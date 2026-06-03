@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiagnosticsTracerouteRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_options.dart';@immutable final class DiagnosticsTracerouteRequest {const DiagnosticsTracerouteRequest({required this.targets, this.colos, this.options, });
 

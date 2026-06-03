@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationCustomerDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Customer details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationCustomerDetails {const InsightsResourcesPaymentEvaluationCustomerDetails({this.customer, this.customerAccount, this.email, this.name, this.phone, });

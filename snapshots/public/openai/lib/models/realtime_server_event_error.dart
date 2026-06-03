@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_error/realtime_beta_server_event_error_error.dart';/// Returned when an error occurs, which could be a client problem or a server
 /// problem. Most errors are recoverable and the session will stay open, we

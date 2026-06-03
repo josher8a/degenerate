@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Requests
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth2/bandwidth2_ssl.dart';import 'package:pub_cloudflare/models/bandwidth2/ssl_protocols.dart';/// Breakdown of totals for requests.
 @immutable final class Requests {const Requests({this.all, this.cached, this.contentType, this.country, this.httpStatus, this.ssl, this.sslProtocols, this.uncached, });

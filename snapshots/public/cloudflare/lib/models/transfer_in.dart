@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TransferIn
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Form of authorization has been accepted by the registrant.
 @immutable final class AcceptFoa {const AcceptFoa._(this.value);

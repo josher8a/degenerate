@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsSingleRequestOutgoing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_name.dart';@immutable final class SecondaryDnsSingleRequestOutgoing {const SecondaryDnsSingleRequestOutgoing({required this.id, required this.name, required this.peers, });
 

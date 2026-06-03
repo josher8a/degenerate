@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcSaasApp (inline: HybridAndImplicitOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HybridAndImplicitOptions {const HybridAndImplicitOptions({this.returnAccessTokenFromAuthorizationEndpoint, this.returnIdTokenFromAuthorizationEndpoint, });
 

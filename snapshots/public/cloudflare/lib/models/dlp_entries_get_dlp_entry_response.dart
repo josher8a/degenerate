@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntriesGetDlpEntryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_with_shared_profiles.dart';@immutable final class DlpEntriesGetDlpEntryResponse {const DlpEntriesGetDlpEntryResponse({this.result});
 

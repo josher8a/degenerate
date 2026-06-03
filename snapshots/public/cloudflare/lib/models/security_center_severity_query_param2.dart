@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityCenterSeverityQueryParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterSeverityQueryParam2 {const SecurityCenterSeverityQueryParam2._(this.value);
 

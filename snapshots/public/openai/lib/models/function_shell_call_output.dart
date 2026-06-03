@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallOutput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';@immutable final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
 

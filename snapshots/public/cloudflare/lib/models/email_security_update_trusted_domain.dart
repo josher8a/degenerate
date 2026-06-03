@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityUpdateTrustedDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateTrustedDomain {const EmailSecurityUpdateTrustedDomain({this.comments, this.isRecent, this.isRegex, this.isSimilarity, this.pattern, });
 

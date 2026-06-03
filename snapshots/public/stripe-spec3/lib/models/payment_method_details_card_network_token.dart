@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsCardNetworkToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsCardNetworkToken {const PaymentMethodDetailsCardNetworkToken({required this.used});

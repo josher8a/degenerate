@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamPlaybackRtmps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret key to use for playback via RTMPS.
 extension type const StreamPlaybackRtmpsStreamKey(String value) {

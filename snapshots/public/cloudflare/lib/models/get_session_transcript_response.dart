@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSessionTranscriptResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_transcript.dart';@immutable final class GetSessionTranscriptResponse {const GetSessionTranscriptResponse({this.data, this.success, });
 

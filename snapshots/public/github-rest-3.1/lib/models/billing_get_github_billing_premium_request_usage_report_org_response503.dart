@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503 {const BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503({this.code, this.message, this.documentationUrl, });
 

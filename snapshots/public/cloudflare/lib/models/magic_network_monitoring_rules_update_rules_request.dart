@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicNetworkMonitoringRulesUpdateRulesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_duration.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_rule_identifier.dart';@immutable final class MagicNetworkMonitoringRulesUpdateRulesRequest {const MagicNetworkMonitoringRulesUpdateRulesRequest({required this.duration, required this.name, this.automaticAdvertisement, this.bandwidth, this.id, this.packetThreshold, this.prefixes, });
 

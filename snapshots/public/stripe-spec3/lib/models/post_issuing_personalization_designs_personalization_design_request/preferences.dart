@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingPersonalizationDesignsPersonalizationDesignRequest (inline: Preferences)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information on whether this personalization design is used to create cards when one is not specified.
 @immutable final class Preferences {const Preferences({required this.isDefault});

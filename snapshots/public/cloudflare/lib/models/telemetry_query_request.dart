@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryQueryRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/telemetry_query_request_parameters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';/// Type of pattern to search for when using pattern-based views
 @immutable final class PatternType {const PatternType._(this.value);

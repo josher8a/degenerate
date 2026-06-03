@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewaySingleResponseWithListItems (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_items2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_type.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_uuid.dart';@immutable final class ZeroTrustGatewaySingleResponseWithListItemsResult {const ZeroTrustGatewaySingleResponseWithListItemsResult({this.createdAt, this.description, this.id, this.items, this.name, this.type, this.updatedAt, });
 

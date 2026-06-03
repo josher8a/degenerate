@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceLinesLineItemIdRequest (inline: TaxAmounts > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/tax_rate_data.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown/tax_product_resource_line_item_tax_breakdown_taxability_reason.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1 {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1({required this.amount, required this.taxRateData, required this.taxableAmount, this.taxabilityReason, });
 

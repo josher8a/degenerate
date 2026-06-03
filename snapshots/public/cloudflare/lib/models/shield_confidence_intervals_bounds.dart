@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldConfidenceIntervalsBounds
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Upper and lower bound for percentile estimate
 @immutable final class ShieldConfidenceIntervalsBounds {const ShieldConfidenceIntervalsBounds({this.lower, this.upper, });

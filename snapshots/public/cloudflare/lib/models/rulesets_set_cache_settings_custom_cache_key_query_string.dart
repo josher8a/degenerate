@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKeyQueryString
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_query_string/rulesets_set_cache_settings_custom_cache_key_query_string_exclude.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_query_string/rulesets_set_cache_settings_custom_cache_key_query_string_include.dart';/// Which query string parameters to include in or exclude from the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyQueryString {const RulesetsSetCacheSettingsCustomCacheKeyQueryString({this.exclude, this.include, });

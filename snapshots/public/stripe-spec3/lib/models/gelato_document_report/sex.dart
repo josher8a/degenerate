@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoDocumentReport (inline: Sex)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sex of the person in the document.
 @immutable final class Sex {const Sex._(this.value);

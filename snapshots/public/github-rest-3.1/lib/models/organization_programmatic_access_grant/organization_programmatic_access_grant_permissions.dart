@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationProgrammaticAccessGrant (inline: Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions requested, categorized by type of permission.
 @immutable final class OrganizationProgrammaticAccessGrantPermissions {const OrganizationProgrammaticAccessGrantPermissions({this.organization, this.repository, this.other, });

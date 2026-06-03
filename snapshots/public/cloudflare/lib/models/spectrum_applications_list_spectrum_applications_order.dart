@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumApplicationsListSpectrumApplicationsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Application field by which results are ordered.
 @immutable final class SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCustomersCustomerBalanceTransactionsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetCustomersCustomerBalanceTransactionsResponse {const GetCustomersCustomerBalanceTransactionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });

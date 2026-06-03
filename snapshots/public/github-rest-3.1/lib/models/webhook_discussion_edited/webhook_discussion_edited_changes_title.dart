@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDiscussionEdited (inline: Changes > Title)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDiscussionEditedChangesTitle {const WebhookDiscussionEditedChangesTitle({required this.from});
 

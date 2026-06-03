@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerStateRunning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ContainerStateRunning is a running state of a container.
 @immutable final class ContainerStateRunning {const ContainerStateRunning({this.startedAt});

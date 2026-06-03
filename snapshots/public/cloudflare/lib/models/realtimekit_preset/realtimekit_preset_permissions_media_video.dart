@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Media > Video)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/can_produce.dart';/// Video permissions
 @immutable final class RealtimekitPresetPermissionsMediaVideo {const RealtimekitPresetPermissionsMediaVideo({required this.canProduce});

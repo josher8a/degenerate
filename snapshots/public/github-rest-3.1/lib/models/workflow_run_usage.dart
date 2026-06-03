@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowRunUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_run_usage/workflow_run_usage_billable.dart';/// Workflow Run Usage
 @immutable final class WorkflowRunUsage {const WorkflowRunUsage({required this.billable, this.runDurationMs, });

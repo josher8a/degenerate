@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessRdpProps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_target_criteria_self_hosted_app.dart';import 'package:pub_cloudflare/models/access_type.dart';@immutable final class AccessRdpProps {const AccessRdpProps({required this.targetCriteria, this.type, });
 

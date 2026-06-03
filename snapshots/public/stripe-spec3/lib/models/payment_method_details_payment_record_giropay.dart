@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsPaymentRecordGiropay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordGiropay {const PaymentMethodDetailsPaymentRecordGiropay({this.bankCode, this.bankName, this.bic, this.verifiedName, });

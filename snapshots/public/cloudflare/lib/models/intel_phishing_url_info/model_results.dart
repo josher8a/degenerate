@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlInfo (inline: ModelResults)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModelResults {const ModelResults({this.modelName, this.modelScore, });
 

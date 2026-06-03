@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UnrevokeRegistrationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_cursor_result_info.dart';@immutable final class UnrevokeRegistrationsResponse {const UnrevokeRegistrationsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

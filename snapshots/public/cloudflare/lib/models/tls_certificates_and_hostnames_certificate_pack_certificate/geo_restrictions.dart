@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificatePackCertificate (inline: GeoRestrictions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_geo_restrictions/label.dart';/// Specify the region where your private key can be held locally.
 @immutable final class GeoRestrictions {const GeoRestrictions({this.label});

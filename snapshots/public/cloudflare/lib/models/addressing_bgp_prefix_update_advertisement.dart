@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingBgpPrefixUpdateAdvertisement
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn_prepend_count.dart';import 'package:pub_cloudflare/models/addressing_auto_advertise_withdraw.dart';import 'package:pub_cloudflare/models/addressing_bgp_prefix_update_advertisement/on_demand.dart';@immutable final class AddressingBgpPrefixUpdateAdvertisement {const AddressingBgpPrefixUpdateAdvertisement({this.asnPrependCount, this.autoAdvertiseWithdraw, this.onDemand, });
 

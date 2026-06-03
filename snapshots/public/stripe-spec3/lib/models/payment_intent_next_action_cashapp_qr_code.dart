@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionCashappQrCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionCashappQrCode {const PaymentIntentNextActionCashappQrCode({required this.expiresAt, required this.imageUrlPng, required this.imageUrlSvg, });

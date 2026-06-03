@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitVideoConfig (inline: Watermark)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_video_config/watermark_size.dart';/// Position of the watermark
 @immutable final class WatermarkPosition {const WatermarkPosition._(this.value);

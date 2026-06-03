@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTopupsTopupCancelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTopupsTopupCancelRequest {const PostTopupsTopupCancelRequest({this.expand});
 

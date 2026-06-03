@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEntitlementsFeaturesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEntitlementsFeaturesRequest {const PostEntitlementsFeaturesRequest({required this.lookupKey, required this.name, this.expand, this.metadata, });
 

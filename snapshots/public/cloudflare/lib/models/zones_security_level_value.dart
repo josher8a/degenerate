@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesSecurityLevelValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesSecurityLevelValue {const ZonesSecurityLevelValue._(this.value);

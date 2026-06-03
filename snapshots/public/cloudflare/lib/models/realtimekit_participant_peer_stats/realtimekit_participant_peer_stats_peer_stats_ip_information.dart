@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantPeerStats (inline: PeerStats > IpInformation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsIpInformation {const RealtimekitParticipantPeerStatsPeerStatsIpInformation({this.city, this.country, this.ipLocation, this.ipv4, this.org, this.portal, this.region, this.timezone, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDeploymentCreated (inline: Deployment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment/deployment_payload.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/deployment_performed_via_github_app.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';/// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
 @immutable final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp, this.productionEnvironment, this.transientEnvironment, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/S3SourceResponseSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema/r2_slurper_s3_source_schema_vendor.dart';@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint, this.keys, this.pathPrefix, this.vendor, });
 

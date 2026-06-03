@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRulesResponseCollection (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_rule.dart';import 'package:pub_cloudflare/models/rum_ruleset.dart';@immutable final class RumRulesResponseCollectionResult {const RumRulesResponseCollectionResult({this.rules, this.ruleset, });
 

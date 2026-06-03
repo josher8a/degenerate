@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldId
 
 /// Identifier
 extension type const PageShieldId(String value) {

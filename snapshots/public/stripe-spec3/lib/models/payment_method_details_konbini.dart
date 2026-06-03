@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsKonbini
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_konbini_store.dart';/// 
 @immutable final class PaymentMethodDetailsKonbini {const PaymentMethodDetailsKonbini({this.store});

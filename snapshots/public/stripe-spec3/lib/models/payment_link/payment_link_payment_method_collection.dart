@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLink (inline: PaymentMethodCollection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for collecting a payment method during checkout. Defaults to `always`.
 @immutable final class PaymentLinkPaymentMethodCollection {const PaymentLinkPaymentMethodCollection._(this.value);

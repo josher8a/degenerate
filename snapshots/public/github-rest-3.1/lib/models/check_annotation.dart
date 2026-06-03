@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckAnnotation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check Annotation
 @immutable final class CheckAnnotation {const CheckAnnotation({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.annotationLevel, required this.title, required this.message, required this.rawDetails, required this.blobHref, });

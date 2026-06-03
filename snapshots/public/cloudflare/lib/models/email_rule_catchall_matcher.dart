@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRuleCatchallMatcher
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of matcher. Default is 'all'.
 @immutable final class EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest (inline: Fleet > CardholderPromptData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CardholderPromptData {const CardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
 

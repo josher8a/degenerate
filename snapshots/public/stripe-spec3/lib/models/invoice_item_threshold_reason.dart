@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceItemThresholdReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class InvoiceItemThresholdReason {const InvoiceItemThresholdReason({required this.lineItemIds, required this.usageGte, });

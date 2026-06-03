@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningListAlertsForOrgState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningListAlertsForOrgState {const SecretScanningListAlertsForOrgState._(this.value);
 

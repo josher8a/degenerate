@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeCreateClientSecretRequest (inline: ExpiresAfter)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after/batch_file_expiration_after_anchor.dart';/// Configuration for the client secret expiration. Expiration refers to the time after which
 /// a client secret will no longer be valid for creating sessions. The session itself may

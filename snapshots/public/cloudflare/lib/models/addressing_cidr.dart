@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingCidr
 
 /// IP Prefix in Classless Inter-Domain Routing format.
 extension type const AddressingCidr(String value) {

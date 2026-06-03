@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersScriptSettingsItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_logpush.dart';import 'package:pub_cloudflare/models/workers_observability.dart';import 'package:pub_cloudflare/models/workers_tag.dart';import 'package:pub_cloudflare/models/workers_tail_consumers_script.dart';@immutable final class WorkersScriptSettingsItem {const WorkersScriptSettingsItem({this.logpush, this.observability, this.tags, this.tailConsumers, });
 

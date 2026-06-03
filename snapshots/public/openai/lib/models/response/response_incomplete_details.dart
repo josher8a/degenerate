@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Response (inline: IncompleteDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason why the response is incomplete.
 @immutable final class ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason._(this.value);

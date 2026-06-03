@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringCpuPctByApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringCpuPctByApp2 {const DigitalExperienceMonitoringCpuPctByApp2({this.cpuPct, this.name, });
 

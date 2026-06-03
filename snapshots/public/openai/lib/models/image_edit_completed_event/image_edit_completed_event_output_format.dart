@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageEditCompletedEvent (inline: OutputFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The output format for the edited image.
 /// 

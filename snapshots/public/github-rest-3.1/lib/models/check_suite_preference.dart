@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckSuitePreference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite_preference/preferences.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';/// Check suite configuration preferences for a repository.
 @immutable final class CheckSuitePreference {const CheckSuitePreference({required this.preferences, required this.repository, });

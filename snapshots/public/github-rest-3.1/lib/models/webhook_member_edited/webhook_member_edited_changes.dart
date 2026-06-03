@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMemberEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_member_edited/old_permission.dart';import 'package:pub_github_rest_3_1/models/webhook_member_edited/webhook_member_edited_changes_permission.dart';/// The changes to the collaborator permissions
 @immutable final class WebhookMemberEditedChanges {const WebhookMemberEditedChanges({this.oldPermission, this.permission, });

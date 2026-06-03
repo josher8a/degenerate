@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InviteProjectGroupBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for granting a group access to a project.
 @immutable final class InviteProjectGroupBody {const InviteProjectGroupBody({required this.groupId, required this.role, });

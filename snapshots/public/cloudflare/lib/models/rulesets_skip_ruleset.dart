@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSkipRuleset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ruleset to skip the execution of. This option is incompatible with the rulesets option.
 @immutable final class RulesetsSkipRuleset {const RulesetsSkipRuleset._(this.value);

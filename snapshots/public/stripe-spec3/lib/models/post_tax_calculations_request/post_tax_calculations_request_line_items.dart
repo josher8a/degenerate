@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxCalculationsRequest (inline: LineItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';@immutable final class PostTaxCalculationsRequestLineItems {const PostTaxCalculationsRequestLineItems({required this.amount, this.metadata, this.product, this.quantity, this.reference, this.taxBehavior, this.taxCode, });
 

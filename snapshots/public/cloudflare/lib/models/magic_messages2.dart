@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicMessages2 {const MagicMessages2({required this.code, required this.message, });
 

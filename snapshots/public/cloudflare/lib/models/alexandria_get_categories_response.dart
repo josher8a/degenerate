@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlexandriaGetCategoriesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_category.dart';import 'package:pub_cloudflare/models/alexandria_messages2.dart';@immutable final class AlexandriaGetCategoriesResponse {const AlexandriaGetCategoriesResponse({required this.errors, required this.messages, required this.success, this.result, });
 

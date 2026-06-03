@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosTcpFlowProtectionRuleListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_tcp_flow_protection_rule.dart';@immutable final class DosTcpFlowProtectionRuleListResponse {const DosTcpFlowProtectionRuleListResponse({this.result});
 

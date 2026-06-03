@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingHealthDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_health_details/load_balancing_health_details_result.dart';@immutable final class LoadBalancingHealthDetails {const LoadBalancingHealthDetails({this.result});
 

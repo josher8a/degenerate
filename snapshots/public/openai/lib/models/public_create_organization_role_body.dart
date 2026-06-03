@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicCreateOrganizationRoleBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for creating a custom role.
 @immutable final class PublicCreateOrganizationRoleBody {const PublicCreateOrganizationRoleBody({required this.roleName, required this.permissions, this.description, });

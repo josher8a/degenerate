@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsnsAsSetResponse (inline: Result > AsSets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsSets {const AsSets({required this.asMembersCount, required this.asSetMembersCount, required this.asSetUpstreamsCount, required this.asnConeSize, required this.irrSources, required this.name, this.hierarchicalAsn, this.inferredAsn, this.peeringdbAsn, });
 

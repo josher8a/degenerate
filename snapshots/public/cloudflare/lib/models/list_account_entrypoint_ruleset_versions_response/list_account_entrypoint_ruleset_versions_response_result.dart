@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAccountEntrypointRulesetVersionsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_kind.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';@immutable final class ListAccountEntrypointRulesetVersionsResponseResult {const ListAccountEntrypointRulesetVersionsResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, this.description = '', });
 

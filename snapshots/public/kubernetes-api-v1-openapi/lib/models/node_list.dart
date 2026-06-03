@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node.dart';/// NodeList is the whole list of all Nodes which have been registered with master.
 @immutable final class NodeList {const NodeList({required this.items, this.apiVersion, this.kind, this.metadata, });

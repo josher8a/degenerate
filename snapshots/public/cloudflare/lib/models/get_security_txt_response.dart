@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSecurityTxtResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_messages2.dart';import 'package:pub_cloudflare/models/security_center_security_txt.dart';@immutable final class GetSecurityTxtResponse {const GetSecurityTxtResponse({required this.errors, required this.messages, required this.success, this.result, });
 

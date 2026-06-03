@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingCreditGrantsIdRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_expires_at.dart';@immutable final class PostBillingCreditGrantsIdRequest {const PostBillingCreditGrantsIdRequest({this.expand, this.expiresAt, this.metadata, });
 

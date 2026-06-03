@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesGroupByProtocolResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_protocol_response/radar_get_dns_as112_timeseries_group_by_protocol_response_result_serie0.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResult {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResult({required this.meta, required this.serie0, });
 

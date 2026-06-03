@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_swish_qr_code.dart';/// 
 @immutable final class PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode {const PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode({required this.hostedInstructionsUrl, required this.qrCode, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnCustomerSnapshotsGetResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_snapshot_metadata.dart';@immutable final class MconnCustomerSnapshotsGetResult {const MconnCustomerSnapshotsGetResult({required this.count, required this.items, this.cursor, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LegalEntityCompany
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/legal_entity_company_verification.dart';import 'package:pub_stripe_spec3/models/legal_entity_directorship_declaration.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';import 'package:pub_stripe_spec3/models/legal_entity_registration_date.dart';import 'package:pub_stripe_spec3/models/legal_entity_representative_declaration.dart';import 'package:pub_stripe_spec3/models/legal_entity_ubo_declaration.dart';/// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
 @immutable final class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason._(this.value);

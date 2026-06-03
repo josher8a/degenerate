@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaSilence
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_policy_id.dart';import 'package:pub_cloudflare/models/aaa_silence_id.dart';@immutable final class AaaSilence {const AaaSilence({this.createdAt, this.endTime, this.id, this.policyId, this.startTime, this.updatedAt, });
 

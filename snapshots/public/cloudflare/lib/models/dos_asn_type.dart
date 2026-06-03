@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosAsnType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Infrastructure type of this ASN.
 @immutable final class DosAsnType {const DosAsnType._(this.value);

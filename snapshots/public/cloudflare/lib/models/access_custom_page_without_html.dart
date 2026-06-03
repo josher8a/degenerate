@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCustomPageWithoutHtml
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_custom_pages_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_schemas_app_count.dart';import 'package:pub_cloudflare/models/access_schemas_type.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessCustomPageWithoutHtml {const AccessCustomPageWithoutHtml({required this.name, required this.type, this.appCount, this.createdAt, this.uid, this.updatedAt, });
 

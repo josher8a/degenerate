@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: Documents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/company_authorization.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/passport.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/visa.dart';/// Documents that may be submitted to satisfy various informational requests.
 @immutable final class PostAccountsAccountPeoplePersonRequestDocuments {const PostAccountsAccountPeoplePersonRequestDocuments({this.companyAuthorization, this.passport, this.visa, });

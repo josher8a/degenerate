@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: SetupIntentData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A subset of parameters to be passed to SetupIntent creation for Checkout Sessions in `setup` mode.
 @immutable final class SetupIntentData {const SetupIntentData({this.description, this.metadata, this.onBehalfOf, });

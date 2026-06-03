@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/variant2_function.dart';@immutable final class ToolsVariant2 {const ToolsVariant2({required this.function, required this.type, });
 

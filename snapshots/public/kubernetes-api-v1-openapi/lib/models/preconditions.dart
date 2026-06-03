@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Preconditions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
 @immutable final class Preconditions {const Preconditions({this.resourceVersion, this.uid, });

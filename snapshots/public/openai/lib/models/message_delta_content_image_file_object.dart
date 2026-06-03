@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentImageFileObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_image_file_object/message_content_image_file_object_type.dart';import 'package:pub_openai/models/message_delta_content_image_file_object/message_delta_content_image_file_object_image_file.dart';/// References an image [File](/docs/api-reference/files) in the content of a message.
 @immutable final class MessageDeltaContentImageFileObject {const MessageDeltaContentImageFileObject({required this.index, required this.type, this.imageFile, });

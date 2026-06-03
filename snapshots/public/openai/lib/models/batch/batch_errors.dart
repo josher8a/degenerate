@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Batch (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch/errors_data.dart';@immutable final class BatchErrors {const BatchErrors({this.object, this.data, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSOrganizationsLeaveOrganizationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';@immutable final class UserSOrganizationsLeaveOrganizationResponse {const UserSOrganizationsLeaveOrganizationResponse({this.id});
 

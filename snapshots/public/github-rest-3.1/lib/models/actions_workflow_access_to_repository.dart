@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsWorkflowAccessToRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
 /// repository.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used when `setting_id` is `min_tls_version`. The minimum TLS version.
 @immutable final class TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2._(this.value);

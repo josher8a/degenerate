@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateZoneSnippetRequest (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the name of the file that contains the main module of the snippet.
 extension type const SnippetsSnippetMainModule(String value) {

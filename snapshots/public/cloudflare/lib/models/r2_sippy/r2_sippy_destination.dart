@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2Sippy (inline: Destination)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_aws/destination_provider.dart';/// Details about the configured destination bucket.
 @immutable final class R2SippyDestination {const R2SippyDestination({this.accessKeyId, this.account, this.bucket, this.provider, });

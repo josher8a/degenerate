@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingBgpSignalOpts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether control of advertisement of the prefix to the Internet is enabled to be performed via BGP signal
 extension type const AddressingBgpSignalingEnabled(bool value) {

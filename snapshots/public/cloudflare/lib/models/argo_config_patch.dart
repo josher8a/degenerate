@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ArgoConfigPatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_config_setting_value.dart';/// Configures the enablement of Argo Smart Routing.
 @immutable final class ArgoConfigPatch {const ArgoConfigPatch({required this.value});

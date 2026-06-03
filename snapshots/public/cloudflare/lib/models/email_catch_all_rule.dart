@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailCatchAllRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_catchall_action.dart';import 'package:pub_cloudflare/models/email_rule_catchall_matcher.dart';import 'package:pub_cloudflare/models/email_rule_enabled.dart';import 'package:pub_cloudflare/models/email_rule_identifier.dart';import 'package:pub_cloudflare/models/email_rule_name.dart';import 'package:pub_cloudflare/models/email_rule_tag.dart';@immutable final class EmailCatchAllRule {const EmailCatchAllRule({this.actions, this.enabled, this.id, this.matchers, this.name, this.tag, });
 

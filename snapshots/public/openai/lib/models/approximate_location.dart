@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ApproximateLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location/approximate_location_type.dart';@immutable final class ApproximateLocation {const ApproximateLocation({this.type = ApproximateLocationType.approximate, this.country, this.region, this.city, this.timezone, });
 

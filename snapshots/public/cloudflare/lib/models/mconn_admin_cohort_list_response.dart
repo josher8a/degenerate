@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminCohortListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_cohort.dart';@immutable final class MconnAdminCohortListResponse {const MconnAdminCohortListResponse({this.result});
 

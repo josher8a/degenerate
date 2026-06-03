@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerNetworkPolicyAllowlistParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_network_policy_domain_secret_param.dart';/// Allow outbound network access only to specified domains. Always `allowlist`.
 @immutable final class ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType._(this.value);

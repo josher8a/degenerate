@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserMarketplacePurchase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_account.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan.dart';/// User Marketplace Purchase
 @immutable final class UserMarketplacePurchase {const UserMarketplacePurchase({required this.billingCycle, required this.nextBillingDate, required this.unitCount, required this.onFreeTrial, required this.freeTrialEndsOn, required this.updatedAt, required this.account, required this.plan, });

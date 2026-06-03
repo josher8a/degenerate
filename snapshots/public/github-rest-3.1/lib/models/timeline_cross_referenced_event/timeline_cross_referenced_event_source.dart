@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TimelineCrossReferencedEvent (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';@immutable final class TimelineCrossReferencedEventSource {const TimelineCrossReferencedEventSource({this.type, this.issue, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Consent > ButtonTextTranslations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ButtonTextTranslations {const ButtonTextTranslations({required this.acceptAll, required this.confirmMyChoices, required this.rejectAll, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRuleRatelimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object configuring the rule's rate limit behavior.
 @immutable final class RulesetsRuleRatelimit {const RulesetsRuleRatelimit({required this.characteristics, required this.period, this.countingExpression, this.mitigationTimeout, this.requestsPerPeriod, this.requestsToOrigin = false, this.scorePerPeriod, this.scoreResponseHeaderName, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateAuthorityDetailsResponse (inline: Result > CertificateAuthority)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/certificate_record_type.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/revocation_status.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response/certificate_authority_related.dart';/// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class AppleStatus {const AppleStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfigurationForRepository (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The attachment status of the code security configuration on the repository.
 @immutable final class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus._(this.value);

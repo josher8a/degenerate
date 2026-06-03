@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlSaasApp (inline: CustomAttributes > NameFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A globally unique name for an identity or service provider.
 @immutable final class NameFormat {const NameFormat._(this.value);

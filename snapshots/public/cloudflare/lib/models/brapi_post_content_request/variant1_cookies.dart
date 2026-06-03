@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > Cookies)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Priority {const Priority._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesAccountIdentifier
 
 /// Account identifier tag.
 extension type const ImagesAccountIdentifier(String value) {

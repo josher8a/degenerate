@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZoneSettingsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_base.dart';import 'package:pub_cloudflare/models/zones_cache_rules_aegis.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_h2_max_streams.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_max_http_version.dart';import 'package:pub_cloudflare/models/zones_development_mode.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';import 'package:pub_cloudflare/models/zones_schemas_base.dart';import 'package:pub_cloudflare/models/zones_ssl_recommender.dart';import 'package:pub_cloudflare/models/zones_zone_settings_response_collection/zones_zone_settings_response_collection_result.dart';@immutable final class ZonesZoneSettingsResponseCollection {const ZonesZoneSettingsResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityGetMessageDetectionsResponse (inline: Result > SenderInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SenderInfo {const SenderInfo({this.asName, this.asNumber, this.geo, this.ip, this.pld, });
 

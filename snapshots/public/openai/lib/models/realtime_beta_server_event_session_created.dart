@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventSessionCreated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session.dart';/// The event type, must be `session.created`.
 @immutable final class RealtimeBetaServerEventSessionCreatedType {const RealtimeBetaServerEventSessionCreatedType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoCodeInterpreterToolParam (inline: NetworkPolicy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_network_policy_allowlist_param.dart';import 'package:pub_openai/models/container_network_policy_disabled_param.dart';import 'package:pub_openai/models/container_network_policy_domain_secret_param.dart';/// Network access policy for the container.
 sealed class AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicy();

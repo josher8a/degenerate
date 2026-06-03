@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicLan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_bond_id.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_lan_static_addressing.dart';import 'package:pub_cloudflare/models/magic_nat.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_routed_subnet.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';@immutable final class MagicLan {const MagicLan({this.bondId, this.haLink, this.id, this.isBreakout, this.isPrioritized, this.name, this.nat, this.physport, this.routedSubnets, this.siteId, this.staticAddressing, this.vlanTag, });
 

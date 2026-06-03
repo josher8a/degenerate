@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LocalEnvironmentParam (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use a local computer environment.
 @immutable final class LocalEnvironmentParamType {const LocalEnvironmentParamType._(this.value);

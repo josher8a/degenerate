@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureParameterSchemas
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_parameter_schemas/parameter_schemas.dart';@immutable final class ShieldOperationFeatureParameterSchemas {const ShieldOperationFeatureParameterSchemas({required this.parameterSchemas});
 

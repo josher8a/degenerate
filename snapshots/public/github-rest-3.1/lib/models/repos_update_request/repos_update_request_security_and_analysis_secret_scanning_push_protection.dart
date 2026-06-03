@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateRequest (inline: SecurityAndAnalysis > SecretScanningPushProtection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
 @immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection {const ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection({this.status});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2TempAccessCredsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions allowed on the credentials.
 @immutable final class Permission {const Permission._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuneReinforcementHyperparameters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/compute_multiplier.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/eval_interval.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/eval_samples.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// Level of reasoning effort.
 /// 

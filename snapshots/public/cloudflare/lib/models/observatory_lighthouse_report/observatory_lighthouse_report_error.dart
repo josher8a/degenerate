@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryLighthouseReport (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The error code of the Lighthouse result.
 @immutable final class ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode._(this.value);

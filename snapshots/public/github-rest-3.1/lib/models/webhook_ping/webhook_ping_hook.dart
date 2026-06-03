@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPing (inline: Hook)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_response.dart';import 'package:pub_github_rest_3_1/models/repos_create_webhook_request/repos_create_webhook_request_config.dart';/// The type of webhook. The only valid value is 'web'.
 @immutable final class HookName {const HookName._(this.value);

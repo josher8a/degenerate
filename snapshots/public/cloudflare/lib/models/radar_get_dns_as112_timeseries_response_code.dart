@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesResponseCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode._(this.value);
 

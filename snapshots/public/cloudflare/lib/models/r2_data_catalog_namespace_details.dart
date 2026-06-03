@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogNamespaceDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains namespace with metadata details.
 @immutable final class R2DataCatalogNamespaceDetails {const R2DataCatalogNamespaceDetails({required this.namespace, required this.namespaceUuid, this.createdAt, this.updatedAt, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TopAttacksLimitDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `limitPerLocation` applies to the source or target location.
 @immutable final class RadarGetAttacksLayer3TopAttacksLimitDirection {const RadarGetAttacksLayer3TopAttacksLimitDirection._(this.value);

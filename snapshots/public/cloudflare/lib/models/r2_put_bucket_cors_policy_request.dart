@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2PutBucketCorsPolicyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_cors_rule.dart';@immutable final class R2PutBucketCorsPolicyRequest {const R2PutBucketCorsPolicyRequest({this.rules});
 

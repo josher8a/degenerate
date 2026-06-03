@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationDeletePerOperationSettingResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class SchemaValidationDeletePerOperationSettingResponseResult {const SchemaValidationDeletePerOperationSettingResponseResult({this.operationId});
 

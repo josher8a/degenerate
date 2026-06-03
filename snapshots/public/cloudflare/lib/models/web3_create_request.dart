@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3CreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_description.dart';import 'package:pub_cloudflare/models/web3_dnslink.dart';import 'package:pub_cloudflare/models/web3_name.dart';import 'package:pub_cloudflare/models/web3_target.dart';@immutable final class Web3CreateRequest {const Web3CreateRequest({required this.name, required this.target, this.description, this.dnslink, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersCreateAssetsUploadSessionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_create_assets_upload_session_response/workers_create_assets_upload_session_response_result.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class WorkersCreateAssetsUploadSessionResponse {const WorkersCreateAssetsUploadSessionResponse({required this.errors, required this.messages, required this.success, this.result, });
 

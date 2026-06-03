@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantPeerStats (inline: PeerStats > PrecallNetworkInformation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation {const RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughtput, this.turnConnectivity, });
 

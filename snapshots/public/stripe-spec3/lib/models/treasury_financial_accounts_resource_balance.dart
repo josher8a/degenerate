@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceBalance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Balance information for the FinancialAccount
 @immutable final class TreasuryFinancialAccountsResourceBalance {const TreasuryFinancialAccountsResourceBalance({required this.cash, required this.inboundPending, required this.outboundPending, });

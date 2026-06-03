@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualitySpeedHistogramResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_response/histogram0.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_histogram_response/radar_get_quality_speed_histogram_response_result_meta.dart';@immutable final class RadarGetQualitySpeedHistogramResponseResult {const RadarGetQualitySpeedHistogramResponseResult({required this.histogram0, required this.meta, });
 

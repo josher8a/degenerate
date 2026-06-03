@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentImageFileObject (inline: ImageFile)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/detail.dart';@immutable final class MessageDeltaContentImageFileObjectImageFile {const MessageDeltaContentImageFileObjectImageFile({this.fileId, this.detail = Detail.auto, });
 

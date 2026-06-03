@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1CreateDatabaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_database_name.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 @immutable final class D1Jurisdiction {const D1Jurisdiction._(this.value);

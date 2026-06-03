@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaResponseWithThresholds
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_schema_response_with_thresholds/shield_schema_response_with_thresholds_result.dart';@immutable final class ShieldSchemaResponseWithThresholds {const ShieldSchemaResponseWithThresholds({required this.errors, required this.messages, required this.success, required this.result, });
 

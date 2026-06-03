@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfMetaLlamaGuard38bRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_llama_guard38b_request/workers_ai_post_run_cf_meta_llama_guard38b_request_messages.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_llama_guard38b_request/workers_ai_post_run_cf_meta_llama_guard38b_request_response_format.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequest {const WorkersAiPostRunCfMetaLlamaGuard38bRequest({required this.messages, this.maxTokens = 256, this.responseFormat, this.temperature = 0.6, });
 

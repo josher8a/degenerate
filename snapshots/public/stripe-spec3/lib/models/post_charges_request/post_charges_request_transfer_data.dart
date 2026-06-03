@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesRequest (inline: TransferData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An optional dictionary including the account to automatically transfer to as part of a destination charge. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
 @immutable final class PostChargesRequestTransferData {const PostChargesRequestTransferData({required this.destination, this.amount, });

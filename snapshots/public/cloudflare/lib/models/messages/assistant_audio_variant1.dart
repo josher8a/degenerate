@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Assistant > Audio > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantAudioVariant1 {const AssistantAudioVariant1({required this.id});
 

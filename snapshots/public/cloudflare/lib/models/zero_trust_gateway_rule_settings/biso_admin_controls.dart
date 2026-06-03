@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: BisoAdminControls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
 @immutable final class Copy {const Copy._(this.value);

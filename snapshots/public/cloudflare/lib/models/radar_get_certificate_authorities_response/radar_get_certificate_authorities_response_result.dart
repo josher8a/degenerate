@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateAuthoritiesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/certificate_authorities.dart';@immutable final class RadarGetCertificateAuthoritiesResponseResult {const RadarGetCertificateAuthoritiesResponseResult({required this.certificateAuthorities});
 

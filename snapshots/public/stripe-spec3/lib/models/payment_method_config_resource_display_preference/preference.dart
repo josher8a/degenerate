@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodConfigResourceDisplayPreference (inline: Preference)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The account's display preference.
 @immutable final class Preference {const Preference._(this.value);

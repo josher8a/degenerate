@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/namespace.dart';/// NamespaceList is a list of Namespaces.
 @immutable final class NamespaceList {const NamespaceList({required this.items, this.apiVersion, this.kind, this.metadata, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FormatTypes
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FormatTypes {const FormatTypes({required this.createdAt, required this.website, this.avatar, this.trackingId, this.email, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoVerificationReportOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_report_document_options.dart';import 'package:pub_stripe_spec3/models/gelato_report_id_number_options.dart';/// 
 @immutable final class GelatoVerificationReportOptions {const GelatoVerificationReportOptions({this.document, this.idNumber, });

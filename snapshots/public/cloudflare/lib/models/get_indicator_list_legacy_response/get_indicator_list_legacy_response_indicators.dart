@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorListLegacyResponse (inline: Indicators)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/get_indicator_read_response_tags.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';@immutable final class GetIndicatorListLegacyResponseIndicators {const GetIndicatorListLegacyResponseIndicators({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 

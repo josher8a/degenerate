@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecuritySummaryByTlsVersionResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0 {const RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0({required this.tls10, required this.tls11, required this.tls12, required this.tls13, });
 

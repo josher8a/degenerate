@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreadSubscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Thread Subscription
 @immutable final class ThreadSubscription {const ThreadSubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, this.threadUrl, this.repositoryUrl, });

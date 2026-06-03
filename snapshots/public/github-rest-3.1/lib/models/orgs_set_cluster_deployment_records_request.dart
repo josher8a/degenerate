@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsSetClusterDeploymentRecordsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_set_cluster_deployment_records_request/orgs_set_cluster_deployment_records_request_deployments.dart';@immutable final class OrgsSetClusterDeploymentRecordsRequest {const OrgsSetClusterDeploymentRecordsRequest({required this.logicalEnvironment, required this.deployments, this.physicalEnvironment, });
 

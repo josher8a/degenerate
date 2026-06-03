@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaValidationPostSchemaRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_kind.dart';/// Flag whether schema is enabled for validation.
 @immutable final class ValidationEnabled {const ValidationEnabled._(this.value);

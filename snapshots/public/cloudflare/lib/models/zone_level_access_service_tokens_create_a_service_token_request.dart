@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneLevelAccessServiceTokensCreateAServiceTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_client_secret_version.dart';import 'package:pub_cloudflare/models/access_previous_client_secret_expires_at.dart';import 'package:pub_cloudflare/models/access_schemas_duration.dart';import 'package:pub_cloudflare/models/access_service_tokens_components_schemas_name.dart';@immutable final class ZoneLevelAccessServiceTokensCreateAServiceTokenRequest {const ZoneLevelAccessServiceTokensCreateAServiceTokenRequest({required this.name, this.clientSecretVersion, this.duration, this.previousClientSecretExpiresAt, });
 

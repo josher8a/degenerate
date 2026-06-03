@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowVersionsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_request/wor_create_or_modify_workflow_request_limits.dart';@immutable final class WorDescribeWorkflowVersionsResponseResult {const WorDescribeWorkflowVersionsResponseResult({required this.className, required this.createdOn, required this.hasDag, required this.id, required this.modifiedOn, required this.workflowId, this.limits, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneCacheSettingsChangeCacheReserveSettingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_value.dart';@immutable final class ZoneCacheSettingsChangeCacheReserveSettingRequest {const ZoneCacheSettingsChangeCacheReserveSettingRequest({required this.value});
 

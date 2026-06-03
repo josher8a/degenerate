@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageContentTextAnnotationsFileCitationObject (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `file_citation`.
 @immutable final class MessageContentTextAnnotationsFileCitationObjectType {const MessageContentTextAnnotationsFileCitationObjectType._(this.value);

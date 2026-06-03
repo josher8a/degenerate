@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationVerificationData (inline: CvcCheck)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the cardholder provided a CVC and if it matched Stripe’s record.
 @immutable final class IssuingAuthorizationVerificationDataCvcCheck {const IssuingAuthorizationVerificationDataCvcCheck._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/preconditions.dart';/// DeleteOptions may be provided when deleting an API object.
 @immutable final class DeleteOptions {const DeleteOptions({this.apiVersion, this.dryRun, this.gracePeriodSeconds, this.ignoreStoreReadErrorWithClusterBreakingPotential, this.kind, this.orphanDependents, this.preconditions, this.propagationPolicy, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_error/realtime_beta_server_event_error_error.dart';/// The event type, must be `error`.
 @immutable final class RealtimeBetaServerEventErrorType {const RealtimeBetaServerEventErrorType._(this.value);

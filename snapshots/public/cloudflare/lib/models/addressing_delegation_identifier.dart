@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingDelegationIdentifier
 
 /// Identifier of a Delegation.
 extension type const AddressingDelegationIdentifier(String value) {

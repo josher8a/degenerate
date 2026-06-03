@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsCardPresent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present/read_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_receipt.dart';/// 
 @immutable final class PaymentMethodDetailsCardPresent {const PaymentMethodDetailsCardPresent({required this.expMonth, required this.expYear, required this.incrementalAuthorizationSupported, required this.overcaptureSupported, this.amountAuthorized, this.brand, this.brandProduct, this.captureBefore, this.cardholderName, this.country, this.description, this.emvAuthData, this.fingerprint, this.funding, this.generatedCard, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.offline, this.preferredLocales, this.readMethod, this.reader, this.receipt, this.wallet, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetAttacksLayer7SummaryDimension {const RadarGetAttacksLayer7SummaryDimension._(this.value);

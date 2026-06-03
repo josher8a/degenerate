@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksReviewComment (inline: Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_links_html.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_links_self.dart';import 'package:pub_github_rest_3_1/models/webhooks_review_comment/webhooks_review_comment_links_pull_request.dart';@immutable final class WebhooksReviewCommentLinks {const WebhooksReviewCommentLinks({required this.html, required this.pullRequest, required this.self, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsRevolutPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/revolut_pay_underlying_payment_method_funding_details.dart';/// 
 @immutable final class PaymentMethodDetailsRevolutPay {const PaymentMethodDetailsRevolutPay({this.funding, this.transactionId, });

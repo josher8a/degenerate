@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponseCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponseCode {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponseCode._(this.value);
 

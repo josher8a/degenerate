@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPassiveDnsByIp (inline: ReverseRecords)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReverseRecords {const ReverseRecords({this.firstSeen, this.hostname, this.lastSeen, });
 

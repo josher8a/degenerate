@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateQueueRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateQueueRequest {const UpdateQueueRequest({this.friendlyName, this.maxSize, });
 

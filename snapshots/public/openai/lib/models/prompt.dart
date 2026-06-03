@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Prompt
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';import 'package:pub_openai/models/response_prompt_variables/response_prompt_variables_value.dart';/// Reference to a prompt template and its variables.
 /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).

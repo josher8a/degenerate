@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerVersionsUploadVersionRequest (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request/metadata_annotations.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
 @immutable final class WorkerVersionsUploadVersionRequestMetadata {const WorkerVersionsUploadVersionRequestMetadata({required this.mainModule, this.annotations, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.keepBindings, this.usageModel, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.completed`.
 @immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType._(this.value);

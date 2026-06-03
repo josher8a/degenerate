@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningGenericSecrets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of Copilot secret scanning
 @immutable final class SecretScanningGenericSecrets {const SecretScanningGenericSecrets._(this.value);

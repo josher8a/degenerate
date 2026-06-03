@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_response/radar_get_bgp_pfx2as_response_result.dart';@immutable final class RadarGetBgpPfx2asResponse {const RadarGetBgpPfx2asResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallOutputExitOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `exit`.
 @immutable final class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType._(this.value);

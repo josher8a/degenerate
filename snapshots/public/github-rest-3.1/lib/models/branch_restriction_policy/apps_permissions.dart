@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchRestrictionPolicy (inline: Apps > Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsPermissions {const AppsPermissions({this.metadata, this.contents, this.issues, this.singleFile, });
 

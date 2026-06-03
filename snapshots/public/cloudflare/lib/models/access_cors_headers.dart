@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCorsHeaders
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_allow_all_headers.dart';import 'package:pub_cloudflare/models/access_allow_all_methods.dart';import 'package:pub_cloudflare/models/access_allow_all_origins.dart';import 'package:pub_cloudflare/models/access_allow_credentials.dart';import 'package:pub_cloudflare/models/access_allowed_methods2.dart';import 'package:pub_cloudflare/models/access_max_age.dart';@immutable final class AccessCorsHeaders {const AccessCorsHeaders({this.allowAllHeaders, this.allowAllMethods, this.allowAllOrigins, this.allowCredentials, this.allowedHeaders, this.allowedMethods, this.allowedOrigins, this.maxAge, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountPaymentsSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class AccountPaymentsSettings {const AccountPaymentsSettings({this.statementDescriptor, this.statementDescriptorKana, this.statementDescriptorKanji, });

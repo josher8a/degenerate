@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Security Configuration feature options for code scanning
 @immutable final class CodeScanningOptions {const CodeScanningOptions({this.allowAdvanced});

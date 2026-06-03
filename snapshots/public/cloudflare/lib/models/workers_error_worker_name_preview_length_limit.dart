@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerNamePreviewLengthLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is too long to be used with previews enabled.
 @immutable final class WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode._(this.value);

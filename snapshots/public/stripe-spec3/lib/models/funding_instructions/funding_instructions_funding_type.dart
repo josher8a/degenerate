@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructions (inline: FundingType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The `funding_type` of the returned instructions
 @immutable final class FundingInstructionsFundingType {const FundingInstructionsFundingType._(this.value);

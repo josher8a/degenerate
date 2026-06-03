@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerReferenceParam (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a container created with the /v1/containers endpoint
 @immutable final class ContainerReferenceParamType {const ContainerReferenceParamType._(this.value);

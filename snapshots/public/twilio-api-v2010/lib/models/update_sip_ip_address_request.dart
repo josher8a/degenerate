@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateSipIpAddressRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipIpAddressRequest {const UpdateSipIpAddressRequest({this.ipAddress, this.friendlyName, this.cidrPrefixLength, });
 

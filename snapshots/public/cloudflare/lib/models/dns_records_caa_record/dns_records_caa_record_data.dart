@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsCaaRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a CAA record.
 @immutable final class DnsRecordsCaaRecordData {const DnsRecordsCaaRecordData({this.flags, this.tag, this.value, });

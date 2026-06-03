@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Response
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type of this resource - always set to `response`.
 /// 

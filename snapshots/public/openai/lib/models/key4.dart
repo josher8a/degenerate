@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key4
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account.api_key`
 @immutable final class Key4Object {const Key4Object._(this.value);

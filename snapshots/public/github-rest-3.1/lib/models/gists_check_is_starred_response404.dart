@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistsCheckIsStarredResponse404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistsCheckIsStarredResponse404 {const GistsCheckIsStarredResponse404();
 

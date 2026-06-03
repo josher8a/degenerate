@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam (inline: PreferredLocale)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam17PreferredLocale {const PaymentMethodOptionsParam17PreferredLocale._(this.value);
 

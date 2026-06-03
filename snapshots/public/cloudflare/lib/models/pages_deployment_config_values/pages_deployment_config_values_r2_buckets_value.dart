@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValues (inline: R2Buckets > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// R2 binding.
 @immutable final class PagesDeploymentConfigValuesR2BucketsValue {const PagesDeploymentConfigValuesR2BucketsValue({required this.name, this.jurisdiction, });

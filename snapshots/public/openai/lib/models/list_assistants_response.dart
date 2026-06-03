@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAssistantsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object.dart';@immutable final class ListAssistantsResponse {const ListAssistantsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 

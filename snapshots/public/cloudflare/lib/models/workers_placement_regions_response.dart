@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementRegionsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_placement_provider.dart';@immutable final class WorkersPlacementRegionsResponse {const WorkersPlacementRegionsResponse({required this.providers});
 

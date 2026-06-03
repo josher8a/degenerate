@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayoutsTraceId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PayoutsTraceId {const PayoutsTraceId({required this.status, this.value, });

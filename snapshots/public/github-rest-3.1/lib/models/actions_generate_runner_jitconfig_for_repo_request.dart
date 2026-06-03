@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsGenerateRunnerJitconfigForRepoRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
 

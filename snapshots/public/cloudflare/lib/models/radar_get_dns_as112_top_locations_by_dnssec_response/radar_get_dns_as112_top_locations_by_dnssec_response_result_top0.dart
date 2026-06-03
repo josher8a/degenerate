@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TopLocationsByDnssecResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 {const RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
 

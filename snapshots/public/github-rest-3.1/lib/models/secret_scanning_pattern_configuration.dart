@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningPatternConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_pattern_override.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_row_version.dart';/// A collection of secret scanning patterns and their settings related to push protection.
 @immutable final class SecretScanningPatternConfiguration {const SecretScanningPatternConfiguration({this.patternConfigVersion, this.providerPatternOverrides, this.customPatternOverrides, });

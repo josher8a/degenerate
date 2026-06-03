@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: Init)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Initialized process
 @immutable final class InitK {const InitK._(this.value);

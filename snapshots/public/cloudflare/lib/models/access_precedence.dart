@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPrecedence
 
 /// The order of execution for this policy. Must be unique for each policy within an app.
 /// 

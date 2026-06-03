@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CredentialsRevokeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CredentialsRevokeRequest {const CredentialsRevokeRequest({required this.credentials});
 

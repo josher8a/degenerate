@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutAcssDebitPaymentMethodOptions (inline: VerificationMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bank account verification method.
 @immutable final class CheckoutAcssDebitPaymentMethodOptionsVerificationMethod {const CheckoutAcssDebitPaymentMethodOptionsVerificationMethod._(this.value);

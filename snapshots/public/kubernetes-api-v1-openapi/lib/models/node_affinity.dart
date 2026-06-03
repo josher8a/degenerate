@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeAffinity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/preferred_scheduling_term.dart';/// Node affinity is a group of node affinity scheduling rules.
 @immutable final class NodeAffinity {const NodeAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });

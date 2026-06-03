@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Package
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/package/package_type.dart';import 'package:pub_github_rest_3_1/models/package/package_visibility.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A software package
 @immutable final class Package {const Package({required this.id, required this.name, required this.packageType, required this.url, required this.htmlUrl, required this.versionCount, required this.visibility, required this.createdAt, required this.updatedAt, this.owner, this.repository, });

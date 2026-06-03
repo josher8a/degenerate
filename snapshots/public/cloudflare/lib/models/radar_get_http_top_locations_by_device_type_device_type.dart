@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopLocationsByDeviceTypeDeviceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device type.
 @immutable final class RadarGetHttpTopLocationsByDeviceTypeDeviceType {const RadarGetHttpTopLocationsByDeviceTypeDeviceType._(this.value);

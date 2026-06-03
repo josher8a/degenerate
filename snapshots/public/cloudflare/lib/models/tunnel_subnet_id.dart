@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelSubnetId
 
 /// The UUID of the subnet.
 extension type const TunnelSubnetId(String value) {

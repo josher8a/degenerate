@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemasDescription
 
 /// A human-readable description that gives more details than `title`.
 extension type const ShieldSchemasDescription(String value) {

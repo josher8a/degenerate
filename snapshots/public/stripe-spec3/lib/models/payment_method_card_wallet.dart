@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodCardWallet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet/payment_method_card_wallet_type.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_amex_express_checkout.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_apple_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_google_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_link.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_masterpass.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_samsung_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet_visa_checkout.dart';/// 
 @immutable final class PaymentMethodCardWallet {const PaymentMethodCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4, this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesByBytesMetric
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Measurement units, eg. bytes.
 @immutable final class RadarGetAttacksLayer3TimeseriesByBytesMetric {const RadarGetAttacksLayer3TimeseriesByBytesMetric._(this.value);

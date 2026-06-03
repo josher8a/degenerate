@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaWebhooks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_name.dart';import 'package:pub_cloudflare/models/aaa_secret.dart';import 'package:pub_cloudflare/models/aaa_url.dart';import 'package:pub_cloudflare/models/aaa_webhook_id.dart';/// Type of webhook endpoint.
 @immutable final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);

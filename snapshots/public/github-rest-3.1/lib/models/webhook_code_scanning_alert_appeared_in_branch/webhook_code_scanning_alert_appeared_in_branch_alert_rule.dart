@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch (inline: Alert > Rule)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/code_scanning_alert_rule_severity.dart';@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertRule {const WebhookCodeScanningAlertAppearedInBranchAlertRule({required this.description, required this.id, required this.severity, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsnsRelResponse (inline: Result > Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsnsRelResponseResultMeta {const RadarGetAsnsRelResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalPeers, });
 

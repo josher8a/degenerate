@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Job (inline: Steps)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/job/steps_status.dart';@immutable final class JobSteps {const JobSteps({required this.status, required this.conclusion, required this.name, required this.number, this.startedAt, this.completedAt, });
 

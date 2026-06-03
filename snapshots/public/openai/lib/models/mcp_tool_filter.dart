@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McpToolFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A filter object to specify which tools are allowed.
 /// 

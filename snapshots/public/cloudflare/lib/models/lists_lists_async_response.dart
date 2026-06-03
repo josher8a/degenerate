@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsListsAsyncResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_lists_async_response/lists_lists_async_response_result.dart';@immutable final class ListsListsAsyncResponse {const ListsListsAsyncResponse({this.result});
 

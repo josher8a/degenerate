@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetLeakedCredentialChecksSummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetLeakedCredentialChecksSummaryDimension {const RadarGetLeakedCredentialChecksSummaryDimension._(this.value);

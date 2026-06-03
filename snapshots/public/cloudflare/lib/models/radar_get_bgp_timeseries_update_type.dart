@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTimeseriesUpdateType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTimeseriesUpdateType {const RadarGetBgpTimeseriesUpdateType._(this.value);
 

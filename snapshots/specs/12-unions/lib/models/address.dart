@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Address
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Address {const Address({required this.street, required this.city, required this.country, this.state, this.postalCode, });
 

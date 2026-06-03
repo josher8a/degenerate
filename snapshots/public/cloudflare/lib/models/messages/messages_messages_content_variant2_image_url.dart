@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Content > Variant2 > ImageUrl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessagesMessagesContentVariant2ImageUrl {const MessagesMessagesContentVariant2ImageUrl({this.url});
 

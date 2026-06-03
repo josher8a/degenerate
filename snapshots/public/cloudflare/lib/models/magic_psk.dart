@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicPsk
 
 /// A randomly generated or provided string for use in the IPsec tunnel.
 extension type const MagicPsk(String value) {

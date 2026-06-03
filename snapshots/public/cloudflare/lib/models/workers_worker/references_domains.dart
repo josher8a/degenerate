@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: References > Domains)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReferencesDomains {const ReferencesDomains({required this.certificateId, required this.hostname, required this.id, required this.zoneId, required this.zoneName, });
 

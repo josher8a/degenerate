@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature {const ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature._(this.value);
 

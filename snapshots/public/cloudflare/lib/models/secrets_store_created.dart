@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreCreated
 
 /// Whenthe secret was created.
 extension type SecretsStoreCreated(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionWechatPayRedirectToAndroidApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionWechatPayRedirectToAndroidApp {const PaymentIntentNextActionWechatPayRedirectToAndroidApp({required this.appId, required this.nonceStr, required this.package, required this.partnerId, required this.prepayId, required this.sign, required this.timestamp, });

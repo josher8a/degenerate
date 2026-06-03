@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersistentVolumeClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_status.dart';/// PersistentVolumeClaim is a user's request for and claim to a persistent volume
 @immutable final class PersistentVolumeClaim {const PersistentVolumeClaim({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });

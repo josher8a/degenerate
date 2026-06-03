@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_organizations_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_schemas_auth_domain.dart';import 'package:pub_cloudflare/models/access_schemas_is_ui_read_only.dart';import 'package:pub_cloudflare/models/access_schemas_login_design.dart';import 'package:pub_cloudflare/models/access_schemas_user_seat_expiration_inactive_time.dart';import 'package:pub_cloudflare/models/access_ui_read_only_toggle_reason.dart';@immutable final class ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest {const ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest({required this.authDomain, required this.name, this.isUiReadOnly, this.loginDesign, this.uiReadOnlyToggleReason, this.userSeatExpirationInactiveTime, });
 

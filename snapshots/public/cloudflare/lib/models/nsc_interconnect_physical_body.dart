@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscInterconnectPhysicalBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_facility_info.dart';/// A Cloudflare site name.
 extension type const NscCloudflareSite(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateMemberWithRoles
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_email.dart';import 'package:pub_cloudflare/models/iam_member_invitation_status.dart';import 'package:pub_cloudflare/models/iam_role_components_schemas_identifier.dart';@immutable final class IamCreateMemberWithRoles {const IamCreateMemberWithRoles({required this.email, required this.roles, this.status, });
 

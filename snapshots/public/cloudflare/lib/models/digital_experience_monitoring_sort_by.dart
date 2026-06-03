@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringSortBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Dimension to sort results by
 @immutable final class DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy._(this.value);

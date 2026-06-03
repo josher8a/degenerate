@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionCallOutputItemParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_call_output_item_param/output_variant2.dart';/// The output of a function tool call.
 @immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.output, this.id, this.type = 'function_call_output', this.status, });

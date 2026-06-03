@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPagesErrorPageType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Error Page Types
 @immutable final class CustomPagesErrorPageType {const CustomPagesErrorPageType._(this.value);

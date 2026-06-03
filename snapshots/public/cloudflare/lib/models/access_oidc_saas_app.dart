@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcSaasApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_auth_type.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_custom_claims.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_scopes.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/grant_types.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/hybrid_and_implicit_options.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/refresh_token_options.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessOidcSaasApp {const AccessOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
 

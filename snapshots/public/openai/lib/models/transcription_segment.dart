@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TranscriptionSegment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptionSegment {const TranscriptionSegment({required this.id, required this.seek, required this.start, required this.end, required this.text, required this.tokens, required this.temperature, required this.avgLogprob, required this.compressionRatio, required this.noSpeechProb, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorBatchCreateWorkflowInstanceResponse (inline: Result > Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorBatchCreateWorkflowInstanceResponseResultStatus {const WorBatchCreateWorkflowInstanceResponseResultStatus._(this.value);
 

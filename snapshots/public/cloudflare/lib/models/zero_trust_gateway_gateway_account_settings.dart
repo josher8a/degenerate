@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayGatewayAccountSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings/zero_trust_gateway_gateway_account_settings_settings.dart';/// Specify account settings.
 @immutable final class ZeroTrustGatewayGatewayAccountSettings {const ZeroTrustGatewayGatewayAccountSettings({this.settings});

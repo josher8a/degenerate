@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSubscriptionResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/subscription2.dart';@immutable final class UserSubscriptionResponseCollection {const UserSubscriptionResponseCollection({this.result});
 

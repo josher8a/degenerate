@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_default_sampling.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_router_ip.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_warp_device.dart';@immutable final class MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest {const MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest({this.defaultSampling, this.name, this.routerIps, this.warpDevices, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowVersionsDagResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowVersionsDagResponseResult {const WorDescribeWorkflowVersionsDagResponseResult({required this.className, required this.createdOn, required this.dag, required this.id, required this.modifiedOn, required this.workflowId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertSecurityAdvisory (inline: References)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A link to additional advisory information.
 @immutable final class References {const References({required this.url});

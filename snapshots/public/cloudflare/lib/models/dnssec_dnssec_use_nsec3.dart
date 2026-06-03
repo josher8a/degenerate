@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnssecDnssecUseNsec3
 
 /// If true, enables the use of NSEC3 together with DNSSEC on the zone.
 /// Combined with setting dnssec_presigned to true, this enables the use of

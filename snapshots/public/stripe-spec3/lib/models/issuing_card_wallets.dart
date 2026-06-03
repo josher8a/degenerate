@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardWallets
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card_apple_pay.dart';import 'package:pub_stripe_spec3/models/issuing_card_google_pay.dart';/// 
 @immutable final class IssuingCardWallets {const IssuingCardWallets({required this.applePay, required this.googlePay, this.primaryAccountIdentifier, });

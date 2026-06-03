@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessLastSeenIdentityResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identity.dart';@immutable final class AccessLastSeenIdentityResponse {const AccessLastSeenIdentityResponse({this.result});
 

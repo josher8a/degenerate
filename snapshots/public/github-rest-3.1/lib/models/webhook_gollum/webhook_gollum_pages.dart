@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookGollum (inline: Pages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed on the page. Can be `created` or `edited`.
 @immutable final class PagesAction {const PagesAction._(this.value);

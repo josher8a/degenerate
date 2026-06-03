@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsOutagesResponse (inline: Result > Annotations > OriginsDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OriginsDetails {const OriginsDetails({required this.name, required this.origin, });
 

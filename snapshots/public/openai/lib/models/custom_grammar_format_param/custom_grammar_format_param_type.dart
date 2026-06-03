@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomGrammarFormatParam (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Grammar format. Always `grammar`.
 @immutable final class CustomGrammarFormatParamType {const CustomGrammarFormatParamType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorReadResponse (inline: Tags)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorReadResponseTags {const GetIndicatorReadResponseTags({this.categoryName, this.uuid, this.value, });
 

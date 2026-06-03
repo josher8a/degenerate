@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionMessageToolCallChunk
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/chat_completion_message_tool_call_chunk/chat_completion_message_tool_call_chunk_function.dart';@immutable final class ChatCompletionMessageToolCallChunk {const ChatCompletionMessageToolCallChunk({required this.index, this.id, this.type, this.function, });
 

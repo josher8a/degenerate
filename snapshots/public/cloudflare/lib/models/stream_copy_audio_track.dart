@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamCopyAudioTrack
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_audio_label.dart';@immutable final class StreamCopyAudioTrack {const StreamCopyAudioTrack({required this.label, this.url, });
 

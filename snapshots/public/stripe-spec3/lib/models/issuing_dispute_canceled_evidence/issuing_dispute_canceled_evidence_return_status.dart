@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingDisputeCanceledEvidence (inline: ReturnStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of cardholder's attempt to return the product.
 @immutable final class IssuingDisputeCanceledEvidenceReturnStatus {const IssuingDisputeCanceledEvidenceReturnStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EntitlementsActiveEntitlement
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement/feature.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject._(this.value);

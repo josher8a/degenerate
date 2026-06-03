@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryLabeledRegion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_region.dart';/// A test region with a label.
 @immutable final class ObservatoryLabeledRegion {const ObservatoryLabeledRegion({this.label, this.value, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OidcCustomSub
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC Subject customization
 @immutable final class OidcCustomSub {const OidcCustomSub({required this.includeClaimKeys});

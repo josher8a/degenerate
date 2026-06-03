@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_usage/workflow_usage_billable.dart';/// Workflow Usage
 @immutable final class WorkflowUsage {const WorkflowUsage({required this.billable});

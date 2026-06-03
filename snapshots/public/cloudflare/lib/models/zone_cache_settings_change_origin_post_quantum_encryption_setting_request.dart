@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_post_quantum_encryption_value.dart';@immutable final class ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest {const ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest({required this.value});
 

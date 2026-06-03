@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsUpsertRepoConnectionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_deleted_on.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_provider_account_id.dart';import 'package:pub_cloudflare/models/builds_provider_account_name.dart';import 'package:pub_cloudflare/models/builds_repo_connection_uuid.dart';import 'package:pub_cloudflare/models/builds_repo_id.dart';import 'package:pub_cloudflare/models/builds_repo_name.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';@immutable final class BuildsUpsertRepoConnectionResponse {const BuildsUpsertRepoConnectionResponse({this.createdOn, this.deletedOn, this.modifiedOn, this.providerAccountId, this.providerAccountName, this.providerType, this.repoConnectionUuid, this.repoId, this.repoName, });
 

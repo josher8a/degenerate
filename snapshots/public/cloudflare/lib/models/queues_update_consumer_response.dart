@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesUpdateConsumerResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model22.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';@immutable final class QueuesUpdateConsumerResponse {const QueuesUpdateConsumerResponse({this.errors, this.messages, this.success, this.result, });
 

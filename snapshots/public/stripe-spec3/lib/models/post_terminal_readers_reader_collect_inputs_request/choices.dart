@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderCollectInputsRequest (inline: Inputs > Selection > Choices)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChoicesStyle {const ChoicesStyle._(this.value);
 

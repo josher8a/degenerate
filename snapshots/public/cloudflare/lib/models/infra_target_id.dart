@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraTargetId
 
 /// Target identifier
 extension type const InfraTargetId(String value) {

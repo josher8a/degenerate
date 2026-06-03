@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksPaymentLinkRequest (inline: AfterCompletion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_after_completion/payment_links_resource_after_completion_type.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/after_completion_redirect.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/hosted_confirmation.dart';/// Behavior after the purchase is complete.
 @immutable final class PostPaymentLinksPaymentLinkRequestAfterCompletion {const PostPaymentLinksPaymentLinkRequestAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });

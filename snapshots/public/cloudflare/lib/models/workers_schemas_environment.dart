@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersSchemasEnvironment
 
 /// Worker environment associated with the zone and hostname.
 extension type const WorkersSchemasEnvironment(String value) {

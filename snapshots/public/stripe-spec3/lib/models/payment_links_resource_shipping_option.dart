@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceShippingOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
 @immutable final class PaymentLinksResourceShippingOption {const PaymentLinksResourceShippingOption({required this.shippingAmount, required this.shippingRate, });

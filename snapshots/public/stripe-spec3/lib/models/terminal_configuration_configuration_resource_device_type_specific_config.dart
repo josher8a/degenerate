@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_device_type_specific_config/terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});

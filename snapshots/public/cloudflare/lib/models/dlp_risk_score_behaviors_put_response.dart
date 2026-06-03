@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpRiskScoreBehaviorsPutResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_update_behaviors.dart';@immutable final class DlpRiskScoreBehaviorsPutResponse {const DlpRiskScoreBehaviorsPutResponse({this.result});
 

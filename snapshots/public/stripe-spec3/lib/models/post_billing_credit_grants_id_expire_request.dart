@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingCreditGrantsIdExpireRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingCreditGrantsIdExpireRequest {const PostBillingCreditGrantsIdExpireRequest({this.expand});
 

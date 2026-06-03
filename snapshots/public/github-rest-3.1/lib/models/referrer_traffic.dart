@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReferrerTraffic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Referrer Traffic
 @immutable final class ReferrerTraffic {const ReferrerTraffic({required this.referrer, required this.count, required this.uniques, });

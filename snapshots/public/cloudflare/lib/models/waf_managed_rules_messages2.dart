@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WafManagedRulesMessages2 {const WafManagedRulesMessages2({required this.code, required this.message, });
 

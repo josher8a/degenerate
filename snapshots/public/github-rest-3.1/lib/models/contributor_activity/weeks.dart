@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContributorActivity (inline: Weeks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Weeks {const Weeks({this.w, this.a, this.d, this.c, });
 

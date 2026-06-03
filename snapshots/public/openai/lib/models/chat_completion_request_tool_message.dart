@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestToolMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_tool_message/chat_completion_request_tool_message_content.dart';import 'package:pub_openai/models/chat_completion_request_tool_message_content_part.dart';@immutable final class ChatCompletionRequestToolMessage {const ChatCompletionRequestToolMessage({required this.role, required this.content, required this.toolCallId, });
 

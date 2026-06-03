@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Documented
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A well-documented type.
 @immutable final class Documented {const Documented({this.field1, this.field2, });

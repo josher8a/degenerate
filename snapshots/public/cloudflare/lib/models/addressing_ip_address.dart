@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingIpAddress
 
 /// An IPv4 or IPv6 address.
 extension type const AddressingIpAddress(String value) {

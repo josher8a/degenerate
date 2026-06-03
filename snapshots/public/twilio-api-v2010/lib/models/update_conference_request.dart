@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateConferenceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';@immutable final class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus._(this.value);
 

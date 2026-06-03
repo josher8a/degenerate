@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallCidrConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration/firewall_cidr_configuration_target.dart';@immutable final class FirewallCidrConfiguration {const FirewallCidrConfiguration({this.target, this.value, });
 

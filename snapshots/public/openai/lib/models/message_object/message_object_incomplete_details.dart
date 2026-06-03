@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageObject (inline: IncompleteDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the message is incomplete.
 @immutable final class MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlsRegionalHostnameResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_hostname.dart';import 'package:pub_cloudflare/models/dls_region_key.dart';import 'package:pub_cloudflare/models/dls_routing.dart';extension type DlsTimestamp(DateTime value) {
 factory DlsTimestamp.fromJson(String json) => DlsTimestamp(DateTime.parse(json));

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailRuleCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_value.dart';@immutable final class DlpEmailRuleOperator {const DlpEmailRuleOperator._(this.value);
 

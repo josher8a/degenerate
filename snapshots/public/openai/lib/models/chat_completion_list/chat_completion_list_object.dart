@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionList (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of this object. It is always set to "list".
 /// 

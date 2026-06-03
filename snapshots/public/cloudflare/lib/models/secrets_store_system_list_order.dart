@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreSystemListOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretsStoreSystemListOrder {const SecretsStoreSystemListOrder._(this.value);
 

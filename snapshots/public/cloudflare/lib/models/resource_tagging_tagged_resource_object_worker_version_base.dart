@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingTaggedResourceObjectWorkerVersionBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';/// Base schema for worker_version resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectWorkerVersionBase {const ResourceTaggingTaggedResourceObjectWorkerVersionBase({required this.etag, required this.id, required this.name, required this.tags, required this.workerId, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsGetHostedRunnersMachineSpecsForOrgResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_machine_spec.dart';@immutable final class ActionsGetHostedRunnersMachineSpecsForOrgResponse {const ActionsGetHostedRunnersMachineSpecsForOrgResponse({required this.totalCount, required this.machineSpecs, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphSpdxSbom (inline: Sbom > Packages > ExternalRefs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExternalRefs {const ExternalRefs({required this.referenceCategory, required this.referenceLocator, required this.referenceType, });
 

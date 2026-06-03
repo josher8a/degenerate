@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: RateLimitUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the rate limits.
 @immutable final class RateLimitUpdatedChangesRequested {const RateLimitUpdatedChangesRequested({this.maxRequestsPer1Minute, this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });

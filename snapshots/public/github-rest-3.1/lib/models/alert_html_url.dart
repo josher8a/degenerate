@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlertHtmlUrl
 
 /// The GitHub URL of the alert resource.
 extension type AlertHtmlUrl(Uri value) {

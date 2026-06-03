@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsEnvironmentVariablesResponse (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_is_secret.dart';@immutable final class BuildsEnvironmentVariablesResponseValue {const BuildsEnvironmentVariablesResponseValue({required this.createdOn, required this.isSecret, this.value, });
 

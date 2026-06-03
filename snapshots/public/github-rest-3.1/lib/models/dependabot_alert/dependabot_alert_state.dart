@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlert (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the Dependabot alert.
 @immutable final class DependabotAlertState {const DependabotAlertState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSourcesIdVerifyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSourcesIdVerifyRequest {const PostCustomersCustomerSourcesIdVerifyRequest({this.amounts, this.expand, });
 

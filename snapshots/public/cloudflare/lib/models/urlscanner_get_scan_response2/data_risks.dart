@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > UrlCategories > Data > Risks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataRisks {const DataRisks({required this.id, required this.name, required this.superCategoryId, });
 

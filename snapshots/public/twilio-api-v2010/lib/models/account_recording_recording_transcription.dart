@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRecordingRecordingTranscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the transcription. Can be: `in-progress`, `completed`, `failed`.
 @immutable final class RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus._(this.value);

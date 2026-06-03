@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepInProgress)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepInProgressEvent {const ThreadRunStepInProgressEvent._(this.value);
 

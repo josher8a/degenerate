@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemEdited (inline: Changes > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/status_update_edited/changes_body.dart';@immutable final class ChangesVariant2 {const ChangesVariant2({required this.body});
 

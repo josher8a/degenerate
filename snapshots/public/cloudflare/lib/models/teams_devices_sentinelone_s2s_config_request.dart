@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesSentineloneS2sConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesSentineloneS2sConfigRequest {const TeamsDevicesSentineloneS2sConfigRequest({required this.apiUrl, required this.clientSecret, });
 

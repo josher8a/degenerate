@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingResponseCollectionBgp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_ipam_bgp_prefixes.dart';@immutable final class AddressingResponseCollectionBgp {const AddressingResponseCollectionBgp({this.result});
 

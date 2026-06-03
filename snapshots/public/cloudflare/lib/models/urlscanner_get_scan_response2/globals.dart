@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Globals)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Globals {const Globals({required this.prop, required this.type, });
 

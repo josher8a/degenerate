@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HealthchecksTcpConfig (inline: Method)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TCP connection method to use for the health check.
 @immutable final class HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod._(this.value);

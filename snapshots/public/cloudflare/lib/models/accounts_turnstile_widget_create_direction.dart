@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsTurnstileWidgetCreateDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order widgets.
 @immutable final class AccountsTurnstileWidgetCreateDirection {const AccountsTurnstileWidgetCreateDirection._(this.value);

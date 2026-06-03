@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Issues)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
 @immutable final class Issues {const Issues._(this.value);

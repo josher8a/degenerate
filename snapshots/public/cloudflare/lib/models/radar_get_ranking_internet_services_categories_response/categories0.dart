@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingInternetServicesCategoriesResponse (inline: Result > Categories0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Categories0 {const Categories0({required this.name});
 

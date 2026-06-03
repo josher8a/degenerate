@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputeEnhancedEligibility
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_enhanced_eligibility_visa_compelling_evidence3.dart';import 'package:pub_stripe_spec3/models/dispute_enhanced_eligibility_visa_compliance.dart';/// 
 @immutable final class DisputeEnhancedEligibility {const DisputeEnhancedEligibility({this.visaCompellingEvidence3, this.visaCompliance, });

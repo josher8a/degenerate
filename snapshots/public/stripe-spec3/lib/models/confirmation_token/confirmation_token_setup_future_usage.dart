@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfirmationToken (inline: SetupFutureUsage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerInvalid
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker request contains invalid data.
 @immutable final class WorkersErrorWorkerInvalidCode {const WorkersErrorWorkerInvalidCode._(this.value);

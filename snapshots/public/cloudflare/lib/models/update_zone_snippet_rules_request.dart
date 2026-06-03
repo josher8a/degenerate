@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateZoneSnippetRulesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_snippet_rules2.dart';/// Define a snippet rules object.
 @immutable final class UpdateZoneSnippetRulesRequest {const UpdateZoneSnippetRulesRequest({required this.rules});

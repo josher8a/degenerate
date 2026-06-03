@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksPaymentLinkRequest (inline: CustomFields > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields/payment_links_resource_custom_fields_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/custom_fields_label.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/custom_fields_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/dropdown.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/numeric.dart';@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 

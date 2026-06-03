@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payouts/balance_settings_resource_payouts_status.dart';/// 
 @immutable final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization({required this.status});

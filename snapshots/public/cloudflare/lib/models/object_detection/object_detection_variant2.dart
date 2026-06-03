@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObjectDetection (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObjectDetectionVariant2 {const ObjectDetectionVariant2({this.image});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: OrganizationSecrets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage organization secrets.
 @immutable final class OrganizationSecrets {const OrganizationSecrets._(this.value);

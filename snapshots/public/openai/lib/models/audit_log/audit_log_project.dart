@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: Project)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The project that the action was scoped to. Absent for actions not scoped to projects. Note that any admin actions taken via Admin API keys are associated with the default project.
 @immutable final class AuditLogProject {const AuditLogProject({this.id, this.name, });

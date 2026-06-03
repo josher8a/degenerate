@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: Alma)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Alma is a Buy Now, Pay Later payment method that offers customers the ability to pay in 2, 3, or 4 installments.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestAlma {const PostPaymentMethodConfigurationsConfigurationRequestAlma({this.displayPreference});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax {const PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax({required this.totalTaxAmount});

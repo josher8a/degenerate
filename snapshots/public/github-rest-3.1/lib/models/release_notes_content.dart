@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReleaseNotesContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Generated name and body describing a release
 @immutable final class ReleaseNotesContent {const ReleaseNotesContent({required this.name, required this.body, });

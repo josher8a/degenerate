@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryEdited (inline: Changes > Homepage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Homepage {const Homepage({required this.from});
 

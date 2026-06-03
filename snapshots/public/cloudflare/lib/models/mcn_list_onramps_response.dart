@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnListOnrampsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_onramp.dart';@immutable final class McnListOnrampsResponse {const McnListOnrampsResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamEnd
 
 /// Lists videos created before the specified date.
 extension type StreamEnd(DateTime value) {

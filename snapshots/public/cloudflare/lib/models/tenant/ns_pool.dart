@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tenant (inline: TenantMetadata > Dns > NsPool)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NsPool {const NsPool({this.primary, this.secondary, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRepositories
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksRepositories2 {const WebhooksRepositories2({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
 

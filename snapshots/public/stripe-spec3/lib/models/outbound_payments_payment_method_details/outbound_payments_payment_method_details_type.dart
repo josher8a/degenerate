@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OutboundPaymentsPaymentMethodDetails (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the payment method used in the OutboundPayment.
 @immutable final class OutboundPaymentsPaymentMethodDetailsType {const OutboundPaymentsPaymentMethodDetailsType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorBatchTerminateWorkflowInstancesResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class WorBatchTerminateWorkflowInstancesResponse400 {const WorBatchTerminateWorkflowInstancesResponse400({required this.errors, required this.messages, required this.result, required this.success, });
 

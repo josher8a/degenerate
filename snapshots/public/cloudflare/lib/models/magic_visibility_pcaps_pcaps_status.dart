@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the packet capture request.
 @immutable final class MagicVisibilityPcapsPcapsStatus {const MagicVisibilityPcapsPcapsStatus._(this.value);

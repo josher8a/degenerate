@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountResourceGroupListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_resource_group.dart';import 'package:pub_cloudflare/models/iam_schemas_messages2.dart';@immutable final class AccountResourceGroupListResponse {const AccountResourceGroupListResponse({required this.errors, required this.messages, required this.success, this.result, });
 

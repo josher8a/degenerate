@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Triggers > Value > LoadRules)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule.dart';import 'package:pub_cloudflare/models/zaraz_load_rule.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule.dart';typedef LoadRules = OneOf7<ZarazLoadRule,ZarazClickListenerRule,ZarazTimerRule,ZarazFormSubmissionRule,ZarazVariableMatchRule,ZarazScrollDepthRule,ZarazElementVisibilityRule>;

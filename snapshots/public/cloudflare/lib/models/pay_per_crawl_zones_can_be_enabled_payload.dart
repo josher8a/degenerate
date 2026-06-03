@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlZonesCanBeEnabledPayload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_daric_zone_can_be_enabled.dart';@immutable final class PayPerCrawlZonesCanBeEnabledPayload {const PayPerCrawlZonesCanBeEnabledPayload({this.zones});
 

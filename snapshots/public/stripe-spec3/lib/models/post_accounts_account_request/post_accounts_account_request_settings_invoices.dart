@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > Invoices)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/invoices_default_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/invoices_hosted_payment_method_save.dart';@immutable final class PostAccountsAccountRequestSettingsInvoices {const PostAccountsAccountRequestSettingsInvoices({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
 

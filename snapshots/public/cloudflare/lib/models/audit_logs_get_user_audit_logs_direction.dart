@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLogsGetUserAuditLogsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Changes the direction of the chronological sorting.
 @immutable final class AuditLogsGetUserAuditLogsDirection {const AuditLogsGetUserAuditLogsDirection._(this.value);

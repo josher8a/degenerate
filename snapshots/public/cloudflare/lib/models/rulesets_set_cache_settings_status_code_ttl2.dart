@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsStatusCodeTtl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_status_code_ttl/status_code_range.dart';@immutable final class RulesetsSetCacheSettingsStatusCodeTtl2 {const RulesetsSetCacheSettingsStatusCodeTtl2({required this.value, this.statusCode, this.statusCodeRange, });
 

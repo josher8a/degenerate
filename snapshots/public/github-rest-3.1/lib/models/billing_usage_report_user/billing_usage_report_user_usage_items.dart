@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingUsageReportUser (inline: UsageItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUsageReportUserUsageItems {const BillingUsageReportUserUsageItems({required this.date, required this.product, required this.sku, required this.quantity, required this.unitType, required this.pricePerUnit, required this.grossAmount, required this.discountAmount, required this.netAmount, this.repositoryName, });
 

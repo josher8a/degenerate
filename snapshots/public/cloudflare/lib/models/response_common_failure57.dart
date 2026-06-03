@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure57
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/request_tracer_messages2.dart';@immutable final class ResponseCommonFailure57 {const ResponseCommonFailure57({required this.errors, required this.messages, required this.result, required this.success, });
 

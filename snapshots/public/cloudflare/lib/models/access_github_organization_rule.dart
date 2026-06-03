@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGithubOrganizationRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_github_organization_rule/github_organization.dart';/// Matches a Github organization.
 /// Requires a Github identity provider.

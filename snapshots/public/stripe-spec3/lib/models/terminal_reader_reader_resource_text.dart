@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about text being collected using a reader
 @immutable final class TerminalReaderReaderResourceText {const TerminalReaderReaderResourceText({this.value});

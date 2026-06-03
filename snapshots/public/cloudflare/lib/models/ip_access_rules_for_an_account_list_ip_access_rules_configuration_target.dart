@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the target to search in existing rules.
 @immutable final class IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget {const IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget._(this.value);

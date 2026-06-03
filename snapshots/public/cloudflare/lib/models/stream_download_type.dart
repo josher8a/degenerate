@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDownloadType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of downloads available are: `default`, `audio`.
 @immutable final class StreamDownloadType {const StreamDownloadType._(this.value);

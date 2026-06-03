@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectAccountReference (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the account referenced.
 @immutable final class ConnectAccountReferenceType {const ConnectAccountReferenceType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesCreated
 
 /// When the device was created.
 extension type TeamsDevicesCreated(DateTime value) {

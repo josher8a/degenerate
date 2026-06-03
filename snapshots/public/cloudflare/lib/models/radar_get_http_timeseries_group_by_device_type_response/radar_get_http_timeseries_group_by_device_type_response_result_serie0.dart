@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByDeviceTypeResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0({required this.desktop, required this.mobile, required this.other, required this.timestamps, });
 

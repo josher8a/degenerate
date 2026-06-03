@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSchemasTunnelDeletedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_deleted_response/magic_schemas_tunnel_deleted_response_result.dart';@immutable final class MagicSchemasTunnelDeletedResponse {const MagicSchemasTunnelDeletedResponse({this.result});
 

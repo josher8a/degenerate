@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionMessageToolCall (inline: Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The function that the model called.
 @immutable final class ChatCompletionMessageToolCallFunction {const ChatCompletionMessageToolCallFunction({required this.name, required this.arguments, });

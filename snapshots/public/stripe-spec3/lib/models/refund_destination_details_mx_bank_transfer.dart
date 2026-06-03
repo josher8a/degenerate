@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RefundDestinationDetailsMxBankTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class RefundDestinationDetailsMxBankTransfer {const RefundDestinationDetailsMxBankTransfer({this.reference, this.referenceStatus, });

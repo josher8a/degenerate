@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRumSite
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const RumEditable(bool value) {
 factory RumEditable.fromJson(bool json) => RumEditable(json);

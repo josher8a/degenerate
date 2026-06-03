@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionToolParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/empty_model_param.dart';@immutable final class FunctionToolParam {const FunctionToolParam({required this.name, this.description, this.parameters, this.strict, this.type = AssistantToolsFunctionType.function, });
 

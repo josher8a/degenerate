@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigFilesResponse (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesResponseResultInfo {const AutoragConfigFilesResponseResultInfo({required this.count, required this.page, required this.totalCount, this.perPage = 20, });
 

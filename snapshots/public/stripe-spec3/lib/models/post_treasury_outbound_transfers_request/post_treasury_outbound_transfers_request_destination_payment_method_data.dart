@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryOutboundTransfersRequest (inline: DestinationPaymentMethodData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationPaymentMethodDataType {const DestinationPaymentMethodDataType._(this.value);
 

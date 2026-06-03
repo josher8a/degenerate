@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCompactionUpdateParams
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_state.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_target_file_size.dart';/// Updates compaction configuration (all fields optional).
 @immutable final class R2DataCatalogCompactionUpdateParams {const R2DataCatalogCompactionUpdateParams({this.state, this.targetSizeMb, });

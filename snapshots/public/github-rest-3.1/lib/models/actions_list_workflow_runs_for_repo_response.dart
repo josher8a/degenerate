@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsListWorkflowRunsForRepoResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_run.dart';@immutable final class ActionsListWorkflowRunsForRepoResponse {const ActionsListWorkflowRunsForRepoResponse({required this.totalCount, required this.workflowRuns, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetOrgAnalyticsResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/recording_stats.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/session_stats.dart';@immutable final class GetOrgAnalyticsResponseData {const GetOrgAnalyticsResponseData({this.recordingStats, this.sessionStats, });
 

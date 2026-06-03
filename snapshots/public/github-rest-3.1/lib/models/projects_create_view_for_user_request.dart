@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsCreateViewForUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_create_view_for_org_request/layout.dart';@immutable final class ProjectsCreateViewForUserRequest {const ProjectsCreateViewForUserRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
 

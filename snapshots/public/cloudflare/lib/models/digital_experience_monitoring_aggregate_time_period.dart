@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringAggregateTimePeriod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringAggregateTimePeriodUnits {const DigitalExperienceMonitoringAggregateTimePeriodUnits._(this.value);
 

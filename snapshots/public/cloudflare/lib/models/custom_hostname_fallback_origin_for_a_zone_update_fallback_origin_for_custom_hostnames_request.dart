@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_origin.dart';@immutable final class CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest {const CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest({required this.origin});
 

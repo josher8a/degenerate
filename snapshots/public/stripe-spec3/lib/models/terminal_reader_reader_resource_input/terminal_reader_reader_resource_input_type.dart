@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceInput (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of input being collected.
 @immutable final class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType._(this.value);

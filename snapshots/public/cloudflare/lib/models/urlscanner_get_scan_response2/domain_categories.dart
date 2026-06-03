@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > DomainCategories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/domain_categories_data.dart';@immutable final class DomainCategories {const DomainCategories({required this.data});
 

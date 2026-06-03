@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningDefaultSetupOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to use labeled runners or standard GitHub runners.
 @immutable final class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretKeyParam (inline: CustomerAcceptance > Online)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretKeyParamCustomerAcceptanceOnline {const SecretKeyParamCustomerAcceptanceOnline({required this.ipAddress, required this.userAgent, });
 

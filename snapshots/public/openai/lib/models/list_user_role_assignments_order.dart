@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListUserRoleAssignmentsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListUserRoleAssignmentsOrder {const ListUserRoleAssignmentsOrder._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PipelinesByPipelineIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/pipelines_by_pipeline_id_response/pipelines_by_pipeline_id_response_result.dart';@immutable final class PipelinesByPipelineIdResponse {const PipelinesByPipelineIdResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuiteRequiredStatusChecks (inline: Checks > App)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub App associated with the status check.
 @immutable final class ChecksApp {const ChecksApp({this.id, this.slug, this.name, });

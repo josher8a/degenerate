@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityPerformanceInformation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The statistics object contains information about query performance from the database, it does not include any network latency
 @immutable final class WorkersObservabilityPerformanceInformation {const WorkersObservabilityPerformanceInformation({required this.bytesRead, required this.elapsed, required this.rowsRead, this.abrLevel, });

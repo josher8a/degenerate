@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages13_messages_content.dart';import 'package:pub_cloudflare/models/messages/messages13_messages_content_variant2.dart';@immutable final class Messages13Messages {const Messages13Messages({this.content, this.role, });
 

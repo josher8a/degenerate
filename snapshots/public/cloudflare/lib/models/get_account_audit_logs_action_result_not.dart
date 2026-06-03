@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAccountAuditLogsActionResultNot
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActionResultNot {const GetAccountAuditLogsActionResultNot._(this.value);
 

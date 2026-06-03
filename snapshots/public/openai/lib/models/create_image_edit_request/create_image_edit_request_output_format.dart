@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateImageEditRequest (inline: OutputFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format in which the generated images are returned. This parameter is
 /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.

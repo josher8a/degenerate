@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayHostSelectorSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable host selection in egress policies.
 @immutable final class ZeroTrustGatewayHostSelectorSettings {const ZeroTrustGatewayHostSelectorSettings({this.enabled});

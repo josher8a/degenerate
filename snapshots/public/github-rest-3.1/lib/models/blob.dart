@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Blob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Blob
 @immutable final class Blob {const Blob({required this.content, required this.encoding, required this.url, required this.sha, required this.size, required this.nodeId, this.highlightedContent, });

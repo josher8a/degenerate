@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_financial_addresses_features.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_inbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_outbound_payments.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_outbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggle_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject._(this.value);

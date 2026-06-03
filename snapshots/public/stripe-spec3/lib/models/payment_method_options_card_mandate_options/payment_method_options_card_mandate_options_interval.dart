@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsCardMandateOptions (inline: Interval)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies payment frequency. One of `day`, `week`, `month`, `year`, or `sporadic`.
 @immutable final class PaymentMethodOptionsCardMandateOptionsInterval {const PaymentMethodOptionsCardMandateOptionsInterval._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallAttackMitigation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Attack mitigation settings
 @immutable final class DnsFirewallAttackMitigation {const DnsFirewallAttackMitigation({this.enabled, this.onlyWhenUpstreamUnhealthy = true, });

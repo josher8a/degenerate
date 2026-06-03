@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_private_key.dart';@immutable final class PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest {const PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest({required this.certificate, required this.privateKey, });
 

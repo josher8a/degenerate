@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigCreateEvaluationsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateEvaluationsRequest {const AigConfigCreateEvaluationsRequest({required this.datasetIds, required this.evaluationTypeIds, required this.name, });
 

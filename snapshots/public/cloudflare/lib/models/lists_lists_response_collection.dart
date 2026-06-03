@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsListsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_list.dart';@immutable final class ListsListsResponseCollection {const ListsListsResponseCollection({this.result});
 

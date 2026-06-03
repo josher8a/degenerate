@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnDeleteControllerFlareResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_flare.dart';@immutable final class MconnDeleteControllerFlareResponse {const MconnDeleteControllerFlareResponse({this.result});
 

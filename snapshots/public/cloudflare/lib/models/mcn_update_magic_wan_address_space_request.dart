@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnUpdateMagicWanAddressSpaceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cidr_prefix.dart';@immutable final class McnUpdateMagicWanAddressSpaceRequest {const McnUpdateMagicWanAddressSpaceRequest({required this.prefixes});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsResponse (inline: Result > Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/asns_details.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/locations_details.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/origins_details.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/outage.dart';@immutable final class RadarGetAnnotationsResponseResultAnnotations {const RadarGetAnnotationsResponseResultAnnotations({required this.asns, required this.asnsDetails, required this.dataSource, required this.eventType, required this.id, required this.locations, required this.locationsDetails, required this.origins, required this.originsDetails, required this.outage, required this.startDate, this.description, this.endDate, this.linkedUrl, this.scope, });
 

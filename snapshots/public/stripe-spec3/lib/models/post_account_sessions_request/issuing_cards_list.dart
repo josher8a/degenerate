@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > IssuingCardsList)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request/issuing_cards_list_features.dart';@immutable final class IssuingCardsList {const IssuingCardsList({required this.enabled, this.features, });
 

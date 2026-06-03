@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountAddress {const AccountAddress({this.accountSid, this.city, this.customerName, this.dateCreated, this.dateUpdated, this.friendlyName, this.isoCountry, this.postalCode, this.region, this.sid, this.street, this.uri, this.emergencyEnabled, this.validated, this.verified, this.streetSecondary, });
 

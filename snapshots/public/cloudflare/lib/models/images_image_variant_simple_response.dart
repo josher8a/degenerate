@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageVariantSimpleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_variant_response.dart';@immutable final class ImagesImageVariantSimpleResponse {const ImagesImageVariantSimpleResponse({this.result});
 

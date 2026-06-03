@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_peer_stats_device_info.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_peer_stats_events.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_peer_stats_ip_information.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_peer_stats_precall_network_information.dart';@immutable final class ParticipantPeerStats {const ParticipantPeerStats({this.deviceInfo, this.events, this.ipInformation, this.precallNetworkInformation, });
 

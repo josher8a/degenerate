@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: StartAttestation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started attestation
 @immutable final class StartAttestationK {const StartAttestationK._(this.value);

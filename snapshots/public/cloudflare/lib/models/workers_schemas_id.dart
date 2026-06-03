@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersSchemasId
 
 /// ID of the namespace.
 extension type const WorkersSchemasId(String value) {

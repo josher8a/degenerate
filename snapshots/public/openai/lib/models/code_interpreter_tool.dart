@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeInterpreterTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param.dart';import 'package:pub_openai/models/code_interpreter_tool/code_interpreter_tool_container.dart';/// A tool that runs Python code to help generate a response to a prompt.
 /// 

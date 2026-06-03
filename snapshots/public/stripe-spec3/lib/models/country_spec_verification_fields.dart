@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CountrySpecVerificationFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/country_spec_verification_field_details.dart';/// 
 @immutable final class CountrySpecVerificationFields {const CountrySpecVerificationFields({required this.company, required this.individual, });

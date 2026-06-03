@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAppsSecretsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request/post_apps_secrets_delete_request_scope.dart';@immutable final class PostAppsSecretsRequest {const PostAppsSecretsRequest({required this.name, required this.payload, required this.scope, this.expand, this.expiresAt, });
 

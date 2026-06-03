@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure54
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/public_ip_messages2.dart';@immutable final class ResponseCommonFailure54 {const ResponseCommonFailure54({required this.errors, required this.messages, required this.result, required this.success, });
 

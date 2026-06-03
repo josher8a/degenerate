@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingDisputeCanceledEvidence (inline: ProductType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the product was a merchandise or service.
 @immutable final class IssuingDisputeCanceledEvidenceProductType {const IssuingDisputeCanceledEvidenceProductType._(this.value);

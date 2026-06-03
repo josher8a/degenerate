@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessComponentsSchemasDomain
 
 /// The domain and path that Access will secure.
 extension type const AccessComponentsSchemasDomain(String value) {

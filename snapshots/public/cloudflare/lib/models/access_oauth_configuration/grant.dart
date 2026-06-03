@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOauthConfiguration (inline: Grant)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for OAuth grant behavior.
 @immutable final class Grant {const Grant({this.accessTokenLifetime, this.sessionDuration, });

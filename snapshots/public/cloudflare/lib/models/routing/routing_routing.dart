@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Routing (inline: Routing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';/// API Routing settings on endpoint.
 @immutable final class RoutingRouting {const RoutingRouting({this.lastUpdated, this.route, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountQueue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueue {const AccountQueue({this.dateUpdated, this.currentSize = 0, this.friendlyName, this.uri, this.accountSid, this.averageWaitTime = 0, this.sid, this.dateCreated, this.maxSize = 0, });
 

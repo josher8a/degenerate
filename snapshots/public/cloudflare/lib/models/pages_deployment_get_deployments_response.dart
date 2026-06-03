@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentGetDeploymentsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment.dart';@immutable final class PagesDeploymentGetDeploymentsResponse {const PagesDeploymentGetDeploymentsResponse({required this.result});
 

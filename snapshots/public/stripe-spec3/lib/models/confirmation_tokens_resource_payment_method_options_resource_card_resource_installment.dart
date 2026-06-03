@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_installments_plan.dart';/// Installment configuration for payments.
 @immutable final class ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment {const ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment({this.plan});

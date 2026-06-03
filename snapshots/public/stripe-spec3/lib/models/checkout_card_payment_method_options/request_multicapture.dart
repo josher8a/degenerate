@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCardPaymentMethodOptions (inline: RequestMulticapture)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to make [multiple captures](/payments/multicapture) for this CheckoutSession.
 @immutable final class RequestMulticapture {const RequestMulticapture._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigAiSearchResponse (inline: Result > Data > Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultDataContent {const ResultDataContent({this.text, this.type, });
 

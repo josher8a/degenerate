@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelConnection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_colo_name.dart';import 'package:pub_cloudflare/models/tunnel_connection_id.dart';import 'package:pub_cloudflare/models/tunnel_is_pending_reconnect.dart';@immutable final class TunnelConnection {const TunnelConnection({this.coloName, this.isPendingReconnect, this.uuid, });
 

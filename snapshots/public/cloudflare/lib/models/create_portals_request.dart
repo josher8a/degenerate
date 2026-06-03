@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreatePortalsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request/create_portals_request_servers.dart';@immutable final class CreatePortalsRequest {const CreatePortalsRequest({required this.hostname, required this.id, required this.name, this.description, this.secureWebGateway, this.servers, });
 

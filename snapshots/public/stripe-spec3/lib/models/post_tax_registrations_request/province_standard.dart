@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest (inline: CountryOptions > Ca > ProvinceStandard)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProvinceStandard {const ProvinceStandard({required this.province});
 

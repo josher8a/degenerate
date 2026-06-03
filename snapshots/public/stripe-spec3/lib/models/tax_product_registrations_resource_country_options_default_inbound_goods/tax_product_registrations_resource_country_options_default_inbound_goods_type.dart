@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of registration in `country`.
 @immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType._(this.value);

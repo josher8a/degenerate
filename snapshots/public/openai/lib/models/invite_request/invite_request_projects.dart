@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InviteRequest (inline: Projects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';@immutable final class InviteRequestProjects {const InviteRequestProjects({required this.id, required this.role, });
 

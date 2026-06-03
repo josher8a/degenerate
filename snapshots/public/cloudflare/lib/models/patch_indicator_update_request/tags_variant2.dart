@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PatchIndicatorUpdateRequest (inline: Tags > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TagsVariant2 {const TagsVariant2({required this.value, this.categoryName, });
 

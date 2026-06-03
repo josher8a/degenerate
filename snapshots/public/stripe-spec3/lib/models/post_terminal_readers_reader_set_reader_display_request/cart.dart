@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderSetReaderDisplayRequest (inline: Cart)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request/cart_line_items.dart';/// Cart details to display on the reader screen, including line items, amounts, and currency.
 @immutable final class Cart {const Cart({required this.currency, required this.lineItems, required this.total, this.tax, });

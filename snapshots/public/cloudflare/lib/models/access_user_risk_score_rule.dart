@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUserRiskScoreRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_user_risk_score_rule/access_user_risk_score_rule_user_risk_score.dart';/// Matches a user's risk score.
 @immutable final class AccessUserRiskScoreRule {const AccessUserRiskScoreRule({required this.userRiskScore});

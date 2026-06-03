@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingAlertsRequest (inline: UsageThreshold)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_request/usage_threshold_filters.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config/recurrence.dart';/// The configuration of the usage threshold.
 @immutable final class UsageThreshold {const UsageThreshold({required this.gte, required this.meter, required this.recurrence, this.filters, });

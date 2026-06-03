@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingNetworkTokenWalletProvider
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_address.dart';/// The method used for tokenizing a card.
 @immutable final class CardNumberSource {const CardNumberSource._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersonRaceDetails (inline: Race)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Race {const Race._(this.value);
 

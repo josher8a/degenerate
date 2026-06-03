@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistHistory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_commit/change_status.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist History
 @immutable final class GistHistory {const GistHistory({this.user, this.version, this.committedAt, this.changeStatus, this.url, });

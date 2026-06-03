@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiSearchTaskResponse404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiSearchTaskResponse404 {const WorkersAiSearchTaskResponse404({required this.errors, required this.success, });
 

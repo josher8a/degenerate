@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2ResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2ResultInfo {const R2ResultInfo({this.cursor, this.perPage, });
 

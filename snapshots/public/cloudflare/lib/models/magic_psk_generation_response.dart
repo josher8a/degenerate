@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicPskGenerationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_psk_generation_response/magic_psk_generation_response_result.dart';@immutable final class MagicPskGenerationResponse {const MagicPskGenerationResponse({this.result});
 

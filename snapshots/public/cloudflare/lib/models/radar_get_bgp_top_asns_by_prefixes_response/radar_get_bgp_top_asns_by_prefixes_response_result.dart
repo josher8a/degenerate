@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopAsnsByPrefixesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_asns_by_prefixes_response/radar_get_bgp_top_asns_by_prefixes_response_result_asns.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponseResult {const RadarGetBgpTopAsnsByPrefixesResponseResult({required this.asns, required this.meta, });
 

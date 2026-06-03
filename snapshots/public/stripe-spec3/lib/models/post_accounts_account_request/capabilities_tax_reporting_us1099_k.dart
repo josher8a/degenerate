@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Capabilities > TaxReportingUs1099K)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesTaxReportingUs1099K {const CapabilitiesTaxReportingUs1099K({this.requested});
 

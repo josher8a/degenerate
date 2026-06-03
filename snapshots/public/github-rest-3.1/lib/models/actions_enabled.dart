@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsEnabled
 
 /// Whether GitHub Actions is enabled on the repository.
 extension type const ActionsEnabled(bool value) {

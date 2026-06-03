@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImagesStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_images_stats_count.dart';@immutable final class ImagesImagesStats {const ImagesImagesStats({this.count});
 

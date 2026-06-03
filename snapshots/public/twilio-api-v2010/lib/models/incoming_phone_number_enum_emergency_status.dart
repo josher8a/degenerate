@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IncomingPhoneNumberEnumEmergencyStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 @immutable final class IncomingPhoneNumberEnumEmergencyStatus {const IncomingPhoneNumberEnumEmergencyStatus._(this.value);

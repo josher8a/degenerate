@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Person
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/deleted_person/deleted_person_object.dart';import 'package:pub_stripe_spec3/models/legal_entity_dob.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';import 'package:pub_stripe_spec3/models/legal_entity_person_verification.dart';import 'package:pub_stripe_spec3/models/person/political_exposure.dart';import 'package:pub_stripe_spec3/models/person_additional_tos_acceptances.dart';import 'package:pub_stripe_spec3/models/person_future_requirements.dart';import 'package:pub_stripe_spec3/models/person_relationship.dart';import 'package:pub_stripe_spec3/models/person_requirements.dart';import 'package:pub_stripe_spec3/models/person_us_cfpb_data.dart';/// This is an object representing a person associated with a Stripe account.
 /// 

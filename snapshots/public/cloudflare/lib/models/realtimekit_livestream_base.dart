@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitLivestreamBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class RealtimekitLivestreamBase {const RealtimekitLivestreamBase({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.orgId, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 

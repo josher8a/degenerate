@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotDotcomChat (inline: Models)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotDotcomChatModels {const CopilotDotcomChatModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.totalChats, });
 

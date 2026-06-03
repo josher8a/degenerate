@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ValidateSqlResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_pipeline_graph.dart';import 'package:pub_cloudflare/models/validate_sql_response/tables_value.dart';@immutable final class ValidateSqlResponseResult {const ValidateSqlResponseResult({required this.tables, this.graph, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesValidationLevel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesRequestType {const AiSearchCreateInstancesRequestType._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorListResponse (inline: Properties > Pagination)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_response/pagination_properties.dart';@immutable final class PropertiesPagination {const PropertiesPagination({required this.properties, required this.type, });
 

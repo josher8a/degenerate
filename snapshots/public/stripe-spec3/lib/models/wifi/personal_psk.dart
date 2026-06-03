@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Wifi (inline: PersonalPsk)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonalPsk {const PersonalPsk({required this.password, required this.ssid, });
 

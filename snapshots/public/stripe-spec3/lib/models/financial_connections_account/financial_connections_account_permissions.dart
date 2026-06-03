@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FinancialConnectionsAccount (inline: Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FinancialConnectionsAccountPermissions {const FinancialConnectionsAccountPermissions._(this.value);
 

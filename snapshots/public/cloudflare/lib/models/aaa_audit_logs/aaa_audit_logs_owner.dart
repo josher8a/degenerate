@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs (inline: Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_identifier.dart';@immutable final class AaaAuditLogsOwner {const AaaAuditLogsOwner({this.id});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDomainResourcePaymentMethodStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/payment_method_domain_resource_payment_method_status_details.dart';/// Indicates the status of a specific payment method on a payment method domain.
 @immutable final class PaymentMethodDomainResourcePaymentMethodStatus {const PaymentMethodDomainResourcePaymentMethodStatus({required this.status, this.statusDetails, });

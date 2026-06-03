@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourceDetailsSectionItem (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_list_item.dart';import 'package:pub_cloudflare/models/mcn_list_item/mcn_list_item_list.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_resource_preview_item.dart';import 'package:pub_cloudflare/models/mcn_string_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
 

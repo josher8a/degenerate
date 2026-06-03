@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileAnnotationSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_file/chat_completion_request_message_content_part_file_type.dart';/// Attachment source referenced by an annotation.
 @immutable final class FileAnnotationSource {const FileAnnotationSource({required this.filename, this.type = ChatCompletionRequestMessageContentPartFileType.file, });

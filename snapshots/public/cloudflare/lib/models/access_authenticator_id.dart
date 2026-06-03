@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAuthenticatorId
 
 /// The unique identifier for the MFA device.
 extension type const AccessAuthenticatorId(String value) {

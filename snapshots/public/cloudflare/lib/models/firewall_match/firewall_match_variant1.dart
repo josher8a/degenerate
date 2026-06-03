@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallMatch (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_match/variant1_headers.dart';import 'package:pub_cloudflare/models/firewall_match/variant1_request.dart';import 'package:pub_cloudflare/models/firewall_match/variant1_response.dart';@immutable final class FirewallMatchVariant1 {const FirewallMatchVariant1({this.headers, this.request, this.response, });
 

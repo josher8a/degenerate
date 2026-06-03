@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsP24
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_p24/payment_method_details_p24_bank.dart';/// 
 @immutable final class PaymentMethodDetailsP24 {const PaymentMethodDetailsP24({this.bank, this.reference, this.verifiedName, });

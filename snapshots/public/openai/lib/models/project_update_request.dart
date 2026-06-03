@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectUpdateRequest {const ProjectUpdateRequest({required this.name});
 

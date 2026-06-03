@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EndpointPort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// EndpointPort is a tuple that describes a single port. Deprecated: This API is deprecated in v1.33+.
 @immutable final class EndpointPort {const EndpointPort({this.appProtocol, this.name, this.port = 0, this.protocol, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksRequest (inline: LineItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adjustable_quantity.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items_price_data.dart';@immutable final class PostPaymentLinksRequestLineItems {const PostPaymentLinksRequestLineItems({required this.quantity, this.adjustableQuantity, this.price, this.priceData, });
 

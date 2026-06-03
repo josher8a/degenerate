@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicBgpStatusWithState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState._(this.value);
 

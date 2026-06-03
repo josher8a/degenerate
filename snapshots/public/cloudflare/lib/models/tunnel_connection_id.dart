@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelConnectionId
 
 /// UUID of the Cloudflare Tunnel connection.
 extension type const TunnelConnectionId(String value) {

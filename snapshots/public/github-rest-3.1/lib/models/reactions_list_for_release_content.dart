@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReactionsListForReleaseContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReactionsListForReleaseContent {const ReactionsListForReleaseContent._(this.value);
 

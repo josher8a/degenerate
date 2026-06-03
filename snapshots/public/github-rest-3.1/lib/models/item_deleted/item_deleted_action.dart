@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemDeleted (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemDeletedAction {const ItemDeletedAction._(this.value);
 

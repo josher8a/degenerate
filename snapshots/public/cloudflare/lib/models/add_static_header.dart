@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddStaticHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_operation.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_value.dart';/// A header with a static value to add.
 @immutable final class AddStaticHeader {const AddStaticHeader({required this.operation, required this.value, });

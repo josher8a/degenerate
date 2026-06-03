@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GrpcAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// GRPCAction specifies an action involving a GRPC service.
 @immutable final class GrpcAction {const GrpcAction({this.port = 0, this.service = '', });

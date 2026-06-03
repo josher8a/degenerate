@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_list_devcontainers_in_repository_for_authenticated_user_response/devcontainers.dart';@immutable final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse({required this.totalCount, required this.devcontainers, });
 

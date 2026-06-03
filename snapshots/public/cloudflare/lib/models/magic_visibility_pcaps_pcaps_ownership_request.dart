@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsOwnershipRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_destination_conf.dart';@immutable final class MagicVisibilityPcapsPcapsOwnershipRequest {const MagicVisibilityPcapsPcapsOwnershipRequest({required this.destinationConf});
 

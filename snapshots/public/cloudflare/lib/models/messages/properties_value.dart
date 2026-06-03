@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Variant1 > Parameters > Properties > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PropertiesValue {const PropertiesValue({required this.description, required this.type, });
 

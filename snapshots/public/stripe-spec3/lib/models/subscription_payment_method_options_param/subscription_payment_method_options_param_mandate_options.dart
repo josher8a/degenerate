@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionPaymentMethodOptionsParam (inline: MandateOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';@immutable final class SubscriptionPaymentMethodOptionsParamMandateOptions {const SubscriptionPaymentMethodOptionsParamMandateOptions({this.amount, this.amountType, this.description, });
 

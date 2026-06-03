@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Bandwidth2 (inline: SslProtocols)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A breakdown of requests by their SSL protocol.
 @immutable final class SslProtocols {const SslProtocols({this.tlSv1, this.tlSv11, this.tlSv12, this.tlSv13, this.none, });

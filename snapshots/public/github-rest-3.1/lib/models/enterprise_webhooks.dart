@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseWebhooks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
 /// on an enterprise account or an organization that's part of an enterprise account. For more information,

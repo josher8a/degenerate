@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedPrice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';/// 
 @immutable final class DeletedPrice {const DeletedPrice({required this.deleted, required this.id, required this.object, });

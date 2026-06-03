@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerConnectorIdentity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_account_id.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnControllerConnectorIdentity {const MconnControllerConnectorIdentity({required this.accountId, required this.activated, required this.id, });
 

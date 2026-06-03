@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreSecretsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_secret_object.dart';@immutable final class SecretsStoreSecretsResponseCollection {const SecretsStoreSecretsResponseCollection({this.result});
 

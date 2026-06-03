@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsFileSearchResultObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_details_tool_calls_file_search_result_object/run_step_details_tool_calls_file_search_result_object_content.dart';/// A result instance of the file search.
 @immutable final class RunStepDetailsToolCallsFileSearchResultObject {const RunStepDetailsToolCallsFileSearchResultObject({required this.fileId, required this.fileName, required this.score, this.content, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SkillVersionResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill.version`.
 @immutable final class SkillVersionResourceObject {const SkillVersionResourceObject._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FinancialConnectionsSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_link_account_session_filters.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/accounts.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject._(this.value);

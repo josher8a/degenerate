@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Analytics)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Cloudflare Monitoring settings.
 @immutable final class Analytics {const Analytics({this.defaultPurpose, this.enabled, this.sessionExpTime, });

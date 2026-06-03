@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2Jurisdiction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Jurisdiction where objects in this bucket are guaranteed to be stored.
 @immutable final class R2Jurisdiction {const R2Jurisdiction._(this.value);

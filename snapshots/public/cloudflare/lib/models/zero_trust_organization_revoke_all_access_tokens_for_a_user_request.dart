@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest {const ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest({required this.email, this.devices, this.userUid, this.warpSessionReauth, });
 

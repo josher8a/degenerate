@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Page > SecurityViolations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityViolations {const SecurityViolations({required this.category, required this.text, required this.url, });
 

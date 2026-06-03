@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByHttpProtocolResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0({required this.http, required this.https, required this.timestamps, });
 

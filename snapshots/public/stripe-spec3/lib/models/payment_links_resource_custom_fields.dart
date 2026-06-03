@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceCustomFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields/payment_links_resource_custom_fields_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_dropdown.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_numeric.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_text.dart';/// 
 @immutable final class PaymentLinksResourceCustomFields {const PaymentLinksResourceCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });

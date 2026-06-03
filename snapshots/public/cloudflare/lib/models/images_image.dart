@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_identifier.dart';/// Can set the creator field with an internal user ID.
 extension type const ImagesImageCreator(String value) {

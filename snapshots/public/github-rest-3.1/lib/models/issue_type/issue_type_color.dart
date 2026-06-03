@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueType (inline: Color)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The color of the issue type.
 @immutable final class IssueTypeColor {const IssueTypeColor._(this.value);

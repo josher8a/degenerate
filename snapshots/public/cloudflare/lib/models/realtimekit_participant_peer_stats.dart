@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantPeerStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant_peer_stats/realtimekit_participant_peer_stats_peer_stats.dart';@immutable final class RealtimekitParticipantPeerStats {const RealtimekitParticipantPeerStats({this.peerStats});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_cpu_pct_by_app2.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_ip_info.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_mode.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_platform.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_ram_used_pct_by_app2.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_status.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_version.dart';/// User contact email address
 extension type const DigitalExperienceMonitoringPersonEmail(String value) {

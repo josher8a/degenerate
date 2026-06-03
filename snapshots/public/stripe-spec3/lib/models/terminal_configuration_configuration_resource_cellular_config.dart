@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceCellularConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceCellularConfig {const TerminalConfigurationConfigurationResourceCellularConfig({required this.enabled});

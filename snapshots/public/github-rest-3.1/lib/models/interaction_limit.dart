@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InteractionLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/interaction_group.dart';/// The duration of the interaction restriction. Default: `one_day`.
 @immutable final class InteractionExpiry {const InteractionExpiry._(this.value);

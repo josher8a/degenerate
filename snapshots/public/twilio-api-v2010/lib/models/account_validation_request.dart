@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountValidationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountValidationRequest {const AccountValidationRequest({this.accountSid, this.callSid, this.friendlyName, this.phoneNumber, this.validationCode, });
 

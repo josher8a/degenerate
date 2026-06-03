@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryReceivedCreditsResourceSourceFlowsDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';/// The type of the source flow that originated the ReceivedCredit.
 @immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType._(this.value);

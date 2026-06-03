@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamStart
 
 /// Lists videos created after the specified date.
 extension type StreamStart(DateTime value) {

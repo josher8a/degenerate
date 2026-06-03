@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsRequest (inline: Boleto)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestBoleto {const PostPaymentMethodsRequestBoleto({required this.taxId});
 

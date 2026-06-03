@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionCallOutputItemParam (inline: Output > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';/// A piece of message content, such as text, an image, or a file.
 sealed class OutputVariant2 {const OutputVariant2();

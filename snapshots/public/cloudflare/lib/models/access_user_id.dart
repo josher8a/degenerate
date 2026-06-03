@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUserId
 
 /// The UUID of the authenticating user.
 extension type const AccessUserId(String value) {

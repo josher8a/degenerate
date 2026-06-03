@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldPerOperationSettingChangeBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_per_operation_setting_change_base/shield_per_operation_setting_change_base_mitigation_action.dart';@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction});
 

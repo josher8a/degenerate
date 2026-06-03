@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAutoRedirectToIdentity
 
 /// When set to `true`, users skip the identity provider selection step during login.
 extension type const AccessAutoRedirectToIdentity(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionPendingInvoiceItemInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';/// 
 @immutable final class SubscriptionPendingInvoiceItemInterval {const SubscriptionPendingInvoiceItemInterval({required this.interval, required this.intervalCount, });

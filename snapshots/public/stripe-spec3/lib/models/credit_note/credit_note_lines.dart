@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreditNote (inline: Lines)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_line_item.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// Line items that make up the credit note
 @immutable final class CreditNoteLines {const CreditNoteLines({required this.data, required this.hasMore, required this.object, required this.url, });

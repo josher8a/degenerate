@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitSummarizationConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the style of the summary, such as general, team meeting, or sales call.
 @immutable final class SummaryType {const SummaryType._(this.value);

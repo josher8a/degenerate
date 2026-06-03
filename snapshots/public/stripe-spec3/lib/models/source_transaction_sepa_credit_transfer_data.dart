@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTransactionSepaCreditTransferData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceTransactionSepaCreditTransferData {const SourceTransactionSepaCreditTransferData({this.reference, this.senderIban, this.senderName, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTreasuryTransactionsStatusTransitions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status_transitions/posted_at.dart';import 'package:pub_stripe_spec3/models/range_query_specs.dart';@immutable final class GetTreasuryTransactionsStatusTransitions {const GetTreasuryTransactionsStatusTransitions({this.postedAt});
 

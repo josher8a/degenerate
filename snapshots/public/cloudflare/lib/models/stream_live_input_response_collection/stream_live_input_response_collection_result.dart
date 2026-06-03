@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLiveInputResponseCollection (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_live_input_object_without_url.dart';@immutable final class StreamLiveInputResponseCollectionResult {const StreamLiveInputResponseCollectionResult({this.liveInputs, this.range, this.total, });
 

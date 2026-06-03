@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled
 
 /// Indicates whether zone-level authenticated origin pulls is enabled.
 extension type const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled(bool value) {

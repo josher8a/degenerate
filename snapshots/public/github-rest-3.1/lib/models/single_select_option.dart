@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SingleSelectOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An option for a single select field
 @immutable final class SingleSelectOption {const SingleSelectOption({required this.id, required this.name, this.color, this.description, });

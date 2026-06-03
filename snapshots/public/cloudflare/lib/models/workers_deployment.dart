@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersDeployment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_annotations.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_versions.dart';@immutable final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
 

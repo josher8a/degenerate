@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionPermissions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which entity is allowed to update the shipping details.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateVectorStoreRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';@immutable final class UpdateVectorStoreRequest {const UpdateVectorStoreRequest({this.name, this.expiresAfter, this.metadata, });
 

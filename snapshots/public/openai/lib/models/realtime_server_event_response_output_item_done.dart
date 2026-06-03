@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseOutputItemDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// Returned when an Item is done streaming. Also emitted when a Response is
 /// interrupted, incomplete, or cancelled.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalogCredentialRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains request to store catalog credentials.
 @immutable final class R2DataCatalogCatalogCredentialRequest {const R2DataCatalogCatalogCredentialRequest({required this.token});

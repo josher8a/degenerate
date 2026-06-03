@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GcsSourceResponseSchema (inline: Vendor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GcsSourceResponseSchemaVendor {const GcsSourceResponseSchemaVendor._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account/account_object.dart';/// 
 @immutable final class DeletedAccount {const DeletedAccount({required this.deleted, required this.id, required this.object, });

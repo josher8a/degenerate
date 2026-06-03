@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAccountsAccountExternalAccountsObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject._(this.value);
 

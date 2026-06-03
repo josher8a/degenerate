@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsSingleResponseOutgoing (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_name.dart';import 'package:pub_cloudflare/models/secondary_dns_soa_serial.dart';import 'package:pub_cloudflare/models/secondary_dns_time.dart';@immutable final class SecondaryDnsSingleResponseOutgoingResult {const SecondaryDnsSingleResponseOutgoingResult({this.checkedTime, this.createdTime, this.id, this.lastTransferredTime, this.name, this.peers, this.soaSerial, });
 

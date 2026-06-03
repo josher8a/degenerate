@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxIdsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_tax_ids_request/post_customers_customer_tax_ids_request_type.dart';import 'package:pub_stripe_spec3/models/post_tax_ids_request/post_tax_ids_request_owner.dart';@immutable final class PostTaxIdsRequest {const PostTaxIdsRequest({required this.type, required this.value, this.expand, this.owner, });
 

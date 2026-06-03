@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateAutolinkRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAutolinkRequest {const ReposCreateAutolinkRequest({required this.keyPrefix, required this.urlTemplate, this.isAlphanumeric = true, });
 

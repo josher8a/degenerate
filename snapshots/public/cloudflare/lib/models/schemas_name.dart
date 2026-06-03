@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemasName
 
 /// The plan name.
 extension type const SchemasName(String value) {

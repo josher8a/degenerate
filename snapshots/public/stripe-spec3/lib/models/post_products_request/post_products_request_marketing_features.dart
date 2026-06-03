@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostProductsRequest (inline: MarketingFeatures)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostProductsRequestMarketingFeatures {const PostProductsRequestMarketingFeatures({required this.name});
 

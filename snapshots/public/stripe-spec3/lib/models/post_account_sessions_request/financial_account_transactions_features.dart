@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > FinancialAccountTransactions > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FinancialAccountTransactionsFeatures {const FinancialAccountTransactionsFeatures({this.cardSpendDisputeManagement});
 

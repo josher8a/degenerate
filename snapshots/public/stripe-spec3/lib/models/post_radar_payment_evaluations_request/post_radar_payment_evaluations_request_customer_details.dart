@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest (inline: CustomerDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the customer associated with the payment evaluation.
 @immutable final class PostRadarPaymentEvaluationsRequestCustomerDetails {const PostRadarPaymentEvaluationsRequestCustomerDetails({this.customer, this.customerAccount, this.email, this.name, this.phone, });

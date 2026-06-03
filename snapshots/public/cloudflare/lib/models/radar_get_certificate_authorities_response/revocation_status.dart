@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateAuthoritiesResponse (inline: Result > CertificateAuthorities > RevocationStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current revocation status of a Certificate Authority (CA) certificate.
 @immutable final class RevocationStatus {const RevocationStatus._(this.value);

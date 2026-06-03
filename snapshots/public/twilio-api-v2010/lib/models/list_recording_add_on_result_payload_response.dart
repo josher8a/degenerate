@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListRecordingAddOnResultPayloadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_recording_recording_add_on_result_recording_add_on_result_payload.dart';@immutable final class ListRecordingAddOnResultPayloadResponse {const ListRecordingAddOnResultPayloadResponse({this.payloads, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 

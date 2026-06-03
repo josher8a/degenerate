@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateTokensResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateTokensResponseResult {const AiSearchCreateTokensResponseResult({required this.cfApiId, required this.createdAt, required this.id, required this.modifiedAt, required this.name, this.createdBy, this.enabled = true, this.legacy = true, this.modifiedBy, });
 

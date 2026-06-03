@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingName
 
 /// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
 extension type const LoadBalancingName(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: OrganizationPackages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for organization packages published to GitHub Packages.
 @immutable final class OrganizationPackages {const OrganizationPackages._(this.value);

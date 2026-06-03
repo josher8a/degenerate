@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTransfersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payouts_request/source_type.dart';@immutable final class PostTransfersRequest {const PostTransfersRequest({required this.currency, required this.destination, this.amount, this.description, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
 

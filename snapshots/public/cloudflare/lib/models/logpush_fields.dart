@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushFields
 
 /// Comma-separated list of fields.
 extension type const LogpushFields(String value) {

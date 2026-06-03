@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostQuotesRequest (inline: FromQuote)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clone an existing quote. The new quote will be created in `status=draft`. When using this parameter, you cannot specify any other parameters except for `expires_at`.
 @immutable final class FromQuote {const FromQuote({required this.quote, this.isRevision, });

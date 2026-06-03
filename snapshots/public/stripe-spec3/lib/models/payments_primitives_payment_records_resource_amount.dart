@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourceAmount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A representation of an amount of money, consisting of an amount and a currency.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourceAmount {const PaymentsPrimitivesPaymentRecordsResourceAmount({required this.currency, required this.value, });

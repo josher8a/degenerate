@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._(this.value);
 

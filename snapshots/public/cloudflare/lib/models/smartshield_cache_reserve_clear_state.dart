@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldCacheReserveClearState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current state of the Cache Reserve Clear operation.
 @immutable final class SmartshieldCacheReserveClearState {const SmartshieldCacheReserveClearState._(this.value);

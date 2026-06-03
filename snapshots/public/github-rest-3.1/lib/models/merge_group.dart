@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MergeGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_commit.dart';/// A group of pull requests that the merge queue has grouped together to be merged.
 @immutable final class MergeGroup {const MergeGroup({required this.headSha, required this.headRef, required this.baseSha, required this.baseRef, required this.headCommit, });

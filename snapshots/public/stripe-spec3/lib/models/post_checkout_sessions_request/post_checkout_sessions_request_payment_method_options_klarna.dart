@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: PaymentMethodOptions > Klarna)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions_variant1.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarna {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarna({this.captureMethod, this.setupFutureUsage, this.subscriptions, });
 

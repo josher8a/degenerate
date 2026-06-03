@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemMessageSystem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system/realtime_conversation_item_message_system_content.dart';/// The role of the message sender. Always `system`.
 @immutable final class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole._(this.value);

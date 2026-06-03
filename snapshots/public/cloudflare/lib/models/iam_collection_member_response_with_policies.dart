@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCollectionMemberResponseWithPolicies
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_member_with_policies.dart';@immutable final class IamCollectionMemberResponseWithPolicies {const IamCollectionMemberResponseWithPolicies({this.result});
 

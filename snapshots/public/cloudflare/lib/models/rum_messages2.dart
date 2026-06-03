@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumMessages2 {const RumMessages2({required this.code, required this.message, });
 

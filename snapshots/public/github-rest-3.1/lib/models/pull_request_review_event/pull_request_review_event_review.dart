@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewEvent (inline: Review)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestReviewEventReview {const PullRequestReviewEventReview({this.id, this.nodeId, this.user, this.body, this.commitId, this.submittedAt, this.state, this.htmlUrl, this.pullRequestUrl, this.links, this.updatedAt, });
 

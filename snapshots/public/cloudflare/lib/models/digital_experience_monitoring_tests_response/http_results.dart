@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTestsResponse (inline: Tests > HttpResults)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timing_aggregates.dart';@immutable final class HttpResults {const HttpResults({required this.resourceFetchTime});
 

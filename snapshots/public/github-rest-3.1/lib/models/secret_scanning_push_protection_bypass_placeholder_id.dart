@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningPushProtectionBypassPlaceholderId
 
 /// The ID of the push protection bypass placeholder. This value is returned on any push protected routes.
 extension type const SecretScanningPushProtectionBypassPlaceholderId(String value) {

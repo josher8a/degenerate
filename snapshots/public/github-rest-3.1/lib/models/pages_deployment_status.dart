@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current status of the deployment.
 @immutable final class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus._(this.value);

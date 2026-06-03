@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LocalSkillParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LocalSkillParam {const LocalSkillParam({required this.name, required this.description, required this.path, });
 

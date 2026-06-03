@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CampaignsUpdateCampaignResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignsUpdateCampaignResponse503 {const CampaignsUpdateCampaignResponse503({this.code, this.message, this.documentationUrl, });
 

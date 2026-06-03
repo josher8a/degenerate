@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecuritySummaryBySpoofFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetEmailSecuritySummaryBySpoofFormat {const RadarGetEmailSecuritySummaryBySpoofFormat._(this.value);

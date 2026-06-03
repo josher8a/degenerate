@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asResponse (inline: Result > PrefixOrigins)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultPrefixOrigins {const ResultPrefixOrigins({required this.origin, required this.peerCount, required this.prefix, required this.rpkiValidation, });
 

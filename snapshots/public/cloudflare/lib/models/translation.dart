@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Translation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Translation {const Translation({required this.targetLang, required this.text, this.sourceLang = 'en', });
 

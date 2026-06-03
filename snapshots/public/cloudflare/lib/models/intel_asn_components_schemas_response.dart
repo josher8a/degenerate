@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelAsnComponentsSchemasResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_asn.dart';@immutable final class IntelAsnComponentsSchemasResponse {const IntelAsnComponentsSchemasResponse({this.result});
 

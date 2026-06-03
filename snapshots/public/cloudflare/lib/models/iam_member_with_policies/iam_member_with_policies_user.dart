@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamMemberWithPolicies (inline: User)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_email.dart';import 'package:pub_cloudflare/models/iam_first_name.dart';import 'package:pub_cloudflare/models/iam_last_name.dart';import 'package:pub_cloudflare/models/iam_two_factor_authentication_enabled.dart';/// Details of the user associated to the membership.
 @immutable final class IamMemberWithPoliciesUser {const IamMemberWithPoliciesUser({required this.email, this.firstName, this.id, this.lastName, this.twoFactorAuthenticationEnabled, });

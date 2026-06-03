@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutSepaDebitPaymentMethodOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_payment_method_options_mandate_options_sepa_debit.dart';/// 
 @immutable final class CheckoutSepaDebitPaymentMethodOptions {const CheckoutSepaDebitPaymentMethodOptions({this.mandateOptions, this.setupFutureUsage, this.targetDate, });

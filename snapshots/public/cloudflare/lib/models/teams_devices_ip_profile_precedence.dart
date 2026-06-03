@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesIpProfilePrecedence
 
 /// The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.
 extension type const TeamsDevicesIpProfilePrecedence(int value) {

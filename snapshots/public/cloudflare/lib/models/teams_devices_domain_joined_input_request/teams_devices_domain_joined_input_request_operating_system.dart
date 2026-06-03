@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDomainJoinedInputRequest (inline: OperatingSystem)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
 @immutable final class TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem._(this.value);

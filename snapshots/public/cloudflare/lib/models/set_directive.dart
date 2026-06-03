@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetDirective
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_cloudflare_only.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_operation.dart';/// Set the directive.
 @immutable final class SetDirective {const SetDirective({required this.operation, this.cloudflareOnly, });

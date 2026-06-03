@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailEmailRoutingDnsQueryResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_dns_record.dart';import 'package:pub_cloudflare/models/email_email_routing_get_response_dns_error.dart';@immutable final class EmailEmailRoutingDnsQueryResponseResult {const EmailEmailRoutingDnsQueryResponseResult({this.errors, this.record, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationAuthenticationExemption (inline: ClaimedBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The entity that requested the exemption, either the acquiring merchant or the Issuing user.
 @immutable final class ClaimedBy {const ClaimedBy._(this.value);

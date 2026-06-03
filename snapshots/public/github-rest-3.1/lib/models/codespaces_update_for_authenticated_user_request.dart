@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesUpdateForAuthenticatedUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesUpdateForAuthenticatedUserRequest {const CodespacesUpdateForAuthenticatedUserRequest({this.machine, this.displayName, this.recentFolders, });
 

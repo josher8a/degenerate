@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallDescription
 
 /// An informative summary of the rule. This value is sanitized and any tags will be removed.
 extension type const FirewallDescription(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryEdited (inline: Changes > DefaultBranch)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DefaultBranch {const DefaultBranch({required this.from});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsFileSearchRankingOptionsObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_search_ranker.dart';/// The ranking options for the file search.
 @immutable final class RunStepDetailsToolCallsFileSearchRankingOptionsObject {const RunStepDetailsToolCallsFileSearchRankingOptionsObject({required this.ranker, required this.scoreThreshold, });

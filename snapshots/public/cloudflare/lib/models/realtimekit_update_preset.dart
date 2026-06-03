@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_config.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_ui.dart';@immutable final class RealtimekitUpdatePreset {const RealtimekitUpdatePreset({this.config, this.name, this.permissions, this.ui, });
 

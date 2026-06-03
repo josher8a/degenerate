@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostProductsIdRequest (inline: MarketingFeatures > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketingFeaturesVariant1 {const MarketingFeaturesVariant1({required this.name});
 

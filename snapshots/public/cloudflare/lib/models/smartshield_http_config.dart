@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldHttpConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_http_config/healthchecks_http_config_method.dart';/// Parameters specific to an HTTP or HTTPS health check.
 @immutable final class SmartshieldHttpConfig {const SmartshieldHttpConfig({this.allowInsecure = false, this.expectedBody, this.expectedCodes, this.followRedirects = false, this.header, this.method = HealthchecksHttpConfigMethod.$get, this.path = '/', this.port = 80, });

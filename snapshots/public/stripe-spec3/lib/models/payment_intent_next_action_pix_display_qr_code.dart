@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionPixDisplayQrCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionPixDisplayQrCode {const PaymentIntentNextActionPixDisplayQrCode({this.data, this.expiresAt, this.hostedInstructionsUrl, this.imageUrlPng, this.imageUrlSvg, });

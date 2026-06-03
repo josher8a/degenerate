@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Variant1 > Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/properties_value.dart';/// Schema defining the parameters accepted by the tool.
 @immutable final class Variant1Parameters {const Variant1Parameters({required this.properties, required this.type, this.$required, });

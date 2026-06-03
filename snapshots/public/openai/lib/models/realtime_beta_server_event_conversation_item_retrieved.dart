@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventConversationItemRetrieved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `conversation.item.retrieved`.
 @immutable final class RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType._(this.value);

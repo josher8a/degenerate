@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PatchEventQueryAlertUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_query_alert_list_response/get_event_query_alert_list_response_frequency.dart';@immutable final class PatchEventQueryAlertUpdateRequest {const PatchEventQueryAlertUpdateRequest({this.enabled, this.frequency, this.notificationType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksIssue2 (inline: PerformedViaGithubApp > Permissions > ContentReferences)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentReferences {const ContentReferences._(this.value);
 

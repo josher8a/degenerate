@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalogMaintenanceConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_compaction_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_snapshot_expiration_config.dart';/// Configures maintenance for the catalog.
 @immutable final class R2DataCatalogCatalogMaintenanceConfig {const R2DataCatalogCatalogMaintenanceConfig({this.compaction, this.snapshotExpiration, });

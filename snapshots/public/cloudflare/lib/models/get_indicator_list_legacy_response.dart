@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorListLegacyResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_indicators.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_pagination.dart';@immutable final class GetIndicatorListLegacyResponse {const GetIndicatorListLegacyResponse({required this.indicators, required this.pagination, });
 

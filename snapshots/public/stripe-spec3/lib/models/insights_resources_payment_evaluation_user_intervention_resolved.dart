@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationUserInterventionResolved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the intervention if it has been completed.
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(this.value);

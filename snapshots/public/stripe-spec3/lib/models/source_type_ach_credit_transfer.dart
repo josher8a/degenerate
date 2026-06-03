@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeAchCreditTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAchCreditTransfer {const SourceTypeAchCreditTransfer({this.accountNumber, this.bankName, this.fingerprint, this.refundAccountHolderName, this.refundAccountHolderType, this.refundRoutingNumber, this.routingNumber, this.swiftCode, });
 

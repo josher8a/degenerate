@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityListAllowPoliciesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy.dart';import 'package:pub_cloudflare/models/email_security_message.dart';import 'package:pub_cloudflare/models/email_security_result_info.dart';@immutable final class EmailSecurityListAllowPoliciesResponse {const EmailSecurityListAllowPoliciesResponse({required this.errors, required this.messages, required this.success, required this.result, required this.resultInfo, });
 

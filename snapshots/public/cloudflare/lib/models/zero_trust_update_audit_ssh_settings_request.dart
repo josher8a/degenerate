@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustUpdateAuditSshSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_public_key.dart';@immutable final class ZeroTrustUpdateAuditSshSettingsRequest {const ZeroTrustUpdateAuditSshSettingsRequest({required this.publicKey});
 

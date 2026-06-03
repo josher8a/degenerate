@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryDebitReversal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// The rails used to reverse the funds.
 @immutable final class TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork._(this.value);

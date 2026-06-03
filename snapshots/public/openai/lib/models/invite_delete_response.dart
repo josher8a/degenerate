@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InviteDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.invite.deleted`
 @immutable final class InviteDeleteResponseObject {const InviteDeleteResponseObject._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarValueList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list/deleted_radar_value_list_object.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request/item_type.dart';import 'package:pub_stripe_spec3/models/radar_value_list/list_items.dart';/// Value lists allow you to group values together which can then be referenced in rules.
 /// 

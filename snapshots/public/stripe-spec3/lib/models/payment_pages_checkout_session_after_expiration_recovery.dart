@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionAfterExpirationRecovery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionAfterExpirationRecovery {const PaymentPagesCheckoutSessionAfterExpirationRecovery({required this.allowPromotionCodes, required this.enabled, this.expiresAt, this.url, });

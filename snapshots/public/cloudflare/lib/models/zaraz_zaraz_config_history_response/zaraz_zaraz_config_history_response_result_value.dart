@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigHistoryResponse (inline: Result > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_return.dart';/// Configuration record correspoding to an ID provided in query params
 @immutable final class ZarazZarazConfigHistoryResponseResultValue {const ZarazZarazConfigHistoryResponseResultValue({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.config, });

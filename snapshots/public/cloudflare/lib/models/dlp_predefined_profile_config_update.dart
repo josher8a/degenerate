@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPredefinedProfileConfigUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_predefined_profile_entry_update.dart';@immutable final class DlpPredefinedProfileConfigUpdate {const DlpPredefinedProfileConfigUpdate({this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.enabledEntries, this.entries, this.ocrEnabled = false, });
 

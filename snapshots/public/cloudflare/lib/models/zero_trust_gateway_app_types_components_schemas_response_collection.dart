@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_app_types.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_application.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_application_type.dart';@immutable final class ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection {const ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection({this.result});
 

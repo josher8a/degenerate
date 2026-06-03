@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigSearchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_search_response/autorag_config_search_response_result.dart';@immutable final class AutoragConfigSearchResponse {const AutoragConfigSearchResponse({required this.result, required this.success, });
 

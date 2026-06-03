@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListMitigationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_appeal_result/abuse_reports_mitigation_appeal_result_result_info.dart';import 'package:pub_cloudflare/models/list_mitigations_response/list_mitigations_response_result.dart';@immutable final class ListMitigationsResponse {const ListMitigationsResponse({required this.success, this.errors, this.messages, this.result, this.resultInfo, });
 

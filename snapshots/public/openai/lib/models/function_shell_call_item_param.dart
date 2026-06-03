@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallItemParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_action_param.dart';import 'package:pub_openai/models/function_shell_call_item_param/function_shell_call_item_param_environment.dart';import 'package:pub_openai/models/function_shell_call_item_status.dart';/// A tool representing a request to execute one or more shell commands.
 @immutable final class FunctionShellCallItemParam {const FunctionShellCallItemParam({required this.callId, required this.action, this.id, this.type = 'shell_call', this.status, this.environment, });

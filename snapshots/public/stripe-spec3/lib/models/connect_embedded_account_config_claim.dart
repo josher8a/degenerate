@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedAccountConfigClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_account_features_claim.dart';/// 
 @immutable final class ConnectEmbeddedAccountConfigClaim {const ConnectEmbeddedAccountConfigClaim({required this.enabled, required this.features, });

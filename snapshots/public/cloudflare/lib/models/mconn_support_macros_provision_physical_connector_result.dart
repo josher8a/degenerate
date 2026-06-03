@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSupportMacrosProvisionPhysicalConnectorResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_connector.dart';@immutable final class MconnSupportMacrosProvisionPhysicalConnectorResult {const MconnSupportMacrosProvisionPhysicalConnectorResult({required this.connector});
 

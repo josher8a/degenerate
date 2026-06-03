@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasResponseCollectionHostnames
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_settings.dart';@immutable final class AccessSchemasResponseCollectionHostnames {const AccessSchemasResponseCollectionHostnames({this.result});
 

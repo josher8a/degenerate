@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Feed (inline: Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/link_with_type.dart';@immutable final class FeedLinks {const FeedLinks({required this.timeline, required this.user, this.securityAdvisories, this.currentUser, this.currentUserPublic, this.currentUserActor, this.currentUserOrganization, this.currentUserOrganizations, this.repositoryDiscussions, this.repositoryDiscussionsCategory, });
 

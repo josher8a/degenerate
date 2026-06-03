@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeClientEventConversationItemRetrieve
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event when you want to retrieve the server's representation of a specific item in the conversation history. This is useful, for example, to inspect user audio after noise cancellation and VAD.
 /// The server will respond with a `conversation.item.retrieved` event,

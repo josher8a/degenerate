@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Coupon
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_object.dart';import 'package:pub_stripe_spec3/models/coupon_applies_to.dart';import 'package:pub_stripe_spec3/models/coupon_currency_option.dart';/// A coupon contains information about a percent-off or amount-off discount you
 /// might want to apply to a customer. Coupons may be applied to [subscriptions](https://api.stripe.com#subscriptions), [invoices](https://api.stripe.com#invoices),

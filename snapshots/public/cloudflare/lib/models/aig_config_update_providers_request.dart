@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigUpdateProvidersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateProvidersRequest {const AigConfigUpdateProvidersRequest({required this.secret});
 

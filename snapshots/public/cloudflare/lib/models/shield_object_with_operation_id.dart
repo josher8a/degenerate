@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldObjectWithOperationId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldObjectWithOperationId {const ShieldObjectWithOperationId({required this.operationId});
 

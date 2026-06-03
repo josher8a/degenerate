@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasDecision
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action Access will take if a user matches this policy.
 @immutable final class AccessSchemasDecision {const AccessSchemasDecision._(this.value);

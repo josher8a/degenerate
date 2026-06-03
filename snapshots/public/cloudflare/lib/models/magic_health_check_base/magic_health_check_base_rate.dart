@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicHealthCheckBase (inline: Rate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How frequent the health check is run. The default value is `mid`.
 @immutable final class MagicHealthCheckBaseRate {const MagicHealthCheckBaseRate._(this.value);

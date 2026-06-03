@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionDisplayOxxoDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionDisplayOxxoDetails {const PaymentIntentNextActionDisplayOxxoDetails({this.expiresAfter, this.hostedVoucherUrl, this.number, });

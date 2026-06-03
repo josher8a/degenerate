@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Kind of schema
 @immutable final class ShieldOldKind {const ShieldOldKind._(this.value);

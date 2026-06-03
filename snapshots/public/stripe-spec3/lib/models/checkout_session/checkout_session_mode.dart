@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutSession (inline: Mode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The mode of the Checkout Session.
 @immutable final class CheckoutSessionMode {const CheckoutSessionMode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Developer > Content > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/text_type.dart';@immutable final class DeveloperContentVariant2 {const DeveloperContentVariant2({required this.text, required this.type, });
 

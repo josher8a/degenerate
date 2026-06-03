@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCallCallNotification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_call_call_notification_instance/request_method.dart';@immutable final class AccountCallCallNotification {const AccountCallCallNotification({this.accountSid, this.apiVersion, this.callSid, this.dateCreated, this.dateUpdated, this.errorCode, this.log, this.messageDate, this.messageText, this.moreInfo, this.requestMethod, this.requestUrl, this.sid, this.uri, });
 

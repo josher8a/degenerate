@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Checks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for checks on code.
 @immutable final class AppPermissionsChecks {const AppPermissionsChecks._(this.value);

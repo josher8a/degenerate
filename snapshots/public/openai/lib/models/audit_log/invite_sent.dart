@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: InviteSent)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/invite_sent_data.dart';/// The details for events with this `type`.
 @immutable final class InviteSent {const InviteSent({this.id, this.data, });

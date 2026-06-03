@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeFeatures describes the set of features implemented by the CRI implementation. The features contained in the NodeFeatures should depend only on the cri implementation independent of runtime handlers.
 @immutable final class NodeFeatures {const NodeFeatures({this.supplementalGroupsPolicy});

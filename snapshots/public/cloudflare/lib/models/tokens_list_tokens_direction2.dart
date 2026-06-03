@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokensListTokensDirection2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
 @immutable final class TokensListTokensDirection2 {const TokensListTokensDirection2._(this.value);

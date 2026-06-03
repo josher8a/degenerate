@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionsSubscriptionMigrateRequest (inline: BillingMode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/flexible.dart';@immutable final class BillingModeType {const BillingModeType._(this.value);
 

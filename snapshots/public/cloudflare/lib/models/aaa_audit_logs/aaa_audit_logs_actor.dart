@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs (inline: Actor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
 @immutable final class AaaAuditLogsActorType {const AaaAuditLogsActorType._(this.value);

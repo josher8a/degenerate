@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeInsertVectorUnparsableBehavior
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Behavior for ndjson parse failures.
 @immutable final class VectorizeInsertVectorUnparsableBehavior {const VectorizeInsertVectorUnparsableBehavior._(this.value);

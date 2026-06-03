@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardholderRequirements
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `disabled_reason` is present, all cards will decline authorizations with `cardholder_verification_required` reason.
 @immutable final class IssuingCardholderRequirementsDisabledReason {const IssuingCardholderRequirementsDisabledReason._(this.value);

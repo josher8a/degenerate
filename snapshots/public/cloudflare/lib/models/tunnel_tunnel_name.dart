@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelTunnelName
 
 /// A user-friendly name for a tunnel.
 extension type const TunnelTunnelName(String value) {

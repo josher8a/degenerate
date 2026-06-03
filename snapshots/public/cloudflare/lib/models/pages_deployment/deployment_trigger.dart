@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeployment (inline: DeploymentTrigger)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment/deployment_trigger_metadata.dart';/// What caused the deployment.
 @immutable final class DeploymentTriggerType {const DeploymentTriggerType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/line_items_discount_amount.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown {const PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown({required this.discounts, required this.taxes, });

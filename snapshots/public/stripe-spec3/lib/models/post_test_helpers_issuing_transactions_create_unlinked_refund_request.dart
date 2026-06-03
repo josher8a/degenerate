@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request/purchase_details.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_data.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasIsolationRequired
 
 /// Require this application to be served in an isolated browser for users matching this policy.
 extension type const AccessSchemasIsolationRequired(bool value) {

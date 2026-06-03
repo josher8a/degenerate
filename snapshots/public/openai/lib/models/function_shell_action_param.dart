@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellActionParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Commands and limits describing how to run the shell tool call.
 @immutable final class FunctionShellActionParam {const FunctionShellActionParam({required this.commands, this.timeoutMs, this.maxOutputLength, });

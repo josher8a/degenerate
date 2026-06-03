@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsPublicKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting Actions Secrets.
 @immutable final class ActionsPublicKey {const ActionsPublicKey({required this.keyId, required this.key, this.id, this.url, this.title, this.createdAt, });

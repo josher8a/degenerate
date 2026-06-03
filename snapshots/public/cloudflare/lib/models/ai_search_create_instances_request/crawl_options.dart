@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams > WebCrawler > CrawlOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CrawlOptionsSource {const CrawlOptionsSource._(this.value);
 

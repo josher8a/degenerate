@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceNumeric
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about a number being collected using a reader
 @immutable final class TerminalReaderReaderResourceNumeric {const TerminalReaderReaderResourceNumeric({this.value});

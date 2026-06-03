@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClientKeyParam (inline: CustomerAcceptance > Online)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClientKeyParamCustomerAcceptanceOnline {const ClientKeyParamCustomerAcceptanceOnline({this.ipAddress, this.userAgent, });
 

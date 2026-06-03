@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringAggregateStat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_aggregate_time_period.dart';@immutable final class DigitalExperienceMonitoringAggregateStat {const DigitalExperienceMonitoringAggregateStat({required this.timePeriod, this.avgMs, this.deltaPct, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: PaymentMethodOptions > AcssDebit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_currency.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/acss_debit_mandate_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 

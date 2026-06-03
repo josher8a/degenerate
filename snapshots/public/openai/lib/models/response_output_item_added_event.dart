@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseOutputItemAddedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_item.dart';/// Emitted when a new output item is added.
 @immutable final class ResponseOutputItemAddedEvent {const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscCni
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_bgp_control.dart';import 'package:pub_cloudflare/models/nsc_magic_settings.dart';@immutable final class NscCni {const NscCni({required this.account, required this.custIp, required this.id, required this.interconnect, required this.magic, required this.p2pIp, this.bgp, });
 

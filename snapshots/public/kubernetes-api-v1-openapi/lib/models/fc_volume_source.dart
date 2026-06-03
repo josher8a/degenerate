@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FcVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Fibre Channel volume. Fibre Channel volumes can only be mounted as read/write once. Fibre Channel volumes support ownership management and SELinux relabeling.
 @immutable final class FcVolumeSource {const FcVolumeSource({this.fsType, this.lun, this.readOnly, this.targetWwNs, this.wwids, });

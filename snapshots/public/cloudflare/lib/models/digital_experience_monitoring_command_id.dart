@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringCommandId
 
 /// Unique identifier for a command
 extension type const DigitalExperienceMonitoringCommandId(String value) {

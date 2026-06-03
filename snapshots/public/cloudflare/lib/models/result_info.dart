@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultInfo {const ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 

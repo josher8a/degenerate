@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreditNotesRequest (inline: ShippingCost)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When shipping_cost contains the shipping_rate from the invoice, the shipping_cost is included in the credit note. One of `amount`, `lines`, or `shipping_cost` must be provided.
 @immutable final class PostCreditNotesRequestShippingCost {const PostCreditNotesRequestShippingCost({this.shippingRate});

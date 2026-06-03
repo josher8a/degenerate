@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Individual > CardIssuing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/user_terms_acceptance.dart';@immutable final class IndividualCardIssuing {const IndividualCardIssuing({this.userTermsAcceptance});
 

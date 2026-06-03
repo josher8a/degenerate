@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationMoneyMovementCard (inline: CustomerPresence)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes the presence of the customer during the payment.
 @immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence {const InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesRequest (inline: FromInvoice)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FromInvoiceAction {const FromInvoiceAction._(this.value);
 

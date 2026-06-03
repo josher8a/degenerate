@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatkitWorkflow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chatkit_workflow_tracing.dart';/// Workflow metadata and state returned for the session.
 @immutable final class ChatkitWorkflow {const ChatkitWorkflow({required this.id, required this.version, required this.stateVariables, required this.tracing, });

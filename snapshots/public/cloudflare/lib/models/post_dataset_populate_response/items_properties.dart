@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties > Datasets > Items > Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/attackers.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/indicator_types.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/processing_time_ms.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/properties_categories.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/target_industries.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/total_processed.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/dataset_id.dart';@immutable final class ItemsProperties {const ItemsProperties({required this.attackers, required this.categories, required this.datasetId, required this.indicatorTypes, required this.processingTimeMs, required this.targetIndustries, required this.totalProcessed, });
 

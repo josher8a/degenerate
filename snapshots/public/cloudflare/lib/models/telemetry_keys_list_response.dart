@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryKeysListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_messages.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_response/telemetry_keys_list_response_result.dart';@immutable final class TelemetryKeysListResponse {const TelemetryKeysListResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

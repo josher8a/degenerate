@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsResponseImportScan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_import_scan/dns_records_dns_response_import_scan_result.dart';@immutable final class DnsRecordsDnsResponseImportScan {const DnsRecordsDnsResponseImportScan({this.result});
 

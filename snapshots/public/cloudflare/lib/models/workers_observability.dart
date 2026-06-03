@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservability
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability/workers_observability_logs.dart';/// Observability settings for the Worker.
 @immutable final class WorkersObservability {const WorkersObservability({required this.enabled, this.headSamplingRate, this.logs, });

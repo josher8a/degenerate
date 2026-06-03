@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileWidgetDetail
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_bot_fight_mode.dart';import 'package:pub_cloudflare/models/turnstile_clearance_level.dart';import 'package:pub_cloudflare/models/turnstile_created_on.dart';import 'package:pub_cloudflare/models/turnstile_ephemeral_id.dart';import 'package:pub_cloudflare/models/turnstile_modified_on.dart';import 'package:pub_cloudflare/models/turnstile_name.dart';import 'package:pub_cloudflare/models/turnstile_offlabel.dart';import 'package:pub_cloudflare/models/turnstile_region.dart';import 'package:pub_cloudflare/models/turnstile_sitekey.dart';import 'package:pub_cloudflare/models/turnstile_widget_mode.dart';/// Secret key for this widget.
 extension type const TurnstileSecret(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsPriority
 
 /// Required for MX, SRV and URI records; unused by other record types. Records with lower priorities are preferred.
 extension type const DnsRecordsPriority(double value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesOwnershipVerificationHttp (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 {const TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1({this.httpBody, this.httpUrl, });
 

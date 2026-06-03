@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsTracerouteTestNetworkPathResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response.dart';@immutable final class DexEndpointsTracerouteTestNetworkPathResponse {const DexEndpointsTracerouteTestNetworkPathResponse({this.result});
 

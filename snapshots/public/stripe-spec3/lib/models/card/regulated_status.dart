@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Card (inline: RegulatedStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of a card based on the card issuer.
 @immutable final class RegulatedStatus {const RegulatedStatus._(this.value);

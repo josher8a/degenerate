@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicLanAclConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl_subnet.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';import 'package:pub_cloudflare/models/magic_ip_address.dart';import 'package:pub_cloudflare/models/magic_port.dart';/// A valid port range value.
 extension type const MagicAclPortRange(String value) {

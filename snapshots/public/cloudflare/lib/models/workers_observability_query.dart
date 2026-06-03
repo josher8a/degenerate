@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQuery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/telemetry_query_request_parameters.dart';@immutable final class WorkersObservabilityQuery {const WorkersObservabilityQuery({required this.created, required this.description, required this.environmentId, required this.generated, required this.id, required this.name, required this.parameters, required this.updated, required this.userId, required this.workspaceId, });
 

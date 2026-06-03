@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionConsent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `opt_in`, the customer consents to receiving promotional communications
 /// from the merchant about this Checkout Session.

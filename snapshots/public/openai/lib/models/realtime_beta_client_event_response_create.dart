@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventResponseCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response_create_params.dart';/// The event type, must be `response.create`.
 @immutable final class RealtimeBetaClientEventResponseCreateType {const RealtimeBetaClientEventResponseCreateType._(this.value);

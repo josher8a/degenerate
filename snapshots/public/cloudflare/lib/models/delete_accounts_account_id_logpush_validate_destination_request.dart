@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteAccountsAccountIdLogpushValidateDestinationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';@immutable final class DeleteAccountsAccountIdLogpushValidateDestinationRequest {const DeleteAccountsAccountIdLogpushValidateDestinationRequest({required this.destinationConf});
 

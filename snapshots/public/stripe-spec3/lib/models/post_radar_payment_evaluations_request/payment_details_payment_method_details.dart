@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest (inline: PaymentDetails > PaymentMethodDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/payment_method_details_billing_details.dart';@immutable final class PaymentDetailsPaymentMethodDetails {const PaymentDetailsPaymentMethodDetails({required this.paymentMethod, this.billingDetails, });
 

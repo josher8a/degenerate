@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Metadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Metadata {const Metadata({this.name, this.additionalProperties = const {}, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_object/run_step_delta_object_delta.dart';/// The object type, which is always `thread.run.step.delta`.
 @immutable final class RunStepDeltaObjectObject {const RunStepDeltaObjectObject._(this.value);

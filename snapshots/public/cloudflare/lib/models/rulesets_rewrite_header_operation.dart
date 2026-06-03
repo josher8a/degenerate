@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRewriteHeaderOperation
 
 /// The operation to perform on the header.
 extension type const RulesetsRewriteHeaderOperation(String value) {

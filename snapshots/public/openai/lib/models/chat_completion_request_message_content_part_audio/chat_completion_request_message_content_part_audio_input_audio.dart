@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestMessageContentPartAudio (inline: InputAudio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of the encoded audio data. Currently supports "wav" and "mp3".
 /// 

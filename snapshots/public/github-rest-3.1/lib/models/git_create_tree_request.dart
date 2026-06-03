@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCreateTreeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_create_tree_request/git_create_tree_request_tree.dart';@immutable final class GitCreateTreeRequest {const GitCreateTreeRequest({required this.tree, this.baseTree, });
 

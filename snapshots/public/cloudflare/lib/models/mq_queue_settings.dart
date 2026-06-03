@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqQueueSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqQueueSettings {const MqQueueSettings({this.deliveryDelay, this.deliveryPaused, this.messageRetentionPeriod, });
 

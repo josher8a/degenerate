@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats > DomainStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DomainStats {const DomainStats({required this.count, required this.countries, required this.domain, required this.encodedSize, required this.index, required this.initiators, required this.ips, required this.redirects, required this.size, });
 

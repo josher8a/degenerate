@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringDexDeleteResponseCollection (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http.dart';@immutable final class DigitalExperienceMonitoringDexDeleteResponseCollectionResult {const DigitalExperienceMonitoringDexDeleteResponseCollectionResult({this.dexTests});
 

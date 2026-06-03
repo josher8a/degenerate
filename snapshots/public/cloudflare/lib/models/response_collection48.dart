@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection48
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_list_databases_response/d1_list_databases_response_result_info.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class ResponseCollection48 {const ResponseCollection48({required this.errors, required this.messages, required this.success, this.resultInfo, });
 

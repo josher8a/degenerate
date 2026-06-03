@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryQueryRequest (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/group_bys.dart';import 'package:pub_cloudflare/models/telemetry_query_request/havings.dart';import 'package:pub_cloudflare/models/telemetry_query_request/order_by.dart';import 'package:pub_cloudflare/models/telemetry_query_request/parameters_calculations.dart';/// Set a Flag to describe how to combine the filters on the query.
 @immutable final class FilterCombination {const FilterCombination._(this.value);

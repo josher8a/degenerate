@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesSource (inline: Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_source/preview_deployment_setting.dart';@immutable final class PagesSourceConfig {const PagesSourceConfig({required this.deploymentsEnabled, required this.owner, required this.ownerId, required this.pathExcludes, required this.pathIncludes, required this.prCommentsEnabled, required this.previewBranchExcludes, required this.previewBranchIncludes, required this.previewDeploymentSetting, required this.productionBranch, required this.productionDeploymentsEnabled, required this.repoId, required this.repoName, });
 

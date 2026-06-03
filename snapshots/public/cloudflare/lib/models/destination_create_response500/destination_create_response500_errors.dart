@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationCreateResponse500 (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponse500ErrorsMessage {const DestinationCreateResponse500ErrorsMessage._(this.value);
 

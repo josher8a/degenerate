@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiGetModelSchemaResponse (inline: Result > Input)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultInput {const ResultInput({required this.additionalProperties, required this.description, required this.type, });
 

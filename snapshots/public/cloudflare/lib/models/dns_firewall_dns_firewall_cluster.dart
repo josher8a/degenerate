@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallDnsFirewallCluster
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_attack_mitigation.dart';import 'package:pub_cloudflare/models/dns_firewall_deprecate_any_requests.dart';import 'package:pub_cloudflare/models/dns_firewall_ecs_fallback.dart';import 'package:pub_cloudflare/models/dns_firewall_maximum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_minimum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_name.dart';import 'package:pub_cloudflare/models/dns_firewall_negative_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_ratelimit.dart';import 'package:pub_cloudflare/models/dns_firewall_retries.dart';@immutable final class DnsFirewallDnsFirewallCluster {const DnsFirewallDnsFirewallCluster({this.attackMitigation, this.deprecateAnyRequests, this.ecsFallback, this.maximumCacheTtl, this.minimumCacheTtl, this.name, this.negativeCacheTtl, this.ratelimit, this.retries, this.upstreamIps, });
 

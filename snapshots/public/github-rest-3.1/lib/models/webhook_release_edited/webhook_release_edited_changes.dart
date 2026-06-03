@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookReleaseEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';import 'package:pub_github_rest_3_1/models/webhook_release_edited/changes_make_latest.dart';import 'package:pub_github_rest_3_1/models/webhook_release_edited/tag_name.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes/webhooks_changes_body.dart';@immutable final class WebhookReleaseEditedChanges {const WebhookReleaseEditedChanges({this.body, this.name, this.tagName, this.makeLatest, });
 

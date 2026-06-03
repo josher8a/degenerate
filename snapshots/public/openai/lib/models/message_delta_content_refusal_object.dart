@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentRefusalObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_refusal_object/message_content_refusal_object_type.dart';/// The refusal content that is part of a message.
 @immutable final class MessageDeltaContentRefusalObject {const MessageDeltaContentRefusalObject({required this.index, required this.type, this.refusal, });

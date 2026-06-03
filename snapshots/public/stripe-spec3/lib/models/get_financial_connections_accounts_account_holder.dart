@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetFinancialConnectionsAccountsAccountHolder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFinancialConnectionsAccountsAccountHolder {const GetFinancialConnectionsAccountsAccountHolder({this.account, this.customer, this.customerAccount, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseOutputTextAnnotationAddedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an annotation is added to output text content.
 /// 

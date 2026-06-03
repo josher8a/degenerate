@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIndicatorCreateBulkRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_indicator_create_bulk_request/post_indicator_create_bulk_request_indicators.dart';@immutable final class PostIndicatorCreateBulkRequest {const PostIndicatorCreateBulkRequest({required this.indicators, this.autoCreateType, });
 

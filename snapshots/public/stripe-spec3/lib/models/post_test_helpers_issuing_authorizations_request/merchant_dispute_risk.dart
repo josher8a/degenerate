@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest (inline: RiskAssessment > MerchantDisputeRisk)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/risk_level.dart';@immutable final class MerchantDisputeRisk {const MerchantDisputeRisk({required this.riskLevel, this.disputeRate, });
 

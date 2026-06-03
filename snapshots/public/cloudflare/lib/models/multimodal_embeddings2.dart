@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MultimodalEmbeddings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MultimodalEmbeddings2 {const MultimodalEmbeddings2({this.data, this.shape, });
 

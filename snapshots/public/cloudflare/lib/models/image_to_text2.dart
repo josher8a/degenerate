@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageToText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageToText2 {const ImageToText2({this.description});
 

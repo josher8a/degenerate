@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseReasoningSummaryPartDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_reasoning_summary_part_added_event/response_reasoning_summary_part_added_event_part.dart';/// Emitted when a reasoning summary part is completed.
 @immutable final class ResponseReasoningSummaryPartDoneEvent {const ResponseReasoningSummaryPartDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.sequenceNumber, required this.$part, });

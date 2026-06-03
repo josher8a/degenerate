@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSslsettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not Early Hints is enabled.
 @immutable final class EarlyHints {const EarlyHints._(this.value);

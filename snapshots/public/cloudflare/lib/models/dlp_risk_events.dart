@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpRiskEvents
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_event.dart';import 'package:pub_cloudflare/models/dlp_risk_level.dart';@immutable final class DlpRiskEvents {const DlpRiskEvents({required this.email, required this.events, required this.name, this.lastResetTime, this.riskLevel, });
 

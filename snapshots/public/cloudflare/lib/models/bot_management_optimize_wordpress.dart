@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementOptimizeWordpress
 
 /// Whether to optimize Super Bot Fight Mode protections for Wordpress.
 extension type const BotManagementOptimizeWordpress(bool value) {

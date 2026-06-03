@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/draft_issue.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/item_content_type.dart';import 'package:pub_github_rest_3_1/models/item_simple/item_simple_content.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// An item belonging to a project
 @immutable final class ItemSimple {const ItemSimple({required this.id, required this.contentType, required this.createdAt, required this.updatedAt, required this.archivedAt, this.nodeId, this.content, this.creator, this.projectUrl, this.itemUrl, });

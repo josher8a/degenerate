@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcPublicApplication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_application_health_instances.dart';import 'package:pub_cloudflare/models/cc_application_network.dart';import 'package:pub_cloudflare/models/cc_custom_resource_allocation.dart';import 'package:pub_cloudflare/models/cc_durable_objects_configuration_namespace_id.dart';import 'package:pub_cloudflare/models/cc_instance_type.dart';import 'package:pub_cloudflare/models/cc_observability.dart';import 'package:pub_cloudflare/models/cc_public_instance_type.dart';/// An Application ID represents an identifier of an application
 extension type const CcApplicationId(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookInstallationTargetRenamed (inline: Changes > Login)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationTargetRenamedChangesLogin {const WebhookInstallationTargetRenamedChangesLogin({required this.from});
 

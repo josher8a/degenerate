@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginDetailsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_response/result_origin.dart';@immutable final class RadarGetOriginDetailsResponseResult {const RadarGetOriginDetailsResponseResult({required this.origin});
 

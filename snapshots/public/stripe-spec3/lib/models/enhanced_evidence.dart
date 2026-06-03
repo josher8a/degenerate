@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnhancedEvidence
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/visa_compelling_evidence3.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/visa_compliance.dart';@immutable final class EnhancedEvidence {const EnhancedEvidence({this.visaCompellingEvidence3, this.visaCompliance, });
 

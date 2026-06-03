@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesByDnssecProtocol
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol._(this.value);
 

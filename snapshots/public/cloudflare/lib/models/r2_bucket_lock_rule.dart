@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2BucketLockRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_lock_rule/r2_bucket_lock_rule_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_age_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_date_condition.dart';import 'package:pub_cloudflare/models/r2_lock_rule_indefinite_condition.dart';@immutable final class R2BucketLockRule {const R2BucketLockRule({required this.condition, required this.enabled, required this.id, this.prefix, });
 

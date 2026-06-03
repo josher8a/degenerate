@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ServiceSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service_port.dart';import 'package:pub_kubernetes_api_v1_openapi/models/session_affinity_config.dart';/// ServiceSpec describes the attributes that a user creates on a service.
 @immutable final class ServiceSpec {const ServiceSpec({this.allocateLoadBalancerNodePorts, this.clusterIp, this.clusterIPs, this.externalIPs, this.externalName, this.externalTrafficPolicy, this.healthCheckNodePort, this.internalTrafficPolicy, this.ipFamilies, this.ipFamilyPolicy, this.loadBalancerClass, this.loadBalancerIp, this.loadBalancerSourceRanges, this.ports, this.publishNotReadyAddresses, this.selector, this.sessionAffinity, this.sessionAffinityConfig, this.trafficDistribution, this.type, });

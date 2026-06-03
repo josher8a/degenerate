@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreCreateSecretObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';import 'package:pub_cloudflare/models/secrets_store_secret_name.dart';/// The value of the secret. Note that this is 'write only' - no API reponse will provide this value, it is only used to create/modify secrets.
 extension type const SecretsStoreValue(String value) {

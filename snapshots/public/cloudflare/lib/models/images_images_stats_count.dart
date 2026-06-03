@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImagesStatsCount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Cloudflare Images allowed usage.
 extension type const ImagesImagesStatsAllowed(double value) {

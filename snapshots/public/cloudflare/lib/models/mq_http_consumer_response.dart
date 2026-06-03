@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqHttpConsumerResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';@immutable final class MqHttpConsumerResponse {const MqHttpConsumerResponse({this.consumerId, this.createdOn, this.deadLetterQueue, this.queueName, this.settings, this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsAppEditableFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_name.dart';@immutable final class CallsAppEditableFields {const CallsAppEditableFields({this.name});
 

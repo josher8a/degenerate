@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsCreateReviewRequest (inline: Comments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateReviewRequestComments {const PullsCreateReviewRequestComments({required this.path, required this.body, this.position, this.line, this.side, this.startLine, this.startSide, });
 

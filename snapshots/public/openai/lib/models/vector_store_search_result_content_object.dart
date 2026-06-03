@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreSearchResultContentObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';@immutable final class VectorStoreSearchResultContentObject {const VectorStoreSearchResultContentObject({required this.type, required this.text, });
 

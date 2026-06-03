@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesListForAuthenticatedUserFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForAuthenticatedUserFilter {const IssuesListForAuthenticatedUserFilter._(this.value);
 

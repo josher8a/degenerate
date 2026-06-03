@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFirewallRulesComponentsSchemasId
 
 /// The unique identifier of the firewall rule.
 extension type const FirewallFirewallRulesComponentsSchemasId(String value) {

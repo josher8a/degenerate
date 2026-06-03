@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosPrefix
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosPrefix {const DosPrefix({required this.comment, required this.createdOn, required this.excluded, required this.id, required this.modifiedOn, required this.prefix, });
 

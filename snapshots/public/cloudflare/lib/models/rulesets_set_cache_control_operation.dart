@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheControlOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache-control directive.
 @immutable final class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation._(this.value);

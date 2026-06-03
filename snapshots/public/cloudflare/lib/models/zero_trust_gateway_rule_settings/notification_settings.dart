@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: NotificationSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure a notification to display on the user's device when this rule matched. Settable for all types of rules with the action set to `block`.
 @immutable final class NotificationSettings {const NotificationSettings({this.enabled, this.includeContext, this.msg, this.supportUrl, });

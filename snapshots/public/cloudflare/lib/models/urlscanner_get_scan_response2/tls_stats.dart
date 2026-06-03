@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats > TlsStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/tls_stats_protocols.dart';@immutable final class TlsStats {const TlsStats({required this.count, required this.countries, required this.encodedSize, required this.ips, required this.protocols, required this.securityState, required this.size, });
 

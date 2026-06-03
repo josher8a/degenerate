@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GollumEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gollum_event/gollum_event_pages.dart';@immutable final class GollumEvent {const GollumEvent({required this.pages});
 

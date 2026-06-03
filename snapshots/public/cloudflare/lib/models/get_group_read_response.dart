@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetGroupReadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_group_read_response/members.dart';@immutable final class GetGroupReadResponse {const GetGroupReadResponse({required this.createdAt, required this.description, required this.members, required this.name, required this.updatedAt, required this.uuid, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelCreatedAt
 
 /// Timestamp of when the resource was created.
 extension type TunnelCreatedAt(DateTime value) {

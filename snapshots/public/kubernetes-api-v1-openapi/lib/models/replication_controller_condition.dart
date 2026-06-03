@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReplicationControllerCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ReplicationControllerCondition describes the state of a replication controller at a certain point.
 @immutable final class ReplicationControllerCondition {const ReplicationControllerCondition({this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });

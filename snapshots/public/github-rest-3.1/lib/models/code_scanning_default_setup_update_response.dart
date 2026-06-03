@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningDefaultSetupUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// You can use `run_url` to track the status of the run. This includes a property status and conclusion.
 /// You should not rely on this always being an actions workflow run object.

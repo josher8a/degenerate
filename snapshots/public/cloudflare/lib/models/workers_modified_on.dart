@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersModifiedOn
 
 /// When the script was last modified.
 extension type WorkersModifiedOn(DateTime value) {

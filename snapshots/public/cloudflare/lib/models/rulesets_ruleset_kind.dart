@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRulesetKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The kind of the ruleset.
 @immutable final class RulesetsRulesetKind {const RulesetsRulesetKind._(this.value);

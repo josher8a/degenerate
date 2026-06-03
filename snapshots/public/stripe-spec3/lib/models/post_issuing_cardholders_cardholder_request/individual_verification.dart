@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Individual > Verification)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_verification_document.dart';@immutable final class IndividualVerification {const IndividualVerification({this.document});
 

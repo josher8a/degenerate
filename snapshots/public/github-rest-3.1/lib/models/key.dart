@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key
 @immutable final class Key {const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed, });

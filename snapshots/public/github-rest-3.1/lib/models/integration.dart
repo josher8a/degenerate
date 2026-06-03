@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Integration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_owner.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_permissions.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class Integration {const Integration({required this.id, required this.nodeId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.slug, this.clientId, this.installationsCount, });

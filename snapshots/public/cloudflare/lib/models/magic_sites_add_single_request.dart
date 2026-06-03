@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSitesAddSingleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_connector_id.dart';import 'package:pub_cloudflare/models/magic_secondary_connector_id.dart';import 'package:pub_cloudflare/models/magic_site_location.dart';import 'package:pub_cloudflare/models/magic_site_name.dart';@immutable final class MagicSitesAddSingleRequest {const MagicSitesAddSingleRequest({required this.name, this.connectorId, this.description, this.haMode, this.location, this.secondaryConnectorId, });
 

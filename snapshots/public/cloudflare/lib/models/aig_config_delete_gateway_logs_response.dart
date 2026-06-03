@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigDeleteGatewayLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayLogsResponse {const AigConfigDeleteGatewayLogsResponse({required this.success});
 

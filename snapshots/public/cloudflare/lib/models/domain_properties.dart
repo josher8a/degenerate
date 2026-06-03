@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DomainProperties
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/contact_properties.dart';import 'package:pub_cloudflare/models/locked.dart';import 'package:pub_cloudflare/models/transfer_in.dart';/// Shows if a domain is available for transferring into Cloudflare Registrar.
 extension type const Available(bool value) {

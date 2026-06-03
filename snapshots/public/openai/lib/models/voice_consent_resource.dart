@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VoiceConsentResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_consent_deleted_resource/voice_consent_deleted_resource_object.dart';/// A consent recording used to authorize creation of a custom voice.
 @immutable final class VoiceConsentResource {const VoiceConsentResource({required this.object, required this.id, required this.name, required this.language, required this.createdAt, });

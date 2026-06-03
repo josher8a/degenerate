@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoDocumentReport (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this `document` check.
 @immutable final class GelatoDocumentReportStatus {const GelatoDocumentReportStatus._(this.value);

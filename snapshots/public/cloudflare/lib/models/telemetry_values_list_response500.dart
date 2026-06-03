@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryValuesListResponse500
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';import 'package:pub_cloudflare/models/destination_create_response500/destination_create_response500_errors.dart';@immutable final class TelemetryValuesListResponse500 {const TelemetryValuesListResponse500({required this.errors, required this.messages, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesLocationsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_response/result_locations.dart';@immutable final class RadarGetEntitiesLocationsResponseResult {const RadarGetEntitiesLocationsResponseResult({required this.locations});
 

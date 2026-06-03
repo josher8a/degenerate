@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeCreateClientSecretResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_create_client_secret_response/realtime_create_client_secret_response_session.dart';/// Response from creating a session and client secret for the Realtime API.
 /// 

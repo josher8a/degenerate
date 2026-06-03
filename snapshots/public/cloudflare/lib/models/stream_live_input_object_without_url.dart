@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLiveInputObjectWithoutUrl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_live_input_created.dart';import 'package:pub_cloudflare/models/stream_live_input_enabled.dart';import 'package:pub_cloudflare/models/stream_live_input_identifier.dart';import 'package:pub_cloudflare/models/stream_live_input_modified.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_deletion.dart';@immutable final class StreamLiveInputObjectWithoutUrl {const StreamLiveInputObjectWithoutUrl({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.uid, });
 

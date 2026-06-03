@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesLocationsResponse (inline: Result > Locations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultLocations {const ResultLocations({required this.alpha2, required this.continent, required this.latitude, required this.longitude, required this.name, required this.region, required this.subregion, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunnerLabel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of label. Read-only labels are applied automatically when the runner is configured.
 @immutable final class RunnerLabelType {const RunnerLabelType._(this.value);

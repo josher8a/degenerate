@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatSessionChatkitConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_session_automatic_thread_titling.dart';import 'package:pub_openai/models/chat_session_file_upload.dart';import 'package:pub_openai/models/chat_session_history.dart';/// ChatKit configuration for the session.
 @immutable final class ChatSessionChatkitConfiguration {const ChatSessionChatkitConfiguration({required this.automaticThreadTitling, required this.fileUpload, required this.history, });

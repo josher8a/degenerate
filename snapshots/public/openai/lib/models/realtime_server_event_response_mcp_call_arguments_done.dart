@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseMcpCallArgumentsDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when MCP tool call arguments are finalized during response generation.
 @immutable final class RealtimeServerEventResponseMcpCallArgumentsDone {const RealtimeServerEventResponseMcpCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.arguments, });

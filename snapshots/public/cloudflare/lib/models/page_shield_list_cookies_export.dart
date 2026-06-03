@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListCookiesExport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of cookies as a file, limited to 50000 entries.
 @immutable final class PageShieldListCookiesExport {const PageShieldListCookiesExport._(this.value);

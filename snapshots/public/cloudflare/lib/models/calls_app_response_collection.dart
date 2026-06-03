@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsAppResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_app.dart';import 'package:pub_cloudflare/models/calls_messages2.dart';@immutable final class CallsAppResponseCollection {const CallsAppResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

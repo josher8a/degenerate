@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerNotFound
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker does not exist.
 @immutable final class WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode._(this.value);

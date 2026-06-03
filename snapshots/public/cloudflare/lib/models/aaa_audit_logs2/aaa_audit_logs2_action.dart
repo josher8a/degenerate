@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs2 (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides information about the action performed.
 @immutable final class AaaAuditLogs2Action {const AaaAuditLogs2Action({this.description, this.result, this.time, this.type, });

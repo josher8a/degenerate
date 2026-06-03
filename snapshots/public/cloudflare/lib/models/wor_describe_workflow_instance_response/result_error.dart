@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultError {const ResultError({required this.message, required this.name, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitUuid
 
 /// UUID.
 extension type const MagicTransitUuid(String value) {

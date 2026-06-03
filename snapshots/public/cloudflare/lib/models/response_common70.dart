@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon70
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_schemas_messages2.dart';@immutable final class ResponseCommon70 {const ResponseCommon70({required this.errors, required this.messages, required this.success, });
 

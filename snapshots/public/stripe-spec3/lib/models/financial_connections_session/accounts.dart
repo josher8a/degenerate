@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FinancialConnectionsSession (inline: Accounts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// The accounts that were collected as part of this Session.
 @immutable final class Accounts {const Accounts({required this.data, required this.hasMore, required this.object, required this.url, });

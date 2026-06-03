@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudConnectorRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloud_connector_rule/cloud_connector_rule_parameters.dart';/// Cloud Provider type
 @immutable final class CloudConnectorProvider {const CloudConnectorProvider._(this.value);

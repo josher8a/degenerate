@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaginationMetadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaginationMetadata {const PaginationMetadata({this.firstPage, this.lastPage, this.nextPage, this.page, this.previousPage, this.total, this.totalPages, });
 

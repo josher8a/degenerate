@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListAttestationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_response/orgs_list_attestations_response_attestations.dart';@immutable final class OrgsListAttestationsResponse {const OrgsListAttestationsResponse({this.attestations});
 

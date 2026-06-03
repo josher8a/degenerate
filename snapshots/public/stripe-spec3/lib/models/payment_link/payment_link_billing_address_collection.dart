@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLink (inline: BillingAddressCollection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
 @immutable final class PaymentLinkBillingAddressCollection {const PaymentLinkBillingAddressCollection._(this.value);

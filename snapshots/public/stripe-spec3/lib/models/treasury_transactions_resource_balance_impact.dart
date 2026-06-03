@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryTransactionsResourceBalanceImpact
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Change to a FinancialAccount's balance
 @immutable final class TreasuryTransactionsResourceBalanceImpact {const TreasuryTransactionsResourceBalanceImpact({required this.cash, required this.inboundPending, required this.outboundPending, });

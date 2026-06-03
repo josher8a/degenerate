@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FinancialConnectionsAccountOwnership (inline: Owners)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account_owner.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// A paginated list of owners for this account.
 @immutable final class Owners {const Owners({required this.data, required this.hasMore, required this.object, required this.url, });

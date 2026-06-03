@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesSigningKeyIdentifier
 
 extension type const ImagesSigningKeyIdentifier(String value) {
 factory ImagesSigningKeyIdentifier.fromJson(String json) => ImagesSigningKeyIdentifier(json);

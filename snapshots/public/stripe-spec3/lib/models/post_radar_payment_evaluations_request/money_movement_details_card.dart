@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest (inline: PaymentDetails > MoneyMovementDetails > Card)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request/post_payment_records_report_payment_request_customer_presence.dart';@immutable final class CardPaymentType {const CardPaymentType._(this.value);
 

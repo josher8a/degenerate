@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerSearchScansResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_search_scans_response2/urlscanner_search_scans_response2_results.dart';@immutable final class UrlscannerSearchScansResponse2 {const UrlscannerSearchScansResponse2({required this.results});
 

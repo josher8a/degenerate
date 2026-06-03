@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryDeviceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device.
 @immutable final class ObservatoryDeviceType {const ObservatoryDeviceType._(this.value);

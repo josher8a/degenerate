@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerRestartRuleOnExitCodes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerRestartRuleOnExitCodes describes the condition for handling an exited container based on its exit codes.
 @immutable final class ContainerRestartRuleOnExitCodes {const ContainerRestartRuleOnExitCodes({required this.$operator, this.values, });

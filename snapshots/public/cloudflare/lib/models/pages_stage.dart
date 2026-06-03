@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesStage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current build stage.
 @immutable final class PagesStageName {const PagesStageName._(this.value);

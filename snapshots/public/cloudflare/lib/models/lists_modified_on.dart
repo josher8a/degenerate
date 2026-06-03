@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsModifiedOn
 
 /// The RFC 3339 timestamp of when the list was last modified.
 extension type const ListsModifiedOn(String value) {

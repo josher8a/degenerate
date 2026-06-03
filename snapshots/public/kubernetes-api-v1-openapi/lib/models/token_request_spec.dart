@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenRequestSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/bound_object_reference.dart';/// TokenRequestSpec contains client provided parameters of a token request.
 @immutable final class TokenRequestSpec {const TokenRequestSpec({this.audiences, this.boundObjectRef, this.expirationSeconds, });

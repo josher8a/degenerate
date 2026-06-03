@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDnsSettingsAccountPatch (inline: Nameservers > Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Nameserver type
 @immutable final class DnsSettingsDnsSettingsAccountPatchNameserversType {const DnsSettingsDnsSettingsAccountPatchNameserversType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaPerPage
 
 /// Number of items per page.
 extension type const AaaPerPage(double value) {

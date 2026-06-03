@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCustomerBalancePaymentMethodOptions (inline: FundingType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
 @immutable final class CheckoutCustomerBalancePaymentMethodOptionsFundingType {const CheckoutCustomerBalancePaymentMethodOptionsFundingType._(this.value);

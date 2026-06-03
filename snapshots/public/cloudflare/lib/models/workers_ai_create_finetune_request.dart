@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiCreateFinetuneRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiCreateFinetuneRequest {const WorkersAiCreateFinetuneRequest({required this.model, required this.name, this.description, this.public = false, });
 

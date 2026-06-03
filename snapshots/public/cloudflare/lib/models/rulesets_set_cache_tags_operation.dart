@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheTagsOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache tags.
 @immutable final class RulesetsSetCacheTagsOperation {const RulesetsSetCacheTagsOperation._(this.value);

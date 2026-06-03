@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteEventReferenceDeleteResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEventReferenceDeleteResponseResult {const DeleteEventReferenceDeleteResponseResult({required this.success});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > Dns > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsData {const DnsData({required this.address, required this.dnssecValid, required this.name, required this.type, });
 

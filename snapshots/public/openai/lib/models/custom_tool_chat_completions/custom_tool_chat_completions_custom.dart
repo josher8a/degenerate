@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomToolChatCompletions (inline: Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_tool_chat_completions/custom_format.dart';import 'package:pub_openai/models/grammar_format.dart';import 'package:pub_openai/models/text_format.dart';/// Properties of the custom tool.
 /// 

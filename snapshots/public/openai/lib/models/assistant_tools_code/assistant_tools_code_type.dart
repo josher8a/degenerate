@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantToolsCode (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `code_interpreter`
 @immutable final class AssistantToolsCodeType {const AssistantToolsCodeType._(this.value);

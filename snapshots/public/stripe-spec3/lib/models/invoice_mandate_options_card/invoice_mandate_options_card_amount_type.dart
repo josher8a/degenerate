@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceMandateOptionsCard (inline: AmountType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
 @immutable final class InvoiceMandateOptionsCardAmountType {const InvoiceMandateOptionsCardAmountType._(this.value);

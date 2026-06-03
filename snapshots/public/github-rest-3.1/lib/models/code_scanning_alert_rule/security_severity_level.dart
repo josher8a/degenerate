@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertRule (inline: SecuritySeverityLevel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The security severity of the alert.
 @immutable final class SecuritySeverityLevel {const SecuritySeverityLevel._(this.value);

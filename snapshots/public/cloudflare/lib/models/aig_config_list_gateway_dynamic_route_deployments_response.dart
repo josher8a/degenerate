@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListGatewayDynamicRouteDeploymentsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_deployments_response/aig_config_list_gateway_dynamic_route_deployments_response_data.dart';@immutable final class AigConfigListGatewayDynamicRouteDeploymentsResponse {const AigConfigListGatewayDynamicRouteDeploymentsResponse({required this.data, required this.success, });
 

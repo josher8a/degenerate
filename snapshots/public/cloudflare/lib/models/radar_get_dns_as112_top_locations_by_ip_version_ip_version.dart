@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TopLocationsByIpVersionIpVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// IP version.
 @immutable final class RadarGetDnsAs112TopLocationsByIpVersionIpVersion {const RadarGetDnsAs112TopLocationsByIpVersionIpVersion._(this.value);

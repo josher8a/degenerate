@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSearchResultItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';/// Code Search Result Item
 @immutable final class CodeSearchResultItem {const CodeSearchResultItem({required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.repository, required this.score, this.fileSize, this.language, this.lastModifiedAt, this.lineNumbers, this.textMatches, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceUpfront
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';/// 
 @immutable final class QuotesResourceUpfront {const QuotesResourceUpfront({required this.amountSubtotal, required this.amountTotal, required this.totalDetails, this.lineItems, });

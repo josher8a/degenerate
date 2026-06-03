@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosPrefixResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_messages2.dart';import 'package:pub_cloudflare/models/dos_prefix.dart';@immutable final class DosPrefixResponse {const DosPrefixResponse({required this.errors, required this.messages, required this.success, this.result, });
 

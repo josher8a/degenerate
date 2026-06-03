@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRpkiAspaChangesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/radar_get_bgp_rpki_aspa_changes_response_result.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponse {const RadarGetBgpRpkiAspaChangesResponse({required this.result, required this.success, });
 

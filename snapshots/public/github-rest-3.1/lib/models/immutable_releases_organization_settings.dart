@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImmutableReleasesOrganizationSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/immutable_releases_organization_settings/enforced_repositories.dart';/// Check immutable releases settings for an organization.
 @immutable final class ImmutableReleasesOrganizationSettings {const ImmutableReleasesOrganizationSettings({required this.enforcedRepositories, this.selectedRepositoriesUrl, });

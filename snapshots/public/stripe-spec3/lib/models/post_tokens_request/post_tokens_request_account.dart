@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTokensRequest (inline: Account)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_type.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_individual.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/account_company.dart';/// Information for the account this token represents.
 @immutable final class PostTokensRequestAccount {const PostTokensRequestAccount({this.businessType, this.company, this.individual, this.tosShownAndAccepted, });

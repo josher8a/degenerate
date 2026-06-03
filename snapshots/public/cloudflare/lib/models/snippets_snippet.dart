@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SnippetsSnippet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_snippet_name.dart';/// Define a snippet.
 @immutable final class SnippetsSnippet {const SnippetsSnippet({required this.createdOn, required this.snippetName, this.modifiedOn, });

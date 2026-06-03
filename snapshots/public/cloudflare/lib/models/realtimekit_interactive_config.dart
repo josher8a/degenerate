@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitInteractiveConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The metadata is presented in the form of ID3 tags.
 @immutable final class RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType._(this.value);

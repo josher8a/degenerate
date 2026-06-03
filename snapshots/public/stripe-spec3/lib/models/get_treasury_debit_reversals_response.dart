@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTreasuryDebitReversalsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal.dart';/// 
 @immutable final class GetTreasuryDebitReversalsResponse {const GetTreasuryDebitReversalsResponse({required this.data, required this.hasMore, required this.object, required this.url, });

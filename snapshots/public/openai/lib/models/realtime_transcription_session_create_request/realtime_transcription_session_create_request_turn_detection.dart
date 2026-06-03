@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeTranscriptionSessionCreateRequest (inline: TurnDetection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vad_config/vad_config_type.dart';/// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
 /// 

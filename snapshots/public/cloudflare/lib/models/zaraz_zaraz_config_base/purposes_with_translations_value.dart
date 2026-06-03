@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Consent > PurposesWithTranslations > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PurposesWithTranslationsValue {const PurposesWithTranslationsValue({required this.description, required this.name, required this.order, });
 

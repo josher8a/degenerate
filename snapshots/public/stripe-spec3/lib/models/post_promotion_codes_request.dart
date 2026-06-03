@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPromotionCodesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request/post_promotion_codes_request_restrictions.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request/promotion.dart';@immutable final class PostPromotionCodesRequest {const PostPromotionCodesRequest({required this.promotion, this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, this.restrictions, });
 

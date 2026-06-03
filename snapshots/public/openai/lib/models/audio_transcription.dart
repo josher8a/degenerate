@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AudioTranscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';@immutable final class AudioTranscription {const AudioTranscription({this.model, this.language, this.prompt, });
 

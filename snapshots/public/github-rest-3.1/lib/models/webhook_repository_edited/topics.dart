@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryEdited (inline: Changes > Topics)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Topics {const Topics({this.from});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ScopeSelector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/scoped_resource_selector_requirement.dart';/// A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.
 @immutable final class ScopeSelector {const ScopeSelector({this.matchExpressions});

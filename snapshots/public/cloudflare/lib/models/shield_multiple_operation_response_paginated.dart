@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldMultipleOperationResponsePaginated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation.dart';@immutable final class ShieldMultipleOperationResponsePaginated {const ShieldMultipleOperationResponsePaginated({required this.result});
 

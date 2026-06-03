@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByVerticalHttpMethod._(this.value);
 

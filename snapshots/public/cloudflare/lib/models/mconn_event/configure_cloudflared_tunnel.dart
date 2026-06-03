@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: ConfigureCloudflaredTunnel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configured Cloudflared tunnel
 @immutable final class ConfigureCloudflaredTunnelK {const ConfigureCloudflaredTunnelK._(this.value);

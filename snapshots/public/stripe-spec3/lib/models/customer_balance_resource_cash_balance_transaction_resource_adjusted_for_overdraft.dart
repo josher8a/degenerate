@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft/linked_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {const CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft({required this.balanceTransaction, required this.linkedTransaction, });

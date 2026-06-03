@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileSearchToolCall
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';/// The status of the file search tool call. One of `in_progress`,
 /// `searching`, `incomplete` or `failed`,

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingUpdateShareResourceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingUpdateShareResourceRequest {const ResourceSharingUpdateShareResourceRequest({required this.meta});
 

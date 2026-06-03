@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionTotalDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_total_details_resource_breakdown.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionTotalDetails {const PaymentPagesCheckoutSessionTotalDetails({required this.amountDiscount, required this.amountTax, this.amountShipping, this.breakdown, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsInternalDnsBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for this internal zone.
 @immutable final class DnsSettingsInternalDnsBase {const DnsSettingsInternalDnsBase({this.referenceZoneId});

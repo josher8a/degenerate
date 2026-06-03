@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest (inline: CountryOptions > Us > StateSalesTax)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/elections.dart';@immutable final class StateSalesTax {const StateSalesTax({required this.elections});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AsnIntelligenceGetAsnSubnetsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_asn.dart';import 'package:pub_cloudflare/models/intel_count.dart';import 'package:pub_cloudflare/models/intel_page.dart';import 'package:pub_cloudflare/models/intel_per_page.dart';@immutable final class AsnIntelligenceGetAsnSubnetsResponse {const AsnIntelligenceGetAsnSubnetsResponse({this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingFilterOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filter options for a particular resource type (pool or origin). Use null to reset.
 @immutable final class LoadBalancingFilterOptions {const LoadBalancingFilterOptions({this.disable = false, this.healthy, });

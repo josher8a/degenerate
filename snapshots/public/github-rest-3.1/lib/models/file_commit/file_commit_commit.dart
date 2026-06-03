@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCommit (inline: Commit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_search_result_item/commit_search_result_item_parents.dart';import 'package:pub_github_rest_3_1/models/file_commit/commit_tree.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_author.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_committer.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_verification.dart';@immutable final class FileCommitCommit {const FileCommitCommit({this.sha, this.nodeId, this.url, this.htmlUrl, this.author, this.committer, this.message, this.tree, this.parents, this.verification, });
 

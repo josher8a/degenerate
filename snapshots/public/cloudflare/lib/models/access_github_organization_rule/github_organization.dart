@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGithubOrganizationRule (inline: GithubOrganization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GithubOrganization {const GithubOrganization({required this.identityProviderId, required this.name, this.team, });
 

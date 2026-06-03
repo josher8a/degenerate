@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelRouteCreateATunnelRouteRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id_computed_optional.dart';@immutable final class TunnelRouteCreateATunnelRouteRequest {const TunnelRouteCreateATunnelRouteRequest({required this.network, required this.tunnelId, this.comment, this.virtualNetworkId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsBuildLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_cursor.dart';@immutable final class BuildsBuildLogsResponse {const BuildsBuildLogsResponse({this.cursor, this.lines, this.truncated, });
 

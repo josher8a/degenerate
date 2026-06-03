@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchAllowPoliciesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';@immutable final class EmailSecurityBatchAllowPoliciesResponseResult {const EmailSecurityBatchAllowPoliciesResponseResult({required this.deletes, required this.patches, required this.posts, required this.puts, });
 

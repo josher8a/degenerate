@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleClassroomRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub repository view for Classroom
 @immutable final class SimpleClassroomRepository {const SimpleClassroomRepository({required this.id, required this.fullName, required this.htmlUrl, required this.nodeId, required this.private, required this.defaultBranch, });

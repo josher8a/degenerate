@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanBulkResponse400 (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerCreateScanBulkResponse400Errors {const UrlscannerCreateScanBulkResponse400Errors({required this.detail, required this.status, required this.title, });
 

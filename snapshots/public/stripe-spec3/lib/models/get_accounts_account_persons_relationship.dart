@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAccountsAccountPersonsRelationship
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountPersonsRelationship {const GetAccountsAccountPersonsRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.representative, });
 

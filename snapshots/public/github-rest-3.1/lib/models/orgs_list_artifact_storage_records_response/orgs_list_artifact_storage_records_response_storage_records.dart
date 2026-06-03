@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListArtifactStorageRecordsResponse (inline: StorageRecords)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListArtifactStorageRecordsResponseStorageRecords {const OrgsListArtifactStorageRecordsResponseStorageRecords({this.id, this.name, this.digest, this.artifactUrl, this.registryUrl, this.repository, this.status, this.createdAt, this.updatedAt, });
 

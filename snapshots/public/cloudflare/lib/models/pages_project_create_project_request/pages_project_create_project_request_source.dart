@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesProjectCreateProjectRequest (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/source_config.dart';import 'package:pub_cloudflare/models/pages_source/pages_source_type.dart';/// Configs for the project source control.
 @immutable final class PagesProjectCreateProjectRequestSource {const PagesProjectCreateProjectRequestSource({required this.config, required this.type, });

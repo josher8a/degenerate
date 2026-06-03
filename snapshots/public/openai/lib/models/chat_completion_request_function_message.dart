@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestFunctionMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionRequestFunctionMessage {const ChatCompletionRequestFunctionMessage({required this.role, required this.content, required this.name, });
 

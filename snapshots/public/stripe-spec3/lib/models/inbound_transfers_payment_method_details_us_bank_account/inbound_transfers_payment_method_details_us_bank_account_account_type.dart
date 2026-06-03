@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InboundTransfersPaymentMethodDetailsUsBankAccount (inline: AccountType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Account type: checkings or savings. Defaults to checking if omitted.
 @immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardAuthorizationControls (inline: AllowedCategories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowedCategories {const AllowedCategories._(this.value);
 

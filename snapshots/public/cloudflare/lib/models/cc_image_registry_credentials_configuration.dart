@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcImageRegistryCredentialsConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies what permissions the credentials will have.
 @immutable final class CcImageRegistryPermissions {const CcImageRegistryPermissions._(this.value);

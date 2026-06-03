@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodIdeal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/bic.dart';import 'package:pub_stripe_spec3/models/payment_method_details_ideal/payment_method_details_ideal_bank.dart';/// 
 @immutable final class PaymentMethodIdeal {const PaymentMethodIdeal({this.bank, this.bic, });

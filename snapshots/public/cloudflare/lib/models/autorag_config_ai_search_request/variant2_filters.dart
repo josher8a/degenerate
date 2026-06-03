@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigAiSearchRequest (inline: Filters > Variant2 > Filters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/variant1_type.dart';@immutable final class Variant2Filters {const Variant2Filters({required this.key, required this.type, required this.value, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnReadControllerConnectorTokenResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnReadControllerConnectorTokenResponse {const MconnReadControllerConnectorTokenResponse({this.result});
 

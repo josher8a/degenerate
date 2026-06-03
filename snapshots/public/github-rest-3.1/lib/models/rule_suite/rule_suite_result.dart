@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuite (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The result of the rule evaluations for rules with the `active` enforcement status.
 @immutable final class RuleSuiteResult {const RuleSuiteResult._(this.value);

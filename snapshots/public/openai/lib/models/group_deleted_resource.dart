@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GroupDeletedResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.deleted`.
 @immutable final class GroupDeletedResourceObject {const GroupDeletedResourceObject._(this.value);

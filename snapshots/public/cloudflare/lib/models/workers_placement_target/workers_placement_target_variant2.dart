@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementTarget (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementTargetVariant2 {const WorkersPlacementTargetVariant2({required this.hostname});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsTtl (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsTtlVariant2 {const DnsRecordsTtlVariant2._(this.value);
 

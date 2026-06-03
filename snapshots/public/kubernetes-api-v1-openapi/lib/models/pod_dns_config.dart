@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodDnsConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_dns_config_option.dart';/// PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
 @immutable final class PodDnsConfig {const PodDnsConfig({this.nameservers, this.options, this.searches, });

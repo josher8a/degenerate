@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckImmutableReleases
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check immutable releases
 @immutable final class CheckImmutableReleases {const CheckImmutableReleases({required this.enabled, required this.enforcedByOwner, });

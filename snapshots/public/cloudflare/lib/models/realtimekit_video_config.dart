@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitVideoConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_video_config/watermark.dart';/// Codec using which the recording will be encoded.
 @immutable final class RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec._(this.value);

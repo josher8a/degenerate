@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseOutputItemDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_item.dart';/// Emitted when an output item is marked done.
 @immutable final class ResponseOutputItemDoneEvent {const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });

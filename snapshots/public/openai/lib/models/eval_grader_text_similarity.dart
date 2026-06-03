@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderTextSimilarity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_text_similarity/eval_grader_text_similarity_type.dart';import 'package:pub_openai/models/eval_grader_text_similarity/evaluation_metric.dart';@immutable final class EvalGraderTextSimilarity {const EvalGraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, required this.passThreshold, this.type = EvalGraderTextSimilarityType.textSimilarity, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardShippingAddressValidation (inline: Mode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The address validation capabilities to use.
 @immutable final class IssuingCardShippingAddressValidationMode {const IssuingCardShippingAddressValidationMode._(this.value);

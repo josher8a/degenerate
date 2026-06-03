@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListIpProfilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile.dart';import 'package:pub_cloudflare/models/teams_devices_pagination_info.dart';@immutable final class ListIpProfilesResponse {const ListIpProfilesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

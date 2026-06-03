@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingTopDomainsRankingType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranking type.
 @immutable final class RadarGetRankingTopDomainsRankingType {const RadarGetRankingTopDomainsRankingType._(this.value);

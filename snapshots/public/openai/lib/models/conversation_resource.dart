@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConversationResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `conversation`.
 @immutable final class ConversationResourceObject {const ConversationResourceObject._(this.value);

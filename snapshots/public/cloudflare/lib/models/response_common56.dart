@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon56
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_messages2.dart';@immutable final class ResponseCommon56 {const ResponseCommon56({required this.errors, required this.messages, required this.success, });
 

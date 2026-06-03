@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfDeepgramAura1Request (inline: Encoding)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the output audio.
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding._(this.value);

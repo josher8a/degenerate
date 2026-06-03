@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Snapshot (inline: Job)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SnapshotJob {const SnapshotJob({required this.id, required this.correlator, this.htmlUrl, });
 

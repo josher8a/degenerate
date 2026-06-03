@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransferAbaRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// ABA Records contain U.S. bank account details per the ABA format.
 @immutable final class FundingInstructionsBankTransferAbaRecord {const FundingInstructionsBankTransferAbaRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.accountType, required this.bankAddress, required this.bankName, required this.routingNumber, });

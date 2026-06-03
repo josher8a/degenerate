@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Team (inline: Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamPermissions {const TeamPermissions({required this.pull, required this.triage, required this.push, required this.maintain, required this.admin, });
 

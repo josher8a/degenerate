@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCreateWorkflowDispatchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateWorkflowDispatchRequest {const ActionsCreateWorkflowDispatchRequest({required this.ref, this.inputs, this.returnRunDetails, });
 

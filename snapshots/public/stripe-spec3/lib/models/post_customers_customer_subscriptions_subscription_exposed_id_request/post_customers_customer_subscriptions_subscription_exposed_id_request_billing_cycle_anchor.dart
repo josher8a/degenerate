@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequest (inline: BillingCycleAnchor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingCycleAnchor._(this.value);
 

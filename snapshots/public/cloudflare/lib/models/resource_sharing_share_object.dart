@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingShareObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_created.dart';import 'package:pub_cloudflare/models/resource_sharing_modified.dart';import 'package:pub_cloudflare/models/resource_sharing_organization_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_kind.dart';import 'package:pub_cloudflare/models/resource_sharing_share_name.dart';import 'package:pub_cloudflare/models/resource_sharing_share_resource_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_status.dart';import 'package:pub_cloudflare/models/resource_sharing_share_target_type.dart';/// The display name of an account.
 extension type const ResourceSharingAccountName(String value) {

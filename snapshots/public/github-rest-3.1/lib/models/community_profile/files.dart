@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CommunityProfile (inline: Files)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_of_conduct_simple.dart';import 'package:pub_github_rest_3_1/models/community_health_file.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';@immutable final class Files {const Files({required this.codeOfConduct, required this.codeOfConductFile, required this.license, required this.contributing, required this.readme, required this.issueTemplate, required this.pullRequestTemplate, });
 

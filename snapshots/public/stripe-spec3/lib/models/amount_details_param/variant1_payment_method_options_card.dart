@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AmountDetailsParam (inline: LineItems > Variant1 > PaymentMethodOptions > Card)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1PaymentMethodOptionsCard {const Variant1PaymentMethodOptionsCard({this.commodityCode});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksChanges8 (inline: Tier > From)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
 @immutable final class TierFrom {const TierFrom({required this.createdAt, required this.description, required this.isOneTime, required this.monthlyPriceInCents, required this.monthlyPriceInDollars, required this.name, required this.nodeId, this.isCustomAmmount, this.isCustomAmount, });

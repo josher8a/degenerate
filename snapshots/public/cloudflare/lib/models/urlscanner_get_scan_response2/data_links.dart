@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataLinks {const DataLinks({required this.href, required this.text, });
 

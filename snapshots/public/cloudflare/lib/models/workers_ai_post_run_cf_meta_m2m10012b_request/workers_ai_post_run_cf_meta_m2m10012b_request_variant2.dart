@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfMetaM2m10012bRequest (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_request/workers_ai_post_run_cf_meta_m2m10012b_request_variant2_requests.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2 {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2({required this.requests});
 

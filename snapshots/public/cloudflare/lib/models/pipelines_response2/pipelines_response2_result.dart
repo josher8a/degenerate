@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PipelinesResponse2 (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PipelinesResponse2Result {const PipelinesResponse2Result({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, });
 

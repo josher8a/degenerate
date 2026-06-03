@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsItemRedirect
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode._(this.value);
 

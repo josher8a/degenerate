@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerCashBalanceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_cash_balance_request/post_customers_customer_cash_balance_request_settings.dart';@immutable final class PostCustomersCustomerCashBalanceRequest {const PostCustomersCustomerCashBalanceRequest({this.expand, this.settings, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRuleAction (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of supported action.
 @immutable final class EmailRuleActionType {const EmailRuleActionType._(this.value);

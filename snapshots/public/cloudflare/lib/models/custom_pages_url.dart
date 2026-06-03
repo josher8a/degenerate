@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPagesUrl
 
 /// The URL associated with the custom page.
 extension type CustomPagesUrl(Uri value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsHostedRunnerCustomImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of a custom runner image
 @immutable final class ActionsHostedRunnerCustomImage {const ActionsHostedRunnerCustomImage({required this.id, required this.platform, required this.totalVersionsSize, required this.name, required this.source, required this.versionsCount, required this.latestVersion, required this.state, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: Redirect)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
 @immutable final class Redirect {const Redirect({required this.targetUri, this.includeContext, this.preservePathAndQuery, });

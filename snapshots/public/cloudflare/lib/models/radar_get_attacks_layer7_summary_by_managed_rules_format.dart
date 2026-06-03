@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryByManagedRulesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAttacksLayer7SummaryByManagedRulesFormat {const RadarGetAttacksLayer7SummaryByManagedRulesFormat._(this.value);

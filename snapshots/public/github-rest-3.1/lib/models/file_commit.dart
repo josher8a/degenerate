@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCommit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_content.dart';/// File Commit
 @immutable final class FileCommit {const FileCommit({required this.content, required this.commit, });

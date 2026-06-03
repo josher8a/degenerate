@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpUpdateEmailRulePriorities
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to update multiple email rule priorities as an atomic action,
 /// to support patterns such as swapping the priorities of two email rules.

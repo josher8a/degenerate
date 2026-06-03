@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransferSortCodeRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// Sort Code Records contain U.K. bank account details per the sort code format.
 @immutable final class FundingInstructionsBankTransferSortCodeRecord {const FundingInstructionsBankTransferSortCodeRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.bankAddress, required this.sortCode, });

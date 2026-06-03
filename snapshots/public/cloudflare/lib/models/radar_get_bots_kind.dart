@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBotsKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot kind.
 @immutable final class RadarGetBotsKind {const RadarGetBotsKind._(this.value);

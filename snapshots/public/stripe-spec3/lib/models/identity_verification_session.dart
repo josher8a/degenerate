@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IdentityVerificationSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_provided_details.dart';import 'package:pub_stripe_spec3/models/gelato_related_person.dart';import 'package:pub_stripe_spec3/models/gelato_session_last_error.dart';import 'package:pub_stripe_spec3/models/gelato_verification_session_options.dart';import 'package:pub_stripe_spec3/models/gelato_verified_outputs.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';import 'package:pub_stripe_spec3/models/identity_verification_session/last_verification_report.dart';import 'package:pub_stripe_spec3/models/verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);

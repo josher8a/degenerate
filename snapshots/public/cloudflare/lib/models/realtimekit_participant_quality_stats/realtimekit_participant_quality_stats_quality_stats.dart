@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantQualityStats (inline: QualityStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant_quality_stats/audio_stats.dart';import 'package:pub_cloudflare/models/realtimekit_participant_quality_stats/video_stats.dart';@immutable final class RealtimekitParticipantQualityStatsQualityStats {const RealtimekitParticipantQualityStatsQualityStats({this.audioBandwidth, this.audioPacketLoss, this.audioStats, this.averageQuality, this.end, this.peerId, this.start, this.videoBandwidth, this.videoPacketLoss, this.videoStats, });
 

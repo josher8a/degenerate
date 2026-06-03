@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryByIndustryIpVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByIndustryIpVersion {const RadarGetAttacksLayer7SummaryByIndustryIpVersion._(this.value);
 

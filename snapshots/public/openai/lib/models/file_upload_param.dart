@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileUploadParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether users can upload files.
 @immutable final class FileUploadParam {const FileUploadParam({this.enabled, this.maxFileSize, this.maxFiles, });

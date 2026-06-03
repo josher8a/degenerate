@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallRulesDeleteFirewallRulesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_firewall_rules_components_schemas_id.dart';@immutable final class FirewallRulesDeleteFirewallRulesRequest {const FirewallRulesDeleteFirewallRulesRequest({required this.id});
 

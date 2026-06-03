@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersCreateAssetsUploadSessionObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_manifest_value.dart';@immutable final class WorkersCreateAssetsUploadSessionObject {const WorkersCreateAssetsUploadSessionObject({required this.manifest});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustListsCreateZeroTrustListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_items_input2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_type.dart';@immutable final class ZeroTrustListsCreateZeroTrustListRequest {const ZeroTrustListsCreateZeroTrustListRequest({required this.name, required this.type, this.description, this.items, });
 

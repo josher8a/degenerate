@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config.dart';import 'package:pub_cloudflare/models/tunnel_identifier.dart';import 'package:pub_cloudflare/models/tunnel_schemas_tunnel_id.dart';/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
 @immutable final class TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc._(this.value);

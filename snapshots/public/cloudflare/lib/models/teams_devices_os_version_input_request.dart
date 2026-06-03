@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesOsVersionInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';import 'package:pub_cloudflare/models/teams_devices_domain_joined_input_request/teams_devices_domain_joined_input_request_operating_system.dart';@immutable final class TeamsDevicesOsVersionInputRequest {const TeamsDevicesOsVersionInputRequest({required this.operatingSystem, required this.$operator, required this.version, this.osDistroName, this.osDistroRevision, this.osVersionExtra, });
 

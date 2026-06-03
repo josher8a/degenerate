@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesRealtimeResponse (inline: Result > Meta > Collectors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Collectors {const Collectors({required this.collector, required this.latestRealtimeTs, required this.latestRibTs, required this.latestUpdatesTs, required this.peersCount, required this.peersV4Count, required this.peersV6Count, });
 

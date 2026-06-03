@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddDynamicHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_expression.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_operation.dart';/// A header with a dynamic value to add.
 @immutable final class AddDynamicHeader {const AddDynamicHeader({required this.expression, required this.operation, });

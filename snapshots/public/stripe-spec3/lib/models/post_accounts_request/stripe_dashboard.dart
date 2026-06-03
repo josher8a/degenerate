@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsRequest (inline: Controller > StripeDashboard)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_stripe_dashboard/account_unification_account_controller_stripe_dashboard_type.dart';@immutable final class StripeDashboard {const StripeDashboard({this.type});
 

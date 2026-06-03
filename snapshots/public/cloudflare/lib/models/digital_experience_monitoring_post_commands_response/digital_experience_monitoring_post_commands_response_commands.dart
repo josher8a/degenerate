@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringPostCommandsResponse (inline: Commands)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the command
 @immutable final class CommandsStatus {const CommandsStatus._(this.value);

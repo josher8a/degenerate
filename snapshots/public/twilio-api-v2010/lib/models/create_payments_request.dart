@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreatePaymentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
 @immutable final class PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod._(this.value);

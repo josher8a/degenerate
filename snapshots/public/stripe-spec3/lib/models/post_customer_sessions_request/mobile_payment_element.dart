@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components > MobilePaymentElement)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/mobile_payment_element_features.dart';@immutable final class MobilePaymentElement {const MobilePaymentElement({required this.enabled, this.features, });
 

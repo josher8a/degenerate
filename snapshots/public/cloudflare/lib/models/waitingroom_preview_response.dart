@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomPreviewResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_preview_response/waitingroom_preview_response_result.dart';@immutable final class WaitingroomPreviewResponse {const WaitingroomPreviewResponse({this.result});
 

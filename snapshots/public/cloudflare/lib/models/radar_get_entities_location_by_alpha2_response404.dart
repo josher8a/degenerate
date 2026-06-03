@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesLocationByAlpha2Response404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesLocationByAlpha2Response404 {const RadarGetEntitiesLocationByAlpha2Response404({required this.error});
 

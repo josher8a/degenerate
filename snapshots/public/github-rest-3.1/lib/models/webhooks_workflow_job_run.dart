@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksWorkflowJobRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksWorkflowJobRun {const WebhooksWorkflowJobRun({required this.conclusion, required this.createdAt, required this.environment, required this.htmlUrl, required this.id, required this.name, required this.status, required this.updatedAt, });
 

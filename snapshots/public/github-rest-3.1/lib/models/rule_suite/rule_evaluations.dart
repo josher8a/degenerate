@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuite (inline: RuleEvaluations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite/rule_source.dart';/// The enforcement level of this rule source.
 @immutable final class RuleEvaluationsEnforcement {const RuleEvaluationsEnforcement._(this.value);

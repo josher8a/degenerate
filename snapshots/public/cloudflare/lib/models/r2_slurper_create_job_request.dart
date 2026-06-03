@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperCreateJobRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_gcs_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_target_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_source_job_schema.dart';@immutable final class R2SlurperCreateJobRequest {const R2SlurperCreateJobRequest({this.overwrite = true, this.source, this.target, });
 

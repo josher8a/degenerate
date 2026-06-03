@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ToolChoice > Variant1 > Function > Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1FunctionFunction {const Variant1FunctionFunction({required this.name});
 

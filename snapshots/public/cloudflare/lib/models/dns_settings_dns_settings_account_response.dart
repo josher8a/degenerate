@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDnsSettingsAccountResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_account_response/dns_settings_dns_settings_account_response_nameservers.dart';@immutable final class DnsSettingsDnsSettingsAccountResponse {const DnsSettingsDnsSettingsAccountResponse({required this.nameservers});
 

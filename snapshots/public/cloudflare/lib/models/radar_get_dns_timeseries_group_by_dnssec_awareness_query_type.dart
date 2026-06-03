@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType {const RadarGetDnsTimeseriesGroupByDnssecAwarenessQueryType._(this.value);
 

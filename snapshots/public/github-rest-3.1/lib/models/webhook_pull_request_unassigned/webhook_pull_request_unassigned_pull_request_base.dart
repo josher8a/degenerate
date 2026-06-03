@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestUnassigned (inline: PullRequest > Base)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_base_repo.dart';@immutable final class WebhookPullRequestUnassignedPullRequestBase {const WebhookPullRequestUnassignedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 

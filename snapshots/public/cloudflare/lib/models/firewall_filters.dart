@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFilters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';/// The target to search in existing rules.
 @immutable final class ConfigurationTarget {const ConfigurationTarget._(this.value);

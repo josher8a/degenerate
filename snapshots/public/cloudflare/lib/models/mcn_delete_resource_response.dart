@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnDeleteResourceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_deleted_resource.dart';@immutable final class McnDeleteResourceResponse {const McnDeleteResourceResponse({this.result});
 

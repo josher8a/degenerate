@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningNonProviderPatterns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning non-provider patterns
 @immutable final class CodeSecurityConfigurationSecretScanningNonProviderPatterns {const CodeSecurityConfigurationSecretScanningNonProviderPatterns._(this.value);

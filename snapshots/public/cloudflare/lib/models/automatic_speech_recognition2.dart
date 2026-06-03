@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutomaticSpeechRecognition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/automatic_speech_recognition/words.dart';@immutable final class AutomaticSpeechRecognition2 {const AutomaticSpeechRecognition2({required this.text, this.vtt, this.wordCount, this.words, });
 

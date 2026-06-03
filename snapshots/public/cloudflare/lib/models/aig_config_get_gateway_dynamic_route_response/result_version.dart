@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigGetGatewayDynamicRouteResponse (inline: Result > Version)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/active.dart';@immutable final class ResultVersion {const ResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LifecycleRule (inline: AbortMultipartUploadsTransition)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition.dart';/// Transition to abort ongoing multipart uploads.
 @immutable final class AbortMultipartUploadsTransition {const AbortMultipartUploadsTransition({this.condition});

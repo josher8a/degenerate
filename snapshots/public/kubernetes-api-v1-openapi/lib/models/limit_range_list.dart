@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LimitRangeList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/limit_range.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';/// LimitRangeList is a list of LimitRange items.
 @immutable final class LimitRangeList {const LimitRangeList({required this.items, this.apiVersion, this.kind, this.metadata, });

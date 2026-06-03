@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOnePriorityQuotaResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_messages2.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_quota.dart';@immutable final class CloudforceOnePriorityQuotaResponse {const CloudforceOnePriorityQuotaResponse({required this.errors, required this.messages, required this.success, this.result, });
 

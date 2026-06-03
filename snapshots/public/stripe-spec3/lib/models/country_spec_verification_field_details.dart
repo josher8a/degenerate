@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CountrySpecVerificationFieldDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class CountrySpecVerificationFieldDetails {const CountrySpecVerificationFieldDetails({required this.additional, required this.minimum, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure67
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_messages2.dart';@immutable final class ResponseCommonFailure67 {const ResponseCommonFailure67({required this.errors, required this.messages, required this.result, required this.success, });
 

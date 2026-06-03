@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ChatTemplateKwargs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatTemplateKwargs {const ChatTemplateKwargs({this.clearThinking = false, this.enableThinking = true, });
 

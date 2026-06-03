@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDirectUploadRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_creator.dart';import 'package:pub_cloudflare/models/stream_max_duration_seconds.dart';import 'package:pub_cloudflare/models/stream_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/stream_scheduled_deletion.dart';import 'package:pub_cloudflare/models/stream_thumbnail_timestamp_pct.dart';import 'package:pub_cloudflare/models/stream_watermark_at_upload.dart';@immutable final class StreamDirectUploadRequest {const StreamDirectUploadRequest({required this.maxDurationSeconds, this.allowedOrigins, this.creator, this.expiry, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.watermark, });
 

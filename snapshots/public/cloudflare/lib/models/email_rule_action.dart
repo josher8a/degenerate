@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRuleAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_action/email_rule_action_type.dart';/// Actions pattern.
 @immutable final class EmailRuleAction {const EmailRuleAction({required this.type, this.value, });

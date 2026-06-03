@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnDeletedProvider
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_provider_id.dart';@immutable final class McnDeletedProvider {const McnDeletedProvider({required this.id});
 

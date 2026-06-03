@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalStoredCompletionsDataSourceConfig (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `stored_completions`.
 @immutable final class CreateEvalStoredCompletionsDataSourceConfigType {const CreateEvalStoredCompletionsDataSourceConfigType._(this.value);

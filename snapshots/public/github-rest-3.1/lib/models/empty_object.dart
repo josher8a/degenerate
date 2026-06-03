@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmptyObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object without any properties.
 @immutable final class EmptyObject {const EmptyObject();

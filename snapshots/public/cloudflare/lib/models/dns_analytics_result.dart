@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_data2.dart';import 'package:pub_cloudflare/models/dns_analytics_query.dart';@immutable final class DnsAnalyticsResult {const DnsAnalyticsResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
 

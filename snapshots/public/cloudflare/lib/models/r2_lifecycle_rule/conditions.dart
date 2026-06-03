@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LifecycleRule (inline: Conditions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Conditions that apply to all transitions of this rule.
 @immutable final class Conditions {const Conditions({required this.prefix});

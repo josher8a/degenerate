@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToolChoiceTypes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of hosted tool the model should to use. Learn more about
 /// [built-in tools](/docs/guides/tools).

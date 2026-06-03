@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotListOrgSecretsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_dependabot_secret.dart';@immutable final class DependabotListOrgSecretsResponse {const DependabotListOrgSecretsResponse({required this.totalCount, required this.secrets, });
 

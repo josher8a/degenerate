@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueCommentEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';@immutable final class IssueCommentEvent {const IssueCommentEvent({required this.action, required this.issue, required this.comment, });
 

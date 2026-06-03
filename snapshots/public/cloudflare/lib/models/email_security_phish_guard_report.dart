@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityPhishGuardReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report/email_security_phish_guard_report_fields.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report_tag.dart';@immutable final class EmailSecurityPhishGuardReport {const EmailSecurityPhishGuardReport({required this.content, required this.createdAt, required this.disposition, required this.fields, required this.id, required this.priority, required this.title, required this.ts, required this.updatedAt, this.tags, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceSettingsResourcePayouts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payouts/balance_settings_resource_payouts_status.dart';/// 
 @immutable final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts({required this.status, this.minimumBalanceByCurrency, this.schedule, this.statementDescriptor, });

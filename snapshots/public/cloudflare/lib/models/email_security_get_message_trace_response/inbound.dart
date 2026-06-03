@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityGetMessageTraceResponse (inline: Result > Inbound)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_trace_line.dart';@immutable final class Inbound {const Inbound({this.lines, this.pending, });
 

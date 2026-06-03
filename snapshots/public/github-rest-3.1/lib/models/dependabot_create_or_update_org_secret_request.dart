@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotCreateOrUpdateOrgSecretRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class DependabotCreateOrUpdateOrgSecretRequest {const DependabotCreateOrUpdateOrgSecretRequest({required this.visibility, this.encryptedValue, this.keyId, this.selectedRepositoryIds, });
 

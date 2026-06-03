@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalOnboardingLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link_link_options.dart';@immutable final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
 

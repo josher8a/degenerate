@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryOutboundPaymentsResourceReturnedStatus (inline: Code)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for the return.
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateVectorStoreFileAttributesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateVectorStoreFileAttributesRequest {const UpdateVectorStoreFileAttributesRequest({required this.attributes});
 

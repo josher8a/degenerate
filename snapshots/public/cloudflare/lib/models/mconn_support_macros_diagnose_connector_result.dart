@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSupportMacrosDiagnoseConnectorResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_connector.dart';import 'package:pub_cloudflare/models/mconn_support_device.dart';import 'package:pub_cloudflare/models/mconn_support_site.dart';@immutable final class MconnSupportMacrosDiagnoseConnectorResult {const MconnSupportMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
 

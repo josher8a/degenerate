@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MigrationsStartForOrgRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request/migrations_start_for_authenticated_user_request_exclude.dart';@immutable final class MigrationsStartForOrgRequest {const MigrationsStartForOrgRequest({required this.repositories, this.lockRepositories = false, this.excludeMetadata = false, this.excludeGitData = false, this.excludeAttachments = false, this.excludeReleases = false, this.excludeOwnerProjects = false, this.orgMetadataOnly = false, this.exclude, });
 

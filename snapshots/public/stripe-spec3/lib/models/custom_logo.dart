@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomLogo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class CustomLogo {const CustomLogo({required this.url, this.contentType, });

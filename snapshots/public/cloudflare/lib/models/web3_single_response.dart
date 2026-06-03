@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3SingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_web3_hostname.dart';@immutable final class Web3SingleResponse {const Web3SingleResponse({this.result});
 

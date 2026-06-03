@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: Paynow)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// PayNow is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Check this [page](https://docs.stripe.com/payments/paynow) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestPaynow {const PostPaymentMethodConfigurationsConfigurationRequestPaynow({this.displayPreference});

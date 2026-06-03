@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0 {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0({required this.name, required this.value, });
 

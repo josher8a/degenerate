@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsHostedRunnerCuratedImage (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image provider.
 @immutable final class ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource._(this.value);

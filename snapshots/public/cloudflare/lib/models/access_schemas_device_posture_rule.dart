@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasDevicePostureRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_device_posture_check.dart';@immutable final class AccessSchemasDevicePostureRule {const AccessSchemasDevicePostureRule({this.check, this.data, this.description, this.error, this.id, this.ruleName, this.success, this.timestamp, this.type, });
 

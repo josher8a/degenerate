@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookBranchProtectionRuleEdited (inline: Changes > AuthorizedDismissalActorsOnly)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorizedDismissalActorsOnly {const AuthorizedDismissalActorsOnly({required this.from});
 

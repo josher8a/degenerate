@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventInputAudioBufferSpeechStarted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_started`.
 @immutable final class RealtimeBetaServerEventInputAudioBufferSpeechStartedType {const RealtimeBetaServerEventInputAudioBufferSpeechStartedType._(this.value);

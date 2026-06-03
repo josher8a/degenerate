@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsLogCustomFieldResponseFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The transformed response field to log.
 @immutable final class RulesetsLogCustomFieldResponseFields2 {const RulesetsLogCustomFieldResponseFields2({required this.name, this.preserveDuplicates = false, });

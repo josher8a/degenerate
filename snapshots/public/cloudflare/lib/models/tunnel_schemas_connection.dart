@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelSchemasConnection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_client_id.dart';import 'package:pub_cloudflare/models/tunnel_colo_name.dart';import 'package:pub_cloudflare/models/tunnel_connection_id.dart';import 'package:pub_cloudflare/models/tunnel_ip.dart';import 'package:pub_cloudflare/models/tunnel_is_pending_reconnect.dart';import 'package:pub_cloudflare/models/tunnel_version.dart';@immutable final class TunnelSchemasConnection {const TunnelSchemasConnection({this.clientId, this.clientVersion, this.coloName, this.id, this.isPendingReconnect, this.openedAt, this.originIp, this.uuid, });
 

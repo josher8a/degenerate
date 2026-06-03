@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventListGetSearch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_list_get_search/get_event_list_get_search_value.dart';@immutable final class GetEventListGetSearchOp {const GetEventListGetSearchOp._(this.value);
 

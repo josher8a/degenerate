@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCallRecordingRequest (inline: RecordingStatusCallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `recording_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class RecordingStatusCallbackMethod {const RecordingStatusCallbackMethod._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRef0
 
 /// The [`git ref`](https://docs.github.com/rest/git/refs#get-a-reference) resource.
 extension type const WebhooksRef0(String value) {

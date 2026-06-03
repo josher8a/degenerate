@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedIssuingCardsListFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedIssuingCardsListFeatures {const ConnectEmbeddedIssuingCardsListFeatures({required this.cardManagement, required this.cardSpendDisputeManagement, required this.cardholderManagement, required this.disableStripeUserAuthentication, required this.spendControlManagement, });

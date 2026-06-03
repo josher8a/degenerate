@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Individual > Dob)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IndividualDob {const IndividualDob({required this.day, required this.month, required this.year, });
 

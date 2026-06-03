@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams > WebCrawler)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/crawl_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/parse_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/store_options.dart';@immutable final class ParseType {const ParseType._(this.value);
 

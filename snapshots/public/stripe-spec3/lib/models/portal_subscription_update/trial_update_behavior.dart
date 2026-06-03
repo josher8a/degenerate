@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalSubscriptionUpdate (inline: TrialUpdateBehavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines how handle updates to trialing subscriptions. Valid values are `end_trial` and `continue_trial`. Defaults to a value of `end_trial` if you don't set it during creation.
 @immutable final class TrialUpdateBehavior {const TrialUpdateBehavior._(this.value);

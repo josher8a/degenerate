@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFormatTextGrammar
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';/// A custom grammar for the model to follow when generating text.
 /// Learn more in the [custom grammars guide](/docs/guides/custom-grammars).

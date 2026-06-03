@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsDeleteListItemsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_delete_list_items_request/lists_delete_list_items_request_items.dart';@immutable final class ListsDeleteListItemsRequest {const ListsDeleteListItemsRequest({this.items});
 

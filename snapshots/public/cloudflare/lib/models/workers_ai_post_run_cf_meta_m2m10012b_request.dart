@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfMetaM2m10012bRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_request/workers_ai_post_run_cf_meta_m2m10012b_request_variant1.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_request/workers_ai_post_run_cf_meta_m2m10012b_request_variant2.dart';typedef WorkersAiPostRunCfMetaM2m10012bRequest = OneOf2<WorkersAiPostRunCfMetaM2m10012bRequestVariant1,WorkersAiPostRunCfMetaM2m10012bRequestVariant2>;

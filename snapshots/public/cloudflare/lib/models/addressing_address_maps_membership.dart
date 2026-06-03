@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingAddressMapsMembership
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_identifier.dart';import 'package:pub_cloudflare/models/addressing_kind.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// Controls whether the membership can be deleted via the API or not.
 extension type const AddressingSchemasCanDelete(bool value) {

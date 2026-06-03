@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRequestTracerRequestTraceRequest (inline: Context)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request/geoloc.dart';/// Additional request parameters
 @immutable final class AccountRequestTracerRequestTraceRequestContext {const AccountRequestTracerRequestTraceRequestContext({this.botScore, this.geoloc, this.skipChallenge, this.threatScore, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseAudioDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio.done`.
 @immutable final class RealtimeBetaServerEventResponseAudioDoneType {const RealtimeBetaServerEventResponseAudioDoneType._(this.value);

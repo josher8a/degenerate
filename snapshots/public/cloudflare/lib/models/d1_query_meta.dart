@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1QueryMeta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_query_meta/timings.dart';/// The three letters airport code of the colo that handled the query.
 extension type const D1ServedByColo(String value) {

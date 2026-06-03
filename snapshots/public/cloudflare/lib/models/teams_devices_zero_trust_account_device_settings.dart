@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesZeroTrustAccountDeviceSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesZeroTrustAccountDeviceSettings {const TeamsDevicesZeroTrustAccountDeviceSettings({this.disableForTime, this.externalEmergencySignalEnabled, this.externalEmergencySignalFingerprint, this.externalEmergencySignalInterval, this.externalEmergencySignalUrl, this.gatewayProxyEnabled, this.gatewayUdpProxyEnabled, this.rootCertificateInstallationEnabled, this.useZtVirtualIp, });
 

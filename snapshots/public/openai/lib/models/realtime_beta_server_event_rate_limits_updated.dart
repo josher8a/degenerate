@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventRateLimitsUpdated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_rate_limits_updated/rate_limits.dart';/// The event type, must be `rate_limits.updated`.
 @immutable final class RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType._(this.value);

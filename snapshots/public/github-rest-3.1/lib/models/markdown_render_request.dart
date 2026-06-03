@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MarkdownRenderRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rendering mode.
 @immutable final class MarkdownRenderRequestMode {const MarkdownRenderRequestMode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallModifiedOn
 
 /// The timestamp of when the rule was last modified.
 extension type FirewallModifiedOn(DateTime value) {

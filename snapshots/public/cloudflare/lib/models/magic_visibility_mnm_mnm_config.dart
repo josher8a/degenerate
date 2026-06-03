@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityMnmMnmConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_default_sampling.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_router_ip.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_config_warp_device.dart';@immutable final class MagicVisibilityMnmMnmConfig {const MagicVisibilityMnmMnmConfig({required this.defaultSampling, required this.name, required this.routerIps, required this.warpDevices, });
 

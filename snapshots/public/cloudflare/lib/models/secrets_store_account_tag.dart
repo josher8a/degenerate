@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreAccountTag
 
 /// Account tag identifier
 extension type const SecretsStoreAccountTag(String value) {

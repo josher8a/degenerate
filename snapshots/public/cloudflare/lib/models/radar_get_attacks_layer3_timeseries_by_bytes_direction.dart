@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesByBytesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
 @immutable final class RadarGetAttacksLayer3TimeseriesByBytesDirection {const RadarGetAttacksLayer3TimeseriesByBytesDirection._(this.value);

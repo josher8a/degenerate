@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseContentPartAdded (inline: Part)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type ("text", "audio").
 @immutable final class PartType {const PartType._(this.value);

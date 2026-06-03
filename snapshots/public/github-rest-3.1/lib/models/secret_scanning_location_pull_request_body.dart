@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningLocationPullRequestBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'pull_request_body' secret scanning location type. This location type shows that a secret was detected in the body of a pull request.
 @immutable final class SecretScanningLocationPullRequestBody {const SecretScanningLocationPullRequestBody({required this.pullRequestBodyUrl});

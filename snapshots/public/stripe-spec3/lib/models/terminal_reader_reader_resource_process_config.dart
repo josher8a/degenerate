@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceProcessConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_tipping_config.dart';/// Represents a per-transaction override of a reader configuration
 @immutable final class TerminalReaderReaderResourceProcessConfig {const TerminalReaderReaderResourceProcessConfig({this.enableCustomerCancellation, this.returnUrl, this.skipTipping, this.tipping, });

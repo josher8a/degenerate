@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposDeleteFileRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_delete_file_request/repos_delete_file_request_author.dart';import 'package:pub_github_rest_3_1/models/repos_delete_file_request/repos_delete_file_request_committer.dart';@immutable final class ReposDeleteFileRequest {const ReposDeleteFileRequest({required this.message, required this.sha, this.branch, this.committer, this.author, });
 

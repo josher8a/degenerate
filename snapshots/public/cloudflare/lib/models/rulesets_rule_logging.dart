@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRuleLogging
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object configuring the rule's logging behavior.
 @immutable final class RulesetsRuleLogging {const RulesetsRuleLogging({required this.enabled});

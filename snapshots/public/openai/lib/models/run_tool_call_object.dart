@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunToolCallObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/chat_completion_message_tool_call/chat_completion_message_tool_call_function.dart';/// Tool call objects
 @immutable final class RunToolCallObject {const RunToolCallObject({required this.id, required this.type, required this.function, });

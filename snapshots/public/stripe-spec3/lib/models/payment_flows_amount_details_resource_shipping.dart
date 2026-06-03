@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAmountDetailsResourceShipping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsAmountDetailsResourceShipping {const PaymentFlowsAmountDetailsResourceShipping({this.amount, this.fromPostalCode, this.toPostalCode, });

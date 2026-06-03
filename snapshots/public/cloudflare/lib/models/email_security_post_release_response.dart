@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityPostReleaseResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_message.dart';import 'package:pub_cloudflare/models/email_security_release_response.dart';@immutable final class EmailSecurityPostReleaseResponse {const EmailSecurityPostReleaseResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceTippingConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-transaction tipping configuration
 @immutable final class TerminalReaderReaderResourceTippingConfig {const TerminalReaderReaderResourceTippingConfig({this.amountEligible});

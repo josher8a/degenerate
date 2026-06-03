@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsRecordWithoutData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_a_record.dart';import 'package:pub_cloudflare/models/dns_records_aaaa_record.dart';import 'package:pub_cloudflare/models/dns_records_cname_record.dart';import 'package:pub_cloudflare/models/dns_records_mx_record.dart';import 'package:pub_cloudflare/models/dns_records_ns_record.dart';import 'package:pub_cloudflare/models/dns_records_openpgpkey_record.dart';import 'package:pub_cloudflare/models/dns_records_ptr_record.dart';import 'package:pub_cloudflare/models/dns_records_txt_record.dart';typedef DnsRecordsDnsRecordWithoutData = OneOf8<DnsRecordsARecord,DnsRecordsAaaaRecord,DnsRecordsCnameRecord,DnsRecordsMxRecord,DnsRecordsNsRecord,DnsRecordsOpenpgpkeyRecord,DnsRecordsPtrRecord,DnsRecordsTxtRecord>;

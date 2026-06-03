@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: ResolveDnsInternally)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
 @immutable final class ResolveDnsInternallyFallback {const ResolveDnsInternallyFallback._(this.value);

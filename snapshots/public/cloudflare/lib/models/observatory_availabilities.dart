@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryAvailabilities
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_availabilities/quota.dart';import 'package:pub_cloudflare/models/observatory_availabilities/regions_per_plan.dart';import 'package:pub_cloudflare/models/observatory_labeled_region.dart';@immutable final class ObservatoryAvailabilities {const ObservatoryAvailabilities({this.quota, this.regions, this.regionsPerPlan, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotDotcomPullRequests
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_dotcom_pull_requests/copilot_dotcom_pull_requests_repositories.dart';/// Usage metrics for Copilot for pull requests.
 @immutable final class CopilotDotcomPullRequests {const CopilotDotcomPullRequests({this.totalEngagedUsers, this.repositories, this.additionalProperties = const {}, });

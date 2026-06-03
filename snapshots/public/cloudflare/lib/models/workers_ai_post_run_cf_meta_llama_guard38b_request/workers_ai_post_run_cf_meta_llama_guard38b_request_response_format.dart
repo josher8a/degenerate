@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfMetaLlamaGuard38bRequest (inline: ResponseFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Dictate the output format of the generated response.
 @immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat {const WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat({this.type});

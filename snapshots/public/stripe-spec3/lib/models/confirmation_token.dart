@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfirmationToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_token/confirmation_token_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_mandate_data.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_options.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ConfirmationTokenObject {const ConfirmationTokenObject._(this.value);

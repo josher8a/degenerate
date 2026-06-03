@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamOutputUrl
 
 /// The URL an output uses to restream.
 extension type const StreamOutputUrl(String value) {

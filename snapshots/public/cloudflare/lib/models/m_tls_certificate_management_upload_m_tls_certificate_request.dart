@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MTlsCertificateManagementUploadMTlsCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ca.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificates.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_name.dart';/// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
 extension type const TlsCertificatesAndHostnamesComponentsSchemasPrivateKey(String value) {

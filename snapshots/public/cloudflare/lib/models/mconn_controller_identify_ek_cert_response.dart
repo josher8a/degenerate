@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerIdentifyEkCertResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_identify_ek_cert_result.dart';@immutable final class MconnControllerIdentifyEkCertResponse {const MconnControllerIdentifyEkCertResponse({this.result});
 

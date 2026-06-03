@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupAttemptPaymentMethodDetailsCardChecks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsCardChecks {const SetupAttemptPaymentMethodDetailsCardChecks({this.addressLine1Check, this.addressPostalCodeCheck, this.cvcCheck, });

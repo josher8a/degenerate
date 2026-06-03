@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasAud
 
 /// Audience tag.
 extension type const AccessSchemasAud(String value) {

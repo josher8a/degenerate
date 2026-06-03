@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesAckMessagesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/queues_ack_messages_request/acks.dart';import 'package:pub_cloudflare/models/queues_ack_messages_request/queues_ack_messages_request_retries.dart';@immutable final class QueuesAckMessagesRequest {const QueuesAckMessagesRequest({this.acks, this.retries, });
 

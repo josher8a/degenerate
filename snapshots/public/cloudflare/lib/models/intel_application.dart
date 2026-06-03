@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelApplication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Application that the hostname belongs to.
 @immutable final class IntelApplication {const IntelApplication({this.id, this.name, });

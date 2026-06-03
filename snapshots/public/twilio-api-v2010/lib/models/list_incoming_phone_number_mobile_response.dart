@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListIncomingPhoneNumberMobileResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_incoming_phone_number_incoming_phone_number_mobile.dart';@immutable final class ListIncomingPhoneNumberMobileResponse {const ListIncomingPhoneNumberMobileResponse({this.incomingPhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 

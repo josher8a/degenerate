@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosSynProtectionRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosSynProtectionRule {const DosSynProtectionRule({required this.burstSensitivity, required this.createdOn, required this.id, required this.mitigationType, required this.mode, required this.modifiedOn, required this.name, required this.rateSensitivity, required this.scope, });
 

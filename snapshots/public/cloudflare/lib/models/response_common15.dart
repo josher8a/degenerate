@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon15
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_whois_schemas_messages2.dart';@immutable final class ResponseCommon15 {const ResponseCommon15({required this.errors, required this.messages, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ApplyPatchToolCallOutputItemParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';/// The streamed output emitted by an apply patch tool call.
 @immutable final class ApplyPatchToolCallOutputItemParam {const ApplyPatchToolCallOutputItemParam({required this.callId, required this.status, this.type = 'apply_patch_call_output', this.id, this.output, });

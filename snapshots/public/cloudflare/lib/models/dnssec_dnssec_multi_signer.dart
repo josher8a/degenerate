@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnssecDnssecMultiSigner
 
 /// If true, multi-signer DNSSEC is enabled on the zone, allowing multiple
 /// providers to serve a DNSSEC-signed zone at the same time.

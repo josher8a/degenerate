@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasSaasProps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_launcher_visible.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_logo_url.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';import 'package:pub_cloudflare/models/access_schemas_oidc_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_saas_props/access_schemas_saas_props_saas_app.dart';import 'package:pub_cloudflare/models/access_schemas_saml_saas_app.dart';@immutable final class AccessSchemasSaasProps {const AccessSchemasSaasProps({this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.logoUrl, this.name, this.saasApp, this.type, });
 

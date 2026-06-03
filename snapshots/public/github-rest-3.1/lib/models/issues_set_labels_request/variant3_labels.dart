@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesSetLabelsRequest (inline: Variant3 > Labels)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant3Labels {const Variant3Labels({required this.name});
 

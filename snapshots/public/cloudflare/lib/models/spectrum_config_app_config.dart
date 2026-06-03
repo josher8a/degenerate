@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigAppConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips/dynamic.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips/static.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_origin_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_origin_port.dart';import 'package:pub_cloudflare/models/spectrum_config_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';/// Enables Argo Smart Routing for this application.
 /// Notes: Only available for TCP applications with traffic_type set to "direct".

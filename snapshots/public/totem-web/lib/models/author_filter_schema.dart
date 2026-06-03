@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuthorFilterSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorFilterSchema {const AuthorFilterSchema({required this.name, required this.slug, });
 

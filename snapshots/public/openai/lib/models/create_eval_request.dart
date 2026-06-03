@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_custom_data_source_config.dart';import 'package:pub_openai/models/create_eval_label_model_grader.dart';import 'package:pub_openai/models/create_eval_logs_data_source_config.dart';import 'package:pub_openai/models/create_eval_request/create_eval_request_data_source_config.dart';import 'package:pub_openai/models/create_eval_request/create_eval_request_testing_criteria.dart';import 'package:pub_openai/models/create_eval_stored_completions_data_source_config.dart';import 'package:pub_openai/models/eval_grader_python.dart';import 'package:pub_openai/models/eval_grader_score_model.dart';import 'package:pub_openai/models/eval_grader_text_similarity.dart';import 'package:pub_openai/models/grader_string_check.dart';@immutable final class CreateEvalRequest {const CreateEvalRequest({required this.dataSourceConfig, required this.testingCriteria, this.name, this.metadata, });
 

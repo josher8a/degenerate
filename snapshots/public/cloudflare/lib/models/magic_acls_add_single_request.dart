@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicAclsAddSingleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl/magic_acl_protocols.dart';import 'package:pub_cloudflare/models/magic_forward_locally.dart';import 'package:pub_cloudflare/models/magic_lan_acl_configuration.dart';import 'package:pub_cloudflare/models/magic_unidirectional.dart';/// Bidirectional ACL policy for local network traffic within a site.
 @immutable final class MagicAclsAddSingleRequest {const MagicAclsAddSingleRequest({required this.lan1, required this.lan2, required this.name, this.description, this.forwardLocally, this.protocols, this.unidirectional, });

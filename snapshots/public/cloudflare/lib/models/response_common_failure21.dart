@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure21
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_messages2.dart';@immutable final class ResponseCommonFailure21 {const ResponseCommonFailure21({required this.errors, required this.messages, required this.result, required this.success, });
 

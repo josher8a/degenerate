@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateConferenceRecordingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/conference_recording_enum_status.dart';@immutable final class UpdateConferenceRecordingRequest {const UpdateConferenceRecordingRequest({required this.status, this.pauseBehavior, });
 

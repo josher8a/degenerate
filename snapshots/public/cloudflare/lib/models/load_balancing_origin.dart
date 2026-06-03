@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingOrigin
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_address.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_enabled.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_header.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_name.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
 extension type LoadBalancingDisabledAt(DateTime value) {

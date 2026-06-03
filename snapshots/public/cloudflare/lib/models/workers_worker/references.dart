@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: References)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/dispatch_namespace_outbounds.dart';import 'package:pub_cloudflare/models/workers_worker/durable_objects.dart';import 'package:pub_cloudflare/models/workers_worker/queues.dart';import 'package:pub_cloudflare/models/workers_worker/references_domains.dart';import 'package:pub_cloudflare/models/workers_worker/references_workers.dart';/// Other resources that reference the Worker and depend on it existing.
 @immutable final class References {const References({required this.dispatchNamespaceOutbounds, required this.domains, required this.durableObjects, required this.queues, required this.workers, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method used to access the endpoint.
 @immutable final class ShieldMethod {const ShieldMethod._(this.value);

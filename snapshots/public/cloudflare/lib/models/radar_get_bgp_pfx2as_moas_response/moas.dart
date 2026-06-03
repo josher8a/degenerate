@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asMoasResponse (inline: Result > Moas)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response/moas_origins.dart';@immutable final class Moas {const Moas({required this.origins, required this.prefix, });
 

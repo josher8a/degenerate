@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsAddFieldForOrgRequest (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_add_field_for_org_request/variant2_data_type.dart';@immutable final class ProjectsAddFieldForOrgRequestVariant2 {const ProjectsAddFieldForOrgRequestVariant2({required this.name, required this.dataType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_service_tokens.dart';@immutable final class AccessComponentsSchemasResponseCollection {const AccessComponentsSchemasResponseCollection({this.result});
 

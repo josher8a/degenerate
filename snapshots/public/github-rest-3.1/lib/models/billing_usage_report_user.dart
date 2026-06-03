@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingUsageReportUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_usage_report_user/billing_usage_report_user_usage_items.dart';@immutable final class BillingUsageReportUser {const BillingUsageReportUser({this.usageItems});
 

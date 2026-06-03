@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityMnmMnmConfigWarpDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Object representing a warp device with an ID and name.
 @immutable final class MagicVisibilityMnmMnmConfigWarpDevice {const MagicVisibilityMnmMnmConfigWarpDevice({required this.id, required this.name, required this.routerIp, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumCreateRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumCreateRuleRequest {const RumCreateRuleRequest({this.host, this.inclusive, this.isPaused, this.paths, });
 

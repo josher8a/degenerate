@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPackagePublished (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackagePublishedAction {const WebhookPackagePublishedAction._(this.value);
 

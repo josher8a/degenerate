@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceRequest (inline: ShippingDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/recipient_shipping_with_optional_fields_address.dart';typedef PostInvoicesInvoiceRequestShippingDetails = OneOf2<RecipientShippingWithOptionalFieldsAddress,GetPaymentMethodConfigurationsApplicationVariant2>;

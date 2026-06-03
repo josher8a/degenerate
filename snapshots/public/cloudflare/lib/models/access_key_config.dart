@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessKeyConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_key_rotation_interval_days.dart';/// The number of days until the next key rotation.
 extension type const AccessDaysUntilNextRotation(double value) {

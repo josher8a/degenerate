@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookIssuesTransferred
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_transferred/webhook_discussion_transferred_action.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_transferred/webhook_issues_transferred_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2.dart';@immutable final class WebhookIssuesTransferred {const WebhookIssuesTransferred({required this.action, required this.changes, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 

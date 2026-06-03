@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationFuelData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fuel that was purchased.
 @immutable final class IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType._(this.value);

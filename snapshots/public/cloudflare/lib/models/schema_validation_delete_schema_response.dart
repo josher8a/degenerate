@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationDeleteSchemaResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schema_validation_delete_schema_response/schema_validation_delete_schema_response_result.dart';@immutable final class SchemaValidationDeleteSchemaResponse {const SchemaValidationDeleteSchemaResponse({required this.result});
 

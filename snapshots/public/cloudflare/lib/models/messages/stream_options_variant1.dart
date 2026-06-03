@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: StreamOptions > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamOptionsVariant1 {const StreamOptionsVariant1({this.includeObfuscation, this.includeUsage, });
 

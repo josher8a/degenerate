@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperJobResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/gcs_source_response_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_source.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_target.dart';import 'package:pub_cloudflare/models/r2_slurper_job_status.dart';import 'package:pub_cloudflare/models/r2_source_response_schema.dart';import 'package:pub_cloudflare/models/s3_source_response_schema.dart';@immutable final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
 

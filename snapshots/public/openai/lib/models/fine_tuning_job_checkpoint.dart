@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningJobCheckpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint/metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
 @immutable final class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject._(this.value);

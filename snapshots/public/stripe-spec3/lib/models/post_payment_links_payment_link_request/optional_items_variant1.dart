@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksPaymentLinkRequest (inline: OptionalItems > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adjustable_quantity.dart';@immutable final class OptionalItemsVariant1 {const OptionalItemsVariant1({required this.price, required this.quantity, this.adjustableQuantity, });
 

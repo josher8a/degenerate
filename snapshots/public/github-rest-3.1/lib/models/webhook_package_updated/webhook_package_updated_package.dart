@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPackageUpdated (inline: Package)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_registry.dart';import 'package:pub_github_rest_3_1/models/webhook_package_updated/webhook_package_updated_package_package_version.dart';/// Information about the package.
 @immutable final class WebhookPackageUpdatedPackage {const WebhookPackageUpdatedPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });

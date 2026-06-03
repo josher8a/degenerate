@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitAiConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_summarization_config.dart';import 'package:pub_cloudflare/models/realtimekit_transcription_config.dart';/// The AI Config allows you to customize the behavior of meeting transcriptions and summaries
 @immutable final class RealtimekitAiConfig {const RealtimekitAiConfig({this.summarization, this.transcription, });

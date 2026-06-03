@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventTagCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventTagCreateRequest {const PostEventTagCreateRequest({required this.tags});
 

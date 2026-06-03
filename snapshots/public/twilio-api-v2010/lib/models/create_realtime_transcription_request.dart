@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateRealtimeTranscriptionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
 @immutable final class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack._(this.value);

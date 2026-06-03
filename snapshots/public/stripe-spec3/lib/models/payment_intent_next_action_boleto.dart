@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionBoleto
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionBoleto {const PaymentIntentNextActionBoleto({this.expiresAt, this.hostedVoucherUrl, this.number, this.pdf, });

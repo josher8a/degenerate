@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration/deleted_terminal_configuration_object.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_cellular_config.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_device_type_specific_config.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_offline_config.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_reboot_window.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_tipping.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_wifi_config.dart';/// A Configurations object represents how features should be configured for terminal readers.
 /// For information about how to use it, see the [Terminal configurations documentation](https://docs.stripe.com/terminal/fleet/configurations-overview).

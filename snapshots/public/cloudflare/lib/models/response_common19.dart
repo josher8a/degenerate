@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon19
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_messages2.dart';@immutable final class ResponseCommon19 {const ResponseCommon19({required this.errors, required this.messages, required this.success, });
 

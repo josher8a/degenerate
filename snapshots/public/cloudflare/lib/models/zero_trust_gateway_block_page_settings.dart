@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayBlockPageSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
 @immutable final class ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAbuseReportResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_abuse_report.dart';import 'package:pub_cloudflare/models/abuse_reports_error_message.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';@immutable final class GetAbuseReportResponse {const GetAbuseReportResponse({required this.result, required this.success, this.errors, this.messages, });
 

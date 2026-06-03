@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Media > Audio > CanProduce)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Can produce audio
 @immutable final class CanProduce {const CanProduce._(this.value);

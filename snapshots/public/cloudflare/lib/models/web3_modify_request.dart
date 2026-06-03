@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ModifyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_description.dart';import 'package:pub_cloudflare/models/web3_dnslink.dart';@immutable final class Web3ModifyRequest {const Web3ModifyRequest({this.description, this.dnslink, });
 

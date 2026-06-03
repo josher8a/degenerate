@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseRefusalDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when refusal text is finalized.
 @immutable final class ResponseRefusalDoneEvent {const ResponseRefusalDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.refusal, required this.sequenceNumber, });

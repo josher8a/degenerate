@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Meta > Processors > Tech > Evidence > Patterns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EvidencePatterns {const EvidencePatterns({required this.confidence, required this.excludes, required this.implies, required this.match, required this.name, required this.regex, required this.type, required this.value, required this.version, });
 

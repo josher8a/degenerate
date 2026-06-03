@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';@immutable final class PullsUpdateRequest {const PullsUpdateRequest({this.title, this.body, this.state, this.base, this.maintainerCanModify, });
 

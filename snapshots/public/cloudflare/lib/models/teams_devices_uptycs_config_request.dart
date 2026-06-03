@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesUptycsConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesUptycsConfigRequest {const TeamsDevicesUptycsConfigRequest({required this.apiUrl, required this.clientKey, required this.clientSecret, required this.customerId, });
 

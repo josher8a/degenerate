@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > ConnectedMeetings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetPermissionsConnectedMeetings {const RealtimekitPresetPermissionsConnectedMeetings({required this.canAlterConnectedMeetings, required this.canSwitchConnectedMeetings, required this.canSwitchToParentMeeting, });
 

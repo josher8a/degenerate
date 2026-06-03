@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamAccount (inline: ManagedBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parent container details
 @immutable final class ManagedBy {const ManagedBy({this.parentOrgId, this.parentOrgName, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus {const ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus._(this.value);
 

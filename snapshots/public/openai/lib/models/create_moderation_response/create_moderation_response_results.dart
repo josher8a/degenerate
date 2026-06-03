@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateModerationResponse (inline: Results)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_moderation_response/categories.dart';import 'package:pub_openai/models/create_moderation_response/category_applied_input_types.dart';import 'package:pub_openai/models/create_moderation_response/category_scores.dart';@immutable final class CreateModerationResponseResults {const CreateModerationResponseResults({required this.flagged, required this.categories, required this.categoryScores, required this.categoryAppliedInputTypes, });
 

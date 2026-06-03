@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorChangeStatusWorkflowInstanceResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';@immutable final class WorChangeStatusWorkflowInstanceResponseResult {const WorChangeStatusWorkflowInstanceResponseResult({required this.status, required this.timestamp, });
 

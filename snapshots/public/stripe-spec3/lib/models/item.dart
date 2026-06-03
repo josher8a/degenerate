@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Item
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/line_items_adjustable_quantity.dart';import 'package:pub_stripe_spec3/models/line_items_discount_amount.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';import 'package:pub_stripe_spec3/models/price.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ItemObject {const ItemObject._(this.value);

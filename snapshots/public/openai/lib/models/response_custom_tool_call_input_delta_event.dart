@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCustomToolCallInputDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event representing a delta (partial update) to the input of a custom tool call.
 /// 

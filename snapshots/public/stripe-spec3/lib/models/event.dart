@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Event
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/notification_event_data.dart';import 'package:pub_stripe_spec3/models/notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class EventObject {const EventObject._(this.value);

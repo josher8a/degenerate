@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecuritySummaryByThreatCategoryResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0 {const RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0({required this.brandImpersonation, required this.credentialHarvester, required this.identityDeception, required this.link, });
 

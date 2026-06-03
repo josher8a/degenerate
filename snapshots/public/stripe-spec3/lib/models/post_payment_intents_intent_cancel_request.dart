@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentCancelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this PaymentIntent. Possible values are: `duplicate`, `fraudulent`, `requested_by_customer`, or `abandoned`
 @immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason._(this.value);

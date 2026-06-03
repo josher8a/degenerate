@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch (inline: Alert > DismissedReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for dismissing or closing the alert.
 @immutable final class AlertDismissedReason {const AlertDismissedReason._(this.value);

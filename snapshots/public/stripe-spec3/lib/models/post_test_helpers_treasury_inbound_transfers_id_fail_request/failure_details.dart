@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryInboundTransfersIdFailRequest (inline: FailureDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_failure_details/treasury_inbound_transfers_resource_failure_details_code.dart';/// Details about a failed InboundTransfer.
 @immutable final class FailureDetails {const FailureDetails({this.code});

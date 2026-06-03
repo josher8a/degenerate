@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteSubscriptionsSubscriptionExposedIdRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscriptions_subscription_exposed_id_request/delete_subscriptions_subscription_exposed_id_request_cancellation_details.dart';@immutable final class DeleteSubscriptionsSubscriptionExposedIdRequest {const DeleteSubscriptionsSubscriptionExposedIdRequest({this.cancellationDetails, this.expand, this.invoiceNow, this.prorate, });
 

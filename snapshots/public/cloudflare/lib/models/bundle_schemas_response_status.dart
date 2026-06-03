@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleSchemasResponseStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_schemas_status.dart';@immutable final class BundleSchemasResponseStatus {const BundleSchemasResponseStatus({this.result});
 

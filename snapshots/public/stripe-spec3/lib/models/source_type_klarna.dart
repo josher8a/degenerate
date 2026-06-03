@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeKlarna
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeKlarna {const SourceTypeKlarna({this.backgroundImageUrl, this.clientToken, this.firstName, this.lastName, this.locale, this.logoUrl, this.pageTitle, this.payLaterAssetUrlsDescriptive, this.payLaterAssetUrlsStandard, this.payLaterName, this.payLaterRedirectUrl, this.payNowAssetUrlsDescriptive, this.payNowAssetUrlsStandard, this.payNowName, this.payNowRedirectUrl, this.payOverTimeAssetUrlsDescriptive, this.payOverTimeAssetUrlsStandard, this.payOverTimeName, this.payOverTimeRedirectUrl, this.paymentMethodCategories, this.purchaseCountry, this.purchaseType, this.redirectUrl, this.shippingDelay, this.shippingFirstName, this.shippingLastName, });
 

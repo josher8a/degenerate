@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryEdited (inline: Changes > Description)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryEditedChangesDescription {const WebhookRepositoryEditedChangesDescription({required this.from});
 

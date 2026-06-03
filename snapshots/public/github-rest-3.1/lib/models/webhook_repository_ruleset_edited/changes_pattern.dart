@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryRulesetEdited (inline: Changes > Rules > Updated > Changes > Pattern)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChangesPattern {const ChangesPattern({this.from});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseOutputText (inline: Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';/// Annotation object describing a cited source.
 sealed class ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations();

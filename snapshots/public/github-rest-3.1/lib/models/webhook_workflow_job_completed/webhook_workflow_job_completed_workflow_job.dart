@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookWorkflowJobCompleted (inline: WorkflowJob)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowJobConclusion {const WorkflowJobConclusion._(this.value);
 

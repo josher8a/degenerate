@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3SummaryByDurationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_by_duration_response/radar_get_attacks_layer3_summary_by_duration_response_result.dart';@immutable final class RadarGetAttacksLayer3SummaryByDurationResponse {const RadarGetAttacksLayer3SummaryByDurationResponse({required this.result, required this.success, });
 

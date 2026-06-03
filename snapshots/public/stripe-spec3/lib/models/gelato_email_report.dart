@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoEmailReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_email_report_error.dart';/// Result from a email check
 @immutable final class GelatoEmailReport {const GelatoEmailReport({required this.status, this.email, this.error, });

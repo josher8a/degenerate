@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateVectorStoreFileRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chunking_strategy_request_param.dart';@immutable final class CreateVectorStoreFileRequest {const CreateVectorStoreFileRequest({required this.fileId, this.chunkingStrategy, this.attributes, });
 

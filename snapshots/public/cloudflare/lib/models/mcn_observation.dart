@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnObservation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_provider_id.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';@immutable final class McnObservation {const McnObservation({required this.firstObservedAt, required this.lastObservedAt, required this.providerId, required this.resourceId, });
 

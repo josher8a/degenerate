@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Custom > Custom > Format > Grammar)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/grammar_grammar.dart';@immutable final class GrammarType {const GrammarType._(this.value);
 

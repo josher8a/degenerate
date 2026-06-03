@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseReasoningTextDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a delta is added to a reasoning text.
 @immutable final class ResponseReasoningTextDeltaEvent {const ResponseReasoningTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, });

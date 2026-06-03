@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserEditUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_country.dart';import 'package:pub_cloudflare/models/iam_first_name.dart';import 'package:pub_cloudflare/models/iam_last_name.dart';import 'package:pub_cloudflare/models/iam_telephone.dart';import 'package:pub_cloudflare/models/iam_zipcode.dart';@immutable final class UserEditUserRequest {const UserEditUserRequest({this.country, this.firstName, this.lastName, this.telephone, this.zipcode, });
 

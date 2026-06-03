@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSession (inline: InputAudioFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReactionsListForIssueCommentContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReactionsListForIssueCommentContent {const ReactionsListForIssueCommentContent._(this.value);
 

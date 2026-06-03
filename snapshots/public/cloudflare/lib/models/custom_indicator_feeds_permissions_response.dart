@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsPermissionsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_permissions_update.dart';@immutable final class CustomIndicatorFeedsPermissionsResponse {const CustomIndicatorFeedsPermissionsResponse({this.result});
 

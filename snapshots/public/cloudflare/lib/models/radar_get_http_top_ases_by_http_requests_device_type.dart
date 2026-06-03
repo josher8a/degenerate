@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopAsesByHttpRequestsDeviceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType._(this.value);
 

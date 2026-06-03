@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsAccountId
 
 /// The unique ID of the account.
 extension type const RulesetsAccountId(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FetchGatewaysResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_gateways_response/fetch_gateways_response_result.dart';@immutable final class FetchGatewaysResponse {const FetchGatewaysResponse({required this.result, required this.success, });
 

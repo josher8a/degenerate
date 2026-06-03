@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryFinancialAccountsFinancialAccountCloseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request/forwarding_settings.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountCloseRequest {const PostTreasuryFinancialAccountsFinancialAccountCloseRequest({this.expand, this.forwardingSettings, });
 

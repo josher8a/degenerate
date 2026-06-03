@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtSummaryResponse (inline: Result > Summary0 > Variant4)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Summary0Variant4 {const Summary0Variant4({required this.certificate, required this.precertificate, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentVerifyMicrodepositsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentVerifyMicrodepositsRequest {const PostPaymentIntentsIntentVerifyMicrodepositsRequest({this.amounts, this.clientSecret, this.descriptorCode, this.expand, });
 

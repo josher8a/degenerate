@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessExternalEvaluationRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_external_evaluation_rule/external_evaluation.dart';/// Create Allow or Block policies which evaluate the user based on custom criteria.
 @immutable final class AccessExternalEvaluationRule {const AccessExternalEvaluationRule({required this.externalEvaluation});

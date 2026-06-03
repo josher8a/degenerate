@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiUploadFinetuneAssetRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiUploadFinetuneAssetRequest {const WorkersAiUploadFinetuneAssetRequest({this.file, this.fileName, });
 

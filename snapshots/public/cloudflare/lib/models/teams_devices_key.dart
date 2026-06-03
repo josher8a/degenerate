@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesKey
 
 /// The device's public key.
 extension type const TeamsDevicesKey(String value) {

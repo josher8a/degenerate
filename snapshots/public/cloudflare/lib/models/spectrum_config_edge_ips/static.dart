@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigEdgeIps (inline: Static)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of edge IP configuration specified. Statically allocated edge IPs use customer IPs in accordance with the ips array you specify. Only valid with ADDRESS DNS names.
 @immutable final class StaticType {const StaticType._(this.value);

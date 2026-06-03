@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuitePullRequest (inline: PullRequest > Reviews)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite_pull_request/pull_request_user.dart';@immutable final class Reviews {const Reviews({this.id, this.user, this.state, });
 

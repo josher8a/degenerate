@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicLanSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_lan.dart';@immutable final class MagicLanSingleResponse {const MagicLanSingleResponse({this.result});
 

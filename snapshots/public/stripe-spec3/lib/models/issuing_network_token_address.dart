@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingNetworkTokenAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingNetworkTokenAddress {const IssuingNetworkTokenAddress({required this.line1, required this.postalCode, });

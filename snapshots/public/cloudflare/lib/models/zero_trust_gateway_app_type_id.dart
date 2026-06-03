@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayAppTypeId
 
 /// Identify the type of this application. Multiple applications can share the same type. Refers to the `id` of a returned application type.
 extension type const ZeroTrustGatewayAppTypeId(int value) {

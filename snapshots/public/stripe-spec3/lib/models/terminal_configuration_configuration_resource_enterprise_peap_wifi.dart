@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceEnterprisePeapWifi
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceEnterprisePeapWifi {const TerminalConfigurationConfigurationResourceEnterprisePeapWifi({required this.password, required this.ssid, required this.username, this.caCertificateFile, });

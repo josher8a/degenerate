@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Customer (inline: Sources)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_response/get_customers_customer_sources_response_data.dart';import 'package:pub_stripe_spec3/models/source.dart';/// The customer's payment sources, if any.
 @immutable final class Sources {const Sources({required this.data, required this.hasMore, required this.object, required this.url, });

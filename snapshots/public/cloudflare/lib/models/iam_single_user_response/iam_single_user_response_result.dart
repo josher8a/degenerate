@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamSingleUserResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_country.dart';import 'package:pub_cloudflare/models/iam_first_name.dart';import 'package:pub_cloudflare/models/iam_last_name.dart';import 'package:pub_cloudflare/models/iam_organization.dart';import 'package:pub_cloudflare/models/iam_telephone.dart';import 'package:pub_cloudflare/models/iam_two_factor_authentication_enabled.dart';import 'package:pub_cloudflare/models/iam_zipcode.dart';/// Indicates whether two-factor authentication is required by one of the accounts that the user is a member of.
 extension type const IamTwoFactorAuthenticationLocked(bool value) {

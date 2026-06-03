@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CostsResult (inline: Amount)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The monetary value in its associated currency.
 @immutable final class Amount {const Amount({this.value, this.currency, });

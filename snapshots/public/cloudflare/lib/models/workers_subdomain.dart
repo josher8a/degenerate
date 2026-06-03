@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersSubdomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSubdomain {const WorkersSubdomain({required this.previewsEnabled, this.enabled = false, });
 

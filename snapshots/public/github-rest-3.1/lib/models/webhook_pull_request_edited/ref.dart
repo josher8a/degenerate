@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestEdited (inline: Changes > Base > Ref)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Ref {const Ref({required this.from});
 

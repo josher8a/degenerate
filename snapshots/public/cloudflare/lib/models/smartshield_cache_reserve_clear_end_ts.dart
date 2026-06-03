@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldCacheReserveClearEndTs
 
 /// The time that the latest Cache Reserve Clear operation completed.
 extension type SmartshieldCacheReserveClearEndTs(DateTime value) {

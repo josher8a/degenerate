@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotIdeCodeCompletions (inline: Languages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage metrics for a given language for the given editor for Copilot code completions.
 @immutable final class CopilotIdeCodeCompletionsLanguages {const CopilotIdeCodeCompletionsLanguages({this.name, this.totalEngagedUsers, });

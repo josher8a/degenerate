@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmptyDirVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// Represents an empty directory for a pod. Empty directory volumes support ownership management and SELinux relabeling.
 @immutable final class EmptyDirVolumeSource {const EmptyDirVolumeSource({this.medium, this.sizeLimit, });

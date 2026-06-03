@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelSubnet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_subnet_comment.dart';import 'package:pub_cloudflare/models/tunnel_subnet_id.dart';import 'package:pub_cloudflare/models/tunnel_subnet_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_is_default_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_name.dart';/// The type of subnet.
 @immutable final class TunnelSubnetType {const TunnelSubnetType._(this.value);

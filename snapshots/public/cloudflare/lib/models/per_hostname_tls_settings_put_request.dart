@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PerHostnameTlsSettingsPutRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_value.dart';@immutable final class PerHostnameTlsSettingsPutRequest {const PerHostnameTlsSettingsPutRequest({required this.value});
 

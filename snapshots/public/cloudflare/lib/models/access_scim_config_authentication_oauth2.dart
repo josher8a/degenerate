@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessScimConfigAuthenticationOauth2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
 @immutable final class AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme._(this.value);

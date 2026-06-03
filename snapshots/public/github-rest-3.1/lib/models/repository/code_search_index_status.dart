@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Repository (inline: CodeSearchIndexStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the code search index for this repository
 @immutable final class CodeSearchIndexStatus {const CodeSearchIndexStatus({this.lexicalSearchOk, this.lexicalCommitSha, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsId
 
 /// The ID for the packet capture.
 extension type const MagicVisibilityPcapsPcapsId(String value) {

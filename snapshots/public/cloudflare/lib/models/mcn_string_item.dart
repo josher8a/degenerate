@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnStringItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnStringItem {const McnStringItem({required this.itemType, required this.string, });
 

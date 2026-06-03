@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest (inline: PaymentDetails > MoneyMovementDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_details/money_movement_type.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/money_movement_details_card.dart';@immutable final class MoneyMovementDetails {const MoneyMovementDetails({required this.moneyMovementType, this.card, });
 

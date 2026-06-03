@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsExecuteOverrides
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_category_overrides2.dart';import 'package:pub_cloudflare/models/rulesets_execute_rule_overrides2.dart';import 'package:pub_cloudflare/models/rulesets_execute_sensitivity_level.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';/// A set of overrides to apply to the target ruleset.
 @immutable final class RulesetsExecuteOverrides {const RulesetsExecuteOverrides({this.action, this.categories, this.enabled, this.rules, this.sensitivityLevel, });

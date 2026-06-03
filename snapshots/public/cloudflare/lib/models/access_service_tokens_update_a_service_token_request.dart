@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessServiceTokensUpdateAServiceTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_client_secret_version.dart';import 'package:pub_cloudflare/models/access_duration.dart';import 'package:pub_cloudflare/models/access_previous_client_secret_expires_at.dart';import 'package:pub_cloudflare/models/access_schemas_name.dart';@immutable final class AccessServiceTokensUpdateAServiceTokenRequest {const AccessServiceTokensUpdateAServiceTokenRequest({this.clientSecretVersion, this.duration, this.name, this.previousClientSecretExpiresAt, });
 

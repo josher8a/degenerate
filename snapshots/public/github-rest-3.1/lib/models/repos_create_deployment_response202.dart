@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateDeploymentResponse202
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateDeploymentResponse202 {const ReposCreateDeploymentResponse202({this.message});
 

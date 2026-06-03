@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClimateOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_order/climate_order_product.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_removals_beneficiary.dart';import 'package:pub_stripe_spec3/models/climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
 @immutable final class ClimateOrderCancellationReason {const ClimateOrderCancellationReason._(this.value);

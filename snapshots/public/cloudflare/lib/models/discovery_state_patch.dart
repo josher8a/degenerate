@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscoveryStatePatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mark state of operation in API Discovery
 ///   * `review` - Mark operation as for review

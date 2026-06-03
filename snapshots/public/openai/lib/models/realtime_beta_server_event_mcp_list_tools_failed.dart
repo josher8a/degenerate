@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventMcpListToolsFailed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.failed`.
 @immutable final class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType._(this.value);

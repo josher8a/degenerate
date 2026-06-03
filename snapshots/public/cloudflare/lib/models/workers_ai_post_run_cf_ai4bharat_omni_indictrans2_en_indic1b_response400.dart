@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400 {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400({required this.errors, required this.result, required this.success, });
 

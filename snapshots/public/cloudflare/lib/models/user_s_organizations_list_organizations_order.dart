@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSOrganizationsListOrganizationsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order organizations by.
 @immutable final class UserSOrganizationsListOrganizationsOrder {const UserSOrganizationsListOrganizationsOrder._(this.value);

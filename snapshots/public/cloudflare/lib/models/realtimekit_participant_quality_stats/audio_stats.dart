@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantQualityStats (inline: QualityStats > AudioStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioStats {const AudioStats({this.concealmentEvents, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 

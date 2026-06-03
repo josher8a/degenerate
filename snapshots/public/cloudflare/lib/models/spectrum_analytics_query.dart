@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumAnalyticsQuery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_dimensions2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_filters.dart';import 'package:pub_cloudflare/models/spectrum_analytics_metrics2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_timestamp.dart';@immutable final class SpectrumAnalyticsQuery {const SpectrumAnalyticsQuery({this.dimensions, this.filters, this.limit, this.metrics, this.since, this.sort, this.until, });
 

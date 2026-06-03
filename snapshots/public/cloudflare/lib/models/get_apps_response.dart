@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAppsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_apps_response/get_apps_response_data.dart';@immutable final class GetAppsResponse {const GetAppsResponse({this.data, this.success, });
 

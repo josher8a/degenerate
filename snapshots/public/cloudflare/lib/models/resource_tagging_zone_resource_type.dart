@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingZoneResourceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of zone-level resource.
 @immutable final class ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType._(this.value);

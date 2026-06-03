@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalOnboardingLinksRequest (inline: LinkType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of link being generated.
 @immutable final class LinkType {const LinkType._(this.value);

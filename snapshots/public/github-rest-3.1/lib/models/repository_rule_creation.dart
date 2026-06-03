@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleCreation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleCreationType {const RepositoryRuleCreationType._(this.value);
 

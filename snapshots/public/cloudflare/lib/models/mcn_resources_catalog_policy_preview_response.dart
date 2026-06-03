@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourcesCatalogPolicyPreviewResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const McnResourcesCatalogPolicyPreview(String value) {
 factory McnResourcesCatalogPolicyPreview.fromJson(String json) => McnResourcesCatalogPolicyPreview(json);

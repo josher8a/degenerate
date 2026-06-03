@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingBgpPrefixCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';@immutable final class AddressingBgpPrefixCreate {const AddressingBgpPrefixCreate({required this.cidr});
 

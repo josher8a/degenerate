@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigPostGatewayDynamicRouteDeploymentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteDeploymentRequest {const AigConfigPostGatewayDynamicRouteDeploymentRequest({required this.comment, required this.versionId, });
 

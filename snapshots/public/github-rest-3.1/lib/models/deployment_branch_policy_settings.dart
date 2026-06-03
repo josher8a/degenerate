@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeploymentBranchPolicySettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
 @immutable final class DeploymentBranchPolicySettings {const DeploymentBranchPolicySettings({required this.protectedBranches, required this.customBranchPolicies, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Documents > CompanyMemorandumOfAssociation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CompanyMemorandumOfAssociation {const CompanyMemorandumOfAssociation({this.files});
 

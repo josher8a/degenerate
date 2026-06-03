@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Uniques
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Uniques {const Uniques({this.all});
 

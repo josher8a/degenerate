@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankConnectionsResourceBalance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/resource_cash_balance.dart';import 'package:pub_stripe_spec3/models/resource_credit_balance.dart';/// The `type` of the balance. An additional hash is included on the balance with a name matching this value.
 @immutable final class BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType._(this.value);

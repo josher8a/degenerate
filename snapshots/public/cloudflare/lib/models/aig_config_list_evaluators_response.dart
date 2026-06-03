@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListEvaluatorsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_deprecated_response/accounts_by_account_id_pipelines_deprecated_response_result_info.dart';import 'package:pub_cloudflare/models/aig_config_list_evaluators_response/aig_config_list_evaluators_response_result.dart';@immutable final class AigConfigListEvaluatorsResponse {const AigConfigListEvaluatorsResponse({required this.result, required this.resultInfo, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigAiSearchResponse (inline: Result > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/result_data_content.dart';@immutable final class ResultData {const ResultData({required this.score, this.attributes, this.content, this.fileId, this.filename, });
 

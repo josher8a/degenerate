@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeAcssDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAcssDebit {const SourceTypeAcssDebit({this.bankAddressCity, this.bankAddressLine1, this.bankAddressLine2, this.bankAddressPostalCode, this.bankName, this.category, this.country, this.fingerprint, this.last4, this.routingNumber, });
 

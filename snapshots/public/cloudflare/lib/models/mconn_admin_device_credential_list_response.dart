@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminDeviceCredentialListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_device_credential.dart';@immutable final class MconnAdminDeviceCredentialListResponse {const MconnAdminDeviceCredentialListResponse({this.result});
 

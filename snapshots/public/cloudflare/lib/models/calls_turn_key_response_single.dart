@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsTurnKeyResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_turn_key_object.dart';@immutable final class CallsTurnKeyResponseSingle {const CallsTurnKeyResponseSingle({this.result});
 

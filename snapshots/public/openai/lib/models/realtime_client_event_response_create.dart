@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeClientEventResponseCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_response_create_params.dart';/// This event instructs the server to create a Response, which means triggering
 /// model inference. When in Server VAD mode, the server will create Responses

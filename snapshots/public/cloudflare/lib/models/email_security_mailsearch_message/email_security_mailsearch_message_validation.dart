@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityMailsearchMessage (inline: Validation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_validation_status.dart';@immutable final class EmailSecurityMailsearchMessageValidation {const EmailSecurityMailsearchMessageValidation({this.comment, this.dkim, this.dmarc, this.spf, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaSilenceUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_silence_id.dart';@immutable final class AaaSilenceUpdateRequest {const AaaSilenceUpdateRequest({this.endTime, this.id, this.startTime, });
 

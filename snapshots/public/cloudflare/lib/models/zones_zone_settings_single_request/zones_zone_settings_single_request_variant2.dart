@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZoneSettingsSingleRequest (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_setting_value.dart';@immutable final class ZonesZoneSettingsSingleRequestVariant2 {const ZonesZoneSettingsSingleRequestVariant2({this.value});
 

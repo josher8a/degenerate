@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComponentStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/component_condition.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// ComponentStatus (and ComponentStatusList) holds the cluster validation info. Deprecated: This API is deprecated in v1.19+
 @immutable final class ComponentStatus {const ComponentStatus({this.apiVersion, this.conditions, this.kind, this.metadata, });

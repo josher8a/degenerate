@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposListCollaboratorsAffiliation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation._(this.value);
 

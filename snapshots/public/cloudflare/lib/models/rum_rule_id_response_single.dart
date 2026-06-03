@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRuleIdResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/rum_messages2.dart';@immutable final class RumRuleIdResponseSingle {const RumRuleIdResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 

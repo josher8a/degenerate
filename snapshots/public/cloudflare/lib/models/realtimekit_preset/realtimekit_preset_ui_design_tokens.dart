@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Ui > DesignTokens)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/border_radius.dart';import 'package:pub_cloudflare/models/realtimekit_preset/border_width.dart';import 'package:pub_cloudflare/models/realtimekit_preset/design_tokens_theme.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_ui_design_tokens_colors.dart';@immutable final class RealtimekitPresetUiDesignTokens {const RealtimekitPresetUiDesignTokens({required this.borderRadius, required this.borderWidth, required this.colors, required this.logo, required this.theme, this.spacingBase = 4.0, });
 

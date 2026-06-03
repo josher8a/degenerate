@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2Table (inline: Credentials)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesR2TableCredentials {const CloudflarePipelinesR2TableCredentials({required this.accessKeyId, required this.secretAccessKey, });
 

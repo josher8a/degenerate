@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostClimateOrdersRequest (inline: Beneficiary)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Publicly sharable reference for the end beneficiary of carbon removal. Assumed to be the Stripe account if not set.
 @immutable final class PostClimateOrdersRequestBeneficiary {const PostClimateOrdersRequestBeneficiary({required this.publicName});

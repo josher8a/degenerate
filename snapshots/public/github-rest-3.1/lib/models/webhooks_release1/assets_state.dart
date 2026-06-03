@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRelease1 (inline: Assets > State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of the release asset.
 @immutable final class AssetsState {const AssetsState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnOnrampCloudType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnOnrampCloudType {const McnOnrampCloudType._(this.value);
 

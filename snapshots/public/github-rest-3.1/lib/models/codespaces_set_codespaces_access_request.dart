@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesSetCodespacesAccessRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
 @immutable final class CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility._(this.value);

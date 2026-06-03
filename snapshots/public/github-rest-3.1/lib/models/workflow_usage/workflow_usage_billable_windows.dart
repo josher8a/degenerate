@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowUsage (inline: Billable > Windows)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowUsageBillableWindows {const WorkflowUsageBillableWindows({this.totalMs});
 

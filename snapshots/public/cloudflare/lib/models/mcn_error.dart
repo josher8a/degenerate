@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error_meta.dart';import 'package:pub_cloudflare/models/mcn_error_source.dart';@immutable final class McnErrorCode {const McnErrorCode._(this.value);
 

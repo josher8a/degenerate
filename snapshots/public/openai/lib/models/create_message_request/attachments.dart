@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateMessageRequest (inline: Attachments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search_type_only.dart';import 'package:pub_openai/models/create_message_request/attachments_tools.dart';@immutable final class Attachments {const Attachments({this.fileId, this.tools, });
 

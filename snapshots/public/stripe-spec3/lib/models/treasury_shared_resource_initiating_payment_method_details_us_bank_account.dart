@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount {const TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount({this.bankName, this.last4, this.routingNumber, });

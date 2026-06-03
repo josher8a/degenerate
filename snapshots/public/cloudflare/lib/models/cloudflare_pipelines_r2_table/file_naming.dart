@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2Table (inline: FileNaming)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filename generation strategy.
 @immutable final class FileNamingStrategy {const FileNamingStrategy._(this.value);

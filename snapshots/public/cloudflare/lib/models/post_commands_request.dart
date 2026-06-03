@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCommandsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_commands_request/post_commands_request_commands.dart';@immutable final class PostCommandsRequest {const PostCommandsRequest({required this.commands});
 

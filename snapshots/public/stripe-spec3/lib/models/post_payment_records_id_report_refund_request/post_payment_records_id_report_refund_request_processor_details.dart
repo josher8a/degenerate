@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportRefundRequest (inline: ProcessorDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_processor_details_custom.dart';/// Processor information for this refund.
 @immutable final class PostPaymentRecordsIdReportRefundRequestProcessorDetails {const PostPaymentRecordsIdReportRefundRequestProcessorDetails({required this.type, this.custom, });

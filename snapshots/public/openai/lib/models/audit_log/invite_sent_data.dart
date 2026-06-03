@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: InviteSent > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the invite.
 @immutable final class InviteSentData {const InviteSentData({this.email, this.role, });

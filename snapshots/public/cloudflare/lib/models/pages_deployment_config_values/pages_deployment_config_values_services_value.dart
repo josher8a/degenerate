@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValues (inline: Services > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Service binding.
 @immutable final class PagesDeploymentConfigValuesServicesValue {const PagesDeploymentConfigValuesServicesValue({required this.environment, required this.service, this.entrypoint, });

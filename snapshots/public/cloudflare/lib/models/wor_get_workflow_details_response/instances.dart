@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorGetWorkflowDetailsResponse (inline: Result > Instances)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Instances {const Instances({this.complete, this.errored, this.paused, this.queued, this.running, this.terminated, this.waiting, this.waitingForPause, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Traces)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Traces {const Traces({required this.rootSpanName, required this.rootTransactionName, required this.service, required this.spans, required this.traceDurationMs, required this.traceEndMs, required this.traceId, required this.traceStartMs, this.errors, });
 

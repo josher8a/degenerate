@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionTaxIdCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_tax_id_collection/required.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionTaxIdCollection {const PaymentPagesCheckoutSessionTaxIdCollection({required this.enabled, required this.$required, });

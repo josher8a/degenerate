@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRewriteHeaderValue
 
 /// A static value for the header.
 extension type const RulesetsRewriteHeaderValue(String value) {

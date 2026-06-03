@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityAdvisoryCreditTypes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of credit the user is receiving.
 @immutable final class SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes._(this.value);

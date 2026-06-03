@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostZonesZoneIdLogpushValidateOriginRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_logpull_options.dart';@immutable final class PostZonesZoneIdLogpushValidateOriginRequest {const PostZonesZoneIdLogpushValidateOriginRequest({required this.logpullOptions});
 

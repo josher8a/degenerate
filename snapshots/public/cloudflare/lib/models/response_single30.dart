@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingle30
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/response_single30/response_single30_result.dart';@immutable final class ResponseSingle30 {const ResponseSingle30({required this.errors, required this.messages, required this.success, required this.result, });
 

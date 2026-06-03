@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsLocRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Latitude direction.
 @immutable final class LatDirection {const LatDirection._(this.value);

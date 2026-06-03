@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Response
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_pagination_info.dart';import 'package:pub_cloudflare/models/response_common_failure55/response_common_failure55_errors.dart';@immutable final class Response {const Response({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

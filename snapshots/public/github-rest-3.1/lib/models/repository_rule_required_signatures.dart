@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleRequiredSignatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType._(this.value);
 

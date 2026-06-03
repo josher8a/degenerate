@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreadStreamEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_stream_event/thread_created.dart';/// A value that is one of: `ThreadCreated`.
 sealed class ThreadStreamEvent {const ThreadStreamEvent();

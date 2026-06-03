@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Budget
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_type.dart';import 'package:pub_github_rest_3_1/models/budget/budget_budget_alerting.dart';@immutable final class Budget {const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, required this.budgetProductSku, required this.budgetAlerting, this.budgetEntityName, });
 

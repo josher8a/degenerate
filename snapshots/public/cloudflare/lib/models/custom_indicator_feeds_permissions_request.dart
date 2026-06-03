@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsPermissionsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsPermissionsRequest {const CustomIndicatorFeedsPermissionsRequest({this.accountTag, this.feedId, });
 

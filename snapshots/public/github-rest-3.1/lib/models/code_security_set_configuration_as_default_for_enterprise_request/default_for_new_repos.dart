@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest (inline: DefaultForNewRepos)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify which types of repository this security configuration should be applied to by default.
 @immutable final class DefaultForNewRepos {const DefaultForNewRepos._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedTerminalLocation (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class DeletedTerminalLocationObject {const DeletedTerminalLocationObject._(this.value);

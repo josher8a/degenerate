@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitWebhooksListSuccessResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_webhook.dart';@immutable final class RealtimekitWebhooksListSuccessResponse {const RealtimekitWebhooksListSuccessResponse({required this.data, required this.success, });
 

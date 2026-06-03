@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorChangeStatusWorkflowInstanceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply action to instance.
 @immutable final class WorChangeStatusWorkflowInstanceRequestStatus {const WorChangeStatusWorkflowInstanceRequestStatus._(this.value);

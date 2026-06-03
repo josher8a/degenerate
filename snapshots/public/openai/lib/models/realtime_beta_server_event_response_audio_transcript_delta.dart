@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseAudioTranscriptDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio_transcript.delta`.
 @immutable final class RealtimeBetaServerEventResponseAudioTranscriptDeltaType {const RealtimeBetaServerEventResponseAudioTranscriptDeltaType._(this.value);

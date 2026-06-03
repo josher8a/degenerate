@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantToolsFunction (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `function`
 @immutable final class AssistantToolsFunctionType {const AssistantToolsFunctionType._(this.value);

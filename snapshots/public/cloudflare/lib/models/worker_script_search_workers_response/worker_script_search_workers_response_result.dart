@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerScriptSearchWorkersResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';@immutable final class WorkerScriptSearchWorkersResponseResult {const WorkerScriptSearchWorkersResponseResult({required this.createdOn, required this.id, required this.modifiedOn, required this.scriptName, this.environmentIsDefault, this.environmentName, this.serviceName, });
 

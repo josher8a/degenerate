@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenValidationRulesEditResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_rule.dart';@immutable final class TokenValidationRulesEditResponse {const TokenValidationRulesEditResponse({required this.result});
 

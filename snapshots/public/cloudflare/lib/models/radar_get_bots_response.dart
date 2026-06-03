@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBotsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bots_response/radar_get_bots_response_result.dart';@immutable final class RadarGetBotsResponse {const RadarGetBotsResponse({required this.result, required this.success, });
 

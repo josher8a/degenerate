@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfBaaiBgeRerankerBaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_query_and_contexts/contexts.dart';@immutable final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequest {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequest({required this.contexts, required this.query, this.topK, });
 

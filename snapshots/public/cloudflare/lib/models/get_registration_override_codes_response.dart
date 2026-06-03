@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetRegistrationOverrideCodesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_override_codes.dart';@immutable final class GetRegistrationOverrideCodesResponse {const GetRegistrationOverrideCodesResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

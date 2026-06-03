@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerVersionsUploadVersionRequest (inline: Metadata > Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataAnnotations {const MetadataAnnotations({this.workersAlias, this.workersMessage, this.workersTag, });
 

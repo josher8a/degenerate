@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexInfoResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_dimensions.dart';import 'package:pub_cloudflare/models/vectorize_mutation_uuid.dart';@immutable final class VectorizeIndexInfoResponse {const VectorizeIndexInfoResponse({this.dimensions, this.processedUpToDatetime, this.processedUpToMutation, this.vectorCount, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateAuthoritiesResponse (inline: Result > CertificateAuthorities)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/certificate_record_type.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/revocation_status.dart';@immutable final class CertificateAuthorities {const CertificateAuthorities({required this.certificateRecordType, required this.country, required this.countryName, required this.name, required this.owner, required this.parentName, required this.parentSha256Fingerprint, required this.revocationStatus, required this.sha256Fingerprint, });
 

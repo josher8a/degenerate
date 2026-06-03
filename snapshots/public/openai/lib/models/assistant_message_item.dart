@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantMessageItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/response_output_text.dart';/// Assistant-authored message within a thread.
 @immutable final class AssistantMessageItem {const AssistantMessageItem({required this.id, required this.createdAt, required this.threadId, required this.content, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.assistant_message', });

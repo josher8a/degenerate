@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Environment (inline: ProtectionRules > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers.dart';@immutable final class ProtectionRulesVariant2 {const ProtectionRulesVariant2({required this.id, required this.nodeId, required this.type, this.preventSelfReview, this.reviewers, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateSipIpAccessControlListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipIpAccessControlListRequest {const CreateSipIpAccessControlListRequest({required this.friendlyName});
 

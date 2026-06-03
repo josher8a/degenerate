@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnDeleteProviderResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_deleted_provider.dart';@immutable final class McnDeleteProviderResponse {const McnDeleteProviderResponse({this.result});
 

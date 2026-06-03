@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCouponsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_coupons_request/applies_to.dart';@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
 

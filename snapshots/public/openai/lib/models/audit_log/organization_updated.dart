@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: OrganizationUpdated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/organization_updated_changes_requested.dart';/// The details for events with this `type`.
 @immutable final class OrganizationUpdated {const OrganizationUpdated({this.id, this.changesRequested, });

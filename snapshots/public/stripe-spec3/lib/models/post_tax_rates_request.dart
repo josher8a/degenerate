@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRatesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request/post_tax_rates_request_tax_type.dart';@immutable final class PostTaxRatesRequest {const PostTaxRatesRequest({required this.displayName, required this.inclusive, required this.percentage, this.active, this.country, this.description, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
 

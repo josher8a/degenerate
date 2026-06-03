@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Role
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role`.
 @immutable final class RoleObject {const RoleObject._(this.value);

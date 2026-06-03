@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateInvitationRequest (inline: Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The permission associated with the invitation.
 @immutable final class ReposUpdateInvitationRequestPermissions {const ReposUpdateInvitationRequestPermissions._(this.value);

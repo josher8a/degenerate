@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3Messages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Web3Messages2 {const Web3Messages2({required this.code, required this.message, });
 

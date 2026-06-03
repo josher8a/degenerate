@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfigMap
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// ConfigMap holds configuration data for pods to consume.
 @immutable final class ConfigMap {const ConfigMap({this.apiVersion, this.binaryData, this.data, this.immutable, this.kind, this.metadata, });

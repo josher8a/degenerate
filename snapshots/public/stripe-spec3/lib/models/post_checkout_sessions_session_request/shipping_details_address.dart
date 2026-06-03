@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsSessionRequest (inline: CollectedInformation > ShippingDetails > Address)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingDetailsAddress {const ShippingDetailsAddress({required this.country, required this.line1, this.city, this.line2, this.postalCode, this.state, });
 

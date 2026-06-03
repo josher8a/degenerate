@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesKeylessResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_base.dart';@immutable final class TlsCertificatesAndHostnamesKeylessResponseSingle {const TlsCertificatesAndHostnamesKeylessResponseSingle({this.result});
 

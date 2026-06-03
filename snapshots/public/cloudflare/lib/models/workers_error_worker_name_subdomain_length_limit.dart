@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerNameSubdomainLengthLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is too long to be used as a subdomain.
 @immutable final class WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode._(this.value);

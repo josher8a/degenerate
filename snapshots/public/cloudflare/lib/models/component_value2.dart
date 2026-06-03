@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComponentValue2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A component value for a subscription.
 @immutable final class ComponentValue2 {const ComponentValue2({this.$default, this.name, this.price, this.value, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodOs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodOS defines the OS parameters of a pod.
 @immutable final class PodOs {const PodOs({this.name = ''});

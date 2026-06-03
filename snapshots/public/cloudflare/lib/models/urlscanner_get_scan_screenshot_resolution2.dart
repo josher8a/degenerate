@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanScreenshotResolution2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target device type.
 @immutable final class UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2._(this.value);

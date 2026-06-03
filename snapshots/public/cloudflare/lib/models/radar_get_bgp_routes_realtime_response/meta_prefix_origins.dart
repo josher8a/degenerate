@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesRealtimeResponse (inline: Result > Meta > PrefixOrigins)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetaPrefixOrigins {const MetaPrefixOrigins({required this.origin, required this.prefix, required this.rpkiValidation, required this.totalPeers, required this.totalVisible, required this.visibility, });
 

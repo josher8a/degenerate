@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > Balances > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BalancesFeatures {const BalancesFeatures({this.disableStripeUserAuthentication, this.editPayoutSchedule, this.externalAccountCollection, this.instantPayouts, this.standardPayouts, });
 

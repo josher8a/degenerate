@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCommandsEligibleDevicesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_commands_devices_response.dart';@immutable final class GetCommandsEligibleDevicesResponse {const GetCommandsEligibleDevicesResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodReadinessGate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodReadinessGate contains the reference to a pod condition
 @immutable final class PodReadinessGate {const PodReadinessGate({this.conditionType = ''});

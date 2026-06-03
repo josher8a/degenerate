@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityUpdateDisplayNameResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_create_display_name_response/email_security_create_display_name_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityUpdateDisplayNameResponse {const EmailSecurityUpdateDisplayNameResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

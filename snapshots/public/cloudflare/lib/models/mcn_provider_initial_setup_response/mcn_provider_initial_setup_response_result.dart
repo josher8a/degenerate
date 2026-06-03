@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnProviderInitialSetupResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_aws_trust_policy.dart';import 'package:pub_cloudflare/models/mcn_azure_setup.dart';import 'package:pub_cloudflare/models/mcn_gcp_setup.dart';sealed class McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResult();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpNewCustomProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry_of_new_profile.dart';import 'package:pub_cloudflare/models/dlp_new_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_new_shared_entry.dart';import 'package:pub_cloudflare/models/dlp_new_word_list_entry.dart';@immutable final class DlpNewCustomProfile {const DlpNewCustomProfile({required this.name, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 

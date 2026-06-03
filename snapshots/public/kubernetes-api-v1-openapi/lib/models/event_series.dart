@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EventSeries
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/micro_time.dart';/// EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
 @immutable final class EventSeries {const EventSeries({this.count, this.lastObservedTime, });

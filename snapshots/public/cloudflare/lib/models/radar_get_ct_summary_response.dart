@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtSummaryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ct_summary_response/radar_get_ct_summary_response_result.dart';@immutable final class RadarGetCtSummaryResponse {const RadarGetCtSummaryResponse({required this.result, required this.success, });
 

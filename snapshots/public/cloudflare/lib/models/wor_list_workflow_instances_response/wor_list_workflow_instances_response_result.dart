@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorListWorkflowInstancesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_status.dart';@immutable final class WorListWorkflowInstancesResponseResult {const WorListWorkflowInstancesResponseResult({required this.createdOn, required this.endedOn, required this.id, required this.modifiedOn, required this.startedOn, required this.status, required this.versionId, required this.workflowId, });
 

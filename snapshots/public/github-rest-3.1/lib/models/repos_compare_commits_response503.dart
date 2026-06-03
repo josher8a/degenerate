@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCompareCommitsResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCompareCommitsResponse503 {const ReposCompareCommitsResponse503({this.code, this.message, this.documentationUrl, });
 

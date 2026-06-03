@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorTagsListResponse404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class GetIndicatorTagsListResponse404 {const GetIndicatorTagsListResponse404({required this.errors, required this.result, required this.success, });
 

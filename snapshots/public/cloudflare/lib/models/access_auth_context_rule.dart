@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAuthContextRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_auth_context_rule/auth_context.dart';/// Matches an Azure Authentication Context.
 /// Requires an Azure identity provider.

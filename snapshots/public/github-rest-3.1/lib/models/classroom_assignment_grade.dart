@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClassroomAssignmentGrade
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Grade for a student or groups GitHub Classroom assignment
 @immutable final class ClassroomAssignmentGrade {const ClassroomAssignmentGrade({required this.assignmentName, required this.assignmentUrl, required this.starterCodeUrl, required this.githubUsername, required this.rosterIdentifier, required this.studentRepositoryName, required this.studentRepositoryUrl, required this.submissionTimestamp, required this.pointsAwarded, required this.pointsAvailable, this.groupName, });

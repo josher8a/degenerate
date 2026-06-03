@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LabeledIssueEvent (inline: Label)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LabeledIssueEventLabel {const LabeledIssueEventLabel({required this.name, required this.color, });
 

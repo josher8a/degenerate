@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailCreated
 
 /// The date and time the destination address has been created.
 extension type EmailCreated(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingOriginSteering
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of origin steering policy to use.
 /// - `"random"`: Select an origin randomly.

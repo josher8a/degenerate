@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceRequest (inline: Rendering > Pdf)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PdfPageSize {const PdfPageSize._(this.value);
 

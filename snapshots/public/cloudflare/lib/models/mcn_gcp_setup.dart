@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnGcpSetup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnGcpSetup {const McnGcpSetup({required this.integrationIdentityTag, required this.itemType, required this.tagCliCommand, });
 

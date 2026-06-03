@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenValidationRulesPreviewResponse (inline: Result > Operations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_endpoint.dart';import 'package:pub_cloudflare/models/shield_host.dart';import 'package:pub_cloudflare/models/shield_method.dart';import 'package:pub_cloudflare/models/shield_selector_operation_state.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ResultOperations {const ResultOperations({this.endpoint, this.host, this.lastUpdated, this.method, this.operationId, this.state, });
 

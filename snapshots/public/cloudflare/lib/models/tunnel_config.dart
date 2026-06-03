@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config/warp_routing.dart';import 'package:pub_cloudflare/models/tunnel_ingress_rule.dart';import 'package:pub_cloudflare/models/tunnel_origin_request.dart';/// The tunnel configuration and ingress rules.
 @immutable final class TunnelConfig {const TunnelConfig({this.ingress, this.originRequest, this.warpRouting, });

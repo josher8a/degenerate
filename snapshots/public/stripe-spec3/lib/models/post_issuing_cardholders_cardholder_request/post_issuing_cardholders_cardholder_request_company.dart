@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Company)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional information about a `company` cardholder.
 @immutable final class PostIssuingCardholdersCardholderRequestCompany {const PostIssuingCardholdersCardholderRequestCompany({this.taxId});

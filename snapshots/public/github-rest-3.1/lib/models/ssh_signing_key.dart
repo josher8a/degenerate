@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SshSigningKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A public SSH key used to sign Git commits
 @immutable final class SshSigningKey {const SshSigningKey({required this.key, required this.id, required this.title, required this.createdAt, });

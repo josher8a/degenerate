@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationMerchantData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingAuthorizationMerchantData {const IssuingAuthorizationMerchantData({required this.category, required this.categoryCode, required this.networkId, this.city, this.country, this.name, this.postalCode, this.state, this.taxId, this.terminalId, this.url, });

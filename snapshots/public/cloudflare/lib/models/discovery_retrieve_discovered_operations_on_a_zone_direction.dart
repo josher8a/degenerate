@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection {const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection._(this.value);

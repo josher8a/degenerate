@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetGroupListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetGroupListResponse {const GetGroupListResponse({required this.createdAt, required this.description, required this.name, required this.updatedAt, required this.uuid, });
 

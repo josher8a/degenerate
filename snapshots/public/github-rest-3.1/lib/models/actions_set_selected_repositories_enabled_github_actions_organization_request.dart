@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest {const ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest({required this.selectedRepositoryIds});
 

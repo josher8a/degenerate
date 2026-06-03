@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRun (inline: PerModelUsage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PerModelUsage {const PerModelUsage({required this.modelName, required this.invocationCount, required this.promptTokens, required this.completionTokens, required this.totalTokens, required this.cachedTokens, });
 

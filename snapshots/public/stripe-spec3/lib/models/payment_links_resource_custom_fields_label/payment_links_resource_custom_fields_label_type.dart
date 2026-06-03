@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceCustomFieldsLabel (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the label.
 @immutable final class PaymentLinksResourceCustomFieldsLabelType {const PaymentLinksResourceCustomFieldsLabelType._(this.value);

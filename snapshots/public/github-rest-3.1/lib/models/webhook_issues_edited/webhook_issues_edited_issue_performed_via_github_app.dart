@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookIssuesEdited (inline: Issue > PerformedViaGithubApp)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_performed_via_github_app_permissions.dart';@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents._(this.value);
 

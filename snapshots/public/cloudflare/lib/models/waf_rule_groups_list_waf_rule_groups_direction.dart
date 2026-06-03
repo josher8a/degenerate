@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafRuleGroupsListWafRuleGroupsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the direction used to sort returned rule groups.
 @immutable final class WafRuleGroupsListWafRuleGroupsDirection {const WafRuleGroupsListWafRuleGroupsDirection._(this.value);

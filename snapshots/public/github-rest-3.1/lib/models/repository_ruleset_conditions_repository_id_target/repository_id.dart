@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulesetConditionsRepositoryIdTarget (inline: RepositoryId)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryId {const RepositoryId({this.repositoryIds});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HealthchecksSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_healthchecks.dart';@immutable final class HealthchecksSingleResponse {const HealthchecksSingleResponse({this.result});
 

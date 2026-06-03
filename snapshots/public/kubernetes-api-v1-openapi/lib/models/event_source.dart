@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EventSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// EventSource contains information for an event.
 @immutable final class EventSource {const EventSource({this.component, this.host, });

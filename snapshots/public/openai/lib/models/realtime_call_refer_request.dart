@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeCallReferRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters required to transfer a SIP call to a new destination using the
 /// Realtime API.

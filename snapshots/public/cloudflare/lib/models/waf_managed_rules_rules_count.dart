@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesRulesCount
 
 /// Defines the number of rules in the current rule group.
 extension type const WafManagedRulesRulesCount(double value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMetersRequest (inline: ValueSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Fields that specify how to calculate a meter event's value.
 @immutable final class ValueSettings {const ValueSettings({required this.eventPayloadKey});

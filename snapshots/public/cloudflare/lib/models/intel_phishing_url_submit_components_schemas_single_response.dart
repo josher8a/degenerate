@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlSubmitComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit.dart';@immutable final class IntelPhishingUrlSubmitComponentsSchemasSingleResponse {const IntelPhishingUrlSubmitComponentsSchemasSingleResponse({this.result});
 

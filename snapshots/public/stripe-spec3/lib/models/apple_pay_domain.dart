@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ApplePayDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain/apple_pay_domain_object.dart';/// 
 @immutable final class ApplePayDomain {const ApplePayDomain({required this.created, required this.domainName, required this.id, required this.livemode, required this.object, });

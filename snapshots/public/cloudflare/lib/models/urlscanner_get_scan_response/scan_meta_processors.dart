@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Meta > Processors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/processors_categories.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/rank.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/tech.dart';@immutable final class ScanMetaProcessors {const ScanMetaProcessors({required this.categories, required this.phishing, required this.rank, required this.tech, });
 

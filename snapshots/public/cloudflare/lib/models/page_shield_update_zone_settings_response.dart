@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldUpdateZoneSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_enabled.dart';import 'package:pub_cloudflare/models/page_shield_updated_at.dart';import 'package:pub_cloudflare/models/page_shield_use_cloudflare_reporting_endpoint.dart';import 'package:pub_cloudflare/models/page_shield_use_connection_url_path.dart';@immutable final class PageShieldUpdateZoneSettingsResponse {const PageShieldUpdateZoneSettingsResponse({required this.enabled, required this.updatedAt, required this.useCloudflareReportingEndpoint, required this.useConnectionUrlPath, });
 

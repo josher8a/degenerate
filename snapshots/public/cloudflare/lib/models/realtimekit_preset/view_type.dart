@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Config > ViewType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the meeting
 @immutable final class ViewType {const ViewType._(this.value);

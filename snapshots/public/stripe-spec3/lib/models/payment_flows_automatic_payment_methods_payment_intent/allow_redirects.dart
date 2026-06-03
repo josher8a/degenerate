@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAutomaticPaymentMethodsPaymentIntent (inline: AllowRedirects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether this PaymentIntent will accept redirect-based payment methods.
 /// 

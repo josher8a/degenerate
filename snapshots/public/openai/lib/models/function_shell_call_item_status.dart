@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallItemStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status values reported for shell tool calls.
 @immutable final class FunctionShellCallItemStatus {const FunctionShellCallItemStatus._(this.value);

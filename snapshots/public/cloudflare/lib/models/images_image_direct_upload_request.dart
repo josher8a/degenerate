@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageDirectUploadRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageDirectUploadRequest {const ImagesImageDirectUploadRequest({this.creator, this.expiry, this.id, this.metadata, this.requireSignedUrLs = false, });
 

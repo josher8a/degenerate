@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedPaymentsFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedPaymentsFeatures {const ConnectEmbeddedPaymentsFeatures({required this.capturePayments, required this.destinationOnBehalfOfChargeManagement, required this.disputeManagement, required this.refundManagement, });

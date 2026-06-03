@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: CertificateDeleted)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class CertificateDeleted {const CertificateDeleted({this.id, this.name, this.certificate, });

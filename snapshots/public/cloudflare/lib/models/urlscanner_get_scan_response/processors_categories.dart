@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Meta > Processors > Categories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/categories_content.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/processors_categories_risks.dart';@immutable final class ProcessorsCategories {const ProcessorsCategories({required this.content, required this.risks, });
 

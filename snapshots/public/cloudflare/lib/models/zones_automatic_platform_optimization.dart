@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesAutomaticPlatformOptimization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesAutomaticPlatformOptimization {const ZonesAutomaticPlatformOptimization({required this.cacheByDeviceType, required this.hostnames, this.cf = false, this.enabled = false, this.wordpress = false, this.wpPlugin = false, });
 

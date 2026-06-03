@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAiBotsSummaryByUserAgentResponse (inline: Result > Meta > ConfidenceInfo > Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
 @immutable final class DataSource {const DataSource._(this.value);

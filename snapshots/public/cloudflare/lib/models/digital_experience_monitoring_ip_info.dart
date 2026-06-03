@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringIpInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_ip_info/digital_experience_monitoring_ip_info_location.dart';@immutable final class DigitalExperienceMonitoringIpInfo {const DigitalExperienceMonitoringIpInfo({this.address, this.asn, this.aso, this.location, this.netmask, this.version, });
 

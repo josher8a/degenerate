@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsDeletedOn
 
 extension type BuildsDeletedOn(DateTime value) {
 factory BuildsDeletedOn.fromJson(String json) => BuildsDeletedOn(DateTime.parse(json));

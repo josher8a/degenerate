@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsUpdatePublicFieldRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdatePublicFieldRequest {const CustomIndicatorFeedsUpdatePublicFieldRequest({this.description, this.isAttributable, this.isDownloadable, this.isPublic, this.name, });
 

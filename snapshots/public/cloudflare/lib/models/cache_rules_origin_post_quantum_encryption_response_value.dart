@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesOriginPostQuantumEncryptionResponseValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_post_quantum_encryption_response_value/cache_rules_origin_post_quantum_encryption_response_value_result.dart';@immutable final class CacheRulesOriginPostQuantumEncryptionResponseValue {const CacheRulesOriginPostQuantumEncryptionResponseValue({this.result});
 

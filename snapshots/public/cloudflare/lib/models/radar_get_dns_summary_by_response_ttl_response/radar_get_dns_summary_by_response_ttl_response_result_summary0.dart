@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsSummaryByResponseTtlResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByResponseTtlResponseResultSummary0 {const RadarGetDnsSummaryByResponseTtlResponseResultSummary0({required this.gt1dLte1w, required this.gt1hLte1d, required this.gt1mLte5m, required this.gt1w, required this.gt5mLte15m, required this.gt15mLte1h, required this.lte1m, });
 

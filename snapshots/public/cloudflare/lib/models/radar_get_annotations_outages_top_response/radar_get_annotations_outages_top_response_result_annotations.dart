@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsOutagesTopResponse (inline: Result > Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAnnotationsOutagesTopResponseResultAnnotations {const RadarGetAnnotationsOutagesTopResponseResultAnnotations({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
 

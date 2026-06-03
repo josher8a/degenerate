@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoCodeInterpreterToolParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_memory_limit.dart';/// Always `auto`.
 @immutable final class AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType._(this.value);

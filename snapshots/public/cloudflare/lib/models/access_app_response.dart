@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppResponse
 
 import 'package:pub_cloudflare/models/access_basic_app_response_props.dart';final class AccessAppResponse {const AccessAppResponse({this.accessBasicAppResponseProps});
 

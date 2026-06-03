@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model22.dart';import 'package:pub_cloudflare/models/mq_queue.dart';import 'package:pub_cloudflare/models/queues_list_response/queues_list_response_result_info.dart';@immutable final class QueuesListResponse {const QueuesListResponse({this.errors, this.messages, this.success, this.result, this.resultInfo, });
 

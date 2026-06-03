@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingUpdateBudgetOrgRequest (inline: BudgetAlerting)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUpdateBudgetOrgRequestBudgetAlerting {const BillingUpdateBudgetOrgRequestBudgetAlerting({this.willAlert, this.alertRecipients, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningJob (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
 @immutable final class FineTuningJobError {const FineTuningJobError({required this.code, required this.message, required this.param, });

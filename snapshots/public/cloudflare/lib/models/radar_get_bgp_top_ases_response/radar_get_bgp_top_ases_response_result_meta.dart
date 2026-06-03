@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopAsesResponse (inline: Result > Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/meta_date_range.dart';@immutable final class RadarGetBgpTopAsesResponseResultMeta {const RadarGetBgpTopAsesResponseResultMeta({required this.dateRange});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookReleaseEdited (inline: Changes > TagName)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TagName {const TagName({required this.from});
 

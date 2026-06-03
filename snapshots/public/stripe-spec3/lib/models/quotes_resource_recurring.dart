@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceRecurring
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';/// 
 @immutable final class QuotesResourceRecurring {const QuotesResourceRecurring({required this.amountSubtotal, required this.amountTotal, required this.interval, required this.intervalCount, required this.totalDetails, });

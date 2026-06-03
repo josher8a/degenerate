@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardsCardRequest (inline: Shipping > AddressValidation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_address_validation/issuing_card_shipping_address_validation_mode.dart';@immutable final class AddressValidation {const AddressValidation({required this.mode});
 

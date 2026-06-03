@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeterEventAdjustment (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The meter event adjustment's status.
 @immutable final class BillingMeterEventAdjustmentStatus {const BillingMeterEventAdjustmentStatus._(this.value);

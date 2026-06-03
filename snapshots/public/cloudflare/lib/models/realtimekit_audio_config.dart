@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitAudioConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Audio signal pathway within an audio file that carries a specific sound source.
 @immutable final class Channel {const Channel._(this.value);

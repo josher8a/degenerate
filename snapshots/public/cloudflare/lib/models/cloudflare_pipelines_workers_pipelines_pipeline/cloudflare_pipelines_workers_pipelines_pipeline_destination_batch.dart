@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesPipeline (inline: Destination > Batch)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch {const CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch({this.maxBytes = 100000000, this.maxDurationS = 300.0, this.maxRows = 10000000, });
 

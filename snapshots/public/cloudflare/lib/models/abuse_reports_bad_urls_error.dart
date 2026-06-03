@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsBadUrlsError
 
 /// Invalid URL (http://example.com/) Invalid URL Scheme (http or https) Missing hostname in url Missing a required field Could not determine encoding of field
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSAccountMembershipsListMembershipsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this membership.
 @immutable final class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus._(this.value);

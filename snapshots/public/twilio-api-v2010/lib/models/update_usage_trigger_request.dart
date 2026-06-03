@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateUsageTriggerRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_usage_trigger_request/create_usage_trigger_request_callback_method.dart';@immutable final class UpdateUsageTriggerRequest {const UpdateUsageTriggerRequest({this.callbackMethod, this.callbackUrl, this.friendlyName, });
 

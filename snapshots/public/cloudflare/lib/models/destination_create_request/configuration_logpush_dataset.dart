@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationCreateRequest (inline: Configuration > LogpushDataset)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConfigurationLogpushDataset {const ConfigurationLogpushDataset._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleCommitStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleCommitStatus {const SimpleCommitStatus({required this.description, required this.id, required this.nodeId, required this.state, required this.context, required this.targetUrl, required this.avatarUrl, required this.url, required this.createdAt, required this.updatedAt, this.$required, });
 

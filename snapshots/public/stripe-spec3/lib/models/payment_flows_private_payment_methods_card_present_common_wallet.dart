@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mobile wallet, one of `apple_pay`, `google_pay`, `samsung_pay`, or `unknown`.
 @immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(this.value);

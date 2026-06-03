@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnabledRepositories
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
 @immutable final class EnabledRepositories {const EnabledRepositories._(this.value);

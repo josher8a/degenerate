@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubmitToolOutputsRunRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/submit_tool_outputs_run_request/tool_outputs.dart';@immutable final class SubmitToolOutputsRunRequest {const SubmitToolOutputsRunRequest({required this.toolOutputs, this.stream, });
 

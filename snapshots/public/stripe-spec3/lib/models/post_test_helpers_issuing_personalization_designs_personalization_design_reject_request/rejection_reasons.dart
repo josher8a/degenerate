@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest (inline: RejectionReasons)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_rejection_reasons/issuing_personalization_design_rejection_reasons_card_logo.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_rejection_reasons/issuing_personalization_design_rejection_reasons_carrier_text.dart';/// The reason(s) the personalization design was rejected.
 @immutable final class RejectionReasons {const RejectionReasons({this.cardLogo, this.carrierText, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitHopResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_node_result.dart';/// Number of packets where no response was received.
 extension type const MagicTransitPacketsLost(int value) {

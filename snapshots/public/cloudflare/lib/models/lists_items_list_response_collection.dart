@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsItemsListResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item.dart';import 'package:pub_cloudflare/models/lists_items_list_response_collection/lists_items_list_response_collection_result_info.dart';import 'package:pub_cloudflare/models/lists_list_item_asn_object.dart';import 'package:pub_cloudflare/models/lists_list_item_hostname_object.dart';import 'package:pub_cloudflare/models/lists_list_item_ip_object.dart';import 'package:pub_cloudflare/models/lists_list_item_redirect_object.dart';@immutable final class ListsItemsListResponseCollection {const ListsItemsListResponseCollection({this.result, this.resultInfo, });
 

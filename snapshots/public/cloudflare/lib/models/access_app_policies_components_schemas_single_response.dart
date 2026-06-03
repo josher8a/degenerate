@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppPoliciesComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policy_response.dart';@immutable final class AccessAppPoliciesComponentsSchemasSingleResponse {const AccessAppPoliciesComponentsSchemasSingleResponse({this.result});
 

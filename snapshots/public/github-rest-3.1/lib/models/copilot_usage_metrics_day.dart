@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotUsageMetricsDay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_dotcom_chat.dart';import 'package:pub_github_rest_3_1/models/copilot_dotcom_pull_requests.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_chat.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions.dart';/// Copilot usage metrics for a given day.
 @immutable final class CopilotUsageMetricsDay {const CopilotUsageMetricsDay({required this.date, this.totalActiveUsers, this.totalEngagedUsers, this.copilotIdeCodeCompletions, this.copilotIdeChat, this.copilotDotcomChat, this.copilotDotcomPullRequests, this.additionalProperties = const {}, });

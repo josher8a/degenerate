@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: Egress)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.
 @immutable final class Egress {const Egress({this.ipv4, this.ipv4Fallback, this.ipv6, });

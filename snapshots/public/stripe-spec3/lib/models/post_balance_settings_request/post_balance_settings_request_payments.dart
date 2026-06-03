@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBalanceSettingsRequest (inline: Payments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/payments_payouts.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/settlement_timing.dart';/// Settings that apply to the [Payments Balance](https://docs.stripe.com/api/balance).
 @immutable final class PostBalanceSettingsRequestPayments {const PostBalanceSettingsRequestPayments({this.debitNegativeBalances, this.payouts, this.settlementTiming, });

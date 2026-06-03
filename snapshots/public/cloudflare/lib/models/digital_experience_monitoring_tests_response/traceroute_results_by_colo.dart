@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTestsResponse (inline: Tests > TracerouteResultsByColo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timing_aggregates.dart';@immutable final class TracerouteResultsByColo {const TracerouteResultsByColo({required this.colo, required this.roundTripTime, });
 

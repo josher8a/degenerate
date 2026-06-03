@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreadResource (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/active_status.dart';import 'package:pub_openai/models/closed_status.dart';import 'package:pub_openai/models/locked_status.dart';/// Current status for the thread. Defaults to `active` for newly created threads.
 sealed class ThreadResourceStatus {const ThreadResourceStatus();

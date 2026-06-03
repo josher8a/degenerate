@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: KeyCreated > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the API key.
 @immutable final class KeyCreatedData {const KeyCreatedData({this.scopes});

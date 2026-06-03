@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookProjectColumnEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';@immutable final class WebhookProjectColumnEditedChanges {const WebhookProjectColumnEditedChanges({this.name});
 

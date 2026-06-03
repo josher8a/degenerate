@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountUnificationAccountControllerFees
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating the responsible payer of a bundle of Stripe fees for pricing-control eligible products on this account. Learn more about [fee behavior on connected accounts](https://docs.stripe.com/connect/direct-charges-fee-payer-behavior).
 @immutable final class AccountUnificationAccountControllerFeesPayer {const AccountUnificationAccountControllerFeesPayer._(this.value);

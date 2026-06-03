@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoPhoneReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_phone_report_error.dart';/// Result from a phone check
 @immutable final class GelatoPhoneReport {const GelatoPhoneReport({required this.status, this.error, this.phone, });

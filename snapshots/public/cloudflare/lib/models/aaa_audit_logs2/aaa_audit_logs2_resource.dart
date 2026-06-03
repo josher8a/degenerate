@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs2 (inline: Resource)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details about the affected resource.
 @immutable final class AaaAuditLogs2Resource {const AaaAuditLogs2Resource({this.id, this.product, this.request, this.response, this.scope, this.type, });

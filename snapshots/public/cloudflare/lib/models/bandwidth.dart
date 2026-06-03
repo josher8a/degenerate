@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Bandwidth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bandwidth structure as visible through the customer-facing API.
 @immutable final class Bandwidth {const Bandwidth._(this.value);

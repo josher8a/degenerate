@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAccessRulesForAUserListIpAccessRulesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the direction used to sort returned rules.
 @immutable final class IpAccessRulesForAUserListIpAccessRulesDirection {const IpAccessRulesForAUserListIpAccessRulesDirection._(this.value);

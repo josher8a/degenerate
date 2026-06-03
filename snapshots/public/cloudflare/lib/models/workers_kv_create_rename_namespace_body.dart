@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvCreateRenameNamespaceBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_title.dart';@immutable final class WorkersKvCreateRenameNamespaceBody {const WorkersKvCreateRenameNamespaceBody({required this.title});
 

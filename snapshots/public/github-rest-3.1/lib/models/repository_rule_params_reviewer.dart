@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleParamsReviewer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the reviewer
 @immutable final class RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType._(this.value);

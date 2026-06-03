@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoIdNumberReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_data_id_number_report_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report/id_number_type.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report_error.dart';/// Result from an id_number check
 @immutable final class GelatoIdNumberReport {const GelatoIdNumberReport({required this.status, this.dob, this.error, this.firstName, this.idNumber, this.idNumberType, this.lastName, });

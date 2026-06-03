@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallAction (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_custom_response.dart';/// The action to perform.
 @immutable final class FirewallMode {const FirewallMode._(this.value);

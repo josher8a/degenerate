@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_components_schemas_advertised.dart';@immutable final class IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest {const IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest({required this.advertised});
 

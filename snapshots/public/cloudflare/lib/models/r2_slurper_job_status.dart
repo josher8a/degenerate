@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperJobStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJobStatus {const R2SlurperJobStatus._(this.value);
 

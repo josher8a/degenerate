@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set to `active`, indicates that the WAF package will be applied to the zone.
 @immutable final class FirewallStatus {const FirewallStatus._(this.value);

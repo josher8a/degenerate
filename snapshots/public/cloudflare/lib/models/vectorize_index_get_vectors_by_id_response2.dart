@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexGetVectorsByIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexGetVectorsByIdResponse2 {const VectorizeIndexGetVectorsByIdResponse2({this.id, this.metadata, this.namespace, this.values, });
 

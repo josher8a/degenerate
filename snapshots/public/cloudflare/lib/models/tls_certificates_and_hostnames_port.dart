@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesPort
 
 /// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
 extension type const TlsCertificatesAndHostnamesPort(double value) {

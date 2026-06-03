@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningDefaultSetup (inline: QuerySuite)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// CodeQL query suite to be used.
 @immutable final class QuerySuite {const QuerySuite._(this.value);

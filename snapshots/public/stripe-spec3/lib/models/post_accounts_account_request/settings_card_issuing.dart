@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > CardIssuing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/card_issuing_tos_acceptance.dart';@immutable final class SettingsCardIssuing {const SettingsCardIssuing({this.tosAcceptance});
 

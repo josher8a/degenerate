@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesOverrideCodes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesOverrideCodes {const TeamsDevicesOverrideCodes({this.disableForTime});
 

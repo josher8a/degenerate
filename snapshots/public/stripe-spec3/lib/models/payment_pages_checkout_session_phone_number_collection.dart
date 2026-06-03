@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionPhoneNumberCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionPhoneNumberCollection {const PaymentPagesCheckoutSessionPhoneNumberCollection({required this.enabled});

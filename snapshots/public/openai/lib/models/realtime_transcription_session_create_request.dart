@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeTranscriptionSessionCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/realtime_session/input_audio_format.dart';import 'package:pub_openai/models/realtime_session/input_audio_noise_reduction.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request/realtime_transcription_session_create_request_turn_detection.dart';/// Realtime transcription session object configuration.
 @immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = InputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });

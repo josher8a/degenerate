@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleSchemasStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the status for Content Scanning.
 @immutable final class BundleSchemasStatus {const BundleSchemasStatus({this.modified, this.value, });

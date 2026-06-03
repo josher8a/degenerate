@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaValidationRetrieveUserSchemaHostsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_response_user_schemas_hosts.dart';@immutable final class ShieldSchemaValidationRetrieveUserSchemaHostsResponse {const ShieldSchemaValidationRetrieveUserSchemaHostsResponse({this.result});
 

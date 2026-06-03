@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsCursor
 
 /// Pagination cursor for log retrieval.
 extension type const BuildsCursor(String value) {

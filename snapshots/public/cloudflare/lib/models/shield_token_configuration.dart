@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldTokenConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_description.dart';import 'package:pub_cloudflare/models/shield_header.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_title.dart';import 'package:pub_cloudflare/models/shield_token_type.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldTokenConfiguration {const ShieldTokenConfiguration({required this.createdAt, required this.credentials, required this.description, required this.id, required this.lastUpdated, required this.title, required this.tokenSources, required this.tokenType, });
 

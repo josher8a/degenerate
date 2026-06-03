@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomToolParam (inline: Format)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param.dart';import 'package:pub_openai/models/custom_text_format_param.dart';/// The input format for the custom tool. Default is unconstrained text.
 sealed class CustomToolParamFormat {const CustomToolParamFormat();

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionCustomFieldsOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsOption {const PaymentPagesCheckoutSessionCustomFieldsOption({required this.label, required this.value, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Overview (inline: Domains > ActionsInbound)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsInbound {const ActionsInbound({this.fullDomains, this.wildcardDomains, });
 

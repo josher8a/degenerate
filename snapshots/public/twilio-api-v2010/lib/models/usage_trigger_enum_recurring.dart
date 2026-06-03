@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageTriggerEnumRecurring
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency of a recurring UsageTrigger.  Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
 @immutable final class UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring._(this.value);

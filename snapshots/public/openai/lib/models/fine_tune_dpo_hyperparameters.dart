@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuneDpoHyperparameters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/beta.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// The hyperparameters used for the DPO fine-tuning job.
 @immutable final class FineTuneDpoHyperparameters {const FineTuneDpoHyperparameters({this.beta, this.batchSize, this.learningRateMultiplier, this.nEpochs, });

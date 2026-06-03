@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePayment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment/invoice_payment_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoicePaymentObject {const InvoicePaymentObject._(this.value);

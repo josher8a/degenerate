@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShapeCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/shape.dart';@immutable final class ShapeCollection {const ShapeCollection({required this.name, required this.shapes, this.tags, });
 

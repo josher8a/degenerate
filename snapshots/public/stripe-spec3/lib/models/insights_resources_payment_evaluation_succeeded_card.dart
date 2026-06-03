@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationSucceededCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_address_line1_check.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_address_postal_code_check.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_cvc_check.dart';/// Details of an succeeded card outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationSucceededCard {const InsightsResourcesPaymentEvaluationSucceededCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, });

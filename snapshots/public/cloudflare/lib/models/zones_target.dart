@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesTarget
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_url_target.dart';/// A value that is one of: `ZonesUrlTarget`.
 sealed class ZonesTarget {const ZonesTarget();

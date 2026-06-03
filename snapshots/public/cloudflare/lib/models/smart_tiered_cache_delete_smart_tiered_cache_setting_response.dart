@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartTieredCacheDeleteSmartTieredCacheSettingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_base.dart';@immutable final class SmartTieredCacheDeleteSmartTieredCacheSettingResponse {const SmartTieredCacheDeleteSmartTieredCacheSettingResponse({this.result});
 

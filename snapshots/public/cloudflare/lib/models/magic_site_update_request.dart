@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSiteUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_connector_id.dart';import 'package:pub_cloudflare/models/magic_secondary_connector_id.dart';import 'package:pub_cloudflare/models/magic_site_location.dart';import 'package:pub_cloudflare/models/magic_site_name.dart';@immutable final class MagicSiteUpdateRequest {const MagicSiteUpdateRequest({this.connectorId, this.description, this.location, this.name, this.secondaryConnectorId, });
 

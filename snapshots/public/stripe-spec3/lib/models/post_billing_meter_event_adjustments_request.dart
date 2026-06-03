@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMeterEventAdjustmentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_type.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_event_adjustments_request/cancel.dart';@immutable final class PostBillingMeterEventAdjustmentsRequest {const PostBillingMeterEventAdjustmentsRequest({required this.eventName, required this.type, this.cancel, this.expand, });
 

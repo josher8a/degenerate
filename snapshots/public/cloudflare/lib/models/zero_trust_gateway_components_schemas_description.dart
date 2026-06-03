@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayComponentsSchemasDescription
 
 /// Provide a short summary of domains in the category.
 extension type const ZeroTrustGatewayComponentsSchemasDescription(String value) {

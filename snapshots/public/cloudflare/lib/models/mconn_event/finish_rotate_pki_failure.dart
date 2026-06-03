@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: FinishRotatePkiFailure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed PKI rotation
 @immutable final class FinishRotatePkiFailureK {const FinishRotatePkiFailureK._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementInfoNoStatus (inline: Targeted)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/targeted_mode.dart';import 'package:pub_cloudflare/models/workers_placement_target.dart';import 'package:pub_cloudflare/models/workers_placement_target/workers_placement_target_variant1.dart';import 'package:pub_cloudflare/models/workers_placement_target/workers_placement_target_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_target/workers_placement_target_variant3.dart';@immutable final class WorkersPlacementInfoNoStatusTargeted4 {const WorkersPlacementInfoNoStatusTargeted4({required this.mode, required this.target, });
 

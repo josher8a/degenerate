@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnAzureSetup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnAzureSetup {const McnAzureSetup({required this.azureConsentUrl, required this.integrationIdentityTag, required this.itemType, required this.tagCliCommand, });
 

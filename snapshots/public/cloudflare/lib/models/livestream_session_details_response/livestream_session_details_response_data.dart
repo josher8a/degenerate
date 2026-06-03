@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LivestreamSessionDetailsResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_all_livestreams_response/fetch_all_livestreams_response_data_paging.dart';import 'package:pub_cloudflare/models/livestream_session_details_response/livestreams.dart';import 'package:pub_cloudflare/models/livestream_session_details_response/sessions.dart';@immutable final class LivestreamSessionDetailsResponseData {const LivestreamSessionDetailsResponseData({this.livestreams, this.paging, this.sessions, });
 

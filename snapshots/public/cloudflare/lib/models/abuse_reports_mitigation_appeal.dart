@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsMitigationAppeal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason why the customer is appealing.
 @immutable final class AbuseReportsAppealReason {const AbuseReportsAppealReason._(this.value);

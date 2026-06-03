@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Default permission level members have for organization repositories.
 @immutable final class DefaultRepositoryPermission {const DefaultRepositoryPermission._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsExecuteRuleOverrides
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_sensitivity_level.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';/// A rule-level override.
 @immutable final class RulesetsExecuteRuleOverrides2 {const RulesetsExecuteRuleOverrides2({required this.id, this.action, this.enabled, this.scoreThreshold, this.sensitivityLevel, });

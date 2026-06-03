@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazBaseMc (inline: NeoEvents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NeoEvents {const NeoEvents({required this.actionType, required this.blockingTriggers, required this.data, required this.firingTriggers, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamAdditionalAudio
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_audio_default.dart';import 'package:pub_cloudflare/models/stream_audio_label.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';/// Specifies the processing status of the video.
 @immutable final class StreamAudioState {const StreamAudioState._(this.value);

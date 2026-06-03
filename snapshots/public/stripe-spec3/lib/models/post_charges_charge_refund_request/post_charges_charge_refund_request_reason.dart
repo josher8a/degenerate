@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesChargeRefundRequest (inline: Reason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for the refund.
 @immutable final class PostChargesChargeRefundRequestReason {const PostChargesChargeRefundRequestReason._(this.value);

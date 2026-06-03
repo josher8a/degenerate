@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCommonNameRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_common_name_rule/common_name.dart';/// Matches a specific common name.
 @immutable final class AccessCommonNameRule {const AccessCommonNameRule({required this.commonName});

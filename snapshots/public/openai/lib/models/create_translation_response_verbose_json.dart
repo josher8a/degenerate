@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTranslationResponseVerboseJson
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcription_segment.dart';@immutable final class CreateTranslationResponseVerboseJson {const CreateTranslationResponseVerboseJson({required this.language, required this.duration, required this.text, this.segments, });
 

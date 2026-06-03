@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityAndAnalysis (inline: DependabotSecurityUpdates)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/security_and_analysis/advanced_security_status.dart';/// Enable or disable Dependabot security updates for the repository.
 @immutable final class SecurityAndAnalysisDependabotSecurityUpdates {const SecurityAndAnalysisDependabotSecurityUpdates({this.status});

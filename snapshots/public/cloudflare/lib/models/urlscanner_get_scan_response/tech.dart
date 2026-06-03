@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Meta > Processors > Tech)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/evidence.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/tech_categories.dart';@immutable final class Tech {const Tech({required this.categories, required this.confidence, required this.evidence, required this.icon, required this.name, required this.slug, required this.website, this.description, });
 

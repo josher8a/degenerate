@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueDependenciesSummary
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssueDependenciesSummary {const IssueDependenciesSummary({required this.blockedBy, required this.blocking, required this.totalBlockedBy, required this.totalBlocking, });
 

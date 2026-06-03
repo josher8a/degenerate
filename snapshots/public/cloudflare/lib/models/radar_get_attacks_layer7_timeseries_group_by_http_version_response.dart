@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_timeseries_group_by_http_version_response/radar_get_attacks_layer7_timeseries_group_by_http_version_response_result.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponse {const RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponse({required this.result, required this.success, });
 

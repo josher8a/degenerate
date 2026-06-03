@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnUpdateOnrampRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';@immutable final class McnUpdateOnrampRequest {const McnUpdateOnrampRequest({this.attachedHubs, this.attachedVpcs, this.description, this.installRoutesInCloud, this.installRoutesInMagicWan, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, this.name, this.vpc, });
 

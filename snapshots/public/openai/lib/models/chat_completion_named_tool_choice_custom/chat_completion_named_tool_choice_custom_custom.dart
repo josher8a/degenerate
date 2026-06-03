@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionNamedToolChoiceCustom (inline: Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionNamedToolChoiceCustomCustom {const ChatCompletionNamedToolChoiceCustomCustom({required this.name});
 

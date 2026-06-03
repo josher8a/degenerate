@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileSearchRanker
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranker to use for the file search. If not specified will use the `auto` ranker.
 @immutable final class FileSearchRanker {const FileSearchRanker._(this.value);

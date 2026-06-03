@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: CodeScanningDelegatedAlertDismissal)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of code scanning delegated alert dismissal
 @immutable final class CodeScanningDelegatedAlertDismissal {const CodeScanningDelegatedAlertDismissal._(this.value);

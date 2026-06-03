@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KeyList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key.dart';@immutable final class KeyList {const KeyList({this.object, this.data, this.hasMore, this.firstId, this.lastId, });
 

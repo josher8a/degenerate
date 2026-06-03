@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsSetSelectedReposForOrgSecretRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetSelectedReposForOrgSecretRequest {const ActionsSetSelectedReposForOrgSecretRequest({required this.selectedRepositoryIds});
 

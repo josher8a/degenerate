@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosSynProtectionRuleListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_syn_protection_rule.dart';@immutable final class DosSynProtectionRuleListResponse {const DosSynProtectionRuleListResponse({this.result});
 

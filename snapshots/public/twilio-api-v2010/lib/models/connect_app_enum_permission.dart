@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectAppEnumPermission
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that your ConnectApp requests.
 @immutable final class ConnectAppEnumPermission {const ConnectAppEnumPermission._(this.value);

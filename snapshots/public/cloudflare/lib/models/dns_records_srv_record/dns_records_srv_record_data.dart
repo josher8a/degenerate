@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsSrvRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_priority.dart';/// Components of a SRV record.
 @immutable final class DnsRecordsSrvRecordData {const DnsRecordsSrvRecordData({this.port, this.priority, this.target, this.weight, });

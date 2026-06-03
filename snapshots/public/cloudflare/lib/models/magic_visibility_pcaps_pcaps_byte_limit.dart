@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsByteLimit
 
 /// The maximum number of bytes to capture. This field only applies to `full` packet captures.
 extension type const MagicVisibilityPcapsPcapsByteLimit(double value) {

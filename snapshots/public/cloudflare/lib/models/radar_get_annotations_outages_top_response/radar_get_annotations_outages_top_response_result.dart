@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsOutagesTopResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_top_response/radar_get_annotations_outages_top_response_result_annotations.dart';@immutable final class RadarGetAnnotationsOutagesTopResponseResult {const RadarGetAnnotationsOutagesTopResponseResult({required this.annotations});
 

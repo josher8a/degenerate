@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleMaxFilePathLength
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_path_length/repository_rule_max_file_path_length_parameters.dart';@immutable final class RepositoryRuleMaxFilePathLengthType {const RepositoryRuleMaxFilePathLengthType._(this.value);
 

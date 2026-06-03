@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSchemasMtu
 
 /// The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.
 extension type const MagicSchemasMtu(int value) {

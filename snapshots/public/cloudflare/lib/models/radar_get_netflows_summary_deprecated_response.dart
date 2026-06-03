@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetNetflowsSummaryDeprecatedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_netflows_summary_deprecated_response/radar_get_netflows_summary_deprecated_response_result.dart';@immutable final class RadarGetNetflowsSummaryDeprecatedResponse {const RadarGetNetflowsSummaryDeprecatedResponse({required this.result, required this.success, });
 

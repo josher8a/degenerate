@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_return_request/returned_details.dart';@immutable final class PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest {const PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest({this.expand, this.returnedDetails, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_event/pull_request_review_event_review.dart';@immutable final class PullRequestReviewEvent {const PullRequestReviewEvent({required this.action, required this.review, required this.pullRequest, });
 

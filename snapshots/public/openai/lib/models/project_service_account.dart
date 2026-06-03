@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectServiceAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';import 'package:pub_openai/models/project_service_account_create_response/project_service_account_create_response_object.dart';/// Represents an individual service account in a project.
 @immutable final class ProjectServiceAccount {const ProjectServiceAccount({required this.object, required this.id, required this.name, required this.role, required this.createdAt, });

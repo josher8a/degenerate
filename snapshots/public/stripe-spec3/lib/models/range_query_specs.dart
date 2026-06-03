@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RangeQuerySpecs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RangeQuerySpecs {const RangeQuerySpecs({this.gt, this.gte, this.lt, this.lte, });
 

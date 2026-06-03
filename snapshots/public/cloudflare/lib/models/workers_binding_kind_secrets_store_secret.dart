@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindSecretsStoreSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindSecretsStoreSecret {const WorkersBindingKindSecretsStoreSecret({required this.name, required this.secretName, required this.storeId, required this.type, });
 

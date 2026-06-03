@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: BusinessProfile > SupportAddress)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SupportAddress {const SupportAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 

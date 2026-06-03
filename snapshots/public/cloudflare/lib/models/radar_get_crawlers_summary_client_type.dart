@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCrawlersSummaryClientType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the client.
 @immutable final class RadarGetCrawlersSummaryClientType {const RadarGetCrawlersSummaryClientType._(this.value);

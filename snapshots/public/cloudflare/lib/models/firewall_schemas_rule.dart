@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallSchemasRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_asn_configuration.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_configuration.dart';import 'package:pub_cloudflare/models/firewall_country_configuration.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration.dart';import 'package:pub_cloudflare/models/firewall_ipv6_configuration.dart';import 'package:pub_cloudflare/models/firewall_notes.dart';import 'package:pub_cloudflare/models/firewall_schemas_identifier.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_rule/firewall_schemas_rule_scope.dart';@immutable final class FirewallSchemasRule {const FirewallSchemasRule({required this.allowedModes, required this.configuration, required this.id, required this.mode, required this.scope, this.createdOn, this.modifiedOn, this.notes, });
 

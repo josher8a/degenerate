@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewComment (inline: StartSide)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The side of the first line of the range for a multi-line comment.
 @immutable final class PullRequestReviewCommentStartSide {const PullRequestReviewCommentStartSide._(this.value);

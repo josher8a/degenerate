@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnByIdResponse (inline: Result > Asn > Related)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsnRelated {const AsnRelated({required this.asn, required this.name, this.aka, this.estimatedUsers, });
 

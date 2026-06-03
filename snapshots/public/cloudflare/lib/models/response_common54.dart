@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon54
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/request_tracer_messages2.dart';@immutable final class ResponseCommon54 {const ResponseCommon54({required this.errors, required this.messages, required this.success, });
 

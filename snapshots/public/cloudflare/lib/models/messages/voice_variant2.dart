@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Audio > Variant1 > Voice > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VoiceVariant2 {const VoiceVariant2({required this.id});
 

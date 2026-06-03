@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OwnerReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
 @immutable final class OwnerReference {const OwnerReference({this.apiVersion = '', this.blockOwnerDeletion, this.controller, this.kind = '', this.name = '', this.uid = '', });

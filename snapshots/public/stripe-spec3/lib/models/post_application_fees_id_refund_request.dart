@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostApplicationFeesIdRefundRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostApplicationFeesIdRefundRequest {const PostApplicationFeesIdRefundRequest({this.amount, this.directive, this.expand, });
 

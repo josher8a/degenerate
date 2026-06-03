@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateMessageRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the message content can be stored or redacted based on privacy settings
 @immutable final class MessageEnumContentRetention {const MessageEnumContentRetention._(this.value);

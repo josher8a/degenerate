@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessConnectionRulesInfra
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_connection_rules_ssh.dart';/// The rules that define how users may connect to the targets secured by your application.
 @immutable final class AccessConnectionRulesInfra {const AccessConnectionRulesInfra({this.ssh});

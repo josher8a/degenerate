@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsTimeLimitFull
 
 /// The packet capture duration in seconds.
 extension type const MagicVisibilityPcapsPcapsTimeLimitFull(double value) {

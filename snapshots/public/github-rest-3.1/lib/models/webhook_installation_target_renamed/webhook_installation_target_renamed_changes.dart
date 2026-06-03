@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookInstallationTargetRenamed (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/slug.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/webhook_installation_target_renamed_changes_login.dart';@immutable final class WebhookInstallationTargetRenamedChanges {const WebhookInstallationTargetRenamedChanges({this.login, this.slug, });
 

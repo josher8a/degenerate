@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequest (inline: ClientSecret)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ephemeral key returned by the API.
 @immutable final class ClientSecret {const ClientSecret({required this.value, required this.expiresAt, });

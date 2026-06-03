@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesAsnsSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
 @immutable final class RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder._(this.value);

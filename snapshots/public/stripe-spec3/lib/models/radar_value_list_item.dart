@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarValueListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item/deleted_radar_value_list_item_object.dart';/// Value list items allow you to add specific values to a given Radar value list, which can then be used in rules.
 /// 

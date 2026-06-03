@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPackagePublished (inline: Package > PackageVersion > PackageFiles)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackagePublishedPackagePackageVersionPackageFiles {const WebhookPackagePublishedPackagePackageVersionPackageFiles({required this.contentType, required this.createdAt, required this.downloadUrl, required this.id, required this.md5, required this.name, required this.sha1, required this.sha256, required this.size, required this.state, required this.updatedAt, });
 

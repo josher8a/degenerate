@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretEnvSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretEnvSource selects a Secret to populate the environment variables with.
 /// 

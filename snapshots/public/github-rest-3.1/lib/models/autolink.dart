@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Autolink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An autolink reference.
 @immutable final class Autolink {const Autolink({required this.id, required this.keyPrefix, required this.urlTemplate, required this.isAlphanumeric, this.updatedAt, });

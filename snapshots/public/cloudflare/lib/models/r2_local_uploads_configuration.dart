@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LocalUploadsConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for local uploads on a bucket.
 @immutable final class R2LocalUploadsConfiguration {const R2LocalUploadsConfiguration({this.enabled});

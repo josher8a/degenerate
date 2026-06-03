@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ServiceAccountList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service_account.dart';/// ServiceAccountList is a list of ServiceAccount objects
 @immutable final class ServiceAccountList {const ServiceAccountList({required this.items, this.apiVersion, this.kind, this.metadata, });

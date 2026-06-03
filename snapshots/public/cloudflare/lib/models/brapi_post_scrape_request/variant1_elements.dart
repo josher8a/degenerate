@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostScrapeRequest (inline: Variant1 > Elements)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1Elements {const Variant1Elements({required this.selector});
 

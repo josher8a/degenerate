@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_bank_transfer.dart';@immutable final class InvoicePaymentMethodOptionsParam10 {const InvoicePaymentMethodOptionsParam10({this.bankTransfer, this.fundingType, });
 

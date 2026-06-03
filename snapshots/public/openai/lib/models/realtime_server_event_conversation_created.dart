@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationCreated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_server_event_conversation_created/realtime_server_event_conversation_created_conversation.dart';/// Returned when a conversation is created. Emitted right after session creation.
 /// 

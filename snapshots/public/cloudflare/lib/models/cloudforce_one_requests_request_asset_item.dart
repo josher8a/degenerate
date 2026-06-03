@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestAssetItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestAssetItem {const CloudforceOneRequestsRequestAssetItem({required this.id, required this.name, this.created, this.description, this.fileType, });
 

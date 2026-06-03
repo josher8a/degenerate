@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_result_network_path_response/hops.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse({required this.hops, required this.resultId, this.deviceName, this.testId, this.testName, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelCount
 
 /// Total results returned based on your search parameters.
 extension type const IntelCount(double value) {

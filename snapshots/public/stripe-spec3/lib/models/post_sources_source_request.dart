@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSourcesSourceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request/post_customers_customer_bank_accounts_id_request_owner.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_mandate.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_source_order.dart';@immutable final class PostSourcesSourceRequest {const PostSourcesSourceRequest({this.amount, this.expand, this.mandate, this.metadata, this.owner, this.sourceOrder, });
 

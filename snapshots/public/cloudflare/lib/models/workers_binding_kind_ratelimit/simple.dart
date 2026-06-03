@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindRatelimit (inline: Simple)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rate limit configuration.
 @immutable final class Simple {const Simple({required this.limit, required this.period, });

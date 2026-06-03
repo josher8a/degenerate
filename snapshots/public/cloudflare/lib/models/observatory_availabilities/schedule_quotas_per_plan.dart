@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryAvailabilities (inline: Quota > ScheduleQuotasPerPlan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_plan_properties_info.dart';/// The number of schedules available per plan.
 @immutable final class ScheduleQuotasPerPlan {const ScheduleQuotasPerPlan({this.value});

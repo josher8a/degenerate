@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuneDpoMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters.dart';/// Configuration for the DPO fine-tuning method.
 @immutable final class FineTuneDpoMethod {const FineTuneDpoMethod({this.hyperparameters});

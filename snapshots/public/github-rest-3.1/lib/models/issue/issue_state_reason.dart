@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Issue (inline: StateReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for the current state
 @immutable final class IssueStateReason {const IssueStateReason._(this.value);

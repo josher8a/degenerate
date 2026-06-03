@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarReviewResourceSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class RadarReviewResourceSession {const RadarReviewResourceSession({this.browser, this.device, this.platform, this.version, });

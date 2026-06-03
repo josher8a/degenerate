@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningScan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information on a single scan performed by secret scanning on the repository
 @immutable final class SecretScanningScan {const SecretScanningScan({this.type, this.status, this.completedAt, this.startedAt, });

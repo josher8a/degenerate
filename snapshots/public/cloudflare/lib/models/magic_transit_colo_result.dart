@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitColoResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_colo.dart';import 'package:pub_cloudflare/models/magic_transit_hop_result.dart';/// Errors resulting from collecting traceroute from colo to target.
 @immutable final class MagicTransitError {const MagicTransitError._(this.value);

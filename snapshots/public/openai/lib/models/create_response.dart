@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/response_stream_options.dart';@immutable final class CreateResponse {const CreateResponse({this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdentityProvidersComponentsSchemasResponseCollection (inline: Result)
 
 import 'package:pub_cloudflare/models/access_schemas_identity_provider.dart';final class AccessIdentityProvidersComponentsSchemasResponseCollectionResult {const AccessIdentityProvidersComponentsSchemasResponseCollectionResult({this.accessSchemasIdentityProvider});
 

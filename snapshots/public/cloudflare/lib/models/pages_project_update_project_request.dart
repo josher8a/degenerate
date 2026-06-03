@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesProjectUpdateProjectRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/build_config.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_deployment_configs.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_source.dart';/// Example:
 /// ```json

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingleId4
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_schemas_messages2.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';@immutable final class ResponseSingleId4 {const ResponseSingleId4({required this.errors, required this.messages, required this.success, this.result, });
 

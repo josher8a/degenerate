@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageHeroUrl
 
 /// URI to hero variant for an image.
 extension type ImagesImageHeroUrl(Uri value) {

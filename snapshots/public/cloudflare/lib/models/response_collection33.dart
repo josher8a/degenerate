@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection33
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_result_info.dart';import 'package:pub_cloudflare/models/resource_sharing_v4error.dart';@immutable final class ResponseCollection33 {const ResponseCollection33({required this.errors, required this.success, this.result, this.resultInfo, });
 

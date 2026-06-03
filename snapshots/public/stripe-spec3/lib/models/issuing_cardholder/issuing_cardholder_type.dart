@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardholder (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
 @immutable final class IssuingCardholderType {const IssuingCardholderType._(this.value);

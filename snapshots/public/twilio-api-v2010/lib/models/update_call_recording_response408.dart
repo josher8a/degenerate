@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateCallRecordingResponse408
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateCallRecordingResponse408 {const UpdateCallRecordingResponse408({this.code, this.message, this.moreInfo, this.status, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionWechatPayRedirectToIosApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionWechatPayRedirectToIosApp {const PaymentIntentNextActionWechatPayRedirectToIosApp({required this.nativeUrl});

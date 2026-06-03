@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryReceivedCreditsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details_us_bank_account/outbound_payments_payment_method_details_us_bank_account_network.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request/initiating_payment_method_details.dart';@immutable final class PostTestHelpersTreasuryReceivedCreditsRequest {const PostTestHelpersTreasuryReceivedCreditsRequest({required this.amount, required this.currency, required this.financialAccount, required this.network, this.description, this.expand, this.initiatingPaymentMethodDetails, });
 

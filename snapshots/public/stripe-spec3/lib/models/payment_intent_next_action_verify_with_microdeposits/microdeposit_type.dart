@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionVerifyWithMicrodeposits (inline: MicrodepositType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
 @immutable final class MicrodepositType {const MicrodepositType._(this.value);

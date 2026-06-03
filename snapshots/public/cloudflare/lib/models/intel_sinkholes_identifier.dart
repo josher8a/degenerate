@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelSinkholesIdentifier
 
 /// Identifier
 extension type const IntelSinkholesIdentifier(String value) {

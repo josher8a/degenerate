@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateAuthorityDetailsResponse404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCertificateAuthorityDetailsResponse404 {const RadarGetCertificateAuthorityDetailsResponse404({required this.error});
 

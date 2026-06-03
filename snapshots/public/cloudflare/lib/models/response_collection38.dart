@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection38
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_messages2.dart';import 'package:pub_cloudflare/models/teams_devices_result_info.dart';@immutable final class ResponseCollection38 {const ResponseCollection38({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

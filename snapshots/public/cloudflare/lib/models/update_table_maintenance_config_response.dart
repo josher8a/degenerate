@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateTableMaintenanceConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config.dart';import 'package:pub_cloudflare/models/response_errors3.dart';import 'package:pub_cloudflare/models/response_messages2.dart';import 'package:pub_cloudflare/models/response_success.dart';@immutable final class UpdateTableMaintenanceConfigResponse {const UpdateTableMaintenanceConfigResponse({required this.errors, required this.messages, required this.success, this.result, });
 

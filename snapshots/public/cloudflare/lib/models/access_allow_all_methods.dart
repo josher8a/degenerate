@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAllowAllMethods
 
 /// Allows all HTTP request methods.
 extension type const AccessAllowAllMethods(bool value) {

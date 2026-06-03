@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvCursorResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
 extension type const WorkersKvCursor(String value) {

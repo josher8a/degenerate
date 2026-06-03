@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: CheckpointPermissionCreated > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the checkpoint permission.
 @immutable final class CheckpointPermissionCreatedData {const CheckpointPermissionCreatedData({this.projectId, this.fineTunedModelCheckpoint, });

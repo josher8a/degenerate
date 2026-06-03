@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDocumentFingerprintsUploadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint_upload.dart';@immutable final class DlpDocumentFingerprintsUploadResponse {const DlpDocumentFingerprintsUploadResponse({this.result});
 

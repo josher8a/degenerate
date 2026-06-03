@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorGetWorkflowDetailsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response/instances.dart';@immutable final class WorGetWorkflowDetailsResponseResult {const WorGetWorkflowDetailsResponseResult({required this.className, required this.createdOn, required this.id, required this.instances, required this.modifiedOn, required this.name, required this.scriptName, required this.triggeredOn, });
 

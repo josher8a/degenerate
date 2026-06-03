@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NamespaceSpec describes the attributes on a Namespace.
 @immutable final class NamespaceSpec {const NamespaceSpec({this.finalizers});

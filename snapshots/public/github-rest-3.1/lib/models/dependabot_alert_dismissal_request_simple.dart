@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertDismissalRequestSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_dismissal_request_simple/requester.dart';/// The current status of the dismissal request.
 @immutable final class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus._(this.value);

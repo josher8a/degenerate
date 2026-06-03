@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseContentPartAdded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_response_content_part_added/realtime_beta_server_event_response_content_part_added_part.dart';/// The event type, must be `response.content_part.added`.
 @immutable final class RealtimeBetaServerEventResponseContentPartAddedType {const RealtimeBetaServerEventResponseContentPartAddedType._(this.value);

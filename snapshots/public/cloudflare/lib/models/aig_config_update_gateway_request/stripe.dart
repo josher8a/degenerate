@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Stripe)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/usage_events.dart';@immutable final class Stripe {const Stripe({required this.authorization, required this.usageEvents, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldPublicSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request/schema_validation_create_schema_request_kind.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// A schema used in schema validation
 @immutable final class ShieldPublicSchema {const ShieldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, required this.source, this.validationEnabled, });

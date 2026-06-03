@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleBranchNamePattern (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operator to use for matching.
 @immutable final class Operator {const Operator._(this.value);

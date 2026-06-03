@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesPageRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_actions2.dart';import 'package:pub_cloudflare/models/zones_priority.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';import 'package:pub_cloudflare/models/zones_status.dart';import 'package:pub_cloudflare/models/zones_target.dart';/// The timestamp of when the Page Rule was created.
 extension type ZonesCreatedOn(DateTime value) {

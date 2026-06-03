@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingIpamBgpPrefixes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn_prepend_count.dart';import 'package:pub_cloudflare/models/addressing_auto_advertise_withdraw.dart';import 'package:pub_cloudflare/models/addressing_bgp_on_demand.dart';import 'package:pub_cloudflare/models/addressing_bgp_prefix_identifier.dart';import 'package:pub_cloudflare/models/addressing_bgp_signal_opts.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// Autonomous System Number (ASN) the prefix will be advertised under.
 extension type const AddressingSchemasAsn(int value) {

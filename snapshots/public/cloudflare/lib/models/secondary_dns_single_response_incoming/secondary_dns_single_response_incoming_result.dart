@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsSingleResponseIncoming (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_auto_refresh_seconds.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_name.dart';import 'package:pub_cloudflare/models/secondary_dns_soa_serial.dart';import 'package:pub_cloudflare/models/secondary_dns_time.dart';@immutable final class SecondaryDnsSingleResponseIncomingResult {const SecondaryDnsSingleResponseIncomingResult({this.autoRefreshSeconds, this.checkedTime, this.createdTime, this.id, this.modifiedTime, this.name, this.peers, this.soaSerial, });
 

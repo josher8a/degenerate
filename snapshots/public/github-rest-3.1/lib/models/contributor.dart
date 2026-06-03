@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Contributor
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contributor
 @immutable final class Contributor {const Contributor({required this.type, required this.contributions, this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId, this.url, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.reposUrl, this.eventsUrl, this.receivedEventsUrl, this.siteAdmin, this.email, this.name, this.userViewType, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PackageVersion (inline: Metadata > Container)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataContainer {const MetadataContainer({required this.tags});
 

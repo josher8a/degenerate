@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldPolicyExpression
 
 /// The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax
 extension type const PageShieldPolicyExpression(String value) {

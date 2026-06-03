@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsResourceBillingModeFlexible (inline: ProrationDiscounts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how invoices and invoice items display proration amounts and discount amounts.
 @immutable final class ProrationDiscounts {const ProrationDiscounts._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindDispatchNamespace (inline: Outbound)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace/outbound_worker.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace/params.dart';/// Outbound worker.
 @immutable final class WorkersBindingKindDispatchNamespaceOutbound {const WorkersBindingKindDispatchNamespaceOutbound({this.params, this.worker, });

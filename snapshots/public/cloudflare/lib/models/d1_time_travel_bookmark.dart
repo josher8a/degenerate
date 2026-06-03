@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1TimeTravelBookmark
 
 /// A bookmark representing a specific state of the database at a specific point in time.
 extension type const D1TimeTravelBookmark(String value) {

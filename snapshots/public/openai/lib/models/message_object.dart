@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/create_message_request/attachments.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_content_image_file_object.dart';import 'package:pub_openai/models/message_content_image_url_object.dart';import 'package:pub_openai/models/message_content_refusal_object.dart';import 'package:pub_openai/models/message_content_text_object.dart';import 'package:pub_openai/models/message_object/message_object_content.dart';import 'package:pub_openai/models/message_object/message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
 @immutable final class MessageObjectObject {const MessageObjectObject._(this.value);

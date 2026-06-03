@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BandwidthByColo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for bandwidth in the form of bytes.
 @immutable final class BandwidthByColo {const BandwidthByColo({this.all, this.cached, this.uncached, });

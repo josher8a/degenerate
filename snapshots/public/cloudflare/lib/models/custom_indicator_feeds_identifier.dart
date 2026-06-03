@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsIdentifier
 
 /// Identifier
 extension type const CustomIndicatorFeedsIdentifier(String value) {

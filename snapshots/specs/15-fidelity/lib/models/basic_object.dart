@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BasicObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BasicObject {const BasicObject({required this.reqNonNull, required this.reqNullable, this.optNonNull, this.optNullable, this.reqWithDefault = 'hello', this.optWithDefault = 42, });
 

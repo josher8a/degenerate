@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionDisplayMultibancoDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionDisplayMultibancoDetails {const PaymentIntentNextActionDisplayMultibancoDetails({this.entity, this.expiresAt, this.hostedVoucherUrl, this.reference, });

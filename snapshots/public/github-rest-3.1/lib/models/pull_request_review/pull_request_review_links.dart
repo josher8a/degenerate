@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReview (inline: Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links_html.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links_pull_request.dart';@immutable final class PullRequestReviewLinks {const PullRequestReviewLinks({required this.html, required this.pullRequest, });
 

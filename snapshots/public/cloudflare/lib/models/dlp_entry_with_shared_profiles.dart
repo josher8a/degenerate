@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntryWithSharedProfiles
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_profile.dart';@immutable final class DlpEntryWithSharedProfiles {const DlpEntryWithSharedProfiles({required this.profiles});
 

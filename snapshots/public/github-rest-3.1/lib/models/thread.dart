@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Thread
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/thread/subject.dart';/// Thread
 @immutable final class Thread {const Thread({required this.id, required this.repository, required this.subject, required this.reason, required this.unread, required this.updatedAt, required this.lastReadAt, required this.url, required this.subscriptionUrl, });

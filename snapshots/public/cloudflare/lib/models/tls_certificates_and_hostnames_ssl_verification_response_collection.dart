@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSslVerificationResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_verification.dart';@immutable final class TlsCertificatesAndHostnamesSslVerificationResponseCollection {const TlsCertificatesAndHostnamesSslVerificationResponseCollection({this.result});
 

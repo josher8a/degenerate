@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksLabel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksLabel {const WebhooksLabel({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
 

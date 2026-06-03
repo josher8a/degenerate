@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection9
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_list_databases_response/d1_list_databases_response_result_info.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_messages2.dart';@immutable final class ResponseCollection9 {const ResponseCollection9({required this.errors, required this.messages, required this.success, this.resultInfo, });
 

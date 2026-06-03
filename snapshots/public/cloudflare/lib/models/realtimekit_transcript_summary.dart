@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitTranscriptSummary
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitTranscriptSummary {const RealtimekitTranscriptSummary({required this.sessionId, required this.summaryDownloadUrl, required this.summaryDownloadUrlExpiry, });
 

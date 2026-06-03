@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsMetrics
 
 /// A comma-separated list of metrics to query.
 extension type const DnsAnalyticsMetrics(String value) {

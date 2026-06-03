@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_result_info/rulesets_result_info_cursors.dart';/// Information to navigate the results.
 @immutable final class RulesetsResultInfo {const RulesetsResultInfo({this.cursors});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsMessages2 {const CustomIndicatorFeedsMessages2({required this.code, required this.message, });
 

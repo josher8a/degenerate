@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CommitCommentEvent (inline: Comment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class CommitCommentEventComment {const CommitCommentEventComment({this.htmlUrl, this.url, this.id, this.nodeId, this.body, this.path, this.position, this.line, this.commitId, this.user, this.createdAt, this.updatedAt, this.reactions, });
 

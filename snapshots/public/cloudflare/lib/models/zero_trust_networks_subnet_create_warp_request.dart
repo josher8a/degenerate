@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustNetworksSubnetCreateWarpRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_subnet_comment.dart';import 'package:pub_cloudflare/models/tunnel_subnet_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_is_default_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_name.dart';@immutable final class ZeroTrustNetworksSubnetCreateWarpRequest {const ZeroTrustNetworksSubnetCreateWarpRequest({required this.name, required this.network, this.comment, this.isDefaultNetwork, });
 

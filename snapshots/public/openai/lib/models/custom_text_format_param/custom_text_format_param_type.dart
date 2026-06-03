@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomTextFormatParam (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `text`.
 @immutable final class CustomTextFormatParamType {const CustomTextFormatParamType._(this.value);

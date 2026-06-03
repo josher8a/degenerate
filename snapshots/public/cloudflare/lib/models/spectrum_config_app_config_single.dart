@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigAppConfigSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_single/spectrum_config_app_config_single_result.dart';import 'package:pub_cloudflare/models/spectrum_config_paygo_app_config.dart';@immutable final class SpectrumConfigAppConfigSingle {const SpectrumConfigAppConfigSingle({this.result});
 

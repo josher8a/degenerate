@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsPriorityList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneRequestsPriorityList {const CloudforceOneRequestsPriorityList({required this.page, required this.perPage, });
 

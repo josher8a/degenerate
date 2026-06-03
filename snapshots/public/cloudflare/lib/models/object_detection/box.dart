@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObjectDetection (inline: Box)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Coordinates defining the bounding box around the detected object
 @immutable final class Box {const Box({this.xmax, this.xmin, this.ymax, this.ymin, });

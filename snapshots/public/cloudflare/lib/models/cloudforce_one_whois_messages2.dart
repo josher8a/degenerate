@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneWhoisMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneWhoisMessages2 {const CloudforceOneWhoisMessages2({required this.code, required this.message, });
 

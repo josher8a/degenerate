@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OutboundPaymentsPaymentMethodDetailsFinancialAccount (inline: Network)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rails used to send funds.
 @immutable final class OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork {const OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork._(this.value);

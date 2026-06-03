@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanBulkResponse (inline: Visibility)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Submitted visibility status.
 @immutable final class UrlscannerCreateScanBulkResponseVisibility {const UrlscannerCreateScanBulkResponseVisibility._(this.value);

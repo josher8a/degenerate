@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallActionMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default action performed by the rules in the WAF package.
 @immutable final class FirewallActionMode {const FirewallActionMode._(this.value);

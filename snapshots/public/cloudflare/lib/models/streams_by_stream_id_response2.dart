@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamsByStreamIdResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_response2/streams_by_stream_id_response2_result.dart';@immutable final class StreamsByStreamIdResponse2 {const StreamsByStreamIdResponse2({required this.result, required this.success, });
 

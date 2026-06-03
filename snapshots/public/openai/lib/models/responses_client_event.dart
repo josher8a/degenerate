@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponsesClientEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/response_stream_options.dart';/// Client events accepted by the Responses WebSocket server.
 /// 

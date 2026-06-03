@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure55 (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseCommonFailure55Errors {const ResponseCommonFailure55Errors({this.code, this.message, });
 

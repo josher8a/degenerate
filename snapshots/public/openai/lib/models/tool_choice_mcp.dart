@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToolChoiceMcp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For MCP tools, the type is always `mcp`.
 @immutable final class ToolChoiceMcpType {const ToolChoiceMcpType._(this.value);

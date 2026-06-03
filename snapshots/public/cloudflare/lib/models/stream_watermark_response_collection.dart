@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWatermarkResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';import 'package:pub_cloudflare/models/stream_watermarks.dart';@immutable final class StreamWatermarkResponseCollection {const StreamWatermarkResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

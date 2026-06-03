@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcObservability
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_observability_logs.dart';/// Settings for observability such as logging.
 @immutable final class CcObservability {const CcObservability({this.logs});

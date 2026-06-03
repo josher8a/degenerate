@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedIssuingCardsListConfigClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_issuing_cards_list_features.dart';/// 
 @immutable final class ConnectEmbeddedIssuingCardsListConfigClaim {const ConnectEmbeddedIssuingCardsListConfigClaim({required this.enabled, required this.features, });

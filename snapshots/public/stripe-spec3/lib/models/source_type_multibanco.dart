@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeMultibanco
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeMultibanco {const SourceTypeMultibanco({this.entity, this.reference, this.refundAccountHolderAddressCity, this.refundAccountHolderAddressCountry, this.refundAccountHolderAddressLine1, this.refundAccountHolderAddressLine2, this.refundAccountHolderAddressPostalCode, this.refundAccountHolderAddressState, this.refundAccountHolderName, this.refundIban, });
 

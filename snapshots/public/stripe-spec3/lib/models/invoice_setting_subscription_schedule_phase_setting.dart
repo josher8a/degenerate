@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceSettingSubscriptionSchedulePhaseSetting
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// 
 @immutable final class InvoiceSettingSubscriptionSchedulePhaseSetting {const InvoiceSettingSubscriptionSchedulePhaseSetting({this.accountTaxIds, this.daysUntilDue, this.issuer, });

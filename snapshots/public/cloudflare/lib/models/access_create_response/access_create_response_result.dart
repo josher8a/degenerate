@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCreateResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_client_id.dart';import 'package:pub_cloudflare/models/access_duration.dart';import 'package:pub_cloudflare/models/access_schemas_name.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';/// The Client Secret for the service token. Access will check for this value in the `CF-Access-Client-Secret` request header.
 extension type const AccessClientSecret(String value) {

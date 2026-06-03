@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigCreateGatewayRequest (inline: WorkersAiBillingMode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how Workers AI inference calls routed through this gateway are billed
 @immutable final class WorkersAiBillingMode {const WorkersAiBillingMode._(this.value);

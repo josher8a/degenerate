@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/label.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class PullRequestEvent {const PullRequestEvent({required this.action, required this.number, required this.pullRequest, this.assignee, this.assignees, this.label, this.labels, });
 

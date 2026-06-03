@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestReviewRequested
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_requested/webhook_pull_request_review_requested_review_requested.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_requested/webhook_pull_request_review_requested_review_requested2.dart';typedef WebhookPullRequestReviewRequested = OneOf2<WebhookPullRequestReviewRequestedReviewRequested,WebhookPullRequestReviewRequestedReviewRequested2>;

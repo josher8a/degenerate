@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteDexRuleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteDexRuleResponse {const DeleteDexRuleResponse({this.result});
 

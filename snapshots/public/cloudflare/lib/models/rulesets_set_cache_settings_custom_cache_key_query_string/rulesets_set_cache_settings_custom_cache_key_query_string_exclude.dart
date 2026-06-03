@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKeyQueryString (inline: Exclude)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which query string parameters to exclude from the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude {const RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude({this.all, this.list, });

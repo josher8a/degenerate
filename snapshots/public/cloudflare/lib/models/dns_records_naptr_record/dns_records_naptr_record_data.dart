@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsNaptrRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a NAPTR record.
 @immutable final class DnsRecordsNaptrRecordData {const DnsRecordsNaptrRecordData({this.flags, this.order, this.preference, this.regex, this.replacement, this.service, });

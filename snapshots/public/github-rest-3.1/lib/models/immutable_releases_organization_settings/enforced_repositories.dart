@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImmutableReleasesOrganizationSettings (inline: EnforcedRepositories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls how immutable releases are enforced in the organization.
 @immutable final class EnforcedRepositories {const EnforcedRepositories._(this.value);

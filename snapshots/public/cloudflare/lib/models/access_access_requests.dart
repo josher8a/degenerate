@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAccessRequests
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_components_schemas_email.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';/// The event that occurred, such as a login attempt.
 extension type const AccessAction(String value) {

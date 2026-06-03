@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/analytics.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/consent.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/triggers_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/variables_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/zaraz_zaraz_config_base_settings.dart';/// Zaraz configuration
 /// 

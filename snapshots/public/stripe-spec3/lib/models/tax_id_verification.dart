@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxIdVerification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
 @immutable final class TaxIdVerificationStatus {const TaxIdVerificationStatus._(this.value);

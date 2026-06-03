@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedProductFeature
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_product_feature/deleted_product_feature_object.dart';/// 
 @immutable final class DeletedProductFeature {const DeletedProductFeature({required this.deleted, required this.id, required this.object, });

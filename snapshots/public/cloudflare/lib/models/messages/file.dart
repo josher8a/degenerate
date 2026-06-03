@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > User > Content > Variant2 > File)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class File {const File({this.fileData, this.fileId, this.filename, });
 

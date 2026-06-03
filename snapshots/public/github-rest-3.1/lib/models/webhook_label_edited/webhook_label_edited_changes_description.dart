@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookLabelEdited (inline: Changes > Description)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookLabelEditedChangesDescription {const WebhookLabelEditedChangesDescription({required this.from});
 

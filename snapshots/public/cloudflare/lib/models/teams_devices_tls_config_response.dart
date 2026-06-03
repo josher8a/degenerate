@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesTlsConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Managed Network TLS Config Response.
 @immutable final class TeamsDevicesTlsConfigResponse {const TeamsDevicesTlsConfigResponse({required this.tlsSockaddr, this.sha256, });

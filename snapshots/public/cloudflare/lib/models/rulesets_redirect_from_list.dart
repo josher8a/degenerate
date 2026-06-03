@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRedirectFromList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A redirect based on a bulk list lookup.
 @immutable final class RulesetsRedirectFromList {const RulesetsRedirectFromList({required this.key, required this.name, });

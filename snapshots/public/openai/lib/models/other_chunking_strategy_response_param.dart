@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OtherChunkingStrategyResponseParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `other`.
 @immutable final class OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType._(this.value);

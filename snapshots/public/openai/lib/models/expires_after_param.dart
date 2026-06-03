@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ExpiresAfterParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after/batch_file_expiration_after_anchor.dart';/// Controls when the session expires relative to an anchor timestamp.
 @immutable final class ExpiresAfterParam {const ExpiresAfterParam({required this.seconds, this.anchor = BatchFileExpirationAfterAnchor.createdAt, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpContextAwareness
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_skip_config.dart';/// Scan the context of predefined entries to only return matches surrounded by keywords.
 @immutable final class DlpContextAwareness {const DlpContextAwareness({required this.enabled, required this.skip, });

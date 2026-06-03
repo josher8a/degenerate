@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CampaignsUpdateCampaignRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';@immutable final class CampaignsUpdateCampaignRequest {const CampaignsUpdateCampaignRequest({this.name, this.description, this.managers, this.teamManagers, this.endsAt, this.contactLink, this.state, });
 

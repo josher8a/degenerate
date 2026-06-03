@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CommunityHealthFile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommunityHealthFile {const CommunityHealthFile({required this.url, required this.htmlUrl, });
 

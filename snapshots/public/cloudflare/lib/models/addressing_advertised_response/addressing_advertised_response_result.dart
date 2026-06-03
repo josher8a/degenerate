@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingAdvertisedResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_components_schemas_advertised.dart';import 'package:pub_cloudflare/models/addressing_modified_at_nullable.dart';@immutable final class AddressingAdvertisedResponseResult {const AddressingAdvertisedResponseResult({this.advertised, this.advertisedModifiedAt, });
 

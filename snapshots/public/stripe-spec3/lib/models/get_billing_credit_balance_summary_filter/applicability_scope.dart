@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetBillingCreditBalanceSummaryFilter (inline: ApplicabilityScope)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_scope/price_type.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter/prices.dart';@immutable final class ApplicabilityScope {const ApplicabilityScope({this.priceType, this.prices, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaObject (inline: Delta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_object/delta_step_details.dart';import 'package:pub_openai/models/run_step_delta_step_details_message_creation_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_object.dart';/// The delta containing the fields that have changed on the run step.
 @immutable final class RunStepDeltaObjectDelta {const RunStepDeltaObjectDelta({this.stepDetails});

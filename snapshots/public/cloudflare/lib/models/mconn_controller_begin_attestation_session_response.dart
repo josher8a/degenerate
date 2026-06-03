@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerBeginAttestationSessionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_attestation_session.dart';@immutable final class MconnControllerBeginAttestationSessionResponse {const MconnControllerBeginAttestationSessionResponse({this.result});
 

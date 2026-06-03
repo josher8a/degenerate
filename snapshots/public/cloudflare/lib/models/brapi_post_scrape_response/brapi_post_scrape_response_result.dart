@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostScrapeResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_scrape_response/brapi_post_scrape_response_result_results.dart';@immutable final class BrapiPostScrapeResponseResult {const BrapiPostScrapeResponseResult({required this.results, required this.selector, });
 

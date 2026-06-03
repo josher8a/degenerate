@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTldsTldType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD type.
 @immutable final class RadarGetTldsTldType {const RadarGetTldsTldType._(this.value);

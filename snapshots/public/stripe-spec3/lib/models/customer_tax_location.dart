@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerTaxLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The data source used to infer the customer's location.
 @immutable final class CustomerTaxLocationSource {const CustomerTaxLocationSource._(this.value);

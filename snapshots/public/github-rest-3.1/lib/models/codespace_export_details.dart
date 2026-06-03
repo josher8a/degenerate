@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespaceExportDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An export of a codespace. Also, latest export details for a codespace can be fetched with id = latest
 @immutable final class CodespaceExportDetails {const CodespaceExportDetails({this.state, this.completedAt, this.branch, this.sha, this.id, this.exportUrl, this.htmlUrl, });

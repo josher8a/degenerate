@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination.dart';import 'package:pub_cloudflare/models/mq_event_source.dart';import 'package:pub_cloudflare/models/mq_event_source_images.dart';import 'package:pub_cloudflare/models/mq_event_source_kv.dart';import 'package:pub_cloudflare/models/mq_event_source_r2.dart';import 'package:pub_cloudflare/models/mq_event_source_super_slurper.dart';import 'package:pub_cloudflare/models/mq_event_source_vectorize.dart';import 'package:pub_cloudflare/models/mq_event_source_workers_ai_model.dart';import 'package:pub_cloudflare/models/mq_event_source_workers_builds_worker.dart';import 'package:pub_cloudflare/models/mq_event_source_workflows_workflow.dart';@immutable final class SubscriptionsCreateRequest {const SubscriptionsCreateRequest({this.destination, this.enabled, this.events, this.name, this.source, });
 

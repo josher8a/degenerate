@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponsesAsync (inline: Requests)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses/reasoning.dart';import 'package:pub_cloudflare/models/responses/responses_input.dart';@immutable final class ResponsesAsyncRequests {const ResponsesAsyncRequests({required this.input, this.reasoning, });
 

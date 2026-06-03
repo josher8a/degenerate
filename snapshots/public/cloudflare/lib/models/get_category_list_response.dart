@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCategoryListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCategoryListResponse {const GetCategoryListResponse({required this.killChain, required this.name, required this.uuid, this.mitreAttack, this.shortname, });
 

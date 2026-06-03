@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscountSource (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source type of the discount.
 @immutable final class DiscountSourceType {const DiscountSourceType._(this.value);

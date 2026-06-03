@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryInboundTransfersResourceFailureDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_failure_details/treasury_inbound_transfers_resource_failure_details_code.dart';/// 
 @immutable final class TreasuryInboundTransfersResourceFailureDetails {const TreasuryInboundTransfersResourceFailureDetails({required this.code});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_ship_from_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_resource_reversal.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_shipping_cost.dart';import 'package:pub_stripe_spec3/models/tax_transaction/tax_transaction_line_items.dart';import 'package:pub_stripe_spec3/models/tax_transaction_line_item/tax_transaction_line_item_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxTransactionObject {const TaxTransactionObject._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoiceitemsInvoiceitemRequest (inline: Pricing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pricing information for the invoice item.
 @immutable final class Pricing {const Pricing({this.price});

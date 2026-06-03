@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsBotnetThreatFeedSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
 @immutable final class RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder._(this.value);

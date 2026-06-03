@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage._(this.value);
 

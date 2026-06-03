@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneLockdownUpdateAZoneLockdownRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_configurations2.dart';import 'package:pub_cloudflare/models/firewall_schemas_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_ip_configuration.dart';@immutable final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Customer (inline: TaxExempt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes the customer's tax exemption status, which is `none`, `exempt`, or `reverse`. When set to `reverse`, invoice and receipt PDFs include the following text: **"Reverse charge"**.
 @immutable final class CustomerTaxExempt {const CustomerTaxExempt._(this.value);

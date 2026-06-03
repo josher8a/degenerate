@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestMessageEdit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_message_content.dart';@immutable final class CloudforceOneRequestsRequestMessageEdit {const CloudforceOneRequestsRequestMessageEdit({this.content});
 

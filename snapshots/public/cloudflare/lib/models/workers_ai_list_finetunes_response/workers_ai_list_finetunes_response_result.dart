@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiListFinetunesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiListFinetunesResponseResult {const WorkersAiListFinetunesResponseResult({required this.createdAt, required this.id, required this.model, required this.modifiedAt, required this.name, this.description, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperConnectivityResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConnectivityStatus {const ConnectivityStatus._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UploadPart
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `upload.part`.
 @immutable final class UploadPartObject {const UploadPartObject._(this.value);

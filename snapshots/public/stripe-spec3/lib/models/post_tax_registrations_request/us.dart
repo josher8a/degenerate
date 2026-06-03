@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest (inline: CountryOptions > Us)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/local_amusement_tax.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/local_lease_tax.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/state_sales_tax.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_united_states/tax_product_registrations_resource_country_options_united_states_type.dart';@immutable final class Us {const Us({required this.state, required this.type, this.localAmusementTax, this.localLeaseTax, this.stateSalesTax, });
 

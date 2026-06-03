@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebSearchActionSearch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_action_search/sources.dart';/// The action type.
 /// 

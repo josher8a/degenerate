@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminDeviceListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_device.dart';@immutable final class MconnAdminDeviceListResponse {const MconnAdminDeviceListResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesRequestType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Signature type desired on certificate ("origin-rsa" (rsa), "origin-ecc" (ecdsa), or "keyless-certificate" (for Keyless SSL servers).
 @immutable final class TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType._(this.value);

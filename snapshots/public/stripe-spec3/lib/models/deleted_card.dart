@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';/// 
 @immutable final class DeletedCard {const DeletedCard({required this.deleted, required this.id, required this.object, this.currency, });

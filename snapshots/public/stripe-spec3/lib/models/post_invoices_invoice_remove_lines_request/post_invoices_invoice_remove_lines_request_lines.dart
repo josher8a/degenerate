@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceRemoveLinesRequest (inline: Lines)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LinesBehavior {const LinesBehavior._(this.value);
 

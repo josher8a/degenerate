@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TopTargetLocationsResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0 {const RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0({required this.rank, required this.targetCountryAlpha2, required this.targetCountryName, required this.value, });
 

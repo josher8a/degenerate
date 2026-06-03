@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumModifyRulesRequest (inline: Rules)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_rule_identifier.dart';@immutable final class RumModifyRulesRequestRules {const RumModifyRulesRequestRules({this.host, this.id, this.inclusive, this.isPaused, this.paths, });
 

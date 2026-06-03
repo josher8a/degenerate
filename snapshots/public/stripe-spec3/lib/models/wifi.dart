@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Wifi
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_wifi_config/terminal_configuration_configuration_resource_wifi_config_type.dart';import 'package:pub_stripe_spec3/models/wifi/enterprise_eap_peap.dart';import 'package:pub_stripe_spec3/models/wifi/enterprise_eap_tls.dart';import 'package:pub_stripe_spec3/models/wifi/personal_psk.dart';@immutable final class Wifi {const Wifi({required this.type, this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, });
 

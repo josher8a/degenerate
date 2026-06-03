@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of a code scanning alert.
 @immutable final class CodeScanningAlertState {const CodeScanningAlertState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_rule_identifier.dart';import 'package:pub_cloudflare/models/rum_timestamp.dart';@immutable final class RumRule {const RumRule({this.created, this.host, this.id, this.inclusive, this.isPaused, this.paths, this.priority, });
 

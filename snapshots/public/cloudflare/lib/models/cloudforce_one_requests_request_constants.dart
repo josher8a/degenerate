@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestConstants
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_priority.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_status.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';@immutable final class CloudforceOneRequestsRequestConstants {const CloudforceOneRequestsRequestConstants({this.priority, this.status, this.tlp, });
 

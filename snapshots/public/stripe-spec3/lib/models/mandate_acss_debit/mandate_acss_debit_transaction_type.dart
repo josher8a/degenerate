@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MandateAcssDebit (inline: TransactionType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Transaction type of the mandate.
 @immutable final class MandateAcssDebitTransactionType {const MandateAcssDebitTransactionType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon62
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/smartshield_messages2.dart';@immutable final class ResponseCommon62 {const ResponseCommon62({required this.errors, required this.messages, required this.result, required this.success, });
 

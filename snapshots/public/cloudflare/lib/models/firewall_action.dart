@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallAction
 
 import 'package:pub_cloudflare/models/firewall_action/firewall_action_variant1.dart';/// The action to perform when the threshold of matched traffic within the configured period is exceeded.
 final class FirewallAction {const FirewallAction({this.firewallActionVariant1});

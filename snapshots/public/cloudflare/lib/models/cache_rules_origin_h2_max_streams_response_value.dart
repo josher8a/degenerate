@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesOriginH2MaxStreamsResponseValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';import 'package:pub_cloudflare/models/cache_rules_origin_h2_max_streams.dart';@immutable final class CacheRulesOriginH2MaxStreamsResponseValue {const CacheRulesOriginH2MaxStreamsResponseValue({required this.errors, required this.messages, required this.success, this.result, });
 

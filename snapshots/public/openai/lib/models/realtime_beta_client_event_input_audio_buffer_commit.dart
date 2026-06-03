@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventInputAudioBufferCommit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.commit`.
 @immutable final class RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesSortQueryStringForCacheValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreateEventRelationshipResponse (inline: Relationships)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_request/relationship_type.dart';@immutable final class Relationships {const Relationships({required this.childDatasetId, required this.childId, required this.parentDatasetId, required this.parentId, required this.relationshipType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsnsRelResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/rels.dart';@immutable final class RadarGetAsnsRelResponseResult {const RadarGetAsnsRelResponseResult({required this.meta, required this.rels, });
 

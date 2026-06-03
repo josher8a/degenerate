@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAnalysis
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_analysis_key.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_category.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_commit_sha.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_sarif_id.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_tool.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';/// Identifies the variable values associated with the environment in which this analysis was performed.
 extension type const CodeScanningAnalysisEnvironment(String value) {

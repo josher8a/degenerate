@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityGetConfigurationsForOrgTargetType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeSecurityGetConfigurationsForOrgTargetType {const CodeSecurityGetConfigurationsForOrgTargetType._(this.value);
 

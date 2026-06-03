@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposMergeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposMergeRequest {const ReposMergeRequest({required this.base, required this.head, this.commitMessage, });
 

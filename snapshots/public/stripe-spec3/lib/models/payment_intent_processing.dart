@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentProcessing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_card_processing.dart';/// Type of the payment method for which payment is in `processing` state, one of `card`.
 @immutable final class PaymentIntentProcessingType {const PaymentIntentProcessingType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPayoutsRequest (inline: SourceType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The balance type of your Stripe balance to draw this payout from. Balances for different payment sources are kept separately. You can find the amounts with the Balances API. One of `bank_account`, `card`, or `fpx`.
 @immutable final class SourceType {const SourceType._(this.value);

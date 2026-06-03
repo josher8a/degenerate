@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingLoadBalancerComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_load_balancer.dart';@immutable final class LoadBalancingLoadBalancerComponentsSchemasResponseCollection {const LoadBalancingLoadBalancerComponentsSchemasResponseCollection({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheSchemasPatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls enablement of Automatic SSL/TLS.
 @immutable final class CacheSchemasValue {const CacheSchemasValue._(this.value);

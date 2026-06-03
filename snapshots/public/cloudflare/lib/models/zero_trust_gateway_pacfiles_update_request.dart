@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayPacfilesUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_contents.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_name.dart';@immutable final class ZeroTrustGatewayPacfilesUpdateRequest {const ZeroTrustGatewayPacfilesUpdateRequest({required this.contents, required this.description, required this.name, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAnalysisToolGuid
 
 /// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
 extension type const CodeScanningAnalysisToolGuid(String value) {

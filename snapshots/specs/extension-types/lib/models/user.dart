@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/User
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_extension_types/models/user_id.dart';/// An ISO 8601 timestamp.
 extension type Timestamp(DateTime value) {

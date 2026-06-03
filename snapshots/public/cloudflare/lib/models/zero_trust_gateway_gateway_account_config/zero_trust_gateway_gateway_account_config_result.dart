@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayGatewayAccountConfig (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings/zero_trust_gateway_gateway_account_settings_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';@immutable final class ZeroTrustGatewayGatewayAccountConfigResult {const ZeroTrustGatewayGatewayAccountConfigResult({this.settings, this.createdAt, this.updatedAt, });
 

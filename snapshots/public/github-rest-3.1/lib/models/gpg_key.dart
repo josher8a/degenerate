@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GpgKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gpg_key/gpg_key_emails.dart';import 'package:pub_github_rest_3_1/models/gpg_key/subkeys.dart';/// A unique encryption key
 @immutable final class GpgKey {const GpgKey({required this.id, required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey, this.name, });

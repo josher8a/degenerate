@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > InstantPayoutsPromotion > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InstantPayoutsPromotionFeatures {const InstantPayoutsPromotionFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, this.instantPayouts, });
 

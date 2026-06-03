@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsManagedTransform
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The human-readable identifier of the Managed Transform.
 extension type const RulesetsManagedTransformId(String value) {

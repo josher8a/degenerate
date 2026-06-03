@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesIdentifier
 
 /// Identifier
 extension type const ZonesIdentifier(String value) {

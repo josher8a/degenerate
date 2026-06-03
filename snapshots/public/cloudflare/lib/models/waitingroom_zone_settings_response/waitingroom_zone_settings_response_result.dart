@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomZoneSettingsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_search_engine_crawler_bypass.dart';@immutable final class WaitingroomZoneSettingsResponseResult {const WaitingroomZoneSettingsResponseResult({required this.searchEngineCrawlerBypass});
 

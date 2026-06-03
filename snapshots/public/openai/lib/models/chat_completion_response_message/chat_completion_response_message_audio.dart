@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionResponseMessage (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If the audio output modality is requested, this object contains data
 /// about the audio response from the model. [Learn more](/docs/guides/audio).

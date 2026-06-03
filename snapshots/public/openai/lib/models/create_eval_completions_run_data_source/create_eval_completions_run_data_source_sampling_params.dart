@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalCompletionsRunDataSource (inline: SamplingParams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_tool.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/sampling_params_response_format.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_text.dart';@immutable final class CreateEvalCompletionsRunDataSourceSamplingParams {const CreateEvalCompletionsRunDataSourceSamplingParams({this.reasoningEffort, this.temperature = 1.0, this.maxCompletionTokens, this.topP = 1.0, this.seed = 42, this.responseFormat, this.tools, });
 

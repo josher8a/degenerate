@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazVariableMatchRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule/zaraz_variable_match_rule_settings.dart';@immutable final class ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTcpResetsTimeoutsTimeseriesGroupResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_timeseries_group_response/radar_get_tcp_resets_timeouts_timeseries_group_response_result_serie0.dart';@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResult {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
 

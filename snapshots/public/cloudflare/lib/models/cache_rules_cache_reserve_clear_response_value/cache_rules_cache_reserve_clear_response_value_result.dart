@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesCacheReserveClearResponseValue (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The time that the latest Cache Reserve Clear operation completed.
 extension type CacheRulesCacheReserveClearEndTs(DateTime value) {

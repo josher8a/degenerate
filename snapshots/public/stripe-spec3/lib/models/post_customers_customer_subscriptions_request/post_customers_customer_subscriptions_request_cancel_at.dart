@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: CancelAt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CancelAtVariant2 {const CancelAtVariant2._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDiskEncryptionInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to check all disks for encryption.
 extension type const TeamsDevicesRequireAll(bool value) {

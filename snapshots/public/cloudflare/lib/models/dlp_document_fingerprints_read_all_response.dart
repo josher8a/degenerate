@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDocumentFingerprintsReadAllResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint.dart';@immutable final class DlpDocumentFingerprintsReadAllResponse {const DlpDocumentFingerprintsReadAllResponse({this.result});
 

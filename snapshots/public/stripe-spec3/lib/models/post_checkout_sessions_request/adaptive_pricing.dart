@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: AdaptivePricing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
 @immutable final class AdaptivePricing {const AdaptivePricing({this.enabled});

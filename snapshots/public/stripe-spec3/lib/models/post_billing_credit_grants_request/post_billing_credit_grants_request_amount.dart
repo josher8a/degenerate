@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingCreditGrantsRequest (inline: Amount)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount/billing_credit_grants_resource_amount_type.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request/monetary.dart';/// Amount of this credit grant.
 @immutable final class PostBillingCreditGrantsRequestAmount {const PostBillingCreditGrantsRequestAmount({required this.type, this.monetary, });

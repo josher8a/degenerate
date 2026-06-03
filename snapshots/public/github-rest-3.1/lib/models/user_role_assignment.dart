@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserRoleAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment/assignment.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// The Relationship a User has with a role.
 @immutable final class UserRoleAssignment {const UserRoleAssignment({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.assignment, this.inheritedFrom, this.name, this.email, this.starredAt, this.userViewType, });

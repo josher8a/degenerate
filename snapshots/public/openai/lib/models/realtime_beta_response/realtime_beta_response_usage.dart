@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: Usage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/output_token_details.dart';import 'package:pub_openai/models/realtime_beta_response/usage_input_token_details.dart';/// Usage statistics for the Response, this will correspond to billing. A
 /// Realtime API session will maintain a conversation context and append new

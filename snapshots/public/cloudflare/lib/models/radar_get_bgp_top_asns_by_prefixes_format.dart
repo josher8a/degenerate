@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopAsnsByPrefixesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetBgpTopAsnsByPrefixesFormat {const RadarGetBgpTopAsnsByPrefixesFormat._(this.value);

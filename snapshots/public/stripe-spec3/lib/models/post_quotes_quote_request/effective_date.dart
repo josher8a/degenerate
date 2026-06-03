@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostQuotesQuoteRequest (inline: SubscriptionData > EffectiveDate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request/expires_at_variant3.dart';@immutable final class EffectiveDateVariant1 {const EffectiveDateVariant1._(this.value);
 

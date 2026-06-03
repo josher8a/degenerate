@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunnerApplication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Runner Application
 @immutable final class RunnerApplication {const RunnerApplication({required this.os, required this.architecture, required this.downloadUrl, required this.filename, this.tempDownloadToken, this.sha256Checksum, });

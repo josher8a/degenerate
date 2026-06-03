@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSelectorInclude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_host.dart';@immutable final class ShieldSelectorInclude {const ShieldSelectorInclude({this.host});
 

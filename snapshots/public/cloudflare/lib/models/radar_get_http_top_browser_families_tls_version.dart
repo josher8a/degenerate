@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopBrowserFamiliesTlsVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowserFamiliesTlsVersion {const RadarGetHttpTopBrowserFamiliesTlsVersion._(this.value);
 

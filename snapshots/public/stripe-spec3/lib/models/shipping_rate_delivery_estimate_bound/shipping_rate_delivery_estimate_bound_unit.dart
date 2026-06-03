@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShippingRateDeliveryEstimateBound (inline: Unit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A unit of time.
 @immutable final class ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCertificatesComponentsSchemasResponseCollection2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_components_schemas_certificates.dart';@immutable final class AccessCertificatesComponentsSchemasResponseCollection2 {const AccessCertificatesComponentsSchemasResponseCollection2({this.result});
 

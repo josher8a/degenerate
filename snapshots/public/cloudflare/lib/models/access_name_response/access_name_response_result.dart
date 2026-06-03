@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessNameResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_tags_components_schemas_name.dart';@immutable final class AccessNameResponseResult {const AccessNameResponseResult({this.name});
 

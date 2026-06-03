@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ToolChoice > Variant1 > Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/messages/variant1_custom_custom.dart';/// Force a specific custom tool.
 @immutable final class Variant1Custom {const Variant1Custom({required this.custom, required this.type, });

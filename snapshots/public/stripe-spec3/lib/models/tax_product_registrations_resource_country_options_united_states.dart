@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsUnitedStates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_united_states/tax_product_registrations_resource_country_options_united_states_type.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_us_local_amusement_tax.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_us_local_lease_tax.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_us_state_sales_tax.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsUnitedStates {const TaxProductRegistrationsResourceCountryOptionsUnitedStates({required this.state, required this.type, this.localAmusementTax, this.localLeaseTax, this.stateSalesTax, });

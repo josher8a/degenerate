@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminUpgradeSlotsFetchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_upgrade_slot.dart';@immutable final class MconnAdminUpgradeSlotsFetchResponse {const MconnAdminUpgradeSlotsFetchResponse({this.result});
 

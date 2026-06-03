@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamTokenStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the token.
 @immutable final class IamTokenStatus {const IamTokenStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesOriginMaxHttpVersionValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Origin Max HTTP Version Setting.
 @immutable final class CacheRulesOriginMaxHttpVersionValue {const CacheRulesOriginMaxHttpVersionValue._(this.value);

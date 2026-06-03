@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSetupIntentsRequest (inline: SingleUse)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If you populate this hash, this SetupIntent generates a `single_use` mandate after successful completion.
 /// 

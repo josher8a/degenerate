@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDexSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_dex_test_schemas_http.dart';@immutable final class TeamsDevicesDexSingleResponse {const TeamsDevicesDexSingleResponse({this.result});
 

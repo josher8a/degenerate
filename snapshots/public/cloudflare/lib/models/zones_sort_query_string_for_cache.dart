@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesSortQueryStringForCache
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';/// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
 /// 

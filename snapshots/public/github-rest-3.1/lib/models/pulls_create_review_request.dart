@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsCreateReviewRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pulls_create_review_request/pulls_create_review_request_comments.dart';import 'package:pub_github_rest_3_1/models/pulls_create_review_request/pulls_create_review_request_event.dart';@immutable final class PullsCreateReviewRequest {const PullsCreateReviewRequest({this.commitId, this.body, this.event, this.comments, });
 

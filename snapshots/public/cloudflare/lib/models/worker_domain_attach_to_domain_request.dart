@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerDomainAttachToDomainRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_hostname.dart';import 'package:pub_cloudflare/models/workers_schemas_environment.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';@immutable final class WorkerDomainAttachToDomainRequest {const WorkerDomainAttachToDomainRequest({required this.hostname, required this.service, required this.zoneId, this.environment, });
 

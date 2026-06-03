@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWebhookRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The URL where webhooks will be sent.
 extension type StreamNotificationUrl(Uri value) {

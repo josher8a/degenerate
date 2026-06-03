@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PartialImages
 
 /// The number of partial images to generate. This parameter is used for
 /// streaming responses that return partial images. Value must be between 0 and 3.

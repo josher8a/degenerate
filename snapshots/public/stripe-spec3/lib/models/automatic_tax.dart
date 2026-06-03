@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutomaticTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/automatic_tax/automatic_tax_status.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
 @immutable final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);

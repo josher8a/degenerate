@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Metadata > PcMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PcMetadata {const PcMetadata({this.effectiveNetworkType, this.reflexiveConnectivity, this.relayConnectivity, this.timestamp, this.turnConnectivity, });
 

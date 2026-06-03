@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon71
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_messages2.dart';@immutable final class ResponseCommon71 {const ResponseCommon71({required this.errors, required this.messages, required this.success, });
 

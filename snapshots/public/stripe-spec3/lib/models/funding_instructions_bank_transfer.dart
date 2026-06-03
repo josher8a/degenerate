@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_financial_address.dart';/// The bank_transfer type
 @immutable final class FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType._(this.value);

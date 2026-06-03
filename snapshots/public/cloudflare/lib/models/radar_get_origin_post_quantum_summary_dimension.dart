@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginPostQuantumSummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the origin post-quantum data dimension by which to group the results.
 @immutable final class RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension._(this.value);

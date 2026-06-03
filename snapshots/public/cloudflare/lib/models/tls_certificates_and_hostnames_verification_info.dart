@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesVerificationInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of CNAME record.
 @immutable final class RecordName {const RecordName._(this.value);

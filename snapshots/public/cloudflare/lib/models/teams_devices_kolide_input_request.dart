@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesKolideInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Count Operator.
 @immutable final class CountOperator {const CountOperator._(this.value);

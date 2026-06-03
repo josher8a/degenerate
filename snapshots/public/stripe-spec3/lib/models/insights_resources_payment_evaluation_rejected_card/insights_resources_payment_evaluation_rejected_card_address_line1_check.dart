@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationRejectedCard (inline: AddressLine1Check)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the address line 1 check.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check {const InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check._(this.value);

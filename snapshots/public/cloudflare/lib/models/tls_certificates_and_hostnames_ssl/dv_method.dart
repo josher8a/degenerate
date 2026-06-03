@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSsl (inline: Dv > Method)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Domain control validation (DCV) method used for this hostname.
 @immutable final class DvMethod {const DvMethod._(this.value);

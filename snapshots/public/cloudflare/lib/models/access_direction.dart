@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The chronological order used to sort the logs.
 @immutable final class AccessDirection {const AccessDirection._(this.value);

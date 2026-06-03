@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2CorsRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_cors_rule/allowed.dart';@immutable final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
 

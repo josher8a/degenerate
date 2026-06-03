@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Dependency
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
 @immutable final class DependencyRelationship {const DependencyRelationship._(this.value);

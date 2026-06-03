@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodResourceClaimStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodResourceClaimStatus is stored in the PodStatus for each PodResourceClaim which references a ResourceClaimTemplate. It stores the generated name for the corresponding ResourceClaim.
 @immutable final class PodResourceClaimStatus {const PodResourceClaimStatus({this.name = '', this.resourceClaimName, });

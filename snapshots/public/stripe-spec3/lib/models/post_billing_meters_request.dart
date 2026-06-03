@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMetersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/customer_mapping.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/default_aggregation.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/value_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 @immutable final class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow._(this.value);

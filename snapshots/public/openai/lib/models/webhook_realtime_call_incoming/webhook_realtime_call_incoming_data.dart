@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRealtimeCallIncoming (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_realtime_call_incoming/sip_headers.dart';/// Event data payload.
 /// 

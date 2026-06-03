@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: PaymentIntentData > Shipping)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/shipping_address.dart';@immutable final class PaymentIntentDataShipping {const PaymentIntentDataShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 

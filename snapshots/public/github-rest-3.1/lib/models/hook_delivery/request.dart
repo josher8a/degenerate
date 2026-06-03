@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HookDelivery (inline: Request)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Request {const Request({required this.headers, required this.payload, });
 

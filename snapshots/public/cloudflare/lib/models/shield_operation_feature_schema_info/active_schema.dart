@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureSchemaInfo (inline: SchemaInfo > ActiveSchema)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// Schema active on endpoint.
 @immutable final class ActiveSchema {const ActiveSchema({this.createdAt, this.id, this.isLearned, this.name, });

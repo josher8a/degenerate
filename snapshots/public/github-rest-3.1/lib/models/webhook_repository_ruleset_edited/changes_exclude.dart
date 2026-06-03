@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryRulesetEdited (inline: Changes > Conditions > Updated > Changes > Exclude)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChangesExclude {const ChangesExclude({this.from});
 

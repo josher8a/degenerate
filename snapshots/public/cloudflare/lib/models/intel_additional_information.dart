@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelAdditionalInformation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional information related to the host name.
 @immutable final class IntelAdditionalInformation {const IntelAdditionalInformation({this.suspectedMalwareFamily});

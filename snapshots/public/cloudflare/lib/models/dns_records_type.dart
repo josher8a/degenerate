@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Record type.
 @immutable final class DnsRecordsType {const DnsRecordsType._(this.value);

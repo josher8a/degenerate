@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallNegativeCacheTtl
 
 /// This setting controls how long DNS Firewall should cache negative
 /// responses (e.g., NXDOMAIN) from the upstream servers.

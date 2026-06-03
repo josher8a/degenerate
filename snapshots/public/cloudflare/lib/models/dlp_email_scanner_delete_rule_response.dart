@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailScannerDeleteRuleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule.dart';@immutable final class DlpEmailScannerDeleteRuleResponse {const DlpEmailScannerDeleteRuleResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/choices.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/chunks.dart';@immutable final class AiSearchInstanceChatCompletionResponse {const AiSearchInstanceChatCompletionResponse({required this.choices, required this.chunks, this.id, this.model, this.object, this.additionalProperties = const {}, });
 

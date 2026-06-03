@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequestGa (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeSessionCreateRequestGaModelVariant2 {const RealtimeSessionCreateRequestGaModelVariant2._(this.value);
 

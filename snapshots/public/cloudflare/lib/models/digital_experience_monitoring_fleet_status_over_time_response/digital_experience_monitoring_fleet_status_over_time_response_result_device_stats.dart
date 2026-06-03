@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringFleetStatusOverTimeResponse (inline: Result > DeviceStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_aggregate_stat.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_unique_devices_total.dart';@immutable final class DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats {const DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats({this.byMode, this.byStatus, this.uniqueDevicesTotal, });
 

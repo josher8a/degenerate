@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describe a container image
 @immutable final class ContainerImage {const ContainerImage({this.names, this.sizeBytes, });

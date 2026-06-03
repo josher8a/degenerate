@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingPricingPricingPriceDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing_price_details/billing_bill_resource_invoicing_pricing_pricing_price_details_price.dart';import 'package:pub_stripe_spec3/models/price.dart';/// 
 @immutable final class BillingBillResourceInvoicingPricingPricingPriceDetails {const BillingBillResourceInvoicingPricingPricingPriceDetails({required this.price, required this.product, });

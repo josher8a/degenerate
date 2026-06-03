@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpIpsTimeseriesResponse (inline: Result > Meta > Delay > CountryData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/country_data_latest.dart';@immutable final class CountryData {const CountryData({required this.delaySecs, required this.delayStr, required this.healthy, required this.latest, });
 

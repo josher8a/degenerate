@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamStorageUseResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_creator.dart';@immutable final class StreamStorageUseResponseResult {const StreamStorageUseResponseResult({this.creator, this.totalStorageMinutes, this.totalStorageMinutesLimit, this.videoCount, });
 

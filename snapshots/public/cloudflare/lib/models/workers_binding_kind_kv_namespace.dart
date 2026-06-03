@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindKvNamespace
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';import 'package:pub_cloudflare/models/workers_namespace_identifier.dart';@immutable final class WorkersBindingKindKvNamespace {const WorkersBindingKindKvNamespace({required this.name, required this.namespaceId, required this.type, });
 

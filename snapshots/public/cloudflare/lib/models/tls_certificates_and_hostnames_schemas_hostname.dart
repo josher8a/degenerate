@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSchemasHostname
 
 /// The hostname on the origin for which the client certificate uploaded will be used.
 extension type const TlsCertificatesAndHostnamesSchemasHostname(String value) {

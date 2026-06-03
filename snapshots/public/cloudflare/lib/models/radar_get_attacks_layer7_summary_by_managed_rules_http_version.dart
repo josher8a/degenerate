@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryByManagedRulesHttpVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesHttpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesHttpVersion._(this.value);
 

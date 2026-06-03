@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSettings {const AccessSettings({required this.chinaNetwork, required this.clientCertificateForwarding, required this.hostname, });
 

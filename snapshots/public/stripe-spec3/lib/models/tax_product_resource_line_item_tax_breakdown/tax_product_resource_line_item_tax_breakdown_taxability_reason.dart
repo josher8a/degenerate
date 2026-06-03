@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceLineItemTaxBreakdown (inline: TaxabilityReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 @immutable final class TaxProductResourceLineItemTaxBreakdownTaxabilityReason {const TaxProductResourceLineItemTaxBreakdownTaxabilityReason._(this.value);

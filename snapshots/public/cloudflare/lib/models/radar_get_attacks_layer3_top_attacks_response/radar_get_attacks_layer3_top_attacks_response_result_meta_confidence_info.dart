@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TopAttacksResponse (inline: Result > Meta > ConfidenceInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/confidence_info_annotations.dart';@immutable final class RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo {const RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 

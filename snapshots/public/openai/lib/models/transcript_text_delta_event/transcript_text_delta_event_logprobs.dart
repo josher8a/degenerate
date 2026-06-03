@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TranscriptTextDeltaEvent (inline: Logprobs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptTextDeltaEventLogprobs {const TranscriptTextDeltaEventLogprobs({this.token, this.logprob, this.bytes, });
 

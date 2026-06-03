@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoPhoneReportError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
 @immutable final class GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode._(this.value);

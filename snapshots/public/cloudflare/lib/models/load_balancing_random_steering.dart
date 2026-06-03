@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingRandomSteering
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures pool weights.
 /// - `steering_policy="random"`: A random pool is selected with probability proportional to pool weights.

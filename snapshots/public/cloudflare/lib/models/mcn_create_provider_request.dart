@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnCreateProviderRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cloud_type.dart';@immutable final class McnCreateProviderRequest {const McnCreateProviderRequest({required this.cloudType, required this.friendlyName, this.description, });
 

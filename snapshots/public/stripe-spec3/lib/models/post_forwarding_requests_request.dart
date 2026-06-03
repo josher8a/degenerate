@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostForwardingRequestsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarding_request/replacements.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request/request.dart';@immutable final class PostForwardingRequestsRequest {const PostForwardingRequestsRequest({required this.paymentMethod, required this.replacements, required this.url, this.expand, this.metadata, this.request, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalConfigurationsConfigurationRequest (inline: BusinessProfile)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/headline.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/privacy_policy_url.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/terms_of_service_url.dart';/// The business information shown to customers in the portal.
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfile {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });

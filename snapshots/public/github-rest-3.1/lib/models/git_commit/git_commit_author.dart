@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCommit (inline: Author)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifying information for the git-user
 @immutable final class GitCommitAuthor {const GitCommitAuthor({required this.date, required this.email, required this.name, });

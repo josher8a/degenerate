@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntent (inline: ConfirmationMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes whether we can confirm this PaymentIntent automatically, or if it requires customer action to confirm the payment.
 @immutable final class ConfirmationMethod {const ConfirmationMethod._(this.value);

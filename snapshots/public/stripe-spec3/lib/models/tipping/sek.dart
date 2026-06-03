@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tipping (inline: Sek)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Sek {const Sek({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 

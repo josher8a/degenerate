@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewaySchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_lists.dart';@immutable final class ZeroTrustGatewaySchemasResponseCollection {const ZeroTrustGatewaySchemasResponseCollection({this.result});
 

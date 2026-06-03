@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdatePortalsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request/create_portals_request_servers.dart';@immutable final class UpdatePortalsRequest {const UpdatePortalsRequest({this.description, this.hostname, this.name, this.secureWebGateway, this.servers, });
 

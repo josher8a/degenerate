@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetPricesRecurring (inline: Interval)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
 @immutable final class GetPricesRecurringInterval {const GetPricesRecurringInterval._(this.value);

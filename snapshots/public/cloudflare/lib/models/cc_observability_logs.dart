@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcObservabilityLogs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Observability logging settings.
 @immutable final class CcObservabilityLogs {const CcObservabilityLogs({this.enabled = false});

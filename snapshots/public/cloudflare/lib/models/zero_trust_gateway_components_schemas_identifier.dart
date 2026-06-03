@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayComponentsSchemasIdentifier
 
 /// Provide the identifier string.
 extension type const ZeroTrustGatewayComponentsSchemasIdentifier(String value) {

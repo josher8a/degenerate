@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCreditNotesPreviewLinesLines (inline: TaxAmounts > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesLinesTaxAmountsVariant1 {const GetCreditNotesPreviewLinesLinesTaxAmountsVariant1({required this.amount, required this.taxRate, required this.taxableAmount, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Capabilities > OxxoPayments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesOxxoPayments {const CapabilitiesOxxoPayments({this.requested});
 

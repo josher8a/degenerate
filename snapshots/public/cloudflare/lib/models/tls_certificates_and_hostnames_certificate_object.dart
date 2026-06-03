@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificateObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_issuer.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_uploaded_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_signature.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_expires_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_status.dart';@immutable final class TlsCertificatesAndHostnamesCertificateObject {const TlsCertificatesAndHostnamesCertificateObject({this.certificate, this.expiresOn, this.id, this.issuer, this.signature, this.status, this.uploadedOn, });
 

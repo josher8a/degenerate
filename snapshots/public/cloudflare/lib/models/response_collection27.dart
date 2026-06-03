@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection27
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_messages2.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_result_info.dart';@immutable final class ResponseCollection27 {const ResponseCollection27({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

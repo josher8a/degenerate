@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgMembership (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
 @immutable final class OrgMembershipState {const OrgMembershipState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningUpdateOrgPatternConfigsRequest (inline: ProviderPatternSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Push protection setting to set for the pattern.
 @immutable final class ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting._(this.value);

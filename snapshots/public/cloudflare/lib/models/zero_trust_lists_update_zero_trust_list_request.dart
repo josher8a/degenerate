@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustListsUpdateZeroTrustListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_items_input2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_name.dart';@immutable final class ZeroTrustListsUpdateZeroTrustListRequest {const ZeroTrustListsUpdateZeroTrustListRequest({required this.name, this.description, this.items, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedSubscriptionItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item/deleted_subscription_item_object.dart';/// 
 @immutable final class DeletedSubscriptionItem {const DeletedSubscriptionItem({required this.deleted, required this.id, required this.object, });

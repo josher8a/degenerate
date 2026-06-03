@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKeyHost
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How to use the host in the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyHost {const RulesetsSetCacheSettingsCustomCacheKeyHost({this.resolved});

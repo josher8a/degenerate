@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureThresholds
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_thresholds/thresholds.dart';@immutable final class ShieldOperationFeatureThresholds {const ShieldOperationFeatureThresholds({this.thresholds});
 

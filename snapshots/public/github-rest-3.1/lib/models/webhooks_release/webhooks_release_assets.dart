@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRelease (inline: Assets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/assets_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/uploader.dart';/// Data related to a release.
 @immutable final class WebhooksReleaseAssets {const WebhooksReleaseAssets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader, });

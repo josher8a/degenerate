@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMeterEventAdjustmentsRequest (inline: Cancel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies which event to cancel.
 @immutable final class Cancel {const Cancel({this.identifier});

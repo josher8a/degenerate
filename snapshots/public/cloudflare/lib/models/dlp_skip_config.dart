@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpSkipConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Content types to exclude from context analysis and return all matches.
 @immutable final class DlpSkipConfig {const DlpSkipConfig({required this.files});

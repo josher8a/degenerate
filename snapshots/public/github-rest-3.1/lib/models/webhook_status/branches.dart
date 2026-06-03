@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookStatus (inline: Branches)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_status/branches_commit.dart';@immutable final class Branches {const Branches({required this.commit, required this.name, required this.protected, });
 

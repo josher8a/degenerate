@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: Twint)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Twint is a payment method popular in Switzerland. It allows customers to pay using their mobile phone. Check this [page](https://docs.stripe.com/payments/twint) for more details.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestTwint {const PostPaymentMethodConfigurationsConfigurationRequestTwint({this.displayPreference});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ArgoConfigResultObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_config_setting_value.dart';/// Specifies if the setting is editable.
 extension type const ArgoConfigEditable(bool value) {

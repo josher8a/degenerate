@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomTurnstileMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which Turnstile widget type to use for detecting bot traffic. See
 /// [the Turnstile documentation](https://developers.cloudflare.com/turnstile/concepts/widget/#widget-types)

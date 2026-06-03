@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerReferenceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';@immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });
 

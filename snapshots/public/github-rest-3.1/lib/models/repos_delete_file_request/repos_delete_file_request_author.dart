@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposDeleteFileRequest (inline: Author)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// object containing information about the author.
 @immutable final class ReposDeleteFileRequestAuthor {const ReposDeleteFileRequestAuthor({this.name, this.email, });

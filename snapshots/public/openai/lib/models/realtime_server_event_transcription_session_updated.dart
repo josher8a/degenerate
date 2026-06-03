@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventTranscriptionSessionUpdated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_transcription_session_updated/realtime_beta_server_event_transcription_session_updated_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response.dart';/// Returned when a transcription session is updated with a `transcription_session.update` event, unless
 /// there is an error.

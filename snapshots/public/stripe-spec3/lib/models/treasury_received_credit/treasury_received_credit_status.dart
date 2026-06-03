@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryReceivedCredit (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
 @immutable final class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus._(this.value);

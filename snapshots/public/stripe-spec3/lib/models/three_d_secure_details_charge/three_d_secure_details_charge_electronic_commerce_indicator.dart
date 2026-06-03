@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreeDSecureDetailsCharge (inline: ElectronicCommerceIndicator)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Electronic Commerce Indicator (ECI). A protocol-level field
 /// indicating what degree of authentication was performed.

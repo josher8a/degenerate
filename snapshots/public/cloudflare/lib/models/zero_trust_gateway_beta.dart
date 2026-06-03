@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayBeta
 
 /// Indicate whether the category is in beta and subject to change.
 extension type const ZeroTrustGatewayBeta(bool value) {

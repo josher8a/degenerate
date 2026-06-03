@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderPython
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_python/eval_grader_python_type.dart';@immutable final class EvalGraderPython {const EvalGraderPython({required this.type, required this.name, required this.source, this.imageTag, this.passThreshold, });
 

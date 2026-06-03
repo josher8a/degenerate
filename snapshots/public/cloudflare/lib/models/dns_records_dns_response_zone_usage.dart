@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsResponseZoneUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_zone_usage/dns_records_dns_response_zone_usage_result.dart';@immutable final class DnsRecordsDnsResponseZoneUsage {const DnsRecordsDnsResponseZoneUsage({this.result});
 

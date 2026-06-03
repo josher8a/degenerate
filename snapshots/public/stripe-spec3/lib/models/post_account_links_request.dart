@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountLinksRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_links_request/collection_options.dart';/// The collect parameter is deprecated. Use `collection_options` instead.
 @immutable final class Collect {const Collect._(this.value);

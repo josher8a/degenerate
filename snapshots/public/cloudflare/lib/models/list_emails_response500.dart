@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListEmailsResponse500
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';@immutable final class ListEmailsResponse500 {const ListEmailsResponse500({required this.success, this.errors, this.messages, });
 

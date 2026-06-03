@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response/urlscanner_create_scan_bulk_response_options.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response/urlscanner_create_scan_bulk_response_visibility.dart';@immutable final class UrlscannerCreateScanResponse2 {const UrlscannerCreateScanResponse2({required this.api, required this.message, required this.result, required this.url, required this.uuid, required this.visibility, this.options, });
 

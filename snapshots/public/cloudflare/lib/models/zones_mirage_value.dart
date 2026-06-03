@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesMirageValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesMirageValue {const ZonesMirageValue._(this.value);

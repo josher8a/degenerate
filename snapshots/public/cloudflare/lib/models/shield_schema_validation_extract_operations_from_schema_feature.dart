@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaValidationExtractOperationsFromSchemaFeature
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldSchemaValidationExtractOperationsFromSchemaFeature {const ShieldSchemaValidationExtractOperationsFromSchemaFeature._(this.value);
 

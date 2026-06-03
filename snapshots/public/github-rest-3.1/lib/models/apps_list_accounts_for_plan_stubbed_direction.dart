@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppsListAccountsForPlanStubbedDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsListAccountsForPlanStubbedDirection {const AppsListAccountsForPlanStubbedDirection._(this.value);
 

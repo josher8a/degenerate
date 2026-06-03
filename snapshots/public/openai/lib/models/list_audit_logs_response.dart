@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAuditLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';@immutable final class ListAuditLogsResponse {const ListAuditLogsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 

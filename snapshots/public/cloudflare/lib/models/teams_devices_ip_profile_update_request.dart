@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesIpProfileUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_enabled.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_match.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_name.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_precedence.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_subnet_id.dart';@immutable final class TeamsDevicesIpProfileUpdateRequest {const TeamsDevicesIpProfileUpdateRequest({this.description, this.enabled, this.match, this.name, this.precedence, this.subnetId, });
 

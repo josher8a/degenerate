@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebSearchActionOpenPage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action type.
 /// 

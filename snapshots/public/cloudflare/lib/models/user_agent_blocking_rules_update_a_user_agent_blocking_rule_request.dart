@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_asn_configuration.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/firewall_configuration.dart';import 'package:pub_cloudflare/models/firewall_country_configuration.dart';import 'package:pub_cloudflare/models/firewall_description.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration.dart';import 'package:pub_cloudflare/models/firewall_ipv6_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_paused.dart';@immutable final class UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest {const UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest({required this.configuration, required this.id, required this.mode, this.description, this.paused, });
 

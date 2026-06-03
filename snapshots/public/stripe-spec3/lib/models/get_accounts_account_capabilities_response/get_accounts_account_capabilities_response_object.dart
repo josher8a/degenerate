@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAccountsAccountCapabilitiesResponse (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class GetAccountsAccountCapabilitiesResponseObject {const GetAccountsAccountCapabilitiesResponseObject._(this.value);

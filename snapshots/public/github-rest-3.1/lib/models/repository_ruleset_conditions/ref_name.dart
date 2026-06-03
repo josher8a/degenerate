@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulesetConditions (inline: RefName)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RefName {const RefName({this.include, this.exclude, });
 

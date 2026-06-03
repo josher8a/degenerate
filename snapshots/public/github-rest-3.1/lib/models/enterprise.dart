@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Enterprise
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on GitHub.
 @immutable final class Enterprise {const Enterprise({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description, this.websiteUrl, });

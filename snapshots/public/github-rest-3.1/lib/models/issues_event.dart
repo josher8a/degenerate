@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/label.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class IssuesEvent {const IssuesEvent({required this.action, required this.issue, this.assignee, this.assignees, this.label, this.labels, });
 

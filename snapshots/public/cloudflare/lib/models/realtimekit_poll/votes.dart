@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPoll (inline: Options > Votes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Votes {const Votes({required this.id, required this.name, });
 

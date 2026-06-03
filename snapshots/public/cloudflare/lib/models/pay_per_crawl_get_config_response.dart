@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlGetConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_daric_config.dart';import 'package:pub_cloudflare/models/pay_per_crawl_msg.dart';import 'package:pub_cloudflare/models/pay_per_crawl_result_info.dart';@immutable final class PayPerCrawlGetConfigResponse {const PayPerCrawlGetConfigResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
 

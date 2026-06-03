@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAlertTypes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes the alert type.
 extension type const AaaDescription(String value) {

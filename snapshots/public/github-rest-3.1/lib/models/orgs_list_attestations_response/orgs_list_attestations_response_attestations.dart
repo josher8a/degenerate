@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListAttestationsResponse (inline: Attestations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_response/attestations_bundle.dart';@immutable final class OrgsListAttestationsResponseAttestations {const OrgsListAttestationsResponseAttestations({this.bundle, this.repositoryId, this.bundleUrl, this.initiator, });
 

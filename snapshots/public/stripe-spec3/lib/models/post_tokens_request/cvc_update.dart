@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTokensRequest (inline: CvcUpdate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The updated CVC value this token represents.
 @immutable final class CvcUpdate {const CvcUpdate({required this.cvc});

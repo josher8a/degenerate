@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewaySlug
 
 /// URL-friendly version of the PAC file name.
 extension type const ZeroTrustGatewaySlug(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallSensitivity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The sensitivity of the WAF package.
 @immutable final class FirewallSensitivity {const FirewallSensitivity._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateChatCompletionResponse (inline: Choices > Logprobs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_token_logprob.dart';/// Log probability information for the choice.
 @immutable final class CreateChatCompletionResponseChoicesLogprobs {const CreateChatCompletionResponseChoicesLogprobs({required this.content, required this.refusal, });

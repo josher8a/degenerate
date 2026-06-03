@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsEmailListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An email sent to the customer for an abuse report.
 @immutable final class AbuseReportsEmailListItem {const AbuseReportsEmailListItem({required this.body, required this.id, required this.recipient, required this.sentAt, required this.subject, });

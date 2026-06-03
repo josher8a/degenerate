@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamUpdateOutputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_output_enabled.dart';@immutable final class StreamUpdateOutputRequest {const StreamUpdateOutputRequest({required this.enabled});
 

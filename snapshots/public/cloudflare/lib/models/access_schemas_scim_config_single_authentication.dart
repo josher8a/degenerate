@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasScimConfigSingleAuthentication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config_authentication_oauth_bearer_token.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_access_service_token.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_http_basic.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_oauth2.dart';typedef AccessSchemasScimConfigSingleAuthentication = OneOf4<AccessScimConfigAuthenticationHttpBasic,AccessSchemasScimConfigAuthenticationOauthBearerToken,AccessScimConfigAuthenticationOauth2,AccessScimConfigAuthenticationAccessServiceToken>;

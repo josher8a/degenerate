@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppReqEmbeddedScimConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_scim_config.dart';@immutable final class AccessAppReqEmbeddedScimConfig {const AccessAppReqEmbeddedScimConfig({this.scimConfig});
 

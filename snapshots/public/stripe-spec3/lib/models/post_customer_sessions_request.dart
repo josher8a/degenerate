@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomerSessionsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/post_customer_sessions_request_components.dart';@immutable final class PostCustomerSessionsRequest {const PostCustomerSessionsRequest({required this.components, this.customer, this.customerAccount, this.expand, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ScreenshotParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A screenshot action.
 @immutable final class ScreenshotParam {const ScreenshotParam({this.type = 'screenshot'});

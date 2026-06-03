@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementBotFightModeConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_bot_fight_mode_config/bot_management_bot_fight_mode_config_stale_zone_configuration.dart';/// Whether to enable Bot Fight Mode.
 extension type const BotManagementFightMode(bool value) {

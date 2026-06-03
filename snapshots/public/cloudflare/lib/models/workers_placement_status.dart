@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
 @immutable final class WorkersPlacementStatus {const WorkersPlacementStatus._(this.value);

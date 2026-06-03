@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2ListCustomDomainsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_list_custom_domains_response/r2_list_custom_domains_response_domains.dart';/// Example:
 /// ```json

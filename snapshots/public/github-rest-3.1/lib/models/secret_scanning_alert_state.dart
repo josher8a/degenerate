@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningAlertState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 @immutable final class SecretScanningAlertState {const SecretScanningAlertState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsEurope
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_eu_standard.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_europe/tax_product_registrations_resource_country_options_europe_type.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsEurope {const TaxProductRegistrationsResourceCountryOptionsEurope({required this.type, this.standard, });

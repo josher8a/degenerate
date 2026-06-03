@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardApplePay (inline: IneligibleReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason the card is ineligible for Apple Pay
 @immutable final class IneligibleReason {const IneligibleReason._(this.value);

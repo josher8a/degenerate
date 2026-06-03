@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallZonelockdownResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_zonelockdown.dart';@immutable final class FirewallZonelockdownResponseCollection {const FirewallZonelockdownResponseCollection({required this.result});
 

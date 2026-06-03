@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByDeviceTypeResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_http_timeseries_group_by_device_type_response/radar_get_http_timeseries_group_by_device_type_response_result_serie0.dart';@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult {const RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult({required this.meta, required this.serie0, });
 

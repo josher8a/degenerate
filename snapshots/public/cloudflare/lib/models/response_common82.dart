@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon82
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';@immutable final class ResponseCommon82 {const ResponseCommon82({required this.errors, required this.messages, required this.success, });
 

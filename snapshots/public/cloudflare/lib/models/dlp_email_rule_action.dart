@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailRuleAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action/block.dart';/// A value that is one of: `Block`.
 sealed class DlpEmailRuleAction {const DlpEmailRuleAction();

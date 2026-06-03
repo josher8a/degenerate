@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsResourcePaymentSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_payment_settings/invoices_payment_settings_payment_method_types.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_payment_method_options.dart';/// Configure whether Stripe updates `subscription.default_payment_method` when payment succeeds. Defaults to `off`.
 @immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(this.value);

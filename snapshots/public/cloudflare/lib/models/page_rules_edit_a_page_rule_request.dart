@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageRulesEditAPageRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_actions2.dart';import 'package:pub_cloudflare/models/zones_priority.dart';import 'package:pub_cloudflare/models/zones_status.dart';import 'package:pub_cloudflare/models/zones_target.dart';@immutable final class PageRulesEditAPageRuleRequest {const PageRulesEditAPageRuleRequest({this.actions, this.priority, this.status, this.targets, });
 

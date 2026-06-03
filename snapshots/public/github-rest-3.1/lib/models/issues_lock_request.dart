@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesLockRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
 ///  * `off-topic`

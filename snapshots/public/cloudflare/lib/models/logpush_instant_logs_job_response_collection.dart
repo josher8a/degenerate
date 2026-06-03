@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushInstantLogsJobResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_instant_logs_job.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class LogpushInstantLogsJobResponseCollection {const LogpushInstantLogsJobResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

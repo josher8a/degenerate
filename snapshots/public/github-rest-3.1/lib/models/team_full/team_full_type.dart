@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamFull (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ownership type of the team
 @immutable final class TeamFullType {const TeamFullType._(this.value);

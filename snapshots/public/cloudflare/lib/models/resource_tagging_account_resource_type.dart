@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingAccountResourceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of account-level resource.
 @immutable final class ResourceTaggingAccountResourceType {const ResourceTaggingAccountResourceType._(this.value);

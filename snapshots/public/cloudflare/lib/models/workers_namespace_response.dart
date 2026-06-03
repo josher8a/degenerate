@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersNamespaceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_dispatch_namespace_name.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_trusted_workers.dart';import 'package:pub_cloudflare/models/workers_uuid.dart';/// The current number of scripts in this Dispatch Namespace.
 extension type const WorkersScriptCount(int value) {

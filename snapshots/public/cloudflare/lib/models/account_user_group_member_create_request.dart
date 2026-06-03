@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountUserGroupMemberCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';@immutable final class AccountUserGroupMemberCreateRequest {const AccountUserGroupMemberCreateRequest({required this.id});
 

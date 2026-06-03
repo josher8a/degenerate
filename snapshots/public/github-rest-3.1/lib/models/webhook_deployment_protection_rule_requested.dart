@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDeploymentProtectionRuleRequested
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment, this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
 

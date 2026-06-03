@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafPackagesListWafPackagesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned packages.
 @immutable final class WafPackagesListWafPackagesOrder {const WafPackagesListWafPackagesOrder._(this.value);

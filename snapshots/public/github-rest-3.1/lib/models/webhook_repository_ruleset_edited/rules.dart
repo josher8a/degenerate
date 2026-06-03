@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryRulesetEdited (inline: Changes > Rules)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_ruleset_edited/rules_updated.dart';@immutable final class Rules {const Rules({this.added, this.deleted, this.updated, });
 

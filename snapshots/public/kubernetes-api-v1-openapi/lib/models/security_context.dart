@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityContext
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/app_armor_profile.dart';import 'package:pub_kubernetes_api_v1_openapi/models/capabilities.dart';import 'package:pub_kubernetes_api_v1_openapi/models/se_linux_options.dart';import 'package:pub_kubernetes_api_v1_openapi/models/seccomp_profile.dart';import 'package:pub_kubernetes_api_v1_openapi/models/windows_security_context_options.dart';/// SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext.  When both are set, the values in SecurityContext take precedence.
 @immutable final class SecurityContext {const SecurityContext({this.allowPrivilegeEscalation, this.appArmorProfile, this.capabilities, this.privileged, this.procMount, this.readOnlyRootFilesystem, this.runAsGroup, this.runAsNonRoot, this.runAsUser, this.seLinuxOptions, this.seccompProfile, this.windowsOptions, });

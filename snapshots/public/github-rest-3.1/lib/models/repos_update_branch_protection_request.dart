@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateBranchProtectionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/repos_update_branch_protection_request_required_status_checks.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes, this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
 

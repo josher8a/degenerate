@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldGetZoneCookieResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_cookie.dart';@immutable final class PageShieldGetZoneCookieResponse {const PageShieldGetZoneCookieResponse({required this.result});
 

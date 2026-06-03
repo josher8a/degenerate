@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByIpVersionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_ip_version_response/radar_get_dns_as112_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByIpVersionResponse {const RadarGetDnsTimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
 

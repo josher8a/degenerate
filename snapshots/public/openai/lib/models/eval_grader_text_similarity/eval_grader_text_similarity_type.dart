@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderTextSimilarity (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of grader.
 @immutable final class EvalGraderTextSimilarityType {const EvalGraderTextSimilarityType._(this.value);

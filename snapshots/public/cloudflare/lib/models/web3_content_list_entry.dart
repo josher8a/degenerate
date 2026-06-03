@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ContentListEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_content.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_description.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_type.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_timestamp.dart';/// Specify a content list entry to block.
 @immutable final class Web3ContentListEntry {const Web3ContentListEntry({this.content, this.createdOn, this.description, this.id, this.modifiedOn, this.type, });

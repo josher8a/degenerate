@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitAccountIdentifier
 
 /// The account identifier tag.
 extension type const RealtimekitAccountIdentifier(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsCreateInvitationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role for the new member.
 ///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.

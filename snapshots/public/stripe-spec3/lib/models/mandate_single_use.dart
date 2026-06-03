@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MandateSingleUse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class MandateSingleUse {const MandateSingleUse({required this.amount, required this.currency, });

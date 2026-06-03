@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationRefunded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the reason for the refund.
 @immutable final class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason._(this.value);

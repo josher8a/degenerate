@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitRecordingConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_audio_config.dart';import 'package:pub_cloudflare/models/realtimekit_livestreaming_config.dart';import 'package:pub_cloudflare/models/realtimekit_realtimekit_bucket_config.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';import 'package:pub_cloudflare/models/realtimekit_video_config.dart';/// Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.
 /// 

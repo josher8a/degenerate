@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessagePhase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Labels an `assistant` message as intermediate commentary (`commentary`) or the final answer (`final_answer`).
 /// For models like `gpt-5.3-codex` and beyond, when sending follow-up requests, preserve and resend

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamSsoConnector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_sso_connector_verification_info.dart';import 'package:pub_cloudflare/models/iam_use_fedramp_language.dart';@immutable final class IamSsoConnector {const IamSsoConnector({this.createdOn, this.emailDomain, this.enabled, this.id, this.updatedOn, this.useFedrampLanguage, this.verification, });
 

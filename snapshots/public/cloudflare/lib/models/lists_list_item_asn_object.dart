@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsListItemAsnObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines a non-negative 32 bit integer.
 extension type const ListsItemAsn(int value) {

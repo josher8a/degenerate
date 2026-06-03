@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazTimerRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule/zaraz_timer_rule_settings.dart';@immutable final class ZarazTimerRuleAction {const ZarazTimerRuleAction._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListRegistrationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_cursor_result_info.dart';import 'package:pub_cloudflare/models/teams_devices_registration.dart';@immutable final class ListRegistrationsResponse {const ListRegistrationsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

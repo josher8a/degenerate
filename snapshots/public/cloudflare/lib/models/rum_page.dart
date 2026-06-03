@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumPage
 
 /// Current page within the paginated list of results.
 extension type const RumPage(double value) {

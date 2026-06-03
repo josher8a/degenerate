@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationVerificationData (inline: ExpiryCheck)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the cardholder provided an expiry date and if it matched Stripe’s record.
 @immutable final class ExpiryCheck {const ExpiryCheck._(this.value);

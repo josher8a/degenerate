@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationAuthenticationExemption (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The specific exemption claimed for this authorization.
 @immutable final class IssuingAuthorizationAuthenticationExemptionType {const IssuingAuthorizationAuthenticationExemptionType._(this.value);

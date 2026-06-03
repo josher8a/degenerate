@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceCompletedSessions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentLinksResourceCompletedSessions {const PaymentLinksResourceCompletedSessions({required this.count, required this.limit, });

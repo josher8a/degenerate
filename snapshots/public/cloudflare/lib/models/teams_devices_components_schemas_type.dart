@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesComponentsSchemasType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device managed network.
 @immutable final class TeamsDevicesComponentsSchemasType {const TeamsDevicesComponentsSchemasType._(this.value);

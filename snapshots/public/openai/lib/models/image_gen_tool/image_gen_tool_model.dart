@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageGenTool (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image generation model to use. Default: `gpt-image-1`.
 /// 

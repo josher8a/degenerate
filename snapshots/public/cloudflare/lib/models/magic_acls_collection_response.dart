@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicAclsCollectionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl.dart';@immutable final class MagicAclsCollectionResponse {const MagicAclsCollectionResponse({this.result});
 

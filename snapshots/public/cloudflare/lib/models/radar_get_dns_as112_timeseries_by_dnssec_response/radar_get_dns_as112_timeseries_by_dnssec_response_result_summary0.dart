@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesByDnssecResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0 {const RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0({required this.notSupported, required this.supported, });
 

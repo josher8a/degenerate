@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreatePollRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreatePollRequest {const CreatePollRequest({required this.options, required this.question, this.anonymous, this.hideVotes, });
 

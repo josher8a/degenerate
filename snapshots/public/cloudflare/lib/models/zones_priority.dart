@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesPriority
 
 /// The priority of the rule, used to define which Page Rule is processed
 /// over another. A higher number indicates a higher priority. For example,

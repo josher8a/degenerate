@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAssets (inline: Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_assets/html_handling.dart';import 'package:pub_cloudflare/models/workers_assets/not_found_handling.dart';import 'package:pub_cloudflare/models/workers_assets/run_worker_first.dart';/// Configuration for assets within a Worker.
 @immutable final class WorkersAssetsConfig {const WorkersAssetsConfig({this.headers, this.redirects, this.htmlHandling, this.notFoundHandling, this.runWorkerFirst, this.serveDirectly, });

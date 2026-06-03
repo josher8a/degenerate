@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCommit (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/file_commit/content_links.dart';@immutable final class FileCommitContent {const FileCommitContent({this.name, this.path, this.sha, this.size, this.url, this.htmlUrl, this.gitUrl, this.downloadUrl, this.type, this.links, });
 

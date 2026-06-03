@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotThermal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Thermal
 @immutable final class MconnSnapshotThermal {const MconnSnapshotThermal({required this.label, this.connectorId, this.criticalCelcius, this.currentCelcius, this.maxCelcius, });

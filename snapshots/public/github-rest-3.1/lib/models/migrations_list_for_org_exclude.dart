@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MigrationsListForOrgExclude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
 @immutable final class MigrationsListForOrgExclude {const MigrationsListForOrgExclude._(this.value);

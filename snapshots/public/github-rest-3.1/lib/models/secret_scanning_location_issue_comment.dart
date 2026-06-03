@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningLocationIssueComment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an 'issue_comment' secret scanning location type. This location type shows that a secret was detected in a comment on an issue.
 @immutable final class SecretScanningLocationIssueComment {const SecretScanningLocationIssueComment({required this.issueCommentUrl});

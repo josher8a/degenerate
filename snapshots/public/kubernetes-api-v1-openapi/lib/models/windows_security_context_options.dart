@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WindowsSecurityContextOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// WindowsSecurityContextOptions contain Windows-specific options and credentials.
 @immutable final class WindowsSecurityContextOptions {const WindowsSecurityContextOptions({this.gmsaCredentialSpec, this.gmsaCredentialSpecName, this.hostProcess, this.runAsUserName, });

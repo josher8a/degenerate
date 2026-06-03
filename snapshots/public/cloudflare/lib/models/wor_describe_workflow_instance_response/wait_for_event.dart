@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > WaitForEvent)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wait_for_event_output.dart';@immutable final class WaitForEventType {const WaitForEventType._(this.value);
 

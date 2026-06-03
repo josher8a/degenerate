@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: References > DispatchNamespaceOutbounds)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DispatchNamespaceOutbounds {const DispatchNamespaceOutbounds({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
 

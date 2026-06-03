@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldCredentialsJwtKeyEcEs384
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Algorithm
 @immutable final class ShieldCredentialsJwtKeyEcEs384Alg {const ShieldCredentialsJwtKeyEcEs384Alg._(this.value);

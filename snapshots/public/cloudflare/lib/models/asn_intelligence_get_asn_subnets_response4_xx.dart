@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AsnIntelligenceGetAsnSubnetsResponse4Xx
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_asn.dart';import 'package:pub_cloudflare/models/intel_count.dart';import 'package:pub_cloudflare/models/intel_messages2.dart';import 'package:pub_cloudflare/models/intel_page.dart';import 'package:pub_cloudflare/models/intel_per_page.dart';@immutable final class AsnIntelligenceGetAsnSubnetsResponse4Xx {const AsnIntelligenceGetAsnSubnetsResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
 

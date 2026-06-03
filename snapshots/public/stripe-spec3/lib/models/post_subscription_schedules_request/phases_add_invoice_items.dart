@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionSchedulesRequest (inline: Phases > AddInvoiceItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/add_invoice_items_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_price_data.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/phases_add_invoice_items_period.dart';@immutable final class PhasesAddInvoiceItems {const PhasesAddInvoiceItems({this.discounts, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxRates, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityCreateConfigurationForEnterpriseRequest (inline: CodeSecurity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of GitHub Code Security features.
 @immutable final class CodeSecurityCreateConfigurationForEnterpriseRequestCodeSecurity {const CodeSecurityCreateConfigurationForEnterpriseRequestCodeSecurity._(this.value);

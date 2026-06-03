@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseAudioDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the model-generated audio is done. Also emitted when a Response
 /// is interrupted, incomplete, or cancelled.

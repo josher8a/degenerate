@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsAccountSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_account_response.dart';@immutable final class DnsSettingsAccountSettings {const DnsSettingsAccountSettings({required this.zoneDefaults});
 

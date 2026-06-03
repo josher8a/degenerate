@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsBrowserTtl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The browser TTL mode.
 @immutable final class RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode._(this.value);

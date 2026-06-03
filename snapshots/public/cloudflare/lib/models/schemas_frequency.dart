@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemasFrequency
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency at which you will be billed for this plan.
 @immutable final class SchemasFrequency {const SchemasFrequency._(this.value);

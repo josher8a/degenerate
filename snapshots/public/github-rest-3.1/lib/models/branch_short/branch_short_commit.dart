@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchShort (inline: Commit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchShortCommit {const BranchShortCommit({required this.sha, required this.url, });
 

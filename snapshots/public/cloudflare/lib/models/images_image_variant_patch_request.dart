@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageVariantPatchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_variant_never_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/images_image_variant_options.dart';@immutable final class ImagesImageVariantPatchRequest {const ImagesImageVariantPatchRequest({required this.options, this.neverRequireSignedUrLs, });
 

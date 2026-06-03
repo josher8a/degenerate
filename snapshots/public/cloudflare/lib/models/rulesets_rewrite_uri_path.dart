@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRewriteUriPath
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URI path rewrite.
 @immutable final class RulesetsRewriteUriPath {const RulesetsRewriteUriPath({this.expression, this.value, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersConfirmationTokensRequest (inline: PaymentMethodOptions > Card > Installments > Plan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/installment_plan/installment_plan_interval.dart';import 'package:pub_stripe_spec3/models/installment_plan/installment_plan_type.dart';@immutable final class CardInstallmentsPlan {const CardInstallmentsPlan({required this.type, this.count, this.interval, });
 

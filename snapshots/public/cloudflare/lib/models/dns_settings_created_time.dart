@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsCreatedTime
 
 /// When the view was created.
 extension type DnsSettingsCreatedTime(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WeightedPodAffinityTerm
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_affinity_term.dart';/// The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
 @immutable final class WeightedPodAffinityTerm {const WeightedPodAffinityTerm({required this.podAffinityTerm, this.weight = 0, });

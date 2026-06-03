@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShortBlob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Short Blob
 @immutable final class ShortBlob {const ShortBlob({required this.url, required this.sha, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesJsonFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding._(this.value);
 

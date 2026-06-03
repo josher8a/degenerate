@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageVariantOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The fit property describes how the width and height dimensions should be interpreted.
 @immutable final class ImagesImageVariantFit {const ImagesImageVariantFit._(this.value);

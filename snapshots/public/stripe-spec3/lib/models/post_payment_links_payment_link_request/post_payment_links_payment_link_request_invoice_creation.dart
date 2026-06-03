@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksPaymentLinkRequest (inline: InvoiceCreation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/post_payment_links_payment_link_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
 @immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreation {const PostPaymentLinksPaymentLinkRequestInvoiceCreation({required this.enabled, this.invoiceData, });

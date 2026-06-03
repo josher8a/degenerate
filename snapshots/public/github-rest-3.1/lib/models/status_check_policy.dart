@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StatusCheckPolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch_required_status_check/protected_branch_required_status_check_checks.dart';/// Status Check Policy
 @immutable final class StatusCheckPolicy {const StatusCheckPolicy({required this.url, required this.strict, required this.contexts, required this.checks, required this.contextsUrl, });

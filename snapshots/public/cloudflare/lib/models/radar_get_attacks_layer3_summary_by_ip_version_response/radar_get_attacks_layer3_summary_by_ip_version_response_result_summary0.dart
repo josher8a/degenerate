@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3SummaryByIpVersionResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
 

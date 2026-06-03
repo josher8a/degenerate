@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Commit (inline: Stats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Stats {const Stats({this.additions, this.deletions, this.total, });
 

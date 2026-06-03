@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnCustomerSnapshotsGetLatestSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_customer_snapshots_get_latest_result.dart';@immutable final class MconnCustomerSnapshotsGetLatestSuccess {const MconnCustomerSnapshotsGetLatestSuccess({required this.success, required this.result, this.errors, this.messages, });
 

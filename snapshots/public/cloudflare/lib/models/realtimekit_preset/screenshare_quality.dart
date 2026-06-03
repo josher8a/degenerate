@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Config > Media > Screenshare > Quality)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Quality of screen share
 @immutable final class ScreenshareQuality {const ScreenshareQuality._(this.value);

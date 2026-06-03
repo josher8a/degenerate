@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationItemAdded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// Sent by the server when an Item is added to the default Conversation. This can happen in several cases:
 /// - When the client sends a `conversation.item.create` event.

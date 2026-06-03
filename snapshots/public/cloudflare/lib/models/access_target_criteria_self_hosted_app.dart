@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessTargetCriteriaSelfHostedApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_port.dart';/// The communication protocol your application secures.
 @immutable final class AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp._(this.value);

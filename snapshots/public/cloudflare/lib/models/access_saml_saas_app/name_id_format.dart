@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlSaasApp (inline: NameIdFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of the name identifier sent to the SaaS application.
 @immutable final class NameIdFormat {const NameIdFormat._(this.value);

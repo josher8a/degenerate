@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersZoneName
 
 /// Name of the zone.
 extension type const WorkersZoneName(String value) {

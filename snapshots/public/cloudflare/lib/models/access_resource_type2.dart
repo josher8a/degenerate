@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessResourceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessResourceType2 {const AccessResourceType2._(this.value);
 

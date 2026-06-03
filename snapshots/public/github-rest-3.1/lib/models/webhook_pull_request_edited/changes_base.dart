@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestEdited (inline: Changes > Base)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_edited/ref.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_edited/sha.dart';@immutable final class ChangesBase {const ChangesBase({required this.ref, required this.sha, });
 

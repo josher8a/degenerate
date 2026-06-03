@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_customer_update.dart';import 'package:pub_stripe_spec3/models/portal_invoice_list.dart';import 'package:pub_stripe_spec3/models/portal_payment_method_update.dart';import 'package:pub_stripe_spec3/models/portal_subscription_cancel.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update.dart';/// 
 @immutable final class PortalFeatures {const PortalFeatures({required this.customerUpdate, required this.invoiceHistory, required this.paymentMethodUpdate, required this.subscriptionCancel, required this.subscriptionUpdate, });

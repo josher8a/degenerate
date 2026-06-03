@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs2 (inline: Account)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains account related information.
 @immutable final class AaaAuditLogs2Account {const AaaAuditLogs2Account({this.id, this.name, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailDetails {const EmailDetails({required this.emailAddress, required this.subject, this.body, });
 

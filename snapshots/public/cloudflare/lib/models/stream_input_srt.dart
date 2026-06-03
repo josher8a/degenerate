@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamInputSrt
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The identifier of the live input to use when streaming via SRT.
 extension type const StreamInputSrtStreamId(String value) {

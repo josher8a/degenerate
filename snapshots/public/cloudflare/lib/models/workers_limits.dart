@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersLimits
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Limits to apply for this Worker.
 @immutable final class WorkersLimits {const WorkersLimits({this.cpuMs});

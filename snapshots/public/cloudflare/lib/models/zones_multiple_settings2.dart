@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesMultipleSettings
 
 import 'package:pub_cloudflare/models/zones_base.dart';import 'package:pub_cloudflare/models/zones_cache_rules_aegis.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_h2_max_streams.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_max_http_version.dart';import 'package:pub_cloudflare/models/zones_development_mode.dart';import 'package:pub_cloudflare/models/zones_schemas_base.dart';import 'package:pub_cloudflare/models/zones_ssl_recommender.dart';final class ZonesMultipleSettings2 {const ZonesMultipleSettings2({this.zonesBase, this.zonesCacheRulesAegis, this.zonesDevelopmentMode, this.zonesCacheRulesOriginH2MaxStreams, this.zonesCacheRulesOriginMaxHttpVersion, this.zonesSchemasBase, this.zonesSslRecommender, });
 

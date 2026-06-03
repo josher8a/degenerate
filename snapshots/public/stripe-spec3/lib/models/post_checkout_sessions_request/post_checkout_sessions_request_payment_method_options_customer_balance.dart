@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: PaymentMethodOptions > CustomerBalance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/funding_instructions/funding_instructions_funding_type.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_bank_transfer.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 

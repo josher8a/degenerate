@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsSessionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/collected_information.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 

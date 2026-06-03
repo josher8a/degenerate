@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfLykonDreamshaper8LcmResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfLykonDreamshaper8LcmResponse400 {const WorkersAiPostRunCfLykonDreamshaper8LcmResponse400({required this.errors, required this.result, required this.success, });
 

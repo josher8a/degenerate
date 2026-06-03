@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelSinkholesSinkholeItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The unique identifier for the sinkhole
 extension type const IntelSinkholesId(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalSubscriptionCancel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/portal_subscription_cancel/portal_subscription_cancel_mode.dart';import 'package:pub_stripe_spec3/models/portal_subscription_cancellation_reason.dart';/// 
 @immutable final class PortalSubscriptionCancel {const PortalSubscriptionCancel({required this.cancellationReason, required this.enabled, required this.mode, required this.prorationBehavior, });

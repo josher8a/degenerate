@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelSubnetQueryName
 
 /// If set, only list subnets with the given name
 extension type const TunnelSubnetQueryName(String value) {

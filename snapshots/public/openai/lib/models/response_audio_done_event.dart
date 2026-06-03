@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseAudioDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the audio response is complete.
 @immutable final class ResponseAudioDoneEvent {const ResponseAudioDoneEvent({required this.type, required this.sequenceNumber, });

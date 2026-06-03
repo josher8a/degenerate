@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelVirtualNetworkId
 
 /// UUID of the virtual network.
 extension type const TunnelVirtualNetworkId(String value) {

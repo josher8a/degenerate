@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheKeyFields (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/cookie.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/header.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/host.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/query_string.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/value_user.dart';@immutable final class ZonesCacheKeyFieldsValue {const ZonesCacheKeyFieldsValue({this.cookie, this.header, this.host, this.queryString, this.user, });
 

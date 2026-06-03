@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsSofort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit_mandate.dart';import 'package:pub_stripe_spec3/models/payment_method_details_sofort/payment_method_details_sofort_preferred_language.dart';/// 
 @immutable final class PaymentMethodDetailsSofort {const PaymentMethodDetailsSofort({this.bankCode, this.bankName, this.bic, this.country, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.preferredLanguage, this.verifiedName, });

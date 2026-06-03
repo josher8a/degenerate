@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GlobalAdvisory (inline: Credits)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/security_advisory_credit_types.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class GlobalAdvisoryCredits {const GlobalAdvisoryCredits({required this.user, required this.type, });
 

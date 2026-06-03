@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingClocksResourceStatusDetailsStatusDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_clocks_resource_status_details_advancing_status_details.dart';/// 
 @immutable final class BillingClocksResourceStatusDetailsStatusDetails {const BillingClocksResourceStatusDetailsStatusDetails({this.advancing});

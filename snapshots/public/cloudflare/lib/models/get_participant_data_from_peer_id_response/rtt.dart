@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Quality > AudioProducerCumulative > Rtt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rtt {const Rtt({this.$100msOrGreaterEventFraction, this.$250msOrGreaterEventFraction, this.$500msOrGreaterEventFraction, this.avg, });
 

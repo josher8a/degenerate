@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicComponentsSchemasDescription
 
 /// An optional description forthe IPsec tunnel.
 extension type const MagicComponentsSchemasDescription(String value) {

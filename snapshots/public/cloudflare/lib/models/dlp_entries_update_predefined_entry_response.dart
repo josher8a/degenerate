@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntriesUpdatePredefinedEntryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_predefined_entry.dart';@immutable final class DlpEntriesUpdatePredefinedEntryResponse {const DlpEntriesUpdatePredefinedEntryResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicNetflowConfigSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_netflow_config.dart';@immutable final class MagicNetflowConfigSingleResponse {const MagicNetflowConfigSingleResponse({this.result});
 

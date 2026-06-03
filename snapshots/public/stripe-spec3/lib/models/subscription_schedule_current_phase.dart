@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionScheduleCurrentPhase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SubscriptionScheduleCurrentPhase {const SubscriptionScheduleCurrentPhase({required this.endDate, required this.startDate, });

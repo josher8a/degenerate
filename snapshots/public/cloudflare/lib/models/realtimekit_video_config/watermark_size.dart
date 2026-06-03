@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitVideoConfig (inline: Watermark > Size)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Size of the watermark
 @immutable final class WatermarkSize {const WatermarkSize({this.height, this.width, });

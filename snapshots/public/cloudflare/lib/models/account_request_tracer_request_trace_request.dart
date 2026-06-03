@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRequestTracerRequestTraceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request/account_request_tracer_request_trace_request_context.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request/body.dart';@immutable final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({required this.method, required this.url, this.body, this.context, this.cookies, this.headers, this.protocol, this.skipResponse, });
 

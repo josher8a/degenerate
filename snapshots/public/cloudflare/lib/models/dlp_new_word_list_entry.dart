@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpNewWordListEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewWordListEntry {const DlpNewWordListEntry({required this.enabled, required this.name, required this.words, });
 

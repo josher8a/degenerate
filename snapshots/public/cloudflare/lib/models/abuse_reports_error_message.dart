@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsErrorMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AbuseReportsErrorMessage {const AbuseReportsErrorMessage({required this.message, this.code, });
 

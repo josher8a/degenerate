@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceAutomaticTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/automatic_tax/automatic_tax_status.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// 
 @immutable final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });

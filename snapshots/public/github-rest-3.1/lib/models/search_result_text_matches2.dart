@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchResultTextMatches
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches/matches.dart';@immutable final class SearchResultTextMatches2 {const SearchResultTextMatches2({this.objectUrl, this.objectType, this.property, this.fragment, this.matches, });
 

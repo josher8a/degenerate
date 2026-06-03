@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateAccountRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_enum_status.dart';@immutable final class UpdateAccountRequest {const UpdateAccountRequest({this.friendlyName, this.status, });
 

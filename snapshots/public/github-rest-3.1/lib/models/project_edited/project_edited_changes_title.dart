@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectEdited (inline: Changes > Title)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectEditedChangesTitle {const ProjectEditedChangesTitle({this.from, this.to, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringDeviceDexTestSchemasData (inline: Kind)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of test.
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataKind {const DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._(this.value);

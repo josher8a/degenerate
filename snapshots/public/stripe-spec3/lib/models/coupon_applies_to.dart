@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CouponAppliesTo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class CouponAppliesTo {const CouponAppliesTo({required this.products});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotAddCopilotSeatsForTeamsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The total number of seats created for members of the specified team(s).
 @immutable final class CopilotAddCopilotSeatsForTeamsResponse {const CopilotAddCopilotSeatsForTeamsResponse({required this.seatsCreated});

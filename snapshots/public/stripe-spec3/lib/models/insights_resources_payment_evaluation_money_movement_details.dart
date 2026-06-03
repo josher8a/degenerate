@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationMoneyMovementDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_details/money_movement_type.dart';/// Money Movement details attached to this payment.
 @immutable final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({required this.moneyMovementType, this.card, });

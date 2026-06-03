@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_setting_object_delete.dart';@immutable final class TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete {const TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/file_link/file_link_file.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FileLinkObject {const FileLinkObject._(this.value);

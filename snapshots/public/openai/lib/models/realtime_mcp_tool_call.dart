@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeMcpToolCall
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_mcp_protocol_error.dart';import 'package:pub_openai/models/realtime_mcp_tool_call/realtime_mcp_tool_call_error.dart';import 'package:pub_openai/models/realtime_mcp_tool_execution_error.dart';import 'package:pub_openai/models/realtime_mcphttp_error.dart';/// A Realtime item representing an invocation of a tool on an MCP server.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MarketplaceAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceAccount {const MarketplaceAccount({required this.url, required this.id, required this.type, required this.login, this.nodeId, this.email, this.organizationBillingEmail, });
 

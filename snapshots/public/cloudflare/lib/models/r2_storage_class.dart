@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2StorageClass
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Storage class for newly uploaded objects, unless specified otherwise.
 @immutable final class R2StorageClass {const R2StorageClass._(this.value);

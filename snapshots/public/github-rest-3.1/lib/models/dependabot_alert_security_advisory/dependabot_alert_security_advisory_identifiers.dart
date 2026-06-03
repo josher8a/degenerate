@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertSecurityAdvisory (inline: Identifiers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of identifier.
 @immutable final class IdentifiersType {const IdentifiersType._(this.value);

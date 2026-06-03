@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelIsDefaultNetwork
 
 /// If `true`, this virtual network is the default for the account.
 extension type const TunnelIsDefaultNetwork(bool value) {

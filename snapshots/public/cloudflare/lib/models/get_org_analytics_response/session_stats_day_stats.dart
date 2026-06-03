@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetOrgAnalyticsResponse (inline: Data > SessionStats > DayStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SessionStatsDayStats {const SessionStatsDayStats({this.day, this.totalSessionMinutes, this.totalSessions, });
 

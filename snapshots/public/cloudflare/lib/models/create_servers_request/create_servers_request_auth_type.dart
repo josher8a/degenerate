@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateServersRequest (inline: AuthType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateServersRequestAuthType {const CreateServersRequestAuthType._(this.value);
 

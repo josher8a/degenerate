@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesMessages2 {const ZonesMessages2({required this.code, required this.message, });
 

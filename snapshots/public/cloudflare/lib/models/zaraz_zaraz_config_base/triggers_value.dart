@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Triggers > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule.dart';import 'package:pub_cloudflare/models/zaraz_load_rule.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/exclude_rules.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/load_rules.dart';@immutable final class ValueSystem {const ValueSystem._(this.value);
 

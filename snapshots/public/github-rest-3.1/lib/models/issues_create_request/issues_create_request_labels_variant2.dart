@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesCreateRequest (inline: Labels > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesCreateRequestLabelsVariant2 {const IssuesCreateRequestLabelsVariant2({this.id, this.name, this.description, this.color, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsSubmissionReportType
 
 /// The report type for submitted reports.
 extension type const AbuseReportsSubmissionReportType(String value) {

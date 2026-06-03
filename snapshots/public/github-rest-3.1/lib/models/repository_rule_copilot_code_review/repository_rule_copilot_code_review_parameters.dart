@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleCopilotCodeReview (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleCopilotCodeReviewParameters {const RepositoryRuleCopilotCodeReviewParameters({this.reviewDraftPullRequests, this.reviewOnPush, });
 

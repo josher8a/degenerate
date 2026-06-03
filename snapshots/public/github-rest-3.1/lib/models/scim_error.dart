@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ScimError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Scim Error
 @immutable final class ScimError {const ScimError({this.message, this.documentationUrl, this.detail, this.status, this.scimType, this.schemas, });

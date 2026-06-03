@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties > Summary > Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/failed_datasets.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/successful_datasets.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/total_datasets.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/total_indicator_types.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/total_processing_time_ms.dart';@immutable final class SummaryProperties {const SummaryProperties({required this.failedDatasets, required this.successfulDatasets, required this.totalDatasets, required this.totalIndicatorTypes, required this.totalProcessingTimeMs, });
 

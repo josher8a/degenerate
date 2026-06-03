@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckRun (inline: Output)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Output {const Output({required this.title, required this.summary, required this.text, required this.annotationsCount, required this.annotationsUrl, });
 

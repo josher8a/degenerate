@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostScreenshotRequest (inline: Variant1 > ScreenshotOptions > Clip)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Clip {const Clip({required this.height, required this.width, required this.x, required this.y, this.scale, });
 

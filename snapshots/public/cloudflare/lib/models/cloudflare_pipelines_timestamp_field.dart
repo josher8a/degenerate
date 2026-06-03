@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesTimestampField
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit._(this.value);
 

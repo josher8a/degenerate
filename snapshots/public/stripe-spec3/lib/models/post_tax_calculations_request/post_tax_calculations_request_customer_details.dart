@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxCalculationsRequest (inline: CustomerDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details_address.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';@immutable final class CustomerDetailsAddressSource {const CustomerDetailsAddressSource._(this.value);
 

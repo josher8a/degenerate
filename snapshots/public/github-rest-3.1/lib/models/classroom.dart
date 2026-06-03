@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Classroom
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_organization.dart';/// A GitHub Classroom classroom
 @immutable final class Classroom {const Classroom({required this.id, required this.name, required this.archived, required this.organization, required this.url, });

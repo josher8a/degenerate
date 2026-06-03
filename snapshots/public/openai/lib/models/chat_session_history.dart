@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatSessionHistory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// History retention preferences returned for the session.
 @immutable final class ChatSessionHistory {const ChatSessionHistory({required this.enabled, required this.recentThreads, });

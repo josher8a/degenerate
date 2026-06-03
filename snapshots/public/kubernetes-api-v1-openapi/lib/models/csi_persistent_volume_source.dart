@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CsiPersistentVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// Represents storage that is managed by an external CSI volume driver
 @immutable final class CsiPersistentVolumeSource {const CsiPersistentVolumeSource({this.controllerExpandSecretRef, this.controllerPublishSecretRef, this.driver = '', this.fsType, this.nodeExpandSecretRef, this.nodePublishSecretRef, this.nodeStageSecretRef, this.readOnly, this.volumeAttributes, this.volumeHandle = '', });

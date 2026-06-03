@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTopTldsByMaliciousTlsVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsByMaliciousTlsVersion {const RadarGetEmailSecurityTopTldsByMaliciousTlsVersion._(this.value);
 

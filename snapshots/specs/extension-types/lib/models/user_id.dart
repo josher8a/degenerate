@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserId
 
 /// A unique user identifier.
 extension type const UserId(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest (inline: PurchaseDetails > Receipt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PurchaseDetailsReceipt {const PurchaseDetailsReceipt({this.description, this.quantity, this.total, this.unitCost, });
 

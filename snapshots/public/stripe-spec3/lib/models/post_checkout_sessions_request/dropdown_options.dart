@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: CustomFields > Dropdown > Options)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DropdownOptions {const DropdownOptions({required this.label, required this.value, });
 

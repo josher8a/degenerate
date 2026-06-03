@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStreamEvent (inline: ThreadRunIncomplete)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunIncompleteEvent {const ThreadRunIncompleteEvent._(this.value);
 

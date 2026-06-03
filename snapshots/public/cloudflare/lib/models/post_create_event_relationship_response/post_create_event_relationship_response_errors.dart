@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreateEventRelationshipResponse (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreateEventRelationshipResponseErrors {const PostCreateEventRelationshipResponseErrors({required this.childId, required this.error, this.errorType, });
 

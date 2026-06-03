@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceTaxBreakdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown/tax_product_resource_line_item_tax_breakdown_taxability_reason.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_rate_details.dart';/// 
 @immutable final class TaxProductResourceTaxBreakdown {const TaxProductResourceTaxBreakdown({required this.amount, required this.inclusive, required this.taxRateDetails, required this.taxabilityReason, required this.taxableAmount, });

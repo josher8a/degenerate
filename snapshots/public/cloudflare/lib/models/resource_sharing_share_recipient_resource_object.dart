@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingShareRecipientResourceObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_version.dart';/// Share Recipient error message.
 extension type const ResourceSharingRecipientResourceError(String value) {

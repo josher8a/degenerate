@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantMessageItem (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `chatkit.thread_item`.
 @immutable final class AssistantMessageItemObject {const AssistantMessageItemObject._(this.value);

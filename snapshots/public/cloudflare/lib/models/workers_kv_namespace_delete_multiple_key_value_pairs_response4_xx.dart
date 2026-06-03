@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_bulk_result.dart';@immutable final class WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx {const WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx({this.result});
 

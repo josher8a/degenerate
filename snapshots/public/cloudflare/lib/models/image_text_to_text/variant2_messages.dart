@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageTextToText (inline: Variant2 > Messages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages_content.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages_content_variant2.dart';@immutable final class Variant2Messages {const Variant2Messages({required this.content, required this.role, });
 

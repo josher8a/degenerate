@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelSubnetComment
 
 /// An optional description of the subnet.
 extension type const TunnelSubnetComment(String value) {

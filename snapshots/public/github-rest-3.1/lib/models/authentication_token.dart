@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuthenticationToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/authentication_token/authentication_token_repository_selection.dart';import 'package:pub_github_rest_3_1/models/repository.dart';/// Authentication Token
 @immutable final class AuthenticationToken {const AuthenticationToken({required this.token, required this.expiresAt, this.permissions, this.repositories, this.singleFile, this.repositorySelection, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckRunWithSimpleCheckSuite (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the lifecycle that the check is currently in.
 @immutable final class CheckRunWithSimpleCheckSuiteStatus {const CheckRunWithSimpleCheckSuiteStatus._(this.value);

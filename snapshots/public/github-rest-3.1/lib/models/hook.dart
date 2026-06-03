@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Hook
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_response.dart';import 'package:pub_github_rest_3_1/models/webhook_config.dart';/// Webhooks for repositories.
 @immutable final class Hook {const Hook({required this.type, required this.id, required this.name, required this.active, required this.events, required this.config, required this.updatedAt, required this.createdAt, required this.url, required this.testUrl, required this.pingUrl, required this.lastResponse, this.deliveriesUrl, });

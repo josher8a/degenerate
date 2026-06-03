@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Response > Response > SecurityDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityDetails {const SecurityDetails({required this.certificateId, required this.certificateTransparencyCompliance, required this.cipher, required this.encryptedClientHello, required this.issuer, required this.keyExchange, required this.keyExchangeGroup, required this.protocol, required this.sanList, required this.serverSignatureAlgorithm, required this.subjectName, required this.validFrom, required this.validTo, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteEvalResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEvalResponse {const DeleteEvalResponse({required this.object, required this.deleted, required this.evalId, });
 

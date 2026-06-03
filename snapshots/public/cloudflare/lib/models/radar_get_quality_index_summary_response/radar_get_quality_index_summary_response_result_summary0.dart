@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualityIndexSummaryResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualityIndexSummaryResponseResultSummary0 {const RadarGetQualityIndexSummaryResponseResultSummary0({required this.p25, required this.p50, required this.p75, });
 

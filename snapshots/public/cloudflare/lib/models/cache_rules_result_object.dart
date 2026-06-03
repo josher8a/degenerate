@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesResultObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_editable.dart';import 'package:pub_cloudflare/models/cache_rules_modified_on.dart';import 'package:pub_cloudflare/models/cache_rules_setting_id.dart';/// The value of the setting.
 extension type const CacheRulesSettingValue(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDomainResourcePaymentMethodStatusDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains additional details about the status of a payment method for a specific payment method domain.
 @immutable final class PaymentMethodDomainResourcePaymentMethodStatusDetails {const PaymentMethodDomainResourcePaymentMethodStatusDetails({required this.errorMessage});

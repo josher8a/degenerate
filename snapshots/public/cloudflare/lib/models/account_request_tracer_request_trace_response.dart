@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRequestTracerRequestTraceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_response/account_request_tracer_request_trace_response_result.dart';import 'package:pub_cloudflare/models/request_tracer_messages2.dart';@immutable final class AccountRequestTracerRequestTraceResponse {const AccountRequestTracerRequestTraceResponse({required this.errors, required this.messages, required this.success, this.result, });
 

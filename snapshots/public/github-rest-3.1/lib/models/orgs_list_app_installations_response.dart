@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListAppInstallationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/installation.dart';@immutable final class OrgsListAppInstallationsResponse {const OrgsListAppInstallationsResponse({required this.totalCount, required this.installations, });
 

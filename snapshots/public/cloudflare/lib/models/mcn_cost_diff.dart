@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnCostDiff
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnCostDiff {const McnCostDiff({required this.currency, required this.currentMonthlyCost, required this.diff, required this.proposedMonthlyCost, });
 

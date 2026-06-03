@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListArtifactStorageRecordsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_list_artifact_storage_records_response/orgs_list_artifact_storage_records_response_storage_records.dart';@immutable final class OrgsListArtifactStorageRecordsResponse {const OrgsListArtifactStorageRecordsResponse({this.totalCount, this.storageRecords, });
 

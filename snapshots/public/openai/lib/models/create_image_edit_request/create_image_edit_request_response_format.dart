@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateImageEditRequest (inline: ResponseFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
 @immutable final class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat._(this.value);

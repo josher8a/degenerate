@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: D1Databases > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// D1 binding.
 @immutable final class PagesDeploymentConfigValuesRequestD1DatabasesValue {const PagesDeploymentConfigValuesRequestD1DatabasesValue({required this.id});

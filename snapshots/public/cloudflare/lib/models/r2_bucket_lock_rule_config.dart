@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2BucketLockRuleConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_lock_rule.dart';@immutable final class R2BucketLockRuleConfig {const R2BucketLockRuleConfig({this.rules});
 

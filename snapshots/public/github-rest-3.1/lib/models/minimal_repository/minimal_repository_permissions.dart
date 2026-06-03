@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MinimalRepository (inline: Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryPermissions {const MinimalRepositoryPermissions({this.admin, this.maintain, this.push, this.triage, this.pull, });
 

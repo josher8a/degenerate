@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityCreateTrustedDomainResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_create_trusted_domain_response/email_security_create_trusted_domain_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';import 'package:pub_cloudflare/models/email_security_trusted_domain.dart';@immutable final class EmailSecurityCreateTrustedDomainResponse {const EmailSecurityCreateTrustedDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

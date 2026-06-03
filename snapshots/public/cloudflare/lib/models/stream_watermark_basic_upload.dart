@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWatermarkBasicUpload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_name.dart';import 'package:pub_cloudflare/models/stream_opacity.dart';import 'package:pub_cloudflare/models/stream_padding.dart';import 'package:pub_cloudflare/models/stream_position.dart';import 'package:pub_cloudflare/models/stream_scale.dart';@immutable final class StreamWatermarkBasicUpload {const StreamWatermarkBasicUpload({required this.file, this.name, this.opacity, this.padding, this.position, this.scale, });
 

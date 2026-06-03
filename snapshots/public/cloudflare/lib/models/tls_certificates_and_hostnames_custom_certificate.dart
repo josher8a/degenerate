@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCustomCertificate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_base.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_issuer.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_priority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_signature.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_uploaded_on.dart';/// When the certificate from the authority expires.
 extension type TlsCertificatesAndHostnamesExpiresOn(DateTime value) {

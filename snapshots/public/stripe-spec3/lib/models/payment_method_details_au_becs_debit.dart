@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsAuBecsDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsAuBecsDebit {const PaymentMethodDetailsAuBecsDebit({this.bsbNumber, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, });

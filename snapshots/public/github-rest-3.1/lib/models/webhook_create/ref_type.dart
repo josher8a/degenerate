@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCreate (inline: RefType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of Git ref object created in the repository.
 @immutable final class RefType {const RefType._(this.value);

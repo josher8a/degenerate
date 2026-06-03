@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ResponseFormat > Variant1 > JsonSchema)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/json_schema_json_schema.dart';@immutable final class JsonSchemaType {const JsonSchemaType._(this.value);
 

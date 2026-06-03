@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCodeScanningAlertFixed (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertFixedAction {const WebhookCodeScanningAlertFixedAction._(this.value);
 

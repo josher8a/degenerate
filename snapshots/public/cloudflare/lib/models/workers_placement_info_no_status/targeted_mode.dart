@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementInfoNoStatus (inline: Targeted > Mode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Targeted placement mode.
 @immutable final class TargetedMode {const TargetedMode._(this.value);

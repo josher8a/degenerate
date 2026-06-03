@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpIpsTimeseriesResponse (inline: Result > Meta > Delay > CountryData > Latest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CountryDataLatest {const CountryDataLatest({required this.count, required this.timestamp, });
 

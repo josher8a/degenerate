@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActivitySetRepoSubscriptionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivitySetRepoSubscriptionRequest {const ActivitySetRepoSubscriptionRequest({this.subscribed, this.ignored, });
 

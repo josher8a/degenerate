@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryOutboundTransfersResourceReturnedDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status/treasury_outbound_payments_resource_returned_status_code.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// 
 @immutable final class TreasuryOutboundTransfersResourceReturnedDetails {const TreasuryOutboundTransfersResourceReturnedDetails({required this.code, required this.transaction, });

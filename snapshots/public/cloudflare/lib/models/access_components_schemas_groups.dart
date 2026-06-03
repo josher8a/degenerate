@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessComponentsSchemasGroups
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups_components_schemas_name2.dart';import 'package:pub_cloudflare/models/access_rule.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessComponentsSchemasGroups {const AccessComponentsSchemasGroups({this.createdAt, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsMessageCreationObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_step_details_message_creation_object/run_step_delta_step_details_message_creation_object_type.dart';import 'package:pub_openai/models/run_step_details_message_creation_object/run_step_details_message_creation_object_message_creation.dart';/// Details of the message creation by the run step.
 @immutable final class RunStepDetailsMessageCreationObject {const RunStepDetailsMessageCreationObject({required this.type, required this.messageCreation, });

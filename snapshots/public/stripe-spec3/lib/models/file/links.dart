@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/File (inline: Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file_link.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// A list of [file links](https://api.stripe.com#file_links) that point at this file.
 @immutable final class Links {const Links({required this.data, required this.hasMore, required this.object, required this.url, });

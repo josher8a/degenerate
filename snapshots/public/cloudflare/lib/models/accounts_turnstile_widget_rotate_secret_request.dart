@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsTurnstileWidgetRotateSecretRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `invalidate_immediately` is set to `false`, the previous secret will
 /// remain valid for two hours. Otherwise, the secret is immediately

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsAclCreateAclRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_acl_components_schemas_name.dart';import 'package:pub_cloudflare/models/secondary_dns_ip_range.dart';@immutable final class SecondaryDnsAclCreateAclRequest {const SecondaryDnsAclCreateAclRequest({required this.ipRange, required this.name, });
 

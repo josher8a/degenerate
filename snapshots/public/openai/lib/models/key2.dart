@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log_actor_service_account.dart';import 'package:pub_openai/models/audit_log_actor_user.dart';import 'package:pub_openai/models/key2/key2_type.dart';/// The API Key used to perform the audit logged action.
 @immutable final class Key2 {const Key2({this.id, this.type, this.user, this.serviceAccount, });

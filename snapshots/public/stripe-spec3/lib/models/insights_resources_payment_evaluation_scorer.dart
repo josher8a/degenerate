@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationScorer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Recommended action based on the risk score. Possible values are `block` and `continue`.
 @immutable final class RecommendedAction {const RecommendedAction._(this.value);

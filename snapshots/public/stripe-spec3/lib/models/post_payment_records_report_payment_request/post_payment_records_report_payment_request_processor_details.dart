@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsReportPaymentRequest (inline: ProcessorDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request/post_payment_records_report_payment_request_processor_details_custom.dart';/// Processor information for this payment.
 @immutable final class PostPaymentRecordsReportPaymentRequestProcessorDetails {const PostPaymentRecordsReportPaymentRequestProcessorDetails({required this.type, this.custom, });

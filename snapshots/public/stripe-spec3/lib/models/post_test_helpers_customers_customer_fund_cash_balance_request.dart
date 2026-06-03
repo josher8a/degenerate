@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersCustomersCustomerFundCashBalanceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersCustomersCustomerFundCashBalanceRequest {const PostTestHelpersCustomersCustomerFundCashBalanceRequest({required this.amount, required this.currency, this.expand, this.reference, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseTeamsCreateRequest (inline: SyncToOrganizations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Retired: this field is no longer supported.
 /// Whether the enterprise team should be reflected in each organization.

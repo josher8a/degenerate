@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheKeyFields (inline: Value > Cookie)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls which cookies appear in the Cache Key.
 /// 

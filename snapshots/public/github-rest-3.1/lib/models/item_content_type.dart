@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemContentType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of content tracked in a project item
 @immutable final class ItemContentType {const ItemContentType._(this.value);

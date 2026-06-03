@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Conversation2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation that this response belonged to. Input items and output items from this response were automatically added to this conversation.
 @immutable final class Conversation2 {const Conversation2({required this.id});

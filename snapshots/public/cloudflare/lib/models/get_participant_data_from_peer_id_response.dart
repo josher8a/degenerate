@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/get_participant_data_from_peer_id_response_data.dart';@immutable final class GetParticipantDataFromPeerIdResponse {const GetParticipantDataFromPeerIdResponse({this.data, this.success, });
 

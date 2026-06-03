@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceComputed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/quotes_resource_recurring.dart';import 'package:pub_stripe_spec3/models/quotes_resource_upfront.dart';/// 
 @immutable final class QuotesResourceComputed {const QuotesResourceComputed({required this.upfront, this.recurring, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomTurnstileAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which action to take when a bot is detected using Turnstile. `log` will
 /// have no impact on queueing behavior, simply keeping track of how many

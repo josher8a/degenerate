@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationDeletePerOperationSettingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schema_validation_delete_per_operation_setting_response/schema_validation_delete_per_operation_setting_response_result.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';@immutable final class SchemaValidationDeletePerOperationSettingResponse {const SchemaValidationDeletePerOperationSettingResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

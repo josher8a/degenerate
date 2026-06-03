@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryPageTestResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_page_test_.dart';import 'package:pub_cloudflare/models/observatory_result_info.dart';@immutable final class ObservatoryPageTestResponseCollection {const ObservatoryPageTestResponseCollection({this.result, this.resultInfo, });
 

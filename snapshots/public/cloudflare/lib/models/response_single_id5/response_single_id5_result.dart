@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingleId5 (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_purge_identifier.dart';@immutable final class ResponseSingleId5Result {const ResponseSingleId5Result({required this.id});
 

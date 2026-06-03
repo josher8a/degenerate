@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingSessionAffinityAttributes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
 @immutable final class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite._(this.value);

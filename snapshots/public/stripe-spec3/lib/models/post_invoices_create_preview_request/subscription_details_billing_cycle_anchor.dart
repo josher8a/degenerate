@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesCreatePreviewRequest (inline: SubscriptionDetails > BillingCycleAnchor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingCycleAnchorVariant1 {const BillingCycleAnchorVariant1._(this.value);
 

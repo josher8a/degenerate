@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessLoginMethodRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_login_method_rule/login_method.dart';/// Matches a specific identity provider id.
 @immutable final class AccessLoginMethodRule {const AccessLoginMethodRule({required this.loginMethod});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsSetMembershipForUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role to give the user in the organization. Can be one of:
 ///  * `admin` - The user will become an owner of the organization.

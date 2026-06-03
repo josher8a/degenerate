@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomOriginTrustStoreCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate.dart';@immutable final class CustomOriginTrustStoreCreateRequest {const CustomOriginTrustStoreCreateRequest({required this.certificate});
 

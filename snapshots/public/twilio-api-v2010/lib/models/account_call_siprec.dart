@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCallSiprec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status - one of `stopped`, `in-progress`
 @immutable final class SiprecEnumStatus {const SiprecEnumStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewCommentEvent (inline: Comment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment_event/comment_reactions.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment_event/comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review_comment/webhooks_review_comment_links.dart';@immutable final class PullRequestReviewCommentEventComment {const PullRequestReviewCommentEventComment({required this.id, required this.nodeId, required this.url, required this.pullRequestReviewId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.originalCommitId, required this.reactions, this.subjectType, this.inReplyToId, });
 

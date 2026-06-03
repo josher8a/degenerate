@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardsCardRequest (inline: Pin)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired PIN for this card.
 @immutable final class Pin {const Pin({this.encryptedNumber});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventInputAudioBufferCleared
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the input audio buffer is cleared by the client with a
 /// `input_audio_buffer.clear` event.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessComponentsSchemasName
 
 /// The name of the identity provider, shown to users on the login page.
 extension type const AccessComponentsSchemasName(String value) {

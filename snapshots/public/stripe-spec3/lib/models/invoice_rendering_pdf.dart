@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceRenderingPdf
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Page size of invoice pdf. Options include a4, letter, and auto. If set to auto, page size will be switched to a4 or letter based on customer locale.
 @immutable final class InvoiceRenderingPdfPageSize {const InvoiceRenderingPdfPageSize._(this.value);

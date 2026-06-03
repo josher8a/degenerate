@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentParam (inline: ThreeDSecure > ElectronicCommerceIndicator)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ThreeDSecureElectronicCommerceIndicator {const ThreeDSecureElectronicCommerceIndicator._(this.value);
 

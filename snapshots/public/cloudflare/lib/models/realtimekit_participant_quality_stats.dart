@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantQualityStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant_quality_stats/realtimekit_participant_quality_stats_quality_stats.dart';@immutable final class RealtimekitParticipantQualityStats {const RealtimekitParticipantQualityStats({this.qualityStats});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsBotnetThreatFeedResponse (inline: Result > Ases)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Ases {const Ases({required this.asn, required this.country, required this.name, required this.rank, this.rankChange, });
 

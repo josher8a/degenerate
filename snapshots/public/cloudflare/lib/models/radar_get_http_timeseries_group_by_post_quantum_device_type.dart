@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByPostQuantumDeviceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumDeviceType {const RadarGetHttpTimeseriesGroupByPostQuantumDeviceType._(this.value);
 

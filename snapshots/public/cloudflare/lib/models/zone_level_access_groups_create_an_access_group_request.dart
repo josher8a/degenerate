@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneLevelAccessGroupsCreateAnAccessGroupRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups_components_schemas_name2.dart';import 'package:pub_cloudflare/models/access_rule.dart';@immutable final class ZoneLevelAccessGroupsCreateAnAccessGroupRequest {const ZoneLevelAccessGroupsCreateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.require, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatSessionResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_session_chatkit_configuration.dart';import 'package:pub_openai/models/chat_session_rate_limits.dart';import 'package:pub_openai/models/chatkit_workflow.dart';@immutable final class ChatSessionStatus {const ChatSessionStatus._(this.value);
 

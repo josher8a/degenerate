@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsPaginationInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsPaginationInfo {const BuildsPaginationInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ManagedFieldsEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.
 @immutable final class ManagedFieldsEntry {const ManagedFieldsEntry({this.apiVersion, this.fieldsType, this.fieldsV1, this.manager, this.operation, this.subresource, this.time, });

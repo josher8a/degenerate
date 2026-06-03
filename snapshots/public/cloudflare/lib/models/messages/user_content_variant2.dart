@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > User > Content > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/file.dart';import 'package:pub_cloudflare/models/messages/input_audio.dart';import 'package:pub_cloudflare/models/messages/user_content_variant2_image_url.dart';@immutable final class UserContentVariant2Type {const UserContentVariant2Type._(this.value);
 

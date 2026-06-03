@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgHook (inline: Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgHookConfig {const OrgHookConfig({this.url, this.insecureSsl, this.contentType, this.secret, });
 

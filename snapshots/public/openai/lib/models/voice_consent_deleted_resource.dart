@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VoiceConsentDeletedResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_consent_deleted_resource/voice_consent_deleted_resource_object.dart';@immutable final class VoiceConsentDeletedResource {const VoiceConsentDeletedResource({required this.id, required this.object, required this.deleted, });
 

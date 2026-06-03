@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerResizePolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerResizePolicy represents resource resize policy for the container.
 @immutable final class ContainerResizePolicy {const ContainerResizePolicy({this.resourceName = '', this.restartPolicy = '', });

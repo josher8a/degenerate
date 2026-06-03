@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAnyValidServiceTokenRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches any valid Access Service Token
 @immutable final class AccessAnyValidServiceTokenRule {const AccessAnyValidServiceTokenRule({required this.anyValidServiceToken});

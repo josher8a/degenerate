@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsIndicatorFeedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_indicator_feed_item.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_schemas_messages2.dart';@immutable final class CustomIndicatorFeedsIndicatorFeedResponse {const CustomIndicatorFeedsIndicatorFeedResponse({required this.errors, required this.messages, required this.success, this.result, });
 

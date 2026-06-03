@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamStorageUseResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_storage_use_response/stream_storage_use_response_result.dart';@immutable final class StreamStorageUseResponse {const StreamStorageUseResponse({this.result});
 

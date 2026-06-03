@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CampaignState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether a campaign is open or closed
 @immutable final class CampaignState {const CampaignState._(this.value);

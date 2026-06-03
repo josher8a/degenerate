@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventSessionUpdated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_client_event_session_update/realtime_client_event_session_update_session.dart';import 'package:pub_openai/models/realtime_session_create_request_ga.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request_ga.dart';/// Returned when a session is updated with a `session.update` event, unless
 /// there is an error.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamModifiedOn
 
 /// Last time the token was modified.
 extension type IamModifiedOn(DateTime value) {

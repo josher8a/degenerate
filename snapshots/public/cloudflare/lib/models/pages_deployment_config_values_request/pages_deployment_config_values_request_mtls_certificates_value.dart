@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: MtlsCertificates > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// mTLS binding.
 @immutable final class PagesDeploymentConfigValuesRequestMtlsCertificatesValue {const PagesDeploymentConfigValuesRequestMtlsCertificatesValue({required this.certificateId});

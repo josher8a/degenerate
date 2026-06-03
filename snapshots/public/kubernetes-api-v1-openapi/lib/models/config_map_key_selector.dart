@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfigMapKeySelector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Selects a key from a ConfigMap.
 @immutable final class ConfigMapKeySelector {const ConfigMapKeySelector({this.key = '', this.name = '', this.optional, });

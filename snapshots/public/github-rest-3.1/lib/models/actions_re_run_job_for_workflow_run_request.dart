@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsReRunJobForWorkflowRunRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsReRunJobForWorkflowRunRequest {const ActionsReRunJobForWorkflowRunRequest({this.enableDebugLogging = false});
 

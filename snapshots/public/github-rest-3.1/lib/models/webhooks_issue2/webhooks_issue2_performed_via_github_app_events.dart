@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksIssue2 (inline: PerformedViaGithubApp > Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksIssue2PerformedViaGithubAppEvents {const WebhooksIssue2PerformedViaGithubAppEvents._(this.value);
 

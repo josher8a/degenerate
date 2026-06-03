@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitTree
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_tree/git_tree_tree.dart';/// The hierarchy between files in a Git repository.
 @immutable final class GitTree {const GitTree({required this.sha, required this.truncated, required this.tree, this.url, });

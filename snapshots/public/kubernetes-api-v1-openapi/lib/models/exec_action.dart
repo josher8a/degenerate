@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ExecAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ExecAction describes a "run in container" action.
 @immutable final class ExecAction {const ExecAction({this.command});

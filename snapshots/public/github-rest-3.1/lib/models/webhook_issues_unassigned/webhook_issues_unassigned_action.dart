@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookIssuesUnassigned (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed.
 @immutable final class WebhookIssuesUnassignedAction {const WebhookIssuesUnassignedAction._(this.value);

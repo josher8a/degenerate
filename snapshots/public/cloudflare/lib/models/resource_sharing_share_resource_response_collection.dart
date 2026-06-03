@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingShareResourceResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_share_resource_object.dart';@immutable final class ResourceSharingShareResourceResponseCollection {const ResourceSharingShareResourceResponseCollection({this.result});
 

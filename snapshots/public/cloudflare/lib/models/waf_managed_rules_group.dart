@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_description.dart';import 'package:pub_cloudflare/models/waf_managed_rules_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_modified_rules_count.dart';import 'package:pub_cloudflare/models/waf_managed_rules_name.dart';import 'package:pub_cloudflare/models/waf_managed_rules_rules_count.dart';@immutable final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
 

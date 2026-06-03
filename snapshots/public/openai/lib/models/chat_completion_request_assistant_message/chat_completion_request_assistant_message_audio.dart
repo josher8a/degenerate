@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestAssistantMessage (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data about a previous audio response from the model.
 /// [Learn more](/docs/guides/audio).

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranch (inline: RequiredPullRequestReviews)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch/required_pull_request_reviews_bypass_pull_request_allowances.dart';import 'package:pub_github_rest_3_1/models/protected_branch/required_pull_request_reviews_dismissal_restrictions.dart';@immutable final class ProtectedBranchRequiredPullRequestReviews {const ProtectedBranchRequiredPullRequestReviews({required this.url, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.dismissalRestrictions, this.bypassPullRequestAllowances, });
 

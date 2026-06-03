@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckRunRequestedAction (inline: RequestedAction)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action requested by the user.
 @immutable final class RequestedAction {const RequestedAction({this.identifier});

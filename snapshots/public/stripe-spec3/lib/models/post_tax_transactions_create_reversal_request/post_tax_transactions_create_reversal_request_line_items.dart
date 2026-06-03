@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxTransactionsCreateReversalRequest (inline: LineItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxTransactionsCreateReversalRequestLineItems {const PostTaxTransactionsCreateReversalRequestLineItems({required this.amount, required this.amountTax, required this.originalLineItem, required this.reference, this.metadata, this.quantity, });
 

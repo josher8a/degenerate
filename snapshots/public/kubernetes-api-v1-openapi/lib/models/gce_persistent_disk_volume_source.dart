@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GcePersistentDiskVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Persistent Disk resource in Google Compute Engine.
 /// 

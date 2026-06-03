@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateCommitCommentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateCommitCommentRequest {const ReposCreateCommitCommentRequest({required this.body, this.path, this.position, this.line, });
 

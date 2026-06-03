@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopUserAgentsByDirectiveResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0 {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultTop0({required this.name, required this.value, this.fully, this.partially, });
 

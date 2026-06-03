@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamNotBefore
 
 /// The time before which the token MUST NOT be accepted for processing.
 extension type IamNotBefore(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileSearchRankingOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_search_ranker.dart';/// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.
 /// 

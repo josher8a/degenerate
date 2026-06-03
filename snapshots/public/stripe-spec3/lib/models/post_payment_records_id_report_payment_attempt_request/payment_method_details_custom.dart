@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptRequest (inline: PaymentMethodDetails > Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodDetailsCustom {const PaymentMethodDetailsCustom({this.displayName, this.type, });
 

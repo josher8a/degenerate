@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventRawReadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventRawReadResponse {const GetEventRawReadResponse({required this.accountId, required this.created, required this.data, required this.id, required this.source, required this.tlp, });
 

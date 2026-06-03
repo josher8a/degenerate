@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseImageGenCallPartialImageEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a partial image is available during image generation streaming.
 /// 

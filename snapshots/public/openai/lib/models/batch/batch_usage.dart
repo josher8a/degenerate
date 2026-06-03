@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Batch (inline: Usage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_usage/output_tokens_details.dart';import 'package:pub_openai/models/response_usage/response_usage_input_tokens_details.dart';/// Represents token usage details including input tokens, output tokens, a
 /// breakdown of output tokens, and the total tokens used. Only populated on

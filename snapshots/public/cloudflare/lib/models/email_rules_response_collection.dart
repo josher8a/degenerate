@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRulesResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_response_collection/access_users_components_schemas_response_collection_result_info.dart';import 'package:pub_cloudflare/models/email_rule_properties.dart';@immutable final class EmailRulesResponseCollection {const EmailRulesResponseCollection({this.result, this.resultInfo, });
 

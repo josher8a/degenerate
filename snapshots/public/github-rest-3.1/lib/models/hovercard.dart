@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Hovercard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hovercard/contexts.dart';/// Hovercard
 @immutable final class Hovercard {const Hovercard({required this.contexts});

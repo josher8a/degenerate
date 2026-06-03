@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled
 
 /// Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
 extension type const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnssecDnssecResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dnssec_dnssec.dart';@immutable final class DnssecDnssecResponseSingle {const DnssecDnssecResponseSingle({this.result});
 

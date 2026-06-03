@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsMessageCreationObject (inline: MessageCreation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDetailsMessageCreationObjectMessageCreation {const RunStepDetailsMessageCreationObjectMessageCreation({required this.messageId});
 

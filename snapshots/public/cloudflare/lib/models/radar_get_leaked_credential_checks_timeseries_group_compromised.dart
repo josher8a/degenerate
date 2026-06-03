@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetLeakedCredentialChecksTimeseriesGroupCompromised
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCompromised {const RadarGetLeakedCredentialChecksTimeseriesGroupCompromised._(this.value);
 

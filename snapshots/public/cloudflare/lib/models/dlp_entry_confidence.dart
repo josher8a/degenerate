@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntryConfidence
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryConfidence {const DlpEntryConfidence({required this.aiContextAvailable, required this.available, });
 

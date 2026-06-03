@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarValueListsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request/item_type.dart';@immutable final class PostRadarValueListsRequest {const PostRadarValueListsRequest({required this.alias, required this.name, this.expand, this.itemType, this.metadata, });
 

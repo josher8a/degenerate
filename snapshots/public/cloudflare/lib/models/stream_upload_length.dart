@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamUploadLength
 
 /// Indicates the size of the entire upload in bytes. The value must be a non-negative integer.
 extension type const StreamUploadLength(int value) {

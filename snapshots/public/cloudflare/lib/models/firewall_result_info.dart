@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallResultInfo {const FirewallResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 

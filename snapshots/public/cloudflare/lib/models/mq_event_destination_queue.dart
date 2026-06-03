@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqEventDestinationQueue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of destination
 @immutable final class MqEventDestinationQueueType {const MqEventDestinationQueueType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningDeleteCodeqlDatabaseResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningDeleteCodeqlDatabaseResponse503 {const CodeScanningDeleteCodeqlDatabaseResponse503({this.code, this.message, this.documentationUrl, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PatchDatasetUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchDatasetUpdateResponse {const PatchDatasetUpdateResponse({required this.isPublic, required this.name, required this.uuid, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesSourceHash
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesSourceHash {const PagesSourceHash({required this.branch, required this.path, });
 

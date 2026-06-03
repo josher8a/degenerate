@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicesPaymentSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_payment_method_options.dart';import 'package:pub_stripe_spec3/models/invoices_payment_settings/invoices_payment_settings_payment_method_types.dart';/// 
 @immutable final class InvoicesPaymentSettings {const InvoicesPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });

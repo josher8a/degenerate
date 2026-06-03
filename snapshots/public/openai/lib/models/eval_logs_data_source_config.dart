@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalLogsDataSourceConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// A LogsDataSourceConfig which specifies the metadata property of your logs query.
 /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.

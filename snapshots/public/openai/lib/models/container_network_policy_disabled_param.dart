@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerNetworkPolicyDisabledParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Disable outbound network access. Always `disabled`.
 @immutable final class ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Totals
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth2.dart';import 'package:pub_cloudflare/models/pageviews.dart';import 'package:pub_cloudflare/models/requests.dart';import 'package:pub_cloudflare/models/since.dart';import 'package:pub_cloudflare/models/threats.dart';import 'package:pub_cloudflare/models/uniques.dart';import 'package:pub_cloudflare/models/until.dart';/// Breakdown of totals by data type.
 @immutable final class Totals {const Totals({this.bandwidth, this.pageviews, this.requests, this.since, this.threats, this.uniques, this.until, });

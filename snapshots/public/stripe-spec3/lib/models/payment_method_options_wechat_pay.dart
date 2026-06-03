@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsWechatPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// The client type that the end customer will pay from
 @immutable final class PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient._(this.value);

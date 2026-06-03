@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedFinancialAccountTransactionsConfigClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_financial_account_transactions_features.dart';/// 
 @immutable final class ConnectEmbeddedFinancialAccountTransactionsConfigClaim {const ConnectEmbeddedFinancialAccountTransactionsConfigClaim({required this.enabled, required this.features, });

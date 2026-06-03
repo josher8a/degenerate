@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LegalEntityRepresentativeDeclaration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class LegalEntityRepresentativeDeclaration {const LegalEntityRepresentativeDeclaration({this.date, this.ip, this.userAgent, });

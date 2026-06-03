@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserMessageQuotedText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `quoted_text`.
 @immutable final class UserMessageQuotedTextType {const UserMessageQuotedTextType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldAuthIdCharacteristic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
 @immutable final class ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsId
 
 /// The unique identifier for the indicator feed
 extension type const CustomIndicatorFeedsId(int value) {

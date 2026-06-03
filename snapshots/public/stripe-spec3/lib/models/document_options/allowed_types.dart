@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DocumentOptions (inline: AllowedTypes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowedTypes {const AllowedTypes._(this.value);
 

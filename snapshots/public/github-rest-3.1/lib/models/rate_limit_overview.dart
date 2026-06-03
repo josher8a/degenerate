@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RateLimitOverview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rate_limit.dart';import 'package:pub_github_rest_3_1/models/rate_limit_overview/resources.dart';/// Rate Limit Overview
 @immutable final class RateLimitOverview {const RateLimitOverview({required this.resources, required this.rate, });

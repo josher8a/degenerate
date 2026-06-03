@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostGroupMemberCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostGroupMemberCreateResponse {const PostGroupMemberCreateResponse({required this.accountId, required this.groupId, required this.uuid, this.createdAt, this.updatedAt, });
 

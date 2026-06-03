@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetBillingCreditBalanceSummaryFilter (inline: ApplicabilityScope > Prices)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prices {const Prices({required this.id});
 

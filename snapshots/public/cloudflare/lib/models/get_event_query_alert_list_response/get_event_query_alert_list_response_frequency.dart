@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventQueryAlertListResponse (inline: Frequency)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
 @immutable final class GetEventQueryAlertListResponseFrequency {const GetEventQueryAlertListResponseFrequency._(this.value);

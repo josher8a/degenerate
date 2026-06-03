@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalConfigurationsRequest (inline: Features > SubscriptionCancel > CancellationReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/cancellation_reason_options.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason({required this.enabled, required this.options, });
 

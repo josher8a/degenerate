@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersUsageModelResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';import 'package:pub_cloudflare/models/workers_user_limits.dart';@immutable final class WorkersUsageModelResponseResult {const WorkersUsageModelResponseResult({this.usageModel, this.userLimits, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequest (inline: TurnDetection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for turn detection. Can be set to `null` to turn off. Server
 /// VAD means that the model will detect the start and end of speech based on

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksRequest (inline: ShippingOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestShippingOptions {const PostPaymentLinksRequestShippingOptions({this.shippingRate});
 

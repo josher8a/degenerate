@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CompletionUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage/completion_tokens_details.dart';import 'package:pub_openai/models/completion_usage/prompt_tokens_details.dart';/// Usage statistics for the completion request.
 @immutable final class CompletionUsage {const CompletionUsage({this.completionTokens = 0, this.promptTokens = 0, this.totalTokens = 0, this.completionTokensDetails, this.promptTokensDetails, });

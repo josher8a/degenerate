@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushEnabled
 
 /// Flag that indicates if the job is enabled.
 extension type const LogpushEnabled(bool value) {

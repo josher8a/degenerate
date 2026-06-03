@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPattern
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpValidation {const DlpValidation._(this.value);
 

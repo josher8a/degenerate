@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetReportsDatasetsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_reports_datasets_response/radar_get_reports_datasets_response_result_datasets.dart';@immutable final class RadarGetReportsDatasetsResponseResult {const RadarGetReportsDatasetsResponseResult({required this.datasets});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSourcesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request/post_customers_customer_bank_accounts_id_request_owner.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_mandate.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_redirect.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_source_order.dart';import 'package:pub_stripe_spec3/models/post_sources_request/receiver.dart';/// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
 @immutable final class Flow {const Flow._(this.value);

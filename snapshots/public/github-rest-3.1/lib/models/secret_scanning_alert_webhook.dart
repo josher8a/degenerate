@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningAlertWebhook
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/organization_secret_scanning_alert/validity.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The reason for resolving the alert.
 @immutable final class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook._(this.value);

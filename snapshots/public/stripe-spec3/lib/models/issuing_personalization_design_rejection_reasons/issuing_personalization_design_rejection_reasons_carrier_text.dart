@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingPersonalizationDesignRejectionReasons (inline: CarrierText)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuingPersonalizationDesignRejectionReasonsCarrierText {const IssuingPersonalizationDesignRejectionReasonsCarrierText._(this.value);
 

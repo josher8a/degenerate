@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/project_edited/changes_public.dart';import 'package:pub_github_rest_3_1/models/project_edited/project_edited_changes_description.dart';import 'package:pub_github_rest_3_1/models/project_edited/project_edited_changes_title.dart';import 'package:pub_github_rest_3_1/models/project_edited/short_description.dart';@immutable final class ProjectEditedChanges {const ProjectEditedChanges({this.description, this.public, this.shortDescription, this.title, });
 

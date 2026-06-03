@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraTarget
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info.dart';import 'package:pub_cloudflare/models/infra_target_id.dart';@immutable final class InfraTarget {const InfraTarget({required this.createdAt, required this.hostname, required this.id, required this.ip, required this.modifiedAt, });
 

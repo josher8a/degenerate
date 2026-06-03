@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateZoneSnippetRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/update_zone_snippet_request/update_zone_snippet_request_metadata.dart';/// Define a snippet object.
 @immutable final class UpdateZoneSnippetRequest {const UpdateZoneSnippetRequest({required this.metadata, this.additionalProperties = const {}, });

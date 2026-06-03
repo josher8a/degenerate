@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileRegion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Region where this widget can be used. This cannot be changed after creation.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Secrets for a GitHub Codespace.
 @immutable final class CodespacesSecret {const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl, });

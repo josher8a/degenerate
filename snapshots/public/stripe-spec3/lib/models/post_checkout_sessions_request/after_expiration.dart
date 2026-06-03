@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: AfterExpiration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/recovery.dart';/// Configure actions after a Checkout Session has expired. You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class AfterExpiration {const AfterExpiration({this.recovery});

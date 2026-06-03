@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputePaymentMethodDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_amazon_pay.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_card.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_klarna.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_paypal.dart';/// Payment method type.
 @immutable final class DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType._(this.value);

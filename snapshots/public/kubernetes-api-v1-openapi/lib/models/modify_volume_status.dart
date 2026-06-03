@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ModifyVolumeStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ModifyVolumeStatus represents the status object of ControllerModifyVolume operation
 @immutable final class ModifyVolumeStatus {const ModifyVolumeStatus({this.status = '', this.targetVolumeAttributesClassName, });

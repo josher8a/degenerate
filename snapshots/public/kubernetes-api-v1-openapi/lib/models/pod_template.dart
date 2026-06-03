@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodTemplate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_template_spec.dart';/// PodTemplate describes a template for creating copies of a predefined pod.
 @immutable final class PodTemplate {const PodTemplate({this.apiVersion, this.kind, this.metadata, this.template, });

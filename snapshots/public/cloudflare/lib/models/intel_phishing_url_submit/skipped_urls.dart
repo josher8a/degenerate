@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlSubmit (inline: SkippedUrls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SkippedUrls {const SkippedUrls({this.url, this.urlId, });
 

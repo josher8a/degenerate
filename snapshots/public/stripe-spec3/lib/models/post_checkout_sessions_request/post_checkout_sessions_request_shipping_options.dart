@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: ShippingOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_cost/shipping_rate_data.dart';@immutable final class PostCheckoutSessionsRequestShippingOptions {const PostCheckoutSessionsRequestShippingOptions({this.shippingRate, this.shippingRateData, });
 

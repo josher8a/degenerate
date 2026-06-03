@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomQueueingStatusCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTP status code returned to a user while in the queue.
 @immutable final class WaitingroomQueueingStatusCode {const WaitingroomQueueingStatusCode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCa
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_public_key.dart';/// The Application Audience (AUD) tag. Identifies the application associated with the CA.
 extension type const AccessAud(String value) {

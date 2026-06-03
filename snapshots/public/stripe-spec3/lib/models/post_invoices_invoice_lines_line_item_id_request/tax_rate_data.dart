@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceLinesLineItemIdRequest (inline: TaxAmounts > Variant1 > TaxRateData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request/post_tax_rates_request_tax_type.dart';@immutable final class TaxRateDataJurisdictionLevel {const TaxRateDataJurisdictionLevel._(this.value);
 

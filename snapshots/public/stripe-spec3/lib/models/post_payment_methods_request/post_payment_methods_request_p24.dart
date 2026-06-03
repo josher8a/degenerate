@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsRequest (inline: P24)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class P24Bank {const P24Bank._(this.value);
 

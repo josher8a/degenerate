@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningVariantAnalysis
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/scanned_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/skipped_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_status.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The language targeted by the CodeQL query
 @immutable final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);

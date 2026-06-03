@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountCapabilitiesCapabilityRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountCapabilitiesCapabilityRequest {const PostAccountsAccountCapabilitiesCapabilityRequest({this.expand, this.requested, });
 

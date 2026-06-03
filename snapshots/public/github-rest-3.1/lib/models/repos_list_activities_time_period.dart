@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposListActivitiesTimePeriod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListActivitiesTimePeriod {const ReposListActivitiesTimePeriod._(this.value);
 

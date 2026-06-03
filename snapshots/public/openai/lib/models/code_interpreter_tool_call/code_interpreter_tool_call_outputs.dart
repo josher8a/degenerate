@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeInterpreterToolCall (inline: Outputs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image.dart';import 'package:pub_openai/models/code_interpreter_output_logs.dart';sealed class CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputs();
 

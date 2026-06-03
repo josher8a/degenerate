@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: Address)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountPeoplePersonRequestAddress {const PostAccountsAccountPeoplePersonRequestAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 

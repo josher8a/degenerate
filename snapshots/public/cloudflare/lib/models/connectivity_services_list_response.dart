@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectivityServicesListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_service_config.dart';@immutable final class ConnectivityServicesListResponse {const ConnectivityServicesListResponse({this.result});
 

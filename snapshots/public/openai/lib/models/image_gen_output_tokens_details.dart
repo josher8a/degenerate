@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageGenOutputTokensDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The output token details for the image generation.
 @immutable final class ImageGenOutputTokensDetails {const ImageGenOutputTokensDetails({required this.imageTokens, required this.textTokens, });

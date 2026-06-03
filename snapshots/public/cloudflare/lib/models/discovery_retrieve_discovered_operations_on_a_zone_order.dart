@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order by
 @immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder._(this.value);

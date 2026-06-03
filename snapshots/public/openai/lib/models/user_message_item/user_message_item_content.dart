@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserMessageItem (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/user_message_input_text.dart';import 'package:pub_openai/models/user_message_quoted_text.dart';/// Content blocks that comprise a user message.
 sealed class UserMessageItemContent {const UserMessageItemContent();

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest (inline: InboundTransfers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_features_request/inbound_transfers_ach.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers({this.ach});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListCookiesOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned cookies.
 @immutable final class PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy._(this.value);

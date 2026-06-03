@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesHttpSource (inline: Cors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Cors {const Cors({this.origins});
 

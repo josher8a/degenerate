@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZone (inline: Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the zone.
 @immutable final class ZonesZoneMeta {const ZonesZoneMeta({this.cdnOnly, this.customCertificateQuota, this.dnsOnly, this.foundationDns, this.pageRuleQuota, this.phishingDetected, this.step, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalCompletionsRunDataSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_input_messages.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_sampling_params.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_source.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source.dart';import 'package:pub_openai/models/eval_jsonl_file_id_source.dart';import 'package:pub_openai/models/eval_stored_completions_source.dart';import 'package:pub_openai/models/item_reference_input_messages.dart';import 'package:pub_openai/models/template_input_messages.dart';/// The type of run data source. Always `completions`.
 @immutable final class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType._(this.value);

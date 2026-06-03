@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsDefaultWorkflowPermissions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
 @immutable final class ActionsDefaultWorkflowPermissions {const ActionsDefaultWorkflowPermissions._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FinancialReportingFinanceReportRunRunParameters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class FinancialReportingFinanceReportRunRunParameters {const FinancialReportingFinanceReportRunRunParameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });

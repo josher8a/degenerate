@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListDevicesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_cursor_result_info.dart';import 'package:pub_cloudflare/models/teams_devices_physical_device.dart';@immutable final class ListDevicesResponse {const ListDevicesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

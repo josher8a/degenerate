@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostProductsRequest (inline: DefaultPriceData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data_recurring.dart';/// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object. This Price will be set as the default price for this product.
 @immutable final class DefaultPriceData {const DefaultPriceData({required this.currency, this.currencyOptions, this.customUnitAmount, this.metadata, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });

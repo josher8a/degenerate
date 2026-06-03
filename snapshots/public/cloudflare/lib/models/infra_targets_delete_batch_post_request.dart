@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraTargetsDeleteBatchPostRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_target_id.dart';@immutable final class InfraTargetsDeleteBatchPostRequest {const InfraTargetsDeleteBatchPostRequest({required this.targetIds});
 

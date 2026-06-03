@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementFeedbackReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_metric_requests.dart';/// Type of feedback report.
 @immutable final class BotManagementFeedbackType {const BotManagementFeedbackType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayProtocolDetection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to detect protocols from the initial bytes of client traffic.
 @immutable final class ZeroTrustGatewayProtocolDetection {const ZeroTrustGatewayProtocolDetection({this.enabled});

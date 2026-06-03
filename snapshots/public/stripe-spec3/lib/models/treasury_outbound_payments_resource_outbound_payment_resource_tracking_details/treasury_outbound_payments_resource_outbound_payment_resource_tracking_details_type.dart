@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The US bank account network used to send funds.
 @immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._(this.value);

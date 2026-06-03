@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_peer.dart';@immutable final class SecondaryDnsSchemasResponseCollection {const SecondaryDnsSchemasResponseCollection({this.result});
 

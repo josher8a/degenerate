@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotBond
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Bond
 @immutable final class MconnSnapshotBond {const MconnSnapshotBond({required this.name, required this.status, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesRuleGroupResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_schemas_group.dart';@immutable final class WafManagedRulesRuleGroupResponseCollection {const WafManagedRulesRuleGroupResponseCollection({this.result});
 

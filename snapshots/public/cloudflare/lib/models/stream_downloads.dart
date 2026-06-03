@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDownloads
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the progress as a percentage between 0 and 100.
 extension type const StreamDownloadPercentComplete(double value) {

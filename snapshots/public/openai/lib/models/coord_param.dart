@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CoordParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.
 @immutable final class CoordParam {const CoordParam({required this.x, required this.y, });

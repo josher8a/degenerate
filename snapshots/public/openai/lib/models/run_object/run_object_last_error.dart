@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunObject (inline: LastError)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
 @immutable final class RunObjectLastErrorCode {const RunObjectLastErrorCode._(this.value);

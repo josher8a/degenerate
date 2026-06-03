@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceWifiConfig (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Security type of the WiFi network. The hash with the corresponding name contains the credentials for this security type.
 @immutable final class TerminalConfigurationConfigurationResourceWifiConfigType {const TerminalConfigurationConfigurationResourceWifiConfigType._(this.value);

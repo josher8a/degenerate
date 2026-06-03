@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2ObjectSizeMetrics
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics on number of objects/amount of storage used.
 @immutable final class R2ObjectSizeMetrics {const R2ObjectSizeMetrics({this.metadataSize, this.objects, this.payloadSize, });

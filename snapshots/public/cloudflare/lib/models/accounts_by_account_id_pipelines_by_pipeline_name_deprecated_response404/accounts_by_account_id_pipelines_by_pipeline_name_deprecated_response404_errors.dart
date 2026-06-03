@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404 (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors({required this.code, required this.message, });
 

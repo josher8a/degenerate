@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTranscriptionResponseJson (inline: Logprobs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTranscriptionResponseJsonLogprobs {const CreateTranscriptionResponseJsonLogprobs({this.token, this.logprob, this.bytes, });
 

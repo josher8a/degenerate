@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartshieldBase {const SmartshieldBase({required this.id, this.modifiedOn, });
 

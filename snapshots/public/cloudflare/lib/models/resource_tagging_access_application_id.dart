@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingAccessApplicationId
 
 /// Access application ID is required only for access_application_policy resources
 extension type const ResourceTaggingAccessApplicationId(String value) {

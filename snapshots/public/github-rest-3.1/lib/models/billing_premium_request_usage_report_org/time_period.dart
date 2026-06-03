@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingPremiumRequestUsageReportOrg (inline: TimePeriod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimePeriod {const TimePeriod({required this.year, this.month, this.day, });
 

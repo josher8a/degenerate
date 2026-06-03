@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDosEventCreateBulkWithRelationshipsRequest (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_event_create_request/post_event_create_request_indicators.dart';import 'package:pub_cloudflare/models/post_event_create_request/post_event_create_request_raw.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsRequestData {const PostDosEventCreateBulkWithRelationshipsRequestData({required this.category, required this.date, required this.event, required this.raw, required this.tlp, this.accountId, this.attacker, this.attackerCountry, this.datasetId, this.indicator, this.indicatorType, this.indicators, this.insight, this.tags, this.targetCountry, this.targetIndustry, });
 

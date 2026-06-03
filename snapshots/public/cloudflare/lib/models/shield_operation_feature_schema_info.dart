@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureSchemaInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_schema_info/schema_info.dart';@immutable final class ShieldOperationFeatureSchemaInfo {const ShieldOperationFeatureSchemaInfo({this.schemaInfo});
 

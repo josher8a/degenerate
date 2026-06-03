@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPricesRequest (inline: Recurring)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/usage_type.dart';/// The recurring components of a price such as `interval` and `usage_type`.
 @immutable final class PostPricesRequestRecurring {const PostPricesRequestRecurring({required this.interval, this.intervalCount, this.meter, this.usageType, });

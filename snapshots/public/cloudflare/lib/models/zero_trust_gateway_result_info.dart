@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayResultInfo {const ZeroTrustGatewayResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 

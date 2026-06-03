@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteCustomersCustomerTaxIdsIdRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteCustomersCustomerTaxIdsIdRequest {const DeleteCustomersCustomerTaxIdsIdRequest();
 

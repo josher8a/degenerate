@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageCostsGroupBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCostsGroupBy {const UsageCostsGroupBy._(this.value);
 

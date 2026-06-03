@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpNewDocumentFingerprint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpNewDocumentFingerprint {const DlpNewDocumentFingerprint({required this.matchPercent, required this.name, this.description = '', });
 

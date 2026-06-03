@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserRoleAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/role.dart';import 'package:pub_openai/models/user.dart';/// Always `user.role`.
 @immutable final class UserRoleAssignmentObject {const UserRoleAssignmentObject._(this.value);

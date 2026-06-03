@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersistentVolumeClaimStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/modify_volume_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_condition.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// PersistentVolumeClaimStatus is the current status of a persistent volume claim.
 @immutable final class PersistentVolumeClaimStatus {const PersistentVolumeClaimStatus({this.accessModes, this.allocatedResourceStatuses, this.allocatedResources, this.capacity, this.conditions, this.currentVolumeAttributesClassName, this.modifyVolumeStatus, this.phase, });

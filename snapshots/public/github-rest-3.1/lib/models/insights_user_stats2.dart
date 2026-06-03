@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsUserStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsUserStats2 {const InsightsUserStats2({this.actorType, this.actorName, this.actorId, this.integrationId, this.oauthApplicationId, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp, this.lastRequestTimestamp, });
 

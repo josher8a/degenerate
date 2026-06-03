@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayUuid
 
 /// Identify the certificate with a UUID.
 extension type const ZeroTrustGatewayUuid(String value) {

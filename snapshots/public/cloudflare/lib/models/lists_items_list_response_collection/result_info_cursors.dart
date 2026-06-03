@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsItemsListResponseCollection (inline: ResultInfo > Cursors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultInfoCursors {const ResultInfoCursors({this.after, this.before, });
 

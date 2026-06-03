@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLogActorServiceAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The service account that performed the audit logged action.
 @immutable final class AuditLogActorServiceAccount {const AuditLogActorServiceAccount({this.id});

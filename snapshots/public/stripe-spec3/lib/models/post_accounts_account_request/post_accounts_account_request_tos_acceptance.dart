@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: TosAcceptance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details on the account's acceptance of the [Stripe Services Agreement](/connect/updating-accounts#tos-acceptance). This property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts. This property defaults to a `full` service agreement when empty.
 @immutable final class PostAccountsAccountRequestTosAcceptance {const PostAccountsAccountRequestTosAcceptance({this.date, this.ip, this.serviceAgreement, this.userAgent, });

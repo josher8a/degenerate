@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetCreateRequest {const PostDatasetCreateRequest({required this.isPublic, required this.name, });
 

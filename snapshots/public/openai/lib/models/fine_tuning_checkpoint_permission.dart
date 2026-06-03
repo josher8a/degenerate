@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningCheckpointPermission
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_fine_tuning_checkpoint_permission_response/delete_fine_tuning_checkpoint_permission_response_object.dart';/// The `checkpoint.permission` object represents a permission for a fine-tuned model checkpoint.
 /// 

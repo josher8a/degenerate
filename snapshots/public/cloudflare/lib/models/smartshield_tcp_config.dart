@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldTcpConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_tcp_config/healthchecks_tcp_config_method.dart';/// Parameters specific to TCP health check.
 @immutable final class SmartshieldTcpConfig {const SmartshieldTcpConfig({this.method = HealthchecksTcpConfigMethod.connectionEstablished, this.port = 80, });

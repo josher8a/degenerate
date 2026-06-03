@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCallRequest (inline: FallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
 @immutable final class FallbackMethod {const FallbackMethod._(this.value);

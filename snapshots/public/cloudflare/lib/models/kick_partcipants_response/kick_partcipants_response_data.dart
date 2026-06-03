@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KickPartcipantsResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_session_participant.dart';@immutable final class KickPartcipantsResponseData {const KickPartcipantsResponseData({this.action, this.participants, });
 

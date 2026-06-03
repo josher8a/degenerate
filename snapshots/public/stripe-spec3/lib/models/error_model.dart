@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ErrorModel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/errors.dart';/// An error response from the Stripe API
 @immutable final class ErrorModel {const ErrorModel({required this.error});

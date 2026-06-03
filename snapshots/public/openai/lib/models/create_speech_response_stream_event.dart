@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateSpeechResponseStreamEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/speech_audio_delta_event.dart';import 'package:pub_openai/models/speech_audio_done_event.dart';import 'package:pub_openai/models/speech_audio_done_event/speech_audio_done_event_usage.dart';sealed class CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEvent();
 

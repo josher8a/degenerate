@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasIdentityProvider
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_identity_provider/access_identity_provider_type.dart';import 'package:pub_cloudflare/models/access_identity_provider/scim_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasIdentityProvider {const AccessSchemasIdentityProvider({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 

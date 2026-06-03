@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFormatTextPython
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_python/eval_grader_python_type.dart';/// Configure the model to generate valid Python code. See the
 /// [custom grammars guide](/docs/guides/custom-grammars) for more details.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesGroupByProtocolResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultSerie0 {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultSerie0({required this.https, required this.tcp, required this.tls, required this.udp, });
 

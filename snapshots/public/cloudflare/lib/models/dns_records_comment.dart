@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsComment
 
 /// Comments or notes about the DNS record. This field has no effect on DNS responses.
 extension type const DnsRecordsComment(String value) {

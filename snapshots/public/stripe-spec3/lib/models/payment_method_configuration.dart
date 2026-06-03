@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject._(this.value);

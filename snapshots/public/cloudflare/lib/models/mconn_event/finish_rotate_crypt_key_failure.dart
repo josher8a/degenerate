@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: FinishRotateCryptKeyFailure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed crypt key rotation
 @immutable final class FinishRotateCryptKeyFailureK {const FinishRotateCryptKeyFailureK._(this.value);

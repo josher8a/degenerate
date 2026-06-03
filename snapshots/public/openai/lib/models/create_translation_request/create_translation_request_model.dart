@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTranslationRequest (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTranslationRequestModelVariant2 {const CreateTranslationRequestModelVariant2._(this.value);
 

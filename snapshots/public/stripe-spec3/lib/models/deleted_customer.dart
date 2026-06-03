@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedCustomer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer/customer_object.dart';/// 
 @immutable final class DeletedCustomer {const DeletedCustomer({required this.deleted, required this.id, required this.object, });

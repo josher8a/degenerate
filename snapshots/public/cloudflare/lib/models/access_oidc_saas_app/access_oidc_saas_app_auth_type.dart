@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcSaasApp (inline: AuthType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier of the authentication protocol used for the saas app. Required for OIDC.
 @immutable final class AccessOidcSaasAppAuthType {const AccessOidcSaasAppAuthType._(this.value);

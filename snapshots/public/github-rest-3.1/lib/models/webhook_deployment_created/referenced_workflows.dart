@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDeploymentCreated (inline: WorkflowRun > ReferencedWorkflows)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReferencedWorkflows {const ReferencedWorkflows({required this.path, required this.sha, this.ref, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRequestTracerRequestTraceRequest (inline: Context > Geoloc)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Geodata for tracing request
 @immutable final class Geoloc {const Geoloc({this.city, this.continent, this.isEuCountry, this.isoCode, this.latitude, this.longitude, this.postalCode, this.regionCode, this.subdivision2IsoCode, this.timezone, });

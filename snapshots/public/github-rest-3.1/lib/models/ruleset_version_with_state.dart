@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetVersionWithState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/ruleset_version/ruleset_version_actor.dart';@immutable final class RulesetVersionWithState {const RulesetVersionWithState({required this.versionId, required this.actor, required this.updatedAt, required this.state, });
 

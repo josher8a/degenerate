@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReviewDismissedIssueEvent (inline: DismissedReview)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DismissedReview {const DismissedReview({required this.state, required this.reviewId, required this.dismissalMessage, this.dismissalCommitId, });
 

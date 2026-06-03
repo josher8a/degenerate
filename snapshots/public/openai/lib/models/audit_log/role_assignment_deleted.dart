@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: RoleAssignmentDeleted)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class RoleAssignmentDeleted {const RoleAssignmentDeleted({this.id, this.principalId, this.principalType, this.resourceId, this.resourceType, });

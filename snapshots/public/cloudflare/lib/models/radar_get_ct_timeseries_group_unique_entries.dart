@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesGroupUniqueEntries
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupUniqueEntries {const RadarGetCtTimeseriesGroupUniqueEntries._(this.value);
 

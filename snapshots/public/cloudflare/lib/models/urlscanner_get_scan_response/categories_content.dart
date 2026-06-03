@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Domains > ExampleCom > Categories > Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CategoriesContent {const CategoriesContent({required this.id, required this.name, this.superCategoryId, });
 

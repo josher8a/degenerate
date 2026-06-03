@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleCommit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_commit/simple_commit_author.dart';import 'package:pub_github_rest_3_1/models/simple_commit/simple_commit_committer.dart';/// A commit.
 @immutable final class SimpleCommit {const SimpleCommit({required this.id, required this.treeId, required this.message, required this.timestamp, required this.author, required this.committer, });

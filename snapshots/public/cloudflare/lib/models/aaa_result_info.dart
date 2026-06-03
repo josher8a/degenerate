@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides information about the result of the request, including count and cursor.
 @immutable final class AaaResultInfo {const AaaResultInfo({this.count, this.cursor, });

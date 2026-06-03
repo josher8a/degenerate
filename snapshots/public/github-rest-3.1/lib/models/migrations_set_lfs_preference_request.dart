@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MigrationsSetLfsPreferenceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
 @immutable final class UseLfs {const UseLfs._(this.value);

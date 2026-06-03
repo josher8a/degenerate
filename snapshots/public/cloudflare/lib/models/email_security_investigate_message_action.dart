@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityInvestigateMessageAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction._(this.value);
 

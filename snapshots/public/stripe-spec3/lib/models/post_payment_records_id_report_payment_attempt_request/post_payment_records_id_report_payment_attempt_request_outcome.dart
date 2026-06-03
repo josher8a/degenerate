@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptRequest (inline: Outcome)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the reported payment.
 @immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestOutcome {const PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._(this.value);

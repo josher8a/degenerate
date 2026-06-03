@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationClientDeviceMetadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Client device metadata attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationClientDeviceMetadata {const InsightsResourcesPaymentEvaluationClientDeviceMetadata({required this.radarSession});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByHttpVersionResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_http_version_response/radar_get_http_summary_by_http_version_response_result_summary0.dart';@immutable final class RadarGetHttpSummaryByHttpVersionResponseResult {const RadarGetHttpSummaryByHttpVersionResponseResult({required this.meta, required this.summary0, });
 

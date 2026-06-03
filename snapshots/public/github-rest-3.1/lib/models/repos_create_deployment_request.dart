@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateDeploymentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment/deployment_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task = 'deploy', this.autoMerge = true, this.requiredContexts, this.payload, this.environment = 'production', this.description = '', this.transientEnvironment = false, this.productionEnvironment, });
 

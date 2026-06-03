@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsPaymentMethodRequest (inline: Card > Networks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CardNetworksPreferred {const CardNetworksPreferred._(this.value);
 

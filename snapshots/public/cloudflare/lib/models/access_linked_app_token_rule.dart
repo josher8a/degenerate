@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessLinkedAppTokenRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_linked_app_token_rule/linked_app_token.dart';/// Matches OAuth 2.0 access tokens issued by the specified Access OIDC SaaS application. Only compatible with non_identity and bypass decisions.
 @immutable final class AccessLinkedAppTokenRule {const AccessLinkedAppTokenRule({required this.linkedAppToken});

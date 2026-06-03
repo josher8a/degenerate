@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_address_maps.dart';@immutable final class AddressingComponentsSchemasResponseCollection {const AddressingComponentsSchemasResponseCollection({this.result});
 

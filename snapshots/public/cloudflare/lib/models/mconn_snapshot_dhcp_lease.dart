@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotDhcpLease
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot DHCP lease
 @immutable final class MconnSnapshotDhcpLease {const MconnSnapshotDhcpLease({required this.clientId, required this.expiryTime, required this.hostname, required this.interfaceName, required this.ipAddress, required this.macAddress, this.connectorId, });

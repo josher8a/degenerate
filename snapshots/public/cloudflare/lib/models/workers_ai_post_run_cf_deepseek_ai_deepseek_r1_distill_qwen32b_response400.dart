@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400 {const WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400({required this.errors, required this.result, required this.success, });
 

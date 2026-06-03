@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityAttachEnterpriseConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to.
 @immutable final class CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope._(this.value);

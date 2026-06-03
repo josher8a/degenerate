@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificateRevokeResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_revoke_response/tls_certificates_and_hostnames_certificate_revoke_response_result.dart';@immutable final class TlsCertificatesAndHostnamesCertificateRevokeResponse {const TlsCertificatesAndHostnamesCertificateRevokeResponse({this.result});
 

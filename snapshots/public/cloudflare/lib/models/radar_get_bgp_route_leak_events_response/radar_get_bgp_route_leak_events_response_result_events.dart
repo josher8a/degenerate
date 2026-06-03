@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRouteLeakEventsResponse (inline: Result > Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRouteLeakEventsResponseResultEvents {const RadarGetBgpRouteLeakEventsResponseResultEvents({required this.countries, required this.detectedTs, required this.finished, required this.id, required this.leakAsn, required this.leakCount, required this.leakSeg, required this.leakType, required this.maxTs, required this.minTs, required this.originCount, required this.peerCount, required this.prefixCount, });
 

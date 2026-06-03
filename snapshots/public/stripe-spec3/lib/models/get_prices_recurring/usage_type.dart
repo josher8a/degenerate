@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetPricesRecurring (inline: UsageType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
 @immutable final class UsageType {const UsageType._(this.value);

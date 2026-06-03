@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsSummaryByDnssecQueryType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType._(this.value);
 

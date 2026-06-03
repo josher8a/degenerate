@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingSchemasHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The request header is used to pass additional information with an HTTP request. Currently supported header is 'Host'.
 @immutable final class LoadBalancingSchemasHeader {const LoadBalancingSchemasHeader({this.host});

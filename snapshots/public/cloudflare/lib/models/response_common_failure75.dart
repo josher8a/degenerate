@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure75
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_messages2.dart';@immutable final class ResponseCommonFailure75 {const ResponseCommonFailure75({required this.errors, required this.messages, required this.result, required this.success, });
 

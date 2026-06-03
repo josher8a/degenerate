@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazElementVisibilityRule (inline: Settings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazElementVisibilityRuleSettings {const ZarazElementVisibilityRuleSettings({required this.selector});
 

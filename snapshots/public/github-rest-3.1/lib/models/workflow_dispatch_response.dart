@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowDispatchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ID of the workflow run.
 extension type const WorkflowRunId(int value) {

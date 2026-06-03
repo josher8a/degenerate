@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleResponseCustomScanCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_scan.dart';@immutable final class BundleResponseCustomScanCollection {const BundleResponseCustomScanCollection({this.result});
 

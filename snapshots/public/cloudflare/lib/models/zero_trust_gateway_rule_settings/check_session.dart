@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: CheckSession)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
 @immutable final class CheckSession {const CheckSession({this.duration, this.enforce, });

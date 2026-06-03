@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogsResponseCollection (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_audit_logs.dart';import 'package:pub_cloudflare/models/aaa_messages2.dart';@immutable final class AaaAuditLogsResponseCollectionVariant1 {const AaaAuditLogsResponseCollectionVariant1({this.errors, this.messages, this.result, this.success, });
 

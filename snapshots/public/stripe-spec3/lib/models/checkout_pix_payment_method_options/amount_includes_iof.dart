@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutPixPaymentMethodOptions (inline: AmountIncludesIof)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the amount includes the IOF tax.
 @immutable final class AmountIncludesIof {const AmountIncludesIof._(this.value);

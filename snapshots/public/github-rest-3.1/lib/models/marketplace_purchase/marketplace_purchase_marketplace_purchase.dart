@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MarketplacePurchase (inline: MarketplacePurchase)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan.dart';@immutable final class MarketplacePurchaseMarketplacePurchase {const MarketplacePurchaseMarketplacePurchase({this.billingCycle, this.nextBillingDate, this.isInstalled, this.unitCount, this.onFreeTrial, this.freeTrialEndsOn, this.updatedAt, this.plan, });
 

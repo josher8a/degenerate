@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesGroupResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/radar_get_ct_timeseries_group_response_result.dart';@immutable final class RadarGetCtTimeseriesGroupResponse {const RadarGetCtTimeseriesGroupResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HttpHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTPHeader describes a custom header to be used in HTTP probes
 @immutable final class HttpHeader {const HttpHeader({this.name = '', this.value = '', });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TopAttacksMagnitude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Orders results based on attack magnitude, defined by total mitigated bytes or total mitigated attacks.
 @immutable final class RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude._(this.value);

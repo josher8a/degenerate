@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingLocationStrategy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.
 /// - `"pop"`: Use the Cloudflare PoP location.

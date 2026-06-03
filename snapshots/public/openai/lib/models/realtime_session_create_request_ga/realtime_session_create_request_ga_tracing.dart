@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequestGa (inline: Tracing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tracing_configuration.dart';/// Enables tracing and sets default values for tracing configuration options. Always `auto`.
 /// 

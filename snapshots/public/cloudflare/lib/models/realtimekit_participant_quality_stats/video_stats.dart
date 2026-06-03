@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantQualityStats (inline: QualityStats > VideoStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoStats {const VideoStats({this.frameHeight, this.frameWidth, this.framesDropped, this.framesPerSecond, this.jitter, this.packetsLost, this.quality, this.timestamp, });
 

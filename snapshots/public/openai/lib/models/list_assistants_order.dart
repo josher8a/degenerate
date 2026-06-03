@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAssistantsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListAssistantsOrder {const ListAssistantsOrder._(this.value);
 

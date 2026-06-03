@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopAsesByBotClassBotClass
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).
 @immutable final class RadarGetHttpTopAsesByBotClassBotClass {const RadarGetHttpTopAsesByBotClassBotClass._(this.value);

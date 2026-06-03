@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchedulesPhaseAutomaticTax (inline: DisabledReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If Stripe disabled automatic tax, this enum describes why.
 @immutable final class SchedulesPhaseAutomaticTaxDisabledReason {const SchedulesPhaseAutomaticTaxDisabledReason._(this.value);

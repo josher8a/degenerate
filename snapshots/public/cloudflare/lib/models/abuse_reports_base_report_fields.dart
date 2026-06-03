@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsBaseReportFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_submission_report_type.dart';@immutable final class AbuseReportsBaseReportFields {const AbuseReportsBaseReportFields({required this.act, required this.email, required this.email2, required this.name, required this.urls, this.comments, this.company, this.reportedCountry, this.reportedUserAgent, this.tele, this.title, });
 

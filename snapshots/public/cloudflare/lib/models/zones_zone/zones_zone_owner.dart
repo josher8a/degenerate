@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZone (inline: Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';/// The owner of the zone.
 @immutable final class ZonesZoneOwner {const ZonesZoneOwner({this.id, this.name, this.type, });

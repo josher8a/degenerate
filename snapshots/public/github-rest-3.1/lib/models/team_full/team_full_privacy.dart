@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamFull (inline: Privacy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of privacy this team should have
 @immutable final class TeamFullPrivacy {const TeamFullPrivacy._(this.value);

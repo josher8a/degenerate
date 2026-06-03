@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAzureGroupRule (inline: AzureAd)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AzureAd {const AzureAd({required this.id, required this.identityProviderId, });
 

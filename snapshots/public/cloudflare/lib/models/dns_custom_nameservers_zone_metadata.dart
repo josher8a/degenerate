@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsCustomNameserversZoneMetadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsCustomNameserversZoneMetadata {const DnsCustomNameserversZoneMetadata({this.enabled, this.nsSet = 1.0, });
 

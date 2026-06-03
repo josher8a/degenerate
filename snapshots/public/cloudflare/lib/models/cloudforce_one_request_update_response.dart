@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_messages2.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_item.dart';@immutable final class CloudforceOneRequestUpdateResponse {const CloudforceOneRequestUpdateResponse({required this.errors, required this.messages, required this.success, this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsFlow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow/portal_flows_flow_type.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_after_completion.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_subscription_cancel.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_subscription_update.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_subscription_update_confirm.dart';/// 
 @immutable final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, required this.type, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, });

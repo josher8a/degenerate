@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingOriginHealth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_origin_health/load_balancing_origin_health_ip.dart';@immutable final class LoadBalancingOriginHealth {const LoadBalancingOriginHealth({this.ip});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateConversationItemsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_item.dart';@immutable final class CreateConversationItemsRequest {const CreateConversationItemsRequest({required this.items});
 

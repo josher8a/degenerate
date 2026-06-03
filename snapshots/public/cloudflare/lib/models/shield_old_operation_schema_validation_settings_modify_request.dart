@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldOperationSchemaValidationSettingsModifyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_operation_mitigation_action.dart';@immutable final class ShieldOldOperationSchemaValidationSettingsModifyRequest {const ShieldOldOperationSchemaValidationSettingsModifyRequest({this.mitigationAction});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesProject (inline: DeploymentConfigs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values.dart';/// Configs for deployments in a project.
 @immutable final class PagesProjectDeploymentConfigs {const PagesProjectDeploymentConfigs({required this.preview, required this.production, });

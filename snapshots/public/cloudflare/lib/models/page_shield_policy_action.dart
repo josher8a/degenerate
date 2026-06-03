@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldPolicyAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take if the expression matches
 @immutable final class PageShieldPolicyAction {const PageShieldPolicyAction._(this.value);

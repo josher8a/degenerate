@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesFirewallInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
 @immutable final class TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem._(this.value);

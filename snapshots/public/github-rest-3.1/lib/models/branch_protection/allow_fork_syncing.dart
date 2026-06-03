@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchProtection (inline: AllowForkSyncing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
 @immutable final class AllowForkSyncing {const AllowForkSyncing({this.enabled = false});

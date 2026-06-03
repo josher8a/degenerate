@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsSummaryByDnssecE2eVersionFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetDnsSummaryByDnssecE2eVersionFormat {const RadarGetDnsSummaryByDnssecE2eVersionFormat._(this.value);

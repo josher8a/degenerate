@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourceAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A representation of a physical address.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourceAddress {const PaymentsPrimitivesPaymentRecordsResourceAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BatchFileExpirationAfter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after/batch_file_expiration_after_anchor.dart';/// The expiration policy for the output and/or error file that are generated for a batch.
 @immutable final class BatchFileExpirationAfter {const BatchFileExpirationAfter({required this.anchor, required this.seconds, });

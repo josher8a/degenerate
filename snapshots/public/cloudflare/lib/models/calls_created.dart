@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsCreated
 
 /// The date and time the item was created.
 extension type CallsCreated(DateTime value) {

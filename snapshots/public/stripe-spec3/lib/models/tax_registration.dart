@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxRegistration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxRegistrationObject {const TaxRegistrationObject._(this.value);

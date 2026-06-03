@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesIpGeolocationValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class ZonesIpGeolocationValue {const ZonesIpGeolocationValue._(this.value);

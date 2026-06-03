@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Node
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
 @immutable final class Node {const Node({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });

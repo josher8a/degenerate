@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsRepoConnectionUuid
 
 /// Repository connection UUID.
 extension type const BuildsRepoConnectionUuid(String value) {

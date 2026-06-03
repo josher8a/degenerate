@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamSsoConnectorVerificationInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
 extension type const IamDnsVerificationCode(String value) {

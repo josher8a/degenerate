@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleRequiredStatusChecks (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_status_check_configuration.dart';@immutable final class RepositoryRuleRequiredStatusChecksParameters {const RepositoryRuleRequiredStatusChecksParameters({required this.requiredStatusChecks, required this.strictRequiredStatusChecksPolicy, this.doNotEnforceOnCreate, });
 

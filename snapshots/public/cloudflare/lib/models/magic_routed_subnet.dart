@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicRoutedSubnet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';import 'package:pub_cloudflare/models/magic_ip_address.dart';import 'package:pub_cloudflare/models/magic_nat.dart';@immutable final class MagicRoutedSubnet {const MagicRoutedSubnet({required this.nextHop, required this.prefix, this.nat, });
 

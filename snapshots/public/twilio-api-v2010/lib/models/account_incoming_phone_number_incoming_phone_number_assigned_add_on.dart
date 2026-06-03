@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn {const AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn({this.sid, this.accountSid, this.resourceSid, this.friendlyName, this.description, this.configuration, this.uniqueName, this.dateCreated, this.dateUpdated, this.uri, this.subresourceUris, });
 

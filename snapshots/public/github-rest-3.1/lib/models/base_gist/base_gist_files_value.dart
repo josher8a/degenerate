@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BaseGist (inline: Files > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseGistFilesValue {const BaseGistFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.encoding = 'utf-8', });
 

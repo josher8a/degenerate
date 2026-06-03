@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TopLogProb
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The top log probability of a token.
 @immutable final class TopLogProb {const TopLogProb({required this.token, required this.logprob, required this.bytes, });

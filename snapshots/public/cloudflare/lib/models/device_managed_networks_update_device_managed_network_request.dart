@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeviceManagedNetworksUpdateDeviceManagedNetworkRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_components_schemas_type.dart';import 'package:pub_cloudflare/models/teams_devices_device_managed_networks_components_schemas_name.dart';import 'package:pub_cloudflare/models/teams_devices_schemas_config_request.dart';@immutable final class DeviceManagedNetworksUpdateDeviceManagedNetworkRequest {const DeviceManagedNetworksUpdateDeviceManagedNetworkRequest({this.config, this.name, this.type, });
 

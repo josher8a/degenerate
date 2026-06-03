@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Quality > AudioProducerCumulative)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/packet_loss.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/quality_mos.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/rtt.dart';@immutable final class AudioProducerCumulative {const AudioProducerCumulative({this.packetLoss, this.qualityMos, this.rtt, });
 

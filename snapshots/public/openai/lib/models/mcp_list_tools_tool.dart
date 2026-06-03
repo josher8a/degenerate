@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McpListToolsTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool available on an MCP server.
 /// 

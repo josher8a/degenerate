@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesChargeRequest (inline: Shipping)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';/// Shipping information for the charge. Helps prevent fraud on charges for physical goods.
 @immutable final class PostChargesChargeRequestShipping {const PostChargesChargeRequestShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });

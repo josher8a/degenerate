@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListSipIpAccessControlListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_sip_sip_ip_access_control_list.dart';@immutable final class ListSipIpAccessControlListResponse {const ListSipIpAccessControlListResponse({this.ipAccessControlLists, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 

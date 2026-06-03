@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt
 
 /// The time when the certificate was updated.
 extension type TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposListForOrgSort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForOrgSort {const ReposListForOrgSort._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_notes.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';@immutable final class IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest {const IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest({this.mode, this.notes, });
 

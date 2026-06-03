@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTagCategoryListResponse (inline: Categories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTagCategoryListResponseCategories {const GetTagCategoryListResponseCategories({required this.name, required this.uuid, this.createdAt, this.description, this.updatedAt, });
 

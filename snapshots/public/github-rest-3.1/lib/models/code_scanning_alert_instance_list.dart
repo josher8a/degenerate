@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertInstanceList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_classification.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_environment.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list/message.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_location.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_analysis_key.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_category.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';/// State of a code scanning alert instance.
 @immutable final class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebSearchActionSearch (inline: Sources)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/url_annotation_source/url_annotation_source_type.dart';/// A source used in the search.
 /// 

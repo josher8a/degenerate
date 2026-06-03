@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventOutputAudioBufferStopped
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **WebRTC/SIP Only:** Emitted when the output audio buffer has been completely drained on the server,
 /// and no more audio is forthcoming. This event is emitted after the full response

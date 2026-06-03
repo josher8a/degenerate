@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListCertificatesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/certificate.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';@immutable final class ListCertificatesResponse {const ListCertificatesResponse({required this.data, required this.hasMore, required this.object, this.firstId, this.lastId, });
 

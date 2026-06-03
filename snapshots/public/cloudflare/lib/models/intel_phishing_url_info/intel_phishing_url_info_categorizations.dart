@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlInfo (inline: Categorizations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlInfoCategorizations {const IntelPhishingUrlInfoCategorizations({this.category, this.verificationStatus, });
 

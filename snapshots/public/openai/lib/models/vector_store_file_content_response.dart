@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreFileContentResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_file_content_response/vector_store_file_content_response_data.dart';/// The object type, which is always `vector_store.file_content.page`
 @immutable final class VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject._(this.value);

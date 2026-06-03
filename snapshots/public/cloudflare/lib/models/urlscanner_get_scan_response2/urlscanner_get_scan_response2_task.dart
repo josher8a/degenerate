@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Task)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/task_options.dart';@immutable final class UrlscannerGetScanResponse2Task {const UrlscannerGetScanResponse2Task({required this.apexDomain, required this.domUrl, required this.domain, required this.method, required this.options, required this.reportUrl, required this.screenshotUrl, required this.source, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 

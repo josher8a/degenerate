@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
 @immutable final class GitUser {const GitUser({this.name, this.email, this.date, });

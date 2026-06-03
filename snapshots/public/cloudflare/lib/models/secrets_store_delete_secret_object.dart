@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreDeleteSecretObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';@immutable final class SecretsStoreDeleteSecretObject {const SecretsStoreDeleteSecretObject({required this.id});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposRenameBranchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposRenameBranchRequest {const ReposRenameBranchRequest({required this.newName});
 

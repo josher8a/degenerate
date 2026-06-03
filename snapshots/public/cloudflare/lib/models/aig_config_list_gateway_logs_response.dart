@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListGatewayLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_logs_response/aig_config_list_gateway_logs_response_result.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_logs_response/aig_config_list_gateway_logs_response_result_info.dart';@immutable final class AigConfigListGatewayLogsResponse {const AigConfigListGatewayLogsResponse({required this.result, required this.resultInfo, required this.success, });
 

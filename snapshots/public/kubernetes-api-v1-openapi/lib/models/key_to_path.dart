@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KeyToPath
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maps a string key to a path within a volume.
 @immutable final class KeyToPath {const KeyToPath({this.key = '', this.mode, this.path = '', });

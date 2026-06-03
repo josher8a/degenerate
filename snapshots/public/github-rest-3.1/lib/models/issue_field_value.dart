@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueFieldValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_field_value/issue_field_value_single_select_option.dart';/// The data type of the issue field
 @immutable final class IssueFieldValueDataType {const IssueFieldValueDataType._(this.value);

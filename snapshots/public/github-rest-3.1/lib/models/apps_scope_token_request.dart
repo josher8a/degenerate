@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppsScopeTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';@immutable final class AppsScopeTokenRequest {const AppsScopeTokenRequest({required this.accessToken, this.target, this.targetId, this.repositories, this.repositoryIds, this.permissions, });
 

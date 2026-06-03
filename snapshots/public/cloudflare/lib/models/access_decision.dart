@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessDecision
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
 @immutable final class AccessDecision {const AccessDecision._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Subscription2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/component_value2.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/rate_plan2.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';import 'package:pub_cloudflare/models/subscription2/subscription2_app.dart';import 'package:pub_cloudflare/models/zone.dart';/// The end of the current period and also when the next billing is due.
 extension type CurrentPeriodEnd(DateTime value) {

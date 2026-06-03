@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlexandriaGetApplicationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_application.dart';@immutable final class AlexandriaGetApplicationsResponse {const AlexandriaGetApplicationsResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeTranscriptionSessionCreateResponseGa (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session_create_response/realtime_session_create_response_audio_input.dart';/// Configuration for input audio for the session.
 /// 

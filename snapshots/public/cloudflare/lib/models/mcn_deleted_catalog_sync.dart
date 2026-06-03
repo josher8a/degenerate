@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnDeletedCatalogSync
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_id.dart';@immutable final class McnDeletedCatalogSync {const McnDeletedCatalogSync({required this.id});
 

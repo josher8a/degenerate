@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByDkimArc
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc._(this.value);
 

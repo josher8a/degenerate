@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Ui > DesignTokens > Colors > Background)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetUiDesignTokensColorsBackground {const RealtimekitPresetUiDesignTokensColorsBackground({this.$600 = '#222222', this.$700 = '#1f1f1f', this.$800 = '#1b1b1b', this.$900 = '#181818', this.$1000 = '#141414', });
 

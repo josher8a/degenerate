@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodConfigResourceDisplayPreference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_display_preference/preference.dart';/// The effective display preference value.
 @immutable final class PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue._(this.value);

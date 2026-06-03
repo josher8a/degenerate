@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalConfigurationsConfigurationRequest (inline: StripeS710)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/stripe_s710.dart';typedef PostTerminalConfigurationsConfigurationRequestStripeS710 = OneOf2<StripeS710,GetPaymentMethodConfigurationsApplicationVariant2>;

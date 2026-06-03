@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchTrustedDomainsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';import 'package:pub_cloudflare/models/email_security_batch_trusted_domains_request/email_security_batch_trusted_domains_request_patches.dart';import 'package:pub_cloudflare/models/email_security_batch_trusted_domains_request/email_security_batch_trusted_domains_request_puts.dart';import 'package:pub_cloudflare/models/email_security_create_trusted_domain.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequest {const EmailSecurityBatchTrustedDomainsRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 

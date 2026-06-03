@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByMaliciousResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultSerie0({required this.malicious, required this.notMalicious, });
 

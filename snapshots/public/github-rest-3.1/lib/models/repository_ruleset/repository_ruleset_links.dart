@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleset (inline: Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links_html.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links_self.dart';@immutable final class RepositoryRulesetLinks {const RepositoryRulesetLinks({this.self, this.html, });
 

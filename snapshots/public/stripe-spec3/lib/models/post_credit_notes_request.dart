@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreditNotesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_lines.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_refunds.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_shipping_cost.dart';/// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
 @immutable final class EmailType {const EmailType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryReceivedCreditsResourceReversalDetails (inline: RestrictedReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set if a ReceivedCredit cannot be reversed.
 @immutable final class RestrictedReason {const RestrictedReason._(this.value);

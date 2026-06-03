@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsReportType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The abuse report type
 @immutable final class AbuseReportsReportType {const AbuseReportsReportType._(this.value);

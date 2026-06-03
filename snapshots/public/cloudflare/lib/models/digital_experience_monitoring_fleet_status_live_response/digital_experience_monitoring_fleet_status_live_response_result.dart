@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringFleetStatusLiveResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_fleet_status_live_response/digital_experience_monitoring_fleet_status_live_response_result_device_stats.dart';@immutable final class DigitalExperienceMonitoringFleetStatusLiveResponseResult {const DigitalExperienceMonitoringFleetStatusLiveResponseResult({this.deviceStats});
 

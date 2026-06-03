@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToggleCertificatesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToggleCertificatesRequest {const ToggleCertificatesRequest({required this.certificateIds});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotListAlertsForOrgDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForOrgDirection {const DependabotListAlertsForOrgDirection._(this.value);
 

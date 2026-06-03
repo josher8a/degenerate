@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationListOrganizationsParentId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization_id.dart';@immutable final class OrganizationListOrganizationsParentIdVariant2 {const OrganizationListOrganizationsParentIdVariant2._(this.value);
 

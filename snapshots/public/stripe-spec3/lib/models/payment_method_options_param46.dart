@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client/payment_intent_type_specific_payment_method_options_client_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/routing.dart';@immutable final class PaymentMethodOptionsParam46 {const PaymentMethodOptionsParam46({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentCardProcessing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_processing_customer_notification.dart';/// 
 @immutable final class PaymentIntentCardProcessing {const PaymentIntentCardProcessing({this.customerNotification});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessActiveSessionsResponse (inline: Result > Metadata > Apps > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsValue {const AppsValue({this.hostname, this.name, this.type, this.uid, });
 

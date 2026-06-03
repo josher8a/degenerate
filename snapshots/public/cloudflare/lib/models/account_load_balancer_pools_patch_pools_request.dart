@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountLoadBalancerPoolsPatchPoolsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_patch_pools_notification_email.dart';@immutable final class AccountLoadBalancerPoolsPatchPoolsRequest {const AccountLoadBalancerPoolsPatchPoolsRequest({this.notificationEmail});
 

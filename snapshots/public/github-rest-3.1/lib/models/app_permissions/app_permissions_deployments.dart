@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Deployments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for deployments and deployment statuses.
 @immutable final class AppPermissionsDeployments {const AppPermissionsDeployments._(this.value);

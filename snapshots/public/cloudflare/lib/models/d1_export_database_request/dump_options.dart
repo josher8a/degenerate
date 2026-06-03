@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1ExportDatabaseRequest (inline: DumpOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DumpOptions {const DumpOptions({this.noData, this.noSchema, this.tables, });
 

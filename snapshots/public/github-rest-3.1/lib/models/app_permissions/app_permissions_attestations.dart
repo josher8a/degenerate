@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Attestations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to create and retrieve the access token for repository attestations.
 @immutable final class AppPermissionsAttestations {const AppPermissionsAttestations._(this.value);

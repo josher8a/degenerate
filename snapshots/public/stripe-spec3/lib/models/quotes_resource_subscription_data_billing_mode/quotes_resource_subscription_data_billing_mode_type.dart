@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceSubscriptionDataBillingMode (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 @immutable final class QuotesResourceSubscriptionDataBillingModeType {const QuotesResourceSubscriptionDataBillingModeType._(this.value);

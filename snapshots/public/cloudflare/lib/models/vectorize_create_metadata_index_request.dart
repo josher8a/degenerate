@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeCreateMetadataIndexRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_create_metadata_index_request/index_type.dart';@immutable final class VectorizeCreateMetadataIndexRequest {const VectorizeCreateMetadataIndexRequest({required this.indexType, required this.propertyName, });
 

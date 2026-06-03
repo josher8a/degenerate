@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400 {const WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400({required this.errors, required this.result, required this.success, });
 

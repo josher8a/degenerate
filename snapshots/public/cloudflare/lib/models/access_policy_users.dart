@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyUsers
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_email.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// Policy evaluation result for an individual user.
 @immutable final class AccessUserResult {const AccessUserResult._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionsRequest (inline: BillingCycleAnchorConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mutually exclusive with billing_cycle_anchor and only valid with monthly and yearly price intervals. When provided, the billing_cycle_anchor is set to the next occurrence of the day_of_month at the hour, minute, and second UTC.
 @immutable final class BillingCycleAnchorConfig {const BillingCycleAnchorConfig({required this.dayOfMonth, this.hour, this.minute, this.month, this.second, });

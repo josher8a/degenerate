@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2EnableSippyAws
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_aws/r2_enable_sippy_aws_destination.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_aws/r2_enable_sippy_aws_source.dart';@immutable final class R2EnableSippyAws {const R2EnableSippyAws({this.destination, this.source, });
 

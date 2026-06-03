@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppPoliciesComponentsSchemasIdResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessAppPoliciesComponentsSchemasIdResponseResult {const AccessAppPoliciesComponentsSchemasIdResponseResult({this.id});
 

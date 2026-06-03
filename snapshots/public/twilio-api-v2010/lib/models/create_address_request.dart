@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateAddressRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAddressRequest {const CreateAddressRequest({required this.customerName, required this.street, required this.city, required this.region, required this.postalCode, required this.isoCountry, this.friendlyName, this.emergencyEnabled, this.autoCorrectAddress, this.streetSecondary, });
 

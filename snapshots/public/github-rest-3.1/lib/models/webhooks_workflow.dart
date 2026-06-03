@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksWorkflow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksWorkflow {const WebhooksWorkflow({required this.badgeUrl, required this.createdAt, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.state, required this.updatedAt, required this.url, });
 

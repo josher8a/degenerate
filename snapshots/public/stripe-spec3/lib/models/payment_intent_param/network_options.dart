@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentParam (inline: ThreeDSecure > NetworkOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/network_options_cartes_bancaires.dart';@immutable final class NetworkOptions {const NetworkOptions({this.cartesBancaires});
 

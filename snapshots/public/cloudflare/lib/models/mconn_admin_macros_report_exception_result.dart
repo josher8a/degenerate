@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminMacrosReportExceptionResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnAdminMacrosReportExceptionResult {const MconnAdminMacrosReportExceptionResult({required this.message});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldSchemaUploadDetailsErrorsCritical
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_schema_upload_log_event.dart';@immutable final class ShieldOldSchemaUploadDetailsErrorsCritical {const ShieldOldSchemaUploadDetailsErrorsCritical({this.critical, this.errors, });
 

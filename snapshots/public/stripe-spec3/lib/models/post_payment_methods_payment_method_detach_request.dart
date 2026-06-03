@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsPaymentMethodDetachRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodDetachRequest {const PostPaymentMethodsPaymentMethodDetachRequest({this.expand});
 

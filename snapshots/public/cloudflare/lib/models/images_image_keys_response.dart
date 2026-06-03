@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageKeysResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_keys.dart';@immutable final class ImagesImageKeysResponse {const ImagesImageKeysResponse({this.keys});
 

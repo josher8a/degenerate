@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CommitActivity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Commit Activity
 @immutable final class CommitActivity {const CommitActivity({required this.days, required this.total, required this.week, });

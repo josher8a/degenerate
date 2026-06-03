@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClimateRemovalsLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ClimateRemovalsLocation {const ClimateRemovalsLocation({required this.country, this.city, this.latitude, this.longitude, this.region, });

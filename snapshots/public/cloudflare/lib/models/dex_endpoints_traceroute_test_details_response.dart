@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsTracerouteTestDetailsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_details_response.dart';@immutable final class DexEndpointsTracerouteTestDetailsResponse {const DexEndpointsTracerouteTestDetailsResponse({this.result});
 

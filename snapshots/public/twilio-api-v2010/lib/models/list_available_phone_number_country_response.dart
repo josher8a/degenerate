@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAvailablePhoneNumberCountryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country.dart';@immutable final class ListAvailablePhoneNumberCountryResponse {const ListAvailablePhoneNumberCountryResponse({this.countries, this.uri, });
 

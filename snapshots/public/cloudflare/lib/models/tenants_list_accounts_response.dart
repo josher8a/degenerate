@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TenantsListAccountsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account.dart';import 'package:pub_cloudflare/models/message3.dart';@immutable final class TenantsListAccountsResponse {const TenantsListAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

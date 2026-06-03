@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > WaitForSelector)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).
 @immutable final class WaitForSelector {const WaitForSelector({required this.selector, this.hidden, this.timeout, this.visible, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSetupIntentsIntentConfirmRequest (inline: PaymentMethodOptions > Card)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_network.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/card_mandate_options.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/card_three_d_secure.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, this.threeDSecure, });
 

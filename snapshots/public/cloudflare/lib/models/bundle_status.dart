@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the overall status for Leaked Credential Checks.
 @immutable final class BundleStatus {const BundleStatus({this.enabled});

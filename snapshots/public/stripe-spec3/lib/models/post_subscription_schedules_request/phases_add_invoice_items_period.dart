@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionSchedulesRequest (inline: Phases > AddInvoiceItems > Period)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/phases_add_invoice_items_period_end.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/phases_add_invoice_items_period_start.dart';@immutable final class PhasesAddInvoiceItemsPeriod {const PhasesAddInvoiceItemsPeriod({required this.end, required this.start, });
 

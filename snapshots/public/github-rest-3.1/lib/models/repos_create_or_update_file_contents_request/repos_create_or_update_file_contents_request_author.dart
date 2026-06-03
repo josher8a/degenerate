@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateOrUpdateFileContentsRequest (inline: Author)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
 @immutable final class ReposCreateOrUpdateFileContentsRequestAuthor {const ReposCreateOrUpdateFileContentsRequestAuthor({required this.name, required this.email, this.date, });

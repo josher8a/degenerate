@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerStats > Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/events_metadata.dart';@immutable final class ParticipantPeerStatsEvents {const ParticipantPeerStatsEvents({this.metadata, this.timestamp, this.type, });
 

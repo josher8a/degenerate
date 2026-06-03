@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestAutoMergeEnabled (inline: PullRequest > Head)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_auto_merge_enabled/webhook_pull_request_auto_merge_enabled_pull_request_head_repo.dart';@immutable final class WebhookPullRequestAutoMergeEnabledPullRequestHead {const WebhookPullRequestAutoMergeEnabledPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 

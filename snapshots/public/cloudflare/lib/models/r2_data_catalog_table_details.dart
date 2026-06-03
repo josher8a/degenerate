@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogTableDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_identifier.dart';/// Contains table with metadata.
 @immutable final class R2DataCatalogTableDetails {const R2DataCatalogTableDetails({required this.identifier, required this.tableUuid, this.createdAt, this.location, this.metadataLocation, this.updatedAt, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemReferenceInputMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_messages_item_reference/input_messages_item_reference_type.dart';@immutable final class ItemReferenceInputMessages {const ItemReferenceInputMessages({required this.type, required this.itemReference, });
 

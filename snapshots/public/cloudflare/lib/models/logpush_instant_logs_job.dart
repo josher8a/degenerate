@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushInstantLogsJob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_fields.dart';import 'package:pub_cloudflare/models/logpush_sample.dart';import 'package:pub_cloudflare/models/logpush_schemas_filter.dart';/// Unique WebSocket address that will receive messages from Cloudflare’s edge.
 extension type LogpushSchemasDestinationConf(Uri value) {

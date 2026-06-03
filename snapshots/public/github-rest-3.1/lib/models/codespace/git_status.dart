@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Codespace (inline: GitStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the codespace's git repository.
 @immutable final class GitStatus {const GitStatus({this.ahead, this.behind, this.hasUnpushedChanges, this.hasUncommittedChanges, this.ref, });

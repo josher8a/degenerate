@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscoveryPatchMultipleRequestEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/discovery_state_patch.dart';/// Mappings of discovered operations (keys) to objects describing their state
 @immutable final class DiscoveryPatchMultipleRequestEntry {const DiscoveryPatchMultipleRequestEntry({this.state});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotDotcomPullRequests (inline: Repositories > Models)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoriesModels {const RepositoriesModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalPrSummariesCreated, this.totalEngagedUsers, });
 

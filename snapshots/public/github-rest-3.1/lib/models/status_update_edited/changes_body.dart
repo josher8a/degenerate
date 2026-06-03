@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StatusUpdateEdited (inline: Changes > Body)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChangesBody {const ChangesBody({this.from, this.to, });
 

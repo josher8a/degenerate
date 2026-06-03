@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListGatewayDynamicRouteDeploymentsResponse (inline: Data > Deployments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Deployments {const Deployments({required this.createdAt, required this.deploymentId, required this.versionId, this.comment, });
 

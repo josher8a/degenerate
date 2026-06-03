@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementBotFightModeConfig (inline: StaleZoneConfiguration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_optimize_wordpress_turned_on.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_definitely_automated_turned_on.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_likely_automated_turned_on.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_static_resource_protection_turned_on.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_verified_bots_turned_on.dart';/// Indicates that the zone's session score tracking is disabled.
 extension type const BotManagementSuppressSessionScoreTurnedOff(bool value) {

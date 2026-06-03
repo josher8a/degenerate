@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringUniqueDevicesTotal
 
 /// Number of unique devices
 extension type const DigitalExperienceMonitoringUniqueDevicesTotal(double value) {

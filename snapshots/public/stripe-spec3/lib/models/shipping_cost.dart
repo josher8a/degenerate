@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShippingCost
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_cost/shipping_rate_data.dart';/// Settings for the cost of shipping for this invoice.
 @immutable final class ShippingCost {const ShippingCost({this.shippingRate, this.shippingRateData, });

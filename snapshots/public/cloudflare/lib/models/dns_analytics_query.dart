@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsQuery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_filters.dart';import 'package:pub_cloudflare/models/dns_analytics_limit.dart';import 'package:pub_cloudflare/models/dns_analytics_since.dart';import 'package:pub_cloudflare/models/dns_analytics_until.dart';@immutable final class DnsAnalyticsQuery {const DnsAnalyticsQuery({required this.dimensions, required this.limit, required this.metrics, required this.since, required this.until, this.filters, this.sort, });
 

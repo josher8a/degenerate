@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: KeyUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the API key.
 @immutable final class KeyUpdatedChangesRequested {const KeyUpdatedChangesRequested({this.scopes});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: PaymentIntentData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_capture_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/payment_intent_data_shipping.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/post_invoices_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
 @immutable final class PostCheckoutSessionsRequestPaymentIntentData {const PostCheckoutSessionsRequestPaymentIntentData({this.applicationFeeAmount, this.captureMethod, this.description, this.metadata, this.onBehalfOf, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });

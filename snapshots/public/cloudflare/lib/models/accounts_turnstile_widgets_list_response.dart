@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsTurnstileWidgetsListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_messages2.dart';import 'package:pub_cloudflare/models/turnstile_result_info.dart';import 'package:pub_cloudflare/models/turnstile_widget_list.dart';@immutable final class AccountsTurnstileWidgetsListResponse {const AccountsTurnstileWidgetsListResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginsResponse (inline: Result > Origins)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_origin_details_response/origin_regions.dart';@immutable final class ResultOrigins {const ResultOrigins({required this.regions, required this.slug, });
 

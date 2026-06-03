@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldConnection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_id.dart';@immutable final class PageShieldConnection {const PageShieldConnection({required this.addedAt, required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.url, required this.urlContainsCdnCgiPath, this.domainReportedMalicious, this.firstPageUrl, this.maliciousDomainCategories, this.maliciousUrlCategories, this.pageUrls, this.urlReportedMalicious, });
 

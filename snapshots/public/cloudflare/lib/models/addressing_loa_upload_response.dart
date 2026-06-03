@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingLoaUploadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_loa_upload_response/addressing_loa_upload_response_result.dart';@immutable final class AddressingLoaUploadResponse {const AddressingLoaUploadResponse({this.result});
 

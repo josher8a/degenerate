@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FetchAllLivestreamsResponse (inline: Data > Paging)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchAllLivestreamsResponseDataPaging {const FetchAllLivestreamsResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
 

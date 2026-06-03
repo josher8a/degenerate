@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazCustomManagedComponent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_custom_managed_component/zaraz_custom_managed_component_worker.dart';@immutable final class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType._(this.value);
 

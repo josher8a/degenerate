@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayActivityLogSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify activity log settings.
 @immutable final class ZeroTrustGatewayActivityLogSettings {const ZeroTrustGatewayActivityLogSettings({this.enabled});

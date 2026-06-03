@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupAttemptPaymentMethodDetailsCardWallet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_apple_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_google_pay.dart';/// The type of the card wallet, one of `apple_pay`, `google_pay`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
 @immutable final class SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType._(this.value);

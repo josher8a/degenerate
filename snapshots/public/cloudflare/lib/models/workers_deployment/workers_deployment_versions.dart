@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersDeployment (inline: Versions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersDeploymentVersions {const WorkersDeploymentVersions({required this.percentage, required this.versionId, });
 

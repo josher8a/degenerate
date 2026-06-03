@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRpkiAspaChangesResponse (inline: Result > Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_rpki_aspa_changes_response/changes_entries.dart';@immutable final class Changes {const Changes({required this.customersAdded, required this.customersRemoved, required this.date, required this.entries, required this.providersAdded, required this.providersRemoved, required this.totalCount, });
 

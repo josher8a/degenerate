@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CompletionUsage (inline: CompletionTokensDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tokens used in a completion.
 @immutable final class CompletionTokensDetails {const CompletionTokensDetails({this.acceptedPredictionTokens = 0, this.audioTokens = 0, this.reasoningTokens = 0, this.rejectedPredictionTokens = 0, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesRealtimeResponse (inline: Result > Meta > AsnInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetaAsnInfo {const MetaAsnInfo({required this.asName, required this.asn, required this.countryCode, required this.orgId, required this.orgName, });
 

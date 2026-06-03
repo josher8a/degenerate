@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceEnterpriseFeaturesOvercaptureOvercapture
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_incremental_authorization_incremental_authorization/resource_enterprise_features_incremental_authorization_incremental_authorization_status.dart';/// 
 @immutable final class ResourceEnterpriseFeaturesOvercaptureOvercapture {const ResourceEnterpriseFeaturesOvercaptureOvercapture({required this.maximumAmountCapturable, required this.status, });

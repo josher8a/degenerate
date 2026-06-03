@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAuthenticationMethodRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_authentication_method_rule/access_authentication_method_rule_auth_method.dart';/// Enforce different MFA options
 @immutable final class AccessAuthenticationMethodRule {const AccessAuthenticationMethodRule({required this.authMethod});

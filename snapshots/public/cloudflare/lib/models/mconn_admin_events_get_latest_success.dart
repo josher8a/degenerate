@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminEventsGetLatestSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_events_get_latest_result.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnAdminEventsGetLatestSuccess {const MconnAdminEventsGetLatestSuccess({required this.success, required this.result, this.errors, this.messages, });
 

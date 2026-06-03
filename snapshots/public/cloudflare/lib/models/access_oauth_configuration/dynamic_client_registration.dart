@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOauthConfiguration (inline: DynamicClientRegistration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for OAuth dynamic client registration.
 @immutable final class DynamicClientRegistration {const DynamicClientRegistration({this.allowAnyOnLocalhost, this.allowAnyOnLoopback, this.allowedUris, this.enabled, });

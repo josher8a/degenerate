@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to take on requests that match operations included in `selector` and fail `expression`.
 @immutable final class ShieldAction {const ShieldAction._(this.value);

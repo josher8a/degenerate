@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Quality > AudioProducerCumulative > PacketLoss)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PacketLoss {const PacketLoss({this.$5OrGreaterEventFraction, this.$10OrGreaterEventFraction, this.$25OrGreaterEventFraction, this.$50OrGreaterEventFraction, this.avg, });
 

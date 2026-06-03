@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityMoveResponseItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMoveResponseItem {const EmailSecurityMoveResponseItem({required this.completedTimestamp, required this.itemCount, required this.success, this.destination, this.messageId, this.operation, this.recipient, this.status, });
 

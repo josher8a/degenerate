@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Rectangle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rectangle {const Rectangle({required this.type, required this.width, required this.height, this.color, });
 

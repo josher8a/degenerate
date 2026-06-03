@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsBuildSeedRepoInput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_build_seed_repo_input_file.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';@immutable final class BuildsBuildSeedRepoInput {const BuildsBuildSeedRepoInput({required this.branch, required this.owner, required this.path, required this.provider, required this.repository, this.files, });
 

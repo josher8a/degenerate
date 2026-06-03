@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamPreview
 
 /// The video's preview page URI. This field is omitted until encoding is complete.
 extension type StreamPreview(Uri value) {

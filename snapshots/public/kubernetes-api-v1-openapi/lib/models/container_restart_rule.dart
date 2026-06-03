@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerRestartRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_restart_rule_on_exit_codes.dart';/// ContainerRestartRule describes how a container exit is handled.
 @immutable final class ContainerRestartRule {const ContainerRestartRule({required this.action, this.exitCodes, });

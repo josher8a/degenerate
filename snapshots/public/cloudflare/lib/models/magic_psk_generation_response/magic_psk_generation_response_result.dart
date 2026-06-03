@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicPskGenerationResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_psk.dart';import 'package:pub_cloudflare/models/magic_psk_metadata.dart';@immutable final class MagicPskGenerationResponseResult {const MagicPskGenerationResponseResult({this.ipsecTunnelId, this.psk, this.pskMetadata, });
 

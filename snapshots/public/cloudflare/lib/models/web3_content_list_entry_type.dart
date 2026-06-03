@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ContentListEntryType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the type of content list entry to block.
 @immutable final class Web3ContentListEntryType {const Web3ContentListEntryType._(this.value);

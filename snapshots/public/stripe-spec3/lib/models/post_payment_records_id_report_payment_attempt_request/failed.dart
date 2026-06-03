@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptRequest (inline: Failed)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt failure.
 @immutable final class Failed {const Failed({required this.failedAt});

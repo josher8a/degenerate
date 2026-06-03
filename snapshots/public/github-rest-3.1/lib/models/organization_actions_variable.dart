@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationActionsVariable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Organization variable for GitHub Actions.
 @immutable final class OrganizationActionsVariable {const OrganizationActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });

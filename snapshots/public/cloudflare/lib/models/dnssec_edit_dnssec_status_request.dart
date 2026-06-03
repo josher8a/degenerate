@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnssecEditDnssecStatusRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_multi_signer.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_presigned.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
 @immutable final class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus._(this.value);

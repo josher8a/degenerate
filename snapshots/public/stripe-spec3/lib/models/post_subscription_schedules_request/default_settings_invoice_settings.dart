@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionSchedulesRequest (inline: DefaultSettings > InvoiceSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_account_tax_ids.dart';@immutable final class DefaultSettingsInvoiceSettings {const DefaultSettingsInvoiceSettings({this.accountTaxIds, this.daysUntilDue, this.issuer, });
 

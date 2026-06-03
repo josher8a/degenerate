@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Verdicts > Overall)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2VerdictsOverall {const UrlscannerGetScanResponse2VerdictsOverall({required this.categories, required this.hasVerdicts, required this.malicious, required this.tags, });
 

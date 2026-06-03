@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTranscriptionResponseDiarizedJson
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_diarized_json/create_transcription_response_diarized_json_usage.dart';import 'package:pub_openai/models/transcription_diarized_segment.dart';/// The type of task that was run. Always `transcribe`.
 @immutable final class Task {const Task._(this.value);

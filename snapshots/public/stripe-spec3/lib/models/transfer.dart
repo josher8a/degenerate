@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Transfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';import 'package:pub_stripe_spec3/models/transfer/destination_payment.dart';import 'package:pub_stripe_spec3/models/transfer/reversals.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferObject {const TransferObject._(this.value);

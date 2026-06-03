@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomSslForAZoneCreateSslConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_deploy.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_policy.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_private_key.dart';/// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
 @immutable final class TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType._(this.value);

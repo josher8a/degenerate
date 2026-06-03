@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostGroupMemberCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostGroupMemberCreateRequest {const PostGroupMemberCreateRequest({required this.accountId});
 

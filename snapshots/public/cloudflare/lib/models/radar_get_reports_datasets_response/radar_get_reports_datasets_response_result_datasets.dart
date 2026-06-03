@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetReportsDatasetsResponse (inline: Result > Datasets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetReportsDatasetsResponseResultDatasets {const RadarGetReportsDatasetsResponseResultDatasets({required this.description, required this.id, required this.meta, required this.tags, required this.title, required this.type, });
 

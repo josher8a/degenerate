@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneCacheSettingsChangeAegisSettingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis_value.dart';@immutable final class ZoneCacheSettingsChangeAegisSettingRequest {const ZoneCacheSettingsChangeAegisSettingRequest({required this.value});
 

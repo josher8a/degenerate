@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseMcpCallFailed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an MCP tool call has failed.
 @immutable final class RealtimeServerEventResponseMcpCallFailed {const RealtimeServerEventResponseMcpCallFailed({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });

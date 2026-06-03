@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > Payouts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/settings_payouts_schedule.dart';@immutable final class SettingsPayouts {const SettingsPayouts({this.debitNegativeBalances, this.schedule, this.statementDescriptor, });
 

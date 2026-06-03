@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTcpResetsTimeoutsSummaryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_summary_response/radar_get_tcp_resets_timeouts_summary_response_result.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponse {const RadarGetTcpResetsTimeoutsSummaryResponse({required this.result, required this.success, });
 

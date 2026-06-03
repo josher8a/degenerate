@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingUpdateShareRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_share_name.dart';@immutable final class ResourceSharingUpdateShareRequest {const ResourceSharingUpdateShareRequest({required this.name});
 

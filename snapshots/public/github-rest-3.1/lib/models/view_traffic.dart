@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ViewTraffic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/traffic.dart';/// View Traffic
 @immutable final class ViewTraffic {const ViewTraffic({required this.count, required this.uniques, required this.views, });

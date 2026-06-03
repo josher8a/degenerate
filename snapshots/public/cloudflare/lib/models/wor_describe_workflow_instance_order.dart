@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowInstanceOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Step ordering: "asc" (default, oldest first) or "desc" (newest first).
 @immutable final class WorDescribeWorkflowInstanceOrder {const WorDescribeWorkflowInstanceOrder._(this.value);

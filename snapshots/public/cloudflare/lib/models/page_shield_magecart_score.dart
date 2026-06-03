@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldMagecartScore
 
 /// The magecart score of the JavaScript content.
 extension type const PageShieldMagecartScore(int value) {

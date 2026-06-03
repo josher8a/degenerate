@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventTranscriptionSessionUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_client_event_transcription_session_update/realtime_beta_client_event_transcription_session_update_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request.dart';/// Send this event to update a transcription session.
 /// 

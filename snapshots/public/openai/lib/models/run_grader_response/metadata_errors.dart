@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunGraderResponse (inline: Metadata > Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataErrors {const MetadataErrors({required this.formulaParseError, required this.sampleParseError, required this.truncatedObservationError, required this.unresponsiveRewardError, required this.invalidVariableError, required this.otherError, required this.pythonGraderServerError, required this.pythonGraderServerErrorType, required this.pythonGraderRuntimeError, required this.pythonGraderRuntimeErrorDetails, required this.modelGraderServerError, required this.modelGraderRefusalError, required this.modelGraderParseError, required this.modelGraderServerErrorDetails, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VoiceResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `audio.voice`.
 @immutable final class VoiceResourceObject {const VoiceResourceObject._(this.value);

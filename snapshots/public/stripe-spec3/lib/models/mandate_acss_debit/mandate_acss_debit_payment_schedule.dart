@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MandateAcssDebit (inline: PaymentSchedule)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Payment schedule for the mandate.
 @immutable final class MandateAcssDebitPaymentSchedule {const MandateAcssDebitPaymentSchedule._(this.value);

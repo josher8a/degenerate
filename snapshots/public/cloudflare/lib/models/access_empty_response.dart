@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessEmptyResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessEmptyResponse {const AccessEmptyResponse({this.result, this.success, });
 

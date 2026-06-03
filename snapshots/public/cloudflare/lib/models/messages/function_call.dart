@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: FunctionCall)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/function_call_variant2.dart';@immutable final class MessagesFunctionCallVariant1 {const MessagesFunctionCallVariant1._(this.value);
 

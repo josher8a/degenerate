@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDatasetNewVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';@immutable final class DlpDatasetNewVersion {const DlpDatasetNewVersion({required this.encodingVersion, required this.maxCells, required this.version, this.caseSensitive, this.columns, this.secret, });
 

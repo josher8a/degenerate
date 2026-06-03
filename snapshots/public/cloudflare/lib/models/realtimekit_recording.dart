@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitRecording
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the recording.
 @immutable final class RealtimekitRecordingStatus {const RealtimekitRecordingStatus._(this.value);

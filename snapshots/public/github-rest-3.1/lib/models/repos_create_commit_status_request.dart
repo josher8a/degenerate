@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateCommitStatusRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_commit_status_request/repos_create_commit_status_request_state.dart';@immutable final class ReposCreateCommitStatusRequest {const ReposCreateCommitStatusRequest({required this.state, this.targetUrl, this.description, this.context = 'default', });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotDotcomPullRequests (inline: Repositories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_dotcom_pull_requests/repositories_models.dart';@immutable final class CopilotDotcomPullRequestsRepositories {const CopilotDotcomPullRequestsRepositories({this.name, this.totalEngagedUsers, this.models, });
 

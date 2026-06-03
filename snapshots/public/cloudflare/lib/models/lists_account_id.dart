@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsAccountId
 
 /// The Account ID for this resource.
 extension type const ListsAccountId(String value) {

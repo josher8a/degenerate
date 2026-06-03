@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageTextToText (inline: Variant2 > Messages > Content > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/image_text_to_text/variant2_messages_content_variant2_image_url.dart';@immutable final class Variant2MessagesContentVariant2 {const Variant2MessagesContentVariant2({required this.type, this.imageUrl, this.text, });
 

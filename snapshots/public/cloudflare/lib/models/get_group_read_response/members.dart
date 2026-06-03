@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetGroupReadResponse (inline: Members)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Members {const Members({required this.accountId, required this.groupId, required this.uuid, this.createdAt, this.updatedAt, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPagesForAZoneUpdateACustomPageRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_pages_state.dart';import 'package:pub_cloudflare/models/custom_pages_url.dart';@immutable final class CustomPagesForAZoneUpdateACustomPageRequest {const CustomPagesForAZoneUpdateACustomPageRequest({required this.state, required this.url, });
 

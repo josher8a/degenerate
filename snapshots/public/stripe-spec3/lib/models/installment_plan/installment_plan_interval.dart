@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InstallmentPlan (inline: Interval)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InstallmentPlanInterval {const InstallmentPlanInterval._(this.value);
 

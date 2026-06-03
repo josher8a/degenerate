@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerTagLengthLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker has a tag that exceeds the maximum tag length.
 @immutable final class WorkersErrorWorkerTagLengthLimitCode {const WorkersErrorWorkerTagLengthLimitCode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreditNotesPretaxCreditAmount (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the pretax credit amount referenced.
 @immutable final class CreditNotesPretaxCreditAmountType {const CreditNotesPretaxCreditAmountType._(this.value);

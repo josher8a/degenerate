@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesGroupPublicKeyAlgorithm
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupPublicKeyAlgorithm {const RadarGetCtTimeseriesGroupPublicKeyAlgorithm._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyInitResp (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_test_id.dart';/// The status of the policy test request.
 @immutable final class AccessStatus {const AccessStatus._(this.value);

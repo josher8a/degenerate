@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserListResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/user.dart';/// Paginated list of user objects returned when inspecting group membership.
 @immutable final class UserListResource {const UserListResource({required this.object, required this.data, required this.hasMore, required this.next, });

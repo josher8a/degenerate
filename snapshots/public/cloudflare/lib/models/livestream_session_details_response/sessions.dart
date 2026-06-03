@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LivestreamSessionDetailsResponse (inline: Data > Sessions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Sessions {const Sessions({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, });
 

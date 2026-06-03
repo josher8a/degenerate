@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperJobProgressResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_job_status.dart';@immutable final class R2SlurperJobProgressResponse {const R2SlurperJobProgressResponse({this.createdAt, this.failedObjects, this.id, this.objects, this.skippedObjects, this.status, this.transferredObjects, });
 

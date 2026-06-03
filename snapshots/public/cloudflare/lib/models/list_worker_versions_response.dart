@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListWorkerVersionsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version.dart';@immutable final class ListWorkerVersionsResponse {const ListWorkerVersionsResponse({required this.result});
 

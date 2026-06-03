@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingTransactionFlightData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_flight_data_leg.dart';/// 
 @immutable final class IssuingTransactionFlightData {const IssuingTransactionFlightData({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });

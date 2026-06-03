@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AmountDetailsParam (inline: LineItems > Variant1 > PaymentMethodOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_param/variant1_payment_method_options_card.dart';import 'package:pub_stripe_spec3/models/amount_details_param/variant1_payment_method_options_card_present.dart';import 'package:pub_stripe_spec3/models/amount_details_param/variant1_payment_method_options_klarna.dart';import 'package:pub_stripe_spec3/models/amount_details_param/variant1_payment_method_options_paypal.dart';@immutable final class Variant1PaymentMethodOptions {const Variant1PaymentMethodOptions({this.card, this.cardPresent, this.klarna, this.paypal, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaStepDetailsToolCallsFunctionObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_function_object/run_step_delta_step_details_tool_calls_function_object_function.dart';@immutable final class RunStepDeltaStepDetailsToolCallsFunctionObject {const RunStepDeltaStepDetailsToolCallsFunctionObject({required this.index, required this.type, this.id, this.function, });
 

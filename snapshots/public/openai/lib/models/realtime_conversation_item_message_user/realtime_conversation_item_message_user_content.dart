@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemMessageUser (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/detail.dart';/// The content type (`input_text`, `input_audio`, or `input_image`).
 @immutable final class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType._(this.value);

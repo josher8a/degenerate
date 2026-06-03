@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateLogDetailsResponse (inline: Result > CertificateLog > Api)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The API standard that the certificate log follows.
 @immutable final class Api {const Api._(this.value);

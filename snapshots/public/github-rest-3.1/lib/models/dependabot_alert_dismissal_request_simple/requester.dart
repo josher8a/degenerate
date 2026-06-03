@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertDismissalRequestSimple (inline: Requester)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who requested the dismissal.
 @immutable final class Requester {const Requester({this.id, this.login, });

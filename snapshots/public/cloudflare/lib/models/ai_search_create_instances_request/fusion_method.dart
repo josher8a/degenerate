@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: FusionMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FusionMethod {const FusionMethod._(this.value);
 

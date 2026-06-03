@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnByIpResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_ip_response/radar_get_entities_asn_by_ip_response_result_asn.dart';@immutable final class RadarGetEntitiesAsnByIpResponseResult {const RadarGetEntitiesAsnByIpResponseResult({required this.asn});
 

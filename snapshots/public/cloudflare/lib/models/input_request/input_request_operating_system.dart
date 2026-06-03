@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputRequest (inline: OperatingSystem)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
 @immutable final class InputRequestOperatingSystem {const InputRequestOperatingSystem._(this.value);

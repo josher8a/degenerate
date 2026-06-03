@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Ui)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_ui_design_tokens.dart';@immutable final class RealtimekitUpdatePresetUi {const RealtimekitUpdatePresetUi({this.configDiff, this.designTokens, });
 

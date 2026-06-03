@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom Payment Methods represent Payment Method types not modeled directly in
 /// the Stripe API. This resource consists of details about the custom payment method

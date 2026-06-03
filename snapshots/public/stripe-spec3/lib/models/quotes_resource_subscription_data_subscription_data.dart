@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceSubscriptionDataSubscriptionData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/quotes_resource_subscription_data_billing_mode.dart';/// 
 @immutable final class QuotesResourceSubscriptionDataSubscriptionData {const QuotesResourceSubscriptionDataSubscriptionData({required this.billingMode, this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });

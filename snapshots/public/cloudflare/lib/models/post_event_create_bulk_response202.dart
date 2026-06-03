@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventCreateBulkResponse202
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dos_event_create_bulk_with_relationships_response/post_dos_event_create_bulk_with_relationships_response_errors.dart';import 'package:pub_cloudflare/models/post_event_create_bulk_response202/created_events.dart';/// Detailed result of bulk event creation with auto-tag management
 @immutable final class PostEventCreateBulkResponse202 {const PostEventCreateBulkResponse202({required this.createdEventsCount, required this.createdTagsCount, required this.errorCount, required this.queuedIndicatorsCount, this.createBulkEventsRequestId, this.createdEvents, this.errors, });

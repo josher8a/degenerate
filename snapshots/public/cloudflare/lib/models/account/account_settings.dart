@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Account (inline: Settings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSettings {const AccountSettings({required this.abuseContactEmail, required this.accessApprovalExpiry, required this.apiAccessEnabled, required this.defaultNameservers, required this.enforceTwofactor, required this.useAccountCustomNsByDefault, });
 

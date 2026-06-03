@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicIpEtag
 
 /// A digest of the IP data. Useful for determining if the data has changed.
 extension type const PublicIpEtag(String value) {

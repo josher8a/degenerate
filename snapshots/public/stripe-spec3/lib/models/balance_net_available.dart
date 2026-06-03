@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceNetAvailable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount_by_source_type.dart';/// 
 @immutable final class BalanceNetAvailable {const BalanceNetAvailable({required this.amount, required this.destination, this.sourceTypes, });

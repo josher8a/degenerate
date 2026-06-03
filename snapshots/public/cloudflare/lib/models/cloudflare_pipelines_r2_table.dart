@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2Table
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public/rolling_policy.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/cloudflare_pipelines_r2_table_credentials.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/file_naming.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/partitioning.dart';@immutable final class CloudflarePipelinesR2Table {const CloudflarePipelinesR2Table({required this.accountId, required this.bucket, required this.credentials, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
 

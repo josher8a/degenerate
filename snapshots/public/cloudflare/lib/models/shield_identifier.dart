@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldIdentifier
 
 /// Identifier.
 extension type const ShieldIdentifier(String value) {

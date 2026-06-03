@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscFacilityInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscFacilityInfo {const NscFacilityInfo({required this.address, required this.name, });
 

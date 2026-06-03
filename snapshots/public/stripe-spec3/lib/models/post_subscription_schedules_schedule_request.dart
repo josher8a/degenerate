@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionSchedulesScheduleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request/post_subscription_schedules_schedule_request_phases.dart';@immutable final class PostSubscriptionSchedulesScheduleRequest {const PostSubscriptionSchedulesScheduleRequest({this.defaultSettings, this.endBehavior, this.expand, this.metadata, this.phases, this.prorationBehavior, });
 

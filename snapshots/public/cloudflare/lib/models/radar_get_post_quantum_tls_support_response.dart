@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetPostQuantumTlsSupportResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_post_quantum_tls_support_response/radar_get_post_quantum_tls_support_response_result.dart';@immutable final class RadarGetPostQuantumTlsSupportResponse {const RadarGetPostQuantumTlsSupportResponse({required this.result, required this.success, });
 

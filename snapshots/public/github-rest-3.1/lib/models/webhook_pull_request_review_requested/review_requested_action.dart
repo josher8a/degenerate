@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestReviewRequested (inline: ReviewRequested > Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReviewRequestedAction {const ReviewRequestedAction._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain/validation_data.dart';import 'package:pub_cloudflare/models/pages_domain/verification_data.dart';import 'package:pub_cloudflare/models/pages_domain_name.dart';@immutable final class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority._(this.value);
 

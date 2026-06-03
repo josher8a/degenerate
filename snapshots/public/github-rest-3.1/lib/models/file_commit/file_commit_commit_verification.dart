@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCommit (inline: Commit > Verification)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitVerification {const FileCommitCommitVerification({this.verified, this.reason, this.signature, this.payload, this.verifiedAt, });
 

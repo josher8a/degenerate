@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersTailConsumersScript
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A reference to a script that will consume logs from the attached Worker.
 @immutable final class WorkersTailConsumersScript {const WorkersTailConsumersScript({required this.service, this.environment, this.namespace, });

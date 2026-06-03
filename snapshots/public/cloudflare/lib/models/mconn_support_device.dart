@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSupportDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnSupportDevice {const MconnSupportDevice({required this.id, required this.lastUpdated, required this.metadata, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.pkiRotationFinishedAt, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
 

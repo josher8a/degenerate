@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > PaymentDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request/disputes_list_features.dart';@immutable final class ComponentsPaymentDetails {const ComponentsPaymentDetails({required this.enabled, this.features, });
 

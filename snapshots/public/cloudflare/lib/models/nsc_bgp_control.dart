@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscBgpControl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscBgpControl {const NscBgpControl({required this.customerAsn, required this.extraPrefixes, this.md5Key, });
 

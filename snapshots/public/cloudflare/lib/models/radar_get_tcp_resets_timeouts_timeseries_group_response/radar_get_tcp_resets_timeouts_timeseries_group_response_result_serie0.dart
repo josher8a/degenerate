@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTcpResetsTimeoutsTimeseriesGroupResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, required this.timestamps, });
 

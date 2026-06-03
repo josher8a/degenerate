@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfigMapList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/config_map.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';/// ConfigMapList is a resource containing a list of ConfigMap objects.
 @immutable final class ConfigMapList {const ConfigMapList({required this.items, this.apiVersion, this.kind, this.metadata, });

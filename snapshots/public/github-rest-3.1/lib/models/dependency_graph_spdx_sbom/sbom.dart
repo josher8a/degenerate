@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphSpdxSbom (inline: Sbom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/creation_info.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/relationships.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/sbom_packages.dart';@immutable final class Sbom {const Sbom({required this.spdxid, required this.spdxVersion, required this.creationInfo, required this.name, required this.dataLicense, required this.documentNamespace, required this.packages, this.comment, this.relationships, });
 

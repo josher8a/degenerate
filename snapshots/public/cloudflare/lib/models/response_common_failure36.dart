@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure36
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_messages2.dart';@immutable final class ResponseCommonFailure36 {const ResponseCommonFailure36({required this.errors, required this.messages, required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPayloadLogSetting
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_payload_log_masking_level.dart';@immutable final class DlpPayloadLogSetting {const DlpPayloadLogSetting({required this.updatedAt, this.maskingLevel, this.publicKey, });
 

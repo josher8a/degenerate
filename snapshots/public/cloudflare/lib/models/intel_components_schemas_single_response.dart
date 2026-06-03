@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_passive_dns_by_ip.dart';@immutable final class IntelComponentsSchemasSingleResponse {const IntelComponentsSchemasSingleResponse({this.result});
 

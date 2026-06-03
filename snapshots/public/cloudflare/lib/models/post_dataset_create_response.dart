@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetCreateResponse {const PostDatasetCreateResponse({required this.isPublic, required this.name, required this.uuid, });
 

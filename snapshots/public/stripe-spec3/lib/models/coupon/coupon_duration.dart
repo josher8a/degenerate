@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Coupon (inline: Duration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `forever`, `once`, or `repeating`. Describes how long a customer who applies this coupon will get the discount.
 @immutable final class CouponDuration {const CouponDuration._(this.value);

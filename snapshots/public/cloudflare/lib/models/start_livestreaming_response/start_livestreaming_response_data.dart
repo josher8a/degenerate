@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StartLivestreamingResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class StartLivestreamingResponseData {const StartLivestreamingResponseData({this.id, this.ingestServer, this.playbackUrl, this.status, this.streamKey, });
 

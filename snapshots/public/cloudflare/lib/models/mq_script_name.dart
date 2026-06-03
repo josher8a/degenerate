@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqScriptName
 
 /// Name of a Worker
 extension type const MqScriptName(String value) {

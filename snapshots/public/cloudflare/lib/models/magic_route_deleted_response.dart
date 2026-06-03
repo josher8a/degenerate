@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicRouteDeletedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route_deleted_response/magic_route_deleted_response_result.dart';@immutable final class MagicRouteDeletedResponse {const MagicRouteDeletedResponse({this.result});
 

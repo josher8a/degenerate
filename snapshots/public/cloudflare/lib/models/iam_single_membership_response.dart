@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamSingleMembershipResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_membership.dart';@immutable final class IamSingleMembershipResponse {const IamSingleMembershipResponse({this.result});
 

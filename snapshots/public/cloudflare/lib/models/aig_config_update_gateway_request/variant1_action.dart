@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Dlp > Variant1 > Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1Action {const Variant1Action._(this.value);
 

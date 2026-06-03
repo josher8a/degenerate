@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryAvailabilities (inline: RegionsPerPlan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_labeled_region.dart';/// Available regions.
 @immutable final class RegionsPerPlan {const RegionsPerPlan({this.business, this.enterprise, this.free, this.pro, });

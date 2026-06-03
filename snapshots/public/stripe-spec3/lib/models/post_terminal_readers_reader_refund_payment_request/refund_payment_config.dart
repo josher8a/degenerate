@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderRefundPaymentRequest (inline: RefundPaymentConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this refund, such as customer cancellation settings.
 @immutable final class RefundPaymentConfig {const RefundPaymentConfig({this.enableCustomerCancellation});

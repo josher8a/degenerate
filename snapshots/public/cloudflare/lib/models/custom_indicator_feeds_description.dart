@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsDescription
 
 /// The description of the example test
 extension type const CustomIndicatorFeedsDescription(String value) {

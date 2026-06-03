@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallItemParam (inline: Environment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_skill_param.dart';/// The environment to execute the shell commands in.
 sealed class FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironment();

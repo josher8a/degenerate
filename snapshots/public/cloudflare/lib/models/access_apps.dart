@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessApps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_basic_app_response_props.dart';typedef AccessApps = OneOf8<AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps,AccessSchemasBasicAppResponseProps>;

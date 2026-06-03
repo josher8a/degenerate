@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingLeasesComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_lease.dart';@immutable final class AddressingLeasesComponentsSchemasResponseCollection {const AddressingLeasesComponentsSchemasResponseCollection({this.result});
 

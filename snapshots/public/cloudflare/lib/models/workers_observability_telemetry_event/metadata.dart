@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityTelemetryEvent (inline: $metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Metadata {const Metadata({required this.id, this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
 

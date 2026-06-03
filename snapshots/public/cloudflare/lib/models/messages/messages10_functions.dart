@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Functions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages10Functions {const Messages10Functions({required this.code, required this.name, });
 

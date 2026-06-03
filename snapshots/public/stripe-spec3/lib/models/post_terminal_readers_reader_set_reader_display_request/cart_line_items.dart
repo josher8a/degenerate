@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderSetReaderDisplayRequest (inline: Cart > LineItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CartLineItems {const CartLineItems({required this.amount, required this.description, required this.quantity, });
 

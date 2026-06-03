@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersVersionItemFull (inline: Resources > ScriptRuntime)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values_request/usage_model.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script_runtime_limits.dart';/// Runtime configuration for the Worker.
 @immutable final class ScriptRuntime {const ScriptRuntime({this.compatibilityDate, this.compatibilityFlags, this.limits, this.migrationTag, this.usageModel, });

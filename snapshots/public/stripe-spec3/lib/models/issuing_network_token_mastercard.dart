@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingNetworkTokenMastercard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingNetworkTokenMastercard {const IssuingNetworkTokenMastercard({required this.tokenReferenceId, required this.tokenRequestorId, this.cardReferenceId, this.tokenRequestorName, });

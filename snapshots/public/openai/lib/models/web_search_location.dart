@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebSearchLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Approximate location parameters for the search.
 @immutable final class WebSearchLocation {const WebSearchLocation({this.country, this.region, this.city, this.timezone, });

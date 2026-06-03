@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InteractionGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
 @immutable final class InteractionGroup {const InteractionGroup._(this.value);

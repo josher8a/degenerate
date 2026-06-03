@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GraderTextSimilarity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_text_similarity/eval_grader_text_similarity_type.dart';import 'package:pub_openai/models/eval_grader_text_similarity/evaluation_metric.dart';/// A TextSimilarityGrader object which grades text based on similarity metrics.
 /// 

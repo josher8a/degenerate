@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_managed_networks.dart';@immutable final class TeamsDevicesComponentsSchemasSingleResponse {const TeamsDevicesComponentsSchemasSingleResponse({this.result});
 

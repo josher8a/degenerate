@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuthorAssociation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How the author is associated with the repository.
 @immutable final class AuthorAssociation {const AuthorAssociation._(this.value);

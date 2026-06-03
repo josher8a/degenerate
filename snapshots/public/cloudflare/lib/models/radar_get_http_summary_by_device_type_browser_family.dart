@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByDeviceTypeBrowserFamily
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeBrowserFamily {const RadarGetHttpSummaryByDeviceTypeBrowserFamily._(this.value);
 

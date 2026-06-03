@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: CheckpointPermissionCreated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/checkpoint_permission_created_data.dart';/// The project and fine-tuned model checkpoint that the checkpoint permission was created for.
 @immutable final class CheckpointPermissionCreated {const CheckpointPermissionCreated({this.id, this.data, });

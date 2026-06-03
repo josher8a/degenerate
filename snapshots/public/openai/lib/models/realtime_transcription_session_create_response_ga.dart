@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeTranscriptionSessionCreateResponseGa
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request_ga/realtime_transcription_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response_ga/realtime_transcription_session_create_response_ga_audio.dart';/// A Realtime transcription session configuration object.
 /// 

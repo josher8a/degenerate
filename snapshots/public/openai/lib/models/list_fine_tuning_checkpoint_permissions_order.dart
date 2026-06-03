@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListFineTuningCheckpointPermissionsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListFineTuningCheckpointPermissionsOrder {const ListFineTuningCheckpointPermissionsOrder._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpExactDataEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpExactDataEntry {const DlpExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, });
 

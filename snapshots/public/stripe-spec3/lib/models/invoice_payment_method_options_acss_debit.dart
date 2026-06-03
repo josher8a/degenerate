@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsAcssDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_acss_debit_mandate_options.dart';/// 
 @immutable final class InvoicePaymentMethodOptionsAcssDebit {const InvoicePaymentMethodOptionsAcssDebit({this.mandateOptions, this.verificationMethod, });

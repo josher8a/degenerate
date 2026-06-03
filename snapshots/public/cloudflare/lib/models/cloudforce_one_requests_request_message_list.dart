@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestMessageList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_list/sort_order.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestMessageList {const CloudforceOneRequestsRequestMessageList({required this.page, required this.perPage, this.after, this.before, this.sortBy, this.sortOrder, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCacheReserve
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings to determine whether the request's response from origin is eligible for Cache Reserve (requires a Cache Reserve add-on plan).
 @immutable final class RulesetsSetCacheSettingsCacheReserve {const RulesetsSetCacheSettingsCacheReserve({required this.eligible, this.minimumFileSize, });

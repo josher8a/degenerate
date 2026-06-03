@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_history.dart';import 'package:pub_github_rest_3_1/models/gist_simple/fork_of.dart';import 'package:pub_github_rest_3_1/models/gist_simple/forks.dart';import 'package:pub_github_rest_3_1/models/gist_simple/gist_simple_files_value.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist Simple
 @immutable final class GistSimple {const GistSimple({this.forks, this.history, this.forkOf, this.url, this.forksUrl, this.commitsUrl, this.id, this.nodeId, this.gitPullUrl, this.gitPushUrl, this.htmlUrl, this.files, this.public, this.createdAt, this.updatedAt, this.description, this.comments, this.commentsEnabled, this.user, this.commentsUrl, this.owner, this.truncated, });

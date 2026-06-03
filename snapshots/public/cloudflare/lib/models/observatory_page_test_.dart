@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryPageTest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_labeled_region.dart';import 'package:pub_cloudflare/models/observatory_lighthouse_report.dart';import 'package:pub_cloudflare/models/observatory_schedule_frequency.dart';import 'package:pub_cloudflare/models/observatory_timestamp.dart';import 'package:pub_cloudflare/models/observatory_url.dart';/// UUID.
 extension type const ObservatoryUuid(String value) {

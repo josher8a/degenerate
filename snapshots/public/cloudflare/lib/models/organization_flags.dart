@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationFlags
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable features for Organizations.
 @immutable final class OrganizationFlags {const OrganizationFlags({required this.accountCreation, required this.accountDeletion, required this.accountMigration, required this.accountMobility, required this.subOrgCreation, });

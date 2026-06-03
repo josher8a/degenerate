@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesByBytesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAttacksLayer3TimeseriesByBytesFormat {const RadarGetAttacksLayer3TimeseriesByBytesFormat._(this.value);

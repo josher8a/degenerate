@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Execute a shell command.
 @immutable final class FunctionShellAction {const FunctionShellAction({required this.commands, required this.timeoutMs, required this.maxOutputLength, });

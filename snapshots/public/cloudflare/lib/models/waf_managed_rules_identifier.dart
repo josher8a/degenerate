@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesIdentifier
 
 /// Defines the unique identifier of a WAF package.
 extension type const WafManagedRulesIdentifier(String value) {

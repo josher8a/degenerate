@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: PayloadLog)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure DLP payload logging. Settable only for `http` rules.
 @immutable final class PayloadLog {const PayloadLog({this.enabled});

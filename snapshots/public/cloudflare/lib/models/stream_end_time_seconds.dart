@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamEndTimeSeconds
 
 /// Specifies the end time for the video clip in seconds.
 extension type const StreamEndTimeSeconds(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData > AfterCompletion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_after_completion/portal_flows_flow_after_completion_type.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/hosted_confirmation.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_redirect.dart';@immutable final class FlowDataAfterCompletion {const FlowDataAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });
 

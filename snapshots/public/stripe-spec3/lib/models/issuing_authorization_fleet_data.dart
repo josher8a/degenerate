@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationFleetData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_cardholder_prompt_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_reported_breakdown.dart';/// The type of purchase.
 @immutable final class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType._(this.value);

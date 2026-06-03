@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow/portal_flows_flow_type.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/flow_data_after_completion.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/flow_data_subscription_cancel.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/flow_data_subscription_update.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/subscription_update_confirm.dart';/// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
 @immutable final class FlowData {const FlowData({required this.type, this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, });

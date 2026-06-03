@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionObject {const FunctionObject({required this.name, this.description, this.parameters, this.strict, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginsTimeseriesOrigin
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origins.
 @immutable final class RadarGetOriginsTimeseriesOrigin {const RadarGetOriginsTimeseriesOrigin._(this.value);

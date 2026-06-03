@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsCreateArtifactDeploymentRecordRequest (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact. Can be either deployed or decommissioned.
 @immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus._(this.value);

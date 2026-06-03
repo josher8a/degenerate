@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalSubscriptionCancellationReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksIssue2 (inline: PerformedViaGithubApp > Permissions > SecurityScanningAlert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityScanningAlert {const SecurityScanningAlert._(this.value);
 

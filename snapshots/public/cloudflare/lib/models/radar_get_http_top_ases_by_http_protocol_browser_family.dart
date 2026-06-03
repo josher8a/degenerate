@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopAsesByHttpProtocolBrowserFamily
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpProtocolBrowserFamily {const RadarGetHttpTopAsesByHttpProtocolBrowserFamily._(this.value);
 

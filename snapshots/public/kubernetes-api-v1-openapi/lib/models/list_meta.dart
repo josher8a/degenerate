@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListMeta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
 @immutable final class ListMeta {const ListMeta({this.$continue, this.remainingItemCount, this.resourceVersion, this.selfLink, });

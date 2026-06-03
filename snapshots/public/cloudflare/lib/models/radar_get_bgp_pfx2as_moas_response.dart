@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asMoasResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response/radar_get_bgp_pfx2as_moas_response_result.dart';@immutable final class RadarGetBgpPfx2asMoasResponse {const RadarGetBgpPfx2asMoasResponse({required this.result, required this.success, });
 

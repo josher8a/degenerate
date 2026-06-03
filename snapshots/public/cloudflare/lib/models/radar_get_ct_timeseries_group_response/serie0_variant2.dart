@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesGroupResponse (inline: Result > Serie0 > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Serie0Variant2 {const Serie0Variant2({required this.rfc6962, required this.$static, });
 

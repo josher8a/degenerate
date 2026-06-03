@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Page > Js > Variables)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variables {const Variables({required this.name, required this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountSubscriptionsDeleteSubscriptionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_subscriptions_delete_subscription_response/account_subscriptions_delete_subscription_response_result.dart';@immutable final class AccountSubscriptionsDeleteSubscriptionResponse {const AccountSubscriptionsDeleteSubscriptionResponse({this.result});
 

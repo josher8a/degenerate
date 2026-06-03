@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CsiVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';/// Represents a source location of a volume to mount, managed by an external CSI driver
 @immutable final class CsiVolumeSource {const CsiVolumeSource({this.driver = '', this.fsType, this.nodePublishSecretRef, this.readOnly, this.volumeAttributes, });

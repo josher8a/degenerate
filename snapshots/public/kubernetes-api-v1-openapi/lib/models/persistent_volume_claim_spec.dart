@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersistentVolumeClaimSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/label_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/typed_local_object_reference.dart';import 'package:pub_kubernetes_api_v1_openapi/models/typed_object_reference.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_resource_requirements.dart';/// PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
 @immutable final class PersistentVolumeClaimSpec {const PersistentVolumeClaimSpec({this.accessModes, this.dataSource, this.dataSourceRef, this.resources, this.selector, this.storageClassName, this.volumeAttributesClassName, this.volumeMode, this.volumeName, });

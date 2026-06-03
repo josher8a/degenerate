@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionNamedToolChoice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/assistants_named_tool_choice/assistants_named_tool_choice_function.dart';/// Specifies a tool the model should use. Use to force the model to call a specific function.
 @immutable final class ChatCompletionNamedToolChoice {const ChatCompletionNamedToolChoice({required this.type, required this.function, });

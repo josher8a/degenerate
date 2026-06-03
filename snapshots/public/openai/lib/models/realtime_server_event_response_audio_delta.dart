@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseAudioDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the model-generated audio is updated.
 @immutable final class RealtimeServerEventResponseAudioDelta {const RealtimeServerEventResponseAudioDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });

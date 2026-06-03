@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelWhois
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_domain_name.dart';@immutable final class IntelWhois {const IntelWhois({this.createdDate, this.domain, this.nameservers, this.registrant, this.registrantCountry, this.registrantEmail, this.registrantOrg, this.registrar, this.updatedDate, });
 

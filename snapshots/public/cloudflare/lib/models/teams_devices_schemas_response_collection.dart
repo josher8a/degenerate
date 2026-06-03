@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_posture_integrations.dart';@immutable final class TeamsDevicesSchemasResponseCollection {const TeamsDevicesSchemasResponseCollection({this.result});
 

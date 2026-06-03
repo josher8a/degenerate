@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon32
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fraud_messages2.dart';@immutable final class ResponseCommon32 {const ResponseCommon32({required this.errors, required this.messages, required this.success, });
 

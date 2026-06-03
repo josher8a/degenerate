@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposListDeploymentBranchPoliciesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy.dart';@immutable final class ReposListDeploymentBranchPoliciesResponse {const ReposListDeploymentBranchPoliciesResponse({required this.totalCount, required this.branchPolicies, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlexandriaApplication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_application_human_id.dart';import 'package:pub_cloudflare/models/alexandria_application_name.dart';/// Returns the application creation time.
 extension type const AlexandriaApplicationCreatedAt(String value) {

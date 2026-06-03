@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Certificate (inline: CertificateDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CertificateDetails {const CertificateDetails({this.validAt, this.expiresAt, this.content, });
 

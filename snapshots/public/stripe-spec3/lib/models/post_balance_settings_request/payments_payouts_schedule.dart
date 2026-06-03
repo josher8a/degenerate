@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBalanceSettingsRequest (inline: Payments > Payouts > Schedule)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule/weekly_payout_days.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/schedule_interval.dart';@immutable final class PaymentsPayoutsSchedule {const PaymentsPayoutsSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountMessageMedia
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountMessageMedia {const AccountMessageMedia({this.accountSid, this.contentType, this.dateCreated, this.dateUpdated, this.parentSid, this.sid, this.uri, });
 

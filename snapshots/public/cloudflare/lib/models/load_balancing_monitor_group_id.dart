@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingMonitorGroupId
 
 /// The ID of the Monitor Group to use for checking the health of origins within this pool.
 extension type const LoadBalancingMonitorGroupId(String value) {

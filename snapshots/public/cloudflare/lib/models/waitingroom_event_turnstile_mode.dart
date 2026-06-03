@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomEventTurnstileMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set, the event will override the waiting room's `turnstile_mode` property while it is active. If null, the event will inherit it.
 @immutable final class WaitingroomEventTurnstileMode {const WaitingroomEventTurnstileMode._(this.value);

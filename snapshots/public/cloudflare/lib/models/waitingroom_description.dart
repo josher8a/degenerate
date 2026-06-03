@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomDescription
 
 /// A note that you can use to add more details about the waiting room.
 extension type const WaitingroomDescription(String value) {

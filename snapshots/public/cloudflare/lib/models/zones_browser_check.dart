@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesBrowserCheck
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
 /// spammers and certain bots.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesDeploy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The environment to deploy the certificate to, defaults to production
 @immutable final class TlsCertificatesAndHostnamesDeploy {const TlsCertificatesAndHostnamesDeploy._(this.value);

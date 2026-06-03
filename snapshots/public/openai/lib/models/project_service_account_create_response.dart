@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectServiceAccountCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key4.dart';import 'package:pub_openai/models/project_service_account_create_response/project_service_account_create_response_object.dart';/// Service accounts can only have one role of type `member`
 @immutable final class ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole._(this.value);

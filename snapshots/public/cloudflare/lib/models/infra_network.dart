@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraNetwork
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraNetwork {const InfraNetwork({required this.tunnelId});
 

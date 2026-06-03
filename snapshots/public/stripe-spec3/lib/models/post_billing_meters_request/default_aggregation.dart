@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMetersRequest (inline: DefaultAggregation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_aggregation_settings/formula.dart';/// The default settings to aggregate a meter's events with.
 @immutable final class DefaultAggregation {const DefaultAggregation({required this.formula});

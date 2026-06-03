@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RoleDeletedResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role.deleted`.
 @immutable final class RoleDeletedResourceObject {const RoleDeletedResourceObject._(this.value);

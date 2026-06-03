@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the election for the state sales tax registration.
 @immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order by. When requesting a feature, the feature keys are available for ordering as well, e.g., `thresholds.suggested_threshold`.
 @immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(this.value);

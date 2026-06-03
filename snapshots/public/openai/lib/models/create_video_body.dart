@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateVideoBody
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_ref_param2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';@immutable final class VideoSeconds {const VideoSeconds._(this.value);
 

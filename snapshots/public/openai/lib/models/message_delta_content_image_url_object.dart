@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentImageUrlObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/chat_completion_request_message_content_part_image_type.dart';import 'package:pub_openai/models/message_delta_content_image_url_object/message_delta_content_image_url_object_image_url.dart';/// References an image URL in the content of a message.
 @immutable final class MessageDeltaContentImageUrlObject {const MessageDeltaContentImageUrlObject({required this.index, required this.type, this.imageUrl, });

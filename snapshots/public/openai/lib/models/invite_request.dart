@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InviteRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite_request/invite_request_projects.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';@immutable final class InviteRequest {const InviteRequest({required this.email, required this.role, this.projects, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputePaymentMethodDetailsCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of dispute opened. Different case types may have varying fees and financial impact.
 @immutable final class CaseType {const CaseType._(this.value);

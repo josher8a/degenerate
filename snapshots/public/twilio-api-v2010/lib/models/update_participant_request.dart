@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateParticipantRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
 @immutable final class HoldMethod {const HoldMethod._(this.value);

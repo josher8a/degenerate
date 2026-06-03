@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraIpInfo (inline: Ipv4)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target's IPv4 address
 @immutable final class Ipv4 {const Ipv4({this.ipAddr, this.virtualNetworkId, });

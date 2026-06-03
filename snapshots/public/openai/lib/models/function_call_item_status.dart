@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionCallItemStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionCallItemStatus {const FunctionCallItemStatus._(this.value);
 

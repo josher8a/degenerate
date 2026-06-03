@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListScriptsExport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of scripts as a file, limited to 50000 entries.
 @immutable final class PageShieldListScriptsExport {const PageShieldListScriptsExport._(this.value);

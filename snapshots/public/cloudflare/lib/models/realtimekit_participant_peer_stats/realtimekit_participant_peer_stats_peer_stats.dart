@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantPeerStats (inline: PeerStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participant_peer_stats/realtimekit_participant_peer_stats_peer_stats_device_info.dart';import 'package:pub_cloudflare/models/realtimekit_participant_peer_stats/realtimekit_participant_peer_stats_peer_stats_events.dart';import 'package:pub_cloudflare/models/realtimekit_participant_peer_stats/realtimekit_participant_peer_stats_peer_stats_ip_information.dart';import 'package:pub_cloudflare/models/realtimekit_participant_peer_stats/realtimekit_participant_peer_stats_peer_stats_precall_network_information.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStats {const RealtimekitParticipantPeerStatsPeerStats({this.config, this.deviceInfo, this.events, this.ipInformation, this.precallNetworkInformation, this.status, });
 

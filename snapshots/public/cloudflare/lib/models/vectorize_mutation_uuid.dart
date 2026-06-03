@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeMutationUuid
 
 /// The unique identifier for the async mutation operation containing the changeset.
 extension type VectorizeMutationUuid(dynamic value) {

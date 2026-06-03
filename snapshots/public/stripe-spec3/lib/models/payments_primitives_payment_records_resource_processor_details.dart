@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourceProcessorDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_processor_details_resource_custom_details.dart';/// Processor information associated with this payment.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetails {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetails({required this.type, this.custom, });

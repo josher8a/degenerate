@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMembershipRemoved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_removed/webhook_installation_repositories_removed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_membership_added/sender.dart';import 'package:pub_github_rest_3_1/models/webhooks_team.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';/// The scope of the membership. Currently, can only be `team`.
 @immutable final class WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope._(this.value);

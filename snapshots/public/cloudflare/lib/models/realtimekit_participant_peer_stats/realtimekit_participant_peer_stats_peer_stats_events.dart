@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantPeerStats (inline: PeerStats > Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsEvents {const RealtimekitParticipantPeerStatsPeerStatsEvents({this.timestamp, this.type, });
 

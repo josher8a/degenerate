@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsBadIpError
 
 /// Invalid IP passed to api
 extension type const AbuseReportsBadIpError(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomPatchRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_rule_action.dart';import 'package:pub_cloudflare/models/waitingroom_rule_description.dart';import 'package:pub_cloudflare/models/waitingroom_rule_enabled.dart';import 'package:pub_cloudflare/models/waitingroom_rule_expression.dart';import 'package:pub_cloudflare/models/waitingroom_rule_position.dart';import 'package:pub_cloudflare/models/waitingroom_rule_position/waitingroom_rule_position_variant1.dart';import 'package:pub_cloudflare/models/waitingroom_rule_position/waitingroom_rule_position_variant2.dart';import 'package:pub_cloudflare/models/waitingroom_rule_position/waitingroom_rule_position_variant3.dart';@immutable final class WaitingroomPatchRule {const WaitingroomPatchRule({required this.action, required this.expression, this.description, this.enabled, this.position, });
 

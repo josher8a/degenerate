@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallRef
 
 /// A short reference tag. Allows you to select related firewall rules.
 extension type const FirewallRef(String value) {

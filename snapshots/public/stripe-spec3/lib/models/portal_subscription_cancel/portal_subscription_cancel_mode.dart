@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalSubscriptionCancel (inline: Mode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to cancel subscriptions immediately or at the end of the billing period.
 @immutable final class PortalSubscriptionCancelMode {const PortalSubscriptionCancelMode._(this.value);

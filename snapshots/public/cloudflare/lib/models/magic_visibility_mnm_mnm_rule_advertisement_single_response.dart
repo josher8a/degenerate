@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityMnmMnmRuleAdvertisementSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_advertisable_response.dart';@immutable final class MagicVisibilityMnmMnmRuleAdvertisementSingleResponse {const MagicVisibilityMnmMnmRuleAdvertisementSingleResponse({this.result});
 

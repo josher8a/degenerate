@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, must be `realtime.response`.
 @immutable final class RealtimeBetaResponseObject {const RealtimeBetaResponseObject._(this.value);

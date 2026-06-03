@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallMatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_match/firewall_match_variant1.dart';/// A value that is one of: `FirewallMatchVariant1`.
 sealed class FirewallMatch {const FirewallMatch();

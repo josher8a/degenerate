@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalConfigurationsConfigurationRequest (inline: Features > CustomerUpdate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/customer_update_allowed_updates.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate {const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate({this.allowedUpdates, this.enabled, });
 

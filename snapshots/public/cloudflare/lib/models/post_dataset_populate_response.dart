@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/post_dataset_populate_response_properties.dart';@immutable final class PostDatasetPopulateResponse {const PostDatasetPopulateResponse({required this.properties, required this.type, });
 

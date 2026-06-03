@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryByIpVersionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_summary_by_ip_version_response/radar_get_attacks_layer7_summary_by_ip_version_response_result.dart';@immutable final class RadarGetAttacksLayer7SummaryByIpVersionResponse {const RadarGetAttacksLayer7SummaryByIpVersionResponse({required this.result, required this.success, });
 

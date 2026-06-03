@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCrawlersTimeseriesGroupClientType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the client.
 @immutable final class RadarGetCrawlersTimeseriesGroupClientType {const RadarGetCrawlersTimeseriesGroupClientType._(this.value);

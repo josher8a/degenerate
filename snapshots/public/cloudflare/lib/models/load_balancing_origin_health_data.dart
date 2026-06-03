@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingOriginHealthData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The origin ipv4/ipv6 address or domain name mapped to its health data.
 /// 

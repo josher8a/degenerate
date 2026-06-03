@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AmountDetailsParam (inline: LineItems > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_param/variant1_payment_method_options.dart';import 'package:pub_stripe_spec3/models/amount_details_param/variant1_tax.dart';@immutable final class LineItemsVariant1 {const LineItemsVariant1({required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
 

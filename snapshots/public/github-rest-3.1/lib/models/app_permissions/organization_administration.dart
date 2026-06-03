@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: OrganizationAdministration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage access to an organization.
 @immutable final class OrganizationAdministration {const OrganizationAdministration._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsArtifactAndLogRetentionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsArtifactAndLogRetentionResponse {const ActionsArtifactAndLogRetentionResponse({required this.days, required this.maximumAllowedDays, });
 

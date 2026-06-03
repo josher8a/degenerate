@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIndicatorTypeCreateResponse400 (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_indicator_type_create_response400/application_json.dart';@immutable final class PostIndicatorTypeCreateResponse400Content {const PostIndicatorTypeCreateResponse400Content({required this.applicationJson});
 

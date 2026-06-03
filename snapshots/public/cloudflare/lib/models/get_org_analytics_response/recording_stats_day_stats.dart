@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetOrgAnalyticsResponse (inline: Data > RecordingStats > DayStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RecordingStatsDayStats {const RecordingStatsDayStats({this.day, this.totalRecordingMinutes, this.totalRecordings, });
 

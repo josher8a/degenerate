@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphDiff
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff/dependency_graph_diff_vulnerabilities.dart';@immutable final class ChangeType {const ChangeType._(this.value);
 

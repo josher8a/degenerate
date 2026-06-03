@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon17
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_pages_messages2.dart';@immutable final class ResponseCommon17 {const ResponseCommon17({required this.errors, required this.messages, required this.success, });
 

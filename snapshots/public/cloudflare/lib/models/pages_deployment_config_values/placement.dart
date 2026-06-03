@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValues (inline: Placement)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Placement setting used for Pages Functions.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerResource (inline: NetworkPolicy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network policy mode.
 @immutable final class NetworkPolicyType {const NetworkPolicyType._(this.value);

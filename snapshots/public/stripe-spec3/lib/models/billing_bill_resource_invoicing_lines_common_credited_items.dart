@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingLinesCommonCreditedItems
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class BillingBillResourceInvoicingLinesCommonCreditedItems {const BillingBillResourceInvoicingLinesCommonCreditedItems({required this.invoice, required this.invoiceLineItems, });

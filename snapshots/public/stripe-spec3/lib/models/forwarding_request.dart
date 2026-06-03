@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ForwardingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_context.dart';import 'package:pub_stripe_spec3/models/forwarded_request_details.dart';import 'package:pub_stripe_spec3/models/forwarded_response_details.dart';import 'package:pub_stripe_spec3/models/forwarding_request/replacements.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ForwardingRequestObject {const ForwardingRequestObject._(this.value);

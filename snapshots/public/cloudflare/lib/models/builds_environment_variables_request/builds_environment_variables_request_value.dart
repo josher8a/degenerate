@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsEnvironmentVariablesRequest (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_is_secret.dart';@immutable final class BuildsEnvironmentVariablesRequestValue {const BuildsEnvironmentVariablesRequestValue({required this.isSecret, this.value, });
 

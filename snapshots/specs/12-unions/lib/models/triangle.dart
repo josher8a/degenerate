@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Triangle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Triangle {const Triangle({required this.type, required this.base, required this.height, this.angles, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostSnapshotResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';import 'package:pub_cloudflare/models/brapi_post_content_response/brapi_post_content_response_meta.dart';import 'package:pub_cloudflare/models/brapi_post_snapshot_response/brapi_post_snapshot_response_result.dart';@immutable final class BrapiPostSnapshotResponse {const BrapiPostSnapshotResponse({required this.meta, required this.success, this.errors, this.result, });
 

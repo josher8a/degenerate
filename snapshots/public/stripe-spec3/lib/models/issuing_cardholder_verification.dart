@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardholderVerification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document.dart';/// 
 @immutable final class IssuingCardholderVerification {const IssuingCardholderVerification({this.document});

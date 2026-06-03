@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsBuildResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_outcome.dart';import 'package:pub_cloudflare/models/builds_build_response/builds_build_response_trigger.dart';import 'package:pub_cloudflare/models/builds_build_response/pull_request.dart';import 'package:pub_cloudflare/models/builds_build_trigger_metadata_response.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_stopped_on.dart';@immutable final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
 

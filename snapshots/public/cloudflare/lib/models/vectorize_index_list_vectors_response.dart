@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexListVectorsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_list_item.dart';@immutable final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, required this.isTruncated, required this.totalCount, required this.vectors, this.cursorExpirationTimestamp, this.nextCursor, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersUsageModelResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_usage_model_response/workers_usage_model_response_result.dart';@immutable final class WorkersUsageModelResponse {const WorkersUsageModelResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

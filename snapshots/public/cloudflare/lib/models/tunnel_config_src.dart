@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelConfigSrc
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
 @immutable final class TunnelConfigSrc {const TunnelConfigSrc._(this.value);

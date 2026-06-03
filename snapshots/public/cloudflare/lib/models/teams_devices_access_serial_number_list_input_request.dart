@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesAccessSerialNumberListInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesAccessSerialNumberListInputRequest {const TeamsDevicesAccessSerialNumberListInputRequest({required this.id});
 

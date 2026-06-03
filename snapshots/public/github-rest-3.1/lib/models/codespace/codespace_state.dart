@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Codespace (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of this codespace.
 @immutable final class CodespaceState {const CodespaceState._(this.value);

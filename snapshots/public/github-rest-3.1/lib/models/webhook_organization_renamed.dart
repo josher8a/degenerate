@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookOrganizationRenamed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/webhook_installation_target_renamed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_renamed/webhook_organization_renamed_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_membership.dart';@immutable final class WebhookOrganizationRenamed {const WebhookOrganizationRenamed({required this.action, required this.organization, required this.sender, this.changes, this.enterprise, this.installation, this.membership, this.repository, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningVariantAnalysis (inline: SkippedRepositories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/not_found_repos.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_skipped_repo_group.dart';/// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
 @immutable final class SkippedRepositories {const SkippedRepositories({required this.accessMismatchRepos, required this.notFoundRepos, required this.noCodeqlDbRepos, required this.overLimitRepos, });

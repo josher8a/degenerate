@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigSearchResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/result_data.dart';@immutable final class AutoragConfigSearchResponseResult {const AutoragConfigSearchResponseResult({required this.searchQuery, this.data, this.hasMore = false, this.nextPage, this.object, });
 

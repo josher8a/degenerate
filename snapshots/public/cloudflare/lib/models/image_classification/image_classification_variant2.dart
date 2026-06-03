@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageClassification (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageClassificationVariant2 {const ImageClassificationVariant2({required this.image});
 

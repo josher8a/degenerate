@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages10_functions.dart';import 'package:pub_cloudflare/models/messages/messages10_tools.dart';import 'package:pub_cloudflare/models/messages/messages28_messages.dart';import 'package:pub_cloudflare/models/messages/messages_image.dart';import 'package:pub_cloudflare/models/messages/tools_variant1.dart';import 'package:pub_cloudflare/models/messages/tools_variant2.dart';@immutable final class Messages28 {const Messages28({required this.messages, this.frequencyPenalty, this.functions, this.image, this.maxTokens = 256, this.presencePenalty, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
 

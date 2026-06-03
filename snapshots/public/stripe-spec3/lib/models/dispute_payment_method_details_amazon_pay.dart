@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputePaymentMethodDetailsAmazonPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The AmazonPay dispute type, chargeback or claim
 @immutable final class DisputeType {const DisputeType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesDisableZaraz
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off [Zaraz](https://developers.cloudflare.com/zaraz/).
 /// 

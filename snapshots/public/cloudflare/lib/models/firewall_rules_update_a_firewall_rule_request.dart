@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallRulesUpdateAFirewallRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/firewall_filter.dart';@immutable final class FirewallRulesUpdateAFirewallRuleRequest {const FirewallRulesUpdateAFirewallRuleRequest({required this.action, required this.filter, required this.id, });
 

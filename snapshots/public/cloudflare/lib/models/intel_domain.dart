@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_additional_information.dart';import 'package:pub_cloudflare/models/intel_application.dart';import 'package:pub_cloudflare/models/intel_category_with_super_category_id.dart';import 'package:pub_cloudflare/models/intel_content_categories2.dart';import 'package:pub_cloudflare/models/intel_domain_name.dart';import 'package:pub_cloudflare/models/intel_inherited_from.dart';import 'package:pub_cloudflare/models/intel_popularity_rank.dart';import 'package:pub_cloudflare/models/intel_resolves_to_ref.dart';import 'package:pub_cloudflare/models/intel_risk_score.dart';@immutable final class IntelDomain {const IntelDomain({this.additionalInformation, this.application, this.contentCategories, this.domain, this.inheritedContentCategories, this.inheritedFrom, this.inheritedRiskTypes, this.popularityRank, this.resolvesToRefs, this.riskScore, this.riskTypes, });
 

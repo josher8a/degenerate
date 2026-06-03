@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTransactionGbpCreditTransferData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceTransactionGbpCreditTransferData {const SourceTransactionGbpCreditTransferData({this.fingerprint, this.fundingMethod, this.last4, this.reference, this.senderAccountNumber, this.senderName, this.senderSortCode, });

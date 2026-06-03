@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPropertySetPayload (inline: ValuesEditableBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Who can edit the values of the property
 @immutable final class ValuesEditableBy {const ValuesEditableBy._(this.value);

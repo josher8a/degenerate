@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > FinancialAccount > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FinancialAccountFeatures {const FinancialAccountFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, this.sendMoney, this.transferBalance, });
 

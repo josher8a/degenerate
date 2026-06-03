@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesSmartTieredCachePatch (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable or disable the Smart Tiered Cache.
 @immutable final class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue._(this.value);

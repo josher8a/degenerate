@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CostsResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result/amount.dart';@immutable final class CostsResultObject {const CostsResultObject._(this.value);
 

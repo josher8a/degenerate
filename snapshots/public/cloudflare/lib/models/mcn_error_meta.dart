@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnErrorMeta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnErrorMeta {const McnErrorMeta({this.l10nKey, this.loggableError, this.templateData, this.traceId, });
 

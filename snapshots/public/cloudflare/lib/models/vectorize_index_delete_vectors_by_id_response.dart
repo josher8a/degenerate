@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexDeleteVectorsByIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexDeleteVectorsByIdResponse {const VectorizeIndexDeleteVectorsByIdResponse({this.count, this.ids, });
 

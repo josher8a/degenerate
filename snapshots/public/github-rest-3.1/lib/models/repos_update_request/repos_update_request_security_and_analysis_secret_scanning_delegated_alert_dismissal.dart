@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateRequest (inline: SecurityAndAnalysis > SecretScanningDelegatedAlertDismissal)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
 @immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status});

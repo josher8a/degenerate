@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EphemeralVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_claim_template.dart';/// Represents an ephemeral volume that is handled by a normal storage driver.
 @immutable final class EphemeralVolumeSource {const EphemeralVolumeSource({this.volumeClaimTemplate});

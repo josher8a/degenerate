@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_account_type.dart';import 'package:pub_cloudflare/models/iam_create_account/unit.dart';@immutable final class IamCreateAccount {const IamCreateAccount({required this.name, this.type, this.unit, });
 

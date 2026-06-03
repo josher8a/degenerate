@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCollectionPermissionGroupsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';@immutable final class IamCollectionPermissionGroupsResponse {const IamCollectionPermissionGroupsResponse({this.result});
 

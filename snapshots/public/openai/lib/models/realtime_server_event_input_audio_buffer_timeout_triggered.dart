@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventInputAudioBufferTimeoutTriggered
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the Server VAD timeout is triggered for the input audio buffer. This is configured
 /// with `idle_timeout_ms` in the `turn_detection` settings of the session, and it indicates that

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityDomain (inline: SpfStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpfStatus {const SpfStatus._(this.value);
 

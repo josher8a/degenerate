@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToolChoice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Tool selection that the assistant should honor when executing the item.
 @immutable final class ToolChoice {const ToolChoice({required this.id});

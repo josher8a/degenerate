@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClientCertificateForAZoneCreateClientCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_csr.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_validity_days.dart';@immutable final class ClientCertificateForAZoneCreateClientCertificateRequest {const ClientCertificateForAZoneCreateClientCertificateRequest({required this.csr, required this.validityDays, });
 

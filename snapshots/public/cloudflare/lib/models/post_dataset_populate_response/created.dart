@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties > Datasets > Items > Properties > Attackers > Properties > Created)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Created {const Created({required this.type});
 

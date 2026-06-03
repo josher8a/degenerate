@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualitySpeedHistogramMetricGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics to be returned.
 @immutable final class RadarGetQualitySpeedHistogramMetricGroup {const RadarGetQualitySpeedHistogramMetricGroup._(this.value);

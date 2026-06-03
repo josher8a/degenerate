@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningUpdateOrgPatternConfigsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_row_version.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_update_org_pattern_configs_request/custom_pattern_settings.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_update_org_pattern_configs_request/provider_pattern_settings.dart';@immutable final class SecretScanningUpdateOrgPatternConfigsRequest {const SecretScanningUpdateOrgPatternConfigsRequest({this.patternConfigVersion, this.providerPatternSettings, this.customPatternSettings, });
 

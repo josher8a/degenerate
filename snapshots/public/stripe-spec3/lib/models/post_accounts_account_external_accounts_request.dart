@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountExternalAccountsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountExternalAccountsRequest {const PostAccountsAccountExternalAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
 

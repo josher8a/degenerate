@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestMergeResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Pull Request Merge Result
 @immutable final class PullRequestMergeResult {const PullRequestMergeResult({required this.sha, required this.merged, required this.message, });

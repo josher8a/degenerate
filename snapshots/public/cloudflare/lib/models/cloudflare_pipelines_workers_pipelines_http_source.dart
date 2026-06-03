@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesHttpSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source/cloudflare_pipelines_workers_pipelines_binding_source_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_http_source/cors.dart';/// `[DEPRECATED]` HTTP source configuration. Use the new streams API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesHttpSource {const CloudflarePipelinesWorkersPipelinesHttpSource({required this.format, required this.type, this.authentication, this.cors, });

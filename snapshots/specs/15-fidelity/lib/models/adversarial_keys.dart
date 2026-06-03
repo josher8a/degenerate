@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AdversarialKeys
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AdversarialKeys {const AdversarialKeys({this.itS, this.keywithquotes, this.$dollar, this.backslash, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_timeseries_group_by_cache_hit_status_response/radar_get_dns_timeseries_group_by_cache_hit_status_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponse({required this.result, required this.success, });
 

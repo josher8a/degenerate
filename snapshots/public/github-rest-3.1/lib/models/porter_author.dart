@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PorterAuthor
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Porter Author
 @immutable final class PorterAuthor {const PorterAuthor({required this.id, required this.remoteId, required this.remoteName, required this.email, required this.name, required this.url, required this.importUrl, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsUrlNormalization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The scope of the URL normalization.
 @immutable final class RulesetsUrlNormalizationScope {const RulesetsUrlNormalizationScope._(this.value);

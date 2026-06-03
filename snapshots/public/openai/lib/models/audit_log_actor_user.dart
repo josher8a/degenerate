@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLogActorUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who performed the audit logged action.
 @immutable final class AuditLogActorUser {const AuditLogActorUser({this.id, this.email, });

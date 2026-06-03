@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingDelegateLoaCreation
 
 /// Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.
 extension type const AddressingDelegateLoaCreation(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransferSpeiRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// SPEI Records contain Mexico bank account details per the SPEI format.
 @immutable final class FundingInstructionsBankTransferSpeiRecord {const FundingInstructionsBankTransferSpeiRecord({required this.accountHolderAddress, required this.accountHolderName, required this.bankAddress, required this.bankCode, required this.bankName, required this.clabe, });

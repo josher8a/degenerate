@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GrammarFormat (inline: Grammar)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The syntax of the grammar definition. One of `lark` or `regex`.
 @immutable final class Syntax {const Syntax._(this.value);

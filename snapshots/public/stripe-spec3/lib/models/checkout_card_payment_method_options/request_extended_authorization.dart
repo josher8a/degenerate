@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCardPaymentMethodOptions (inline: RequestExtendedAuthorization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to [capture beyond the standard authorization validity window](/payments/extended-authorization) for this CheckoutSession.
 @immutable final class RequestExtendedAuthorization {const RequestExtendedAuthorization._(this.value);

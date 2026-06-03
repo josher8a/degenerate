@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallSchemasAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
 @immutable final class FirewallSchemasAction {const FirewallSchemasAction._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsPrivatePaymentMethodsKlarnaDob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsPrivatePaymentMethodsKlarnaDob {const PaymentFlowsPrivatePaymentMethodsKlarnaDob({this.day, this.month, this.year, });

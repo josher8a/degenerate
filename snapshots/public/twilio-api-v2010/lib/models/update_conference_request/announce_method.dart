@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateConferenceRequest (inline: AnnounceMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`
 @immutable final class AnnounceMethod {const AnnounceMethod._(this.value);

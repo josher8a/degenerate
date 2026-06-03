@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesGeoRestrictions (inline: Label)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Label {const Label._(this.value);
 

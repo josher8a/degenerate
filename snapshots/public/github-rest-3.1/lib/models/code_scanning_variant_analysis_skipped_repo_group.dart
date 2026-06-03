@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningVariantAnalysisSkippedRepoGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_repository.dart';@immutable final class CodeScanningVariantAnalysisSkippedRepoGroup {const CodeScanningVariantAnalysisSkippedRepoGroup({required this.repositoryCount, required this.repositories, });
 

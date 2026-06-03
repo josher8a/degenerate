@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldEditSingleRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_after.dart';import 'package:pub_cloudflare/models/shield_before.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_expression.dart';import 'package:pub_cloudflare/models/shield_index.dart';import 'package:pub_cloudflare/models/shield_position.dart';import 'package:pub_cloudflare/models/shield_schemas_description.dart';import 'package:pub_cloudflare/models/shield_schemas_title.dart';import 'package:pub_cloudflare/models/shield_selector.dart';@immutable final class ShieldEditSingleRuleRequest {const ShieldEditSingleRuleRequest({this.action, this.description, this.enabled, this.expression, this.selector, this.title, this.position, });
 

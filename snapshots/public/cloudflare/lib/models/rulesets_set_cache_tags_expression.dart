@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheTagsExpression
 
 /// An expression that evaluates to an array of cache tag values.
 extension type const RulesetsSetCacheTagsExpression(String value) {

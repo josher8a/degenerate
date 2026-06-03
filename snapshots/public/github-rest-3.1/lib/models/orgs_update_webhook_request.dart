@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsUpdateWebhookRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_update_webhook_request/orgs_update_webhook_request_config.dart';@immutable final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active = true, this.name, });
 

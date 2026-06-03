@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest (inline: VerificationData > ThreeDSecure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_three_d_secure/issuing_authorization_three_d_secure_result.dart';@immutable final class VerificationDataThreeDSecure {const VerificationDataThreeDSecure({required this.result});
 

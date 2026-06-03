@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > PaymentDisputes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request/payment_disputes_features.dart';@immutable final class PaymentDisputes {const PaymentDisputes({required this.enabled, this.features, });
 

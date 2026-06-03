@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSubscriptionDeleteUserSubscriptionResponse4Xx
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages5.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';@immutable final class UserSubscriptionDeleteUserSubscriptionResponse4Xx {const UserSubscriptionDeleteUserSubscriptionResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.subscriptionId, });
 

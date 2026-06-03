@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FetchAllLivestreamsResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_all_livestreams_response/fetch_all_livestreams_response_data_paging.dart';import 'package:pub_cloudflare/models/realtimekit_livestream_base/realtimekit_livestream_base_status.dart';@immutable final class FetchAllLivestreamsResponseData {const FetchAllLivestreamsResponseData({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.paging, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 

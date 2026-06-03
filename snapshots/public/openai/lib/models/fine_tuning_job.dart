@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningJob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_method.dart';import 'package:pub_openai/models/fine_tuning_integration.dart';import 'package:pub_openai/models/fine_tuning_job/fine_tuning_job_error.dart';import 'package:pub_openai/models/fine_tuning_job/fine_tuning_job_hyperparameters.dart';/// The object type, which is always "fine_tuning.job".
 @immutable final class FineTuningJobObject {const FineTuningJobObject._(this.value);

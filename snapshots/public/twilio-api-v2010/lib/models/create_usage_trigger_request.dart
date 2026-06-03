@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateUsageTriggerRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_usage_trigger_request/create_usage_trigger_request_callback_method.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_recurring.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_trigger_field.dart';@immutable final class CreateUsageTriggerRequest {const CreateUsageTriggerRequest({required this.callbackUrl, required this.triggerValue, required this.usageCategory, this.callbackMethod, this.friendlyName, this.recurring, this.triggerBy, });
 

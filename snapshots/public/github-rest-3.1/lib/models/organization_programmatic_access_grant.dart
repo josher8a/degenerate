@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationProgrammaticAccessGrant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant/organization_programmatic_access_grant_permissions.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant/organization_programmatic_access_grant_repository_selection.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Minimal representation of an organization programmatic access grant for enumerations
 @immutable final class OrganizationProgrammaticAccessGrant {const OrganizationProgrammaticAccessGrant({required this.id, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.accessGrantedAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });

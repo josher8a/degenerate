@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon29
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class ResponseCommon29 {const ResponseCommon29({required this.errors, required this.messages, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: QueueProducers > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Queue Producer binding.
 @immutable final class PagesDeploymentConfigValuesRequestQueueProducersValue {const PagesDeploymentConfigValuesRequestQueueProducersValue({required this.name});

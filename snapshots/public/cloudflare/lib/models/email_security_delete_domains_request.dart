@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityDeleteDomainsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityDeleteDomainsRequest {const EmailSecurityDeleteDomainsRequest({required this.id});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsDeleteAttestationsBulkRequest (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsDeleteAttestationsBulkRequestVariant2 {const OrgsDeleteAttestationsBulkRequestVariant2({required this.attestationIds});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunObject (inline: IncompleteDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
 @immutable final class RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason._(this.value);

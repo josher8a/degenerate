@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCompletionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_model.dart';import 'package:pub_openai/models/create_completion_request/create_completion_request_prompt.dart';import 'package:pub_openai/models/stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = 1, this.echo = false, this.frequencyPenalty = 0.0, this.logitBias, this.logprobs, this.maxTokens = 16, this.n = 1, this.presencePenalty = 0.0, this.seed, this.stop, this.stream = false, this.streamOptions, this.suffix, this.temperature = 1.0, this.topP = 1.0, this.user, });
 

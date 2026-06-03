@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesGroupByIpVersionResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResultSerie0 {const RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResultSerie0({required this.iPv4, required this.iPv6, });
 

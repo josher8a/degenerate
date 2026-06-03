@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TopLocationsByDnssecDnssec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNSSEC (DNS Security Extensions) status.
 @immutable final class RadarGetDnsAs112TopLocationsByDnssecDnssec {const RadarGetDnsAs112TopLocationsByDnssecDnssec._(this.value);

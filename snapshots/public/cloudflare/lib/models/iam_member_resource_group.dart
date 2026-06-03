@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamMemberResourceGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of scoped resources.
 @immutable final class IamMemberResourceGroup {const IamMemberResourceGroup({required this.id});

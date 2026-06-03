@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionResponse (inline: Chunks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/item.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/scoring_details.dart';@immutable final class Chunks {const Chunks({required this.id, required this.score, required this.text, required this.type, this.item, this.scoringDetails, });
 

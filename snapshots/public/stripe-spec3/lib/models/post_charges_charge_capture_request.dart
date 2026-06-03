@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesChargeCaptureRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';@immutable final class PostChargesChargeCaptureRequest {const PostChargesChargeCaptureRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.expand, this.receiptEmail, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 

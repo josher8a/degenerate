@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: OrganizationProjects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage organization projects and projects public preview (where available).
 @immutable final class AppPermissionsOrganizationProjects {const AppPermissionsOrganizationProjects._(this.value);

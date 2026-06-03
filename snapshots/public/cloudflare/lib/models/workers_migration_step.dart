@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersMigrationStep
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_migration_step/renamed_classes.dart';import 'package:pub_cloudflare/models/workers_migration_step/transferred_classes.dart';@immutable final class WorkersMigrationStep {const WorkersMigrationStep({this.deletedClasses, this.newClasses, this.newSqliteClasses, this.renamedClasses, this.transferredClasses, });
 

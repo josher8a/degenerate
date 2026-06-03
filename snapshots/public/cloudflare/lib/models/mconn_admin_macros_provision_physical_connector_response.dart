@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminMacrosProvisionPhysicalConnectorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_macros_provision_physical_connector_result.dart';@immutable final class MconnAdminMacrosProvisionPhysicalConnectorResponse {const MconnAdminMacrosProvisionPhysicalConnectorResponse({this.result});
 

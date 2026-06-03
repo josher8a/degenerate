@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityMnmMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicVisibilityMnmMessages2 {const MagicVisibilityMnmMessages2({required this.code, required this.message, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicesResourceStatusTransitions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class InvoicesResourceStatusTransitions {const InvoicesResourceStatusTransitions({this.finalizedAt, this.markedUncollectibleAt, this.paidAt, this.voidedAt, });

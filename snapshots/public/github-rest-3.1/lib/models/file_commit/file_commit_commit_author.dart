@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCommit (inline: Commit > Author)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitAuthor {const FileCommitCommitAuthor({this.date, this.name, this.email, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallIpConfiguration (inline: Target)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip` when specifying an IP address in the rule.
 @immutable final class FirewallIpConfigurationTarget {const FirewallIpConfigurationTarget._(this.value);

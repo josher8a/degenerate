@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeAlipay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAlipay {const SourceTypeAlipay({this.dataString, this.nativeUrl, this.statementDescriptor, });
 

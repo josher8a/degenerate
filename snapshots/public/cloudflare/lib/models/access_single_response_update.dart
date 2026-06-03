@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSingleResponseUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';@immutable final class AccessSingleResponseUpdate {const AccessSingleResponseUpdate({this.result});
 

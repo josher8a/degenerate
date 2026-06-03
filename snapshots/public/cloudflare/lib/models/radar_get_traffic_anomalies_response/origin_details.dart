@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTrafficAnomaliesResponse (inline: Result > TrafficAnomalies > OriginDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OriginDetails {const OriginDetails({required this.name, required this.origin, });
 

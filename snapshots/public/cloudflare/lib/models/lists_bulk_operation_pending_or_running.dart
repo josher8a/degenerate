@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsBulkOperationPendingOrRunning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';/// The current status of the asynchronous operation.
 @immutable final class ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus._(this.value);

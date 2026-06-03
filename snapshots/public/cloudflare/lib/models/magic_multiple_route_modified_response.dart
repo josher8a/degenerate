@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicMultipleRouteModifiedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_multiple_route_modified_response/magic_multiple_route_modified_response_result.dart';@immutable final class MagicMultipleRouteModifiedResponse {const MagicMultipleRouteModifiedResponse({this.result});
 

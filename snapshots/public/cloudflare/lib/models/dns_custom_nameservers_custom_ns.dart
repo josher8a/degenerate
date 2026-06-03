@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsCustomNameserversCustomNs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_custom_ns/dns_records.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_ns_name.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_ns_set.dart';/// Identifier.
 extension type const DnsCustomNameserversSchemasIdentifier(String value) {

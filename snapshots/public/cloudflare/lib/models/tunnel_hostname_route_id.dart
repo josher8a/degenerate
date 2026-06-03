@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelHostnameRouteId
 
 /// The hostname route ID.
 extension type const TunnelHostnameRouteId(String value) {

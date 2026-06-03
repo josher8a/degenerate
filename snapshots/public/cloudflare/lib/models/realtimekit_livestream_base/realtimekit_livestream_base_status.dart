@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitLivestreamBase (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the livestream.
 @immutable final class RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus._(this.value);

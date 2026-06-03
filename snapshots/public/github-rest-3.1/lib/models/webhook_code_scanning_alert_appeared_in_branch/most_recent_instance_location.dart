@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch (inline: Alert > MostRecentInstance > Location)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MostRecentInstanceLocation {const MostRecentInstanceLocation({this.endColumn, this.endLine, this.path, this.startColumn, this.startLine, });
 

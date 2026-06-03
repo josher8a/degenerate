@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchUsersOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchUsersOrder {const SearchUsersOrder._(this.value);
 

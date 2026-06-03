@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeIdeal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeIdeal {const SourceTypeIdeal({this.bank, this.bic, this.ibanLast4, this.statementDescriptor, });
 

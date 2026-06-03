@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnCatalogSync
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_destination_type.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_id.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_update_mode.dart';import 'package:pub_cloudflare/models/mcn_error.dart';extension type const McnCatalogSyncDestinationId(String value) {
 factory McnCatalogSyncDestinationId.fromJson(String json) { if (!RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(json)) throw FormatException('Invalid uuid', json);

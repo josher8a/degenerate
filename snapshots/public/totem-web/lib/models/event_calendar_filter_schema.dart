@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EventCalendarFilterSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EventCalendarFilterSchema {const EventCalendarFilterSchema({this.spaceSlug = '', this.month = 3, this.year = 2026, });
 

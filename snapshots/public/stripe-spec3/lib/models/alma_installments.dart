@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlmaInstallments
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class AlmaInstallments {const AlmaInstallments({required this.count});

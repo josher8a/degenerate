@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateImageRequest (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2._(this.value);
 

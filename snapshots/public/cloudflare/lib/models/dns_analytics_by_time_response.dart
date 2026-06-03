@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsByTimeResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_report_bytime.dart';@immutable final class DnsAnalyticsByTimeResponse {const DnsAnalyticsByTimeResponse({this.result});
 

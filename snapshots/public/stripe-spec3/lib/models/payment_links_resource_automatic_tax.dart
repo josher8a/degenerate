@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceAutomaticTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// 
 @immutable final class PaymentLinksResourceAutomaticTax {const PaymentLinksResourceAutomaticTax({required this.enabled, this.liability, });

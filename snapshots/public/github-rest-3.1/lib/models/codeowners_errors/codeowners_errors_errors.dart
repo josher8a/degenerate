@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeownersErrors (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeownersErrorsErrors {const CodeownersErrorsErrors({required this.line, required this.column, required this.kind, required this.message, required this.path, this.source, this.suggestion, });
 

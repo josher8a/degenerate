@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse2 (inline: Log > Entries > Request)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_request_headers.dart';@immutable final class EntriesRequest {const EntriesRequest({required this.bodySize, required this.headers, required this.headersSize, required this.httpVersion, required this.method, required this.url, });
 

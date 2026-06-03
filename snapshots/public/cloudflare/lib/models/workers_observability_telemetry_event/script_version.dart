@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityTelemetryEvent (inline: $workers > Variant1 > ScriptVersion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScriptVersion {const ScriptVersion({this.id, this.message, this.tag, });
 

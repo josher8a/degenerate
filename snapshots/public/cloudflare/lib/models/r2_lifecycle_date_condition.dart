@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LifecycleDateCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_date_condition/r2_lifecycle_date_condition_type.dart';/// Condition for lifecycle transitions to apply on a specific date.
 @immutable final class R2LifecycleDateCondition {const R2LifecycleDateCondition({required this.date, required this.type, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAppsSecretsFindScope (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret scope type.
 @immutable final class GetAppsSecretsFindScopeType {const GetAppsSecretsFindScopeType._(this.value);

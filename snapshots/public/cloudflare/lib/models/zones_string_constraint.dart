@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesStringConstraint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String constraint.
 @immutable final class ZonesStringConstraint {const ZonesStringConstraint({required this.$operator, required this.value, });

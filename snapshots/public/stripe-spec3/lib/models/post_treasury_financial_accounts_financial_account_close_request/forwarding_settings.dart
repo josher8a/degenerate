@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryFinancialAccountsFinancialAccountCloseRequest (inline: ForwardingSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ForwardingSettingsType {const ForwardingSettingsType._(this.value);
 

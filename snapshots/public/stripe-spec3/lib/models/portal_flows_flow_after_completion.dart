@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsFlowAfterCompletion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_after_completion_hosted_confirmation.dart';import 'package:pub_stripe_spec3/models/portal_flows_after_completion_redirect.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow_after_completion/portal_flows_flow_after_completion_type.dart';/// 
 @immutable final class PortalFlowsFlowAfterCompletion {const PortalFlowsFlowAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });

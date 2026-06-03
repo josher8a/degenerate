@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPricesRequest (inline: CustomUnitAmount)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesRequestCustomUnitAmount {const PostPricesRequestCustomUnitAmount({required this.enabled, this.maximum, this.minimum, this.preset, });
 

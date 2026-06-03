@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerStats > Events > Metadata > ConnectionInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/connection_info_connectivity.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/connection_info_location.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/ip_details.dart';@immutable final class ConnectionInfo {const ConnectionInfo({this.backendRTT, this.connectivity, this.effectiveNetworkType, this.fractionalLoss, this.ipDetails, this.jitter, this.location, this.rTT, this.throughput, this.turnConnectivity, });
 

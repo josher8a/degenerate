@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_description.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/firewall_schemas_paused.dart';import 'package:pub_cloudflare/models/firewall_ua_configuration.dart';@immutable final class UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest {const UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest({required this.configuration, required this.mode, this.description, this.paused, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSchemasTunnelsCollectionResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel.dart';@immutable final class MagicSchemasTunnelsCollectionResponseResult {const MagicSchemasTunnelsCollectionResponseResult({this.ipsecTunnels});
 

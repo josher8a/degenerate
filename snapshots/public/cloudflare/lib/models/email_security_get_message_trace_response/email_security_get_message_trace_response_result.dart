@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityGetMessageTraceResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_get_message_trace_response/inbound.dart';import 'package:pub_cloudflare/models/email_security_get_message_trace_response/result_outbound.dart';@immutable final class EmailSecurityGetMessageTraceResponseResult {const EmailSecurityGetMessageTraceResponseResult({required this.inbound, required this.outbound, });
 

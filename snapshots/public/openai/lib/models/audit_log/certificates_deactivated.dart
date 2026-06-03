@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: CertificatesDeactivated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/certificates.dart';/// The details for events with this `type`.
 @immutable final class CertificatesDeactivated {const CertificatesDeactivated({this.certificates});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelHostnameRouteResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_hostname_route.dart';@immutable final class TunnelHostnameRouteResponseCollection {const TunnelHostnameRouteResponseCollection({this.result});
 

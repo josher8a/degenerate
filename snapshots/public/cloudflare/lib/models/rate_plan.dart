@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RatePlan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/component_value.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/schemas_frequency.dart';import 'package:pub_cloudflare/models/schemas_name.dart';/// The duration of the plan subscription.
 extension type const Duration(double value) {

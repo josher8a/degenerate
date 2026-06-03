@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTagCategoryCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCategoryCreateResponse {const PostTagCategoryCreateResponse({required this.name, required this.uuid, this.createdAt, this.description, this.updatedAt, });
 

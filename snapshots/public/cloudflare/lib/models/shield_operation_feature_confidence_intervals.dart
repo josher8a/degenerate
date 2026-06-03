@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureConfidenceIntervals
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_confidence_intervals/shield_operation_feature_confidence_intervals_confidence_intervals.dart';/// Example:
 /// ```json

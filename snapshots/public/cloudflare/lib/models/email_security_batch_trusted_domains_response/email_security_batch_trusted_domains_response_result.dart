@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchTrustedDomainsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';import 'package:pub_cloudflare/models/email_security_trusted_domain.dart';@immutable final class EmailSecurityBatchTrustedDomainsResponseResult {const EmailSecurityBatchTrustedDomainsResponseResult({required this.deletes, required this.patches, required this.posts, required this.puts, });
 

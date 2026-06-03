@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesChargeRequest (inline: FraudDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserReport {const UserReport._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsReportPaymentRequest (inline: ProcessorDetails > Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom {const PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom({required this.paymentReference});
 

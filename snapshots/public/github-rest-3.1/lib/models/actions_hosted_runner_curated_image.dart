@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsHostedRunnerCuratedImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_curated_image/actions_hosted_runner_curated_image_source.dart';/// Provides details of a hosted runner image
 @immutable final class ActionsHostedRunnerCuratedImage {const ActionsHostedRunnerCuratedImage({required this.id, required this.platform, required this.sizeGb, required this.displayName, required this.source, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Media > Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/can_produce.dart';/// Audio permissions
 @immutable final class RealtimekitPresetPermissionsMediaAudio {const RealtimekitPresetPermissionsMediaAudio({required this.canProduce});

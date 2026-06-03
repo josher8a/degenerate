@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessResourceGroupName
 
 /// The display name of the SCIM Group resource.
 extension type const AccessResourceGroupName(String value) {

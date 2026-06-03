@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopAsesByTlsVersionTlsVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// TLS version.
 @immutable final class RadarGetHttpTopAsesByTlsVersionTlsVersion {const RadarGetHttpTopAsesByTlsVersionTlsVersion._(this.value);

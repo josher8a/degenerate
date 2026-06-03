@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaResponseDiscovery (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';@immutable final class ShieldSchemaResponseDiscoveryResult {const ShieldSchemaResponseDiscoveryResult({required this.schemas, required this.timestamp, });
 

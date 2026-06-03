@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitErrorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_error_response/realtimekit_error_response_error.dart';@immutable final class RealtimekitErrorResponse {const RealtimekitErrorResponse({required this.error, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeCreateIndexResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_description.dart';import 'package:pub_cloudflare/models/vectorize_index_dimension_configuration.dart';import 'package:pub_cloudflare/models/vectorize_index_name.dart';@immutable final class VectorizeCreateIndexResponse {const VectorizeCreateIndexResponse({this.config, this.createdOn, this.description, this.modifiedOn, this.name, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRewriteUriQuery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URI query rewrite.
 @immutable final class RulesetsRewriteUriQuery {const RulesetsRewriteUriQuery({this.expression, this.value, });

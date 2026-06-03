@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asRpkiStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Return only results with matching rpki status: valid, invalid or unknown.
 @immutable final class RadarGetBgpPfx2asRpkiStatus {const RadarGetBgpPfx2asRpkiStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VadConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vad_config/vad_config_type.dart';@immutable final class VadConfig {const VadConfig({required this.type, this.prefixPaddingMs = 300, this.silenceDurationMs = 200, this.threshold = 0.5, });
 

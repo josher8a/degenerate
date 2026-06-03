@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesWorkspaceOneInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Compliance Status.
 @immutable final class TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus._(this.value);

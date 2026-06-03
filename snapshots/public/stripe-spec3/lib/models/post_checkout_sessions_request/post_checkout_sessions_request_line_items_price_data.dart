@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: LineItems > PriceData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/price_data_product_data.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data_recurring.dart';@immutable final class PostCheckoutSessionsRequestLineItemsPriceData {const PostCheckoutSessionsRequestLineItemsPriceData({required this.currency, this.product, this.productData, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 

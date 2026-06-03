@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileClearanceLevel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,
 /// this setting can determine the clearance level to be set

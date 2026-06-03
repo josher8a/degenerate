@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAiBotsSummaryByUserAgentResponse (inline: Result > Meta > Units)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetaUnits {const MetaUnits({required this.name, required this.value, });
 

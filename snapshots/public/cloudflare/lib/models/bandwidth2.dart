@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Bandwidth2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth2/bandwidth2_ssl.dart';import 'package:pub_cloudflare/models/bandwidth2/ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
 @immutable final class Bandwidth2 {const Bandwidth2({this.all, this.cached, this.contentType, this.country, this.ssl, this.sslProtocols, this.uncached, });

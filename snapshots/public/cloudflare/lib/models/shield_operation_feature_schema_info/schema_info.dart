@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureSchemaInfo (inline: SchemaInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_schema_info/active_schema.dart';/// Action taken on requests failing validation.
 @immutable final class SchemaInfoMitigationAction {const SchemaInfoMitigationAction._(this.value);

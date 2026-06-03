@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Port
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Port {const Port({this.number, this.proto, this.status, });
 

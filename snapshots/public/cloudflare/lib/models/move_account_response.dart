@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MoveAccountResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MoveAccountResponse {const MoveAccountResponse({required this.accountId, required this.destinationOrganizationId, required this.sourceOrganizationId, });
 

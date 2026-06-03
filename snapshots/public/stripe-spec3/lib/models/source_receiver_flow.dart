@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceReceiverFlow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceReceiverFlow {const SourceReceiverFlow({required this.amountCharged, required this.amountReceived, required this.amountReturned, required this.refundAttributesMethod, required this.refundAttributesStatus, this.address, });

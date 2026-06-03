@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentLinksRequest (inline: Restrictions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/restrictions_params/completed_sessions.dart';/// Settings that restrict the usage of a payment link.
 @immutable final class PostPaymentLinksRequestRestrictions {const PostPaymentLinksRequestRestrictions({required this.completedSessions});

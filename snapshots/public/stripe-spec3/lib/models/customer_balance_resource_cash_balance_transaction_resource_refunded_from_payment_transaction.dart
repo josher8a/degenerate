@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/refund.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction({required this.refund});

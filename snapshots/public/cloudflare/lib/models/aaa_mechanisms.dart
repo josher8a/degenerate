@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaMechanisms
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/aaa_mechanisms_email.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/pagerduty.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/webhooks.dart';/// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
 /// 

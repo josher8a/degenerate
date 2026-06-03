@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventMcpListToolsFailed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when listing MCP tools has failed for an item.
 @immutable final class RealtimeServerEventMcpListToolsFailed {const RealtimeServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });

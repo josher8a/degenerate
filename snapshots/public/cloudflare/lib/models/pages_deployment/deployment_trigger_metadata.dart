@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeployment (inline: DeploymentTrigger > Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional info about the trigger.
 @immutable final class DeploymentTriggerMetadata {const DeploymentTriggerMetadata({required this.branch, required this.commitDirty, required this.commitHash, required this.commitMessage, });

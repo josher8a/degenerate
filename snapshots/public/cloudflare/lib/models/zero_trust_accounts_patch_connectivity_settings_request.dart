@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustAccountsPatchConnectivitySettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A flag to enable the ICMP proxy for the account network.
 extension type const TunnelIcmpProxyEnabled(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarReviewResourceLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class RadarReviewResourceLocation {const RadarReviewResourceLocation({this.city, this.country, this.latitude, this.longitude, this.region, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountAddressDependentPhoneNumber (inline: VoiceMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
 @immutable final class AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod._(this.value);

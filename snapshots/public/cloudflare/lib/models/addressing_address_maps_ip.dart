@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingAddressMapsIp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// An IPv4 or IPv6 address.
 extension type const AddressingIp(String value) {

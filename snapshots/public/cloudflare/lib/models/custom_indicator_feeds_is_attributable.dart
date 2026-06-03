@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsIsAttributable
 
 /// Whether the indicator feed can be attributed to a provider
 extension type const CustomIndicatorFeedsIsAttributable(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreSearchResultItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_search_result_content_object.dart';@immutable final class VectorStoreSearchResultItem {const VectorStoreSearchResultItem({required this.fileId, required this.filename, required this.score, required this.attributes, required this.content, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicInterconnectTunnelUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_automatic_return_routing.dart';import 'package:pub_cloudflare/models/magic_gre.dart';import 'package:pub_cloudflare/models/magic_health_check_base.dart';import 'package:pub_cloudflare/models/magic_interconnect_components_schemas_description.dart';import 'package:pub_cloudflare/models/magic_interface_address.dart';import 'package:pub_cloudflare/models/magic_interface_address6.dart';import 'package:pub_cloudflare/models/magic_schemas_mtu.dart';@immutable final class MagicInterconnectTunnelUpdateRequest {const MagicInterconnectTunnelUpdateRequest({this.automaticReturnRouting, this.description, this.gre, this.healthCheck, this.interfaceAddress, this.interfaceAddress6, this.mtu, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDlpSettingsUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting_update.dart';/// Request model for updating DLP account-level settings.
 /// All fields are optional. Missing fields behave differently for PUT vs PATCH:

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PatchEventRawUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchEventRawUpdateResponse {const PatchEventRawUpdateResponse({required this.data, required this.id, });
 

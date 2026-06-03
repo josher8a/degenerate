@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LicenseSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// License Simple
 @immutable final class LicenseSimple {const LicenseSimple({required this.key, required this.name, required this.url, required this.spdxId, required this.nodeId, this.htmlUrl, });

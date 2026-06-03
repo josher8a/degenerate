@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitColo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Source colo city.
 extension type const MagicTransitColoCity(String value) {

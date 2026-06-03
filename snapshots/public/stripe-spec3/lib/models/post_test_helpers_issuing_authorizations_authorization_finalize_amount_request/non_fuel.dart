@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest (inline: Fleet > ReportedBreakdown > NonFuel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NonFuel {const NonFuel({this.grossAmountDecimal});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailScannerGetRuleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule.dart';@immutable final class DlpEmailScannerGetRuleResponse {const DlpEmailScannerGetRuleResponse({this.result});
 

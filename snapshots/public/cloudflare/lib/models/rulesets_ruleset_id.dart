@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRulesetId
 
 /// The unique ID of the ruleset.
 extension type const RulesetsRulesetId(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsResponseBatchObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseBatchObject {const DnsRecordsDnsResponseBatchObject({this.deletes, this.patches, this.posts, this.puts, });
 

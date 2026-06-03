@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetNetflowsSummaryDeprecatedResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsSummaryDeprecatedResponseResultSummary0 {const RadarGetNetflowsSummaryDeprecatedResponseResultSummary0({required this.http, required this.other, });
 

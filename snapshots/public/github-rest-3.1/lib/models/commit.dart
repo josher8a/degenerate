@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Commit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit/commit_author.dart';import 'package:pub_github_rest_3_1/models/commit/commit_commit.dart';import 'package:pub_github_rest_3_1/models/commit/commit_committer.dart';import 'package:pub_github_rest_3_1/models/commit/commit_parents.dart';import 'package:pub_github_rest_3_1/models/commit/stats.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Commit
 @immutable final class Commit {const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats, this.files, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderTextSimilarity (inline: EvaluationMetric)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`,
 /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`,

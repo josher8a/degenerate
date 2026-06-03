@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventRateLimitsUpdated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_rate_limits_updated/rate_limits.dart';/// Emitted at the beginning of a Response to indicate the updated rate limits.
 /// When a Response is created some tokens will be "reserved" for the output

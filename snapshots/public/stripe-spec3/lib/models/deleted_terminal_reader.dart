@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedTerminalReader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';/// 
 @immutable final class DeletedTerminalReader {const DeletedTerminalReader({required this.deleted, required this.deviceType, required this.id, required this.object, required this.serialNumber, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitSecret
 
 /// Bearer token
 extension type const RealtimekitSecret(String value) {

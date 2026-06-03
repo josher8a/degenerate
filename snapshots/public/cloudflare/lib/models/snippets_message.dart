@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SnippetsMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes an API message.
 @immutable final class SnippetsMessage {const SnippetsMessage({required this.message, this.code, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTreasuryReceivedDebitsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryReceivedDebitsStatus {const GetTreasuryReceivedDebitsStatus._(this.value);
 

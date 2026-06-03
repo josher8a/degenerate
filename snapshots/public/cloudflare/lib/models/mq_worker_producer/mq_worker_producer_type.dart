@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqWorkerProducer (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqWorkerProducerType {const MqWorkerProducerType._(this.value);
 

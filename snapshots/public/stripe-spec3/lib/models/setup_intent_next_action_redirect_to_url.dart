@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupIntentNextActionRedirectToUrl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SetupIntentNextActionRedirectToUrl {const SetupIntentNextActionRedirectToUrl({this.returnUrl, this.url, });

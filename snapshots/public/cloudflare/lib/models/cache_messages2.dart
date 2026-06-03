@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CacheMessages2 {const CacheMessages2({required this.code, required this.message, });
 

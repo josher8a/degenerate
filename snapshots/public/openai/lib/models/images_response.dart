@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_gen_usage.dart';/// The background parameter used for the image generation. Either `transparent` or `opaque`.
 @immutable final class ImagesResponseBackground {const ImagesResponseBackground._(this.value);

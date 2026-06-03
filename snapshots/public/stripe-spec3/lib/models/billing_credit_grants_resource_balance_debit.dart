@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingCreditGrantsResourceBalanceDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_applied.dart';/// The type of debit transaction.
 @immutable final class BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType._(this.value);

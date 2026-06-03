@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountBacsDebitPaymentsSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class AccountBacsDebitPaymentsSettings {const AccountBacsDebitPaymentsSettings({this.displayName, this.serviceUserNumber, });

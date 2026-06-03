@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Request > Initiator)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequestInitiator {const RequestInitiator({required this.host, required this.type, required this.url, });
 

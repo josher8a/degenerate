@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificateAuthority
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Certificate Authority that will issue the certificate
 @immutable final class TlsCertificatesAndHostnamesCertificateAuthority {const TlsCertificatesAndHostnamesCertificateAuthority._(this.value);

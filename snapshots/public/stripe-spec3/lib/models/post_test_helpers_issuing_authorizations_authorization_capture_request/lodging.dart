@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest (inline: PurchaseDetails > Lodging)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Lodging {const Lodging({this.checkInAt, this.nights, });
 

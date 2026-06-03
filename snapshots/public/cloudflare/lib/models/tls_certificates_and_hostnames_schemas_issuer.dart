@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSchemasIssuer
 
 /// The certificate authority that issued the certificate.
 extension type const TlsCertificatesAndHostnamesSchemasIssuer(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaginatedResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/load_balancing_result_info.dart';@immutable final class PaginatedResponseCollection {const PaginatedResponseCollection({required this.errors, required this.messages, required this.success, required this.resultInfo, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestMessageContentPartFile (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the content part. Always `file`.
 @immutable final class ChatCompletionRequestMessageContentPartFileType {const ChatCompletionRequestMessageContentPartFileType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsPermissionListItemResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_permission_list_item.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_schemas_messages2.dart';@immutable final class CustomIndicatorFeedsPermissionListItemResponse {const CustomIndicatorFeedsPermissionListItemResponse({required this.errors, required this.messages, required this.success, this.result, });
 

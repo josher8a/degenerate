@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure68
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/speed_messages2.dart';@immutable final class ResponseCommonFailure68 {const ResponseCommonFailure68({required this.errors, required this.messages, required this.result, required this.success, });
 

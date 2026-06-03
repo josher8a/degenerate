@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesProject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_build_config.dart';import 'package:pub_cloudflare/models/pages_deployment.dart';import 'package:pub_cloudflare/models/pages_project/pages_project_deployment_configs.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';import 'package:pub_cloudflare/models/pages_source.dart';@immutable final class PagesProject {const PagesProject({required this.canonicalDeployment, required this.createdOn, required this.deploymentConfigs, required this.framework, required this.frameworkVersion, required this.id, required this.latestDeployment, required this.name, required this.previewScriptName, required this.productionBranch, required this.productionScriptName, required this.usesFunctions, this.buildConfig, this.domains, this.source, this.subdomain, });
 

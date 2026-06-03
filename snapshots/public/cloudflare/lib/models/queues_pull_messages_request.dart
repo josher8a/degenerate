@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesPullMessagesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_batch_size.dart';import 'package:pub_cloudflare/models/mq_visibility_timeout.dart';@immutable final class QueuesPullMessagesRequest {const QueuesPullMessagesRequest({this.batchSize, this.visibilityTimeoutMs, });
 

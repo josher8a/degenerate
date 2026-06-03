@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerIdentifyLicenseKeyResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_identify_license_key_result.dart';@immutable final class MconnControllerIdentifyLicenseKeyResponse {const MconnControllerIdentifyLicenseKeyResponse({this.result});
 

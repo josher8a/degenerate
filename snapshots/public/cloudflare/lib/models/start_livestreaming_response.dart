@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StartLivestreamingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/start_livestreaming_response/start_livestreaming_response_data.dart';@immutable final class StartLivestreamingResponse {const StartLivestreamingResponse({this.data, this.success, });
 

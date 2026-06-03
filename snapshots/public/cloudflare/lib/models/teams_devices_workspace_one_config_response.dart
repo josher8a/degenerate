@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesWorkspaceOneConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Workspace One Config Response.
 @immutable final class TeamsDevicesWorkspaceOneConfigResponse {const TeamsDevicesWorkspaceOneConfigResponse({required this.apiUrl, required this.authUrl, required this.clientId, });

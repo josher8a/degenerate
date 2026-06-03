@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderSetReaderDisplayRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request/cart.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request/post_terminal_readers_reader_set_reader_display_request_type.dart';@immutable final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({required this.type, this.cart, this.expand, });
 

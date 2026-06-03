@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoSessionLastError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification or user-session failure.
 @immutable final class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode._(this.value);

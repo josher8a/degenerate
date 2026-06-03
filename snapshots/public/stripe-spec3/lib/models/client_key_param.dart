@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClientKeyParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/client_key_param/client_key_param_customer_acceptance.dart';/// This hash contains details about the Mandate to create
 @immutable final class ClientKeyParam {const ClientKeyParam({required this.customerAcceptance});

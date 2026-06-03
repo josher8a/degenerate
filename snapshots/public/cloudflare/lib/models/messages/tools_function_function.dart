@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Function > Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToolsFunctionFunction {const ToolsFunctionFunction({required this.name, this.description, this.parameters, this.strict, });
 

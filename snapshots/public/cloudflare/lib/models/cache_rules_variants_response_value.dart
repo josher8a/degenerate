@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesVariantsResponseValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_variants_response_value/cache_rules_variants_response_value_result.dart';@immutable final class CacheRulesVariantsResponseValue {const CacheRulesVariantsResponseValue({this.result});
 

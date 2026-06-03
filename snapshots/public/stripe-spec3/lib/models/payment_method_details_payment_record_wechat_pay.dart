@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsPaymentRecordWechatPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordWechatPay {const PaymentMethodDetailsPaymentRecordWechatPay({this.fingerprint, this.location, this.reader, this.transactionId, });

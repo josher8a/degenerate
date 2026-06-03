@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessRequestMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessRequestMethod2 {const AccessRequestMethod2._(this.value);
 

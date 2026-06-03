@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SepaDebitGeneratedFrom
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/payment_method_card_generated_card/payment_method_card_generated_card_setup_attempt.dart';import 'package:pub_stripe_spec3/models/setup_attempt.dart';/// 
 @immutable final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge, this.setupAttempt, });

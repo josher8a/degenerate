@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessDomainRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_domain_rule/email_domain.dart';/// Match an entire email domain.
 @immutable final class AccessDomainRule {const AccessDomainRule({required this.emailDomain});

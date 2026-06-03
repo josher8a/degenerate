@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseTeamMembershipsBulkAddRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnterpriseTeamMembershipsBulkAddRequest {const EnterpriseTeamMembershipsBulkAddRequest({required this.usernames});
 

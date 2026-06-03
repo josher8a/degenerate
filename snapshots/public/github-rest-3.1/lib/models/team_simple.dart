@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class TeamSimple {const TeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, required this.htmlUrl, required this.repositoriesUrl, required this.slug, required this.type, this.privacy, this.notificationSetting, this.ldapDn, this.organizationId, this.enterpriseId, });

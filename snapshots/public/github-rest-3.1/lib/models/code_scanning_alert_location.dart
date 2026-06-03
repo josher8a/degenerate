@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describe a region within a file for the alert.
 @immutable final class CodeScanningAlertLocation {const CodeScanningAlertLocation({this.path, this.startLine, this.endLine, this.startColumn, this.endColumn, });

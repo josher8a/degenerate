@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestSimple (inline: Labels)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestSimpleLabels {const PullRequestSimpleLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
 

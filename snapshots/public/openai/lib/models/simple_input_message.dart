@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleInputMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleInputMessage {const SimpleInputMessage({required this.role, required this.content, });
 

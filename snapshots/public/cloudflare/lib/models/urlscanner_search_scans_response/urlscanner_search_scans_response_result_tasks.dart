@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerSearchScansResponse (inline: Result > Tasks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response/urlscanner_create_scan_bulk_response_visibility.dart';@immutable final class UrlscannerSearchScansResponseResultTasks {const UrlscannerSearchScansResponseResultTasks({required this.country, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 

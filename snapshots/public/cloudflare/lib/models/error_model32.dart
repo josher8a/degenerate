@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ErrorModel3
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorModel32 {const ErrorModel32({required this.code, required this.message, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaValidationEnableValidationForASchemaRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_validation_enabled.dart';@immutable final class ShieldSchemaValidationEnableValidationForASchemaRequest {const ShieldSchemaValidationEnableValidationForASchemaRequest({this.validationEnabled});
 

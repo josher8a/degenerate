@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentTextAnnotationsFilePathObject (inline: FilePath)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageDeltaContentTextAnnotationsFilePathObjectFilePath {const MessageDeltaContentTextAnnotationsFilePathObjectFilePath({this.fileId});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceStatusTransitions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class QuotesResourceStatusTransitions {const QuotesResourceStatusTransitions({this.acceptedAt, this.canceledAt, this.finalizedAt, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PcmuAudioFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcmu`.
 @immutable final class PcmuAudioFormatType {const PcmuAudioFormatType._(this.value);

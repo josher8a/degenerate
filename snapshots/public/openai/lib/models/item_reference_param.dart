@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemReferenceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of item to reference. Always `item_reference`.
 @immutable final class ItemReferenceParamType {const ItemReferenceParamType._(this.value);

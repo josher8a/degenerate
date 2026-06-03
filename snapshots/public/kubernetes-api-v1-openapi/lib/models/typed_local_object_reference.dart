@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TypedLocalObjectReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
 @immutable final class TypedLocalObjectReference {const TypedLocalObjectReference({this.apiGroup, this.kind = '', this.name = '', });

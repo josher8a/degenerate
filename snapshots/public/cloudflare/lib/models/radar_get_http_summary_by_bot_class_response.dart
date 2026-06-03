@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByBotClassResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_bot_class_response/radar_get_http_summary_by_bot_class_response_result.dart';@immutable final class RadarGetHttpSummaryByBotClassResponse {const RadarGetHttpSummaryByBotClassResponse({required this.result, required this.success, });
 

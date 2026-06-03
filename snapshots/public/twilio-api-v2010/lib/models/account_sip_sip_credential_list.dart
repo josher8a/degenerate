@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountSipSipCredentialList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipCredentialList {const AccountSipSipCredentialList({this.accountSid, this.dateCreated, this.dateUpdated, this.friendlyName, this.sid, this.subresourceUris, this.uri, });
 

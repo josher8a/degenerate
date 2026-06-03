@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchResultTextMatches (inline: Matches)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Matches {const Matches({this.text, this.indices, });
 

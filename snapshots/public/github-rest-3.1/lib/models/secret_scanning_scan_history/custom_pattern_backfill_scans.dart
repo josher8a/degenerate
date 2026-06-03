@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningScanHistory (inline: CustomPatternBackfillScans)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomPatternBackfillScans {const CustomPatternBackfillScans({this.type, this.status, this.completedAt, this.startedAt, this.patternName, this.patternScope, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Authorization (inline: App)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorizationApp {const AuthorizationApp({required this.clientId, required this.name, required this.url, });
 

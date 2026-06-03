@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsCreateArtifactStorageRecordRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact (e.g., active, inactive).
 @immutable final class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus._(this.value);

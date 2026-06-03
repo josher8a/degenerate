@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequest (inline: InputAudioTranscription)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for input audio transcription, defaults to off and can be
 /// set to `null` to turn off once on. Input audio transcription is not native

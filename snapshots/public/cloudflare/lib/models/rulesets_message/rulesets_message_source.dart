@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsMessage (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of this message.
 @immutable final class RulesetsMessageSource {const RulesetsMessageSource({required this.pointer});

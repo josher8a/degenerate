@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OutboundTransfersPaymentMethodDetailsFinancialAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details_financial_account/outbound_payments_payment_method_details_financial_account_network.dart';/// 
 @immutable final class OutboundTransfersPaymentMethodDetailsFinancialAccount {const OutboundTransfersPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });

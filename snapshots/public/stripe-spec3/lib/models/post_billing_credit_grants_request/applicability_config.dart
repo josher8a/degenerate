@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingCreditGrantsRequest (inline: ApplicabilityConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request/applicability_config_scope.dart';/// Configuration specifying what this credit grant applies to. We currently only support `metered` prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them.
 @immutable final class ApplicabilityConfig {const ApplicabilityConfig({required this.scope});

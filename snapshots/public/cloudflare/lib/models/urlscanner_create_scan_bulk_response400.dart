@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanBulkResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response400/urlscanner_create_scan_bulk_response400_errors.dart';@immutable final class UrlscannerCreateScanBulkResponse400 {const UrlscannerCreateScanBulkResponse400({required this.errors, required this.message, required this.status, });
 

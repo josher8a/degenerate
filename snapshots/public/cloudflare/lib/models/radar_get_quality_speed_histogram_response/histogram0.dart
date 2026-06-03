@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualitySpeedHistogramResponse (inline: Result > Histogram0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Histogram0 {const Histogram0({required this.bandwidthDownload, required this.bandwidthUpload, required this.bucketMin, });
 

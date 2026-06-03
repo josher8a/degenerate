@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqEventSourceR2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_source_r2/mq_event_source_r2_type.dart';@immutable final class MqEventSourceR2 {const MqEventSourceR2({this.type});
 

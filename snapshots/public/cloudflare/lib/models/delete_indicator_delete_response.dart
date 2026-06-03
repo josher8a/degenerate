@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteIndicatorDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteIndicatorDeleteResponse {const DeleteIndicatorDeleteResponse({this.message, this.success, });
 

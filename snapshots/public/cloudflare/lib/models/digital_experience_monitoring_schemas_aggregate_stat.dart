@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringSchemasAggregateStat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_unique_devices_total.dart';@immutable final class DigitalExperienceMonitoringSchemasAggregateStat {const DigitalExperienceMonitoringSchemasAggregateStat({this.timestamp, this.uniqueDevicesTotal, this.value, });
 

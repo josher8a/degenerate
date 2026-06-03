@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NameCollectionParams (inline: Individual)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NameCollectionParamsIndividual {const NameCollectionParamsIndividual({required this.enabled, this.optional, });
 

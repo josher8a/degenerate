@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnListResponse (inline: Result > Asns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesAsnListResponseResultAsns {const RadarGetEntitiesAsnListResponseResultAsns({required this.asn, required this.country, required this.countryName, required this.name, this.aka, this.orgName, this.website, });
 

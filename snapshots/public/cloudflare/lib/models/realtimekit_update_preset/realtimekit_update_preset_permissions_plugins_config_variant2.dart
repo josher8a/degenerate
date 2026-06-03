@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Permissions > Plugins > Config > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/access_control.dart';@immutable final class RealtimekitUpdatePresetPermissionsPluginsConfigVariant2 {const RealtimekitUpdatePresetPermissionsPluginsConfigVariant2({this.accessControl, this.handlesViewOnly, });
 

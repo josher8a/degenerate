@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsHttpsRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a HTTPS record.
 @immutable final class DnsRecordsHttpsRecordData {const DnsRecordsHttpsRecordData({this.priority, this.target, this.value, });

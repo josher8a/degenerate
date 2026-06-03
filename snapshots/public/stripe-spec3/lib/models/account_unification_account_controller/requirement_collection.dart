@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountUnificationAccountController (inline: RequirementCollection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating responsibility for collecting requirements on this account. Only returned when the Connect application retrieving the resource controls the account.
 @immutable final class RequirementCollection {const RequirementCollection._(this.value);

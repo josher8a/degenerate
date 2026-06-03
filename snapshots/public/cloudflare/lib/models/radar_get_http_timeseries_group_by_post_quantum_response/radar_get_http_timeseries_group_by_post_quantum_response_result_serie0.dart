@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByPostQuantumResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0({required this.notSupported, required this.supported, required this.timestamps, });
 

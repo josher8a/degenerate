@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeSelectorRequirement
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
 @immutable final class NodeSelectorRequirement {const NodeSelectorRequirement({this.key = '', this.$operator = '', this.values, });

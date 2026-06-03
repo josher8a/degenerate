@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByDkimSpf
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimSpf {const RadarGetEmailRoutingTimeseriesGroupByDkimSpf._(this.value);
 

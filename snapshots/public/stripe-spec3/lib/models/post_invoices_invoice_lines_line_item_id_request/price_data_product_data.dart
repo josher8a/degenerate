@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceLinesLineItemIdRequest (inline: PriceData > ProductData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PriceDataProductData {const PriceDataProductData({required this.name, this.description, this.images, this.metadata, this.taxCode, this.unitLabel, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartshieldResultInfo {const SmartshieldResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 

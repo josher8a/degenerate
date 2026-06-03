@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessServiceTokensComponentsSchemasName
 
 /// The name of the service token.
 extension type const AccessServiceTokensComponentsSchemasName(String value) {

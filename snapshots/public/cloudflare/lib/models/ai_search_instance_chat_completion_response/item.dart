@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionResponse (inline: Chunks > Item)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Item {const Item({required this.key, this.metadata, this.timestamp, });
 

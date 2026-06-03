@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_completion_usage.dart';import 'package:pub_openai/models/run_step_details_message_creation_object.dart';import 'package:pub_openai/models/run_step_details_tool_calls_object.dart';import 'package:pub_openai/models/run_step_object/run_step_object_last_error.dart';import 'package:pub_openai/models/run_step_object/run_step_object_step_details.dart';/// The object type, which is always `thread.run.step`.
 @immutable final class RunStepObjectObject {const RunStepObjectObject._(this.value);

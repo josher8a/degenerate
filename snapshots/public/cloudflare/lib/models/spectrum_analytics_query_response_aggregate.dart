@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumAnalyticsQueryResponseAggregate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query_response_aggregate/spectrum_analytics_query_response_aggregate_result.dart';@immutable final class SpectrumAnalyticsQueryResponseAggregate {const SpectrumAnalyticsQueryResponseAggregate({this.result});
 

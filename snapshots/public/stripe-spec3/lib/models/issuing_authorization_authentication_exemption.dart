@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationAuthenticationExemption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_authentication_exemption/claimed_by.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_authentication_exemption/issuing_authorization_authentication_exemption_type.dart';/// 
 @immutable final class IssuingAuthorizationAuthenticationExemption {const IssuingAuthorizationAuthenticationExemption({required this.claimedBy, required this.type, });

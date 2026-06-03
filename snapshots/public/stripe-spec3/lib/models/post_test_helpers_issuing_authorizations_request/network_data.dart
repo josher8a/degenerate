@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest (inline: NetworkData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the authorization, such as identifiers, set by the card network.
 @immutable final class NetworkData {const NetworkData({this.acquiringInstitutionId});

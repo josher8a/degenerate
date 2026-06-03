@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the state of the rules contained in the rule group. When `on`, the rules in the group are configurable/usable.
 @immutable final class WafManagedRulesMode {const WafManagedRulesMode._(this.value);

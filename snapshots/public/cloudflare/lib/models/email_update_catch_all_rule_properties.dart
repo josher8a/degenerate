@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailUpdateCatchAllRuleProperties
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_catchall_action.dart';import 'package:pub_cloudflare/models/email_rule_catchall_matcher.dart';import 'package:pub_cloudflare/models/email_rule_enabled.dart';import 'package:pub_cloudflare/models/email_rule_name.dart';@immutable final class EmailUpdateCatchAllRuleProperties {const EmailUpdateCatchAllRuleProperties({required this.actions, required this.matchers, this.enabled, this.name, });
 

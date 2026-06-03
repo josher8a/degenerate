@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitEndpointHealthCheckResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_check_type.dart';import 'package:pub_cloudflare/models/magic_transit_uuid.dart';@immutable final class MagicTransitEndpointHealthCheckResponse {const MagicTransitEndpointHealthCheckResponse({required this.checkType, required this.endpoint, required this.id, this.name, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerStats > PrecallNetworkInformation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParticipantPeerStatsPrecallNetworkInformation {const ParticipantPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughput, this.turnConnectivity, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountQueueMember
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueueMember {const AccountQueueMember({this.callSid, this.dateEnqueued, this.position = 0, this.uri, this.waitTime = 0, this.queueSid, });
 

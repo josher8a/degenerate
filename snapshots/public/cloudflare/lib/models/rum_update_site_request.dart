@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumUpdateSiteRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_auto_install.dart';import 'package:pub_cloudflare/models/rum_host.dart';import 'package:pub_cloudflare/models/rum_zone_tag.dart';/// Enables or disables RUM. This option can be used only when auto_install is set to true.
 extension type const RumEnabled(bool value) {

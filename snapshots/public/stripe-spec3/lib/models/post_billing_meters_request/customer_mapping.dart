@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMetersRequest (inline: CustomerMapping)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_customer_mapping_settings/billing_meter_resource_customer_mapping_settings_type.dart';/// Fields that specify how to map a meter event to a customer.
 @immutable final class CustomerMapping {const CustomerMapping({required this.eventPayloadKey, required this.type, });

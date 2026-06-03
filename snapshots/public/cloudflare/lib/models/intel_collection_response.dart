@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelCollectionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_collection_response/intel_collection_response_result.dart';@immutable final class IntelCollectionResponse {const IntelCollectionResponse({this.result});
 

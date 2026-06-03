@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityPostBulkMessageMoveRequest (inline: Destination)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostBulkMessageMoveRequestDestination {const EmailSecurityPostBulkMessageMoveRequestDestination._(this.value);
 

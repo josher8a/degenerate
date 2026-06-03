@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BoundObjectReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// BoundObjectReference is a reference to an object that a token is bound to.
 @immutable final class BoundObjectReference {const BoundObjectReference({this.apiVersion, this.kind, this.name, this.uid, });

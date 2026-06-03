@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpRiskScoreIntegration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_score_integration_type.dart';@immutable final class DlpRiskScoreIntegration {const DlpRiskScoreIntegration({required this.accountTag, required this.active, required this.createdAt, required this.id, required this.integrationType, required this.referenceId, required this.tenantUrl, required this.wellKnownUrl, });
 

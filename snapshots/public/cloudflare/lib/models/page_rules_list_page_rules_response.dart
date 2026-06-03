@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageRulesListPageRulesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_messages2.dart';@immutable final class PageRulesListPageRulesResponse {const PageRulesListPageRulesResponse({required this.errors, required this.messages, required this.success, this.result, });
 

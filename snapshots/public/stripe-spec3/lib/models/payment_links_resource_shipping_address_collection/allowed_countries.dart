@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceShippingAddressCollection (inline: AllowedCountries)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowedCountries {const AllowedCountries._(this.value);
 

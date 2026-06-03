@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelRouteComment
 
 /// Optional remark describing the route.
 extension type const TunnelRouteComment(String value) {

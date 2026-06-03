@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PackageVersion (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/package/package_type.dart';import 'package:pub_github_rest_3_1/models/package_version/docker.dart';import 'package:pub_github_rest_3_1/models/package_version/metadata_container.dart';@immutable final class PackageVersionMetadata {const PackageVersionMetadata({required this.packageType, this.container, this.docker, });
 

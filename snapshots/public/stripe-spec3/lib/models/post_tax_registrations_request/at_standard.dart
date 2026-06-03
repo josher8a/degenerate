@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest (inline: CountryOptions > At > Standard)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_eu_standard/tax_product_registrations_resource_country_options_eu_standard_place_of_supply_scheme.dart';@immutable final class AtStandard {const AtStandard({required this.placeOfSupplyScheme});
 

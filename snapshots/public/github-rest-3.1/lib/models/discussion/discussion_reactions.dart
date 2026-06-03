@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Discussion (inline: Reactions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DiscussionReactions {const DiscussionReactions({required this.plus1, required this.minus1, required this.confused, required this.eyes, required this.heart, required this.hooray, required this.laugh, required this.rocket, required this.totalCount, required this.url, });
 

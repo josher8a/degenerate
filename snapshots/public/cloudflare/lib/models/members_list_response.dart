@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MembersListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/member.dart';import 'package:pub_cloudflare/models/message3.dart';import 'package:pub_cloudflare/models/page_token_result_info.dart';@immutable final class MembersListResponse {const MembersListResponse({required this.errors, required this.messages, required this.result, required this.resultInfo, required this.success, });
 

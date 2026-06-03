@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafPackagesListWafPackagesMatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 @immutable final class WafPackagesListWafPackagesMatch {const WafPackagesListWafPackagesMatch._(this.value);

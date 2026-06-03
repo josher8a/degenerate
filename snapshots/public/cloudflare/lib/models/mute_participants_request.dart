@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MuteParticipantsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MuteParticipantsRequest {const MuteParticipantsRequest({required this.customParticipantIds, required this.participantIds, });
 

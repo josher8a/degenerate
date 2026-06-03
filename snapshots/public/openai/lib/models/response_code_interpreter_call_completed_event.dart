@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCodeInterpreterCallCompletedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the code interpreter call is completed.
 @immutable final class ResponseCodeInterpreterCallCompletedEvent {const ResponseCodeInterpreterCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });

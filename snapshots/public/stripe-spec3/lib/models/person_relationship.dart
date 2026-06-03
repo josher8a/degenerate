@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersonRelationship
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PersonRelationship {const PersonRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });

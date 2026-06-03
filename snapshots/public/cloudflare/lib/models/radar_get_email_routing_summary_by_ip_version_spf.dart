@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingSummaryByIpVersionSpf
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionSpf {const RadarGetEmailRoutingSummaryByIpVersionSpf._(this.value);
 

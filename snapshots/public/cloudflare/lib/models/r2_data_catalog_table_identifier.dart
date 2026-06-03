@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogTableIdentifier
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies a unique table identifier within a catalog.
 @immutable final class R2DataCatalogTableIdentifier {const R2DataCatalogTableIdentifier({required this.name, required this.namespace, });

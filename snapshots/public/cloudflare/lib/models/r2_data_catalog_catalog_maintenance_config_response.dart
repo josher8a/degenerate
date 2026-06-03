@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalogMaintenanceConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_credential_status.dart';/// Contains maintenance configuration and credential status.
 @immutable final class R2DataCatalogCatalogMaintenanceConfigResponse {const R2DataCatalogCatalogMaintenanceConfigResponse({required this.credentialStatus, required this.maintenanceConfig, });

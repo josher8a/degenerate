@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunObject (inline: RequiredAction > SubmitToolOutputs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_tool_call_object.dart';/// Details on the tool outputs needed for this run to continue.
 @immutable final class SubmitToolOutputs {const SubmitToolOutputs({required this.toolCalls});

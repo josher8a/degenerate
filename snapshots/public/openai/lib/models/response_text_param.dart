@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseTextParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/text_response_format_configuration.dart';import 'package:pub_openai/models/text_response_format_json_schema.dart';import 'package:pub_openai/models/verbosity.dart';/// Configuration options for a text response from the model. Can be plain
 /// text or structured JSON data. Learn more:

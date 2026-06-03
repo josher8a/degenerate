@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateLogDetailsResponse (inline: Result > CertificateLog > Performance > Endpoints)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The certificate log endpoint names used in performance metrics.
 @immutable final class Endpoint {const Endpoint._(this.value);

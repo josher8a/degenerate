@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventOutputAudioBufferCleared
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **WebRTC/SIP Only:** Emitted when the output audio buffer is cleared. This happens either in VAD
 /// mode when the user has interrupted (`input_audio_buffer.speech_started`),

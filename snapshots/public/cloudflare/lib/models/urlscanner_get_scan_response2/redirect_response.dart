@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Request > RedirectResponse)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/security_headers.dart';@immutable final class RedirectResponse {const RedirectResponse({required this.charset, required this.mimeType, required this.protocol, required this.remoteIpAddress, required this.remotePort, required this.securityHeaders, required this.securityState, required this.status, required this.statusText, required this.url, this.headers, });
 

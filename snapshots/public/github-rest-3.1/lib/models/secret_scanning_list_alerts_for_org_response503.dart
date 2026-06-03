@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningListAlertsForOrgResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningListAlertsForOrgResponse503 {const SecretScanningListAlertsForOrgResponse503({this.code, this.message, this.documentationUrl, });
 

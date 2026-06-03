@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodNaverPay (inline: Funding)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to fund this transaction with Naver Pay points or a card.
 @immutable final class PaymentMethodNaverPayFunding {const PaymentMethodNaverPayFunding._(this.value);

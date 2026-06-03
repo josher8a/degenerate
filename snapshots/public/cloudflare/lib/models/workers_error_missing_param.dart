@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorMissingParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that a required URL parameter is missing.
 @immutable final class WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsStripSetCookie
 
 /// Whether to strip Set-Cookie headers from the origin response before caching.
 extension type const RulesetsSetCacheSettingsStripSetCookie(bool value) {

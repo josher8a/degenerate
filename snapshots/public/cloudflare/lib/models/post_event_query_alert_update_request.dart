@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventQueryAlertUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_query_alert_list_response/get_event_query_alert_list_response_frequency.dart';@immutable final class PostEventQueryAlertUpdateRequest {const PostEventQueryAlertUpdateRequest({this.enabled, this.frequency, this.notificationType, });
 

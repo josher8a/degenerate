@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayAntiVirusSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_notification_settings.dart';/// Specify whether to enable anti-virus scanning on downloads.
 extension type const ZeroTrustGatewayEnabledDownloadPhase(bool value) {

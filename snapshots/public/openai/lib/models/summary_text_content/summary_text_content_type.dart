@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SummaryTextContent (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the summary part. Always `summary_text`.
 @immutable final class SummaryTextContentType {const SummaryTextContentType._(this.value);

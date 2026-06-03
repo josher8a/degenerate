@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerTax (inline: Provider)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 @immutable final class Provider {const Provider._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs2 (inline: Zone)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details about the zone affected by the action.
 @immutable final class AaaAuditLogs2Zone {const AaaAuditLogs2Zone({this.id, this.name, });

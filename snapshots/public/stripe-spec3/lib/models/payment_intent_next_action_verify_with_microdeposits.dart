@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionVerifyWithMicrodeposits
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_verify_with_microdeposits/microdeposit_type.dart';/// 
 @immutable final class PaymentIntentNextActionVerifyWithMicrodeposits {const PaymentIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType, });

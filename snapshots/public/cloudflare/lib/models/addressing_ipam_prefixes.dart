@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingIpamPrefixes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_account_identifier.dart';import 'package:pub_cloudflare/models/addressing_asn.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_delegate_loa_creation.dart';import 'package:pub_cloudflare/models/addressing_description.dart';import 'package:pub_cloudflare/models/addressing_loa_document_identifier.dart';import 'package:pub_cloudflare/models/addressing_prefix_identifier.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 extension type const AddressingAdvertised(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPush (inline: Repository > License)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryLicense {const RepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
 

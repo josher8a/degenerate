@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitCheckType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// type of check to perform
 @immutable final class MagicTransitCheckType {const MagicTransitCheckType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Page)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/screenshot.dart';@immutable final class UrlscannerGetScanResponse2Page {const UrlscannerGetScanResponse2Page({required this.apexDomain, required this.asn, required this.asnname, required this.city, required this.country, required this.domain, required this.ip, required this.mimeType, required this.server, required this.status, required this.title, required this.tlsAgeDays, required this.tlsIssuer, required this.tlsValidDays, required this.tlsValidFrom, required this.url, this.screenshot, });
 

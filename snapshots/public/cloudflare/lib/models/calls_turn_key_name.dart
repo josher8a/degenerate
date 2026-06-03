@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsTurnKeyName
 
 /// A short description of a TURN key, not shown to end users.
 extension type const CallsTurnKeyName(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecuritySubmissionsOutcomeDisposition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecuritySubmissionsOutcomeDisposition {const EmailSecuritySubmissionsOutcomeDisposition._(this.value);
 

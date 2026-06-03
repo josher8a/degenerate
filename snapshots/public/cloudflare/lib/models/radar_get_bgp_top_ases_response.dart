@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopAsesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_response/radar_get_bgp_top_ases_response_result.dart';@immutable final class RadarGetBgpTopAsesResponse {const RadarGetBgpTopAsesResponse({required this.result, required this.success, });
 

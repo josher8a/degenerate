@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Taint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// The node this Taint is attached to has the "effect" on any pod that does not tolerate the Taint.
 @immutable final class Taint {const Taint({this.effect = '', this.key = '', this.timeAdded, this.value, });

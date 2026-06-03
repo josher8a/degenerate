@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTransactionPaperCheckData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceTransactionPaperCheckData {const SourceTransactionPaperCheckData({this.availableAt, this.invoices, });

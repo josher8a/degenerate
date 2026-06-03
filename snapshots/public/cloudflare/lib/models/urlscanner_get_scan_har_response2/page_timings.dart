@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse2 (inline: Log > Pages > PageTimings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageTimings {const PageTimings({required this.onContentLoad, required this.onLoad, });
 

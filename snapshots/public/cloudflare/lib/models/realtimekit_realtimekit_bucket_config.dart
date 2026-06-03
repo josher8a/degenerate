@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitRealtimekitBucketConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitRealtimekitBucketConfig {const RealtimekitRealtimekitBucketConfig({required this.enabled});
 

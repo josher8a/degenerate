@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalItemInputImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_input_image/eval_item_input_image_type.dart';/// An image input block used within EvalItem content arrays.
 @immutable final class EvalItemInputImage {const EvalItemInputImage({required this.type, required this.imageUrl, this.detail, });

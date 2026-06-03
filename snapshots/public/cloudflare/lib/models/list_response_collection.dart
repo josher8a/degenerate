@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_messages2.dart';import 'package:pub_cloudflare/models/page_shield_result_info.dart';@immutable final class ListResponseCollection {const ListResponseCollection({required this.success, required this.resultInfo, this.errors, this.messages, });
 

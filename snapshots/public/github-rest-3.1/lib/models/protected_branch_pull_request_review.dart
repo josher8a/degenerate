@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranchPullRequestReview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch_pull_request_review/protected_branch_pull_request_review_bypass_pull_request_allowances.dart';import 'package:pub_github_rest_3_1/models/protected_branch_pull_request_review/protected_branch_pull_request_review_dismissal_restrictions.dart';/// Protected Branch Pull Request Review
 @immutable final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestReview({required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.url, this.dismissalRestrictions, this.bypassPullRequestAllowances, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, });

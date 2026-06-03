@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PutGroupUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutGroupUpdateRequest {const PutGroupUpdateRequest({required this.description, required this.name, });
 

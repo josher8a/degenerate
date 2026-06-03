@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamKeys
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_schemas_identifier.dart';import 'package:pub_cloudflare/models/stream_signing_key_created.dart';/// The signing key in JWK format.
 extension type const StreamJwk(String value) {

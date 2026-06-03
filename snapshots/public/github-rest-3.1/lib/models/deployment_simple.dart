@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeploymentSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';/// A deployment created as the result of an Actions check run from a workflow that references an environment
 @immutable final class DeploymentSimple {const DeploymentSimple({required this.url, required this.id, required this.nodeId, required this.task, required this.environment, required this.description, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.originalEnvironment, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: ConsentCollection > PaymentMethodReuseAgreement)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_payment_method_reuse_agreement/position.dart';@immutable final class PaymentMethodReuseAgreement {const PaymentMethodReuseAgreement({required this.position});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingDomainDetailsResponse (inline: Result > Details0 > TopLocations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TopLocations {const TopLocations({required this.locationCode, required this.locationName, required this.rank, });
 

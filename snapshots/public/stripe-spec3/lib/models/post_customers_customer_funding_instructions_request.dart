@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerFundingInstructionsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions/funding_instructions_funding_type.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_funding_instructions_request/post_customers_customer_funding_instructions_request_bank_transfer.dart';@immutable final class PostCustomersCustomerFundingInstructionsRequest {const PostCustomersCustomerFundingInstructionsRequest({required this.bankTransfer, required this.currency, required this.fundingType, this.expand, });
 

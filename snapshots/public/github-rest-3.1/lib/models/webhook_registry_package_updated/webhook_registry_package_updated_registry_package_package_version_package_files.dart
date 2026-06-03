@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRegistryPackageUpdated (inline: RegistryPackage > PackageVersion > PackageFiles)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles({this.contentType, this.createdAt, this.downloadUrl, this.id, this.md5, this.name, this.sha1, this.sha256, this.size, this.state, this.updatedAt, });
 

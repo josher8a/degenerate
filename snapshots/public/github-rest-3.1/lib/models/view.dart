@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/View
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_create_view_for_org_request/layout.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A view inside a projects v2 project
 @immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter, });

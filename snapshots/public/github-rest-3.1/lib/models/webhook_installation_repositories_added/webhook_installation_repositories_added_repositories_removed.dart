@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookInstallationRepositoriesAdded (inline: RepositoriesRemoved)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationRepositoriesAddedRepositoriesRemoved {const WebhookInstallationRepositoriesAddedRepositoriesRemoved({this.fullName, this.id, this.name, this.nodeId, this.private, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionResponseMessage (inline: Annotations > UrlCitation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URL citation when using web search.
 @immutable final class UrlCitation {const UrlCitation({required this.endIndex, required this.startIndex, required this.url, required this.title, });

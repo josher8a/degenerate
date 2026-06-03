@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWatermarkResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_watermarks.dart';@immutable final class StreamWatermarkResponseSingle {const StreamWatermarkResponseSingle({this.result});
 

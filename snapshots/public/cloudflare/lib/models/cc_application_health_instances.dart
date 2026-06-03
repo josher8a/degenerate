@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcApplicationHealthInstances
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Shows a count of application instance states.
 @immutable final class CcApplicationHealthInstances {const CcApplicationHealthInstances({required this.active, required this.assigned, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushValidateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';import 'package:pub_cloudflare/models/logpush_validate_response/logpush_validate_response_result.dart';@immutable final class LogpushValidateResponse {const LogpushValidateResponse({required this.errors, required this.messages, required this.success, this.result, });
 

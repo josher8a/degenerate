@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsTrialsResourceTrialSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_trials_resource_end_behavior.dart';/// Configures how this subscription behaves during the trial period.
 @immutable final class SubscriptionsTrialsResourceTrialSettings {const SubscriptionsTrialsResourceTrialSettings({required this.endBehavior});

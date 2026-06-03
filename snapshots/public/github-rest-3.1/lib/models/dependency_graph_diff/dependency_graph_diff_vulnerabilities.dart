@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphDiff (inline: Vulnerabilities)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphDiffVulnerabilities {const DependencyGraphDiffVulnerabilities({required this.severity, required this.advisoryGhsaId, required this.advisorySummary, required this.advisoryUrl, });
 

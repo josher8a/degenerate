@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InboundTransfersPaymentMethodDetailsUsBankAccount (inline: Network)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
 @immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(this.value);

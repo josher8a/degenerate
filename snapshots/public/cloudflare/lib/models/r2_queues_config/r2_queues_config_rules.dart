@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2QueuesConfig (inline: Rules)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_r2_action.dart';@immutable final class R2QueuesConfigRules {const R2QueuesConfigRules({required this.actions, this.description, this.prefix, this.suffix, this.createdAt, this.ruleId, });
 

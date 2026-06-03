@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogcontrolRetentionFlag
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The log retention flag for Logpull API.
 extension type const LogcontrolFlag(bool value) {

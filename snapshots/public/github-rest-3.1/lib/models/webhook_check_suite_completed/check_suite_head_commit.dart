@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckSuiteCompleted (inline: CheckSuite > HeadCommit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_push/commits_author.dart';import 'package:pub_github_rest_3_1/models/webhook_push/commits_committer.dart';@immutable final class CheckSuiteHeadCommit {const CheckSuiteHeadCommit({required this.author, required this.committer, required this.id, required this.message, required this.timestamp, required this.treeId, });
 

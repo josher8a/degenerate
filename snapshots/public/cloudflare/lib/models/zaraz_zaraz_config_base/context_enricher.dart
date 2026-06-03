@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Settings > ContextEnricher)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the worker that receives and edits Zaraz Context object.
 @immutable final class ContextEnricher {const ContextEnricher({required this.escapedWorkerName, required this.workerTag, });

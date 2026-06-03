@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MandateUsBankAccount (inline: CollectionMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mandate collection method
 @immutable final class MandateUsBankAccountCollectionMethod {const MandateUsBankAccountCollectionMethod._(this.value);

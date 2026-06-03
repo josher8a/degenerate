@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksSponsorship
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/maintainer.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/sponsor.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/sponsorable.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/webhooks_sponsorship_tier.dart';@immutable final class WebhooksSponsorship {const WebhooksSponsorship({required this.createdAt, required this.nodeId, required this.privacyLevel, required this.sponsor, required this.sponsorable, required this.tier, this.maintainer, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsUsBankAccountMandateOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_us_bank_account/mandate_us_bank_account_collection_method.dart';/// 
 @immutable final class PaymentMethodOptionsUsBankAccountMandateOptions {const PaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});

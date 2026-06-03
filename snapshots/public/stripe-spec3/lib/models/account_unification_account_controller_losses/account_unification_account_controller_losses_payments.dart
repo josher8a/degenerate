@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountUnificationAccountControllerLosses (inline: Payments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating who is liable when this account can't pay back negative balances from payments.
 @immutable final class AccountUnificationAccountControllerLossesPayments {const AccountUnificationAccountControllerLossesPayments._(this.value);

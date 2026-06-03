@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate Authority used to issue the Client Certificate
 @immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority({this.id, this.name, });

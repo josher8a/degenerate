@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookProjectCardEdited (inline: Changes > Note)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookProjectCardEditedChangesNote {const WebhookProjectCardEditedChangesNote({required this.from});
 

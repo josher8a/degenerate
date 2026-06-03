@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRpkiAspaSnapshotResponse (inline: Result > Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponseResultMeta {const RadarGetBgpRpkiAspaSnapshotResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalCount, });
 

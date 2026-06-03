@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventDoRevertResponse (inline: Properties > MinutesAgo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinutesAgo {const MinutesAgo({required this.type});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscInterconnectList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_interconnect.dart';@immutable final class NscInterconnectList {const NscInterconnectList({required this.items, this.next, });
 

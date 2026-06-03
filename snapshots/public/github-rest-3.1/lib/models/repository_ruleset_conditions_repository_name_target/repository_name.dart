@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulesetConditionsRepositoryNameTarget (inline: RepositoryName)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryName {const RepositoryName({this.include, this.exclude, this.protected, });
 

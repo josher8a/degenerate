@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionRedirectToUrl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionRedirectToUrl {const PaymentIntentNextActionRedirectToUrl({this.returnUrl, this.url, });

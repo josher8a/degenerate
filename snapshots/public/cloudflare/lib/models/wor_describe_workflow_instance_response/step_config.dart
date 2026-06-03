@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > Step > Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/config_retries.dart';@immutable final class StepConfig {const StepConfig({required this.retries, required this.timeout, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityInvestigateFinalDisposition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityInvestigateFinalDisposition {const EmailSecurityInvestigateFinalDisposition._(this.value);
 

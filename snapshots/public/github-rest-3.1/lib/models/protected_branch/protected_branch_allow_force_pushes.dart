@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranch (inline: AllowForcePushes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchAllowForcePushes {const ProtectedBranchAllowForcePushes({required this.enabled});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumAnalyticsColumn
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_column/metrics.dart';@immutable final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
 

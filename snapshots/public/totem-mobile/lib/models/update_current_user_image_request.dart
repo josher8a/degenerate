@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateCurrentUserImageRequest
 
 import 'dart:convert';
 import 'dart:typed_data';

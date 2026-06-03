@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputMessagesTemplate (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of input messages. Always `template`.
 @immutable final class InputMessagesTemplateType {const InputMessagesTemplateType._(this.value);

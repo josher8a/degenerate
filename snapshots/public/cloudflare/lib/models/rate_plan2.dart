@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RatePlan2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rate plan applied to the subscription.
 @immutable final class RatePlan2 {const RatePlan2({this.currency, this.externallyManaged, this.id, this.isContract, this.publicName, this.scope, this.sets, });

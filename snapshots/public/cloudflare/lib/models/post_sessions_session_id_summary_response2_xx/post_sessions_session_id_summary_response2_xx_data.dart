@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSessionsSessionIdSummaryResponse2Xx (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSessionsSessionIdSummaryResponse2XxData {const PostSessionsSessionIdSummaryResponse2XxData({this.message, this.success, });
 

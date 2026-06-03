@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTestStatPctOverTime
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_pct_over_time/digital_experience_monitoring_test_stat_pct_over_time_slots.dart';@immutable final class DigitalExperienceMonitoringTestStatPctOverTime {const DigitalExperienceMonitoringTestStatPctOverTime({required this.slots, this.avg, this.max, this.min, });
 

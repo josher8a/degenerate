@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceOutboundTransfers
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_outbound_ach_toggle_settings.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggle_settings.dart';/// OutboundTransfers contains outbound transfers features for a FinancialAccount.
 @immutable final class TreasuryFinancialAccountsResourceOutboundTransfers {const TreasuryFinancialAccountsResourceOutboundTransfers({this.ach, this.usDomesticWire, });

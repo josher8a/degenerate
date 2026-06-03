@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_list_response/radar_get_entities_asn_list_response_result.dart';@immutable final class RadarGetEntitiesAsnListResponse {const RadarGetEntitiesAsnListResponse({required this.result, required this.success, });
 

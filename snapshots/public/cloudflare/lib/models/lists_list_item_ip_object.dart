@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsListItemIpObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
 extension type const ListsItemIp(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NoResultResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_msg.dart';import 'package:pub_cloudflare/models/pay_per_crawl_result_info.dart';@immutable final class NoResultResponse {const NoResultResponse({this.errors, this.messages, this.resultInfo, this.success, });
 

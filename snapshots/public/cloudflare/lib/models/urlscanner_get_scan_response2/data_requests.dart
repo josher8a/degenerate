@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_requests_request.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/requests_requests.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/requests_response.dart';@immutable final class DataRequests {const DataRequests({required this.request, required this.response, this.requests, });
 

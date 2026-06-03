@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseLogProb
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_log_prob/response_log_prob_top_logprobs.dart';/// A logprob is the logarithmic probability that the model assigns to producing
 /// a particular token at a given position in the sequence. Less-negative (higher)

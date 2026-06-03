@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionsSubscriptionResumeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request/post_customers_customer_subscriptions_subscription_exposed_id_request_billing_cycle_anchor.dart';@immutable final class PostSubscriptionsSubscriptionResumeRequest {const PostSubscriptionsSubscriptionResumeRequest({this.billingCycleAnchor, this.expand, this.prorationBehavior, this.prorationDate, });
 

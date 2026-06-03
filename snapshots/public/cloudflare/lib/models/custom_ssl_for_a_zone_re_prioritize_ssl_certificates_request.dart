@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomSslForAZoneRePrioritizeSslCertificatesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request/custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request_certificates.dart';@immutable final class CustomSslForAZoneRePrioritizeSslCertificatesRequest {const CustomSslForAZoneRePrioritizeSslCertificatesRequest({required this.certificates});
 

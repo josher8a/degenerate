@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlexandriaCategory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returns the category creation time.
 extension type const AlexandriaCategoryCreatedAt(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsSetGithubActionsPermissionsRepositoryRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_enabled.dart';import 'package:pub_github_rest_3_1/models/allowed_actions.dart';import 'package:pub_github_rest_3_1/models/sha_pinning_required.dart';@immutable final class ActionsSetGithubActionsPermissionsRepositoryRequest {const ActionsSetGithubActionsPermissionsRepositoryRequest({required this.enabled, this.allowedActions, this.shaPinningRequired, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Ui > DesignTokens > BorderWidth)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BorderWidth {const BorderWidth._(this.value);
 

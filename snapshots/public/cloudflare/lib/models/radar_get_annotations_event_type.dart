@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsEventType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by event type.
 @immutable final class RadarGetAnnotationsEventType {const RadarGetAnnotationsEventType._(this.value);

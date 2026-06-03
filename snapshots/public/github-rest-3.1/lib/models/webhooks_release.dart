@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRelease
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/webhooks_release/webhooks_release_assets.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/webhooks_release1_author.dart';/// The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object.
 @immutable final class WebhooksRelease {const WebhooksRelease({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.updatedAt, required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.uploadUrl, required this.url, required this.zipballUrl, this.discussionUrl, this.reactions, });

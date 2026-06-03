@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesPreFlightWithRepoForAuthenticatedUserResponse (inline: Defaults)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Defaults {const Defaults({required this.location, required this.devcontainerPath, });
 

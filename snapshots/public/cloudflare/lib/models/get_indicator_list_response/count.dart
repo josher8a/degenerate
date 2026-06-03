@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorListResponse (inline: Properties > Pagination > Properties > Count)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Count {const Count({required this.type});
 

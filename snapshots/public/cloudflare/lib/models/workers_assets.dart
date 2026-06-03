@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAssets
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_assets/workers_assets_config.dart';/// Configuration for assets within a Worker.
 @immutable final class WorkersAssets {const WorkersAssets({this.config, this.jwt, });

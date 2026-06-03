@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueEventMilestone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Milestone
 @immutable final class IssueEventMilestone {const IssueEventMilestone({required this.title});

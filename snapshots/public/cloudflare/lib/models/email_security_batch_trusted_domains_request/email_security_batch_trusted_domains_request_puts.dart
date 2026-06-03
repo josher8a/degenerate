@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchTrustedDomainsRequest (inline: Puts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_trusted_domain_id.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequestPuts {const EmailSecurityBatchTrustedDomainsRequestPuts({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, required this.id, this.comments, });
 

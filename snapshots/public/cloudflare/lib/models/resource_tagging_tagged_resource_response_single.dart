@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingTaggedResourceResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_messages2.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object.dart';@immutable final class ResourceTaggingTaggedResourceResponseSingle {const ResourceTaggingTaggedResourceResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 

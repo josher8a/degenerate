@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesVerification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cert_pack_uuid.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_verification_info.dart';/// Certificate Authority is manually reviewing the order.
 extension type const TlsCertificatesAndHostnamesBrandCheck(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallIpConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration/firewall_ip_configuration_target.dart';@immutable final class FirewallIpConfiguration {const FirewallIpConfiguration({this.target, this.value, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesAckMessagesRequest (inline: Retries)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_lease_id.dart';import 'package:pub_cloudflare/models/mq_retry_delay.dart';@immutable final class QueuesAckMessagesRequestRetries {const QueuesAckMessagesRequestRetries({this.delaySeconds, this.leaseId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseTeamMembershipsBulkRemoveRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnterpriseTeamMembershipsBulkRemoveRequest {const EnterpriseTeamMembershipsBulkRemoveRequest({required this.usernames});
 

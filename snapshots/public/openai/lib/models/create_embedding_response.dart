@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEmbeddingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/create_embedding_response/create_embedding_response_usage.dart';import 'package:pub_openai/models/embedding.dart';@immutable final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
 

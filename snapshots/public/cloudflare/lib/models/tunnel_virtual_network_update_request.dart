@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelVirtualNetworkUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_is_default_network_optional.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_comment.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';@immutable final class TunnelVirtualNetworkUpdateRequest {const TunnelVirtualNetworkUpdateRequest({this.comment, this.isDefaultNetwork, this.name, });
 

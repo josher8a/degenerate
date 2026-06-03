@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components > CustomerSheet)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/customer_sheet_features.dart';@immutable final class CustomerSheet {const CustomerSheet({required this.enabled, this.features, });
 

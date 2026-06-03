@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1SingleQuery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.
 extension type const D1Sql(String value) {

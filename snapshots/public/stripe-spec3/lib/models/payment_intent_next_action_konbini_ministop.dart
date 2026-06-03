@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionKonbiniMinistop
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionKonbiniMinistop {const PaymentIntentNextActionKonbiniMinistop({required this.paymentCode, this.confirmationNumber, });

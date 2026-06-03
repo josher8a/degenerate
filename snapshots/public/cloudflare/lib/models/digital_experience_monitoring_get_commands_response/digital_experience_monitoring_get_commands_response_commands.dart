@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringGetCommandsResponse (inline: Commands)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringGetCommandsResponseCommands {const DigitalExperienceMonitoringGetCommandsResponseCommands({this.completedDate, this.createdDate, this.deviceId, this.filename, this.id, this.registrationId, this.status, this.type, this.userEmail, });
 

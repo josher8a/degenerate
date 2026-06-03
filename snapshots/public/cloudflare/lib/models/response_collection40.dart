@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection40
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_messages2.dart';import 'package:pub_cloudflare/models/tunnel_result_info.dart';@immutable final class ResponseCollection40 {const ResponseCollection40({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCollectionOrganizationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_organization.dart';@immutable final class IamCollectionOrganizationResponse {const IamCollectionOrganizationResponse({this.result});
 

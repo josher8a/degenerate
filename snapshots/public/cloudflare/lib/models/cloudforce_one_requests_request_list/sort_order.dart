@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestList (inline: SortOrder)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order (asc or desc).
 @immutable final class SortOrder {const SortOrder._(this.value);

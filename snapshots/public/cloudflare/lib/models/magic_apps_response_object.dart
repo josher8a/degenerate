@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicAppsResponseObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_messages2.dart';@immutable final class MagicAppsResponseObject {const MagicAppsResponseObject({required this.errors, required this.messages, required this.result, required this.success, });
 

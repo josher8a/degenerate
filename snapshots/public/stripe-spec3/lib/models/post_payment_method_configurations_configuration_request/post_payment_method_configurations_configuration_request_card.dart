@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: Card)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Cards are a popular way for consumers and businesses to pay online or in person. Stripe supports global and local card networks.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestCard {const PostPaymentMethodConfigurationsConfigurationRequestCard({this.displayPreference});

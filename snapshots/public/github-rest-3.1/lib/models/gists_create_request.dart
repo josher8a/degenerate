@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gists_create_request/gists_create_request_files_value.dart';import 'package:pub_github_rest_3_1/models/gists_create_request/gists_create_request_public.dart';@immutable final class GistsCreateRequest {const GistsCreateRequest({required this.files, this.description, this.public, });
 

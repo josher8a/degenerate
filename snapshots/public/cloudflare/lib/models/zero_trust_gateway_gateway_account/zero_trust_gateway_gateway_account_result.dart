@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayGatewayAccount (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the Cloudflare account ID.
 extension type const ZeroTrustGatewayCfAccountId(String value) {

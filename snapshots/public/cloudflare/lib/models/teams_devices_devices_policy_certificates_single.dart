@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDevicesPolicyCertificatesSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_devices_policy_certificates.dart';@immutable final class TeamsDevicesDevicesPolicyCertificatesSingle {const TeamsDevicesDevicesPolicyCertificatesSingle({this.result});
 

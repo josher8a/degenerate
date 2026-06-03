@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreatePollResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_poll_response/create_poll_response_data.dart';@immutable final class CreatePollResponse {const CreatePollResponse({this.data, this.success, });
 

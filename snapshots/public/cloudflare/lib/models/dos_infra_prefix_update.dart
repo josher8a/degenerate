@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosInfraPrefixUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosInfraPrefixUpdate {const DosInfraPrefixUpdate({this.comment, this.enabled, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfigMapNodeConfigSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ConfigMapNodeConfigSource contains the information to reference a ConfigMap as a config source for the Node. This API is deprecated since 1.22: https://git.k8s.io/enhancements/keps/sig-node/281-dynamic-kubelet-configuration
 @immutable final class ConfigMapNodeConfigSource {const ConfigMapNodeConfigSource({this.kubeletConfigKey = '', this.name = '', this.namespace = '', this.resourceVersion, this.uid, });

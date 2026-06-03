@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerFileCitationBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation for a container file used to generate a model response.
 @immutable final class ContainerFileCitationBody {const ContainerFileCitationBody({required this.containerId, required this.fileId, required this.startIndex, required this.endIndex, required this.filename, this.type = 'container_file_citation', });

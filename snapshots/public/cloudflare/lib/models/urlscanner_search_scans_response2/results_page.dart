@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerSearchScansResponse2 (inline: Results > Page)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultsPage {const ResultsPage({required this.asn, required this.country, required this.ip, required this.url, });
 

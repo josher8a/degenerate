@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventInputAudioBufferSpeechStarted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sent by the server when in `server_vad` mode to indicate that speech has been
 /// detected in the audio buffer. This can happen any time audio is added to the

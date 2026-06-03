@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessMfaConfig (inline: AllowedAuthenticators)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowedAuthenticators {const AllowedAuthenticators._(this.value);
 

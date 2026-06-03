@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Fee
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class Fee {const Fee({required this.amount, required this.currency, required this.type, this.application, this.description, });

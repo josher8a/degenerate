@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByHttpVersionResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpVersionResponseResultSummary0 {const RadarGetHttpSummaryByHttpVersionResponseResultSummary0({required this.http1X, required this.http2, required this.http3, });
 

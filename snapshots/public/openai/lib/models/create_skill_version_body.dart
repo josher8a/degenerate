@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateSkillVersionBody
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_skill_body/create_skill_body_files.dart';/// Uploads a new immutable version of a skill.
 @immutable final class CreateSkillVersionBody {const CreateSkillVersionBody({required this.files, this.$default, });

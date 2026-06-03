@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_client_default.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_dns_destination_ips_id_write.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_ecs_support.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_endpoints.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_ipv4_network.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_name.dart';@immutable final class ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest {const ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest({required this.name, this.clientDefault, this.dnsDestinationIpsId, this.ecsSupport, this.endpoints, this.networks, });
 

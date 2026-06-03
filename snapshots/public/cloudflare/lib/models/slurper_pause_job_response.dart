@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SlurperPauseJobResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model32.dart';@immutable final class SlurperPauseJobResponse {const SlurperPauseJobResponse({this.errors, this.messages, this.success, this.result, });
 

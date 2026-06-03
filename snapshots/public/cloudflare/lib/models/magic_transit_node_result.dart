@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitNodeResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AS number associated with the node object.
 extension type const MagicTransitAsn(String value) {

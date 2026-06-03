@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchBlockedSendersResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender.dart';@immutable final class EmailSecurityBatchBlockedSendersResponseResult {const EmailSecurityBatchBlockedSendersResponseResult({required this.deletes, required this.patches, required this.posts, required this.puts, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldSchemaUploadDetailsWarningsOnly
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_schema_upload_log_event.dart';@immutable final class ShieldOldSchemaUploadDetailsWarningsOnly {const ShieldOldSchemaUploadDetailsWarningsOnly({this.warnings});
 

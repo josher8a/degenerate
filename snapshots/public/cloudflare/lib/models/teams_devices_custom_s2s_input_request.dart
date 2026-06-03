@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesCustomS2sInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';@immutable final class TeamsDevicesCustomS2sInputRequest {const TeamsDevicesCustomS2sInputRequest({required this.connectionId, required this.$operator, required this.score, });
 

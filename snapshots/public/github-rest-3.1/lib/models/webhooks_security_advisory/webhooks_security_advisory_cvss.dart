@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksSecurityAdvisory (inline: Cvss)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryCvss {const WebhooksSecurityAdvisoryCvss({required this.score, required this.vectorString, });
 

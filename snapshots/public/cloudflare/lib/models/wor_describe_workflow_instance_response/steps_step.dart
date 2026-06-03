@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > Step)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/attempts.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/step_config.dart';@immutable final class StepType {const StepType._(this.value);
 

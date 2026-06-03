@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_response/radar_get_annotations_response_result_annotations.dart';@immutable final class RadarGetAnnotationsResponseResult {const RadarGetAnnotationsResponseResult({required this.annotations});
 

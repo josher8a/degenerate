@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionBrandingSettingsLogo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings_icon/payment_pages_checkout_session_branding_settings_icon_type.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionBrandingSettingsLogo {const PaymentPagesCheckoutSessionBrandingSettingsLogo({required this.type, this.file, this.url, });

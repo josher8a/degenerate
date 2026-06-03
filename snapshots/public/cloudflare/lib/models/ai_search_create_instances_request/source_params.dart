@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/web_crawler.dart';@immutable final class SourceParams {const SourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction = 'default', this.webCrawler, });
 

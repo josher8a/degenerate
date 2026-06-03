@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportRefundRequest (inline: Refunded)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt refund.
 @immutable final class Refunded {const Refunded({required this.refundedAt});

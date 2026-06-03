@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDataset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDataset {const DlpDataset({required this.columns, required this.createdAt, required this.encodingVersion, required this.id, required this.name, required this.numCells, required this.secret, required this.status, required this.updatedAt, required this.uploads, this.caseSensitive, this.description, });
 

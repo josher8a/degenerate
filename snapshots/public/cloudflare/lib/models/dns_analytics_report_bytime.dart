@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsReportBytime
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_report_bytime/dns_analytics_report_bytime_data.dart';import 'package:pub_cloudflare/models/dns_analytics_report_bytime/dns_analytics_report_bytime_query.dart';@immutable final class DnsAnalyticsReportBytime {const DnsAnalyticsReportBytime({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, required this.timeIntervals, });
 

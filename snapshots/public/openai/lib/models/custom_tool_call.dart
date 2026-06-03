@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomToolCall
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A call to a custom tool created by the model.
 /// 

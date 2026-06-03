@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetPermissionListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_permission_list_response/get_permission_list_response_resource_type.dart';import 'package:pub_cloudflare/models/get_permission_list_response/get_permission_list_response_role.dart';import 'package:pub_cloudflare/models/get_permission_list_response/subject_type.dart';@immutable final class GetPermissionListResponse {const GetPermissionListResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
 

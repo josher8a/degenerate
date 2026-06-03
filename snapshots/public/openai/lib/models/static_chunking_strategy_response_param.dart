@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StaticChunkingStrategyResponseParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/static_chunking_strategy.dart';/// Always `static`.
 @immutable final class StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType._(this.value);

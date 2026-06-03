@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RateLimitsForAZoneCreateARateLimitRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_match.dart';import 'package:pub_cloudflare/models/firewall_period.dart';import 'package:pub_cloudflare/models/firewall_threshold.dart';@immutable final class RateLimitsForAZoneCreateARateLimitRequest {const RateLimitsForAZoneCreateARateLimitRequest({required this.action, required this.match, required this.period, required this.threshold, });
 

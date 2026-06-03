@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDatasetsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetsCreateRequest {const DlpDatasetsCreateRequest({required this.name, this.caseSensitive, this.description, this.encodingVersion, this.secret, });
 

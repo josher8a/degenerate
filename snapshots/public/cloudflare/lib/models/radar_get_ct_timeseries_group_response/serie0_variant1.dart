@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesGroupResponse (inline: Result > Serie0 > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Example:
 /// ```json

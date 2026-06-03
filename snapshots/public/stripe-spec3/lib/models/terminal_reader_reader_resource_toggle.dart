@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceToggle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The toggle's default value. Can be `enabled` or `disabled`.
 @immutable final class TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Order
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/address.dart';import 'package:spec_12_unions/models/nullability_combos.dart';import 'package:spec_12_unions/models/order_item.dart';@immutable final class Status {const Status._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionSwishQrCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionSwishQrCode {const PaymentIntentNextActionSwishQrCode({required this.data, required this.imageUrlPng, required this.imageUrlSvg, });

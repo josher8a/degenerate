@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesComponentsSchemasValidationMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_method_definition.dart';@immutable final class TlsCertificatesAndHostnamesComponentsSchemasValidationMethod {const TlsCertificatesAndHostnamesComponentsSchemasValidationMethod({required this.validationMethod});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComputerAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/click_param.dart';import 'package:pub_openai/models/coord_param.dart';import 'package:pub_openai/models/double_click_action.dart';import 'package:pub_openai/models/drag_param.dart';import 'package:pub_openai/models/key_press_action.dart';import 'package:pub_openai/models/move_param.dart';import 'package:pub_openai/models/screenshot_param.dart';import 'package:pub_openai/models/scroll_param.dart';import 'package:pub_openai/models/type_param.dart';import 'package:pub_openai/models/wait_param.dart';sealed class ComputerAction {const ComputerAction();
 

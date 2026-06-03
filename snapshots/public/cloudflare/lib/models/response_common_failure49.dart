@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure49
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_messages2.dart';@immutable final class ResponseCommonFailure49 {const ResponseCommonFailure49({required this.errors, required this.messages, required this.result, required this.success, });
 

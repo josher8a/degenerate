@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > GotoOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_content_request/wait_until.dart';/// Check [options](https://pptr.dev/api/puppeteer.gotooptions).
 @immutable final class GotoOptions {const GotoOptions({this.referer, this.referrerPolicy, this.timeout = 30000.0, this.waitUntil, });

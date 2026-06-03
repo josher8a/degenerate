@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyCheckResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_check_response/access_policy_check_response_result_app_state.dart';import 'package:pub_cloudflare/models/access_policy_check_response/user_identity.dart';@immutable final class AccessPolicyCheckResponseResult {const AccessPolicyCheckResponseResult({this.appState, this.userIdentity, });
 

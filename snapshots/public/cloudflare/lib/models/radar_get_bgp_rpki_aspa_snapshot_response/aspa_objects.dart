@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRpkiAspaSnapshotResponse (inline: Result > AspaObjects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AspaObjects {const AspaObjects({required this.customerAsn, required this.providers, });
 

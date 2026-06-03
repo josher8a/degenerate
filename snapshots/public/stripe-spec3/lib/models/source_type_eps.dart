@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeEps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeEps {const SourceTypeEps({this.reference, this.statementDescriptor, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsIdeal (inline: Bic)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Bank Identifier Code of the customer's bank.
 @immutable final class Bic {const Bic._(this.value);

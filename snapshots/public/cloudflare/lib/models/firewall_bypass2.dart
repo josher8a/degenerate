@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallBypass
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallBypassName {const FirewallBypassName._(this.value);
 

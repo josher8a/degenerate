@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Actor
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actor
 @immutable final class Actor {const Actor({required this.id, required this.login, required this.gravatarId, required this.url, required this.avatarUrl, this.displayLogin, });

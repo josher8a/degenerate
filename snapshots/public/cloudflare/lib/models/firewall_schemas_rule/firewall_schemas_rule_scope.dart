@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallSchemasRule (inline: Scope)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';/// The contact email address of the user.
 extension type const FirewallEmail(String value) {

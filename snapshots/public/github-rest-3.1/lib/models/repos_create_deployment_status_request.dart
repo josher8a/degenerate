@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateDeploymentStatusRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_status/deployment_status_state.dart';@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl = '', this.logUrl = '', this.description = '', this.environment, this.environmentUrl = '', this.autoInactive, });
 

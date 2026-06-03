@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddedToProjectIssueEvent (inline: ProjectCard)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddedToProjectIssueEventProjectCard {const AddedToProjectIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
 

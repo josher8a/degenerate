@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopAsnsByPrefixesResponse (inline: Result > Asns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponseResultAsns {const RadarGetBgpTopAsnsByPrefixesResponseResultAsns({required this.asn, required this.country, required this.name, required this.pfxsCount, });
 

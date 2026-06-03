@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeSwapStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeSwapStatus represents swap memory information.
 @immutable final class NodeSwapStatus {const NodeSwapStatus({this.capacity});

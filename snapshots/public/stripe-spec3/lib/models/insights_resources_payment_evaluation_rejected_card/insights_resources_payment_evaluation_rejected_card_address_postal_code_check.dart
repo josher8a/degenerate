@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationRejectedCard (inline: AddressPostalCodeCheck)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether the cardholder provided a postal code and if it matched the cardholder’s billing address.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck {const InsightsResourcesPaymentEvaluationRejectedCardAddressPostalCodeCheck._(this.value);

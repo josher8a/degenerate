@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMarketplacePurchasePendingChange (inline: PreviousMarketplacePurchase)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase/webhooks_marketplace_purchase_account.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase/webhooks_previous_marketplace_purchase_plan.dart';@immutable final class WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase {const WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.onFreeTrial, required this.plan, required this.unitCount, this.nextBillingDate, });
 

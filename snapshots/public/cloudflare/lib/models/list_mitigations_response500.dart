@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListMitigationsResponse500
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';@immutable final class ListMitigationsResponse500 {const ListMitigationsResponse500({required this.success, this.errors, this.messages, });
 

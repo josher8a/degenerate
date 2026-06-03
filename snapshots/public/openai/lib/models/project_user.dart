@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';/// The object type, which is always `organization.project.user`
 @immutable final class ProjectUserObject {const ProjectUserObject._(this.value);

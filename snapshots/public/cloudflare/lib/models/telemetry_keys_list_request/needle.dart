@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryKeysListRequest (inline: Needle)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define an expression to search using full-text search.
 @immutable final class Needle {const Needle({required this.value, this.isRegex, this.matchCase, });

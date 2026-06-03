@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingLease
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Timestamp of the moment the object was created.
 extension type AddressingCreatedAt(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodConfigBizPaymentMethodConfigurationDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodConfigBizPaymentMethodConfigurationDetails {const PaymentMethodConfigBizPaymentMethodConfigurationDetails({required this.id, this.parent, });

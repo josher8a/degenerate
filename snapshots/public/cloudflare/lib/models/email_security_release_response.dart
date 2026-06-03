@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityReleaseResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_postfix_id.dart';@immutable final class EmailSecurityReleaseResponse {const EmailSecurityReleaseResponse({required this.id, required this.postfixId, this.delivered, this.failed, this.undelivered, });
 

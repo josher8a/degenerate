@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksSetSuitesPreferencesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/checks_set_suites_preferences_request/auto_trigger_checks.dart';@immutable final class ChecksSetSuitesPreferencesRequest {const ChecksSetSuitesPreferencesRequest({this.autoTriggerChecks});
 

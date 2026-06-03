@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Consent)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/button_text_translations.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/purposes_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/purposes_with_translations_value.dart';/// Consent management configuration.
 @immutable final class Consent {const Consent({required this.enabled, this.buttonTextTranslations, this.companyEmail, this.companyName, this.companyStreetAddress, this.consentModalIntroHtml, this.consentModalIntroHtmlWithTranslations, this.cookieName, this.customCss, this.customIntroDisclaimerDismissed, this.defaultLanguage, this.hideModal, this.purposes, this.purposesWithTranslations, this.tcfCompliant, });

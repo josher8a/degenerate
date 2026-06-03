@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUserGroup (inline: Policies)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_access.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';import 'package:pub_cloudflare/models/iam_policy_identifier.dart';import 'package:pub_cloudflare/models/iam_resource_group.dart';/// Policy
 @immutable final class IamUserGroupPolicies {const IamUserGroupPolicies({this.access, this.id, this.permissionGroups, this.resourceGroups, });

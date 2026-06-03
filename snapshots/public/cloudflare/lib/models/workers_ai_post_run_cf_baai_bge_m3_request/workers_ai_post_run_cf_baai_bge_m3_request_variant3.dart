@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfBaaiBgeM3Request (inline: Variant3)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding.dart';import 'package:pub_cloudflare/models/input_query_and_contexts.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_m3_request/variant3_requests.dart';@immutable final class WorkersAiPostRunCfBaaiBgeM3RequestVariant3 {const WorkersAiPostRunCfBaaiBgeM3RequestVariant3({required this.requests});
 

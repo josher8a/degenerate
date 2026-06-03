@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryInvitation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/repos_update_invitation_request/repos_update_invitation_request_permissions.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Repository invitations let you manage who you collaborate with.
 @immutable final class RepositoryInvitation {const RepositoryInvitation({required this.id, required this.repository, required this.invitee, required this.inviter, required this.permissions, required this.createdAt, required this.url, required this.htmlUrl, required this.nodeId, this.expired, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ArtifactDeploymentRecord (inline: RuntimeRisks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RuntimeRisks {const RuntimeRisks._(this.value);
 

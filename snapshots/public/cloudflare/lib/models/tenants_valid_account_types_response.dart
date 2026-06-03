@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TenantsValidAccountTypesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message3.dart';@immutable final class TenantsValidAccountTypesResponse {const TenantsValidAccountTypesResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

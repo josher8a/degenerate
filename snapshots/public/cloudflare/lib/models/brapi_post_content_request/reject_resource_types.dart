@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > RejectResourceTypes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RejectResourceTypes {const RejectResourceTypes._(this.value);
 

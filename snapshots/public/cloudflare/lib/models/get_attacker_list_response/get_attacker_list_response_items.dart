@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAttackerListResponse (inline: Items)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAttackerListResponseItems {const GetAttackerListResponseItems({required this.type});
 

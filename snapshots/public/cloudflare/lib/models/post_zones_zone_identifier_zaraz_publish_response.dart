@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostZonesZoneIdentifierZarazPublishResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_messages2.dart';@immutable final class PostZonesZoneIdentifierZarazPublishResponse {const PostZonesZoneIdentifierZarazPublishResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

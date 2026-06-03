@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Response > Geoip)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseGeoip {const ResponseGeoip({required this.city, required this.country, required this.countryName, required this.geonameId, required this.ll, required this.region, });
 

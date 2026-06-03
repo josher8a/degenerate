@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_update/repository_rule_update_parameters.dart';@immutable final class RepositoryRuleUpdateType {const RepositoryRuleUpdateType._(this.value);
 

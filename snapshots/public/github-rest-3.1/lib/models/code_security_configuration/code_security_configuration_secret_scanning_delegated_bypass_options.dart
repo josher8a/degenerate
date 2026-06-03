@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningDelegatedBypassOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass_options_reviewers.dart';/// Feature options for secret scanning delegated bypass
 @immutable final class CodeSecurityConfigurationSecretScanningDelegatedBypassOptions {const CodeSecurityConfigurationSecretScanningDelegatedBypassOptions({this.reviewers});

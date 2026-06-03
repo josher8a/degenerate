@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyCheckResponse (inline: Result > UserIdentity > Geo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserIdentityGeo {const UserIdentityGeo({this.country});
 

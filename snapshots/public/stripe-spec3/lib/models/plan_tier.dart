@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PlanTier
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PlanTier {const PlanTier({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, this.upTo, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesLocationByAlpha2Response
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_response/radar_get_entities_location_by_alpha2_response_result.dart';@immutable final class RadarGetEntitiesLocationByAlpha2Response {const RadarGetEntitiesLocationByAlpha2Response({required this.result, required this.success, });
 

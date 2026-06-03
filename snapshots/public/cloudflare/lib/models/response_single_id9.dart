@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingleId9
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zones_schemas_messages2.dart';@immutable final class ResponseSingleId9 {const ResponseSingleId9({required this.errors, required this.messages, required this.success, this.result, });
 

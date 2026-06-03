@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessFooterLinks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessFooterLinks2 {const AccessFooterLinks2({required this.name, required this.url, });
 

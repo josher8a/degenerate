@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Permissions > Media > Screenshare)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/can_produce.dart';/// Screenshare permissions
 @immutable final class RealtimekitUpdatePresetPermissionsMediaScreenshare {const RealtimekitUpdatePresetPermissionsMediaScreenshare({this.canProduce});

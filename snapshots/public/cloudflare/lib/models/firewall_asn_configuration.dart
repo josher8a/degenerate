@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallAsnConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `asn` when specifying an Autonomous System Number (ASN) in the rule.
 @immutable final class FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget._(this.value);

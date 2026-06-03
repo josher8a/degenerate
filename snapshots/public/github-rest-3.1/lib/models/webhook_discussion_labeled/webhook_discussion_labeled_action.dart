@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDiscussionLabeled (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDiscussionLabeledAction {const WebhookDiscussionLabeledAction._(this.value);
 

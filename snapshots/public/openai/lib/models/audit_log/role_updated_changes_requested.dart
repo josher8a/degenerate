@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: RoleUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the role.
 @immutable final class RoleUpdatedChangesRequested {const RoleUpdatedChangesRequested({this.roleName, this.resourceId, this.resourceType, this.permissionsAdded, this.permissionsRemoved, this.description, this.metadata, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByMatchingAnswerStatusQueryType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusQueryType {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusQueryType._(this.value);
 

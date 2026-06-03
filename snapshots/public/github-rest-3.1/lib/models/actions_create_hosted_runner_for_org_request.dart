@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCreateHostedRunnerForOrgRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_hosted_runner_for_org_request/actions_create_hosted_runner_for_org_request_image.dart';@immutable final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen = false, });
 

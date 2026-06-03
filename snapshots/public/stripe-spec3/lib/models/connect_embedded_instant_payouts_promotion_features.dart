@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedInstantPayoutsPromotionFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedInstantPayoutsPromotionFeatures {const ConnectEmbeddedInstantPayoutsPromotionFeatures({required this.disableStripeUserAuthentication, required this.externalAccountCollection, required this.instantPayouts, });

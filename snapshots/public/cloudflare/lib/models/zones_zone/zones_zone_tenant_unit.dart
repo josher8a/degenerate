@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZone (inline: TenantUnit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';/// The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).
 @immutable final class ZonesZoneTenantUnit {const ZonesZoneTenantUnit({this.id});

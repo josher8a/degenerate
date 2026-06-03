@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementSbfmVerifiedBots
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Super Bot Fight Mode (SBFM) action to take on verified bots requests.
 @immutable final class BotManagementSbfmVerifiedBots {const BotManagementSbfmVerifiedBots._(this.value);

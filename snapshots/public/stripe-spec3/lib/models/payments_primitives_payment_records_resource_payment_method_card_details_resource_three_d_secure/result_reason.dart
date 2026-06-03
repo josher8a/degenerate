@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure (inline: ResultReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional information about why 3D Secure succeeded or failed, based on the `result`.
 @immutable final class ResultReason {const ResultReason._(this.value);

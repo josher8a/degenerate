@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/domain_stats.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/ip_stats.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/protocol_stats.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/resource_stats.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/server_stats.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/tls_stats.dart';@immutable final class UrlscannerGetScanResponse2Stats {const UrlscannerGetScanResponse2Stats({required this.iPv6Percentage, required this.domainStats, required this.ipStats, required this.malicious, required this.protocolStats, required this.resourceStats, required this.securePercentage, required this.secureRequests, required this.serverStats, required this.tlsStats, required this.totalLinks, required this.uniqAsNs, required this.uniqCountries, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MicroTime
 
 /// MicroTime is version of Time with microsecond level precision.
 extension type MicroTime(DateTime value) {

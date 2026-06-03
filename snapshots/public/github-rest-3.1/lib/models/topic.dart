@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Topic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A topic aggregates entities that are related to a subject.
 @immutable final class Topic {const Topic({required this.names});

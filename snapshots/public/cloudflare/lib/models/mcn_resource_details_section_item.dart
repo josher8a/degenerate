@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourceDetailsSectionItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_details_section_item/mcn_resource_details_section_item_value.dart';@immutable final class McnResourceDetailsSectionItem {const McnResourceDetailsSectionItem({this.helpText, this.name, this.value, });
 

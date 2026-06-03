@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountAuthorizedConnectApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that you authorized for the Connect App.  Can be: `get-all` or `post-all`.
 @immutable final class AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/intel_phishing_url_info_categorizations.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/model_results.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/rule_matches.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/scan_status.dart';@immutable final class IntelPhishingUrlInfo {const IntelPhishingUrlInfo({this.categorizations, this.modelResults, this.ruleMatches, this.scanStatus, this.screenshotDownloadSignature, this.screenshotPath, this.url, });
 

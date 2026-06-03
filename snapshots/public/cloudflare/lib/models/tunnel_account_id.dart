@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelAccountId
 
 /// Cloudflare account ID
 extension type const TunnelAccountId(String value) {

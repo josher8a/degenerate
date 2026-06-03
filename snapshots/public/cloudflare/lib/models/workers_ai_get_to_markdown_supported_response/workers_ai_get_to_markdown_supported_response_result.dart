@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiGetToMarkdownSupportedResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiGetToMarkdownSupportedResponseResult {const WorkersAiGetToMarkdownSupportedResponseResult({required this.$extension, required this.mimeType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscStatusInfo (inline: Pending)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Pending {const Pending({required this.state});
 

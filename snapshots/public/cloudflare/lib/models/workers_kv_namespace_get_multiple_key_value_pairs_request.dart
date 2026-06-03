@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceGetMultipleKeyValuePairsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_key_name_bulk.dart';/// Whether to parse JSON values in the response.
 @immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequestType {const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(this.value);

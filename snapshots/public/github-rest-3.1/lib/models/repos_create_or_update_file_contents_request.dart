@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateOrUpdateFileContentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_or_update_file_contents_request/repos_create_or_update_file_contents_request_author.dart';import 'package:pub_github_rest_3_1/models/repos_create_or_update_file_contents_request/repos_create_or_update_file_contents_request_committer.dart';@immutable final class ReposCreateOrUpdateFileContentsRequest {const ReposCreateOrUpdateFileContentsRequest({required this.message, required this.content, this.sha, this.branch, this.committer, this.author, });
 

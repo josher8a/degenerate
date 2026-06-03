@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReviewCustomGatesCommentRequired
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReviewCustomGatesCommentRequired {const ReviewCustomGatesCommentRequired({required this.environmentName, required this.comment, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OutputAudio
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output audio. Always `output_audio`.
 /// 

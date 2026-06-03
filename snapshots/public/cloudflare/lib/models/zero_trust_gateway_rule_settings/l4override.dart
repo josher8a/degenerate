@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: L4override)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`.
 @immutable final class L4override {const L4override({this.ip, this.port, });

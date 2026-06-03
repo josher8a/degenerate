@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCredentialStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Shows the credential configuration status.
 @immutable final class R2DataCatalogCredentialStatus {const R2DataCatalogCredentialStatus._(this.value);

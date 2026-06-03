@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse4Xx
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse4Xx {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse4Xx({required this.errors, required this.results, required this.success, });
 

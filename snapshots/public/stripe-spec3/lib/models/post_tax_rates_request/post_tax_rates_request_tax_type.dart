@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRatesRequest (inline: TaxType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax type, such as `vat` or `sales_tax`.
 @immutable final class PostTaxRatesRequestTaxType {const PostTaxRatesRequestTaxType._(this.value);

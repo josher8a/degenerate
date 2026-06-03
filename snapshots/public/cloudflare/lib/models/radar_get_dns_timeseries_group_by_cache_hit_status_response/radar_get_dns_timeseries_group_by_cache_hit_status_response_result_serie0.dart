@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByCacheHitStatusResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0({required this.negative, required this.positive, });
 

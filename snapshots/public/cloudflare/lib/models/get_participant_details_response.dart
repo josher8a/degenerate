@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDetailsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_details_response/get_participant_details_response_data.dart';@immutable final class GetParticipantDetailsResponse {const GetParticipantDetailsResponse({this.data, this.success, });
 

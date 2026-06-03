@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/code_scanning_alert_rule_severity.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/security_severity_level.dart';@immutable final class CodeScanningAlertRule {const CodeScanningAlertRule({this.id, this.name, this.severity, this.securitySeverityLevel, this.description, this.fullDescription, this.tags, this.help, this.helpUri, });
 

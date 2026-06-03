@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Asns > Asn)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ASN's contacted
 @immutable final class AsnsAsn {const AsnsAsn({required this.asn, required this.description, required this.locationAlpha2, required this.name, required this.orgName, });

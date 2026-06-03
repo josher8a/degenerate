@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamMemberPermissionGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of permissions.
 @immutable final class IamMemberPermissionGroup {const IamMemberPermissionGroup({required this.id});

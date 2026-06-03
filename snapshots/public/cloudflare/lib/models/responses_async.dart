@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponsesAsync
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses_async/responses_async_requests.dart';@immutable final class ResponsesAsync {const ResponsesAsync({required this.requests});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtTimeseriesGroupDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the certificate attribute by which to group the results.
 @immutable final class RadarGetCtTimeseriesGroupDimension {const RadarGetCtTimeseriesGroupDimension._(this.value);

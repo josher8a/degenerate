@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemWithReference (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
 /// 

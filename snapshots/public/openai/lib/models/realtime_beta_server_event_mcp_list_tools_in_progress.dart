@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventMcpListToolsInProgress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.in_progress`.
 @immutable final class RealtimeBetaServerEventMcpListToolsInProgressType {const RealtimeBetaServerEventMcpListToolsInProgressType._(this.value);

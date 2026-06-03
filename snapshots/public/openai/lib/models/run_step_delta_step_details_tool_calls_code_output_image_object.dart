@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputImageObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image/code_interpreter_output_image_type.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_output_image_object/run_step_delta_step_details_tool_calls_code_output_image_object_image.dart';@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject {const RunStepDeltaStepDetailsToolCallsCodeOutputImageObject({required this.index, required this.type, this.image, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';import 'package:pub_cloudflare/models/zones_result_info.dart';import 'package:pub_cloudflare/models/zones_zone.dart';@immutable final class ZonesGetResponse {const ZonesGetResponse({required this.errors, required this.messages, required this.success, this.resultInfo, this.result, });
 

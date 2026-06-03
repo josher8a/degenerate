@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Ips > Ip)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpsIp {const IpsIp({required this.asn, required this.asnDescription, required this.asnLocationAlpha2, required this.asnName, required this.asnOrgName, required this.continent, required this.geonameId, required this.ip, required this.ipVersion, required this.latitude, required this.locationAlpha2, required this.locationName, required this.longitude, required this.subdivision1Name, required this.subdivision2Name, });
 

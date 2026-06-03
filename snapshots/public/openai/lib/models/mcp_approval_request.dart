@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McpApprovalRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A request for human approval of a tool invocation.
 /// 

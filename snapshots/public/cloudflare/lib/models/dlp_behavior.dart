@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpBehavior
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_level.dart';@immutable final class DlpBehavior {const DlpBehavior({required this.description, required this.enabled, required this.name, required this.riskLevel, });
 

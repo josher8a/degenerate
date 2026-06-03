@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminSnapshotGetSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_snapshot.dart';@immutable final class MconnAdminSnapshotGetSuccess {const MconnAdminSnapshotGetSuccess({required this.success, required this.result, this.errors, this.messages, });
 

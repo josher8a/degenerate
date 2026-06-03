@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDomainJoinedInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_domain_joined_input_request/teams_devices_domain_joined_input_request_operating_system.dart';@immutable final class TeamsDevicesDomainJoinedInputRequest {const TeamsDevicesDomainJoinedInputRequest({required this.operatingSystem, this.domain, });
 

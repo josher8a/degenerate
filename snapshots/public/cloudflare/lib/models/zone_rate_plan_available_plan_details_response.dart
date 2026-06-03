@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneRatePlanAvailablePlanDetailsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/available_rate_plan.dart';@immutable final class ZoneRatePlanAvailablePlanDetailsResponse {const ZoneRatePlanAvailablePlanDetailsResponse({this.result});
 

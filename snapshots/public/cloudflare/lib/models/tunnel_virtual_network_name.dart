@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelVirtualNetworkName
 
 /// A user-friendly name for the virtual network.
 extension type const TunnelVirtualNetworkName(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentTextObject (inline: Text)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_content_text_annotations_file_citation_object.dart';import 'package:pub_openai/models/message_delta_content_text_annotations_file_path_object.dart';import 'package:pub_openai/models/message_delta_content_text_object/message_delta_content_text_object_text_annotations.dart';@immutable final class MessageDeltaContentTextObjectText {const MessageDeltaContentTextObjectText({this.value, this.annotations, });
 

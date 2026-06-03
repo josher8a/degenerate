@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotInterfaceAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Interface Address
 @immutable final class MconnSnapshotInterfaceAddress {const MconnSnapshotInterfaceAddress({required this.interfaceName, required this.ipAddress, this.connectorId, });

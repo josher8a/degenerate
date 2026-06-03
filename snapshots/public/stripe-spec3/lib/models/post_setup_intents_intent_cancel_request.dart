@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSetupIntentsIntentCancelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this SetupIntent. Possible values are: `abandoned`, `requested_by_customer`, or `duplicate`
 @immutable final class PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason._(this.value);

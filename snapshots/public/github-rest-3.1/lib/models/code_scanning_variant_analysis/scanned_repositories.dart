@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningVariantAnalysis (inline: ScannedRepositories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_repository.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_status.dart';@immutable final class ScannedRepositories {const ScannedRepositories({required this.repository, required this.analysisStatus, this.resultCount, this.artifactSizeInBytes, this.failureMessage, });
 

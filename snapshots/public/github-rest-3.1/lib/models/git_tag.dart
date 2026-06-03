@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitTag
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_tag/git_tag_object.dart';import 'package:pub_github_rest_3_1/models/git_tag/git_tag_tagger.dart';import 'package:pub_github_rest_3_1/models/verification.dart';/// Metadata for a Git tag
 @immutable final class GitTag {const GitTag({required this.nodeId, required this.tag, required this.sha, required this.url, required this.message, required this.tagger, required this.object, this.verification, });

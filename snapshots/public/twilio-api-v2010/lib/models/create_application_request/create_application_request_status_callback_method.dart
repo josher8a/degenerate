@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateApplicationRequest (inline: StatusCallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`.
 @immutable final class CreateApplicationRequestStatusCallbackMethod {const CreateApplicationRequestStatusCallbackMethod._(this.value);

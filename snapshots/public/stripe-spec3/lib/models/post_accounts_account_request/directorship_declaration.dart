@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Company > DirectorshipDeclaration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DirectorshipDeclaration {const DirectorshipDeclaration({this.date, this.ip, this.userAgent, });
 

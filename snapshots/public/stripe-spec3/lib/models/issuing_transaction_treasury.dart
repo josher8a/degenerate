@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingTransactionTreasury
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingTransactionTreasury {const IssuingTransactionTreasury({this.receivedCredit, this.receivedDebit, });

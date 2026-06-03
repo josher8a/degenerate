@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceListNamespacesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order results by.
 @immutable final class WorkersKvNamespaceListNamespacesOrder {const WorkersKvNamespaceListNamespacesOrder._(this.value);

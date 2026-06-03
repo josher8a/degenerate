@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CommitSearchResultItem (inline: Parents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitSearchResultItemParents {const CommitSearchResultItemParents({this.url, this.htmlUrl, this.sha, });
 

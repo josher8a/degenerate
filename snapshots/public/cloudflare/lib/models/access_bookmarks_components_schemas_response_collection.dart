@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessBookmarksComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_bookmarks.dart';@immutable final class AccessBookmarksComponentsSchemasResponseCollection {const AccessBookmarksComponentsSchemasResponseCollection({this.result});
 

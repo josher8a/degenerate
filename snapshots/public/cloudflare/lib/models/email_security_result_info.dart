@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityResultInfo {const EmailSecurityResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 

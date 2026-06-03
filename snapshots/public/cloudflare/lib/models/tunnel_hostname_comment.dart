@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelHostnameComment
 
 /// An optional description of the hostname route.
 extension type const TunnelHostnameComment(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpIpsTimeseriesResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpIpsTimeseriesResponseResultSerie0 {const RadarGetBgpIpsTimeseriesResponseResultSerie0({required this.ipv4, required this.ipv6, required this.timestamps, });
 

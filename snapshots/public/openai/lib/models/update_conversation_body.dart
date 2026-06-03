@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateConversationBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateConversationBody {const UpdateConversationBody({required this.metadata});
 

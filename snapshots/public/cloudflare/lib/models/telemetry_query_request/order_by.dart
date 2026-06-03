@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryQueryRequest (inline: Parameters > OrderBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set the order of the results
 @immutable final class Order {const Order._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertSecurityAdvisory (inline: Cvss)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details for the advisory pertaining to the Common Vulnerability Scoring System.
 @immutable final class DependabotAlertSecurityAdvisoryCvss {const DependabotAlertSecurityAdvisoryCvss({required this.score, required this.vectorString, });

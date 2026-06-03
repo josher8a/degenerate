@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPush (inline: Pusher)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
 @immutable final class WebhookPushPusher {const WebhookPushPusher({required this.name, this.date, this.email, this.username, });

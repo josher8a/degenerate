@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AsyncBatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/async_batch/async_batch2_requests.dart';@immutable final class AsyncBatch2 {const AsyncBatch2({this.requests});
 

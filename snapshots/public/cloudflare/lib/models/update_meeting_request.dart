@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateMeetingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_ai_config.dart';import 'package:pub_cloudflare/models/realtimekit_meeting/realtimekit_meeting_status.dart';@immutable final class UpdateMeetingRequest {const UpdateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd = false, this.title, });
 

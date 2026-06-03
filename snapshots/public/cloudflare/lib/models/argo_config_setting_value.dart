@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ArgoConfigSettingValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Argo Smart Routing.
 @immutable final class ArgoConfigSettingValue {const ArgoConfigSettingValue._(this.value);

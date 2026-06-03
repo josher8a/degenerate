@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemFunctionCall
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';/// A function call item in a Realtime conversation.
 @immutable final class RealtimeConversationItemFunctionCall {const RealtimeConversationItemFunctionCall({required this.type, required this.name, required this.arguments, this.id, this.object, this.status, this.callId, });

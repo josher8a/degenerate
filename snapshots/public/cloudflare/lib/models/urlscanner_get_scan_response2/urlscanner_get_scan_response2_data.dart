@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_console.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_cookies.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_links.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_performance.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_requests.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/globals.dart';@immutable final class UrlscannerGetScanResponse2Data {const UrlscannerGetScanResponse2Data({required this.console, required this.cookies, required this.globals, required this.links, required this.performance, required this.requests, });
 

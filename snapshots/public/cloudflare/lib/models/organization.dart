@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Organization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization/organization_meta.dart';import 'package:pub_cloudflare/models/organization/organization_parent.dart';import 'package:pub_cloudflare/models/organization_id.dart';import 'package:pub_cloudflare/models/profile.dart';/// References an Organization in the Cloudflare data model.
 @immutable final class Organization {const Organization({required this.createTime, required this.id, required this.meta, required this.name, this.parent, this.profile, });

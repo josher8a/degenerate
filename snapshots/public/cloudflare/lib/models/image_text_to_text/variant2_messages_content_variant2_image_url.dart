@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageTextToText (inline: Variant2 > Messages > Content > Variant2 > ImageUrl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Image URL object (when type is 'image_url').
 @immutable final class Variant2MessagesContentVariant2ImageUrl {const Variant2MessagesContentVariant2ImageUrl({required this.url});

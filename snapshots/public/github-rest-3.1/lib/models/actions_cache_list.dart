@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCacheList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_cache_list/actions_caches.dart';/// Repository actions caches
 @immutable final class ActionsCacheList {const ActionsCacheList({required this.totalCount, required this.actionsCaches, });

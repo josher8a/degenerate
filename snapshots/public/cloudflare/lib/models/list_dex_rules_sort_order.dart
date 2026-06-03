@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListDexRulesSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListDexRulesSortOrder {const ListDexRulesSortOrder._(this.value);
 

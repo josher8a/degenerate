@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowUsage (inline: Billable > Macos)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowUsageBillableMacos {const WorkflowUsageBillableMacos({this.totalMs});
 

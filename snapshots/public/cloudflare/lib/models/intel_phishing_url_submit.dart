@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlSubmit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit/excluded_urls.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit/skipped_urls.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit/submitted_urls.dart';@immutable final class IntelPhishingUrlSubmit {const IntelPhishingUrlSubmit({this.excludedUrls, this.skippedUrls, this.submittedUrls, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByDmarcTlsVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcTlsVersion {const RadarGetEmailSecurityTimeseriesGroupByDmarcTlsVersion._(this.value);
 

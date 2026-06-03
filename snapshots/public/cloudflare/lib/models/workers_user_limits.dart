@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersUserLimits
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// User-defined resource limits for Workers with standard usage model.
 @immutable final class WorkersUserLimits {const WorkersUserLimits({this.cpuMs});

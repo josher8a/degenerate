@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushGetOwnershipResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_get_ownership_response/logpush_get_ownership_response_result.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class LogpushGetOwnershipResponse {const LogpushGetOwnershipResponse({required this.errors, required this.messages, required this.success, this.result, });
 

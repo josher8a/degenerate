@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SleepAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SleepAction describes a "sleep" action.
 @immutable final class SleepAction {const SleepAction({this.seconds = 0});

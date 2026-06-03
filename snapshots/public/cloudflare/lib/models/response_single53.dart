@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingle53
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single53/response_single53_result.dart';import 'package:pub_cloudflare/models/waf_managed_rules_messages2.dart';@immutable final class ResponseSingle53 {const ResponseSingle53({required this.errors, required this.messages, required this.success, required this.result, });
 

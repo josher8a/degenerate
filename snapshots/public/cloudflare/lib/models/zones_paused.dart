@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesPaused
 
 /// Indicates whether the zone is only using Cloudflare DNS services. A
 /// true value means the zone will not receive security or performance

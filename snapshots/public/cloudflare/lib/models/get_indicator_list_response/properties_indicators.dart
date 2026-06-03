@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorListResponse (inline: Properties > Indicators)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_response/indicators_items.dart';@immutable final class PropertiesIndicators {const PropertiesIndicators({required this.items, required this.type, });
 

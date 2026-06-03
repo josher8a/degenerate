@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningExtendedMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning extended metadata
 @immutable final class SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata._(this.value);

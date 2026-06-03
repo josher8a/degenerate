@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCommandsRequest (inline: Commands)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_commands_request/command_args.dart';/// Type of command to execute on the device
 @immutable final class CommandType {const CommandType._(this.value);

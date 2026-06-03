@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLiveInputRecordingSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Disables reporting the number of live viewers when this property is set to `true`.
 extension type const StreamLiveInputRecordingHideLiveViewerCount(bool value) {

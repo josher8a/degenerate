@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceFinancialAddressesFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings.dart';/// Settings related to Financial Addresses features on a Financial Account
 @immutable final class TreasuryFinancialAccountsResourceFinancialAddressesFeatures {const TreasuryFinancialAccountsResourceFinancialAddressesFeatures({this.aba});

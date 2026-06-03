@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Discussions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for discussions and related comments and labels.
 @immutable final class Discussions {const Discussions._(this.value);

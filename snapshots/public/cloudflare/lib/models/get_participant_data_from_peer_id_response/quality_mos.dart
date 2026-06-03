@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Quality > AudioProducerCumulative > QualityMos)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QualityMos {const QualityMos({this.avg, this.p50, this.p75, this.p90, });
 

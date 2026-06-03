@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserDeleteResponseObject {const UserDeleteResponseObject._(this.value);
 

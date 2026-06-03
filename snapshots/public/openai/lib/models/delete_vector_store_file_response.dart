@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteVectorStoreFileResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject._(this.value);
 

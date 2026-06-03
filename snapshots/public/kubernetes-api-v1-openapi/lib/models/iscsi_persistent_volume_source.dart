@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IscsiPersistentVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_reference.dart';/// ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
 @immutable final class IscsiPersistentVolumeSource {const IscsiPersistentVolumeSource({this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iqn = '', this.iscsiInterface = 'default', this.lun = 0, this.portals, this.readOnly, this.secretRef, this.targetPortal = '', });

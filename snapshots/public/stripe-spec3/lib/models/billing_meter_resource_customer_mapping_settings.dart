@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeterResourceCustomerMappingSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_customer_mapping_settings/billing_meter_resource_customer_mapping_settings_type.dart';/// 
 @immutable final class BillingMeterResourceCustomerMappingSettings {const BillingMeterResourceCustomerMappingSettings({required this.eventPayloadKey, required this.type, });

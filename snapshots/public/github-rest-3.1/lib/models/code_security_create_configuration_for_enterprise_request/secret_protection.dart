@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityCreateConfigurationForEnterpriseRequest (inline: SecretProtection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of GitHub Secret Protection features.
 @immutable final class SecretProtection {const SecretProtection._(this.value);

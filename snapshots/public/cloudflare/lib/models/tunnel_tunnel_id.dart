@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelTunnelId
 
 /// UUID of the tunnel.
 extension type const TunnelTunnelId(String value) {

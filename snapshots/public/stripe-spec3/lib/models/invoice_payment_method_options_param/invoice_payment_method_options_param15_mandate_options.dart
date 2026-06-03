@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsParam (inline: MandateOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_acss_debit/mandate_acss_debit_transaction_type.dart';@immutable final class InvoicePaymentMethodOptionsParam15MandateOptions {const InvoicePaymentMethodOptionsParam15MandateOptions({this.transactionType});
 

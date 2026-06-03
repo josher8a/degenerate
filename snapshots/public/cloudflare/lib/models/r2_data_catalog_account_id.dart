@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogAccountId
 
 /// Use this to identify the account.
 extension type const R2DataCatalogAccountId(String value) {

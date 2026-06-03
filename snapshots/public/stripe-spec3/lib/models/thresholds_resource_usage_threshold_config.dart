@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThresholdsResourceUsageThresholdConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_alert_filter.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config/meter.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config/recurrence.dart';/// The usage threshold alert configuration enables setting up alerts for when a certain usage threshold on a specific meter is crossed.
 @immutable final class ThresholdsResourceUsageThresholdConfig {const ThresholdsResourceUsageThresholdConfig({required this.gte, required this.meter, required this.recurrence, this.filters, });

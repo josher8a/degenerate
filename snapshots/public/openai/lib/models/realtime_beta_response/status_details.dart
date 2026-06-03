@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: StatusDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/status_details_error.dart';/// The type of error that caused the response to fail, corresponding
 /// with the `status` field (`completed`, `cancelled`, `incomplete`,

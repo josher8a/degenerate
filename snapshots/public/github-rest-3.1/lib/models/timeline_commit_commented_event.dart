@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TimelineCommitCommentedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_comment.dart';/// Timeline Commit Commented Event
 @immutable final class TimelineCommitCommentedEvent {const TimelineCommitCommentedEvent({this.event, this.nodeId, this.commitId, this.comments, });

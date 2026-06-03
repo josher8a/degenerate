@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateModerationRequest (inline: Input > Variant3 > ImageUrl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/chat_completion_request_message_content_part_image_type.dart';import 'package:pub_openai/models/create_moderation_request/image_url_image_url.dart';/// An object describing an image to classify.
 @immutable final class Variant3ImageUrl {const Variant3ImageUrl({required this.type, required this.imageUrl, });

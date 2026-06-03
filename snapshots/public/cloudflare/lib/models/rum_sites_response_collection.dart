@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumSitesResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_messages2.dart';import 'package:pub_cloudflare/models/rum_result_info.dart';import 'package:pub_cloudflare/models/rum_site.dart';@immutable final class RumSitesResponseCollection {const RumSitesResponseCollection({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 

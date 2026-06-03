@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptRequest (inline: Guaranteed)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt guarantee.
 @immutable final class Guaranteed {const Guaranteed({required this.guaranteedAt});

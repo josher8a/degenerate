@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActivityMarkRepoNotificationsAsReadRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityMarkRepoNotificationsAsReadRequest {const ActivityMarkRepoNotificationsAsReadRequest({this.lastReadAt});
 

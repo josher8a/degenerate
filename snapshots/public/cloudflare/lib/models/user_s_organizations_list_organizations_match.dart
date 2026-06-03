@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSOrganizationsListOrganizationsMatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match all search requirements or at least one (any).
 @immutable final class UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch._(this.value);

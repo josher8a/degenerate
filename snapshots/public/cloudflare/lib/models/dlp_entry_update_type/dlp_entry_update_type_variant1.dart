@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntryUpdateType (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_pattern.dart';@immutable final class DlpEntryUpdateTypeVariant1 {const DlpEntryUpdateTypeVariant1({required this.name, required this.pattern, required this.type, this.description, });
 

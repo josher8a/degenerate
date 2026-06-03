@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > AddStyleTag)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddStyleTag {const AddStyleTag({this.content, this.url, });
 

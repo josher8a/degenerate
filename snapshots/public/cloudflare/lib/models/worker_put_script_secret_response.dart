@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerPutScriptSecretResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_secret.dart';@immutable final class WorkerPutScriptSecretResponse {const WorkerPutScriptSecretResponse({required this.errors, required this.messages, required this.success, this.result, });
 

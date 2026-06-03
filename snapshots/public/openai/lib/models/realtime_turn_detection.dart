@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeTurnDetection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/semantic_vad.dart';import 'package:pub_openai/models/server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
 /// 

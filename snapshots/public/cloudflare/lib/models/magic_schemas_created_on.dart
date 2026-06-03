@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSchemasCreatedOn
 
 /// The date and time the tunnel was created.
 extension type MagicSchemasCreatedOn(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingPersonalizationDesign
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/issuing_personalization_design_card_logo.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_carrier_text.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_preferences.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_rejection_reasons.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);

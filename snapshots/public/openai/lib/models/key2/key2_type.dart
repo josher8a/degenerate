@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key2 (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of API key. Can be either `user` or `service_account`.
 @immutable final class Key2Type {const Key2Type._(this.value);

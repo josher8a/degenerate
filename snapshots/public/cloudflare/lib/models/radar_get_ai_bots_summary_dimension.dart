@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAiBotsSummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetAiBotsSummaryDimension {const RadarGetAiBotsSummaryDimension._(this.value);

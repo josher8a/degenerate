@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesUniqueClientIdInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
 @immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(this.value);

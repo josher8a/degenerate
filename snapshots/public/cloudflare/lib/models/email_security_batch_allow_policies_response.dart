@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchAllowPoliciesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_response/email_security_batch_allow_policies_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityBatchAllowPoliciesResponse {const EmailSecurityBatchAllowPoliciesResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

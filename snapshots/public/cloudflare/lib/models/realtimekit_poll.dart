@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPoll
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_poll/realtimekit_poll_options.dart';@immutable final class RealtimekitPoll {const RealtimekitPoll({required this.id, required this.options, required this.question, this.anonymous, this.createdBy, this.hideVotes, this.voted, });
 

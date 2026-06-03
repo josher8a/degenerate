@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessScimGroupsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups.dart';@immutable final class AccessScimGroupsResponse {const AccessScimGroupsResponse({this.result});
 

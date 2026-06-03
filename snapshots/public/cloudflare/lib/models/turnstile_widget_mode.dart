@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileWidgetMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Widget Mode
 @immutable final class TurnstileWidgetMode {const TurnstileWidgetMode._(this.value);

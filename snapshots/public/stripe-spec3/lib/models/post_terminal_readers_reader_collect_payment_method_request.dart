@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderCollectPaymentMethodRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request/collect_config.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({required this.paymentIntent, this.collectConfig, this.expand, });
 

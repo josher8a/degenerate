@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunModelResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_model_response/workers_ai_post_run_model_response_result.dart';@immutable final class WorkersAiPostRunModelResponse {const WorkersAiPostRunModelResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesSetLabelsRequest (inline: Variant4)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesSetLabelsRequestVariant4 {const IssuesSetLabelsRequestVariant4({required this.name});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HyperdriveInternetOrigin
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveInternetOrigin {const HyperdriveInternetOrigin({required this.host, required this.port, });
 

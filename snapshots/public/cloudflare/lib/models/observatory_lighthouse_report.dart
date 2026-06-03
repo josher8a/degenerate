@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryLighthouseReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_device_type.dart';import 'package:pub_cloudflare/models/observatory_lighthouse_report/observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
 @immutable final class ObservatoryLighthouseState {const ObservatoryLighthouseState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesPatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables Tiered Caching.
 @immutable final class CacheRulesValue {const CacheRulesValue._(this.value);

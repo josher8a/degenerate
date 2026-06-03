@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpCustomProfileUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_new_custom_entry.dart';import 'package:pub_cloudflare/models/dlp_new_custom_entry_with_id.dart';import 'package:pub_cloudflare/models/dlp_profile_entry_update.dart';import 'package:pub_cloudflare/models/dlp_shared_entry_update.dart';@immutable final class DlpCustomProfileUpdate {const DlpCustomProfileUpdate({required this.name, this.aiContextEnabled = false, this.allowedMatchCount, this.confidenceThreshold = 'low', this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';/// 
 @immutable final class DeletedBankAccount {const DeletedBankAccount({required this.deleted, required this.id, required this.object, this.currency, });

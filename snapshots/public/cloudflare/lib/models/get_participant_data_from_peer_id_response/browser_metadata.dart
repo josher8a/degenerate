@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Metadata > BrowserMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrowserMetadata {const BrowserMetadata({this.browser, this.browserVersion, this.engine, this.userAgent, this.webglSupport, });
 

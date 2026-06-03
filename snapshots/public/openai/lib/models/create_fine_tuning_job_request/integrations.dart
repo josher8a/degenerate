@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateFineTuningJobRequest (inline: Integrations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_integration/fine_tuning_integration_type.dart';import 'package:pub_openai/models/fine_tuning_integration/wandb.dart';@immutable final class Integrations {const Integrations({required this.type, required this.wandb, });
 

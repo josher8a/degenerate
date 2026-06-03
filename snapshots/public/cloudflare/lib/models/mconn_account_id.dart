@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAccountId
 
 /// Account identifier
 extension type const MconnAccountId(String value) {

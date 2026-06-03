@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpHijacksEventsResponse (inline: Result > Events > Tags)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EventsTags {const EventsTags({required this.name, required this.score, });
 

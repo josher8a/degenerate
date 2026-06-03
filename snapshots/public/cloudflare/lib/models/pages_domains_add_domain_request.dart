@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDomainsAddDomainRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain_name.dart';@immutable final class PagesDomainsAddDomainRequest {const PagesDomainsAddDomainRequest({required this.name});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateModerationRequest (inline: Input > Variant3 > ImageUrl > ImageUrl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains either an image URL or a data URL for a base64 encoded image.
 @immutable final class ImageUrlImageUrl {const ImageUrlImageUrl({required this.url});

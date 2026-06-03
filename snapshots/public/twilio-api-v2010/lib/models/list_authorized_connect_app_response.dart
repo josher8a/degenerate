@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAuthorizedConnectAppResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_authorized_connect_app.dart';@immutable final class ListAuthorizedConnectAppResponse {const ListAuthorizedConnectAppResponse({this.authorizedConnectApps, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRouteSni
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Server Name Indication (SNI) override.
 @immutable final class RulesetsRouteSni {const RulesetsRouteSni({required this.value});

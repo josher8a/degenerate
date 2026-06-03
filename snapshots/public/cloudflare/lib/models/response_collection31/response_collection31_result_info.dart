@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection31 (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseCollection31ResultInfo {const ResponseCollection31ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 

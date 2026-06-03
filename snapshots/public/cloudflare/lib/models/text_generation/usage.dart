@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TextGeneration (inline: Variant1 > Usage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage statistics for the inference request
 @immutable final class Usage {const Usage({this.completionTokens = 0.0, this.promptTokens = 0.0, this.totalTokens = 0.0, });

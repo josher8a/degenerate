@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsSummaryByCacheHitStatusProtocol
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol._(this.value);
 

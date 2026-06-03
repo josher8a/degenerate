@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementInfoNoStatus (inline: Variant3)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementInfoNoStatusVariant3 {const WorkersPlacementInfoNoStatusVariant3({required this.hostname});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomCookieAttributes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on the waiting room cookie. Value `auto` will be translated to `lax` or `none` depending if **Always Use HTTPS** is enabled. Note that when using value `none`, the secure attribute cannot be set to `never`.
 @immutable final class WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite._(this.value);

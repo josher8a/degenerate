@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2.dart';import 'package:pub_cloudflare/models/aaa_result_info.dart';import 'package:pub_cloudflare/models/aaa_schemas_messages2.dart';@immutable final class ResponseCollection2 {const ResponseCollection2({this.errors, this.result, this.resultInfo, this.success, });
 

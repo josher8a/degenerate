@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingSummaryByArcResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByArcResponseResultSummary0 {const RadarGetEmailRoutingSummaryByArcResponseResultSummary0({required this.fail, required this.none, required this.pass, });
 

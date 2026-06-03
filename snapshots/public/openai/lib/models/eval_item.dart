@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/eval_item_content.dart';import 'package:pub_openai/models/eval_item_content_item.dart';import 'package:pub_openai/models/eval_item_content_output_text.dart';import 'package:pub_openai/models/eval_item_input_image.dart';import 'package:pub_openai/models/input_audio.dart';import 'package:pub_openai/models/input_text_content.dart';/// The type of the message input. Always `message`.
 /// 

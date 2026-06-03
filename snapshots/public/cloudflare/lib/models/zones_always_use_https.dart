@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesAlwaysUseHttps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If enabled, any `http://`` URL is converted to `https://` through a`
 /// 301 redirect.

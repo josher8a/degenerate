@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIndicatorTypeCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorTypeCreateResponse {const PostIndicatorTypeCreateResponse({required this.durableObjectId, required this.indicatorType, required this.message, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessServiceTokenRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_service_token_rule/service_token.dart';/// Matches a specific Access Service Token
 @immutable final class AccessServiceTokenRule {const AccessServiceTokenRule({required this.serviceToken});

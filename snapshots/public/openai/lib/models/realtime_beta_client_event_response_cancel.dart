@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventResponseCancel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.cancel`.
 @immutable final class RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType._(this.value);

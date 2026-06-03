@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Capabilities > AcssDebitPayments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesAcssDebitPayments {const CapabilitiesAcssDebitPayments({this.requested});
 

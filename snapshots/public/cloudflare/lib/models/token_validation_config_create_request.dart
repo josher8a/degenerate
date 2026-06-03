@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenValidationConfigCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_description.dart';import 'package:pub_cloudflare/models/shield_header.dart';import 'package:pub_cloudflare/models/shield_title.dart';import 'package:pub_cloudflare/models/shield_token_type.dart';@immutable final class TokenValidationConfigCreateRequest {const TokenValidationConfigCreateRequest({required this.credentials, required this.description, required this.title, required this.tokenSources, required this.tokenType, });
 

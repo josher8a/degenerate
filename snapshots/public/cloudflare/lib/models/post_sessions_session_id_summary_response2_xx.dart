@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSessionsSessionIdSummaryResponse2Xx
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_sessions_session_id_summary_response2_xx/post_sessions_session_id_summary_response2_xx_data.dart';@immutable final class PostSessionsSessionIdSummaryResponse2Xx {const PostSessionsSessionIdSummaryResponse2Xx({this.data, this.success, });
 

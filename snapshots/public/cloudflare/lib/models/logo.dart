@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Logo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Logo {const Logo({this.id, this.tag, this.uploadPath, });
 

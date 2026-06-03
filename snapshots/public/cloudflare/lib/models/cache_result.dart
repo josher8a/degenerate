@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current setting of the automatic SSL/TLS.
 @immutable final class CacheResultValue {const CacheResultValue._(this.value);

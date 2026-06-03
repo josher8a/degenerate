@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryAvailabilitiesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_availabilities.dart';@immutable final class ObservatoryAvailabilitiesResponse {const ObservatoryAvailabilitiesResponse({this.result});
 

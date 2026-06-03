@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsPriorityItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_uuid.dart';@immutable final class CloudforceOneRequestsPriorityItem {const CloudforceOneRequestsPriorityItem({required this.created, required this.id, required this.labels, required this.priority, required this.requirement, required this.tlp, required this.updated, });
 

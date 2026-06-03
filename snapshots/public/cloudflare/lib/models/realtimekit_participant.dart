@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a participant.
 @immutable final class RealtimekitParticipant {const RealtimekitParticipant({required this.createdAt, required this.customParticipantId, required this.id, required this.presetName, required this.updatedAt, this.name, this.picture, });

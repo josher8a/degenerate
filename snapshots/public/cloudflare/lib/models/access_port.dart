@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPort
 
 /// The port that the targets use for the chosen communication protocol. A port cannot be assigned to multiple protocols.
 extension type const AccessPort(int value) {

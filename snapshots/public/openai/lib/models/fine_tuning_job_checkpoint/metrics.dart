@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningJobCheckpoint (inline: Metrics)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics at the step number during the fine-tuning job.
 @immutable final class Metrics {const Metrics({this.step, this.trainLoss, this.trainMeanTokenAccuracy, this.validLoss, this.validMeanTokenAccuracy, this.fullValidLoss, this.fullValidMeanTokenAccuracy, });

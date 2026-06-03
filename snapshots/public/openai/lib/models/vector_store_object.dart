@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';import 'package:pub_openai/models/vector_store_file_batch_object/file_counts.dart';/// The object type, which is always `vector_store`.
 @immutable final class VectorStoreObjectObject {const VectorStoreObjectObject._(this.value);

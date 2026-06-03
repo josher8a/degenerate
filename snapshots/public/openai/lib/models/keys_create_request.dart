@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KeysCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeysCreateRequest {const KeysCreateRequest({required this.name});
 

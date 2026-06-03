@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceReaderAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_inputs_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_payment_method_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_confirm_payment_intent_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_payment_intent_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_setup_intent_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_set_reader_display_action.dart';/// Status of the action performed by the reader.
 @immutable final class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus._(this.value);

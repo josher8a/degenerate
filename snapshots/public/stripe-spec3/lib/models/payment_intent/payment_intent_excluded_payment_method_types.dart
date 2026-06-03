@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntent (inline: ExcludedPaymentMethodTypes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentExcludedPaymentMethodTypes {const PaymentIntentExcludedPaymentMethodTypes._(this.value);
 

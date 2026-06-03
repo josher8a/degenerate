@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayDnsResolverSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayDnsResolverSettings {const ZeroTrustGatewayDnsResolverSettings({required this.ip, this.port, this.routeThroughPrivateNetwork, this.vnetId, });
 

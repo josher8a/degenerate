@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValues (inline: VectorizeBindings > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Vectorize binding.
 @immutable final class PagesDeploymentConfigValuesVectorizeBindingsValue {const PagesDeploymentConfigValuesVectorizeBindingsValue({required this.indexName});

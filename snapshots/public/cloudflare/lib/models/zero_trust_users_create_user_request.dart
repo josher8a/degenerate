@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustUsersCreateUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_email.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_name.dart';@immutable final class ZeroTrustUsersCreateUserRequest {const ZeroTrustUsersCreateUserRequest({required this.email, this.name, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesIpGeolocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
 /// 

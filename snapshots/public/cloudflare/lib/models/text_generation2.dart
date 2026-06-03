@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TextGeneration
 
 import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/text_generation/text_generation_variant1.dart';typedef TextGeneration2 = OneOf2<TextGenerationVariant1,Uint8List>;

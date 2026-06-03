@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamSingleTokenResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_token_base.dart';@immutable final class IamSingleTokenResponse {const IamSingleTokenResponse({this.result});
 

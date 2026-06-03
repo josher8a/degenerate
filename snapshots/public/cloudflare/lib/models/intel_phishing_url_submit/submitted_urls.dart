@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlSubmit (inline: SubmittedUrls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubmittedUrls {const SubmittedUrls({this.url, this.urlId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats > IpStats > Asn)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpStatsAsn {const IpStatsAsn({required this.asn, required this.country, required this.description, required this.ip, required this.name, required this.org, });
 

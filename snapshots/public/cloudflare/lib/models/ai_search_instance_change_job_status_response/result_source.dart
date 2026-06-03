@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChangeJobStatusResponse (inline: Result > Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultSource {const ResultSource._(this.value);
 

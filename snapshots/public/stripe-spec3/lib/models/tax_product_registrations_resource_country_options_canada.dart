@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsCanada
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_ca_province_standard.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_canada/tax_product_registrations_resource_country_options_canada_type.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsCanada {const TaxProductRegistrationsResourceCountryOptionsCanada({required this.type, this.provinceStandard, });

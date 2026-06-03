@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCompletedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response.dart';/// Emitted when the model response is complete.
 @immutable final class ResponseCompletedEvent {const ResponseCompletedEvent({required this.type, required this.response, required this.sequenceNumber, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateParticipantRequest (inline: WaitMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
 @immutable final class WaitMethod {const WaitMethod._(this.value);

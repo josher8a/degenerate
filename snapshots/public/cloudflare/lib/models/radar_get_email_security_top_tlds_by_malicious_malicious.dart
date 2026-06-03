@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTopTldsByMaliciousMalicious
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Malicious classification.
 @immutable final class RadarGetEmailSecurityTopTldsByMaliciousMalicious {const RadarGetEmailSecurityTopTldsByMaliciousMalicious._(this.value);

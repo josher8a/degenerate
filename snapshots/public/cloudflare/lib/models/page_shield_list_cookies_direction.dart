@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListCookiesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned cookies.'
 @immutable final class PageShieldListCookiesDirection {const PageShieldListCookiesDirection._(this.value);

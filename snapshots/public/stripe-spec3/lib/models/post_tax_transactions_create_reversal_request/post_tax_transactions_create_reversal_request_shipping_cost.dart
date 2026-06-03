@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxTransactionsCreateReversalRequest (inline: ShippingCost)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The shipping cost to reverse.
 @immutable final class PostTaxTransactionsCreateReversalRequestShippingCost {const PostTaxTransactionsCreateReversalRequestShippingCost({required this.amount, required this.amountTax, });

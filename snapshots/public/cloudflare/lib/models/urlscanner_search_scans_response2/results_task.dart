@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerSearchScansResponse2 (inline: Results > Task)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultsTask {const ResultsTask({required this.time, required this.url, required this.uuid, required this.visibility, });
 

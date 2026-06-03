@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImagesListResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_images_list_response2/images_images_list_response2_result.dart';@immutable final class ImagesImagesListResponse2 {const ImagesImagesListResponse2({this.result});
 

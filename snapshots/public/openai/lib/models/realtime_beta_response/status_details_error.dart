@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: StatusDetails > Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of the error that caused the response to fail,
 /// populated when the `status` is `failed`.

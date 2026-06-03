@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTunnelModifiedResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_gre_tunnel.dart';@immutable final class MagicTunnelModifiedResponseResult {const MagicTunnelModifiedResponseResult({this.modified, this.modifiedGreTunnel, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesAddSubIssueRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesAddSubIssueRequest {const IssuesAddSubIssueRequest({required this.subIssueId, this.replaceParent, });
 

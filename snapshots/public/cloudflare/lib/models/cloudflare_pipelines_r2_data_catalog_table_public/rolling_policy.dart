@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2DataCatalogTablePublic (inline: RollingPolicy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Rolling policy for file sinks (when & why to close a file and open a new one).
 @immutable final class RollingPolicy {const RollingPolicy({this.fileSizeBytes, this.inactivitySeconds, this.intervalSeconds, });

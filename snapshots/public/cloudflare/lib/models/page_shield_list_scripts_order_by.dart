@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListScriptsOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned scripts.
 @immutable final class PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy._(this.value);

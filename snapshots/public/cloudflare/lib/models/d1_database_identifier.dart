@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1DatabaseIdentifier
 
 /// D1 database identifier (UUID).
 extension type const D1DatabaseIdentifier(String value) {

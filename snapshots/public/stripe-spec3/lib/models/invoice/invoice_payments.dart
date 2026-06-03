@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Invoice (inline: Payments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/invoice_payment.dart';/// Payments for this invoice. Use [invoice payment](/api/invoice-payment) to get more details.
 @immutable final class InvoicePayments {const InvoicePayments({required this.data, required this.hasMore, required this.object, required this.url, });

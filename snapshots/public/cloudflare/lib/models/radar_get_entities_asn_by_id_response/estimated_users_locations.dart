@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnByIdResponse (inline: Result > Asn > EstimatedUsers > Locations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EstimatedUsersLocations {const EstimatedUsersLocations({required this.locationAlpha2, required this.locationName, this.estimatedUsers, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCustomTrustStore
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_issuer.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_expires_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_signature.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_uploaded_on.dart';/// Status of the zone's custom SSL.
 @immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._(this.value);

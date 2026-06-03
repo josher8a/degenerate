@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeMcpApprovalResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Realtime item responding to an MCP approval request.
 /// 

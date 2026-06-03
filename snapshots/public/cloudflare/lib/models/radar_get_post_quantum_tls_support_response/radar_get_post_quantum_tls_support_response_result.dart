@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetPostQuantumTlsSupportResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetPostQuantumTlsSupportResponseResult {const RadarGetPostQuantumTlsSupportResponseResult({required this.host, required this.kex, required this.kexName, required this.pq, });
 

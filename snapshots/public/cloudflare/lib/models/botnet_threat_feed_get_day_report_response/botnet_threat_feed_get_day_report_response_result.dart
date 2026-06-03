@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotnetThreatFeedGetDayReportResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotnetThreatFeedGetDayReportResponseResult {const BotnetThreatFeedGetDayReportResponseResult({this.cidr, this.date, this.offenseCount, });
 

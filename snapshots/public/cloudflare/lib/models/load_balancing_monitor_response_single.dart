@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingMonitorResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_monitor.dart';@immutable final class LoadBalancingMonitorResponseSingle {const LoadBalancingMonitorResponseSingle({this.result});
 

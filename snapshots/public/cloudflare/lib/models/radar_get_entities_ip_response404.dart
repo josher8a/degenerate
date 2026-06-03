@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesIpResponse404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesIpResponse404 {const RadarGetEntitiesIpResponse404({required this.error});
 

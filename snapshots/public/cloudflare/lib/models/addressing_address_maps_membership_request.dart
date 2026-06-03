@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingAddressMapsMembershipRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_identifier.dart';import 'package:pub_cloudflare/models/addressing_kind.dart';@immutable final class AddressingAddressMapsMembershipRequest {const AddressingAddressMapsMembershipRequest({this.identifier, this.kind, });
 

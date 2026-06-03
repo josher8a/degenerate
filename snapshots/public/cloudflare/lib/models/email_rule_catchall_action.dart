@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRuleCatchallAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_action/email_rule_action_type.dart';/// Action for the catch-all routing rule.
 @immutable final class EmailRuleCatchallAction {const EmailRuleCatchallAction({required this.type, this.value, });

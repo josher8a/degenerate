@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessDevicePostureRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_device_posture_rule/device_posture.dart';/// Enforces a device posture rule has run successfully
 @immutable final class AccessDevicePostureRule {const AccessDevicePostureRule({required this.devicePosture});

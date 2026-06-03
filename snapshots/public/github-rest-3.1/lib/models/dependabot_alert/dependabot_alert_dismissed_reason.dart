@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlert (inline: DismissedReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason that the alert was dismissed.
 @immutable final class DependabotAlertDismissedReason {const DependabotAlertDismissedReason._(this.value);

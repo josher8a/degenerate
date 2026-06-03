@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMetaDeleted (inline: Hook > Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConfigContentType {const ConfigContentType._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The packet capture filter. When this field is empty, all packets are captured.
 @immutable final class MagicVisibilityPcapsPcapsFilter {const MagicVisibilityPcapsPcapsFilter({this.destinationAddress, this.destinationPort, this.protocol, this.sourceAddress, this.sourcePort, });

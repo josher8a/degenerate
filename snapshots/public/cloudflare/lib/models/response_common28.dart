@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon28
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_messages2.dart';@immutable final class ResponseCommon28 {const ResponseCommon28({required this.errors, required this.messages, required this.success, });
 

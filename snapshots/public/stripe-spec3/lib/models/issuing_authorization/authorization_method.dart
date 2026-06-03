@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorization (inline: AuthorizationMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How the card details were provided.
 @immutable final class AuthorizationMethod {const AuthorizationMethod._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesCreateForAuthenticatedUserRequest (inline: Variant2 > PullRequest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Pull request number for this codespace
 @immutable final class Variant2PullRequest {const Variant2PullRequest({required this.pullRequestNumber, required this.repositoryId, });

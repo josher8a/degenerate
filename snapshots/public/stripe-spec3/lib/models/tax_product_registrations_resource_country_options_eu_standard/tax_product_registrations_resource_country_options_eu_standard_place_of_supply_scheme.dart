@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsEuStandard (inline: PlaceOfSupplyScheme)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Place of supply scheme used in an EU standard registration.
 @immutable final class TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._(this.value);

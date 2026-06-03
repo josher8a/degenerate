@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThresholdsResourceUsageAlertFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_alert_filter/thresholds_resource_usage_alert_filter_type.dart';/// 
 @immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer, });

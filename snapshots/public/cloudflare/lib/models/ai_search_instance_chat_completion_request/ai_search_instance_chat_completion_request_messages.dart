@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionRequest (inline: Messages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/messages_role.dart';@immutable final class AiSearchInstanceChatCompletionRequestMessages {const AiSearchInstanceChatCompletionRequestMessages({required this.content, required this.role, this.additionalProperties = const {}, });
 

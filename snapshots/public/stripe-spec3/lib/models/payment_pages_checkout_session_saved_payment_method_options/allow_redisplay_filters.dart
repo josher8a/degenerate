@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionSavedPaymentMethodOptions (inline: AllowRedisplayFilters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowRedisplayFilters {const AllowRedisplayFilters._(this.value);
 

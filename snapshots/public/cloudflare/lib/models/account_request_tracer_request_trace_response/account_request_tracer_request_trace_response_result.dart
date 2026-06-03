@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRequestTracerRequestTraceResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/request_tracer_trace2.dart';/// Trace result with an origin status code
 @immutable final class AccountRequestTracerRequestTraceResponseResult {const AccountRequestTracerRequestTraceResponseResult({this.statusCode, this.trace, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventGraphQlResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventGraphQlResponse {const PostEventGraphQlResponse({this.data, this.errors, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Lists > Certificates)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsCertificates {const ListsCertificates({required this.issuer, required this.subjectName, required this.validFrom, required this.validTo, });
 

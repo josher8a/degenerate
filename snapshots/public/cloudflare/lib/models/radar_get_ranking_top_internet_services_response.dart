@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingTopInternetServicesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ranking_top_internet_services_response/radar_get_ranking_top_internet_services_response_result.dart';@immutable final class RadarGetRankingTopInternetServicesResponse {const RadarGetRankingTopInternetServicesResponse({required this.result, required this.success, });
 

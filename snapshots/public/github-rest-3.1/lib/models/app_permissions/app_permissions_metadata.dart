@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
 @immutable final class AppPermissionsMetadata {const AppPermissionsMetadata._(this.value);

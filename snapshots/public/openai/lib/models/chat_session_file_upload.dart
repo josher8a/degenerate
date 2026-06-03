@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatSessionFileUpload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Upload permissions and limits applied to the session.
 @immutable final class ChatSessionFileUpload {const ChatSessionFileUpload({required this.enabled, required this.maxFileSize, required this.maxFiles, });

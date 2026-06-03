@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageContentRefusalObject (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `refusal`.
 @immutable final class MessageContentRefusalObjectType {const MessageContentRefusalObjectType._(this.value);

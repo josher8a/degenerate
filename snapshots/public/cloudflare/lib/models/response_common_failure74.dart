@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure74
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_messages2.dart';@immutable final class ResponseCommonFailure74 {const ResponseCommonFailure74({required this.errors, required this.messages, required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageTextToText (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageTextToTextVariant1 {const ImageTextToTextVariant1({required this.image, required this.prompt, this.frequencyPenalty, this.ignoreEos, this.maxTokens = 512, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 

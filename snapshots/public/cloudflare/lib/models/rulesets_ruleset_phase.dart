@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRulesetPhase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the ruleset.
 @immutable final class RulesetsRulesetPhase {const RulesetsRulesetPhase._(this.value);

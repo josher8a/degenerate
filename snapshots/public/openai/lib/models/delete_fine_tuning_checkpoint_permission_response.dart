@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteFineTuningCheckpointPermissionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_fine_tuning_checkpoint_permission_response/delete_fine_tuning_checkpoint_permission_response_object.dart';@immutable final class DeleteFineTuningCheckpointPermissionResponse {const DeleteFineTuningCheckpointPermissionResponse({required this.id, required this.object, required this.deleted, });
 

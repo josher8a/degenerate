@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseAudioTranscriptDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a partial transcript of audio.
 @immutable final class ResponseAudioTranscriptDeltaEvent {const ResponseAudioTranscriptDeltaEvent({required this.type, required this.delta, required this.sequenceNumber, });

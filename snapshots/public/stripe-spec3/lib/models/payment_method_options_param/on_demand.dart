@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam (inline: OnDemand)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PurchaseInterval {const PurchaseInterval._(this.value);
 

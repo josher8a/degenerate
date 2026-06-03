@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlertInstancesUrl
 
 /// The REST API URL for fetching the list of instances for an alert.
 extension type AlertInstancesUrl(Uri value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingSummaryByEncryptedResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 {const RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0({required this.encrypted, required this.notEncrypted, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualitySpeedTopLocationsOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the results by.
 @immutable final class RadarGetQualitySpeedTopLocationsOrderBy {const RadarGetQualitySpeedTopLocationsOrderBy._(this.value);

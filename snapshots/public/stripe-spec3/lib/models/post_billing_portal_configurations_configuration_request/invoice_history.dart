@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalConfigurationsConfigurationRequest (inline: Features > InvoiceHistory)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoiceHistory {const InvoiceHistory({required this.enabled});
 

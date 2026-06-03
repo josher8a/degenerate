@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderCollectInputsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request/post_terminal_readers_reader_collect_inputs_request_inputs.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequest {const PostTerminalReadersReaderCollectInputsRequest({required this.inputs, this.expand, this.metadata, });
 

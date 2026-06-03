@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationCreateSchemaRequest (inline: Kind)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The kind of the schema
 @immutable final class SchemaValidationCreateSchemaRequestKind {const SchemaValidationCreateSchemaRequestKind._(this.value);

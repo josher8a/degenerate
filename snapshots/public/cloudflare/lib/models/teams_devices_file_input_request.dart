@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesFileInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';@immutable final class TeamsDevicesFileInputRequest {const TeamsDevicesFileInputRequest({required this.operatingSystem, required this.path, this.exists, this.sha256, this.thumbprint, });
 

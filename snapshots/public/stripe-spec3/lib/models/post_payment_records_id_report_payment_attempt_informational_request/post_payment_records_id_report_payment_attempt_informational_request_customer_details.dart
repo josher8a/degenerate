@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptInformationalRequest (inline: CustomerDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Customer information for this payment.
 @immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails({this.customer, this.email, this.name, this.phone, });

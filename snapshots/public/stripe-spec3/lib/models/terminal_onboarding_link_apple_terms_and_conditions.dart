@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalOnboardingLinkAppleTermsAndConditions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options associated with the Apple Terms and Conditions link type.
 @immutable final class TerminalOnboardingLinkAppleTermsAndConditions {const TerminalOnboardingLinkAppleTermsAndConditions({required this.merchantDisplayName, this.allowRelinking, });

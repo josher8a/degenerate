@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SnippetsZoneId
 
 /// Use this field to specify the unique ID of the zone.
 extension type const SnippetsZoneId(String value) {

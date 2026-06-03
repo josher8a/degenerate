@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlexandriaCreateApplicationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_application_human_id.dart';import 'package:pub_cloudflare/models/alexandria_application_name.dart';@immutable final class AlexandriaCreateApplicationRequest {const AlexandriaCreateApplicationRequest({required this.applicationTypeId, required this.humanId, required this.name, this.hostnames, this.ipSubnets, this.portProtocols, this.supportDomains, });
 

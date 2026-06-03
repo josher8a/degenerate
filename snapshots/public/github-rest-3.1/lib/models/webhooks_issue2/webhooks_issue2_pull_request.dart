@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksIssue2 (inline: PullRequest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksIssue2PullRequest {const WebhooksIssue2PullRequest({this.diffUrl, this.htmlUrl, this.mergedAt, this.patchUrl, this.url, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsDedupeError
 
 /// You have already submitted this URL in the last 7 days
 extension type const AbuseReportsDedupeError(String value) {

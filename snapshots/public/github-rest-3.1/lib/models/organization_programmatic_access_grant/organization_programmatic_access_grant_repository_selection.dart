@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationProgrammaticAccessGrant (inline: RepositorySelection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of repository selection requested.
 @immutable final class OrganizationProgrammaticAccessGrantRepositorySelection {const OrganizationProgrammaticAccessGrantRepositorySelection._(this.value);

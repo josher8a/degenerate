@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageBuild
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/page_build/page_build_error.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Page Build
 @immutable final class PageBuild {const PageBuild({required this.url, required this.status, required this.error, required this.pusher, required this.commit, required this.duration, required this.createdAt, required this.updatedAt, });

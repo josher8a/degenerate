@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessScimUpdateLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_responses.dart';@immutable final class AccessScimUpdateLogsResponse {const AccessScimUpdateLogsResponse({this.result});
 

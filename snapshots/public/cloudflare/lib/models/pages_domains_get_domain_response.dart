@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDomainsGetDomainResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain.dart';import 'package:pub_cloudflare/models/pages_messages2.dart';@immutable final class PagesDomainsGetDomainResponse {const PagesDomainsGetDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Patterns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/patterns_series.dart';@immutable final class WorkersObservabilityQueryResultsPatterns {const WorkersObservabilityQueryResultsPatterns({required this.count, required this.pattern, required this.series, required this.service, });
 

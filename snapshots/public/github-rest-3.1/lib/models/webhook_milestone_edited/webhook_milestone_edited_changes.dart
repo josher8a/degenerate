@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMilestoneEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_edited/webhook_discussion_edited_changes_title.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_description.dart';import 'package:pub_github_rest_3_1/models/webhook_milestone_edited/due_on.dart';/// The changes to the milestone if the action was `edited`.
 @immutable final class WebhookMilestoneEditedChanges {const WebhookMilestoneEditedChanges({this.description, this.dueOn, this.title, });

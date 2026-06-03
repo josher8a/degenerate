@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsPacketLimit
 
 /// The limit of packets contained in a packet capture.
 extension type const MagicVisibilityPcapsPcapsPacketLimit(double value) {

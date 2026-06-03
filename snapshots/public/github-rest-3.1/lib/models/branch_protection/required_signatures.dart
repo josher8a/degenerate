@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchProtection (inline: RequiredSignatures)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequiredSignatures {const RequiredSignatures({required this.url, required this.enabled, });
 

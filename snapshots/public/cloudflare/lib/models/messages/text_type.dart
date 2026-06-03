@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ResponseFormat > Variant1 > Text > Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextType {const TextType._(this.value);
 

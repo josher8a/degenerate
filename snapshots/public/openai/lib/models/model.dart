@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Model
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "model".
 @immutable final class ModelObject {const ModelObject._(this.value);

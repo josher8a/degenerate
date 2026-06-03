@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreatePortalsRequest (inline: Servers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request/updated_prompts.dart';import 'package:pub_cloudflare/models/create_portals_request/updated_tools.dart';@immutable final class CreatePortalsRequestServers {const CreatePortalsRequestServers({required this.serverId, this.defaultDisabled = false, this.onBehalf = true, this.updatedPrompts, this.updatedTools, });
 

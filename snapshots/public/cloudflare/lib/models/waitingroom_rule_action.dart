@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomRuleAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when the expression matches.
 @immutable final class WaitingroomRuleAction {const WaitingroomRuleAction._(this.value);

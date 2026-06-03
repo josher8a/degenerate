@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqBatchSize
 
 /// The maximum number of messages to include in a batch.
 extension type const MqBatchSize(double value) {

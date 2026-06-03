@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMemberAdded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_action.dart';import 'package:pub_github_rest_3_1/models/webhook_member_added/webhook_member_added_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookMemberAdded {const WebhookMemberAdded({required this.action, required this.member, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 

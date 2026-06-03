@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tenant (inline: TenantMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tenant/tenant_metadata_dns.dart';@immutable final class TenantMetadata {const TenantMetadata({this.dns});
 

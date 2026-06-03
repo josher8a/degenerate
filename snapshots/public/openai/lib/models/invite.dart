@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Invite
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite/invite_projects.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';/// The object type, which is always `organization.invite`
 @immutable final class InviteObject {const InviteObject._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListEvaluatorsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListEvaluatorsResponseResult {const AigConfigListEvaluatorsResponseResult({required this.createdAt, required this.description, required this.enable, required this.id, required this.mandatory, required this.modifiedAt, required this.name, required this.type, });
 

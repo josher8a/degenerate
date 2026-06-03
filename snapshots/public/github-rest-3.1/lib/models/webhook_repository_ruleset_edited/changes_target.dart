@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryRulesetEdited (inline: Changes > Conditions > Updated > Changes > Target)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChangesTarget {const ChangesTarget({this.from});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ExtendedPet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/owner.dart';import 'package:spec_12_unions/models/pet_status.dart';@immutable final class ExtendedPet {const ExtendedPet({required this.id, required this.name, this.status, this.breed, this.vaccinated, this.weight, this.owner, });
 

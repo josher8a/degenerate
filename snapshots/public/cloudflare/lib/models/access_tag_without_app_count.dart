@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessTagWithoutAppCount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_tags_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';/// A tag
 @immutable final class AccessTagWithoutAppCount {const AccessTagWithoutAppCount({required this.name, this.createdAt, this.updatedAt, });

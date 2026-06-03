@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax {const PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax({required this.calculation});

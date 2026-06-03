@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection25
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_schemas_messages2.dart';import 'package:pub_cloudflare/models/intel_schemas_result_info.dart';@immutable final class ResponseCollection25 {const ResponseCollection25({required this.errors, required this.messages, required this.success, this.resultInfo, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RefundDestinationDetailsCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of refund. This can be `refund`, `reversal`, or `pending`.
 @immutable final class RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType._(this.value);

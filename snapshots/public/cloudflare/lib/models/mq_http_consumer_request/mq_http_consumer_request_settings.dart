@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqHttpConsumerRequest (inline: Settings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_batch_size.dart';import 'package:pub_cloudflare/models/mq_max_retries.dart';import 'package:pub_cloudflare/models/mq_retry_delay.dart';import 'package:pub_cloudflare/models/mq_visibility_timeout.dart';@immutable final class MqHttpConsumerRequestSettings {const MqHttpConsumerRequestSettings({this.batchSize, this.maxRetries, this.retryDelay, this.visibilityTimeoutMs, });
 

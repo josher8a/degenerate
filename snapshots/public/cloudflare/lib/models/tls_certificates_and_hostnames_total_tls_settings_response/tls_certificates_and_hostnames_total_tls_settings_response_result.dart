@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesTotalTlsSettingsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_enabled.dart';/// The validity period in days for the certificates ordered via Total TLS.
 @immutable final class TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod._(this.value);

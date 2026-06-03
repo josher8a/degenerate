@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ArtifactDeploymentRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record/runtime_risks.dart';/// Artifact Metadata Deployment Record
 @immutable final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId, });

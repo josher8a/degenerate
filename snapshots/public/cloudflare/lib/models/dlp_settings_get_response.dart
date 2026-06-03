@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpSettingsGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dlp_settings.dart';@immutable final class DlpSettingsGetResponse {const DlpSettingsGetResponse({this.result});
 

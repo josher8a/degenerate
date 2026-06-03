@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerIdentifyEkCertResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_connector_identity.dart';import 'package:pub_cloudflare/models/mconn_controller_device_identity.dart';@immutable final class MconnControllerIdentifyEkCertResult {const MconnControllerIdentifyEkCertResult({this.connector, this.device, });
 

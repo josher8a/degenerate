@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionScheduleConfigurationItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_price.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/stackable_discount_with_discount_settings.dart';import 'package:pub_stripe_spec3/models/subscription_item_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item/subscription_schedule_add_invoice_item_price.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// A phase item describes the price and quantity of a phase.
 @immutable final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({required this.discounts, required this.price, this.billingThresholds, this.metadata, this.quantity, this.taxRates, });

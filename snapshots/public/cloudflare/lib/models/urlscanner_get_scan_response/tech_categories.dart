@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Meta > Processors > Tech > Categories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TechCategories {const TechCategories({required this.groups, required this.id, required this.name, required this.priority, required this.slug, });
 

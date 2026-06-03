@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedWebhookEndpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint/deleted_webhook_endpoint_object.dart';/// 
 @immutable final class DeletedWebhookEndpoint {const DeletedWebhookEndpoint({required this.deleted, required this.id, required this.object, });

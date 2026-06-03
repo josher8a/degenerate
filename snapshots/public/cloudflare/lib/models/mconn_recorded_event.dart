@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnRecordedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_event.dart';/// Recorded Event
 @immutable final class MconnRecordedEvent {const MconnRecordedEvent({required this.e, required this.n, required this.t, });

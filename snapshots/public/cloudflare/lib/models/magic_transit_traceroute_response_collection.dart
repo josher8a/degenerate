@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitTracerouteResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_messages2.dart';import 'package:pub_cloudflare/models/magic_transit_target_result.dart';@immutable final class MagicTransitTracerouteResponseCollection {const MagicTransitTracerouteResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

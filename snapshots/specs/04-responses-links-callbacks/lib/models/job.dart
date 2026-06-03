@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Job
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Job {const Job({required this.id, required this.status, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindInherit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersBindingKindInherit {const WorkersBindingKindInherit({required this.name, required this.type, this.oldName, this.versionId = 'latest', });
 

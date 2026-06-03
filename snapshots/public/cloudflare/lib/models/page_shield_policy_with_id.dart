@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldPolicyWithId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_id.dart';import 'package:pub_cloudflare/models/page_shield_policy_action.dart';import 'package:pub_cloudflare/models/page_shield_policy_description.dart';import 'package:pub_cloudflare/models/page_shield_policy_enabled.dart';import 'package:pub_cloudflare/models/page_shield_policy_expression.dart';import 'package:pub_cloudflare/models/page_shield_policy_value.dart';@immutable final class PageShieldPolicyWithId {const PageShieldPolicyWithId({required this.action, required this.description, required this.enabled, required this.expression, required this.value, required this.id, });
 

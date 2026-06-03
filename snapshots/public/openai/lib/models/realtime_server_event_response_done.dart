@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_response.dart';/// Returned when a Response is done streaming. Always emitted, no matter the
 /// final state. The Response object included in the `response.done` event will

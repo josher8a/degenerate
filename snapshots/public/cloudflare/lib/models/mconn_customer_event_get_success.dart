@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnCustomerEventGetSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_recorded_event.dart';@immutable final class MconnCustomerEventGetSuccess {const MconnCustomerEventGetSuccess({required this.success, required this.result, this.errors, this.messages, });
 

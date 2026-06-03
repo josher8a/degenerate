@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemMessageSystem (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_text_content_param/input_text_content_param_type.dart';@immutable final class RealtimeConversationItemMessageSystemContent {const RealtimeConversationItemMessageSystemContent({this.type, this.text, });
 

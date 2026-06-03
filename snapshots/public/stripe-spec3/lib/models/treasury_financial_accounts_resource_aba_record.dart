@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceAbaRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ABA Records contain U.S. bank account details per the ABA format.
 @immutable final class TreasuryFinancialAccountsResourceAbaRecord {const TreasuryFinancialAccountsResourceAbaRecord({required this.accountHolderName, required this.accountNumberLast4, required this.bankName, required this.routingNumber, this.accountNumber, });

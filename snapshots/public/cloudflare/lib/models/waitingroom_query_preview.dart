@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomQueryPreview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_custom_page_html.dart';@immutable final class WaitingroomQueryPreview {const WaitingroomQueryPreview({required this.customHtml});
 

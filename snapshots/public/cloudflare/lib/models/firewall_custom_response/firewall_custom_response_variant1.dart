@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallCustomResponse (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The response body to return. The value must conform to the configured content type.
 extension type const FirewallBody(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Wifi (inline: EnterpriseEapTls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnterpriseEapTls {const EnterpriseEapTls({required this.clientCertificateFile, required this.privateKeyFile, required this.ssid, this.caCertificateFile, this.privateKeyFilePassword, });
 

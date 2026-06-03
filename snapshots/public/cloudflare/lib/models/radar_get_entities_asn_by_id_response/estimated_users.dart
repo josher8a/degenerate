@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnByIdResponse (inline: Result > Asn > EstimatedUsers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/estimated_users_locations.dart';@immutable final class EstimatedUsers {const EstimatedUsers({required this.locations, this.estimatedUsers, });
 

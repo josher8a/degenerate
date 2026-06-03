@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderSetReaderDisplayRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
 @immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);

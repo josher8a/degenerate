@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomEventName
 
 /// A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.
 extension type const WaitingroomEventName(String value) {

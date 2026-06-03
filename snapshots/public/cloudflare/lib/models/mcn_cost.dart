@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnCost
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnCost {const McnCost({required this.currency, required this.monthlyCost, });
 

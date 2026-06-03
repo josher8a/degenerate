@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryReceivedDebitsResourceLinkedFlows
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryReceivedDebitsResourceLinkedFlows {const TreasuryReceivedDebitsResourceLinkedFlows({this.debitReversal, this.inboundTransfer, this.issuingAuthorization, this.issuingTransaction, this.payout, this.topup, });

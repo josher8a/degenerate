@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksListForRefStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksListForRefStatus {const ChecksListForRefStatus._(this.value);
 

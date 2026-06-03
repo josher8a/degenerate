@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPlansRequest (inline: Tiers > UpTo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpToVariant1 {const UpToVariant1._(this.value);
 

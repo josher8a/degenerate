@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallArgumentsDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.delta`.
 @immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType._(this.value);

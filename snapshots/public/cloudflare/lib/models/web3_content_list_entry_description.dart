@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ContentListEntryDescription
 
 /// Specify an optional description of the content list entry.
 extension type const Web3ContentListEntryDescription(String value) {

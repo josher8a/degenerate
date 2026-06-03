@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitTrackLayerOutput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';/// The type of output destination this layer is being exported to.
 @immutable final class RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType._(this.value);

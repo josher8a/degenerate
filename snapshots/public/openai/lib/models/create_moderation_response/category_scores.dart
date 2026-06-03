@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateModerationResponse (inline: Results > CategoryScores)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of the categories along with their scores as predicted by model.
 @immutable final class CategoryScores {const CategoryScores({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });

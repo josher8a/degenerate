@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyCheckResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_check_response/access_policy_check_response_result.dart';@immutable final class AccessPolicyCheckResponse {const AccessPolicyCheckResponse({this.result});
 

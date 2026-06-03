@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsCardPresentOffline
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method used to process this payment method offline. Only deferred is allowed.
 @immutable final class PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType._(this.value);

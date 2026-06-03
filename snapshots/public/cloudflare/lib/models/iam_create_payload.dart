@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreatePayload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_condition.dart';import 'package:pub_cloudflare/models/iam_expires_on.dart';import 'package:pub_cloudflare/models/iam_name.dart';import 'package:pub_cloudflare/models/iam_not_before.dart';import 'package:pub_cloudflare/models/iam_policy_with_permission_groups_and_resources.dart';@immutable final class IamCreatePayload {const IamCreatePayload({required this.name, required this.policies, this.condition, this.expiresOn, this.notBefore, });
 

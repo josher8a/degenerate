@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for access_application_policy resource type.
 @immutable final class ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum {const ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum._(this.value);

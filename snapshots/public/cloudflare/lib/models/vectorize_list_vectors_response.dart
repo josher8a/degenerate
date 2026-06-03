@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeListVectorsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_list_vectors_response.dart';@immutable final class VectorizeListVectorsResponse {const VectorizeListVectorsResponse({this.result});
 

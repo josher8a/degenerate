@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PutGroupUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutGroupUpdateResponse {const PutGroupUpdateResponse({required this.createdAt, required this.description, required this.name, required this.updatedAt, required this.uuid, });
 

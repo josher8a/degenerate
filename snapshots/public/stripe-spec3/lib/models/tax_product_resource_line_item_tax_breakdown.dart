@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceLineItemTaxBreakdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_jurisdiction.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown/tax_product_resource_line_item_tax_breakdown_taxability_reason.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
 @immutable final class Sourcing {const Sourcing._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteIpProfileResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_ip_profile_response/delete_ip_profile_response_result.dart';import 'package:pub_cloudflare/models/response_message.dart';@immutable final class DeleteIpProfileResponse {const DeleteIpProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LocalShellExecAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the local shell action. Always `exec`.
 @immutable final class LocalShellExecActionType {const LocalShellExecActionType._(this.value);

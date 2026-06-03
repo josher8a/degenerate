@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceEnterpriseTlsWifi
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceEnterpriseTlsWifi {const TerminalConfigurationConfigurationResourceEnterpriseTlsWifi({required this.clientCertificateFile, required this.privateKeyFile, required this.ssid, this.caCertificateFile, this.privateKeyFilePassword, });

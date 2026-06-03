@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRumSiteResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_messages2.dart';import 'package:pub_cloudflare/models/rum_rum_site.dart';@immutable final class RumRumSiteResponseSingle {const RumRumSiteResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 

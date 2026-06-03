@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnUpdateProviderResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_provider.dart';@immutable final class McnUpdateProviderResponse {const McnUpdateProviderResponse({this.result});
 

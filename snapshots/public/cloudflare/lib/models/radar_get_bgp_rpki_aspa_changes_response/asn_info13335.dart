@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRpkiAspaChangesResponse (inline: Result > AsnInfo > 13335)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsnInfo13335 {const AsnInfo13335({required this.asn, required this.country, required this.name, });
 

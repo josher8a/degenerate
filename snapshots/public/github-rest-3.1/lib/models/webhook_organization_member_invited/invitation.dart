@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookOrganizationMemberInvited (inline: Invitation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_member_invited/inviter.dart';/// The invitation for the user or email if the action is `member_invited`.
 @immutable final class Invitation {const Invitation({required this.createdAt, required this.email, required this.failedAt, required this.failedReason, required this.id, required this.invitationTeamsUrl, required this.inviter, required this.login, required this.nodeId, required this.role, required this.teamCount, this.invitationSource, });

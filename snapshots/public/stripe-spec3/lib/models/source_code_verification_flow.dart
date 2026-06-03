@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceCodeVerificationFlow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceCodeVerificationFlow {const SourceCodeVerificationFlow({required this.attemptsRemaining, required this.status, });

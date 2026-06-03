@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryRegion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A test region.
 @immutable final class ObservatoryRegion {const ObservatoryRegion._(this.value);

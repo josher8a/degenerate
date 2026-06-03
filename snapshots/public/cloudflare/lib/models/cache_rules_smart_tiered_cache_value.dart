@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesSmartTieredCacheValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Smart Tiered Cache zone setting.
 @immutable final class CacheRulesSmartTieredCacheValue {const CacheRulesSmartTieredCacheValue._(this.value);

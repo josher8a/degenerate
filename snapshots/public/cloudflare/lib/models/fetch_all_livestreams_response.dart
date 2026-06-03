@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FetchAllLivestreamsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_all_livestreams_response/fetch_all_livestreams_response_data.dart';@immutable final class FetchAllLivestreamsResponse {const FetchAllLivestreamsResponse({this.data, this.success, });
 

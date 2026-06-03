@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseContentPartAddedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_content.dart';/// Emitted when a new content part is added.
 @immutable final class ResponseContentPartAddedEvent {const ResponseContentPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, required this.sequenceNumber, });

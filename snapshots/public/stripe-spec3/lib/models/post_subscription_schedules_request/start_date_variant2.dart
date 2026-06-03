@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionSchedulesRequest (inline: StartDate > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StartDateVariant2 {const StartDateVariant2._(this.value);
 

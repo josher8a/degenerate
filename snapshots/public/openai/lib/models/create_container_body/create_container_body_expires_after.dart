@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateContainerBody (inline: ExpiresAfter)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after/vector_store_expiration_after_anchor.dart';/// Container expiration time in seconds relative to the 'anchor' time.
 @immutable final class CreateContainerBodyExpiresAfter {const CreateContainerBodyExpiresAfter({required this.anchor, required this.minutes, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Metadata > DeviceInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataDeviceInfo {const MetadataDeviceInfo({this.cpus, this.isMobile, this.os, this.osVersion, });
 

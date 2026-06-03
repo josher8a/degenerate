@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRun (inline: PerTestingCriteriaResults)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PerTestingCriteriaResults {const PerTestingCriteriaResults({required this.testingCriteria, required this.passed, required this.failed, });
 

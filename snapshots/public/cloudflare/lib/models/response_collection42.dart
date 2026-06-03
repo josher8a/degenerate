@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection42
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_messages2.dart';import 'package:pub_cloudflare/models/waf_managed_rules_result_info.dart';@immutable final class ResponseCollection42 {const ResponseCollection42({required this.errors, required this.messages, required this.success, this.resultInfo, });
 

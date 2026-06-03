@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfDeepgramFluxRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the audio stream. Currently only supports raw signed little-endian 16-bit PCM.
 @immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding._(this.value);

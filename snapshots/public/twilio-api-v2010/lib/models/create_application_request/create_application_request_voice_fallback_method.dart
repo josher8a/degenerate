@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateApplicationRequest (inline: VoiceFallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class CreateApplicationRequestVoiceFallbackMethod {const CreateApplicationRequestVoiceFallbackMethod._(this.value);

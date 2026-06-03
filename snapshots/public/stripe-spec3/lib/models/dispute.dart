@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Dispute
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';@immutable final class EnhancedEligibilityTypes {const EnhancedEligibilityTypes._(this.value);
 

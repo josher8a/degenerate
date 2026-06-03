@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityAttachment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';@immutable final class EmailSecurityAttachment {const EmailSecurityAttachment({required this.size, this.contentType, this.detection, this.encrypted, this.name, });
 

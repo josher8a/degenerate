@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingProvisioning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
 /// 

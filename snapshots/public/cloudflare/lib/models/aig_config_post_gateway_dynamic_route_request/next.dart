@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Start > Outputs > Next)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Next {const Next({required this.elementId});
 

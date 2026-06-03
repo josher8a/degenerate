@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksIssue2 (inline: PerformedViaGithubApp > Permissions > Keys)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Keys {const Keys._(this.value);
 

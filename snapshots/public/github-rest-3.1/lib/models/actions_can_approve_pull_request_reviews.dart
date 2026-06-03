@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCanApprovePullRequestReviews
 
 /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
 extension type const ActionsCanApprovePullRequestReviews(bool value) {

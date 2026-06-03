@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosExpressionFilterListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_expression_filter.dart';@immutable final class DosExpressionFilterListResponse {const DosExpressionFilterListResponse({this.result});
 

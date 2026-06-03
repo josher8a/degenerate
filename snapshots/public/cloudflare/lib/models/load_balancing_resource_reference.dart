@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingResourceReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When listed as a reference, the type (direction) of the reference.
 @immutable final class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIpListRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_ip_list_rule/ip_list.dart';/// Matches an IP address from a list.
 @immutable final class AccessIpListRule {const AccessIpListRule({required this.ipList});

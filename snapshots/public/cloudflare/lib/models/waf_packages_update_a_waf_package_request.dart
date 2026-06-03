@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafPackagesUpdateAWafPackageRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action_mode.dart';import 'package:pub_cloudflare/models/firewall_sensitivity.dart';@immutable final class WafPackagesUpdateAWafPackageRequest {const WafPackagesUpdateAWafPackageRequest({this.actionMode, this.sensitivity, });
 

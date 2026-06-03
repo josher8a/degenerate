@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIndicatorTypeCreateResponse500
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_indicator_type_create_response400/post_indicator_type_create_response400_content.dart';@immutable final class PostIndicatorTypeCreateResponse500 {const PostIndicatorTypeCreateResponse500({required this.content, required this.description, });
 

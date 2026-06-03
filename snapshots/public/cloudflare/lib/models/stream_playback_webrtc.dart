@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamPlaybackWebrtc
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The URL used to play live video over WebRTC.
 extension type const StreamPlaybackWebrtcUrl(String value) {

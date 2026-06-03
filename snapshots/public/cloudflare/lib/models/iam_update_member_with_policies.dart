@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUpdateMemberWithPolicies
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_create_member_policy.dart';@immutable final class IamUpdateMemberWithPolicies {const IamUpdateMemberWithPolicies({required this.policies});
 

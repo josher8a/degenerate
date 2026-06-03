@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/$0Response400 (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class $0Response400Errors {const $0Response400Errors({required this.code, required this.message, });
 

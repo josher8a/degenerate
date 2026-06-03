@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesStatsResponse (inline: Result > Stats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultStats {const ResultStats({required this.distinctOrigins, required this.distinctOriginsIpv4, required this.distinctOriginsIpv6, required this.distinctPrefixes, required this.distinctPrefixesIpv4, required this.distinctPrefixesIpv6, required this.routesInvalid, required this.routesInvalidIpv4, required this.routesInvalidIpv6, required this.routesTotal, required this.routesTotalIpv4, required this.routesTotalIpv6, required this.routesUnknown, required this.routesUnknownIpv4, required this.routesUnknownIpv6, required this.routesValid, required this.routesValidIpv4, required this.routesValidIpv6, });
 

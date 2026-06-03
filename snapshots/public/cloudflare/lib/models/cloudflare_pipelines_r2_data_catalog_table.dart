@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2DataCatalogTable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public/rolling_policy.dart';/// R2 Data Catalog Sink
 @immutable final class CloudflarePipelinesR2DataCatalogTable {const CloudflarePipelinesR2DataCatalogTable({required this.accountId, required this.bucket, required this.tableName, required this.token, this.namespace, this.rollingPolicy, });

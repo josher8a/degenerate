@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminDeviceFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnAdminDeviceFields {const MconnAdminDeviceFields({this.cryptKey, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationOutput, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.lastCryptKey, this.lastUpdated, this.metadata, this.pkiRotationFinishedAt, this.pkiRotationOutput, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
 

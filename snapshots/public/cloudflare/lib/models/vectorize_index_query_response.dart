@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexQueryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_query_response/vectorize_index_query_response_matches.dart';@immutable final class VectorizeIndexQueryResponse {const VectorizeIndexQueryResponse({this.count, this.matches, });
 

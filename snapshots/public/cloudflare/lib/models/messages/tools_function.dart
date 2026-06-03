@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/function_type.dart';import 'package:pub_cloudflare/models/messages/tools_function_function.dart';@immutable final class ToolsFunction {const ToolsFunction({required this.function, required this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationListResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_result_configuration.dart';@immutable final class DestinationListResponseResult {const DestinationListResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
 

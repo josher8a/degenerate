@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardAuthorizationControls (inline: BlockedCategories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BlockedCategories {const BlockedCategories._(this.value);
 

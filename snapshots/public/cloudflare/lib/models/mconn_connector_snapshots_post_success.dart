@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnConnectorSnapshotsPostSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_connector_snapshots_post_result.dart';@immutable final class MconnConnectorSnapshotsPostSuccess {const MconnConnectorSnapshotsPostSuccess({required this.success, required this.result, this.errors, this.messages, });
 

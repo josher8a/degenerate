@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: AdvancedSecurity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of GitHub Advanced Security
 @immutable final class CodeSecurityConfigurationAdvancedSecurity {const CodeSecurityConfigurationAdvancedSecurity._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionTokenLogprob (inline: TopLogprobs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionTokenLogprobTopLogprobs {const ChatCompletionTokenLogprobTopLogprobs({required this.token, required this.logprob, required this.bytes, });
 

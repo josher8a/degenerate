@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueFieldValue (inline: SingleSelectOption)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the selected option (only present for single_select fields)
 @immutable final class IssueFieldValueSingleSelectOption {const IssueFieldValueSingleSelectOption({required this.id, required this.name, required this.color, });

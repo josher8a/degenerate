@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingShareResourceObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_created.dart';import 'package:pub_cloudflare/models/resource_sharing_modified.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_status.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_type.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_version.dart';@immutable final class ResourceSharingShareResourceObject {const ResourceSharingShareResourceObject({required this.created, required this.id, required this.meta, required this.modified, required this.resourceAccountId, required this.resourceId, required this.resourceType, required this.resourceVersion, required this.status, });
 

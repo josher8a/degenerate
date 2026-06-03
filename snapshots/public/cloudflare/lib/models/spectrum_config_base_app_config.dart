@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigBaseAppConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';@immutable final class SpectrumConfigBaseAppConfig {const SpectrumConfigBaseAppConfig({required this.createdOn, required this.id, required this.modifiedOn, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Collaborator (inline: Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CollaboratorPermissions {const CollaboratorPermissions({required this.admin, required this.pull, required this.push, this.triage, this.maintain, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsListArtifactsForRepoResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact.dart';@immutable final class ActionsListArtifactsForRepoResponse {const ActionsListArtifactsForRepoResponse({required this.totalCount, required this.artifacts, });
 

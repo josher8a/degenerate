@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: StartUpgrade)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started upgrade
 @immutable final class StartUpgradeK {const StartUpgradeK._(this.value);

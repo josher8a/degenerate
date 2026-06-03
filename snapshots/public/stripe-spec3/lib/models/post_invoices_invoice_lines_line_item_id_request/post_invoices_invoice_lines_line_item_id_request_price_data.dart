@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceLinesLineItemIdRequest (inline: PriceData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_lines_line_item_id_request/price_data_product_data.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestPriceData {const PostInvoicesInvoiceLinesLineItemIdRequestPriceData({required this.currency, this.product, this.productData, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 

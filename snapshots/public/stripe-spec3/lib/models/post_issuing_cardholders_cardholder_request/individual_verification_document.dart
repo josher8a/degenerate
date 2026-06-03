@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Individual > Verification > Document)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IndividualVerificationDocument {const IndividualVerificationDocument({this.back, this.front, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigHistoryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_messages2.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_history_response/zaraz_zaraz_config_history_response_result_value.dart';@immutable final class ZarazZarazConfigHistoryResponse {const ZarazZarazConfigHistoryResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

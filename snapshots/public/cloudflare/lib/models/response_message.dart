@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A message which can be returned in either the 'errors' or 'messages' fields in a v4 API response.
 @immutable final class ResponseMessage {const ResponseMessage({required this.code, required this.message, });

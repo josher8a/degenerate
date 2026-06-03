@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerScriptPatchSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item.dart';@immutable final class WorkerScriptPatchSettingsRequest {const WorkerScriptPatchSettingsRequest({this.settings});
 

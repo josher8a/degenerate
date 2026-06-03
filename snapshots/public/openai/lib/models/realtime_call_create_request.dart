@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeCallCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session_create_request_ga.dart';/// Parameters required to initiate a realtime call and receive the SDP answer
 /// needed to complete a WebRTC peer connection. Provide an SDP offer generated

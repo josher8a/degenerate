@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailDnsRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';import 'package:pub_cloudflare/models/email_dns_record/ttl.dart';/// DNS record type.
 @immutable final class EmailDnsRecordType {const EmailDnsRecordType._(this.value);

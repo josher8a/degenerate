@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantsNamedToolChoice (inline: Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantsNamedToolChoiceFunction {const AssistantsNamedToolChoiceFunction({required this.name});
 

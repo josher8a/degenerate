@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneWhoisSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_whois_whois.dart';@immutable final class CloudforceOneWhoisSchemasSingleResponse {const CloudforceOneWhoisSchemasSingleResponse({this.result});
 

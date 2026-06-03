@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransferIbanRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// Iban Records contain E.U. bank account details per the SEPA format.
 @immutable final class FundingInstructionsBankTransferIbanRecord {const FundingInstructionsBankTransferIbanRecord({required this.accountHolderAddress, required this.accountHolderName, required this.bankAddress, required this.bic, required this.country, required this.iban, });

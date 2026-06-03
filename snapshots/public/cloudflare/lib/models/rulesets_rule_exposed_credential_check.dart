@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRuleExposedCredentialCheck
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for exposed credential checking.
 @immutable final class RulesetsRuleExposedCredentialCheck {const RulesetsRuleExposedCredentialCheck({required this.passwordExpression, required this.usernameExpression, });

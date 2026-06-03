@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmsMessageEnumStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmsMessageEnumStatus {const SmsMessageEnumStatus._(this.value);
 

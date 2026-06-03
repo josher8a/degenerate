@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchListTokensOrderByDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Direction
 @immutable final class AiSearchListTokensOrderByDirection {const AiSearchListTokensOrderByDirection._(this.value);

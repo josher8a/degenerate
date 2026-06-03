@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Compare)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/calculations_aggregates.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/calculations_series.dart';@immutable final class Compare {const Compare({required this.aggregates, required this.calculation, required this.series, this.alias, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSourcesRequest (inline: Mandate > Acceptance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance/customer_acceptance_type.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance_offline.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance_online.dart';@immutable final class AcceptanceStatus {const AcceptanceStatus._(this.value);
 

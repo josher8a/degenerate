@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicDescription
 
 /// An optional human provided description of the static route.
 extension type const MagicDescription(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksSetSuitesPreferencesRequest (inline: AutoTriggerChecks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoTriggerChecks {const AutoTriggerChecks({required this.appId, required this.setting, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedInvoiceitem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_invoiceitem/deleted_invoiceitem_object.dart';/// 
 @immutable final class DeletedInvoiceitem {const DeletedInvoiceitem({required this.deleted, required this.id, required this.object, });

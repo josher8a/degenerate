@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersonalAccessTokenRequest (inline: PermissionsResult)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
 @immutable final class PermissionsResult {const PermissionsResult({this.organization, this.repository, this.other, });

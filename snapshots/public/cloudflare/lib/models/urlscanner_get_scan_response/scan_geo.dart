@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Geo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScanGeo {const ScanGeo({required this.continents, required this.locations, });
 

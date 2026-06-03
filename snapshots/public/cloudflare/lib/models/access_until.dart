@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUntil
 
 /// the timestamp of the most-recent update log.
 extension type AccessUntil(DateTime value) {

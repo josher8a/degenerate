@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction/balance_transaction_source.dart';import 'package:pub_stripe_spec3/models/fee.dart';/// The balance that this transaction impacts.
 @immutable final class BalanceType {const BalanceType._(this.value);

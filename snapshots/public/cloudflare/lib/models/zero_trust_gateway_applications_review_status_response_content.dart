@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayApplicationsReviewStatusResponseContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';@immutable final class ZeroTrustGatewayApplicationsReviewStatusResponseContent {const ZeroTrustGatewayApplicationsReviewStatusResponseContent({this.approvedApps, this.createdAt, this.inReviewApps, this.unapprovedApps, this.updatedAt, });
 

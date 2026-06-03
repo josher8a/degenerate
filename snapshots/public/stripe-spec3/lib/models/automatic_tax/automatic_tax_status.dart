@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutomaticTax (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the most recent automated tax calculation for this invoice.
 @immutable final class AutomaticTaxStatus {const AutomaticTaxStatus._(this.value);

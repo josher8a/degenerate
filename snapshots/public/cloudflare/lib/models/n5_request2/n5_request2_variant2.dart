@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/$5Request2 (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n5_request2/n5_request2_variant2_requests.dart';@immutable final class $5Request2Variant2 {const $5Request2Variant2({required this.requests});
 

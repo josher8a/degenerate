@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails {const TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails({this.chips, this.imad, this.omad, });

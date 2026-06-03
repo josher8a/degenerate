@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelCfdTunnel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_config_src.dart';import 'package:pub_cloudflare/models/tunnel_conns_active_at.dart';import 'package:pub_cloudflare/models/tunnel_conns_inactive_at.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_schemas_connection.dart';import 'package:pub_cloudflare/models/tunnel_status.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';/// If `true`, the tunnel can be configured remotely from the Zero Trust dashboard. If `false`, the tunnel must be configured locally on the origin machine.
 extension type const TunnelRemoteConfig(bool value) {

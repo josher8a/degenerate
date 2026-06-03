@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicIpIpsJdcloud
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/public_ip_etag.dart';@immutable final class PublicIpIpsJdcloud {const PublicIpIpsJdcloud({this.etag, this.ipv4Cidrs, this.ipv6Cidrs, this.jdcloudCidrs, });
 

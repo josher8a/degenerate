@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: AutomaticTax)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/liability.dart';/// Settings for automatic tax lookup for this session and resulting payments, invoices, and subscriptions.
 @immutable final class PostCheckoutSessionsRequestAutomaticTax {const PostCheckoutSessionsRequestAutomaticTax({required this.enabled, this.liability, });

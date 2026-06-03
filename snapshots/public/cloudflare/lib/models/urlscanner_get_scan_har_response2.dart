@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/log.dart';@immutable final class UrlscannerGetScanHarResponse2 {const UrlscannerGetScanHarResponse2({required this.log});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaComponentsSchemasMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaComponentsSchemasMessages2 {const AaaComponentsSchemasMessages2({required this.message, this.code, });
 

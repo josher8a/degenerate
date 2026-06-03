@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountSipSipDomainSipIpAccessControlListMapping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipIpAccessControlListMapping {const AccountSipSipDomainSipIpAccessControlListMapping({this.accountSid, this.dateCreated, this.dateUpdated, this.domainSid, this.friendlyName, this.sid, this.uri, });
 

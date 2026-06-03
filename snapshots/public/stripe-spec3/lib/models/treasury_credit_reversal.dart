@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryCreditReversal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// The rails used to reverse the funds.
 @immutable final class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCodeInterpreterCallInterpretingEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the code interpreter is actively interpreting the code snippet.
 @immutable final class ResponseCodeInterpreterCallInterpretingEvent {const ResponseCodeInterpreterCallInterpretingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });

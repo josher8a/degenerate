@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContentTraffic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Content Traffic
 @immutable final class ContentTraffic {const ContentTraffic({required this.path, required this.title, required this.count, required this.uniques, });

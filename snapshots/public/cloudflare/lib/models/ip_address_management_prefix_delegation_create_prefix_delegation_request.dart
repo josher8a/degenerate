@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_delegated_account_identifier.dart';@immutable final class IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest {const IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest({required this.cidr, required this.delegatedAccountId, });
 

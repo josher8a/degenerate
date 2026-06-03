@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewCommentEvent (inline: Comment > Reactions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommentReactions {const CommentReactions({this.plus1, this.minus1, this.confused, this.eyes, this.heart, this.hooray, this.laugh, this.rocket, this.totalCount, this.url, });
 

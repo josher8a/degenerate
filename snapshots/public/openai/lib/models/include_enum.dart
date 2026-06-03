@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IncludeEnum
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify additional output data to include in the model response. Currently supported values are:
 /// - `web_search_call.action.sources`: Include the sources of the web search tool call.

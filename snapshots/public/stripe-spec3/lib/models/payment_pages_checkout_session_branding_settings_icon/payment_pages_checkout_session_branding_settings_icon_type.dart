@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionBrandingSettingsIcon (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of image for the icon. Must be one of `file` or `url`.
 @immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType._(this.value);

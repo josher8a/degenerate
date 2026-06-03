@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReviewComment (inline: Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/link.dart';@immutable final class ReviewCommentLinks {const ReviewCommentLinks({required this.self, required this.html, required this.pullRequest, });
 

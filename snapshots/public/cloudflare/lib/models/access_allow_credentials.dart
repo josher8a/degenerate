@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAllowCredentials
 
 /// When set to `true`, includes credentials (cookies, authorization headers, or TLS client certificates) with requests.
 extension type const AccessAllowCredentials(bool value) {

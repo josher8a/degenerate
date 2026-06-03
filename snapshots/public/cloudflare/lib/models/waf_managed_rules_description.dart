@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesDescription
 
 /// Defines an informative summary of what the rule group does.
 extension type const WafManagedRulesDescription(String value) {

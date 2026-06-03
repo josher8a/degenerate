@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanRequest2 (inline: Country)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Country to geo egress from
 @immutable final class UrlscannerCreateScanRequest2Country {const UrlscannerCreateScanRequest2Country._(this.value);

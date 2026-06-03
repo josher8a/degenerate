@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpHijacksEventsResponse (inline: Result > AsnInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpHijacksEventsResponseResultAsnInfo {const RadarGetBgpHijacksEventsResponseResultAsnInfo({required this.asn, required this.countryCode, required this.orgName, });
 

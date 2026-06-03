@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfirmationTokensResourcePaymentMethodOptionsResourceCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_options_resource_card_resource_installment.dart';/// This hash contains the card payment method options.
 @immutable final class ConfirmationTokensResourcePaymentMethodOptionsResourceCard {const ConfirmationTokensResourcePaymentMethodOptionsResourceCard({this.cvcToken, this.installments, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostLinkAccountSessionsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request/account_holder.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request/post_financial_connections_sessions_request_filters.dart';@immutable final class PostLinkAccountSessionsRequest {const PostLinkAccountSessionsRequest({required this.accountHolder, required this.permissions, this.expand, this.filters, this.prefetch, this.returnUrl, });
 

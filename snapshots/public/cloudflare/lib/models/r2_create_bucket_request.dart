@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2CreateBucketRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket_location.dart';import 'package:pub_cloudflare/models/r2_bucket_name.dart';import 'package:pub_cloudflare/models/r2_storage_class.dart';/// Example:
 /// ```json

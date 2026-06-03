@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldSchemaUploadFailure
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_old_schema_upload_details_errors_critical.dart';@immutable final class ShieldOldSchemaUploadFailure {const ShieldOldSchemaUploadFailure({required this.errors, required this.messages, required this.result, required this.success, this.uploadDetails, });
 

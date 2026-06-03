@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsReportPaymentRequest (inline: CustomerPresence)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
 @immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryTransactionEntry (inline: FlowType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the flow that created the Transaction.
 @immutable final class FlowType {const FlowType._(this.value);

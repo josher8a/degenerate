@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingConsecutiveDown
 
 /// To be marked unhealthy the monitored origin must fail this healthcheck N consecutive times.
 extension type const LoadBalancingConsecutiveDown(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminDeviceReplaceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_device.dart';@immutable final class MconnAdminDeviceReplaceResponse {const MconnAdminDeviceReplaceResponse({this.result});
 

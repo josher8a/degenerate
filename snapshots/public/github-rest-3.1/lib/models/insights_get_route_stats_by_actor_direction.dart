@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsGetRouteStatsByActorDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetRouteStatsByActorDirection {const InsightsGetRouteStatsByActorDirection._(this.value);
 

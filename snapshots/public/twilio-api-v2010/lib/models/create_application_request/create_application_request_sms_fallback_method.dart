@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateApplicationRequest (inline: SmsFallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 @immutable final class CreateApplicationRequestSmsFallbackMethod {const CreateApplicationRequestSmsFallbackMethod._(this.value);

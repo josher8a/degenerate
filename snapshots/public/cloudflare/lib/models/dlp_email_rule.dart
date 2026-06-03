@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description, });
 

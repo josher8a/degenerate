@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BalanceSettingsObject {const BalanceSettingsObject._(this.value);

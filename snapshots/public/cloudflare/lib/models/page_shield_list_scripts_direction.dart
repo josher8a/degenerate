@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListScriptsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned scripts.
 @immutable final class PageShieldListScriptsDirection {const PageShieldListScriptsDirection._(this.value);

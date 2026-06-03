@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityTelemetryEvent (inline: $workers > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/diagnostics_channel_events.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/execution_model.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/script_version.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/variant1_event_type.dart';@immutable final class WorkersVariant2 {const WorkersVariant2({required this.cpuTimeMs, required this.eventType, required this.outcome, required this.requestId, required this.scriptName, required this.wallTimeMs, this.diagnosticsChannelEvents, this.dispatchNamespace, this.durableObjectId, this.entrypoint, this.event, this.executionModel, this.scriptVersion, this.truncated, });
 

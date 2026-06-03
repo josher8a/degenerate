@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleParamsRequiredReviewerConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_reviewer.dart';/// A reviewing team, and file patterns describing which files they must approve changes to.
 @immutable final class RepositoryRuleParamsRequiredReviewerConfiguration {const RepositoryRuleParamsRequiredReviewerConfiguration({required this.filePatterns, required this.minimumApprovals, required this.reviewer, });

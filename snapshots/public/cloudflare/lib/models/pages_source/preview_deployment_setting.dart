@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesSource (inline: Config > PreviewDeploymentSetting)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether commits to preview branches trigger a preview deployment.
 @immutable final class PreviewDeploymentSetting {const PreviewDeploymentSetting._(this.value);

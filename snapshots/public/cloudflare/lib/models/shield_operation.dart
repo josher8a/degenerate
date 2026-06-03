@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/routing.dart';import 'package:pub_cloudflare/models/shield_operation_feature_confidence_intervals.dart';import 'package:pub_cloudflare/models/shield_operation_feature_parameter_schemas.dart';import 'package:pub_cloudflare/models/shield_operation_feature_schema_info.dart';import 'package:pub_cloudflare/models/shield_operation_feature_thresholds.dart';import 'package:pub_cloudflare/models/shield_operation_features.dart';@immutable final class ShieldOperation {const ShieldOperation({this.features});
 

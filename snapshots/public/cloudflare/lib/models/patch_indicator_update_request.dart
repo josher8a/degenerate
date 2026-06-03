@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PatchIndicatorUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/patch_indicator_update_request_tags.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/tags_variant2.dart';@immutable final class PatchIndicatorUpdateRequest {const PatchIndicatorUpdateRequest({this.indicatorType, this.relatedEvents, this.tags, this.value, });
 

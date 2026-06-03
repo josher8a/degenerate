@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificatePackCertificate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_certificate/geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// An individual certificate within a certificate pack.
 @immutable final class TlsCertificatesAndHostnamesCertificatePackCertificate {const TlsCertificatesAndHostnamesCertificatePackCertificate({required this.hosts, required this.id, required this.status, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.issuer, this.modifiedOn, this.priority, this.signature, this.uploadedOn, this.zoneId, });

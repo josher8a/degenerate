@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1JurisdictionNullable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 @immutable final class D1JurisdictionNullable {const D1JurisdictionNullable._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigFilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_files_response/autorag_config_files_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_files_response/autorag_config_files_response_result_info.dart';@immutable final class AutoragConfigFilesResponse {const AutoragConfigFilesResponse({required this.result, required this.resultInfo, required this.success, });
 

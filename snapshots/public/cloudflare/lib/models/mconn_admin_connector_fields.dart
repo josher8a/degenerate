@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminConnectorFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_day_of_week.dart';import 'package:pub_cloudflare/models/mconn_embargo_date.dart';@immutable final class MconnAdminConnectorFields {const MconnAdminConnectorFields({this.accountId, this.activated, this.cloudflaredTunnelId, this.cloudflaredTunnelToken, this.cohortId, this.desiredVersion, this.deviceId, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.lastHeartbeat, this.lastSeenVersion, this.lastUpdated, this.notes, this.timezone, this.upgradeAsap, });
 

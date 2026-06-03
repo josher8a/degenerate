@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesClientCertificateInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesClientCertificateInputRequest {const TeamsDevicesClientCertificateInputRequest({required this.certificateId, required this.cn, });
 

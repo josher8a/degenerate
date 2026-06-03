@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TransformQuantity (inline: Round)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// After division, either round the result `up` or `down`.
 @immutable final class Round {const Round._(this.value);

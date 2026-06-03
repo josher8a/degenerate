@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: KakaoPay)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Kakao Pay is a popular local wallet available in South Korea.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestKakaoPay {const PostPaymentMethodConfigurationsConfigurationRequestKakaoPay({this.displayPreference});

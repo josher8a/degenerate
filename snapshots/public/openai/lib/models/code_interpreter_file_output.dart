@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeInterpreterFileOutput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_file_output/code_interpreter_file_output_files.dart';/// The type of the code interpreter file output. Always `files`.
 /// 

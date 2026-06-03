@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotMount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Mount
 @immutable final class MconnSnapshotMount {const MconnSnapshotMount({required this.fileSystem, required this.kind, required this.mountPoint, required this.name, this.availableBytes, this.connectorId, this.isReadOnly, this.isRemovable, this.totalBytes, });

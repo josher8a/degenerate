@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpNewCustomEntryWithId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_pattern.dart';@immutable final class DlpNewCustomEntryWithId {const DlpNewCustomEntryWithId({required this.enabled, required this.name, required this.pattern, required this.entryId, this.description, });
 

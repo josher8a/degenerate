@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsCertRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a CERT record.
 @immutable final class DnsRecordsCertRecordData {const DnsRecordsCertRecordData({this.algorithm, this.certificate, this.keyTag, this.type, });

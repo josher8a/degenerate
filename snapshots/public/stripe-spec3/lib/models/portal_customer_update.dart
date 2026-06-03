@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalCustomerUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates._(this.value);
 

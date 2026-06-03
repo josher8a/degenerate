@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// Text output from the Code Interpreter tool call as part of a run step.
 @immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject {const RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject({required this.index, required this.type, this.logs, });

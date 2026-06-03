@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventAggregateResponse (inline: Aggregations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Aggregations {const Aggregations({required this.count, this.date, this.additionalProperties = const {}, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateEvalRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateEvalRequest {const UpdateEvalRequest({this.name, this.metadata, });
 

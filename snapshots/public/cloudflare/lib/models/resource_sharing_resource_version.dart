@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingResourceVersion
 
 /// Resource Version.
 extension type const ResourceSharingResourceVersion(int value) {

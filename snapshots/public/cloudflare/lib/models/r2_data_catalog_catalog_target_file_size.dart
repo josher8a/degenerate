@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalogTargetFileSize
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the target file size for compaction in megabytes. Defaults to "128".
 @immutable final class R2DataCatalogCatalogTargetFileSize {const R2DataCatalogCatalogTargetFileSize._(this.value);

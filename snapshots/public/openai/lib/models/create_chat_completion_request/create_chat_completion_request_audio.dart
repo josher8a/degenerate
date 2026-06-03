@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateChatCompletionRequest (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,
 /// `opus`, or `pcm16`.

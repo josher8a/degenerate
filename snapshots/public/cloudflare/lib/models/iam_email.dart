@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamEmail
 
 /// The contact email address of the user.
 extension type const IamEmail(String value) {

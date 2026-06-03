@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessTagsComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_tag.dart';@immutable final class AccessTagsComponentsSchemasSingleResponse {const AccessTagsComponentsSchemasSingleResponse({this.result});
 

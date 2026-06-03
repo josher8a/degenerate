@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest (inline: PurchaseDetails > Flight > Segments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Segments {const Segments({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
 

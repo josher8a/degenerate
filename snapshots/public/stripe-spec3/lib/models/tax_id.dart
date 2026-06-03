@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id/deleted_tax_id_object.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id/invoices_resource_invoice_tax_id_type.dart';import 'package:pub_stripe_spec3/models/tax_i_ds_owner.dart';import 'package:pub_stripe_spec3/models/tax_id_verification.dart';/// You can add one or multiple tax IDs to a [customer](https://docs.stripe.com/api/customers) or account.
 /// Customer and account tax IDs get displayed on related invoices and credit notes.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VideoModel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoModelVariant2 {const VideoModelVariant2._(this.value);
 

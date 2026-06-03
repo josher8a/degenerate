@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: Reconcile)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reconciled
 @immutable final class ReconcileK {const ReconcileK._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddParticipantRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddParticipantRequest {const AddParticipantRequest({required this.customParticipantId, this.name, this.picture, this.presetName = 'group_call_host', });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcSaasApp (inline: CustomClaims)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/custom_claims_scope.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/custom_claims_source.dart';@immutable final class AccessOidcSaasAppCustomClaims {const AccessOidcSaasAppCustomClaims({this.name, this.$required, this.scope, this.source, });
 

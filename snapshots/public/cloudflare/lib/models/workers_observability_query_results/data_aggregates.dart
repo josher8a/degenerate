@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Events > Series > Data > Aggregates)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataAggregates {const DataAggregates({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, this.bin, });
 

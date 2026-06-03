@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringHttpDetailsPercentilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_percentiles.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsPercentilesResponse {const DigitalExperienceMonitoringHttpDetailsPercentilesResponse({this.dnsResponseTimeMs, this.resourceFetchTimeMs, this.serverResponseTimeMs, });
 

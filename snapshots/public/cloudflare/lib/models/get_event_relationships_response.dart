@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventRelationshipsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventRelationshipsResponse {const GetEventRelationshipsResponse({required this.attacker, required this.attackerCountry, required this.category, required this.datasetId, required this.date, required this.event, required this.hasChildren, required this.indicator, required this.indicatorType, required this.indicatorTypeId, required this.killChain, required this.mitreAttack, required this.numReferenced, required this.numReferences, required this.rawId, required this.referenced, required this.referencedIds, required this.references, required this.referencesIds, required this.tags, required this.targetCountry, required this.targetIndustry, required this.tlp, required this.uuid, this.insight, this.releasabilityId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VolumeResourceRequirements
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// VolumeResourceRequirements describes the storage resource requirements for a volume.
 @immutable final class VolumeResourceRequirements {const VolumeResourceRequirements({this.limits, this.requests, });

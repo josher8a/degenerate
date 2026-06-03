@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request({required this.text});
 

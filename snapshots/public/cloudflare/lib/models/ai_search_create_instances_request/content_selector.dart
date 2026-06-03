@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams > WebCrawler > ParseOptions > ContentSelector)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentSelector {const ContentSelector({required this.path, required this.selector, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulePullRequest (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_required_reviewer_configuration.dart';@immutable final class AllowedMergeMethods {const AllowedMergeMethods._(this.value);
 

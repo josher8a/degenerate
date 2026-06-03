@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCommit (inline: Content > Links)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentLinks {const ContentLinks({this.self, this.git, this.html, });
 

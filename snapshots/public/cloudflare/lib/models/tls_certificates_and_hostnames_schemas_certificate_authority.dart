@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSchemasCertificateAuthority
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details.](https://developers.cloudflare.com/ssl/reference/certificate-authorities)
 @immutable final class TlsCertificatesAndHostnamesSchemasCertificateAuthority {const TlsCertificatesAndHostnamesSchemasCertificateAuthority._(this.value);

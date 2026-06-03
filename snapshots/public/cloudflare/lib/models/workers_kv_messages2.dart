@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersKvMessages2 {const WorkersKvMessages2({required this.code, required this.message, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountUnificationAccountControllerStripeDashboard (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating the Stripe dashboard this account has access to independent of the Connect application.
 @immutable final class AccountUnificationAccountControllerStripeDashboardType {const AccountUnificationAccountControllerStripeDashboardType._(this.value);

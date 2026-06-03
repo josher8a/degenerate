@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequestGa (inline: Audio > Input > NoiseReduction)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/noise_reduction_type.dart';/// Configuration for input audio noise reduction. This can be set to `null` to turn off.
 /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.

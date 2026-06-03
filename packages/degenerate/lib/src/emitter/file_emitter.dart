@@ -168,6 +168,16 @@ class FileEmitter {
 
       final library = Library((b) {
         b.comments.addAll(header);
+        final segs = typePaths[name];
+        final root = segs != null && segs.isNotEmpty ? segs.first : name;
+        if (segs != null && segs.length > 1) {
+          b.comments.add(
+            'Source: #/components/schemas/$root '
+            '(inline: ${segs.skip(1).join(' > ')})',
+          );
+        } else {
+          b.comments.add('Source: #/components/schemas/$root');
+        }
         if (needsConvert) {
           b.directives.add(Directive.import('dart:convert'));
         }

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesListState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListState {const IssuesListState._(this.value);
 

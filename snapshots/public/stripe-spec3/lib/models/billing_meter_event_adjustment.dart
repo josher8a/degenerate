@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeterEventAdjustment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_type.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);

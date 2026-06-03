@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsTriggerUuid
 
 /// Trigger UUID.
 extension type const BuildsTriggerUuid(String value) {

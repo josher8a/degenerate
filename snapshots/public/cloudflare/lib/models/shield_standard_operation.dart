@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldStandardOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_endpoint.dart';import 'package:pub_cloudflare/models/shield_host.dart';import 'package:pub_cloudflare/models/shield_method.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldStandardOperation {const ShieldStandardOperation({required this.endpoint, required this.host, required this.method, required this.lastUpdated, required this.operationId, });
 

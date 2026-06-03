@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalLabelModelGrader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_item.dart';import 'package:pub_openai/models/create_eval_label_model_grader/create_eval_label_model_grader_type.dart';import 'package:pub_openai/models/eval_item.dart';import 'package:pub_openai/models/simple_input_message.dart';/// A LabelModelGrader object which uses a model to assign labels to each item
 /// in the evaluation.

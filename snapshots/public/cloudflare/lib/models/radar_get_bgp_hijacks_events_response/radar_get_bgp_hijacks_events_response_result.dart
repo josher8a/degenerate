@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpHijacksEventsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response/radar_get_bgp_hijacks_events_response_result_asn_info.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response/radar_get_bgp_hijacks_events_response_result_events.dart';@immutable final class RadarGetBgpHijacksEventsResponseResult {const RadarGetBgpHijacksEventsResponseResult({required this.asnInfo, required this.events, required this.totalMonitors, });
 

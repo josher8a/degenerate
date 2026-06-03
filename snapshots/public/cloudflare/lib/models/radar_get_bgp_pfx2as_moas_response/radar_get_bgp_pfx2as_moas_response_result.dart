@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asMoasResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_moas_response/moas.dart';@immutable final class RadarGetBgpPfx2asMoasResponseResult {const RadarGetBgpPfx2asMoasResponseResult({required this.meta, required this.moas, });
 

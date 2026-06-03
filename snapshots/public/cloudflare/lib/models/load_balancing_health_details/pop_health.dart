@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingHealthDetails (inline: Result > PopHealth)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_origin_health.dart';/// List of regions and associated health status.
 @immutable final class PopHealth {const PopHealth({this.healthy, this.origins, });

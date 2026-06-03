@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoMerge
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/auto_merge/auto_merge_merge_method.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of auto merging a pull request.
 @immutable final class AutoMerge {const AutoMerge({required this.enabledBy, required this.mergeMethod, required this.commitTitle, required this.commitMessage, });

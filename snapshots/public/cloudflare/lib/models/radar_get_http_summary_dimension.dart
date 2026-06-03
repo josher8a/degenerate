@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the HTTP attribute by which to group the results.
 @immutable final class RadarGetHttpSummaryDimension {const RadarGetHttpSummaryDimension._(this.value);

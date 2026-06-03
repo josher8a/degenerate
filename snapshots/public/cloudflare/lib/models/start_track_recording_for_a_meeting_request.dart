@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StartTrackRecordingForAMeetingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_track_config_layer.dart';@immutable final class StartTrackRecordingForAMeetingRequest {const StartTrackRecordingForAMeetingRequest({required this.layers, required this.meetingId, this.maxSeconds, });
 

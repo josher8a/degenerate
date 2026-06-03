@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionMessageCustomToolCall (inline: Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The custom tool that the model called.
 @immutable final class ChatCompletionMessageCustomToolCallCustom {const ChatCompletionMessageCustomToolCallCustom({required this.name, required this.input, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsRequest (inline: AutomaticPaymentMethods)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_automatic_payment_methods_payment_intent/allow_redirects.dart';/// When you enable this parameter, this PaymentIntent accepts payment methods that you enable in the Dashboard and that are compatible with this PaymentIntent's other parameters.
 @immutable final class AutomaticPaymentMethods {const AutomaticPaymentMethods({required this.enabled, this.allowRedirects, });

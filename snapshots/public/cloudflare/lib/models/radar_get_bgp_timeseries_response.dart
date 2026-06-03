@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTimeseriesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_timeseries_response/radar_get_bgp_timeseries_response_result.dart';@immutable final class RadarGetBgpTimeseriesResponse {const RadarGetBgpTimeseriesResponse({required this.result, required this.success, });
 

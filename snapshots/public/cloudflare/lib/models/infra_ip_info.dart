@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraIpInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info/ipv4.dart';import 'package:pub_cloudflare/models/infra_ip_info/ipv6.dart';/// The IPv4/IPv6 address that identifies where to reach a target
 @immutable final class InfraIpInfo {const InfraIpInfo({this.ipv4, this.ipv6, });

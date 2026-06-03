@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EndpointsList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/endpoints.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';/// EndpointsList is a list of endpoints. Deprecated: This API is deprecated in v1.33+.
 @immutable final class EndpointsList {const EndpointsList({required this.items, this.apiVersion, this.kind, this.metadata, });

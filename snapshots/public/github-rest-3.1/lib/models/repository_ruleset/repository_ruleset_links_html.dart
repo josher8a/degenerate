@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleset (inline: Links > Html)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRulesetLinksHtml {const RepositoryRulesetLinksHtml({this.href});
 

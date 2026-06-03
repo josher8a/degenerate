@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreFileObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/other_chunking_strategy_response_param.dart';import 'package:pub_openai/models/static_chunking_strategy_response_param.dart';import 'package:pub_openai/models/vector_store_file_batch_object/vector_store_file_batch_object_status.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_chunking_strategy.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
 @immutable final class VectorStoreFileObjectObject {const VectorStoreFileObjectObject._(this.value);

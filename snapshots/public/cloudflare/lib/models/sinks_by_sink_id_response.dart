@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SinksBySinkIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/sinks_by_sink_id_response/sinks_by_sink_id_response_result.dart';@immutable final class SinksBySinkIdResponse {const SinksBySinkIdResponse({required this.result, required this.success, });
 

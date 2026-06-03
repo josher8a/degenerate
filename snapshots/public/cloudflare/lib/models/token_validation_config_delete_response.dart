@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenValidationConfigDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';@immutable final class TokenValidationConfigDeleteResponse {const TokenValidationConfigDeleteResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

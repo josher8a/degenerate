@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetOrgAnalyticsResponse (inline: Data > SessionStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/session_stats_day_stats.dart';/// Session statistics of an App during the range specified
 @immutable final class SessionStats {const SessionStats({this.dayStats, this.sessionsCount, this.sessionsMinutesConsumed, });

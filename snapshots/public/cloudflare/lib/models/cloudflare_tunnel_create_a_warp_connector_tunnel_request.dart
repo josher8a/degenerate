@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflareTunnelCreateAWarpConnectorTunnelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';@immutable final class CloudflareTunnelCreateAWarpConnectorTunnelRequest {const CloudflareTunnelCreateAWarpConnectorTunnelRequest({required this.name});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PredefinedProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/dlp_confidence.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/predefined_entry/predefined_entry_type.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class PredefinedProfile {const PredefinedProfile({required this.allowedMatchCount, required this.entries, required this.id, required this.name, required this.type, this.aiContextEnabled = false, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.ocrEnabled = false, this.openAccess, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_settings.dart';@immutable final class AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest {const AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest({required this.settings});
 

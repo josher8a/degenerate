@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPropertySetPayload (inline: ValueType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the value for the property
 @immutable final class ValueType {const ValueType._(this.value);

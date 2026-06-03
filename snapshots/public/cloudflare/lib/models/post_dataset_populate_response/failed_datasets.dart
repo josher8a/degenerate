@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties > Summary > Properties > FailedDatasets)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FailedDatasets {const FailedDatasets({required this.type});
 

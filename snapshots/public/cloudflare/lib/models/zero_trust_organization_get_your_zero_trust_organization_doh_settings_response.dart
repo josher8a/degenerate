@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_organization_get_your_zero_trust_organization_doh_settings_response/zero_trust_organization_get_your_zero_trust_organization_doh_settings_response_result.dart';@immutable final class ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse {const ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties > Datasets > Items > Properties > Attackers > Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/created.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/found.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/properties_errors.dart';@immutable final class AttackersProperties {const AttackersProperties({required this.created, required this.errors, required this.found, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cloudflare_branding.dart';@immutable final class CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest({this.cloudflareBranding});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesBindingSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source/cloudflare_pipelines_workers_pipelines_binding_source_format.dart';/// `[DEPRECATED]` Worker binding source configuration. Use the new streams API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesBindingSource {const CloudflarePipelinesWorkersPipelinesBindingSource({required this.format, required this.type, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details on why we couldn't commit the tax transaction.
 @immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason {const TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventTranscriptionSessionUpdated (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `transcription_session.updated`.
 @immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowRunUsage (inline: Billable > Ubuntu)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_run_usage/job_runs.dart';@immutable final class WorkflowRunUsageBillableUbuntu {const WorkflowRunUsageBillableUbuntu({required this.totalMs, required this.jobs, this.jobRuns, });
 

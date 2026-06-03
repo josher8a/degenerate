@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuiteRequiredStatusChecks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite_required_status_checks/rule_suite_required_status_checks_checks.dart';/// Metadata for a required status checks rule evaluation result.
 @immutable final class RuleSuiteRequiredStatusChecks {const RuleSuiteRequiredStatusChecks({this.checks});

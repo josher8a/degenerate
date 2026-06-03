@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > PaymentDisputes > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentDisputesFeatures {const PaymentDisputesFeatures({this.destinationOnBehalfOfChargeManagement, this.disputeManagement, this.refundManagement, });
 

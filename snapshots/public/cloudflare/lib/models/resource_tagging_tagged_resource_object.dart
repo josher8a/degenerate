@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingTaggedResourceObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_worker_version_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_zone_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenValidationConfigListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_token_configuration.dart';@immutable final class TokenValidationConfigListResponse {const TokenValidationConfigListResponse({required this.result});
 

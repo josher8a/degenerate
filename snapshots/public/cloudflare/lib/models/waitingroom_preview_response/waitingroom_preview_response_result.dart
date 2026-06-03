@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomPreviewResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// URL where the custom waiting room page can temporarily be previewed.
 extension type const WaitingroomPreviewUrl(String value) {

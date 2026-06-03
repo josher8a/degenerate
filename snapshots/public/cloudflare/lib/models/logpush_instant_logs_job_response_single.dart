@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushInstantLogsJobResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_instant_logs_job.dart';@immutable final class LogpushInstantLogsJobResponseSingle {const LogpushInstantLogsJobResponseSingle({this.result});
 

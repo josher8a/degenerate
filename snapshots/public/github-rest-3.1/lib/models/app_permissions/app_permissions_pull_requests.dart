@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: PullRequests)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 @immutable final class AppPermissionsPullRequests {const AppPermissionsPullRequests._(this.value);

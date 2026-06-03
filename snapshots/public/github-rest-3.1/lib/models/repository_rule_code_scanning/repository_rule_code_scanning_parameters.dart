@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleCodeScanning (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_code_scanning_tool.dart';@immutable final class RepositoryRuleCodeScanningParameters {const RepositoryRuleCodeScanningParameters({required this.codeScanningTools});
 

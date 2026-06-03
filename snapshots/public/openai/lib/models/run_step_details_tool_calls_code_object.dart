@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsCodeObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_code/assistant_tools_code_type.dart';import 'package:pub_openai/models/run_step_details_tool_calls_code_object/run_step_details_tool_calls_code_object_code_interpreter.dart';/// Details of the Code Interpreter tool call the run step was involved in.
 @immutable final class RunStepDetailsToolCallsCodeObject {const RunStepDetailsToolCallsCodeObject({required this.id, required this.type, required this.codeInterpreter, });

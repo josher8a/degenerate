@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/variant1_parameters.dart';@immutable final class ToolsVariant1 {const ToolsVariant1({required this.description, required this.name, required this.parameters, });
 

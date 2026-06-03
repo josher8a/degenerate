@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldUpdateSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_enabled.dart';import 'package:pub_cloudflare/models/page_shield_use_cloudflare_reporting_endpoint.dart';import 'package:pub_cloudflare/models/page_shield_use_connection_url_path.dart';@immutable final class PageShieldUpdateSettingsRequest {const PageShieldUpdateSettingsRequest({this.enabled, this.useCloudflareReportingEndpoint, this.useConnectionUrlPath, });
 

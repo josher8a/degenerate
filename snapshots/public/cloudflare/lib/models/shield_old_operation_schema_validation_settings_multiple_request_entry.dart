@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_operation_mitigation_action.dart';/// Operation ID to mitigation action mappings
 @immutable final class ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry {const ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry({this.mitigationAction});

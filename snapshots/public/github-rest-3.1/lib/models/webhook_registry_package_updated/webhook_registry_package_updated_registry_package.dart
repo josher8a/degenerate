@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRegistryPackageUpdated (inline: RegistryPackage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/registry_package_owner.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_updated/webhook_registry_package_updated_registry_package_package_version.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackage {const WebhookRegistryPackageUpdatedRegistryPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 

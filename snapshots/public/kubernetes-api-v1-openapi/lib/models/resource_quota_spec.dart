@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceQuotaSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/scope_selector.dart';/// ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
 @immutable final class ResourceQuotaSpec {const ResourceQuotaSpec({this.hard, this.scopeSelector, this.scopes, });

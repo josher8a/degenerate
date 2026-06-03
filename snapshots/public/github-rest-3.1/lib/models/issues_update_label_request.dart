@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesUpdateLabelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesUpdateLabelRequest {const IssuesUpdateLabelRequest({this.newName, this.color, this.description, });
 

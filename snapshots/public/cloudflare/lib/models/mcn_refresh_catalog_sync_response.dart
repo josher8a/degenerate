@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnRefreshCatalogSyncResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const McnPolicyResult(String value) {
 factory McnPolicyResult.fromJson(String json) => McnPolicyResult(json);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComputerCallOutputItemParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/function_call_item_status.dart';/// The output of a computer tool call.
 @immutable final class ComputerCallOutputItemParam {const ComputerCallOutputItemParam({required this.callId, required this.output, this.id, this.type = 'computer_call_output', this.acknowledgedSafetyChecks, this.status, });

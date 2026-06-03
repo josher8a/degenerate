@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionCustomFieldsLabel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({required this.type, this.custom, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRunOutputItemResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A single grader result for an evaluation run output item.
 /// 

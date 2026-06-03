@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingTopDomainsResponse (inline: Result > Top0 > Categories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Top0Categories {const Top0Categories({required this.id, required this.name, required this.superCategoryId, });
 

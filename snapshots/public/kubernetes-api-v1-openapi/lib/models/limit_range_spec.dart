@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LimitRangeSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/limit_range_item.dart';/// LimitRangeSpec defines a min/max usage limit for resources that match on kind.
 @immutable final class LimitRangeSpec {const LimitRangeSpec({required this.limits});

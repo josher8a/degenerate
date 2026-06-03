@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_response/radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse({required this.result, required this.success, });
 

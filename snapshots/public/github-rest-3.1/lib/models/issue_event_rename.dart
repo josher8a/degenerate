@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueEventRename
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Rename
 @immutable final class IssueEventRename {const IssueEventRename({required this.from, required this.to, });

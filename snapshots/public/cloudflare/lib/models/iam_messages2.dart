@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamMessages2 {const IamMessages2({required this.code, required this.message, });
 

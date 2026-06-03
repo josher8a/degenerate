@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourcePreviewItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';@immutable final class McnResourcePreviewItem {const McnResourcePreviewItem({required this.itemType, required this.resourcePreview, });
 

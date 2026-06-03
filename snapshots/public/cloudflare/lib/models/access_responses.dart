@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessResponses
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessResponses {const AccessResponses({this.cfResourceId, this.errorDescription, this.idpId, this.idpResourceId, this.loggedAt, this.requestBody, this.requestMethod, this.resourceGroupName, this.resourceType, this.resourceUserEmail, this.status, });
 

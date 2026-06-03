@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: IpAllowlistDeleted)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
 @immutable final class IpAllowlistDeleted {const IpAllowlistDeleted({this.id, this.name, this.allowedIps, });

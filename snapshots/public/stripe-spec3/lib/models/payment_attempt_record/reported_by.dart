@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentAttemptRecord (inline: ReportedBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates who reported the payment.
 @immutable final class ReportedBy {const ReportedBy._(this.value);

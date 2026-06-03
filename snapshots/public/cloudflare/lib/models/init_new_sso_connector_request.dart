@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InitNewSsoConnectorRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_use_fedramp_language.dart';@immutable final class InitNewSsoConnectorRequest {const InitNewSsoConnectorRequest({required this.emailDomain, this.beginVerification = true, this.useFedrampLanguage, });
 

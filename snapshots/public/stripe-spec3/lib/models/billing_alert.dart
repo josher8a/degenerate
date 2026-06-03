@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingAlert
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_alert/alert_type.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingAlertObject {const BillingAlertObject._(this.value);

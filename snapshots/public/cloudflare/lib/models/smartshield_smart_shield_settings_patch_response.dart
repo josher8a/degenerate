@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldSmartShieldSettingsPatchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_get_response/smartshield_smart_shield_settings_get_response_smart_tiered_cache.dart';/// A consolidated object containing settings from multiple APIs for partial updates.
 @immutable final class SmartshieldSmartShieldSettingsPatchResponse {const SmartshieldSmartShieldSettingsPatchResponse({required this.smartTieredCache});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSendingSubdomainsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_sending_subdomain_properties.dart';@immutable final class EmailSendingSubdomainsResponseCollection {const EmailSendingSubdomainsResponseCollection({this.result});
 

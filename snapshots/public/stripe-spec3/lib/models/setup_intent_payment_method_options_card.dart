@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupIntentPaymentMethodOptionsCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_card/invoice_payment_method_options_card_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_card/payment_intent_payment_method_options_card_network.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_card_mandate_options.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsCard {const SetupIntentPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });

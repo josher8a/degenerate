@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayFipsSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify FIPS settings.
 @immutable final class ZeroTrustGatewayFipsSettings {const ZeroTrustGatewayFipsSettings({this.tls});

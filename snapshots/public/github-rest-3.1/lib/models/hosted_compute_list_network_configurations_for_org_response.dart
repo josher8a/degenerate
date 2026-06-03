@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HostedComputeListNetworkConfigurationsForOrgResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/network_configuration.dart';@immutable final class HostedComputeListNetworkConfigurationsForOrgResponse {const HostedComputeListNetworkConfigurationsForOrgResponse({required this.totalCount, required this.networkConfigurations, });
 

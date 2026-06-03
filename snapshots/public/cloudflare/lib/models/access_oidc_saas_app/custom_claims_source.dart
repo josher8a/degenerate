@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcSaasApp (inline: CustomClaims > Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomClaimsSource {const CustomClaimsSource({this.name, this.nameByIdp, });
 

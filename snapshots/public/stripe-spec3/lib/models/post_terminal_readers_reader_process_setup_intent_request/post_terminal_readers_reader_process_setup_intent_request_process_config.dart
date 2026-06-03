@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderProcessSetupIntentRequest (inline: ProcessConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this setup, such as MOTO and customer cancellation settings.
 @immutable final class PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig {const PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig({this.enableCustomerCancellation});

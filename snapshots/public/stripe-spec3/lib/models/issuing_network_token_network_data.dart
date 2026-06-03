@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingNetworkTokenNetworkData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_device.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_mastercard.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_visa.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_wallet_provider.dart';/// The network that the token is associated with. An additional hash is included with a name matching this value, containing tokenization data specific to the card network.
 @immutable final class IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType._(this.value);

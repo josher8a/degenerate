@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateVectorStoreRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_chunking_strategy_request_param.dart';import 'package:pub_openai/models/create_vector_store_request/create_vector_store_request_chunking_strategy.dart';import 'package:pub_openai/models/static_chunking_strategy_request_param.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';@immutable final class CreateVectorStoreRequest {const CreateVectorStoreRequest({this.fileIds, this.name, this.description, this.expiresAfter, this.chunkingStrategy, this.metadata, });
 

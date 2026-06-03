@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: InvoiceSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_account_tax_ids.dart';/// All invoices will be billed using the specified settings.
 @immutable final class PostCustomersCustomerSubscriptionsRequestInvoiceSettings {const PostCustomersCustomerSubscriptionsRequestInvoiceSettings({this.accountTaxIds, this.issuer, });

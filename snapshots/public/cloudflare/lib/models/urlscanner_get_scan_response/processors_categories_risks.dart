@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Meta > Processors > Categories > Risks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProcessorsCategoriesRisks {const ProcessorsCategoriesRisks({required this.id, required this.name, required this.superCategoryId, });
 

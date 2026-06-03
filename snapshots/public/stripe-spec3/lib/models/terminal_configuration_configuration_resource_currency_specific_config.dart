@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceCurrencySpecificConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceCurrencySpecificConfig {const TerminalConfigurationConfigurationResourceCurrencySpecificConfig({this.fixedAmounts, this.percentages, this.smartTipThreshold, });

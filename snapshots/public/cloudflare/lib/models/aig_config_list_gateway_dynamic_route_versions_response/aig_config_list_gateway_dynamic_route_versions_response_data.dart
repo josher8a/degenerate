@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListGatewayDynamicRouteVersionsResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_versions_response/data_versions.dart';@immutable final class AigConfigListGatewayDynamicRouteVersionsResponseData {const AigConfigListGatewayDynamicRouteVersionsResponseData({required this.orderBy, required this.orderByDirection, required this.page, required this.perPage, required this.versions, });
 

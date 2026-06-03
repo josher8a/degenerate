@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationUserInterventionRaised
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_raised_custom.dart';/// Type of user intervention raised.
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Affinity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_affinity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_affinity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_anti_affinity.dart';/// Affinity is a group of affinity scheduling rules.
 @immutable final class Affinity {const Affinity({this.nodeAffinity, this.podAffinity, this.podAntiAffinity, });

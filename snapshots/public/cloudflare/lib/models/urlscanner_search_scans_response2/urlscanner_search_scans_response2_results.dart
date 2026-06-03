@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerSearchScansResponse2 (inline: Results)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_search_scans_response2/results_page.dart';import 'package:pub_cloudflare/models/urlscanner_search_scans_response2/results_stats.dart';import 'package:pub_cloudflare/models/urlscanner_search_scans_response2/results_task.dart';import 'package:pub_cloudflare/models/urlscanner_search_scans_response2/results_verdicts.dart';@immutable final class UrlscannerSearchScansResponse2Results {const UrlscannerSearchScansResponse2Results({required this.id, required this.page, required this.result, required this.stats, required this.task, required this.verdicts, });
 

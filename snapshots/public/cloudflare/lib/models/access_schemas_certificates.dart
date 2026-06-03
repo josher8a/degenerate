@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasCertificates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasCertificates {const AccessSchemasCertificates({this.id, this.publicKey, });
 

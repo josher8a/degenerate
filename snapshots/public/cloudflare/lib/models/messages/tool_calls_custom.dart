@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Assistant > ToolCalls > Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/messages/tool_calls_custom_custom.dart';@immutable final class ToolCallsCustom {const ToolCallsCustom({required this.custom, required this.id, required this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalLocationsRequest (inline: Address)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The full address of the location.
 @immutable final class PostTerminalLocationsRequestAddress {const PostTerminalLocationsRequestAddress({required this.country, this.city, this.line1, this.line2, this.postalCode, this.state, });

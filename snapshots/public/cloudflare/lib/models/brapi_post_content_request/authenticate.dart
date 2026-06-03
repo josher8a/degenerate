@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > Authenticate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provide credentials for HTTP authentication.
 @immutable final class Authenticate {const Authenticate({required this.password, required this.username, });

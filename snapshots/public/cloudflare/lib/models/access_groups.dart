@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGroups
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_id.dart';import 'package:pub_cloudflare/models/access_meta.dart';/// The IdP-generated Id of the SCIM resource.
 extension type const AccessExternalId(String value) {

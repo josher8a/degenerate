@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomName
 
 /// A unique name to identify the waiting room. Only alphanumeric characters, hyphens and underscores are allowed.
 extension type const WaitingroomName(String value) {

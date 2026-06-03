@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesGetStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify a zone status to filter by.
 @immutable final class ZonesGetStatus {const ZonesGetStatus._(this.value);

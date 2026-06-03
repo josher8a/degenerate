@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: BlockPage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.
 @immutable final class BlockPage {const BlockPage({required this.targetUri, this.includeContext, });

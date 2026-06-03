@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFilterRulesResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filter_rule_response.dart';@immutable final class FirewallFilterRulesResponseCollection {const FirewallFilterRulesResponseCollection({required this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsSwish
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsSwish {const PaymentMethodDetailsSwish({this.fingerprint, this.paymentReference, this.verifiedPhoneLast4, });

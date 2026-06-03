@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/preferred_locales.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/billing.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_company.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_individual.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_spending_controls.dart';@immutable final class PostIssuingCardholdersCardholderRequest {const PostIssuingCardholdersCardholderRequest({this.billing, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, });
 

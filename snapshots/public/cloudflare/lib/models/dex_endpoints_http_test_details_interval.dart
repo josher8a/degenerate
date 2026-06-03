@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsHttpTestDetailsInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsHttpTestDetailsInterval {const DexEndpointsHttpTestDetailsInterval._(this.value);
 

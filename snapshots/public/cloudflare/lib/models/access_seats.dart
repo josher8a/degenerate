@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSeats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_seat.dart';import 'package:pub_cloudflare/models/access_gateway_seat.dart';import 'package:pub_cloudflare/models/access_seat_uid.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessSeats {const AccessSeats({this.accessSeat, this.createdAt, this.gatewaySeat, this.seatUid, this.updatedAt, });
 

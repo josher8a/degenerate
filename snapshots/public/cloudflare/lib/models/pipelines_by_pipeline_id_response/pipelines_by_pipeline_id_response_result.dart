@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PipelinesByPipelineIdResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pipelines_by_pipeline_id_response/tables.dart';@immutable final class PipelinesByPipelineIdResponseResult {const PipelinesByPipelineIdResponseResult({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.sql, required this.status, required this.tables, });
 

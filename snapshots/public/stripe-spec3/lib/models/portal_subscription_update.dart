@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalSubscriptionUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/portal_resource_schedule_update_at_period_end.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update/trial_update_behavior.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update_product.dart';/// Determines the value to use for the billing cycle anchor on subscription updates. Valid values are `now` or `unchanged`, and the default value is `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 @immutable final class PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor._(this.value);

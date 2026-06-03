@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsUpdateRepoVariableRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateRepoVariableRequest {const ActionsUpdateRepoVariableRequest({this.name, this.value, });
 

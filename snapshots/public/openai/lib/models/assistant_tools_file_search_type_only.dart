@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantToolsFileSearchTypeOnly
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_file_search/assistant_tools_file_search_type.dart';@immutable final class AssistantToolsFileSearchTypeOnly {const AssistantToolsFileSearchTypeOnly({required this.type});
 

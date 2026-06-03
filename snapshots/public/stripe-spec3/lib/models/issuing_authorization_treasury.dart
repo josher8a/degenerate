@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationTreasury
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingAuthorizationTreasury {const IssuingAuthorizationTreasury({required this.receivedCredits, required this.receivedDebits, this.transaction, });

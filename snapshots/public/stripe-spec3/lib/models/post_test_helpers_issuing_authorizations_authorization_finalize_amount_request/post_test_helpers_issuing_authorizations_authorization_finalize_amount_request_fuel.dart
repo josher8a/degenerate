@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest (inline: Fuel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FuelType {const FuelType._(this.value);
 

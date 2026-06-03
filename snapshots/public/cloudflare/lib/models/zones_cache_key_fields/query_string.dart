@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheKeyFields (inline: Value > QueryString)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/exclude_variant1.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/query_string_exclude.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/query_string_include.dart';/// Controls which URL query string parameters go into the Cache
 /// Key. Exactly one of `include` or `exclude` is expected.

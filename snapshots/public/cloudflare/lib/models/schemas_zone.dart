@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemasZone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemasZone {const SchemasZone({this.name});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsPaymentRecordAffirm
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordAffirm {const PaymentMethodDetailsPaymentRecordAffirm({this.location, this.reader, this.transactionId, });

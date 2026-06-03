@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetConfigAutominify
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which file extensions to minify automatically.
 @immutable final class RulesetsSetConfigAutominify {const RulesetsSetConfigAutominify({this.css = false, this.html = false, this.js = false, });

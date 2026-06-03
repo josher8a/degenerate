@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLiveInputEnabled
 
 /// Indicates whether the live input is enabled and can accept streams.
 extension type const StreamLiveInputEnabled(bool value) {

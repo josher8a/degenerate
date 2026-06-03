@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementBaseConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
 @immutable final class BotManagementAiBotsProtection {const BotManagementAiBotsProtection._(this.value);

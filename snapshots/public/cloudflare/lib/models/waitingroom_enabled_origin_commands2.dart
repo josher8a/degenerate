@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomEnabledOriginCommands
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomEnabledOriginCommands2 {const WaitingroomEnabledOriginCommands2._(this.value);
 

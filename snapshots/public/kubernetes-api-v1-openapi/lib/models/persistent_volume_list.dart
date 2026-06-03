@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersistentVolumeList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume.dart';/// PersistentVolumeList is a list of PersistentVolume items.
 @immutable final class PersistentVolumeList {const PersistentVolumeList({required this.items, this.apiVersion, this.kind, this.metadata, });

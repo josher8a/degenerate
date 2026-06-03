@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseStreamOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options for streaming responses. Only set this when you set `stream: true`.
 /// 

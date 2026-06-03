@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationVerificationData (inline: AddressPostalCodeCheck)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the cardholder provided a postal code and if it matched the cardholder’s `billing.address.postal_code`.
 @immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck._(this.value);

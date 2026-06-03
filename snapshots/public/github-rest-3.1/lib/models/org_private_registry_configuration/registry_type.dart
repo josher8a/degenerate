@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgPrivateRegistryConfiguration (inline: RegistryType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
 @immutable final class RegistryType {const RegistryType._(this.value);

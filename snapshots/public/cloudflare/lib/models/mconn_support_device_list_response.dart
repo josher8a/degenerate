@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSupportDeviceListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_device.dart';@immutable final class MconnSupportDeviceListResponse {const MconnSupportDeviceListResponse({this.result});
 

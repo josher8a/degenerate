@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StopLivestreamingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stop_livestreaming_response/stop_livestreaming_response_data.dart';@immutable final class StopLivestreamingResponse {const StopLivestreamingResponse({this.data, this.success, });
 

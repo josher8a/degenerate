@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order DNS views in.
 @immutable final class DnsSettingsDirection {const DnsSettingsDirection._(this.value);

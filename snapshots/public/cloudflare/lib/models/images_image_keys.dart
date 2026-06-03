@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageKeys
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key name.
 extension type const ImagesImageKeyName(String value) {

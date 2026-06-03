@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to select time series resolution.
 @immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(this.value);

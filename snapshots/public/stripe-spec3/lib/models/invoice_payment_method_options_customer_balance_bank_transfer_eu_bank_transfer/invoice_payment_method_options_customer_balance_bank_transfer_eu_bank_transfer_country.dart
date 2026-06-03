@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer (inline: Country)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
 @immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry {const InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry._(this.value);

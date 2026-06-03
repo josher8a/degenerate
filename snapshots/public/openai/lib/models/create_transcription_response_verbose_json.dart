@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTranscriptionResponseVerboseJson
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcription_segment.dart';import 'package:pub_openai/models/transcription_word.dart';/// Represents a verbose json transcription response returned by model, based on the provided input.
 @immutable final class CreateTranscriptionResponseVerboseJson {const CreateTranscriptionResponseVerboseJson({required this.language, required this.duration, required this.text, this.words, this.segments, this.usage, });

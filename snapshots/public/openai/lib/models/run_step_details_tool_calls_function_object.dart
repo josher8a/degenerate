@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsFunctionObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/run_step_details_tool_calls_function_object/run_step_details_tool_calls_function_object_function.dart';@immutable final class RunStepDetailsToolCallsFunctionObject {const RunStepDetailsToolCallsFunctionObject({required this.id, required this.type, required this.function, });
 

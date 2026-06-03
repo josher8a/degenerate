@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CompoundFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compound_filter/compound_filter_filters.dart';/// Type of operation: `and` or `or`.
 @immutable final class CompoundFilterType {const CompoundFilterType._(this.value);

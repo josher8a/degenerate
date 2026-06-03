@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigCreateEvaluationsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result_datasets.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result_results.dart';@immutable final class AigConfigCreateEvaluationsResponseResult {const AigConfigCreateEvaluationsResponseResult({required this.createdAt, required this.datasets, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.processed, required this.results, required this.totalLogs, });
 

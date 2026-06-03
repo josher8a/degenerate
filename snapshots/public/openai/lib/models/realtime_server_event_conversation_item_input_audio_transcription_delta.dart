@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationItemInputAudioTranscriptionDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/log_prob_properties.dart';/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
 /// 

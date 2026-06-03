@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetVerifiedBotsTopByHttpRequestsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_verified_bots_top_by_http_requests_response/radar_get_verified_bots_top_by_http_requests_response_result.dart';@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponse {const RadarGetVerifiedBotsTopByHttpRequestsResponse({required this.result, required this.success, });
 

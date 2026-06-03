@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputAudio
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_audio/chat_completion_request_message_content_part_audio_input_audio.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_audio/chat_completion_request_message_content_part_audio_type.dart';/// An audio input to the model.
 /// 

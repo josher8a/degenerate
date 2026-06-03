@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2ClassBasedMetrics
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_object_size_metrics.dart';/// Metrics based on what state they are in(uploaded or published).
 @immutable final class R2ClassBasedMetrics {const R2ClassBasedMetrics({this.published, this.uploaded, });

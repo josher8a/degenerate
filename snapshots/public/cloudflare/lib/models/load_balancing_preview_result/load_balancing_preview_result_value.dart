@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingPreviewResult (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_origin_health_data.dart';@immutable final class LoadBalancingPreviewResultValue {const LoadBalancingPreviewResultValue({this.healthy, this.origins, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraTargetsGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_target.dart';@immutable final class InfraTargetsGetResponse {const InfraTargetsGetResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTcpResetsTimeoutsSummaryResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_summary_response/radar_get_tcp_resets_timeouts_summary_response_result_summary0.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponseResult {const RadarGetTcpResetsTimeoutsSummaryResponseResult({required this.meta, required this.summary0, });
 

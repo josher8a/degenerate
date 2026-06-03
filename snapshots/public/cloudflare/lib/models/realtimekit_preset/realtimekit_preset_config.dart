@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_config_max_video_streams.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_config_media.dart';import 'package:pub_cloudflare/models/realtimekit_preset/view_type.dart';@immutable final class RealtimekitPresetConfig {const RealtimekitPresetConfig({required this.maxScreenshareCount, required this.maxVideoStreams, required this.media, required this.viewType, });
 

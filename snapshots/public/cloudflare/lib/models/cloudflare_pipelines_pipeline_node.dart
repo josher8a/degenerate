@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesPipelineNode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesPipelineNode {const CloudflarePipelinesPipelineNode({required this.description, required this.nodeId, required this.$operator, required this.parallelism, });
 

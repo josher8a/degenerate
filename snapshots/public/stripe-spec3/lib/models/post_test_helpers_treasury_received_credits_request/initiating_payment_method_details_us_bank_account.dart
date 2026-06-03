@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryReceivedCreditsRequest (inline: InitiatingPaymentMethodDetails > UsBankAccount)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InitiatingPaymentMethodDetailsUsBankAccount {const InitiatingPaymentMethodDetailsUsBankAccount({this.accountHolderName, this.accountNumber, this.routingNumber, });
 

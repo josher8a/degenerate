@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreeDSecureDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure/authentication_flow.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure_result.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure/result_reason.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details_charge/three_d_secure_details_charge_electronic_commerce_indicator.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details_charge/three_d_secure_details_charge_version.dart';/// 
 @immutable final class ThreeDSecureDetails {const ThreeDSecureDetails({this.authenticationFlow, this.electronicCommerceIndicator, this.result, this.resultReason, this.transactionId, this.version, });

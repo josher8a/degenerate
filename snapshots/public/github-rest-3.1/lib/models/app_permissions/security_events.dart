@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: SecurityEvents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to view and manage security events like code scanning alerts.
 @immutable final class SecurityEvents {const SecurityEvents._(this.value);

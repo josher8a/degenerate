@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRegistryPackagePublished (inline: RegistryPackage > Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RegistryPackageOwner {const RegistryPackageOwner({required this.avatarUrl, required this.eventsUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.gravatarId, required this.htmlUrl, required this.id, required this.login, required this.nodeId, required this.organizationsUrl, required this.receivedEventsUrl, required this.reposUrl, required this.siteAdmin, required this.starredUrl, required this.subscriptionsUrl, required this.type, required this.url, this.userViewType, });
 

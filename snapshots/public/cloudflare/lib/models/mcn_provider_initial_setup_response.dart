@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnProviderInitialSetupResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_provider_initial_setup_response/mcn_provider_initial_setup_response_result.dart';@immutable final class McnProviderInitialSetupResponse {const McnProviderInitialSetupResponse({this.result});
 

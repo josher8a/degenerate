@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminConnectorDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_connector.dart';@immutable final class MconnAdminConnectorDeleteResponse {const MconnAdminConnectorDeleteResponse({this.result});
 

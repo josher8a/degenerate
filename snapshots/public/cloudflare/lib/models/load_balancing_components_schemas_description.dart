@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingComponentsSchemasDescription
 
 /// Object description.
 extension type const LoadBalancingComponentsSchemasDescription(String value) {

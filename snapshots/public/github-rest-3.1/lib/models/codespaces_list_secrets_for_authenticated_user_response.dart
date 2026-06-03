@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesListSecretsForAuthenticatedUserResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_secret.dart';@immutable final class CodespacesListSecretsForAuthenticatedUserResponse {const CodespacesListSecretsForAuthenticatedUserResponse({required this.totalCount, required this.secrets, });
 

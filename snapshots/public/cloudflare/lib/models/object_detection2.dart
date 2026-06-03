@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObjectDetection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/object_detection/box.dart';@immutable final class ObjectDetection2 {const ObjectDetection2({this.box, this.label, this.score, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectServiceAccount (inline: Role)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Project membership role
 @immutable final class ProjectServiceAccountRole {const ProjectServiceAccountRole._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostShippingRatesRequest (inline: DeliveryEstimate > Minimum)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate_bound/shipping_rate_delivery_estimate_bound_unit.dart';@immutable final class Minimum {const Minimum({required this.unit, required this.value, });
 

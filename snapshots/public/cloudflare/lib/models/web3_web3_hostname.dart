@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3Web3Hostname
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_description.dart';import 'package:pub_cloudflare/models/web3_dnslink.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_name.dart';import 'package:pub_cloudflare/models/web3_target.dart';import 'package:pub_cloudflare/models/web3_timestamp.dart';/// Specifies the status of the hostname's activation.
 @immutable final class Web3Status {const Web3Status._(this.value);

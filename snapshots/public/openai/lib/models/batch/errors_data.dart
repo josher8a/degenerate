@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Batch (inline: Errors > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorsData {const ErrorsData({this.code, this.message, this.param, this.line, });
 

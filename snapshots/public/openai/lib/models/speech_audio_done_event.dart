@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpeechAudioDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/speech_audio_done_event/speech_audio_done_event_usage.dart';/// Emitted when the speech synthesis is complete and all audio has been streamed.
 @immutable final class SpeechAudioDoneEvent {const SpeechAudioDoneEvent({required this.type, required this.usage, });

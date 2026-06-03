@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToolSearchCall
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class FunctionCallStatus {const FunctionCallStatus._(this.value);
 

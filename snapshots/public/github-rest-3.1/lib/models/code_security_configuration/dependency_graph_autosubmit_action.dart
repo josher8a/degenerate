@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: DependencyGraphAutosubmitAction)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of Automatic dependency submission
 @immutable final class DependencyGraphAutosubmitAction {const DependencyGraphAutosubmitAction._(this.value);

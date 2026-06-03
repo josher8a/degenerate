@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2GetEventNotificationConfigCfR2Jurisdiction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The bucket jurisdiction.
 @immutable final class R2GetEventNotificationConfigCfR2Jurisdiction {const R2GetEventNotificationConfigCfR2Jurisdiction._(this.value);

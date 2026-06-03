@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageContentImageFileObject (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `image_file`.
 @immutable final class MessageContentImageFileObjectType {const MessageContentImageFileObjectType._(this.value);

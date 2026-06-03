@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_account/iam_account_settings.dart';import 'package:pub_cloudflare/models/iam_account/managed_by.dart';import 'package:pub_cloudflare/models/iam_account_type.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';@immutable final class IamAccount {const IamAccount({required this.id, required this.name, required this.type, this.createdOn, this.managedBy, this.settings, });
 

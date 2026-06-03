@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure26
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_messages2.dart';@immutable final class ResponseCommonFailure26 {const ResponseCommonFailure26({required this.errors, required this.messages, required this.result, required this.success, });
 

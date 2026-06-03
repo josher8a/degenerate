@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseReasoningSummaryPartAddedEvent (inline: Part)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/summary_text_content/summary_text_content_type.dart';/// The summary part that was added.
 /// 

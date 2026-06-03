@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Max TTL.
 extension type const MagicTransitMaxTtl(int value) {

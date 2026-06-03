@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: Observability > Logs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Log settings for the Worker.
 @immutable final class ObservabilityLogs {const ObservabilityLogs({this.enabled = false, this.headSamplingRate = 1.0, this.invocationLogs = true, });

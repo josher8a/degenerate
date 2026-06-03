@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model22.dart';import 'package:pub_cloudflare/models/mq_event_subscription.dart';@immutable final class SubscriptionsGetResponse {const SubscriptionsGetResponse({this.errors, this.messages, this.success, this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchAllowPoliciesRequest (inline: Patches)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_allow_policy_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPatches {const EmailSecurityBatchAllowPoliciesRequestPatches({required this.id, this.comments, this.isAcceptableSender, this.isExemptRecipient, this.isRegex, this.isTrustedSender, this.pattern, this.patternType, this.verifySender, });
 

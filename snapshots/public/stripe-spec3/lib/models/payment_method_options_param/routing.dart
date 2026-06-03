@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam (inline: Routing)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RoutingRequestedPriority {const RoutingRequestedPriority._(this.value);
 

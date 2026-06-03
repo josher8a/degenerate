@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxRateFlatAmount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The amount of the tax rate when the `rate_type`` is `flat_amount`. Tax rates with `rate_type` `percentage` can vary based on the transaction, resulting in this field being `null`. This field exposes the amount and currency of the flat tax rate.`
 @immutable final class TaxRateFlatAmount {const TaxRateFlatAmount({required this.amount, required this.currency, });

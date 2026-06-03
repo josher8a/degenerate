@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamAccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow or deny operations against the resources.
 @immutable final class IamAccess {const IamAccess._(this.value);

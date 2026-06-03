@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldExpression
 
 /// Rule expression. Requests that fail to match this expression will be subject to `action`.
 /// 

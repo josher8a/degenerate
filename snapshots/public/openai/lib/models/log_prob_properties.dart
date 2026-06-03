@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogProbProperties
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A log probability object.
 /// 

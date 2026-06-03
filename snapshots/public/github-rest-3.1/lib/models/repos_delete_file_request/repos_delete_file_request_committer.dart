@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposDeleteFileRequest (inline: Committer)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// object containing information about the committer.
 @immutable final class ReposDeleteFileRequestCommitter {const ReposDeleteFileRequestCommitter({this.name, this.email, });

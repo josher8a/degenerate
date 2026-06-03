@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersConfirmationTokensRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/post_test_helpers_confirmation_tokens_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/post_test_helpers_confirmation_tokens_request_shipping.dart';@immutable final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
 

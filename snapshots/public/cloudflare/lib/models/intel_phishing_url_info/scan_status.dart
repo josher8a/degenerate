@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPhishingUrlInfo (inline: ScanStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the most recent scan found.
 @immutable final class ScanStatus {const ScanStatus({this.lastProcessed, this.scanComplete, this.statusCode, this.submissionId, });

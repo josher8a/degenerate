@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityGetMessagePreviewResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_get_message_preview_response/email_security_get_message_preview_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityGetMessagePreviewResponse {const EmailSecurityGetMessagePreviewResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

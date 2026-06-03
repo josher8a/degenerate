@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedRadarValueListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item/deleted_radar_value_list_item_object.dart';/// 
 @immutable final class DeletedRadarValueListItem {const DeletedRadarValueListItem({required this.deleted, required this.id, required this.object, });

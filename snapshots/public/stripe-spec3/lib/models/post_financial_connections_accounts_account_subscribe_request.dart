@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostFinancialConnectionsAccountsAccountSubscribeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_subscribe_request/post_financial_connections_accounts_account_subscribe_request_features.dart';@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequest {const PostFinancialConnectionsAccountsAccountSubscribeRequest({required this.features, this.expand, });
 

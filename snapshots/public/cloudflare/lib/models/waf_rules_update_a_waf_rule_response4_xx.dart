@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafRulesUpdateAWafRuleResponse4Xx
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_anomaly_rule.dart';import 'package:pub_cloudflare/models/waf_managed_rules_traditional_allow_rule.dart';import 'package:pub_cloudflare/models/waf_managed_rules_traditional_deny_rule.dart';import 'package:pub_cloudflare/models/waf_rules_update_a_waf_rule_response4_xx/waf_rules_update_a_waf_rule_response4_xx_result.dart';@immutable final class WafRulesUpdateAWafRuleResponse4Xx {const WafRulesUpdateAWafRuleResponse4Xx({this.result});
 

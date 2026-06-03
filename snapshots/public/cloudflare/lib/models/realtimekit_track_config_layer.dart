@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitTrackConfigLayer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_track_layer_output.dart';@immutable final class RealtimekitTrackConfigLayer {const RealtimekitTrackConfigLayer({this.fileNamePrefix, this.outputs, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamAccessRules
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.
 @immutable final class StreamAccessRulesAction {const StreamAccessRulesAction._(this.value);

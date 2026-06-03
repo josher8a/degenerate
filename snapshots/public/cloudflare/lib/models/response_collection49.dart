@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection49
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_result_info.dart';@immutable final class ResponseCollection49 {const ResponseCollection49({required this.errors, required this.messages, required this.success, this.resultInfo, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_messages2.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_return.dart';@immutable final class ZarazZarazConfigResponse {const ZarazZarazConfigResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

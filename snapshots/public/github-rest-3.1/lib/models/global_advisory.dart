@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GlobalAdvisory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/global_advisory/global_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/security_advisory_epss.dart';import 'package:pub_github_rest_3_1/models/vulnerability.dart';/// The type of advisory.
 @immutable final class GlobalAdvisoryType {const GlobalAdvisoryType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAccountsAccountExternalAccountsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response/get_accounts_account_external_accounts_response_data.dart';/// 
 @immutable final class GetAccountsAccountExternalAccountsResponse {const GetAccountsAccountExternalAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });

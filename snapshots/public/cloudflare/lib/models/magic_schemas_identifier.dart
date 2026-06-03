@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSchemasIdentifier
 
 /// Identifier
 extension type const MagicSchemasIdentifier(String value) {

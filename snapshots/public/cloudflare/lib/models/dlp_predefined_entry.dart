@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPredefinedEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_entry_confidence.dart';import 'package:pub_cloudflare/models/dlp_predefined_entry_variant.dart';@immutable final class DlpPredefinedEntry {const DlpPredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, this.profileId, this.variant, });
 

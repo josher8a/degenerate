@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogcontrolCmbConfigResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logcontrol_cmb_config.dart';@immutable final class LogcontrolCmbConfigResponseSingle {const LogcontrolCmbConfigResponseSingle({this.result});
 

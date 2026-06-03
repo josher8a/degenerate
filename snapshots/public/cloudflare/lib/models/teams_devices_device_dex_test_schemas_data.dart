@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDeviceDexTestSchemasData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration object which contains the details for the WARP client to conduct the test.
 /// 

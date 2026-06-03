@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningGetScanHistoryResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningGetScanHistoryResponse503 {const SecretScanningGetScanHistoryResponse503({this.code, this.message, this.documentationUrl, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheTtlByStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';/// Enterprise customers can set cache time-to-live (TTL) based on the
 /// response status from the origin web server. Cache TTL refers to the

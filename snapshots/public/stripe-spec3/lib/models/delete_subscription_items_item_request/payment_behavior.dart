@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteSubscriptionItemsItemRequest (inline: PaymentBehavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Only applies to subscriptions with `collection_method=charge_automatically`.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceListANamespaceSKeysResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_cursor_result_info.dart';import 'package:pub_cloudflare/models/workers_kv_key.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';@immutable final class WorkersKvNamespaceListANamespaceSKeysResponse {const WorkersKvNamespaceListANamespaceSKeysResponse({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 

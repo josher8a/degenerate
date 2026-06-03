@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: Usage > InputTokenDetails > CachedTokensDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the cached tokens used as input for the Response.
 @immutable final class CachedTokensDetails {const CachedTokensDetails({this.textTokens, this.imageTokens, this.audioTokens, });

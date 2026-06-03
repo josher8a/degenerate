@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/License
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// License
 @immutable final class License {const License({required this.key, required this.name, required this.spdxId, required this.url, required this.nodeId, required this.htmlUrl, required this.description, required this.implementation, required this.permissions, required this.conditions, required this.limitations, required this.body, required this.featured, });

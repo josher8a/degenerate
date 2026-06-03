@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionResponseMessage (inline: Role)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the author of this message.
 @immutable final class ChatCompletionResponseMessageRole {const ChatCompletionResponseMessageRole._(this.value);

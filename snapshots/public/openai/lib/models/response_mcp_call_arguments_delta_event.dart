@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseMcpCallArgumentsDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
 /// 

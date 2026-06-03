@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSessionParticipantsSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionParticipantsSortOrder {const GetSessionParticipantsSortOrder._(this.value);
 

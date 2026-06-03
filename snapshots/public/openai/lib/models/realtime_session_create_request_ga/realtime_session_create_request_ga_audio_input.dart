@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequestGa (inline: Audio > Input)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/pcm_audio_format.dart';import 'package:pub_openai/models/pcma_audio_format.dart';import 'package:pub_openai/models/pcmu_audio_format.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/noise_reduction.dart';import 'package:pub_openai/models/realtime_turn_detection.dart';@immutable final class RealtimeSessionCreateRequestGaAudioInput {const RealtimeSessionCreateRequestGaAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection, });
 

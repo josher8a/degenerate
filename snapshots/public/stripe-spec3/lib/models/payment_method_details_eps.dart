@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsEps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_eps/payment_method_details_eps_bank.dart';/// 
 @immutable final class PaymentMethodDetailsEps {const PaymentMethodDetailsEps({this.bank, this.verifiedName, });

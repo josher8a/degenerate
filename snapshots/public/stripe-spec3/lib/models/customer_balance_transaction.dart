@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);

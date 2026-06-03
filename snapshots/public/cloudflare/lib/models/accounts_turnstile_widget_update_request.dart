@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsTurnstileWidgetUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_bot_fight_mode.dart';import 'package:pub_cloudflare/models/turnstile_clearance_level.dart';import 'package:pub_cloudflare/models/turnstile_ephemeral_id.dart';import 'package:pub_cloudflare/models/turnstile_name.dart';import 'package:pub_cloudflare/models/turnstile_offlabel.dart';import 'package:pub_cloudflare/models/turnstile_region.dart';import 'package:pub_cloudflare/models/turnstile_widget_mode.dart';@immutable final class AccountsTurnstileWidgetUpdateRequest {const AccountsTurnstileWidgetUpdateRequest({required this.domains, required this.mode, required this.name, this.botFightMode, this.clearanceLevel, this.ephemeralId, this.offlabel, this.region, });
 

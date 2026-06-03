@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumApplicationsListSpectrumApplicationsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the direction by which results are ordered.
 @immutable final class SpectrumApplicationsListSpectrumApplicationsDirection {const SpectrumApplicationsListSpectrumApplicationsDirection._(this.value);

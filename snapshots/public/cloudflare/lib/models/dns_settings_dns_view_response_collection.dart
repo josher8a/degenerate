@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDnsViewResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_response.dart';@immutable final class DnsSettingsDnsViewResponseCollection {const DnsSettingsDnsViewResponseCollection({this.result});
 

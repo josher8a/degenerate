@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazCustomManagedComponent (inline: Worker)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Cloudflare worker that acts as a managed component
 @immutable final class ZarazCustomManagedComponentWorker {const ZarazCustomManagedComponentWorker({required this.escapedWorkerName, required this.workerTag, });

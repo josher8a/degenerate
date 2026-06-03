@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigGetGatewayDynamicRouteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_response/aig_config_get_gateway_dynamic_route_response_result.dart';@immutable final class AigConfigGetGatewayDynamicRouteResponse {const AigConfigGetGatewayDynamicRouteResponse({required this.result, required this.success, });
 

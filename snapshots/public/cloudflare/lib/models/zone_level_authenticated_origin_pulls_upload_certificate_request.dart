@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_private_key.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_certificate.dart';@immutable final class ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest {const ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest({required this.certificate, required this.privateKey, });
 

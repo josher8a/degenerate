@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamRequestCreateResourceGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_create_scope.dart';@immutable final class IamRequestCreateResourceGroup {const IamRequestCreateResourceGroup({required this.name, required this.scope, });
 

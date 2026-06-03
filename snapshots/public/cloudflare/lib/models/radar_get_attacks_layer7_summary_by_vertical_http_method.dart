@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryByVerticalHttpMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByVerticalHttpMethod {const RadarGetAttacksLayer7SummaryByVerticalHttpMethod._(this.value);
 

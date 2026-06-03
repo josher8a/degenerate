@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon66
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';@immutable final class ResponseCommon66 {const ResponseCommon66({required this.errors, required this.messages, required this.success, });
 

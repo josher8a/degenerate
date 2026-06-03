@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingParentsInvoiceSubscriptionParent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// 
 @immutable final class BillingBillResourceInvoicingParentsInvoiceSubscriptionParent {const BillingBillResourceInvoicingParentsInvoiceSubscriptionParent({required this.subscription, this.metadata, this.subscriptionProrationDate, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: AddInvoiceItems > Period > End)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EndType {const EndType._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasUpdatedAt
 
 /// This is the time the tls setting was updated.
 extension type TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasUpdatedAt(DateTime value) {

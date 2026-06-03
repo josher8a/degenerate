@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_list_item/mcn_list_item_list.dart';@immutable final class McnListItem {const McnListItem({required this.itemType, required this.list, });
 

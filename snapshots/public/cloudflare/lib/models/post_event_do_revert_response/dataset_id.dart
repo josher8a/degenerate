@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventDoRevertResponse (inline: Properties > DatasetId)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DatasetId {const DatasetId({required this.type});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateChatCompletionRequest (inline: WebSearchOptions > UserLocation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location/approximate_location_type.dart';import 'package:pub_openai/models/web_search_location.dart';/// Approximate location parameters for the search.
 /// 

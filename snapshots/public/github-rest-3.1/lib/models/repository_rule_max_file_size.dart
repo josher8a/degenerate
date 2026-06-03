@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleMaxFileSize
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_max_file_size/repository_rule_max_file_size_parameters.dart';@immutable final class RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType._(this.value);
 

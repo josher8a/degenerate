@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > Payouts > Schedule)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule/weekly_payout_days.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/delay_days.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/schedule_interval.dart';@immutable final class WeeklyAnchor {const WeeklyAnchor._(this.value);
 

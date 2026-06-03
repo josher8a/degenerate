@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallFailed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.failed`.
 @immutable final class RealtimeBetaServerEventResponseMcpCallFailedType {const RealtimeBetaServerEventResponseMcpCallFailedType._(this.value);

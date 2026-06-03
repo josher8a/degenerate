@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceOwner
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class SourceOwner {const SourceOwner({this.address, this.email, this.name, this.phone, this.verifiedAddress, this.verifiedEmail, this.verifiedName, this.verifiedPhone, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesGlobalWarpOverrideResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_global_warp_override.dart';@immutable final class TeamsDevicesGlobalWarpOverrideResponse {const TeamsDevicesGlobalWarpOverrideResponse({this.result});
 

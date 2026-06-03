@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulesetBypassActor
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor that can bypass a ruleset.
 @immutable final class ActorType {const ActorType._(this.value);

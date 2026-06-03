@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudConnectorRule (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Parameters of Cloud Connector Rule
 @immutable final class CloudConnectorRuleParameters {const CloudConnectorRuleParameters({this.host});

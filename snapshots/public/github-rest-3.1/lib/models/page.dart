@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Page
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pages_https_certificate.dart';import 'package:pub_github_rest_3_1/models/pages_source_hash.dart';/// The status of the most recent build of the Page.
 @immutable final class PageStatus {const PageStatus._(this.value);

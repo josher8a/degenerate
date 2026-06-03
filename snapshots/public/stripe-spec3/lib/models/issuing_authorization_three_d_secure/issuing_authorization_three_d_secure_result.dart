@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationThreeDSecure (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the 3D Secure authentication request.
 @immutable final class IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult._(this.value);

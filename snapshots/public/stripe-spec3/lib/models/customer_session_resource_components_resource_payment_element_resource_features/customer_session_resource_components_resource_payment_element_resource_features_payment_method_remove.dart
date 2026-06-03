@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures (inline: PaymentMethodRemove)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether the Payment Element displays the option to remove a saved payment method. This parameter defaults to `disabled`.
 /// 

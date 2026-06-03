@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsSessionRequest (inline: CollectedInformation > ShippingDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/shipping_details_address.dart';@immutable final class CollectedInformationShippingDetails {const CollectedInformationShippingDetails({required this.address, required this.name, });
 

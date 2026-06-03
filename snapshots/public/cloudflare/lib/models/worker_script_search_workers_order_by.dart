@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerScriptSearchWorkersOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Property to sort results by. Results are sorted in ascending order.
 @immutable final class WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy._(this.value);

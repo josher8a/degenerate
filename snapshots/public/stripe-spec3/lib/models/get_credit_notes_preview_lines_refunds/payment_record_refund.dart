@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCreditNotesPreviewLinesRefunds (inline: PaymentRecordRefund)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentRecordRefund {const PaymentRecordRefund({required this.paymentRecord, required this.refundGroup, });
 

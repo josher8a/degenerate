@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutLinkWalletOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_link_wallet_options/display.dart';/// 
 @immutable final class CheckoutLinkWalletOptions {const CheckoutLinkWalletOptions({this.display});

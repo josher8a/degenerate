@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementIdentifier
 
 /// Identifier.
 extension type const BotManagementIdentifier(String value) {

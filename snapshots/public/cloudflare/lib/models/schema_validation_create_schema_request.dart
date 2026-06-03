@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationCreateSchemaRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request/schema_validation_create_schema_request_kind.dart';@immutable final class SchemaValidationCreateSchemaRequest {const SchemaValidationCreateSchemaRequest({required this.kind, required this.name, required this.source, required this.validationEnabled, });
 

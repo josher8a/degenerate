@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: GroupCreated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/group_created_data.dart';/// The details for events with this `type`.
 @immutable final class GroupCreated {const GroupCreated({this.id, this.data, });

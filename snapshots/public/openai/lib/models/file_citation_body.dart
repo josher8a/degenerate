@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileCitationBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation to a file.
 @immutable final class FileCitationBody {const FileCitationBody({required this.fileId, required this.index, required this.filename, this.type = 'file_citation', });

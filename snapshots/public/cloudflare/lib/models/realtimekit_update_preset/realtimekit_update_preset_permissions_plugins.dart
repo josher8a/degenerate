@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Permissions > Plugins)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions_plugins_config.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions_plugins_config_variant2.dart';/// Plugin permissions
 @immutable final class RealtimekitUpdatePresetPermissionsPlugins {const RealtimekitUpdatePresetPermissionsPlugins({this.canClose, this.canEditConfig, this.canStart, this.config, });

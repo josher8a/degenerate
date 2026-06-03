@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs2 (inline: Raw)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides raw information about the request and response.
 @immutable final class AaaAuditLogs2Raw {const AaaAuditLogs2Raw({this.cfRayId, this.method, this.statusCode, this.uri, this.userAgent, });

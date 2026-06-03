@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_auth_id_characteristic.dart';import 'package:pub_cloudflare/models/shield_auth_id_characteristic_jwt_claim.dart';import 'package:pub_cloudflare/models/shield_auth_id_characteristics2.dart';@immutable final class ShieldConfiguration {const ShieldConfiguration({required this.authIdCharacteristics});
 

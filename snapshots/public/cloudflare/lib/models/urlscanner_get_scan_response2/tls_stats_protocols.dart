@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats > TlsStats > Protocols)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsStatsProtocols {const TlsStatsProtocols({required this.tls13Aes128Gcm});
 

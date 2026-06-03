@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: StartRotatePki)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started PKI rotation
 @immutable final class StartRotatePkiK {const StartRotatePkiK._(this.value);

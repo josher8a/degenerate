@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: SavedPaymentMethodOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_save.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_saved_payment_method_options/allow_redisplay_filters.dart';/// Controls saved payment method settings for the session. Only available in `payment` and `subscription` mode.
 @immutable final class SavedPaymentMethodOptions {const SavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });

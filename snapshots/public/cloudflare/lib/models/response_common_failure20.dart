@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure20
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_whois_messages2.dart';@immutable final class ResponseCommonFailure20 {const ResponseCommonFailure20({required this.errors, required this.messages, required this.result, required this.success, });
 

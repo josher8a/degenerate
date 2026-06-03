@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Ui > DesignTokens > BorderRadius)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BorderRadius {const BorderRadius._(this.value);
 

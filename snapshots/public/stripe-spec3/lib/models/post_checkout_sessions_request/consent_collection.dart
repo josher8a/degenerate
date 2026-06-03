@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: ConsentCollection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/payment_method_reuse_agreement.dart';@immutable final class ConsentCollectionPromotions {const ConsentCollectionPromotions._(this.value);
 

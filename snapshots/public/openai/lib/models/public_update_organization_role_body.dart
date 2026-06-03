@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicUpdateOrganizationRoleBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for updating an existing role.
 @immutable final class PublicUpdateOrganizationRoleBody {const PublicUpdateOrganizationRoleBody({this.permissions, this.description, this.roleName, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsRouteStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsRouteStats2 {const InsightsRouteStats2({this.httpMethod, this.apiRoute, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp, this.lastRequestTimestamp, });
 

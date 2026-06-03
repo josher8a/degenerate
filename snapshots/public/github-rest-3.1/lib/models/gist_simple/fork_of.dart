@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistSimple (inline: ForkOf)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_simple/fork_of_files_value.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist
 @immutable final class ForkOf {const ForkOf({required this.url, required this.forksUrl, required this.commitsUrl, required this.id, required this.nodeId, required this.gitPullUrl, required this.gitPushUrl, required this.htmlUrl, required this.files, required this.public, required this.createdAt, required this.updatedAt, required this.description, required this.comments, required this.user, required this.commentsUrl, this.commentsEnabled, this.owner, this.truncated, this.forks, this.history, });

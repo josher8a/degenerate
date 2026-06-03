@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerAcceptance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance/customer_acceptance_type.dart';import 'package:pub_stripe_spec3/models/offline_acceptance.dart';import 'package:pub_stripe_spec3/models/online_acceptance.dart';/// 
 @immutable final class CustomerAcceptance {const CustomerAcceptance({required this.type, this.acceptedAt, this.offline, this.online, });

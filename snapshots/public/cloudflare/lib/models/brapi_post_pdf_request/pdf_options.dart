@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostPdfRequest (inline: Variant1 > PdfOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_pdf_request/margin.dart';/// Paper format. Takes priority over width and height if set.
 @immutable final class PdfOptionsFormat {const PdfOptionsFormat._(this.value);

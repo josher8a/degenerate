@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsCrypto
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The blockchain network that the transaction was sent on.
 @immutable final class PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork._(this.value);

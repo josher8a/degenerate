@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIdentityVerificationSessionsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIdentityVerificationSessionsStatus {const GetIdentityVerificationSessionsStatus._(this.value);
 

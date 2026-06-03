@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersDomainResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_domain.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class WorkersDomainResponseSingle {const WorkersDomainResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 

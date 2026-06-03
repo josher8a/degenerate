@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupIntentTypeSpecificPaymentMethodOptionsClient
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_payto.dart';/// 
 @immutable final class SetupIntentTypeSpecificPaymentMethodOptionsClient {const SetupIntentTypeSpecificPaymentMethodOptionsClient({this.mandateOptions, this.verificationMethod, });

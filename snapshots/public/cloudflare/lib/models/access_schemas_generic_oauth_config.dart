@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasGenericOauthConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasGenericOauthConfig {const AccessSchemasGenericOauthConfig({this.clientId, this.clientSecret, });
 

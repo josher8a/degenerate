@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionKonbiniFamilymart
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionKonbiniFamilymart {const PaymentIntentNextActionKonbiniFamilymart({required this.paymentCode, this.confirmationNumber, });

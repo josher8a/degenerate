@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicLanDhcpServer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_ip_address.dart';@immutable final class MagicLanDhcpServer {const MagicLanDhcpServer({this.dhcpPoolEnd, this.dhcpPoolStart, this.dnsServer, this.dnsServers, this.reservations, });
 

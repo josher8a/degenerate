@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCallRecordingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';@immutable final class CreateCallRecordingRequest {const CreateCallRecordingRequest({this.recordingStatusCallbackEvent, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.trim, this.recordingChannels, this.recordingTrack, });
 

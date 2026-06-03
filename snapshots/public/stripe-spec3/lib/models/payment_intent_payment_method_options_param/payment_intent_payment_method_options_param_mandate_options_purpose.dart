@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam (inline: MandateOptions > Purpose)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._(this.value);
 

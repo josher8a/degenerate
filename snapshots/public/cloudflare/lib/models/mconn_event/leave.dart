@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: Leave)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Stopped process
 @immutable final class LeaveK {const LeaveK._(this.value);

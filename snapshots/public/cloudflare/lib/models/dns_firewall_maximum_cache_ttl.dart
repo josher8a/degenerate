@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallMaximumCacheTtl
 
 /// By default, Cloudflare attempts to cache responses for as long as
 /// indicated by the TTL received from upstream nameservers. This setting

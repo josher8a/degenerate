@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Message
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message/message_content.dart';@immutable final class MessageStatus {const MessageStatus._(this.value);
 

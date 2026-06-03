@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InternalCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class InternalCard {const InternalCard({this.brand, this.country, this.expMonth, this.expYear, this.last4, });

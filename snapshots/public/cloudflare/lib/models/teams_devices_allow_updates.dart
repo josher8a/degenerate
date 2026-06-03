@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesAllowUpdates
 
 /// Whether to receive update notifications when a new version of the client is available.
 extension type const TeamsDevicesAllowUpdates(bool value) {

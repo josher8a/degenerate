@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldExpressionTemplatesFallthroughResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_response_expression_templates_fallthrough.dart';@immutable final class ShieldExpressionTemplatesFallthroughResponse {const ShieldExpressionTemplatesFallthroughResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

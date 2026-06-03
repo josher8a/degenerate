@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StatusCause
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
 @immutable final class StatusCause {const StatusCause({this.field, this.message, this.reason, });

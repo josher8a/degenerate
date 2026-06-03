@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceOrderItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceOrderItem {const SourceOrderItem({this.amount, this.currency, this.description, this.parent, this.quantity, this.type, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringFleetStatusDevicesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device.dart';@immutable final class DigitalExperienceMonitoringFleetStatusDevicesResponse {const DigitalExperienceMonitoringFleetStatusDevicesResponse({this.result});
 

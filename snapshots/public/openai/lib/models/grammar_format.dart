@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GrammarFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';import 'package:pub_openai/models/grammar_format/grammar.dart';/// A grammar defined by the user.
 @immutable final class GrammarFormat {const GrammarFormat({required this.type, required this.grammar, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HyperdriveHyperdriveCaching
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_caching_common.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_caching_enabled.dart';sealed class HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCaching();
 

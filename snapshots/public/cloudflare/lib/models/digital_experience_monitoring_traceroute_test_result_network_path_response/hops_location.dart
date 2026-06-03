@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse (inline: Hops > Location)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HopsLocation {const HopsLocation({this.city, this.state, this.zip, });
 

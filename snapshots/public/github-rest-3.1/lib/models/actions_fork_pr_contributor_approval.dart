@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsForkPrContributorApproval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls when fork PR workflows require approval from a maintainer.
 @immutable final class ApprovalPolicy {const ApprovalPolicy._(this.value);

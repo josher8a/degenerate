@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersCreateAssetsUploadSessionResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersCreateAssetsUploadSessionResponseResult {const WorkersCreateAssetsUploadSessionResponseResult({this.buckets, this.jwt, });
 

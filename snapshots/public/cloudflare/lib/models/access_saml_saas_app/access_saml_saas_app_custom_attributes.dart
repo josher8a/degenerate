@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlSaasApp (inline: CustomAttributes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/custom_attributes_source.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/name_format.dart';@immutable final class AccessSamlSaasAppCustomAttributes {const AccessSamlSaasAppCustomAttributes({this.friendlyName, this.name, this.nameFormat, this.$required, this.source, });
 

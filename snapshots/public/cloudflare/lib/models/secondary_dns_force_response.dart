@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsForceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When force_axfr query parameter is set to true, the response is a simple string.
 extension type const SecondaryDnsForceResult(String value) {

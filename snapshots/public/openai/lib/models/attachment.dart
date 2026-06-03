@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Attachment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AttachmentType {const AttachmentType._(this.value);
 

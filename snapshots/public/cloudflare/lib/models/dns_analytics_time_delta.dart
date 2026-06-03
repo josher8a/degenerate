@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsTimeDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unit of time to group data by.
 @immutable final class DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta._(this.value);

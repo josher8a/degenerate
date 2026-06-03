@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Config > Media > Video)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/screenshare_quality.dart';/// Configuration options for participant videos
 @immutable final class RealtimekitPresetConfigMediaVideo {const RealtimekitPresetConfigMediaVideo({required this.frameRate, required this.quality, });

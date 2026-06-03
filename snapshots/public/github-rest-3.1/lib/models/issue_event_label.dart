@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueEventLabel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Issue Event Label
 @immutable final class IssueEventLabel {const IssueEventLabel({required this.name, required this.color, });

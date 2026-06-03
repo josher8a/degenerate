@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventConversationItemDeleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.deleted`.
 @immutable final class RealtimeBetaServerEventConversationItemDeletedType {const RealtimeBetaServerEventConversationItemDeletedType._(this.value);

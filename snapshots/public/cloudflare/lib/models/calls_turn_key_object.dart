@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsTurnKeyObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_created.dart';import 'package:pub_cloudflare/models/calls_identifier.dart';import 'package:pub_cloudflare/models/calls_modified.dart';import 'package:pub_cloudflare/models/calls_name.dart';@immutable final class CallsTurnKeyObject {const CallsTurnKeyObject({this.created, this.modified, this.name, this.uid, });
 

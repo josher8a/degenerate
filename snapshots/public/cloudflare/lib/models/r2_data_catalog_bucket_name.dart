@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogBucketName
 
 /// Specifies the R2 bucket name.
 extension type const R2DataCatalogBucketName(String value) {

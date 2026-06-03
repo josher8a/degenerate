@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceTaxIdCollection (inline: Required)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Required {const Required._(this.value);
 

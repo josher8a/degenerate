@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsCreateBuildTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_cloudflare_token_id.dart';@immutable final class BuildsCreateBuildTokenRequest {const BuildsCreateBuildTokenRequest({required this.buildTokenName, required this.buildTokenSecret, required this.cloudflareTokenId, });
 

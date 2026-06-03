@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RequestsByColo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for requests.
 @immutable final class RequestsByColo {const RequestsByColo({this.all, this.cached, this.country, this.httpStatus, this.uncached, });

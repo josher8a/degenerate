@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayCategories
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_beta.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_categories_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_class.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_id.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_subcategory.dart';@immutable final class ZeroTrustGatewayCategories {const ZeroTrustGatewayCategories({this.beta, this.$class, this.description, this.id, this.name, this.subcategories, });
 

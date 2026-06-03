@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldName
 
 /// A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
 extension type const SmartshieldName(String value) {

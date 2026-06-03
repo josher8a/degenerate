@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlQueryZonesCanBeEnabledResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_msg.dart';import 'package:pub_cloudflare/models/pay_per_crawl_result_info.dart';import 'package:pub_cloudflare/models/pay_per_crawl_zones_can_be_enabled_payload.dart';@immutable final class PayPerCrawlQueryZonesCanBeEnabledResponse {const PayPerCrawlQueryZonesCanBeEnabledResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPromotionCodesRequest (inline: Restrictions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_promotion_code_request/restrictions_currency_options_value.dart';/// Settings that restrict the redemption of the promotion code.
 @immutable final class PostPromotionCodesRequestRestrictions {const PostPromotionCodesRequestRestrictions({this.currencyOptions, this.firstTimeTransaction, this.minimumAmount, this.minimumAmountCurrency, });

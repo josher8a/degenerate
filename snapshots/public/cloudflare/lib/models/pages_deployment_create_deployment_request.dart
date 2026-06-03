@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentCreateDeploymentRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boolean string indicating if the working directory has uncommitted changes.
 @immutable final class CommitDirty {const CommitDirty._(this.value);

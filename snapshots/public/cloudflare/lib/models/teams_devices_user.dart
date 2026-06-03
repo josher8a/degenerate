@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// UUID.
 extension type const TeamsDevicesComponentsSchemasUuid(String value) {

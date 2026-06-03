@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodUsBankAccountStatusDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account_blocked.dart';/// 
 @immutable final class PaymentMethodUsBankAccountStatusDetails {const PaymentMethodUsBankAccountStatusDetails({this.blocked});

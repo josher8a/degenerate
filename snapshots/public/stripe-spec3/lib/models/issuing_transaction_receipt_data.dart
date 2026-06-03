@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingTransactionReceiptData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingTransactionReceiptData {const IssuingTransactionReceiptData({this.description, this.quantity, this.total, this.unitCost, });

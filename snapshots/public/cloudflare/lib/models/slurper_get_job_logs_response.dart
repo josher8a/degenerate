@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SlurperGetJobLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model32.dart';import 'package:pub_cloudflare/models/r2_slurper_job_log_response.dart';@immutable final class SlurperGetJobLogsResponse {const SlurperGetJobLogsResponse({this.errors, this.messages, this.success, this.result, });
 

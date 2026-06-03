@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGroupsCreateAnAccessGroupRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_groups_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_is_default.dart';import 'package:pub_cloudflare/models/access_rule.dart';@immutable final class AccessGroupsCreateAnAccessGroupRequest {const AccessGroupsCreateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.isDefault, this.require, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckAutomatedSecurityFixes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Check Dependabot security updates
 @immutable final class CheckAutomatedSecurityFixes {const CheckAutomatedSecurityFixes({required this.enabled, required this.paused, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleCustomScanPayload
 
 /// Defines the ruleset expression to use in matching content objects.
 extension type const BundleCustomScanPayload(String value) {

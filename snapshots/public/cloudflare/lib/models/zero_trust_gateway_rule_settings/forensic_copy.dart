@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: ForensicCopy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure whether a copy of the HTTP request will be sent to storage when the rule matches.
 @immutable final class ForensicCopy {const ForensicCopy({this.enabled});

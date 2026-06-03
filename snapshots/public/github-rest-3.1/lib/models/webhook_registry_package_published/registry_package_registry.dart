@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRegistryPackagePublished (inline: RegistryPackage > Registry)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RegistryPackageRegistry {const RegistryPackageRegistry({this.aboutUrl, this.name, this.type, this.url, this.vendor, });
 

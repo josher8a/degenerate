@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRealtimeCallIncoming
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';import 'package:pub_openai/models/webhook_realtime_call_incoming/webhook_realtime_call_incoming_data.dart';/// The type of the event. Always `realtime.call.incoming`.
 /// 

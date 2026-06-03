@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscInterconnectGcpPartnerBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth.dart';@immutable final class NscInterconnectGcpPartnerBody {const NscInterconnectGcpPartnerBody({required this.account, required this.name, required this.type, required this.region, this.owner, this.speed, });
 

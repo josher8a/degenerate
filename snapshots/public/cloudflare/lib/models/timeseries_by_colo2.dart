@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TimeseriesByColo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth_by_colo.dart';import 'package:pub_cloudflare/models/requests_by_colo.dart';import 'package:pub_cloudflare/models/since.dart';import 'package:pub_cloudflare/models/threats.dart';import 'package:pub_cloudflare/models/until.dart';@immutable final class TimeseriesByColo2 {const TimeseriesByColo2({this.bandwidth, this.requests, this.since, this.threats, this.until, });
 

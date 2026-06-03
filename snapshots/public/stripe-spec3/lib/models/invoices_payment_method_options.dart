@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicesPaymentMethodOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_acss_debit.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_bancontact.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_card.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_customer_balance.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_konbini.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_payto.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_sepa_debit.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_us_bank_account.dart';/// 
 @immutable final class InvoicesPaymentMethodOptions {const InvoicesPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });

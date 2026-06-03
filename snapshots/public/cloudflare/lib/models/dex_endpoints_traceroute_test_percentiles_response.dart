@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsTracerouteTestPercentilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_details_percentiles_response.dart';@immutable final class DexEndpointsTracerouteTestPercentilesResponse {const DexEndpointsTracerouteTestPercentilesResponse({this.result});
 

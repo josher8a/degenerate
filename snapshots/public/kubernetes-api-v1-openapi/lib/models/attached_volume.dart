@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AttachedVolume
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AttachedVolume describes a volume attached to a node
 @immutable final class AttachedVolume {const AttachedVolume({this.devicePath = '', this.name = '', });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderScoreModel (inline: SamplingParams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// The sampling parameters for the model.
 @immutable final class EvalGraderScoreModelSamplingParams {const EvalGraderScoreModelSamplingParams({this.seed, this.topP, this.temperature, this.maxCompletionsTokens, this.reasoningEffort, });

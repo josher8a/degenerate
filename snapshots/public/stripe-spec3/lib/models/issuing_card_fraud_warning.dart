@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardFraudWarning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
 @immutable final class IssuingCardFraudWarningType {const IssuingCardFraudWarningType._(this.value);

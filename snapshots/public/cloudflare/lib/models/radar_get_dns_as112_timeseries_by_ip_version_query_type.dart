@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesByIpVersionQueryType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesByIpVersionQueryType {const RadarGetDnsAs112TimeseriesByIpVersionQueryType._(this.value);
 

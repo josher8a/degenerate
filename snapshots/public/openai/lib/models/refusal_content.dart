@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RefusalContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A refusal from the model.
 @immutable final class RefusalContent {const RefusalContent({required this.refusal, this.type = 'refusal', });

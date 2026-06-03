@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorListWorkflowInstancesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// should only be used when `cursor` is used, defines a new direction for the cursor
 @immutable final class WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogTableMaintenanceConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config.dart';/// Contains table maintenance configuration.
 @immutable final class R2DataCatalogTableMaintenanceConfigResponse {const R2DataCatalogTableMaintenanceConfigResponse({required this.maintenanceConfig});

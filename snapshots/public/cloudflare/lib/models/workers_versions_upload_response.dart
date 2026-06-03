@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersVersionsUploadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_version_item_uploaded.dart';@immutable final class WorkersVersionsUploadResponse {const WorkersVersionsUploadResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

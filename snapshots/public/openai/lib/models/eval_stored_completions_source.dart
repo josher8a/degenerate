@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalStoredCompletionsSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_stored_completions_data_source_config/create_eval_stored_completions_data_source_config_type.dart';/// A StoredCompletionsRunDataSource configuration describing a set of filters
 /// 

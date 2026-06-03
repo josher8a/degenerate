@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCallStream
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Stream. Possible values are `stopped` and `in-progress`.
 @immutable final class StreamEnumStatus {const StreamEnumStatus._(this.value);

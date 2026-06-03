@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingNetworkTokenDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device used for tokenization.
 @immutable final class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType._(this.value);

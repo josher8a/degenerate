@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogcontrolRetentionFlagResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logcontrol_retention_flag.dart';@immutable final class LogcontrolRetentionFlagResponseSingle {const LogcontrolRetentionFlagResponseSingle({this.result});
 

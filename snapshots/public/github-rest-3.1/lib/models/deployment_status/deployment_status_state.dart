@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeploymentStatus (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status.
 @immutable final class DeploymentStatusState {const DeploymentStatusState._(this.value);

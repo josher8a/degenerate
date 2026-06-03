@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafRulesListWafRulesMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action/mode a rule has been overridden to perform.
 @immutable final class WafRulesListWafRulesMode {const WafRulesListWafRulesMode._(this.value);

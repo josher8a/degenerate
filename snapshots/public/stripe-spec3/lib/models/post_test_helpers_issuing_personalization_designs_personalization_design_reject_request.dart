@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_personalization_designs_personalization_design_reject_request/rejection_reasons.dart';@immutable final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest({required this.rejectionReasons, this.expand, });
 

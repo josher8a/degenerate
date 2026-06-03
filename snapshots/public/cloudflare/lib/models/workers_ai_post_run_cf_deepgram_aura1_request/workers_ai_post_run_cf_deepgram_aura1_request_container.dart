@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfDeepgramAura1Request (inline: Container)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
 @immutable final class WorkersAiPostRunCfDeepgramAura1RequestContainer {const WorkersAiPostRunCfDeepgramAura1RequestContainer._(this.value);

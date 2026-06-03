@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantToolsFileSearch (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `file_search`
 @immutable final class AssistantToolsFileSearchType {const AssistantToolsFileSearchType._(this.value);

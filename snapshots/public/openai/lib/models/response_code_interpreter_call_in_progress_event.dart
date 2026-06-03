@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCodeInterpreterCallInProgressEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a code interpreter call is in progress.
 @immutable final class ResponseCodeInterpreterCallInProgressEvent {const ResponseCodeInterpreterCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });

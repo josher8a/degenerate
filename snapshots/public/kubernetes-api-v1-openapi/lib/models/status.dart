@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Status
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/status_details.dart';/// Status is a return value for calls that don't return other objects.
 @immutable final class Status {const Status({this.apiVersion, this.code, this.details, this.kind, this.message, this.metadata, this.reason, this.status, });

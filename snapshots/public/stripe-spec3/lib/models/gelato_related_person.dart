@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoRelatedPerson
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class GelatoRelatedPerson {const GelatoRelatedPerson({required this.account, required this.person, });

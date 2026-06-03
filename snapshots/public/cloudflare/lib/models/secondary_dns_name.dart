@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsName
 
 /// Zone name.
 extension type const SecondaryDnsName(String value) {

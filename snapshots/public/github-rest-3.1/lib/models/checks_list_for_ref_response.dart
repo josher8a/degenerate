@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksListForRefResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run.dart';@immutable final class ChecksListForRefResponse {const ChecksListForRefResponse({required this.totalCount, required this.checkRuns, });
 

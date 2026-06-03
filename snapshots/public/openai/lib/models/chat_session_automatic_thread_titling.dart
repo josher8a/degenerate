@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatSessionAutomaticThreadTitling
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Automatic thread title preferences for the session.
 @immutable final class ChatSessionAutomaticThreadTitling {const ChatSessionAutomaticThreadTitling({required this.enabled});

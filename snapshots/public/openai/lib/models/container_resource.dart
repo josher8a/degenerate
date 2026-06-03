@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_resource/container_resource_expires_after.dart';import 'package:pub_openai/models/container_resource/container_resource_network_policy.dart';import 'package:pub_openai/models/container_resource/memory_limit.dart';@immutable final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
 

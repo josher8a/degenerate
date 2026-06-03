@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceCustomText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents custom text to be displayed when collecting the input using a reader
 @immutable final class TerminalReaderReaderResourceCustomText {const TerminalReaderReaderResourceCustomText({this.description, this.skipButton, this.submitButton, this.title, });

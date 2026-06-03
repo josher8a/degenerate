@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FetchGatewaysResponse (inline: Result > Servers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_request/create_servers_request_auth_type.dart';@immutable final class ResultServers {const ResultServers({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, required this.updatedPrompts, required this.updatedTools, this.createdAt, this.createdBy, this.defaultDisabled = false, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.onBehalf = true, this.status = 'waiting', });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCardPaymentMethodOptions (inline: RequestOvercapture)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to [overcapture](/payments/overcapture) for this CheckoutSession.
 @immutable final class RequestOvercapture {const RequestOvercapture._(this.value);

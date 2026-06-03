@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldTokenType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldTokenType {const ShieldTokenType._(this.value);
 

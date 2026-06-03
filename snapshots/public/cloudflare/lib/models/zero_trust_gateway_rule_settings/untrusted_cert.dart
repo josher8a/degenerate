@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: UntrustedCert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
 @immutable final class UntrustedCertAction {const UntrustedCertAction._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingV4error
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingV4error {const ResourceSharingV4error({required this.code, required this.message, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestMessageContentPartAudio (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the content part. Always `input_audio`.
 @immutable final class ChatCompletionRequestMessageContentPartAudioType {const ChatCompletionRequestMessageContentPartAudioType._(this.value);

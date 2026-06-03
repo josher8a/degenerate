@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelTunnelLinksResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_link.dart';@immutable final class TunnelTunnelLinksResponse {const TunnelTunnelLinksResponse({this.result});
 

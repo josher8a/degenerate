@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsAppResponseSingleWithSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_app_with_secret.dart';@immutable final class CallsAppResponseSingleWithSecret {const CallsAppResponseSingleWithSecret({this.result});
 

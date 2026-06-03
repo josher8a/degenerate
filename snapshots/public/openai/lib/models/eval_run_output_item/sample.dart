@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRunOutputItem (inline: Sample)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error_model2.dart';import 'package:pub_openai/models/eval_run_output_item/sample_input.dart';import 'package:pub_openai/models/eval_run_output_item/sample_output.dart';import 'package:pub_openai/models/eval_run_output_item/sample_usage.dart';/// A sample containing the input and output of the evaluation run.
 @immutable final class Sample {const Sample({required this.input, required this.output, required this.finishReason, required this.model, required this.usage, required this.error, required this.temperature, required this.maxCompletionTokens, required this.topP, required this.seed, });

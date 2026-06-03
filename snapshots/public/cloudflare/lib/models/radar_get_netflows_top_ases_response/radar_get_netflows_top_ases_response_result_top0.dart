@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetNetflowsTopAsesResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsTopAsesResponseResultTop0 {const RadarGetNetflowsTopAsesResponseResultTop0({required this.clientAsn, required this.clientAsName, required this.value, });
 

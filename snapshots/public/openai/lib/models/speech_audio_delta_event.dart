@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpeechAudioDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted for each chunk of audio data generated during speech synthesis.
 @immutable final class SpeechAudioDeltaEvent {const SpeechAudioDeltaEvent({required this.type, required this.audio, });

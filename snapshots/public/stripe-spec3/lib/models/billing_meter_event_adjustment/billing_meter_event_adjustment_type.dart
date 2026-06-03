@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeterEventAdjustment (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
 @immutable final class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType._(this.value);

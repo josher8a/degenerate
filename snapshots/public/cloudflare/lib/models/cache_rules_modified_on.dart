@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesModifiedOn
 
 /// The time when the setting was last modified.
 extension type CacheRulesModifiedOn(DateTime value) {

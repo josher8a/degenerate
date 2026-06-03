@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeterResourceAggregationSettings (inline: Formula)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies how events are aggregated.
 @immutable final class Formula {const Formula._(this.value);

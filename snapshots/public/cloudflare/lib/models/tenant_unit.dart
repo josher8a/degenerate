@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TenantUnit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantUnit {const TenantUnit({required this.unitMemberships, required this.unitMetadata, required this.unitName, required this.unitStatus, required this.unitTag, });
 

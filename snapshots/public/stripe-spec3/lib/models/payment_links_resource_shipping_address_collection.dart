@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceShippingAddressCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_address_collection/allowed_countries.dart';/// 
 @immutable final class PaymentLinksResourceShippingAddressCollection {const PaymentLinksResourceShippingAddressCollection({required this.allowedCountries});

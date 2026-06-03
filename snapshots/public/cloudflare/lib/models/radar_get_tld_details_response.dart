@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTldDetailsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response/radar_get_tld_details_response_result.dart';@immutable final class RadarGetTldDetailsResponse {const RadarGetTldDetailsResponse({required this.result, required this.success, });
 

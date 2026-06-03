@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIdentityVerificationSessionsRequest (inline: ProvidedDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details provided about the user being verified. These details may be shown to the user.
 @immutable final class ProvidedDetails {const ProvidedDetails({this.email, this.phone, });

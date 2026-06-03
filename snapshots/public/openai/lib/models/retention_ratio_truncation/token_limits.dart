@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RetentionRatioTruncation (inline: TokenLimits)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.
 @immutable final class TokenLimits {const TokenLimits({this.postInstructions});

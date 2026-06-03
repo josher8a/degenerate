@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ScanConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/frequency2.dart';@immutable final class ScanConfig {const ScanConfig({required this.accountId, required this.frequency, required this.id, required this.ips, required this.ports, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfLeonardoPhoenix10Request
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoPhoenix10Request {const WorkersAiPostRunCfLeonardoPhoenix10Request({required this.prompt, this.guidance = 2.0, this.height = 1024, this.negativePrompt, this.numSteps = 25, this.seed, this.width = 1024, });
 

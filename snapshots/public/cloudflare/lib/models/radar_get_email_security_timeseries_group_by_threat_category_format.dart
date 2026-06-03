@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat {const RadarGetEmailSecurityTimeseriesGroupByThreatCategoryFormat._(this.value);

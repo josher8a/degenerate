@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicWansAddSingleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';import 'package:pub_cloudflare/models/magic_wan_static_addressing.dart';@immutable final class MagicWansAddSingleRequest {const MagicWansAddSingleRequest({required this.physport, this.name, this.priority, this.staticAddressing, this.vlanTag, });
 

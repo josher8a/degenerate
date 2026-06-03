@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesLocationByAlpha2Response (inline: Result > Location)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultLocation {const ResultLocation({required this.alpha2, required this.confidenceLevel, required this.continent, required this.latitude, required this.longitude, required this.name, required this.region, required this.subregion, });
 

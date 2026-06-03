@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCreateHostedRunnerForOrgRequest (inline: Image)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_curated_image/actions_hosted_runner_curated_image_source.dart';/// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
 @immutable final class ActionsCreateHostedRunnerForOrgRequestImage {const ActionsCreateHostedRunnerForOrgRequestImage({this.id, this.source, this.version, });

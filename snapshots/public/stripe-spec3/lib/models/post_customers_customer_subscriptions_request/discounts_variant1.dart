@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: Discounts > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DiscountsVariant1 {const DiscountsVariant1({this.coupon, this.discount, this.promotionCode, });
 

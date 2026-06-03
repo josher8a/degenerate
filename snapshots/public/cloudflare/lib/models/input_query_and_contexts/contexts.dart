@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputQueryAndContexts (inline: Contexts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Contexts {const Contexts({this.text});
 

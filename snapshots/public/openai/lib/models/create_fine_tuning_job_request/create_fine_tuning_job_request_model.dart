@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateFineTuningJobRequest (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateFineTuningJobRequestModelVariant2 {const CreateFineTuningJobRequestModelVariant2._(this.value);
 

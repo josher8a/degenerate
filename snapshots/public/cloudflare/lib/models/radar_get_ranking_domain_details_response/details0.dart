@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingDomainDetailsResponse (inline: Result > Details0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ranking_domain_details_response/details0_categories.dart';import 'package:pub_cloudflare/models/radar_get_ranking_domain_details_response/top_locations.dart';@immutable final class Details0 {const Details0({required this.categories, this.bucket, this.rank, this.topLocations, });
 

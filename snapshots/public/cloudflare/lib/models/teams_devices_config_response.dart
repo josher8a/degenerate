@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_workspace_one_config_response.dart';/// A value that is one of: `TeamsDevicesWorkspaceOneConfigResponse`.
 sealed class TeamsDevicesConfigResponse {const TeamsDevicesConfigResponse();

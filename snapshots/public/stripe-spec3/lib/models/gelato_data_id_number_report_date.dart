@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoDataIdNumberReportDate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Point in Time
 @immutable final class GelatoDataIdNumberReportDate {const GelatoDataIdNumberReportDate({this.day, this.month, this.year, });

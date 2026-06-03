@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewaySchemasType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the list type.
 @immutable final class ZeroTrustGatewaySchemasType {const ZeroTrustGatewaySchemasType._(this.value);

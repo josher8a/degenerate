@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesCreateForAuthenticatedUserRequest (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_create_for_authenticated_user_request/variant2_pull_request.dart';import 'package:pub_github_rest_3_1/models/codespaces_create_with_pr_for_authenticated_user_request/geo.dart';@immutable final class CodespacesCreateForAuthenticatedUserRequestVariant2 {const CodespacesCreateForAuthenticatedUserRequestVariant2({required this.pullRequest, this.location, this.geo, this.machine, this.devcontainerPath, this.workingDirectory, this.idleTimeoutMinutes, });
 

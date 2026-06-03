@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTopTldsByMessagesTldCategory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD category.
 @immutable final class RadarGetEmailSecurityTopTldsByMessagesTldCategory {const RadarGetEmailSecurityTopTldsByMessagesTldCategory._(this.value);

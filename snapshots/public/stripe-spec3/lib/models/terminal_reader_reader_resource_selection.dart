@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceSelection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_choice.dart';/// Information about a selection being collected using a reader
 @immutable final class TerminalReaderReaderResourceSelection {const TerminalReaderReaderResourceSelection({required this.choices, this.id, this.text, });

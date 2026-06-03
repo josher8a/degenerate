@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCreateTagRequest (inline: Tagger)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object with information about the individual creating the tag.
 @immutable final class GitCreateTagRequestTagger {const GitCreateTagRequestTagger({required this.name, required this.email, this.date, });

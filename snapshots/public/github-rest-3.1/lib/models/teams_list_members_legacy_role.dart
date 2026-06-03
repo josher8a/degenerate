@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsListMembersLegacyRole
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsListMembersLegacyRole {const TeamsListMembersLegacyRole._(this.value);
 

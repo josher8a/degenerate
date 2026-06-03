@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Conditional > Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConditionalProperties {const ConditionalProperties({this.conditions});
 

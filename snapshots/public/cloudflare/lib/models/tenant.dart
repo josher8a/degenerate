@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tenant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tenant/tenant_contacts.dart';import 'package:pub_cloudflare/models/tenant/tenant_metadata.dart';import 'package:pub_cloudflare/models/tenant_unit.dart';@immutable final class Tenant {const Tenant({required this.cdate, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, this.customerId, });
 

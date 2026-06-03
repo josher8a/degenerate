@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesPermissionsCheckForDevcontainer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permission check result for a given devcontainer config.
 @immutable final class CodespacesPermissionsCheckForDevcontainer {const CodespacesPermissionsCheckForDevcontainer({required this.accepted});

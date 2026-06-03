@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RebootWindow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reboot time settings for readers. that support customized reboot time configuration.
 @immutable final class RebootWindow {const RebootWindow({required this.endHour, required this.startHour, });

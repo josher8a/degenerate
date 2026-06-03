@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Billing > Address)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingAddress {const BillingAddress({required this.city, required this.country, required this.line1, required this.postalCode, this.line2, this.state, });
 

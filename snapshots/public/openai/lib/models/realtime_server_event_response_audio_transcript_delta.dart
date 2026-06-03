@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseAudioTranscriptDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the model-generated transcription of audio output is updated.
 /// 

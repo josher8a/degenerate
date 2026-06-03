@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsOutagesResponse (inline: Result > Annotations > Outage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Outage {const Outage({required this.outageCause, required this.outageType, });
 

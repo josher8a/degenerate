@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationSecretScanningAlert (inline: Validity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The token status as of the latest validity check.
 @immutable final class Validity {const Validity._(this.value);

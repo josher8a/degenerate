@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreditCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreditCard {const CreditCard({required this.cardNumber, required this.expiryMonth, required this.expiryYear, this.cardholderName, });
 

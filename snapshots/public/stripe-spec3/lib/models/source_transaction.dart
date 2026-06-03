@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/source_transaction_ach_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_chf_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_gbp_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_paper_check_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_sepa_credit_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SourceTransactionObject {const SourceTransactionObject._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputePaymentMethodDetailsPaypal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class DisputePaymentMethodDetailsPaypal {const DisputePaymentMethodDetailsPaypal({this.caseId, this.reasonCode, });

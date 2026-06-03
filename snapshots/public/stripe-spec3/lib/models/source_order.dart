@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/source_order_item.dart';/// 
 @immutable final class SourceOrder {const SourceOrder({required this.amount, required this.currency, this.email, this.items, this.shipping, });

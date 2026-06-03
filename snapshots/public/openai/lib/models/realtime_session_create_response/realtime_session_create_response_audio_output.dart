@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateResponse (inline: Audio > Output)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/pcm_audio_format.dart';import 'package:pub_openai/models/pcma_audio_format.dart';import 'package:pub_openai/models/pcmu_audio_format.dart';import 'package:pub_openai/models/realtime_audio_formats.dart';import 'package:pub_openai/models/voice_ids_shared.dart';@immutable final class RealtimeSessionCreateResponseAudioOutput {const RealtimeSessionCreateResponseAudioOutput({this.format, this.voice, this.speed, });
 

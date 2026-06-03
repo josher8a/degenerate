@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseAudioTranscriptDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the full audio transcript is completed.
 @immutable final class ResponseAudioTranscriptDoneEvent {const ResponseAudioTranscriptDoneEvent({required this.type, required this.sequenceNumber, });

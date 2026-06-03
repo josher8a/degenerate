@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepCompletionUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
 @immutable final class RunStepCompletionUsage {const RunStepCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, });

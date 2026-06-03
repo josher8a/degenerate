@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerDeploymentsListDeploymentsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_deployment.dart';@immutable final class WorkerDeploymentsListDeploymentsResponseResult {const WorkerDeploymentsListDeploymentsResponseResult({required this.deployments});
 

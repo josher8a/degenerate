@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MembersDeleteRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/member_id.dart';@immutable final class MembersDeleteRequest {const MembersDeleteRequest({required this.memberId});
 

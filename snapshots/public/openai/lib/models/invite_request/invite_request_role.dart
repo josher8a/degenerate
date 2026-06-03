@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InviteRequest (inline: Role)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `owner` or `reader`
 @immutable final class InviteRequestRole {const InviteRequestRole._(this.value);

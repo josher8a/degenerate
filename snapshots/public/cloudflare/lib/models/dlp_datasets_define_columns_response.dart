@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDatasetsDefineColumnsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';@immutable final class DlpDatasetsDefineColumnsResponse {const DlpDatasetsDefineColumnsResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_ipam_delegations.dart';@immutable final class AddressingSchemasSingleResponse {const AddressingSchemasSingleResponse({this.result});
 

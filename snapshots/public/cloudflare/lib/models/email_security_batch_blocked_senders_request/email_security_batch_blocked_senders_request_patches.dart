@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchBlockedSendersRequest (inline: Patches)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityBatchBlockedSendersRequestPatches {const EmailSecurityBatchBlockedSendersRequestPatches({required this.id, this.comments, this.isRegex, this.pattern, this.patternType, });
 

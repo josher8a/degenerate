@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldSingleHcResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_healthchecks.dart';@immutable final class SmartshieldSingleHcResponse {const SmartshieldSingleHcResponse({this.result});
 

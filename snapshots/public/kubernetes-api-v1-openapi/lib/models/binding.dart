@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Binding
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_reference.dart';/// Binding ties one object to another; for example, a pod is bound to a node by a scheduler.
 @immutable final class Binding {const Binding({required this.target, this.apiVersion, this.kind, this.metadata, });

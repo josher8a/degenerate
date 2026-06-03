@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: OrganizationUserBlocking)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to view and manage users blocked by the organization.
 @immutable final class OrganizationUserBlocking {const OrganizationUserBlocking._(this.value);

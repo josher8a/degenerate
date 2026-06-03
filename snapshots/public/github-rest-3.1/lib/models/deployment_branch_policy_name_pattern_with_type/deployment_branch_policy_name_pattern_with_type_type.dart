@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeploymentBranchPolicyNamePatternWithType (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this rule targets a branch or tag.
 @immutable final class DeploymentBranchPolicyNamePatternWithTypeType {const DeploymentBranchPolicyNamePatternWithTypeType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Quality > AudioProducer)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioProducer {const AudioProducer({this.bytesSent, this.jitter, this.mid, this.mosQuality, this.packetsLost, this.packetsSent, this.producerId, this.rtt, this.ssrc, this.timestamp, });
 

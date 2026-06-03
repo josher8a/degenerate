@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaIntegrationToken
 
 /// The token integration key
 extension type const AaaIntegrationToken(String value) {

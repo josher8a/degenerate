@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessInfraProps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_target_criteria_infra_app.dart';import 'package:pub_cloudflare/models/access_type.dart';@immutable final class AccessInfraProps {const AccessInfraProps({required this.targetCriteria, required this.type, this.name, });
 

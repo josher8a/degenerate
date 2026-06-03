@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Overview (inline: SshKeyFingerprints)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SshKeyFingerprints {const SshKeyFingerprints({this.sha256Rsa, this.sha256Dsa, this.sha256Ecdsa, this.sha256Ed25519, });
 

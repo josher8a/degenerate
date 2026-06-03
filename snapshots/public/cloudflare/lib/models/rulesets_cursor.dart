@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsCursor
 
 /// The cursor to use for the next page.
 extension type const RulesetsCursor(String value) {

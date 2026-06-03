@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageToText (inline: Variant2)
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_image.dart';@immutable final class ImageToTextVariant2 {const ImageToTextVariant2({required this.image, this.frequencyPenalty, this.maxTokens = 512, this.presencePenalty, this.prompt, this.raw = false, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 

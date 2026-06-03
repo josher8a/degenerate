@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrderItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrderItem {const OrderItem({required this.productId, required this.quantity, this.unitPrice, this.notes, });
 

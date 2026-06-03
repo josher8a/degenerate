@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallRulesDeleteAFirewallRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.
 extension type const FirewallDeleteFilterIfUnused(bool value) {

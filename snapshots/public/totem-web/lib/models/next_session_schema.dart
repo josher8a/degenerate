@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NextSessionSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/meeting_provider_enum.dart';@immutable final class NextSessionSchema {const NextSessionSchema({required this.slug, required this.start, required this.link, required this.title, required this.seatsLeft, required this.duration, required this.meetingProvider, required this.calLink, required this.attending, required this.cancelled, required this.open, required this.joinable, });
 

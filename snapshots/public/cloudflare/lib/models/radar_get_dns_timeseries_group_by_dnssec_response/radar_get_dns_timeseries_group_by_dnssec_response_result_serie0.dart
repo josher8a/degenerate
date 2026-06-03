@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByDnssecResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0({required this.insecure, required this.invalid, required this.other, required this.secure, });
 

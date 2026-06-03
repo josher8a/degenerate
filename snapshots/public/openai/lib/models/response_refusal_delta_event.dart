@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseRefusalDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a partial refusal text.
 @immutable final class ResponseRefusalDeltaEvent {const ResponseRefusalDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, });

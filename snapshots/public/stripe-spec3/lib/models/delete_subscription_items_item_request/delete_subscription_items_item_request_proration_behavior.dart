@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteSubscriptionItemsItemRequest (inline: ProrationBehavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to create prorations when canceling subscriptions. Possible values are `none` and `create_prorations`.
 @immutable final class DeleteSubscriptionItemsItemRequestProrationBehavior {const DeleteSubscriptionItemsItemRequestProrationBehavior._(this.value);

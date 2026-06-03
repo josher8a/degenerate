@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesFallbackDomainResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_fallback_domain.dart';@immutable final class TeamsDevicesFallbackDomainResponseCollection {const TeamsDevicesFallbackDomainResponseCollection({this.result});
 

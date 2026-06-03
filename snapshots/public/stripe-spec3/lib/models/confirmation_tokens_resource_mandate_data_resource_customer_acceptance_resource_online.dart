@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains details about the online acceptance.
 @immutable final class ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline {const ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline({this.ipAddress, this.userAgent, });

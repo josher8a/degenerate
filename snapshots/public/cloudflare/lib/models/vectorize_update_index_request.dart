@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeUpdateIndexRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_description.dart';@immutable final class VectorizeUpdateIndexRequest {const VectorizeUpdateIndexRequest({required this.description});
 

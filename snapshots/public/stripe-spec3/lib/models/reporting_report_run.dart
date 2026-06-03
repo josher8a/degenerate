@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReportingReportRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReportingReportRunObject {const ReportingReportRunObject._(this.value);

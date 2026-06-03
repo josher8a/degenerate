@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingServiceBinding
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_provisioning.dart';import 'package:pub_cloudflare/models/addressing_service_binding_identifier.dart';import 'package:pub_cloudflare/models/addressing_service_identifier.dart';import 'package:pub_cloudflare/models/addressing_service_name.dart';@immutable final class AddressingServiceBinding {const AddressingServiceBinding({this.cidr, this.id, this.provisioning, this.serviceId, this.serviceName, });
 

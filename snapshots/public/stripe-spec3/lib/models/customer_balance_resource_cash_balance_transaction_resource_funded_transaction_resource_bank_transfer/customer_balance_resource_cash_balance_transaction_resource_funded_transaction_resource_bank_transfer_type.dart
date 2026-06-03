@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The funding method type used to fund the customer balance. Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._(this.value);

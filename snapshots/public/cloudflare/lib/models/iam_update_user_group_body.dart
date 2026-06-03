@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUpdateUserGroupBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_update_user_group_body/iam_update_user_group_body_policies.dart';@immutable final class IamUpdateUserGroupBody {const IamUpdateUserGroupBody({this.name, this.policies, });
 

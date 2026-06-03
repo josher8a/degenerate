@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: DependabotSecurityUpdates)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of Dependabot security updates
 @immutable final class CodeSecurityConfigurationDependabotSecurityUpdates {const CodeSecurityConfigurationDependabotSecurityUpdates._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsCustomNameserversAcnsResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_custom_ns.dart';@immutable final class DnsCustomNameserversAcnsResponseSingle {const DnsCustomNameserversAcnsResponseSingle({this.result});
 

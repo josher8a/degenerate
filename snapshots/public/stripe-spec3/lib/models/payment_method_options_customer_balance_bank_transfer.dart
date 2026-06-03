@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsCustomerBalanceBankTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_customer_balance_bank_transfer_payment_method_options/checkout_customer_balance_bank_transfer_payment_method_options_requested_address_types.dart';import 'package:pub_stripe_spec3/models/checkout_customer_balance_bank_transfer_payment_method_options/checkout_customer_balance_bank_transfer_payment_method_options_type.dart';import 'package:pub_stripe_spec3/models/payment_method_options_customer_balance_eu_bank_account.dart';/// 
 @immutable final class PaymentMethodOptionsCustomerBalanceBankTransfer {const PaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.requestedAddressTypes, this.type, });

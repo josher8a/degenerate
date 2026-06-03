@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningDefaultSetup (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code scanning default setup has been configured or not.
 @immutable final class CodeScanningDefaultSetupState {const CodeScanningDefaultSetupState._(this.value);

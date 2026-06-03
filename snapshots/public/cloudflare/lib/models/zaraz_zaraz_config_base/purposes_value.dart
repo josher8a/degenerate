@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Consent > Purposes > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PurposesValue {const PurposesValue({required this.description, required this.name, });
 

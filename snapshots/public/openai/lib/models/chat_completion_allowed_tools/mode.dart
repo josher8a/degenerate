@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionAllowedTools (inline: Mode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains the tools available to the model to a pre-defined set.
 /// 

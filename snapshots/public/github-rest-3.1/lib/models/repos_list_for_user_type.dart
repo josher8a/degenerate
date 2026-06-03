@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposListForUserType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForUserType {const ReposListForUserType._(this.value);
 

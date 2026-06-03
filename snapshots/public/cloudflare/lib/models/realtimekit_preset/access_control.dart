@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Plugins > Config > Variant2 > AccessControl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessControl {const AccessControl._(this.value);
 

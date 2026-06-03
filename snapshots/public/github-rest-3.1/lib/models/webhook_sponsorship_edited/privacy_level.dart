@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookSponsorshipEdited (inline: Changes > PrivacyLevel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PrivacyLevel {const PrivacyLevel({required this.from});
 

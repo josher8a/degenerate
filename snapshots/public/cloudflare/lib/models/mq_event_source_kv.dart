@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqEventSourceKv
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
 @immutable final class MqEventSourceKvType {const MqEventSourceKvType._(this.value);

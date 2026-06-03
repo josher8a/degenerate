@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeSofort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeSofort {const SourceTypeSofort({this.bankCode, this.bankName, this.bic, this.country, this.ibanLast4, this.preferredLanguage, this.statementDescriptor, });
 

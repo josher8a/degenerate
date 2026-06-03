@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Link
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Hypermedia Link
 @immutable final class Link {const Link({required this.href});

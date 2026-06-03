@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsAs112TimeseriesGroupByDnssecFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetDnsAs112TimeseriesGroupByDnssecFormat {const RadarGetDnsAs112TimeseriesGroupByDnssecFormat._(this.value);

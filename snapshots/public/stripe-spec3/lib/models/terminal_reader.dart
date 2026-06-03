@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_reader/location.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_reader_action.dart';/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 @immutable final class TerminalReaderStatus {const TerminalReaderStatus._(this.value);

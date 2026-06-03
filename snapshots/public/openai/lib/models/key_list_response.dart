@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KeyListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/key3.dart';@immutable final class KeyListResponse {const KeyListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 

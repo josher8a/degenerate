@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotListAlertsForEnterpriseHas (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForEnterpriseHasVariant2 {const DependabotListAlertsForEnterpriseHasVariant2._(this.value);
 

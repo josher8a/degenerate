@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleClassroomAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment/classroom_assignment_type.dart';import 'package:pub_github_rest_3_1/models/simple_classroom.dart';/// A GitHub Classroom assignment
 @immutable final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, this.maxTeams, this.maxMembers, });

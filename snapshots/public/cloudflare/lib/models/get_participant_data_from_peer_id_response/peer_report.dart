@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/peer_report_metadata.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/peer_report_quality.dart';@immutable final class PeerReport {const PeerReport({this.metadata, this.quality, });
 

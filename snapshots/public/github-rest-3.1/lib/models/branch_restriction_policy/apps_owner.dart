@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchRestrictionPolicy (inline: Apps > Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsOwner {const AppsOwner({this.login, this.id, this.nodeId, this.url, this.reposUrl, this.eventsUrl, this.hooksUrl, this.issuesUrl, this.membersUrl, this.publicMembersUrl, this.avatarUrl, this.description, this.gravatarId, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, this.userViewType, });
 

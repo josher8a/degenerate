@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodUsBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account_status_details.dart';import 'package:pub_stripe_spec3/models/us_bank_account_networks.dart';/// 
 @immutable final class PaymentMethodUsBankAccount {const PaymentMethodUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.financialConnectionsAccount, this.fingerprint, this.last4, this.networks, this.routingNumber, this.statusDetails, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPredefinedProfileEntryUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpPredefinedProfileEntryUpdate {const DlpPredefinedProfileEntryUpdate({required this.enabled, required this.id, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindWorkflow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindWorkflow {const WorkersBindingKindWorkflow({required this.name, required this.type, required this.workflowName, this.className, this.scriptName, });
 

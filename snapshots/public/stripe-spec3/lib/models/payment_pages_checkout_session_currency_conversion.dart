@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionCurrencyConversion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCurrencyConversion {const PaymentPagesCheckoutSessionCurrencyConversion({required this.amountSubtotal, required this.amountTotal, required this.fxRate, required this.sourceCurrency, });

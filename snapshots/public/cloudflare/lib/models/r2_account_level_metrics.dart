@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2AccountLevelMetrics
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_class_based_metrics.dart';/// Metrics based on the class they belong to.
 @immutable final class R2AccountLevelMetrics {const R2AccountLevelMetrics({this.infrequentAccess, this.standard, });

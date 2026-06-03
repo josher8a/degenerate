@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2ListBucketsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_bucket.dart';@immutable final class R2ListBucketsResponseResult {const R2ListBucketsResponseResult({this.buckets});
 

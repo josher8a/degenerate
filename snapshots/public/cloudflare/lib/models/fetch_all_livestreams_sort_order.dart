@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FetchAllLivestreamsSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchAllLivestreamsSortOrder {const FetchAllLivestreamsSortOrder._(this.value);
 

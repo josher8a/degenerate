@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookIssueCommentCreated (inline: Issue > User)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentCreatedIssueUser {const WebhookIssueCommentCreatedIssueUser({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 

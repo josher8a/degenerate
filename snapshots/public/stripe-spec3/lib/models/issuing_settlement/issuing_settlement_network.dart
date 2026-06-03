@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingSettlement (inline: Network)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement report. One of `["visa", "maestro"]`
 @immutable final class IssuingSettlementNetwork {const IssuingSettlementNetwork._(this.value);

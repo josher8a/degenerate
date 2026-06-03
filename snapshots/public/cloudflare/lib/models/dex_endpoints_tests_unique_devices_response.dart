@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsTestsUniqueDevicesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_unique_devices_response.dart';@immutable final class DexEndpointsTestsUniqueDevicesResponse {const DexEndpointsTestsUniqueDevicesResponse({this.result});
 

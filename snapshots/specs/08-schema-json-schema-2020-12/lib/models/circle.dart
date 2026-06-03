@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Circle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Circle {const Circle({required this.kind, required this.radius, this.color, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: ProjectCreated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/project_created_data.dart';/// The details for events with this `type`.
 @immutable final class ProjectCreated {const ProjectCreated({this.id, this.data, });

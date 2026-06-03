@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsPayto
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_payto.dart';/// 
 @immutable final class InvoicePaymentMethodOptionsPayto {const InvoicePaymentMethodOptionsPayto({this.mandateOptions});

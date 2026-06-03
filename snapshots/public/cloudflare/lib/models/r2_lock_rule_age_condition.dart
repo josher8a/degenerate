@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LockRuleAgeCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition/r2_lifecycle_age_condition_type.dart';/// Condition to apply a lock rule to an object for how long in seconds.
 @immutable final class R2LockRuleAgeCondition {const R2LockRuleAgeCondition({required this.maxAgeSeconds, required this.type, });

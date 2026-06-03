@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTransactionChfCreditTransferData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceTransactionChfCreditTransferData {const SourceTransactionChfCreditTransferData({this.reference, this.senderAddressCountry, this.senderAddressLine1, this.senderIban, this.senderName, });

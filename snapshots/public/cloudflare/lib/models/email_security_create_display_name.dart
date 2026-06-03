@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityCreateDisplayName
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCreateDisplayName {const EmailSecurityCreateDisplayName({required this.email, required this.isEmailRegex, required this.name, });
 

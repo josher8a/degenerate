@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsResourceTrialSettingsEndBehavior
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_trial_settings_end_behavior/missing_payment_method.dart';/// Defines how a subscription behaves when a trial ends.
 @immutable final class SubscriptionsResourceTrialSettingsEndBehavior {const SubscriptionsResourceTrialSettingsEndBehavior({required this.missingPaymentMethod});

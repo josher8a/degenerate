@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PendingDeployment (inline: Environment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PendingDeploymentEnvironment {const PendingDeploymentEnvironment({this.id, this.nodeId, this.name, this.url, this.htmlUrl, });
 

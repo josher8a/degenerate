@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementServiceBindingsListServicesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_messages2.dart';import 'package:pub_cloudflare/models/ip_address_management_service_bindings_list_services_response/ip_address_management_service_bindings_list_services_response_result.dart';@immutable final class IpAddressManagementServiceBindingsListServicesResponse {const IpAddressManagementServiceBindingsListServicesResponse({required this.errors, required this.messages, required this.success, this.result, });
 

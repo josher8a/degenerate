@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsAddFieldForUserRequest (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_add_field_for_org_request/variant2_data_type.dart';@immutable final class ProjectsAddFieldForUserRequestVariant1 {const ProjectsAddFieldForUserRequestVariant1({required this.name, required this.dataType, });
 

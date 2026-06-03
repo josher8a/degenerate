@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StatusUpdateEdited (inline: Changes > StartDate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StartDate {const StartDate({this.from, this.to, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSessionChatResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_chat_message.dart';@immutable final class GetSessionChatResponse {const GetSessionChatResponse({this.data, this.success, });
 

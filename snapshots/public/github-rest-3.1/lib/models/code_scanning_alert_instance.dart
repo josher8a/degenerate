@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertInstance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_classification.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_environment.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list/message.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_location.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_state.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_analysis_key.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_category.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';@immutable final class CodeScanningAlertInstance {const CodeScanningAlertInstance({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 

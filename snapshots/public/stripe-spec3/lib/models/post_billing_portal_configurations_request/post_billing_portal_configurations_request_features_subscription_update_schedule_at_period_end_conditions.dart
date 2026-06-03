@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalConfigurationsRequest (inline: Features > SubscriptionUpdate > ScheduleAtPeriodEnd > Conditions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_resource_schedule_update_at_period_end_condition/portal_resource_schedule_update_at_period_end_condition_type.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions({required this.type});
 

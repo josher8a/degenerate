@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessServiceTokens
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_client_id.dart';import 'package:pub_cloudflare/models/access_duration.dart';import 'package:pub_cloudflare/models/access_schemas_name.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessServiceTokens {const AccessServiceTokens({this.clientId, this.createdAt, this.duration, this.expiresAt, this.id, this.lastSeenAt, this.name, this.updatedAt, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasPurposeJustificationRequired
 
 /// Require users to enter a justification when they log in to the application.
 extension type const AccessSchemasPurposeJustificationRequired(bool value) {

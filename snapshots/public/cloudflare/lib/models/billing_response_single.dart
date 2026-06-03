@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/billing_response_single/billing_response_single_result.dart';@immutable final class BillingResponseSingle {const BillingResponseSingle({this.result});
 

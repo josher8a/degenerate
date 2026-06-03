@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalBusinessProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PortalBusinessProfile {const PortalBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });

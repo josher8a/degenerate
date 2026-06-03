@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TextToSpeech
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToSpeech {const TextToSpeech({required this.prompt, this.lang = 'en', });
 

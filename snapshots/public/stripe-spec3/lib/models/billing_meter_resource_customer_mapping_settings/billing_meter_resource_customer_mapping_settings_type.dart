@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeterResourceCustomerMappingSettings (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method for mapping a meter event to a customer.
 @immutable final class BillingMeterResourceCustomerMappingSettingsType {const BillingMeterResourceCustomerMappingSettingsType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamFirstName
 
 /// User's first name
 extension type const IamFirstName(String value) {

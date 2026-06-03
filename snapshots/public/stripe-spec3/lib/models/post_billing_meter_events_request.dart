@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingMeterEventsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMeterEventsRequest {const PostBillingMeterEventsRequest({required this.eventName, required this.payload, this.expand, this.identifier, this.timestamp, });
 

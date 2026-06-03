@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUserRiskScoreRule (inline: UserRiskScore)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore._(this.value);
 

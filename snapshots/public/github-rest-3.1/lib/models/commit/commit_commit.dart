@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Commit (inline: Commit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_user.dart';import 'package:pub_github_rest_3_1/models/verification.dart';@immutable final class CommitCommit {const CommitCommit({required this.url, required this.author, required this.committer, required this.message, required this.commentCount, required this.tree, this.verification, });
 

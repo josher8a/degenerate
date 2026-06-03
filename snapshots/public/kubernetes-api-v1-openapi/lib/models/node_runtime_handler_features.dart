@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeRuntimeHandlerFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeRuntimeHandlerFeatures is a set of features implemented by the runtime handler.
 @immutable final class NodeRuntimeHandlerFeatures {const NodeRuntimeHandlerFeatures({this.recursiveReadOnlyMounts, this.userNamespaces, });

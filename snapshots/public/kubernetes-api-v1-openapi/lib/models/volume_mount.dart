@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VolumeMount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// VolumeMount describes a mounting of a Volume within a container.
 @immutable final class VolumeMount {const VolumeMount({this.mountPath = '', this.mountPropagation, this.name = '', this.readOnly, this.recursiveReadOnly, this.subPath, this.subPathExpr, });

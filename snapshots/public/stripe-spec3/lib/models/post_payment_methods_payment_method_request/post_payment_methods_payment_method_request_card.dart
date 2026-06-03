@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsPaymentMethodRequest (inline: Card)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/card_networks.dart';/// If this is a `card` PaymentMethod, this hash contains the user's card details.
 @immutable final class PostPaymentMethodsPaymentMethodRequestCard {const PostPaymentMethodsPaymentMethodRequestCard({this.expMonth, this.expYear, this.networks, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestAssetEdit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Asset file to upload.
 extension type const CloudforceOneRequestsAssetContent(String value) {

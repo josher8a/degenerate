@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FraudFraudSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether Fraud User Profiles is enabled for the zone.
 @immutable final class FraudUserProfilesStatus {const FraudUserProfilesStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsStatusCodeTtl (inline: StatusCodeRange)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A range of status codes to apply the TTL to.
 @immutable final class StatusCodeRange {const StatusCodeRange({this.from, this.to, });

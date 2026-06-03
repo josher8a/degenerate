@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: Subdomain)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Subdomain settings for the Worker.
 @immutable final class Subdomain {const Subdomain({this.enabled = false, this.previewsEnabled, });

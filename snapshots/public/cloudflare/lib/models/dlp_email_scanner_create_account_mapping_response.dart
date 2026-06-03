@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailScannerCreateAccountMappingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_addin_account_mapping.dart';@immutable final class DlpEmailScannerCreateAccountMappingResponse {const DlpEmailScannerCreateAccountMappingResponse({this.result});
 

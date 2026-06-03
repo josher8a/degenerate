@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeSessionCreateRequestGa (inline: Include)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Include {const Include._(this.value);
 

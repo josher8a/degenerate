@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposGenerateReleaseNotesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGenerateReleaseNotesRequest {const ReposGenerateReleaseNotesRequest({required this.tagName, this.targetCommitish, this.previousTagName, this.configurationFilePath, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsnsRelResponse (inline: Result > Rels)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rels {const Rels({required this.asn1, required this.asn1Country, required this.asn1Name, required this.asn2, required this.asn2Country, required this.asn2Name, required this.rel, });
 

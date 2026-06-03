@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RequestTracerTrace
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// List of steps acting on request/response
 @immutable final class RequestTracerTrace2 {const RequestTracerTrace2({this.action, this.actionParameters, this.description, this.expression, this.kind, this.matched, this.name, this.stepName, this.trace, this.type, });

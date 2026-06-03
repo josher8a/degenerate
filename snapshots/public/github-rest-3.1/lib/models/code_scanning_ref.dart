@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningRef
 
 /// The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
 /// `refs/heads/<branch name>` or simply `<branch name>`.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObjectMeta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/managed_fields_entry.dart';import 'package:pub_kubernetes_api_v1_openapi/models/owner_reference.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
 @immutable final class ObjectMeta {const ObjectMeta({this.annotations, this.creationTimestamp, this.deletionGracePeriodSeconds, this.deletionTimestamp, this.finalizers, this.generateName, this.generation, this.labels, this.managedFields, this.name, this.namespace, this.ownerReferences, this.resourceVersion, this.selfLink, this.uid, });

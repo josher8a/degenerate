@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceTaxSettingsStatusDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_status_details_resource_active.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_status_details_resource_pending.dart';/// 
 @immutable final class TaxProductResourceTaxSettingsStatusDetails {const TaxProductResourceTaxSettingsStatusDetails({this.active, this.pending, });

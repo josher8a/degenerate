@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeResponseCreateParams (inline: OutputModalities)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OutputModalities {const OutputModalities._(this.value);
 

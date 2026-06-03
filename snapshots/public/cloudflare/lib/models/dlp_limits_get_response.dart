@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpLimitsGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_limits.dart';@immutable final class DlpLimitsGetResponse {const DlpLimitsGetResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxTransactionsCreateFromCalculationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxTransactionsCreateFromCalculationRequest {const PostTaxTransactionsCreateFromCalculationRequest({required this.calculation, required this.reference, this.expand, this.metadata, this.postedAt, });
 

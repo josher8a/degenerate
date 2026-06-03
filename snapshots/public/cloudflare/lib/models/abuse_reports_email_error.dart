@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsEmailError
 
 /// Failed to send confirmation email
 extension type const AbuseReportsEmailError(String value) {

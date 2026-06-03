@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentApplyCustomerBalanceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentApplyCustomerBalanceRequest {const PostPaymentIntentsIntentApplyCustomerBalanceRequest({this.amount, this.currency, this.expand, });
 

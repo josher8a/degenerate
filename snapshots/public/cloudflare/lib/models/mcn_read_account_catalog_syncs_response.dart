@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnReadAccountCatalogSyncsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync.dart';@immutable final class McnReadAccountCatalogSyncsResponse {const McnReadAccountCatalogSyncsResponse({this.result});
 

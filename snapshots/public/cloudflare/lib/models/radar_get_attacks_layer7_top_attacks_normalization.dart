@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TopAttacksNormalization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 @immutable final class RadarGetAttacksLayer7TopAttacksNormalization {const RadarGetAttacksLayer7TopAttacksNormalization._(this.value);

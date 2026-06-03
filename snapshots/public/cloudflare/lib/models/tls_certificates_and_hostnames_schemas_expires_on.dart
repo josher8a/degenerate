@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSchemasExpiresOn
 
 /// When the certificate expires.
 extension type TlsCertificatesAndHostnamesSchemasExpiresOn(DateTime value) {

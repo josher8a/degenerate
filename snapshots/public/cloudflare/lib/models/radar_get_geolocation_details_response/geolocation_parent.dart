@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetGeolocationDetailsResponse (inline: Result > Geolocation > Parent)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_response/geolocation_type.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_response/parent_parent.dart';@immutable final class GeolocationParent {const GeolocationParent({required this.geoId, required this.latitude, required this.longitude, required this.name, required this.parent, required this.type, this.code, });
 

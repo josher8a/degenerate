@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceSignature
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about a signature being collected using a reader
 @immutable final class TerminalReaderReaderResourceSignature {const TerminalReaderReaderResourceSignature({this.value});

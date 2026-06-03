@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginsTimeseriesGroupMetric
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to retrieve.
 @immutable final class RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric._(this.value);

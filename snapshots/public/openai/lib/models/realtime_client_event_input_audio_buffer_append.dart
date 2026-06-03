@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeClientEventInputAudioBufferAppend
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event to append audio bytes to the input audio buffer. The audio
 /// buffer is temporary storage you can write to and later commit. A "commit" will create a new

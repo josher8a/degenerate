@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ValidationError (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/validation_error/errors_value.dart';@immutable final class ValidationErrorErrors {const ValidationErrorErrors({required this.code, this.resource, this.field, this.message, this.index, this.value, });
 

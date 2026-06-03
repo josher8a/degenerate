@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1RawResultResponse (inline: Results)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_raw_result_response/rows.dart';@immutable final class D1RawResultResponseResults {const D1RawResultResponseResults({this.columns, this.rows, });
 

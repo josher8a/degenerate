@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceMandateOptionsPayto (inline: Purpose)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The purpose for which payments are made. Has a default value based on your merchant category code.
 @immutable final class InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose._(this.value);

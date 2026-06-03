@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentPaymentMethodOptionsCard (inline: Network)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Selected network to process this payment intent on. Depends on the available networks of the card attached to the payment intent. Can be only set confirm-time.
 @immutable final class PaymentIntentPaymentMethodOptionsCardNetwork {const PaymentIntentPaymentMethodOptionsCardNetwork._(this.value);

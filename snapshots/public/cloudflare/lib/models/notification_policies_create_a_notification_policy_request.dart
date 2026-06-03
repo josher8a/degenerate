@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NotificationPoliciesCreateANotificationPolicyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_alert_interval.dart';import 'package:pub_cloudflare/models/aaa_alert_type.dart';import 'package:pub_cloudflare/models/aaa_enabled.dart';import 'package:pub_cloudflare/models/aaa_filters.dart';import 'package:pub_cloudflare/models/aaa_mechanisms.dart';import 'package:pub_cloudflare/models/aaa_schemas_description.dart';import 'package:pub_cloudflare/models/aaa_schemas_name.dart';@immutable final class NotificationPoliciesCreateANotificationPolicyRequest {const NotificationPoliciesCreateANotificationPolicyRequest({required this.alertType, required this.enabled, required this.mechanisms, required this.name, this.alertInterval, this.description, this.filters, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsMergeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/auto_merge/auto_merge_merge_method.dart';@immutable final class PullsMergeRequest {const PullsMergeRequest({this.commitTitle, this.commitMessage, this.sha, this.mergeMethod, });
 

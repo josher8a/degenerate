@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityAdvisoryEpss
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
 @immutable final class SecurityAdvisoryEpss {const SecurityAdvisoryEpss({this.percentage, this.percentile, });

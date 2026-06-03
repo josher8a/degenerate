@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchLabelsSort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchLabelsSort {const SearchLabelsSort._(this.value);
 

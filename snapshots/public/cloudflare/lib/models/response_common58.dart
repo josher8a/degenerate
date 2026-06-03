@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon58
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_messages2.dart';@immutable final class ResponseCommon58 {const ResponseCommon58({required this.errors, required this.messages, required this.success, });
 

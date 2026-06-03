@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InstallmentPlan (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
 @immutable final class InstallmentPlanType {const InstallmentPlanType._(this.value);

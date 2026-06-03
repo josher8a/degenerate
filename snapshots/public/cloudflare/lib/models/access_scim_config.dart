@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessScimConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_scim_config/access_scim_config_authentication.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_access_service_token.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_http_basic.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_oauth2.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_oauth_bearer_token.dart';import 'package:pub_cloudflare/models/access_scim_config_mapping.dart';/// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
 @immutable final class AccessScimConfig {const AccessScimConfig({required this.idpUid, required this.remoteUri, this.authentication, this.deactivateOnDelete, this.enabled, this.mappings, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvAny
 
 final class WorkersKvAny {const WorkersKvAny({this.string, this.$double, this.$int, this.$bool, this.mapStringDynamic, this.listWorkersKvAny, });
 

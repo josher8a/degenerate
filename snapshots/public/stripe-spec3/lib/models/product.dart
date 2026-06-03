@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Product
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_product/deleted_product_object.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product/default_price.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/product_marketing_feature.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';/// Products describe the specific goods or services you offer to your customers.
 /// For example, you might offer a Standard and Premium version of your goods or service; each version would be a separate Product.

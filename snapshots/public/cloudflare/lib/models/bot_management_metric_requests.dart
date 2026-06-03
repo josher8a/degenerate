@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementMetricRequests
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotManagementMetricRequests {const BotManagementMetricRequests({required this.metric, required this.requests, });
 

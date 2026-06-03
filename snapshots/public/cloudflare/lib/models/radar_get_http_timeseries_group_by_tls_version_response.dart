@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByTlsVersionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_timeseries_group_by_tls_version_response/radar_get_http_timeseries_group_by_tls_version_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByTlsVersionResponse {const RadarGetHttpTimeseriesGroupByTlsVersionResponse({required this.result, required this.success, });
 

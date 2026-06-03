@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedFinancialAccountFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedFinancialAccountFeatures {const ConnectEmbeddedFinancialAccountFeatures({required this.disableStripeUserAuthentication, required this.externalAccountCollection, required this.sendMoney, required this.transferBalance, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityCenterPerPage
 
 /// Sets the number of results per page of results.
 extension type const SecurityCenterPerPage(int value) {

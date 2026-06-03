@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RankingOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/hybrid_search_options.dart';@immutable final class RankerVersionType {const RankerVersionType._(this.value);
 

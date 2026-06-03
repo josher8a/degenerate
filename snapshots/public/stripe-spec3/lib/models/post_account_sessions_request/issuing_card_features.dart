@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > IssuingCard > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuingCardFeatures {const IssuingCardFeatures({this.cardManagement, this.cardSpendDisputeManagement, this.cardholderManagement, this.spendControlManagement, });
 

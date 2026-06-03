@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicRoute
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_description.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_nexthop.dart';import 'package:pub_cloudflare/models/magic_prefix.dart';import 'package:pub_cloudflare/models/magic_priority.dart';import 'package:pub_cloudflare/models/magic_scope.dart';import 'package:pub_cloudflare/models/magic_weight.dart';/// When the route was created.
 extension type MagicCreatedOn(DateTime value) {

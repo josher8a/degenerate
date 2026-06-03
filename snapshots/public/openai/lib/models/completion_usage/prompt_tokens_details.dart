@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CompletionUsage (inline: PromptTokensDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tokens used in the prompt.
 @immutable final class PromptTokensDetails {const PromptTokensDetails({this.audioTokens = 0, this.cachedTokens = 0, });

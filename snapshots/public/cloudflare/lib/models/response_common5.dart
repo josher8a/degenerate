@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon5
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_messages2.dart';@immutable final class ResponseCommon5 {const ResponseCommon5({required this.errors, required this.messages, required this.success, });
 

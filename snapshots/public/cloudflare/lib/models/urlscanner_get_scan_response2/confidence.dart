@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > Wappa > Data > Confidence)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Confidence {const Confidence({required this.confidence, required this.name, required this.pattern, required this.patternType, });
 

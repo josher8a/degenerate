@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafRulesUpdateAWafRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the mode/action of the rule when triggered. You must use a value from the `allowed_modes` array of the current rule.
 @immutable final class WafRulesUpdateAWafRuleRequestMode {const WafRulesUpdateAWafRuleRequestMode._(this.value);

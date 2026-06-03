@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Scanner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Scanner {const Scanner({required this.colo, required this.country, });
 

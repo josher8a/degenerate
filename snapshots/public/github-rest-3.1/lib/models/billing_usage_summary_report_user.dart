@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingUsageSummaryReportUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_org/time_period.dart';import 'package:pub_github_rest_3_1/models/billing_usage_summary_report_org/billing_usage_summary_report_org_usage_items.dart';@immutable final class BillingUsageSummaryReportUser {const BillingUsageSummaryReportUser({required this.timePeriod, required this.user, required this.usageItems, this.repository, this.product, this.sku, });
 

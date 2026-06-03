@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxTransactionLineItem (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `reversal`, this transaction reverses an earlier transaction.
 @immutable final class TaxTransactionLineItemType {const TaxTransactionLineItemType._(this.value);

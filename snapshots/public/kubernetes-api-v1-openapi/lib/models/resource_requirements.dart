@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceRequirements
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_claim.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// ResourceRequirements describes the compute resource requirements.
 @immutable final class ResourceRequirements {const ResourceRequirements({this.claims, this.limits, this.requests, });

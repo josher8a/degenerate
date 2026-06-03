@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByIpVersionDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
 @immutable final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionDirection {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionDirection._(this.value);

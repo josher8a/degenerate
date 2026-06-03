@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreFileBatchObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_file_batch_object/file_counts.dart';import 'package:pub_openai/models/vector_store_file_batch_object/vector_store_file_batch_object_status.dart';/// The object type, which is always `vector_store.file_batch`.
 @immutable final class VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject._(this.value);

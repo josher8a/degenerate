@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcClaimRule (inline: Oidc)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Oidc {const Oidc({required this.claimName, required this.claimValue, required this.identityProviderId, });
 

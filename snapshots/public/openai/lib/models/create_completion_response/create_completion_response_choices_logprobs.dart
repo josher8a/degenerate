@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCompletionResponse (inline: Choices > Logprobs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateCompletionResponseChoicesLogprobs {const CreateCompletionResponseChoicesLogprobs({this.textOffset, this.tokenLogprobs, this.tokens, this.topLogprobs, });
 

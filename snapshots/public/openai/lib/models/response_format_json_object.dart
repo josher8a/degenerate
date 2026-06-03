@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFormatJsonObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `json_object`.
 @immutable final class ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType._(this.value);

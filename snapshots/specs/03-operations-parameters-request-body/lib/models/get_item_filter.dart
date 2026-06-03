@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetItemFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetItemFilter {const GetItemFilter({required this.status, required this.limit, });
 

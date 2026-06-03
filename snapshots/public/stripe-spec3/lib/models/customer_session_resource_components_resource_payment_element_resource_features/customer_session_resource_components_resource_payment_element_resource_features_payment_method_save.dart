@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures (inline: PaymentMethodSave)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether the Payment Element displays a checkbox offering to save a new payment method. This parameter defaults to `disabled`.
 /// 

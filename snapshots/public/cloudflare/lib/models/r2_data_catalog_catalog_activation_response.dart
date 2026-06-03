@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalogActivationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains response from activating an R2 bucket as a catalog.
 @immutable final class R2DataCatalogCatalogActivationResponse {const R2DataCatalogCatalogActivationResponse({required this.id, required this.name, });

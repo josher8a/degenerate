@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazScrollDepthRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule/zaraz_scroll_depth_rule_settings.dart';@immutable final class ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction._(this.value);
 

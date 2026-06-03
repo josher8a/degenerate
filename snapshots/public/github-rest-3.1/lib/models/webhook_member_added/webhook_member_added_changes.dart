@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMemberAdded (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_member_added/role_name.dart';import 'package:pub_github_rest_3_1/models/webhook_member_added/webhook_member_added_changes_permission.dart';@immutable final class WebhookMemberAddedChanges {const WebhookMemberAddedChanges({this.permission, this.roleName, });
 

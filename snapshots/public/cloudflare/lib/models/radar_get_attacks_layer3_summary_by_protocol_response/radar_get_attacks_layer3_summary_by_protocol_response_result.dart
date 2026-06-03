@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3SummaryByProtocolResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_summary_by_protocol_response/radar_get_attacks_layer3_summary_by_protocol_response_result_summary0.dart';@immutable final class RadarGetAttacksLayer3SummaryByProtocolResponseResult {const RadarGetAttacksLayer3SummaryByProtocolResponseResult({required this.meta, required this.summary0, });
 

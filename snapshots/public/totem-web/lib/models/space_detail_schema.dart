@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpaceDetailSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/next_session_schema.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SpaceDetailSchema {const SpaceDetailSchema({required this.slug, required this.title, required this.imageLink, required this.shortDescription, required this.content, required this.author, required this.nextEvent, required this.category, required this.subscribers, required this.recurring, required this.price, });
 

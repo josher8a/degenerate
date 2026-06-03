@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesSchemasConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_tls_config_request.dart';/// A value that is one of: `TeamsDevicesTlsConfigRequest`.
 sealed class TeamsDevicesSchemasConfigRequest {const TeamsDevicesSchemasConfigRequest();

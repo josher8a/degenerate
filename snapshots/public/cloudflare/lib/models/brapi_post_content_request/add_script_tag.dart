@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > AddScriptTag)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddScriptTag {const AddScriptTag({this.content, this.id, this.type, this.url, });
 

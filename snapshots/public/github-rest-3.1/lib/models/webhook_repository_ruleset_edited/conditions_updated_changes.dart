@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryRulesetEdited (inline: Changes > Conditions > Updated > Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_ruleset_edited/changes_exclude.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_ruleset_edited/changes_target.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_ruleset_edited/condition_type.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_ruleset_edited/include.dart';@immutable final class ConditionsUpdatedChanges {const ConditionsUpdatedChanges({this.conditionType, this.target, this.include, this.exclude, });
 

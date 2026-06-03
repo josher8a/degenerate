@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentPaymentMethodOptionsNzBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsNzBankAccount {const PaymentIntentPaymentMethodOptionsNzBankAccount({this.setupFutureUsage, this.targetDate, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Runner
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_label.dart';/// A self hosted runner
 @immutable final class Runner {const Runner({required this.id, required this.name, required this.os, required this.status, required this.busy, required this.labels, this.runnerGroupId, this.ephemeral, });

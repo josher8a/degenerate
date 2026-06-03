@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallAnomalyPackage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action_mode.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/firewall_sensitivity.dart';import 'package:pub_cloudflare/models/firewall_status.dart';/// A summary of the purpose/function of the WAF package.
 extension type const FirewallAnomalyDescription(String value) {

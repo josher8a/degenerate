@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Address data.
 @immutable final class InsightsResourcesPaymentEvaluationAddress {const InsightsResourcesPaymentEvaluationAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_check_suite.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_conclusion.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';/// A check performed on the code of a given code change
 @immutable final class CheckRun {const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment, });

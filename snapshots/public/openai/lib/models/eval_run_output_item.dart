@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRunOutputItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_run_output_item/sample.dart';import 'package:pub_openai/models/eval_run_output_item_result.dart';/// The type of the object. Always "eval.run.output_item".
 @immutable final class EvalRunOutputItemObject {const EvalRunOutputItemObject._(this.value);

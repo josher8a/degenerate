@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: ServiceAccountCreated > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the service account.
 @immutable final class ServiceAccountCreatedData {const ServiceAccountCreatedData({this.role});

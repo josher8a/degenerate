@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceConfirmConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-transaction override of a reader configuration
 @immutable final class TerminalReaderReaderResourceConfirmConfig {const TerminalReaderReaderResourceConfirmConfig({this.returnUrl});

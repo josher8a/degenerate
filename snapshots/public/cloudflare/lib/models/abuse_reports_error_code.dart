@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsErrorCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Report has invalid type
 extension type const AbuseReportsBadActError(String value) {

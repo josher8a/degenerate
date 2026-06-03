@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Embedding
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "embedding".
 @immutable final class EmbeddingObject {const EmbeddingObject._(this.value);

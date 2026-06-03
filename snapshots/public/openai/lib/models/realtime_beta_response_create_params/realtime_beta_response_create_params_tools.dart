@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponseCreateParams (inline: Tools)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';@immutable final class RealtimeBetaResponseCreateParamsTools {const RealtimeBetaResponseCreateParamsTools({this.type, this.name, this.description, this.parameters, });
 

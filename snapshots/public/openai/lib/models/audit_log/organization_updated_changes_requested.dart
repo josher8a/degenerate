@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: OrganizationUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the organization settings.
 @immutable final class OrganizationUpdatedChangesRequested {const OrganizationUpdatedChangesRequested({this.title, this.description, this.name, this.threadsUiVisibility, this.usageDashboardVisibility, this.apiCallLogging, this.apiCallLoggingProjectIds, });

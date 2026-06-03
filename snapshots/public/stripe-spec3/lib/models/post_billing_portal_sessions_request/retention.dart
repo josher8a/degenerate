@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData > SubscriptionCancel > Retention)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_retention/portal_flows_retention_type.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/coupon_offer.dart';@immutable final class Retention {const Retention({required this.couponOffer, required this.type, });
 

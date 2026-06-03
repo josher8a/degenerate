@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalog
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_credential_status.dart';/// Indicates the status of the catalog.
 @immutable final class R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus._(this.value);

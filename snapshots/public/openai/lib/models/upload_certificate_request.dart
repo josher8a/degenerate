@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UploadCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UploadCertificateRequest {const UploadCertificateRequest({required this.content, this.name, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopAsesResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopAsesResponseResultTop0 {const RadarGetBgpTopAsesResponseResultTop0({required this.asName, required this.asn, required this.value, });
 

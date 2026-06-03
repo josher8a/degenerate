@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > RobotsTxt > Data > Rules)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules2.dart';@immutable final class DataRules {const DataRules({required this.$empty});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsTurnKeyEditableFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_turn_key_name.dart';@immutable final class CallsTurnKeyEditableFields {const CallsTurnKeyEditableFields({this.name});
 

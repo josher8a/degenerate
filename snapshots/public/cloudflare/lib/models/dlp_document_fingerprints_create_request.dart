@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDocumentFingerprintsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDocumentFingerprintsCreateRequest {const DlpDocumentFingerprintsCreateRequest({required this.matchPercent, required this.name, this.description = '', });
 

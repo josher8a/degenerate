@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceFromQuote
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/quote.dart';import 'package:pub_stripe_spec3/models/quotes_resource_from_quote/quotes_resource_from_quote_quote.dart';/// 
 @immutable final class QuotesResourceFromQuote {const QuotesResourceFromQuote({required this.isRevision, required this.quote, });

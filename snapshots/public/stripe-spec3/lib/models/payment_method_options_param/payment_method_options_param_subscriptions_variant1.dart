@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam (inline: Subscriptions > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/next_billing.dart';@immutable final class PaymentMethodOptionsParamSubscriptionsVariant1 {const PaymentMethodOptionsParamSubscriptionsVariant1({required this.interval, required this.reference, this.intervalCount, this.name, this.nextBilling, });
 

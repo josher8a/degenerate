@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalOnboardingLinksRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_options.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';@immutable final class PostTerminalOnboardingLinksRequest {const PostTerminalOnboardingLinksRequest({required this.linkOptions, required this.linkType, this.expand, this.onBehalfOf, });
 

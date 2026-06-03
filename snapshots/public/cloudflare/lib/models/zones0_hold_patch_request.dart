@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Zones0HoldPatchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter = '', this.includeSubdomains = false, });
 

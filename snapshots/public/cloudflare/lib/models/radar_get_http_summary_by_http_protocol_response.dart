@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByHttpProtocolResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_http_protocol_response/radar_get_http_summary_by_http_protocol_response_result.dart';@immutable final class RadarGetHttpSummaryByHttpProtocolResponse {const RadarGetHttpSummaryByHttpProtocolResponse({required this.result, required this.success, });
 

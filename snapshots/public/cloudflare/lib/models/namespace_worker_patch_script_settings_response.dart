@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceWorkerPatchScriptSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item.dart';@immutable final class NamespaceWorkerPatchScriptSettingsResponse {const NamespaceWorkerPatchScriptSettingsResponse({required this.errors, required this.messages, required this.success, this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsCreateTriggerRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_caching_enabled.dart';import 'package:pub_cloudflare/models/builds_build_command.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_deploy_command.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/builds_repo_connection_uuid.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_trigger_name.dart';@immutable final class BuildsCreateTriggerRequest {const BuildsCreateTriggerRequest({required this.branchExcludes, required this.branchIncludes, required this.buildCommand, required this.buildTokenUuid, required this.deployCommand, required this.externalScriptId, required this.pathExcludes, required this.pathIncludes, required this.repoConnectionUuid, required this.rootDirectory, required this.triggerName, this.buildCachingEnabled, });
 

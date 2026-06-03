@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsLogCustomFieldTransformedRequestFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The transformed request field to log.
 @immutable final class RulesetsLogCustomFieldTransformedRequestFields2 {const RulesetsLogCustomFieldTransformedRequestFields2({required this.name});

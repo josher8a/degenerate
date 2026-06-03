@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookTeamEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_description.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';import 'package:pub_github_rest_3_1/models/webhook_team_edited/changes_notification_setting.dart';import 'package:pub_github_rest_3_1/models/webhook_team_edited/changes_privacy.dart';import 'package:pub_github_rest_3_1/models/webhook_team_edited/webhook_team_edited_changes_repository.dart';/// The changes to the team if the action was `edited`.
 @immutable final class WebhookTeamEditedChanges {const WebhookTeamEditedChanges({this.description, this.name, this.privacy, this.notificationSetting, this.repository, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest (inline: RiskAssessment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/card_testing_risk.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/fraud_risk.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_dispute_risk.dart';/// Stripe’s assessment of the fraud risk for this authorization.
 @immutable final class RiskAssessment {const RiskAssessment({this.cardTestingRisk, this.fraudRisk, this.merchantDisputeRisk, });

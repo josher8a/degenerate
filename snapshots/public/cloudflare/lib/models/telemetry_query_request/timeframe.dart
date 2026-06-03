@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryQueryRequest (inline: Timeframe)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Time range for the query execution
 @immutable final class Timeframe {const Timeframe({required this.from, required this.to, });

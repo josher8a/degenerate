@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsSummaryStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// API Insights usage summary stats for an organization
 @immutable final class InsightsSummaryStats {const InsightsSummaryStats({this.totalRequestCount, this.rateLimitedRequestCount, });

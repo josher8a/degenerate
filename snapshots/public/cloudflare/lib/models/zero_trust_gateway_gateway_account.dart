@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayGatewayAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';@immutable final class ZeroTrustGatewayGatewayAccount {const ZeroTrustGatewayGatewayAccount({this.result});
 

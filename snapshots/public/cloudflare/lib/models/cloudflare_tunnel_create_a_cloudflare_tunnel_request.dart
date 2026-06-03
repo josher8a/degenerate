@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflareTunnelCreateACloudflareTunnelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config_src.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_secret.dart';@immutable final class CloudflareTunnelCreateACloudflareTunnelRequest {const CloudflareTunnelCreateACloudflareTunnelRequest({required this.name, this.configSrc, this.tunnelSecret, });
 

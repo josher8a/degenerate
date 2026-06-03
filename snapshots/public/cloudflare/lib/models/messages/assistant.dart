@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Assistant)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/assistant_audio_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_content.dart';import 'package:pub_cloudflare/models/messages/assistant_content_variant2.dart';import 'package:pub_cloudflare/models/messages/assistant_function_call_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_tool_calls.dart';import 'package:pub_cloudflare/models/messages/tool_calls_custom.dart';import 'package:pub_cloudflare/models/messages/tool_calls_function.dart';@immutable final class AssistantRole {const AssistantRole._(this.value);
 

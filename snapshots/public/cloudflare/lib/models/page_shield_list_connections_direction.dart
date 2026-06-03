@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListConnectionsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned connections.
 @immutable final class PageShieldListConnectionsDirection {const PageShieldListConnectionsDirection._(this.value);

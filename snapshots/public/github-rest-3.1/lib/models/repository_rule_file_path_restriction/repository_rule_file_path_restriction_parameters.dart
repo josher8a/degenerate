@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleFilePathRestriction (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleFilePathRestrictionParameters {const RepositoryRuleFilePathRestrictionParameters({required this.restrictedFilePaths});
 

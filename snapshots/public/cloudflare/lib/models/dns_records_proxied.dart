@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsProxied
 
 /// Whether the record is receiving the performance and security benefits of Cloudflare.
 extension type const DnsRecordsProxied(bool value) {

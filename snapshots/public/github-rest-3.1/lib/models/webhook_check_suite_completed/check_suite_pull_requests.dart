@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckSuiteCompleted (inline: CheckSuite > PullRequests)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/pull_requests_base.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/pull_requests_head.dart';@immutable final class CheckSuitePullRequests {const CheckSuitePullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
 

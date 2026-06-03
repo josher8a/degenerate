@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Calculations > Aggregates > Groups)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Groups {const Groups({required this.key, required this.value, });
 

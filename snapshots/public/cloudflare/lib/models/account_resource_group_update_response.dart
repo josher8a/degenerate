@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountResourceGroupUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_resource_group.dart';@immutable final class AccountResourceGroupUpdateResponse {const AccountResourceGroupUpdateResponse({this.result});
 

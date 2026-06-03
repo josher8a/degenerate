@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTaxIdsOwner (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of owner referenced.
 @immutable final class GetTaxIdsOwnerType {const GetTaxIdsOwnerType._(this.value);

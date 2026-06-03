@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreFileBatchObject (inline: FileCounts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCounts {const FileCounts({required this.inProgress, required this.completed, required this.failed, required this.cancelled, required this.total, });
 

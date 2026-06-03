@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlSaasApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_auth_type.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/access_saml_saas_app_custom_attributes.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/name_id_format.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessSamlSaasApp {const AccessSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.defaultRelayState, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.samlAttributeTransformJsonata, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
 

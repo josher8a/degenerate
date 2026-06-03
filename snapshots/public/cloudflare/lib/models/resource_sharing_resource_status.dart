@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingResourceStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Status.
 @immutable final class ResourceSharingResourceStatus {const ResourceSharingResourceStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersUsageModel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage model for the Worker invocations.
 @immutable final class WorkersUsageModel {const WorkersUsageModel._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > Wappa > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/confidence.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_categories.dart';@immutable final class WappaData {const WappaData({required this.app, required this.categories, required this.confidence, required this.confidenceTotal, required this.icon, required this.website, });
 

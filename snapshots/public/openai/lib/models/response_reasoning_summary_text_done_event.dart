@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseReasoningSummaryTextDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a reasoning summary text is completed.
 @immutable final class ResponseReasoningSummaryTextDoneEvent {const ResponseReasoningSummaryTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.text, required this.sequenceNumber, });

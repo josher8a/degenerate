@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaMechanisms (inline: Pagerduty)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_uuid.dart';@immutable final class Pagerduty {const Pagerduty({this.id});
 

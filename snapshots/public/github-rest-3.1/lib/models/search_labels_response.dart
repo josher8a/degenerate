@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchLabelsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/label_search_result_item.dart';@immutable final class SearchLabelsResponse {const SearchLabelsResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsSofort (inline: PreferredLanguage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the SOFORT authorization page that the customer is redirected to.
 /// Can be one of `de`, `en`, `es`, `fr`, `it`, `nl`, or `pl`

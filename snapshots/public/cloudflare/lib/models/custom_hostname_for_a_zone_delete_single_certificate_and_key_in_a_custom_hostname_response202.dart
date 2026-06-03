@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';@immutable final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202({this.id});
 

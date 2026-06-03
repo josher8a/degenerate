@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankConnectionsResourceBalanceRefresh (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the last refresh attempt.
 @immutable final class BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus._(this.value);

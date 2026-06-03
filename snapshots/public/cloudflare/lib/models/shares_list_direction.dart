@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SharesListDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SharesListDirection {const SharesListDirection._(this.value);
 

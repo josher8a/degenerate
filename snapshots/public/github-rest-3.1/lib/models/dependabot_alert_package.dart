@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertPackage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details for the vulnerable package.
 @immutable final class DependabotAlertPackage {const DependabotAlertPackage({required this.ecosystem, required this.name, });

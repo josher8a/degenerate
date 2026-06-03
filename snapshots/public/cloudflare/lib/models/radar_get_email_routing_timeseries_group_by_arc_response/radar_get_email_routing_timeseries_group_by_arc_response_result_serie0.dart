@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByArcResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupByArcResponseResultSerie0({required this.fail, required this.none, required this.pass, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksEffectiveDate
 
 /// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
 extension type const WebhooksEffectiveDate(String value) {

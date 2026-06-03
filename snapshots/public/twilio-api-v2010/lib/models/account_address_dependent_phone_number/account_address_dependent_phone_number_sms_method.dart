@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountAddressDependentPhoneNumber (inline: SmsMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 @immutable final class AccountAddressDependentPhoneNumberSmsMethod {const AccountAddressDependentPhoneNumberSmsMethod._(this.value);

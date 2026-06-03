@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersDispatchNamespaceName
 
 /// Name of the Workers for Platforms dispatch namespace.
 extension type const WorkersDispatchNamespaceName(String value) {

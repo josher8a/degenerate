@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqEventSourceR2 (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of destination.
 @immutable final class MqEventSourceR2Type {const MqEventSourceR2Type._(this.value);

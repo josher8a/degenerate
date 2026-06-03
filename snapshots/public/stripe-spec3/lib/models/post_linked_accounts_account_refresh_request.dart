@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostLinkedAccountsAccountRefreshRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_refresh_request/post_financial_connections_accounts_account_refresh_request_features.dart';@immutable final class PostLinkedAccountsAccountRefreshRequest {const PostLinkedAccountsAccountRefreshRequest({required this.features, this.expand, });
 

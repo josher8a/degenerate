@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryTransaction (inline: Entries)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry.dart';/// A list of TransactionEntries that are part of this Transaction. This cannot be expanded in any list endpoints.
 @immutable final class Entries {const Entries({required this.data, required this.hasMore, required this.object, required this.url, });

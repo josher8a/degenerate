@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldCredentialsJwtKeyEcCommon
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key Type
 @immutable final class ShieldCredentialsJwtKeyEcCommonKty {const ShieldCredentialsJwtKeyEcCommonKty._(this.value);

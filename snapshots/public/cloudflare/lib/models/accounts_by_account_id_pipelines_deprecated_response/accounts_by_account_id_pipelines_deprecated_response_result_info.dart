@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsByAccountIdPipelinesDeprecatedResponse (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedResponseResultInfo {const AccountsByAccountIdPipelinesDeprecatedResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 

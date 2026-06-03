@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_common_proration_details.dart';/// 
 @immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent({required this.invoiceItem, required this.proration, this.prorationDetails, this.subscription, });

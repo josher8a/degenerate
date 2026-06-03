@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InnateEntitlements
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bool_allocation.dart';import 'package:pub_cloudflare/models/entitlement.dart';import 'package:pub_cloudflare/models/max_count_allocation.dart';@immutable final class InnateEntitlements {const InnateEntitlements({required this.allowAddSubdomain, required this.allowAutoAcceptInvites, required this.cnameSetupAllowed, required this.customEntitlements, required this.mhsCertificateCount, required this.partialSetupAllowed, });
 

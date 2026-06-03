@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsParam (inline: BankTransfer > EuBankTransfer)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EuBankTransfer {const EuBankTransfer({required this.country});
 

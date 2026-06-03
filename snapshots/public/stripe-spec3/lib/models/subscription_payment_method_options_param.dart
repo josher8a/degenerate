@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionPaymentMethodOptionsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_network.dart';import 'package:pub_stripe_spec3/models/subscription_payment_method_options_param/subscription_payment_method_options_param_mandate_options.dart';@immutable final class SubscriptionPaymentMethodOptionsParam {const SubscriptionPaymentMethodOptionsParam({this.mandateOptions, this.network, this.requestThreeDSecure, });
 

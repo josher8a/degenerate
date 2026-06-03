@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PlatformEarningFeeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of object that created the application fee.
 @immutable final class PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType._(this.value);

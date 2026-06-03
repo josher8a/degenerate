@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceDetailUngated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount.dart';/// 
 @immutable final class BalanceDetailUngated {const BalanceDetailUngated({required this.available, required this.pending, });

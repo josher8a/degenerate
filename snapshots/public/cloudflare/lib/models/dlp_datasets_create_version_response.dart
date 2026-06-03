@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDatasetsCreateVersionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_new_version.dart';@immutable final class DlpDatasetsCreateVersionResponse {const DlpDatasetsCreateVersionResponse({this.result});
 

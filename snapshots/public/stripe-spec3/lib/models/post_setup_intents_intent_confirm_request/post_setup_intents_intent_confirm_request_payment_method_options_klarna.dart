@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSetupIntentsIntentConfirmRequest (inline: PaymentMethodOptions > Klarna)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/on_demand.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param17_preferred_locale.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/klarna_subscriptions_variant1.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
 

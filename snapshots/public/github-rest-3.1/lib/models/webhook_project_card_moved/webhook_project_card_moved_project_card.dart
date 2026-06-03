@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookProjectCardMoved (inline: ProjectCard)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/project_card_creator.dart';@immutable final class WebhookProjectCardMovedProjectCard {const WebhookProjectCardMovedProjectCard({required this.afterId, required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.contentUrl, });
 

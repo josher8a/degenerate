@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Task)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/urlscanner_create_scan_bulk_request_visibility.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/scanned_from.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_client_type.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/tasks_status.dart';@immutable final class UrlscannerGetScanResponseResultScanTask {const UrlscannerGetScanResponseResultScanTask({required this.clientLocation, required this.clientType, required this.effectiveUrl, required this.errors, required this.scannedFrom, required this.status, required this.success, required this.time, required this.timeEnd, required this.url, required this.uuid, required this.visibility, });
 

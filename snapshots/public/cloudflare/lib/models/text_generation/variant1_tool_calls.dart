@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TextGeneration (inline: Variant1 > ToolCalls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1ToolCalls {const Variant1ToolCalls({this.arguments, this.name, });
 

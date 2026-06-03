@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceCustomerDetails (inline: TaxabilityOverride)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The taxability override used for taxation.
 @immutable final class TaxabilityOverride {const TaxabilityOverride._(this.value);

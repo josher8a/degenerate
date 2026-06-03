@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/buy_button.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/customer_sheet.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/mobile_payment_element.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/payment_element.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/pricing_table.dart';/// Configuration for each component. At least 1 component must be enabled.
 @immutable final class PostCustomerSessionsRequestComponents {const PostCustomerSessionsRequestComponents({this.buyButton, this.customerSheet, this.mobilePaymentElement, this.paymentElement, this.pricingTable, });

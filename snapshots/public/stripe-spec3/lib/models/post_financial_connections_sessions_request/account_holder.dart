@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostFinancialConnectionsSessionsRequest (inline: AccountHolder)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_type.dart';/// The account holder to link accounts for.
 @immutable final class AccountHolder {const AccountHolder({required this.type, this.account, this.customer, this.customerAccount, });

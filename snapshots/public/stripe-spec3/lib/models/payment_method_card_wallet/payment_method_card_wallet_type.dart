@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodCardWallet (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the card wallet, one of `amex_express_checkout`, `apple_pay`, `google_pay`, `masterpass`, `samsung_pay`, `visa_checkout`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
 @immutable final class PaymentMethodCardWalletType {const PaymentMethodCardWalletType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasUsers
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_email.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// The number of active devices registered to the user.
 extension type const AccessActiveDeviceCount(double value) {

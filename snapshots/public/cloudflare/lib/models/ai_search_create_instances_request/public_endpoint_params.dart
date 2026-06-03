@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: PublicEndpointParams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/chat_completions_endpoint.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/mcp.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/rate_limit.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/search_endpoint.dart';@immutable final class PublicEndpointParams {const PublicEndpointParams({this.authorizedHosts, this.chatCompletionsEndpoint, this.enabled = false, this.mcp, this.rateLimit, this.searchEndpoint, });
 

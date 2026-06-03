@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemArchived (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemArchivedAction {const ItemArchivedAction._(this.value);
 

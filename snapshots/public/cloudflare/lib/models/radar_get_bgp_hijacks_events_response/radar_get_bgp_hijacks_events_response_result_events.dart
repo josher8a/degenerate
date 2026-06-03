@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpHijacksEventsResponse (inline: Result > Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_hijacks_events_response/events_tags.dart';@immutable final class RadarGetBgpHijacksEventsResponseResultEvents {const RadarGetBgpHijacksEventsResponseResultEvents({required this.confidenceScore, required this.duration, required this.eventType, required this.hijackMsgsCount, required this.hijackerAsn, required this.hijackerCountry, required this.id, required this.isStale, required this.maxHijackTs, required this.maxMsgTs, required this.minHijackTs, required this.onGoingCount, required this.peerAsns, required this.peerIpCount, required this.prefixes, required this.tags, required this.victimAsns, required this.victimCountries, });
 

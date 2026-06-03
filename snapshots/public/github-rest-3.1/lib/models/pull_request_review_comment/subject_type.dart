@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewComment (inline: SubjectType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level at which the comment is targeted, can be a diff line or a file.
 @immutable final class SubjectType {const SubjectType._(this.value);

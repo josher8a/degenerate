@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsFlowSubscriptionUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PortalFlowsFlowSubscriptionUpdate {const PortalFlowsFlowSubscriptionUpdate({required this.subscription});

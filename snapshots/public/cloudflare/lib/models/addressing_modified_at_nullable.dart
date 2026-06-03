@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingModifiedAtNullable
 
 /// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
 extension type AddressingModifiedAtNullable(DateTime value) {

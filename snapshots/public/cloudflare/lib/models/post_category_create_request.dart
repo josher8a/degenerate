@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCategoryCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCategoryCreateRequest {const PostCategoryCreateRequest({required this.killChain, required this.name, this.mitreAttack, this.shortname, });
 

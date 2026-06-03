@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CachePurgeSingleFileWithUrlAndHeaders (inline: Files)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Files {const Files({this.headers, this.url, });
 

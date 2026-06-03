@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamVideos
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_creator.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';import 'package:pub_cloudflare/models/stream_input.dart';import 'package:pub_cloudflare/models/stream_max_duration_seconds.dart';import 'package:pub_cloudflare/models/stream_media_status.dart';import 'package:pub_cloudflare/models/stream_one_time_upload_expiry.dart';import 'package:pub_cloudflare/models/stream_playback.dart';import 'package:pub_cloudflare/models/stream_preview.dart';import 'package:pub_cloudflare/models/stream_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/stream_scheduled_deletion.dart';import 'package:pub_cloudflare/models/stream_thumbnail_timestamp_pct.dart';import 'package:pub_cloudflare/models/stream_watermarks.dart';/// The date and time the media item was created.
 extension type StreamCreated(DateTime value) {

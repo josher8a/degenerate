@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Batch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch/batch_errors.dart';import 'package:pub_openai/models/batch/batch_usage.dart';import 'package:pub_openai/models/batch/request_counts.dart';/// The object type, which is always `batch`.
 @immutable final class BatchObject {const BatchObject._(this.value);

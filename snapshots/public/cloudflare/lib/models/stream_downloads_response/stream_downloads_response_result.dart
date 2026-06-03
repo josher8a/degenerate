@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDownloadsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_downloads.dart';/// An object with download type keys. Each key is optional and only present if that download type has been created.
 @immutable final class StreamDownloadsResponseResult {const StreamDownloadsResponseResult({this.audio, this.$default, });

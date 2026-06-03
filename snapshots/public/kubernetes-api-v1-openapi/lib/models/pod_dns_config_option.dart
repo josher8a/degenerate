@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodDnsConfigOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodDNSConfigOption defines DNS resolver options of a pod.
 @immutable final class PodDnsConfigOption {const PodDnsConfigOption({this.name, this.value, });

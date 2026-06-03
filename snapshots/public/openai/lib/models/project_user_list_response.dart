@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectUserListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_user.dart';@immutable final class ProjectUserListResponse {const ProjectUserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 

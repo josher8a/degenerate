@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsPaymentMethodRequest (inline: UsBankAccount > AccountType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsBankAccountAccountType {const UsBankAccountAccountType._(this.value);
 

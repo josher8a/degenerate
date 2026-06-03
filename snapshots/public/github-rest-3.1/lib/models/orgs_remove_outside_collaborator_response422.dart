@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsRemoveOutsideCollaboratorResponse422
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsRemoveOutsideCollaboratorResponse422 {const OrgsRemoveOutsideCollaboratorResponse422({this.message, this.documentationUrl, });
 

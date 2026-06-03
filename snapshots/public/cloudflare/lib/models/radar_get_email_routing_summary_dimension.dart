@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingSummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
 @immutable final class RadarGetEmailRoutingSummaryDimension {const RadarGetEmailRoutingSummaryDimension._(this.value);

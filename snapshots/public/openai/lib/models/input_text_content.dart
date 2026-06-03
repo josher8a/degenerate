@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputTextContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A text input to the model.
 @immutable final class InputTextContent {const InputTextContent({required this.text, this.type = 'input_text', });

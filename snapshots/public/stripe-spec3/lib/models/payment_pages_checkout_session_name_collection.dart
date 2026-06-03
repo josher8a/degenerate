@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionNameCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_business_name.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_individual_name.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionNameCollection {const PaymentPagesCheckoutSessionNameCollection({this.business, this.individual, });

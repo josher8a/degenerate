@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetZonesZoneIdentifierZarazHistorySortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetZonesZoneIdentifierZarazHistorySortOrder {const GetZonesZoneIdentifierZarazHistorySortOrder._(this.value);
 

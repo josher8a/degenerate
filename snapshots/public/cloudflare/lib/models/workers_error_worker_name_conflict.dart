@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerNameConflict
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that a Worker with this name already exists.
 @immutable final class WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode._(this.value);

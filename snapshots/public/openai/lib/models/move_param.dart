@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MoveParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A mouse move action.
 @immutable final class MoveParam {const MoveParam({required this.x, required this.y, this.type = 'move', });

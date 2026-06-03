@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdatePullRequestReviewProtectionRequest (inline: BypassPullRequestAllowances)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow specific users, teams, or apps to bypass pull request requirements.
 @immutable final class ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances {const ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances({this.users, this.teams, this.apps, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_ach_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details_type.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_us_domestic_wire_tracking_details.dart';/// 
 @immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails({required this.type, this.ach, this.usDomesticWire, });

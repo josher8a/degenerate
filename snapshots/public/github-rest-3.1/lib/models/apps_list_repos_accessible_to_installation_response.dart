@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppsListReposAccessibleToInstallationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';@immutable final class AppsListReposAccessibleToInstallationResponse {const AppsListReposAccessibleToInstallationResponse({required this.totalCount, required this.repositories, this.repositorySelection, });
 

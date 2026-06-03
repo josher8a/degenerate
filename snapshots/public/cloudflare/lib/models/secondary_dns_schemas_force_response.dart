@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsSchemasForceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When force_notify query parameter is set to true, the response is a simple string.
 extension type const SecondaryDnsSchemasForceResult(String value) {

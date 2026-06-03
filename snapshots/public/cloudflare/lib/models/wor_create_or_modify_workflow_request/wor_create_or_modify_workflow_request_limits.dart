@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorCreateOrModifyWorkflowRequest (inline: Limits)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateOrModifyWorkflowRequestLimits {const WorCreateOrModifyWorkflowRequestLimits({this.steps});
 

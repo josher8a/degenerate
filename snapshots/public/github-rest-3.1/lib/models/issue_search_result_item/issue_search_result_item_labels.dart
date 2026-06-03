@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueSearchResultItem (inline: Labels)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssueSearchResultItemLabels {const IssueSearchResultItemLabels({this.id, this.nodeId, this.url, this.name, this.color, this.$default, this.description, });
 

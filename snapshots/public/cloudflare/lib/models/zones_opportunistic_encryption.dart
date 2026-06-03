@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesOpportunisticEncryption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
 /// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityMnmMnmVpcFlowsSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Authentication token to be used for VPC Flows export authentication.
 extension type const MagicVisibilityMnmMnmVpcFlowsToken(String value) {

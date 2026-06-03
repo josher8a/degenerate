@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSiteLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Location of site in latitude and longitude.
 @immutable final class MagicSiteLocation {const MagicSiteLocation({this.lat, this.lon, });

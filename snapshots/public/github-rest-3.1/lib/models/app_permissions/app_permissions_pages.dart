@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Pages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
 @immutable final class AppPermissionsPages {const AppPermissionsPages._(this.value);

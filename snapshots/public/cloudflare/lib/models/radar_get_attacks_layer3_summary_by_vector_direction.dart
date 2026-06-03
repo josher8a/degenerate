@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3SummaryByVectorDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
 @immutable final class RadarGetAttacksLayer3SummaryByVectorDirection {const RadarGetAttacksLayer3SummaryByVectorDirection._(this.value);

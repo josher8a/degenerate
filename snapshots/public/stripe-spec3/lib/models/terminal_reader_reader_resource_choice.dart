@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceChoice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The button style for the choice. Can be `primary` or `secondary`.
 @immutable final class TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListVectorStoreFilesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListVectorStoreFilesOrder {const ListVectorStoreFilesOrder._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedVideoResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type that signals the deletion response.
 @immutable final class DeletedVideoResourceObject {const DeletedVideoResourceObject._(this.value);

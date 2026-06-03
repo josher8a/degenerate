@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSecurityCenterIssuesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_security_center_insights_response/get_security_center_insights_response_result_variant1.dart';import 'package:pub_cloudflare/models/security_center_messages2.dart';@immutable final class GetSecurityCenterIssuesResponse {const GetSecurityCenterIssuesResponse({required this.errors, required this.messages, required this.success, this.result, });
 

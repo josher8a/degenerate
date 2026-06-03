@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShaPinningRequired
 
 /// Whether actions must be pinned to a full-length commit SHA.
 extension type const ShaPinningRequired(bool value) {

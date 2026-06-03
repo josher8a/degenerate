@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFilterRuleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_paused.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_priority.dart';import 'package:pub_cloudflare/models/firewall_deleted_filter.dart';import 'package:pub_cloudflare/models/firewall_filter.dart';import 'package:pub_cloudflare/models/firewall_filter_rule_response/filter.dart';import 'package:pub_cloudflare/models/firewall_firewall_rules_components_schemas_description.dart';import 'package:pub_cloudflare/models/firewall_firewall_rules_components_schemas_id.dart';import 'package:pub_cloudflare/models/firewall_products2.dart';import 'package:pub_cloudflare/models/firewall_ref.dart';import 'package:pub_cloudflare/models/firewall_schemas_action.dart';@immutable final class FirewallFilterRuleResponse {const FirewallFilterRuleResponse({this.action, this.description, this.id, this.paused, this.priority, this.products, this.ref, this.filter, });
 

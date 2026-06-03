@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/usage_time_bucket.dart';@immutable final class UsageResponseObject {const UsageResponseObject._(this.value);
 

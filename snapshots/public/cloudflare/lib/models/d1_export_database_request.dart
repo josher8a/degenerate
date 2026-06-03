@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1ExportDatabaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_export_database_request/dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
 @immutable final class OutputFormat {const OutputFormat._(this.value);

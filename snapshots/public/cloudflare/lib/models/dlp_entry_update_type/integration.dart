@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntryUpdateType (inline: Integration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/integration_entry/integration_entry_type.dart';@immutable final class Integration {const Integration({required this.type});
 

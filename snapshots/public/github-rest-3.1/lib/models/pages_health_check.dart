@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesHealthCheck
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pages_health_check/alt_domain.dart';import 'package:pub_github_rest_3_1/models/pages_health_check/domain.dart';/// Pages Health Check Status
 @immutable final class PagesHealthCheck {const PagesHealthCheck({this.domain, this.altDomain, });

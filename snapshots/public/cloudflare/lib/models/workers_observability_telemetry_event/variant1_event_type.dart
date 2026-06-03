@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityTelemetryEvent (inline: $workers > Variant1 > EventType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1EventType {const Variant1EventType._(this.value);
 

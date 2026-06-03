@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCompletionRequest (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateCompletionRequestModelVariant2 {const CreateCompletionRequestModelVariant2._(this.value);
 

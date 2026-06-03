@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsServeErrorStatusCode
 
 /// The status code to use for the error.
 extension type const RulesetsServeErrorStatusCode(int value) {

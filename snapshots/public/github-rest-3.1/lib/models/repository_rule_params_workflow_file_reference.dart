@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleParamsWorkflowFileReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A workflow that must run for this rule to pass
 @immutable final class RepositoryRuleParamsWorkflowFileReference {const RepositoryRuleParamsWorkflowFileReference({required this.path, required this.repositoryId, this.ref, this.sha, });

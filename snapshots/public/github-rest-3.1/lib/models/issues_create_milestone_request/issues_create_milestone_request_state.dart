@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesCreateMilestoneRequest (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the milestone.
 @immutable final class IssuesCreateMilestoneRequestState {const IssuesCreateMilestoneRequestState._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitTree (inline: Tree)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTreeTree {const GitTreeTree({required this.path, required this.mode, required this.type, required this.sha, this.size, this.url, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSslpost
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslpost/tls_certificates_and_hostnames_sslpost_dv.dart';/// A value that is one of: `TlsCertificatesAndHostnamesSslpostDv`.
 sealed class TlsCertificatesAndHostnamesSslpost {const TlsCertificatesAndHostnamesSslpost();

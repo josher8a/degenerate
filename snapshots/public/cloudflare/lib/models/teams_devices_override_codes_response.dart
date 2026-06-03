@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesOverrideCodesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_override_codes_response/teams_devices_override_codes_response_result.dart';@immutable final class TeamsDevicesOverrideCodesResponse {const TeamsDevicesOverrideCodesResponse({this.result});
 

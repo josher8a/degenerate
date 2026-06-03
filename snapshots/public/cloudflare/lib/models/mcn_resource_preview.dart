@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourcePreview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cloud_type.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';import 'package:pub_cloudflare/models/mcn_resource_type.dart';@immutable final class McnResourcePreview {const McnResourcePreview({required this.cloudType, required this.detail, required this.id, required this.name, required this.resourceType, required this.title, });
 

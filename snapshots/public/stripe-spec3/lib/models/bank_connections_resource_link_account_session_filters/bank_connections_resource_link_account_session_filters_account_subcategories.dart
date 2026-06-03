@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankConnectionsResourceLinkAccountSessionFilters (inline: AccountSubcategories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories {const BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories._(this.value);
 

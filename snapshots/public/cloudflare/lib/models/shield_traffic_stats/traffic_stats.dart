@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldTrafficStats (inline: TrafficStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';@immutable final class TrafficStats {const TrafficStats({required this.lastUpdated, required this.periodSeconds, required this.requests, });
 

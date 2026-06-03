@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqQueue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_consumer_response.dart';import 'package:pub_cloudflare/models/mq_producer.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_queue_settings.dart';import 'package:pub_cloudflare/models/mq_r2_producer.dart';import 'package:pub_cloudflare/models/mq_worker_producer.dart';@immutable final class MqQueue {const MqQueue({this.consumers, this.consumersTotalCount, this.createdOn, this.modifiedOn, this.producers, this.producersTotalCount, this.queueId, this.queueName, this.settings, });
 

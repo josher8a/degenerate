@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListCookiesType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters the returned cookies that match the specified type attribute
 @immutable final class PageShieldListCookiesType {const PageShieldListCookiesType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumPerPage
 
 /// Number of items to return per page of results.
 extension type const RumPerPage(double value) {

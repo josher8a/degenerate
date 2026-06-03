@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingTokensTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies which status the token should be updated to.
 @immutable final class PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus._(this.value);

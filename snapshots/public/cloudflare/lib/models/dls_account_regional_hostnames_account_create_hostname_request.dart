@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlsAccountRegionalHostnamesAccountCreateHostnameRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_hostname.dart';import 'package:pub_cloudflare/models/dls_region_key.dart';import 'package:pub_cloudflare/models/dls_routing.dart';@immutable final class DlsAccountRegionalHostnamesAccountCreateHostnameRequest {const DlsAccountRegionalHostnamesAccountCreateHostnameRequest({required this.hostname, required this.regionKey, this.routing, });
 

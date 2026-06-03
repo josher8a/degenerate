@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitErrorResponse (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Object containing details of the error that occurred
 @immutable final class RealtimekitErrorResponseError {const RealtimekitErrorResponseError({required this.code, required this.message, });

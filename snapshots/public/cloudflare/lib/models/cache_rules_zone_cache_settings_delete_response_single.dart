@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesZoneCacheSettingsDeleteResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_messages2.dart';import 'package:pub_cloudflare/models/cache_rules_result_object_delete.dart';@immutable final class CacheRulesZoneCacheSettingsDeleteResponseSingle {const CacheRulesZoneCacheSettingsDeleteResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 

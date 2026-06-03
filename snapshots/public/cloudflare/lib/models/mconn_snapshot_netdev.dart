@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotNetdev
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Netdev
 @immutable final class MconnSnapshotNetdev {const MconnSnapshotNetdev({required this.name, required this.recvBytes, required this.recvCompressed, required this.recvDrop, required this.recvErrs, required this.recvFifo, required this.recvFrame, required this.recvMulticast, required this.recvPackets, required this.sentBytes, required this.sentCarrier, required this.sentColls, required this.sentCompressed, required this.sentDrop, required this.sentErrs, required this.sentFifo, required this.sentPackets, this.connectorId, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAiBotsSummaryByUserAgentResponse (inline: Result > Meta > DateRange)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetaDateRange {const MetaDateRange({required this.endTime, required this.startTime, });
 

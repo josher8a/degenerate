@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallOutputTimeoutOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `timeout`.
 @immutable final class FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType._(this.value);

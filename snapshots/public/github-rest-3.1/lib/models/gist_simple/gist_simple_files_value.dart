@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistSimple (inline: Files > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistSimpleFilesValue {const GistSimpleFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.truncated, this.content, this.encoding = 'utf-8', });
 

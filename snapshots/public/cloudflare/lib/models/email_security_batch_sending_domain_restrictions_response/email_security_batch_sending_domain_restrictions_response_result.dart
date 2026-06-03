@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityBatchSendingDomainRestrictionsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';@immutable final class EmailSecurityBatchSendingDomainRestrictionsResponseResult {const EmailSecurityBatchSendingDomainRestrictionsResponseResult({required this.deletes});
 

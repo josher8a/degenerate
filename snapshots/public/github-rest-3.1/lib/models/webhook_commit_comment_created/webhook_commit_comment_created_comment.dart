@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCommitCommentCreated (inline: Comment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';/// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
 @immutable final class WebhookCommitCommentCreatedComment {const WebhookCommitCommentCreatedComment({required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.path, required this.position, required this.updatedAt, required this.url, required this.user, this.reactions, });

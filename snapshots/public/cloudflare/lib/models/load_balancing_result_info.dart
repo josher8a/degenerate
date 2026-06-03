@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LoadBalancingResultInfo {const LoadBalancingResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 

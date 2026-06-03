@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingPhysicalBundleFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy for how to use card logo images in a card design with this physical bundle.
 @immutable final class IssuingPhysicalBundleFeaturesCardLogo {const IssuingPhysicalBundleFeaturesCardLogo._(this.value);

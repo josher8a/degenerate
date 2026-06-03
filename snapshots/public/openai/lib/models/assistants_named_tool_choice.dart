@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantsNamedToolChoice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistants_named_tool_choice/assistants_named_tool_choice_function.dart';/// The type of the tool. If type is `function`, the function name must be set
 @immutable final class AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType._(this.value);

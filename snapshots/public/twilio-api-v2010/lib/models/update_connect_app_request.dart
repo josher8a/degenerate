@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateConnectAppRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/connect_app_enum_permission.dart';/// The HTTP method to use when calling `deauthorize_callback_url`.
 @immutable final class UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod._(this.value);

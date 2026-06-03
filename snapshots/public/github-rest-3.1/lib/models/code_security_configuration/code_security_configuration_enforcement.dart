@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: Enforcement)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enforcement status for a security configuration
 @immutable final class CodeSecurityConfigurationEnforcement {const CodeSecurityConfigurationEnforcement._(this.value);

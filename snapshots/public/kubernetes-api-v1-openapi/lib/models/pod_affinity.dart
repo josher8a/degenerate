@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodAffinity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_affinity_term.dart';import 'package:pub_kubernetes_api_v1_openapi/models/weighted_pod_affinity_term.dart';/// Pod affinity is a group of inter pod affinity scheduling rules.
 @immutable final class PodAffinity {const PodAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });

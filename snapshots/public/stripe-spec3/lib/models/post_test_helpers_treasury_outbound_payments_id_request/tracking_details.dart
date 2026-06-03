@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryOutboundPaymentsIdRequest (inline: TrackingDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request/tracking_details_ach.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request/tracking_details_us_domestic_wire.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details_type.dart';/// Details about network-specific tracking information.
 @immutable final class TrackingDetails {const TrackingDetails({required this.type, this.ach, this.usDomesticWire, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceOutboundPayments
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_outbound_ach_toggle_settings.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggle_settings.dart';/// Settings related to Outbound Payments features on a Financial Account
 @immutable final class TreasuryFinancialAccountsResourceOutboundPayments {const TreasuryFinancialAccountsResourceOutboundPayments({this.ach, this.usDomesticWire, });

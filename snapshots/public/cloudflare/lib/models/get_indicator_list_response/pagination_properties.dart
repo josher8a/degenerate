@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIndicatorListResponse (inline: Properties > Pagination > Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_response/count.dart';import 'package:pub_cloudflare/models/get_indicator_list_response/per_page.dart';import 'package:pub_cloudflare/models/get_indicator_list_response/properties_page.dart';import 'package:pub_cloudflare/models/get_indicator_list_response/total_count.dart';@immutable final class PaginationProperties {const PaginationProperties({required this.count, required this.page, required this.perPage, required this.totalCount, });
 

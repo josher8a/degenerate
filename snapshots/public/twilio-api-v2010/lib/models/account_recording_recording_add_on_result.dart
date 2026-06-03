@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRecordingRecordingAddOnResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
 @immutable final class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Reaction (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reaction to use
 @immutable final class ReactionContent {const ReactionContent._(this.value);

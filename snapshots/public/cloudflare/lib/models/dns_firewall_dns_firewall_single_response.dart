@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallDnsFirewallSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_dns_firewall_cluster_response.dart';@immutable final class DnsFirewallDnsFirewallSingleResponse {const DnsFirewallDnsFirewallSingleResponse({this.result});
 

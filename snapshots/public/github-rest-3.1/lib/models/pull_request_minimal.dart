@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestMinimal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal/pull_request_minimal_base.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal/pull_request_minimal_head.dart';@immutable final class PullRequestMinimal {const PullRequestMinimal({required this.id, required this.number, required this.url, required this.head, required this.base, });
 

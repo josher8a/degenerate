@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunGraderResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_grader_response/run_grader_response_metadata.dart';@immutable final class RunGraderResponse {const RunGraderResponse({required this.reward, required this.metadata, required this.subRewards, required this.modelGraderTokenUsagePerModel, });
 

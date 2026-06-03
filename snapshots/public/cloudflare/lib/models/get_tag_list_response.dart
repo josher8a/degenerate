@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTagListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_pagination.dart';import 'package:pub_cloudflare/models/get_tag_list_response/get_tag_list_response_tags.dart';@immutable final class GetTagListResponse {const GetTagListResponse({required this.pagination, required this.tags, });
 

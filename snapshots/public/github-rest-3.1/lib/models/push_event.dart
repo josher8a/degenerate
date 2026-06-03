@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PushEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PushEvent {const PushEvent({required this.repositoryId, required this.pushId, required this.ref, required this.head, required this.before, });
 

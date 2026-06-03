@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesHostnameCertidInput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_enabled.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_hostname.dart';/// Certificate identifier tag.
 extension type const TlsCertificatesAndHostnamesCertId(String value) {

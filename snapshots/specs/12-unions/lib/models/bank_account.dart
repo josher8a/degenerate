@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BankAccount {const BankAccount({required this.routingNumber, required this.accountNumber, this.accountHolderName, });
 

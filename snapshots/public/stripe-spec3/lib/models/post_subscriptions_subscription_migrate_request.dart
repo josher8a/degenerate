@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionsSubscriptionMigrateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_subscriptions_subscription_migrate_request/post_subscriptions_subscription_migrate_request_billing_mode.dart';@immutable final class PostSubscriptionsSubscriptionMigrateRequest {const PostSubscriptionsSubscriptionMigrateRequest({required this.billingMode, this.expand, });
 

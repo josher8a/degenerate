@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryInboundTransfersIdFailRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_inbound_transfers_id_fail_request/failure_details.dart';@immutable final class PostTestHelpersTreasuryInboundTransfersIdFailRequest {const PostTestHelpersTreasuryInboundTransfersIdFailRequest({this.expand, this.failureDetails, });
 

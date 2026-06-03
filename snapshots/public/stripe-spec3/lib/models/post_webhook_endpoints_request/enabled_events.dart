@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostWebhookEndpointsRequest (inline: EnabledEvents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnabledEvents {const EnabledEvents._(this.value);
 

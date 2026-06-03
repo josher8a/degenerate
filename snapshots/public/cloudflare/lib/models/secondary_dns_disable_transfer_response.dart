@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsDisableTransferResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The zone transfer status of a primary zone.
 extension type const SecondaryDnsDisableTransferResult(String value) {

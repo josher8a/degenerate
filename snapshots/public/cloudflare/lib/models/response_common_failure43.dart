@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure43
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';@immutable final class ResponseCommonFailure43 {const ResponseCommonFailure43({required this.errors, required this.messages, required this.result, required this.success, });
 

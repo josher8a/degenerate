@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumSite
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_auto_install.dart';import 'package:pub_cloudflare/models/rum_rule.dart';import 'package:pub_cloudflare/models/rum_ruleset.dart';import 'package:pub_cloudflare/models/rum_site_tag.dart';import 'package:pub_cloudflare/models/rum_timestamp.dart';/// The Web Analytics site token.
 extension type const RumSiteToken(String value) {

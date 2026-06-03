@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcApplicationNetwork
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Network settings for an application
 @immutable final class CcApplicationNetwork {const CcApplicationNetwork({required this.bandwidthLimitMbps});

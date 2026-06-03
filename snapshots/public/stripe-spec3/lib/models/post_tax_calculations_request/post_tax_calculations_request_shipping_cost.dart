@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxCalculationsRequest (inline: ShippingCost)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';/// Shipping cost details to be used for the calculation.
 @immutable final class PostTaxCalculationsRequestShippingCost {const PostTaxCalculationsRequestShippingCost({this.amount, this.shippingRate, this.taxBehavior, this.taxCode, });

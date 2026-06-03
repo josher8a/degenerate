@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementPrefixesUpdatePrefixDescriptionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_description.dart';@immutable final class IpAddressManagementPrefixesUpdatePrefixDescriptionRequest {const IpAddressManagementPrefixesUpdatePrefixDescriptionRequest({required this.description});
 

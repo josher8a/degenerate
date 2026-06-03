@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleParamsStatusCheckConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Required status check
 @immutable final class RepositoryRuleParamsStatusCheckConfiguration {const RepositoryRuleParamsStatusCheckConfiguration({required this.context, this.integrationId, });

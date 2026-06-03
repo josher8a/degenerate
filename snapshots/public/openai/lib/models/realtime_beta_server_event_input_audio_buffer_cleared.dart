@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventInputAudioBufferCleared
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.cleared`.
 @immutable final class RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType._(this.value);

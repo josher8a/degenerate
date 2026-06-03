@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesOwnershipVerification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ownership_verification/txt.dart';/// A value that is one of: `Txt`.
 sealed class TlsCertificatesAndHostnamesOwnershipVerification {const TlsCertificatesAndHostnamesOwnershipVerification();

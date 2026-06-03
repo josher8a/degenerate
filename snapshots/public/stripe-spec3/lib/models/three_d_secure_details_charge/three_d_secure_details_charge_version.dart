@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreeDSecureDetailsCharge (inline: Version)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The version of 3D Secure that was used.
 @immutable final class ThreeDSecureDetailsChargeVersion {const ThreeDSecureDetailsChargeVersion._(this.value);

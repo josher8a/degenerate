@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseTeam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Group of enterprise owners and/or members
 @immutable final class EnterpriseTeam {const EnterpriseTeam({required this.id, required this.name, required this.slug, required this.url, required this.groupId, required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, this.description, this.syncToOrganizations, this.organizationSelectionType, this.groupName, });

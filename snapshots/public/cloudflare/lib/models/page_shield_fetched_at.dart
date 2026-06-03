@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldFetchedAt
 
 /// The timestamp of when the script was last fetched.
 extension type const PageShieldFetchedAt(String value) {

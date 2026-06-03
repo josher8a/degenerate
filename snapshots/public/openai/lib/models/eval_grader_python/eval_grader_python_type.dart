@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderPython (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `python`.
 @immutable final class EvalGraderPythonType {const EvalGraderPythonType._(this.value);

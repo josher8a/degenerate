@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ToolChoice > Variant1 > Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/function_type.dart';import 'package:pub_cloudflare/models/messages/variant1_function_function.dart';/// Force a specific function tool.
 @immutable final class Variant1Function {const Variant1Function({required this.function, required this.type, });

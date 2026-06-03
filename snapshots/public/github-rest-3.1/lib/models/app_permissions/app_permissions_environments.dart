@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: Environments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for managing repository environments.
 @immutable final class AppPermissionsEnvironments {const AppPermissionsEnvironments._(this.value);

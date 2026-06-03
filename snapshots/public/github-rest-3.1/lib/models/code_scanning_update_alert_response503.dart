@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningUpdateAlertResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningUpdateAlertResponse503 {const CodeScanningUpdateAlertResponse503({this.code, this.message, this.documentationUrl, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseTextDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the text value of an "output_text" content part is done streaming. Also
 /// emitted when a Response is interrupted, incomplete, or cancelled.

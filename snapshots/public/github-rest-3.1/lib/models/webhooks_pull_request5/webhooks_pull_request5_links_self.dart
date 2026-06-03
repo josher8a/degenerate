@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksPullRequest5 (inline: Links > Self)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksPullRequest5LinksSelf {const WebhooksPullRequest5LinksSelf({required this.href});
 

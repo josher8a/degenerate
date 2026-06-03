@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodCertificateProjection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodCertificateProjection provides a private key and X.509 certificate in the pod filesystem.
 @immutable final class PodCertificateProjection {const PodCertificateProjection({required this.keyType, required this.signerName, this.certificateChainPath, this.credentialBundlePath, this.keyPath, this.maxExpirationSeconds, this.userAnnotations, });

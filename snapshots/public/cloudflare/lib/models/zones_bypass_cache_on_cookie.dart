@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesBypassCacheOnCookie
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bypass cache and fetch resources from the origin server if a regular
 /// expression matches against a cookie name present in the request.

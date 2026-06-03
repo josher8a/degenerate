@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostFilesRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_files_request/file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 @immutable final class PostFilesRequestPurpose {const PostFilesRequestPurpose._(this.value);

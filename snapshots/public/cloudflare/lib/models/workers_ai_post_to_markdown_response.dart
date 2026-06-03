@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostToMarkdownResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_to_markdown_response/workers_ai_post_to_markdown_response_result.dart';@immutable final class WorkersAiPostToMarkdownResponse {const WorkersAiPostToMarkdownResponse({required this.result, required this.success, });
 

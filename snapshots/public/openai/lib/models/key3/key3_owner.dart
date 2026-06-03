@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key3 (inline: Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key2/key2_type.dart';import 'package:pub_openai/models/project_service_account.dart';import 'package:pub_openai/models/project_user.dart';@immutable final class Key3Owner {const Key3Owner({this.type, this.user, this.serviceAccount, });
 

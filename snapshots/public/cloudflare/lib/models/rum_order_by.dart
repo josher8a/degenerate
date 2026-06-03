@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The property used to sort the list of results.
 @immutable final class RumOrderBy {const RumOrderBy._(this.value);

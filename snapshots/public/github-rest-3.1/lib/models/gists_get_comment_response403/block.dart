@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistsGetCommentResponse403 (inline: Block)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Block {const Block({this.reason, this.createdAt, this.htmlUrl, });
 

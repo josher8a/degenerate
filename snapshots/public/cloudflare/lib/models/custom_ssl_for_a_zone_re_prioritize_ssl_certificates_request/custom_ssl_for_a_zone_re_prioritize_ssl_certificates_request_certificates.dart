@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomSslForAZoneRePrioritizeSslCertificatesRequest (inline: Certificates)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_priority.dart';@immutable final class CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates {const CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates({this.id, this.priority, });
 

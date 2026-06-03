@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ForwardedRequestContext
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the forwarded request.
 @immutable final class ForwardedRequestContext {const ForwardedRequestContext({required this.destinationDuration, required this.destinationIpAddress, });

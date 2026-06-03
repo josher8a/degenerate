@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLanguageResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_captions.dart';@immutable final class StreamLanguageResponseSingle {const StreamLanguageResponseSingle({this.result});
 

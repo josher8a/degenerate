@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreSecretObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_secret_name.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';@immutable final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
 

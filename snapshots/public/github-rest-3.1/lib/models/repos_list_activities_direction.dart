@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposListActivitiesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListActivitiesDirection {const ReposListActivitiesDirection._(this.value);
 

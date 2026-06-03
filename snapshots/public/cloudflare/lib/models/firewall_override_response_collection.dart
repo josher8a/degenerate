@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallOverrideResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_override.dart';@immutable final class FirewallOverrideResponseCollection {const FirewallOverrideResponseCollection({required this.result});
 

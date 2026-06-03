@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Verification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Verification {const Verification({required this.verified, required this.reason, required this.payload, required this.signature, required this.verifiedAt, });
 

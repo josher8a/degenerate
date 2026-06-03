@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventInputAudioBufferAppend
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.append`.
 @immutable final class RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType._(this.value);

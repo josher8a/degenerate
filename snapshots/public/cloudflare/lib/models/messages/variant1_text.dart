@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ResponseFormat > Variant1 > Text)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/text_type.dart';@immutable final class Variant1Text {const Variant1Text({required this.type});
 

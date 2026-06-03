@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsLogCustomFieldCookieFields
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The cookie field to log.
 @immutable final class RulesetsLogCustomFieldCookieFields2 {const RulesetsLogCustomFieldCookieFields2({required this.name});

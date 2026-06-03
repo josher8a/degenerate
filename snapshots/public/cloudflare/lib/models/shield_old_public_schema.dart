@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOldPublicSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_kind.dart';import 'package:pub_cloudflare/models/shield_old_validation_enabled.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldOldPublicSchema {const ShieldOldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, this.source, this.validationEnabled, });
 

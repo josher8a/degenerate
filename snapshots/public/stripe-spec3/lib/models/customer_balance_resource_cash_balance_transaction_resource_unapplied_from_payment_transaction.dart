@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction({required this.paymentIntent});

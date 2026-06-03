@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessClientId
 
 /// The Client ID for the service token. Access will check for this value in the `CF-Access-Client-ID` request header.
 extension type const AccessClientId(String value) {

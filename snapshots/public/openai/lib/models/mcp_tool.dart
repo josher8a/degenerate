@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McpTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_tool/allowed_tools.dart';import 'package:pub_openai/models/mcp_tool/require_approval.dart';import 'package:pub_openai/models/mcp_tool_approval_filter.dart';import 'package:pub_openai/models/mcp_tool_filter.dart';/// Identifier for service connectors, like those available in ChatGPT. One of
 /// `server_url` or `connector_id` must be provided. Learn more about service

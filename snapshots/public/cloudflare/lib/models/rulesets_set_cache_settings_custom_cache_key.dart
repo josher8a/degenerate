@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_cookie.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_header.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_host.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_query_string.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key_user.dart';/// Which components of the request are included or excluded from the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKey {const RulesetsSetCacheSettingsCustomCacheKey({this.cookie, this.header, this.host, this.queryString, this.user, });

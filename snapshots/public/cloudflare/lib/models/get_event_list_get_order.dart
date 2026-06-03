@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventListGetOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventListGetOrder {const GetEventListGetOrder._(this.value);
 

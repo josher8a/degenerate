@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesListMilestonesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListMilestonesDirection {const IssuesListMilestonesDirection._(this.value);
 

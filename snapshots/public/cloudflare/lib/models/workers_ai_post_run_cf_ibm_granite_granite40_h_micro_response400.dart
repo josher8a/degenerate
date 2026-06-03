@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400 {const WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400({required this.errors, required this.result, required this.success, });
 

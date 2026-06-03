@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon83
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zone_activation_messages2.dart';@immutable final class ResponseCommon83 {const ResponseCommon83({required this.errors, required this.messages, required this.success, });
 

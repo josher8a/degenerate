@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ServiceTier
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the processing type used for serving the request.
 ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.

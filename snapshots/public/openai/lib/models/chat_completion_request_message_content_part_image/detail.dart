@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestMessageContentPartImage (inline: ImageUrl > Detail)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
 @immutable final class Detail {const Detail._(this.value);

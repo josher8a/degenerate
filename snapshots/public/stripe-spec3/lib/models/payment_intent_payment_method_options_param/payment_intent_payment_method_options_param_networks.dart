@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam (inline: Networks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Requested {const Requested._(this.value);
 

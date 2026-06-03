@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClimateRemovalsProductsPrice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ClimateRemovalsProductsPrice {const ClimateRemovalsProductsPrice({required this.amountFees, required this.amountSubtotal, required this.amountTotal, });

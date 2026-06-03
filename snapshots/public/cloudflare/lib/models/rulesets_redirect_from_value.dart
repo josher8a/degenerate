@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRedirectFromValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_redirect_from_value/target_url.dart';/// The status code to use for the redirect.
 @immutable final class RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode._(this.value);

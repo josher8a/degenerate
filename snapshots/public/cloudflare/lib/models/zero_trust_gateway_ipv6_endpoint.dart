@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayIpv6Endpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_ipv6_network.dart';@immutable final class ZeroTrustGatewayIpv6Endpoint {const ZeroTrustGatewayIpv6Endpoint({this.enabled, this.networks, });
 

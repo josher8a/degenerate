@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafContentScanningUpdateSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status value for Content Scanning.
 @immutable final class WafContentScanningUpdateSettingsRequestValue {const WafContentScanningUpdateSettingsRequestValue._(this.value);

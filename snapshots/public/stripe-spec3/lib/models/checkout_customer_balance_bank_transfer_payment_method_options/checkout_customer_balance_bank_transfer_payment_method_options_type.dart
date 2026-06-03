@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCustomerBalanceBankTransferPaymentMethodOptions (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The bank transfer type that this PaymentIntent is allowed to use for funding Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
 @immutable final class CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType {const CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType._(this.value);

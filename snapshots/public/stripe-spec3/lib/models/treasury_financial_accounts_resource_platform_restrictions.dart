@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourcePlatformRestrictions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restricts all inbound money movement.
 @immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._(this.value);

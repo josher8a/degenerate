@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEmailRuleAction (inline: Block)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BlockAction {const BlockAction._(this.value);
 

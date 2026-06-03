@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscInterconnectCreatePhysicalBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscInterconnectCreatePhysicalBody {const NscInterconnectCreatePhysicalBody({required this.account, required this.type, required this.slotId, this.speed, });
 

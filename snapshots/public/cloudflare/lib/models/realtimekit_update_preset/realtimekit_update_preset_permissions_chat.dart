@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Permissions > Chat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions_chat_private.dart';import 'package:pub_cloudflare/models/realtimekit_update_preset/realtimekit_update_preset_permissions_chat_public.dart';/// Chat permissions
 @immutable final class RealtimekitUpdatePresetPermissionsChat {const RealtimekitUpdatePresetPermissionsChat({this.private, this.public, });

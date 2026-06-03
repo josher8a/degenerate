@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountSipSipDomainSipCredentialListMapping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipCredentialListMapping {const AccountSipSipDomainSipCredentialListMapping({this.accountSid, this.dateCreated, this.dateUpdated, this.domainSid, this.friendlyName, this.sid, this.uri, });
 

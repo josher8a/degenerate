@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRoutingDestinationAddressesListDestinationAddressesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results in an ascending or descending order.
 @immutable final class EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection._(this.value);

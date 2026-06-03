@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamMediaState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the processing status for all quality levels for a video.
 @immutable final class StreamMediaState {const StreamMediaState._(this.value);

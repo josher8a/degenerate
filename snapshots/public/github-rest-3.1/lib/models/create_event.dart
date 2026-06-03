@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateEvent {const CreateEvent({required this.ref, required this.refType, required this.fullRef, required this.masterBranch, required this.pusherType, this.description, });
 

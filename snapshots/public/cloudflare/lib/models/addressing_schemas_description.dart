@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingSchemasDescription
 
 /// An optional description field which may be used to describe the types of IPs or zones on the map.
 extension type const AddressingSchemasDescription(String value) {

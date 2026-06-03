@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorInternalServer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that an unknown internal server error has occurred.
 @immutable final class WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode._(this.value);

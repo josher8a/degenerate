@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Browser family.
 @immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._(this.value);

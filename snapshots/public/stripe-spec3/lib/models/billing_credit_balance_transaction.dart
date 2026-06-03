@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingCreditBalanceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credit.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_debit.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);

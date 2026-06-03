@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupAttemptPaymentMethodDetailsCardPresent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_present/generated_card.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsCardPresent {const SetupAttemptPaymentMethodDetailsCardPresent({this.generatedCard, this.offline, });

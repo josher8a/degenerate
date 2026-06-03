@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAnalysisDeletion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Successful deletion of a code scanning analysis
 @immutable final class CodeScanningAnalysisDeletion {const CodeScanningAnalysisDeletion({required this.nextAnalysisUrl, required this.confirmDeleteUrl, });

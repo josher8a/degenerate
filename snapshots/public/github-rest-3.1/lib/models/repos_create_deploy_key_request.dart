@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateDeployKeyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateDeployKeyRequest {const ReposCreateDeployKeyRequest({required this.key, this.title, this.readOnly, });
 

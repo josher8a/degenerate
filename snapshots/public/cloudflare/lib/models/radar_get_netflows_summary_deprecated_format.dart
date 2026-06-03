@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetNetflowsSummaryDeprecatedFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetNetflowsSummaryDeprecatedFormat {const RadarGetNetflowsSummaryDeprecatedFormat._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesUsage (inline: InputTokensDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The input tokens detailed information for the image generation.
 @immutable final class ImagesUsageInputTokensDetails {const ImagesUsageInputTokensDetails({required this.textTokens, required this.imageTokens, });

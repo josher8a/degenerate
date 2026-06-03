@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PcmAudioFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcm`.
 @immutable final class PcmAudioFormatType {const PcmAudioFormatType._(this.value);

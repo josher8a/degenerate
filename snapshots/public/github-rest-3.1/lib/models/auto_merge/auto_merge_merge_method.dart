@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoMerge (inline: MergeMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The merge method to use.
 @immutable final class AutoMergeMergeMethod {const AutoMergeMergeMethod._(this.value);

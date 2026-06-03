@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSourcesRequest (inline: SourceOrder > Shipping)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/shipping_address.dart';@immutable final class SourceOrderShipping {const SourceOrderShipping({required this.address, this.carrier, this.name, this.phone, this.trackingNumber, });
 

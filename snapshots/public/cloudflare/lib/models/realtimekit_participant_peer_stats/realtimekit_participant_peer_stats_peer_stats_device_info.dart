@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitParticipantPeerStats (inline: PeerStats > DeviceInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsDeviceInfo {const RealtimekitParticipantPeerStatsPeerStatsDeviceInfo({this.browser, this.browserVersion, this.cpus, this.engine, this.isMobile, this.memory, this.os, this.osVersion, this.sdkName, this.sdkVersion, this.userAgent, this.webglSupport, });
 

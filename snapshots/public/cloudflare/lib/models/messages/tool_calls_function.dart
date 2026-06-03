@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Assistant > ToolCalls > Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/function_type.dart';import 'package:pub_cloudflare/models/messages/tool_calls_function_function.dart';@immutable final class ToolCallsFunction {const ToolCallsFunction({required this.function, required this.id, required this.type, });
 

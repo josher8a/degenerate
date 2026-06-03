@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityMessageHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMessageHeader {const EmailSecurityMessageHeader({required this.name, required this.value, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalSubscriptionUpdateProductAdjustableQuantity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PortalSubscriptionUpdateProductAdjustableQuantity {const PortalSubscriptionUpdateProductAdjustableQuantity({required this.enabled, required this.minimum, this.maximum, });

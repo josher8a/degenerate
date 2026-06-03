@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TimelineCrossReferencedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/timeline_cross_referenced_event/timeline_cross_referenced_event_source.dart';/// Timeline Cross Referenced Event
 @immutable final class TimelineCrossReferencedEvent {const TimelineCrossReferencedEvent({required this.event, required this.createdAt, required this.updatedAt, required this.source, this.actor, });

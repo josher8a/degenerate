@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaSilenceComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_messages2.dart';import 'package:pub_cloudflare/models/aaa_silence.dart';@immutable final class AaaSilenceComponentsSchemasResponseCollection {const AaaSilenceComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

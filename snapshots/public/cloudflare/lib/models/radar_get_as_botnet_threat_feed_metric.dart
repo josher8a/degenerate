@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsBotnetThreatFeedMetric
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metric to rank ASNs by.
 @immutable final class RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebSearchApproximateLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location/approximate_location_type.dart';/// The approximate location of the user.
 /// 

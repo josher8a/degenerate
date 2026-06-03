@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesCrowdstrikeInputRequest (inline: Operator)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator.
 @immutable final class TeamsDevicesCrowdstrikeInputRequestOperator {const TeamsDevicesCrowdstrikeInputRequestOperator._(this.value);

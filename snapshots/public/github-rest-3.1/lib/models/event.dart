@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Event
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actor.dart';import 'package:pub_github_rest_3_1/models/event/event_payload.dart';import 'package:pub_github_rest_3_1/models/event/event_repo.dart';/// Event
 @immutable final class Event {const Event({required this.id, required this.type, required this.actor, required this.repo, required this.payload, required this.public, required this.createdAt, this.org, });

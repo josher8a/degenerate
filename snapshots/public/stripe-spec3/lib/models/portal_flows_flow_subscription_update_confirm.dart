@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsFlowSubscriptionUpdateConfirm
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_subscription_update_confirm_discount.dart';import 'package:pub_stripe_spec3/models/portal_flows_subscription_update_confirm_item.dart';/// 
 @immutable final class PortalFlowsFlowSubscriptionUpdateConfirm {const PortalFlowsFlowSubscriptionUpdateConfirm({required this.items, required this.subscription, this.discounts, });

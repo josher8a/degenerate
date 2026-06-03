@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1DatabaseResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_created_at.dart';import 'package:pub_cloudflare/models/d1_database_identifier.dart';import 'package:pub_cloudflare/models/d1_database_name.dart';import 'package:pub_cloudflare/models/d1_database_version.dart';import 'package:pub_cloudflare/models/d1_jurisdiction_nullable.dart';@immutable final class D1DatabaseResponse {const D1DatabaseResponse({this.createdAt, this.jurisdiction, this.name, this.uuid, this.version, });
 

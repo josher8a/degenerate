@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LocalObjectReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
 @immutable final class LocalObjectReference {const LocalObjectReference({this.name = ''});

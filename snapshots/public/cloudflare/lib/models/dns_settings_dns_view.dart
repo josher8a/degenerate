@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDnsView
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_created_time.dart';import 'package:pub_cloudflare/models/dns_settings_modified_time.dart';import 'package:pub_cloudflare/models/dns_settings_name.dart';@immutable final class DnsSettingsDnsView {const DnsSettingsDnsView({this.createdTime, this.modifiedTime, this.name, this.zones, });
 

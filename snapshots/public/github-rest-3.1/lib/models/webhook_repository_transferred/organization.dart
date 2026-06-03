@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryTransferred (inline: Changes > Owner > From > Organization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Organization {const Organization({required this.avatarUrl, required this.description, required this.eventsUrl, required this.hooksUrl, required this.id, required this.issuesUrl, required this.login, required this.membersUrl, required this.nodeId, required this.publicMembersUrl, required this.reposUrl, required this.url, this.htmlUrl, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookInstallationTargetRenamed (inline: Account)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationTargetRenamedAccount {const WebhookInstallationTargetRenamedAccount({required this.nodeId, required this.avatarUrl, required this.htmlUrl, required this.id, this.hasRepositoryProjects, this.followers, this.followersUrl, this.following, this.followingUrl, this.gistsUrl, this.gravatarId, this.hasOrganizationProjects, this.archivedAt, this.hooksUrl, this.createdAt, this.description, this.isVerified, this.issuesUrl, this.login, this.membersUrl, this.name, this.eventsUrl, this.organizationsUrl, this.publicGists, this.userViewType, this.publicRepos, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.slug, this.starredUrl, this.subscriptionsUrl, this.type, this.updatedAt, this.url, this.websiteUrl, this.publicMembersUrl, });
 

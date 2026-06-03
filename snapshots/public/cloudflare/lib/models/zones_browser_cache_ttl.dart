@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesBrowserCacheTtl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control how long resources cached by client browsers remain valid.
 /// 

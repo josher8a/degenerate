@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingCreateBindingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_service_identifier.dart';@immutable final class AddressingCreateBindingRequest {const AddressingCreateBindingRequest({required this.cidr, required this.serviceId, });
 

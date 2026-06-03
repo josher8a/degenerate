@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnUpdateCatalogSyncRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_update_mode.dart';@immutable final class McnUpdateCatalogSyncRequest {const McnUpdateCatalogSyncRequest({this.description, this.name, this.policy, this.updateMode, });
 

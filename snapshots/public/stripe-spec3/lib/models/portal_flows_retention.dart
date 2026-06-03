@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsRetention
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_coupon_offer.dart';import 'package:pub_stripe_spec3/models/portal_flows_retention/portal_flows_retention_type.dart';/// 
 @immutable final class PortalFlowsRetention {const PortalFlowsRetention({required this.type, this.couponOffer, });

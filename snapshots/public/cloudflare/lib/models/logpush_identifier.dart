@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushIdentifier
 
 /// Identifier.
 extension type const LogpushIdentifier(String value) {

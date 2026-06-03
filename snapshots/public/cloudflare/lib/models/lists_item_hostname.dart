@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsItemHostname
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).
 @immutable final class ListsItemHostname {const ListsItemHostname({required this.urlHostname, this.excludeExactHostname, });

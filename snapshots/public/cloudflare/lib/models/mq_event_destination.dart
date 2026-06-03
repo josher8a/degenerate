@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqEventDestination
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination_queue.dart';/// A value that is one of: `MqEventDestinationQueue`.
 sealed class MqEventDestination {const MqEventDestination();

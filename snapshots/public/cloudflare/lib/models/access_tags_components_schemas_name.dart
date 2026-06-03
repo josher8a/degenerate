@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessTagsComponentsSchemasName
 
 /// The name of the tag
 extension type const AccessTagsComponentsSchemasName(String value) {

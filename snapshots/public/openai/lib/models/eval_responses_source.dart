@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalResponsesSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_type.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// A EvalResponsesSource object describing a run data source configuration.
 /// 

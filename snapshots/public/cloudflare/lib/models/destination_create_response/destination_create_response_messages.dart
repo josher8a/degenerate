@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationCreateResponse (inline: Messages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage._(this.value);
 

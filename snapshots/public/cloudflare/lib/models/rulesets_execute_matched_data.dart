@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsExecuteMatchedData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration to use for matched data logging.
 @immutable final class RulesetsExecuteMatchedData {const RulesetsExecuteMatchedData({required this.publicKey});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSourcesRequest (inline: SourceOrder)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_sources_request/source_order_items.dart';import 'package:pub_stripe_spec3/models/post_sources_request/source_order_shipping.dart';/// Information about the items and shipping associated with the source. Required for transactional credit (for example Klarna) sources before you can charge it.
 @immutable final class PostSourcesRequestSourceOrder {const PostSourcesRequestSourceOrder({this.items, this.shipping, });

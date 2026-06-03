@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsResourceBillingCycleAnchorConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SubscriptionsResourceBillingCycleAnchorConfig {const SubscriptionsResourceBillingCycleAnchorConfig({required this.dayOfMonth, this.hour, this.minute, this.month, this.second, });

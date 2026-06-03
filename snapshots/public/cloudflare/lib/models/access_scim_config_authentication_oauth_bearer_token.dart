@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessScimConfigAuthenticationOauthBearerToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config_authentication_oauth_bearer_token/access_schemas_scim_config_authentication_oauth_bearer_token_scheme.dart';/// Attributes for configuring OAuth Bearer Token authentication scheme for SCIM provisioning to an application.
 @immutable final class AccessScimConfigAuthenticationOauthBearerToken {const AccessScimConfigAuthenticationOauthBearerToken({required this.scheme, required this.token, });

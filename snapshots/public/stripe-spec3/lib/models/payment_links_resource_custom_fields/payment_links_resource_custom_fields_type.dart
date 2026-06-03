@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceCustomFields (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the field.
 @immutable final class PaymentLinksResourceCustomFieldsType {const PaymentLinksResourceCustomFieldsType._(this.value);

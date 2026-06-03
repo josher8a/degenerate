@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StatusUpdateEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/status_update_edited/changes_body.dart';import 'package:pub_github_rest_3_1/models/status_update_edited/changes_status.dart';import 'package:pub_github_rest_3_1/models/status_update_edited/start_date.dart';import 'package:pub_github_rest_3_1/models/status_update_edited/target_date.dart';@immutable final class StatusUpdateEditedChanges {const StatusUpdateEditedChanges({this.body, this.status, this.startDate, this.targetDate, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSOrganizationsListOrganizationsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the user is a member of the organization or has an inivitation pending.
 @immutable final class UserSOrganizationsListOrganizationsStatus {const UserSOrganizationsListOrganizationsStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKeyHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which headers to include in the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyHeader {const RulesetsSetCacheSettingsCustomCacheKeyHeader({this.checkPresence, this.contains, this.excludeOrigin, this.include, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Polls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Poll permissions
 @immutable final class RealtimekitPresetPermissionsPolls {const RealtimekitPresetPermissionsPolls({required this.canCreate, required this.canView, required this.canVote, });

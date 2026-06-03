@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsPaymentMethodAttachRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodAttachRequest {const PostPaymentMethodsPaymentMethodAttachRequest({this.customer, this.customerAccount, this.expand, });
 

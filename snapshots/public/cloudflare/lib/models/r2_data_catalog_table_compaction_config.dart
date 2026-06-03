@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogTableCompactionConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_state.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_target_file_size.dart';/// Configures compaction settings for table optimization.
 @immutable final class R2DataCatalogTableCompactionConfig {const R2DataCatalogTableCompactionConfig({required this.state, required this.targetSizeMb, });

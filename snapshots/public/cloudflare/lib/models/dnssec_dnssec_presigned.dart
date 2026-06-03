@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnssecDnssecPresigned
 
 /// If true, allows Cloudflare to transfer in a DNSSEC-signed zone
 /// including signatures from an external provider, without requiring

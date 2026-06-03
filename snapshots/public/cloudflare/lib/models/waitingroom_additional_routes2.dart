@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomAdditionalRoutes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomAdditionalRoutes2 {const WaitingroomAdditionalRoutes2({this.host, this.path = '/', });
 

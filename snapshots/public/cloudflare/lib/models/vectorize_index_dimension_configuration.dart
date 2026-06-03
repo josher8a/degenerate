@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexDimensionConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_dimensions.dart';/// Specifies the type of metric to use calculating distance.
 @immutable final class VectorizeIndexMetric {const VectorizeIndexMetric._(this.value);

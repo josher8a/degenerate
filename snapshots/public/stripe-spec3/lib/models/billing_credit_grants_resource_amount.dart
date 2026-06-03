@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingCreditGrantsResourceAmount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount/billing_credit_grants_resource_amount_type.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_monetary_amount.dart';/// 
 @immutable final class BillingCreditGrantsResourceAmount {const BillingCreditGrantsResourceAmount({required this.type, this.monetary, });

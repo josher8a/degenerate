@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardSpendingLimit (inline: Interval)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Interval (or event) to which the amount applies.
 @immutable final class IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval._(this.value);

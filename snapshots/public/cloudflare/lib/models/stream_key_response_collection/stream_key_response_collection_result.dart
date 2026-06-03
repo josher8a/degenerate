@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamKeyResponseCollection (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_schemas_identifier.dart';import 'package:pub_cloudflare/models/stream_signing_key_created.dart';@immutable final class StreamKeyResponseCollectionResult {const StreamKeyResponseCollectionResult({this.created, this.id, });
 

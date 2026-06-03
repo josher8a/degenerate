@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostZonesZoneIdLogpushEdgeJobsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_fields.dart';import 'package:pub_cloudflare/models/logpush_sample.dart';import 'package:pub_cloudflare/models/logpush_schemas_filter.dart';@immutable final class PostZonesZoneIdLogpushEdgeJobsRequest {const PostZonesZoneIdLogpushEdgeJobsRequest({this.fields, this.filter, this.sample, });
 

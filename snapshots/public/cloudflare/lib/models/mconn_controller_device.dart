@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnControllerDevice {const MconnControllerDevice({required this.cryptKey, required this.id, this.cryptKeyRotationFinishedAt, this.imagedAt, this.lastCryptKey, this.serialNumber, });
 

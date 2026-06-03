@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: ServiceAccountCreated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/service_account_created_data.dart';/// The details for events with this `type`.
 @immutable final class ServiceAccountCreated {const ServiceAccountCreated({this.id, this.data, });

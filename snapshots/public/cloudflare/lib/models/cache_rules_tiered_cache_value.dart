@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesTieredCacheValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Tiered Cache zone setting.
 @immutable final class CacheRulesTieredCacheValue {const CacheRulesTieredCacheValue._(this.value);

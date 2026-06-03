@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeResponse (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_response/realtime_response_audio_output.dart';/// Configuration for audio output.
 @immutable final class RealtimeResponseAudio {const RealtimeResponseAudio({this.output});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Identifier2
 
 /// Represents a Cloudflare resource identifier tag.
 extension type const Identifier2(String value) {

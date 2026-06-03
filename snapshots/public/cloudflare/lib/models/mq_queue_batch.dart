@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqQueueBatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_queue_message.dart';import 'package:pub_cloudflare/models/mq_queue_message_json.dart';import 'package:pub_cloudflare/models/mq_queue_message_text.dart';@immutable final class MqQueueBatch {const MqQueueBatch({this.delaySeconds, this.messages, });
 

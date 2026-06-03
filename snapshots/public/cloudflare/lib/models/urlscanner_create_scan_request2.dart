@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanRequest2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/screenshots_resolutions.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_request/urlscanner_create_scan_bulk_request_visibility.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_request2/urlscanner_create_scan_request2_country.dart';@immutable final class UrlscannerCreateScanRequest2 {const UrlscannerCreateScanRequest2({required this.url, this.country, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility = UrlscannerCreateScanBulkRequestVisibility.public, });
 

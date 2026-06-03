@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsViewsForAnAccountDeleteInternalDnsViewResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';@immutable final class DnsViewsForAnAccountDeleteInternalDnsViewResponse {const DnsViewsForAnAccountDeleteInternalDnsViewResponse({this.result});
 

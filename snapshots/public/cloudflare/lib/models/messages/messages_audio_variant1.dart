@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Audio > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/voice.dart';import 'package:pub_cloudflare/models/messages/voice_variant2.dart';@immutable final class Variant1Format {const Variant1Format._(this.value);
 

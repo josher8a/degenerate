@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnYamlDiffItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';@immutable final class McnYamlDiffItem {const McnYamlDiffItem({required this.itemType, required this.yamlDiff, });
 

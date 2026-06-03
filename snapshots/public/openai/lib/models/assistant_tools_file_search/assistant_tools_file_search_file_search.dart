@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AssistantToolsFileSearch (inline: FileSearch)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_search_ranking_options.dart';/// Overrides for the file search tool.
 @immutable final class AssistantToolsFileSearchFileSearch {const AssistantToolsFileSearchFileSearch({this.maxNumResults, this.rankingOptions, });

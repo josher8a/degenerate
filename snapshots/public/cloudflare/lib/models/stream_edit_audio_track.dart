@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamEditAudioTrack
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_audio_default.dart';import 'package:pub_cloudflare/models/stream_audio_label.dart';@immutable final class StreamEditAudioTrack {const StreamEditAudioTrack({this.$default, this.label, });
 

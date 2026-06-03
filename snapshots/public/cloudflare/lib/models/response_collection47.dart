@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection47
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';import 'package:pub_cloudflare/models/workers_kv_result_info.dart';@immutable final class ResponseCollection47 {const ResponseCollection47({required this.errors, required this.messages, required this.success, this.resultInfo, });
 

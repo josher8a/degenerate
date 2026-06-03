@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesLastSeen
 
 /// When the device last connected to Cloudflare services.
 extension type TeamsDevicesLastSeen(DateTime value) {

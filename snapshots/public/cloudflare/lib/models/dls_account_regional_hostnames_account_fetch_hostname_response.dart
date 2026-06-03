@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlsAccountRegionalHostnamesAccountFetchHostnameResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_regional_hostname_response.dart';@immutable final class DlsAccountRegionalHostnamesAccountFetchHostnameResponse {const DlsAccountRegionalHostnamesAccountFetchHostnameResponse({this.result});
 

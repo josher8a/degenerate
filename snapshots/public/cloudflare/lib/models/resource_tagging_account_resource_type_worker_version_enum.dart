@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingAccountResourceTypeWorkerVersionEnum
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for worker_version resource type.
 @immutable final class ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingHistory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/components_schemas_identifier.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/schemas_zone.dart';/// The billing item action.
 extension type const Action(String value) {

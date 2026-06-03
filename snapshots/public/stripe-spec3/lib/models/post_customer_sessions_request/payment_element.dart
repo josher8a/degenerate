@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components > PaymentElement)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customer_sessions_request/payment_element_features.dart';@immutable final class PaymentElement {const PaymentElement({required this.enabled, this.features, });
 

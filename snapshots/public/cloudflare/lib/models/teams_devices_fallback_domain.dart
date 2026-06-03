@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesFallbackDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_ip.dart';@immutable final class TeamsDevicesFallbackDomain {const TeamsDevicesFallbackDomain({required this.suffix, this.description, this.dnsServer, });
 

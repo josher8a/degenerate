@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersConfirmationTokensRequest (inline: PaymentMethodOptions > Card > Installments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/card_installments_plan.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments({required this.plan});
 

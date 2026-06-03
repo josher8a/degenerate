@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificateObjectPost
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ca.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_mtls_management_components_schemas_uploaded_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificates.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_expires_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_issuer.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_name.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_serial_number.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_signature.dart';/// This is the time the certificate was updated.
 extension type TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutRenderingOptionsParam (inline: AmountTaxDisplay)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountTaxDisplay {const AmountTaxDisplay._(this.value);
 

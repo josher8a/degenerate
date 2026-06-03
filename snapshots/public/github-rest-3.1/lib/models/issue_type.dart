@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssueType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_type/issue_type_color.dart';/// The type of issue.
 @immutable final class IssueType {const IssueType({required this.id, required this.nodeId, required this.name, required this.description, this.color, this.createdAt, this.updatedAt, this.isEnabled, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnListOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the ASNs by.
 @immutable final class RadarGetEntitiesAsnListOrderBy {const RadarGetEntitiesAsnListOrderBy._(this.value);

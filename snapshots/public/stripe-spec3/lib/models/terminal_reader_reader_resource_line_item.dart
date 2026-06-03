@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceLineItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a line item to be displayed on the reader
 @immutable final class TerminalReaderReaderResourceLineItem {const TerminalReaderReaderResourceLineItem({required this.amount, required this.description, required this.quantity, });

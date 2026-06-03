@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1QueryMeta (inline: Timings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Various durations for the query.
 @immutable final class Timings {const Timings({this.sqlDurationMs});

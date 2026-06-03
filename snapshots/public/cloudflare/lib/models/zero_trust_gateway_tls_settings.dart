@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayTlsSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to inspect encrypted HTTP traffic.
 @immutable final class ZeroTrustGatewayTlsSettings {const ZeroTrustGatewayTlsSettings({this.enabled});

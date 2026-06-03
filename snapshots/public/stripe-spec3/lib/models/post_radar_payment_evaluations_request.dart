@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/client_device_metadata_details.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/post_radar_payment_evaluations_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/post_radar_payment_evaluations_request_payment_details.dart';@immutable final class PostRadarPaymentEvaluationsRequest {const PostRadarPaymentEvaluationsRequest({required this.customerDetails, required this.paymentDetails, this.clientDeviceMetadataDetails, this.expand, this.metadata, });
 

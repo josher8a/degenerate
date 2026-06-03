@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificatePackQuotaResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_quota.dart';@immutable final class TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult {const TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult({this.advanced});
 

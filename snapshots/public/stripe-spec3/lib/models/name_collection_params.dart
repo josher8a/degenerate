@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NameCollectionParams
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/name_collection_params/business.dart';import 'package:pub_stripe_spec3/models/name_collection_params/name_collection_params_individual.dart';@immutable final class NameCollectionParams {const NameCollectionParams({this.business, this.individual, });
 

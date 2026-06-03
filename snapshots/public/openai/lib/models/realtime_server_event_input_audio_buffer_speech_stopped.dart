@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventInputAudioBufferSpeechStopped
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned in `server_vad` mode when the server detects the end of speech in
 /// the audio buffer. The server will also send an `conversation.item.created`

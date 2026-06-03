@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeDeleteMetadataIndexResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_delete_metadata_index_response.dart';@immutable final class VectorizeDeleteMetadataIndexResponse2 {const VectorizeDeleteMetadataIndexResponse2({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LegalEntityDob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class LegalEntityDob {const LegalEntityDob({this.day, this.month, this.year, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsSummaryByCacheHitStatusResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByCacheHitStatusResponseResultSummary0 {const RadarGetDnsSummaryByCacheHitStatusResponseResultSummary0({required this.negative, required this.positive, });
 

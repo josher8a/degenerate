@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BaseModel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseModel {const BaseModel({required this.id, this.createdAt, });
 

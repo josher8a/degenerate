@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: UserAdded)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/service_account_created_data.dart';/// The details for events with this `type`.
 @immutable final class UserAdded {const UserAdded({this.id, this.data, });

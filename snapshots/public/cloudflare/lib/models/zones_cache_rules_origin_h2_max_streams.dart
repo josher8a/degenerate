@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheRulesOriginH2MaxStreams
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_h2_max_streams/cache_rules_origin_h2_max_streams_id.dart';/// Value of the Origin H2 Max Streams Setting.
 extension type const ZonesCacheRulesOriginH2MaxStreamsValue(int value) {

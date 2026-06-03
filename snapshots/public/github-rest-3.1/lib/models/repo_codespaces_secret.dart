@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepoCodespacesSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set repository secrets for GitHub Codespaces.
 @immutable final class RepoCodespacesSecret {const RepoCodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, });

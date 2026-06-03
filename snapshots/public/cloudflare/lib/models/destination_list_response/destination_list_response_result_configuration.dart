@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationListResponse (inline: Result > Configuration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_request/configuration_logpush_dataset.dart';import 'package:pub_cloudflare/models/destination_create_request/configuration_type.dart';import 'package:pub_cloudflare/models/destination_list_response/job_status.dart';@immutable final class DestinationListResponseResultConfiguration {const DestinationListResponseResultConfiguration({required this.destinationConf, required this.headers, required this.jobStatus, required this.logpushDataset, required this.type, required this.url, });
 

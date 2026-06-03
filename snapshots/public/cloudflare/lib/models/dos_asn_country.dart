@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosAsnCountry
 
 extension type const DosAsnCountry(String value) {
 factory DosAsnCountry.fromJson(String json) => DosAsnCountry(json);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsTurnstileWidgetRotateSecretResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turnstile_messages2.dart';import 'package:pub_cloudflare/models/turnstile_widget_detail.dart';@immutable final class AccountsTurnstileWidgetRotateSecretResponse {const AccountsTurnstileWidgetRotateSecretResponse({required this.errors, required this.messages, required this.success, this.result, });
 

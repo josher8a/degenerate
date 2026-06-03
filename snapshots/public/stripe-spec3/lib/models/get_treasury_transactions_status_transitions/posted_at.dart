@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTreasuryTransactionsStatusTransitions (inline: PostedAt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/range_query_specs.dart';typedef PostedAt = OneOf2<RangeQuerySpecs,int>;

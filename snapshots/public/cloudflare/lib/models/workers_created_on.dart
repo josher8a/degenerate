@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersCreatedOn
 
 /// When the script was created.
 extension type WorkersCreatedOn(DateTime value) {

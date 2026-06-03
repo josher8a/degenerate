@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationSpecs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationSpecs {const DestinationSpecs({required this.account, this.amount, });
 

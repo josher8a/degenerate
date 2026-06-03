@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/account_id.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/properties_datasets.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/properties_errors.dart';import 'package:pub_cloudflare/models/post_dataset_populate_response/properties_summary.dart';@immutable final class PostDatasetPopulateResponseProperties {const PostDatasetPopulateResponseProperties({required this.accountId, required this.datasets, required this.errors, required this.summary, });
 

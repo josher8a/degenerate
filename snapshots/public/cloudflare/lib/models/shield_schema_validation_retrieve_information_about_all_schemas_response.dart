@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_public_schema.dart';@immutable final class ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse {const ShieldSchemaValidationRetrieveInformationAboutAllSchemasResponse({required this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesPipeline (inline: Destination)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request/destination_path.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source/cloudflare_pipelines_workers_pipelines_binding_source_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline/cloudflare_pipelines_workers_pipelines_pipeline_destination_batch.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline/cloudflare_pipelines_workers_pipelines_pipeline_destination_compression.dart';import 'package:pub_cloudflare/models/mq_event_source_r2/mq_event_source_r2_type.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestination {const CloudflarePipelinesWorkersPipelinesPipelineDestination({required this.batch, required this.compression, required this.format, required this.path, required this.type, });
 

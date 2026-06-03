@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse2 (inline: Log > Creator)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Creator {const Creator({required this.comment, required this.name, required this.version, });
 

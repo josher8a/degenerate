@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DurableObjectsNamespaceListObjectsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/durable_objects_namespace_list_objects_response/durable_objects_namespace_list_objects_response_result_info.dart';import 'package:pub_cloudflare/models/workers_object.dart';@immutable final class DurableObjectsNamespaceListObjectsResponse {const DurableObjectsNamespaceListObjectsResponse({this.result, this.resultInfo, });
 

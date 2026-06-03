@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCustomToolCallInputDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event indicating that input for a custom tool call is complete.
 /// 

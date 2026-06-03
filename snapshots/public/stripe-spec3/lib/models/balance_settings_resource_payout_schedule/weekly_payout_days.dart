@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceSettingsResourcePayoutSchedule (inline: WeeklyPayoutDays)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WeeklyPayoutDays {const WeeklyPayoutDays._(this.value);
 

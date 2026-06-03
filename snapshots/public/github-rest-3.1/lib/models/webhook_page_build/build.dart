@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPageBuild (inline: Build)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/page_build/page_build_error.dart';import 'package:pub_github_rest_3_1/models/webhook_page_build/build_pusher.dart';/// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
 @immutable final class Build {const Build({required this.commit, required this.createdAt, required this.duration, required this.error, required this.pusher, required this.status, required this.updatedAt, required this.url, });

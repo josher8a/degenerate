@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaMechanisms (inline: Email)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaMechanismsEmail {const AaaMechanismsEmail({this.id});
 

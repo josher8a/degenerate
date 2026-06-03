@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageRulesListPageRulesStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Page Rule.
 @immutable final class PageRulesListPageRulesStatus {const PageRulesListPageRulesStatus._(this.value);

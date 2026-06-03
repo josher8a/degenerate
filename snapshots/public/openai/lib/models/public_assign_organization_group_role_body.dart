@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicAssignOrganizationGroupRoleBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for assigning a role to a group or user.
 @immutable final class PublicAssignOrganizationGroupRoleBody {const PublicAssignOrganizationGroupRoleBody({required this.roleId});

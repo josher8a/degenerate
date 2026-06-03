@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesValidationMethodDefinition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Desired validation method.
 @immutable final class TlsCertificatesAndHostnamesValidationMethodDefinition {const TlsCertificatesAndHostnamesValidationMethodDefinition._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsSoaBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of the zone's SOA record.
 @immutable final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname, this.refresh, this.retry, this.rname, this.ttl, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicCloudflareIpsecEndpoint
 
 /// The IP address assigned to the Cloudflare side of the IPsec tunnel.
 extension type const MagicCloudflareIpsecEndpoint(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerAcceptance (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The mandate includes the type of customer acceptance information, such as: `online` or `offline`.
 @immutable final class CustomerAcceptanceType {const CustomerAcceptanceType._(this.value);

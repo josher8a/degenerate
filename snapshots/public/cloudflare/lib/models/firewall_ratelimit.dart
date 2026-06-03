@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallRatelimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_bypass2.dart';import 'package:pub_cloudflare/models/firewall_description.dart';import 'package:pub_cloudflare/models/firewall_match.dart';import 'package:pub_cloudflare/models/firewall_period.dart';import 'package:pub_cloudflare/models/firewall_threshold.dart';/// When true, indicates that the rate limit is currently disabled.
 extension type const FirewallDisabled(bool value) {

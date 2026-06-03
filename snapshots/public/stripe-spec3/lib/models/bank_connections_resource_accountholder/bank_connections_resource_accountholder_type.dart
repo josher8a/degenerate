@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankConnectionsResourceAccountholder (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of account holder that this account belongs to.
 @immutable final class BankConnectionsResourceAccountholderType {const BankConnectionsResourceAccountholderType._(this.value);

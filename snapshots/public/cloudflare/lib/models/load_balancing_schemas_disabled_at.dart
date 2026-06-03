@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingSchemasDisabledAt
 
 /// This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at.
 extension type LoadBalancingSchemasDisabledAt(DateTime value) {

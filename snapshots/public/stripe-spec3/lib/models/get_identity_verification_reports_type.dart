@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIdentityVerificationReportsType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIdentityVerificationReportsType {const GetIdentityVerificationReportsType._(this.value);
 

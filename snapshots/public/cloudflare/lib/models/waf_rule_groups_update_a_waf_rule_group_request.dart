@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafRuleGroupsUpdateAWafRuleGroupRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_mode.dart';@immutable final class WafRuleGroupsUpdateAWafRuleGroupRequest {const WafRuleGroupsUpdateAWafRuleGroupRequest({this.mode});
 

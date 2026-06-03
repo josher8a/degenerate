@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafManagedRulesBase (inline: Group)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_name.dart';/// Defines the rule group to which the current WAF rule belongs.
 @immutable final class WafManagedRulesBaseGroup {const WafManagedRulesBaseGroup({this.id, this.name, });

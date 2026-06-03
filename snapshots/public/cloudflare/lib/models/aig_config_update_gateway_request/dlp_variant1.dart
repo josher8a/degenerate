@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Dlp > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/variant1_action.dart';@immutable final class DlpVariant1 {const DlpVariant1({required this.action, required this.enabled, required this.profiles, });
 

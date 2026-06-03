@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceTaxAssociationTransactionAttempts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_association_transaction_attempts_resource_committed.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_association_transaction_attempts_resource_errored.dart';/// 
 @immutable final class TaxProductResourceTaxAssociationTransactionAttempts {const TaxProductResourceTaxAssociationTransactionAttempts({required this.source, required this.status, this.committed, this.errored, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreSecretsUsageObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_usage_quota_object.dart';@immutable final class SecretsStoreSecretsUsageObject {const SecretsStoreSecretsUsageObject({required this.secrets});
 

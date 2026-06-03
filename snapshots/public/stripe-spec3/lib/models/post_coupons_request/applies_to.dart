@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCouponsRequest (inline: AppliesTo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A hash containing directions for what this Coupon will apply discounts to.
 @immutable final class AppliesTo {const AppliesTo({this.products});

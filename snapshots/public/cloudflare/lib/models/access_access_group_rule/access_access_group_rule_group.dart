@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAccessGroupRule (inline: Group)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAccessGroupRuleGroup {const AccessAccessGroupRuleGroup({required this.id});
 

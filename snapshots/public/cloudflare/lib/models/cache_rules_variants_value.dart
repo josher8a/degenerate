@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesVariantsValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class CacheRulesVariantsValue {const CacheRulesVariantsValue({this.avif, this.bmp, this.gif, this.jp2, this.jpeg, this.jpg, this.jpg2, this.png, this.tif, this.tiff, this.webp, });

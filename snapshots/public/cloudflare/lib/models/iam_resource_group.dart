@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamResourceGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group/iam_permission_group_meta.dart';import 'package:pub_cloudflare/models/iam_scope.dart';/// A group of scoped resources.
 @immutable final class IamResourceGroup {const IamResourceGroup({required this.id, required this.scope, this.meta, this.name, });

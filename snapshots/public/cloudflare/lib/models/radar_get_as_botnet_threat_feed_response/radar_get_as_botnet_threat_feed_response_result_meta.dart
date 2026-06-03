@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsBotnetThreatFeedResponse (inline: Result > Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsBotnetThreatFeedResponseResultMeta {const RadarGetAsBotnetThreatFeedResponseResultMeta({required this.date, required this.total, this.compareDate, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgHook
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_hook/org_hook_config.dart';/// Org Hook
 @immutable final class OrgHook {const OrgHook({required this.id, required this.url, required this.pingUrl, required this.name, required this.events, required this.active, required this.config, required this.updatedAt, required this.createdAt, required this.type, this.deliveriesUrl, });

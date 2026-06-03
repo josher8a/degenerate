@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CommitSearchResultItem (inline: Commit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_user.dart';import 'package:pub_github_rest_3_1/models/verification.dart';@immutable final class CommitSearchResultItemCommit {const CommitSearchResultItemCommit({required this.author, required this.committer, required this.commentCount, required this.message, required this.tree, required this.url, this.verification, });
 

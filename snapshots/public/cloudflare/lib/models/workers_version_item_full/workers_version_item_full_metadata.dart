@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersVersionItemFull (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the version upload.
 @immutable final class MetadataSource {const MetadataSource._(this.value);

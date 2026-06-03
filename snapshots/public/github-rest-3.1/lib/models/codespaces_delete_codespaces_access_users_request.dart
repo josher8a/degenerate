@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesDeleteCodespacesAccessUsersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesDeleteCodespacesAccessUsersRequest {const CodespacesDeleteCodespacesAccessUsersRequest({required this.selectedUsernames});
 

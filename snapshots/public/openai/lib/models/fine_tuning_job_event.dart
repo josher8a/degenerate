@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningJobEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "fine_tuning.job.event".
 @immutable final class FineTuningJobEventObject {const FineTuningJobEventObject._(this.value);

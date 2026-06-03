@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodIp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodIP represents a single IP address allocated to the pod.
 @immutable final class PodIp {const PodIp({this.ip = ''});

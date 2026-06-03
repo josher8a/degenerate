@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmsFeedbackEnumOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome._(this.value);
 

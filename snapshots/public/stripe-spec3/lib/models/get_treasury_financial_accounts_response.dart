@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTreasuryFinancialAccountsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account.dart';/// 
 @immutable final class GetTreasuryFinancialAccountsResponse {const GetTreasuryFinancialAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });

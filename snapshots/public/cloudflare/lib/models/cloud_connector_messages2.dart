@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudConnectorMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_messages/access_messages_source.dart';@immutable final class CloudConnectorMessages2 {const CloudConnectorMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphSpdxSbom (inline: Sbom > CreationInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreationInfo {const CreationInfo({required this.created, required this.creators, });
 

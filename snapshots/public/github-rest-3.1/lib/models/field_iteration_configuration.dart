@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FieldIterationConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field_iteration_configuration/iterations.dart';/// The configuration for iteration fields.
 @immutable final class FieldIterationConfiguration {const FieldIterationConfiguration({this.startDate, this.duration, this.iterations, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsCodeOutputImageObject (inline: Image)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunStepDetailsToolCallsCodeOutputImageObjectImage {const RunStepDetailsToolCallsCodeOutputImageObjectImage({required this.fileId});
 

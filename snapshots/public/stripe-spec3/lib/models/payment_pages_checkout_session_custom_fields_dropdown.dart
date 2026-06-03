@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentPagesCheckoutSessionCustomFieldsDropdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_option.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsDropdown {const PaymentPagesCheckoutSessionCustomFieldsDropdown({required this.options, this.defaultValue, this.value, });

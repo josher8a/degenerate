@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestReviewComment (inline: Side)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
 @immutable final class Side {const Side._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationMoneyMovementDetails (inline: MoneyMovementType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes the type of money movement. Currently only `card` is supported.
 @immutable final class MoneyMovementType {const MoneyMovementType._(this.value);

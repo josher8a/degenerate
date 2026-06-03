@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountShortCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';@immutable final class AccountShortCode {const AccountShortCode({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.shortCode, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.uri, });
 

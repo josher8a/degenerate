@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerRoutesUpdateRouteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_route.dart';@immutable final class WorkerRoutesUpdateRouteResponse {const WorkerRoutesUpdateRouteResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

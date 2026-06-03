@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginDetailsSlug
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origin slug.
 @immutable final class RadarGetOriginDetailsSlug {const RadarGetOriginDetailsSlug._(this.value);

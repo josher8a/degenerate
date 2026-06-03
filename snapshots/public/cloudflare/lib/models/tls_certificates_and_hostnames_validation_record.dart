@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesValidationRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate's required validation record.
 @immutable final class TlsCertificatesAndHostnamesValidationRecord {const TlsCertificatesAndHostnamesValidationRecord({this.cname, this.cnameTarget, this.emails, this.httpBody, this.httpUrl, this.status, this.txtName, this.txtValue, });

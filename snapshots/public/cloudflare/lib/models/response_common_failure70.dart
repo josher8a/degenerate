@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure70
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_messages2.dart';@immutable final class ResponseCommonFailure70 {const ResponseCommonFailure70({required this.errors, required this.messages, required this.result, required this.success, });
 

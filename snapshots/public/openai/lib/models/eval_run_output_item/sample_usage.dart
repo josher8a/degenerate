@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRunOutputItem (inline: Sample > Usage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Token usage details for the sample.
 @immutable final class SampleUsage {const SampleUsage({required this.totalTokens, required this.completionTokens, required this.promptTokens, required this.cachedTokens, });

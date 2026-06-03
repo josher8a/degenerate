@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelWarpConnectorTunnel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_conns_active_at.dart';import 'package:pub_cloudflare/models/tunnel_conns_inactive_at.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_schemas_connection.dart';import 'package:pub_cloudflare/models/tunnel_status.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';/// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
 @immutable final class TunnelWarpConnectorTunnel {const TunnelWarpConnectorTunnel({this.accountTag, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.status, this.tunType, });

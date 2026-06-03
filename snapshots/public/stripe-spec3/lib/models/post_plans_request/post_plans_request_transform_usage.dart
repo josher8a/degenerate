@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPlansRequest (inline: TransformUsage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/transform_quantity/round.dart';/// Apply a transformation to the reported usage or set quantity before computing the billed price. Cannot be combined with `tiers`.
 @immutable final class PostPlansRequestTransformUsage {const PostPlansRequestTransformUsage({required this.divideBy, required this.round, });

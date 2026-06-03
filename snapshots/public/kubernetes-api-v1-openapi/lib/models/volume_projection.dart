@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VolumeProjection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/cluster_trust_bundle_projection.dart';import 'package:pub_kubernetes_api_v1_openapi/models/config_map_projection.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_certificate_projection.dart';import 'package:pub_kubernetes_api_v1_openapi/models/projection.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_projection.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service_account_token_projection.dart';/// Projection that may be projected along with other supported volume types. Exactly one of these fields must be set.
 @immutable final class VolumeProjection {const VolumeProjection({this.clusterTrustBundle, this.configMap, this.downwardApi, this.podCertificate, this.secret, this.serviceAccountToken, });

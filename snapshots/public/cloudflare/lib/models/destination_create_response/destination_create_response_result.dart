@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationCreateResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result_configuration.dart';@immutable final class DestinationCreateResponseResult {const DestinationCreateResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
 

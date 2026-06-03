@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFailure
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_errors2.dart';@immutable final class ResponseFailure {const ResponseFailure({required this.errors, required this.messages, required this.result, required this.success, });
 

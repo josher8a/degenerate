@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnBadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error.dart';@immutable final class McnBadResponse {const McnBadResponse({required this.messages, required this.success, required this.errors, required this.result, });
 

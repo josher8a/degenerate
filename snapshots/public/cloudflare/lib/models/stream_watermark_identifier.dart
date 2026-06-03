@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWatermarkIdentifier
 
 /// The unique identifier for a watermark profile.
 extension type const StreamWatermarkIdentifier(String value) {

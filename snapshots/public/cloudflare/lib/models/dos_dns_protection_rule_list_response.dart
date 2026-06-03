@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosDnsProtectionRuleListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_dns_protection_rule.dart';@immutable final class DosDnsProtectionRuleListResponse {const DosDnsProtectionRuleListResponse({this.result});
 

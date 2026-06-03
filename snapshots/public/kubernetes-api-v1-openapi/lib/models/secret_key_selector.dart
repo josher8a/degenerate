@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretKeySelector
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretKeySelector selects a key of a Secret.
 @immutable final class SecretKeySelector {const SecretKeySelector({this.key = '', this.name = '', this.optional, });

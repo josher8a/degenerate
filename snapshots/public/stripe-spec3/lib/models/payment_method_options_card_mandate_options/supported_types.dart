@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsCardMandateOptions (inline: SupportedTypes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SupportedTypes {const SupportedTypes._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LockRuleDateCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_date_condition/r2_lifecycle_date_condition_type.dart';/// Condition to apply a lock rule to an object until a specific date.
 @immutable final class R2LockRuleDateCondition {const R2LockRuleDateCondition({required this.date, required this.type, });

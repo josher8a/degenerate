@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryKeysListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/key_needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';@immutable final class TelemetryKeysListRequest {const TelemetryKeysListRequest({this.datasets = const [], this.filters = const [], this.from, this.keyNeedle, this.limit, this.needle, this.to, });
 

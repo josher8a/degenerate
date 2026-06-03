@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAccessRulesForAnAccountListIpAccessRulesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rules.
 @immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder._(this.value);

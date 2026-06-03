@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationUpdateSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_global_settings.dart';@immutable final class SchemaValidationUpdateSettingsResponse {const SchemaValidationUpdateSettingsResponse({required this.result});
 

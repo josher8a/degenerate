@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransferZenginRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// Zengin Records contain Japan bank account details per the Zengin format.
 @immutable final class FundingInstructionsBankTransferZenginRecord {const FundingInstructionsBankTransferZenginRecord({required this.accountHolderAddress, required this.bankAddress, this.accountHolderName, this.accountNumber, this.accountType, this.bankCode, this.bankName, this.branchCode, this.branchName, });

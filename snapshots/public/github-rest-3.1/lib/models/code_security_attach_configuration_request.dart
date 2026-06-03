@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityAttachConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
 @immutable final class CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope._(this.value);

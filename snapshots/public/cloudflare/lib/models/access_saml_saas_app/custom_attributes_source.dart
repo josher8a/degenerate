@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlSaasApp (inline: CustomAttributes > Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/name_by_idp.dart';@immutable final class CustomAttributesSource {const CustomAttributesSource({this.name, this.nameByIdp, });
 

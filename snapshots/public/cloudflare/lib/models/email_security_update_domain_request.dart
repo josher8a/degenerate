@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityUpdateDomainRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_domain/email_security_domain_regions.dart';import 'package:pub_cloudflare/models/email_security_scannable_folder.dart';@immutable final class EmailSecurityUpdateDomainRequest {const EmailSecurityUpdateDomainRequest({required this.ipRestrictions, this.allowedDeliveryModes, this.domain, this.dropDispositions, this.folder, this.integrationId, this.lookbackHops, this.regions, this.requireTlsInbound, this.requireTlsOutbound, this.transport, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_paused.dart';import 'package:pub_cloudflare/models/zones_type.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_account.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_meta.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_owner.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_plan.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_tenant.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_tenant_unit.dart';/// The zone status on Cloudflare.
 @immutable final class ZonesZoneStatus {const ZonesZoneStatus._(this.value);

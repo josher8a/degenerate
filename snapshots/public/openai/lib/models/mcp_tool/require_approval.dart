@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McpTool (inline: RequireApproval)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_tool_approval_filter.dart';/// Specify a single approval policy for all tools. One of `always` or
 /// `never`. When set to `always`, all tools will require approval. When

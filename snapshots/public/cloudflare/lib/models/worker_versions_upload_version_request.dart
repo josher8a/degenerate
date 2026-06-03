@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerVersionsUploadVersionRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request/worker_versions_upload_version_request_metadata.dart';@immutable final class WorkerVersionsUploadVersionRequest {const WorkerVersionsUploadVersionRequest({required this.metadata, this.files, });
 

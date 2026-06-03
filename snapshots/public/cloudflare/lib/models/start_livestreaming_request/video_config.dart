@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StartLivestreamingRequest (inline: VideoConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoConfig {const VideoConfig({this.height, this.width, });
 

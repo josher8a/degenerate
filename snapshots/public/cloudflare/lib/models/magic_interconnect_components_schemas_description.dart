@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicInterconnectComponentsSchemasDescription
 
 /// An optional description of the interconnect.
 extension type const MagicInterconnectComponentsSchemasDescription(String value) {

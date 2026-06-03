@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnCidrPrefix
 
 /// An IP address prefix in CIDR format.
 extension type const McnCidrPrefix(String value) {

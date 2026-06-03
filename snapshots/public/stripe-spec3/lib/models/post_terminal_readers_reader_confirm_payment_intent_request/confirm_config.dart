@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderConfirmPaymentIntentRequest (inline: ConfirmConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration overrides for this confirmation, such as surcharge settings and return URL.
 @immutable final class ConfirmConfig {const ConfirmConfig({this.returnUrl});

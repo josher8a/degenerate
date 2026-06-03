@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvBulkGetResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_bulk_get_result/workers_kv_bulk_get_result_values_value.dart';@immutable final class WorkersKvBulkGetResult {const WorkersKvBulkGetResult({this.values});
 

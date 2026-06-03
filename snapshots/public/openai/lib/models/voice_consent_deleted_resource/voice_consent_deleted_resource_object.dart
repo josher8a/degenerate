@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VoiceConsentDeletedResource (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VoiceConsentDeletedResourceObject {const VoiceConsentDeletedResourceObject._(this.value);
 

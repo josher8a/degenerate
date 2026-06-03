@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleParamsRestrictedCommits
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restricted commit
 @immutable final class RepositoryRuleParamsRestrictedCommits {const RepositoryRuleParamsRestrictedCommits({required this.oid, this.reason, });

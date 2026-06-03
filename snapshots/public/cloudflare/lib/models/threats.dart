@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Threats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for threats.
 @immutable final class Threats {const Threats({this.all, this.country, this.type, });

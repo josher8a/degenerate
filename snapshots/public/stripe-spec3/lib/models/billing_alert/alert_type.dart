@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingAlert (inline: AlertType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the type of the alert.
 @immutable final class AlertType {const AlertType._(this.value);

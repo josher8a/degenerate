@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValues (inline: AiBindings > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AI binding.
 @immutable final class PagesDeploymentConfigValuesAiBindingsValue {const PagesDeploymentConfigValuesAiBindingsValue({required this.projectId});

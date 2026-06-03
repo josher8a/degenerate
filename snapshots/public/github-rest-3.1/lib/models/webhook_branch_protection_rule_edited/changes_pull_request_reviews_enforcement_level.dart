@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookBranchProtectionRuleEdited (inline: Changes > PullRequestReviewsEnforcementLevel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_branch_protection_rule_edited/linear_history_requirement_enforcement_level_from.dart';@immutable final class ChangesPullRequestReviewsEnforcementLevel {const ChangesPullRequestReviewsEnforcementLevel({required this.from});
 

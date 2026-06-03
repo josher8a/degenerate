@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminMacrosReportExceptionSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_macros_report_exception_result.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';@immutable final class MconnAdminMacrosReportExceptionSuccess {const MconnAdminMacrosReportExceptionSuccess({required this.success, required this.result, this.errors, this.messages, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleClassroomUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub user simplified for Classroom.
 @immutable final class SimpleClassroomUser {const SimpleClassroomUser({required this.id, required this.login, required this.avatarUrl, required this.htmlUrl, });

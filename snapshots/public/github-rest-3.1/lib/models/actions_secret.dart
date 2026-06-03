@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set secrets for GitHub Actions.
 @immutable final class ActionsSecret {const ActionsSecret({required this.name, required this.createdAt, required this.updatedAt, });

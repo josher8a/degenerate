@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSecurityCenterInsightsResponse (inline: Result > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_issue.dart';import 'package:pub_cloudflare/models/security_center_page.dart';import 'package:pub_cloudflare/models/security_center_per_page.dart';/// Indicates the total number of results.
 extension type const SecurityCenterCount(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorBatchCreateWorkflowInstanceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_request/instance_retention.dart';@immutable final class WorBatchCreateWorkflowInstanceRequest {const WorBatchCreateWorkflowInstanceRequest({this.instanceId, this.instanceRetention, this.params, });
 

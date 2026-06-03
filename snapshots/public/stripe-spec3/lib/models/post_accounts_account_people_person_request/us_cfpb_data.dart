@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: UsCfpbData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/ethnicity_details.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/race_details.dart';/// Demographic data related to the person.
 @immutable final class UsCfpbData {const UsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });

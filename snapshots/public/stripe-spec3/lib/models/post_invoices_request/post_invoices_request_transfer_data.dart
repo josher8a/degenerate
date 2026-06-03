@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesRequest (inline: TransferData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesRequestTransferData {const PostInvoicesRequestTransferData({required this.destination, this.amount, });
 

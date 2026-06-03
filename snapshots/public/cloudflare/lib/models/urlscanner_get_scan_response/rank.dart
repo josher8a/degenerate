@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Domains > ExampleCom > Rank)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rank {const Rank({required this.bucket, required this.name, this.rank, });
 

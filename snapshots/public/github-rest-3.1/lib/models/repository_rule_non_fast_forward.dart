@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleNonFastForward
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleNonFastForwardType {const RepositoryRuleNonFastForwardType._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2EnableSippyS3 (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider._(this.value);
 

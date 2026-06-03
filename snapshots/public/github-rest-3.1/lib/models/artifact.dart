@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Artifact
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact/artifact_workflow_run.dart';/// An artifact
 @immutable final class Artifact {const Artifact({required this.id, required this.nodeId, required this.name, required this.sizeInBytes, required this.url, required this.archiveDownloadUrl, required this.expired, required this.createdAt, required this.expiresAt, required this.updatedAt, this.digest, this.workflowRun, });

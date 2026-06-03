@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesIpResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_ip_response/result_ip.dart';@immutable final class RadarGetEntitiesIpResponseResult {const RadarGetEntitiesIpResponseResult({required this.ip});
 

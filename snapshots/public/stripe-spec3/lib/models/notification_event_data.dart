@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NotificationEventData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class NotificationEventData {const NotificationEventData({required this.object, this.previousAttributes, });

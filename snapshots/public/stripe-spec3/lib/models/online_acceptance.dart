@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OnlineAcceptance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class OnlineAcceptance {const OnlineAcceptance({this.ipAddress, this.userAgent, });

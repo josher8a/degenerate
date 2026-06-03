@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VoiceIdsShared
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VoiceIdsSharedVariant2 {const VoiceIdsSharedVariant2._(this.value);
 

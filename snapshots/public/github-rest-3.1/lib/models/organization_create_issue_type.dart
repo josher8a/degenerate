@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationCreateIssueType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_type/issue_type_color.dart';@immutable final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description, this.color, });
 

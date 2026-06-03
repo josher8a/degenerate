@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesValidityDays
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validity Days selected for the order.
 @immutable final class TlsCertificatesAndHostnamesValidityDays {const TlsCertificatesAndHostnamesValidityDays._(this.value);

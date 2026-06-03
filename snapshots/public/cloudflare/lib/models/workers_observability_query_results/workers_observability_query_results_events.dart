@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/events_fields.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/events_series.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event.dart';@immutable final class WorkersObservabilityQueryResultsEvents {const WorkersObservabilityQueryResultsEvents({this.count, this.events, this.fields, this.series, });
 

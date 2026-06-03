@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumSiteTagResponseSingle (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_site_tag.dart';@immutable final class RumSiteTagResponseSingleResult {const RumSiteTagResponseSingleResult({this.siteTag});
 

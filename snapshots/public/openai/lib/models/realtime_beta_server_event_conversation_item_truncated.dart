@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventConversationItemTruncated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.truncated`.
 @immutable final class RealtimeBetaServerEventConversationItemTruncatedType {const RealtimeBetaServerEventConversationItemTruncatedType._(this.value);

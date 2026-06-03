@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > Asn > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProcessorsAsnData {const ProcessorsAsnData({required this.asn, required this.country, required this.description, required this.ip, required this.name, });
 

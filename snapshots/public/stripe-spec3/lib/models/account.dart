@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Account
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account/account_object.dart';import 'package:pub_stripe_spec3/models/account/external_accounts.dart';import 'package:pub_stripe_spec3/models/account_business_profile.dart';import 'package:pub_stripe_spec3/models/account_capabilities.dart';import 'package:pub_stripe_spec3/models/account_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_group_membership.dart';import 'package:pub_stripe_spec3/models/account_requirements.dart';import 'package:pub_stripe_spec3/models/account_settings.dart';import 'package:pub_stripe_spec3/models/account_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller.dart';import 'package:pub_stripe_spec3/models/legal_entity_company.dart';import 'package:pub_stripe_spec3/models/person.dart';/// The business type.
 @immutable final class AccountBusinessType {const AccountBusinessType._(this.value);

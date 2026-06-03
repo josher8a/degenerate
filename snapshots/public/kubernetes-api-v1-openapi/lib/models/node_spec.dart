@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_config_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/taint.dart';/// NodeSpec describes the attributes that a node is created with.
 @immutable final class NodeSpec {const NodeSpec({this.configSource, this.externalId, this.podCidr, this.podCidRs, this.providerId, this.taints, this.unschedulable, });

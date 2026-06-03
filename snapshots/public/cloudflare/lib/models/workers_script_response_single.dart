@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersScriptResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';@immutable final class WorkersScriptResponseSingle {const WorkersScriptResponseSingle({required this.result});
 

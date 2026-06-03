@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteRegistrationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';@immutable final class DeleteRegistrationResponse {const DeleteRegistrationResponse({required this.errors, required this.messages, required this.success, this.result, });
 

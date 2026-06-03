@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Response)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/ip_stats_asn.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/response_geoip.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/response_response.dart';@immutable final class RequestsResponse {const RequestsResponse({required this.asn, required this.dataLength, required this.encodedDataLength, required this.geoip, required this.hasExtraInfo, required this.requestId, required this.response, required this.size, required this.type, this.contentAvailable, this.hash, });
 

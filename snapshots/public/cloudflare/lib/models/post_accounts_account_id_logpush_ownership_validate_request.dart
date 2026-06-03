@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountIdLogpushOwnershipValidateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';import 'package:pub_cloudflare/models/logpush_ownership_challenge.dart';@immutable final class PostAccountsAccountIdLogpushOwnershipValidateRequest {const PostAccountsAccountIdLogpushOwnershipValidateRequest({required this.destinationConf, required this.ownershipChallenge, });
 

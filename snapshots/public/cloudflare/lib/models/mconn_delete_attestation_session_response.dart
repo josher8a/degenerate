@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnDeleteAttestationSessionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_attestation_session.dart';@immutable final class MconnDeleteAttestationSessionResponse {const MconnDeleteAttestationSessionResponse({this.result});
 

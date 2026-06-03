@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloneTraffic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/traffic.dart';/// Clone Traffic
 @immutable final class CloneTraffic {const CloneTraffic({required this.count, required this.uniques, required this.clones, });

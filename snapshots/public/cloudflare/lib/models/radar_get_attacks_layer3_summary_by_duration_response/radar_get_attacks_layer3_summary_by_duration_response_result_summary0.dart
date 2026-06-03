@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3SummaryByDurationResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0({required this.$1HourTo3Hours, required this.$10MinsTo20Mins, required this.$20MinsTo40Mins, required this.$40MinsTo1Hour, required this.over3Hours, required this.under10Mins, });
 

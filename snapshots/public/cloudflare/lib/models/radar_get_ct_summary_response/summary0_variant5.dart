@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtSummaryResponse (inline: Result > Summary0 > Variant5)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Summary0Variant5 {const Summary0Variant5({required this.expired, required this.valid, });
 

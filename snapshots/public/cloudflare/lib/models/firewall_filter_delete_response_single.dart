@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFilterDeleteResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filter_delete_response_single/firewall_filter_delete_response_single_result.dart';@immutable final class FirewallFilterDeleteResponseSingle {const FirewallFilterDeleteResponseSingle({required this.result});
 

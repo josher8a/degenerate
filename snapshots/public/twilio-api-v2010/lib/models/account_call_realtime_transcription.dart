@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCallRealtimeTranscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status - one of `stopped`, `in-flight`
 @immutable final class RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus._(this.value);

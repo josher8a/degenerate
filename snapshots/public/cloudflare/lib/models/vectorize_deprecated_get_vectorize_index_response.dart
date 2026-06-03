@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeDeprecatedGetVectorizeIndexResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_create_index_response.dart';@immutable final class VectorizeDeprecatedGetVectorizeIndexResponse {const VectorizeDeprecatedGetVectorizeIndexResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageGenUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_gen_input_usage_details.dart';import 'package:pub_openai/models/image_gen_output_tokens_details.dart';/// For `gpt-image-1` only, the token usage information for the image generation.
 @immutable final class ImageGenUsage {const ImageGenUsage({required this.inputTokens, required this.totalTokens, required this.outputTokens, required this.inputTokensDetails, this.outputTokensDetails, });

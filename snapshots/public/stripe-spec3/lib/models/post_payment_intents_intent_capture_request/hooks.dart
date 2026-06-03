@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentCaptureRequest (inline: Hooks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks_inputs.dart';/// Automations to be run during the PaymentIntent lifecycle
 @immutable final class Hooks {const Hooks({this.inputs});

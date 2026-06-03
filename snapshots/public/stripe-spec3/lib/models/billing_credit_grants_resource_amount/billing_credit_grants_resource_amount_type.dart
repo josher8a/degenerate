@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingCreditGrantsResourceAmount (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of this amount. We currently only support `monetary` billing credits.
 @immutable final class BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType._(this.value);

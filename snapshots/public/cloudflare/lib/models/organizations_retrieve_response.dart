@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationsRetrieveResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message3.dart';import 'package:pub_cloudflare/models/organization.dart';@immutable final class OrganizationsRetrieveResponse {const OrganizationsRetrieveResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

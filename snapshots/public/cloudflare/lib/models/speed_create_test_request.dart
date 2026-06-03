@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpeedCreateTestRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_region.dart';@immutable final class SpeedCreateTestRequest {const SpeedCreateTestRequest({this.region});
 

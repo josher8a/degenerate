@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPingFormEncoded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The webhooks ping payload encoded with URL encoding.
 @immutable final class WebhookPingFormEncoded {const WebhookPingFormEncoded({required this.payload});

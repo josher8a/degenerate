@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpecificApplyPatchParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `apply_patch`.
 @immutable final class SpecificApplyPatchParamType {const SpecificApplyPatchParamType._(this.value);

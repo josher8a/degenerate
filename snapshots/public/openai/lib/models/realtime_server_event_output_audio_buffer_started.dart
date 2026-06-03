@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventOutputAudioBufferStarted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **WebRTC/SIP Only:** Emitted when the server begins streaming audio to the client. This event is
 /// emitted after an audio content part has been added (`response.content_part.added`)

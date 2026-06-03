@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageIncomplete)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';@immutable final class ThreadMessageIncompleteEvent {const ThreadMessageIncompleteEvent._(this.value);
 

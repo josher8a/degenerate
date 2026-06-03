@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardholdersCardholderRequest (inline: Individual)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_card_issuing.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_dob.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_verification.dart';/// Additional information about an `individual` cardholder.
 @immutable final class PostIssuingCardholdersCardholderRequestIndividual {const PostIssuingCardholdersCardholderRequestIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });

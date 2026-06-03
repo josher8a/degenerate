@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/User (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class User12Type {const User12Type._(this.value);
 

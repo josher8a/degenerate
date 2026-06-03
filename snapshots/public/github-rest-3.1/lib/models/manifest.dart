@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Manifest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency.dart';import 'package:pub_github_rest_3_1/models/manifest/file.dart';@immutable final class Manifest {const Manifest({required this.name, this.file, this.metadata, this.resolved, });
 

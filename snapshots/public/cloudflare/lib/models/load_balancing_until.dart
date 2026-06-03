@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingUntil
 
 /// End date and time of requesting data period in the ISO8601 format.
 extension type LoadBalancingUntil(DateTime value) {

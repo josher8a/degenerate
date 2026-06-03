@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tenant (inline: TenantContacts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantContacts {const TenantContacts({this.email, this.website, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_certificates_components_schemas_name.dart';@immutable final class AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest {const AccessMtlsAuthenticationUpdateAnMtlsCertificateRequest({required this.associatedHostnames, this.name, });
 

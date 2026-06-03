@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityCenterValueCountsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_messages2.dart';import 'package:pub_cloudflare/models/security_center_value_counts_response/security_center_value_counts_response_result_variant1.dart';@immutable final class SecurityCenterValueCountsResponse {const SecurityCenterValueCountsResponse({required this.errors, required this.messages, required this.success, this.result, });
 

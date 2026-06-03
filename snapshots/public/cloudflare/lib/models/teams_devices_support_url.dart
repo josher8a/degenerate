@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesSupportUrl
 
 /// The URL to launch when the Send Feedback button is clicked.
 extension type const TeamsDevicesSupportUrl(String value) {

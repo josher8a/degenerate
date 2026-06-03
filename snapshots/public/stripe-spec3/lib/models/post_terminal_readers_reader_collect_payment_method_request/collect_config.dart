@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderCollectPaymentMethodRequest (inline: CollectConfig)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request/collect_config_tipping.dart';/// Configuration overrides for this collection, such as tipping, surcharging, and customer cancellation settings.
 @immutable final class CollectConfig {const CollectConfig({this.allowRedisplay, this.enableCustomerCancellation, this.skipTipping, this.tipping, });

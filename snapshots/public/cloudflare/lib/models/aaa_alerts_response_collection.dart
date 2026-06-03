@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAlertsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_alert_types.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_messages2.dart';@immutable final class AaaAlertsResponseCollection {const AaaAlertsResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

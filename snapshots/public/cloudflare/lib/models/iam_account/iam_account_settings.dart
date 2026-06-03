@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamAccount (inline: Settings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Account settings
 @immutable final class IamAccountSettings {const IamAccountSettings({this.abuseContactEmail, this.enforceTwofactor = false, });

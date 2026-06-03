@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckSuiteRequested (inline: CheckSuite > Conclusion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion._(this.value);

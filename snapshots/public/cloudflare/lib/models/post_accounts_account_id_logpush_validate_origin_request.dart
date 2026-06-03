@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountIdLogpushValidateOriginRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_logpull_options.dart';@immutable final class PostAccountsAccountIdLogpushValidateOriginRequest {const PostAccountsAccountIdLogpushValidateOriginRequest({required this.logpullOptions});
 

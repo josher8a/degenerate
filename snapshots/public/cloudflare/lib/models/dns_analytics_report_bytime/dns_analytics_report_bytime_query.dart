@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsReportBytime (inline: Query)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_time_delta.dart';@immutable final class DnsAnalyticsReportBytimeQuery {const DnsAnalyticsReportBytimeQuery({required this.timeDelta});
 

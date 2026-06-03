@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcCustomResourceAllocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom resource allocation with explicit vcpu, memory, and disk. Custom resource allocations must adhere to the following limits:
 /// - At least 1 vCPU

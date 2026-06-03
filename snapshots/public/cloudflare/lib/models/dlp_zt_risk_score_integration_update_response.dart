@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpZtRiskScoreIntegrationUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_score_integration.dart';@immutable final class DlpZtRiskScoreIntegrationUpdateResponse {const DlpZtRiskScoreIntegrationUpdateResponse({this.result});
 

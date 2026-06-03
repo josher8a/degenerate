@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3Target
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the target gateway of the hostname.
 @immutable final class Web3Target {const Web3Target._(this.value);

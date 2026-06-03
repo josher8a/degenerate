@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessLimit
 
 /// The maximum number of update logs to retrieve.
 extension type const AccessLimit(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallPackageResponseCollection (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_anomaly_package.dart';import 'package:pub_cloudflare/models/firewall_package.dart';import 'package:pub_cloudflare/models/firewall_package_definition.dart';@immutable final class FirewallPackageResponseCollectionVariant2 {const FirewallPackageResponseCollectionVariant2({this.result});
 

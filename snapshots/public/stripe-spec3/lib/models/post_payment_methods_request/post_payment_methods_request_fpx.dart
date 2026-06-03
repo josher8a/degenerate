@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsRequest (inline: Fpx)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_fpx/payment_method_details_fpx_bank.dart';@immutable final class PostPaymentMethodsRequestFpx {const PostPaymentMethodsRequestFpx({required this.bank});
 

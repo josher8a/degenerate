@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBotsTimeseriesBotKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotsTimeseriesBotKind {const RadarGetBotsTimeseriesBotKind._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Feed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/feed/feed_links.dart';/// Feed
 @immutable final class Feed {const Feed({required this.timelineUrl, required this.userUrl, required this.links, this.currentUserPublicUrl, this.currentUserUrl, this.currentUserActorUrl, this.currentUserOrganizationUrl, this.currentUserOrganizationUrls, this.securityAdvisoriesUrl, this.repositoryDiscussionsUrl, this.repositoryDiscussionsCategoryUrl, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceWorkerPutScriptContentRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/namespace_worker_put_script_content_request/namespace_worker_put_script_content_request_metadata.dart';@immutable final class NamespaceWorkerPutScriptContentRequest {const NamespaceWorkerPutScriptContentRequest({required this.metadata, this.files, });
 

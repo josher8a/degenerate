@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflareImagesListImagesSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorting order by upload time
 @immutable final class CloudflareImagesListImagesSortOrder {const CloudflareImagesListImagesSortOrder._(this.value);

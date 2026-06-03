@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningDefaultSetup (inline: ThreatModel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Threat model to be used for code scanning analysis. Use `remote` to analyze only network sources and `remote_and_local` to include local sources like filesystem access, command-line arguments, database reads, environment variable and standard input.
 @immutable final class ThreatModel {const ThreatModel._(this.value);

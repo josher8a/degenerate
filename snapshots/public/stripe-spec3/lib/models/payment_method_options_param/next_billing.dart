@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam (inline: Subscriptions > Variant1 > NextBilling)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NextBilling {const NextBilling({required this.amount, required this.date, });
 

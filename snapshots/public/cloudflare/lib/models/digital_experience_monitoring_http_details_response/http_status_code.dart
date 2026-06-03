@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringHttpDetailsResponse (inline: HttpStatsByColo > HttpStatusCode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HttpStatusCode {const HttpStatusCode({required this.status200, required this.status300, required this.status400, required this.status500, required this.timestamp, });
 

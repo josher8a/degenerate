@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > RadarRank > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarRankData {const RadarRankData({required this.bucket, required this.hostname, this.rank, });
 

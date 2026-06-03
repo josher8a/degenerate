@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Events > Series > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/data_aggregates.dart';@immutable final class EventsSeriesData {const EventsSeriesData({required this.aggregates, required this.count, required this.interval, required this.sampleInterval, this.errors, this.groups, });
 

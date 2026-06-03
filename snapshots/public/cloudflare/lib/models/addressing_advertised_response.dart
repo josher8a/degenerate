@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingAdvertisedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_advertised_response/addressing_advertised_response_result.dart';@immutable final class AddressingAdvertisedResponse {const AddressingAdvertisedResponse({this.result});
 

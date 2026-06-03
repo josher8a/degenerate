@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityAdvisoryEcosystems
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The package's language or package management ecosystem.
 @immutable final class SecurityAdvisoryEcosystems {const SecurityAdvisoryEcosystems._(this.value);

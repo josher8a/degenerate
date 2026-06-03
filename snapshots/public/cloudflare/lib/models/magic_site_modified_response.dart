@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicSiteModifiedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_site.dart';@immutable final class MagicSiteModifiedResponse {const MagicSiteModifiedResponse({this.result});
 

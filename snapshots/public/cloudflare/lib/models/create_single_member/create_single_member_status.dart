@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateSingleMember (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSingleMemberStatus {const CreateSingleMemberStatus._(this.value);
 

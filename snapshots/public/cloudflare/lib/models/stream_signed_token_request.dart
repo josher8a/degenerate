@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamSignedTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_access_rules.dart';@immutable final class StreamSignedTokenRequest {const StreamSignedTokenRequest({this.accessRules, this.downloadable = false, this.exp, this.id, this.nbf, this.pem, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPayloadLogGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting.dart';@immutable final class DlpPayloadLogGetResponse {const DlpPayloadLogGetResponse({this.result});
 

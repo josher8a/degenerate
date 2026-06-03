@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsUpsertRepoConnectionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_provider_account_id.dart';import 'package:pub_cloudflare/models/builds_provider_account_name.dart';import 'package:pub_cloudflare/models/builds_repo_id.dart';import 'package:pub_cloudflare/models/builds_repo_name.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';@immutable final class BuildsUpsertRepoConnectionRequest {const BuildsUpsertRepoConnectionRequest({required this.providerAccountId, required this.providerAccountName, required this.providerType, required this.repoId, required this.repoName, });
 

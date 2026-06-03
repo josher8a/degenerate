@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersMigrationStep (inline: RenamedClasses)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RenamedClasses {const RenamedClasses({this.from, this.to, });
 

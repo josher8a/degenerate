@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsRequest (inline: Controller > Losses)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_losses/account_unification_account_controller_losses_payments.dart';@immutable final class Losses {const Losses({this.payments});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionNamedToolChoiceCustom
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_type.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice_custom/chat_completion_named_tool_choice_custom_custom.dart';/// Specifies a tool the model should use. Use to force the model to call a specific custom tool.
 @immutable final class ChatCompletionNamedToolChoiceCustom {const ChatCompletionNamedToolChoiceCustom({required this.type, required this.custom, });

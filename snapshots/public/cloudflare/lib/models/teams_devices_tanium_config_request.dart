@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesTaniumConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTaniumConfigRequest {const TeamsDevicesTaniumConfigRequest({required this.apiUrl, required this.clientSecret, this.accessClientId, this.accessClientSecret, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingAsnPrependCount
 
 /// Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
 extension type const AddressingAsnPrependCount(int value) {

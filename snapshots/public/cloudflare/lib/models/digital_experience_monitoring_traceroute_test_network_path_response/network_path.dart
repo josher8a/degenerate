@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestNetworkPathResponse (inline: NetworkPath)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/network_path_slots.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/sampling.dart';@immutable final class NetworkPath {const NetworkPath({required this.slots, this.sampling, });
 

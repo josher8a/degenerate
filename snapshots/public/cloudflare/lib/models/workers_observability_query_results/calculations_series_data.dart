@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryResults (inline: Calculations > Series > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_query_results/groups.dart';@immutable final class CalculationsSeriesData {const CalculationsSeriesData({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, required this.sampleInterval, required this.value, this.groups, });
 

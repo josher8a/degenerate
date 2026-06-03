@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSupportMacrosProvisionLicensedConnectorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_macros_provision_licensed_connector_result.dart';@immutable final class MconnSupportMacrosProvisionLicensedConnectorResponse {const MconnSupportMacrosProvisionLicensedConnectorResponse({this.result});
 

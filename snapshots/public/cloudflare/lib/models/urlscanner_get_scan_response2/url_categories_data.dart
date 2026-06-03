@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > UrlCategories > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_inherited.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/data_risks.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/url_categories_data_content.dart';@immutable final class UrlCategoriesData {const UrlCategoriesData({required this.content, required this.inherited, required this.name, required this.risks, });
 

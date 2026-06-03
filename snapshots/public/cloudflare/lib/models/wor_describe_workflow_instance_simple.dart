@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorDescribeWorkflowInstanceSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When true, omits step details and returns only metadata with step_count.
 @immutable final class WorDescribeWorkflowInstanceSimple {const WorDescribeWorkflowInstanceSimple._(this.value);

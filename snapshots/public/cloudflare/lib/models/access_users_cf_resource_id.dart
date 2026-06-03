@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUsersCfResourceId
 
 /// The unique Cloudflare-generated Id of the SCIM User resource; also known as the "Id".
 extension type const AccessUsersCfResourceId(String value) {

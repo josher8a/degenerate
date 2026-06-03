@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceSettingsResourcePayouts (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the funds in this account can be paid out.
 @immutable final class BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus._(this.value);

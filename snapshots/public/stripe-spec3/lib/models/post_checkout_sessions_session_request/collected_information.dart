@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsSessionRequest (inline: CollectedInformation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/collected_information_shipping_details.dart';/// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.
 @immutable final class CollectedInformation {const CollectedInformation({this.shippingDetails});

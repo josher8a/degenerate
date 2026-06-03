@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionRequest (inline: AiSearchOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_options_reranking.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/query_rewrite.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/retrieval.dart';@immutable final class AiSearchOptions {const AiSearchOptions({this.queryRewrite, this.reranking, this.retrieval, });
 

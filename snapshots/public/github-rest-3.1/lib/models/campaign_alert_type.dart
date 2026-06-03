@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CampaignAlertType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the alert type of a campaign
 @immutable final class CampaignAlertType {const CampaignAlertType._(this.value);

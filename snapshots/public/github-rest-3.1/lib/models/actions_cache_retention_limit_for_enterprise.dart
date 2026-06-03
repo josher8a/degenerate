@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCacheRetentionLimitForEnterprise
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// GitHub Actions cache retention policy for an enterprise.
 @immutable final class ActionsCacheRetentionLimitForEnterprise {const ActionsCacheRetentionLimitForEnterprise({this.maxCacheRetentionDays});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HookDelivery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_delivery/request.dart';import 'package:pub_github_rest_3_1/models/hook_delivery/response.dart';/// Delivery made by a webhook.
 @immutable final class HookDelivery {const HookDelivery({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, required this.request, required this.response, this.throttledAt, this.url, });

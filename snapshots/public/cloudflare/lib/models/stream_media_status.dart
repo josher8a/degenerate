@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamMediaStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_media_state.dart';/// Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.
 extension type const StreamErrorReasonCode(String value) {

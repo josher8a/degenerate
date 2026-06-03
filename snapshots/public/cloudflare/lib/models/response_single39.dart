@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingle39
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_errors3.dart';import 'package:pub_cloudflare/models/response_messages2.dart';import 'package:pub_cloudflare/models/response_success.dart';@immutable final class ResponseSingle39 {const ResponseSingle39({required this.errors, required this.messages, required this.success, });
 

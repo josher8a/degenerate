@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrderCreated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrderCreated {const OrderCreated({required this.id, required this.amount, });
 

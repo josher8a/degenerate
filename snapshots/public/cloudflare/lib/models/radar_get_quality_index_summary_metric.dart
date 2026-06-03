@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualityIndexSummaryMetric
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines which metric to return (bandwidth, latency, or DNS response time).
 @immutable final class RadarGetQualityIndexSummaryMetric {const RadarGetQualityIndexSummaryMetric._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Status
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of a commit.
 @immutable final class Status {const Status({required this.url, required this.avatarUrl, required this.id, required this.nodeId, required this.state, required this.description, required this.targetUrl, required this.context, required this.createdAt, required this.updatedAt, required this.creator, });

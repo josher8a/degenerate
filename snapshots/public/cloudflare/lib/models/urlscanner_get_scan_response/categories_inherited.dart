@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Domains > ExampleCom > Categories > Inherited)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/categories_content.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/example_com_categories_risks.dart';@immutable final class CategoriesInherited {const CategoriesInherited({this.content, this.from, this.risks, });
 

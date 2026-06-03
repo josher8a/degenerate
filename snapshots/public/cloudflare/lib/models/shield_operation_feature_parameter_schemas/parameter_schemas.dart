@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureParameterSchemas (inline: ParameterSchemas)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_parameter_schemas_definition.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';@immutable final class ParameterSchemas {const ParameterSchemas({this.lastUpdated, this.parameterSchemas, });
 

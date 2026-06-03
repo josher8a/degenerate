@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device posture rule.
 @immutable final class TeamsDevicesType {const TeamsDevicesType._(this.value);

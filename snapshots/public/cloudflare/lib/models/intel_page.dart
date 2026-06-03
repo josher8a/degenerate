@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPage
 
 /// Current page within paginated list of results.
 extension type const IntelPage(double value) {

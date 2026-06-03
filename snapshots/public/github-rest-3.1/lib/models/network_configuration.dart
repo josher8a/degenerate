@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NetworkConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service the network configuration supports.
 @immutable final class NetworkConfigurationComputeService {const NetworkConfigurationComputeService._(this.value);

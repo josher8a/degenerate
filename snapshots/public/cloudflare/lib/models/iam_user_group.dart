@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUserGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_user_group/iam_user_group_policies.dart';/// A group of policies resources.
 @immutable final class IamUserGroup {const IamUserGroup({required this.createdOn, required this.id, required this.modifiedOn, required this.name, this.policies, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Page > Console)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageConsole {const PageConsole({required this.category, required this.text, required this.type, this.url, });
 

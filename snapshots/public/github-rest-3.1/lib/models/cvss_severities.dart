@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CvssSeverities
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';@immutable final class CvssSeverities {const CvssSeverities({this.cvssV3, this.cvssV4, });
 

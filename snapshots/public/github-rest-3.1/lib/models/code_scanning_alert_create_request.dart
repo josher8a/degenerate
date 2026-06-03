@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertCreateRequest
 
 /// If `true`, attempt to create an alert dismissal request.
 extension type const CodeScanningAlertCreateRequest(bool value) {

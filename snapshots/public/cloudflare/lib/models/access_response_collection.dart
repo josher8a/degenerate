@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identity_provider.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';@immutable final class AccessResponseCollection {const AccessResponseCollection({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanDomResponse404 (inline: Task)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanDomResponse404Task {const UrlscannerGetScanDomResponse404Task({required this.status, required this.time, required this.url, required this.uuid, required this.visibility, });
 

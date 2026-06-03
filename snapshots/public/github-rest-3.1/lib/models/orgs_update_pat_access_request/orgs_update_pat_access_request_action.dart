@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsUpdatePatAccessRequest (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the fine-grained personal access token.
 @immutable final class OrgsUpdatePatAccessRequestAction {const OrgsUpdatePatAccessRequestAction._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventConversationItemCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `conversation.item.create`.
 @immutable final class RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType._(this.value);

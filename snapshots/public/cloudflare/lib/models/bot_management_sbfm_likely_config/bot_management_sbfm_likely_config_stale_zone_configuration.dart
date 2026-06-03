@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementSbfmLikelyConfig (inline: StaleZoneConfiguration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_fight_mode_turned_on.dart';/// A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.
 @immutable final class BotManagementSbfmLikelyConfigStaleZoneConfiguration {const BotManagementSbfmLikelyConfigStaleZoneConfiguration({this.fightMode});

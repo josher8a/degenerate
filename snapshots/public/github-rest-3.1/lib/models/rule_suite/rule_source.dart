@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuite (inline: RuleEvaluations > RuleSource)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RuleSource {const RuleSource({this.type, this.id, this.name, });
 

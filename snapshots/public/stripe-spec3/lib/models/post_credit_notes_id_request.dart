@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreditNotesIdRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreditNotesIdRequest {const PostCreditNotesIdRequest({this.expand, this.memo, this.metadata, });
 

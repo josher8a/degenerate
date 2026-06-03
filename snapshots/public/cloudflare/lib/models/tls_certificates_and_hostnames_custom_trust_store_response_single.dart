@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_trust_store.dart';@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle {const TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle({this.result});
 

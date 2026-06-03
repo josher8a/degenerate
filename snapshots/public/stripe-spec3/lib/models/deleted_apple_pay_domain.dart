@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedApplePayDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain/apple_pay_domain_object.dart';/// 
 @immutable final class DeletedApplePayDomain {const DeletedApplePayDomain({required this.deleted, required this.id, required this.object, });

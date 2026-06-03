@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CardDetailsParams
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card_details_params/card_details_params_networks.dart';@immutable final class CardDetailsParams {const CardDetailsParams({required this.expMonth, required this.expYear, required this.number, this.cvc, this.networks, });
 

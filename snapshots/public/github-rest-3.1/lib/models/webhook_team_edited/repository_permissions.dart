@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookTeamEdited (inline: Changes > Repository > Permissions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_team_edited/permissions_from.dart';@immutable final class RepositoryPermissions {const RepositoryPermissions({required this.from});
 

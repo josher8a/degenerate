@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseMcpListToolsFailedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when the attempt to list available MCP tools has failed.
 /// 

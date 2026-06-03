@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksProjectColumn
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksProjectColumn {const WebhooksProjectColumn({required this.cardsUrl, required this.createdAt, required this.id, required this.name, required this.nodeId, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallRulesUpdatePriorityOfAFirewallRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_identifier.dart';@immutable final class FirewallRulesUpdatePriorityOfAFirewallRuleRequest {const FirewallRulesUpdatePriorityOfAFirewallRuleRequest({required this.id});
 

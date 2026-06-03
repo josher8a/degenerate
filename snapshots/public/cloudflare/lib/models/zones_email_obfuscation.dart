@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesEmailObfuscation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';/// Turn on or off **Email Obfuscation**.
 @immutable final class ZonesEmailObfuscationId {const ZonesEmailObfuscationId._(this.value);

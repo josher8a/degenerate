@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelWarpConnectorResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_warp_connector_tunnel.dart';@immutable final class TunnelWarpConnectorResponseCollection {const TunnelWarpConnectorResponseCollection({this.result});
 

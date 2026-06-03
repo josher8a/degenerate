@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKeyQueryString (inline: Include)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which query string parameters to include in the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude {const RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude({this.all, this.list, });

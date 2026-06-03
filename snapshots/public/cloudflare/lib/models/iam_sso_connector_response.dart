@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamSsoConnectorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_sso_connector.dart';@immutable final class IamSsoConnectorResponse {const IamSsoConnectorResponse({this.result});
 

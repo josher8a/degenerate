@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceTogglesSettingStatusDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the reason why the status is `pending` or `restricted`.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(this.value);

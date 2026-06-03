@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardShipping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/issuing_card_shipping_type.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/service.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_address_validation.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
 @immutable final class Carrier {const Carrier._(this.value);

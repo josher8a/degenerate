@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsCustomNameserversCustomNs (inline: DnsRecords)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS record type.
 @immutable final class DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType._(this.value);

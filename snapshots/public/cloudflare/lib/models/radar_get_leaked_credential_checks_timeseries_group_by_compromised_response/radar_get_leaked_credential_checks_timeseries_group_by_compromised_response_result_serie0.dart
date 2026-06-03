@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0({required this.clean, required this.compromised, required this.timestamps, });
 

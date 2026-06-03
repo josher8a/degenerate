@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankAccount (inline: AvailablePayoutMethods)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AvailablePayoutMethods {const AvailablePayoutMethods._(this.value);
 

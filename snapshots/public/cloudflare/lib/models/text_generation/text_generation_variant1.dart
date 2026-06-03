@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TextGeneration (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/text_generation/usage.dart';import 'package:pub_cloudflare/models/text_generation/variant1_tool_calls.dart';@immutable final class TextGenerationVariant1 {const TextGenerationVariant1({required this.response, this.toolCalls, this.usage, });
 

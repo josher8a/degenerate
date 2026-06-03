@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Request > Request)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequestRequest {const RequestRequest({required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, this.headers, });
 

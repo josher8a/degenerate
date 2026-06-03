@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopAsesByHttpProtocolHttpProtocol
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTP protocol (HTTP vs. HTTPS).
 @immutable final class RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol._(this.value);

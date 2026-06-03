@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamInviteComponentsSchemasIdentifier
 
 /// Invite identifier tag.
 extension type const IamInviteComponentsSchemasIdentifier(String value) {

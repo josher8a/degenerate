@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateWebhookRequest (inline: Config)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_config_content_type.dart';import 'package:pub_github_rest_3_1/models/webhook_config_insecure_ssl.dart';import 'package:pub_github_rest_3_1/models/webhook_config_secret.dart';import 'package:pub_github_rest_3_1/models/webhook_config_url.dart';@immutable final class ReposCreateWebhookRequestConfig {const ReposCreateWebhookRequestConfig({this.contentType, this.insecureSsl, this.secret, this.url, });
 

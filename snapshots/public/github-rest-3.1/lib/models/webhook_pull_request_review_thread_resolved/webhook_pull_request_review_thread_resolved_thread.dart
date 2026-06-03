@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestReviewThreadResolved (inline: Thread)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_thread_comments.dart';@immutable final class WebhookPullRequestReviewThreadResolvedThread {const WebhookPullRequestReviewThreadResolvedThread({required this.comments, required this.nodeId, });
 

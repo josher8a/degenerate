@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCard (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
 @immutable final class IssuingCardStatus {const IssuingCardStatus._(this.value);

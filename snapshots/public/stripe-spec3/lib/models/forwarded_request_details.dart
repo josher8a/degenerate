@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ForwardedRequestDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_header.dart';/// The HTTP method used to call the destination endpoint.
 @immutable final class HttpMethod {const HttpMethod._(this.value);

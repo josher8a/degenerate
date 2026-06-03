@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationCreated (inline: Conversation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation resource.
 @immutable final class RealtimeServerEventConversationCreatedConversation {const RealtimeServerEventConversationCreatedConversation({this.id, this.object, });

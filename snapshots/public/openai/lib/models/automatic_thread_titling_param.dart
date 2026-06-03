@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutomaticThreadTitlingParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether ChatKit automatically generates thread titles.
 @immutable final class AutomaticThreadTitlingParam {const AutomaticThreadTitlingParam({this.enabled});

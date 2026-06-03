@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/query_suite.dart';@immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest {const OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest({this.querySuite});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ValidateSqlResponse (inline: Result > Tables > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TablesValue {const TablesValue({required this.id, required this.name, required this.type, required this.version, });
 

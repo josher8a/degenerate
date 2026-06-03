@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsHttpTestPercentilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_percentiles_response.dart';@immutable final class DexEndpointsHttpTestPercentilesResponse {const DexEndpointsHttpTestPercentilesResponse({this.result});
 

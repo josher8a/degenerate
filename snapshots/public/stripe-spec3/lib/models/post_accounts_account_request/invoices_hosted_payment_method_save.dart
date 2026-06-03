@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > Invoices > HostedPaymentMethodSave)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicesHostedPaymentMethodSave {const InvoicesHostedPaymentMethodSave._(this.value);
 

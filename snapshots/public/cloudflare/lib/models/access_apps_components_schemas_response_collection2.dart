@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppsComponentsSchemasResponseCollection2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps.dart';import 'package:pub_cloudflare/models/access_schemas_basic_app_response_props.dart';@immutable final class AccessAppsComponentsSchemasResponseCollection2 {const AccessAppsComponentsSchemasResponseCollection2({this.result});
 

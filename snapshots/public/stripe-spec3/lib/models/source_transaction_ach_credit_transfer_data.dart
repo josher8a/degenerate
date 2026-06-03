@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTransactionAchCreditTransferData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceTransactionAchCreditTransferData {const SourceTransactionAchCreditTransferData({this.customerData, this.fingerprint, this.last4, this.routingNumber, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreSearchResultsPage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_search_result_item.dart';/// The object type, which is always `vector_store.search_results.page`
 @immutable final class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject._(this.value);

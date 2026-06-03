@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: CustomFields > Numeric)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Numeric {const Numeric({this.defaultValue, this.maximumLength, this.minimumLength, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTrafficAnomaliesResponse (inline: Result > TrafficAnomalies > AsnDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_annotations_outages_response/asns_details_locations.dart';@immutable final class AsnDetails {const AsnDetails({required this.asn, required this.name, this.locations, });
 

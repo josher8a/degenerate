@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersTail
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';@immutable final class WorkersTail {const WorkersTail({required this.expiresAt, required this.id, required this.url, });
 

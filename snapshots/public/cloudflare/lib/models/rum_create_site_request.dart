@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumCreateSiteRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_auto_install.dart';import 'package:pub_cloudflare/models/rum_host.dart';import 'package:pub_cloudflare/models/rum_zone_tag.dart';@immutable final class RumCreateSiteRequest {const RumCreateSiteRequest({this.autoInstall, this.host, this.zoneTag, });
 

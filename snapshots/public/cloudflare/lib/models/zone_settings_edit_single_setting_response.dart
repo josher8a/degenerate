@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneSettingsEditSingleSettingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';import 'package:pub_cloudflare/models/zones_setting.dart';@immutable final class ZoneSettingsEditSingleSettingResponse {const ZoneSettingsEditSingleSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 

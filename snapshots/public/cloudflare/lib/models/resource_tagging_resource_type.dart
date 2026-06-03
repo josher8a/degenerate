@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingResourceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of resource.
 @immutable final class ResourceTaggingResourceType {const ResourceTaggingResourceType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceNameCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_business_name.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_individual_name.dart';/// 
 @immutable final class PaymentLinksResourceNameCollection {const PaymentLinksResourceNameCollection({this.business, this.individual, });

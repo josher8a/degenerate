@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: RetrievalOptions > KeywordMatchMode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
 @immutable final class KeywordMatchMode {const KeywordMatchMode._(this.value);

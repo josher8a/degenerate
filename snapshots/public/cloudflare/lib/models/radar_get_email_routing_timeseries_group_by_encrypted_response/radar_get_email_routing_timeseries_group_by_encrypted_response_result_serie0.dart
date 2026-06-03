@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0({required this.encrypted, required this.notEncrypted, });
 

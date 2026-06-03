@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldPatchDiscoveryResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/discovery_state.dart';@immutable final class ShieldPatchDiscoveryResponseResult {const ShieldPatchDiscoveryResponseResult({this.state});
 

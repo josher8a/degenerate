@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/confirmation_number.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/expires_after_days.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_expires_at.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_product_description.dart';@immutable final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 

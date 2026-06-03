@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest (inline: TargetLanguage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target langauge to translate to
 @immutable final class TargetLanguage {const TargetLanguage._(this.value);

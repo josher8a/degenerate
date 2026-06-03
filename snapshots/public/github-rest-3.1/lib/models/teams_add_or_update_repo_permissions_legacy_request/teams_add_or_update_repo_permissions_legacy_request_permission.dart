@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsAddOrUpdateRepoPermissionsLegacyRequest (inline: Permission)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 @immutable final class TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission {const TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission._(this.value);

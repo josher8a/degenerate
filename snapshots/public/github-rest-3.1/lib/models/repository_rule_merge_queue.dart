@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleMergeQueue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_merge_queue/repository_rule_merge_queue_parameters.dart';@immutable final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
 

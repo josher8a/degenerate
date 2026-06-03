@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallOverride
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_rewrite_action.dart';import 'package:pub_cloudflare/models/firewall_waf_action.dart';/// An informative summary of the current URI-based WAF override.
 extension type const FirewallComponentsSchemasDescription(String value) {

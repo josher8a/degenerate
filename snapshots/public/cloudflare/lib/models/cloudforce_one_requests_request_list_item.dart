@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_priority.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_readable_id.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_status.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_summary.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_type.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_uuid.dart';@immutable final class CloudforceOneRequestsRequestListItem {const CloudforceOneRequestsRequestListItem({required this.created, required this.id, required this.priority, required this.request, required this.summary, required this.tlp, required this.updated, this.completed, this.messageTokens, this.readableId, this.status, this.tokens, });
 

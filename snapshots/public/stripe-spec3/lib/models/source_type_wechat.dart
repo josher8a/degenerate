@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeWechat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeWechat {const SourceTypeWechat({this.prepayId, this.qrCodeUrl, this.statementDescriptor, });
 

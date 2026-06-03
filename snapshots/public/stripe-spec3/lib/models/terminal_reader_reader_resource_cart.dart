@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceCart
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_line_item.dart';/// Represents a cart to be displayed on the reader
 @immutable final class TerminalReaderReaderResourceCart {const TerminalReaderReaderResourceCart({required this.currency, required this.lineItems, required this.total, this.tax, });

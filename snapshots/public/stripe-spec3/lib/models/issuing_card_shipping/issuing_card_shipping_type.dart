@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardShipping (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Packaging options.
 @immutable final class IssuingCardShippingType {const IssuingCardShippingType._(this.value);

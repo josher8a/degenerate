@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseErrorEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an error occurs.
 @immutable final class ResponseErrorEvent {const ResponseErrorEvent({required this.type, required this.code, required this.message, required this.param, required this.sequenceNumber, });

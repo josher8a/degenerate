@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Request)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/redirect_response.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/request_initiator.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/request_request.dart';@immutable final class DataRequestsRequest {const DataRequestsRequest({required this.documentUrl, required this.hasUserGesture, required this.initiator, required this.redirectHasExtraInfo, required this.request, required this.requestId, required this.type, required this.wallTime, this.frameId, this.loaderId, this.primaryRequest, this.redirectResponse, });
 

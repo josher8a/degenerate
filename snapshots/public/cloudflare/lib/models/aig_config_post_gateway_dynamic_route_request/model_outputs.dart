@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Model > Outputs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/outputs_fallback.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/outputs_success.dart';@immutable final class ModelOutputs {const ModelOutputs({required this.fallback, required this.success, });
 

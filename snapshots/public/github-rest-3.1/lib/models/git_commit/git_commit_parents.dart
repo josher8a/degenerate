@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCommit (inline: Parents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCommitParents {const GitCommitParents({required this.sha, required this.url, required this.htmlUrl, });
 

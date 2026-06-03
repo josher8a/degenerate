@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSsl (inline: Dv > Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Level of validation to be used for this hostname. Domain validation (dv) must be used.
 @immutable final class DvType {const DvType._(this.value);

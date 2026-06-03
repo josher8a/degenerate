@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBotDetailsResponse (inline: Result > Bot)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Bot {const Bot({required this.category, required this.description, required this.kind, required this.name, required this.$operator, required this.operatorUrl, required this.slug, required this.userAgentPatterns, required this.userAgents, });
 

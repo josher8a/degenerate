@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersVersionItemFull (inline: Resources)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script.dart';import 'package:pub_cloudflare/models/workers_version_item_full/script_runtime.dart';/// Example:
 /// ```json

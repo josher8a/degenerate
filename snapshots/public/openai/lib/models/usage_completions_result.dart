@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageCompletionsResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCompletionsResultObject {const UsageCompletionsResultObject._(this.value);
 

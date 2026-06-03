@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAnnotationsDataSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by data source.
 @immutable final class RadarGetAnnotationsDataSource {const RadarGetAnnotationsDataSource._(this.value);

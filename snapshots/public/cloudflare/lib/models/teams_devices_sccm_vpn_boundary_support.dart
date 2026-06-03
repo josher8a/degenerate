@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesSccmVpnBoundarySupport
 
 /// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
 extension type const TeamsDevicesSccmVpnBoundarySupport(bool value) {

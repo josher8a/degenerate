@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPush (inline: Commits > Committer)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
 @immutable final class CommitsCommitter {const CommitsCommitter({required this.email, required this.name, this.date, this.username, });

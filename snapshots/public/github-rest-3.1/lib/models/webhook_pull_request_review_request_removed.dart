@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestReviewRequestRemoved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_request_removed/webhook_pull_request_review_request_removed_review_request_removed.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_request_removed/webhook_pull_request_review_request_removed_review_request_removed2.dart';typedef WebhookPullRequestReviewRequestRemoved = OneOf2<WebhookPullRequestReviewRequestRemovedReviewRequestRemoved,WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2>;

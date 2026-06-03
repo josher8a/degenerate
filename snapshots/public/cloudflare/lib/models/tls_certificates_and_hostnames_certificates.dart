@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_csr.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_request_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_requested_validity.dart';/// The Origin CA certificate. Will be newline-encoded.
 extension type const TlsCertificatesAndHostnamesCertificatesComponentsSchemasCertificate(String value) {

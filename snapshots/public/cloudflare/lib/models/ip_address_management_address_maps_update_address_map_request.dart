@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementAddressMapsUpdateAddressMapRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_default_sni.dart';import 'package:pub_cloudflare/models/addressing_enabled.dart';import 'package:pub_cloudflare/models/addressing_schemas_description.dart';@immutable final class IpAddressManagementAddressMapsUpdateAddressMapRequest {const IpAddressManagementAddressMapsUpdateAddressMapRequest({this.defaultSni, this.description, this.enabled, });
 

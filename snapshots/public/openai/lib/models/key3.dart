@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key3
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key3/key3_owner.dart';/// The object type, which is always `organization.project.api_key`
 @immutable final class Key3Object {const Key3Object._(this.value);

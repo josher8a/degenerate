@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMemberAdded (inline: Changes > RoleName)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role assigned to the collaborator.
 @immutable final class RoleName {const RoleName({required this.to});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LivestreamSessionLivestreamIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/livestream_session_livestream_id_response/livestream_session_livestream_id_response_data.dart';@immutable final class LivestreamSessionLivestreamIdResponse {const LivestreamSessionLivestreamIdResponse({this.data, this.success, });
 

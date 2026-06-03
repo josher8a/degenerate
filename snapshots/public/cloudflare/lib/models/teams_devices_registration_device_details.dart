@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesRegistrationDeviceDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device details embedded inside of a registration.
 @immutable final class TeamsDevicesRegistrationDeviceDetails {const TeamsDevicesRegistrationDeviceDetails({required this.id, required this.name, this.clientVersion, });

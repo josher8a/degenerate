@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingAnalytics
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_origin_analytics.dart';@immutable final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id = 1, this.origins, this.pool, this.timestamp, });
 

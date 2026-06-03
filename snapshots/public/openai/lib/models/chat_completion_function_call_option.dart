@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionFunctionCallOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifying a particular function via `{"name": "my_function"}` forces the model to call that function.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LocalVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Local represents directly-attached storage with node affinity
 @immutable final class LocalVolumeSource {const LocalVolumeSource({this.fsType, this.path = '', });

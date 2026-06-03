@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDosEventCreateBulkWithRelationshipsResponse (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsResponseErrors {const PostDosEventCreateBulkWithRelationshipsResponseErrors({required this.error, required this.eventIndex, });
 

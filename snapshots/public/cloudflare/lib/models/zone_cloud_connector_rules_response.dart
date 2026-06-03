@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneCloudConnectorRulesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloud_connector_messages2.dart';import 'package:pub_cloudflare/models/cloud_connector_rule.dart';@immutable final class ZoneCloudConnectorRulesResponse {const ZoneCloudConnectorRulesResponse({required this.errors, required this.messages, required this.success, this.result, });
 

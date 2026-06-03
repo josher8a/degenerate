@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud labeled by the issuer.
 @immutable final class FraudType {const FraudType._(this.value);

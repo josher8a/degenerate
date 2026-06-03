@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListGatewayLogsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsResponseResult {const AigConfigListGatewayLogsResponseResult({required this.cached, required this.createdAt, required this.duration, required this.id, required this.model, required this.path, required this.provider, required this.success, required this.tokensIn, required this.tokensOut, this.cost, this.customCost, this.metadata, this.modelType, this.requestContentType, this.requestType, this.responseContentType, this.statusCode, this.step, });
 

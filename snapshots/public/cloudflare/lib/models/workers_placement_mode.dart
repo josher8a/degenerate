@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersPlacementMode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
 @immutable final class WorkersPlacementMode {const WorkersPlacementMode._(this.value);

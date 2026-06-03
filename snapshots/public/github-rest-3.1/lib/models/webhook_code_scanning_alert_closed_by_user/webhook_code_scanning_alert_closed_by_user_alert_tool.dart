@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCodeScanningAlertClosedByUser (inline: Alert > Tool)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCodeScanningAlertClosedByUserAlertTool {const WebhookCodeScanningAlertClosedByUserAlertTool({required this.name, required this.version, this.guid, });
 

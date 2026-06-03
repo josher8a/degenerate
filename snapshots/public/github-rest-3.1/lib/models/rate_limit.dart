@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RateLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RateLimit {const RateLimit({required this.limit, required this.remaining, required this.reset, required this.used, });
 

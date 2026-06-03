@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamCaptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_language.dart';/// The status of a generated caption.
 @immutable final class StreamCaptionStatus {const StreamCaptionStatus._(this.value);

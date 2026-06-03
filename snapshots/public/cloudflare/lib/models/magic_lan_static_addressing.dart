@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicLanStaticAddressing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';import 'package:pub_cloudflare/models/magic_lan_dhcp_relay.dart';import 'package:pub_cloudflare/models/magic_lan_dhcp_server.dart';/// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
 @immutable final class MagicLanStaticAddressing {const MagicLanStaticAddressing({required this.address, this.dhcpRelay, this.dhcpServer, this.secondaryAddress, this.virtualAddress, });

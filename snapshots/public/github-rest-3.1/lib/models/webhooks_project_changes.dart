@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksProjectChanges
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_changes/archived_at.dart';@immutable final class WebhooksProjectChanges {const WebhooksProjectChanges({this.archivedAt});
 

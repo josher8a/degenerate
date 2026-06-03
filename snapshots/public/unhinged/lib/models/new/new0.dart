@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/New (inline: 0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 

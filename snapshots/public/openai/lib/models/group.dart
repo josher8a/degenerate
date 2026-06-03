@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Group
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group`.
 @immutable final class GroupObject {const GroupObject._(this.value);

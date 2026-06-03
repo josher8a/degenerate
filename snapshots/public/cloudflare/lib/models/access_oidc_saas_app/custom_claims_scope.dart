@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOidcSaasApp (inline: CustomClaims > Scope)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The scope of the claim.
 @immutable final class CustomClaimsScope {const CustomClaimsScope._(this.value);

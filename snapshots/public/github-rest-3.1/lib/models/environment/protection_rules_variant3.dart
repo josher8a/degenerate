@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Environment (inline: ProtectionRules > Variant3)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectionRulesVariant3 {const ProtectionRulesVariant3({required this.id, required this.nodeId, required this.type, });
 

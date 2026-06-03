@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesListForAuthenticatedUserSort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort._(this.value);
 

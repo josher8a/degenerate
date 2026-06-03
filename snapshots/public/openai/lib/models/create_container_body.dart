@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateContainerBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_auto_param/skills.dart';import 'package:pub_openai/models/container_resource/memory_limit.dart';import 'package:pub_openai/models/create_container_body/create_container_body_expires_after.dart';@immutable final class CreateContainerBody {const CreateContainerBody({required this.name, this.fileIds, this.expiresAfter, this.skills, this.memoryLimit, this.networkPolicy, });
 

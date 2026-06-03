@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThresholdsResourceUsageThresholdConfig (inline: Recurrence)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines how the alert will behave.
 @immutable final class Recurrence {const Recurrence._(this.value);

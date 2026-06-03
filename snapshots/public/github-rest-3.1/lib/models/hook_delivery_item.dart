@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HookDeliveryItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Delivery made by a webhook, without request and response information.
 @immutable final class HookDeliveryItem {const HookDeliveryItem({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, this.throttledAt, });

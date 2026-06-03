@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodCardPresent (inline: ReadMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How card details were read in this transaction.
 @immutable final class ReadMethod {const ReadMethod._(this.value);

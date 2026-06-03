@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteAccountsAccountIdLogpushJobsJobIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_accounts_account_id_logpush_jobs_job_id_response/delete_accounts_account_id_logpush_jobs_job_id_response_result.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class DeleteAccountsAccountIdLogpushJobsJobIdResponse {const DeleteAccountsAccountIdLogpushJobsJobIdResponse({required this.errors, required this.messages, required this.success, this.result, });
 

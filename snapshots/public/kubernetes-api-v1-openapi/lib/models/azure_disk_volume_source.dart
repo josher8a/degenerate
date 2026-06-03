@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AzureDiskVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
 @immutable final class AzureDiskVolumeSource {const AzureDiskVolumeSource({this.cachingMode = 'ReadWrite', this.diskName = '', this.diskUri = '', this.fsType = 'ext4', this.kind = 'Shared', this.readOnly = false, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingMeter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_aggregation_settings.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_status_transitions.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_value.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 @immutable final class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow._(this.value);

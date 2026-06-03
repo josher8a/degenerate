@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeResponseCreateParams (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_audio_output.dart';/// Configuration for audio input and output.
 @immutable final class RealtimeResponseCreateParamsAudio {const RealtimeResponseCreateParamsAudio({this.output});

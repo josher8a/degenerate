@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningLocationIssueTitle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an 'issue_title' secret scanning location type. This location type shows that a secret was detected in the title of an issue.
 @immutable final class SecretScanningLocationIssueTitle {const SecretScanningLocationIssueTitle({required this.issueTitleUrl});

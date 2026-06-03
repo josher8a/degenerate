@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: BusinessType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsAccountRequestBusinessType {const PostAccountsAccountRequestBusinessType._(this.value);

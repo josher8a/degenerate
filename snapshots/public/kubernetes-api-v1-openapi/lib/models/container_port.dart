@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerPort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerPort represents a network port in a single container.
 @immutable final class ContainerPort {const ContainerPort({this.containerPort = 0, this.hostIp, this.hostPort, this.name, this.protocol = 'TCP', });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageRulesListPageRulesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned Page Rules.
 @immutable final class PageRulesListPageRulesDirection {const PageRulesListPageRulesDirection._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalConfigurationConfigurationResourceWifiConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_enterprise_peap_wifi.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_enterprise_tls_wifi.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_personal_psk_wifi.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_wifi_config/terminal_configuration_configuration_resource_wifi_config_type.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceWifiConfig {const TerminalConfigurationConfigurationResourceWifiConfig({required this.type, this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, });

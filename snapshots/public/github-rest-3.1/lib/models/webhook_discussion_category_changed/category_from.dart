@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDiscussionCategoryChanged (inline: Changes > Category > From)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CategoryFrom {const CategoryFrom({required this.createdAt, required this.description, required this.emoji, required this.id, required this.isAnswerable, required this.name, required this.repositoryId, required this.slug, required this.updatedAt, this.nodeId, });
 

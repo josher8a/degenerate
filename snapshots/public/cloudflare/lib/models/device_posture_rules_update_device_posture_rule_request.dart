@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DevicePostureRulesUpdateDevicePostureRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_description.dart';import 'package:pub_cloudflare/models/teams_devices_expiration.dart';import 'package:pub_cloudflare/models/teams_devices_input.dart';import 'package:pub_cloudflare/models/teams_devices_match_item.dart';import 'package:pub_cloudflare/models/teams_devices_name.dart';import 'package:pub_cloudflare/models/teams_devices_schedule.dart';import 'package:pub_cloudflare/models/teams_devices_type.dart';@immutable final class DevicePostureRulesUpdateDevicePostureRuleRequest {const DevicePostureRulesUpdateDevicePostureRuleRequest({required this.name, required this.type, this.description, this.expiration, this.input, this.match, this.schedule, });
 

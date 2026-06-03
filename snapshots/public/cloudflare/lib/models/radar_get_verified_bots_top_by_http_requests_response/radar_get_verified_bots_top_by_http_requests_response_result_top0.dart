@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetVerifiedBotsTopByHttpRequestsResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0 {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0({required this.botCategory, required this.botName, required this.botOwner, required this.value, });
 

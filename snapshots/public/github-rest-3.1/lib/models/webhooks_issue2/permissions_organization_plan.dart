@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksIssue2 (inline: PerformedViaGithubApp > Permissions > OrganizationPlan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PermissionsOrganizationPlan {const PermissionsOrganizationPlan._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceRequest (inline: PaymentSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/payment_settings_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/default_mandate.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_payment_settings_payment_method_options.dart';/// Configuration settings for the PaymentIntent that is generated when the invoice is finalized.
 @immutable final class PostInvoicesInvoiceRequestPaymentSettings {const PostInvoicesInvoiceRequestPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });

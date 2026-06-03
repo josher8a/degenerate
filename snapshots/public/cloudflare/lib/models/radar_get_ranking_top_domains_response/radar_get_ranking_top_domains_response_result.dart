@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingTopDomainsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_attacks_response/radar_get_attacks_layer3_top_attacks_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_ranking_top_domains_response/radar_get_ranking_top_domains_response_result_top0.dart';@immutable final class RadarGetRankingTopDomainsResponseResult {const RadarGetRankingTopDomainsResponseResult({required this.meta, required this.top0, });
 

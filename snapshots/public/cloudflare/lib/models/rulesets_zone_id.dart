@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsZoneId
 
 /// The unique ID of the zone.
 extension type const RulesetsZoneId(String value) {

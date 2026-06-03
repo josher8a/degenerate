@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDevicesPolicyCertificates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDevicesPolicyCertificates {const TeamsDevicesDevicesPolicyCertificates({required this.enabled});
 

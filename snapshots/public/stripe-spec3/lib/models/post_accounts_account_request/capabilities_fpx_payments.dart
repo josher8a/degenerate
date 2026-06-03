@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Capabilities > FpxPayments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesFpxPayments {const CapabilitiesFpxPayments({this.requested});
 

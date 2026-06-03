@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListPatGrantsSort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPatGrantsSort {const OrgsListPatGrantsSort._(this.value);
 

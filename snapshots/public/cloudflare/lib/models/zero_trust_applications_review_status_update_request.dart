@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustApplicationsReviewStatusUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustApplicationsReviewStatusUpdateRequest {const ZeroTrustApplicationsReviewStatusUpdateRequest({required this.approvedApps, required this.inReviewApps, required this.unapprovedApps, });
 

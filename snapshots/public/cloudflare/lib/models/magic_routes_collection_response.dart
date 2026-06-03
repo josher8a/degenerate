@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicRoutesCollectionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_routes_collection_response/magic_routes_collection_response_result.dart';@immutable final class MagicRoutesCollectionResponse {const MagicRoutesCollectionResponse({this.result});
 

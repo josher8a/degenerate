@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlMsg
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_source.dart';@immutable final class PayPerCrawlMsg {const PayPerCrawlMsg({this.code, this.documentationUrl, this.errorChain, this.message, this.meta, this.source, });
 

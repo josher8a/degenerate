@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleCommit (inline: Committer)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the Git committer
 @immutable final class SimpleCommitCommitter {const SimpleCommitCommitter({required this.name, required this.email, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretKeyParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/secret_key_param/secret_key_param_customer_acceptance.dart';@immutable final class SecretKeyParam {const SecretKeyParam({required this.customerAcceptance});
 

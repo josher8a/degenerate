@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateRequest (inline: SecurityAndAnalysis > AdvancedSecurity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable GitHub Advanced Security for this repository.
 /// For more information, see "[About GitHub Advanced

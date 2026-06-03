@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReplicationControllerStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/replication_controller_condition.dart';/// ReplicationControllerStatus represents the current status of a replication controller.
 @immutable final class ReplicationControllerStatus {const ReplicationControllerStatus({this.availableReplicas, this.conditions, this.fullyLabeledReplicas, this.observedGeneration, this.readyReplicas, this.replicas = 0, });

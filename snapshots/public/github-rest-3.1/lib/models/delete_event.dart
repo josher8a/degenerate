@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEvent {const DeleteEvent({required this.ref, required this.refType, required this.fullRef, required this.pusherType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscStatusInfo (inline: Healthy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Healthy {const Healthy({required this.state});
 

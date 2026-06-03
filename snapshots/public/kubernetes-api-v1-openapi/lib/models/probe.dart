@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Probe
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/exec_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/grpc_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/http_get_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/tcp_socket_action.dart';/// Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
 @immutable final class Probe {const Probe({this.exec, this.failureThreshold, this.grpc, this.httpGet, this.initialDelaySeconds, this.periodSeconds, this.successThreshold, this.tcpSocket, this.terminationGracePeriodSeconds, this.timeoutSeconds, });

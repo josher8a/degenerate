@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsersListAttestationsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_list_attestations_response/repos_list_attestations_response_attestations.dart';@immutable final class UsersListAttestationsResponse {const UsersListAttestationsResponse({this.attestations});
 

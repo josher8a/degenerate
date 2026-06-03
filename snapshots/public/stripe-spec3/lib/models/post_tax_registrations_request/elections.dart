@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest (inline: CountryOptions > Us > StateSalesTax > Elections)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_us_state_sales_tax_election/tax_product_registrations_resource_country_options_us_state_sales_tax_election_type.dart';@immutable final class Elections {const Elections({required this.type, this.jurisdiction, });
 

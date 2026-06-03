@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesPerHostnameSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_setting_object.dart';@immutable final class TlsCertificatesAndHostnamesPerHostnameSettingsResponse {const TlsCertificatesAndHostnamesPerHostnameSettingsResponse({this.result});
 

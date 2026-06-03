@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetupIntentPaymentMethodOptionsSepaDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_sepa_debit.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsSepaDebit {const SetupIntentPaymentMethodOptionsSepaDebit({this.mandateOptions});

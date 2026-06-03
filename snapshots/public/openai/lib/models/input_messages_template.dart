@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputMessagesTemplate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_message.dart';import 'package:pub_openai/models/eval_item.dart';import 'package:pub_openai/models/input_messages_template/input_messages_template_template.dart';import 'package:pub_openai/models/input_messages_template/input_messages_template_type.dart';@immutable final class InputMessagesTemplate {const InputMessagesTemplate({required this.type, required this.template, });
 

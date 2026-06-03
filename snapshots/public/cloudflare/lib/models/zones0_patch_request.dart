@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Zones0PatchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones0_patch_request/zones0_patch_request_plan.dart';import 'package:pub_cloudflare/models/zones_paused.dart';/// A full zone implies that DNS is hosted with Cloudflare. A partial
 /// zone is typically a partner-hosted zone or a CNAME setup. This

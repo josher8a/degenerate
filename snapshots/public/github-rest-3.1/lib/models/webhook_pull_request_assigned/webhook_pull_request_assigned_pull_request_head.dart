@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestAssigned (inline: PullRequest > Head)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_assigned/webhook_pull_request_assigned_pull_request_head_repo.dart';@immutable final class WebhookPullRequestAssignedPullRequestHead {const WebhookPullRequestAssignedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 

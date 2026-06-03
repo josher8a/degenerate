@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HyperdriveHyperdriveConfigPatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_caching.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_config_patch/hyperdrive_hyperdrive_config_patch_origin.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_database.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_mtls.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_name.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_origin_connection_limit.dart';import 'package:pub_cloudflare/models/hyperdrive_internet_origin.dart';import 'package:pub_cloudflare/models/hyperdrive_over_access_origin.dart';@immutable final class HyperdriveHyperdriveConfigPatch {const HyperdriveHyperdriveConfigPatch({this.caching, this.mtls, this.name, this.origin, this.originConnectionLimit, });
 

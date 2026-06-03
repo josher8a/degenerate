@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateAppResponse (inline: Data > App)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataApp {const DataApp({this.createdAt, this.id, this.name, });
 

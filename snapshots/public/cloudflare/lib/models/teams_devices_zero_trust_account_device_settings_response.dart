@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesZeroTrustAccountDeviceSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_zero_trust_account_device_settings.dart';@immutable final class TeamsDevicesZeroTrustAccountDeviceSettingsResponse {const TeamsDevicesZeroTrustAccountDeviceSettingsResponse({this.result});
 

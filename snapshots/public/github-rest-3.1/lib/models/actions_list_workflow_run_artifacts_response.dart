@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsListWorkflowRunArtifactsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact.dart';@immutable final class ActionsListWorkflowRunArtifactsResponse {const ActionsListWorkflowRunArtifactsResponse({required this.totalCount, required this.artifacts, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallDnsFirewallReverseDnsResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_dns_firewall_reverse_dns.dart';@immutable final class DnsFirewallDnsFirewallReverseDnsResponse2 {const DnsFirewallDnsFirewallReverseDnsResponse2({this.result});
 

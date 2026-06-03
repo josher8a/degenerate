@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookIssuesOpened (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesOpenedAction {const WebhookIssuesOpenedAction._(this.value);
 

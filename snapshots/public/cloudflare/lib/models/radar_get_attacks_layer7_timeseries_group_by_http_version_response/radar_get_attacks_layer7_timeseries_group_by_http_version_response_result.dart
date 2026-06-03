@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_timeseries_group_by_http_version_response/radar_get_attacks_layer7_timeseries_group_by_http_version_response_result_serie0.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResult {const RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResult({required this.meta, required this.serie0, });
 

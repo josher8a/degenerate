@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsAddFieldForOrgRequest (inline: Variant2 > DataType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field's data type.
 @immutable final class Variant2DataType {const Variant2DataType._(this.value);

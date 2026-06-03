@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperGcsSourceSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/gcs_source_response_schema/gcs_source_response_schema_vendor.dart';import 'package:pub_cloudflare/models/r2_slurper_gcs_like_creds_schema.dart';@immutable final class R2SlurperGcsSourceSchema {const R2SlurperGcsSourceSchema({required this.bucket, required this.secret, required this.vendor, this.keys, this.pathPrefix, });
 

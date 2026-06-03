@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: GroupUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the group.
 @immutable final class GroupUpdatedChangesRequested {const GroupUpdatedChangesRequested({this.groupName});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesOriginMaxHttpVersionResponseValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_max_http_version.dart';@immutable final class CacheRulesOriginMaxHttpVersionResponseValue {const CacheRulesOriginMaxHttpVersionResponseValue({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceRedirectFlow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class SourceRedirectFlow {const SourceRedirectFlow({required this.returnUrl, required this.status, required this.url, this.failureReason, });

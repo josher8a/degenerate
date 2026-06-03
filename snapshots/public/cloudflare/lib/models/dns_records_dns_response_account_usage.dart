@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsResponseAccountUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_account_usage/dns_records_dns_response_account_usage_result.dart';@immutable final class DnsRecordsDnsResponseAccountUsage {const DnsRecordsDnsResponseAccountUsage({this.result});
 

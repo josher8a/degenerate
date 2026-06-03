@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiListPublicFinetunesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_response/workers_ai_create_finetune_response_result.dart';@immutable final class WorkersAiListPublicFinetunesResponse {const WorkersAiListPublicFinetunesResponse({required this.result, required this.success, });
 

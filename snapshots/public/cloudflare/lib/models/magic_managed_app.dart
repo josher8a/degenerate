@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicManagedApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_app_name.dart';import 'package:pub_cloudflare/models/magic_app_type.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';import 'package:pub_cloudflare/models/magic_managed_app_id.dart';/// Managed app defined by Cloudflare.
 @immutable final class MagicManagedApp {const MagicManagedApp({required this.managedAppId, this.hostnames, this.ipSubnets, this.name, this.sourceSubnets, this.type, });

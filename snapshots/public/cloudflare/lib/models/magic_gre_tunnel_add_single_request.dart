@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicGreTunnelAddSingleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_automatic_return_routing.dart';import 'package:pub_cloudflare/models/magic_cloudflare_gre_endpoint.dart';import 'package:pub_cloudflare/models/magic_customer_gre_endpoint.dart';import 'package:pub_cloudflare/models/magic_gre_tunnel_name.dart';import 'package:pub_cloudflare/models/magic_interface_address.dart';import 'package:pub_cloudflare/models/magic_interface_address6.dart';import 'package:pub_cloudflare/models/magic_mtu.dart';import 'package:pub_cloudflare/models/magic_schemas_description.dart';import 'package:pub_cloudflare/models/magic_ttl.dart';import 'package:pub_cloudflare/models/magic_tunnel_health_check.dart';@immutable final class MagicGreTunnelAddSingleRequest {const MagicGreTunnelAddSingleRequest({required this.cloudflareGreEndpoint, required this.customerGreEndpoint, required this.interfaceAddress, required this.name, this.automaticReturnRouting, this.description, this.healthCheck, this.interfaceAddress6, this.mtu, this.ttl, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tipping (inline: Usd)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Usd {const Usd({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 

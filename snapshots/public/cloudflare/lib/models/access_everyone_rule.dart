@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessEveryoneRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Matches everyone.
 @immutable final class AccessEveryoneRule {const AccessEveryoneRule({required this.everyone});

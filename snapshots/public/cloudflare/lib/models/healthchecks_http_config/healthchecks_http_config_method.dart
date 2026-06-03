@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HealthchecksHttpConfig (inline: Method)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method to use for the health check.
 @immutable final class HealthchecksHttpConfigMethod {const HealthchecksHttpConfigMethod._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesGetOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order zones by.
 @immutable final class ZonesGetOrder {const ZonesGetOrder._(this.value);

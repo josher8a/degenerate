@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PackagesListPackagesForUserVisibility
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesListPackagesForUserVisibility {const PackagesListPackagesForUserVisibility._(this.value);
 

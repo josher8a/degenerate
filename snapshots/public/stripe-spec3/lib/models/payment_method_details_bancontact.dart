@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsBancontact
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/generated_sepa_debit_mandate.dart';import 'package:pub_stripe_spec3/models/payment_method_details_bancontact/payment_method_details_bancontact_preferred_language.dart';/// 
 @immutable final class PaymentMethodDetailsBancontact {const PaymentMethodDetailsBancontact({this.bankCode, this.bankName, this.bic, this.generatedSepaDebit, this.generatedSepaDebitMandate, this.ibanLast4, this.preferredLanguage, this.verifiedName, });

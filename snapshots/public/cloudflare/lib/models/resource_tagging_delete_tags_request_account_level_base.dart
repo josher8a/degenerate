@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingDeleteTagsRequestAccountLevelBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';/// Enum for base account-level resource types (those with no extra required fields).
 @immutable final class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum._(this.value);

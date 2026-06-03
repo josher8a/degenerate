@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Overview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/overview/domains.dart';import 'package:pub_github_rest_3_1/models/overview/ssh_key_fingerprints.dart';/// Api Overview
 @immutable final class Overview {const Overview({required this.verifiablePasswordAuthentication, this.sshKeyFingerprints, this.sshKeys, this.hooks, this.githubEnterpriseImporter, this.web, this.api, this.git, this.packages, this.pages, this.importer, this.actions, this.actionsMacos, this.codespaces, this.dependabot, this.copilot, this.domains, });

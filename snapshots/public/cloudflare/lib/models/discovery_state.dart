@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscoveryState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of operation in API Discovery
 ///   * `review` - Operation is not saved into API Shield Endpoint Management

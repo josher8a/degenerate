@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageBuildStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Page Build Status
 @immutable final class PageBuildStatus {const PageBuildStatus({required this.url, required this.status, });

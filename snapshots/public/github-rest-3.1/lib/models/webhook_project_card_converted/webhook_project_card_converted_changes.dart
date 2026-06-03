@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookProjectCardConverted (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_converted/webhook_project_card_converted_changes_note.dart';@immutable final class WebhookProjectCardConvertedChanges {const WebhookProjectCardConvertedChanges({required this.note});
 

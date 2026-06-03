@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SessionDetailSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/meeting_provider_enum.dart';import 'package:pub_totem_web/models/session_space_schema.dart';@immutable final class SessionDetailSchema {const SessionDetailSchema({required this.slug, required this.title, required this.space, required this.spaceTitle, required this.description, required this.price, required this.seatsLeft, required this.duration, required this.recurring, required this.subscribers, required this.start, required this.attending, required this.open, required this.started, required this.cancelled, required this.joinable, required this.ended, required this.rsvpUrl, required this.joinUrl, required this.subscribeUrl, required this.calLink, required this.subscribed, required this.userTimezone, required this.meetingProvider, });
 

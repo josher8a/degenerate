@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateMemberPolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_access.dart';import 'package:pub_cloudflare/models/iam_member_permission_group.dart';import 'package:pub_cloudflare/models/iam_member_resource_group.dart';import 'package:pub_cloudflare/models/iam_policy_identifier.dart';@immutable final class IamCreateMemberPolicy {const IamCreateMemberPolicy({required this.access, required this.id, required this.permissionGroups, required this.resourceGroups, });
 

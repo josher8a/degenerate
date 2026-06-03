@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Conditional > Outputs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/false.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/true.dart';@immutable final class ConditionalOutputs {const ConditionalOutputs({required this.$false, required this.$true, });
 

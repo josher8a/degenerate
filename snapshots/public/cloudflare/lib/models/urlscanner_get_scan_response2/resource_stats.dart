@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats > ResourceStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceStats {const ResourceStats({required this.compression, required this.count, required this.countries, required this.encodedSize, required this.ips, required this.percentage, required this.size, required this.type, });
 

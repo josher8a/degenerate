@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Content > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages10MessagesContentVariant2 {const Messages10MessagesContentVariant2({this.text, this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Snapshot
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/manifest.dart';import 'package:pub_github_rest_3_1/models/snapshot/detector.dart';import 'package:pub_github_rest_3_1/models/snapshot/snapshot_job.dart';/// Create a new snapshot of a repository's dependencies.
 @immutable final class Snapshot {const Snapshot({required this.version, required this.job, required this.sha, required this.ref, required this.detector, required this.scanned, this.metadata, this.manifests, });

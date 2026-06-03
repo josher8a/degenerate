@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailRuleMatcher
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field for type matcher.
 @immutable final class Field {const Field._(this.value);

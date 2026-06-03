@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamTokenWithValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_condition.dart';import 'package:pub_cloudflare/models/iam_expires_on.dart';import 'package:pub_cloudflare/models/iam_issued_on.dart';import 'package:pub_cloudflare/models/iam_last_used_on.dart';import 'package:pub_cloudflare/models/iam_modified_on.dart';import 'package:pub_cloudflare/models/iam_name.dart';import 'package:pub_cloudflare/models/iam_not_before.dart';import 'package:pub_cloudflare/models/iam_policy_with_permission_groups_and_resources.dart';import 'package:pub_cloudflare/models/iam_token_identifier.dart';import 'package:pub_cloudflare/models/iam_token_status.dart';import 'package:pub_cloudflare/models/iam_value.dart';@immutable final class IamTokenWithValue {const IamTokenWithValue({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, this.value, });
 

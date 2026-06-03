@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MuteParticipantsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/kick_partcipants_response/kick_partcipants_response_data.dart';@immutable final class MuteParticipantsResponse {const MuteParticipantsResponse({this.data, this.success, });
 

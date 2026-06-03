@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OptionalFieldsShipping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';@immutable final class OptionalFieldsShipping {const OptionalFieldsShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 

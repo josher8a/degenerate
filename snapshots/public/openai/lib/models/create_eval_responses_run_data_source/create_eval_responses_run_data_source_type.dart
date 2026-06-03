@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalResponsesRunDataSource (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of run data source. Always `responses`.
 @immutable final class CreateEvalResponsesRunDataSourceType {const CreateEvalResponsesRunDataSourceType._(this.value);

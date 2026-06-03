@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDlpSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting.dart';/// DLP account-level settings response.
 @immutable final class DlpDlpSettings {const DlpDlpSettings({required this.aiContextAnalysis, required this.ocr, required this.payloadLogging, });

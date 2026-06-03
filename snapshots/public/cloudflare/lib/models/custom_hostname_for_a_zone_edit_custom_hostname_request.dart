@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomHostnameForAZoneEditCustomHostnameRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_origin_server.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_origin_sni.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslpost.dart';@immutable final class CustomHostnameForAZoneEditCustomHostnameRequest {const CustomHostnameForAZoneEditCustomHostnameRequest({this.customMetadata, this.customOriginServer, this.customOriginSni, this.ssl, });
 

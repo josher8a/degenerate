@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnCustomerEventsGetLatestResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_recorded_event.dart';@immutable final class MconnCustomerEventsGetLatestResult {const MconnCustomerEventsGetLatestResult({required this.count, required this.items, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsOriginErrorPagePassthru
 
 /// Whether to generate Cloudflare error pages for issues from the origin server.
 extension type const RulesetsSetCacheSettingsOriginErrorPagePassthru(bool value) {

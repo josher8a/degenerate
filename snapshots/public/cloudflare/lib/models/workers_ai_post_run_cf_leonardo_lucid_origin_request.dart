@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfLeonardoLucidOriginRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance = 4.5, this.height = 1120, this.numSteps, this.seed, this.steps, this.width = 1120, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1ListDatabasesResponse (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class D1ListDatabasesResponseResultInfo {const D1ListDatabasesResponseResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 

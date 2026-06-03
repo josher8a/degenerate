@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogNamespaceListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_namespace_details.dart';/// Contains the list of namespaces with optional pagination.
 @immutable final class R2DataCatalogNamespaceListResponse {const R2DataCatalogNamespaceListResponse({required this.namespaces, this.details, this.namespaceUuids, this.nextPageToken, });

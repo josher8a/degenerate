@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsSummaryByDnssecResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecResponseResultSummary0 {const RadarGetDnsSummaryByDnssecResponseResultSummary0({required this.insecure, required this.invalid, required this.other, required this.secure, });
 

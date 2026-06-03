@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateThreadRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_tool_resources.dart';import 'package:pub_openai/models/create_message_request.dart';/// Options to create a new thread. If no thread is provided when running a
 /// request, an empty thread will be created.

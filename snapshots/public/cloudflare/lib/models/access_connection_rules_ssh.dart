@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessConnectionRulesSsh
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables using Identity Provider email alias as SSH username.
 extension type const AccessAllowEmailAlias(bool value) {

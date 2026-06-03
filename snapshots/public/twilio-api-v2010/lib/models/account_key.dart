@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountKey {const AccountKey({this.sid, this.friendlyName, this.dateCreated, this.dateUpdated, });
 

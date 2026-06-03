@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitSessionParticipant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitSessionParticipant {const RealtimekitSessionParticipant({required this.createdAt, required this.id, required this.updatedAt, this.email, this.name, this.picture, });
 

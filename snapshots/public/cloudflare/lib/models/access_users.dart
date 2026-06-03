@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUsers
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_id.dart';import 'package:pub_cloudflare/models/access_meta.dart';import 'package:pub_cloudflare/models/access_users/emails.dart';@immutable final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqR2Producer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqR2ProducerType {const MqR2ProducerType._(this.value);
 

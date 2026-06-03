@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalRefund
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Refund object returned by the Terminal refunds API.
 @immutable final class TerminalRefund {const TerminalRefund();

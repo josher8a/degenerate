@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_peer_stats.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/participant_quality_stats.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/peer_report.dart';@immutable final class Participant {const Participant({this.createdAt, this.customParticipantId, this.displayName, this.duration, this.id, this.joinedAt, this.leftAt, this.peerReport, this.peerStats, this.qualityStats, this.role, this.updatedAt, this.userId, });
 

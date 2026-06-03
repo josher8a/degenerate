@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom processors represent payment processors not modeled directly in
 /// the Stripe API. This resource consists of details about the custom processor

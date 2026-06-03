@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Person (inline: PoliticalExposure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
 @immutable final class PoliticalExposure {const PoliticalExposure._(this.value);

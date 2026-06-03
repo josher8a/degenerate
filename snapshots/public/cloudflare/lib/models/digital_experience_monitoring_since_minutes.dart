@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringSinceMinutes
 
 /// Number of minutes before current time
 extension type const DigitalExperienceMonitoringSinceMinutes(double value) {

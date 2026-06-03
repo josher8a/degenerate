@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: CertificatesActivated > Certificates)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Certificates {const Certificates({this.id, this.name, });
 

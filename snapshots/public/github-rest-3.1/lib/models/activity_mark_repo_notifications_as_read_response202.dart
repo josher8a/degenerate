@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActivityMarkRepoNotificationsAsReadResponse202
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityMarkRepoNotificationsAsReadResponse202 {const ActivityMarkRepoNotificationsAsReadResponse202({this.message, this.url, });
 

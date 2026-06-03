@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicCidr
 
 /// A valid CIDR notation representing an IP range.
 extension type const MagicCidr(String value) {

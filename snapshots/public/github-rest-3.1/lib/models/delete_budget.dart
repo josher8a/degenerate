@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteBudget
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteBudget {const DeleteBudget({required this.message, required this.id, });
 

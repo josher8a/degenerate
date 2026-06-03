@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUpdateMemberWithRoles
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_member_with_policies/iam_member_with_policies_user.dart';import 'package:pub_cloudflare/models/iam_membership_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_role.dart';@immutable final class IamUpdateMemberWithRoles {const IamUpdateMemberWithRoles({this.id, this.roles, this.status, this.user, });
 

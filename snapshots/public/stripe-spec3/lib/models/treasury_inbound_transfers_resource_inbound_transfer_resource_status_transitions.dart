@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions {const TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions({this.canceledAt, this.failedAt, this.succeededAt, });

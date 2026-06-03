@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VoiceIdsOrCustomVoice (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom voice reference.
 @immutable final class VoiceIdsOrCustomVoiceVariant2 {const VoiceIdsOrCustomVoiceVariant2({required this.id});

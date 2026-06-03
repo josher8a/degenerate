@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallOutputExitOutcomeParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that the shell commands finished and returned an exit code.
 @immutable final class FunctionShellCallOutputExitOutcomeParam {const FunctionShellCallOutputExitOutcomeParam({required this.exitCode, this.type = 'exit', });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSessionParticipantsResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_participants_list.dart';@immutable final class GetSessionParticipantsResponseData {const GetSessionParticipantsResponseData({this.participants});
 

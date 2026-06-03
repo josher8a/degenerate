@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRegistryPackagePublished (inline: RegistryPackage > PackageVersion > Release)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_published/release_author.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease({this.author, this.createdAt, this.draft, this.htmlUrl, this.id, this.name, this.prerelease, this.publishedAt, this.tagName, this.targetCommitish, this.url, });
 

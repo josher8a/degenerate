@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom page type.
 @immutable final class AccessSchemasType {const AccessSchemasType._(this.value);

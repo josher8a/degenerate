@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: SubscriptionData > InvoiceSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';@immutable final class SubscriptionDataInvoiceSettings {const SubscriptionDataInvoiceSettings({this.issuer});
 

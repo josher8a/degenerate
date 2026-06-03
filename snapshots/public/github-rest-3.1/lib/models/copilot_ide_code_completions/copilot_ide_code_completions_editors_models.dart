@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotIdeCodeCompletions (inline: Editors > Models)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/models_languages.dart';@immutable final class CopilotIdeCodeCompletionsEditorsModels {const CopilotIdeCodeCompletionsEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.languages, });
 

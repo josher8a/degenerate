@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCodeInterpreterCallCodeDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a partial code snippet is streamed by the code interpreter.
 @immutable final class ResponseCodeInterpreterCallCodeDeltaEvent {const ResponseCodeInterpreterCallCodeDeltaEvent({required this.type, required this.outputIndex, required this.itemId, required this.delta, required this.sequenceNumber, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelUrlParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// URL(s) to filter submissions results by.
 extension type IntelUrl(Uri value) {

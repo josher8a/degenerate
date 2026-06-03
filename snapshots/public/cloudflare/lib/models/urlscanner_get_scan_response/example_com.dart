@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Domains > ExampleCom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/example_com_categories.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/example_com_dns.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/rank.dart';@immutable final class ExampleCom {const ExampleCom({required this.categories, required this.dns, required this.name, required this.rank, required this.type, });
 

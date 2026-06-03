@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsAddFieldForOrgRequest (inline: SingleSelect)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field_single_select_option.dart';/// The field's data type.
 @immutable final class SingleSelectDataType {const SingleSelectDataType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VolumeDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// volumeDevice describes a mapping of a raw block device within a container.
 @immutable final class VolumeDevice {const VolumeDevice({this.devicePath = '', this.name = '', });

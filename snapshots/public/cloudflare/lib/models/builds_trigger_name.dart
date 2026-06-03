@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsTriggerName
 
 extension type const BuildsTriggerName(String value) {
 factory BuildsTriggerName.fromJson(String json) => BuildsTriggerName(json);

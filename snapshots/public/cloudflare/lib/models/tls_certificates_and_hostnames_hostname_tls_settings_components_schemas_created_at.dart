@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasCreatedAt
 
 /// This is the time the tls setting was originally created for this hostname.
 extension type TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasCreatedAt(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ErrorResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_rest_error.dart';@immutable final class ErrorResponse2 {const ErrorResponse2({this.errors, this.result, this.success, });
 

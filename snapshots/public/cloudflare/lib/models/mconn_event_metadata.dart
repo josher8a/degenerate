@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEventMetadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnEventMetadata {const MconnEventMetadata({required this.a, required this.k, required this.n, required this.t, });
 

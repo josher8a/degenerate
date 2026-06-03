@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteSubscriptionItemsItemRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/payment_behavior.dart';@immutable final class DeleteSubscriptionItemsItemRequest {const DeleteSubscriptionItemsItemRequest({this.clearUsage, this.paymentBehavior, this.prorationBehavior, this.prorationDate, });
 

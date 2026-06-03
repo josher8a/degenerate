@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamMemberInvitationStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the member invitation. If not provided during creation, defaults to 'pending'.
 /// Changing from 'accepted' back to 'pending' will trigger a replacement of the member resource in Terraform.

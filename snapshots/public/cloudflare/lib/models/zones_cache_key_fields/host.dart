@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheKeyFields (inline: Value > Host)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which host header to include in the Cache Key.
 /// 

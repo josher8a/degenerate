@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReasoningTextContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reasoning text from the model.
 @immutable final class ReasoningTextContent {const ReasoningTextContent({required this.text, this.type = 'reasoning_text', });

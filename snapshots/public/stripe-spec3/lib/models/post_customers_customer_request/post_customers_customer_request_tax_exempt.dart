@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerRequest (inline: TaxExempt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 @immutable final class PostCustomersCustomerRequestTaxExempt {const PostCustomersCustomerRequestTaxExempt._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsRetention (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of retention strategy that will be used.
 @immutable final class PortalFlowsRetentionType {const PortalFlowsRetentionType._(this.value);

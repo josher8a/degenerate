@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Dashboard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/timeseries2.dart';import 'package:pub_cloudflare/models/totals.dart';/// Totals and timeseries data.
 @immutable final class Dashboard {const Dashboard({this.timeseries, this.totals, });

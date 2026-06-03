@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageEmbeddingsBucketWidth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageEmbeddingsBucketWidth {const UsageEmbeddingsBucketWidth._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryCountResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_count_response/observatory_count_response_result.dart';@immutable final class ObservatoryCountResponse {const ObservatoryCountResponse({this.result});
 

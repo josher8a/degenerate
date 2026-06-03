@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningVariantAnalysisRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Repository Identifier
 @immutable final class CodeScanningVariantAnalysisRepository {const CodeScanningVariantAnalysisRepository({required this.id, required this.name, required this.fullName, required this.private, required this.stargazersCount, required this.updatedAt, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileSitekey
 
 /// Widget item identifier tag.
 extension type const TurnstileSitekey(String value) {

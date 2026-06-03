@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2Errors
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2Errors2 {const R2Errors2({required this.code, required this.message, });
 

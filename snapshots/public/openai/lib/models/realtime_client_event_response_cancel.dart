@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeClientEventResponseCancel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event to cancel an in-progress response. The server will respond
 /// with a `response.done` event with a status of `response.status=cancelled`. If

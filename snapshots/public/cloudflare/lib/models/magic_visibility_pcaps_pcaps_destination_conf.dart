@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsDestinationConf
 
 /// The full URI for the bucket. This field only applies to `full` packet captures.
 extension type const MagicVisibilityPcapsPcapsDestinationConf(String value) {

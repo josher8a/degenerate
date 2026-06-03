@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityMailsearchMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_properties.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_validation.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/findings.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/post_delivery_operations.dart';import 'package:pub_cloudflare/models/email_security_message_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_postfix_id.dart';/// Example:
 /// ```json

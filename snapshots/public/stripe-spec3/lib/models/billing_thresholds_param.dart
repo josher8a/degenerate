@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingThresholdsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingThresholdsParam {const BillingThresholdsParam({this.amountGte, this.resetBillingCycleAnchor, });
 

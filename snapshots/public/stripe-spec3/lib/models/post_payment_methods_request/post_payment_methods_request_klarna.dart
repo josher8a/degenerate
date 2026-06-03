@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsRequest (inline: Klarna)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_dob.dart';@immutable final class PostPaymentMethodsRequestKlarna {const PostPaymentMethodsRequestKlarna({this.dob});
 

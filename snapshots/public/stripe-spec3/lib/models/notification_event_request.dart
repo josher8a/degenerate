@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NotificationEventRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class NotificationEventRequest {const NotificationEventRequest({this.id, this.idempotencyKey, });

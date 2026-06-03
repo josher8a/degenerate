@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: Verification)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/additional_document.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_verification_document.dart';@immutable final class PostAccountsAccountPeoplePersonRequestVerification {const PostAccountsAccountPeoplePersonRequestVerification({this.additionalDocument, this.document, });
 

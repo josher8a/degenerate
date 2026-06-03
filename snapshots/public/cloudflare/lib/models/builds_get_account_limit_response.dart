@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsGetAccountLimitResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsGetAccountLimitResponse {const BuildsGetAccountLimitResponse({this.buildMinutesRefreshOn, this.hasReachedBuildMinutesLimit, });
 

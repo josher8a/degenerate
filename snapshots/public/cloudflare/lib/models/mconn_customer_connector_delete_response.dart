@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnCustomerConnectorDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorDeleteResponse {const MconnCustomerConnectorDeleteResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FieldSingleSelectOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The color associated with the option.
 @immutable final class FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor._(this.value);

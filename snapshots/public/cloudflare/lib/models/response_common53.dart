@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon53
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages32.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';@immutable final class ResponseCommon53 {const ResponseCommon53({required this.errors, required this.messages, required this.result, required this.success, });
 

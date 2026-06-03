@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneWhoisWhois
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const CloudforceOneWhoisDomainName(String value) {
 factory CloudforceOneWhoisDomainName.fromJson(String json) => CloudforceOneWhoisDomainName(json);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDeploymentStatusCreated (inline: CheckRun)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite/simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_conclusion.dart';@immutable final class WebhookDeploymentStatusCreatedCheckRun {const WebhookDeploymentStatusCreatedCheckRun({required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.startedAt, required this.status, required this.url, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLiveInput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_input_rtmps.dart';import 'package:pub_cloudflare/models/stream_input_srt.dart';import 'package:pub_cloudflare/models/stream_input_webrtc.dart';import 'package:pub_cloudflare/models/stream_live_input_created.dart';import 'package:pub_cloudflare/models/stream_live_input_enabled.dart';import 'package:pub_cloudflare/models/stream_live_input_identifier.dart';import 'package:pub_cloudflare/models/stream_live_input_modified.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_deletion.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_settings.dart';import 'package:pub_cloudflare/models/stream_playback_rtmps.dart';import 'package:pub_cloudflare/models/stream_playback_srt.dart';import 'package:pub_cloudflare/models/stream_playback_webrtc.dart';/// The connection status of a live input.
 @immutable final class StreamLiveInputStatus {const StreamLiveInputStatus._(this.value);

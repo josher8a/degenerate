@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreStoreObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_name.dart';@immutable final class SecretsStoreStoreObject {const SecretsStoreStoreObject({required this.created, required this.id, required this.modified, required this.name, });
 

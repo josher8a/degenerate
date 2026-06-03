@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicComponentsSchemasTunnelSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_single_response/magic_components_schemas_tunnel_single_response_result.dart';@immutable final class MagicComponentsSchemasTunnelSingleResponse {const MagicComponentsSchemasTunnelSingleResponse({this.result});
 

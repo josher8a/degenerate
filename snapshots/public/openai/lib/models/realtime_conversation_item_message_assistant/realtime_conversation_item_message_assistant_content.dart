@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemMessageAssistant (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
 @immutable final class RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType._(this.value);

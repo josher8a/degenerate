@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ApplyPatchCreateFileOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create a new file with the provided diff.
 @immutable final class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType._(this.value);

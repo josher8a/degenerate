@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranchRequiredStatusCheck (inline: Checks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchRequiredStatusCheckChecks {const ProtectedBranchRequiredStatusCheckChecks({required this.context, required this.appId, });
 

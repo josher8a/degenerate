@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfQwenQwen3Embedding06bRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request/documents.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request/queries.dart';@immutable final class WorkersAiPostRunCfQwenQwen3Embedding06bRequest {const WorkersAiPostRunCfQwenQwen3Embedding06bRequest({this.documents, this.instruction = 'Given a web search query, retrieve relevant passages that answer the query', this.queries, this.text, });
 

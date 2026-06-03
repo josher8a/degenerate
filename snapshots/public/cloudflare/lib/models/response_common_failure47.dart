@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure47
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_messages2.dart';@immutable final class ResponseCommonFailure47 {const ResponseCommonFailure47({required this.errors, required this.messages, required this.result, required this.success, });
 

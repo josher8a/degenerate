@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by user agent category.
 @immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedUserAgentCategory._(this.value);

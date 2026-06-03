@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerBankAccountsIdVerifyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerBankAccountsIdVerifyRequest {const PostCustomersCustomerBankAccountsIdVerifyRequest({this.amounts, this.expand, });
 

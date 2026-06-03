@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsRequestSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_filter.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_offset_time.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_packet_limit.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_system.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_type.dart';@immutable final class MagicVisibilityPcapsPcapsRequestSimple {const MagicVisibilityPcapsPcapsRequestSimple({required this.packetLimit, required this.system, required this.timeLimit, required this.type, this.filterV1, this.offsetTime, });
 

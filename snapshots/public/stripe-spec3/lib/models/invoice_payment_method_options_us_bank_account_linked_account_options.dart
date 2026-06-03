@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_us_bank_account_linked_account_options_filters.dart';/// 
 @immutable final class InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions {const InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions({this.filters, this.permissions, this.prefetch, });

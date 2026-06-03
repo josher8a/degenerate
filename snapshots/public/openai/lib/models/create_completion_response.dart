@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateCompletionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_completion_response/create_completion_response_choices.dart';/// The object type, which is always "text_completion"
 @immutable final class CreateCompletionResponseObject {const CreateCompletionResponseObject._(this.value);

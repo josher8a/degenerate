@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventInputAudioBufferCommitted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an input audio buffer is committed, either by the client or
 /// automatically in server VAD mode. The `item_id` property is the ID of the user

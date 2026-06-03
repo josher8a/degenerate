@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardShipping (inline: Service)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Shipment service, such as `standard` or `express`.
 @immutable final class Service {const Service._(this.value);

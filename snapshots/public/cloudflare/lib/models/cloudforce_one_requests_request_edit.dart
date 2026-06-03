@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudforceOneRequestsRequestEdit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_content.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_summary.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_type.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_tlp.dart';@immutable final class CloudforceOneRequestsRequestEdit {const CloudforceOneRequestsRequestEdit({this.content, this.priority, this.requestType, this.summary, this.tlp, });
 

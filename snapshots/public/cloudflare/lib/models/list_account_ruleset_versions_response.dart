@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAccountRulesetVersionsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_message.dart';import 'package:pub_cloudflare/models/rulesets_result_info.dart';@immutable final class ListAccountRulesetVersionsResponse {const ListAccountRulesetVersionsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

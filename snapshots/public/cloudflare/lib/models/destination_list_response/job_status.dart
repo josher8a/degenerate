@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationListResponse (inline: Result > Configuration > JobStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class JobStatus {const JobStatus({required this.errorMessage, required this.lastComplete, required this.lastError, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicHealthCheckBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_rate.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_target.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_type.dart';import 'package:pub_cloudflare/models/magic_health_check_target.dart';@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, });
 

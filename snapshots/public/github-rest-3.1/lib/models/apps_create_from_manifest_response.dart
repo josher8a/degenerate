@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppsCreateFromManifestResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_owner.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_permissions.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class AppsCreateFromManifestResponse {const AppsCreateFromManifestResponse({required this.id, required this.nodeId, required this.clientId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, required this.clientSecret, required this.webhookSecret, required this.pem, this.slug, this.installationsCount, this.additionalProperties = const {}, });
 

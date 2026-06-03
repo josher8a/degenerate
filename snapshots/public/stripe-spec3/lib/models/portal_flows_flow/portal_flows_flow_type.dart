@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsFlow (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of flow that the customer will go through.
 @immutable final class PortalFlowsFlowType {const PortalFlowsFlowType._(this.value);

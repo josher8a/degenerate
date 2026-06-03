@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessApprovalRequired
 
 /// Requires the user to request access from an administrator at the start of each session.
 extension type const AccessApprovalRequired(bool value) {

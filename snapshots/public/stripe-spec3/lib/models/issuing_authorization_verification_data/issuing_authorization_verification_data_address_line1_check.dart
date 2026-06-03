@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationVerificationData (inline: AddressLine1Check)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
 @immutable final class IssuingAuthorizationVerificationDataAddressLine1Check {const IssuingAuthorizationVerificationDataAddressLine1Check._(this.value);

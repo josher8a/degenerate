@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesOriginH2MaxStreams (inline: Id)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 @immutable final class CacheRulesOriginH2MaxStreamsId {const CacheRulesOriginH2MaxStreamsId._(this.value);

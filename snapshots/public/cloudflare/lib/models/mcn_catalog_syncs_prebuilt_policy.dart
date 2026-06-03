@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnCatalogSyncsPrebuiltPolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_destination_type.dart';@immutable final class McnCatalogSyncsPrebuiltPolicy {const McnCatalogSyncsPrebuiltPolicy({required this.applicableDestinations, required this.policyDescription, required this.policyName, required this.policyString, });
 

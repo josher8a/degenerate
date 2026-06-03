@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Media)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_media_audio.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_media_screenshare.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions_media_video.dart';/// Media permissions
 @immutable final class RealtimekitPresetPermissionsMedia {const RealtimekitPresetPermissionsMedia({required this.audio, required this.screenshare, required this.video, });

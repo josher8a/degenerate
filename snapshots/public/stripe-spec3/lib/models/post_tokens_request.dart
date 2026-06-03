@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTokensRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_card_specs.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/cvc_update.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/pii.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_card.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_person.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
 

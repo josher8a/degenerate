@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetLivestreamAnalyticsCompleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_livestream_analytics_complete_response/get_livestream_analytics_complete_response_data.dart';@immutable final class GetLivestreamAnalyticsCompleteResponse {const GetLivestreamAnalyticsCompleteResponse({this.data, this.success, });
 

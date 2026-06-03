@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAccountAuditLogsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets sorting order.
 @immutable final class GetAccountAuditLogsDirection {const GetAccountAuditLogsDirection._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnUpdateProviderRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnUpdateProviderRequest {const McnUpdateProviderRequest({this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileName
 
 /// Human readable widget name. Not unique. Cloudflare suggests that you
 /// set this to a meaningful string to make it easier to identify your

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SeLinuxOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SELinuxOptions are the labels to be applied to the container
 @immutable final class SeLinuxOptions {const SeLinuxOptions({this.level, this.role, this.type, this.user, });

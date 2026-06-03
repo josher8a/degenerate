@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnskeyRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a DNSKEY record.
 @immutable final class DnsRecordsDnskeyRecordData {const DnsRecordsDnskeyRecordData({this.algorithm, this.flags, this.protocol, this.publicKey, });

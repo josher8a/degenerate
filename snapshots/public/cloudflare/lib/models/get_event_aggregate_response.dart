@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventAggregateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_aggregate_response/aggregations.dart';import 'package:pub_cloudflare/models/get_event_aggregate_response/get_event_aggregate_response_date_range.dart';@immutable final class GetEventAggregateResponse {const GetEventAggregateResponse({required this.aggregateBy, required this.aggregations, required this.total, this.dateRange, });
 

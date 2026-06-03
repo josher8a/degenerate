@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceMandateOptionsCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_card/invoice_mandate_options_card_amount_type.dart';/// 
 @immutable final class InvoiceMandateOptionsCard {const InvoiceMandateOptionsCard({this.amount, this.amountType, this.description, });

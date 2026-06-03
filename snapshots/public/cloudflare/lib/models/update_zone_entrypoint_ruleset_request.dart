@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateZoneEntrypointRulesetRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_request_rule.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';@immutable final class UpdateZoneEntrypointRulesetRequest {const UpdateZoneEntrypointRulesetRequest({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, this.rules, });
 

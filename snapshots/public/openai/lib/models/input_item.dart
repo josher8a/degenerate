@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_content.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/item.dart';import 'package:pub_openai/models/item_reference_param.dart';import 'package:pub_openai/models/message_phase.dart';sealed class InputItem {const InputItem();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateUserDefinedMessageRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateUserDefinedMessageRequest {const CreateUserDefinedMessageRequest({required this.content, this.idempotencyKey, });
 

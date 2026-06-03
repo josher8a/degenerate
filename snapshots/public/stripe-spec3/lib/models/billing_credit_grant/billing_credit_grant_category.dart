@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingCreditGrant (inline: Category)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The category of this credit grant. This is for tracking purposes and isn't displayed to the customer.
 @immutable final class BillingCreditGrantCategory {const BillingCreditGrantCategory._(this.value);

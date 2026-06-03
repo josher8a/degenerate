@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Request > RedirectResponse > SecurityHeaders)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityHeaders {const SecurityHeaders({required this.name, required this.value, });
 

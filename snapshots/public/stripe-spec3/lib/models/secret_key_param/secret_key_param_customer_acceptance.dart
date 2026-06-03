@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretKeyParam (inline: CustomerAcceptance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance/customer_acceptance_type.dart';import 'package:pub_stripe_spec3/models/secret_key_param/customer_acceptance_offline.dart';import 'package:pub_stripe_spec3/models/secret_key_param/secret_key_param_customer_acceptance_online.dart';@immutable final class SecretKeyParamCustomerAcceptance {const SecretKeyParamCustomerAcceptance({required this.type, this.acceptedAt, this.offline, this.online, });
 

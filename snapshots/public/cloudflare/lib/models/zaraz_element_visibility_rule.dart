@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazElementVisibilityRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule/zaraz_element_visibility_rule_settings.dart';@immutable final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
 

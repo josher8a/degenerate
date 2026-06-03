@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamResponseCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_response_create/iam_response_create_result.dart';@immutable final class IamResponseCreate {const IamResponseCreate({this.result});
 

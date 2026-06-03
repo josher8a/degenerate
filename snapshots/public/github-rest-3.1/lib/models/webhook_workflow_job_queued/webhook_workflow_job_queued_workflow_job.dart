@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookWorkflowJobQueued (inline: WorkflowJob)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/webhook_workflow_job_queued_workflow_job_steps.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/workflow_job_status.dart';@immutable final class WebhookWorkflowJobQueuedWorkflowJob {const WebhookWorkflowJobQueuedWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
 

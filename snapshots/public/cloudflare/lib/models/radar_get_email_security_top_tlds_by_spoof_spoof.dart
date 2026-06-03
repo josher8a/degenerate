@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTopTldsBySpoofSpoof
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Spoof classification.
 @immutable final class RadarGetEmailSecurityTopTldsBySpoofSpoof {const RadarGetEmailSecurityTopTldsBySpoofSpoof._(this.value);

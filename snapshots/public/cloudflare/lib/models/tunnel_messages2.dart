@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TunnelMessages2 {const TunnelMessages2({required this.code, required this.message, });
 

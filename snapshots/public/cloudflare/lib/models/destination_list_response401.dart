@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationListResponse401
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';import 'package:pub_cloudflare/models/destination_create_response401/destination_create_response401_errors.dart';@immutable final class DestinationListResponse401 {const DestinationListResponse401({required this.errors, required this.messages, required this.success, });
 

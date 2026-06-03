@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersScriptResponse (inline: NamedHandlers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NamedHandlers {const NamedHandlers({this.handlers, this.name, });
 

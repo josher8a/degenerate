@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesEnvVars (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_plain_text_env_var.dart';import 'package:pub_cloudflare/models/pages_secret_text_env_var.dart';sealed class PagesEnvVarsValue {const PagesEnvVarsValue();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpSensitivityLevel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpSensitivityLevel {const DlpSensitivityLevel({required this.createdAt, required this.description, required this.id, required this.name, required this.updatedAt, });
 

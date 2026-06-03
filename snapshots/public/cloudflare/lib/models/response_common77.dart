@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon77
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_messages2.dart';@immutable final class ResponseCommon77 {const ResponseCommon77({required this.errors, required this.messages, required this.success, });
 

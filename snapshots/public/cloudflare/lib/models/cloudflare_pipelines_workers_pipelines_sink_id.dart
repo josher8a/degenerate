@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesSinkId
 
 /// Specifies the publid ID of the sink.
 extension type const CloudflarePipelinesWorkersPipelinesSinkId(String value) {

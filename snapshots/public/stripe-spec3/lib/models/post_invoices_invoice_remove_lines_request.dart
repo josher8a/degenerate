@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceRemoveLinesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_remove_lines_request/post_invoices_invoice_remove_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequest {const PostInvoicesInvoiceRemoveLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 

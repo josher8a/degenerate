@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the account has exceeded the maximum number of Workers allowed.
 @immutable final class WorkersErrorWorkerLimitCode {const WorkersErrorWorkerLimitCode._(this.value);

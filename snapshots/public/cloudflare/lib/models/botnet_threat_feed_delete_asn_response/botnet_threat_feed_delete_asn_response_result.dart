@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotnetThreatFeedDeleteAsnResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotnetThreatFeedDeleteAsnResponseResult {const BotnetThreatFeedDeleteAsnResponseResult({this.asn});
 

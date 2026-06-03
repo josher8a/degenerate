@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BatchAccountMoveResponse (inline: Statuses)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Statuses {const Statuses({required this.moved, required this.tag, this.message, });
 

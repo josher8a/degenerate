@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorCreateOrModifyWorkflowResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateOrModifyWorkflowResponseResult {const WorCreateOrModifyWorkflowResponseResult({required this.className, required this.createdOn, required this.id, required this.isDeleted, required this.modifiedOn, required this.name, required this.scriptName, required this.terminatorRunning, required this.triggeredOn, required this.versionId, });
 

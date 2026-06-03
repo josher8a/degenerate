@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Capabilities > CardPayments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CapabilitiesCardPayments {const CapabilitiesCardPayments({this.requested});
 

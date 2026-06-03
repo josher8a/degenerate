@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityPhishGuardReport (inline: Fields)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPhishGuardReportFields {const EmailSecurityPhishGuardReportFields({required this.to, required this.ts, this.from, this.postfixId, });
 

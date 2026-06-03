@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponseCreateParams (inline: OutputAudioFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 

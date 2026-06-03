@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request_text.dart';@immutable final class WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest {const WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest({required this.text});
 

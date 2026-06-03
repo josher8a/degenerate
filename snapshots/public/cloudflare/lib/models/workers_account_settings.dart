@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAccountSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAccountSettings {const WorkersAccountSettings({this.defaultUsageModel, this.greenCompute, });
 

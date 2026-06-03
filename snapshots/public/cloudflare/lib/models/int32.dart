@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Int32
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Int32 {const Int32({required this.type});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DexEndpointsListTestsOverviewKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsListTestsOverviewKind {const DexEndpointsListTestsOverviewKind._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: AuditSsh)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
 @immutable final class AuditSsh {const AuditSsh({this.commandLogging});

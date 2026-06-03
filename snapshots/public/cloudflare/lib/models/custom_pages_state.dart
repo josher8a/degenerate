@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPagesState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The custom page state.
 @immutable final class CustomPagesState {const CustomPagesState._(this.value);

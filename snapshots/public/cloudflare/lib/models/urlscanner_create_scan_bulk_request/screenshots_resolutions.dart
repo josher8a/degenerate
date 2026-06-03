@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanBulkRequest (inline: ScreenshotsResolutions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device resolutions.
 @immutable final class ScreenshotsResolutions {const ScreenshotsResolutions._(this.value);

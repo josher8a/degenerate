@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryTrend
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryTrend {const ObservatoryTrend({this.cls, this.fcp, this.lcp, this.performanceScore, this.si, this.tbt, this.ttfb, this.tti, });
 

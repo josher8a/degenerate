@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MarketplaceListingPlan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan/price_model.dart';/// Marketplace Listing Plan
 @immutable final class MarketplaceListingPlan {const MarketplaceListingPlan({required this.url, required this.accountsUrl, required this.id, required this.number, required this.name, required this.description, required this.monthlyPriceInCents, required this.yearlyPriceInCents, required this.priceModel, required this.hasFreeTrial, required this.unitName, required this.state, required this.bullets, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersonalAccessTokenRequest (inline: PermissionsUpgraded)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
 @immutable final class PermissionsUpgraded {const PermissionsUpgraded({this.organization, this.repository, this.other, });

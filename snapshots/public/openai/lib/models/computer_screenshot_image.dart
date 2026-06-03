@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComputerScreenshotImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';/// A computer screenshot image used with the computer use tool.
 /// 

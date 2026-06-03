@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/linux_container_user.dart';/// ContainerUser represents user identity information
 @immutable final class ContainerUser {const ContainerUser({this.linux});

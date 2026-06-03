@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPresetListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned by Get All Presets route
 @immutable final class RealtimekitPresetListItem {const RealtimekitPresetListItem({this.createdAt, this.id, this.name, this.updatedAt, });

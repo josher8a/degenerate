@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopUserAgentsByDirectiveResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_user_agents_by_directive_response/radar_get_robots_txt_top_user_agents_by_directive_response_result.dart';@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponse {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponse({required this.result, required this.success, });
 

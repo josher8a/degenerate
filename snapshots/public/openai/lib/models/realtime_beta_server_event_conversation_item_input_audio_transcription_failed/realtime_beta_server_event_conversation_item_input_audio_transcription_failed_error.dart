@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the transcription error.
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError({this.type, this.code, this.message, this.param, });

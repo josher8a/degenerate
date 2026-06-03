@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingUpdateBudgetOrgResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_response/billing_update_budget_org_response_budget.dart';@immutable final class BillingUpdateBudgetOrgResponse {const BillingUpdateBudgetOrgResponse({this.message, this.budget, });
 

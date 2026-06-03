@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages10_messages_content.dart';import 'package:pub_cloudflare/models/messages/messages10_messages_content_variant2.dart';@immutable final class Messages10Messages {const Messages10Messages({required this.content, required this.role, });
 

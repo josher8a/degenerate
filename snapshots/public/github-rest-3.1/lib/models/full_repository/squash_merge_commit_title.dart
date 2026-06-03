@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FullRepository (inline: SquashMergeCommitTitle)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default value for a squash merge commit title:
 /// 

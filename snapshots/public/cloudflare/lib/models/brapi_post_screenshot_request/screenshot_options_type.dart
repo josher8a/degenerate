@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostScreenshotRequest (inline: Variant1 > ScreenshotOptions > Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScreenshotOptionsType {const ScreenshotOptionsType._(this.value);
 

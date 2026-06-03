@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaToken
 
 /// token in form of UUID
 extension type const AaaToken(String value) {

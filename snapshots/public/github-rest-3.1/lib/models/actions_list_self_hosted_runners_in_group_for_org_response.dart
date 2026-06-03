@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsListSelfHostedRunnersInGroupForOrgResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner.dart';@immutable final class ActionsListSelfHostedRunnersInGroupForOrgResponse {const ActionsListSelfHostedRunnersInGroupForOrgResponse({required this.totalCount, required this.runners, });
 

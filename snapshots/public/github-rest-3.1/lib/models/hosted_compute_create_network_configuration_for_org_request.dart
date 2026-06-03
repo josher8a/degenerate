@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HostedComputeCreateNetworkConfigurationForOrgRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hosted_compute_create_network_configuration_for_org_request/hosted_compute_create_network_configuration_for_org_request_compute_service.dart';@immutable final class HostedComputeCreateNetworkConfigurationForOrgRequest {const HostedComputeCreateNetworkConfigurationForOrgRequest({required this.name, required this.networkSettingsIds, this.computeService, });
 

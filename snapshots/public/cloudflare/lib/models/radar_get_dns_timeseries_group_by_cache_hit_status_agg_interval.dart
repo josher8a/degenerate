@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByCacheHitStatusAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
 @immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusAggInterval {const RadarGetDnsTimeseriesGroupByCacheHitStatusAggInterval._(this.value);

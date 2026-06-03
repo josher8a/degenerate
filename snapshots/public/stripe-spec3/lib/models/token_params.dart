@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenParams
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TokenParams {const TokenParams({required this.token});
 

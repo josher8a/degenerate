@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Tenant (inline: TenantMetadata > Dns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tenant/ns_pool.dart';@immutable final class TenantMetadataDns {const TenantMetadataDns({required this.nsPool});
 

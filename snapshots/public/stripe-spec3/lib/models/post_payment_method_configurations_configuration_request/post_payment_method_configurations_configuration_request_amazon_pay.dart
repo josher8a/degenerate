@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: AmazonPay)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Amazon Pay is a wallet payment method that lets your customers check out the same way as on Amazon.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestAmazonPay {const PostPaymentMethodConfigurationsConfigurationRequestAmazonPay({this.displayPreference});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksListForSuiteFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksListForSuiteFilter {const ChecksListForSuiteFilter._(this.value);
 

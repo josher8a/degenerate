@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RevolutPayUnderlyingPaymentMethodFundingDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amazon_pay_underlying_payment_method_funding_details/amazon_pay_underlying_payment_method_funding_details_type.dart';import 'package:pub_stripe_spec3/models/payment_method_details_passthrough_card.dart';/// 
 @immutable final class RevolutPayUnderlyingPaymentMethodFundingDetails {const RevolutPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });

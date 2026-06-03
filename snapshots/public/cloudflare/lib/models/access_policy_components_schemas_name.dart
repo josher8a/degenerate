@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyComponentsSchemasName
 
 /// The name of the Access policy.
 extension type const AccessPolicyComponentsSchemasName(String value) {

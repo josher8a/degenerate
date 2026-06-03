@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryOutboundTransfersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request/destination_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_request/post_treasury_outbound_transfers_request_destination_payment_method_data.dart';@immutable final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, this.metadata, this.statementDescriptor, });
 

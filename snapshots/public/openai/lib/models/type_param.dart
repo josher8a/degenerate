@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TypeParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An action to type in text.
 @immutable final class TypeParam {const TypeParam({required this.text, this.type = 'type', });

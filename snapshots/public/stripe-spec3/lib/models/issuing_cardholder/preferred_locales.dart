@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardholder (inline: PreferredLocales)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PreferredLocales {const PreferredLocales._(this.value);
 

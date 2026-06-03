@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedInstantPayoutsPromotionConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_instant_payouts_promotion_features.dart';/// 
 @immutable final class ConnectEmbeddedInstantPayoutsPromotionConfig {const ConnectEmbeddedInstantPayoutsPromotionConfig({required this.enabled, required this.features, });

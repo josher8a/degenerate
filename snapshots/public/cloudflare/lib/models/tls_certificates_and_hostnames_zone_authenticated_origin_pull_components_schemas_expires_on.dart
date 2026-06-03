@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasExpiresOn
 
 /// When the certificate from the authority expires.
 extension type TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasExpiresOn(DateTime value) {

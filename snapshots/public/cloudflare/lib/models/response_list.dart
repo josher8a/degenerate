@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_errors2.dart';import 'package:pub_cloudflare/models/r2_result_info.dart';@immutable final class ResponseList {const ResponseList({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

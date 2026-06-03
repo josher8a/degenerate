@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateBranchProtectionRequest (inline: RequiredPullRequestReviews)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_pull_request_review_protection_request/repos_update_pull_request_review_protection_request_bypass_pull_request_allowances.dart';import 'package:pub_github_rest_3_1/models/repos_update_pull_request_review_protection_request/repos_update_pull_request_review_protection_request_dismissal_restrictions.dart';/// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
 @immutable final class ReposUpdateBranchProtectionRequestRequiredPullRequestReviews {const ReposUpdateBranchProtectionRequestRequiredPullRequestReviews({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });

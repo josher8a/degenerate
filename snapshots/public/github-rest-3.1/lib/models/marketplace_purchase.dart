@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MarketplacePurchase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_purchase/marketplace_pending_change.dart';import 'package:pub_github_rest_3_1/models/marketplace_purchase/marketplace_purchase_marketplace_purchase.dart';/// Marketplace Purchase
 @immutable final class MarketplacePurchase {const MarketplacePurchase({required this.url, required this.type, required this.id, required this.login, required this.marketplacePurchase, this.organizationBillingEmail, this.email, this.marketplacePendingChange, });

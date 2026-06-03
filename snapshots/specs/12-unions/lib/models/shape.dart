@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Shape
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/circle.dart';import 'package:spec_12_unions/models/rectangle.dart';import 'package:spec_12_unions/models/triangle.dart';sealed class Shape {const Shape();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClusterTrustBundleProjection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/label_selector.dart';/// ClusterTrustBundleProjection describes how to select a set of ClusterTrustBundle objects and project their contents into the pod filesystem.
 @immutable final class ClusterTrustBundleProjection {const ClusterTrustBundleProjection({this.labelSelector, this.name, this.optional, this.path = '', this.signerName, });

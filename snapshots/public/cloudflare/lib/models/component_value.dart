@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComponentValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The unique component.
 extension type ComponentsSchemasName(dynamic value) {

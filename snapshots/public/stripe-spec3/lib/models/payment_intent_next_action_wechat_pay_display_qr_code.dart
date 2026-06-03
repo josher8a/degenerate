@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentNextActionWechatPayDisplayQrCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentIntentNextActionWechatPayDisplayQrCode {const PaymentIntentNextActionWechatPayDisplayQrCode({required this.data, required this.hostedInstructionsUrl, required this.imageDataUrl, required this.imageUrlPng, required this.imageUrlSvg, });

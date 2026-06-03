@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: AnalyticsEngineDatasets > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Analytics Engine binding.
 @immutable final class PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue {const PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue({required this.dataset});

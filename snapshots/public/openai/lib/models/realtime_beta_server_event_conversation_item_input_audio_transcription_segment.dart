@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.input_audio_transcription.segment`.
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType._(this.value);

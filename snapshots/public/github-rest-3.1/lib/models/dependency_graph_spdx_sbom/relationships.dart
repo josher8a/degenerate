@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphSpdxSbom (inline: Sbom > Relationships)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Relationships {const Relationships({this.relationshipType, this.spdxElementId, this.relatedSpdxElement, });
 

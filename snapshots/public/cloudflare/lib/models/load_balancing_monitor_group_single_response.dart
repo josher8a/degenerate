@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingMonitorGroupSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group.dart';@immutable final class LoadBalancingMonitorGroupSingleResponse {const LoadBalancingMonitorGroupSingleResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

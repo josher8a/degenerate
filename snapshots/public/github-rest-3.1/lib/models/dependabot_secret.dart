@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set secrets for Dependabot.
 @immutable final class DependabotSecret {const DependabotSecret({required this.name, required this.createdAt, required this.updatedAt, });

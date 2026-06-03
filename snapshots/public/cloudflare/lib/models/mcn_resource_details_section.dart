@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourceDetailsSection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_details_section_item.dart';@immutable final class McnResourceDetailsSection {const McnResourceDetailsSection({required this.hiddenItems, required this.name, required this.visibleItems, this.helpText, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcAccountRegistryToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A unique identifier for the user's account
 extension type const CcAccountId(String value) {

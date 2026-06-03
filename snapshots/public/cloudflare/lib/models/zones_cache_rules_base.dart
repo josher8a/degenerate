@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheRulesBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesCacheRulesBase {const ZonesCacheRulesBase({required this.id, this.modifiedOn, });
 

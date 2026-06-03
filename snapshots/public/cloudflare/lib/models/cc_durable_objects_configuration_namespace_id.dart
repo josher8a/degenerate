@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcDurableObjectsConfigurationNamespaceId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Durable object configuration using a namespace ID
 @immutable final class CcDurableObjectsConfigurationNamespaceId {const CcDurableObjectsConfigurationNamespaceId({required this.namespaceId});

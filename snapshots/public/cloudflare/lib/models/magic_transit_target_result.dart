@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicTransitTargetResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_colo_result.dart';/// The target hostname, IPv6, or IPv6 address.
 extension type const MagicTransitTarget(String value) {

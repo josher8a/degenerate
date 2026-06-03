@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationThreeDSecure
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_three_d_secure/issuing_authorization_three_d_secure_result.dart';/// 
 @immutable final class IssuingAuthorizationThreeDSecure {const IssuingAuthorizationThreeDSecure({required this.result});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementAddressMapsCreateAddressMapRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_address_maps_membership_request.dart';import 'package:pub_cloudflare/models/addressing_enabled.dart';import 'package:pub_cloudflare/models/addressing_ip_address.dart';import 'package:pub_cloudflare/models/addressing_schemas_description.dart';@immutable final class IpAddressManagementAddressMapsCreateAddressMapRequest {const IpAddressManagementAddressMapsCreateAddressMapRequest({this.description, this.enabled, this.ips, this.memberships, });
 

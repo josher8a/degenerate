@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActivitySetThreadSubscriptionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivitySetThreadSubscriptionRequest {const ActivitySetThreadSubscriptionRequest({this.ignored = false});
 

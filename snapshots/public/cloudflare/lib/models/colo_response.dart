@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ColoResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/datacenters2.dart';import 'package:pub_cloudflare/models/query_response.dart';@immutable final class ColoResponse {const ColoResponse({this.query, this.result, });
 

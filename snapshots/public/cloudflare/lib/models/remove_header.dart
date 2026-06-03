@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RemoveHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_operation.dart';/// A header to remove.
 @immutable final class RemoveHeader {const RemoveHeader({required this.operation});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Asns)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/asns_asn.dart';/// Dictionary of Autonomous System Numbers where ASN's are the keys
 @immutable final class ScanAsns {const ScanAsns({this.asn});

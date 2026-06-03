@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostShippingRatesShippingRateTokenRequest (inline: FixedAmount)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_shipping_rate_token_request/post_shipping_rates_shipping_rate_token_request_fixed_amount_currency_options_value.dart';/// Describes a fixed amount to charge for shipping. Must be present if type is `fixed_amount`.
 @immutable final class PostShippingRatesShippingRateTokenRequestFixedAmount {const PostShippingRatesShippingRateTokenRequestFixedAmount({this.currencyOptions});

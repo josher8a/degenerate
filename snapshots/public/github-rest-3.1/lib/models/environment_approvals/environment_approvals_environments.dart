@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnvironmentApprovals (inline: Environments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnvironmentApprovalsEnvironments {const EnvironmentApprovalsEnvironments({this.id, this.nodeId, this.name, this.url, this.htmlUrl, this.createdAt, this.updatedAt, });
 

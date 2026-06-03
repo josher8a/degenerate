@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingCreateShareRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_recipient_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_resource_request.dart';import 'package:pub_cloudflare/models/resource_sharing_share_name.dart';@immutable final class ResourceSharingCreateShareRequest {const ResourceSharingCreateShareRequest({required this.name, required this.recipients, required this.resources, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TranscriptTextUsageTokens
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_usage_tokens/transcript_text_usage_tokens_input_token_details.dart';/// The type of the usage object. Always `tokens` for this variant.
 @immutable final class TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType._(this.value);

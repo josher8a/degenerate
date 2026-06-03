@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreadResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_resource/thread_resource_status.dart';/// Type discriminator that is always `chatkit.thread`.
 @immutable final class ThreadResourceObject {const ThreadResourceObject._(this.value);

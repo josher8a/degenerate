@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DaemonEndpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DaemonEndpoint contains information about a single Daemon endpoint.
 @immutable final class DaemonEndpoint {const DaemonEndpoint({this.port = 0});

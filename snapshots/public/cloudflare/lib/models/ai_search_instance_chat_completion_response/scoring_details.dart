@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionResponse (inline: Chunks > ScoringDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScoringDetails {const ScoringDetails({this.keywordRank, this.keywordScore, this.rerankingScore, this.vectorRank, this.vectorScore, });
 

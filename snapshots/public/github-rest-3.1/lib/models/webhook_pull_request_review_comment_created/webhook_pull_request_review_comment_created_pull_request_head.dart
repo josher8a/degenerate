@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPullRequestReviewCommentCreated (inline: PullRequest > Head)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_comment_created/webhook_pull_request_review_comment_created_pull_request_head_repo.dart';@immutable final class WebhookPullRequestReviewCommentCreatedPullRequestHead {const WebhookPullRequestReviewCommentCreatedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 

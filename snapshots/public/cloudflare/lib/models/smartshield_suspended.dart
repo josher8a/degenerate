@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldSuspended
 
 /// If suspended, no health checks are sent to the origin.
 extension type const SmartshieldSuspended(bool value) {

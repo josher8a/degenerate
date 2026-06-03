@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneSettingsChangeFontsSettingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the feature is enabled or disabled.
 @immutable final class SpeedCloudflareFontsValue {const SpeedCloudflareFontsValue._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflareTunnelGetACloudflareTunnelManagementTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Management resources the token will have access to.
 @immutable final class TunnelManagementResources {const TunnelManagementResources._(this.value);

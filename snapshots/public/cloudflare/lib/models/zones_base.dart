@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesBase {const ZonesBase({required this.id, required this.value, this.editable = true, this.modifiedOn, });
 

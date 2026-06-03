@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsListItemRedirectObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item_redirect.dart';@immutable final class ListsListItemRedirectObject {const ListsListItemRedirectObject({required this.redirect});
 

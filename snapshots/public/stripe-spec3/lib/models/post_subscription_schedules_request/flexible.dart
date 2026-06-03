@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSubscriptionSchedulesRequest (inline: BillingMode > Flexible)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode_flexible/proration_discounts.dart';@immutable final class Flexible {const Flexible({this.prorationDiscounts});
 

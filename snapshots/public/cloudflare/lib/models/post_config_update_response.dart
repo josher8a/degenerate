@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostConfigUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages22.dart';import 'package:pub_cloudflare/models/scan_config.dart';@immutable final class PostConfigUpdateResponse {const PostConfigUpdateResponse({required this.errors, required this.messages, required this.success, this.result, });
 

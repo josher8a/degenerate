@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheKeyFields (inline: Value > QueryString > Exclude > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ignore all query string parameters.
 /// 

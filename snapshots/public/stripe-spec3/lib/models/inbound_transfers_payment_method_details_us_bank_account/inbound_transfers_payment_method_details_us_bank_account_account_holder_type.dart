@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InboundTransfersPaymentMethodDetailsUsBankAccount (inline: AccountHolderType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Account holder type: individual or company.
 @immutable final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Init
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you have a new SQL file to upload.
 @immutable final class InitAction {const InitAction._(this.value);

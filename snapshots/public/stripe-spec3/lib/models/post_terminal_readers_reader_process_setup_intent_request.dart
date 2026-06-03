@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderProcessSetupIntentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_setup_intent_request/post_terminal_readers_reader_process_setup_intent_request_process_config.dart';@immutable final class PostTerminalReadersReaderProcessSetupIntentRequest {const PostTerminalReadersReaderProcessSetupIntentRequest({required this.allowRedisplay, required this.setupIntent, this.expand, this.processConfig, });
 

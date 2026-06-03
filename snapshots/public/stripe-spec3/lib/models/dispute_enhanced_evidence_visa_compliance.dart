@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputeEnhancedEvidenceVisaCompliance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class DisputeEnhancedEvidenceVisaCompliance {const DisputeEnhancedEvidenceVisaCompliance({required this.feeAcknowledged});

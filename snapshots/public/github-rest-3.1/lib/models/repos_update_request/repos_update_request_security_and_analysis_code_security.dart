@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateRequest (inline: SecurityAndAnalysis > CodeSecurity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable GitHub Code Security for this repository.
 @immutable final class ReposUpdateRequestSecurityAndAnalysisCodeSecurity {const ReposUpdateRequestSecurityAndAnalysisCodeSecurity({this.status});

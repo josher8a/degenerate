@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringDexDeleteResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_delete_response_collection/digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_messages2.dart';@immutable final class DigitalExperienceMonitoringDexDeleteResponseCollection {const DigitalExperienceMonitoringDexDeleteResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

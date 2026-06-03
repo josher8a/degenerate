@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KickPartcipantsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KickPartcipantsRequest {const KickPartcipantsRequest({required this.customParticipantIds, required this.participantIds, });
 

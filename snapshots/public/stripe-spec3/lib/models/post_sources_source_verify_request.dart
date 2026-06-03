@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSourcesSourceVerifyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesSourceVerifyRequest {const PostSourcesSourceVerifyRequest({required this.values, this.expand, });
 

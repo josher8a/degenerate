@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GlusterfsPersistentVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
 @immutable final class GlusterfsPersistentVolumeSource {const GlusterfsPersistentVolumeSource({this.endpoints = '', this.endpointsNamespace, this.path = '', this.readOnly, });

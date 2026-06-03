@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchRestrictionPolicy (inline: Apps)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_restriction_policy/apps_owner.dart';import 'package:pub_github_rest_3_1/models/branch_restriction_policy/apps_permissions.dart';@immutable final class Apps {const Apps({this.id, this.slug, this.nodeId, this.owner, this.name, this.clientId, this.description, this.externalUrl, this.htmlUrl, this.createdAt, this.updatedAt, this.permissions, this.events, });
 

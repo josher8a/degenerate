@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationSimpleWebhooks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
 /// organization, or when the event occurs from activity in a repository owned by an organization.

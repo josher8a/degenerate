@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComputerCallSafetyCheckParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A pending safety check for the computer call.
 @immutable final class ComputerCallSafetyCheckParam {const ComputerCallSafetyCheckParam({required this.id, this.code, this.message, });

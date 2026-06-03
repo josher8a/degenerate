@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaBefore
 
 /// Limit the returned results to history records older than the specified date. This must be a timestamp that conforms to RFC3339.
 extension type AaaBefore(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCustomersCustomerPaymentMethodsType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerPaymentMethodsType {const GetCustomersCustomerPaymentMethodsType._(this.value);
 

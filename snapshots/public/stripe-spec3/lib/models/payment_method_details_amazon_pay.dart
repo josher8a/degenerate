@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsAmazonPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amazon_pay_underlying_payment_method_funding_details.dart';/// 
 @immutable final class PaymentMethodDetailsAmazonPay {const PaymentMethodDetailsAmazonPay({this.funding, this.transactionId, });

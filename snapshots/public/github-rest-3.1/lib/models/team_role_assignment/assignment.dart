@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamRoleAssignment (inline: Assignment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the team has a direct, indirect, or mixed relationship to a role
 @immutable final class Assignment {const Assignment._(this.value);

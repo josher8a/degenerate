@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesRequestedValidity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The number of days for which the certificate should be valid.
 @immutable final class TlsCertificatesAndHostnamesRequestedValidity {const TlsCertificatesAndHostnamesRequestedValidity._(this.value);

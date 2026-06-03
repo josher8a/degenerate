@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TopTargetLocationsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_attacks_response/radar_get_attacks_layer3_top_attacks_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_target_locations_response/radar_get_attacks_layer3_top_target_locations_response_result_top0.dart';@immutable final class RadarGetAttacksLayer3TopTargetLocationsResponseResult {const RadarGetAttacksLayer3TopTargetLocationsResponseResult({required this.meta, required this.top0, });
 

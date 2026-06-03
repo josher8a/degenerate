@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationExtractOperationsFromSchemaResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schema_validation_extract_operations_from_schema_response/schema_validation_extract_operations_from_schema_response_result.dart';import 'package:pub_cloudflare/models/shield_basic_operation.dart';import 'package:pub_cloudflare/models/shield_operation.dart';@immutable final class SchemaValidationExtractOperationsFromSchemaResponse {const SchemaValidationExtractOperationsFromSchemaResponse({required this.result});
 

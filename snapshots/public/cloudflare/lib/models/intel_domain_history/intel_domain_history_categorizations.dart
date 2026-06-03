@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelDomainHistory (inline: Categorizations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_domain_history/categorizations_categories.dart';@immutable final class IntelDomainHistoryCategorizations {const IntelDomainHistoryCategorizations({this.categories, this.end, this.start, });
 

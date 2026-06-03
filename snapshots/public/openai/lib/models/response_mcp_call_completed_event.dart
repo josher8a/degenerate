@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseMcpCallCompletedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an MCP  tool call has completed successfully.
 /// 

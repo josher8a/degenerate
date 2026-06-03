@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShippingRateDeliveryEstimate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate_bound.dart';/// 
 @immutable final class ShippingRateDeliveryEstimate {const ShippingRateDeliveryEstimate({this.maximum, this.minimum, });

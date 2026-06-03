@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Custom > Custom > Format > Grammar > Grammar)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Syntax {const Syntax._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateSipCredentialListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipCredentialListRequest {const CreateSipCredentialListRequest({required this.friendlyName});
 

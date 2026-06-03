@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigCreateProvidersResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersResponseResult {const AigConfigCreateProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod = 60.0, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistSimple (inline: Forks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/public_user.dart';@immutable final class Forks {const Forks({this.id, this.url, this.user, this.createdAt, this.updatedAt, });
 

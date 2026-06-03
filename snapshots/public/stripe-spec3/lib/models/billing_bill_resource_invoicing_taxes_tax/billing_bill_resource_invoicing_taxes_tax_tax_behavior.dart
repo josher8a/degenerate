@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingTaxesTax (inline: TaxBehavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this tax is inclusive or exclusive.
 @immutable final class BillingBillResourceInvoicingTaxesTaxTaxBehavior {const BillingBillResourceInvoicingTaxesTaxTaxBehavior._(this.value);

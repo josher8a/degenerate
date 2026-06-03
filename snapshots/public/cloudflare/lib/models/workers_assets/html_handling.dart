@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAssets (inline: Config > HtmlHandling)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the redirects and rewrites of requests for HTML content.
 @immutable final class HtmlHandling {const HtmlHandling._(this.value);

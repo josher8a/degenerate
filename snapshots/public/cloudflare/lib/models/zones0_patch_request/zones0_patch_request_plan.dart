@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Zones0PatchRequest (inline: Plan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';/// (Deprecated) Please use the `/zones/{zone_id}/subscription` API
 /// to update a zone's plan. Changing this value will create/cancel

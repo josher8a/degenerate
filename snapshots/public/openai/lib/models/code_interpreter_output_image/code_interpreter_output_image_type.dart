@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeInterpreterOutputImage (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `image`.
 @immutable final class CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType._(this.value);

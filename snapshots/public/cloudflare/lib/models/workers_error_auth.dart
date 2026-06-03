@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorAuth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the user is not authorized to perform this action.
 @immutable final class WorkersErrorAuthCode {const WorkersErrorAuthCode._(this.value);

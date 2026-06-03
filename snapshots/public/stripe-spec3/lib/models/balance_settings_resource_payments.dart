@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BalanceSettingsResourcePayments
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payouts.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_settlement_timing.dart';/// 
 @immutable final class BalanceSettingsResourcePayments {const BalanceSettingsResourcePayments({required this.settlementTiming, this.debitNegativeBalances, this.payouts, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageContentImageFileObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_image_file_object/message_content_image_file_object_image_file.dart';import 'package:pub_openai/models/message_content_image_file_object/message_content_image_file_object_type.dart';/// References an image [File](/docs/api-reference/files) in the content of a message.
 @immutable final class MessageContentImageFileObject {const MessageContentImageFileObject({required this.type, required this.imageFile, });

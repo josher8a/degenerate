@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AudioTranscription (inline: Model)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioTranscriptionModelVariant2 {const AudioTranscriptionModelVariant2._(this.value);
 

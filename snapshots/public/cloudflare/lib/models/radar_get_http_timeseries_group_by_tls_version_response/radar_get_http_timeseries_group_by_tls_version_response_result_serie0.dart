@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByTlsVersionResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByTlsVersionResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByTlsVersionResponseResultSerie0({required this.tls10, required this.tls11, required this.tls12, required this.tls13, required this.tlsQuic, required this.timestamps, });
 

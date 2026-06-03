@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckSuiteCompleted (inline: CheckSuite > PullRequests > Base)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/event/event_repo.dart';@immutable final class PullRequestsBase {const PullRequestsBase({required this.ref, required this.repo, required this.sha, });
 

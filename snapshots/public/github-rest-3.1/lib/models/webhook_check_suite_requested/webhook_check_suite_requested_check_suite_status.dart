@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckSuiteRequested (inline: CheckSuite > Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteStatus {const WebhookCheckSuiteRequestedCheckSuiteStatus._(this.value);

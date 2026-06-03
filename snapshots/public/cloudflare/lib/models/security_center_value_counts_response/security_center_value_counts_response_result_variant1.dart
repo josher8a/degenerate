@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityCenterValueCountsResponse (inline: Result > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterValueCountsResponseResultVariant1 {const SecurityCenterValueCountsResponseResultVariant1({this.count, this.value, });
 

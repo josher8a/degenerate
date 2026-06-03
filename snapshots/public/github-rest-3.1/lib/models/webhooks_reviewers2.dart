@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksReviewers
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers/webhooks_reviewers_reviewer.dart';@immutable final class WebhooksReviewersType {const WebhooksReviewersType._(this.value);
 

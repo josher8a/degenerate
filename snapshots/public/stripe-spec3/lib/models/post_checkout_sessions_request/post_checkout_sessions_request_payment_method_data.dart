@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: PaymentMethodData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';/// This parameter allows you to set some attributes on the payment method created during a Checkout session.
 @immutable final class PostCheckoutSessionsRequestPaymentMethodData {const PostCheckoutSessionsRequestPaymentMethodData({this.allowRedisplay});

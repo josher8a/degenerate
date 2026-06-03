@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamStartTimeSeconds
 
 /// Specifies the start time for the video clip in seconds.
 extension type const StreamStartTimeSeconds(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfBlackForestLabsFlux2DevRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_black_forest_labs_flux2_dev_request/multipart.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux2DevRequest {const WorkersAiPostRunCfBlackForestLabsFlux2DevRequest({required this.multipart});
 

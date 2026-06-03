@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesTlsConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTlsConfigRequest {const TeamsDevicesTlsConfigRequest({required this.tlsSockaddr, this.sha256, });
 

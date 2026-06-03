@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: References > Workers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReferencesWorkers {const ReferencesWorkers({required this.id, required this.name, });
 

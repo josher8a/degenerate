@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListRunStepsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ListRunStepsResponse {const ListRunStepsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZoneSettingsSingleRequest (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ssl_recommender_enabled.dart';@immutable final class ZonesZoneSettingsSingleRequestVariant1 {const ZonesZoneSettingsSingleRequestVariant1({this.enabled});
 

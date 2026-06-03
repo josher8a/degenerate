@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpNewPredefinedEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to create a new predefined or integration entry.
 /// 

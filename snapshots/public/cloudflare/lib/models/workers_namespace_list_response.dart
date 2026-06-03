@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersNamespaceListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_namespace_response.dart';@immutable final class WorkersNamespaceListResponse {const WorkersNamespaceListResponse({required this.errors, required this.messages, required this.success, this.result, });
 

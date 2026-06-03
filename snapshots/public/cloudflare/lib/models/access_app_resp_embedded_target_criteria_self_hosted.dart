@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppRespEmbeddedTargetCriteriaSelfHosted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_target_criteria_self_hosted_app.dart';/// Contains the targets secured by the application.
 @immutable final class AccessAppRespEmbeddedTargetCriteriaSelfHosted {const AccessAppRespEmbeddedTargetCriteriaSelfHosted({this.targetCriteria});

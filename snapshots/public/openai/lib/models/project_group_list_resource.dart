@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectGroupListResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/project_group.dart';/// Paginated list of groups that have access to a project.
 @immutable final class ProjectGroupListResource {const ProjectGroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });

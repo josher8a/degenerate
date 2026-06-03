@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponentsResourceBuyButton
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains whether the buy button is enabled.
 @immutable final class CustomerSessionResourceComponentsResourceBuyButton {const CustomerSessionResourceComponentsResourceBuyButton({required this.enabled});

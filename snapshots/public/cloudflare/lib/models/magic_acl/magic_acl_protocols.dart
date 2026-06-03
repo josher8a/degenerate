@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicAcl (inline: Protocols)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
 @immutable final class MagicAclProtocols {const MagicAclProtocols._(this.value);

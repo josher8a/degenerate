@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: CustomText)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/custom_text_position_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/after_submit.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/custom_text_shipping_address.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/submit.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/terms_of_service_acceptance.dart';/// Display additional text for your customers using custom text. You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class PostCheckoutSessionsRequestCustomText {const PostCheckoutSessionsRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });

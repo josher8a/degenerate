@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGroupsComponentsSchemasSingleResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_components_schemas_groups.dart';@immutable final class AccessGroupsComponentsSchemasSingleResponse2 {const AccessGroupsComponentsSchemasSingleResponse2({this.result});
 

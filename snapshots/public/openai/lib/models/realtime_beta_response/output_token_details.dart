@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: Usage > OutputTokenDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the output tokens used in the Response.
 @immutable final class OutputTokenDetails {const OutputTokenDetails({this.textTokens, this.audioTokens, });

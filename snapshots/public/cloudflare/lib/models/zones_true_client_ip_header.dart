@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesTrueClientIpHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';/// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
 /// 

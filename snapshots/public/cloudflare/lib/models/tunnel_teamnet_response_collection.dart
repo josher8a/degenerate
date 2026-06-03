@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelTeamnetResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_teamnet.dart';@immutable final class TunnelTeamnetResponseCollection {const TunnelTeamnetResponseCollection({this.result});
 

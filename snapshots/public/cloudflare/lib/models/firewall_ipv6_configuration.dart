@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallIpv6Configuration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip6` when specifying an IPv6 address in the rule.
 @immutable final class FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget._(this.value);

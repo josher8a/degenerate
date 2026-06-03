@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSelectorOperationState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details how `selector` interacted with an operation:
 ///   - `included` operations are included by `selector` and will be covered by the Token Validation Rule

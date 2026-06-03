@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection36
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_messages2.dart';import 'package:pub_cloudflare/models/smartshield_result_info.dart';@immutable final class ResponseCollection36 {const ResponseCollection36({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

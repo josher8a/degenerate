@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistsGetResponse403
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gists_get_comment_response403/block.dart';@immutable final class GistsGetResponse403 {const GistsGetResponse403({this.block, this.message, this.documentationUrl, });
 

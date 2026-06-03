@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTimingAggregates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_aggregate_stat.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timing_aggregates/over_time.dart';@immutable final class DigitalExperienceMonitoringTimingAggregates {const DigitalExperienceMonitoringTimingAggregates({required this.history, this.avgMs, this.overTime, });
 

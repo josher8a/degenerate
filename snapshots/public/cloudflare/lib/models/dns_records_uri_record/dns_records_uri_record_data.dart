@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsUriRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a URI record.
 @immutable final class DnsRecordsUriRecordData {const DnsRecordsUriRecordData({this.target, this.weight, });

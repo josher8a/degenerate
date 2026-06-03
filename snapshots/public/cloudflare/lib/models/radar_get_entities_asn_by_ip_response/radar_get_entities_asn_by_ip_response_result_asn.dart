@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesAsnByIpResponse (inline: Result > Asn)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/asn_related.dart';import 'package:pub_cloudflare/models/radar_get_entities_asn_by_id_response/estimated_users.dart';@immutable final class RadarGetEntitiesAsnByIpResponseResultAsn {const RadarGetEntitiesAsnByIpResponseResultAsn({required this.asn, required this.country, required this.countryName, required this.estimatedUsers, required this.name, required this.orgName, required this.related, required this.source, required this.website, this.aka, });
 

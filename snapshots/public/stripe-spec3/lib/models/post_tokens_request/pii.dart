@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTokensRequest (inline: Pii)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The PII this token represents.
 @immutable final class Pii {const Pii({this.idNumber});

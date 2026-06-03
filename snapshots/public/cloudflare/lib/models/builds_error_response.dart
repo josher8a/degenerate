@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsErrorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_error_response/builds_error_response_errors.dart';@immutable final class BuildsErrorResponse {const BuildsErrorResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

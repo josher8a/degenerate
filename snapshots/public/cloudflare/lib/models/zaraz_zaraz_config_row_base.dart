@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigRowBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazConfigRowBase {const ZarazZarazConfigRowBase({required this.createdAt, required this.id, required this.updatedAt, required this.userId, });
 

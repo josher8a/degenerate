@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MembersCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/member.dart';import 'package:pub_cloudflare/models/message3.dart';@immutable final class MembersCreateResponse {const MembersCreateResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

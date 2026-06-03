@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalCustomDataSourceConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_type.dart';/// A CustomDataSourceConfig object that defines the schema for the data source used for the evaluation runs.
 /// This schema is used to define the shape of the data that will be:

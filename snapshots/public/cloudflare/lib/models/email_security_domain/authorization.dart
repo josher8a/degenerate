@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityDomain (inline: Authorization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Authorization {const Authorization({required this.authorized, required this.timestamp, this.statusMessage, });
 

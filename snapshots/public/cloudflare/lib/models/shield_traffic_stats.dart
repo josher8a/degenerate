@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldTrafficStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_traffic_stats/traffic_stats.dart';@immutable final class ShieldTrafficStats {const ShieldTrafficStats({this.trafficStats});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsTurnKeySingleWithSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_turn_key_with_key.dart';@immutable final class CallsTurnKeySingleWithSecret {const CallsTurnKeySingleWithSecret({this.result});
 

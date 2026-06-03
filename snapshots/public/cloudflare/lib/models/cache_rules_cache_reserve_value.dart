@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesCacheReserveValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Cache Reserve zone setting.
 @immutable final class CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue._(this.value);

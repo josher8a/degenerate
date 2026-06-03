@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalOnboardingLinksRequest (inline: LinkOptions > AppleTermsAndConditions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppleTermsAndConditions {const AppleTermsAndConditions({required this.merchantDisplayName, this.allowRelinking, });
 

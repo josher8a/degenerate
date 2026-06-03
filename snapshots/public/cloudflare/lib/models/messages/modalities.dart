@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Modalities)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Modalities {const Modalities._(this.value);
 

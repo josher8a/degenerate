@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StartLivestreamingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/start_livestreaming_request/video_config.dart';@immutable final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name, this.videoConfig, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceListJobLogsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceListJobLogsResponseResult {const AiSearchInstanceListJobLogsResponseResult({required this.createdAt, required this.id, required this.message, required this.messageType, });
 

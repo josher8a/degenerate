@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckSuite (inline: Conclusion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckSuiteConclusion {const CheckSuiteConclusion._(this.value);
 

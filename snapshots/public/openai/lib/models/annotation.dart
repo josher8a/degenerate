@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Annotation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_citation_body.dart';import 'package:pub_openai/models/file_citation_body.dart';import 'package:pub_openai/models/file_path.dart';import 'package:pub_openai/models/url_citation_body.dart';/// An annotation that applies to a span of output text.
 sealed class Annotation {const Annotation();

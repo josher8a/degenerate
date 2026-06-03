@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelTeamnet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_route_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id_computed_optional.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';@immutable final class TunnelTeamnet {const TunnelTeamnet({this.comment, this.createdAt, this.deletedAt, this.id, this.network, this.tunType, this.tunnelId, this.tunnelName, this.virtualNetworkId, this.virtualNetworkName, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3Name
 
 /// Specify the hostname that points to the target gateway via CNAME.
 extension type const Web3Name(String value) {

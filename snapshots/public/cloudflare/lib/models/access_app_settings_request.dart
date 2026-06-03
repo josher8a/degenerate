@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_allow_iframe.dart';import 'package:pub_cloudflare/models/access_skip_interstitial.dart';@immutable final class AccessAppSettingsRequest {const AccessAppSettingsRequest({this.allowIframe, this.skipInterstitial, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraTargetsPutBatchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_target.dart';@immutable final class InfraTargetsPutBatchResponse {const InfraTargetsPutBatchResponse({this.result});
 

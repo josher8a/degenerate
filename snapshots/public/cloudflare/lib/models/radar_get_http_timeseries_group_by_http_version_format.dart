@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByHttpVersionFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetHttpTimeseriesGroupByHttpVersionFormat {const RadarGetHttpTimeseriesGroupByHttpVersionFormat._(this.value);

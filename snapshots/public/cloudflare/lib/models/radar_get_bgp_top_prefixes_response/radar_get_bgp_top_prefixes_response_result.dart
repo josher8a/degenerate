@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopPrefixesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_ases_response/radar_get_bgp_top_ases_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_response/radar_get_bgp_top_prefixes_response_result_top0.dart';@immutable final class RadarGetBgpTopPrefixesResponseResult {const RadarGetBgpTopPrefixesResponseResult({required this.meta, required this.top0, });
 

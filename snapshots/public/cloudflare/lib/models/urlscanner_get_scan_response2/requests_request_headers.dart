@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Data > Requests > Requests > Request > Headers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequestsRequestHeaders {const RequestsRequestHeaders({required this.name});
 

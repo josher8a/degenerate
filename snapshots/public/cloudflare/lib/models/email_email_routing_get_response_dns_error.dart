@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailEmailRoutingGetResponseDnsError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_dns_record.dart';@immutable final class EmailEmailRoutingGetResponseDnsError {const EmailEmailRoutingGetResponseDnsError({this.code, this.missing, });
 

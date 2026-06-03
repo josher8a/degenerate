@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetBillingCreditBalanceSummaryFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter/applicability_scope.dart';@immutable final class GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType._(this.value);
 

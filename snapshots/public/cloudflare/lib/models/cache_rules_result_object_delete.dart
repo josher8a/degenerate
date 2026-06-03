@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesResultObjectDelete
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_editable.dart';import 'package:pub_cloudflare/models/cache_rules_modified_on.dart';import 'package:pub_cloudflare/models/cache_rules_setting_id.dart';@immutable final class CacheRulesResultObjectDelete {const CacheRulesResultObjectDelete({required this.editable, required this.id, this.modifiedOn, });
 

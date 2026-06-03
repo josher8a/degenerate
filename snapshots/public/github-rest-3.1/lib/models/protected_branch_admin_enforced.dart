@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranchAdminEnforced
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Protected Branch Admin Enforced
 @immutable final class ProtectedBranchAdminEnforced {const ProtectedBranchAdminEnforced({required this.url, required this.enabled, });

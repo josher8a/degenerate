@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the certificate or the association.
 @immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsListTokensResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_cloudflare_token_id.dart';import 'package:pub_cloudflare/models/builds_owner_type.dart';@immutable final class BuildsListTokensResponse {const BuildsListTokensResponse({this.buildTokenName, this.buildTokenUuid, this.cloudflareTokenId, this.ownerType, });
 

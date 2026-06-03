@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HealthchecksMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HealthchecksMessages2 {const HealthchecksMessages2({required this.code, required this.message, });
 

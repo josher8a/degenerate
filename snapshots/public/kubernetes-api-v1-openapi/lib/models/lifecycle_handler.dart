@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LifecycleHandler
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/exec_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/http_get_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/sleep_action.dart';import 'package:pub_kubernetes_api_v1_openapi/models/tcp_socket_action.dart';/// LifecycleHandler defines a specific action that should be taken in a lifecycle hook. One and only one of the fields, except TCPSocket must be specified.
 @immutable final class LifecycleHandler {const LifecycleHandler({this.exec, this.httpGet, this.sleep, this.tcpSocket, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDeviceSettingsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_settings_policy.dart';@immutable final class TeamsDevicesDeviceSettingsResponseCollection {const TeamsDevicesDeviceSettingsResponseCollection({this.result});
 

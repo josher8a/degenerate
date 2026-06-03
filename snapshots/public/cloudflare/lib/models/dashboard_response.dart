@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DashboardResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dashboard.dart';import 'package:pub_cloudflare/models/query_response.dart';@immutable final class DashboardResponse {const DashboardResponse({this.query, this.result, });
 

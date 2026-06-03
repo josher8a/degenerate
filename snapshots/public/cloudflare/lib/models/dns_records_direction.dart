@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order DNS records in.
 @immutable final class DnsRecordsDirection {const DnsRecordsDirection._(this.value);

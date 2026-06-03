@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamRoleAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_permissions.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment/assignment.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// The Relationship a Team has with a role.
 @immutable final class TeamRoleAssignment {const TeamRoleAssignment({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.parent, required this.type, this.assignment, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });

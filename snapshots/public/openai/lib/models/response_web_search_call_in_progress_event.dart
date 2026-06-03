@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseWebSearchCallInProgressEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a web search call is initiated.
 @immutable final class ResponseWebSearchCallInProgressEvent {const ResponseWebSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });

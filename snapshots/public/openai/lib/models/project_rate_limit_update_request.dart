@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectRateLimitUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectRateLimitUpdateRequest {const ProjectRateLimitUpdateRequest({this.maxRequestsPer1Minute, this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
 

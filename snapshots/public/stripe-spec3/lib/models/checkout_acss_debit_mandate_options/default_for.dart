@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutAcssDebitMandateOptions (inline: DefaultFor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DefaultFor {const DefaultFor._(this.value);
 

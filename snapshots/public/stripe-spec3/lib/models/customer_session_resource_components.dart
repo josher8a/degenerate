@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponents
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_buy_button.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_mobile_payment_element.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_pricing_table.dart';/// Configuration for the components supported by this Customer Session.
 @immutable final class CustomerSessionResourceComponents {const CustomerSessionResourceComponents({required this.buyButton, required this.customerSheet, required this.mobilePaymentElement, required this.paymentElement, required this.pricingTable, });

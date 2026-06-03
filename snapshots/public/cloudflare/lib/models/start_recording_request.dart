@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StartRecordingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_audio_config.dart';import 'package:pub_cloudflare/models/realtimekit_interactive_config.dart';import 'package:pub_cloudflare/models/realtimekit_livestreaming_config.dart';import 'package:pub_cloudflare/models/realtimekit_realtimekit_bucket_config.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';import 'package:pub_cloudflare/models/realtimekit_video_config.dart';@immutable final class StartRecordingRequest {const StartRecordingRequest({this.allowMultipleRecordings = false, this.audioConfig, this.fileNamePrefix, this.interactiveConfig, this.maxSeconds, this.meetingId, this.realtimekitBucketConfig, this.rtmpOutConfig, this.storageConfig, this.url, this.videoConfig, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushValidateOwnershipResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushValidateOwnershipResponseResult {const LogpushValidateOwnershipResponseResult({this.valid});
 

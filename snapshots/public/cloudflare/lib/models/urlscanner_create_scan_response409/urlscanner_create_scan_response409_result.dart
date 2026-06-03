@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanResponse409 (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_response409/urlscanner_create_scan_response409_result_tasks.dart';@immutable final class UrlscannerCreateScanResponse409Result {const UrlscannerCreateScanResponse409Result({required this.tasks});
 

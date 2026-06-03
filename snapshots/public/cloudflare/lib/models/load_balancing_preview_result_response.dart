@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingPreviewResultResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_preview_result/load_balancing_preview_result_value.dart';@immutable final class LoadBalancingPreviewResultResponse {const LoadBalancingPreviewResultResponse({this.result});
 

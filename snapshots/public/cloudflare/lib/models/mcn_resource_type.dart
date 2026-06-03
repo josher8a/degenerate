@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnResourceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnResourceType {const McnResourceType._(this.value);
 

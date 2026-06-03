@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Tools > Custom > Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/custom_format.dart';import 'package:pub_cloudflare/models/messages/format_grammar.dart';import 'package:pub_cloudflare/models/messages/variant1_text.dart';@immutable final class ToolsCustomCustom {const ToolsCustomCustom({required this.name, this.description, this.format, });
 

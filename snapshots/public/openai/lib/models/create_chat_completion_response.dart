@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateChatCompletionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_chat_completion_response/create_chat_completion_response_choices.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type, which is always `chat.completion`.
 @immutable final class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject._(this.value);

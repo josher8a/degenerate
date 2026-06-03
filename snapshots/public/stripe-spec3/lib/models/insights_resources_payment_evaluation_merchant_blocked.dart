@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationMerchantBlocked
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the payment was blocked by the merchant.
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason._(this.value);

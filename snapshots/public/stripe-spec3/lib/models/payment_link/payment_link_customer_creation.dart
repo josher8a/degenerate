@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLink (inline: CustomerCreation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for Customer creation during checkout.
 @immutable final class PaymentLinkCustomerCreation {const PaymentLinkCustomerCreation._(this.value);

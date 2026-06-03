@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookEndpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint/deleted_webhook_endpoint_object.dart';/// You can configure [webhook endpoints](https://docs.stripe.com/webhooks/) via the API to be
 /// notified about events that happen in your Stripe account or connected

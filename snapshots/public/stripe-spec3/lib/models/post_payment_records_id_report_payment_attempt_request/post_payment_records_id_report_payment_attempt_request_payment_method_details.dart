@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsIdReportPaymentAttemptRequest (inline: PaymentMethodDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/payment_method_details_billing_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/payment_method_details_custom.dart';/// Information about the Payment Method debited for this payment.
 @immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });

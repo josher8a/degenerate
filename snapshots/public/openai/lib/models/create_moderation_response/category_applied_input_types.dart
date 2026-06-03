@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateModerationResponse (inline: Results > CategoryAppliedInputTypes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Hate {const Hate._(this.value);
 

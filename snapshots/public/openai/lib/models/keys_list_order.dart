@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KeysListOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order results by creation time, ascending or descending.
 @immutable final class KeysListOrder {const KeysListOrder._(this.value);

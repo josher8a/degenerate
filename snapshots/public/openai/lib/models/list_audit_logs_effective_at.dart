@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListAuditLogsEffectiveAt
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListAuditLogsEffectiveAt {const ListAuditLogsEffectiveAt({this.gt, this.gte, this.lt, this.lte, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesSource (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source control management provider.
 @immutable final class PagesSourceType {const PagesSourceType._(this.value);

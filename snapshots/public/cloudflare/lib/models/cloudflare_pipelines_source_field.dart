@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesSourceField
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesSourceField {const CloudflarePipelinesSourceField({required this.name, this.metadataKey, this.$required, this.sqlName, });
 

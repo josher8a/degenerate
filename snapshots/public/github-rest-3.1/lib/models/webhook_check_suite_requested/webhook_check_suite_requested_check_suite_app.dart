@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckSuiteRequested (inline: CheckSuite > App)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_app_permissions.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';@immutable final class WebhookCheckSuiteRequestedCheckSuiteAppEvents {const WebhookCheckSuiteRequestedCheckSuiteAppEvents._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QuotesResourceTotalDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details_resource_breakdown.dart';/// 
 @immutable final class QuotesResourceTotalDetails {const QuotesResourceTotalDetails({required this.amountDiscount, required this.amountTax, this.amountShipping, this.breakdown, });

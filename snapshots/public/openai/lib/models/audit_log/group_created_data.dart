@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: GroupCreated > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the created group.
 @immutable final class GroupCreatedData {const GroupCreatedData({this.groupName});

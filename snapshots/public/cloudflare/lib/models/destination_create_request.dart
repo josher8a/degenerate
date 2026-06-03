@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_request/destination_create_request_configuration.dart';@immutable final class DestinationCreateRequest {const DestinationCreateRequest({required this.configuration, required this.enabled, required this.name, this.skipPreflightCheck, });
 

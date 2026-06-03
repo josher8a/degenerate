@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesIncludeSplitTunnelWithHost
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_include_split_tunnel_description.dart';/// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
 extension type const TeamsDevicesIncludeSplitTunnelHost(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionDeleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of object being deleted.
 @immutable final class ChatCompletionDeletedObject {const ChatCompletionDeletedObject._(this.value);

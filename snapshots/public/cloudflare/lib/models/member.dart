@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Member
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_single_member/create_single_member_status.dart';import 'package:pub_cloudflare/models/member_id.dart';import 'package:pub_cloudflare/models/member_subject_user.dart';@immutable final class Member {const Member({required this.createTime, required this.id, required this.meta, required this.status, required this.updateTime, required this.user, });
 

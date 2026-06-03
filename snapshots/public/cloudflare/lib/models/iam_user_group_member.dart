@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUserGroupMember
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_email.dart';/// Member attached to a User Group.
 @immutable final class IamUserGroupMember {const IamUserGroupMember({required this.id, this.email, this.status, });

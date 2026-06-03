@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asMoasResponse (inline: Result > Moas > Origins)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MoasOrigins {const MoasOrigins({required this.origin, required this.peerCount, required this.rpkiValidation, });
 

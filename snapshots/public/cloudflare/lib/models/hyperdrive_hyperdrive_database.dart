@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HyperdriveHyperdriveDatabase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the URL scheme used to connect to your origin database.
 @immutable final class HyperdriveHyperdriveScheme {const HyperdriveHyperdriveScheme._(this.value);

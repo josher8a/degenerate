@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentGetDeploymentLogsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_log.dart';import 'package:pub_cloudflare/models/pages_messages2.dart';@immutable final class PagesDeploymentGetDeploymentLogsResponse {const PagesDeploymentGetDeploymentLogsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

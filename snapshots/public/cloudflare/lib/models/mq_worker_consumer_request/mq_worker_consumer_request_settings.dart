@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqWorkerConsumerRequest (inline: Settings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_batch_size.dart';import 'package:pub_cloudflare/models/mq_max_retries.dart';import 'package:pub_cloudflare/models/mq_retry_delay.dart';/// Maximum number of concurrent consumers that may consume from this Queue. Set to `null` to automatically opt in to the platform's maximum (recommended).
 extension type const MqMaxConcurrency(double value) {

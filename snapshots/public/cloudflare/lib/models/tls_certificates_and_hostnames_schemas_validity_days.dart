@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSchemasValidityDays
 
 /// The number of days the Client Certificate will be valid after the issued_on date
 extension type const TlsCertificatesAndHostnamesSchemasValidityDays(int value) {

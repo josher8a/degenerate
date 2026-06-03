@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/received_payment_method_details_financial_account.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_billing_details.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_initiating_payment_method_details_us_bank_account.dart';/// Set when `type` is `balance`.
 @immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(this.value);

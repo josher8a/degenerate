@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSubscriptionsCollectionMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSubscriptionsCollectionMethod {const GetSubscriptionsCollectionMethod._(this.value);
 

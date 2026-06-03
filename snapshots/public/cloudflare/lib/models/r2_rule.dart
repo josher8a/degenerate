@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2Rule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_r2_action.dart';@immutable final class R2Rule {const R2Rule({required this.actions, this.description, this.prefix, this.suffix, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';@immutable final class ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest {const ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest({required this.enabled});
 

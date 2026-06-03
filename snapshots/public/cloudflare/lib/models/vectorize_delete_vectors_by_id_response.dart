@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeDeleteVectorsByIdResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response3.dart';@immutable final class VectorizeDeleteVectorsByIdResponse {const VectorizeDeleteVectorsByIdResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceAfterCompletion (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The specified behavior after the purchase is complete.
 @immutable final class PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType._(this.value);

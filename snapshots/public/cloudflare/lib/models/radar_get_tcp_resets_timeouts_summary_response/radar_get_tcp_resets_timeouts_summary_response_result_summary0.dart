@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTcpResetsTimeoutsSummaryResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 {const RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, });
 

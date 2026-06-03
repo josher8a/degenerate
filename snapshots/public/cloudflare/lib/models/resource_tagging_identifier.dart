@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingIdentifier
 
 /// Identifier.
 extension type const ResourceTaggingIdentifier(String value) {

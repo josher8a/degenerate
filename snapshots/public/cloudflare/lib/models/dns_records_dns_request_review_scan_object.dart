@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsRequestReviewScanObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_a_record.dart';import 'package:pub_cloudflare/models/dns_records_aaaa_record.dart';import 'package:pub_cloudflare/models/dns_records_cname_record.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_patch.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_scan_batch_reject.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_with_data.dart';import 'package:pub_cloudflare/models/dns_records_mx_record.dart';import 'package:pub_cloudflare/models/dns_records_ns_record.dart';import 'package:pub_cloudflare/models/dns_records_openpgpkey_record.dart';import 'package:pub_cloudflare/models/dns_records_ptr_record.dart';import 'package:pub_cloudflare/models/dns_records_txt_record.dart';@immutable final class DnsRecordsDnsRequestReviewScanObject {const DnsRecordsDnsRequestReviewScanObject({this.accepts, this.rejects, });
 

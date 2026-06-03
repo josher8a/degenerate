@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Constrained
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Constrained {const Constrained({required this.name, required this.age, required this.items, this.score, });
 

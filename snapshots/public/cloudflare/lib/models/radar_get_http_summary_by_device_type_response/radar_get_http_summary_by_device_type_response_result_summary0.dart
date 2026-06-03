@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByDeviceTypeResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 {const RadarGetHttpSummaryByDeviceTypeResponseResultSummary0({required this.desktop, required this.mobile, required this.other, });
 

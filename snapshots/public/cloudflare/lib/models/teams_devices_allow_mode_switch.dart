@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesAllowModeSwitch
 
 /// Whether to allow the user to switch WARP between modes.
 extension type const TeamsDevicesAllowModeSwitch(bool value) {

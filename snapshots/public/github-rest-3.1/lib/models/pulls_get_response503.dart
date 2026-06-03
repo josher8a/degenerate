@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsGetResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsGetResponse503 {const PullsGetResponse503({this.code, this.message, this.documentationUrl, });
 

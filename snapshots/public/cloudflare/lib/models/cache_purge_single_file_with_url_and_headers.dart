@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CachePurgeSingleFileWithUrlAndHeaders
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_purge_single_file_with_url_and_headers/files.dart';@immutable final class CachePurgeSingleFileWithUrlAndHeaders {const CachePurgeSingleFileWithUrlAndHeaders({this.files});
 

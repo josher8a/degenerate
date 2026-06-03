@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotnetThreatFeedGetFullReportResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/botnet_threat_feed_get_day_report_response/botnet_threat_feed_get_day_report_response_result.dart';import 'package:pub_cloudflare/models/dos_messages2.dart';@immutable final class BotnetThreatFeedGetFullReportResponse {const BotnetThreatFeedGetFullReportResponse({required this.errors, required this.messages, required this.success, this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepObject (inline: LastError)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error` or `rate_limit_exceeded`.
 @immutable final class RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode._(this.value);

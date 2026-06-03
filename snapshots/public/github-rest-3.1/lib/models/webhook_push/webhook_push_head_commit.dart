@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPush (inline: HeadCommit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_push/commits_author.dart';import 'package:pub_github_rest_3_1/models/webhook_push/commits_committer.dart';@immutable final class WebhookPushHeadCommit {const WebhookPushHeadCommit({required this.author, required this.committer, required this.distinct, required this.id, required this.message, required this.timestamp, required this.treeId, required this.url, this.added, this.modified, this.removed, });
 

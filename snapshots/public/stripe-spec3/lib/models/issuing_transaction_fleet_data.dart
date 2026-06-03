@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingTransactionFleetData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fleet_cardholder_prompt_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fleet_reported_breakdown.dart';/// 
 @immutable final class IssuingTransactionFleetData {const IssuingTransactionFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsItemsListResponseCollection (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_items_list_response_collection/result_info_cursors.dart';@immutable final class ListsItemsListResponseCollectionResultInfo {const ListsItemsListResponseCollectionResultInfo({this.cursors});
 

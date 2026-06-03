@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateMemberWithPolicies
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_create_member_policy.dart';import 'package:pub_cloudflare/models/iam_email.dart';import 'package:pub_cloudflare/models/iam_member_invitation_status.dart';@immutable final class IamCreateMemberWithPolicies {const IamCreateMemberWithPolicies({required this.email, required this.policies, this.status, });
 

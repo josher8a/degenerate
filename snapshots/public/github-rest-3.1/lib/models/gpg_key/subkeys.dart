@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GpgKey (inline: Subkeys)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gpg_key/gpg_key_emails.dart';@immutable final class Subkeys {const Subkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt, this.rawKey, this.revoked, });
 

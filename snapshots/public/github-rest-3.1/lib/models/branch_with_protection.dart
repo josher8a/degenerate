@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchWithProtection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_protection.dart';import 'package:pub_github_rest_3_1/models/branch_with_protection/branch_with_protection_links.dart';import 'package:pub_github_rest_3_1/models/commit.dart';/// Branch With Protection
 @immutable final class BranchWithProtection {const BranchWithProtection({required this.name, required this.commit, required this.links, required this.protected, required this.protection, required this.protectionUrl, this.pattern, this.requiredApprovingReviewCount, });

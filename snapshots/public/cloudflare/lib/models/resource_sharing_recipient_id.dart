@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingRecipientId
 
 /// Share Recipient identifier tag.
 extension type const ResourceSharingRecipientId(String value) {

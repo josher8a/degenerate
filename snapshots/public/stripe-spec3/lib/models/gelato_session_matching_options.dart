@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoSessionMatchingOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Strictness of the DOB matching policy to apply.
 @immutable final class GelatoSessionMatchingOptionsDob {const GelatoSessionMatchingOptionsDob._(this.value);

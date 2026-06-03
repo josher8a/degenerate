@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustNetworksRouteHostnameCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_components_schemas_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_hostname.dart';import 'package:pub_cloudflare/models/tunnel_hostname_comment.dart';@immutable final class ZeroTrustNetworksRouteHostnameCreateRequest {const ZeroTrustNetworksRouteHostnameCreateRequest({this.comment, this.hostname, this.tunnelId, });
 

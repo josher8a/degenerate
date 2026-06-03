@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodSepaDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/sepa_debit_generated_from.dart';/// 
 @immutable final class PaymentMethodSepaDebit {const PaymentMethodSepaDebit({this.bankCode, this.branchCode, this.country, this.fingerprint, this.generatedFrom, this.last4, });

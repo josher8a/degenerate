@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailCreateRuleProperties
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_action.dart';import 'package:pub_cloudflare/models/email_rule_enabled.dart';import 'package:pub_cloudflare/models/email_rule_matcher.dart';import 'package:pub_cloudflare/models/email_rule_name.dart';import 'package:pub_cloudflare/models/email_rule_priority.dart';@immutable final class EmailCreateRuleProperties {const EmailCreateRuleProperties({required this.actions, required this.matchers, this.enabled, this.name, this.priority, });
 

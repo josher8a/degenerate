@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_certid_input.dart';@immutable final class PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest {const PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest({required this.config});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EditWorkerResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_worker.dart';@immutable final class EditWorkerResponse {const EditWorkerResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SetDefaultSkillVersionBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Updates the default version pointer for a skill.
 @immutable final class SetDefaultSkillVersionBody {const SetDefaultSkillVersionBody({required this.defaultVersion});

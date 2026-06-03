@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToolSearchOutputItemParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class ToolSearchOutputItemParam {const ToolSearchOutputItemParam({required this.tools, this.id, this.callId, this.type = 'tool_search_output', this.execution, this.status, });
 

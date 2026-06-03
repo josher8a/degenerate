@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryRun (inline: Statistics)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Statistics {const Statistics({required this.bytesRead, required this.elapsed, required this.rowsRead, this.abrLevel, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateFineTuningJobRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_hyperparameters.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_model.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/integrations.dart';import 'package:pub_openai/models/fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix, this.validationFile, this.integrations, this.seed, this.method, this.metadata, });
 

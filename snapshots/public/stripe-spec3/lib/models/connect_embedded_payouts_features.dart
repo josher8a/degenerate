@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedPayoutsFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class ConnectEmbeddedPayoutsFeatures {const ConnectEmbeddedPayoutsFeatures({required this.disableStripeUserAuthentication, required this.editPayoutSchedule, required this.externalAccountCollection, required this.instantPayouts, required this.standardPayouts, });

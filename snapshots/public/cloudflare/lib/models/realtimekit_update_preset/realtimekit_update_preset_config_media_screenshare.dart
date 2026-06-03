@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Config > Media > Screenshare)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/screenshare_quality.dart';/// Configuration options for participant screen shares
 @immutable final class RealtimekitUpdatePresetConfigMediaScreenshare {const RealtimekitUpdatePresetConfigMediaScreenshare({this.frameRate, this.quality, });

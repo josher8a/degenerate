@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMetaDeleted (inline: Hook)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_meta_deleted/hook_config.dart';@immutable final class HookEvents {const HookEvents._(this.value);
 

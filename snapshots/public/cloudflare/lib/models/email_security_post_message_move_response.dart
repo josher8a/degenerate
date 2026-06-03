@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityPostMessageMoveResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_message.dart';import 'package:pub_cloudflare/models/email_security_move_response_item.dart';@immutable final class EmailSecurityPostMessageMoveResponse {const EmailSecurityPostMessageMoveResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

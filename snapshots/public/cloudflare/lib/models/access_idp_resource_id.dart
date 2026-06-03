@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdpResourceId
 
 /// The IdP-generated Id of the SCIM Group resource; also known as the "external Id".
 extension type const AccessIdpResourceId(String value) {

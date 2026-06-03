@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KickPartcipantsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/kick_partcipants_response/kick_partcipants_response_data.dart';@immutable final class KickPartcipantsResponse {const KickPartcipantsResponse({this.data, this.success, });
 

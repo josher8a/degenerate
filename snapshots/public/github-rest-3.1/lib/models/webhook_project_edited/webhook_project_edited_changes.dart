@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookProjectEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes/webhooks_changes_body.dart';/// The changes to the project if the action was `edited`.
 @immutable final class WebhookProjectEditedChanges {const WebhookProjectEditedChanges({this.body, this.name, });

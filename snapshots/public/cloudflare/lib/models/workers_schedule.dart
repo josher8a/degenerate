@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersSchedule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSchedule {const WorkersSchedule({required this.cron, this.createdOn, this.modifiedOn, });
 

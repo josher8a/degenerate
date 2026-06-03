@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersonAdditionalTosAcceptances
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/person_additional_tos_acceptance.dart';/// 
 @immutable final class PersonAdditionalTosAcceptances {const PersonAdditionalTosAcceptances({this.account});

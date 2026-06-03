@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessDomainRule (inline: EmailDomain)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailDomain {const EmailDomain({required this.domain});
 

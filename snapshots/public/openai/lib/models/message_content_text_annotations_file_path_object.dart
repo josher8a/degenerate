@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageContentTextAnnotationsFilePathObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_annotations_file_path_object/message_content_text_annotations_file_path_object_file_path.dart';import 'package:pub_openai/models/message_content_text_annotations_file_path_object/message_content_text_annotations_file_path_object_type.dart';/// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
 @immutable final class MessageContentTextAnnotationsFilePathObject {const MessageContentTextAnnotationsFilePathObject({required this.type, required this.text, required this.filePath, required this.startIndex, required this.endIndex, });

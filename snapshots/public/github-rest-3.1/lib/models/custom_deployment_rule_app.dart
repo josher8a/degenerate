@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomDeploymentRuleApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub App that is providing a custom deployment protection rule.
 @immutable final class CustomDeploymentRuleApp {const CustomDeploymentRuleApp({required this.id, required this.slug, required this.integrationUrl, required this.nodeId, });

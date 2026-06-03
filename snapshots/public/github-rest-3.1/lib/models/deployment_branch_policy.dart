@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeploymentBranchPolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_name_pattern_with_type/deployment_branch_policy_name_pattern_with_type_type.dart';/// Details of a deployment branch or tag policy.
 @immutable final class DeploymentBranchPolicy {const DeploymentBranchPolicy({this.id, this.nodeId, this.name, this.type, });

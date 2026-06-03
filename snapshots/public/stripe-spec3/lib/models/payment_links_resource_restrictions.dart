@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceRestrictions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_completed_sessions.dart';/// 
 @immutable final class PaymentLinksResourceRestrictions {const PaymentLinksResourceRestrictions({required this.completedSessions});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Eviction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/delete_options.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/`<pod name>`/evictions.
 @immutable final class Eviction {const Eviction({this.apiVersion, this.deleteOptions, this.kind, this.metadata, });

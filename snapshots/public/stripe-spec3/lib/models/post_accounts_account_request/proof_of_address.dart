@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Documents > ProofOfAddress)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProofOfAddress {const ProofOfAddress({this.files});
 

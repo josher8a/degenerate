@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';@immutable final class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse {const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse({this.totalCount, this.repositories, });
 

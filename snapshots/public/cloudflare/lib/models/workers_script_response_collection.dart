@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersScriptResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_script_response_collection/workers_script_response_collection_result.dart';@immutable final class WorkersScriptResponseCollection {const WorkersScriptResponseCollection({required this.errors, required this.messages, required this.success, required this.result, });
 

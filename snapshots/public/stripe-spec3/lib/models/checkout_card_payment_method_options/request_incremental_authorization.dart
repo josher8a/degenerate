@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCardPaymentMethodOptions (inline: RequestIncrementalAuthorization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to [increment the authorization](/payments/incremental-authorization) for this CheckoutSession.
 @immutable final class RequestIncrementalAuthorization {const RequestIncrementalAuthorization._(this.value);

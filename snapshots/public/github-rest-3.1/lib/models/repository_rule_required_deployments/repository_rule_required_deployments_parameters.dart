@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleRequiredDeployments (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredDeploymentsParameters {const RepositoryRuleRequiredDeploymentsParameters({required this.requiredDeploymentEnvironments});
 

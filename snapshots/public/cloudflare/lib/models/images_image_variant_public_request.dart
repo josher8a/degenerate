@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageVariantPublicRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_variant_public_request/hero.dart';@immutable final class ImagesImageVariantPublicRequest {const ImagesImageVariantPublicRequest({this.hero});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityUpdateBlockedSender
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';@immutable final class EmailSecurityUpdateBlockedSender {const EmailSecurityUpdateBlockedSender({this.comments, this.isRegex, this.pattern, this.patternType, });
 

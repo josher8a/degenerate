@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryTransferred (inline: Changes > Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_transferred/owner_from.dart';@immutable final class ChangesOwner {const ChangesOwner({required this.from});
 

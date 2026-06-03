@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminMacrosProvisionLicensedConnectorResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_connector.dart';import 'package:pub_cloudflare/models/mconn_admin_device.dart';@immutable final class MconnAdminMacrosProvisionLicensedConnectorResult {const MconnAdminMacrosProvisionLicensedConnectorResult({required this.connector, required this.device, required this.licenseKey, });
 

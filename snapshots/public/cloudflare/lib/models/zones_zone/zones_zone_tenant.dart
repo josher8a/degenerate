@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesZone (inline: Tenant)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';/// The root organizational unit that this zone belongs to (such as a tenant or organization).
 @immutable final class ZonesZoneTenant {const ZonesZoneTenant({this.id, this.name, });

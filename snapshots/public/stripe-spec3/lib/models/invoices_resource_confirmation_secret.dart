@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicesResourceConfirmationSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class InvoicesResourceConfirmationSecret {const InvoicesResourceConfirmationSecret({required this.clientSecret, required this.type, });

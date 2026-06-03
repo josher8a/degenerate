@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GraderStringCheck
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `string_check`.
 @immutable final class GraderStringCheckType {const GraderStringCheckType._(this.value);

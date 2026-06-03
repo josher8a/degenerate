@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningLocationPullRequestReview
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'pull_request_review' secret scanning location type. This location type shows that a secret was detected in a review on a pull request.
 @immutable final class SecretScanningLocationPullRequestReview {const SecretScanningLocationPullRequestReview({required this.pullRequestReviewUrl});

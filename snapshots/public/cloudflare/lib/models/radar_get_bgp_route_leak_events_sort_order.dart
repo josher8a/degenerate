@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRouteLeakEventsSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
 @immutable final class RadarGetBgpRouteLeakEventsSortOrder {const RadarGetBgpRouteLeakEventsSortOrder._(this.value);

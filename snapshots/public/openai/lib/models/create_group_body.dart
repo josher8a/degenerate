@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateGroupBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for creating a new group in the organization.
 @immutable final class CreateGroupBody {const CreateGroupBody({required this.name});

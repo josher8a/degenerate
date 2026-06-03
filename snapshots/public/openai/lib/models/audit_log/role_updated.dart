@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: RoleUpdated)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/role_updated_changes_requested.dart';/// The details for events with this `type`.
 @immutable final class RoleUpdated {const RoleUpdated({this.id, this.changesRequested, });

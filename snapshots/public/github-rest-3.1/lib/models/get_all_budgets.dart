@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetAllBudgets
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/budget.dart';@immutable final class GetAllBudgets {const GetAllBudgets({required this.budgets, this.hasNextPage, this.totalCount, });
 

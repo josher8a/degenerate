@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayPacfilesComponentsSchemasResponseCollection (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_slug.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_url.dart';@immutable final class ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult {const ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult({this.createdAt, this.description, this.id, this.name, this.slug, this.updatedAt, this.url, });
 

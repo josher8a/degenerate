@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringWarpConfigChangeEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_config_details.dart';@immutable final class DigitalExperienceMonitoringWarpConfigChangeEvent {const DigitalExperienceMonitoringWarpConfigChangeEvent({this.deviceId, this.deviceRegistration, this.from, this.hostname, this.serialNumber, this.timestamp, this.to, this.userEmail, });
 

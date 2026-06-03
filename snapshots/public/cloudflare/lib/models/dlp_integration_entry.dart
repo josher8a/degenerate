@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpIntegrationEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpIntegrationEntry {const DlpIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, this.profileId, });
 

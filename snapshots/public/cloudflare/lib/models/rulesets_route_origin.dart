@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRouteOrigin
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An origin to route to.
 @immutable final class RulesetsRouteOrigin {const RulesetsRouteOrigin({this.host, this.port, });

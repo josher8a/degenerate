@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureThresholds (inline: Thresholds)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';/// The total number of auth-ids seen across this calculation.
 extension type const ShieldAuthIdTokens(int value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400 {const WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400({required this.errors, required this.result, required this.success, });
 

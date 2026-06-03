@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchListInstancesOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Column Name
 @immutable final class AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetLivestreamAnalyticsCompleteResponse (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLivestreamAnalyticsCompleteResponseData {const GetLivestreamAnalyticsCompleteResponseData({this.count, this.totalIngestSeconds, this.totalViewerSeconds, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentRecordsReportPaymentRequest (inline: AmountRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The amount you initially requested for this payment.
 @immutable final class AmountRequested {const AmountRequested({required this.currency, required this.value, });

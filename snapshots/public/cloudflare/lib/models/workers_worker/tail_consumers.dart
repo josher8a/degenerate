@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: TailConsumers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TailConsumers {const TailConsumers({required this.name});
 

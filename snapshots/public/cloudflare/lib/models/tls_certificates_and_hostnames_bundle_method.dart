@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesBundleMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
 @immutable final class TlsCertificatesAndHostnamesBundleMethod {const TlsCertificatesAndHostnamesBundleMethod._(this.value);

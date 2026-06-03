@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputeEnhancedEvidenceVisaCompellingEvidence3
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_visa_compelling_evidence3_disputed_transaction.dart';import 'package:pub_stripe_spec3/models/dispute_visa_compelling_evidence3_prior_undisputed_transaction.dart';/// 
 @immutable final class DisputeEnhancedEvidenceVisaCompellingEvidence3 {const DisputeEnhancedEvidenceVisaCompellingEvidence3({required this.priorUndisputedTransactions, this.disputedTransaction, });

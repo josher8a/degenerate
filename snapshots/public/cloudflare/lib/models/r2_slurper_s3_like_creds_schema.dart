@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperS3LikeCredsSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperS3LikeCredsSchema {const R2SlurperS3LikeCredsSchema({required this.accessKeyId, required this.secretAccessKey, });
 

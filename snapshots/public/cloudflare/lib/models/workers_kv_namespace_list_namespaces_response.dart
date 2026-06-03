@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceListNamespacesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_namespace.dart';@immutable final class WorkersKvNamespaceListNamespacesResponse {const WorkersKvNamespaceListNamespacesResponse({this.result});
 

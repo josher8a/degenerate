@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsListItemHostnameObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item_hostname.dart';@immutable final class ListsListItemHostnameObject {const ListsListItemHostnameObject({required this.hostname});
 

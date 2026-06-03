@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCapabilities
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Canadian pre-authorized debits payments capability of the account, or whether the account can directly process Canadian pre-authorized debits charges.
 @immutable final class AccountCapabilitiesAcssDebitPayments {const AccountCapabilitiesAcssDebitPayments._(this.value);

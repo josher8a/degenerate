@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsTurnKeyCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_messages2.dart';import 'package:pub_cloudflare/models/calls_turn_key_object.dart';@immutable final class CallsTurnKeyCollection {const CallsTurnKeyCollection({required this.errors, required this.messages, required this.success, this.result, });
 

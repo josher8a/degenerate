@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersEnvironment
 
 /// Optional environment if the Worker utilizes one.
 extension type const WorkersEnvironment(String value) {

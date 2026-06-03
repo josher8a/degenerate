@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsExecuteCategoryOverrides
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_sensitivity_level.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';/// A category-level override.
 @immutable final class RulesetsExecuteCategoryOverrides2 {const RulesetsExecuteCategoryOverrides2({required this.category, this.action, this.enabled, this.sensitivityLevel, });

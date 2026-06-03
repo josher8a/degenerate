@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InviteListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/invite.dart';@immutable final class InviteListResponse {const InviteListResponse({required this.object, required this.data, this.firstId, this.lastId, this.hasMore, });
 

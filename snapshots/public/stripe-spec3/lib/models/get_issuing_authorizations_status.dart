@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIssuingAuthorizationsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingAuthorizationsStatus {const GetIssuingAuthorizationsStatus._(this.value);
 

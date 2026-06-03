@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Batch (inline: RequestCounts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The request counts for different statuses within the batch.
 @immutable final class RequestCounts {const RequestCounts({required this.total, required this.completed, required this.failed, });

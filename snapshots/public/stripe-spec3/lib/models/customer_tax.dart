@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_tax/provider.dart';import 'package:pub_stripe_spec3/models/customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
 @immutable final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);

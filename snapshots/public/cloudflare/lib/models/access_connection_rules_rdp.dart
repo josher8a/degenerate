@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessConnectionRulesRdp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clipboard format for RDP connections.
 @immutable final class AccessRdpClipboardFormat {const AccessRdpClipboardFormat._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunObject (inline: RequiredAction)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object/submit_tool_outputs.dart';/// For now, this is always `submit_tool_outputs`.
 @immutable final class RequiredActionType {const RequiredActionType._(this.value);

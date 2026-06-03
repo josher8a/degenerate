@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMemberEdited (inline: Changes > OldPermission)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OldPermission {const OldPermission({required this.from});
 

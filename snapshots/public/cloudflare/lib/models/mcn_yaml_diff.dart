@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnYamlDiff
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnYamlDiff {const McnYamlDiff({required this.diff, required this.leftDescription, required this.leftYaml, required this.rightDescription, required this.rightYaml, });
 

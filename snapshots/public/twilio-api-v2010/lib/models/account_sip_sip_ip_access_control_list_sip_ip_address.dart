@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountSipSipIpAccessControlListSipIpAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipIpAccessControlListSipIpAddress {const AccountSipSipIpAccessControlListSipIpAddress({this.sid, this.accountSid, this.friendlyName, this.ipAddress, this.cidrPrefixLength = 0, this.ipAccessControlListSid, this.dateCreated, this.dateUpdated, this.uri, });
 

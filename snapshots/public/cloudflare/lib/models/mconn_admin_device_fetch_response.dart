@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminDeviceFetchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_device.dart';@immutable final class MconnAdminDeviceFetchResponse {const MconnAdminDeviceFetchResponse({this.result});
 

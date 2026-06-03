@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsUpdatePatAccessesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_update_pat_access_request/orgs_update_pat_access_request_action.dart';@immutable final class OrgsUpdatePatAccessesRequest {const OrgsUpdatePatAccessesRequest({required this.action, required this.patIds, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnCustomerDeviceOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Exactly one of id, serial_number, or provision_license must be provided.
 @immutable final class MconnCustomerDeviceOptions {const MconnCustomerDeviceOptions({this.id, this.provisionLicense, this.serialNumber, });

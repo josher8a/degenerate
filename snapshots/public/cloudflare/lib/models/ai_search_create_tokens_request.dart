@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchCreateTokensRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateTokensRequest {const AiSearchCreateTokensRequest({required this.cfApiId, required this.cfApiKey, required this.name, this.legacy = true, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateRequest {const PullsCreateRequest({required this.head, required this.base, this.title, this.headRepo, this.body, this.maintainerCanModify, this.draft, this.issue, });
 

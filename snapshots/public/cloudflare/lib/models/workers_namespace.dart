@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersNamespace
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersNamespace {const WorkersNamespace({this.$class, this.id, this.name, this.script, this.useSqlite, });
 

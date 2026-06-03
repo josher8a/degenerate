@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsCanceledBuildResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_outcome.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_stopped_on.dart';@immutable final class BuildsCanceledBuildResponse {const BuildsCanceledBuildResponse({this.buildOutcome, this.buildUuid, this.stoppedOn, });
 

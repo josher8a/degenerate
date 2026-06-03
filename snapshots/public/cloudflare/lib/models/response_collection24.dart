@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection24
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_messages2.dart';import 'package:pub_cloudflare/models/intel_result_info.dart';import 'package:pub_cloudflare/models/response_collection24/response_collection24_result.dart';@immutable final class ResponseCollection24 {const ResponseCollection24({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

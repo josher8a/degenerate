@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components > PricingTable)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PricingTable {const PricingTable({required this.enabled});
 

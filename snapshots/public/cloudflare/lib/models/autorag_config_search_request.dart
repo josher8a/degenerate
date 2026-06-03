@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigSearchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/autorag_config_ai_search_request_filters.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/autorag_config_ai_search_request_reranking.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/filters_variant1.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/filters_variant2.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/ranking_options.dart';@immutable final class AutoragConfigSearchRequest {const AutoragConfigSearchRequest({required this.query, this.filters, this.maxNumResults = 10, this.rankingOptions, this.reranking, this.rewriteQuery = false, });
 

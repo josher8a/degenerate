@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InteractionLimitResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/interaction_group.dart';/// Interaction limit settings.
 @immutable final class InteractionLimitResponse {const InteractionLimitResponse({required this.limit, required this.origin, required this.expiresAt, });

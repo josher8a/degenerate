@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FullRepository (inline: PullRequestCreationPolicy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
 @immutable final class PullRequestCreationPolicy {const PullRequestCreationPolicy._(this.value);

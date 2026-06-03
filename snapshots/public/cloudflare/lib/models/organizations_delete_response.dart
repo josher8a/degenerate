@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationsDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_organization_response.dart';import 'package:pub_cloudflare/models/message3.dart';@immutable final class OrganizationsDeleteResponse {const OrganizationsDeleteResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

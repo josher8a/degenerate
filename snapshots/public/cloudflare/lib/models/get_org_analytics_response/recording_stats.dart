@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetOrgAnalyticsResponse (inline: Data > RecordingStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/recording_stats_day_stats.dart';/// Recording statistics of an App during the range specified
 @immutable final class RecordingStats {const RecordingStats({this.dayStats, this.recordingCount, this.recordingMinutesConsumed, });

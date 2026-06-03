@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActiveStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `active`.
 @immutable final class ActiveStatusType {const ActiveStatusType._(this.value);

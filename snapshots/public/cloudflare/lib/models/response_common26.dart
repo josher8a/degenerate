@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon26
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_messages2.dart';@immutable final class ResponseCommon26 {const ResponseCommon26({required this.errors, required this.messages, required this.success, });
 

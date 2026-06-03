@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerReferenceResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';/// Represents a container created with /v1/containers.
 @immutable final class ContainerReferenceResource {const ContainerReferenceResource({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });

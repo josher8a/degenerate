@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflareTunnelConfigurationPutConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config.dart';@immutable final class CloudflareTunnelConfigurationPutConfigurationRequest {const CloudflareTunnelConfigurationPutConfigurationRequest({this.config});
 

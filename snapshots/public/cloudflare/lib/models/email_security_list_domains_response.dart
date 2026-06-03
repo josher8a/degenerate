@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityListDomainsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_domain.dart';import 'package:pub_cloudflare/models/email_security_message.dart';import 'package:pub_cloudflare/models/email_security_result_info.dart';@immutable final class EmailSecurityListDomainsResponse {const EmailSecurityListDomainsResponse({required this.errors, required this.messages, required this.success, required this.result, required this.resultInfo, });
 

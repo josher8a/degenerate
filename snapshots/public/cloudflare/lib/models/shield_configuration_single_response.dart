@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldConfigurationSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_configuration.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';@immutable final class ShieldConfigurationSingleResponse {const ShieldConfigurationSingleResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

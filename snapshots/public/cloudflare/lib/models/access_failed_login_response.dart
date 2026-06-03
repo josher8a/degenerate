@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessFailedLoginResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_failed_login_response/access_failed_login_response_result.dart';@immutable final class AccessFailedLoginResponse {const AccessFailedLoginResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GraderScoreModel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_score_model/eval_grader_score_model_sampling_params.dart';import 'package:pub_openai/models/eval_grader_score_model/eval_grader_score_model_type.dart';import 'package:pub_openai/models/eval_item.dart';/// A ScoreModelGrader object that uses a model to assign a score to the input.
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreCreateStoreObjectSystem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_store_name.dart';/// Request body for creating a store via system API routes
 @immutable final class SecretsStoreCreateStoreObjectSystem {const SecretsStoreCreateStoreObjectSystem({required this.accountId, required this.name, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountUnificationAccountController
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller/requirement_collection.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_fees.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_losses.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_stripe_dashboard.dart';/// The controller type. Can be `application`, if a Connect application controls the account, or `account`, if the account controls itself.
 @immutable final class AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType._(this.value);

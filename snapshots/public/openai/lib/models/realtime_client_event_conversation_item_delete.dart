@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeClientEventConversationItemDelete
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Send this event when you want to remove any item from the conversation
 /// history. The server will respond with a `conversation.item.deleted` event,

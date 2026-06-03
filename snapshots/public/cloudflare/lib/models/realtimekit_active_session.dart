@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitActiveSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// current status of session
 @immutable final class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventRawUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventRawUpdateRequest {const PostEventRawUpdateRequest({this.data, this.source, this.tlp, });
 

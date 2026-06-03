@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreExpirationAfter (inline: Anchor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reference point for the expiration.
 @immutable final class VectorStoreExpirationAfterAnchor {const VectorStoreExpirationAfterAnchor._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrganizationFull (inline: Plan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrganizationFullPlan {const OrganizationFullPlan({required this.name, required this.space, required this.privateRepos, this.filledSeats, this.seats, });
 

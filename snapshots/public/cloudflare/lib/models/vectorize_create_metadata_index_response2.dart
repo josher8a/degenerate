@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeCreateMetadataIndexResponse2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_create_metadata_index_response.dart';@immutable final class VectorizeCreateMetadataIndexResponse2 {const VectorizeCreateMetadataIndexResponse2({this.result});
 

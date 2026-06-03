@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7SummaryByVerticalMitigationProduct
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByVerticalMitigationProduct {const RadarGetAttacksLayer7SummaryByVerticalMitigationProduct._(this.value);
 

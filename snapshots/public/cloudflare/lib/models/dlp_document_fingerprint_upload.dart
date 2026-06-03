@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDocumentFingerprintUpload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpDocumentFingerprintUpload {const DlpDocumentFingerprintUpload({required this.createdAt, required this.description, required this.entryId, required this.fileName, required this.id, required this.matchPercent, required this.name, required this.status, required this.updatedAt, required this.version, });
 

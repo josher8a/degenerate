@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAnalysisCommitSha
 
 /// The SHA of the commit to which the analysis you are uploading relates.
 extension type const CodeScanningAnalysisCommitSha(String value) {

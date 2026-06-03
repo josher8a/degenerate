@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventInputAudioBufferDtmfEventReceived
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **SIP Only:** Returned when an DTMF event is received. A DTMF event is a message that
 /// represents a telephone keypad press (0–9, *, #, A–D). The `event` property

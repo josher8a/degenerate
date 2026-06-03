@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingResourceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Type.
 @immutable final class ResourceSharingResourceType {const ResourceSharingResourceType._(this.value);

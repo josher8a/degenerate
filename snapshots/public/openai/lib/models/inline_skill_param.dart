@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InlineSkillParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/inline_skill_source_param.dart';/// Defines an inline skill for this request.
 @immutable final class InlineSkillParamType {const InlineSkillParamType._(this.value);

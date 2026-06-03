@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCollection32
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages32.dart';import 'package:pub_cloudflare/models/result_info2.dart';@immutable final class ResponseCollection32 {const ResponseCollection32({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

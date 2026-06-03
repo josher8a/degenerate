@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsDescription
 
 /// An informative summary of the list.
 extension type const ListsDescription(String value) {

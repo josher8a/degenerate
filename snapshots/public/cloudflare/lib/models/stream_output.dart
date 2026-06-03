@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamOutput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_output_enabled.dart';import 'package:pub_cloudflare/models/stream_output_identifier.dart';import 'package:pub_cloudflare/models/stream_output_stream_key.dart';import 'package:pub_cloudflare/models/stream_output_url.dart';@immutable final class StreamOutput {const StreamOutput({this.enabled, this.streamKey, this.uid, this.url, });
 

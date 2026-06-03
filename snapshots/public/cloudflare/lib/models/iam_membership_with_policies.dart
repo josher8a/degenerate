@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamMembershipWithPolicies
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_enabled.dart';import 'package:pub_cloudflare/models/iam_account.dart';import 'package:pub_cloudflare/models/iam_list_member_policy.dart';import 'package:pub_cloudflare/models/iam_membership_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_permissions.dart';import 'package:pub_cloudflare/models/iam_schemas_status.dart';@immutable final class IamMembershipWithPolicies {const IamMembershipWithPolicies({this.account, this.apiAccessEnabled, this.id, this.permissions, this.policies, this.roles, this.status, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostConfigCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/frequency2.dart';@immutable final class PostConfigCreateRequest {const PostConfigCreateRequest({required this.ips, this.frequency, this.ports, });
 

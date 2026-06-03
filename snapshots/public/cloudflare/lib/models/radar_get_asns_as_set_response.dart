@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsnsAsSetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_response/radar_get_asns_as_set_response_result.dart';@immutable final class RadarGetAsnsAsSetResponse {const RadarGetAsnsAsSetResponse({required this.result, required this.success, });
 

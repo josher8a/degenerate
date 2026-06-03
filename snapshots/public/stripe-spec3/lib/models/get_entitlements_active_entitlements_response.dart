@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEntitlementsActiveEntitlementsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetEntitlementsActiveEntitlementsResponse {const GetEntitlementsActiveEntitlementsResponse({required this.data, required this.hasMore, required this.object, required this.url, });

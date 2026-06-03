@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Subscription (inline: Items)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';/// List of subscription items, each with an attached price.
 @immutable final class SubscriptionItems {const SubscriptionItems({required this.data, required this.hasMore, required this.object, required this.url, });

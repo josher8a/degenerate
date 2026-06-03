@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest({required this.confirmed, this.expand, });
 

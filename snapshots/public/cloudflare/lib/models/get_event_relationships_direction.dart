@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetEventRelationshipsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction to traverse the graph. Defaults to 'both' to search all.
 @immutable final class GetEventRelationshipsDirection {const GetEventRelationshipsDirection._(this.value);

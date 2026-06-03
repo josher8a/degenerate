@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpamResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_email_security_timeseries_group_by_spam_response/radar_get_email_security_timeseries_group_by_spam_response_result_serie0.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamResponseResult {const RadarGetEmailSecurityTimeseriesGroupBySpamResponseResult({required this.meta, required this.serie0, });
 

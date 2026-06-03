@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsForkPrWorkflowsPrivateRepos
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsForkPrWorkflowsPrivateRepos {const ActionsForkPrWorkflowsPrivateRepos({required this.runWorkflowsFromForkPullRequests, required this.sendWriteTokensToWorkflows, required this.sendSecretsAndVariables, required this.requireApprovalForForkPrWorkflows, });
 

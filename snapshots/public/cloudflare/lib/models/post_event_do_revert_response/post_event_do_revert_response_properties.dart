@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventDoRevertResponse (inline: Properties)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/dataset_id.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/minutes_ago.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/revert_bookmark.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/target_timestamp.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/undo_bookmark.dart';@immutable final class PostEventDoRevertResponseProperties {const PostEventDoRevertResponseProperties({required this.datasetId, required this.minutesAgo, required this.revertBookmark, required this.targetTimestamp, required this.undoBookmark, });
 

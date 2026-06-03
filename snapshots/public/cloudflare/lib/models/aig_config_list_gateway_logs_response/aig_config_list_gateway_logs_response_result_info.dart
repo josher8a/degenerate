@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigListGatewayLogsResponse (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsResponseResultInfo {const AigConfigListGatewayLogsResponseResultInfo({this.count, this.maxCost, this.maxDuration, this.maxTokensIn, this.maxTokensOut, this.maxTotalTokens, this.minCost, this.minDuration, this.minTokensIn, this.minTokensOut, this.minTotalTokens, this.page, this.perPage, this.totalCount, });
 

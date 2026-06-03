@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country_available_phone_number_local/capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
 

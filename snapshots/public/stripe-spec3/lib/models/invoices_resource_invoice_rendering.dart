@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicesResourceInvoiceRendering
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_rendering_pdf.dart';/// 
 @immutable final class InvoicesResourceInvoiceRendering {const InvoicesResourceInvoiceRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });

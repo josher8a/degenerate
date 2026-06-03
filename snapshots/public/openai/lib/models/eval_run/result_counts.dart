@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRun (inline: ResultCounts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Counters summarizing the outcomes of the evaluation run.
 @immutable final class ResultCounts {const ResultCounts({required this.total, required this.errored, required this.failed, required this.passed, });

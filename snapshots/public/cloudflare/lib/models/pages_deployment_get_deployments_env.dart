@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentGetDeploymentsEnv
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// What type of deployments to fetch.
 @immutable final class PagesDeploymentGetDeploymentsEnv {const PagesDeploymentGetDeploymentsEnv._(this.value);

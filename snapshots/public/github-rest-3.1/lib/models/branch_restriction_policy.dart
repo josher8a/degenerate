@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchRestrictionPolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_restriction_policy/apps.dart';import 'package:pub_github_rest_3_1/models/branch_restriction_policy/users.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// Branch Restriction Policy
 @immutable final class BranchRestrictionPolicy {const BranchRestrictionPolicy({required this.url, required this.usersUrl, required this.teamsUrl, required this.appsUrl, required this.users, required this.teams, required this.apps, });

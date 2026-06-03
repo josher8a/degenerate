@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessMeta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The metadata of the SCIM resource.
 @immutable final class AccessMeta {const AccessMeta({this.created, this.lastModified, });

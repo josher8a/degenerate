@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PatchTagCategoryUpdateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchTagCategoryUpdateResponse {const PatchTagCategoryUpdateResponse({required this.name, required this.uuid, this.createdAt, this.description, this.updatedAt, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: TaxIdCollection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_tax_id_collection/required.dart';/// Controls tax ID collection during checkout.
 @immutable final class TaxIdCollection {const TaxIdCollection({required this.enabled, this.$required, });

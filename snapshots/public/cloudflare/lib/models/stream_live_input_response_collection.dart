@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLiveInputResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_live_input_response_collection/stream_live_input_response_collection_result.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';@immutable final class StreamLiveInputResponseCollection {const StreamLiveInputResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

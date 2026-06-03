@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDomainsGetDomainsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain.dart';@immutable final class PagesDomainsGetDomainsResponse {const PagesDomainsGetDomainsResponse({required this.result});
 

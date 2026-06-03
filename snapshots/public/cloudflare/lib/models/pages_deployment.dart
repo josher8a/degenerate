@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeployment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_build_config.dart';import 'package:pub_cloudflare/models/pages_deployment/deployment_trigger.dart';import 'package:pub_cloudflare/models/pages_env_vars/pages_env_vars_value.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';import 'package:pub_cloudflare/models/pages_source.dart';import 'package:pub_cloudflare/models/pages_stage.dart';/// Type of deploy.
 @immutable final class Environment {const Environment._(this.value);

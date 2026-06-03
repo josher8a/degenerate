@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityListTrustedDomainsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityListTrustedDomainsOrder {const EmailSecurityListTrustedDomainsOrder._(this.value);
 

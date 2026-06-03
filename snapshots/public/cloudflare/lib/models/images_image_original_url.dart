@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageOriginalUrl
 
 /// URI to original variant for an image.
 extension type ImagesImageOriginalUrl(Uri value) {

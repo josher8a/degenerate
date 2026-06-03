@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudConnectorIdentifier
 
 /// Identifier.
 extension type const CloudConnectorIdentifier(String value) {

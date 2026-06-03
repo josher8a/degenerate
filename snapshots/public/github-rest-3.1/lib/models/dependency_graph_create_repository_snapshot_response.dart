@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphCreateRepositorySnapshotResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphCreateRepositorySnapshotResponse {const DependencyGraphCreateRepositorySnapshotResponse({required this.id, required this.createdAt, required this.result, required this.message, });
 

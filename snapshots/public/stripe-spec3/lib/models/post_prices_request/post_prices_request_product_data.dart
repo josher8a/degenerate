@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPricesRequest (inline: ProductData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// These fields can be used to create a new product that this price will belong to.
 @immutable final class PostPricesRequestProductData {const PostPricesRequestProductData({required this.name, this.active, this.id, this.metadata, this.statementDescriptor, this.taxCode, this.unitLabel, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesRealtimeResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/radar_get_bgp_routes_realtime_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/result_routes.dart';@immutable final class RadarGetBgpRoutesRealtimeResponseResult {const RadarGetBgpRoutesRealtimeResponseResult({required this.meta, required this.routes, });
 

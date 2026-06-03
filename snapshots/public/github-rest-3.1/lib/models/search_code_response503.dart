@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchCodeResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchCodeResponse503 {const SearchCodeResponse503({this.code, this.message, this.documentationUrl, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsAnalyticsUntil
 
 /// End date and time of requesting data period in ISO 8601 format.
 extension type DnsAnalyticsUntil(DateTime value) {

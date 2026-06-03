@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingInterval
 
 /// The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations.
 extension type const LoadBalancingInterval(int value) {

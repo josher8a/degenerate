@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetGeolocationDetailsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_response/geolocation.dart';@immutable final class RadarGetGeolocationDetailsResponseResult {const RadarGetGeolocationDetailsResponseResult({required this.geolocation});
 

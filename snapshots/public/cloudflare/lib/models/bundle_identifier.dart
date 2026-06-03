@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleIdentifier
 
 /// Defines an identifier.
 extension type const BundleIdentifier(String value) {

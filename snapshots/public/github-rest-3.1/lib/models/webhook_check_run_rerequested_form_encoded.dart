@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCheckRunRerequestedFormEncoded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The check_run.rerequested webhook encoded with URL encoding
 @immutable final class WebhookCheckRunRerequestedFormEncoded {const WebhookCheckRunRerequestedFormEncoded({required this.payload});

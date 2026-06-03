@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerTagInvalid
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker has a tag containing invalid characters.
 @immutable final class WorkersErrorWorkerTagInvalidCode {const WorkersErrorWorkerTagInvalidCode._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentTextAnnotationsFileCitationObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_annotations_file_citation_object/message_content_text_annotations_file_citation_object_type.dart';import 'package:pub_openai/models/message_delta_content_text_annotations_file_citation_object/message_delta_content_text_annotations_file_citation_object_file_citation.dart';/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
 @immutable final class MessageDeltaContentTextAnnotationsFileCitationObject {const MessageDeltaContentTextAnnotationsFileCitationObject({required this.index, required this.type, this.text, this.fileCitation, this.startIndex, this.endIndex, });

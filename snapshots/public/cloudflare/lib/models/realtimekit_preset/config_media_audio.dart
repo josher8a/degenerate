@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Config > Media > Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control options for Audio quality.
 @immutable final class ConfigMediaAudio {const ConfigMediaAudio({this.enableHighBitrate = false, this.enableStereo = false, });

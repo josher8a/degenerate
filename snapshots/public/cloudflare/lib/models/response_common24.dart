@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon24
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_messages2.dart';@immutable final class ResponseCommon24 {const ResponseCommon24({required this.errors, required this.messages, required this.success, });
 

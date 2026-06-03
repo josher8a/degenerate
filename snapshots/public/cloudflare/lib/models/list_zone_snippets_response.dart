@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListZoneSnippetsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_message.dart';import 'package:pub_cloudflare/models/snippets_result_info.dart';import 'package:pub_cloudflare/models/snippets_snippet.dart';@immutable final class ListZoneSnippetsResponse {const ListZoneSnippetsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 

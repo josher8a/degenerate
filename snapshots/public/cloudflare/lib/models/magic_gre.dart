@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicGre
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration specific to GRE interconnects.
 @immutable final class MagicGre {const MagicGre({this.cloudflareEndpoint});

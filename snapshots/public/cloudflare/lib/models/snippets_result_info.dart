@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SnippetsResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_page.dart';import 'package:pub_cloudflare/models/snippets_per_page.dart';/// Additional information to navigate the results.
 @immutable final class SnippetsResultInfo {const SnippetsResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, required this.totalPages, });

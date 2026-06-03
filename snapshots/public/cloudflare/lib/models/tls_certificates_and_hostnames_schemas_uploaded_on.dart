@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSchemasUploadedOn
 
 /// This is the time the certificate was uploaded.
 extension type TlsCertificatesAndHostnamesSchemasUploadedOn(DateTime value) {

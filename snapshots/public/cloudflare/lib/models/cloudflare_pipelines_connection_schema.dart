@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesConnectionSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
 

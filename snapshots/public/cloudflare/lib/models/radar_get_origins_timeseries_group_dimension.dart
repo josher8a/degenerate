@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginsTimeseriesGroupDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the origin attribute by which to group the results.
 @immutable final class RadarGetOriginsTimeseriesGroupDimension {const RadarGetOriginsTimeseriesGroupDimension._(this.value);

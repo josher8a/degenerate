@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2EnableSippyAws (inline: Destination)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_aws/destination_provider.dart';/// R2 bucket to copy objects to.
 @immutable final class R2EnableSippyAwsDestination {const R2EnableSippyAwsDestination({this.accessKeyId, this.provider, this.secretAccessKey, });

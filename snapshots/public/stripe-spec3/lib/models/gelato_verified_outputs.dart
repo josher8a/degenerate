@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoVerifiedOutputs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/gelato_data_verified_outputs_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/sex.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report/id_number_type.dart';/// 
 @immutable final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });

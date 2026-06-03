@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageCompleted)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';@immutable final class ThreadMessageCompletedEvent {const ThreadMessageCompletedEvent._(this.value);
 

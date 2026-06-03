@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetReportsDatasetsDatasetType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by dataset type.
 @immutable final class RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType._(this.value);

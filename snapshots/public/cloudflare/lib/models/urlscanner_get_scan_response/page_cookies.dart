@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Page > Cookies)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageCookies {const PageCookies({required this.domain, required this.expires, required this.httpOnly, required this.name, required this.path, required this.sameParty, required this.secure, required this.session, required this.size, required this.sourcePort, required this.sourceScheme, required this.value, this.priority, });
 

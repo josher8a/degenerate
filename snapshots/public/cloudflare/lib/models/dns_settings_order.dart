@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order DNS views by.
 @immutable final class DnsSettingsOrder {const DnsSettingsOrder._(this.value);

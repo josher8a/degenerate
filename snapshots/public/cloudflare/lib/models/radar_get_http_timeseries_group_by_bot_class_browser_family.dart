@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTimeseriesGroupByBotClassBrowserFamily
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBotClassBrowserFamily {const RadarGetHttpTimeseriesGroupByBotClassBrowserFamily._(this.value);
 

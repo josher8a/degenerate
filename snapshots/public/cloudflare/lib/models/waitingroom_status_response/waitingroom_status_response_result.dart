@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomStatusResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const WaitingroomEstimatedQueuedUsers(int value) {
 factory WaitingroomEstimatedQueuedUsers.fromJson(num json) => WaitingroomEstimatedQueuedUsers(json.toInt());

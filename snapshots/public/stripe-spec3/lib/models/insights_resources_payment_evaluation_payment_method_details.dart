@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationPaymentMethodDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_billing_details.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';/// Payment method details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationPaymentMethodDetails {const InsightsResourcesPaymentEvaluationPaymentMethodDetails({required this.paymentMethod, this.billingDetails, });

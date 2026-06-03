@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlSaasApp (inline: CustomAttributes > Source > NameByIdp)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NameByIdp {const NameByIdp({this.idpId, this.sourceName, });
 

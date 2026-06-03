@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2PutEventNotificationConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_rule.dart';@immutable final class R2PutEventNotificationConfigRequest {const R2PutEventNotificationConfigRequest({required this.rules});
 

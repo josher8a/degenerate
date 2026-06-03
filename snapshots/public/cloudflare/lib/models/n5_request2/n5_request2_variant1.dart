@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/$5Request2 (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';import 'package:pub_cloudflare/models/n5_request2/pooling.dart';@immutable final class $5Request2Variant1 {const $5Request2Variant1({required this.text, this.pooling = Pooling.mean, });
 

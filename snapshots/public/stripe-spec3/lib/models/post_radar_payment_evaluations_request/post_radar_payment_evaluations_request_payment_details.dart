@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest (inline: PaymentDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/money_movement_details.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/payment_details_payment_method_details.dart';import 'package:pub_stripe_spec3/models/shipping_details.dart';/// Details about the payment.
 @immutable final class PostRadarPaymentEvaluationsRequestPaymentDetails {const PostRadarPaymentEvaluationsRequestPaymentDetails({required this.amount, required this.currency, required this.paymentMethodDetails, this.description, this.moneyMovementDetails, this.shippingDetails, this.statementDescriptor, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSince
 
 /// the timestamp of the earliest update log.
 extension type AccessSince(DateTime value) {

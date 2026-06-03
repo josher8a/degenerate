@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PrivateUser (inline: Plan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PrivateUserPlan {const PrivateUserPlan({required this.collaborators, required this.name, required this.space, required this.privateRepos, });
 

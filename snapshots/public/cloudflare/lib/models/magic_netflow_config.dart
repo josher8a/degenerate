@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicNetflowConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NetFlow configuration for a site.
 @immutable final class MagicNetflowConfig {const MagicNetflowConfig({required this.collectorIp, this.activeTimeout, this.collectorPort, this.inactiveTimeout, this.samplingRate, });

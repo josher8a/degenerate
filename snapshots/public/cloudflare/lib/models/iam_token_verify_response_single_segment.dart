@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamTokenVerifyResponseSingleSegment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_token_verify_response_single_segment/iam_token_verify_response_single_segment_result.dart';@immutable final class IamTokenVerifyResponseSingleSegment {const IamTokenVerifyResponseSingleSegment({this.result});
 

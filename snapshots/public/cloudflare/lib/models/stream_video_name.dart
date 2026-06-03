@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamVideoName
 
 /// Provides a fast, exact string match on the `name` key in the `meta` field.
 extension type const StreamVideoName(String value) {

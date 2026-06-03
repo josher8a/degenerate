@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotIdeChat (inline: Editors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_chat/copilot_ide_chat_editors_models.dart';/// Copilot Chat metrics, for active editors.
 @immutable final class CopilotIdeChatEditors {const CopilotIdeChatEditors({this.name, this.totalEngagedUsers, this.models, });

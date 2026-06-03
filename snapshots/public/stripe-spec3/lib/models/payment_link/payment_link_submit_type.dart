@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLink (inline: SubmitType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the type of transaction being performed which customizes relevant text on the page, such as the submit button.
 @immutable final class PaymentLinkSubmitType {const PaymentLinkSubmitType._(this.value);

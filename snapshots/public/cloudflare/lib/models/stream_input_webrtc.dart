@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamInputWebrtc
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The WebRTC URL you provide to the broadcaster, which they stream live video to.
 extension type const StreamInputWebrtcUrl(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsSubmitReportRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_base_report_fields.dart';import 'package:pub_cloudflare/models/abuse_reports_submission_report_type.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
 

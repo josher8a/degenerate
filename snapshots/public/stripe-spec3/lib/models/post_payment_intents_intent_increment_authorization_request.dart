@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentIncrementAuthorizationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequest {const PostPaymentIntentsIntentIncrementAuthorizationRequest({required this.amount, this.amountDetails, this.applicationFeeAmount, this.description, this.expand, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.transferData, });
 

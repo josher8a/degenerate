@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningLocationPullRequestTitle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'pull_request_title' secret scanning location type. This location type shows that a secret was detected in the title of a pull request.
 @immutable final class SecretScanningLocationPullRequestTitle {const SecretScanningLocationPullRequestTitle({required this.pullRequestTitleUrl});

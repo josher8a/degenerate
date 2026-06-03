@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: ToolChoice > Variant1 > AllowedTools > AllowedTools)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowedToolsMode {const AllowedToolsMode._(this.value);
 

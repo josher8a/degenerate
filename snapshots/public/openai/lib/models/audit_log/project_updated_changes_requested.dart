@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: ProjectUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the project.
 @immutable final class ProjectUpdatedChangesRequested {const ProjectUpdatedChangesRequested({this.title});

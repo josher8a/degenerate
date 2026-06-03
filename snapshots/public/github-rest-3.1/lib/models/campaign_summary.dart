@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CampaignSummary
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';import 'package:pub_github_rest_3_1/models/campaign_summary/alert_stats.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The campaign metadata and alert stats.
 @immutable final class CampaignSummary {const CampaignSummary({required this.number, required this.createdAt, required this.updatedAt, required this.description, required this.managers, required this.endsAt, required this.state, required this.contactLink, this.name, this.teamManagers, this.publishedAt, this.closedAt, this.alertStats, });

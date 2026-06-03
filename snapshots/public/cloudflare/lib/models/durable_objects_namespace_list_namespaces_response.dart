@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DurableObjectsNamespaceListNamespacesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_namespace.dart';@immutable final class DurableObjectsNamespaceListNamespacesResponse {const DurableObjectsNamespaceListNamespacesResponse({this.result});
 

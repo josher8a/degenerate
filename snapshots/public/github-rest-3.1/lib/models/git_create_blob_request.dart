@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCreateBlobRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCreateBlobRequest {const GitCreateBlobRequest({required this.content, this.encoding = 'utf-8', });
 

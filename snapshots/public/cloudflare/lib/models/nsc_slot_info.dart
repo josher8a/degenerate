@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscSlotInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_facility_info.dart';@immutable final class NscSlotInfo {const NscSlotInfo({required this.facility, required this.id, required this.occupied, required this.site, required this.speed, this.account, });
 

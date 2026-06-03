@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringRamUsedPctByApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringRamUsedPctByApp2 {const DigitalExperienceMonitoringRamUsedPctByApp2({this.name, this.ramUsedPct, });
 

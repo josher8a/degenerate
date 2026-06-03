@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsKrCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_kr_card/payment_method_details_kr_card_brand.dart';/// 
 @immutable final class PaymentMethodDetailsKrCard {const PaymentMethodDetailsKrCard({this.brand, this.buyerId, this.last4, this.transactionId, });

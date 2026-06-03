@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MandatePaypal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class MandatePaypal {const MandatePaypal({this.billingAgreementId, this.payerId, });

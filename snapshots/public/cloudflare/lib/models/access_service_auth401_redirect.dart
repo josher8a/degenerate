@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessServiceAuth401Redirect
 
 /// Returns a 401 status code when the request is blocked by a Service Auth policy.
 extension type const AccessServiceAuth401Redirect(bool value) {

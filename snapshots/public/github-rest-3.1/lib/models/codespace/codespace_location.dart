@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Codespace (inline: Location)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The initally assigned location of a new codespace.
 @immutable final class CodespaceLocation {const CodespaceLocation._(this.value);

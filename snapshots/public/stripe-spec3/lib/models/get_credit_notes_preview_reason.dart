@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCreditNotesPreviewReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewReason {const GetCreditNotesPreviewReason._(this.value);
 

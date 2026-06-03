@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures (inline: PaymentMethodRedisplay)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether or not the Payment Element shows saved payment methods. This parameter defaults to `disabled`.
 @immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay._(this.value);

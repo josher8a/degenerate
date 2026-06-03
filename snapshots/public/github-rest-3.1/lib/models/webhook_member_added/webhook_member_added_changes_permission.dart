@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMemberAdded (inline: Changes > Permission)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PermissionTo {const PermissionTo._(this.value);
 

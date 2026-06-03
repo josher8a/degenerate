@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranchPullRequestReview (inline: DismissalRestrictions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';@immutable final class ProtectedBranchPullRequestReviewDismissalRestrictions {const ProtectedBranchPullRequestReviewDismissalRestrictions({this.users, this.teams, this.apps, this.url, this.usersUrl, this.teamsUrl, });
 

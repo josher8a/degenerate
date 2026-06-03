@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateAppResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_app_response/create_app_response_data.dart';@immutable final class CreateAppResponse {const CreateAppResponse({this.data, this.success, });
 

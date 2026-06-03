@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostRadarPaymentEvaluationsRequest (inline: ClientDeviceMetadataDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the Client Device Metadata to associate with the payment evaluation.
 @immutable final class ClientDeviceMetadataDetails {const ClientDeviceMetadataDetails({required this.radarSession});

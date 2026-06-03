@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamAudioIdentifier
 
 /// The unique identifier for an additional audio track.
 extension type const StreamAudioIdentifier(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageBuild (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PageBuildError {const PageBuildError({required this.message});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookOrganizationRenamed (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_renamed/webhook_organization_renamed_changes_login.dart';@immutable final class WebhookOrganizationRenamedChanges {const WebhookOrganizationRenamedChanges({this.login});
 

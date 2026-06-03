@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookStatus (inline: Commit > Commit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/webhook_status/commit_commit_author.dart';import 'package:pub_github_rest_3_1/models/webhook_status/commit_commit_committer.dart';import 'package:pub_github_rest_3_1/models/webhook_status/commit_commit_verification.dart';@immutable final class WebhookStatusCommitCommit {const WebhookStatusCommitCommit({required this.author, required this.commentCount, required this.committer, required this.message, required this.tree, required this.url, required this.verification, });
 

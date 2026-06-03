@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopAsesByOperatingSystemOs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
 @immutable final class RadarGetHttpTopAsesByOperatingSystemOs {const RadarGetHttpTopAsesByOperatingSystemOs._(this.value);

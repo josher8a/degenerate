@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementSbfmStaticResourceProtection
 
 /// Super Bot Fight Mode (SBFM) to enable static resource protection.
 /// Enable if static resources on your application need bot protection.

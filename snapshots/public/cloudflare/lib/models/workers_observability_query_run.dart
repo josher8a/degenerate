@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersObservabilityQueryRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/workers_observability_query.dart';import 'package:pub_cloudflare/models/workers_observability_query_run/statistics.dart';@immutable final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
 

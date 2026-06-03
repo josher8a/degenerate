@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsBuildResponse (inline: PullRequest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';@immutable final class PullRequest {const PullRequest({this.createdOn, this.pullRequestUrl, });
 

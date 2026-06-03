@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListRunStepsInclude[]
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListRunStepsInclude {const ListRunStepsInclude._(this.value);
 

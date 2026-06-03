@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStorePatchSecretObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';@immutable final class SecretsStorePatchSecretObject {const SecretsStorePatchSecretObject({this.comment, this.scopes, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsCompleted
 
 /// The RFC 3339 timestamp of when the operation was completed.
 extension type const ListsCompleted(String value) {

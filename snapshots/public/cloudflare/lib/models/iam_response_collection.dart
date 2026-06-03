@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamResponseCollection {const IamResponseCollection({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamMembership (inline: Role)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the user in the team.
 @immutable final class TeamMembershipRole {const TeamMembershipRole._(this.value);

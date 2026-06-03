@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurboRequest (inline: Audio > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AudioVariant2 {const AudioVariant2({this.body, this.contentType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationMoneyMovementCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';/// Describes the type of payment.
 @immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._(this.value);

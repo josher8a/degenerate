@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiGetModelSchemaResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_get_model_schema_response/result_input.dart';import 'package:pub_cloudflare/models/workers_ai_get_model_schema_response/result_output.dart';@immutable final class WorkersAiGetModelSchemaResponseResult {const WorkersAiGetModelSchemaResponseResult({required this.input, required this.output, });
 

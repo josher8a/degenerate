@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Job
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_conclusion.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/job/job_steps.dart';/// Information of a job execution in a workflow run
 @immutable final class Job {const Job({required this.id, required this.runId, required this.runUrl, required this.nodeId, required this.headSha, required this.url, required this.htmlUrl, required this.status, required this.conclusion, required this.createdAt, required this.startedAt, required this.completedAt, required this.name, required this.checkRunUrl, required this.labels, required this.runnerId, required this.runnerName, required this.runnerGroupId, required this.runnerGroupName, required this.workflowName, required this.headBranch, this.runAttempt, this.steps, });

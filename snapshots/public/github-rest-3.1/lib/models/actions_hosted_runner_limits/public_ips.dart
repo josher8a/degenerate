@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsHostedRunnerLimits (inline: PublicIps)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of static public IP limits for GitHub-hosted Hosted Runners
 @immutable final class PublicIps {const PublicIps({required this.maximum, required this.currentUsage, });

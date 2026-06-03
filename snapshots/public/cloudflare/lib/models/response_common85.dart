@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon85
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_messages2.dart';@immutable final class ResponseCommon85 {const ResponseCommon85({required this.errors, required this.messages, required this.success, });
 

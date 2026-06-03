@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCollectionTokensResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_token_base.dart';@immutable final class IamCollectionTokensResponse {const IamCollectionTokensResponse({this.result});
 

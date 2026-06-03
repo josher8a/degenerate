@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_settings_request/defaults.dart';import 'package:pub_stripe_spec3/models/post_tax_settings_request/head_office.dart';@immutable final class PostTaxSettingsRequest {const PostTaxSettingsRequest({this.defaults, this.expand, this.headOffice, });
 

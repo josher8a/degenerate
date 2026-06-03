@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImagePatchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImagePatchRequest {const ImagesImagePatchRequest({this.creator, this.metadata, this.requireSignedUrLs, });
 

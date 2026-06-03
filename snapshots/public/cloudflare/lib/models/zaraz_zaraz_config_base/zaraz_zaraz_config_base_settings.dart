@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazZarazConfigBase (inline: Settings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/context_enricher.dart';/// General Zaraz settings.
 @immutable final class ZarazZarazConfigBaseSettings {const ZarazZarazConfigBaseSettings({required this.autoInjectScript, this.contextEnricher, this.cookieDomain, this.ecommerce, this.eventsApiPath, this.hideExternalReferer, this.hideIpAddress, this.hideQueryParams, this.hideUserAgent, this.initPath, this.injectIframes, this.mcRootPath, this.scriptPath, this.trackPath, });

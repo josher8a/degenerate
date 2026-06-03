@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ExactDataEntry
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExactDataEntryType {const ExactDataEntryType._(this.value);
 

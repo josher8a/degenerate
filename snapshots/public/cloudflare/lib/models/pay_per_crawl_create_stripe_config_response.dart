@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlCreateStripeConfigResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_msg.dart';import 'package:pub_cloudflare/models/pay_per_crawl_result_info.dart';import 'package:pub_cloudflare/models/pay_per_crawl_stripe_connect_resp.dart';@immutable final class PayPerCrawlCreateStripeConfigResponse {const PayPerCrawlCreateStripeConfigResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
 

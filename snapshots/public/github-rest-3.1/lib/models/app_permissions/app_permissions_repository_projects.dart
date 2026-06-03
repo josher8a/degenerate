@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: RepositoryProjects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage repository projects, columns, and cards.
 @immutable final class AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects._(this.value);

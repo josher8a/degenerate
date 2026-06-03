@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceRefundPaymentAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_config.dart';/// Represents a reader action to refund a payment
 @immutable final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });

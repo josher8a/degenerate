@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamTusResumable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the TUS protocol version. This value must be included in every upload request.
 /// Notes: The only supported version of TUS protocol is 1.0.0.

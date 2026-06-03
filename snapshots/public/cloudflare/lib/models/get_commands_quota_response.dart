@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCommandsQuotaResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_get_commands_quota_response.dart';@immutable final class GetCommandsQuotaResponse {const GetCommandsQuotaResponse({this.result});
 

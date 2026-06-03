@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsKrCard (inline: Brand)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The local credit or debit card brand.
 @immutable final class PaymentMethodDetailsKrCardBrand {const PaymentMethodDetailsKrCardBrand._(this.value);

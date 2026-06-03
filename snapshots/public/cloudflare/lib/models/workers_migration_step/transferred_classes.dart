@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersMigrationStep (inline: TransferredClasses)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TransferredClasses {const TransferredClasses({this.from, this.fromScript, this.to, });
 

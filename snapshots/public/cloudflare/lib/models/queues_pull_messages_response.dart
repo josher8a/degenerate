@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesPullMessagesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model22.dart';import 'package:pub_cloudflare/models/queues_pull_messages_response/queues_pull_messages_response_result.dart';@immutable final class QueuesPullMessagesResponse {const QueuesPullMessagesResponse({this.errors, this.messages, this.success, this.result, });
 

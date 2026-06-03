@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldSingleSmartShieldPatchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_response.dart';@immutable final class SmartshieldSingleSmartShieldPatchResponse {const SmartshieldSingleSmartShieldPatchResponse({this.result});
 

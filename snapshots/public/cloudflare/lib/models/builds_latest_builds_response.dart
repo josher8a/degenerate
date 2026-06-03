@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsLatestBuildsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_response.dart';@immutable final class BuildsLatestBuildsResponse {const BuildsLatestBuildsResponse({this.builds});
 

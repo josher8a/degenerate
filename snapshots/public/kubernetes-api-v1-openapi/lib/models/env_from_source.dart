@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnvFromSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/config_map_env_source.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_env_source.dart';/// EnvFromSource represents the source of a set of ConfigMaps or Secrets
 @immutable final class EnvFromSource {const EnvFromSource({this.configMapRef, this.prefix, this.secretRef, });

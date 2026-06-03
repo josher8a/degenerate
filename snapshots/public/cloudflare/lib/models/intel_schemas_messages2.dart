@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelSchemasMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_messages/access_messages_source.dart';@immutable final class IntelSchemasMessages2 {const IntelSchemasMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 

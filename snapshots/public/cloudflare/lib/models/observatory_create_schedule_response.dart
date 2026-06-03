@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryCreateScheduleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_create_schedule_response/observatory_create_schedule_response_result.dart';@immutable final class ObservatoryCreateScheduleResponse {const ObservatoryCreateScheduleResponse({this.result});
 

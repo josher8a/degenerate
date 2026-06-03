@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposUpdateRequest (inline: SecurityAndAnalysis > SecretScanningDelegatedBypass)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
 @immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass({this.status});

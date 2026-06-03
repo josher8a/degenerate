@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseLogProb (inline: TopLogprobs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseLogProbTopLogprobs {const ResponseLogProbTopLogprobs({this.token, this.logprob, });
 

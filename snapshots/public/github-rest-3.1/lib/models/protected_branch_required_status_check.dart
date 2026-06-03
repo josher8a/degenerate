@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranchRequiredStatusCheck
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/protected_branch_required_status_check/protected_branch_required_status_check_checks.dart';/// Protected Branch Required Status Check
 @immutable final class ProtectedBranchRequiredStatusCheck {const ProtectedBranchRequiredStatusCheck({required this.contexts, required this.checks, this.url, this.enforcementLevel, this.contextsUrl, this.strict, });

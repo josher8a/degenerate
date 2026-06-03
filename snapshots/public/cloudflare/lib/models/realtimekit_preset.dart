@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_config.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_permissions.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_ui.dart';@immutable final class RealtimekitPreset {const RealtimekitPreset({required this.config, required this.name, required this.ui, this.permissions, });
 

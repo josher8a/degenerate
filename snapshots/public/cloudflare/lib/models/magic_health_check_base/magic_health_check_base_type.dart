@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicHealthCheckBase (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of healthcheck to run, reply or request. The default value is `reply`.
 @immutable final class MagicHealthCheckBaseType {const MagicHealthCheckBaseType._(this.value);

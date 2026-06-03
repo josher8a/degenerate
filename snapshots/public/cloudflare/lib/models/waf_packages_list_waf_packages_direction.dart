@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafPackagesListWafPackagesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned packages.
 @immutable final class WafPackagesListWafPackagesDirection {const WafPackagesListWafPackagesDirection._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpoofResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_timeseries_group_by_spoof_response/radar_get_email_security_timeseries_group_by_spoof_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofResponse {const RadarGetEmailSecurityTimeseriesGroupBySpoofResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalResponsesRunDataSource (inline: SamplingParams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/sampling_params_text.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/tool.dart';@immutable final class CreateEvalResponsesRunDataSourceSamplingParams {const CreateEvalResponsesRunDataSourceSamplingParams({this.reasoningEffort, this.temperature = 1.0, this.maxCompletionTokens, this.topP = 1.0, this.seed = 42, this.tools, this.text, });
 

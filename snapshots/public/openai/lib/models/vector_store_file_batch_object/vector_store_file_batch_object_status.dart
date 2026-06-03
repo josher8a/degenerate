@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreFileBatchObject (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
 @immutable final class VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus._(this.value);

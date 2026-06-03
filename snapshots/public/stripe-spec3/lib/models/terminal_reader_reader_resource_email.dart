@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceEmail
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about a email being collected using a reader
 @immutable final class TerminalReaderReaderResourceEmail {const TerminalReaderReaderResourceEmail({this.value});

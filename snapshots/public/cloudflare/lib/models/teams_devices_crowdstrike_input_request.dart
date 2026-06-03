@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesCrowdstrikeInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// For more details on state, please refer to the Crowdstrike documentation.
 @immutable final class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState._(this.value);

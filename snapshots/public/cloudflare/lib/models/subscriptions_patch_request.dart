@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionsPatchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination.dart';@immutable final class SubscriptionsPatchRequest {const SubscriptionsPatchRequest({this.destination, this.enabled, this.events, this.name, });
 

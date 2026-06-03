@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsFunctionObject (inline: Function)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The definition of the function that was called.
 @immutable final class RunStepDetailsToolCallsFunctionObjectFunction {const RunStepDetailsToolCallsFunctionObjectFunction({required this.name, required this.arguments, required this.output, });

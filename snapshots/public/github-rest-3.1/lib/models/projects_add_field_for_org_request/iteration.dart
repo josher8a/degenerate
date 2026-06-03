@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsAddFieldForOrgRequest (inline: Iteration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field_iteration_configuration.dart';/// The field's data type.
 @immutable final class IterationDataType {const IterationDataType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCouponsCouponRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';@immutable final class PostCouponsCouponRequest {const PostCouponsCouponRequest({this.currencyOptions, this.expand, this.metadata, this.name, });
 

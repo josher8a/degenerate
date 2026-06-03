@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpUpdateIntegrationBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpUpdateIntegrationBody {const DlpUpdateIntegrationBody({required this.active, required this.tenantUrl, this.referenceId, });
 

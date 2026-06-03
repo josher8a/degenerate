@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamAudioDefault
 
 /// Denotes whether the audio track will be played by default in a player.
 extension type const StreamAudioDefault(bool value) {

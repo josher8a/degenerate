@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputMessagesItemReference (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of input messages. Always `item_reference`.
 @immutable final class InputMessagesItemReferenceType {const InputMessagesItemReferenceType._(this.value);

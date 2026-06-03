@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerFetchConnectorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_connector.dart';@immutable final class MconnControllerFetchConnectorResponse {const MconnControllerFetchConnectorResponse({this.result});
 

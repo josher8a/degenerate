@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaContentTextAnnotationsFileCitationObject (inline: FileCitation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation {const MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation({this.fileId, this.quote, });
 

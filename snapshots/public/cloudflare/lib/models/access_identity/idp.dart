@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdentity (inline: Idp)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Idp {const Idp({this.id, this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon9
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_messages2.dart';@immutable final class ResponseCommon9 {const ResponseCommon9({required this.errors, required this.messages, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventCreateBulkRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dos_event_create_bulk_with_relationships_request/post_dos_event_create_bulk_with_relationships_request_data.dart';@immutable final class PostEventCreateBulkRequest {const PostEventCreateBulkRequest({required this.data, required this.datasetId, this.includeCreatedEvents, });
 

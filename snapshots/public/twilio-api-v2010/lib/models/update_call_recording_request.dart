@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateCallRecordingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/call_recording_enum_status.dart';@immutable final class UpdateCallRecordingRequest {const UpdateCallRecordingRequest({required this.status, this.pauseBehavior, });
 

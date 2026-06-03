@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchStatsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchStatsResponseResult {const AiSearchStatsResponseResult({this.completed, this.error, this.fileEmbedErrors, this.indexSourceErrors, this.lastActivity, this.queued, this.running, this.skipped, });
 

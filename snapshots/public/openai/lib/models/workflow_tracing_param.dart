@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowTracingParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls diagnostic tracing during the session.
 @immutable final class WorkflowTracingParam {const WorkflowTracingParam({this.enabled});

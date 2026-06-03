@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeGiropay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeGiropay {const SourceTypeGiropay({this.bankCode, this.bankName, this.bic, this.statementDescriptor, });
 

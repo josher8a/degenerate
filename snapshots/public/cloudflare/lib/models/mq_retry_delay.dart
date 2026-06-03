@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqRetryDelay
 
 /// The number of seconds to delay before making the message available for another attempt.
 extension type const MqRetryDelay(double value) {

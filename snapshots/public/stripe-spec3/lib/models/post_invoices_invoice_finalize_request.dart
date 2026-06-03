@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostInvoicesInvoiceFinalizeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceFinalizeRequest {const PostInvoicesInvoiceFinalizeRequest({this.autoAdvance, this.expand, });
 

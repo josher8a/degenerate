@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PackageDimensions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PackageDimensions {const PackageDimensions({required this.height, required this.length, required this.weight, required this.width, });

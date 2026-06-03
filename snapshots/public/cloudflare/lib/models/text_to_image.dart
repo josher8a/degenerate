@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TextToImage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToImage {const TextToImage({required this.prompt, this.guidance = 7.5, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps = 20, this.seed, this.strength = 1.0, this.width, });
 

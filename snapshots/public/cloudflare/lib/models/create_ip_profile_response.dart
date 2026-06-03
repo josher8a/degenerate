@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateIpProfileResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_message.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile.dart';@immutable final class CreateIpProfileResponse {const CreateIpProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountConferenceParticipant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the participant's call in a session. Can be: `queued`, `connecting`, `ringing`, `connected`, `complete`, or `failed`.
 @immutable final class ParticipantEnumStatus {const ParticipantEnumStatus._(this.value);

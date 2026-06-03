@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotCancelCopilotSeatAssignmentForUsersResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The total number of seats set to "pending cancellation" for the specified users.
 @immutable final class CopilotCancelCopilotSeatAssignmentForUsersResponse {const CopilotCancelCopilotSeatAssignmentForUsersResponse({required this.seatsCancelled});

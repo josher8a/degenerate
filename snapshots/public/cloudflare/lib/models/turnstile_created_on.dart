@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileCreatedOn
 
 /// When the widget was created.
 extension type TurnstileCreatedOn(DateTime value) {

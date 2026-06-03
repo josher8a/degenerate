@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorBatchCreateWorkflowInstanceResponse (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorBatchCreateWorkflowInstanceResponseResultInfo {const WorBatchCreateWorkflowInstanceResponseResultInfo({required this.count, required this.perPage, required this.totalCount, this.cursor, this.page, });
 

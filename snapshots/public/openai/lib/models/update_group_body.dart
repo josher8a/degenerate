@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateGroupBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for updating the details of an existing group.
 @immutable final class UpdateGroupBody {const UpdateGroupBody({required this.name});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaIssueNotification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_schema_issue_notification/shield_schema_issue_notification_source.dart';@immutable final class ShieldSchemaIssueNotification {const ShieldSchemaIssueNotification({required this.code, required this.message, this.source, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderRefundPaymentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_refund_payment_request/refund_payment_config.dart';@immutable final class PostTerminalReadersReaderRefundPaymentRequest {const PostTerminalReadersReaderRefundPaymentRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 

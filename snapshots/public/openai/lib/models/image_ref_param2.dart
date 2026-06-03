@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageRefParam2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageRefParam2 {const ImageRefParam2({this.imageUrl, this.fileId, });
 

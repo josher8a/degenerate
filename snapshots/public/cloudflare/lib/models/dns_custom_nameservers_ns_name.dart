@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsCustomNameserversNsName
 
 /// The FQDN of the name server.
 extension type const DnsCustomNameserversNsName(String value) {

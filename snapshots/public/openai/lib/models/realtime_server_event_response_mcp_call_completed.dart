@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseMcpCallCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an MCP tool call has completed successfully.
 @immutable final class RealtimeServerEventResponseMcpCallCompleted {const RealtimeServerEventResponseMcpCallCompleted({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpProfilesListAllCustomProfilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_custom_profile.dart';@immutable final class DlpProfilesListAllCustomProfilesResponse {const DlpProfilesListAllCustomProfilesResponse({this.result});
 

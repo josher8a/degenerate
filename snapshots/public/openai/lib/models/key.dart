@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key/key_owner.dart';/// Represents an individual Admin API key in an org.
 @immutable final class Key {const Key({required this.object, required this.id, required this.name, required this.redactedValue, required this.createdAt, required this.lastUsedAt, required this.owner, this.value, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecuritySummaryBySpoofResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_summary_by_spoof_response/radar_get_email_security_summary_by_spoof_response_result.dart';@immutable final class RadarGetEmailSecuritySummaryBySpoofResponse {const RadarGetEmailSecuritySummaryBySpoofResponse({required this.result, required this.success, });
 

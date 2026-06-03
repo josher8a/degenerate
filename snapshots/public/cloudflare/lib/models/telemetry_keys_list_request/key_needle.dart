@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryKeysListRequest (inline: KeyNeedle)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Search for a specific substring in the keys.
 @immutable final class KeyNeedle {const KeyNeedle({required this.value, this.isRegex, this.matchCase, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateGroupUserBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for adding a user to a group.
 @immutable final class CreateGroupUserBody {const CreateGroupUserBody({required this.userId});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Capabilities
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Adds and removes POSIX capabilities from running containers.
 @immutable final class Capabilities {const Capabilities({this.add, this.drop, });

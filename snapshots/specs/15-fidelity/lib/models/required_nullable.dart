@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RequiredNullable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_15_fidelity/models/required_nullable/nullable_object.dart';@immutable final class RequiredNullable {const RequiredNullable({required this.alwaysPresent, required this.nullableString, required this.nullableList, required this.nullableObject, });
 

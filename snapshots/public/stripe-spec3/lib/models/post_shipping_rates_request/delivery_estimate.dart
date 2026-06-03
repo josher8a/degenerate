@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostShippingRatesRequest (inline: DeliveryEstimate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/maximum.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/minimum.dart';@immutable final class DeliveryEstimate {const DeliveryEstimate({this.maximum, this.minimum, });
 

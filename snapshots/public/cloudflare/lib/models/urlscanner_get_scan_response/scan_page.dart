@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Page)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/entries_request_headers.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/js.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/page_console.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/page_cookies.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/security_violations.dart';@immutable final class ScanPage {const ScanPage({required this.asn, required this.asnLocationAlpha2, required this.asnname, required this.console, required this.cookies, required this.country, required this.countryLocationAlpha2, required this.domain, required this.headers, required this.ip, required this.js, required this.securityViolations, required this.status, required this.subdivision1Name, required this.subdivision2name, required this.url, });
 

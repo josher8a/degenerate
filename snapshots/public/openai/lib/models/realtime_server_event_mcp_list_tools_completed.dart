@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventMcpListToolsCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when listing MCP tools has completed for an item.
 @immutable final class RealtimeServerEventMcpListToolsCompleted {const RealtimeServerEventMcpListToolsCompleted({required this.eventId, required this.type, required this.itemId, });

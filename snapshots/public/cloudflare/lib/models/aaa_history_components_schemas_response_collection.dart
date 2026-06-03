@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaHistoryComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_history.dart';@immutable final class AaaHistoryComponentsSchemasResponseCollection {const AaaHistoryComponentsSchemasResponseCollection({this.result, this.resultInfo, });
 

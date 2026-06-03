@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAmountDetailsResourceError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The code of the error that occurred when validating the current amount details.
 @immutable final class PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode._(this.value);

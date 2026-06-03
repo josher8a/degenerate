@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReviewCustomGatesStateRequired
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_review_pending_deployments_for_run_request/actions_review_pending_deployments_for_run_request_state.dart';@immutable final class ReviewCustomGatesStateRequired {const ReviewCustomGatesStateRequired({required this.environmentName, required this.state, this.comment, });
 

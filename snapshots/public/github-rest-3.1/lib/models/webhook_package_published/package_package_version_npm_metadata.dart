@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPackagePublished (inline: Package > PackageVersion > NpmMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagePackageVersionNpmMetadata {const PackagePackageVersionNpmMetadata({this.homepage, this.version, this.npmUser, this.author, this.bugs, this.dependencies, this.devDependencies, this.peerDependencies, this.optionalDependencies, this.description, this.dist, this.gitHead, this.name, this.license, this.main, this.repository, this.scripts, this.id, this.nodeVersion, this.npmVersion, this.hasShrinkwrap, this.maintainers, this.contributors, this.engines, this.deletedById, this.files, this.bin, this.man, this.directories, this.os, this.cpu, this.readme, this.installationCommand, this.releaseId, this.commitOid, this.publishedViaActions, this.keywords, });
 

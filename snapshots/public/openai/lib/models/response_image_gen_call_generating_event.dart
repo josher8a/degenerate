@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseImageGenCallGeneratingEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when an image generation tool call is actively generating an image (intermediate state).
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSingleResponseWithoutHtml
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_custom_page_without_html.dart';@immutable final class AccessSingleResponseWithoutHtml {const AccessSingleResponseWithoutHtml({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateUsingTemplateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateUsingTemplateRequest {const ReposCreateUsingTemplateRequest({required this.name, this.owner, this.description, this.includeAllBranches = false, this.private = false, });
 

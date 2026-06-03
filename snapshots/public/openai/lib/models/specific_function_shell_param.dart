@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpecificFunctionShellParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `shell`.
 @immutable final class SpecificFunctionShellParamType {const SpecificFunctionShellParamType._(this.value);

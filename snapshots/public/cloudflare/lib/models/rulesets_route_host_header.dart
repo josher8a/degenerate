@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRouteHostHeader
 
 /// A value to rewrite the HTTP host header to.
 extension type const RulesetsRouteHostHeader(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodespacesPublicKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting Codespaces secrets.
 @immutable final class CodespacesPublicKey {const CodespacesPublicKey({required this.keyId, required this.key, this.id, this.url, this.title, this.createdAt, });

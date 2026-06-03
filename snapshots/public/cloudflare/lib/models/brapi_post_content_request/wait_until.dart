@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > GotoOptions > WaitUntil)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitUntilVariant1 {const WaitUntilVariant1._(this.value);
 

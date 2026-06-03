@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostJsonRequest (inline: Variant1 > ResponseFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_json_request/json_schema_value.dart';@immutable final class Variant1ResponseFormat {const Variant1ResponseFormat({required this.type, this.jsonSchema, });
 

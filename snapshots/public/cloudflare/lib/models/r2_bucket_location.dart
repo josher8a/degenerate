@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2BucketLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Location of the bucket.
 @immutable final class R2BucketLocation {const R2BucketLocation._(this.value);

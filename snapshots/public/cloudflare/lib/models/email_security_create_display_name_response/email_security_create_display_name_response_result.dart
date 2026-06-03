@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityCreateDisplayNameResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCreateDisplayNameResponseResult {const EmailSecurityCreateDisplayNameResponseResult({required this.email, required this.isEmailRegex, required this.name, required this.createdAt, required this.id, required this.lastModified, this.comments, this.directoryId, this.directoryNodeId, this.externalDirectoryNodeId, this.provenance, });
 

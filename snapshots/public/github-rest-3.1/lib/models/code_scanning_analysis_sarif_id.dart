@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAnalysisSarifId
 
 /// An identifier for the upload.
 extension type const CodeScanningAnalysisSarifId(String value) {

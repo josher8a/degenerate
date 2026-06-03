@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3Description
 
 /// Specify an optional description of the hostname.
 extension type const Web3Description(String value) {

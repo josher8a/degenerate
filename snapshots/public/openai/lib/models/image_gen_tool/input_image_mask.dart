@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageGenTool (inline: InputImageMask)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Optional mask for inpainting. Contains `image_url`
 /// (string, optional) and `file_id` (string, optional).

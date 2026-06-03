@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertSetState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
 @immutable final class CodeScanningAlertSetState {const CodeScanningAlertSetState._(this.value);

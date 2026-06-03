@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRuleIdentifier
 
 /// The Web Analytics rule identifier.
 extension type const RumRuleIdentifier(String value) {

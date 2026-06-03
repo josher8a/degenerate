@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomPagesCustomPageResultList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_pages_custom_page.dart';@immutable final class CustomPagesCustomPageResultList {const CustomPagesCustomPageResultList({this.result});
 

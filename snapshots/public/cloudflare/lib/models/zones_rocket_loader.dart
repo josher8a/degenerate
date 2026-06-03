@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesRocketLoader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
 /// 

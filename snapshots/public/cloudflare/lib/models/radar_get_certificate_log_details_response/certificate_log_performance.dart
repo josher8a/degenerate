@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateLogDetailsResponse (inline: Result > CertificateLog > Performance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/endpoints.dart';/// Log performance metrics, including averages and per-endpoint details.
 @immutable final class CertificateLogPerformance {const CertificateLogPerformance({required this.endpoints, required this.responseTime, required this.uptime, });

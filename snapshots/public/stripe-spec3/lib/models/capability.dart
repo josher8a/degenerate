@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Capability
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_capability_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_capability_requirements.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CapabilityObject {const CapabilityObject._(this.value);

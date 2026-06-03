@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingLoaDocumentIdentifier
 
 /// Identifier for the uploaded LOA document.
 extension type const AddressingLoaDocumentIdentifier(String value) {

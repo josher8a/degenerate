@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequest (inline: Destination > Credentials)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCredentials {const DestinationCredentials({required this.accessKeyId, required this.endpoint, required this.secretAccessKey, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationUpdateRequest (inline: Configuration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_request/configuration_type.dart';@immutable final class DestinationUpdateRequestConfiguration {const DestinationUpdateRequestConfiguration({required this.headers, required this.type, required this.url, });
 

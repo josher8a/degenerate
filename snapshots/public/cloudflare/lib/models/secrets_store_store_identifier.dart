@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreStoreIdentifier
 
 /// Store Identifier
 extension type const SecretsStoreStoreIdentifier(String value) {

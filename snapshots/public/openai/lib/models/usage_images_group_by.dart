@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageImagesGroupBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesGroupBy {const UsageImagesGroupBy._(this.value);
 

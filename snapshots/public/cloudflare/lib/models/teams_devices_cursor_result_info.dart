@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesCursorResultInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// V4 public API Pagination/Cursor info.
 /// 

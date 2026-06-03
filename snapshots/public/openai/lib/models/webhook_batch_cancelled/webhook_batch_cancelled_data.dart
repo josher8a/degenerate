@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookBatchCancelled (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data payload.
 /// 

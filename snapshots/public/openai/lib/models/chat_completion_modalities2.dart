@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionModalities
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionModalities2 {const ChatCompletionModalities2._(this.value);
 

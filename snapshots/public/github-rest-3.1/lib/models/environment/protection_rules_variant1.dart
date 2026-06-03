@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Environment (inline: ProtectionRules > Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/wait_timer.dart';@immutable final class ProtectionRulesVariant1 {const ProtectionRulesVariant1({required this.id, required this.nodeId, required this.type, this.waitTimer, });
 

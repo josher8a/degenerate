@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FilterOptionsSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/author_filter_schema.dart';import 'package:pub_totem_web/models/category_filter_schema.dart';@immutable final class FilterOptionsSchema {const FilterOptionsSchema({required this.categories, required this.authors, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDirectUploadResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';import 'package:pub_cloudflare/models/stream_scheduled_deletion.dart';import 'package:pub_cloudflare/models/stream_watermarks.dart';@immutable final class StreamDirectUploadResponseResult {const StreamDirectUploadResponseResult({this.scheduledDeletion, this.uid, this.uploadUrl, this.watermark, });
 

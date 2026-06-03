@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_domain_identifier.dart';import 'package:pub_cloudflare/models/workers_hostname.dart';import 'package:pub_cloudflare/models/workers_schemas_environment.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';import 'package:pub_cloudflare/models/workers_zone_name.dart';@immutable final class WorkersDomain {const WorkersDomain({this.environment, this.hostname, this.id, this.service, this.zoneId, this.zoneName, });
 

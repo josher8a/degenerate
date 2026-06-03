@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutAcssDebitPaymentMethodOptions (inline: Currency)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Currency supported by the bank account. Returned when the Session is in `setup` mode.
 @immutable final class CheckoutAcssDebitPaymentMethodOptionsCurrency {const CheckoutAcssDebitPaymentMethodOptionsCurrency._(this.value);

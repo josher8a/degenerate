@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DisputeVisaCompellingEvidence3DisputedTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_transaction_shipping_address.dart';/// Categorization of disputed payment.
 @immutable final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._(this.value);

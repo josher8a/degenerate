@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages44Messages {const Messages44Messages({required this.content, required this.role, });
 

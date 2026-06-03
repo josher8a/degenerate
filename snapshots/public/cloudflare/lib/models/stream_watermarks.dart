@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWatermarks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_name.dart';import 'package:pub_cloudflare/models/stream_opacity.dart';import 'package:pub_cloudflare/models/stream_padding.dart';import 'package:pub_cloudflare/models/stream_position.dart';import 'package:pub_cloudflare/models/stream_scale.dart';import 'package:pub_cloudflare/models/stream_watermark_identifier.dart';/// The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
 extension type const StreamDownloadedFrom(String value) {

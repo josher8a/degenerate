@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetPaymentMethodsAllowRedisplay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPaymentMethodsAllowRedisplay {const GetPaymentMethodsAllowRedisplay._(this.value);
 

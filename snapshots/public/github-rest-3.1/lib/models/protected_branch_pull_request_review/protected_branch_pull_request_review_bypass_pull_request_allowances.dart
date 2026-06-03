@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProtectedBranchPullRequestReview (inline: BypassPullRequestAllowances)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// Allow specific users, teams, or apps to bypass pull request requirements.
 @immutable final class ProtectedBranchPullRequestReviewBypassPullRequestAllowances {const ProtectedBranchPullRequestReviewBypassPullRequestAllowances({this.users, this.teams, this.apps, });

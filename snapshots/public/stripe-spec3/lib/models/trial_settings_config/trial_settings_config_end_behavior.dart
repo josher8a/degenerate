@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TrialSettingsConfig (inline: EndBehavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_trial_settings_end_behavior/missing_payment_method.dart';@immutable final class TrialSettingsConfigEndBehavior {const TrialSettingsConfigEndBehavior({required this.missingPaymentMethod});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostProductsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_marketing_features.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 

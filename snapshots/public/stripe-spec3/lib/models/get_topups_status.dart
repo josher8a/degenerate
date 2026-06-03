@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTopupsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTopupsStatus {const GetTopupsStatus._(this.value);
 

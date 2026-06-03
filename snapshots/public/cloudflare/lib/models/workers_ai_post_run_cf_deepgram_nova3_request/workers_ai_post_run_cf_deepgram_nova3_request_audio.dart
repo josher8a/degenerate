@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfDeepgramNova3Request (inline: Audio)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfDeepgramNova3RequestAudio {const WorkersAiPostRunCfDeepgramNova3RequestAudio({required this.body, required this.contentType, });
 

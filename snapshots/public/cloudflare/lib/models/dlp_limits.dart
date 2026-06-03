@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpLimits
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpLimits {const DlpLimits({required this.maxDatasetCells});
 

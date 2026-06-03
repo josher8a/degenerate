@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualityIndexTimeseriesGroupResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_quality_index_timeseries_group_response/radar_get_quality_index_timeseries_group_response_result.dart';@immutable final class RadarGetQualityIndexTimeseriesGroupResponse {const RadarGetQualityIndexTimeseriesGroupResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SingleSelectOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/single_select_options/single_select_options_description.dart';import 'package:pub_github_rest_3_1/models/single_select_options/single_select_options_name.dart';/// An option for a single select field
 @immutable final class SingleSelectOptions {const SingleSelectOptions({required this.id, required this.name, required this.description, required this.color, });

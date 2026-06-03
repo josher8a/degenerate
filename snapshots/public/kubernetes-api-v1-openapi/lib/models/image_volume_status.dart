@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageVolumeStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ImageVolumeStatus represents the image-based volume status.
 @immutable final class ImageVolumeStatus {const ImageVolumeStatus({required this.imageRef});

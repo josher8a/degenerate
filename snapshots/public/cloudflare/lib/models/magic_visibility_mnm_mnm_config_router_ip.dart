@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityMnmMnmConfigRouterIp
 
 /// IPv4 CIDR of the router sourcing flow data. Only /32 addresses are currently supported.
 extension type const MagicVisibilityMnmMnmConfigRouterIp(String value) {

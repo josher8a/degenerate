@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdateShortCodeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_method.dart';@immutable final class UpdateShortCodeRequest {const UpdateShortCodeRequest({this.friendlyName, this.apiVersion, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, });
 

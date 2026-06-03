@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasApprovalGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of email addresses that can approve a temporary authentication request.
 @immutable final class AccessSchemasApprovalGroup {const AccessSchemasApprovalGroup({required this.approvalsNeeded, this.emailAddresses, this.emailListUuid, });

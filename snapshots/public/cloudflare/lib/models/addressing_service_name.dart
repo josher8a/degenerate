@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingServiceName
 
 /// Name of a service running on the Cloudflare network
 extension type const AddressingServiceName(String value) {

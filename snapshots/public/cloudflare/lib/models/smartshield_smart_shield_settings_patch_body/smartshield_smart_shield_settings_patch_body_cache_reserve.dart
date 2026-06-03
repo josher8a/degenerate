@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldSmartShieldSettingsPatchBody (inline: CacheReserve)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';@immutable final class SmartshieldSmartShieldSettingsPatchBodyCacheReserve {const SmartshieldSmartShieldSettingsPatchBodyCacheReserve({this.value});
 

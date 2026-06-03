@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceInboundAchToggleSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings/treasury_financial_accounts_resource_aba_toggle_settings_status.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Toggle settings for enabling/disabling an inbound ACH specific feature
 @immutable final class TreasuryFinancialAccountsResourceInboundAchToggleSettings {const TreasuryFinancialAccountsResourceInboundAchToggleSettings({required this.requested, required this.status, required this.statusDetails, });

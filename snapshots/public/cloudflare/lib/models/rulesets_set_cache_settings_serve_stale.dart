@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsServeStale
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When to serve stale content from cache.
 @immutable final class RulesetsSetCacheSettingsServeStale {const RulesetsSetCacheSettingsServeStale({this.disableStaleWhileUpdating});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon51
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_messages2.dart';@immutable final class ResponseCommon51 {const ResponseCommon51({required this.errors, required this.messages, required this.success, });
 

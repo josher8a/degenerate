@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RuleSuitePullRequest (inline: PullRequest > User)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who created the pull request.
 @immutable final class PullRequestUser {const PullRequestUser({this.id, this.login, this.type, });

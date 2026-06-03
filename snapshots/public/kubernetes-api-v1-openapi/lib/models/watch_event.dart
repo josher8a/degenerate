@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WatchEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event represents a single event to a watched resource.
 @immutable final class WatchEvent {const WatchEvent({required this.object, this.type = '', });

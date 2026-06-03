@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateCommitStatusRequest (inline: State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The new state. Can be `pending`, `success`, `failure`, or `error`.
 @immutable final class ReposCreateCommitStatusRequestState {const ReposCreateCommitStatusRequestState._(this.value);

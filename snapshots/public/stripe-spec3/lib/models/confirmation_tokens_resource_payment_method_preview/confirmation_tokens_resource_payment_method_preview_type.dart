@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConfirmationTokensResourcePaymentMethodPreview (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the PaymentMethod. An additional hash is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type.
 @immutable final class ConfirmationTokensResourcePaymentMethodPreviewType {const ConfirmationTokensResourcePaymentMethodPreviewType._(this.value);

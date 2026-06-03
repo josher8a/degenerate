@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemConverted (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_converted/changes_content_type.dart';@immutable final class ItemConvertedChanges {const ItemConvertedChanges({this.contentType});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingRules (inline: FixedResponse)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.
 @immutable final class FixedResponse {const FixedResponse({this.contentType, this.location, this.messageBody, this.statusCode, });

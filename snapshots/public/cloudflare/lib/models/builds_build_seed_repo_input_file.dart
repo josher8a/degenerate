@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsBuildSeedRepoInputFile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsBuildSeedRepoInputFile {const BuildsBuildSeedRepoInputFile({required this.content, required this.filename, this.isBase64 = false, this.replace, });
 

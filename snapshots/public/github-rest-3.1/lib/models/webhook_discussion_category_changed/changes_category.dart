@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDiscussionCategoryChanged (inline: Changes > Category)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_category_changed/category_from.dart';@immutable final class ChangesCategory {const ChangesCategory({required this.from});
 

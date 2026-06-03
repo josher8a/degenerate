@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Toleration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pod this Toleration is attached to tolerates any taint that matches the triple `<key,value,effect>` using the matching operator `<operator>`.
 @immutable final class Toleration {const Toleration({this.effect, this.key, this.$operator, this.tolerationSeconds, this.value, });

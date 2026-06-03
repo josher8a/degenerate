@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListPaginatedFineTuningJobsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/fine_tuning_job.dart';@immutable final class ListPaginatedFineTuningJobsResponse {const ListPaginatedFineTuningJobsResponse({required this.data, required this.hasMore, required this.object, });
 

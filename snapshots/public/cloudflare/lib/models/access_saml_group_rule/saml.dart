@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSamlGroupRule (inline: Saml)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Saml {const Saml({required this.attributeName, required this.attributeValue, required this.identityProviderId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetOriginDetailsResponse (inline: Result > Origin > Regions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OriginRegions {const OriginRegions({required this.region});
 

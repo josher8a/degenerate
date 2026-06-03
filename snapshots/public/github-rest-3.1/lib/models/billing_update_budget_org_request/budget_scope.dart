@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingUpdateBudgetOrgRequest (inline: BudgetScope)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of scope for the budget
 @immutable final class BudgetScope {const BudgetScope._(this.value);

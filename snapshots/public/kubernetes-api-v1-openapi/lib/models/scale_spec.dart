@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ScaleSpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ScaleSpec describes the attributes of a scale subresource.
 @immutable final class ScaleSpec {const ScaleSpec({this.replicas = 0});

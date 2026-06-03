@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCardSpendingLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card_spending_limit/categories.dart';import 'package:pub_stripe_spec3/models/issuing_card_spending_limit/issuing_card_spending_limit_interval.dart';/// 
 @immutable final class IssuingCardSpendingLimit {const IssuingCardSpendingLimit({required this.amount, required this.interval, this.categories, });

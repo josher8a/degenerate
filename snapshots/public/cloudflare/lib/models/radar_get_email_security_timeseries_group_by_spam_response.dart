@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpamResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_timeseries_group_by_spam_response/radar_get_email_security_timeseries_group_by_spam_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamResponse {const RadarGetEmailSecurityTimeseriesGroupBySpamResponse({required this.result, required this.success, });
 

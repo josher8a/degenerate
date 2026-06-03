@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpRiskScoreIntegrationType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType._(this.value);
 

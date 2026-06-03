@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodsRequest (inline: Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `custom` PaymentMethod, this hash contains details about the Custom payment method.
 @immutable final class PostPaymentMethodsRequestCustom {const PostPaymentMethodsRequestCustom({required this.type});

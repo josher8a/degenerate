@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopUserAgentsByDirectiveDirective
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by robots.txt directive.
 @immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveDirective {const RadarGetRobotsTxtTopUserAgentsByDirectiveDirective._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependencyGraphSpdxSbom
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/sbom.dart';/// A schema for the SPDX JSON format returned by the Dependency Graph.
 @immutable final class DependencyGraphSpdxSbom {const DependencyGraphSpdxSbom({required this.sbom});

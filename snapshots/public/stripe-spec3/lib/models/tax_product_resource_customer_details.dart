@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceCustomerDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details_resource_tax_id.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_postal_address.dart';/// The type of customer address provided.
 @immutable final class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource._(this.value);

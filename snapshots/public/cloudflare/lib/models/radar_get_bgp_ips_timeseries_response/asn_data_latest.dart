@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpIpsTimeseriesResponse (inline: Result > Meta > Delay > AsnData > Latest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AsnDataLatest {const AsnDataLatest({required this.entriesCount, required this.path, required this.timestamp, });
 

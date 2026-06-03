@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpPfx2asResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_rel_response/radar_get_asns_rel_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_bgp_pfx2as_response/result_prefix_origins.dart';@immutable final class RadarGetBgpPfx2asResponseResult {const RadarGetBgpPfx2asResponseResult({required this.meta, required this.prefixOrigins, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserBillingHistoryDeprecatedBillingHistoryDetailsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order billing history by.
 @immutable final class UserBillingHistoryDeprecatedBillingHistoryDetailsOrder {const UserBillingHistoryDeprecatedBillingHistoryDetailsOrder._(this.value);

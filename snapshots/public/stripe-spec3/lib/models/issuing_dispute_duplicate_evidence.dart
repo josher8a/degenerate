@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingDisputeDuplicateEvidence
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence/issuing_dispute_duplicate_evidence_card_statement.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence/issuing_dispute_duplicate_evidence_cash_receipt.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence/issuing_dispute_duplicate_evidence_check_image.dart';/// 
 @immutable final class IssuingDisputeDuplicateEvidence {const IssuingDisputeDuplicateEvidence({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });

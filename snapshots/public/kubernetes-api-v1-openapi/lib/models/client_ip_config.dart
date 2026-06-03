@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClientIpConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ClientIPConfig represents the configurations of Client IP based session affinity.
 @immutable final class ClientIpConfig {const ClientIpConfig({this.timeoutSeconds});

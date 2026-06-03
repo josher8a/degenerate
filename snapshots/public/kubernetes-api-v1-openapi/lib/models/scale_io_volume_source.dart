@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ScaleIoVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';/// ScaleIOVolumeSource represents a persistent ScaleIO volume
 @immutable final class ScaleIoVolumeSource {const ScaleIoVolumeSource({required this.secretRef, this.fsType = 'xfs', this.gateway = '', this.protectionDomain, this.readOnly, this.sslEnabled, this.storageMode = 'ThinProvisioned', this.storagePool, this.system = '', this.volumeName, });

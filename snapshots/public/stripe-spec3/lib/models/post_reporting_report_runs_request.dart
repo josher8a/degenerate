@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostReportingReportRunsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_reporting_report_runs_request/parameters.dart';@immutable final class PostReportingReportRunsRequest {const PostReportingReportRunsRequest({required this.reportType, this.expand, this.parameters, });
 

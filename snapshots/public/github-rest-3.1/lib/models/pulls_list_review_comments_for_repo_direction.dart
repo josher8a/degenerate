@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsListReviewCommentsForRepoDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsListReviewCommentsForRepoDirection {const PullsListReviewCommentsForRepoDirection._(this.value);
 

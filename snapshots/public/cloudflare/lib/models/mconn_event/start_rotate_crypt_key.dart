@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: StartRotateCryptKey)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started crypt key rotation
 @immutable final class StartRotateCryptKeyK {const StartRotateCryptKeyK._(this.value);

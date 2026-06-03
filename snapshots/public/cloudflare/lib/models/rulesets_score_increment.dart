@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsScoreIncrement
 
 /// A delta to change the score by, which can be either positive or negative.
 extension type const RulesetsScoreIncrement(int value) {

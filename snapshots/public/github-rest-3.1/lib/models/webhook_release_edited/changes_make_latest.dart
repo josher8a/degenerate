@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookReleaseEdited (inline: Changes > MakeLatest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChangesMakeLatest {const ChangesMakeLatest({required this.to});
 

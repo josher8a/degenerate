@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesBuildConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configs for the project build process.
 @immutable final class PagesBuildConfig {const PagesBuildConfig({required this.webAnalyticsTag, required this.webAnalyticsToken, this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, });

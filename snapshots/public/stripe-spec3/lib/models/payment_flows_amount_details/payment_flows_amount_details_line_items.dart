@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAmountDetails (inline: LineItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/payment_intent_amount_details_line_item.dart';/// A list of line items, each containing information about a product in the PaymentIntent. There is a maximum of 200 line items.
 @immutable final class PaymentFlowsAmountDetailsLineItems {const PaymentFlowsAmountDetailsLineItems({required this.data, required this.hasMore, required this.object, required this.url, });

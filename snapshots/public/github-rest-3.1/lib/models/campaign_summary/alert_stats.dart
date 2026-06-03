@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CampaignSummary (inline: AlertStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AlertStats {const AlertStats({required this.openCount, required this.closedCount, required this.inProgressCount, });
 

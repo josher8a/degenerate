@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitStopReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_start_reason/caller.dart';/// Specifies the reason why the recording stopped.
 @immutable final class RealtimekitStopReasonReason {const RealtimekitStopReasonReason._(this.value);

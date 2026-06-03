@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceCreateANamespaceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_messages2.dart';import 'package:pub_cloudflare/models/workers_kv_namespace.dart';@immutable final class WorkersKvNamespaceCreateANamespaceResponse {const WorkersKvNamespaceCreateANamespaceResponse({required this.errors, required this.messages, required this.success, this.result, });
 

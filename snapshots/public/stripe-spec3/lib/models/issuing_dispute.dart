@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingDispute
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_treasury.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
 @immutable final class LossReason {const LossReason._(this.value);

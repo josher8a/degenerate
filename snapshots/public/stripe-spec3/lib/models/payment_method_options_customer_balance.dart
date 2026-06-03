@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsCustomerBalance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_customer_balance_payment_method_options/checkout_customer_balance_payment_method_options_funding_type.dart';import 'package:pub_stripe_spec3/models/payment_method_options_customer_balance_bank_transfer.dart';/// 
 @immutable final class PaymentMethodOptionsCustomerBalance {const PaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });

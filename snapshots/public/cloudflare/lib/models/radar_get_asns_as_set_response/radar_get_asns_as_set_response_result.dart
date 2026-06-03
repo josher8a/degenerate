@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsnsAsSetResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_asns_as_set_response/as_sets.dart';@immutable final class RadarGetAsnsAsSetResponseResult {const RadarGetAsnsAsSetResponseResult({required this.asSets, required this.paths, });
 

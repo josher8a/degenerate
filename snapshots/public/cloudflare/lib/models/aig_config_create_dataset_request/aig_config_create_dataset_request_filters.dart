@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigCreateDatasetRequest (inline: Filters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FiltersKey {const FiltersKey._(this.value);
 

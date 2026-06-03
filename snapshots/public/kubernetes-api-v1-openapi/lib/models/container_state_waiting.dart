@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerStateWaiting
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ContainerStateWaiting is a waiting state of a container.
 @immutable final class ContainerStateWaiting {const ContainerStateWaiting({this.message, this.reason, });

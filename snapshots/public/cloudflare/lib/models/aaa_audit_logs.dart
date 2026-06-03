@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaAuditLogs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_audit_logs/aaa_audit_logs_action.dart';import 'package:pub_cloudflare/models/aaa_audit_logs/aaa_audit_logs_actor.dart';import 'package:pub_cloudflare/models/aaa_audit_logs/aaa_audit_logs_owner.dart';import 'package:pub_cloudflare/models/aaa_audit_logs/aaa_audit_logs_resource.dart';@immutable final class AaaAuditLogs {const AaaAuditLogs({this.action, this.actor, this.id, this.$interface, this.metadata, this.newValue, this.oldValue, this.owner, this.resource, this.when, });
 

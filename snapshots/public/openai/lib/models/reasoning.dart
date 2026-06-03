@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Reasoning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// A summary of the reasoning performed by the model. This can be
 /// useful for debugging and understanding the model's reasoning process.

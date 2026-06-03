@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertDismissedReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
 @immutable final class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason._(this.value);

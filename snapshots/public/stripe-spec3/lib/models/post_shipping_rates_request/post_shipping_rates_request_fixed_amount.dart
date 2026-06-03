@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostShippingRatesRequest (inline: FixedAmount)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_fixed_amount_currency_options_value.dart';@immutable final class PostShippingRatesRequestFixedAmount {const PostShippingRatesRequestFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
 

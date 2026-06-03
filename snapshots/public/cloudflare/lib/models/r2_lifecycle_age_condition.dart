@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LifecycleAgeCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition/r2_lifecycle_age_condition_type.dart';/// Condition for lifecycle transitions to apply after an object reaches an age in seconds.
 @immutable final class R2LifecycleAgeCondition {const R2LifecycleAgeCondition({required this.maxAge, required this.type, });

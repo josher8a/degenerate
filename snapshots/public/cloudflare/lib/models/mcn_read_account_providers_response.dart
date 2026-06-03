@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnReadAccountProvidersResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_provider.dart';@immutable final class McnReadAccountProvidersResponse {const McnReadAccountProvidersResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesIntuneConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesIntuneConfigRequest {const TeamsDevicesIntuneConfigRequest({required this.clientId, required this.clientSecret, required this.customerId, });
 

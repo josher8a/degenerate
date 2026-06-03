@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankConnectionsResourceTransactionRefresh
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh/bank_connections_resource_balance_refresh_status.dart';/// 
 @immutable final class BankConnectionsResourceTransactionRefresh {const BankConnectionsResourceTransactionRefresh({required this.id, required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt, });

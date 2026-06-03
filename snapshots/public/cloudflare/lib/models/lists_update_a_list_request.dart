@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsUpdateAListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_description.dart';@immutable final class ListsUpdateAListRequest {const ListsUpdateAListRequest({this.description});
 

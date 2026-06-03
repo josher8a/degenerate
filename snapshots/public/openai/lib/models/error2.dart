@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Error2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An error that occurred while generating the response.
 @immutable final class Error2 {const Error2({required this.code, required this.message, });

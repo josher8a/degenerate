@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListOrganizationCertificatesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListOrganizationCertificatesOrder {const ListOrganizationCertificatesOrder._(this.value);
 

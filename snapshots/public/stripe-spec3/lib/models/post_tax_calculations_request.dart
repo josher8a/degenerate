@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxCalculationsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_shipping_cost.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/ship_from_details.dart';@immutable final class PostTaxCalculationsRequest {const PostTaxCalculationsRequest({required this.currency, required this.lineItems, this.customer, this.customerDetails, this.expand, this.shipFromDetails, this.shippingCost, this.taxDate, });
 

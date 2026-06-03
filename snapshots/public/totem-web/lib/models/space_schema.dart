@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpaceSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/public_user_schema.dart';@immutable final class SpaceSchema {const SpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, this.slug, });
 

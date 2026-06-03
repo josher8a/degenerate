@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntriesDeleteIntegrationEntryResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntriesDeleteIntegrationEntryResponse {const DlpEntriesDeleteIntegrationEntryResponse({this.result});
 

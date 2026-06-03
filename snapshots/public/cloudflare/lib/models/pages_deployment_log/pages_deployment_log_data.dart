@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentLog (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesDeploymentLogData {const PagesDeploymentLogData({required this.line, required this.ts, });
 

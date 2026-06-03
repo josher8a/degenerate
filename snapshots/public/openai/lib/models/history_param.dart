@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HistoryParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how much historical context is retained for the session.
 @immutable final class HistoryParam {const HistoryParam({this.enabled, this.recentThreads, });

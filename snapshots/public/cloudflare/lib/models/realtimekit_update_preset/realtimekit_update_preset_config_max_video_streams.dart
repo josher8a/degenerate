@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitUpdatePreset (inline: Config > MaxVideoStreams)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maximum number of streams that are visible on a device
 @immutable final class RealtimekitUpdatePresetConfigMaxVideoStreams {const RealtimekitUpdatePresetConfigMaxVideoStreams({this.desktop, this.mobile, });

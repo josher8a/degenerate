@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDetailsToolCallsFileSearchObject (inline: FileSearch)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_details_tool_calls_file_search_ranking_options_object.dart';import 'package:pub_openai/models/run_step_details_tool_calls_file_search_result_object.dart';/// For now, this is always going to be an empty object.
 @immutable final class RunStepDetailsToolCallsFileSearchObjectFileSearch {const RunStepDetailsToolCallsFileSearchObjectFileSearch({this.rankingOptions, this.results, });

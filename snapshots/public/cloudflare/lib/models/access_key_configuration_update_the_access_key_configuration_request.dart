@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_key_rotation_interval_days.dart';@immutable final class AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest {const AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest({required this.keyRotationIntervalDays});
 

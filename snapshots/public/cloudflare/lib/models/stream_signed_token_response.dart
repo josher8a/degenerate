@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamSignedTokenResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_signed_token_response/stream_signed_token_response_result.dart';@immutable final class StreamSignedTokenResponse {const StreamSignedTokenResponse({this.result});
 

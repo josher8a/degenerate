@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigPatchGatewayLogResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPatchGatewayLogResponse {const AigConfigPatchGatewayLogResponse({required this.result, required this.success, });
 

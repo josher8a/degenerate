@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetSearchGlobalResponse (inline: Result > Search)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Search {const Search({required this.code, required this.name, required this.type, });
 

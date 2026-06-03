@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingTransactionPurchaseDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fleet_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_flight_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_fuel_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_lodging_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_receipt_data.dart';/// 
 @immutable final class IssuingTransactionPurchaseDetails {const IssuingTransactionPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });

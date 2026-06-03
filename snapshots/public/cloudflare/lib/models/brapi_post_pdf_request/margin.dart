@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostPdfRequest (inline: Variant1 > PdfOptions > Margin)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set the PDF margins. Useful when setting header and footer.
 @immutable final class Margin {const Margin({this.bottom, this.left, this.right, this.top, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindSendEmail
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindSendEmail {const WorkersBindingKindSendEmail({required this.name, required this.type, this.allowedDestinationAddresses, this.allowedSenderAddresses, this.destinationAddress, });
 

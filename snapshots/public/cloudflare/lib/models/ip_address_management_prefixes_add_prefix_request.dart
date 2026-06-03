@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IpAddressManagementPrefixesAddPrefixRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_delegate_loa_creation.dart';import 'package:pub_cloudflare/models/addressing_description.dart';import 'package:pub_cloudflare/models/addressing_loa_document_identifier.dart';@immutable final class IpAddressManagementPrefixesAddPrefixRequest {const IpAddressManagementPrefixesAddPrefixRequest({required this.asn, required this.cidr, this.delegateLoaCreation, this.description, this.loaDocumentId, });
 

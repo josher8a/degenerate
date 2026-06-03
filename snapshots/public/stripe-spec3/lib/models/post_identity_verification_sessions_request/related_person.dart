@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIdentityVerificationSessionsRequest (inline: RelatedPerson)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Tokens referencing a Person resource and it's associated account.
 @immutable final class RelatedPerson {const RelatedPerson({required this.account, required this.person, });

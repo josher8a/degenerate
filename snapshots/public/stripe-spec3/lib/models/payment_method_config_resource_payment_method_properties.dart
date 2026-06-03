@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodConfigResourcePaymentMethodProperties
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_display_preference.dart';/// 
 @immutable final class PaymentMethodConfigResourcePaymentMethodProperties {const PaymentMethodConfigResourcePaymentMethodProperties({required this.available, required this.displayPreference, });

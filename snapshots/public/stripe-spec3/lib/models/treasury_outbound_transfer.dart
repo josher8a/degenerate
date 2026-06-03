@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryOutboundTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_transfers_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_returned_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject._(this.value);

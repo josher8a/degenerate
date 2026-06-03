@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryAvailabilities (inline: Quota)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_availabilities/quotas_per_plan.dart';import 'package:pub_cloudflare/models/observatory_availabilities/schedule_quotas_per_plan.dart';@immutable final class Quota {const Quota({this.plan, this.quotasPerPlan, this.remainingSchedules, this.remainingTests, this.scheduleQuotasPerPlan, });
 

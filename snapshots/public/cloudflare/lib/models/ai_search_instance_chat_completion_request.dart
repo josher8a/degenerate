@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceChatCompletionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant1.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_messages.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_model.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_options.dart';@immutable final class AiSearchInstanceChatCompletionRequest {const AiSearchInstanceChatCompletionRequest({required this.messages, this.aiSearchOptions, this.model, this.stream, this.additionalProperties = const {}, });
 

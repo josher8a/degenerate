@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1DatabaseUpdateRequestBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_database_update_partial_request_body/read_replication.dart';@immutable final class D1DatabaseUpdateRequestBody {const D1DatabaseUpdateRequestBody({required this.readReplication});
 

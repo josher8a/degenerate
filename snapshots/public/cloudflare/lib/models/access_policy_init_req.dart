@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyInitReq
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_init_req/access_policy_init_req_policies.dart';import 'package:pub_cloudflare/models/access_policy_req.dart';@immutable final class AccessPolicyInitReq {const AccessPolicyInitReq({this.policies});
 

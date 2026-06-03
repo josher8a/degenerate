@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_source/pages_source_config.dart';import 'package:pub_cloudflare/models/pages_source/pages_source_type.dart';/// Configs for the project source control.
 @immutable final class PagesSource {const PagesSource({required this.config, required this.type, });

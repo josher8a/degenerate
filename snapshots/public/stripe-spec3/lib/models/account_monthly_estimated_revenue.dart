@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountMonthlyEstimatedRevenue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class AccountMonthlyEstimatedRevenue {const AccountMonthlyEstimatedRevenue({required this.amount, required this.currency, });

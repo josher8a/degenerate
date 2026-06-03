@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceWorkerPutScriptTagsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';import 'package:pub_cloudflare/models/workers_tag.dart';@immutable final class NamespaceWorkerPutScriptTagsResponse {const NamespaceWorkerPutScriptTagsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

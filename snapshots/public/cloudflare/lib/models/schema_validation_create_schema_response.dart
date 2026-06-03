@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationCreateSchemaResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_schema_issue_notification.dart';@immutable final class SchemaValidationCreateSchemaResponse {const SchemaValidationCreateSchemaResponse({required this.messages, this.errors, });
 

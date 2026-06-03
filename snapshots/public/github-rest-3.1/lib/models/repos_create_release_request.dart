@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateReleaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_release_request/repos_create_release_request_make_latest.dart';@immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft = false, this.prerelease = false, this.discussionCategoryName, this.generateReleaseNotes = false, this.makeLatest = ReposCreateReleaseRequestMakeLatest.$true, });
 

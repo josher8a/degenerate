@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByBitrateResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, required this.timestamps, });
 

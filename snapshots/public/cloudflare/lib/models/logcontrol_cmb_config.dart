@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogcontrolCmbConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow out of region access
 extension type const LogcontrolAllowOutOfRegionAccess(bool value) {

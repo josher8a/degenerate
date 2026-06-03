@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This parameter defines the skip behavior for input collection.
 @immutable final class SkipNonRequiredInputs {const SkipNonRequiredInputs._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDirectUser
 
 /// Provisions a URL to let your end users upload videos directly to Cloudflare Stream without exposing your API token to clients.
 extension type const StreamDirectUser(bool value) {

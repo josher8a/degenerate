@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AmountDetailsTaxParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsTaxParam {const AmountDetailsTaxParam({required this.totalTaxAmount});
 

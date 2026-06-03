@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingEtag
 
 /// ETag identifier for optimistic concurrency control. Formatted as "v1:`<hash>`" where
 /// the hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags map

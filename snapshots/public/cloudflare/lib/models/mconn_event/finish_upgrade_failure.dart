@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: FinishUpgradeFailure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed upgrade
 @immutable final class FinishUpgradeFailureK {const FinishUpgradeFailureK._(this.value);

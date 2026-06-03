@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCallPayments
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountCallPayments {const AccountCallPayments({this.accountSid, this.callSid, this.sid, this.dateCreated, this.dateUpdated, this.uri, });
 

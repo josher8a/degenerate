@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringDexTargetedTest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data.dart';@immutable final class DigitalExperienceMonitoringDexTargetedTest {const DigitalExperienceMonitoringDexTargetedTest({required this.data, required this.enabled, required this.name, required this.testId, });
 

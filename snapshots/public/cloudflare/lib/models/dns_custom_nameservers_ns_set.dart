@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsCustomNameserversNsSet
 
 /// The number of the set that this name server belongs to.
 extension type const DnsCustomNameserversNsSet(double value) {

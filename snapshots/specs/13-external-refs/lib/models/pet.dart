@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Pet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_13_external_refs/models/owner.dart';@immutable final class Pet {const Pet({required this.id, required this.name, this.tag, this.owner, });
 

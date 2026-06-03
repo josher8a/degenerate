@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > Chat > Private)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetPermissionsChatPrivate {const RealtimekitPresetPermissionsChatPrivate({required this.canReceive, required this.canSend, required this.files, required this.text, });
 

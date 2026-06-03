@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BatchFileExpirationAfter (inline: Anchor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Note that the anchor is the file creation time, not the time the batch is created.
 @immutable final class BatchFileExpirationAfterAnchor {const BatchFileExpirationAfterAnchor._(this.value);

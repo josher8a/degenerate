@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_token/ice_servers.dart';@immutable final class AccountToken {const AccountToken({this.accountSid, this.dateCreated, this.dateUpdated, this.iceServers, this.password, this.ttl, this.username, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentCaptureRequest (inline: Hooks > Inputs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/inputs_tax.dart';@immutable final class HooksInputs {const HooksInputs({this.tax});
 

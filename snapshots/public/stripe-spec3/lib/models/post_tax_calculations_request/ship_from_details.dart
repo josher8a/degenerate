@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxCalculationsRequest (inline: ShipFromDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details_address.dart';/// Details about the address from which the goods are being shipped.
 @immutable final class ShipFromDetails {const ShipFromDetails({required this.address});

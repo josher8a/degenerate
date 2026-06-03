@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessComponentsSchemasCertificates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_certificates_components_schemas_name2.dart';import 'package:pub_cloudflare/models/access_fingerprint.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessComponentsSchemasCertificates {const AccessComponentsSchemasCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
 

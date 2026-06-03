@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSkipProducts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of a legacy security product to skip the execution of.
 @immutable final class RulesetsSkipProducts2 {const RulesetsSkipProducts2._(this.value);

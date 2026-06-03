@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: UsageModel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The usage model for Pages Functions.
 @immutable final class UsageModel {const UsageModel._(this.value);

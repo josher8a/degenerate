@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Config > Media)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_preset/config_media_audio.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_config_media_screenshare.dart';import 'package:pub_cloudflare/models/realtimekit_preset/realtimekit_preset_config_media_video.dart';/// Media configuration options. eg: Video quality
 @immutable final class RealtimekitPresetConfigMedia {const RealtimekitPresetConfigMedia({required this.screenshare, required this.video, this.audio, });

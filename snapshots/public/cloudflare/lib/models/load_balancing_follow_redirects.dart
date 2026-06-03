@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingFollowRedirects
 
 /// Follow redirects if returned by the origin. This parameter is only valid for HTTP and HTTPS monitors.
 extension type const LoadBalancingFollowRedirects(bool value) {

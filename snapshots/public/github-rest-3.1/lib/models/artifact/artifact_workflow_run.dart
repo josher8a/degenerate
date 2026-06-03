@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Artifact (inline: WorkflowRun)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactWorkflowRun {const ArtifactWorkflowRun({this.id, this.repositoryId, this.headRepositoryId, this.headBranch, this.headSha, });
 

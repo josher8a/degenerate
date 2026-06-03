@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectsUpdateItemForOrgRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_update_item_for_org_request/fields.dart';@immutable final class ProjectsUpdateItemForOrgRequest {const ProjectsUpdateItemForOrgRequest({required this.fields});
 

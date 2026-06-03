@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessServiceTokensComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_service_tokens.dart';@immutable final class AccessServiceTokensComponentsSchemasSingleResponse {const AccessServiceTokensComponentsSchemasSingleResponse({this.result});
 

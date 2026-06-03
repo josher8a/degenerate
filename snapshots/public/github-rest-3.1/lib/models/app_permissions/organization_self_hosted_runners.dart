@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AppPermissions (inline: OrganizationSelfHostedRunners)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
 @immutable final class OrganizationSelfHostedRunners {const OrganizationSelfHostedRunners._(this.value);

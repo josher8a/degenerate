@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Bandwidth2 (inline: Ssl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A break down of bytes served over HTTPS.
 @immutable final class Bandwidth2Ssl {const Bandwidth2Ssl({this.encrypted, this.unencrypted, });

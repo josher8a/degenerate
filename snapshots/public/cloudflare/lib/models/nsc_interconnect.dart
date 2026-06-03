@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NscInterconnect
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth.dart';import 'package:pub_cloudflare/models/nsc_facility_info.dart';import 'package:pub_cloudflare/models/nsc_interconnect_gcp_partner_body.dart';import 'package:pub_cloudflare/models/nsc_interconnect_physical_body.dart';sealed class NscInterconnect {const NscInterconnect();
 

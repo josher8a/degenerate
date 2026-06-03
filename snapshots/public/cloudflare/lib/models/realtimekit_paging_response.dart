@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPagingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_paging_response/realtimekit_paging_response_paging.dart';@immutable final class RealtimekitPagingResponse {const RealtimekitPagingResponse({required this.data, required this.paging, required this.success, });
 

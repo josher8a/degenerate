@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PipelinesByPipelineIdResponse (inline: Result > Tables)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the connection.
 @immutable final class TablesType {const TablesType._(this.value);

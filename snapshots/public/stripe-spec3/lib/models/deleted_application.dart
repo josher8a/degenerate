@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedApplication
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application/application_object.dart';/// 
 @immutable final class DeletedApplication {const DeletedApplication({required this.deleted, required this.id, required this.object, this.name, });

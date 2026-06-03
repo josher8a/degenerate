@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CcPublicListApplicationsResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_public_application.dart';@immutable final class CcPublicListApplicationsResult {const CcPublicListApplicationsResult({required this.result});
 

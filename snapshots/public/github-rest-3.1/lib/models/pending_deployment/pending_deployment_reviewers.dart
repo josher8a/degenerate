@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PendingDeployment (inline: Reviewers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_reviewer_type.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers_reviewer.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
 

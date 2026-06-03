@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponseCreateParams (inline: MaxOutputTokens > Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MaxOutputTokensVariant2 {const MaxOutputTokensVariant2._(this.value);
 

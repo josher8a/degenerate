@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingAuthorizationPendingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_amount_details.dart';/// 
 @immutable final class IssuingAuthorizationPendingRequest {const IssuingAuthorizationPendingRequest({required this.amount, required this.currency, required this.isAmountControllable, required this.merchantAmount, required this.merchantCurrency, this.amountDetails, this.networkRiskScore, });

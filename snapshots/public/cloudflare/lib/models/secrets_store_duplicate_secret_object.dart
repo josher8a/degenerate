@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreDuplicateSecretObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';import 'package:pub_cloudflare/models/secrets_store_secret_name.dart';@immutable final class SecretsStoreDuplicateSecretObject {const SecretsStoreDuplicateSecretObject({required this.name, required this.scopes, this.comment, });
 

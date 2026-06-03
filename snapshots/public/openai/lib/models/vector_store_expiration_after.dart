@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreExpirationAfter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after/vector_store_expiration_after_anchor.dart';/// The expiration policy for a vector store.
 @immutable final class VectorStoreExpirationAfter {const VectorStoreExpirationAfter({required this.anchor, required this.days, });

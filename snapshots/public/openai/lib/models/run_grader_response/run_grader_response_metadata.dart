@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunGraderResponse (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_grader_response/metadata_errors.dart';@immutable final class RunGraderResponseMetadata {const RunGraderResponseMetadata({required this.name, required this.type, required this.errors, required this.executionTime, required this.scores, required this.tokenUsage, required this.sampledModelName, });
 

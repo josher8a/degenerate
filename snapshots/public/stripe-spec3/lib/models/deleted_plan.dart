@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedPlan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_plan/deleted_plan_object.dart';/// 
 @immutable final class DeletedPlan {const DeletedPlan({required this.deleted, required this.id, required this.object, });

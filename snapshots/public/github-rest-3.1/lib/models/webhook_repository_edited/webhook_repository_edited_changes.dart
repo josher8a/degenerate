@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_edited/default_branch.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_edited/homepage.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_edited/topics.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_edited/webhook_repository_edited_changes_description.dart';@immutable final class WebhookRepositoryEditedChanges {const WebhookRepositoryEditedChanges({this.defaultBranch, this.description, this.homepage, this.topics, });
 

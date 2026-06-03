@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFunctionCallArgumentsDoneEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when function-call arguments are finalized.
 @immutable final class ResponseFunctionCallArgumentsDoneEvent {const ResponseFunctionCallArgumentsDoneEvent({required this.type, required this.itemId, required this.name, required this.outputIndex, required this.sequenceNumber, required this.arguments, });

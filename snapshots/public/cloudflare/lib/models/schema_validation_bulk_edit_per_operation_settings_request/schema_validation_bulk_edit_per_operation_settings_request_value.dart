@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SchemaValidationBulkEditPerOperationSettingsRequest (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_per_operation_setting_change_base/shield_per_operation_setting_change_base_mitigation_action.dart';/// Operation ID to mitigation action mappings
 @immutable final class SchemaValidationBulkEditPerOperationSettingsRequestValue {const SchemaValidationBulkEditPerOperationSettingsRequestValue({this.mitigationAction});

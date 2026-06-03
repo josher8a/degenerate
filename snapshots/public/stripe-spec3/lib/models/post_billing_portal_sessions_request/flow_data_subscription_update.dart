@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData > SubscriptionUpdate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FlowDataSubscriptionUpdate {const FlowDataSubscriptionUpdate({required this.subscription});
 

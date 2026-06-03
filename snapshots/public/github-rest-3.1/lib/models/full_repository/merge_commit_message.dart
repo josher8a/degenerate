@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FullRepository (inline: MergeCommitMessage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default value for a merge commit message.
 /// 

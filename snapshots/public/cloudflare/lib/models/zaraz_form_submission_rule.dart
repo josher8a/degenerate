@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazFormSubmissionRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule/zaraz_form_submission_rule_settings.dart';@immutable final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
 

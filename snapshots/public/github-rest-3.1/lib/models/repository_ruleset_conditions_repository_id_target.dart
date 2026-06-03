@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulesetConditionsRepositoryIdTarget
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions_repository_id_target/repository_id.dart';/// Parameters for a repository ID condition
 @immutable final class RepositoryRulesetConditionsRepositoryIdTarget {const RepositoryRulesetConditionsRepositoryIdTarget({required this.repositoryId});

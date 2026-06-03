@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpHijacksEventsSortBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results by the specified field.
 @immutable final class RadarGetBgpHijacksEventsSortBy {const RadarGetBgpHijacksEventsSortBy._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurboRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turbo_request/audio_variant2.dart';import 'package:pub_cloudflare/models/turbo_request/turbo_request_audio.dart';@immutable final class TurboRequest {const TurboRequest({required this.audio, this.beamSize = 5, this.compressionRatioThreshold = 2.4, this.conditionOnPreviousText = true, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold = -1.0, this.noSpeechThreshold = 0.6, this.prefix, this.task = 'transcribe', this.vadFilter = false, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersScriptAndVersionSettingsItem (inline: Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the version.
 @immutable final class WorkersScriptAndVersionSettingsItemAnnotations {const WorkersScriptAndVersionSettingsItemAnnotations({this.workersMessage, this.workersTag, this.workersTriggeredBy, });

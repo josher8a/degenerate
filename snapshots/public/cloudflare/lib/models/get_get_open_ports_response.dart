@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetGetOpenPortsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_get_open_ports_response/get_get_open_ports_response_result.dart';@immutable final class GetGetOpenPortsResponse {const GetGetOpenPortsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

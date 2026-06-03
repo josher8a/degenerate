@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessLandingPageDesign
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The background color of the log in button on the landing page.
 extension type const AccessButtonColor(String value) {

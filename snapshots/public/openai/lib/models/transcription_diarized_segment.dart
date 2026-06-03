@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TranscriptionDiarizedSegment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the segment. Always `transcript.text.segment`.
 /// 

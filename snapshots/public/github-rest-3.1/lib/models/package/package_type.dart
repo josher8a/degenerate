@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Package (inline: PackageType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackageType {const PackageType._(this.value);
 

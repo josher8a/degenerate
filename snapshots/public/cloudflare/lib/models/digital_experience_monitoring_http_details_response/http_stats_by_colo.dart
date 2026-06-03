@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringHttpDetailsResponse (inline: HttpStatsByColo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_status_code.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_over_time.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_pct_over_time.dart';@immutable final class HttpStatsByColo {const HttpStatsByColo({required this.availabilityPct, required this.colo, required this.dnsResponseTimeMs, required this.httpStatusCode, required this.resourceFetchTimeMs, required this.serverResponseTimeMs, required this.uniqueDevicesTotal, });
 

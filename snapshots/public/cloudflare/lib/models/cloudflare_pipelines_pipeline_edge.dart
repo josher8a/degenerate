@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesPipelineEdge
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesPipelineEdge {const CloudflarePipelinesPipelineEdge({required this.destId, required this.edgeType, required this.keyType, required this.srcId, required this.valueType, });
 

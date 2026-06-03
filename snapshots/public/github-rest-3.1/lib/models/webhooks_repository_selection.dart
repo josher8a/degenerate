@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRepositorySelection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describe whether all repositories have been selected or there's a selection involved
 @immutable final class WebhooksRepositorySelection {const WebhooksRepositorySelection._(this.value);

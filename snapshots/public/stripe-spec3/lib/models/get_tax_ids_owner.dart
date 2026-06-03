@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTaxIdsOwner
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner/get_tax_ids_owner_type.dart';@immutable final class GetTaxIdsOwner {const GetTaxIdsOwner({required this.type, this.account, this.customer, this.customerAccount, });
 

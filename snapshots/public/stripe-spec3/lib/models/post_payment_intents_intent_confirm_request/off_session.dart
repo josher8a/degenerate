@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentIntentsIntentConfirmRequest (inline: OffSession)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OffSessionVariant2 {const OffSessionVariant2._(this.value);
 

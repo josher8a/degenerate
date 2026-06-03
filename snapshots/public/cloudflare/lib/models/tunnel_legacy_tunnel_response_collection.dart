@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelLegacyTunnelResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_argo_tunnel.dart';@immutable final class TunnelLegacyTunnelResponseCollection {const TunnelLegacyTunnelResponseCollection({this.result});
 

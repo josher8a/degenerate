@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardsCardRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';/// Reason why the `status` of this card is `canceled`.
 @immutable final class PostIssuingCardsCardRequestCancellationReason {const PostIssuingCardsCardRequestCancellationReason._(this.value);

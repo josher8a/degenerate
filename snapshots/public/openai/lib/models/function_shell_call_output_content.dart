@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCallOutputContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_content/outcome.dart';/// The content of a shell tool call output that was emitted.
 @immutable final class FunctionShellCallOutputContent {const FunctionShellCallOutputContent({required this.stdout, required this.stderr, required this.outcome, this.createdBy, });

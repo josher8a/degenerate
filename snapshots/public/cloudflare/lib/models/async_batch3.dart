@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AsyncBatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/async_batch/async_batch3_requests.dart';import 'package:pub_cloudflare/models/messages_inner.dart';import 'package:pub_cloudflare/models/prompt_inner.dart';@immutable final class AsyncBatch3 {const AsyncBatch3({required this.requests});
 

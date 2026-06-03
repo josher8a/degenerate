@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the membership.
 @immutable final class AddressingKind {const AddressingKind._(this.value);

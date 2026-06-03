@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityPostMessageMoveRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_post_bulk_message_move_request/email_security_post_bulk_message_move_request_destination.dart';@immutable final class EmailSecurityPostMessageMoveRequest {const EmailSecurityPostMessageMoveRequest({required this.destination});
 

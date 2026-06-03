@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTerminalReadersReaderCollectInputsRequest (inline: Inputs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request/inputs_custom_text.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request/selection.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request/toggles.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_input/terminal_reader_reader_resource_input_type.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequestInputs {const PostTerminalReadersReaderCollectInputsRequestInputs({required this.customText, required this.type, this.$required, this.selection, this.toggles, });
 

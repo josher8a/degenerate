@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PodSecurityContext
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/app_armor_profile.dart';import 'package:pub_kubernetes_api_v1_openapi/models/se_linux_options.dart';import 'package:pub_kubernetes_api_v1_openapi/models/seccomp_profile.dart';import 'package:pub_kubernetes_api_v1_openapi/models/sysctl.dart';import 'package:pub_kubernetes_api_v1_openapi/models/windows_security_context_options.dart';/// PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.
 @immutable final class PodSecurityContext {const PodSecurityContext({this.appArmorProfile, this.fsGroup, this.fsGroupChangePolicy, this.runAsGroup, this.runAsNonRoot, this.runAsUser, this.seLinuxChangePolicy, this.seLinuxOptions, this.seccompProfile, this.supplementalGroups, this.supplementalGroupsPolicy, this.sysctls, this.windowsOptions, });

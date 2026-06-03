@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesGetDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order zones.
 @immutable final class ZonesGetDirection {const ZonesGetDirection._(this.value);

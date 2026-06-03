@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TopOriginAsResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginAsResponseResultTop0 {const RadarGetAttacksLayer7TopOriginAsResponseResultTop0({required this.originAsn, required this.originAsnName, required this.rank, required this.value, });
 

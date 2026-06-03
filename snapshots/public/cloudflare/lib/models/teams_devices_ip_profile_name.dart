@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesIpProfileName
 
 /// A user-friendly name for the Device IP profile.
 extension type const TeamsDevicesIpProfileName(String value) {

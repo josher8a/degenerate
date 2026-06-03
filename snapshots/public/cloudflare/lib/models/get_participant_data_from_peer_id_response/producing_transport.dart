@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Metadata > CandidatePairs > ProducingTransport)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProducingTransport {const ProducingTransport({this.availableOutgoingBitrate, this.bytesDiscardedOnSend, this.bytesReceived, this.bytesSent, this.currentRoundTripTime, this.lastPacketReceivedTimestamp, this.lastPacketSentTimestamp, this.localCandidateAddress, this.localCandidateId, this.localCandidateNetworkType, this.localCandidatePort, this.localCandidateProtocol, this.localCandidateRelatedAddress, this.localCandidateRelatedPort, this.localCandidateType, this.nominated, this.packetsDiscardedOnSend, this.packetsReceived, this.packetsSent, this.remoteCandidateAddress, this.remoteCandidateId, this.remoteCandidatePort, this.remoteCandidateProtocol, this.remoteCandidateType, this.totalRoundTripTime, });
 

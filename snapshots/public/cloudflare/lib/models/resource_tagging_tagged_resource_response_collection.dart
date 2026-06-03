@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingTaggedResourceResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_cursor_result_info.dart';import 'package:pub_cloudflare/models/resource_tagging_messages2.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object.dart';@immutable final class ResourceTaggingTaggedResourceResponseCollection {const ResourceTaggingTaggedResourceResponseCollection({required this.errors, required this.messages, required this.success, this.result, this.resultInfo, });
 

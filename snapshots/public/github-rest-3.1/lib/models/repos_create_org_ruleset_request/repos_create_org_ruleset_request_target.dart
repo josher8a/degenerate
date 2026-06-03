@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreateOrgRulesetRequest (inline: Target)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target of the ruleset
 @immutable final class ReposCreateOrgRulesetRequestTarget {const ReposCreateOrgRulesetRequestTarget._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigOriginDns
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TTL of our resolution of your DNS record in seconds.
 extension type const SpectrumConfigDnsTtl(int value) {

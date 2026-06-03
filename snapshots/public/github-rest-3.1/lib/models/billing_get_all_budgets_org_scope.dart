@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingGetAllBudgetsOrgScope
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingGetAllBudgetsOrgScope {const BillingGetAllBudgetsOrgScope._(this.value);
 

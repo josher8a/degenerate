@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2LifecycleRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_rule/abort_multipart_uploads_transition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_rule/conditions.dart';import 'package:pub_cloudflare/models/r2_lifecycle_rule/delete_objects_transition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_storage_transition.dart';@immutable final class R2LifecycleRule {const R2LifecycleRule({required this.conditions, required this.enabled, required this.id, this.abortMultipartUploadsTransition, this.deleteObjectsTransition, this.storageClassTransitions, });
 

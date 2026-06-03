@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClassroomAssignment (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether it's a group assignment or individual assignment.
 @immutable final class ClassroomAssignmentType {const ClassroomAssignmentType._(this.value);

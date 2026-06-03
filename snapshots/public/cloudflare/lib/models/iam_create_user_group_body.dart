@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateUserGroupBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_user_group_policy_write_body.dart';@immutable final class IamCreateUserGroupBody {const IamCreateUserGroupBody({required this.name, required this.policies, });
 

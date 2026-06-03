@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIssuingDisputesStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingDisputesStatus {const GetIssuingDisputesStatus._(this.value);
 

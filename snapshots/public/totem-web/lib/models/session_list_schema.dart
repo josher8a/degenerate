@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SessionListSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/space_schema.dart';@immutable final class SessionListSchema {const SessionListSchema({required this.space, required this.url, required this.dateCreated, required this.dateModified, this.start, this.slug, this.title, });
 

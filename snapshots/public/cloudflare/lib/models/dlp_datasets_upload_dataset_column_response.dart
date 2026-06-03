@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDatasetsUploadDatasetColumnResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';@immutable final class DlpDatasetsUploadDatasetColumnResponse {const DlpDatasetsUploadDatasetColumnResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateScope
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_create_resource_group_scope_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
 extension type IamCreateResourceGroupScopeScopeKey(dynamic value) {

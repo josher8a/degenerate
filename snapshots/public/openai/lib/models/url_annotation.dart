@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlAnnotation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/url_annotation_source.dart';import 'package:pub_openai/models/url_annotation_source/url_annotation_source_type.dart';/// Annotation that references a URL.
 @immutable final class UrlAnnotation {const UrlAnnotation({required this.source, this.type = UrlAnnotationSourceType.url, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LineItemsDiscountAmount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/discount.dart';/// 
 @immutable final class LineItemsDiscountAmount {const LineItemsDiscountAmount({required this.amount, required this.discount, });

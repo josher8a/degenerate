@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageDirectUploadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_direct_upload_response/images_image_direct_upload_response_result.dart';@immutable final class ImagesImageDirectUploadResponse {const ImagesImageDirectUploadResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies fleet status details source
 @immutable final class DigitalExperienceMonitoringSource {const DigitalExperienceMonitoringSource._(this.value);

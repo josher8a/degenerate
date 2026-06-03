@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReasoningEffort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effort on reasoning for
 /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).

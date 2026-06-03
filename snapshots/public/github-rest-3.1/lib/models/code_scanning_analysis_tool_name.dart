@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAnalysisToolName
 
 /// The name of the tool used to generate the code scanning analysis.
 extension type const CodeScanningAnalysisToolName(String value) {

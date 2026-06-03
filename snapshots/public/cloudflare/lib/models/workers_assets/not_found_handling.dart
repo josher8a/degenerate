@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAssets (inline: Config > NotFoundHandling)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the response when a request does not match a static asset, and there is no Worker script.
 @immutable final class NotFoundHandling {const NotFoundHandling._(this.value);

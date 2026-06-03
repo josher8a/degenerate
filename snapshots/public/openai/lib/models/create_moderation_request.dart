@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateModerationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_moderation_request/create_moderation_request_input.dart';import 'package:pub_openai/models/create_moderation_request/create_moderation_request_model.dart';import 'package:pub_openai/models/create_moderation_request/variant3_image_url.dart';import 'package:pub_openai/models/create_moderation_request/variant3_text.dart';@immutable final class CreateModerationRequest {const CreateModerationRequest({required this.input, this.model, });
 

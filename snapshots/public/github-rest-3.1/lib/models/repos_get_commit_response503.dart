@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposGetCommitResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetCommitResponse503 {const ReposGetCommitResponse503({this.code, this.message, this.documentationUrl, });
 

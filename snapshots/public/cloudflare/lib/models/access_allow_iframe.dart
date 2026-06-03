@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAllowIframe
 
 /// Enables loading application content in an iFrame.
 extension type const AccessAllowIframe(bool value) {

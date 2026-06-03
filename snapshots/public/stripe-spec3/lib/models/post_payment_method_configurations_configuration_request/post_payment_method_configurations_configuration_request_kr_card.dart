@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPaymentMethodConfigurationsConfigurationRequest (inline: KrCard)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Korean cards let users pay using locally issued cards from South Korea.
 @immutable final class PostPaymentMethodConfigurationsConfigurationRequestKrCard {const PostPaymentMethodConfigurationsConfigurationRequestKrCard({this.displayPreference});

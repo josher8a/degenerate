@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoicePaymentMethodOptionsParam (inline: FinancialConnections > Filters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_us_bank_account_linked_account_options_filters/invoice_payment_method_options_us_bank_account_linked_account_options_filters_account_subcategories.dart';@immutable final class FinancialConnectionsFilters {const FinancialConnectionsFilters({this.accountSubcategories});
 

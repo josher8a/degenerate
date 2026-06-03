@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookInstallationTargetRenamed (inline: Changes > Slug)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Slug {const Slug({required this.from});
 

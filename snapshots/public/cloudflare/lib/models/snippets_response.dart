@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SnippetsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_message.dart';/// Return all API responses using this object.
 @immutable final class SnippetsResponse {const SnippetsResponse({required this.errors, required this.messages, required this.result, required this.success, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamListAudioTrackResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_additional_audio.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';@immutable final class StreamListAudioTrackResponse {const StreamListAudioTrackResponse({required this.errors, required this.messages, required this.success, this.result, });
 

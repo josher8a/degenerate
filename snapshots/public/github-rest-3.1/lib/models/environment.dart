@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Environment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_settings.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules_variant1.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules_variant2.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules_variant3.dart';/// Details of a deployment environment
 @immutable final class Environment {const Environment({required this.id, required this.nodeId, required this.name, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, this.protectionRules, this.deploymentBranchPolicy, });

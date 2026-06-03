@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningDelegatedAlertDismissal)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning delegated alert dismissal
 @immutable final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(this.value);

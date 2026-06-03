@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsIdentifier
 
 /// Identifier.
 extension type const MagicVisibilityPcapsIdentifier(String value) {

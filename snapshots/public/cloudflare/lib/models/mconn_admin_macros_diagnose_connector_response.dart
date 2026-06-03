@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnAdminMacrosDiagnoseConnectorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_admin_macros_diagnose_connector_result.dart';@immutable final class MconnAdminMacrosDiagnoseConnectorResponse {const MconnAdminMacrosDiagnoseConnectorResponse({this.result});
 

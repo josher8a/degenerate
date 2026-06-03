@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsCreateAListRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_description.dart';import 'package:pub_cloudflare/models/lists_kind.dart';import 'package:pub_cloudflare/models/lists_name.dart';@immutable final class ListsCreateAListRequest {const ListsCreateAListRequest({required this.kind, required this.name, this.description, });
 

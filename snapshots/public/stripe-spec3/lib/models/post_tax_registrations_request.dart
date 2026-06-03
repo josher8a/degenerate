@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/trial_end_variant1.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_id_request/active_from.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/country_options.dart';@immutable final class PostTaxRegistrationsRequest {const PostTaxRegistrationsRequest({required this.activeFrom, required this.country, required this.countryOptions, this.expand, this.expiresAt, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAccessRequestsComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_requests.dart';import 'package:pub_cloudflare/models/access_messages2.dart';@immutable final class AccessAccessRequestsComponentsSchemasResponseCollection {const AccessAccessRequestsComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

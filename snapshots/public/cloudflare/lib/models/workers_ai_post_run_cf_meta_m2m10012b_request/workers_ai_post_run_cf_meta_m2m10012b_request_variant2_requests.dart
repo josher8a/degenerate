@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfMetaM2m10012bRequest (inline: Variant2 > Requests)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests({required this.targetLang, required this.text, this.sourceLang = 'en', });
 

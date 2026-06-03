@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamLastUsedOn
 
 /// Last time the token was used.
 extension type IamLastUsedOn(DateTime value) {

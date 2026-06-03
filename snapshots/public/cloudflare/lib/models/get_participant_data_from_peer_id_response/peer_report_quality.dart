@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Quality)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/audio_producer.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/audio_producer_cumulative.dart';@immutable final class PeerReportQuality {const PeerReportQuality({this.audioConsumer, this.audioConsumerCumulative, this.audioProducer, this.audioProducerCumulative, this.screenshareAudioConsumer, this.screenshareAudioConsumerCumulative, this.screenshareAudioProducer, this.screenshareAudioProducerCumulative, this.screenshareVideoConsumer, this.screenshareVideoConsumerCumulative, this.screenshareVideoProducer, this.screenshareVideoProducerCumulative, this.videoConsumer, this.videoConsumerCumulative, this.videoProducer, this.videoProducerCumulative, });
 

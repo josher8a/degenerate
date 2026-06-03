@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumModifyRulesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_modify_rules_request/rum_modify_rules_request_rules.dart';import 'package:pub_cloudflare/models/rum_rule_identifier.dart';@immutable final class RumModifyRulesRequest {const RumModifyRulesRequest({this.deleteRules, this.rules, });
 

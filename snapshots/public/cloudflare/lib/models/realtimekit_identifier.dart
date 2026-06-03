@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitIdentifier
 
 /// A Cloudflare-generated unique identifier for a item.
 extension type const RealtimekitIdentifier(String value) {

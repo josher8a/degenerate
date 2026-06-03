@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAppPolicyLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_precedence.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';/// A JSON that links a reusable policy to an application.
 @immutable final class AccessAppPolicyLink {const AccessAppPolicyLink({this.id, this.precedence, });

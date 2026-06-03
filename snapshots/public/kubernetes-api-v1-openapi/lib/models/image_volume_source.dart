@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImageVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ImageVolumeSource represents a image volume resource.
 @immutable final class ImageVolumeSource {const ImageVolumeSource({this.pullPolicy, this.reference, });

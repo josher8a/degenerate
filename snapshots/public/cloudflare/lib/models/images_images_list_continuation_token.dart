@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImagesListContinuationToken
 
 /// Continuation token to fetch next page. Passed as a query param when requesting List V2 api endpoint.
 extension type const ImagesImagesListContinuationToken(String value) {

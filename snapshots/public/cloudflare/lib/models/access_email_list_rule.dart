@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessEmailListRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_email_list_rule/email_list.dart';/// Matches an email address from a list.
 @immutable final class AccessEmailListRule {const AccessEmailListRule({required this.emailList});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalGraderScoreModel (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `score_model`.
 @immutable final class EvalGraderScoreModelType {const EvalGraderScoreModelType._(this.value);

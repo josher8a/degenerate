@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldGetZoneScriptResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_get_zone_script_response/page_shield_get_zone_script_response_result.dart';@immutable final class PageShieldGetZoneScriptResponse {const PageShieldGetZoneScriptResponse({required this.result});
 

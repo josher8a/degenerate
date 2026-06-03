@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Project
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project`
 @immutable final class ProjectObject {const ProjectObject._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';@immutable final class ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest({this.ips, this.name, });
 

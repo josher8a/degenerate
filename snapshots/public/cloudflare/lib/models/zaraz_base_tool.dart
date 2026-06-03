@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazBaseTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazBaseTool {const ZarazBaseTool({required this.blockingTriggers, required this.defaultFields, required this.enabled, required this.name, this.defaultPurpose, this.vendorName, this.vendorPolicyUrl, });
 

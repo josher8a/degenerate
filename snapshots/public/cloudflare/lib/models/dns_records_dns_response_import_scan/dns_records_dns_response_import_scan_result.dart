@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsResponseImportScan (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsDnsResponseImportScanResult {const DnsRecordsDnsResponseImportScanResult({this.recsAdded, this.totalRecordsParsed, });
 

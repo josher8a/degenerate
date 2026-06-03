@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutSession (inline: RedirectOnCompletion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
 @immutable final class RedirectOnCompletion {const RedirectOnCompletion._(this.value);

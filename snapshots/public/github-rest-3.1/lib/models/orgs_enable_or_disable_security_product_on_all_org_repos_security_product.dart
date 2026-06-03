@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct {const OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookMarketplacePurchaseChanged
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_changed/webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction._(this.value);
 

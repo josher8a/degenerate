@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_doh_jwt_duration.dart';@immutable final class ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest {const ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest({this.dohJwtDuration, this.serviceTokenId, });
 

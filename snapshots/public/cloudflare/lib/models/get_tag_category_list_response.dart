@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetTagCategoryListResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_tag_category_list_response/get_tag_category_list_response_categories.dart';@immutable final class GetTagCategoryListResponse {const GetTagCategoryListResponse({required this.categories});
 

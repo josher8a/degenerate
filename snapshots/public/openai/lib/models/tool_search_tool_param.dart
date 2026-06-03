@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ToolSearchToolParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';/// Hosted or BYOT tool search configuration for deferred tools.
 @immutable final class ToolSearchToolParam {const ToolSearchToolParam({this.type = 'tool_search', this.execution, this.description, this.parameters, });

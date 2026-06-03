@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ObservatoryPagesResponseCollection (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_labeled_region.dart';import 'package:pub_cloudflare/models/observatory_page_test_.dart';import 'package:pub_cloudflare/models/observatory_schedule_frequency.dart';import 'package:pub_cloudflare/models/observatory_url.dart';@immutable final class ObservatoryPagesResponseCollectionResult {const ObservatoryPagesResponseCollectionResult({this.region, this.scheduleFrequency, this.tests, this.url, });
 

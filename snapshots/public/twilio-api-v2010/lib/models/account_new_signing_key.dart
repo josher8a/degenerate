@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountNewSigningKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountNewSigningKey {const AccountNewSigningKey({this.sid, this.friendlyName, this.dateCreated, this.dateUpdated, this.secret, });
 

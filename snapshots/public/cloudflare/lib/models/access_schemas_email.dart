@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasEmail
 
 /// The email of the user.
 extension type const AccessSchemasEmail(String value) {

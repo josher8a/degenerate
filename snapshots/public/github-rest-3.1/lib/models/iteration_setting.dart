@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IterationSetting
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An iteration setting for an iteration field
 @immutable final class IterationSetting {const IterationSetting({required this.id, required this.title, this.titleHtml, this.duration, this.startDate, this.completed, });

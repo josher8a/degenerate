@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelPassiveDnsByIp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_passive_dns_by_ip/reverse_records.dart';@immutable final class IntelPassiveDnsByIp {const IntelPassiveDnsByIp({this.count, this.page, this.perPage, this.reverseRecords, });
 

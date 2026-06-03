@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryFinancialAccountsResourceAbaToggleSettings (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the Feature is operational.
 @immutable final class TreasuryFinancialAccountsResourceAbaToggleSettingsStatus {const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._(this.value);

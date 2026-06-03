@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalJsonlFileIdSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of jsonl source. Always `file_id`.
 @immutable final class EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType._(this.value);

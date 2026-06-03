@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: DependencyGraph)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of Dependency Graph
 @immutable final class DependencyGraph {const DependencyGraph._(this.value);

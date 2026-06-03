@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCertificateLogsResponse (inline: Result > CertificateLogs)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/api.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_state.dart';@immutable final class CertificateLogs {const CertificateLogs({required this.api, required this.description, required this.endExclusive, required this.$operator, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.url, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatSessionRateLimits
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Active per-minute request limit for the session.
 @immutable final class ChatSessionRateLimits {const ChatSessionRateLimits({required this.maxRequestsPer1Minute});

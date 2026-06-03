@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelOriginRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_origin_request/access.dart';/// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
 @immutable final class TunnelOriginRequest {const TunnelOriginRequest({this.access, this.caPool, this.connectTimeout, this.disableChunkedEncoding, this.http2Origin, this.httpHostHeader, this.keepAliveConnections, this.keepAliveTimeout, this.matchSnItoHost, this.noHappyEyeballs, this.noTlsVerify, this.originServerName, this.proxyType, this.tcpKeepAlive, this.tlsTimeout, });

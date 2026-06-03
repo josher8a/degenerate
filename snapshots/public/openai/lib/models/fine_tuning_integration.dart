@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningIntegration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_integration/fine_tuning_integration_type.dart';import 'package:pub_openai/models/fine_tuning_integration/wandb.dart';@immutable final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
 

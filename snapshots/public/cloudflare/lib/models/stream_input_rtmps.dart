@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamInputRtmps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret key to use when streaming via RTMPS to a live input.
 extension type const StreamInputRtmpsStreamKey(String value) {

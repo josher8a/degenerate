@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesPrecedence
 
 /// The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
 extension type const TeamsDevicesPrecedence(double value) {

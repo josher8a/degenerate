@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushOwnershipChallenge
 
 /// Ownership challenge token to prove destination ownership.
 extension type const LogpushOwnershipChallenge(String value) {

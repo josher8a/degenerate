@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DraftIssue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A draft issue in a project
 @immutable final class DraftIssue {const DraftIssue({required this.id, required this.nodeId, required this.title, required this.user, required this.createdAt, required this.updatedAt, this.body, });

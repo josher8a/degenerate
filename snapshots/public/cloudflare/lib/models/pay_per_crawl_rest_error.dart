@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlRestError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pay_per_crawl_error_source.dart';@immutable final class PayPerCrawlRestError {const PayPerCrawlRestError({this.code, this.documentationUrl, this.error, this.source, });
 

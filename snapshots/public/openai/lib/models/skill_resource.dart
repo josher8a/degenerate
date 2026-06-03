@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SkillResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill`.
 @immutable final class SkillResourceObject {const SkillResourceObject._(this.value);

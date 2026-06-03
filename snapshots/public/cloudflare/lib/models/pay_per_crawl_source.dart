@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PayPerCrawlSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlSource {const PayPerCrawlSource({this.parameter, this.parameterValueIndex, this.pointer, });
 

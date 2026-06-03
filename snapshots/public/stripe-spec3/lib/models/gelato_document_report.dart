@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoDocumentReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_date_of_birth.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_expiration_date.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_issued_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/sex.dart';import 'package:pub_stripe_spec3/models/gelato_document_report_error.dart';/// Type of the document.
 @immutable final class GelatoDocumentReportType {const GelatoDocumentReportType._(this.value);

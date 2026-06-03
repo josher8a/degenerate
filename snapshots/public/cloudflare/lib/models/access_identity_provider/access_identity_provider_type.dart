@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdentityProvider (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
 @immutable final class AccessIdentityProviderType {const AccessIdentityProviderType._(this.value);

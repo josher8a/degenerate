@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesAllowedToLeave
 
 /// Whether to allow devices to leave the organization.
 extension type const TeamsDevicesAllowedToLeave(bool value) {

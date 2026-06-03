@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingPortalConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/portal_business_profile.dart';import 'package:pub_stripe_spec3/models/portal_features.dart';import 'package:pub_stripe_spec3/models/portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingPortalConfigurationObject {const BillingPortalConfigurationObject._(this.value);

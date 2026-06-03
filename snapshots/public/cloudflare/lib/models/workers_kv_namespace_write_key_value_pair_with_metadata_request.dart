@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest
 
 import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_any.dart';import 'package:pub_cloudflare/models/workers_kv_value.dart';@immutable final class WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest {const WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest({required this.value, this.metadata, });
 

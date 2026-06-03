@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceAfterCompletion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_after_completion/payment_links_resource_after_completion_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_completion_behavior_confirmation_page.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_completion_behavior_redirect.dart';/// 
 @immutable final class PaymentLinksResourceAfterCompletion {const PaymentLinksResourceAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });

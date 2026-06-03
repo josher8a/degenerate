@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotIdeCodeCompletions (inline: Editors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/copilot_ide_code_completions_editors_models.dart';/// Copilot code completion metrics for active editors.
 @immutable final class CopilotIdeCodeCompletionsEditors {const CopilotIdeCodeCompletionsEditors({this.name, this.totalEngagedUsers, this.models, this.additionalProperties = const {}, });

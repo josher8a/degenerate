@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceTaxRateDetails (inline: RateType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
 @immutable final class RateType {const RateType._(this.value);

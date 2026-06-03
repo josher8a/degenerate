@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceCustomerBalanceSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration for how funds that land in the customer cash balance are reconciled.
 @immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode._(this.value);

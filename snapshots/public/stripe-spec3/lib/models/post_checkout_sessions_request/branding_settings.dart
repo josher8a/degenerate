@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: BrandingSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/background_color.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_logo.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/button_color.dart';@immutable final class BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle._(this.value);
 

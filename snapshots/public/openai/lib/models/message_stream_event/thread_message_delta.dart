@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageDelta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_object.dart';@immutable final class ThreadMessageDeltaEvent {const ThreadMessageDeltaEvent._(this.value);
 

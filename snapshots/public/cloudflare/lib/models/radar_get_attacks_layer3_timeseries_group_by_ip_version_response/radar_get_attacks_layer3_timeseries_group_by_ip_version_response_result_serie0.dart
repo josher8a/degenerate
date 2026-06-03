@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResultSerie0({required this.iPv4, required this.iPv6, required this.timestamps, });
 

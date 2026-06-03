@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Field
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field/field_configuration.dart';import 'package:pub_github_rest_3_1/models/single_select_options.dart';/// The field's data type.
 @immutable final class FieldDataType {const FieldDataType._(this.value);

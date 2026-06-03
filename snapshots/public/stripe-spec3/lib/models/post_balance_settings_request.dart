@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBalanceSettingsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/post_balance_settings_request_payments.dart';@immutable final class PostBalanceSettingsRequest {const PostBalanceSettingsRequest({this.expand, this.payments, });
 

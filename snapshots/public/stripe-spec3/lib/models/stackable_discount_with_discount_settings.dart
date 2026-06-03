@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StackableDiscountWithDiscountSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/discounts_resource_stackable_discount_with_discount_end/discounts_resource_stackable_discount_with_discount_end_discount.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
 @immutable final class StackableDiscountWithDiscountSettings {const StackableDiscountWithDiscountSettings({this.coupon, this.discount, this.promotionCode, });

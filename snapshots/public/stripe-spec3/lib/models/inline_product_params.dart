@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InlineProductParams
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The product whose pricing the created plan will represent. This can either be the ID of an existing product, or a dictionary containing fields used to create a [service product](https://docs.stripe.com/api#product_object-type).
 @immutable final class InlineProductParams {const InlineProductParams({required this.name, this.active, this.id, this.metadata, this.statementDescriptor, this.taxCode, this.unitLabel, });

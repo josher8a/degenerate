@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreateEventRelationshipResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_response/post_create_event_relationship_response_errors.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_response/relationships.dart';@immutable final class PostCreateEventRelationshipResponse {const PostCreateEventRelationshipResponse({required this.message, required this.relationships, required this.success, this.childIds, this.errors, this.relationshipsCreated, });
 

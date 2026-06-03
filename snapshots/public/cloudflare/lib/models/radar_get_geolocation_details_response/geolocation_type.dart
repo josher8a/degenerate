@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetGeolocationDetailsResponse (inline: Result > Geolocation > Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the geolocation.
 @immutable final class GeolocationType {const GeolocationType._(this.value);

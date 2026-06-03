@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayItemsInput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_description_item.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_value.dart';@immutable final class ZeroTrustGatewayItemsInput2 {const ZeroTrustGatewayItemsInput2({this.description, this.value, });
 

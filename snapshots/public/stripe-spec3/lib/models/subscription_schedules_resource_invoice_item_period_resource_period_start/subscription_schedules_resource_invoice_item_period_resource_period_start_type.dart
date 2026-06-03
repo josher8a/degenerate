@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStart (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Select how to calculate the start of the invoice item period.
 @immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType._(this.value);

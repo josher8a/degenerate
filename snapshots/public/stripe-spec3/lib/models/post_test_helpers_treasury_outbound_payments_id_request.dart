@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryOutboundPaymentsIdRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_outbound_payments_id_request/tracking_details.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequest {const PostTestHelpersTreasuryOutboundPaymentsIdRequest({required this.trackingDetails, this.expand, });
 

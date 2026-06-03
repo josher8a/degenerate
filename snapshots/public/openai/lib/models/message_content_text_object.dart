@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageContentTextObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';import 'package:pub_openai/models/message_content_text_object/message_content_text_object_text.dart';/// The text content that is part of a message.
 @immutable final class MessageContentTextObject {const MessageContentTextObject({required this.type, required this.text, });

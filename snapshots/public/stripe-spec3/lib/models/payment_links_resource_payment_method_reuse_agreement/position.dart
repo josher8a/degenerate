@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourcePaymentMethodReuseAgreement (inline: Position)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the position and visibility of the payment method reuse agreement in the UI. When set to `auto`, Stripe's defaults will be used.
 /// 

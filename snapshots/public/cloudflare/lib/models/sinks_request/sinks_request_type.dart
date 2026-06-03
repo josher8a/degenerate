@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SinksRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of sink.
 @immutable final class SinksRequestType {const SinksRequestType._(this.value);

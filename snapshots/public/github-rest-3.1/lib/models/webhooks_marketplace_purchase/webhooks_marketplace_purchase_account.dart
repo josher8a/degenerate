@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksMarketplacePurchase (inline: Account)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksMarketplacePurchaseAccount {const WebhooksMarketplacePurchaseAccount({required this.id, required this.login, required this.nodeId, required this.organizationBillingEmail, required this.type, });
 

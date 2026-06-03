@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateMeetingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_ai_config.dart';import 'package:pub_cloudflare/models/realtimekit_recording_config.dart';@immutable final class CreateMeetingRequest {const CreateMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.recordingConfig, this.sessionKeepAliveTimeInSecs = 60.0, this.summarizeOnEnd = false, this.title, });
 

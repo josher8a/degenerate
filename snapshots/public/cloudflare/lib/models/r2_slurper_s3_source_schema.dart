@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2SlurperS3SourceSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_like_creds_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema/r2_slurper_s3_source_schema_vendor.dart';@immutable final class R2SlurperS3SourceSchema {const R2SlurperS3SourceSchema({required this.bucket, required this.secret, required this.vendor, this.endpoint, this.keys, this.pathPrefix, this.region, });
 

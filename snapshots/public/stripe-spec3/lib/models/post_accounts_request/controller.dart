@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsRequest (inline: Controller)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller/requirement_collection.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/fees.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/losses.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/stripe_dashboard.dart';/// A hash of configuration describing the account controller's attributes.
 @immutable final class Controller {const Controller({this.fees, this.losses, this.requirementCollection, this.stripeDashboard, });

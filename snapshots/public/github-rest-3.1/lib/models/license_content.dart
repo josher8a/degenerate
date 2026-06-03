@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LicenseContent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';/// License Content
 @immutable final class LicenseContent {const LicenseContent({required this.name, required this.path, required this.sha, required this.size, required this.url, required this.htmlUrl, required this.gitUrl, required this.downloadUrl, required this.type, required this.content, required this.encoding, required this.links, required this.license, });

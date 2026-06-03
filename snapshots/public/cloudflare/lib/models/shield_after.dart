@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldAfter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Move rule to before rule with ID.
 @immutable final class ShieldAfter {const ShieldAfter({this.after});

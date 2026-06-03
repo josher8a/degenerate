@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigDns
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the DNS record associated with the application.
 extension type const SpectrumConfigDnsName(String value) {

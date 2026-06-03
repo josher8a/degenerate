@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: BusinessProfile > AnnualRevenue)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AnnualRevenue {const AnnualRevenue({required this.amount, required this.currency, required this.fiscalYearEnd, });
 

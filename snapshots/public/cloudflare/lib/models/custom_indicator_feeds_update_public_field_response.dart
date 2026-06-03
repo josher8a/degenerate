@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsUpdatePublicFieldResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_indicator_feed_item.dart';@immutable final class CustomIndicatorFeedsUpdatePublicFieldResponse {const CustomIndicatorFeedsUpdatePublicFieldResponse({this.result});
 

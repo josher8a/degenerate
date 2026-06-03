@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsAbuseReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_summary.dart';import 'package:pub_cloudflare/models/abuse_reports_report_status.dart';import 'package:pub_cloudflare/models/abuse_reports_report_type.dart';import 'package:pub_cloudflare/models/abuse_reports_submitter_details.dart';@immutable final class AbuseReportsAbuseReport {const AbuseReportsAbuseReport({required this.cdate, required this.domain, required this.id, required this.mitigationSummary, required this.status, required this.type, this.justification, this.originalWork, this.submitter, this.urls, });
 

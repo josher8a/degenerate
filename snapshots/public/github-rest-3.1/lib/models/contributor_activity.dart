@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContributorActivity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/contributor_activity/weeks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Contributor Activity
 @immutable final class ContributorActivity {const ContributorActivity({required this.author, required this.total, required this.weeks, });

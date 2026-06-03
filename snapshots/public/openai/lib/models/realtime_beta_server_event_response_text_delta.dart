@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseTextDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.delta`.
 @immutable final class RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType._(this.value);

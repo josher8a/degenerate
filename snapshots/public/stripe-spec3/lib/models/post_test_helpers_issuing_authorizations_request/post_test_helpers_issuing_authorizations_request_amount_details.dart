@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest (inline: AmountDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestAmountDetails {const PostTestHelpersIssuingAuthorizationsRequestAmountDetails({this.atmFee, this.cashbackAmount, });

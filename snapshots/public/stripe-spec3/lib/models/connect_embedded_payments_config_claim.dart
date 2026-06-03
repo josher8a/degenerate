@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedPaymentsConfigClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_payments_features.dart';/// 
 @immutable final class ConnectEmbeddedPaymentsConfigClaim {const ConnectEmbeddedPaymentsConfigClaim({required this.enabled, required this.features, });

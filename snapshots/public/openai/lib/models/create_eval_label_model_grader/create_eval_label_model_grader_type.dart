@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEvalLabelModelGrader (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `label_model`.
 @immutable final class CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType._(this.value);

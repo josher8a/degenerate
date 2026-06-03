@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesChargeRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/fraud_details.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';@immutable final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDnsSettingsZoneResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_response/dns_settings_dns_settings_zone_response_nameservers.dart';@immutable final class DnsSettingsDnsSettingsZoneResponse {const DnsSettingsDnsSettingsZoneResponse({required this.nameservers});
 

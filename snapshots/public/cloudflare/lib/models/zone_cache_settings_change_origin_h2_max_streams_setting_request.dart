@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_h2_max_streams_value.dart';@immutable final class ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest {const ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest({required this.value});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PortalFlowsFlowAfterCompletion (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The specified type of behavior after the flow is completed.
 @immutable final class PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType._(this.value);

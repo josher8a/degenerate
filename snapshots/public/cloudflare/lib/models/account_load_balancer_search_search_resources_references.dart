@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountLoadBalancerSearchSearchResourcesReferences
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of references to include. "*" to include both referral and referrer references. "" to not include any reference information.
 @immutable final class AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences._(this.value);

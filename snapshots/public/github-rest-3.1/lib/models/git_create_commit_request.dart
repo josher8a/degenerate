@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCreateCommitRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_create_commit_request/git_create_commit_request_author.dart';import 'package:pub_github_rest_3_1/models/git_create_commit_request/git_create_commit_request_committer.dart';@immutable final class GitCreateCommitRequest {const GitCreateCommitRequest({required this.message, required this.tree, this.parents, this.author, this.committer, this.signature, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaResponse (inline: Usage > InputTokenDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/cached_tokens_details.dart';/// Details about the input tokens used in the Response.
 @immutable final class UsageInputTokenDetails {const UsageInputTokenDetails({this.cachedTokens, this.textTokens, this.imageTokens, this.audioTokens, this.cachedTokensDetails, });

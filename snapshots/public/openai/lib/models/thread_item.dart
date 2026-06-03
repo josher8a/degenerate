@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ThreadItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/attachment.dart';import 'package:pub_openai/models/client_tool_call_item.dart';import 'package:pub_openai/models/inference_options.dart';import 'package:pub_openai/models/response_output_text.dart';import 'package:pub_openai/models/task_group_item.dart';import 'package:pub_openai/models/task_group_task.dart';import 'package:pub_openai/models/task_item.dart';import 'package:pub_openai/models/task_type.dart';import 'package:pub_openai/models/user_message_item.dart';import 'package:pub_openai/models/user_message_item/user_message_item_content.dart';import 'package:pub_openai/models/widget_message_item.dart';sealed class ThreadItem {const ThreadItem();
 

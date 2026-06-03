@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateUsageTriggerRequest (inline: CallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class CreateUsageTriggerRequestCallbackMethod {const CreateUsageTriggerRequestCallbackMethod._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicNetflowConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicNetflowConfigRequest {const MagicNetflowConfigRequest({this.activeTimeout, this.collectorIp, this.collectorPort, this.inactiveTimeout, this.samplingRate, });
 

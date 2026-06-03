@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TokenValidationRulesPreviewResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_host.dart';import 'package:pub_cloudflare/models/token_validation_rules_preview_response/result_operations.dart';@immutable final class TokenValidationRulesPreviewResponseResult {const TokenValidationRulesPreviewResponseResult({this.availableHosts, this.excluded, this.ignored, this.included, this.operations, this.selectedHosts, this.total, });
 

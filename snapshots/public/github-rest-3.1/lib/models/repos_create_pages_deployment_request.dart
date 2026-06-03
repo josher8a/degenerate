@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReposCreatePagesDeploymentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object used to create GitHub Pages deployment
 @immutable final class ReposCreatePagesDeploymentRequest {const ReposCreatePagesDeploymentRequest({required this.oidcToken, this.artifactId, this.artifactUrl, this.environment = 'github-pages', this.pagesBuildVersion = 'GITHUB_SHA', });

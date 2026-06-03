@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingTopDomainsResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ranking_top_domains_response/top0_categories.dart';@immutable final class RadarGetRankingTopDomainsResponseResultTop0 {const RadarGetRankingTopDomainsResponseResultTop0({required this.categories, required this.domain, required this.rank, this.pctRankChange, });
 

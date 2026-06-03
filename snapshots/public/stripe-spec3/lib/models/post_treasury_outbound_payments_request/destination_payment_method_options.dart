@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryOutboundPaymentsRequest (inline: DestinationPaymentMethodOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param112.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request/destination_payment_method_options_us_bank_account.dart';/// Payment method-specific configuration for this OutboundPayment.
 @immutable final class DestinationPaymentMethodOptions {const DestinationPaymentMethodOptions({this.usBankAccount});

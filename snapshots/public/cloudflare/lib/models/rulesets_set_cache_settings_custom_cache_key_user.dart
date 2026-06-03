@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSetCacheSettingsCustomCacheKeyUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How to use characteristics of the request user agent in the cache key.
 @immutable final class RulesetsSetCacheSettingsCustomCacheKeyUser {const RulesetsSetCacheSettingsCustomCacheKeyUser({this.deviceType, this.geo, this.lang, });

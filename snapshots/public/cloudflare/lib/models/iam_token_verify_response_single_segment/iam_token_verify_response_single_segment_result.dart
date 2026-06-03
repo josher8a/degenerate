@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamTokenVerifyResponseSingleSegment (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_expires_on.dart';import 'package:pub_cloudflare/models/iam_not_before.dart';import 'package:pub_cloudflare/models/iam_token_identifier.dart';import 'package:pub_cloudflare/models/iam_token_status.dart';@immutable final class IamTokenVerifyResponseSingleSegmentResult {const IamTokenVerifyResponseSingleSegmentResult({required this.id, required this.status, this.expiresOn, this.notBefore, });
 

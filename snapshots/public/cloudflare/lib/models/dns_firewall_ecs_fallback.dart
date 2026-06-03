@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallEcsFallback
 
 /// Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent
 extension type const DnsFirewallEcsFallback(bool value) {

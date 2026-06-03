@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageRulesGetAPageRuleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';@immutable final class PageRulesGetAPageRuleResponse {const PageRulesGetAPageRuleResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigPaygoAppConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';@immutable final class SpectrumConfigPaygoAppConfig {const SpectrumConfigPaygoAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, this.originDirect, });
 

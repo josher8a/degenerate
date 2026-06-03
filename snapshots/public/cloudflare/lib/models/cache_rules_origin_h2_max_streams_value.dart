@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesOriginH2MaxStreamsValue
 
 /// Value of the Origin H2 Max Streams Setting.
 extension type const CacheRulesOriginH2MaxStreamsValue(int value) {

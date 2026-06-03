@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TimelineLineCommentedEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment.dart';/// Timeline Line Commented Event
 @immutable final class TimelineLineCommentedEvent {const TimelineLineCommentedEvent({this.event, this.nodeId, this.comments, });

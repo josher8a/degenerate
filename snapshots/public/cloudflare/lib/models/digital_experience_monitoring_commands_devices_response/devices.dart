@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringCommandsDevicesResponse (inline: Devices)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_platform.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_status.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_version.dart';@immutable final class Devices {const Devices({this.deviceId, this.deviceName, this.eligible, this.ineligibleReason, this.personEmail, this.platform, this.registrationId, this.status, this.timestamp, this.version, });
 

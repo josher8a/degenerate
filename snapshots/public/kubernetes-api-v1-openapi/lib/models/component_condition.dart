@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComponentCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the condition of a component.
 @immutable final class ComponentCondition {const ComponentCondition({this.error, this.message, this.status = '', this.type = '', });

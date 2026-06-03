@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GroupResourceWithSuccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Response returned after updating a group.
 @immutable final class GroupResourceWithSuccess {const GroupResourceWithSuccess({required this.id, required this.name, required this.createdAt, required this.isScimManaged, });

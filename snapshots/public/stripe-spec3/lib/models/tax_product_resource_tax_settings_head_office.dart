@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceTaxSettingsHeadOffice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class TaxProductResourceTaxSettingsHeadOffice {const TaxProductResourceTaxSettingsHeadOffice({required this.address});

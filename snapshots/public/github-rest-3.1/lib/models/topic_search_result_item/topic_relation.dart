@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TopicSearchResultItem (inline: Aliases > TopicRelation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TopicRelation {const TopicRelation({this.id, this.name, this.topicId, this.relationType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CallsName
 
 /// A short description of Calls app, not shown to end users.
 extension type const CallsName(String value) {

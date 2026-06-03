@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteTagCategoryDeleteResponse404
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class DeleteTagCategoryDeleteResponse404 {const DeleteTagCategoryDeleteResponse404({required this.errors, required this.result, required this.success, });
 

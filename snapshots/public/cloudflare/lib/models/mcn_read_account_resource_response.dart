@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnReadAccountResourceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';@immutable final class McnReadAccountResourceResponse {const McnReadAccountResourceResponse({this.result});
 

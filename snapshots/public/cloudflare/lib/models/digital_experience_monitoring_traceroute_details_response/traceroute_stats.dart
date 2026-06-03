@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTracerouteDetailsResponse (inline: TracerouteStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_over_time.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_test_stat_pct_over_time.dart';@immutable final class TracerouteStats {const TracerouteStats({required this.availabilityPct, required this.hopsCount, required this.packetLossPct, required this.roundTripTimeMs, required this.uniqueDevicesTotal, });
 

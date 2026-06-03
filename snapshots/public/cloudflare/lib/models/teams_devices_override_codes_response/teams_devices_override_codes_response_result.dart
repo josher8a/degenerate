@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesOverrideCodesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_disable_for_time.dart';@immutable final class TeamsDevicesOverrideCodesResponseResult {const TeamsDevicesOverrideCodesResponseResult({this.disableForTime});
 

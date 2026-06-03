@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Mandate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/mandate_multi_use.dart';import 'package:pub_stripe_spec3/models/mandate_payment_method_details.dart';import 'package:pub_stripe_spec3/models/mandate_single_use.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class MandateObject {const MandateObject._(this.value);

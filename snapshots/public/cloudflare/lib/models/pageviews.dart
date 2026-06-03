@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Pageviews
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for pageviews.
 @immutable final class Pageviews {const Pageviews({this.all, this.searchEngine, });

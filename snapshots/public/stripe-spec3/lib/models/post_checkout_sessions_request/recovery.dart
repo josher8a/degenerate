@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: AfterExpiration > Recovery)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Recovery {const Recovery({required this.enabled, this.allowPromotionCodes, });
 

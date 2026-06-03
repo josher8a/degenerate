@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileSearchTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/comparison_filter.dart';import 'package:pub_openai/models/compound_filter.dart';import 'package:pub_openai/models/filters.dart';import 'package:pub_openai/models/ranking_options.dart';/// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
 @immutable final class FileSearchTool {const FileSearchTool({required this.vectorStoreIds, this.type = 'file_search', this.maxNumResults, this.rankingOptions, this.filters, });

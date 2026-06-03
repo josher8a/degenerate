@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldSingleSmartShieldGetResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_get_response.dart';@immutable final class SmartshieldSingleSmartShieldGetResponse {const SmartshieldSingleSmartShieldGetResponse({this.result});
 

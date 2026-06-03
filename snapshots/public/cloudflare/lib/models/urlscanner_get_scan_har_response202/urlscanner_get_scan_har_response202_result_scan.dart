@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse202 (inline: Result > Scan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response202/urlscanner_get_scan_har_response202_result_scan_task.dart';@immutable final class UrlscannerGetScanHarResponse202ResultScan {const UrlscannerGetScanHarResponse202ResultScan({required this.task});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsInsertBuildResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';@immutable final class BuildsInsertBuildResponse {const BuildsInsertBuildResponse({this.buildUuid, this.createdOn, });
 

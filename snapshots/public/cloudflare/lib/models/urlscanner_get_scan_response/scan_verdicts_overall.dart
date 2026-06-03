@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Verdicts > Overall)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response/overall_categories.dart';@immutable final class ScanVerdictsOverall {const ScanVerdictsOverall({required this.categories, required this.malicious, required this.phishing, });
 

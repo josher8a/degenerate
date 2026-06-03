@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BasicError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Basic Error
 @immutable final class BasicError {const BasicError({this.message, this.documentationUrl, this.url, this.status, });

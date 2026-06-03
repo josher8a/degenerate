@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBotsBotCategory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot category.
 @immutable final class RadarGetBotsBotCategory {const RadarGetBotsBotCategory._(this.value);

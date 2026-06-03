@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCard (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the card.
 @immutable final class IssuingCardType {const IssuingCardType._(this.value);

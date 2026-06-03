@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningCommitAutofixResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningCommitAutofixResponse503 {const CodeScanningCommitAutofixResponse503({this.code, this.message, this.documentationUrl, });
 

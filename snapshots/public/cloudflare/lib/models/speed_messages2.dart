@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpeedMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpeedMessages2 {const SpeedMessages2({required this.code, required this.message, });
 

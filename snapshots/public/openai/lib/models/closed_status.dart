@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClosedStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `closed`.
 @immutable final class ClosedStatusType {const ClosedStatusType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SlurperCheckTargetConnectivityResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model32.dart';import 'package:pub_cloudflare/models/r2_slurper_connectivity_response.dart';@immutable final class SlurperCheckTargetConnectivityResponse {const SlurperCheckTargetConnectivityResponse({this.errors, this.messages, this.success, this.result, });
 

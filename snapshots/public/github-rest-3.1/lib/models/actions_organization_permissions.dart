@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsOrganizationPermissions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/allowed_actions.dart';import 'package:pub_github_rest_3_1/models/enabled_repositories.dart';import 'package:pub_github_rest_3_1/models/selected_actions_url.dart';import 'package:pub_github_rest_3_1/models/sha_pinning_required.dart';@immutable final class ActionsOrganizationPermissions {const ActionsOrganizationPermissions({required this.enabledRepositories, this.selectedRepositoriesUrl, this.allowedActions, this.selectedActionsUrl, this.shaPinningRequired, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailEmailSettingsResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_email_settings_properties.dart';@immutable final class EmailEmailSettingsResponseSingle {const EmailEmailSettingsResponseSingle({this.result});
 

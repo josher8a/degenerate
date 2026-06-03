@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsEnvironmentVariableKey
 
 /// Environment variable key.
 extension type const BuildsEnvironmentVariableKey(String value) {

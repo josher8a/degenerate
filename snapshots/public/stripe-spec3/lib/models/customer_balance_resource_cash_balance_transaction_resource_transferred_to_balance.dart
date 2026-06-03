@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance {const CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance({required this.balanceTransaction});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VerificationSessionRedaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether this object and its related objects have been redacted or not.
 @immutable final class VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGsuiteGroupRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_gsuite_group_rule/gsuite.dart';/// Matches a group in Google Workspace.
 /// Requires a Google Workspace identity provider.

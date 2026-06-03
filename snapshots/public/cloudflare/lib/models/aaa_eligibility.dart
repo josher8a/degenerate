@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaEligibility
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines whether or not the account is eligible for the delivery mechanism.
 extension type const AaaEligible(bool value) {

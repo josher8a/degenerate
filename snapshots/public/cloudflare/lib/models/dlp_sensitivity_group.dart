@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpSensitivityGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_sensitivity_level.dart';@immutable final class DlpSensitivityGroup {const DlpSensitivityGroup({required this.createdAt, required this.description, required this.id, required this.levels, required this.name, required this.updatedAt, this.templateId, });
 

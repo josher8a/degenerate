@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRepositoryRenamed (inline: Changes > Repository)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes_name.dart';@immutable final class WebhookRepositoryRenamedChangesRepository {const WebhookRepositoryRenamedChangesRepository({required this.name});
 

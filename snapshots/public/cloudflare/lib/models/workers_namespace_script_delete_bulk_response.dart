@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersNamespaceScriptDeleteBulkResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_namespace_script_delete_bulk_response/deleted.dart';/// Detail about bulk deletion of scripts in a namespace.
 @immutable final class WorkersNamespaceScriptDeleteBulkResponse {const WorkersNamespaceScriptDeleteBulkResponse({this.deleted, this.deletedCount, this.hasMore, });

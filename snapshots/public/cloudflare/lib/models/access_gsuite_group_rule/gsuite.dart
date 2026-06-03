@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessGsuiteGroupRule (inline: Gsuite)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Gsuite {const Gsuite({required this.email, required this.identityProviderId, });
 

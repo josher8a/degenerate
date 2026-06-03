@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FileSearchToolCall (inline: Results)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileSearchToolCallResults {const FileSearchToolCallResults({this.fileId, this.text, this.filename, this.attributes, this.score, });
 

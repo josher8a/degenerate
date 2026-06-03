@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersNamespaceScriptDeleteBulkResponse (inline: Deleted)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_uuid.dart';@immutable final class Deleted {const Deleted({this.id});
 

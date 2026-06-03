@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleInstallation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
 /// for and sent to a GitHub App. For more information,

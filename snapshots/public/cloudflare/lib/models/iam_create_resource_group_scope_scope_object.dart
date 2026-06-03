@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateResourceGroupScopeScopeObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
 extension type IamCreateResourceGroupScopeScopeObjectKey(dynamic value) {

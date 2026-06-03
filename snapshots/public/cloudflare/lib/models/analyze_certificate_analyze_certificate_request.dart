@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AnalyzeCertificateAnalyzeCertificateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate.dart';@immutable final class AnalyzeCertificateAnalyzeCertificateRequest {const AnalyzeCertificateAnalyzeCertificateRequest({this.bundleMethod, this.certificate, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Lists)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/lists_certificates.dart';@immutable final class Lists {const Lists({required this.asns, required this.certificates, required this.continents, required this.countries, required this.domains, required this.hashes, required this.ips, required this.linkDomains, required this.servers, required this.urls, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: LineItems)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adjustable_quantity.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items_price_data.dart';@immutable final class PostCheckoutSessionsRequestLineItems {const PostCheckoutSessionsRequestLineItems({this.adjustableQuantity, this.dynamicTaxRates, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 

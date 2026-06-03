@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodAcssDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodAcssDebit {const PaymentMethodAcssDebit({this.bankName, this.fingerprint, this.institutionNumber, this.last4, this.transitNumber, });

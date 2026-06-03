@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomEventDisableSessionRenewal
 
 /// If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
 extension type const WaitingroomEventDisableSessionRenewal(bool value) {

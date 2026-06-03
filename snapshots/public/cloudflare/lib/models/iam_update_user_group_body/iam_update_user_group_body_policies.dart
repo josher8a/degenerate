@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamUpdateUserGroupBody (inline: Policies)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_access.dart';import 'package:pub_cloudflare/models/iam_permission_group_ids2.dart';import 'package:pub_cloudflare/models/iam_resource_group_ids2.dart';@immutable final class IamUpdateUserGroupBodyPolicies {const IamUpdateUserGroupBodyPolicies({required this.access, required this.permissionGroups, required this.resourceGroups, required this.id, });
 

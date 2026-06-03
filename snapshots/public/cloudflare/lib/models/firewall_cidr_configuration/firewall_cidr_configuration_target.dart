@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallCidrConfiguration (inline: Target)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the rule.
 @immutable final class FirewallCidrConfigurationTarget {const FirewallCidrConfigurationTarget._(this.value);

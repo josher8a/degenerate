@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPreset (inline: Permissions > WaitingRoomType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Waiting room type
 @immutable final class WaitingRoomType {const WaitingRoomType._(this.value);

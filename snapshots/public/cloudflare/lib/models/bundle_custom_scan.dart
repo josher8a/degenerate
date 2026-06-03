@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BundleCustomScan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_scan_payload.dart';import 'package:pub_cloudflare/models/bundle_identifier.dart';/// Defines a custom scan expression to match Content Scanning on.
 @immutable final class BundleCustomScan {const BundleCustomScan({this.id, this.payload, });

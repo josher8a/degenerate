@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestMessageContentPartText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Learn about [text inputs](/docs/guides/text-generation).
 /// 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ForwardedRequestHeader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Header data.
 @immutable final class ForwardedRequestHeader {const ForwardedRequestHeader({required this.name, required this.value, });

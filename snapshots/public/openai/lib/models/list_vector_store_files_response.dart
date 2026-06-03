@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListVectorStoreFilesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_file_object.dart';@immutable final class ListVectorStoreFilesResponse {const ListVectorStoreFilesResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 

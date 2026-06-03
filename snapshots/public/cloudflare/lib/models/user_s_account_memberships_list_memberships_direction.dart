@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSAccountMembershipsListMembershipsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order memberships.
 @immutable final class UserSAccountMembershipsListMembershipsDirection {const UserSAccountMembershipsListMembershipsDirection._(this.value);

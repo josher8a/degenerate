@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretsStoreUsageQuotaObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The number of secrets the account is entitlted to use
 extension type const SecretsStoreQuota(double value) {

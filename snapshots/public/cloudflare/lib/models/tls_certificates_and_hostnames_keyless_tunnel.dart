@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesKeylessTunnel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Private IP of the Key Server Host
 extension type const TlsCertificatesAndHostnamesKeylessPrivateIp(String value) {

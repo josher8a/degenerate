@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksChanges8 (inline: Tier)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8/tier_from.dart';@immutable final class WebhooksChanges8Tier {const WebhooksChanges8Tier({required this.from});
 

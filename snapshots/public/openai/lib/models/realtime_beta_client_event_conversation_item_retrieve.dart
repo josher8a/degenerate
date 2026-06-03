@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaClientEventConversationItemRetrieve
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.retrieve`.
 @immutable final class RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType._(this.value);

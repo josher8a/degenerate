@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetInvoicePaymentsPayment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType._(this.value);
 

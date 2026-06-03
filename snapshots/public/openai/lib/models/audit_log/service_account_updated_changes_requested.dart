@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AuditLog (inline: ServiceAccountUpdated > ChangesRequested)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to updated the service account.
 @immutable final class ServiceAccountUpdatedChangesRequested {const ServiceAccountUpdatedChangesRequested({this.role});

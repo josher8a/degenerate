@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection (inline: ResultInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo {const TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo({this.count, this.page, this.perPage, this.totalCount, this.totalPages, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingResponseSingle (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/components_schemas_identifier.dart';@immutable final class BillingResponseSingleResult {const BillingResponseSingleResult({this.enterpriseBillingEmail, this.address, this.address2, this.balance, this.cardExpiryMonth, this.cardExpiryYear, this.cardNumber, this.city, this.company, this.country, this.createdOn, this.deviceData, this.editedOn, this.accountType, this.enterprisePrimaryEmail, this.firstName, this.id, this.isPartner, this.lastName, this.nextBillDate, this.paymentAddress, this.paymentAddress2, this.paymentCity, this.paymentCountry, this.paymentEmail, this.zipcode, this.paymentGateway, this.paymentLastName, this.paymentNonce, this.paymentState, this.paymentZipcode, this.primaryEmail, this.state, this.taxIdType, this.telephone, this.useLegacy, this.validationCode, this.vat, this.paymentFirstName, });
 

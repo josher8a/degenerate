@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionTokenLogprob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_token_logprob/chat_completion_token_logprob_top_logprobs.dart';@immutable final class ChatCompletionTokenLogprob {const ChatCompletionTokenLogprob({required this.token, required this.logprob, required this.bytes, required this.topLogprobs, });
 

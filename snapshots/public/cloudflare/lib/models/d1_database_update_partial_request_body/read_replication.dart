@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1DatabaseUpdatePartialRequestBody (inline: ReadReplication)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_read_replication_mode.dart';/// Configuration for D1 read replication.
 @immutable final class ReadReplication {const ReadReplication({required this.mode});

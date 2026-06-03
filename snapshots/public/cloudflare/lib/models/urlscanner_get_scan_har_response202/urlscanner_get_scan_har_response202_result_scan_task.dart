@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse202 (inline: Result > Scan > Task)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class UrlscannerGetScanHarResponse202ResultScanTask {const UrlscannerGetScanHarResponse202ResultScanTask({required this.effectiveUrl, required this.errors, required this.location, required this.region, required this.status, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 

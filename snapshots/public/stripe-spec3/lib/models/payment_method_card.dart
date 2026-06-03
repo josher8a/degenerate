@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/networks.dart';import 'package:pub_stripe_spec3/models/payment_method_card_checks.dart';import 'package:pub_stripe_spec3/models/payment_method_card_generated_card.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet.dart';import 'package:pub_stripe_spec3/models/three_d_secure_usage.dart';/// 
 @immutable final class PaymentMethodCard {const PaymentMethodCard({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.checks, this.country, this.displayBrand, this.fingerprint, this.generatedFrom, this.networks, this.regulatedStatus, this.threeDSecureUsage, this.wallet, });

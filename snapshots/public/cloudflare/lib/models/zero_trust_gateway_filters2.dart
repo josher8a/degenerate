@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayFilters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the protocol or layer to use.
 @immutable final class ZeroTrustGatewayFilters2 {const ZeroTrustGatewayFilters2._(this.value);

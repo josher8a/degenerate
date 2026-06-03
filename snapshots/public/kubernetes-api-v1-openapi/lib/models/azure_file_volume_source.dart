@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AzureFileVolumeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
 @immutable final class AzureFileVolumeSource {const AzureFileVolumeSource({this.readOnly, this.secretName = '', this.shareName = '', });

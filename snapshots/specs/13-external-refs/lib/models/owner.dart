@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Owner
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_13_external_refs/models/pet.dart';@immutable final class Owner {const Owner({required this.name, this.email, this.pets, });
 

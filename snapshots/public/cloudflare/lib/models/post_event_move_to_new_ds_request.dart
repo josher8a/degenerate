@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventMoveToNewDsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventMoveToNewDsRequest {const PostEventMoveToNewDsRequest({required this.destDatasetId, this.eventIds, });
 

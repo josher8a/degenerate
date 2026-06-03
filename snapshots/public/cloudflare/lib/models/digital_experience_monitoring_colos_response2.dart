@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringColosResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringColosResponse2 {const DigitalExperienceMonitoringColosResponse2({required this.airportCode, required this.city, required this.countryCode, });
 

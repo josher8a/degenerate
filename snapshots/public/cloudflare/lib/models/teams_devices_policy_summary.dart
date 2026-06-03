@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesPolicySummary
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The device settings profile assigned to this registration.
 @immutable final class TeamsDevicesPolicySummary {const TeamsDevicesPolicySummary({required this.$default, required this.deleted, required this.id, required this.name, required this.updatedAt, });

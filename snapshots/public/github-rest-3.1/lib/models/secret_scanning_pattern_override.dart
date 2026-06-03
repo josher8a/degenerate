@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningPatternOverride
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default push protection setting for this pattern.
 @immutable final class DefaultSetting {const DefaultSetting._(this.value);

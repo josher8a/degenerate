@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicRouteDeleteManyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route_delete_id.dart';@immutable final class MagicRouteDeleteManyRequest {const MagicRouteDeleteManyRequest({required this.routes});
 

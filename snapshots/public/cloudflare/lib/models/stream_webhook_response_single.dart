@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamWebhookResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamWebhookResponseSingle {const StreamWebhookResponseSingle({this.result});
 

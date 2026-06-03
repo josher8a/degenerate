@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAsBotnetThreatFeedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_as_botnet_threat_feed_response/radar_get_as_botnet_threat_feed_response_result.dart';@immutable final class RadarGetAsBotnetThreatFeedResponse {const RadarGetAsBotnetThreatFeedResponse({required this.result, required this.success, });
 

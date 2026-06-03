@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelIpNetworkEncoded
 
 /// IP/CIDR range in URL-encoded format
 extension type const TunnelIpNetworkEncoded(String value) {

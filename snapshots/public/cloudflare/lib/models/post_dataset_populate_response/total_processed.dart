@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostDatasetPopulateResponse (inline: Properties > Datasets > Items > Properties > TotalProcessed)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TotalProcessed {const TotalProcessed({required this.type});
 

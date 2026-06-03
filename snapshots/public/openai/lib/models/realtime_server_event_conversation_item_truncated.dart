@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationItemTruncated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an earlier assistant audio message item is truncated by the
 /// client with a `conversation.item.truncate` event. This event is used to

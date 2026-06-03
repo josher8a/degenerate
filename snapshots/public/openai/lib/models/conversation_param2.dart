@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConversationParam2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation that this response belongs to.
 @immutable final class ConversationParam2 {const ConversationParam2({required this.id});

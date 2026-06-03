@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamLanguage
 
 /// The language tag in BCP 47 format.
 extension type const StreamLanguage(String value) {

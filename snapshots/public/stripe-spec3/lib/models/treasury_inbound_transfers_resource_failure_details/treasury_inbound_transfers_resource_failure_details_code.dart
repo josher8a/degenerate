@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TreasuryInboundTransfersResourceFailureDetails (inline: Code)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for the failure.
 @immutable final class TreasuryInboundTransfersResourceFailureDetailsCode {const TreasuryInboundTransfersResourceFailureDetailsCode._(this.value);

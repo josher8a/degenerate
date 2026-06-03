@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingMonitorGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_id.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_member.dart';@immutable final class LoadBalancingMonitorGroup {const LoadBalancingMonitorGroup({required this.description, required this.id, required this.members, this.createdAt, this.updatedAt, });
 

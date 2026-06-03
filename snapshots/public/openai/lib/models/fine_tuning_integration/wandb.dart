@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FineTuningIntegration (inline: Wandb)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The settings for your integration with Weights and Biases. This payload specifies the project that
 /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags

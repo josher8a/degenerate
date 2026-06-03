@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventResponseTextDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when the text value of an "output_text" content part is updated.
 @immutable final class RealtimeServerEventResponseTextDelta {const RealtimeServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });

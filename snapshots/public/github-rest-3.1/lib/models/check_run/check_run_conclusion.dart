@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckRun (inline: Conclusion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the job.
 @immutable final class CheckRunConclusion {const CheckRunConclusion._(this.value);

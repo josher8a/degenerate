@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpEntryProfile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Computed entry field for a profile that an entry is shared into.
 @immutable final class DlpEntryProfile {const DlpEntryProfile({required this.id, required this.name, });

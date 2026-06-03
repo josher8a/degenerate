@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MarketplacePurchase (inline: MarketplacePendingChange)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan.dart';@immutable final class MarketplacePendingChange {const MarketplacePendingChange({this.isInstalled, this.effectiveDate, this.unitCount, this.id, this.plan, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlsAccountRegionalHostnamesAccountCreateHostnameResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_messages2.dart';import 'package:pub_cloudflare/models/dls_regional_hostname_response.dart';@immutable final class DlsAccountRegionalHostnamesAccountCreateHostnameResponse {const DlsAccountRegionalHostnamesAccountCreateHostnameResponse({required this.errors, required this.messages, required this.success, this.result, });
 

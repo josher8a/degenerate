@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedPayoutsConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_payouts_features.dart';/// 
 @immutable final class ConnectEmbeddedPayoutsConfig {const ConnectEmbeddedPayoutsConfig({required this.enabled, required this.features, });

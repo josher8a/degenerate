@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningValidityChecks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning validity checks
 @immutable final class SecretScanningValidityChecks {const SecretScanningValidityChecks._(this.value);

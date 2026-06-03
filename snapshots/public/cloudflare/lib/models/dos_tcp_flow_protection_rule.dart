@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosTcpFlowProtectionRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosTcpFlowProtectionRule {const DosTcpFlowProtectionRule({required this.burstSensitivity, required this.createdOn, required this.id, required this.mode, required this.modifiedOn, required this.name, required this.rateSensitivity, required this.scope, });
 

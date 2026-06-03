@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A wait action.
 @immutable final class WaitParam {const WaitParam({this.type = 'wait'});

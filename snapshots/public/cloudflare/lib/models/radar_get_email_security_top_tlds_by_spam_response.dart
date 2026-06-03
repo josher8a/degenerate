@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTopTldsBySpamResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_security_top_tlds_by_malicious_response/radar_get_email_security_top_tlds_by_malicious_response_result.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpamResponse {const RadarGetEmailSecurityTopTldsBySpamResponse({required this.result, required this.success, });
 

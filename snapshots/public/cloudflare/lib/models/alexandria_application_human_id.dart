@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AlexandriaApplicationHumanId
 
 /// Returns the human readable ID.
 extension type const AlexandriaApplicationHumanId(String value) {

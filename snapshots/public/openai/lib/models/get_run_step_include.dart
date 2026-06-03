@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetRunStepInclude[]
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRunStepInclude {const GetRunStepInclude._(this.value);
 

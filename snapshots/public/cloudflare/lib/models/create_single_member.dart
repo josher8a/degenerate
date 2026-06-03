@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateSingleMember
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_single_member/create_single_member_status.dart';import 'package:pub_cloudflare/models/create_single_member/create_single_member_user.dart';@immutable final class CreateSingleMember {const CreateSingleMember({required this.user, this.status, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesUuidObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The DCV Delegation unique identifier.
 extension type const TlsCertificatesAndHostnamesUuid(String value) {

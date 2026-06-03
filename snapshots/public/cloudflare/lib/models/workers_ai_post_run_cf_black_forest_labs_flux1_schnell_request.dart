@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest({required this.prompt, this.steps = 4, });
 

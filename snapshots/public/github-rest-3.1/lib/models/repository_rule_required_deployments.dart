@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleRequiredDeployments
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_deployments/repository_rule_required_deployments_parameters.dart';@immutable final class RepositoryRuleRequiredDeploymentsType {const RepositoryRuleRequiredDeploymentsType._(this.value);
 

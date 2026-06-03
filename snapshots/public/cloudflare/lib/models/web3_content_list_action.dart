@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ContentListAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Behavior of the content list.
 @immutable final class Web3ContentListAction {const Web3ContentListAction._(this.value);

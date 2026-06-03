@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByProtocolResponse (inline: Result > Serie0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0({required this.gre, required this.icmp, required this.tcp, required this.udp, required this.timestamps, });
 

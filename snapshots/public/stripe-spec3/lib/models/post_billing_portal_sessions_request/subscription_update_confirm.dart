@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData > SubscriptionUpdateConfirm)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/subscription_update_confirm_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_discounts.dart';@immutable final class SubscriptionUpdateConfirm {const SubscriptionUpdateConfirm({required this.items, required this.subscription, this.discounts, });
 

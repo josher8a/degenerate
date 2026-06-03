@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReleaseEvent (inline: Release)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/release_asset.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ReleaseEventRelease {const ReleaseEventRelease({required this.url, required this.htmlUrl, required this.assetsUrl, required this.uploadUrl, required this.tarballUrl, required this.zipballUrl, required this.id, required this.nodeId, required this.tagName, required this.targetCommitish, required this.name, required this.draft, required this.prerelease, required this.createdAt, required this.publishedAt, required this.author, required this.assets, this.body, this.immutable, this.updatedAt, this.bodyHtml, this.bodyText, this.mentionsCount, this.discussionUrl, this.reactions, this.isShortDescriptionHtmlTruncated, this.shortDescriptionHtml, });
 

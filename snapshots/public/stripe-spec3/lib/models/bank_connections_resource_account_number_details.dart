@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BankConnectionsResourceAccountNumberDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account number associated with the account.
 @immutable final class IdentifierType {const IdentifierType._(this.value);

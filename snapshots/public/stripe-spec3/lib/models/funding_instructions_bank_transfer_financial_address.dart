@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructionsBankTransferFinancialAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_aba_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_iban_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_sort_code_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_spei_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_swift_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_zengin_record.dart';@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(this.value);
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsSetSelfHostedRunnersInGroupForOrgRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsSetSelfHostedRunnersInGroupForOrgRequest {const ActionsSetSelfHostedRunnersInGroupForOrgRequest({required this.runners});
 

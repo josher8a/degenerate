@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsSkipPhase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A phase to skip the execution of. This option is only compatible with the products option.
 @immutable final class RulesetsSkipPhase {const RulesetsSkipPhase._(this.value);

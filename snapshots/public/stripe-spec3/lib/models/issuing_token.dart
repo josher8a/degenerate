@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_token/issuing_token_card.dart';/// The token service provider / card network associated with the token.
 @immutable final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);

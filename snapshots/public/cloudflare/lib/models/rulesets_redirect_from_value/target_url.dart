@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsRedirectFromValue (inline: TargetUrl)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URL to redirect the request to.
 @immutable final class TargetUrl {const TargetUrl({this.expression, this.value, });

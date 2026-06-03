@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookDeploymentStatusCreated (inline: DeploymentStatus)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/deployment_performed_via_github_app.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';/// The [deployment status](https://docs.github.com/rest/deployments/statuses#list-deployment-statuses).
 @immutable final class WebhookDeploymentStatusCreatedDeploymentStatus {const WebhookDeploymentStatusCreatedDeploymentStatus({required this.createdAt, required this.creator, required this.deploymentUrl, required this.description, required this.environment, required this.id, required this.nodeId, required this.repositoryUrl, required this.state, required this.targetUrl, required this.updatedAt, required this.url, this.environmentUrl, this.logUrl, this.performedViaGithubApp, });

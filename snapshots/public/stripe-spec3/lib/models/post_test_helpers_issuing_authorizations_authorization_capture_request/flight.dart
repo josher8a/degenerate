@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest (inline: PurchaseDetails > Flight)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request/segments.dart';@immutable final class Flight {const Flight({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });
 

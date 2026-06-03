@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeInterpreterOutputLogs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// The logs output from the code interpreter.
 @immutable final class CodeInterpreterOutputLogs {const CodeInterpreterOutputLogs({required this.logs, this.type = CodeInterpreterOutputLogsType.logs, });

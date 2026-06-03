@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZarazBaseMc (inline: Actions > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsValue {const ActionsValue({required this.actionType, required this.blockingTriggers, required this.data, required this.firingTriggers, });
 

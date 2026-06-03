@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualitySpeedTopAsesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_quality_speed_top_ases_response/radar_get_quality_speed_top_ases_response_result.dart';@immutable final class RadarGetQualitySpeedTopAsesResponse {const RadarGetQualitySpeedTopAsesResponse({required this.result, required this.success, });
 

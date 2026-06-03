@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsBadCountryError
 
 /// Provided value has invalid size
 extension type const AbuseReportsBadCountryError(String value) {

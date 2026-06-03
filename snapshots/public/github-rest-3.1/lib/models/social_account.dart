@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SocialAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Social media account
 @immutable final class SocialAccount {const SocialAccount({required this.provider, required this.url, });

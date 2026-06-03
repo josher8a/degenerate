@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetOrgAnalyticsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/get_org_analytics_response_data.dart';@immutable final class GetOrgAnalyticsResponse {const GetOrgAnalyticsResponse({this.data, this.success, });
 

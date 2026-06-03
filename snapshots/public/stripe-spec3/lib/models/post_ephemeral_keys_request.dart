@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEphemeralKeysRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEphemeralKeysRequest {const PostEphemeralKeysRequest({this.customer, this.expand, this.issuingCard, this.nonce, this.verificationSession, });
 

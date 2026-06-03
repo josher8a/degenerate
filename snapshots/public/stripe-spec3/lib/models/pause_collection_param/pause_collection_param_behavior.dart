@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PauseCollectionParam (inline: Behavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payment collection behavior for this subscription while paused. One of `keep_as_draft`, `mark_uncollectible`, or `void`.
 @immutable final class PauseCollectionParamBehavior {const PauseCollectionParamBehavior._(this.value);

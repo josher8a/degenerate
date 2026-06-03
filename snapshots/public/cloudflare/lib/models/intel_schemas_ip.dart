@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelSchemasIp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_ip.dart';import 'package:pub_cloudflare/models/intel_schemas_ip/belongs_to_ref.dart';import 'package:pub_cloudflare/models/intel_schemas_ip/risk_types.dart';@immutable final class IntelSchemasIp {const IntelSchemasIp({this.belongsToRef, this.ip, this.riskTypes, });
 

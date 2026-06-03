@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutoragConfigAiSearchRequest (inline: RankingOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RankingOptions {const RankingOptions({this.ranker, this.scoreThreshold = 0.4, });
 

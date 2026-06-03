@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionSchedulesResourceDefaultSettingsAutomaticTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/schedules_phase_automatic_tax/schedules_phase_automatic_tax_disabled_reason.dart';/// 
 @immutable final class SubscriptionSchedulesResourceDefaultSettingsAutomaticTax {const SubscriptionSchedulesResourceDefaultSettingsAutomaticTax({required this.enabled, this.disabledReason, this.liability, });

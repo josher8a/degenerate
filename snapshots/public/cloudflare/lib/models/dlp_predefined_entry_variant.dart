@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpPredefinedEntryVariant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_predefined_entry_variant/prompt_topic.dart';/// A value that is one of: `PromptTopic`.
 sealed class DlpPredefinedEntryVariant {const DlpPredefinedEntryVariant();

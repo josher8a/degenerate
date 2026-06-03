@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnControllerIdentifyLicenseKeyResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_connector_identity.dart';import 'package:pub_cloudflare/models/mconn_controller_device_identity.dart';@immutable final class MconnControllerIdentifyLicenseKeyResult {const MconnControllerIdentifyLicenseKeyResult({this.connector, this.device, });
 

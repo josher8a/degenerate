@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ContentListEntryCollectionResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_content_list_entry.dart';@immutable final class Web3ContentListEntryCollectionResponseResult {const Web3ContentListEntryCollectionResponseResult({this.entries});
 

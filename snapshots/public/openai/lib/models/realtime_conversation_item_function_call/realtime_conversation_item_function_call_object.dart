@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeConversationItemFunctionCall (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
 @immutable final class RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject._(this.value);

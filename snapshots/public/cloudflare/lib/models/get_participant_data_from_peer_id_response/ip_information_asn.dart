@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerStats > IpInformation > Asn)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IpInformationAsn {const IpInformationAsn({this.asn});
 

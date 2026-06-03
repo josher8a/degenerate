@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringPatchRuleBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringPatchRuleBody {const DigitalExperienceMonitoringPatchRuleBody({this.description, this.match, this.name, });
 

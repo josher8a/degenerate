@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SourceTypeCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeCard {const SourceTypeCard({this.addressLine1Check, this.addressZipCheck, this.brand, this.country, this.cvcCheck, this.dynamicLast4, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.name, this.threeDSecure, this.tokenizationMethod, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsGetHostedRunnersPlatformsForOrgResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGetHostedRunnersPlatformsForOrgResponse {const ActionsGetHostedRunnersPlatformsForOrgResponse({required this.totalCount, required this.platforms, });
 

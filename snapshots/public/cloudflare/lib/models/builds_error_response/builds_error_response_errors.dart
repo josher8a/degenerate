@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BuildsErrorResponse (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsErrorResponseErrors {const BuildsErrorResponseErrors({required this.message, this.code, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessCountryRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_country_rule/access_country_rule_geo.dart';/// Matches a specific country
 @immutable final class AccessCountryRule {const AccessCountryRule({required this.geo});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostFinancialConnectionsAccountsAccountRefreshRequest (inline: Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsAccountsAccountRefreshRequestFeatures {const PostFinancialConnectionsAccountsAccountRefreshRequestFeatures._(this.value);
 

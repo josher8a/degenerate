@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitCreateTagRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
 @immutable final class GitCreateTagRequestType {const GitCreateTagRequestType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessUseClientlessIsolationAppLauncherUrl
 
 /// Determines if users can access this application via a clientless browser isolation URL.
 /// This allows users to access private domains without connecting to Gateway. The option requires

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesCertificate
 
 /// The zone's SSL certificate or certificate and the intermediate(s).
 extension type const TlsCertificatesAndHostnamesCertificate(String value) {

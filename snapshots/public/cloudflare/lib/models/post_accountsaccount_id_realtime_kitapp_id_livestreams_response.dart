@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_accountsaccount_id_realtime_kitapp_id_livestreams_response/post_accountsaccount_id_realtime_kitapp_id_livestreams_response_data.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse({this.data, this.success, });
 

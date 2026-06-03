@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PrivateDestination
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.
 @immutable final class L4Protocol {const L4Protocol._(this.value);

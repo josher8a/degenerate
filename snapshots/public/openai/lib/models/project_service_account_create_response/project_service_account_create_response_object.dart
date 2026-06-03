@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectServiceAccountCreateResponse (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account`
 @immutable final class ProjectServiceAccountCreateResponseObject {const ProjectServiceAccountCreateResponseObject._(this.value);

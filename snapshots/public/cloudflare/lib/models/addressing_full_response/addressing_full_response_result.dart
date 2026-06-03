@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingFullResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_address_map_identifier.dart';import 'package:pub_cloudflare/models/addressing_address_maps_ip.dart';import 'package:pub_cloudflare/models/addressing_address_maps_membership.dart';import 'package:pub_cloudflare/models/addressing_can_delete.dart';import 'package:pub_cloudflare/models/addressing_can_modify_ips.dart';import 'package:pub_cloudflare/models/addressing_default_sni.dart';import 'package:pub_cloudflare/models/addressing_enabled.dart';import 'package:pub_cloudflare/models/addressing_schemas_description.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';@immutable final class AddressingFullResponseResult {const AddressingFullResponseResult({this.canDelete, this.canModifyIps, this.createdAt, this.defaultSni, this.description, this.enabled, this.id, this.modifiedAt, this.ips, this.memberships, });
 

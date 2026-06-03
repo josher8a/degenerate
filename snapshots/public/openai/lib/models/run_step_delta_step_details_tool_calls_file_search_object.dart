@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaStepDetailsToolCallsFileSearchObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_file_search/assistant_tools_file_search_type.dart';@immutable final class RunStepDeltaStepDetailsToolCallsFileSearchObject {const RunStepDeltaStepDetailsToolCallsFileSearchObject({required this.index, required this.type, required this.fileSearch, this.id, });
 

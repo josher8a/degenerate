@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RateLimitsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls request rate limits for the session.
 @immutable final class RateLimitsParam {const RateLimitsParam({this.maxRequestsPer1Minute});

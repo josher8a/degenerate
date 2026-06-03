@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsMessages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicVisibilityPcapsMessages2 {const MagicVisibilityPcapsMessages2({required this.code, required this.message, });
 

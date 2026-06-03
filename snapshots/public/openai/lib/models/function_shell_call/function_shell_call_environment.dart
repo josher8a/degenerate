@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FunctionShellCall (inline: Environment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_resource.dart';import 'package:pub_openai/models/local_environment_resource.dart';sealed class FunctionShellCallEnvironment {const FunctionShellCallEnvironment();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPackagePublished (inline: Package > PackageVersion > NugetMetadata > Value > Variant4)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ValueVariant4 {const ValueVariant4({this.url, this.branch, this.commit, this.type, });
 

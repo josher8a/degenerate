@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RefundNextActionDisplayDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/email_sent.dart';/// 
 @immutable final class RefundNextActionDisplayDetails {const RefundNextActionDisplayDetails({required this.emailSent, required this.expiresAt, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceCustomerDetailsResourceTaxId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id/invoices_resource_invoice_tax_id_type.dart';/// 
 @immutable final class TaxProductResourceCustomerDetailsResourceTaxId {const TaxProductResourceCustomerDetailsResourceTaxId({required this.type, required this.value, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTranscriptionResponseStreamEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';import 'package:pub_openai/models/transcript_text_done_event.dart';import 'package:pub_openai/models/transcript_text_segment_event.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';sealed class CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEvent();
 

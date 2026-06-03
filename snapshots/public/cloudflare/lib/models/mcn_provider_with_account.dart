@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnProviderWithAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_account_id.dart';import 'package:pub_cloudflare/models/mcn_cloud_type.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_status.dart';import 'package:pub_cloudflare/models/mcn_provider_id.dart';import 'package:pub_cloudflare/models/mcn_provider_lifecycle_state.dart';import 'package:pub_cloudflare/models/mcn_provider_status.dart';@immutable final class McnProviderWithAccount {const McnProviderWithAccount({required this.cloudType, required this.friendlyName, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, required this.accountId, this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.gcpProjectId, this.gcpServiceAccountEmail, this.status, });
 

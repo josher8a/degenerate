@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotIdeChat (inline: Editors > Models)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotIdeChatEditorsModels {const CopilotIdeChatEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.totalChats, this.totalChatInsertionEvents, this.totalChatCopyEvents, });
 

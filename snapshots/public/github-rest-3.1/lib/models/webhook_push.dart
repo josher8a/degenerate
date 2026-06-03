@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPush
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_push/webhook_push_commits.dart';import 'package:pub_github_rest_3_1/models/webhook_push/webhook_push_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_push/webhook_push_pusher.dart';import 'package:pub_github_rest_3_1/models/webhook_push/webhook_push_repository.dart';extension type const WebhooksNullableString(String value) {
 factory WebhooksNullableString.fromJson(String json) => WebhooksNullableString(json);

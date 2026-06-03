@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceJurisdiction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the level of the jurisdiction imposing the tax.
 @immutable final class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel._(this.value);

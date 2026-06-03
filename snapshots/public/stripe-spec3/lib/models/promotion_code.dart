@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PromotionCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PromotionCodeObject {const PromotionCodeObject._(this.value);

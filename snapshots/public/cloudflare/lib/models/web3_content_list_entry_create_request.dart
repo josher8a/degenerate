@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Web3ContentListEntryCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_content.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_description.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_type.dart';@immutable final class Web3ContentListEntryCreateRequest {const Web3ContentListEntryCreateRequest({required this.content, required this.type, this.description, });
 

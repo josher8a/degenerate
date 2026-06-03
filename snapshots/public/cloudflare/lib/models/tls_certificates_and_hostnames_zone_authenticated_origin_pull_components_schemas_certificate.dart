@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasCertificate
 
 /// The zone's leaf certificate.
 extension type const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasCertificate(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedTerminalReader (inline: DeviceType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device type of the reader.
 @immutable final class DeviceType {const DeviceType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksPullRequest5 (inline: Links > ReviewComment)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LinksReviewComment {const LinksReviewComment({required this.href});
 

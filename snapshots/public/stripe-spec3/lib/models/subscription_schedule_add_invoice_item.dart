@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionScheduleAddInvoiceItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_price.dart';import 'package:pub_stripe_spec3/models/discounts_resource_stackable_discount_with_discount_end.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item/subscription_schedule_add_invoice_item_price.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item_period.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// An Add Invoice Item describes the prices and quantities that will be added as pending invoice items when entering a phase.
 @immutable final class SubscriptionScheduleAddInvoiceItem {const SubscriptionScheduleAddInvoiceItem({required this.discounts, required this.period, required this.price, this.metadata, this.quantity, this.taxRates, });

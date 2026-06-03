@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxCalculationsRequest (inline: CustomerDetails > Address)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/address_state.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/city.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/line1.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/line2.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/postal_code.dart';@immutable final class PostTaxCalculationsRequestCustomerDetailsAddress {const PostTaxCalculationsRequestCustomerDetailsAddress({required this.country, this.city, this.line1, this.line2, this.postalCode, this.state, });
 

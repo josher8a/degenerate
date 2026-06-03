@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: WebSearchOptions > Variant1 > UserLocation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/approximate.dart';@immutable final class UserLocationType {const UserLocationType._(this.value);
 

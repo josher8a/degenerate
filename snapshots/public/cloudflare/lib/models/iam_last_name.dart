@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamLastName
 
 /// User's last name
 extension type const IamLastName(String value) {

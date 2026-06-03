@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SingleSelectOptions (inline: Description)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The description of the option, in raw text and HTML formats.
 @immutable final class SingleSelectOptionsDescription {const SingleSelectOptionsDescription({required this.raw, required this.html, });

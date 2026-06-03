@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesUsage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/images_usage/images_usage_input_tokens_details.dart';/// For the GPT image models only, the token usage information for the image generation.
 /// 

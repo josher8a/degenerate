@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpUpdateAddinAccountMapping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_addin_auth.dart';import 'package:pub_cloudflare/models/dlp_addin_auth/no_auth.dart';import 'package:pub_cloudflare/models/dlp_addin_auth/org.dart';@immutable final class DlpUpdateAddinAccountMapping {const DlpUpdateAddinAccountMapping({required this.authRequirements});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NotificationWebhooksUpdateAWebhookRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_name.dart';import 'package:pub_cloudflare/models/aaa_secret.dart';import 'package:pub_cloudflare/models/aaa_url.dart';@immutable final class NotificationWebhooksUpdateAWebhookRequest {const NotificationWebhooksUpdateAWebhookRequest({required this.name, required this.url, this.secret, });
 

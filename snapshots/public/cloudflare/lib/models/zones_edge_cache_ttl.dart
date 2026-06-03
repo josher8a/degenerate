@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesEdgeCacheTtl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify how long to cache a resource in the Cloudflare global
 /// network. *Edge Cache TTL* is not visible in response headers.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DomainName
 
 /// Name of the custom domain.
 extension type const R2DomainName(String value) {

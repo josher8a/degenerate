@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetCtSummaryDuration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryDuration {const RadarGetCtSummaryDuration._(this.value);
 

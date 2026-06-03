@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TranscriptTextUsageDuration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the usage object. Always `duration` for this variant.
 @immutable final class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConferenceEnumStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of this conference. Can be: `init`, `in-progress`, or `completed`.
 @immutable final class ConferenceEnumStatus {const ConferenceEnumStatus._(this.value);

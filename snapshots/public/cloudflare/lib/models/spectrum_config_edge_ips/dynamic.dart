@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumConfigEdgeIps (inline: Dynamic)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The IP versions supported for inbound connections on Spectrum anycast IPs.
 @immutable final class DynamicConnectivity {const DynamicConnectivity._(this.value);

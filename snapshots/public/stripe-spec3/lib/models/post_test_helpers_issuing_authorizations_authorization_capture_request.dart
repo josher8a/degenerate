@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request/purchase_details.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest({this.captureAmount, this.closeAuthorization, this.expand, this.purchaseDetails, });
 

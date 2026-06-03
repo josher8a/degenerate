@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventError (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the error.
 @immutable final class RealtimeBetaServerEventErrorError {const RealtimeBetaServerEventErrorError({required this.type, required this.message, this.code, this.param, this.eventId, });

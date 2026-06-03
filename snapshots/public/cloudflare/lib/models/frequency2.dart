@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Frequency2
 
 /// Defines the number of days between each scan (0 = One-off scan).
 extension type const Frequency2(double value) {

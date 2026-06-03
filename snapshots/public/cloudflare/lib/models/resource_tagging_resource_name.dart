@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceTaggingResourceName
 
 /// Human-readable name of the resource.
 extension type const ResourceTaggingResourceName(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_sessions_request/post_account_sessions_request_components.dart';@immutable final class PostAccountSessionsRequest {const PostAccountSessionsRequest({required this.account, required this.components, this.expand, });
 

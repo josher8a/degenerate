@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRankingDomainDetailsResponse (inline: Result > Details0 > Categories)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Details0Categories {const Details0Categories({required this.id, required this.name, required this.superCategoryId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceSetReaderDisplayAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request/post_terminal_readers_reader_set_reader_display_request_type.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_cart.dart';/// Represents a reader action to set the reader display
 @immutable final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({required this.type, this.cart, });

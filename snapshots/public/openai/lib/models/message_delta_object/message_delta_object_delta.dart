@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MessageDeltaObject (inline: Delta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_delta_content_image_file_object.dart';import 'package:pub_openai/models/message_delta_content_image_url_object.dart';import 'package:pub_openai/models/message_delta_content_refusal_object.dart';import 'package:pub_openai/models/message_delta_content_text_object.dart';import 'package:pub_openai/models/message_delta_object/delta_content.dart';/// The delta containing the fields that have changed on the Message.
 @immutable final class MessageDeltaObjectDelta {const MessageDeltaObjectDelta({this.role, this.content, });

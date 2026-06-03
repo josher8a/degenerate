@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldGlobalSettingChangeBase (inline: ValidationDefaultMitigationAction)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default mitigation action used
 /// Mitigation actions are as follows:

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProjectRateLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `project.rate_limit`
 @immutable final class ProjectRateLimitObject {const ProjectRateLimitObject._(this.value);

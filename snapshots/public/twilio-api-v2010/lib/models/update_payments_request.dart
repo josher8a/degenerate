@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UpdatePaymentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
 @immutable final class PaymentsEnumCapture {const PaymentsEnumCapture._(this.value);

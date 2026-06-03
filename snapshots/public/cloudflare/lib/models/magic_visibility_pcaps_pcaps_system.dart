@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicVisibilityPcapsPcapsSystem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The system used to collect packet captures.
 @immutable final class MagicVisibilityPcapsPcapsSystem {const MagicVisibilityPcapsPcapsSystem._(this.value);

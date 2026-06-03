@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamPolicyWithPermissionGroupsAndResources
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';import 'package:pub_cloudflare/models/iam_policy_identifier.dart';import 'package:pub_cloudflare/models/iam_resources.dart';/// Allow or deny operations against the resources.
 @immutable final class IamEffect {const IamEffect._(this.value);

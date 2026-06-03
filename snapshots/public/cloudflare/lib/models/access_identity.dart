@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdentity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_device_session.dart';import 'package:pub_cloudflare/models/access_geo.dart';import 'package:pub_cloudflare/models/access_identity/idp.dart';import 'package:pub_cloudflare/models/access_identity/mtls_auth.dart';import 'package:pub_cloudflare/models/access_schemas_device_posture_rule.dart';@immutable final class AccessIdentity {const AccessIdentity({this.accountId, this.authStatus, this.commonName, this.deviceId, this.deviceSessions, this.devicePosture, this.email, this.geo, this.iat, this.idp, this.ip, this.isGateway, this.isWarp, this.mtlsAuth, this.serviceTokenId, this.serviceTokenStatus, this.userUuid, this.version, });
 

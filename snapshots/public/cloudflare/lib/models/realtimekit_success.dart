@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitSuccess
 
 extension type const RealtimekitSuccess(bool value) {
 factory RealtimekitSuccess.fromJson(bool json) => RealtimekitSuccess(json);

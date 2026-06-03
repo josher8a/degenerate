@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnProviderStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cloud_platform_client.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_progress.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_status.dart';@immutable final class McnProviderStatus {const McnProviderStatus({required this.discoveryProgress, required this.discoveryProgressV2, required this.lastDiscoveryStatus, required this.lastDiscoveryStatusV2, required this.regions, this.credentialsGoodSince, this.credentialsMissingSince, this.credentialsRejectedSince, this.discoveryMessage, this.discoveryMessageV2, this.inUseBy, this.lastDiscoveryCompletedAt, this.lastDiscoveryCompletedAtV2, this.lastDiscoveryStartedAt, this.lastDiscoveryStartedAtV2, this.lastUpdated, });
 

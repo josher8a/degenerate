@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ProfileResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message3.dart';import 'package:pub_cloudflare/models/profile.dart';@immutable final class ProfileResponse {const ProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

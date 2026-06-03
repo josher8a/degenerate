@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringAggregateTimeSlot
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringAggregateTimeSlot {const DigitalExperienceMonitoringAggregateTimeSlot({required this.avgMs, required this.timestamp, });
 

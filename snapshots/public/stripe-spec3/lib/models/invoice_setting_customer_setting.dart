@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InvoiceSettingCustomerSetting
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/invoice_setting_customer_rendering_options.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';/// 
 @immutable final class InvoiceSettingCustomerSetting {const InvoiceSettingCustomerSetting({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });

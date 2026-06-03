@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_attacks_response/radar_get_attacks_layer3_top_attacks_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_robots_txt_top_domain_categories_by_files_parsed_response/radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result_top0.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult({required this.meta, required this.top0, });
 

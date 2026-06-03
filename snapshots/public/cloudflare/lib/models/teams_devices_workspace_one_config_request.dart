@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesWorkspaceOneConfigRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesWorkspaceOneConfigRequest {const TeamsDevicesWorkspaceOneConfigRequest({required this.apiUrl, required this.authUrl, required this.clientId, required this.clientSecret, });
 

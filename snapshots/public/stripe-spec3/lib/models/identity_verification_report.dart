@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IdentityVerificationReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report.dart';import 'package:pub_stripe_spec3/models/gelato_email_report.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report.dart';import 'package:pub_stripe_spec3/models/gelato_phone_report.dart';import 'package:pub_stripe_spec3/models/gelato_selfie_report.dart';import 'package:pub_stripe_spec3/models/gelato_verification_report_options.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IdentityVerificationReportObject {const IdentityVerificationReportObject._(this.value);

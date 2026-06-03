@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventDoRevertResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_event_do_revert_response/post_event_do_revert_response_properties.dart';@immutable final class PostEventDoRevertResponse {const PostEventDoRevertResponse({required this.properties, required this.$required, required this.type, });
 

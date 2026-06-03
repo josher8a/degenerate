@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamSigningKeyCreated
 
 /// The date and time a signing key was created.
 extension type StreamSigningKeyCreated(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostZonesZoneIdLogpushValidateDestinationExistsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_destination_conf.dart';@immutable final class PostZonesZoneIdLogpushValidateDestinationExistsRequest {const PostZonesZoneIdLogpushValidateDestinationExistsRequest({required this.destinationConf});
 

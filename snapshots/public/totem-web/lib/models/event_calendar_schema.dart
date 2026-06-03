@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EventCalendarSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EventCalendarSchema {const EventCalendarSchema({required this.title, required this.start, required this.slug, required this.url, });
 

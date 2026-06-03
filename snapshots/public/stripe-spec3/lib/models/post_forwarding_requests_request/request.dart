@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostForwardingRequestsRequest (inline: Request)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request/headers.dart';/// The request body and headers to be sent to the destination endpoint.
 @immutable final class Request {const Request({this.body, this.headers, });

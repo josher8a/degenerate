@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksMarketplacePurchase (inline: Plan)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan/price_model.dart';@immutable final class WebhooksMarketplacePurchasePlan {const WebhooksMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
 

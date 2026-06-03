@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceCondition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// NamespaceCondition contains details about state of namespace.
 @immutable final class NamespaceCondition {const NamespaceCondition({this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });

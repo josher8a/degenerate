@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/QueuesAckMessagesRequest (inline: Acks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_lease_id.dart';@immutable final class Acks {const Acks({this.leaseId});
 

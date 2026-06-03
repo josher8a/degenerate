@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPush (inline: Repository > Visibility)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryVisibility {const RepositoryVisibility._(this.value);
 

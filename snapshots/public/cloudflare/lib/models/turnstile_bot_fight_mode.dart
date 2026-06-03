@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileBotFightMode
 
 /// If bot_fight_mode is set to `true`, Cloudflare issues computationally
 /// expensive challenges in response to malicious bots (ENT only).

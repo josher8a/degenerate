@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqQueuePullBatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_lease_id.dart';@immutable final class MqQueuePullBatch2 {const MqQueuePullBatch2({this.attempts, this.body, this.id, this.leaseId, this.metadata, this.timestampMs, });
 

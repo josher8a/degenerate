@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTestsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/overview_metrics.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/tests.dart';@immutable final class DigitalExperienceMonitoringTestsResponse {const DigitalExperienceMonitoringTestsResponse({required this.overviewMetrics, required this.tests, });
 

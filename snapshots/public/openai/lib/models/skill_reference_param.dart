@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SkillReferenceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a skill created with the /v1/skills endpoint.
 @immutable final class SkillReferenceParamType {const SkillReferenceParamType._(this.value);

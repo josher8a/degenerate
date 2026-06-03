@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookSponsorshipEdited (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_sponsorship_edited/privacy_level.dart';@immutable final class WebhookSponsorshipEditedChanges {const WebhookSponsorshipEditedChanges({this.privacyLevel});
 

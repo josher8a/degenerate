@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheOnCookie
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply the Cache Everything option (Cache Level setting) based on a
 /// regular expression match against a cookie name.

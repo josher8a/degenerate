@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Organization (inline: Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization_flags.dart';@immutable final class OrganizationMeta {const OrganizationMeta({this.flags, this.managedBy, this.additionalProperties = const {}, });
 

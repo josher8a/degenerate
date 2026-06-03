@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitCreateChatChannelInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility._(this.value);
 

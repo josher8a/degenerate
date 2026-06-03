@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingSubdivisionCodeA2
 
 /// Two-letter subdivision code followed in ISO 3166-2.
 extension type const LoadBalancingSubdivisionCodeA2(String value) {

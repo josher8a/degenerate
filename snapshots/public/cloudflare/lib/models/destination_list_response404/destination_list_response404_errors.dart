@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DestinationListResponse404 (inline: Errors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage._(this.value);
 

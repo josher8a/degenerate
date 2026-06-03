@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingPersonalizationDesignsRequest (inline: CarrierText)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/footer_body.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/footer_title.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/header_body.dart';import 'package:pub_stripe_spec3/models/carrier_text_param/header_title.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';/// Hash containing carrier text, for use with physical bundles that support carrier text.
 @immutable final class PostIssuingPersonalizationDesignsRequestCarrierText {const PostIssuingPersonalizationDesignsRequestCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });

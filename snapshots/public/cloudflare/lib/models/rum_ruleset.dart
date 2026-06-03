@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RumRuleset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_ruleset_identifier.dart';import 'package:pub_cloudflare/models/rum_zone_tag.dart';@immutable final class RumRuleset {const RumRuleset({this.enabled, this.id, this.zoneName, this.zoneTag, });
 

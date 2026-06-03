@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SpectrumAnalyticsQueryResponseSingle (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_column.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query.dart';import 'package:pub_cloudflare/models/spectrum_analytics_timestamp.dart';@immutable final class SpectrumAnalyticsQueryResponseSingleResult {const SpectrumAnalyticsQueryResponseSingleResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, this.timeIntervals, });
 

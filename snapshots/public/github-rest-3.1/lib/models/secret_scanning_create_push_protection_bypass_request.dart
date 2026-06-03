@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningCreatePushProtectionBypassRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_push_protection_bypass_placeholder_id.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_push_protection_bypass_reason.dart';@immutable final class SecretScanningCreatePushProtectionBypassRequest {const SecretScanningCreatePushProtectionBypassRequest({required this.reason, required this.placeholderId, });
 

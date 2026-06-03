@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Content > Variant3)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_messages_content_variant2_image_url.dart';@immutable final class ContentVariant3 {const ContentVariant3({this.imageUrl, this.text, this.type, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersHasModules
 
 /// Whether a Worker contains modules.
 extension type const WorkersHasModules(bool value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PersonRaceDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/person_race_details/race.dart';/// 
 @immutable final class PersonRaceDetails {const PersonRaceDetails({this.race, this.raceOther, });

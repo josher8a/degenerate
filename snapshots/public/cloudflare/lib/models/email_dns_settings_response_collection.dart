@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailDnsSettingsResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_dns_record.dart';@immutable final class EmailDnsSettingsResponseCollection {const EmailDnsSettingsResponseCollection({this.result});
 

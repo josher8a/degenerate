@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetTrafficAnomaliesResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_response/radar_get_traffic_anomalies_response_result_traffic_anomalies.dart';@immutable final class RadarGetTrafficAnomaliesResponseResult {const RadarGetTrafficAnomaliesResponseResult({required this.trafficAnomalies});
 

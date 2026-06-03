@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexDescription
 
 /// Specifies the description of the index.
 extension type const VectorizeIndexDescription(String value) {

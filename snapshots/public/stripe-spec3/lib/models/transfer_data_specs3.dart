@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TransferDataSpecs
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TransferDataSpecs3 {const TransferDataSpecs3({required this.destination, this.amount, this.amountPercent, });
 

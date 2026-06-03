@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsReportStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enum value that represents the status of an abuse record
 @immutable final class AbuseReportsReportStatus {const AbuseReportsReportStatus._(this.value);

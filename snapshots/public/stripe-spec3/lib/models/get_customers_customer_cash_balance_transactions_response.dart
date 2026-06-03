@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCustomersCustomerCashBalanceTransactionsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// Customers with certain payments enabled have a cash balance, representing funds that were paid
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions

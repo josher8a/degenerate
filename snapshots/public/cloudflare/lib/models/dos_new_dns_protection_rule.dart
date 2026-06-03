@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DosNewDnsProtectionRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewDnsProtectionRule {const DosNewDnsProtectionRule({required this.burstSensitivity, required this.mode, required this.name, required this.profileSensitivity, required this.rateSensitivity, required this.scope, });
 

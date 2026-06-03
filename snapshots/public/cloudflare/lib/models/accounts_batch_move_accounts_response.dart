@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsBatchMoveAccountsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/batch_account_move_response.dart';import 'package:pub_cloudflare/models/message3.dart';@immutable final class AccountsBatchMoveAccountsResponse {const AccountsBatchMoveAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 

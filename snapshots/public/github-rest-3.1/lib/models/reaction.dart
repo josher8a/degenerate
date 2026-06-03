@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Reaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/reaction/reaction_content.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Reactions to conversations provide a way to help people express their feelings more simply and effectively.
 @immutable final class Reaction {const Reaction({required this.id, required this.nodeId, required this.user, required this.content, required this.createdAt, });

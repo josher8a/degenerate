@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > QualityStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ParticipantQualityStats {const ParticipantQualityStats({this.audioBandwidth, this.audioStats, this.averageQuality, this.end, this.firstAudioPacketReceived, this.firstVideoPacketReceived, this.lastAudioPacketReceived, this.lastVideoPacketReceived, this.peerIds, this.start, this.totalAudioPackets, this.totalAudioPacketsLost, this.totalVideoPackets, this.totalVideoPacketsLost, this.videoBandwidth, this.videoStats, });
 

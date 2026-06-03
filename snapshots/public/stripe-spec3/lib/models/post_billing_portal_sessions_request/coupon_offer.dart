@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData > SubscriptionCancel > Retention > CouponOffer)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CouponOffer {const CouponOffer({required this.coupon});
 

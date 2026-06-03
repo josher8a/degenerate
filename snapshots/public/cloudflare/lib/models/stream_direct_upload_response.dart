@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDirectUploadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_direct_upload_response/stream_direct_upload_response_result.dart';@immutable final class StreamDirectUploadResponse {const StreamDirectUploadResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerFileResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContainerFileResource {const ContainerFileResource({required this.id, required this.object, required this.containerId, required this.createdAt, required this.bytes, required this.path, required this.source, });
 

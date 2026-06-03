@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationItemInputAudioTranscriptionSegment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an input audio transcription segment is identified for an item.
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });

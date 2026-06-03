@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerCreateScanResponse409 (inline: Result > Tasks > Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TasksStatus {const TasksStatus._(this.value);
 

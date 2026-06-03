@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ConnectEmbeddedBaseConfigClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_base_features.dart';/// 
 @immutable final class ConnectEmbeddedBaseConfigClaim {const ConnectEmbeddedBaseConfigClaim({required this.enabled, required this.features, });

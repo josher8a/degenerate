@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetQualitySpeedTopLocationsResponse (inline: Result > Top0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualitySpeedTopLocationsResponseResultTop0 {const RadarGetQualitySpeedTopLocationsResponseResultTop0({required this.bandwidthDownload, required this.bandwidthUpload, required this.clientCountryAlpha2, required this.clientCountryName, required this.jitterIdle, required this.jitterLoaded, required this.latencyIdle, required this.latencyLoaded, required this.numTests, required this.rankPower, });
 

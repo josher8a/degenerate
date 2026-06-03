@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionAllowedToolsChoice (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed tool configuration type. Always `allowed_tools`.
 @immutable final class ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagesDeploymentConfigValuesRequest (inline: DurableObjectNamespaces > Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Durable Object binding.
 @immutable final class PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue {const PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue({required this.namespaceId});

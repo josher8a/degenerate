@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Datacenters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/timeseries_by_colo2.dart';import 'package:pub_cloudflare/models/totals_by_colo.dart';@immutable final class Datacenters2 {const Datacenters2({this.coloId, this.timeseries, this.totals, });
 

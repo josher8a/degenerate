@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListsList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_created_on.dart';import 'package:pub_cloudflare/models/lists_description.dart';import 'package:pub_cloudflare/models/lists_kind.dart';import 'package:pub_cloudflare/models/lists_list_id.dart';import 'package:pub_cloudflare/models/lists_modified_on.dart';import 'package:pub_cloudflare/models/lists_name.dart';/// The number of items in the list.
 extension type const ListsNumItems(double value) {

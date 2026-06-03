@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingCreditGrantsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request/applicability_config.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request/post_billing_credit_grants_request_amount.dart';@immutable final class PostBillingCreditGrantsRequest {const PostBillingCreditGrantsRequest({required this.amount, required this.applicabilityConfig, this.category, this.customer, this.customerAccount, this.effectiveAt, this.expand, this.expiresAt, this.metadata, this.name, this.priority, });
 

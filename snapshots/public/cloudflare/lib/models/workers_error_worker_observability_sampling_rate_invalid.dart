@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersErrorWorkerObservabilitySamplingRateInvalid
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that an observability sampling rate is invalid.
 @immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode._(this.value);

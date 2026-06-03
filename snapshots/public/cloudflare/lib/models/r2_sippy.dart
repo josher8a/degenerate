@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2Sippy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_sippy/r2_sippy_destination.dart';import 'package:pub_cloudflare/models/r2_sippy/r2_sippy_source.dart';@immutable final class R2Sippy {const R2Sippy({this.destination, this.enabled, this.source, });
 

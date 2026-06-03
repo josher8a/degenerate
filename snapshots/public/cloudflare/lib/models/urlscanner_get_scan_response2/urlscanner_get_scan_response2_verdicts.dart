@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Verdicts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_verdicts_overall.dart';@immutable final class UrlscannerGetScanResponse2Verdicts {const UrlscannerGetScanResponse2Verdicts({required this.overall});
 

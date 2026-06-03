@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: AddInvoiceItems > Discounts)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddInvoiceItemsDiscounts {const AddInvoiceItemsDiscounts({this.coupon, this.discount, this.promotionCode, });
 

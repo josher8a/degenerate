@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: Messages > Assistant > ToolCalls > Custom > Custom)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ToolCallsCustomCustom {const ToolCallsCustomCustom({required this.input, required this.name, });
 

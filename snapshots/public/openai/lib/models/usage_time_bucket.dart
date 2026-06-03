@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsageTimeBucket
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result.dart';import 'package:pub_openai/models/usage_audio_speeches_result.dart';import 'package:pub_openai/models/usage_audio_transcriptions_result.dart';import 'package:pub_openai/models/usage_code_interpreter_sessions_result.dart';import 'package:pub_openai/models/usage_completions_result.dart';import 'package:pub_openai/models/usage_embeddings_result.dart';import 'package:pub_openai/models/usage_images_result.dart';import 'package:pub_openai/models/usage_moderations_result.dart';import 'package:pub_openai/models/usage_time_bucket/result.dart';import 'package:pub_openai/models/usage_vector_stores_result.dart';@immutable final class UsageTimeBucketObject {const UsageTimeBucketObject._(this.value);
 

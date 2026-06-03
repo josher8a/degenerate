@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostToMarkdownResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostToMarkdownResponseResult {const WorkersAiPostToMarkdownResponseResult({required this.data, required this.format, required this.mimeType, required this.name, required this.tokens, });
 

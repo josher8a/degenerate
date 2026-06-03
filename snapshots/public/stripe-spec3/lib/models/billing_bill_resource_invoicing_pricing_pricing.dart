@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingPricingPricing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing_price_details.dart';/// The type of the pricing details.
 @immutable final class BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType._(this.value);

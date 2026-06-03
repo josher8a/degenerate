@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingTransactionFuelData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class IssuingTransactionFuelData {const IssuingTransactionFuelData({required this.type, required this.unit, required this.unitCostDecimal, this.industryProductCode, this.quantityDecimal, });

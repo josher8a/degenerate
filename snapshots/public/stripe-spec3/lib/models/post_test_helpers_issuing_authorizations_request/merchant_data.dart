@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest (inline: MerchantData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MerchantDataCategory {const MerchantDataCategory._(this.value);
 

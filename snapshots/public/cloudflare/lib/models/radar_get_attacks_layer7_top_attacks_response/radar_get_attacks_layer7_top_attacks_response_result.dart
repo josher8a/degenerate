@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TopAttacksResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_attacks_response/radar_get_attacks_layer3_top_attacks_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_top_attacks_response/radar_get_attacks_layer7_top_attacks_response_result_top0.dart';@immutable final class RadarGetAttacksLayer7TopAttacksResponseResult {const RadarGetAttacksLayer7TopAttacksResponseResult({required this.meta, required this.top0, });
 

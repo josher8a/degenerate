@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateChatCompletionRequest (inline: WebSearchOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_chat_completion_request/user_location.dart';/// High level guidance for the amount of context window space to use for the
 /// search. One of `low`, `medium`, or `high`. `medium` is the default.

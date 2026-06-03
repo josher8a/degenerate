@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesPipelineGraph
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_pipeline_edge.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_pipeline_node.dart';@immutable final class CloudflarePipelinesPipelineGraph {const CloudflarePipelinesPipelineGraph({required this.edges, required this.nodes, });
 

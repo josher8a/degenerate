@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoVerificationSessionOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_session_document_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_email_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_id_number_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_matching_options.dart';import 'package:pub_stripe_spec3/models/gelato_session_phone_options.dart';/// 
 @immutable final class GelatoVerificationSessionOptions {const GelatoVerificationSessionOptions({this.document, this.email, this.idNumber, this.matching, this.phone, });

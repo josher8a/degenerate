@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessActiveSessionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_active_session_response/access_active_session_response_result.dart';@immutable final class AccessActiveSessionResponse {const AccessActiveSessionResponse({this.result});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShippingRateCurrencyOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';/// 
 @immutable final class ShippingRateCurrencyOption {const ShippingRateCurrencyOption({required this.amount, required this.taxBehavior, });

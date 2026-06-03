@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AsyncBatch (inline: Requests)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class AsyncBatch2Requests {const AsyncBatch2Requests({this.externalReference, this.frequencyPenalty, this.maxTokens = 256, this.presencePenalty, this.prompt, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topP, });
 

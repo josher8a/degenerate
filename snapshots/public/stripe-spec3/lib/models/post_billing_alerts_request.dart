@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingAlertsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_alert/alert_type.dart';import 'package:pub_stripe_spec3/models/post_billing_alerts_request/usage_threshold.dart';@immutable final class PostBillingAlertsRequest {const PostBillingAlertsRequest({required this.alertType, required this.title, this.expand, this.usageThreshold, });
 

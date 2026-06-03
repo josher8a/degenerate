@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessKeysComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_key_config.dart';@immutable final class AccessKeysComponentsSchemasSingleResponse {const AccessKeysComponentsSchemasSingleResponse({this.result});
 

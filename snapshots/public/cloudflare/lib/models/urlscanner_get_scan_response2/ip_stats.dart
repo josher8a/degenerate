@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Stats > IpStats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/ip_stats_asn.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/ip_stats_geoip.dart';@immutable final class IpStats {const IpStats({required this.asn, required this.countries, required this.domains, required this.encodedSize, required this.geoip, required this.index, required this.ip, required this.ipv6, required this.redirects, required this.requests, required this.size, this.count, });
 

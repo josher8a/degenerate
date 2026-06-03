@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetCountryReadResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_country_read_response/get_country_read_response_result.dart';@immutable final class GetCountryReadResponse {const GetCountryReadResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GcsSourceResponseSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/gcs_source_response_schema/gcs_source_response_schema_vendor.dart';@immutable final class GcsSourceResponseSchema {const GcsSourceResponseSchema({this.bucket, this.keys, this.pathPrefix, this.vendor, });
 

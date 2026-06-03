@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AmazonPayUnderlyingPaymentMethodFundingDetails (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// funding type of the underlying payment method.
 @immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType._(this.value);

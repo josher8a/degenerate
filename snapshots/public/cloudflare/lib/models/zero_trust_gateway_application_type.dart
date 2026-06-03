@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayApplicationType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_app_type_id.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_app_types_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_timestamp.dart';@immutable final class ZeroTrustGatewayApplicationType {const ZeroTrustGatewayApplicationType({this.createdAt, this.description, this.id, this.name, });
 

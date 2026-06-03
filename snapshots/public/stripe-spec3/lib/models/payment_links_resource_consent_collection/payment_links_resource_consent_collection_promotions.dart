@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceConsentCollection (inline: Promotions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
 @immutable final class PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions._(this.value);

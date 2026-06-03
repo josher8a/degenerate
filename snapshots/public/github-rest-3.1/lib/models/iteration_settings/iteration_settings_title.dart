@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IterationSettings (inline: Title)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The iteration title, in raw text and HTML formats.
 @immutable final class IterationSettingsTitle {const IterationSettingsTitle({required this.raw, required this.html, });

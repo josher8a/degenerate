@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCustomersCustomerBankAccountsIdRequest (inline: Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';@immutable final class PostCustomersCustomerBankAccountsIdRequestOwner {const PostCustomersCustomerBankAccountsIdRequestOwner({this.address, this.email, this.name, this.phone, });
 

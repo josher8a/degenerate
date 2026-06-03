@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 @immutable final class TeamsCreateRequestPermission {const TeamsCreateRequestPermission._(this.value);

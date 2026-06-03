@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1DatabaseDetailsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_created_at.dart';import 'package:pub_cloudflare/models/d1_database_identifier.dart';import 'package:pub_cloudflare/models/d1_database_name.dart';import 'package:pub_cloudflare/models/d1_database_version.dart';import 'package:pub_cloudflare/models/d1_jurisdiction_nullable.dart';import 'package:pub_cloudflare/models/d1_read_replication_details.dart';/// The D1 database's size, in bytes.
 extension type const D1FileSize(double value) {

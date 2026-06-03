@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTimingAggregates (inline: OverTime)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_aggregate_time_period.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_aggregate_time_slot.dart';@immutable final class OverTime {const OverTime({required this.timePeriod, required this.values, });
 

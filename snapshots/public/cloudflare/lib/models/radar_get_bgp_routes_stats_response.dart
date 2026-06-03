@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesStatsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_stats_response/radar_get_bgp_routes_stats_response_result.dart';@immutable final class RadarGetBgpRoutesStatsResponse {const RadarGetBgpRoutesStatsResponse({required this.result, required this.success, });
 

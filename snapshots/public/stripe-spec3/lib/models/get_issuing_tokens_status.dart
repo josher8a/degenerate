@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetIssuingTokensStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingTokensStatus {const GetIssuingTokensStatus._(this.value);
 

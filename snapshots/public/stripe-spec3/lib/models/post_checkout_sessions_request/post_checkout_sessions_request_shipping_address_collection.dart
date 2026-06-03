@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCheckoutSessionsRequest (inline: ShippingAddressCollection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_address_collection/allowed_countries.dart';/// When set, provides configuration for Checkout to collect a shipping address from a customer.
 @immutable final class PostCheckoutSessionsRequestShippingAddressCollection {const PostCheckoutSessionsRequestShippingAddressCollection({required this.allowedCountries});

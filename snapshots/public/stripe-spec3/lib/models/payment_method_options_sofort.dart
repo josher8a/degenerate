@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodOptionsSofort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_amazon_pay_payment_method_options/checkout_amazon_pay_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_method_details_sofort/payment_method_details_sofort_preferred_language.dart';/// 
 @immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage, this.setupFutureUsage, });

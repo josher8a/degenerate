@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateImageEditRequest (inline: Background)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allows to set transparency for the background of the generated image(s).
 /// This parameter is only supported for the GPT image models. Must be one of

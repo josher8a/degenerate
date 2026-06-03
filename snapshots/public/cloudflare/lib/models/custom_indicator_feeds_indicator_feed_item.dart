@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomIndicatorFeedsIndicatorFeedItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_description.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_id.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_attributable.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_downloadable.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_is_public.dart';import 'package:pub_cloudflare/models/custom_indicator_feeds_name.dart';/// Example:
 /// ```json

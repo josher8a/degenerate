@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InputQueryAndContexts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_query_and_contexts/contexts.dart';@immutable final class InputQueryAndContexts {const InputQueryAndContexts({required this.contexts, this.query, this.truncateInputs = false, });
 

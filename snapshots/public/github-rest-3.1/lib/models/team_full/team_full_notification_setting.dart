@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamFull (inline: NotificationSetting)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The notification setting the team has set
 @immutable final class TeamFullNotificationSetting {const TeamFullNotificationSetting._(this.value);

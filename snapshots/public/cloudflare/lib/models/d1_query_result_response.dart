@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1QueryResultResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_query_meta.dart';@immutable final class D1QueryResultResponse {const D1QueryResultResponse({this.meta, this.results, this.success, });
 

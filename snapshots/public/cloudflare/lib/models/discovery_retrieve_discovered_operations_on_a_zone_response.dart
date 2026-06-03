@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_discovery_operation.dart';@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse {const DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse({required this.result});
 

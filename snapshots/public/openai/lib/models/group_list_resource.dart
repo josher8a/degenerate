@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GroupListResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/group_response.dart';/// Paginated list of organization groups.
 @immutable final class GroupListResource {const GroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });

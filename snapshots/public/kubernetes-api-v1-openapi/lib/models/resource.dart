@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Resource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// APIResource specifies the name of a resource and whether it is namespaced.
 @immutable final class Resource {const Resource({required this.verbs, this.categories, this.group, this.kind = '', this.name = '', this.namespaced = false, this.shortNames, this.singularName = '', this.storageVersionHash, this.version, });

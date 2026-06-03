@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionResponseMessage (inline: Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/url_citation.dart';/// The type of the URL citation. Always `url_citation`.
 @immutable final class AnnotationsType {const AnnotationsType._(this.value);

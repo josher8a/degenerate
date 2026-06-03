@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InfraIpInfo (inline: Ipv6)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The target's IPv6 address
 @immutable final class Ipv6 {const Ipv6({this.ipAddr, this.virtualNetworkId, });

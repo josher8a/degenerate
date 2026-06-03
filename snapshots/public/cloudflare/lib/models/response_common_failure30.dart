@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure30
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_messages2.dart';@immutable final class ResponseCommonFailure30 {const ResponseCommonFailure30({required this.errors, required this.messages, required this.result, required this.success, });
 

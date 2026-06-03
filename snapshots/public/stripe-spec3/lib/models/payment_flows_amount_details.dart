@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAmountDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details/payment_flows_amount_details_line_items.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_client_resource_tip.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_error.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_shipping.dart';import 'package:pub_stripe_spec3/models/payment_flows_amount_details_resource_tax.dart';/// 
 @immutable final class PaymentFlowsAmountDetails {const PaymentFlowsAmountDetails({this.discountAmount, this.error, this.lineItems, this.shipping, this.tax, this.tip, });

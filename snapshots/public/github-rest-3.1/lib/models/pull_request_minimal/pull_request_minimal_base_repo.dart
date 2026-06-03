@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullRequestMinimal (inline: Base > Repo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestMinimalBaseRepo {const PullRequestMinimalBaseRepo({required this.id, required this.url, required this.name, });
 

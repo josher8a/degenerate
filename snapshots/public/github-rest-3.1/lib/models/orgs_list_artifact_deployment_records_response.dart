@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgsListArtifactDeploymentRecordsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record.dart';@immutable final class OrgsListArtifactDeploymentRecordsResponse {const OrgsListArtifactDeploymentRecordsResponse({this.totalCount, this.deploymentRecords, });
 

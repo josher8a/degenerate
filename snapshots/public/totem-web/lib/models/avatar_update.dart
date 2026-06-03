@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AvatarUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/profile_avatar_type_enum.dart';@immutable final class AvatarUpdate {const AvatarUpdate({required this.avatarType, required this.updateAvatarSeed, });
 

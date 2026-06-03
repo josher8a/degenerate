@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEmbeddingResponse (inline: Usage)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The usage information for the request.
 @immutable final class CreateEmbeddingResponseUsage {const CreateEmbeddingResponseUsage({required this.promptTokens, required this.totalTokens, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeIndexPresetConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the preset to use for the index.
 @immutable final class VectorizeIndexPreset {const VectorizeIndexPreset._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCacheStorageLimitForRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// GitHub Actions cache storage policy for a repository.
 @immutable final class ActionsCacheStorageLimitForRepository {const ActionsCacheStorageLimitForRepository({this.maxCacheSizeGb});

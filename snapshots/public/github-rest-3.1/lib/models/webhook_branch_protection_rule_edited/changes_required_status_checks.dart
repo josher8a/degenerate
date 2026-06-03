@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookBranchProtectionRuleEdited (inline: Changes > RequiredStatusChecks)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChangesRequiredStatusChecks {const ChangesRequiredStatusChecks({required this.from});
 

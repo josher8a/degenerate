@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSAccountMembershipsListMembershipsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order memberships by.
 @immutable final class UserSAccountMembershipsListMembershipsOrder {const UserSAccountMembershipsListMembershipsOrder._(this.value);

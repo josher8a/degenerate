@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BranchShort
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_short/branch_short_commit.dart';/// Branch Short
 @immutable final class BranchShort {const BranchShort({required this.name, required this.commit, required this.protected, });

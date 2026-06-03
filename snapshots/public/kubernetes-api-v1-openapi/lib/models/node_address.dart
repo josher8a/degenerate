@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeAddress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeAddress contains information for the node's address.
 @immutable final class NodeAddress {const NodeAddress({this.address = '', this.type = '', });

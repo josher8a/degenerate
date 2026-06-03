@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotOrganizationSeatBreakdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The breakdown of Copilot Business seats for the organization.
 @immutable final class CopilotOrganizationSeatBreakdown {const CopilotOrganizationSeatBreakdown({this.total, this.addedThisCycle, this.pendingCancellation, this.pendingInvitation, this.activeThisCycle, this.inactiveThisCycle, });

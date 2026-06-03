@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnEvent (inline: FinishAttestationSuccess)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished attestation
 @immutable final class FinishAttestationSuccessK {const FinishAttestationSuccessK._(this.value);

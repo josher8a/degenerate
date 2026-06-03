@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceProcessSetupIntentAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_setup_intent.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_setup_config.dart';/// Represents a reader action to process a setup intent
 @immutable final class TerminalReaderReaderResourceProcessSetupIntentAction {const TerminalReaderReaderResourceProcessSetupIntentAction({required this.setupIntent, this.generatedCard, this.processConfig, });

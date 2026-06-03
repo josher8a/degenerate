@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentPaymentMethodOptions (inline: SepaDebit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';typedef PaymentIntentPaymentMethodOptionsSepaDebit2 = OneOf2<PaymentIntentPaymentMethodOptionsSepaDebit,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamAudioLabel
 
 /// A string to uniquely identify the track amongst other audio track labels for the specified video.
 extension type const StreamAudioLabel(String value) {

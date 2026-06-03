@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileModifiedOn
 
 /// When the widget was modified.
 extension type TurnstileModifiedOn(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetLeakedCredentialChecksSummaryByCompromisedResponse (inline: Result > Summary0)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0 {const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0({required this.clean, required this.compromised, });
 

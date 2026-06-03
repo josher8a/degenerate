@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsPaymentIntentAsyncWorkflows
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_async_workflows_resource_inputs.dart';/// 
 @immutable final class PaymentFlowsPaymentIntentAsyncWorkflows {const PaymentFlowsPaymentIntentAsyncWorkflows({this.inputs});

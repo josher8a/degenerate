@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpRoutesRealtimeResponse (inline: Result > Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/collectors.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/meta_asn_info.dart';import 'package:pub_cloudflare/models/radar_get_bgp_routes_realtime_response/meta_prefix_origins.dart';@immutable final class RadarGetBgpRoutesRealtimeResponseResultMeta {const RadarGetBgpRoutesRealtimeResponseResultMeta({required this.asnInfo, required this.collectors, required this.dataTime, required this.prefixOrigins, required this.queryTime, });
 

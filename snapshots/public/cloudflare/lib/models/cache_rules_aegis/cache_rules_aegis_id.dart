@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CacheRulesAegis (inline: Id)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ID of the zone setting.
 @immutable final class CacheRulesAegisId {const CacheRulesAegisId._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Key (inline: Owner)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeyOwner {const KeyOwner({this.type, this.object, this.id, this.name, this.createdAt, this.role, });
 

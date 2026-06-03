@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2Table (inline: Partitioning)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data-layout partitioning for sinks.
 @immutable final class Partitioning {const Partitioning({this.timePattern});

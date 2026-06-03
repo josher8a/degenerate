@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSessionsSortBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionsSortBy {const GetSessionsSortBy._(this.value);
 

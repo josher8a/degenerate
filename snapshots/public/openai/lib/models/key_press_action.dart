@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/KeyPressAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A collection of keypresses the model would like to perform.
 @immutable final class KeyPressAction {const KeyPressAction({required this.keys, this.type = 'keypress', });

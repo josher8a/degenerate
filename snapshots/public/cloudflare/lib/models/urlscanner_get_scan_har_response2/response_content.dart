@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanHarResponse2 (inline: Log > Entries > Response > Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseContent {const ResponseContent({required this.mimeType, required this.size, this.compression, });
 

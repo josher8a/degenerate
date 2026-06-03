@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DependabotAlertSecurityAdvisory (inline: Severity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the vulnerability.
 @immutable final class DependabotAlertSecurityAdvisorySeverity {const DependabotAlertSecurityAdvisorySeverity._(this.value);

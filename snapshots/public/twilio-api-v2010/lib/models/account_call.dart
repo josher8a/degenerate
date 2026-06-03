@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCall
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/call_enum_status.dart';@immutable final class AccountCall {const AccountCall({this.sid, this.dateCreated, this.dateUpdated, this.parentCallSid, this.accountSid, this.to, this.toFormatted, this.from, this.fromFormatted, this.phoneNumberSid, this.status, this.startTime, this.endTime, this.duration, this.price, this.priceUnit, this.direction, this.answeredBy, this.apiVersion, this.forwardedFrom, this.groupSid, this.callerName, this.queueTime, this.trunkSid, this.uri, this.subresourceUris, });
 

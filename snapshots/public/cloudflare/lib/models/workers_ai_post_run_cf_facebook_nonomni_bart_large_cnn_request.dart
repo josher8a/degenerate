@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest {const WorkersAiPostRunCfFacebookNonomniBartLargeCnnRequest({required this.inputText, this.maxLength = 1024, });
 

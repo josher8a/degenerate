@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InsightsResourcesPaymentEvaluationDisputeOpened
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason given by cardholder for dispute.
 @immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TurnstileEphemeralId
 
 /// Return the Ephemeral ID in /siteverify (ENT only).
 /// 

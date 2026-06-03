@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerResource (inline: MemoryLimit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The memory limit configured for the container.
 @immutable final class MemoryLimit {const MemoryLimit._(this.value);

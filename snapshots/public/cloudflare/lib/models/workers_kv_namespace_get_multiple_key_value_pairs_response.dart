@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvNamespaceGetMultipleKeyValuePairsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_bulk_get_result.dart';import 'package:pub_cloudflare/models/workers_kv_bulk_get_result_with_metadata.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_get_multiple_key_value_pairs_response/workers_kv_namespace_get_multiple_key_value_pairs_response_result.dart';@immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsResponse {const WorkersKvNamespaceGetMultipleKeyValuePairsResponse({this.result});
 

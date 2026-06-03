@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSettingObjectDelete
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_hostname.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_tls_settings_components_schemas_created_at.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_tls_settings_components_schemas_status.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_tls_settings_components_schemas_updated_at.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_value.dart';@immutable final class TlsCertificatesAndHostnamesSettingObjectDelete {const TlsCertificatesAndHostnamesSettingObjectDelete({this.createdAt, this.hostname, this.status, this.updatedAt, this.value, });
 

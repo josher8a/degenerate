@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookWorkflowJobWaiting (inline: WorkflowJob > Steps)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite/simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/steps_conclusion.dart';@immutable final class WebhookWorkflowJobWaitingWorkflowJobSteps {const WebhookWorkflowJobWaitingWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
 

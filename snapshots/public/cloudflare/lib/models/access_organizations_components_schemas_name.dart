@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOrganizationsComponentsSchemasName
 
 /// The name of your Zero Trust organization.
 extension type const AccessOrganizationsComponentsSchemasName(String value) {

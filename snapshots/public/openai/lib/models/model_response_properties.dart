@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ModelResponseProperties
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/service_tier.dart';@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesSslpost (inline: Dv)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';@immutable final class TlsCertificatesAndHostnamesSslpostDv {const TlsCertificatesAndHostnamesSslpostDv({this.bundleMethod = BundleMethod.ubiquitous, this.certificateAuthority, this.cloudflareBranding, this.customCertBundle, this.customCertificate, this.customKey, this.method, this.settings, this.type, this.wildcard, });
 

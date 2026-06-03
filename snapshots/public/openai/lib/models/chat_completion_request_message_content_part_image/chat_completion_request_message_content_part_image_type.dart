@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatCompletionRequestMessageContentPartImage (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the content part.
 @immutable final class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType._(this.value);

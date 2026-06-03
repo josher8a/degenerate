@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EasyInputMessage (inline: Role)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the message input. One of `user`, `assistant`, `system`, or
 /// `developer`.

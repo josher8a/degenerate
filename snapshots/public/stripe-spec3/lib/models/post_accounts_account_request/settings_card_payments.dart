@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > CardPayments)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/decline_on.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/statement_descriptor_prefix_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/statement_descriptor_prefix_kanji.dart';@immutable final class SettingsCardPayments {const SettingsCardPayments({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2ListBucketsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order buckets by.
 @immutable final class R2ListBucketsOrder {const R2ListBucketsOrder._(this.value);

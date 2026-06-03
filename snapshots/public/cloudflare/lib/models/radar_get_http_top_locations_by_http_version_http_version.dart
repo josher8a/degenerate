@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpTopLocationsByHttpVersionHttpVersion
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTP version.
 @immutable final class RadarGetHttpTopLocationsByHttpVersionHttpVersion {const RadarGetHttpTopLocationsByHttpVersionHttpVersion._(this.value);

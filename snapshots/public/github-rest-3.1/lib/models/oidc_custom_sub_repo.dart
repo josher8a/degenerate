@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OidcCustomSubRepo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC subject customization for a repository
 @immutable final class OidcCustomSubRepo {const OidcCustomSubRepo({required this.useDefault, this.includeClaimKeys, });

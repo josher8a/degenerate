@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse({required this.result, required this.success, });
 

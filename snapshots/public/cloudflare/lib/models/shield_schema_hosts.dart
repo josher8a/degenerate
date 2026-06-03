@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaHosts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';@immutable final class ShieldSchemaHosts {const ShieldSchemaHosts({required this.createdAt, required this.hosts, required this.name, required this.schemaId, });
 

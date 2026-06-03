@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldSchemaResponseDiscovery
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';import 'package:pub_cloudflare/models/shield_schema_response_discovery/shield_schema_response_discovery_result.dart';@immutable final class ShieldSchemaResponseDiscovery {const ShieldSchemaResponseDiscovery({required this.errors, required this.messages, required this.success, required this.result, });
 

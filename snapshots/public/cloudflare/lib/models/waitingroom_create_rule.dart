@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WaitingroomCreateRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_rule_action.dart';import 'package:pub_cloudflare/models/waitingroom_rule_description.dart';import 'package:pub_cloudflare/models/waitingroom_rule_enabled.dart';import 'package:pub_cloudflare/models/waitingroom_rule_expression.dart';@immutable final class WaitingroomCreateRule {const WaitingroomCreateRule({required this.action, required this.expression, this.description, this.enabled, });
 

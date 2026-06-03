@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTaxRegistrationsRequest (inline: CountryOptions > Us > LocalLeaseTax)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LocalLeaseTax {const LocalLeaseTax({required this.jurisdiction});
 

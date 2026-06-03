@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessResourceUserEmail
 
 /// The email address of the SCIM User resource.
 extension type const AccessResourceUserEmail(String value) {

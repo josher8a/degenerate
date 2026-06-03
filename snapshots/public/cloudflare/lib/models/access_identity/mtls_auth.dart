@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdentity (inline: MtlsAuth)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MtlsAuth {const MtlsAuth({this.authStatus, this.certIssuerDn, this.certIssuerSki, this.certPresented, this.certSerial, });
 

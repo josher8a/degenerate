@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HyperdriveHyperdriveName
 
 /// The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API.
 extension type const HyperdriveHyperdriveName(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityGetPhishguardReportsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_message.dart';import 'package:pub_cloudflare/models/email_security_phish_guard_report.dart';@immutable final class EmailSecurityGetPhishguardReportsResponse {const EmailSecurityGetPhishguardReportsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

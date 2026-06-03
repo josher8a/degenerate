@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse2 (inline: Meta > Processors > DomainCategories > Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DomainCategoriesData {const DomainCategoriesData({required this.inherited, required this.isPrimary, required this.name, });
 

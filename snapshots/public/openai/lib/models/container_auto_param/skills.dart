@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ContainerAutoParam (inline: Skills)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/inline_skill_param.dart';import 'package:pub_openai/models/inline_skill_source_param.dart';import 'package:pub_openai/models/skill_reference_param.dart';sealed class Skills {const Skills();
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingHistoryCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/billing_history.dart';@immutable final class BillingHistoryCollection {const BillingHistoryCollection({this.result});
 

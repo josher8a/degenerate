@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UsersCreateGpgKeyForAuthenticatedUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersCreateGpgKeyForAuthenticatedUserRequest {const UsersCreateGpgKeyForAuthenticatedUserRequest({required this.armoredPublicKey, this.name, });
 

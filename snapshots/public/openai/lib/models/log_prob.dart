@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogProb
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/top_log_prob.dart';/// The log probability of a token.
 @immutable final class LogProb {const LogProb({required this.token, required this.logprob, required this.bytes, required this.topLogprobs, });

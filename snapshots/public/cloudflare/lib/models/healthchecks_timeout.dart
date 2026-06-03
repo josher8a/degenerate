@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HealthchecksTimeout
 
 /// The timeout (in seconds) before marking the health check as failed.
 extension type const HealthchecksTimeout(int value) {

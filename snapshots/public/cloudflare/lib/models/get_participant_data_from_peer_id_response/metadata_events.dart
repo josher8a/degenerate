@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Metadata > Events)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MetadataEvents {const MetadataEvents({this.name, this.timestamp, });
 

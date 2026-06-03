@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Employee
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_11_circular/models/department.dart';@immutable final class Employee {const Employee({required this.id, required this.name, this.department, this.manager, });
 

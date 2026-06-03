@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostChargesChargeRefundsRequest (inline: Origin)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origin of the refund
 @immutable final class Origin {const Origin._(this.value);

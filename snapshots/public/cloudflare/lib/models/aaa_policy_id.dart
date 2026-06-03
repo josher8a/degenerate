@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaPolicyId
 
 /// The unique identifier of a notification policy
 extension type const AaaPolicyId(String value) {

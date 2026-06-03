@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitignoreTemplate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Gitignore Template
 @immutable final class GitignoreTemplate {const GitignoreTemplate({required this.name, required this.source, });

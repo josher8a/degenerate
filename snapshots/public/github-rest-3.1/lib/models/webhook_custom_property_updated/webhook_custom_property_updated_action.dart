@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookCustomPropertyUpdated (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCustomPropertyUpdatedAction {const WebhookCustomPropertyUpdatedAction._(this.value);
 

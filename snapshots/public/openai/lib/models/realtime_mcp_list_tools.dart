@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeMcpListTools
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';/// A Realtime item listing tools available on an MCP server.
 /// 

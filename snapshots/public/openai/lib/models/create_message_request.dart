@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateMessageRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_message_request/attachments.dart';import 'package:pub_openai/models/create_message_request/create_message_request_content.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_content_image_file_object.dart';import 'package:pub_openai/models/message_content_image_url_object.dart';import 'package:pub_openai/models/message_request_content_text_object.dart';@immutable final class CreateMessageRequest {const CreateMessageRequest({required this.role, required this.content, this.attachments, this.metadata, });
 

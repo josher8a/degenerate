@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAmountDetailsClientResourceTip
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentFlowsAmountDetailsClientResourceTip {const PaymentFlowsAmountDetailsClientResourceTip({this.amount});

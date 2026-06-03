@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingCardsCardRequest (inline: Shipping)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/issuing_card_shipping_type.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/service.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/billing_address.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/address_validation.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/customs.dart';/// The address where the card will be shipped.
 @immutable final class PostIssuingCardsCardRequestShipping {const PostIssuingCardsCardRequestShipping({required this.address, required this.name, this.addressValidation, this.customs, this.phoneNumber, this.requireSignature, this.service, this.type, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TestHelpersTestClock
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_clocks_resource_status_details_status_details.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock/deleted_test_helpers_test_clock_object.dart';/// The status of the Test Clock.
 @immutable final class TestHelpersTestClockStatus {const TestHelpersTestClockStatus._(this.value);

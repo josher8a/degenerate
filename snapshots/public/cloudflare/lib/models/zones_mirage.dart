@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesMirage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.

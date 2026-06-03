@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetHttpSummaryByDeviceTypeResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_http_summary_by_device_type_response/radar_get_http_summary_by_device_type_response_result.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponse {const RadarGetHttpSummaryByDeviceTypeResponse({required this.result, required this.success, });
 

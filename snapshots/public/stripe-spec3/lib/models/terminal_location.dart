@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_location/deleted_terminal_location_object.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';/// A Location represents a grouping of readers.
 /// 

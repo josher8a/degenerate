@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestNetworkPathResponse (inline: NetworkPath > Sampling)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the sampling applied, if any, to the slots response. When sampled, results shown represent the first test run to the start of each sampling interval.
 @immutable final class Sampling {const Sampling({required this.unit, required this.value, });

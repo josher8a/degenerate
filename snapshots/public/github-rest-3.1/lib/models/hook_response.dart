@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/HookResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HookResponse {const HookResponse({required this.code, required this.status, required this.message, });
 

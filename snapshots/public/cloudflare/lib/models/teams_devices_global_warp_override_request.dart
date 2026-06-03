@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesGlobalWarpOverrideRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_disconnect.dart';/// Reasoning for setting the Global WARP override state. This will be surfaced in the audit log.
 extension type const TeamsDevicesJustification(String value) {

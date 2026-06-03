@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseOutputItemDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `response.output_item.done`.
 @immutable final class RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MinimalRepository (inline: License)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url, this.nodeId, });
 

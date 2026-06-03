@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsPeerCreatePeerRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_name.dart';@immutable final class SecondaryDnsPeerCreatePeerRequest {const SecondaryDnsPeerCreatePeerRequest({required this.name});
 

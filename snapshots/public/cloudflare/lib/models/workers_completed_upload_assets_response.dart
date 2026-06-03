@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersCompletedUploadAssetsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_completed_upload_assets_response/workers_completed_upload_assets_response_result.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class WorkersCompletedUploadAssetsResponse {const WorkersCompletedUploadAssetsResponse({required this.errors, required this.messages, required this.success, this.result, });
 

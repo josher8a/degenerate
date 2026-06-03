@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseSingle6
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_config_messages2.dart';import 'package:pub_cloudflare/models/argo_config_result_object.dart';@immutable final class ResponseSingle6 {const ResponseSingle6({required this.errors, required this.messages, required this.result, required this.success, });
 

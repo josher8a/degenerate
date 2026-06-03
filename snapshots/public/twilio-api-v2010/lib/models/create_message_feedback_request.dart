@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateMessageFeedbackRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/message_feedback_enum_outcome.dart';@immutable final class CreateMessageFeedbackRequest {const CreateMessageFeedbackRequest({this.outcome});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeServerEventConversationItemDeleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Returned when an item in the conversation is deleted by the client with a
 /// `conversation.item.delete` event. This event is used to synchronize the

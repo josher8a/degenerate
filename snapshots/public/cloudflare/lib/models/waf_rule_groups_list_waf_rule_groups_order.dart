@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafRuleGroupsListWafRuleGroupsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rule groups.
 @immutable final class WafRuleGroupsListWafRuleGroupsOrder {const WafRuleGroupsListWafRuleGroupsOrder._(this.value);

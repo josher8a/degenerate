@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ClassroomAcceptedAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_assignment.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_repository.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_user.dart';/// A GitHub Classroom accepted assignment
 @immutable final class ClassroomAcceptedAssignment {const ClassroomAcceptedAssignment({required this.id, required this.submitted, required this.passing, required this.commitCount, required this.grade, required this.students, required this.repository, required this.assignment, });

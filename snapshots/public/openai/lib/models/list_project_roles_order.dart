@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ListProjectRolesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListProjectRolesOrder {const ListProjectRolesOrder._(this.value);
 

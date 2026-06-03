@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ComputerScreenshotContent (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the event type. For a computer screenshot, this property is
 /// always set to `computer_screenshot`.

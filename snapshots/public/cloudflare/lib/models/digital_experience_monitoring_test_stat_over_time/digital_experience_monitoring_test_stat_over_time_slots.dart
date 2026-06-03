@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringTestStatOverTime (inline: Slots)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringTestStatOverTimeSlots {const DigitalExperienceMonitoringTestStatOverTimeSlots({required this.timestamp, required this.value, });
 

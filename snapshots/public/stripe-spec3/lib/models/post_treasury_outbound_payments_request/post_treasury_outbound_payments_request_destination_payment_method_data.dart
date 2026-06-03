@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryOutboundPaymentsRequest (inline: DestinationPaymentMethodData)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details/outbound_payments_payment_method_details_type.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_us_bank_account.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request/destination_payment_method_data_billing_details.dart';/// Hash used to generate the PaymentMethod to be used for this OutboundPayment. Exclusive with `destination_payment_method`.
 @immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData({required this.type, this.billingDetails, this.financialAccount, this.metadata, this.usBankAccount, });

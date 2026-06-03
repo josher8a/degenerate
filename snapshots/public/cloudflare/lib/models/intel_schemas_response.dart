@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IntelSchemasResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_schemas_ip.dart';@immutable final class IntelSchemasResponse {const IntelSchemasResponse({this.result});
 

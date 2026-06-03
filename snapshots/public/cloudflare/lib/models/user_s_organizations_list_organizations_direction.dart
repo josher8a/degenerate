@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserSOrganizationsListOrganizationsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order organizations.
 @immutable final class UserSOrganizationsListOrganizationsDirection {const UserSOrganizationsListOrganizationsDirection._(this.value);

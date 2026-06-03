@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DigitalExperienceMonitoringPercentiles
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringPercentiles {const DigitalExperienceMonitoringPercentiles({this.p50, this.p90, this.p95, this.p99, });
 

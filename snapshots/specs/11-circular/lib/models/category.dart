@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Category
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Category {const Category({required this.id, required this.name, this.parent, this.children, });
 

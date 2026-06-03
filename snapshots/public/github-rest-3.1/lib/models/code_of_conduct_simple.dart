@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeOfConductSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code of Conduct Simple
 @immutable final class CodeOfConductSimple {const CodeOfConductSimple({required this.url, required this.key, required this.name, required this.htmlUrl, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentFlowsAutomaticPaymentMethodsPaymentIntent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_automatic_payment_methods_payment_intent/allow_redirects.dart';/// 
 @immutable final class PaymentFlowsAutomaticPaymentMethodsPaymentIntent {const PaymentFlowsAutomaticPaymentMethodsPaymentIntent({required this.enabled, this.allowRedirects, });

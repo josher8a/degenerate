@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel._(this.value);
 

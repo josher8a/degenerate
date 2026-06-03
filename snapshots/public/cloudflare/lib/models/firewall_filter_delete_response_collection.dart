@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallFilterDeleteResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filter_delete_response_collection/firewall_filter_delete_response_collection_result.dart';@immutable final class FirewallFilterDeleteResponseCollection {const FirewallFilterDeleteResponseCollection({this.result});
 

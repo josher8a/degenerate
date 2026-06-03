@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSupportCohortFetchResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_support_cohort.dart';@immutable final class MconnSupportCohortFetchResponse {const MconnSupportCohortFetchResponse({this.result});
 

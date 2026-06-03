@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureConfidenceIntervals (inline: ConfidenceIntervals > SuggestedThreshold > ConfidenceIntervals)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_confidence_intervals_bounds.dart';@immutable final class SuggestedThresholdConfidenceIntervals {const SuggestedThresholdConfidenceIntervals({this.p90, this.p95, this.p99, });
 

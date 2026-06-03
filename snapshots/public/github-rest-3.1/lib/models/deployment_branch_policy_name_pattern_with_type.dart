@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeploymentBranchPolicyNamePatternWithType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_name_pattern_with_type/deployment_branch_policy_name_pattern_with_type_type.dart';@immutable final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
 

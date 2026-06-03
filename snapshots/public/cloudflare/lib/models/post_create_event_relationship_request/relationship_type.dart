@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostCreateEventRelationshipRequest (inline: RelationshipType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of relationship to create between parent and child events
 @immutable final class RelationshipType {const RelationshipType._(this.value);

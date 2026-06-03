@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningAlertResolutionComment
 
 /// An optional comment when closing or reopening an alert. Cannot be updated or deleted.
 extension type const SecretScanningAlertResolutionComment(String value) {

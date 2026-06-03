@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetSearchGlobalResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_search_global_response/search.dart';@immutable final class RadarGetSearchGlobalResponseResult {const RadarGetSearchGlobalResponseResult({required this.search});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityDomain (inline: EmailsProcessed)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailsProcessed {const EmailsProcessed({required this.timestamp, required this.totalEmailsProcessed, required this.totalEmailsProcessedPrevious, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeRuntimeHandler
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
 @immutable final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name = '', });

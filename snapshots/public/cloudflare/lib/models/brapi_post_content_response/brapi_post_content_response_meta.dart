@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostContentResponse (inline: Meta)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostContentResponseMeta {const BrapiPostContentResponseMeta({this.status, this.title, });
 

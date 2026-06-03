@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateAccountRulesetRuleRequest (inline: Position > Variant3)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PositionVariant3 {const PositionVariant3({this.index});
 

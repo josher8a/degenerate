@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositorySubscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Repository invitations let you manage who you collaborate with.
 @immutable final class RepositorySubscription {const RepositorySubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, required this.repositoryUrl, });

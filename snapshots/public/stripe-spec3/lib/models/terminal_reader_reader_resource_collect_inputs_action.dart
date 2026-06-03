@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TerminalReaderReaderResourceCollectInputsAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_input.dart';/// Represents a reader action to collect customer inputs
 @immutable final class TerminalReaderReaderResourceCollectInputsAction {const TerminalReaderReaderResourceCollectInputsAction({required this.inputs, this.metadata, });

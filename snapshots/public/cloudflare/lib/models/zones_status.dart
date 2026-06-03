@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Page Rule.
 @immutable final class ZonesStatus {const ZonesStatus._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Issue (inline: PullRequest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuePullRequest {const IssuePullRequest({required this.diffUrl, required this.htmlUrl, required this.patchUrl, required this.url, this.mergedAt, });
 

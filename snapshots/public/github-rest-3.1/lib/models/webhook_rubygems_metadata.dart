@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookRubygemsMetadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_rubygems_metadata/version_info.dart';@immutable final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
 

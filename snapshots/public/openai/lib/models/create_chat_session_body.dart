@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateChatSessionBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chatkit_configuration_param.dart';import 'package:pub_openai/models/expires_after_param.dart';import 'package:pub_openai/models/rate_limits_param.dart';import 'package:pub_openai/models/workflow_param.dart';/// Parameters for provisioning a new ChatKit session.
 @immutable final class CreateChatSessionBody {const CreateChatSessionBody({required this.workflow, required this.user, this.expiresAfter, this.rateLimits, this.chatkitConfiguration, });

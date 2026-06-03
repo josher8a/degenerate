@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesOwnershipVerification (inline: Txt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS Record type.
 @immutable final class TxtType {const TxtType._(this.value);

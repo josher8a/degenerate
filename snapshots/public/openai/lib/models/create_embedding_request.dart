@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateEmbeddingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_embedding_request/create_embedding_request_input.dart';import 'package:pub_openai/models/create_embedding_request/create_embedding_request_model.dart';/// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
 @immutable final class EncodingFormat {const EncodingFormat._(this.value);

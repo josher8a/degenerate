@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesWorkersPipelinesBindingSource (inline: Format)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the format of data to deliver.
 @immutable final class CloudflarePipelinesWorkersPipelinesBindingSourceFormat {const CloudflarePipelinesWorkersPipelinesBindingSourceFormat._(this.value);

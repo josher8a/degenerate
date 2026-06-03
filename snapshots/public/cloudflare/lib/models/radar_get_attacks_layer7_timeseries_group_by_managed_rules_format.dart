@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat._(this.value);

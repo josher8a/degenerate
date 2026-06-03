@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CheckoutCustomerBalanceBankTransferPaymentMethodOptions (inline: RequestedAddressTypes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes {const CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes._(this.value);
 

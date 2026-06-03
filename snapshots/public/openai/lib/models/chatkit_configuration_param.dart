@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChatkitConfigurationParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/automatic_thread_titling_param.dart';import 'package:pub_openai/models/file_upload_param.dart';import 'package:pub_openai/models/history_param.dart';/// Optional per-session configuration settings for ChatKit behavior.
 @immutable final class ChatkitConfigurationParam {const ChatkitConfigurationParam({this.automaticThreadTitling, this.fileUpload, this.history, });

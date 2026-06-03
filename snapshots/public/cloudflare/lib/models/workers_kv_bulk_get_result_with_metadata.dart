@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersKvBulkGetResultWithMetadata
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_bulk_get_result_with_metadata/workers_kv_bulk_get_result_with_metadata_values_value.dart';@immutable final class WorkersKvBulkGetResultWithMetadata {const WorkersKvBulkGetResultWithMetadata({this.values});
 

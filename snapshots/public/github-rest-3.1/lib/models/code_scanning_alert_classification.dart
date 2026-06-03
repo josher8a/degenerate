@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeScanningAlertClassification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A classification of the file. For example to identify it as generated.
 @immutable final class CodeScanningAlertClassification {const CodeScanningAlertClassification._(this.value);

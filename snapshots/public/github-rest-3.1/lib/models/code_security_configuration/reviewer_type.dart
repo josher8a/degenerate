@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningDelegatedBypassOptions > Reviewers > ReviewerType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the bypass reviewer
 @immutable final class ReviewerType {const ReviewerType._(this.value);

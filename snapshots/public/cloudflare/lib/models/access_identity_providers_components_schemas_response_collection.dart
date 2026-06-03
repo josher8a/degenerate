@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessIdentityProvidersComponentsSchemasResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identity_providers_components_schemas_response_collection/access_identity_providers_components_schemas_response_collection_result.dart';@immutable final class AccessIdentityProvidersComponentsSchemasResponseCollection {const AccessIdentityProvidersComponentsSchemasResponseCollection({this.result});
 

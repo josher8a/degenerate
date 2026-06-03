@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AddressingIpamDelegations
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_delegated_account_identifier.dart';import 'package:pub_cloudflare/models/addressing_delegation_identifier.dart';import 'package:pub_cloudflare/models/addressing_prefix_identifier.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';@immutable final class AddressingIpamDelegations {const AddressingIpamDelegations({this.cidr, this.createdAt, this.delegatedAccountId, this.id, this.modifiedAt, this.parentPrefixId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GistsCreateCommentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistsCreateCommentRequest {const GistsCreateCommentRequest({required this.body});
 

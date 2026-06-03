@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecretScanningLocationCommit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'commit' secret scanning location type. This location type shows that a secret was detected inside a commit to a repository.
 @immutable final class SecretScanningLocationCommit {const SecretScanningLocationCommit({required this.path, required this.startLine, required this.endLine, required this.startColumn, required this.endColumn, required this.blobSha, required this.blobUrl, required this.commitSha, required this.commitUrl, });

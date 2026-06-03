@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitDaywiseStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitDaywiseStats {const RealtimekitDaywiseStats({this.date, this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
 

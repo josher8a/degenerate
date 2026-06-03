@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Stripe > UsageEvents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageEvents {const UsageEvents({required this.payload});
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountRequest (inline: Documents > ProofOfRegistration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/signer.dart';@immutable final class ProofOfRegistration {const ProofOfRegistration({this.files, this.signer, });
 

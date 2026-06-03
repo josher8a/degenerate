@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MconnSnapshotTunnel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Tunnels
 @immutable final class MconnSnapshotTunnel {const MconnSnapshotTunnel({required this.healthState, required this.healthValue, required this.interfaceName, required this.tunnelId, this.connectorId, this.probedMtu, this.recentHealthyPings, this.recentUnhealthyPings, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecondaryDnsComponentsSchemasSingleResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_acl.dart';@immutable final class SecondaryDnsComponentsSchemasSingleResponse {const SecondaryDnsComponentsSchemasSingleResponse({this.result});
 

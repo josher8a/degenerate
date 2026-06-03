@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksSecurityAdvisory (inline: Identifiers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryIdentifiers {const WebhooksSecurityAdvisoryIdentifiers({required this.type, required this.value, });
 

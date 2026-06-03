@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerSearchScansResponse2 (inline: Results > Stats)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultsStats {const ResultsStats({required this.dataLength, required this.requests, required this.uniqCountries, required this.uniqIPs, });
 

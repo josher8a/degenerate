@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseTeamsCreateRequest (inline: OrganizationSelectionType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies which organizations in the enterprise should have access to this team. Can be one of `disabled`, `selected`, or `all`.
 /// `disabled`: The team is not assigned to any organizations. This is the default when you create a new team.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TranscriptTextUsageTokens (inline: InputTokenDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the input tokens billed for this request.
 @immutable final class TranscriptTextUsageTokensInputTokenDetails {const TranscriptTextUsageTokensInputTokenDetails({this.textTokens, this.audioTokens, });

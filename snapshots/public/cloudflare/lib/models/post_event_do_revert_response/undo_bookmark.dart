@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventDoRevertResponse (inline: Properties > UndoBookmark)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UndoBookmark {const UndoBookmark({required this.type});
 

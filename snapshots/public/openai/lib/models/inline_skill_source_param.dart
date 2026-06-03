@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/InlineSkillSourceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the inline skill source. Must be `base64`.
 @immutable final class InlineSkillSourceParamType {const InlineSkillSourceParamType._(this.value);

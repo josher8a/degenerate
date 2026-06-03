@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsVariable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsVariable {const ActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, });
 

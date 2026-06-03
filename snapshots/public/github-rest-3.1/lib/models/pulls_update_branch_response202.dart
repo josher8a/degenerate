@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PullsUpdateBranchResponse202
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsUpdateBranchResponse202 {const PullsUpdateBranchResponse202({this.message, this.url, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TlsCertificatesAndHostnamesAdvancedCertificatePackResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack.dart';@immutable final class TlsCertificatesAndHostnamesAdvancedCertificatePackResponseSingle {const TlsCertificatesAndHostnamesAdvancedCertificatePackResponseSingle({this.result});
 

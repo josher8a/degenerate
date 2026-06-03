@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessPolicyUpdateResp (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_test_id.dart';/// The percentage of (processed) users approved based on policy evaluation results.
 extension type const AccessPercentApproved(int value) {

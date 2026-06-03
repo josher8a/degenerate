@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitOverallStats
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitOverallStats {const RealtimekitOverallStats({this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitModified
 
 /// The date and time the item was last modified.
 extension type RealtimekitModified(DateTime value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesLocationsContinent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by continent code.
 @immutable final class RadarGetEntitiesLocationsContinent {const RadarGetEntitiesLocationsContinent._(this.value);

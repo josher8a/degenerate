@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesR2TablePublic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public/rolling_policy.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/file_naming.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/partitioning.dart';/// R2 Sink public configuration.
 @immutable final class CloudflarePipelinesR2TablePublic {const CloudflarePipelinesR2TablePublic({required this.accountId, required this.bucket, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });

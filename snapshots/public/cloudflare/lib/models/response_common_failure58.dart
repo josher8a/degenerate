@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommonFailure58
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_v4error.dart';@immutable final class ResponseCommonFailure58 {const ResponseCommonFailure58({required this.errors, required this.result, required this.success, });
 

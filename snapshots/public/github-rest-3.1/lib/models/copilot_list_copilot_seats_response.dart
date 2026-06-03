@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CopilotListCopilotSeatsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_seat_details.dart';@immutable final class CopilotListCopilotSeatsResponse {const CopilotListCopilotSeatsResponse({this.totalSeats, this.seats, });
 

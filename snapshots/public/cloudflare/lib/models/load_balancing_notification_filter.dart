@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingNotificationFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_filter_options.dart';/// Filter pool and origin health notifications by resource type or health status. Use null to reset.
 /// 

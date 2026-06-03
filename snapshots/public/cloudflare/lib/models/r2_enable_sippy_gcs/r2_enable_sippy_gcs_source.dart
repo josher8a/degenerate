@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2EnableSippyGcs (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyGcsSourceProvider {const R2EnableSippyGcsSourceProvider._(this.value);
 

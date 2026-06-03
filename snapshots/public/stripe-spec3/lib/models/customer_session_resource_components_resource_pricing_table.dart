@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponentsResourcePricingTable
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This hash contains whether the pricing table is enabled.
 @immutable final class CustomerSessionResourceComponentsResourcePricingTable {const CustomerSessionResourceComponentsResourcePricingTable({required this.enabled});

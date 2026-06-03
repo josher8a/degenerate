@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayApplicationsReviewStatusResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_applications_review_status_response_content.dart';@immutable final class ZeroTrustGatewayApplicationsReviewStatusResponse {const ZeroTrustGatewayApplicationsReviewStatusResponse({this.result});
 

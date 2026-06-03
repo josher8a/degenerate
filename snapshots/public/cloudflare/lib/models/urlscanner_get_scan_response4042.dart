@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse4042
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response400/urlscanner_create_scan_bulk_response400_errors.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_dom_response404/urlscanner_get_scan_dom_response404_task.dart';@immutable final class UrlscannerGetScanResponse4042 {const UrlscannerGetScanResponse4042({required this.errors, required this.message, required this.status, required this.task, });
 

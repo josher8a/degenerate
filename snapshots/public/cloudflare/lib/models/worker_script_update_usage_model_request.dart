@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkerScriptUpdateUsageModelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_usage_model.dart';import 'package:pub_cloudflare/models/workers_user_limits.dart';@immutable final class WorkerScriptUpdateUsageModelRequest {const WorkerScriptUpdateUsageModelRequest({this.usageModel, this.userLimits, });
 

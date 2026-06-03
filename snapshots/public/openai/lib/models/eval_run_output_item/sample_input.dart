@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EvalRunOutputItem (inline: Sample > Input)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An input message.
 @immutable final class SampleInput {const SampleInput({required this.role, required this.content, });

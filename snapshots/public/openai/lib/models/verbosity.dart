@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Verbosity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains the verbosity of the model's response. Lower values will result in
 /// more concise responses, while higher values will result in more verbose responses.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentLinksResourceOptionalItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_optional_item_adjustable_quantity.dart';/// 
 @immutable final class PaymentLinksResourceOptionalItem {const PaymentLinksResourceOptionalItem({required this.price, required this.quantity, this.adjustableQuantity, });

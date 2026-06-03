@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAllowedMethods
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAllowedMethods2 {const AccessAllowedMethods2._(this.value);
 

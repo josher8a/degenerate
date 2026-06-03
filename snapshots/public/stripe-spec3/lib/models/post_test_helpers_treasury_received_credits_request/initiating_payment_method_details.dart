@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryReceivedCreditsRequest (inline: InitiatingPaymentMethodDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers/inbound_transfers_type.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request/initiating_payment_method_details_us_bank_account.dart';/// Initiating payment method details for the object.
 @immutable final class InitiatingPaymentMethodDetails {const InitiatingPaymentMethodDetails({required this.type, this.usBankAccount, });

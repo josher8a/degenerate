@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest (inline: InteracPresent)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Simulated data for the interac_present payment method.
 @immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent({this.number});

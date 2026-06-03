@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksListSuitesForRefResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite.dart';@immutable final class ChecksListSuitesForRefResponse {const ChecksListSuitesForRefResponse({required this.totalCount, required this.checkSuites, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateValidationRequestRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';@immutable final class CreateValidationRequestRequest {const CreateValidationRequestRequest({required this.phoneNumber, this.friendlyName, this.callDelay, this.$extension, this.statusCallback, this.statusCallbackMethod, });
 

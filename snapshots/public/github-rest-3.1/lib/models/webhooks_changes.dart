@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksChanges
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes/webhooks_changes_body.dart';/// The changes to the comment.
 @immutable final class WebhooksChanges {const WebhooksChanges({this.body});

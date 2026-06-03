@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageRulesListPageRulesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned Page Rules.
 @immutable final class PageRulesListPageRulesOrder {const PageRulesListPageRulesOrder._(this.value);

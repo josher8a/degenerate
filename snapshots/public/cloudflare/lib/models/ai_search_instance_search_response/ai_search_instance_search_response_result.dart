@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AiSearchInstanceSearchResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/chunks.dart';@immutable final class AiSearchInstanceSearchResponseResult {const AiSearchInstanceSearchResponseResult({required this.chunks, required this.searchQuery, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class EmailSent {const EmailSent({required this.emailSentAt, required this.emailSentTo, });

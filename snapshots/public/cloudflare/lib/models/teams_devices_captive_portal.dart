@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesCaptivePortal
 
 /// Turn on the captive portal after the specified amount of time.
 extension type const TeamsDevicesCaptivePortal(double value) {

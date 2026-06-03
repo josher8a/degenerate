@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFunctionCallArgumentsDeltaEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when there is a partial function-call arguments delta.
 @immutable final class ResponseFunctionCallArgumentsDeltaEvent {const ResponseFunctionCallArgumentsDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, required this.delta, });

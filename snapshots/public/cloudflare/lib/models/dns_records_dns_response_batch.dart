@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsDnsResponseBatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_batch_object.dart';@immutable final class DnsRecordsDnsResponseBatch {const DnsRecordsDnsResponseBatch({this.result});
 

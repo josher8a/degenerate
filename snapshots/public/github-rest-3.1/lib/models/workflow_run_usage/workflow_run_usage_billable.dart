@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkflowRunUsage (inline: Billable)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_run_usage/workflow_run_usage_billable_macos.dart';import 'package:pub_github_rest_3_1/models/workflow_run_usage/workflow_run_usage_billable_ubuntu.dart';import 'package:pub_github_rest_3_1/models/workflow_run_usage/workflow_run_usage_billable_windows.dart';@immutable final class WorkflowRunUsageBillable {const WorkflowRunUsageBillable({this.ubuntu, this.macos, this.windows, });
 

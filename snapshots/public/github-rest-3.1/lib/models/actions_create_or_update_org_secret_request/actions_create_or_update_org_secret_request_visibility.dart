@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCreateOrUpdateOrgSecretRequest (inline: Visibility)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a secret
 @immutable final class ActionsCreateOrUpdateOrgSecretRequestVisibility {const ActionsCreateOrUpdateOrgSecretRequestVisibility._(this.value);

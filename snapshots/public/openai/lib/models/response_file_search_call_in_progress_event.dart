@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseFileSearchCallInProgressEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Emitted when a file search call is initiated.
 @immutable final class ResponseFileSearchCallInProgressEvent {const ResponseFileSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });

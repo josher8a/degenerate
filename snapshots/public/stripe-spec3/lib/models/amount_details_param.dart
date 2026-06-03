@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AmountDetailsParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_param/amount_details_param_line_items.dart';import 'package:pub_stripe_spec3/models/amount_details_param/amount_details_param_shipping.dart';import 'package:pub_stripe_spec3/models/amount_details_param/amount_details_param_tax.dart';import 'package:pub_stripe_spec3/models/amount_details_param/discount_amount.dart';import 'package:pub_stripe_spec3/models/amount_details_param/line_items_variant1.dart';import 'package:pub_stripe_spec3/models/amount_details_shipping_param.dart';import 'package:pub_stripe_spec3/models/amount_details_tax_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class AmountDetailsParam {const AmountDetailsParam({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 

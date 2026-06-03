@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksProjectChanges (inline: ArchivedAt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArchivedAt {const ArchivedAt({this.from, this.to, });
 

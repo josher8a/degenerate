@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FundingInstructions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions/funding_instructions_funding_type.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FundingInstructionsObject {const FundingInstructionsObject._(this.value);

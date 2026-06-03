@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreSearchRequest (inline: RankingOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable re-ranking; set to `none` to disable, which can help reduce latency.
 @immutable final class Ranker {const Ranker._(this.value);

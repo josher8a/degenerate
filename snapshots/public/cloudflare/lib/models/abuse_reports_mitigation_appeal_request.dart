@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsMitigationAppealRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_appeal.dart';@immutable final class AbuseReportsMitigationAppealRequest {const AbuseReportsMitigationAppealRequest({required this.appeals});
 

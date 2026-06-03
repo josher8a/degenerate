@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CloudflarePipelinesFieldType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/binary.dart';import 'package:pub_cloudflare/models/bool.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_list_field.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_source_field.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_struct_field.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_timestamp_field.dart';import 'package:pub_cloudflare/models/float32.dart';import 'package:pub_cloudflare/models/float64.dart';import 'package:pub_cloudflare/models/int32.dart';import 'package:pub_cloudflare/models/int64.dart';import 'package:pub_cloudflare/models/json.dart';import 'package:pub_cloudflare/models/string_model.dart';sealed class CloudflarePipelinesFieldType {const CloudflarePipelinesFieldType();
 

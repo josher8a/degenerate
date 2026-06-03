@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MagicWanStaticAddressing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';import 'package:pub_cloudflare/models/magic_ip_address.dart';/// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
 @immutable final class MagicWanStaticAddressing {const MagicWanStaticAddressing({required this.address, required this.gatewayAddress, this.secondaryAddress, });

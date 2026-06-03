@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpoofFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
 @immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofFormat {const RadarGetEmailSecurityTimeseriesGroupBySpoofFormat._(this.value);

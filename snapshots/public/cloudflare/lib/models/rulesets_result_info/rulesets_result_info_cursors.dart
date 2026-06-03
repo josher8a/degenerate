@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RulesetsResultInfo (inline: Cursors)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_cursor.dart';/// The set of cursors.
 @immutable final class RulesetsResultInfoCursors {const RulesetsResultInfoCursors({required this.after});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TopOriginLocationsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_attacks_response/radar_get_attacks_layer3_top_attacks_response_result_meta.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_origin_locations_response/radar_get_attacks_layer3_top_origin_locations_response_result_top0.dart';@immutable final class RadarGetAttacksLayer3TopOriginLocationsResponseResult {const RadarGetAttacksLayer3TopOriginLocationsResponseResult({required this.meta, required this.top0, });
 

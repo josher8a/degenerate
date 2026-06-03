@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostPromotionCodesRequest (inline: Promotion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_type.dart';/// The promotion referenced by this promotion code.
 @immutable final class Promotion {const Promotion({required this.type, this.coupon, });

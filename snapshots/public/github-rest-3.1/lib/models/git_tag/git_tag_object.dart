@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GitTag (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTagObject {const GitTagObject({required this.sha, required this.type, required this.url, });
 

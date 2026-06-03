@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FirewallCountryConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `country` when specifying a country code in the rule.
 @immutable final class FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget._(this.value);

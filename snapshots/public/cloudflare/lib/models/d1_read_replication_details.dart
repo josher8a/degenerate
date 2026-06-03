@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/D1ReadReplicationDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_read_replication_mode.dart';/// Configuration for D1 read replication.
 @immutable final class D1ReadReplicationDetails {const D1ReadReplicationDetails({required this.mode});

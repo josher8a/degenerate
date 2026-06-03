@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateNewSigningKeyRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateNewSigningKeyRequest {const CreateNewSigningKeyRequest({this.friendlyName});
 

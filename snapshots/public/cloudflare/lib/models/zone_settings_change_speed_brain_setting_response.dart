@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZoneSettingsChangeSpeedBrainSettingResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/speed_base.dart';import 'package:pub_cloudflare/models/speed_messages2.dart';@immutable final class ZoneSettingsChangeSpeedBrainSettingResponse {const ZoneSettingsChangeSpeedBrainSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 

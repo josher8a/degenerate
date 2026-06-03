@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsListEnvironmentVariablesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_variable.dart';@immutable final class ActionsListEnvironmentVariablesResponse {const ActionsListEnvironmentVariablesResponse({required this.totalCount, required this.variables, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksDeployKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [`deploy key`](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key) resource.
 @immutable final class WebhooksDeployKey {const WebhooksDeployKey({required this.createdAt, required this.id, required this.key, required this.readOnly, required this.title, required this.url, required this.verified, this.addedBy, this.lastUsed, this.enabled, });

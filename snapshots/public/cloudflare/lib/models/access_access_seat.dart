@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessAccessSeat
 
 /// True if the seat is part of Access.
 extension type const AccessAccessSeat(bool value) {

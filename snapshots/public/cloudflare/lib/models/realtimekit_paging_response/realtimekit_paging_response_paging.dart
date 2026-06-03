@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimekitPagingResponse (inline: Paging)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPagingResponsePaging {const RealtimekitPagingResponsePaging({required this.endOffset, required this.startOffset, required this.totalCount, });
 

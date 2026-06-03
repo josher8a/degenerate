@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeBetaServerEventResponseTextDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.done`.
 @immutable final class RealtimeBetaServerEventResponseTextDoneType {const RealtimeBetaServerEventResponseTextDoneType._(this.value);

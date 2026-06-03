@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UserMessageItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/attachment.dart';import 'package:pub_openai/models/inference_options.dart';import 'package:pub_openai/models/user_message_item/user_message_item_content.dart';/// User-authored messages within a thread.
 @immutable final class UserMessageItem {const UserMessageItem({required this.id, required this.createdAt, required this.threadId, required this.content, required this.attachments, required this.inferenceOptions, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.user_message', });

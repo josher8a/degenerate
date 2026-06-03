@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EmailSecurityMailsearchMessage (inline: Findings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';@immutable final class Findings {const Findings({this.attachment, this.detail, this.detection, this.field, this.name, this.portion, this.reason, this.score, this.value, });
 

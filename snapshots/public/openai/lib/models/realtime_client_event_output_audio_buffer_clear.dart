@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RealtimeClientEventOutputAudioBufferClear
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// **WebRTC/SIP Only:** Emit to cut off the current audio response. This will trigger the server to
 /// stop generating audio and emit a `output_audio_buffer.cleared` event. This

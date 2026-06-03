@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreFileObject (inline: LastError)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `unsupported_file`, or `invalid_file`.
 @immutable final class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode._(this.value);

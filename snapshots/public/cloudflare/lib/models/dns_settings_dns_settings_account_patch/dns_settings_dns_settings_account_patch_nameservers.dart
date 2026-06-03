@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsSettingsDnsSettingsAccountPatch (inline: Nameservers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_account_patch/dns_settings_dns_settings_account_patch_nameservers_type.dart';/// Settings determining the nameservers through which the zone should be available.
 @immutable final class DnsSettingsDnsSettingsAccountPatchNameservers {const DnsSettingsDnsSettingsAccountPatchNameservers({this.type});

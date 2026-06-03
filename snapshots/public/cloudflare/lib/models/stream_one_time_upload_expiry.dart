@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamOneTimeUploadExpiry
 
 /// The date and time when the video upload URL is no longer valid for direct user uploads.
 extension type StreamOneTimeUploadExpiry(DateTime value) {

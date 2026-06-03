@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingAdaptiveRouting
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls features that modify the routing of requests to pools and origins in response to dynamic conditions, such as during the interval between active health monitoring requests. For example, zero-downtime failover occurs immediately when an origin becomes unavailable due to HTTP 521, 522, or 523 response codes. If there is another healthy origin in the same pool, the request is retried once against this alternate origin.
 @immutable final class LoadBalancingAdaptiveRouting {const LoadBalancingAdaptiveRouting({this.failoverAcrossPools = false});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesSecurityHeaderValue (inline: StrictTransportSecurity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Strict Transport Security.
 @immutable final class StrictTransportSecurity {const StrictTransportSecurity({this.enabled, this.includeSubdomains, this.maxAge, this.nosniff, this.preload, });

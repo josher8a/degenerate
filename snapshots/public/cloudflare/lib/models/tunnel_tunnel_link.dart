@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelTunnelLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';/// The id of the tunnel linked and the date that link was created.
 @immutable final class TunnelTunnelLink {const TunnelTunnelLink({this.createdAt, this.linkedTunnelId, });

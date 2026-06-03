@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/UrlscannerGetScanResponse (inline: Result > Scan > Performance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScanPerformance {const ScanPerformance({required this.connectEnd, required this.connectStart, required this.decodedBodySize, required this.domComplete, required this.domContentLoadedEventEnd, required this.domContentLoadedEventStart, required this.domInteractive, required this.domainLookupEnd, required this.domainLookupStart, required this.duration, required this.encodedBodySize, required this.entryType, required this.fetchStart, required this.initiatorType, required this.loadEventEnd, required this.loadEventStart, required this.name, required this.nextHopProtocol, required this.redirectCount, required this.redirectEnd, required this.redirectStart, required this.requestStart, required this.responseEnd, required this.responseStart, required this.secureConnectionStart, required this.startTime, required this.transferSize, required this.type, required this.unloadEventEnd, required this.unloadEventStart, required this.workerStart, });
 

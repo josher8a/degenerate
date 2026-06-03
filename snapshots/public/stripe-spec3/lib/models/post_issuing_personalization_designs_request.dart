@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingPersonalizationDesignsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/preferences.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_request/post_issuing_personalization_designs_request_carrier_text.dart';@immutable final class PostIssuingPersonalizationDesignsRequest {const PostIssuingPersonalizationDesignsRequest({required this.physicalBundle, this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.preferences, this.transferLookupKey, });
 

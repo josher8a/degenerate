@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ImagesImageBasicUpload
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageBasicUpload {const ImagesImageBasicUpload({this.creator, this.file, this.id, this.metadata, this.requireSignedUrLs = false, this.url, });
 

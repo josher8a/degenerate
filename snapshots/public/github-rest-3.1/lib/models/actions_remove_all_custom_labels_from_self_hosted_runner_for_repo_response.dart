@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_label.dart';@immutable final class ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse {const ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse({required this.totalCount, required this.labels, });
 

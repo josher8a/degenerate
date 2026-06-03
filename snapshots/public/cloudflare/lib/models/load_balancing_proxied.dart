@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LoadBalancingProxied
 
 /// Whether the hostname should be gray clouded (false) or orange clouded (true).
 extension type const LoadBalancingProxied(bool value) {

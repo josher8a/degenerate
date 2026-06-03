@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetLeakedCredentialChecksTimeseriesGroupResponse400
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponse400 {const RadarGetLeakedCredentialChecksTimeseriesGroupResponse400({required this.errors, required this.result, required this.success, });
 

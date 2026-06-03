@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqEventSourceWorkersBuildsWorker
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
 @immutable final class MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/OrgMembership
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_permissions.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_state.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The user's membership type in the organization.
 @immutable final class OrgMembershipRole {const OrgMembershipRole._(this.value);

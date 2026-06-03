@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelOriginRequest (inline: Access)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For all L7 requests to this hostname, cloudflared will validate each request's Cf-Access-Jwt-Assertion request header.
 @immutable final class Access {const Access({required this.audTag, required this.teamName, this.$required, });

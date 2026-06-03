@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasLoginDesign
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasLoginDesign {const AccessSchemasLoginDesign({this.backgroundColor, this.footerText, this.headerText, this.logoPath, this.textColor, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountsTurnstileWidgetsListOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order widgets by.
 @immutable final class AccountsTurnstileWidgetsListOrder {const AccountsTurnstileWidgetsListOrder._(this.value);

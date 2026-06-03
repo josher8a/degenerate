@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2DataCatalogCatalogMaintenanceState
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the state of maintenance operations.
 @immutable final class R2DataCatalogCatalogMaintenanceState {const R2DataCatalogCatalogMaintenanceState._(this.value);

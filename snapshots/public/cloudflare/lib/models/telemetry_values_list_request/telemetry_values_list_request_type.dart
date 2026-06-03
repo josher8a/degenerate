@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TelemetryValuesListRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryValuesListRequestType {const TelemetryValuesListRequestType._(this.value);
 

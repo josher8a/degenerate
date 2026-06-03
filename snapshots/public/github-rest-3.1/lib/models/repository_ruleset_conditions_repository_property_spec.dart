@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRulesetConditionsRepositoryPropertySpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the repository property. Defaults to 'custom' if not specified.
 @immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);

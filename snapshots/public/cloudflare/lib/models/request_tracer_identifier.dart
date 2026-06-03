@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RequestTracerIdentifier
 
 /// Identifier.
 extension type const RequestTracerIdentifier(String value) {

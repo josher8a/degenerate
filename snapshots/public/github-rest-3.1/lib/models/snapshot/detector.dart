@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Snapshot (inline: Detector)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of the detector used.
 @immutable final class Detector {const Detector({required this.name, required this.version, required this.url, });

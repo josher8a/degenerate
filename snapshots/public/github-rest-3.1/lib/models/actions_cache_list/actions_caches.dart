@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActionsCacheList (inline: ActionsCaches)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCaches {const ActionsCaches({this.id, this.ref, this.key, this.version, this.lastAccessedAt, this.createdAt, this.sizeInBytes, });
 

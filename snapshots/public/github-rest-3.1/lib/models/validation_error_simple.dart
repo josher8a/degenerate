@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ValidationErrorSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validation Error Simple
 @immutable final class ValidationErrorSimple {const ValidationErrorSimple({required this.message, required this.documentationUrl, this.errors, });

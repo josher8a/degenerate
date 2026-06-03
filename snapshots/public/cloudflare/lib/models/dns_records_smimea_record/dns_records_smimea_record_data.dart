@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsRecordsSmimeaRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a SMIMEA record.
 @immutable final class DnsRecordsSmimeaRecordData {const DnsRecordsSmimeaRecordData({this.certificate, this.matchingType, this.selector, this.usage, });

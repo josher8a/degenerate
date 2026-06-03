@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SmartshieldDescription
 
 /// A human-readable description of the health check.
 extension type const SmartshieldDescription(String value) {

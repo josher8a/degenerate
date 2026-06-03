@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IamCreateAccount (inline: Unit)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
 @immutable final class Unit {const Unit({this.id});

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeletedThreadResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `chatkit.thread.deleted`.
 @immutable final class DeletedThreadResourceObject {const DeletedThreadResourceObject._(this.value);

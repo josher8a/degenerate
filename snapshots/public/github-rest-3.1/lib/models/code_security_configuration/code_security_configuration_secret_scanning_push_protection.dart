@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningPushProtection)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning push protection
 @immutable final class CodeSecurityConfigurationSecretScanningPushProtection {const CodeSecurityConfigurationSecretScanningPushProtection._(this.value);

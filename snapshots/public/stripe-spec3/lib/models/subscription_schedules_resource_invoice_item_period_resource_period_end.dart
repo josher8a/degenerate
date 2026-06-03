@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_invoice_item_period_resource_period_end/subscription_schedules_resource_invoice_item_period_resource_period_end_type.dart';/// 
 @immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd({required this.type, this.timestamp, });

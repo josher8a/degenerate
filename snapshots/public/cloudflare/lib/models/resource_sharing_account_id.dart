@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResourceSharingAccountId
 
 /// Account identifier.
 extension type const ResourceSharingAccountId(String value) {

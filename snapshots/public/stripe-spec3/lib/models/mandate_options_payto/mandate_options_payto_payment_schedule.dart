@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MandateOptionsPayto (inline: PaymentSchedule)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The periodicity at which payments will be collected. Defaults to `adhoc`.
 @immutable final class MandateOptionsPaytoPaymentSchedule {const MandateOptionsPaytoPaymentSchedule._(this.value);

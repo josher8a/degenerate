@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookIssuesDemilestoned (inline: Issue > Labels)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesDemilestonedIssueLabels {const WebhookIssuesDemilestonedIssueLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
 

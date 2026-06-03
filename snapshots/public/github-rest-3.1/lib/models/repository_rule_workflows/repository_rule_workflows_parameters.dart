@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RepositoryRuleWorkflows (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_workflow_file_reference.dart';@immutable final class RepositoryRuleWorkflowsParameters {const RepositoryRuleWorkflowsParameters({required this.workflows, this.doNotEnforceOnCreate, });
 

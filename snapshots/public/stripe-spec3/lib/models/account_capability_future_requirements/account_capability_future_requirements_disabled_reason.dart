@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountCapabilityFutureRequirements (inline: DisabledReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This is typed as an enum for consistency with `requirements.disabled_reason`, but it safe to assume `future_requirements.disabled_reason` is null because fields in `future_requirements` will never disable the account.
 @immutable final class AccountCapabilityFutureRequirementsDisabledReason {const AccountCapabilityFutureRequirementsDisabledReason._(this.value);

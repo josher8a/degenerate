@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CodeSecurityConfigurationForRepository
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration_for_repository/code_security_configuration_for_repository_status.dart';/// Code security configuration associated with a repository and attachment status
 @immutable final class CodeSecurityConfigurationForRepository {const CodeSecurityConfigurationForRepository({this.status, this.configuration, });

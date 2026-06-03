@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingGetGithubBillingUsageSummaryReportUserResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingGetGithubBillingUsageSummaryReportUserResponse503 {const BillingGetGithubBillingUsageSummaryReportUserResponse503({this.code, this.message, this.documentationUrl, });
 

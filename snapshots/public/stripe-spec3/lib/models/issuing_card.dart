@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/issuing_card/personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_card/replaced_by.dart';import 'package:pub_stripe_spec3/models/issuing_card/replacement_for.dart';import 'package:pub_stripe_spec3/models/issuing_card_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_card_fraud_warning.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping.dart';import 'package:pub_stripe_spec3/models/issuing_card_wallets.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';/// The reason why the card was canceled.
 @immutable final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);

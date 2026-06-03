@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ModelIdsResponses
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_ids_shared.dart';@immutable final class ResponsesOnlyModel {const ResponsesOnlyModel._(this.value);
 

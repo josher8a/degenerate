@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest (inline: ReturnedDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status/treasury_outbound_payments_resource_returned_status_code.dart';/// Optional hash to set the return code.
 @immutable final class ReturnedDetails {const ReturnedDetails({this.code});

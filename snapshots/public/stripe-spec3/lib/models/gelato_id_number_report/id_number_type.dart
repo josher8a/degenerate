@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoIdNumberReport (inline: IdNumberType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of ID number.
 @immutable final class IdNumberType {const IdNumberType._(this.value);

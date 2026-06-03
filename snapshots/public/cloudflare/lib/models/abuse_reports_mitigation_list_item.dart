@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AbuseReportsMitigationListItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigated_entity_type.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_status.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_type.dart';@immutable final class AbuseReportsMitigationListItem {const AbuseReportsMitigationListItem({required this.effectiveDate, required this.entityId, required this.entityType, required this.id, required this.status, required this.type, });
 

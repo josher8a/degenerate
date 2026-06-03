@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures (inline: PaymentMethodRemove)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether the customer sheet displays the option to remove a saved payment method."
 /// 

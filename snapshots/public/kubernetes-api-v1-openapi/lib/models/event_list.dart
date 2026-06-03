@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EventList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/event.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';/// EventList is a list of events.
 @immutable final class EventList {const EventList({required this.items, this.apiVersion, this.kind, this.metadata, });

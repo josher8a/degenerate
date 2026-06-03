@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GelatoSelfieReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_selfie_report_error.dart';/// Result from a selfie check
 @immutable final class GelatoSelfieReport {const GelatoSelfieReport({required this.status, this.document, this.error, this.selfie, });

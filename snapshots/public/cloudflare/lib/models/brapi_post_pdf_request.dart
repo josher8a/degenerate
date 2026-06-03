@@ -1,3 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrapiPostPdfRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_pdf_request/brapi_post_pdf_request_variant1.dart';import 'package:pub_cloudflare/models/brapi_post_pdf_request/brapi_post_pdf_request_variant2.dart';typedef BrapiPostPdfRequest = OneOf2<BrapiPostPdfRequestVariant1,BrapiPostPdfRequestVariant2>;

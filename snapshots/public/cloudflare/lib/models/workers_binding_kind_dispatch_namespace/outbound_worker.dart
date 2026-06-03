@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersBindingKindDispatchNamespace (inline: Outbound > Worker)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Outbound worker.
 @immutable final class OutboundWorker {const OutboundWorker({this.entrypoint, this.environment, this.service, });

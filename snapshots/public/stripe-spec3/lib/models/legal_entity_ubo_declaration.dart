@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LegalEntityUboDeclaration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class LegalEntityUboDeclaration {const LegalEntityUboDeclaration({this.date, this.ip, this.userAgent, });

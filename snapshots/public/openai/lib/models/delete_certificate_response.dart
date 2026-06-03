@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DeleteCertificateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, must be `certificate.deleted`.
 @immutable final class DeleteCertificateResponseObject {const DeleteCertificateResponseObject._(this.value);

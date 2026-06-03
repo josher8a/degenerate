@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WafOverridesCreateAWafOverrideRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WafOverridesCreateAWafOverrideRequest {const WafOverridesCreateAWafOverrideRequest({required this.urls});
 

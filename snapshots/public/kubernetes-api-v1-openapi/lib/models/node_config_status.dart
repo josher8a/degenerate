@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NodeConfigStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_config_source.dart';/// NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
 @immutable final class NodeConfigStatus {const NodeConfigStatus({this.active, this.assigned, this.error, this.lastKnownGood, });

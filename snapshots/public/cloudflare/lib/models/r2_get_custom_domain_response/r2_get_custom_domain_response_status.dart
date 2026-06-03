@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/R2GetCustomDomainResponse (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ownership status of the domain.
 @immutable final class Ownership {const Ownership._(this.value);

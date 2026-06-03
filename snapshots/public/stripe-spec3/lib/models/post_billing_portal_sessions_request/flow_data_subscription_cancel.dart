@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostBillingPortalSessionsRequest (inline: FlowData > SubscriptionCancel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/retention.dart';@immutable final class FlowDataSubscriptionCancel {const FlowDataSubscriptionCancel({required this.subscription, this.retention, });
 

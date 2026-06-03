@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamVideoClipStandard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_clipped_from_video_uid.dart';import 'package:pub_cloudflare/models/stream_creator.dart';import 'package:pub_cloudflare/models/stream_end_time_seconds.dart';import 'package:pub_cloudflare/models/stream_max_duration_seconds.dart';import 'package:pub_cloudflare/models/stream_require_signed_ur_ls.dart';import 'package:pub_cloudflare/models/stream_start_time_seconds.dart';import 'package:pub_cloudflare/models/stream_thumbnail_timestamp_pct.dart';import 'package:pub_cloudflare/models/stream_watermark_at_upload2.dart';@immutable final class StreamVideoClipStandard {const StreamVideoClipStandard({required this.clippedFromVideoUid, required this.endTimeSeconds, required this.startTimeSeconds, this.allowedOrigins, this.creator, this.maxDurationSeconds, this.requireSignedUrLs, this.thumbnailTimestampPct, this.watermark, });
 

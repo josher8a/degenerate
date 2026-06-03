@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesForwardingUrl (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status code to use for the URL redirect. 301 is a permanent
 /// redirect. 302 is a temporary redirect.

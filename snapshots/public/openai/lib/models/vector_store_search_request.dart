@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorStoreSearchRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/comparison_filter.dart';import 'package:pub_openai/models/compound_filter.dart';import 'package:pub_openai/models/vector_store_search_request/query.dart';import 'package:pub_openai/models/vector_store_search_request/vector_store_search_request_filters.dart';import 'package:pub_openai/models/vector_store_search_request/vector_store_search_request_ranking_options.dart';@immutable final class VectorStoreSearchRequest {const VectorStoreSearchRequest({required this.query, this.rewriteQuery = false, this.maxNumResults = 10, this.filters, this.rankingOptions, });
 

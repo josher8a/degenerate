@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamDownloadsResponseSingle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_downloads.dart';@immutable final class StreamDownloadsResponseSingle {const StreamDownloadsResponseSingle({this.result});
 

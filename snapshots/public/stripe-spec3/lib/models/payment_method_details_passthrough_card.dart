@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentMethodDetailsPassthroughCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class PaymentMethodDetailsPassthroughCard {const PaymentMethodDetailsPassthroughCard({this.brand, this.country, this.expMonth, this.expYear, this.funding, this.last4, });

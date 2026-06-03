@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GraderMulti
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/grader_label_model.dart';import 'package:pub_openai/models/grader_multi/graders.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';/// The object type, which is always `multi`.
 @immutable final class GraderMultiType {const GraderMultiType._(this.value);

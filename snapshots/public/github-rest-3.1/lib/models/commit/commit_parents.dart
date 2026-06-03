@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Commit (inline: Parents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitParents {const CommitParents({required this.sha, required this.url, this.htmlUrl, });
 

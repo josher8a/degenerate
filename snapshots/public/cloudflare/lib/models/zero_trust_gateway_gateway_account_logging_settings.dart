@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayGatewayAccountLoggingSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings/settings_by_rule_type.dart';@immutable final class ZeroTrustGatewayGatewayAccountLoggingSettings {const ZeroTrustGatewayGatewayAccountLoggingSettings({this.redactPii = false, this.settingsByRuleType, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/EnterpriseTeamsUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/organization_selection_type.dart';import 'package:pub_github_rest_3_1/models/enterprise_teams_create_request/sync_to_organizations.dart';@immutable final class EnterpriseTeamsUpdateRequest {const EnterpriseTeamsUpdateRequest({this.name, this.description, this.syncToOrganizations = SyncToOrganizations.disabled, this.organizationSelectionType = OrganizationSelectionType.disabled, this.groupId, });
 

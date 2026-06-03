@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ActivityListPublicEventsResponse503
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListPublicEventsResponse503 {const ActivityListPublicEventsResponse503({this.code, this.message, this.documentationUrl, });
 

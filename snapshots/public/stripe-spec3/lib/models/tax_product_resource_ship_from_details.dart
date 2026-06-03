@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TaxProductResourceShipFromDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_postal_address.dart';/// 
 @immutable final class TaxProductResourceShipFromDetails {const TaxProductResourceShipFromDetails({required this.address});

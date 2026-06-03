@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/StreamOutputResponseCollection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_messages2.dart';import 'package:pub_cloudflare/models/stream_output.dart';@immutable final class StreamOutputResponseCollection {const StreamOutputResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 

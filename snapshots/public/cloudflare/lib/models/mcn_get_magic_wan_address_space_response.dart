@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/McnGetMagicWanAddressSpaceResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_magic_wan_address_space.dart';@immutable final class McnGetMagicWanAddressSpaceResponse {const McnGetMagicWanAddressSpaceResponse({this.result});
 

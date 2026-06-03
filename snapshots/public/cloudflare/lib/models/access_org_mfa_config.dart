@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessOrgMfaConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_mfa_config/allowed_authenticators.dart';/// Configures multi-factor authentication (MFA) settings for an organization.
 @immutable final class AccessOrgMfaConfig {const AccessOrgMfaConfig({this.allowedAuthenticators, this.sessionDuration, });

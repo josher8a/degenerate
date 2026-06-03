@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SnippetsSnippetName
 
 /// Identify the snippet.
 extension type const SnippetsSnippetName(String value) {

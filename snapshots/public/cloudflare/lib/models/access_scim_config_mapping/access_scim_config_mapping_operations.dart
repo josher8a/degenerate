@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessScimConfigMapping (inline: Operations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not this mapping applies to creates, updates, or deletes.
 @immutable final class AccessScimConfigMappingOperations {const AccessScimConfigMappingOperations({this.create, this.delete, this.update, });

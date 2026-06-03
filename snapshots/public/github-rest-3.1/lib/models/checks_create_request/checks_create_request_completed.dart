@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ChecksCreateRequest (inline: Completed)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksCreateRequestCompleted {const ChecksCreateRequestCompleted({required this.status, this.additionalProperties = const {}, });
 

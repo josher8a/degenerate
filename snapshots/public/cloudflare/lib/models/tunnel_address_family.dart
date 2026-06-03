@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelAddressFamily
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// IP address family, either `v4` (IPv4) or `v6` (IPv6)
 @immutable final class TunnelAddressFamily {const TunnelAddressFamily._(this.value);

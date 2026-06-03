@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BotManagementOptimizeWordpressTurnedOn
 
 /// Indicates that the zone's wordpress optimization for SBFM is turned on.
 extension type const BotManagementOptimizeWordpressTurnedOn(bool value) {

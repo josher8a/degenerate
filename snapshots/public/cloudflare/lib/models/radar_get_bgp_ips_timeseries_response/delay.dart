@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpIpsTimeseriesResponse (inline: Result > Meta > Delay)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/asn_data.dart';import 'package:pub_cloudflare/models/radar_get_bgp_ips_timeseries_response/country_data.dart';@immutable final class Delay {const Delay({required this.asnData, required this.countryData, required this.healthy, required this.nowTs, });
 

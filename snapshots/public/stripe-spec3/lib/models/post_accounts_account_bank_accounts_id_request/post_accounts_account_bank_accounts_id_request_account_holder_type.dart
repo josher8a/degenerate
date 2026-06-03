@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountBankAccountsIdRequest (inline: AccountHolderType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
 @immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType._(this.value);

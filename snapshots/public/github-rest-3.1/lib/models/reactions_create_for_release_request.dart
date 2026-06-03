@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ReactionsCreateForReleaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
 @immutable final class ReactionsCreateForReleaseRequestContent {const ReactionsCreateForReleaseRequestContent._(this.value);

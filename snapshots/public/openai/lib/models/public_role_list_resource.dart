@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicRoleListResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/role.dart';/// Paginated list of roles available on an organization or project.
 @immutable final class PublicRoleListResource {const PublicRoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });

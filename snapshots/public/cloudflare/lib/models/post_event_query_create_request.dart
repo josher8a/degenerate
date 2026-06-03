@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostEventQueryCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryCreateRequest {const PostEventQueryCreateRequest({required this.alertEnabled, required this.alertRollupEnabled, required this.name, required this.queryJson, required this.ruleEnabled, this.ruleScope, });
 

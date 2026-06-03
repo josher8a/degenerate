@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BillingBillResourceInvoicingTaxesTaxRateDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
 @immutable final class BillingBillResourceInvoicingTaxesTaxRateDetails {const BillingBillResourceInvoicingTaxesTaxRateDetails({required this.taxRate});

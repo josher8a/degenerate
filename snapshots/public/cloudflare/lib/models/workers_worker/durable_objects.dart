@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WorkersWorker (inline: References > DurableObjects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DurableObjects {const DurableObjects({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
 

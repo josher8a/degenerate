@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostSigmaSavedQueriesIdRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSigmaSavedQueriesIdRequest {const PostSigmaSavedQueriesIdRequest({this.expand, this.name, this.sql, });
 

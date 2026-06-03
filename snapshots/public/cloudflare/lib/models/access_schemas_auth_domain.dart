@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessSchemasAuthDomain
 
 /// The unique subdomain assigned to your Zero Trust organization.
 extension type const AccessSchemasAuthDomain(String value) {

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityCenterSecurityTxt
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterSecurityTxt {const SecurityCenterSecurityTxt({this.acknowledgments, this.canonical, this.contact, this.enabled, this.encryption, this.expires, this.hiring, this.policy, this.preferredLanguages, });
 

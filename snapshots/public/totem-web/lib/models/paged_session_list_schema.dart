@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PagedSessionListSchema
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/session_list_schema.dart';@immutable final class PagedSessionListSchema {const PagedSessionListSchema({required this.items, required this.count, });
 

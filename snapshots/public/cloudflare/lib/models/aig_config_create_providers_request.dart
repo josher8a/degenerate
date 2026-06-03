@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AigConfigCreateProvidersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersRequest {const AigConfigCreateProvidersRequest({required this.alias, required this.defaultConfig, required this.providerSlug, required this.secret, required this.secretId, this.rateLimit, this.rateLimitPeriod = 60.0, });
 

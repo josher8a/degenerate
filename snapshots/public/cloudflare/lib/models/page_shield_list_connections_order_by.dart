@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PageShieldListConnectionsOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned connections.
 @immutable final class PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetParticipantDataFromPeerIdResponse (inline: Data > Participant > PeerReport > Metadata > IpInformation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response/ip_information_asn.dart';@immutable final class MetadataIpInformation {const MetadataIpInformation({this.asn, this.city, this.country, this.ipv4, this.region, this.timezone, });
 

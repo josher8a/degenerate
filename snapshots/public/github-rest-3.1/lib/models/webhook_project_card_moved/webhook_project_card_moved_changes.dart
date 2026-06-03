@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookProjectCardMoved (inline: Changes)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/column_id.dart';@immutable final class WebhookProjectCardMovedChanges {const WebhookProjectCardMovedChanges({required this.columnId});
 

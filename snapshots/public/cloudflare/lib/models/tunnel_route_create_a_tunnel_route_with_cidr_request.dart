@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TunnelRouteCreateATunnelRouteWithCidrRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';@immutable final class TunnelRouteCreateATunnelRouteWithCidrRequest {const TunnelRouteCreateATunnelRouteWithCidrRequest({required this.tunnelId, this.comment, this.virtualNetworkId, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MqQueueMessageText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqQueueMessageTextContentType {const MqQueueMessageTextContentType._(this.value);
 

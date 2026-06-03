@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostIssuingDisputesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_request/post_issuing_disputes_dispute_request_evidence.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_request/post_issuing_disputes_request_treasury.dart';@immutable final class PostIssuingDisputesRequest {const PostIssuingDisputesRequest({this.amount, this.evidence, this.expand, this.metadata, this.transaction, this.treasury, });
 

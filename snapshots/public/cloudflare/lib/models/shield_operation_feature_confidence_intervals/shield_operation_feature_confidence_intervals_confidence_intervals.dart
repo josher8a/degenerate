@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ShieldOperationFeatureConfidenceIntervals (inline: ConfidenceIntervals)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_confidence_intervals/suggested_threshold.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';@immutable final class ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals {const ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals({this.lastUpdated, this.suggestedThreshold, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LogpushDataset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
 @immutable final class LogpushDataset {const LogpushDataset._(this.value);

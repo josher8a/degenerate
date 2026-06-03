@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseOutputText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_content_output_text/eval_item_content_output_text_type.dart';import 'package:pub_openai/models/response_output_text/response_output_text_annotations.dart';/// Assistant response text accompanied by optional annotations.
 @immutable final class ResponseOutputText {const ResponseOutputText({required this.text, required this.annotations, this.type = EvalItemContentOutputTextType.outputText, });

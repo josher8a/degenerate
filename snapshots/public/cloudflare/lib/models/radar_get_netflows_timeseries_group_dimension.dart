@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetNetflowsTimeseriesGroupDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the NetFlows attribute by which to group the results.
 @immutable final class RadarGetNetflowsTimeseriesGroupDimension {const RadarGetNetflowsTimeseriesGroupDimension._(this.value);

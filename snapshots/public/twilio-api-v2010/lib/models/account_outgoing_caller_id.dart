@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountOutgoingCallerId
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountOutgoingCallerId {const AccountOutgoingCallerId({this.sid, this.dateCreated, this.dateUpdated, this.friendlyName, this.accountSid, this.phoneNumber, this.uri, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountsAccountPeoplePersonRequest (inline: AddressKanji)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddressKanji {const AddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 

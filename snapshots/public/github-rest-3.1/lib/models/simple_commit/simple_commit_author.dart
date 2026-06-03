@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SimpleCommit (inline: Author)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the Git author
 @immutable final class SimpleCommitAuthor {const SimpleCommitAuthor({required this.name, required this.email, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetBgpTopPrefixesResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_bgp_top_prefixes_response/radar_get_bgp_top_prefixes_response_result.dart';@immutable final class RadarGetBgpTopPrefixesResponse {const RadarGetBgpTopPrefixesResponse({required this.result, required this.success, });
 

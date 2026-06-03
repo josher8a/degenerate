@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GetSessionsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionsStatus {const GetSessionsStatus._(this.value);
 

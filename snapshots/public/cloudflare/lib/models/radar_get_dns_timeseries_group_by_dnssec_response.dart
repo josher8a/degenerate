@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetDnsTimeseriesGroupByDnssecResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_timeseries_group_by_dnssec_response/radar_get_dns_timeseries_group_by_dnssec_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecResponse {const RadarGetDnsTimeseriesGroupByDnssecResponse({required this.result, required this.success, });
 

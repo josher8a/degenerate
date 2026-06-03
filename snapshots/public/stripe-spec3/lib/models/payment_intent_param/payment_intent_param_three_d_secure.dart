@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PaymentIntentParam (inline: ThreeDSecure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/ares_trans_status.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/network_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_electronic_commerce_indicator.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_version.dart';@immutable final class ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator._(this.value);
 

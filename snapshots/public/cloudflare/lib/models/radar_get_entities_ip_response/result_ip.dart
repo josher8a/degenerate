@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetEntitiesIpResponse (inline: Result > Ip)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultIp {const ResultIp({required this.asn, required this.asnLocation, required this.asnName, required this.asnOrgName, required this.ip, required this.ipVersion, required this.location, required this.locationName, });
 

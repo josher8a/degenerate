@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DlpDatasetUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDatasetUpdate {const DlpDatasetUpdate({this.caseSensitive, this.description, this.name, });
 

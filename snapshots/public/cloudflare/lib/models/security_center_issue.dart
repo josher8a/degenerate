@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SecurityCenterIssue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_issue/payload.dart';import 'package:pub_cloudflare/models/security_center_issue_class.dart';import 'package:pub_cloudflare/models/security_center_issue_type.dart';import 'package:pub_cloudflare/models/security_center_subject.dart';@immutable final class Severity {const Severity._(this.value);
 

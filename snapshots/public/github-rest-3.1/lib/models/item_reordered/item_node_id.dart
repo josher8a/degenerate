@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ItemReordered (inline: Changes > ItemNodeId)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemNodeId {const ItemNodeId({this.from, this.to, });
 

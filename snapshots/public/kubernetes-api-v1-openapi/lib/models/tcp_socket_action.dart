@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TcpSocketAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/io_k8s_apimachinery_pkg_util_intstr_int_or_string.dart';/// TCPSocketAction describes an action based on opening a socket
 @immutable final class TcpSocketAction {const TcpSocketAction({required this.port, this.host, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/VectorizeQueryVectorResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response5.dart';@immutable final class VectorizeQueryVectorResponse {const VectorizeQueryVectorResponse({this.result});
 

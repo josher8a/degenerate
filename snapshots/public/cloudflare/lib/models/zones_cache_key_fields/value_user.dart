@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesCacheKeyFields (inline: Value > User)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Feature fields to add features about the end-user (client) into
 /// the Cache Key.

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhookPackagePublished (inline: Package > PackageVersion > NugetMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/nuget_metadata_value.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/value_variant4.dart';@immutable final class PackagePackageVersionNugetMetadata {const PackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
 

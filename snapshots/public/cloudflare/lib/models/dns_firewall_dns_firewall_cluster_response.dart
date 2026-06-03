@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/DnsFirewallDnsFirewallClusterResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_attack_mitigation.dart';import 'package:pub_cloudflare/models/dns_firewall_deprecate_any_requests.dart';import 'package:pub_cloudflare/models/dns_firewall_ecs_fallback.dart';import 'package:pub_cloudflare/models/dns_firewall_identifier.dart';import 'package:pub_cloudflare/models/dns_firewall_maximum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_minimum_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_name.dart';import 'package:pub_cloudflare/models/dns_firewall_negative_cache_ttl.dart';import 'package:pub_cloudflare/models/dns_firewall_ratelimit.dart';import 'package:pub_cloudflare/models/dns_firewall_retries.dart';/// Last modification of DNS Firewall cluster
 extension type DnsFirewallModifiedOn(DateTime value) {

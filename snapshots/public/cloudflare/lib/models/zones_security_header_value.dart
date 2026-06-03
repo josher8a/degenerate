@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZonesSecurityHeaderValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_security_header_value/strict_transport_security.dart';@immutable final class ZonesSecurityHeaderValue {const ZonesSecurityHeaderValue({this.strictTransportSecurity});
 

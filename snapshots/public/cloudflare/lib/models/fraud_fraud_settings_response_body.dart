@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/FraudFraudSettingsResponseBody
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fraud_fraud_settings.dart';@immutable final class FraudFraudSettingsResponseBody {const FraudFraudSettingsResponseBody({this.result});
 

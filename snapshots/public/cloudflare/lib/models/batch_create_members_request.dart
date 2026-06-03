@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BatchCreateMembersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_single_member.dart';@immutable final class BatchCreateMembersRequest {const BatchCreateMembersRequest({required this.members});
 

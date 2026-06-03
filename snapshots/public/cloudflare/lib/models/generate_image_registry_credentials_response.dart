@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/GenerateImageRegistryCredentialsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_account_registry_token.dart';import 'package:pub_cloudflare/models/cc_messages2.dart';@immutable final class GenerateImageRegistryCredentialsResponse {const GenerateImageRegistryCredentialsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 

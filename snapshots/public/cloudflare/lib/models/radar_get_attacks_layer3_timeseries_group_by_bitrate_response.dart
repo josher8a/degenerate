@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByBitrateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_timeseries_group_by_bitrate_response/radar_get_attacks_layer3_timeseries_group_by_bitrate_response_result.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByBitrateResponse {const RadarGetAttacksLayer3TimeseriesGroupByBitrateResponse({required this.result, required this.success, });
 

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AutomaticSpeechRecognition (inline: Variant2)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutomaticSpeechRecognitionVariant2 {const AutomaticSpeechRecognitionVariant2({required this.audio, this.sourceLang, this.targetLang, });
 

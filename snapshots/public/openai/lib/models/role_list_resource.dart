@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RoleListResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assigned_role_details.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';/// Paginated list of roles assigned to a principal.
 @immutable final class RoleListResource {const RoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });

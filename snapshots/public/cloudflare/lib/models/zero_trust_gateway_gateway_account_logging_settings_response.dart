@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ZeroTrustGatewayGatewayAccountLoggingSettingsResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings.dart';@immutable final class ZeroTrustGatewayGatewayAccountLoggingSettingsResponse {const ZeroTrustGatewayGatewayAccountLoggingSettingsResponse({this.result});
 

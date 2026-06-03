@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ResponseCommon57
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_messages2.dart';@immutable final class ResponseCommon57 {const ResponseCommon57({required this.errors, required this.messages, required this.success, });
 

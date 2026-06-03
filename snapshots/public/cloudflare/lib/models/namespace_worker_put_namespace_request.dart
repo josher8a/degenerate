@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/NamespaceWorkerPutNamespaceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_trusted_workers.dart';@immutable final class NamespaceWorkerPutNamespaceRequest {const NamespaceWorkerPutNamespaceRequest({this.name, this.trustedWorkers, });
 

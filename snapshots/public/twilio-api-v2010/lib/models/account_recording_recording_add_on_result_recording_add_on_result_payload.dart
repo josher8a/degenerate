@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload {const AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload({this.sid, this.addOnResultSid, this.accountSid, this.label, this.addOnSid, this.addOnConfigurationSid, this.contentType, this.dateCreated, this.dateUpdated, this.referenceSid, this.subresourceUris, });
 

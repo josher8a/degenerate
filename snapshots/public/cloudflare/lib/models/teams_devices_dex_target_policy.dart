@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/TeamsDevicesDexTargetPolicy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDexTargetPolicy {const TeamsDevicesDexTargetPolicy({this.$default, this.id, this.name, });
 

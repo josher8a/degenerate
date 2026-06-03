@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Messages (inline: WebSearchOptions > Variant1 > UserLocation > Approximate)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Approximate {const Approximate({this.city, this.country, this.region, this.timezone, });
 

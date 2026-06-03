@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuingDisputeEvidence (inline: Reason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for filing the dispute. Its value will match the field containing the evidence.
 @immutable final class IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason._(this.value);

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/RunStepDeltaStepDetailsToolCallsObject (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `tool_calls`.
 @immutable final class RunStepDeltaStepDetailsToolCallsObjectType {const RunStepDeltaStepDetailsToolCallsObjectType._(this.value);

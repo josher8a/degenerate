@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AaaEnabled
 
 /// Whether or not the Notification policy is enabled.
 extension type const AaaEnabled(bool value) {

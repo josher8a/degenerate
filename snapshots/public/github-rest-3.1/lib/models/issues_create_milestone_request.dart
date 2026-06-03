@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/IssuesCreateMilestoneRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';@immutable final class IssuesCreateMilestoneRequest {const IssuesCreateMilestoneRequest({required this.title, this.state = IssuesCreateMilestoneRequestState.open, this.description, this.dueOn, });
 

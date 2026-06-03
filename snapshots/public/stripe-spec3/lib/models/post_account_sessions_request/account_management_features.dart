@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostAccountSessionsRequest (inline: Components > AccountManagement > Features)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountManagementFeatures {const AccountManagementFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, });
 

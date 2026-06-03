@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostFinancialConnectionsSessionsRequest (inline: Filters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_link_account_session_filters/bank_connections_resource_link_account_session_filters_account_subcategories.dart';/// Filters to restrict the kinds of accounts to collect.
 @immutable final class PostFinancialConnectionsSessionsRequestFilters {const PostFinancialConnectionsSessionsRequestFilters({this.accountSubcategories, this.countries, });

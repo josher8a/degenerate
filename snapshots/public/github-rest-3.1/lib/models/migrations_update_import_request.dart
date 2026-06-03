@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/MigrationsUpdateImportRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/migrations_start_import_request/vcs.dart';@immutable final class MigrationsUpdateImportRequest {const MigrationsUpdateImportRequest({this.vcsUsername, this.vcsPassword, this.vcs, this.tfvcProject, });
 

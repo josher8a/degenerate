@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryFinancialAccountsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/nickname.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/platform_restrictions.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/post_treasury_financial_accounts_financial_account_request_features.dart';@immutable final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({required this.supportedCurrencies, this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, });
 

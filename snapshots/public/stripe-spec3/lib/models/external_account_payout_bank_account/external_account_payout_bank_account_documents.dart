@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/ExternalAccountPayoutBankAccount (inline: Documents)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/bank_account_ownership_verification.dart';@immutable final class ExternalAccountPayoutBankAccountDocuments {const ExternalAccountPayoutBankAccountDocuments({this.bankAccountOwnershipVerification});
 

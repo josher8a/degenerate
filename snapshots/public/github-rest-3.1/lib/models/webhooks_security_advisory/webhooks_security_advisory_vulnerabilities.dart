@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/WebhooksSecurityAdvisory (inline: Vulnerabilities)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_vulnerability/first_patched_version.dart';import 'package:pub_github_rest_3_1/models/webhooks_security_advisory/webhooks_security_advisory_vulnerabilities_package.dart';@immutable final class WebhooksSecurityAdvisoryVulnerabilities {const WebhooksSecurityAdvisoryVulnerabilities({required this.firstPatchedVersion, required this.package, required this.severity, required this.vulnerableVersionRange, });
 

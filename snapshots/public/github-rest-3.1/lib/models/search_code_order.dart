@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/SearchCodeOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchCodeOrder {const SearchCodeOrder._(this.value);
 

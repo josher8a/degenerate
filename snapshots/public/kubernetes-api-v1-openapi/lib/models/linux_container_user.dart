@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/LinuxContainerUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// LinuxContainerUser represents user identity information in Linux containers
 @immutable final class LinuxContainerUser {const LinuxContainerUser({this.gid = 0, this.supplementalGroups, this.uid = 0, });

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/CreateTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTokenRequest {const CreateTokenRequest({this.ttl});
 

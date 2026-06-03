@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PostTreasuryOutboundPaymentsRequest (inline: EndUserDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// End user details.
 @immutable final class EndUserDetails {const EndUserDetails({required this.present, this.ipAddress, });
