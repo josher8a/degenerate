@@ -14,7 +14,7 @@ import 'package:yaml/yaml.dart';
 ///
 /// Throws [FormatException] if a circular external ref is detected.
 /// Throws [FileSystemException] if a referenced file cannot be found.
-class RefInliner {
+final class RefInliner {
   /// Creates an inliner rooted at [_baseDir].
   RefInliner(this._baseDir);
 

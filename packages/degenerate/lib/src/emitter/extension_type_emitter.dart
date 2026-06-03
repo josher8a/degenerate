@@ -23,7 +23,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 ///
 /// When the inner primitive carries a recognized `format` (uuid, email, etc.),
 /// `fromJson` validates the input — like `DateTime.parse` does for date-time.
-class ExtensionTypeEmitter {
+final class ExtensionTypeEmitter {
   /// Creates an emitter for the given extension [type].
   const ExtensionTypeEmitter(this.type);
 

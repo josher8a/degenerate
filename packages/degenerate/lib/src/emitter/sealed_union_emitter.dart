@@ -4,7 +4,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
 /// Regex to strip angle brackets, commas, and whitespace from type names.
-final _unsafeTypeNameChars = RegExp(r'[<>,\s]');
+String _safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
 
 /// Fields shared (same Dart name and type) by every variant of [union],
 /// resolving `$ref` variants via [typeRegistry]. These are hoisted onto the
@@ -78,7 +78,7 @@ List<IrField> discriminatedUnionCommonFields(
 }
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
-class DiscriminatedUnionEmitter {
+final class DiscriminatedUnionEmitter {
   /// Creates an emitter for the given discriminated [union].
   ///
   /// [typeRegistry] is used to resolve `$ref` variants to their fields when
@@ -712,7 +712,7 @@ class DiscriminatedUnionEmitter {
   Class _buildRefVariant(String className, String discValue, IrType type) {
     final typeName = irTypeName(type);
     // Sanitize type names like "List<String>" by removing angle brackets
-    final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+    final safeTypeName = _safeTypeName(typeName);
     final fieldName = sanitizeFieldName(toCamelCase(safeTypeName));
 
     return Class(
@@ -807,7 +807,7 @@ class DiscriminatedUnionEmitter {
 }
 
 /// Emits a sealed class with try-parse from an [IrUntaggedUnion].
-class UntaggedUnionEmitter {
+final class UntaggedUnionEmitter {
   /// Creates an emitter for the given untagged [union].
   const UntaggedUnionEmitter(
     this.union, {
@@ -894,7 +894,7 @@ class UntaggedUnionEmitter {
         .where((v) => seenTypes.add(irTypeName(v)))
         .map((v) {
           final typeName = irTypeName(v);
-          final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+          final safeTypeName = _safeTypeName(typeName);
           final className = '${union.name}${toPascalCase(safeTypeName)}';
           return '  final $typeName v => $className(v),';
         })
@@ -930,7 +930,7 @@ class UntaggedUnionEmitter {
       }
       final typeName = irTypeName(variant);
       if (!seenTypes.add(typeName)) continue;
-      final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+      final safeTypeName = _safeTypeName(typeName);
       final className = '${union.name}${toPascalCase(safeTypeName)}';
       if (variant is IrObject || variant is IrTypeRef) {
         final refName = typeName;
@@ -973,7 +973,7 @@ class UntaggedUnionEmitter {
     final typeName = irTypeName(variant);
     // Sanitize type names like "List<String>" or "Map<String, int>"
     // by removing angle brackets and their contents for the class name.
-    final safeTypeName = typeName.replaceAll(_unsafeTypeNameChars, '');
+    final safeTypeName = _safeTypeName(typeName);
     final className = '${union.name}${toPascalCase(safeTypeName)}';
     return Class(
       (b) => b
@@ -1099,7 +1099,7 @@ class UntaggedUnionEmitter {
 }
 
 /// Emits a final class with nullable variant fields from an [IrAnyOf].
-class AnyOfEmitter {
+final class AnyOfEmitter {
   /// Creates an emitter for the given [anyOf] type.
   const AnyOfEmitter(
     this.anyOf, {

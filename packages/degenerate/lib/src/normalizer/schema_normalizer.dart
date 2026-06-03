@@ -9,7 +9,7 @@ import 'package:degenerate/src/naming.dart';
 /// This context is passed to [IrMapper] so it can perform pure schema→IR
 /// translation without worrying about name conflicts or discriminator
 /// detection.
-class NormalizationContext {
+final class NormalizationContext {
   /// Creates a normalization context.
   NormalizationContext({
     required this.nameMapping,
@@ -39,7 +39,7 @@ class NormalizationContext {
 ///    discriminator properties (so those fields emit as plain String).
 /// 2. Pre-computes all name mappings so `$ref` resolution finds the
 ///    correct Dart name for any schema regardless of declaration order.
-class SchemaNormalizer {
+final class SchemaNormalizer {
   /// Normalize all named schemas and return a [NormalizationContext].
   NormalizationContext normalize(Map<String, dynamic> schemas) {
     final usedNames = <String>{};

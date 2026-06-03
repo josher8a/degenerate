@@ -43,7 +43,7 @@ const Set<String> kForbiddenShortNames = {
 };
 
 /// Result of [resolveNames].
-class NameResolution {
+final class NameResolution {
   /// Creates a name resolution result.
   const NameResolution({
     required this.finalNames,

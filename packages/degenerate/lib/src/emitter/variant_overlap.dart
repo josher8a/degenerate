@@ -9,7 +9,7 @@ enum OverlapContainer { object, list, scalar, other }
 /// input — meaning `oneOf`'s "exactly one" contract may be violated.
 /// Best-match dispatch handles it at runtime; these checks identify the
 /// ambiguous sites so a spec owner can add a discriminator.
-class VariantOverlapAnalyzer {
+final class VariantOverlapAnalyzer {
   VariantOverlapAnalyzer(this._registry);
 
   final Map<String, IrType> _registry;

@@ -15,7 +15,7 @@ String _enumWireType(PrimitiveKind kind) => switch (kind) {
 /// Generates: static const values, const constructor, fromJson factory,
 /// toJson method. Unknown server values are preserved via the raw `value`
 /// field, enabling round-trip fidelity.
-class EnumEmitter {
+final class EnumEmitter {
   /// Creates an emitter for the given [irEnum].
   const EnumEmitter(this.irEnum);
 

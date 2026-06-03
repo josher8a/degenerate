@@ -14,7 +14,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// type is skipped, and counted in the file header) for anything it can't
 /// synthesize confidently. Untagged/anyOf unions are skipped in this first
 /// cut; widen as needed.
-class RoundtripEmitter {
+final class RoundtripEmitter {
   /// Creates an emitter over the full set of lowered [types] for [packageName].
   RoundtripEmitter(this.types, this.packageName)
     : _registry = {

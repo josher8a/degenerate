@@ -6,7 +6,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 ///
 /// Generates: const constructor, fromJson factory, toJson, copyWith,
 /// operator ==, hashCode, toString, canParse.
-class ModelEmitter {
+final class ModelEmitter {
   /// Creates an emitter for the given [model].
   const ModelEmitter(
     this.model, {

@@ -14,7 +14,7 @@ import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 ///
 /// `$ref` pointers are kept as [IrTypeRef] nodes. `allOf` schemas are
 /// flattened inline via [AllOfFlattener].
-class IrMapper {
+final class IrMapper {
   /// Create an IrMapper from a [NormalizationContext].
   IrMapper(NormalizationContext context, {this.emitTypedFormats = false})
     : _usedNames = context.usedNames,
@@ -527,30 +527,17 @@ class IrMapper {
     return c.isEmpty ? IrConstraints.none : c;
   }
 
-  PrimitiveKind _primitiveKind(String type, String? format) {
-    switch (type) {
-      case 'string':
-        switch (format) {
-          case 'date-time':
-            return PrimitiveKind.dateTime;
-          case 'uri':
-            return PrimitiveKind.uri;
-          case 'binary':
-          case 'byte':
-            return PrimitiveKind.bytes;
-          default:
-            return PrimitiveKind.string;
-        }
-      case 'integer':
-        return PrimitiveKind.int;
-      case 'number':
-        return PrimitiveKind.double;
-      case 'boolean':
-        return PrimitiveKind.bool;
-      default:
-        return PrimitiveKind.string;
-    }
-  }
+  PrimitiveKind _primitiveKind(String type, String? format) =>
+      switch ((type, format)) {
+        ('string', 'date-time') => PrimitiveKind.dateTime,
+        ('string', 'uri') => PrimitiveKind.uri,
+        ('string', 'binary' || 'byte') => PrimitiveKind.bytes,
+        ('string', _) => PrimitiveKind.string,
+        ('integer', _) => PrimitiveKind.int,
+        ('number', _) => PrimitiveKind.double,
+        ('boolean', _) => PrimitiveKind.bool,
+        _ => PrimitiveKind.string,
+      };
 
   static const _formatTypeNames = {
     'uuid': 'Uuid',

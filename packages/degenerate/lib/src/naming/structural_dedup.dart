@@ -13,7 +13,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// Computes name-independent structural signatures, memoizing per named type
 /// so shared `$ref`s are expanded once rather than re-expanded at every use
 /// site (which would be exponential on ref-heavy specs).
-class StructuralSigner {
+final class StructuralSigner {
   /// Creates a signer over [registry] (name → IR type for `$ref` resolution).
   StructuralSigner(this.registry);
 

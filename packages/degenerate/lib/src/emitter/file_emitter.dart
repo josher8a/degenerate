@@ -33,7 +33,7 @@ const _runtimeExportedNames = <String>{
 /// Orchestrates all emitters to produce the full generated file structure.
 ///
 /// Returns a map of relative file path to Dart source content.
-class FileEmitter {
+final class FileEmitter {
   /// Package-absolute model imports for the referenced type [names], resolved
   /// to files via [typeToFile] (de-duplicated and sorted). Shared by model and
   /// API file emission. Package-absolute so a file's depth in the folder
@@ -560,7 +560,7 @@ class FileEmitter {
     for (final op in api.operations) {
       final info = errorUnionMap[op.operationId];
       if (info != null) {
-        final target = info.isAlias ? info.aliasTarget! : info.className;
+        final target = info.resolvedClassName;
         usedErrorStems.add('errors/${toSnakeCase(target)}');
       }
     }
@@ -1006,14 +1006,14 @@ class FileEmitter {
   }
 }
 
-class _HelperMethodInfo {
+final class _HelperMethodInfo {
   const _HelperMethodInfo(this.name, this.params, this.body);
   final String name;
   final List<_HelperParam> params;
   final String body;
 }
 
-class _HelperParam {
+final class _HelperParam {
   const _HelperParam(this.name, this.type, {this.named = false, this.required = false});
   final String name;
   final String type;

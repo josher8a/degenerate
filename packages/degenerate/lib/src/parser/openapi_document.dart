@@ -4,7 +4,7 @@ import 'package:degenerate/src/parser/yaml_utils.dart';
 import 'package:yaml/yaml.dart';
 
 /// Wraps a parsed OpenAPI spec providing typed accessors and ref resolution.
-class OpenApiDocument {
+final class OpenApiDocument {
   /// Creates a document from the parsed [root] map.
   OpenApiDocument(this.root);
 

@@ -1,5 +1,5 @@
 /// Flattens `allOf` compositions into merged schemas.
-class AllOfFlattener {
+final class AllOfFlattener {
   /// If [schema] has an `allOf` key, merge all sub-schemas into a single
   /// schema by unioning `properties` and `required` lists.
   ///

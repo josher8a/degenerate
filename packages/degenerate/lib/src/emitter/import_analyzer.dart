@@ -77,9 +77,7 @@ analyzeApiImports(
     }
     final errorUnion = errorUnionMap[op.operationId];
     if (errorUnion != null) {
-      final errorClassName = errorUnion.isAlias
-          ? errorUnion.aliasTarget!
-          : errorUnion.className;
+      final errorClassName = errorUnion.resolvedClassName;
       names.add(errorClassName);
     } else {
       (String, IrMediaType)? errorContent;

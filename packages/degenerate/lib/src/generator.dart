@@ -35,7 +35,7 @@ const defaultOutputDir = 'lib';
 const defaultWorkspaceOutputDir = 'packages';
 
 /// Configuration for the code generator.
-class GeneratorConfig {
+final class GeneratorConfig {
   /// Creates a generator configuration.
   GeneratorConfig({
     required this.inputPath,
@@ -133,7 +133,7 @@ class GeneratorConfig {
 }
 
 /// The main code generator pipeline.
-class Generator {
+final class Generator {
   /// Creates a generator with the given [config].
   Generator(this.config);
 
@@ -261,6 +261,11 @@ class Generator {
       }
     }
 
+    if (normContext.warnings.isNotEmpty) {
+      for (final w in normContext.warnings) {
+        _log('  Warning (normalizer): $w');
+      }
+    }
     if (irMapper.warnings.isNotEmpty) {
       for (final w in irMapper.warnings) {
         _log('  Warning: $w');
@@ -896,7 +901,7 @@ class Generator {
 }
 
 /// Exception thrown by the generator pipeline.
-class GeneratorException implements Exception {
+final class GeneratorException implements Exception {
   /// Creates a generator exception with the given [message].
   const GeneratorException(this.message);
 

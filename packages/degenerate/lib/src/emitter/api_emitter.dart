@@ -8,7 +8,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 ///
 /// Each API tag becomes a `final class` with methods for each operation,
 /// returning `Future<ApiResult<T>>`.
-class ApiEmitter {
+final class ApiEmitter {
   /// Creates an emitter for the given [api] group.
   const ApiEmitter(
     this.api, {
@@ -386,9 +386,7 @@ class ApiEmitter {
         : 'void';
     final String errorTypeStr;
     if (errorUnion != null) {
-      errorTypeStr = errorUnion.isAlias
-          ? errorUnion.aliasTarget!
-          : errorUnion.className;
+      errorTypeStr = errorUnion.resolvedClassName;
     } else {
       final errorType = errorResponseContent?.$2.schema;
       errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
@@ -502,9 +500,7 @@ class ApiEmitter {
       buf.writeln('  onSuccess: (_) {},');
     }
     if (errorUnion != null) {
-      final errorClass = errorUnion.isAlias
-          ? errorUnion.aliasTarget!
-          : errorUnion.className;
+      final errorClass = errorUnion.resolvedClassName;
       buf.writeln(
         '  onError: $errorClass.fromResponse,',
       );
@@ -1153,9 +1149,10 @@ class ApiEmitter {
     }
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';
-      final isBytes =
-          f.type is IrPrimitive &&
-          (f.type as IrPrimitive).kind == PrimitiveKind.bytes;
+      final isBytes = switch (f.type) {
+        IrPrimitive(kind: PrimitiveKind.bytes) => true,
+        _ => false,
+      };
       // Emit null guard only when the Dart field type is actually nullable.
       // Fields with defaults are non-nullable even if not required,
       // but only if the default can be represented as a Dart constant.

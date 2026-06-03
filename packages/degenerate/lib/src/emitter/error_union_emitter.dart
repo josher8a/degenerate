@@ -7,7 +7,7 @@ import 'package:degenerate/src/naming.dart';
 
 /// Describes a per-operation error union: the sealed class name and the
 /// status-code-to-schema mapping.
-class ErrorUnionInfo {
+final class ErrorUnionInfo {
   const ErrorUnionInfo({
     required this.className,
     required this.statusErrors,
@@ -19,6 +19,8 @@ class ErrorUnionInfo {
   final Map<int, (String, IrType)> statusErrors;
   final bool isAlias;
   final String? aliasTarget;
+
+  String get resolvedClassName => isAlias ? aliasTarget! : className;
 }
 
 /// Computes per-operation error union info, deduplicating operations that

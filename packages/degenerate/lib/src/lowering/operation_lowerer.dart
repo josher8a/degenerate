@@ -7,7 +7,7 @@ import 'package:degenerate/src/parser/openapi_document.dart';
 ///
 /// Operations are grouped by their first tag into [IrApi] instances. Each
 /// [IrApi] corresponds to a generated API client class.
-class OperationLowerer {
+final class OperationLowerer {
   /// Creates an operation lowerer with the given [irMapper].
   OperationLowerer(this.irMapper, {OpenApiDocument? doc}) : _doc = doc;
 

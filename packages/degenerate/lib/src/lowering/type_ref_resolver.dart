@@ -10,7 +10,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 ///
 /// Refs to emittable types (objects, unions) are kept as [IrTypeRef] since
 /// those types get their own generated files.
-class TypeRefResolver {
+final class TypeRefResolver {
   /// Creates a resolver backed by the given type registry.
   TypeRefResolver(this._typeRegistry);
   final Map<String, IrType> _typeRegistry;

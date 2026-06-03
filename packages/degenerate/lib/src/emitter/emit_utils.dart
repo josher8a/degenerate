@@ -47,11 +47,11 @@ Reference irTypeToReference(
 }
 
 /// The Dart type name for a [PrimitiveKind].
-String primitiveKindName(PrimitiveKind kind) => kind.dartName;
+String _primitiveKindName(PrimitiveKind kind) => kind.dartName;
 
 Reference _primitiveRef(PrimitiveKind kind, bool nullable) {
   if (kind == PrimitiveKind.dynamic_) return refer('dynamic');
-  return _maybeNullable(refer(primitiveKindName(kind)), nullable);
+  return _maybeNullable(refer(_primitiveKindName(kind)), nullable);
 }
 
 Reference _maybeNullable(Reference ref, bool nullable) {
@@ -72,7 +72,7 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 /// Get the Dart type name string for an [IrType].
 String irTypeName(IrType type) {
   return switch (type) {
-    IrPrimitive(:final kind) => primitiveKindName(kind),
+    IrPrimitive(:final kind) => _primitiveKindName(kind),
     IrList(:final items) => 'List<${irTypeName(items)}>',
     IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
     _ => type.name!,
@@ -184,7 +184,7 @@ bool _isIdentityMapValue(IrType type) =>
 
 /// If [expr] is a simple function call `funcName(accessor)`, returns the
 /// function name for use as a tearoff. Returns null otherwise.
-String? asTearoff(String expr, String accessor) {
+String? _asTearoff(String expr, String accessor) {
   // Match pattern: identifier(accessor) — no dots, no chaining.
   if (!expr.endsWith('($accessor)')) return null;
   final funcName = expr.substring(0, expr.length - accessor.length - 2);
@@ -205,7 +205,7 @@ String _buildFromJsonNonNull(
   // Resolve IrTypeRef to OneOf-eligible union before switching.
   final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
   return switch (resolved) {
-    IrPrimitive(:final kind) => primitiveFromJsonExpr(kind, accessor),
+    IrPrimitive(:final kind) => _primitiveFromJsonExpr(kind, accessor),
     IrEnum(:final name, :final valueKind) => switch (valueKind) {
       PrimitiveKind.int => '$name.fromJson(($accessor as num).toInt())',
       PrimitiveKind.double => '$name.fromJson(($accessor as num).toDouble())',
@@ -260,7 +260,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
       if (!listItemNeedsToJson(items)) return accessor;
       final itemExpr = buildToJsonCode(items, 'e', nullable: items.isNullable);
       // Use tearoff when the expression is a simple function call: func(e).
-      final tearoff = asTearoff(itemExpr, 'e');
+      final tearoff = _asTearoff(itemExpr, 'e');
       if (tearoff != null) {
         return '$accessor$q.map($tearoff).toList()';
       }
@@ -754,7 +754,7 @@ String toStringField(IrField f) {
 
 /// Core fromJson expression for a [PrimitiveKind] value.
 /// Returns the Dart expression that converts a JSON value to the Dart type.
-String primitiveFromJsonExpr(PrimitiveKind kind, String accessor) =>
+String _primitiveFromJsonExpr(PrimitiveKind kind, String accessor) =>
     switch (kind) {
       PrimitiveKind.dynamic_ => accessor,
       PrimitiveKind.string => '$accessor as String',
@@ -789,7 +789,7 @@ String primitiveToJsonExpr(
 
 /// Whether [type] is an object-like type (object, ref, or union) for which an
 /// empty `{}` literal is not a valid Dart default.
-bool isObjectLikeType(IrType type) => switch (type) {
+bool _isObjectLikeType(IrType type) => switch (type) {
   IrObject() ||
   IrTypeRef() ||
   IrDiscriminatedUnion() ||
@@ -803,39 +803,25 @@ bool isObjectLikeType(IrType type) => switch (type) {
 /// and the sealed-union variant factories so their parameters stay in sync.
 Code? fieldDefaultCode(IrField f) {
   if (f.defaultValue == null) return null;
-  final v = f.defaultValue;
-  // Empty map/object defaults don't make sense for object-typed fields
-  // (`const {}` is a Map, not the object type).
-  if (v is Map && v.isEmpty && isObjectLikeType(f.type)) return null;
-  // Enum-typed fields: emit the enum constant, not a raw string.
-  if (v is String && f.type is IrEnum) {
-    return Code('${(f.type as IrEnum).name}.${enumValueName(v)}');
-  }
-  if (v is String) {
-    if (f.type is IrPrimitive) {
-      final kind = (f.type as IrPrimitive).kind;
-      if (kind == PrimitiveKind.string) return Code(dartStringLiteral(v));
-      return null; // non-string primitive (incl. dynamic) with string default
-    }
-    return null; // non-primitive (ref/enum/list) with string default
-  }
-  if (v is bool) {
-    if (f.type is! IrPrimitive ||
-        (f.type as IrPrimitive).kind != PrimitiveKind.bool) {
-      return null;
-    }
-    return Code('$v');
-  }
-  if (v is num) {
-    if (f.type is! IrPrimitive) return null;
-    final kind = (f.type as IrPrimitive).kind;
-    if (kind == PrimitiveKind.int) return Code('${v.toInt()}');
-    if (kind == PrimitiveKind.double) return Code('${v.toDouble()}');
-    return Code('$v');
-  }
-  if (v is List && v.isEmpty) return const Code('const []');
-  if (v is Map && v.isEmpty) return const Code('const {}');
-  return null;
+  return switch ((f.defaultValue, f.type)) {
+    (Map(isEmpty: true), _) when _isObjectLikeType(f.type) => null,
+    (final String v, IrEnum(:final name)) =>
+      Code('$name.${enumValueName(v)}'),
+    (final String v, IrPrimitive(kind: PrimitiveKind.string)) =>
+      Code(dartStringLiteral(v)),
+    (String(), _) => null,
+    (final bool v, IrPrimitive(kind: PrimitiveKind.bool)) => Code('$v'),
+    (bool(), _) => null,
+    (final num v, IrPrimitive(kind: PrimitiveKind.int)) =>
+      Code('${v.toInt()}'),
+    (final num v, IrPrimitive(kind: PrimitiveKind.double)) =>
+      Code('${v.toDouble()}'),
+    (final num v, IrPrimitive()) => Code('$v'),
+    (num(), _) => null,
+    (List(isEmpty: true), _) => const Code('const []'),
+    (Map(isEmpty: true), _) => const Code('const {}'),
+    _ => null,
+  };
 }
 
 /// Whether [f] has a representable Dart constructor default.

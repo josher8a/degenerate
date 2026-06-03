@@ -10,7 +10,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// - **Validate fixtures**: JSON that parses but violates JSON-Schema
 ///   constraints — `validate()` must return a non-empty list whose first entry
 ///   matches the expected message.
-class NegativeFixtureEmitter {
+final class NegativeFixtureEmitter {
   NegativeFixtureEmitter(this.types, this.packageName)
     : _registry = {
         for (final t in types)

@@ -3,7 +3,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// Post-lowering validation pass: asserts structural invariants on the fully
 /// resolved IR before emission. Fatal errors throw; warnings are returned
 /// for logging.
-class IrValidator {
+final class IrValidator {
   IrValidator(this.types, this.apis);
 
   final List<IrType> types;
@@ -90,7 +90,7 @@ class IrValidator {
 }
 
 /// Thrown when IR validation detects fatal invariant violations.
-class IrValidationException implements Exception {
+final class IrValidationException implements Exception {
   IrValidationException(this.errors);
   final List<String> errors;
 
