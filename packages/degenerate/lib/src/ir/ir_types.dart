@@ -16,21 +16,28 @@ sealed class IrType {
   /// Whether this type accepts null values.
   final bool isNullable;
 
-  /// The emittable type name, or `null` for anonymous types
-  /// (primitives, lists, maps, type refs).
-  String? get emittableName => switch (this) {
-    IrObject(:final name) => name,
-    IrEnum(:final name) => name,
-    IrDiscriminatedUnion(:final name) => name,
-    IrUntaggedUnion(:final name) => name,
-    IrAnyOf(:final name) => name,
-    IrExtensionType(:final name) => name,
-    _ => null,
-  };
+  /// The type name, or `null` for anonymous types (primitives, lists, maps).
+  /// Named subclasses (IrObject, IrEnum, IrTypeRef, etc.) override via their
+  /// `final String name` field.
+  String? get name;
+
+  /// The emittable type name, or `null` for types that don't produce their own
+  /// declaration (primitives, lists, maps, type refs).
+  String? get emittableName => this is IrTypeRef ? null : name;
 
   /// Returns a copy of this type with [isNullable] set to true.
   /// If already nullable, returns `this`.
   IrType copyAsNullable();
+}
+
+/// One-step type-ref resolution through a registry.
+extension IrTypeResolution on IrType {
+  /// If this is an [IrTypeRef], look up the target in [registry] and return
+  /// it (or `this` if not found). Non-ref types pass through unchanged.
+  IrType resolveRef(Map<String, IrType> registry) => switch (this) {
+    IrTypeRef(:final name) => registry[name] ?? this,
+    _ => this,
+  };
 }
 
 /// JSON-Schema validation constraints carried on a type, used to emit a
@@ -114,6 +121,9 @@ final class IrPrimitive extends IrType {
     super.isNullable,
   });
 
+  @override
+  String? get name => null;
+
   /// The specific primitive kind.
   final PrimitiveKind kind;
 
@@ -147,7 +157,7 @@ final class IrEnum extends IrType {
     super.isNullable,
   });
 
-  /// The Dart type name for this enum.
+  @override
   final String name;
 
   /// The raw enum value strings.
@@ -183,6 +193,9 @@ final class IrList extends IrType {
     super.isNullable,
   });
 
+  @override
+  String? get name => null;
+
   /// The element type of this list.
   final IrType items;
 
@@ -205,6 +218,9 @@ final class IrMap extends IrType {
   /// Creates a map IR type wrapping [values].
   const IrMap(this.values, {super.description, super.isNullable});
 
+  @override
+  String? get name => null;
+
   /// The value type of this map (keys are always String).
   final IrType values;
 
@@ -226,7 +242,7 @@ final class IrObject extends IrType {
     super.isNullable,
   });
 
-  /// The Dart class name for this object.
+  @override
   final String name;
 
   /// The object's typed fields.
@@ -306,7 +322,7 @@ final class IrDiscriminatedUnion extends IrType {
     super.isNullable,
   });
 
-  /// The Dart sealed class name.
+  @override
   final String name;
 
   /// The JSON property used as the discriminator.
@@ -338,7 +354,7 @@ final class IrUntaggedUnion extends IrType {
     super.isNullable,
   });
 
-  /// The Dart sealed class name.
+  @override
   final String name;
 
   /// The possible variant types.
@@ -366,7 +382,7 @@ final class IrAnyOf extends IrType {
     super.isNullable,
   });
 
-  /// The Dart class name.
+  @override
   final String name;
 
   /// The possible variant types.
@@ -397,7 +413,7 @@ final class IrExtensionType extends IrType {
     super.isNullable,
   });
 
-  /// The Dart extension type name.
+  @override
   final String name;
 
   /// The underlying primitive type.
@@ -419,7 +435,7 @@ final class IrTypeRef extends IrType {
   /// Creates a type reference to the named type [name].
   const IrTypeRef(this.name, {super.description, super.isNullable});
 
-  /// The referenced type name.
+  @override
   final String name;
 
   @override

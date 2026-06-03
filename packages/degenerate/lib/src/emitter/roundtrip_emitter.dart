@@ -271,8 +271,7 @@ class RoundtripEmitter {
   /// types and the conversion primitives (DateTime/Uri/BigInt/Duration/bytes)
   /// store a raw representation with no `toJson` and remain unsafe.
   bool _isToJsonSafeUnionVariant(IrType type) {
-    var t = type;
-    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    final t = type.resolveRef(_registry);
     return switch (t) {
       IrObject() ||
       IrDiscriminatedUnion() ||
@@ -428,8 +427,7 @@ class RoundtripEmitter {
     Set<String> visited,
   ) {
     final discValue = entry.key;
-    var variant = entry.value;
-    if (variant is IrTypeRef) variant = _registry[variant.name] ?? variant;
+    final variant = entry.value.resolveRef(_registry);
     if (variant is! IrObject) return null; // non-object payload: skip
     if (variant.name.isNotEmpty && visited.contains(variant.name)) return null;
     final next = variant.name.isEmpty ? visited : {...visited, variant.name};
@@ -459,7 +457,7 @@ class RoundtripEmitter {
         break;
       }
     }
-    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    t = t?.resolveRef(_registry);
     final native =
         t is IrPrimitive &&
         const {

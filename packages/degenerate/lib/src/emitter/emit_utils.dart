@@ -25,7 +25,6 @@ Reference irTypeToReference(
   final nullable = !forceNonNullable && (forceNullable || type.isNullable);
   return switch (type) {
     IrPrimitive(:final kind) => _primitiveRef(kind, nullable),
-    IrEnum(:final name) => _maybeNullable(refer(name), nullable),
     IrList(:final items) => _maybeNullable(
       TypeReference(
         (b) => b
@@ -43,12 +42,7 @@ Reference irTypeToReference(
       ),
       nullable,
     ),
-    IrObject(:final name) => _maybeNullable(refer(name), nullable),
-    IrTypeRef(:final name) => _maybeNullable(refer(name), nullable),
-    IrDiscriminatedUnion(:final name) => _maybeNullable(refer(name), nullable),
-    IrUntaggedUnion(:final name) => _maybeNullable(refer(name), nullable),
-    IrAnyOf(:final name) => _maybeNullable(refer(name), nullable),
-    IrExtensionType(:final name) => _maybeNullable(refer(name), nullable),
+    _ => _maybeNullable(refer(type.name!), nullable),
   };
 }
 
@@ -79,15 +73,9 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 String irTypeName(IrType type) {
   return switch (type) {
     IrPrimitive(:final kind) => primitiveKindName(kind),
-    IrEnum(:final name) => name,
     IrList(:final items) => 'List<${irTypeName(items)}>',
     IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
-    IrObject(:final name) => name,
-    IrTypeRef(:final name) => name,
-    IrDiscriminatedUnion(:final name) => name,
-    IrUntaggedUnion(:final name) => name,
-    IrAnyOf(:final name) => name,
-    IrExtensionType(:final name) => name,
+    _ => type.name!,
   };
 }
 
@@ -289,14 +277,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
       if (valueExpr == 'v') return accessor;
       return '$accessor$q.map((k, v) => MapEntry(k, $valueExpr))';
     }(),
-    // All named types with .toJson()
-    IrEnum() ||
-    IrObject() ||
-    IrTypeRef() ||
-    IrDiscriminatedUnion() ||
-    IrUntaggedUnion() ||
-    IrAnyOf() ||
-    IrExtensionType() => '$accessor$q.toJson()',
+    _ => '$accessor$q.toJson()',
   };
 }
 
@@ -311,14 +292,7 @@ bool listItemNeedsToJson(IrType type) {
       PrimitiveKind.bytes => true,
       _ => false,
     },
-    IrEnum() ||
-    IrObject() ||
-    IrTypeRef() ||
-    IrDiscriminatedUnion() ||
-    IrUntaggedUnion() ||
-    IrAnyOf() ||
-    IrExtensionType() => true,
-    IrList() || IrMap() => true,
+    _ => true,
   };
 }
 
@@ -347,8 +321,7 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
 
 /// Whether a type resolves to a union through the registry.
 bool isUnionType(IrType type, Map<String, IrType> registry) {
-  final resolved =
-      type is IrTypeRef ? (registry[type.name] ?? type) : type;
+  final resolved = type.resolveRef(registry);
   return resolved is IrDiscriminatedUnion ||
       resolved is IrUntaggedUnion ||
       resolved is IrAnyOf;

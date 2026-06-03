@@ -891,12 +891,8 @@ class ApiEmitter {
 
   /// Resolve an IrType to an IrObject if possible (through IrTypeRef).
   IrObject? _resolveToObject(IrType type) {
-    if (type is IrObject) return type;
-    if (type is IrTypeRef) {
-      final resolved = typeRegistry[type.name];
-      if (resolved is IrObject) return resolved;
-    }
-    return null;
+    final r = type.resolveRef(typeRegistry);
+    return r is IrObject ? r : null;
   }
 
   Method _buildStreamingOperation(IrOperation op) {

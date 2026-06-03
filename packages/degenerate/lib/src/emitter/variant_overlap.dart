@@ -14,7 +14,7 @@ class VariantOverlapAnalyzer {
 
   final Map<String, IrType> _registry;
 
-  IrType resolve(IrType t) => t is IrTypeRef ? (_registry[t.name] ?? t) : t;
+  IrType resolve(IrType t) => t.resolveRef(_registry);
 
   /// Whether variant [vj] provably rejects [vk]'s input: either `fromVj`
   /// throws, or `Vj` provably covers fewer of `Vk`'s keys.

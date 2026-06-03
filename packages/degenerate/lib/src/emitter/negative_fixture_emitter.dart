@@ -80,8 +80,7 @@ class NegativeFixtureEmitter {
   /// Returns a wrong-type Dart literal for the given [type], or null if the
   /// `canParse` check for this type is too permissive (dynamic) to reject.
   String? _wrongTypeLiteral(IrType type) {
-    var t = type;
-    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    final t = type.resolveRef(_registry);
     return switch (t) {
       IrPrimitive(:final kind) => switch (kind) {
         PrimitiveKind.string || PrimitiveKind.dateTime || PrimitiveKind.uri =>
@@ -180,8 +179,7 @@ class NegativeFixtureEmitter {
   }
 
   String? _elementSample(IrType type) {
-    var t = type;
-    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    final t = type.resolveRef(_registry);
     if (t is! IrList) return null;
     return _sampleLiteral(t.items);
   }
@@ -191,8 +189,7 @@ class NegativeFixtureEmitter {
   // ---------------------------------------------------------------------------
 
   String? _sampleLiteral(IrType type) {
-    var t = type;
-    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    final t = type.resolveRef(_registry);
     return switch (t) {
       IrPrimitive(:final kind) => _primitiveLiteral(kind),
       IrEnum(:final values, :final valueKind) => values.isEmpty
@@ -247,8 +244,7 @@ class NegativeFixtureEmitter {
   };
 
   IrConstraints _constraintsOf(IrType type) {
-    var t = type;
-    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    final t = type.resolveRef(_registry);
     return switch (t) {
       IrPrimitive(:final constraints) => constraints,
       IrList(:final constraints) => constraints,

@@ -50,8 +50,7 @@ List<IrField> discriminatedUnionCommonFields(
   // OneOf-eligible unions can't be reconstructed in the unknown variant's
   // getter (their runtime parser is `parse`, not `fromJson`), so skip them.
   bool isUnionField(IrType type) {
-    var t = type;
-    if (t is IrTypeRef) t = typeRegistry[t.name] ?? t;
+    final t = type.resolveRef(typeRegistry);
     return switch (t) {
       IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
       IrAnyOf(:final variants) => isOneOfEligible(variants),
@@ -251,8 +250,7 @@ class DiscriminatedUnionEmitter {
   }
 
   IrObject? _resolveToObject(IrType type) {
-    var r = type;
-    if (r is IrTypeRef) r = typeRegistry[r.name] ?? r;
+    final r = type.resolveRef(typeRegistry);
     return r is IrObject ? r : null;
   }
 
@@ -287,8 +285,7 @@ class DiscriminatedUnionEmitter {
   /// [IrExtensionType]) need `Type.fromJson('value')`; a `bool`/`int`/`double`
   /// discriminator field needs the bare literal (e.g. `disabled: false`).
   String _discValueExpr(IrType discFieldType, String discValue) {
-    var t = discFieldType;
-    if (t is IrTypeRef) t = typeRegistry[t.name] ?? t;
+    final t = discFieldType.resolveRef(typeRegistry);
     return switch (t) {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
@@ -1116,16 +1113,8 @@ class AnyOfEmitter {
   final Map<String, IrType> typeRegistry;
 
   /// Resolve an [IrTypeRef] to its underlying type, if available.
-  IrType _resolveType(IrType type) {
-    if (type is IrTypeRef && typeRegistry.containsKey(type.name)) {
-      return typeRegistry[type.name]!;
-    }
-    return type;
-  }
-
-
   bool _isOneOfType(IrType type) {
-    final resolved = _resolveType(type);
+    final resolved = type.resolveRef(typeRegistry);
     return switch (resolved) {
       IrUntaggedUnion(:final name, :final variants)
           when isOneOfTypedef(name, variants) =>
