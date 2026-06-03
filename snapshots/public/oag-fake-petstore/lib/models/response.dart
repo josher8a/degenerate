@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/Response
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Response {const Response({this.code, this.type, this.message, });
+
+factory Response.fromJson(Map<String, dynamic> json) { return Response(
+  code: json['code'] != null ? (json['code'] as num).toInt() : null,
+  type: json['type'] as String?,
+  message: json['message'] as String?,
+); }
+
+final int? code;
+
+final String? type;
+
+final String? message;
+
+Map<String, dynamic> toJson() { return {
+  'code': ?code,
+  'type': ?type,
+  'message': ?message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'type', 'message'}.contains(key)); } 
+Response copyWith({int? Function()? code, String? Function()? type, String? Function()? message, }) { return Response(
+  code: code != null ? code() : this.code,
+  type: type != null ? type() : this.type,
+  message: message != null ? message() : this.message,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is Response &&
+          code == other.code &&
+          type == other.type &&
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, type, message);
+
+@override String toString() => 'Response(code: $code, type: $type, message: $message)';
+
+ }
