@@ -293,9 +293,7 @@ final class DiscriminatedUnionEmitter {
       IrExtensionType(:final name, :final inner)
           when inner.kind == PrimitiveKind.string =>
         "$name.fromJson('$discValue')",
-      IrPrimitive(kind: PrimitiveKind.bool) ||
-      IrPrimitive(kind: PrimitiveKind.int) ||
-      IrPrimitive(kind: PrimitiveKind.double) => discValue,
+      _ when isNonStringPrimitiveDisc(t) => discValue,
       _ => "'$discValue'",
     };
   }
@@ -1112,21 +1110,6 @@ final class AnyOfEmitter {
   /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
 
-  /// Resolve an [IrTypeRef] to its underlying type, if available.
-  bool _isOneOfType(IrType type) {
-    final resolved = type.resolveRef(typeRegistry);
-    return switch (resolved) {
-      IrUntaggedUnion(:final name, :final variants)
-          when isOneOfTypedef(name, variants) =>
-        true,
-      IrAnyOf(:final name, :final variants)
-          when isOneOfTypedef(name, variants) =>
-        true,
-      _ => false,
-    };
-  }
-
-
   /// Emit the anyOf class as code_builder specs.
   List<Spec> emit() {
     // Deduplicate variants by type name - anyOf specs can list the same type
@@ -1229,54 +1212,42 @@ final class AnyOfEmitter {
         ? 'final map = json is Map<String, dynamic> ? json : null;\n'
         : '';
 
-    final args = fields
-        .map((f) {
-          // Primitive types don't have canParse/fromJson - handle them inline.
-          if (f.type is IrPrimitive) {
-            return '  ${f.name}: ${_primitiveAnyOfExpr(f.type as IrPrimitive, 'json')},';
-          }
-          // Enums don't have canParse - they deserialize from a string value.
-          if (f.type is IrEnum) {
-            return '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,';
-          }
-          // Extension types wrap a primitive - deserialize like primitives.
-          if (f.type is IrExtensionType) {
-            final ext = f.type as IrExtensionType;
-            final jsonType = primitiveJsonWireType(ext.inner.kind);
-            return '  ${f.name}: json is $jsonType ? ${f.typeName}.fromJson(json) : null,';
-          }
-          // Lists/maps don't have canParse/fromJson as static methods.
-          if (f.type is IrList || f.type is IrMap) {
-            return '  // ${f.name}: skipped (collection type in anyOf not supported)';
-          }
-          // OneOf typedef types use OneOf.parse() instead of .fromJson().
-          if (_isOneOfType(f.type)) {
-            final accessor = allObjectLike ? 'json' : 'map';
-            final parseCode = buildFromJsonCode(
-              f.type,
-              accessor,
-              paramIsMap: true,
-              typeRegistry: typeRegistry,
-            );
-            if (allObjectLike) {
-              return '  ${f.name}: $parseCode,';
-            }
-            return '  ${f.name}: map != null ? $parseCode : null,';
-          }
-          // Union/AnyOf types don't have canParse - just try fromJson.
-          // If the data doesn't match, it'll parse as the $Unknown variant.
-          if (isUnionType(f.type, typeRegistry)) {
-            if (allObjectLike) {
-              return '  ${f.name}: ${f.typeName}.fromJson(json),';
-            }
-            return '  ${f.name}: map != null ? ${f.typeName}.fromJson(map) : null,';
-          }
-          if (allObjectLike) {
-            return '  ${f.name}: ${f.typeName}.canParse(json) ? ${f.typeName}.fromJson(json) : null,';
-          }
-          return '  ${f.name}: map != null && ${f.typeName}.canParse(map) ? ${f.typeName}.fromJson(map) : null,';
-        })
-        .join('\n');
+    String oneOfArg(String name, IrType type) {
+      final accessor = allObjectLike ? 'json' : 'map';
+      final parseCode = buildFromJsonCode(
+        type, accessor, paramIsMap: true, typeRegistry: typeRegistry,
+      );
+      return allObjectLike
+          ? '  $name: $parseCode,'
+          : '  $name: map != null ? $parseCode : null,';
+    }
+
+    String mapArg(String name, String typeName) => allObjectLike
+        ? '  $name: $typeName.fromJson(json),'
+        : '  $name: map != null ? $typeName.fromJson(map) : null,';
+
+    String objectArg(String name, String typeName) => allObjectLike
+        ? '  $name: $typeName.canParse(json) ? $typeName.fromJson(json) : null,'
+        : '  $name: map != null && $typeName.canParse(map) ? $typeName.fromJson(map) : null,';
+
+    final args = fields.map((f) {
+      final fType = f.type;
+      return switch (fType) {
+        IrPrimitive() =>
+          '  ${f.name}: ${_primitiveAnyOfExpr(fType, 'json')},',
+        IrEnum() =>
+          '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,',
+        IrExtensionType(:final inner) =>
+          '  ${f.name}: json is ${primitiveJsonWireType(inner.kind)} ? ${f.typeName}.fromJson(json) : null,',
+        IrList() || IrMap() =>
+          '  // ${f.name}: skipped (collection type in anyOf not supported)',
+        _ when isOneOfType(fType, typeRegistry) =>
+          oneOfArg(f.name, fType),
+        _ when isUnionType(fType, typeRegistry) =>
+          mapArg(f.name, f.typeName),
+        _ => objectArg(f.name, f.typeName),
+      };
+    }).join('\n');
 
     return Constructor(
       (c) => c
@@ -1320,32 +1291,18 @@ final class AnyOfEmitter {
   Method _buildToJson(
     List<({String name, IrType type, String typeName})> fields,
   ) {
-    final spreads = fields
-        .map((f) {
-          // Primitives and enums can't be spread into a Map - include as named
-          // entries.
-          if (f.type is IrPrimitive) {
-            return "  '${f.name}': ?${f.name},";
-          }
-          if (f.type is IrEnum) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
-          }
-          // Extension types wrap a primitive - toJson returns a primitive, not
-          // a Map.
-          if (f.type is IrExtensionType) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
-          }
-          if (f.type is IrList || f.type is IrMap) {
-            return "  '${f.name}': ?${f.name},";
-          }
-          // Sealed/union types have toJson returning Object?, so we can't
-          // spread.
-          if (isUnionType(f.type, typeRegistry)) {
-            return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
-          }
-          return '  ...?${f.name}?.toJson(),';
-        })
-        .join('\n');
+    final spreads = fields.map((f) {
+      final fType = f.type;
+      return switch (fType) {
+        IrPrimitive() || IrList() || IrMap() =>
+          "  '${f.name}': ?${f.name},",
+        IrEnum() || IrExtensionType() =>
+          "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),",
+        _ when isUnionType(fType, typeRegistry) =>
+          "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),",
+        _ => '  ...?${f.name}?.toJson(),',
+      };
+    }).join('\n');
 
     return Method(
       (m) => m

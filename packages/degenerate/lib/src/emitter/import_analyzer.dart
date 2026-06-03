@@ -258,24 +258,10 @@ analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
     _ => false,
   };
 
-  bool isOneOfType(IrType t) => switch (t) {
-    IrUntaggedUnion(:final name, :final variants)
-        when isOneOfTypedef(name, variants) =>
-      true,
-    IrAnyOf(:final name, :final variants)
-        when isOneOfTypedef(name, variants) =>
-      true,
-    IrTypeRef(:final name) when typeRegistry != null =>
-      switch (typeRegistry[name]) {
-        IrUntaggedUnion(:final variants)
-            when isOneOfTypedef(name, variants) =>
-          true,
-        IrAnyOf(:final variants) when isOneOfTypedef(name, variants) => true,
-        _ => false,
-      },
-    IrList(:final items) => isOneOfType(items),
-    IrMap(:final values) => isOneOfType(values),
-    _ => false,
+  bool isOneOfTypeDeep(IrType t) => switch (t) {
+    IrList(:final items) => isOneOfTypeDeep(items),
+    IrMap(:final values) => isOneOfTypeDeep(values),
+    _ => isOneOfType(t, typeRegistry),
   };
 
   void checkField(IrType fieldType) {
@@ -287,7 +273,7 @@ analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
     } else if (hasBytesAnywhere(fieldType)) {
       needsConvert = true;
     }
-    if (isOneOfType(fieldType)) needsOneOf = true;
+    if (isOneOfTypeDeep(fieldType)) needsOneOf = true;
   }
 
   switch (type) {
@@ -374,7 +360,7 @@ analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
       } else {
         for (final variant in variants) {
           collectTopLevelTypeName(variant, names, typeRegistry);
-          if (isOneOfType(variant)) needsOneOf = true;
+          if (isOneOfTypeDeep(variant)) needsOneOf = true;
           if (isListType(variant)) needsCollection = true;
           if (isBytesType(variant)) {
             needsTypedData = true;

@@ -76,7 +76,7 @@ final class RoundtripEmitter {
         IrAnyOf(:final variants) => variants,
         _ => null,
       };
-      if (unionVariants != null && _isOneOfTypedef(type)) {
+      if (unionVariants != null && isOneOfType(type)) {
         final decode = buildFromJsonCode(type, 'json', typeRegistry: _registry);
         final encode = buildToJsonCode(type, '(value! as $name)');
         var any = false;
@@ -92,7 +92,7 @@ final class RoundtripEmitter {
         continue;
       }
 
-      if (unionVariants != null && !_isOneOfTypedef(type)) {
+      if (unionVariants != null && !isOneOfType(type)) {
         final allPrimitive = unionVariants.every((v) => v is IrPrimitive);
         if (!allPrimitive) {
           final decode = '$name.fromJson(json! as Map<String, dynamic>)';
@@ -356,19 +356,6 @@ final class RoundtripEmitter {
   }
 
 
-  /// Whether [type] is a OneOf-eligible union typedef with an inline parser
-  /// (i.e. not self-referencing — those use a `parseName` helper instead).
-  bool _isOneOfTypedef(IrType type) {
-    final variants = switch (type) {
-      IrUntaggedUnion(:final variants) => variants,
-      IrAnyOf(:final variants) => variants,
-      _ => null,
-    };
-    if (variants == null) return false;
-    return isOneOfTypedef(type.emittableName!, variants);
-  }
-
-
   /// A literal for each primitive kind, chosen so `fromJson`→`toJson` is the
   /// identity (canonical ISO date, round-trippable base64, etc.).
   static const _formatSamples = {
@@ -458,14 +445,9 @@ final class RoundtripEmitter {
       }
     }
     t = t?.resolveRef(_registry);
-    final native =
-        t is IrPrimitive &&
-        const {
-          PrimitiveKind.bool,
-          PrimitiveKind.int,
-          PrimitiveKind.double,
-        }.contains(t.kind);
-    return native ? discValue : dartStringLiteral(discValue);
+    return t != null && isNonStringPrimitiveDisc(t)
+        ? discValue
+        : dartStringLiteral(discValue);
   }
 
   /// Build `'key': <literal>` entries for the always-emitted fields, skipping

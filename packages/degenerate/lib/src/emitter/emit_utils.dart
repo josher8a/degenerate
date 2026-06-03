@@ -399,6 +399,32 @@ bool isOneOfEligible(List<IrType> variants) =>
 bool isOneOfTypedef(String name, List<IrType> variants) =>
     isOneOfEligible(variants) && !isSelfReferencingUnion(name, variants);
 
+/// Whether [type] is a OneOf-eligible union typedef, optionally resolving
+/// [IrTypeRef] through [typeRegistry].
+bool isOneOfType(IrType type, [Map<String, IrType>? typeRegistry]) {
+  final resolved =
+      typeRegistry != null ? type.resolveRef(typeRegistry) : type;
+  return switch (resolved) {
+    IrUntaggedUnion(:final name, :final variants)
+        when isOneOfTypedef(name, variants) =>
+      true,
+    IrAnyOf(:final name, :final variants)
+        when isOneOfTypedef(name, variants) =>
+      true,
+    _ => false,
+  };
+}
+
+/// Whether a resolved discriminator field type uses a bare literal
+/// (bool/int/double) rather than a string representation on the wire.
+bool isNonStringPrimitiveDisc(IrType resolvedType) => switch (resolvedType) {
+  IrPrimitive(
+    kind: PrimitiveKind.bool || PrimitiveKind.int || PrimitiveKind.double,
+  ) =>
+    true,
+  _ => false,
+};
+
 /// Build the `OneOfN<A, B, ...>` type reference for a union's variants.
 ///
 /// Variants keep their spec order: the type-arg order is part of the union's
