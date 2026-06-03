@@ -121,6 +121,139 @@ void main() {
       expect(combinedProps, contains('b'));
     });
 
+    test('does not flatten when sub-schema has discriminator', () {
+      final schema = <String, dynamic>{
+        'allOf': [
+          {
+            'discriminator': {'propertyName': 'kind'},
+            'type': 'object',
+            'properties': {
+              'id': {'type': 'integer'},
+            },
+          },
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result, contains('allOf'));
+    });
+
+    test('short-circuits single-entry allOf with \$ref', () {
+      final schema = <String, dynamic>{
+        'description': 'A pet reference',
+        'allOf': [
+          {r'$ref': '#/components/schemas/Pet'},
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result[r'$ref'], '#/components/schemas/Pet');
+      expect(result['description'], 'A pet reference');
+      expect(result.containsKey('allOf'), isFalse);
+    });
+
+    test('short-circuits single-entry allOf with _resolvedRef', () {
+      final schema = <String, dynamic>{
+        'allOf': [
+          {'_resolvedRef': 'Pet'},
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result['_resolvedRef'], 'Pet');
+      expect(result.containsKey('allOf'), isFalse);
+    });
+
+    test('does not short-circuit single allOf without ref', () {
+      final schema = <String, dynamic>{
+        'allOf': [
+          {
+            'type': 'object',
+            'properties': {
+              'id': {'type': 'integer'},
+            },
+          },
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result.containsKey('allOf'), isFalse);
+      expect(result['properties'], contains('id'));
+    });
+
+    test('does not overwrite top-level type with sub-schema type', () {
+      final schema = <String, dynamic>{
+        'type': ['object', 'null'],
+        'allOf': [
+          {
+            'type': 'object',
+            'properties': {
+              'id': {'type': 'integer'},
+            },
+          },
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result['type'], ['object', 'null']);
+    });
+
+    test('picks up type from sub-schema when top-level has none', () {
+      final schema = <String, dynamic>{
+        'allOf': [
+          {
+            'type': 'object',
+            'properties': {
+              'name': {'type': 'string'},
+            },
+          },
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result['type'], 'object');
+    });
+
+    test('carries over extra keys from sub-schemas', () {
+      final schema = <String, dynamic>{
+        'allOf': [
+          {
+            'type': 'object',
+            'x-custom': 'hello',
+            'properties': {
+              'id': {'type': 'integer'},
+            },
+          },
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result['x-custom'], 'hello');
+    });
+
+    test('last description wins', () {
+      final schema = <String, dynamic>{
+        'allOf': [
+          {
+            'description': 'first',
+            'properties': {
+              'a': {'type': 'string'},
+            },
+          },
+          {
+            'description': 'second',
+            'properties': {
+              'b': {'type': 'string'},
+            },
+          },
+        ],
+      };
+      final result = flattener.flatten(schema);
+      expect(result['description'], 'second');
+    });
+
+    test('returns schema as-is when allOf is not a list', () {
+      final schema = <String, dynamic>{
+        'allOf': 'not a list',
+        'type': 'object',
+      };
+      final result = flattener.flatten(schema);
+      expect(result, schema);
+    });
+
     test('merges top-level properties and required with allOf', () {
       final schema = <String, dynamic>{
         'properties': {

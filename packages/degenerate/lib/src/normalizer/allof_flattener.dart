@@ -7,50 +7,92 @@ final class AllOfFlattener {
   /// so downstream code can handle it as a union type.
   Map<String, dynamic> flatten(Map<String, dynamic> schema) {
     if (!schema.containsKey('allOf')) return schema;
-
-    // Don't flatten discriminated unions.
-    if (schema.containsKey('discriminator')) return schema;
+    if (_hasDiscriminator(schema)) return schema;
 
     final allOf = schema['allOf'];
     if (allOf is! List) return schema;
 
-    // Check sub-schemas for a discriminator as well.
+    final singleRef = _trySingleRefShortcut(schema, allOf);
+    if (singleRef != null) return singleRef;
+
+    return _mergeAllOf(schema, allOf);
+  }
+
+  bool _hasDiscriminator(Map<String, dynamic> schema) {
+    if (schema.containsKey('discriminator')) return true;
+    final allOf = schema['allOf'];
+    if (allOf is! List) return false;
     for (final sub in allOf) {
       if (sub is Map<String, dynamic> && sub.containsKey('discriminator')) {
-        return schema;
+        return true;
       }
     }
+    return false;
+  }
 
-    // Special case: single-entry allOf with a $ref or _resolvedRef is
-    // unambiguously "this field is that type". Short-circuit to preserve the
-    // ref identity instead of merging properties (which would make it look
-    // like a full object schema and lose the type reference).
-    if (allOf.length == 1) {
-      final single = allOf[0];
-      if (single is Map<String, dynamic> &&
-          (single.containsKey(r'$ref') || single.containsKey('_resolvedRef'))) {
-        final result = <String, dynamic>{};
-        // Copy the ref key from the single allOf entry.
-        if (single.containsKey(r'$ref')) {
-          result[r'$ref'] = single[r'$ref'];
-        } else {
-          result['_resolvedRef'] = single['_resolvedRef'];
-        }
-        // Carry over outer keys (description, default, nullable, etc.)
-        for (final MapEntry(:key, :value) in schema.entries) {
-          if (key == 'allOf') continue;
-          result.putIfAbsent(key, () => value);
-        }
-        return result;
-      }
+  /// Single-entry allOf with a $ref or _resolvedRef: preserve the ref identity
+  /// instead of merging properties (which would lose the type reference).
+  Map<String, dynamic>? _trySingleRefShortcut(
+    Map<String, dynamic> schema,
+    List<dynamic> allOf,
+  ) {
+    if (allOf.length != 1) return null;
+    final single = allOf[0];
+    if (single is! Map<String, dynamic>) return null;
+    if (!single.containsKey(r'$ref') && !single.containsKey('_resolvedRef')) {
+      return null;
     }
 
+    final result = <String, dynamic>{};
+    if (single.containsKey(r'$ref')) {
+      result[r'$ref'] = single[r'$ref'];
+    } else {
+      result['_resolvedRef'] = single['_resolvedRef'];
+    }
+    for (final MapEntry(:key, :value) in schema.entries) {
+      if (key == 'allOf') continue;
+      result.putIfAbsent(key, () => value);
+    }
+    return result;
+  }
+
+  Map<String, dynamic> _mergeAllOf(
+    Map<String, dynamic> schema,
+    List<dynamic> allOf,
+  ) {
     final mergedProperties = <String, dynamic>{};
     final mergedRequired = <String>{};
     String? type;
     String? description;
 
-    // Carry over top-level fields that aren't allOf.
+    final result = _extractTopLevel(schema, mergedProperties, mergedRequired);
+
+    for (final sub in allOf) {
+      if (sub is! Map<String, dynamic>) continue;
+      _mergeSubSchema(sub, mergedProperties, mergedRequired, result);
+      if (sub.containsKey('type')) type = sub['type'] as String?;
+      if (sub.containsKey('description')) {
+        description = sub['description'] as String?;
+      }
+    }
+
+    if (type != null && !result.containsKey('type')) result['type'] = type;
+    if (description != null) result['description'] = description;
+    if (mergedProperties.isNotEmpty) result['properties'] = mergedProperties;
+    if (mergedRequired.isNotEmpty) {
+      result['required'] = mergedRequired.toList();
+    }
+
+    return result;
+  }
+
+  /// Extract top-level keys (except allOf, properties, required) into result,
+  /// merging top-level properties and required into the accumulators.
+  Map<String, dynamic> _extractTopLevel(
+    Map<String, dynamic> schema,
+    Map<String, dynamic> mergedProperties,
+    Set<String> mergedRequired,
+  ) {
     final result = <String, dynamic>{};
     for (final MapEntry(:key, :value) in schema.entries) {
       if (key == 'allOf') continue;
@@ -64,50 +106,28 @@ final class AllOfFlattener {
       }
       result[key] = value;
     }
-
-    for (final sub in allOf) {
-      if (sub is! Map<String, dynamic>) continue;
-
-      final props = sub['properties'];
-      if (props is Map<String, dynamic>) {
-        mergedProperties.addAll(props);
-      }
-
-      final req = sub['required'];
-      if (req is List) {
-        mergedRequired.addAll(req.cast<String>());
-      }
-
-      if (sub.containsKey('type')) {
-        type = sub['type'] as String?;
-      }
-
-      if (sub.containsKey('description')) {
-        description = sub['description'] as String?;
-      }
-
-      // Carry over any other keys from sub-schemas that aren't already set.
-      for (final MapEntry(:key, :value) in sub.entries) {
-        if (const {
-          'properties',
-          'required',
-          'type',
-          'description',
-          'allOf',
-        }.contains(key)) {
-          continue;
-        }
-        result.putIfAbsent(key, () => value);
-      }
-    }
-
-    if (type != null && !result.containsKey('type')) result['type'] = type;
-    if (description != null) result['description'] = description;
-    if (mergedProperties.isNotEmpty) result['properties'] = mergedProperties;
-    if (mergedRequired.isNotEmpty) {
-      result['required'] = mergedRequired.toList();
-    }
-
     return result;
+  }
+
+  /// Merge a single sub-schema's properties, required, and extra keys.
+  void _mergeSubSchema(
+    Map<String, dynamic> sub,
+    Map<String, dynamic> mergedProperties,
+    Set<String> mergedRequired,
+    Map<String, dynamic> result,
+  ) {
+    final props = sub['properties'];
+    if (props is Map<String, dynamic>) mergedProperties.addAll(props);
+
+    final req = sub['required'];
+    if (req is List) mergedRequired.addAll(req.cast<String>());
+
+    for (final MapEntry(:key, :value) in sub.entries) {
+      if (const {'properties', 'required', 'type', 'description', 'allOf'}
+          .contains(key)) {
+        continue;
+      }
+      result.putIfAbsent(key, () => value);
+    }
   }
 }
