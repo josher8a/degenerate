@@ -14,6 +14,7 @@ export 'src/list_equals.dart';
 export 'src/map_equals.dart';
 export 'src/multipart.dart';
 export 'src/one_of.dart';
+export 'src/paginate.dart';
 export 'src/request_options.dart';
 export 'src/security.dart';
 export 'src/sse.dart';
