@@ -10,6 +10,7 @@ import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
+import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
     show sanitizeFieldName, toTypeName;
@@ -970,7 +971,7 @@ class FileEmitter {
       final name = _typeName(type);
       if (name == null) continue;
       final refs = <String>{};
-      _collectTypeRefsFromType(type, refs);
+      collectTypeRefs(type, refs);
       refs.remove(name);
       deps[name] = refs;
     }
@@ -993,45 +994,6 @@ class FileEmitter {
       }
     }
     return reachable;
-  }
-
-  /// Collect all type names referenced by [type] (recursive into fields,
-  /// variants, list/map items).
-  static void _collectTypeRefsFromType(IrType type, Set<String> names) {
-    switch (type) {
-      case IrObject(:final name, :final fields):
-        if (name.isNotEmpty) names.add(name);
-        for (final f in fields) {
-          _collectTypeRefsFromType(f.type, names);
-        }
-      case IrEnum(:final name):
-        if (name.isNotEmpty) names.add(name);
-      case IrTypeRef(:final name):
-        names.add(name);
-      case IrExtensionType(:final name):
-        if (name.isNotEmpty) names.add(name);
-      case IrDiscriminatedUnion(:final name, :final mapping):
-        if (name.isNotEmpty) names.add(name);
-        for (final v in mapping.values) {
-          _collectTypeRefsFromType(v, names);
-        }
-      case IrUntaggedUnion(:final name, :final variants):
-        if (name.isNotEmpty) names.add(name);
-        for (final v in variants) {
-          _collectTypeRefsFromType(v, names);
-        }
-      case IrAnyOf(:final name, :final variants):
-        if (name.isNotEmpty) names.add(name);
-        for (final v in variants) {
-          _collectTypeRefsFromType(v, names);
-        }
-      case IrList(:final items):
-        _collectTypeRefsFromType(items, names);
-      case IrMap(:final values):
-        _collectTypeRefsFromType(values, names);
-      case IrPrimitive():
-        break;
-    }
   }
 
   String _emitApiBarrelFile({

@@ -1,6 +1,7 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
@@ -111,7 +112,8 @@ Library emitErrorUnionLibrary({
 
   final importedTypes = <String>{};
   for (final entry in sortedEntries) {
-    _collectTypeRefs(entry.value.$2, importedTypes, typeRegistry);
+    collectTypeRefs(entry.value.$2, importedTypes,
+        typeRegistry: typeRegistry, walkFields: false);
   }
 
   return Library((lib) {
@@ -293,44 +295,4 @@ Class _buildUnknownClass(String className) {
         ..modifier = FieldModifier.final$
         ..type = refer('String?')),
     ]));
-}
-
-void _collectTypeRefs(
-  IrType type,
-  Set<String> names,
-  Map<String, IrType> typeRegistry,
-) {
-  switch (type) {
-    case IrTypeRef(:final name):
-      names.add(name);
-      final target = typeRegistry[name];
-      if (target != null) _collectTypeRefs(target, names, typeRegistry);
-    case IrObject(:final name):
-      names.add(name);
-    case IrEnum(:final name):
-      names.add(name);
-    case IrDiscriminatedUnion(:final name, :final mapping):
-      names.add(name);
-      for (final v in mapping.values) {
-        _collectTypeRefs(v, names, typeRegistry);
-      }
-    case IrUntaggedUnion(:final name, :final variants):
-      names.add(name);
-      for (final v in variants) {
-        _collectTypeRefs(v, names, typeRegistry);
-      }
-    case IrAnyOf(:final name, :final variants):
-      names.add(name);
-      for (final v in variants) {
-        _collectTypeRefs(v, names, typeRegistry);
-      }
-    case IrExtensionType(:final name):
-      names.add(name);
-    case IrList(:final items):
-      _collectTypeRefs(items, names, typeRegistry);
-    case IrMap(:final values):
-      _collectTypeRefs(values, names, typeRegistry);
-    case IrPrimitive():
-      break;
-  }
 }

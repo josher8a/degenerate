@@ -7,6 +7,7 @@ library;
 import 'dart:io';
 
 import 'package:degenerate/src/emitter/file_emitter.dart';
+import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/ir_validator.dart';
@@ -755,7 +756,7 @@ class Generator {
       final name = type.emittableName;
       if (name == null) continue;
       final refs = <String>{};
-      _collectTypeRefs(type, refs);
+      collectTypeRefs(type, refs);
       refs.remove(name);
       deps[name] = refs;
     }
@@ -767,21 +768,21 @@ class Generator {
     for (final api in apis) {
       for (final op in api.operations) {
         for (final p in op.parameters) {
-          _collectTypeRefs(p.type, reachable);
+          collectTypeRefs(p.type, reachable);
         }
         if (op.requestBody != null) {
           for (final c in op.requestBody!.content.values) {
-            _collectTypeRefs(c.schema, reachable);
+            collectTypeRefs(c.schema, reachable);
           }
         }
         for (final r in op.responses.values) {
           for (final c in r.content.values) {
-            _collectTypeRefs(c.schema, reachable);
+            collectTypeRefs(c.schema, reachable);
           }
         }
         if (op.defaultResponse != null) {
           for (final c in op.defaultResponse!.content.values) {
-            _collectTypeRefs(c.schema, reachable);
+            collectTypeRefs(c.schema, reachable);
           }
         }
       }
@@ -802,45 +803,6 @@ class Generator {
     }
 
     return reachable;
-  }
-
-  /// Collect type names referenced by a type (non-recursive into fields for
-  /// named types, but does recurse into list/map item types).
-  static void _collectTypeRefs(IrType type, Set<String> names) {
-    switch (type) {
-      case IrObject(:final name, :final fields):
-        names.add(name);
-        for (final f in fields) {
-          _collectTypeRefs(f.type, names);
-        }
-      case IrEnum(:final name):
-        names.add(name);
-      case IrTypeRef(:final name):
-        names.add(name);
-      case IrExtensionType(:final name):
-        names.add(name);
-      case IrDiscriminatedUnion(:final name, :final mapping):
-        names.add(name);
-        for (final v in mapping.values) {
-          _collectTypeRefs(v, names);
-        }
-      case IrUntaggedUnion(:final name, :final variants):
-        names.add(name);
-        for (final v in variants) {
-          _collectTypeRefs(v, names);
-        }
-      case IrAnyOf(:final name, :final variants):
-        names.add(name);
-        for (final v in variants) {
-          _collectTypeRefs(v, names);
-        }
-      case IrList(:final items):
-        _collectTypeRefs(items, names);
-      case IrMap(:final values):
-        _collectTypeRefs(values, names);
-      case IrPrimitive():
-        break;
-    }
   }
 
   /// Collect unique string-typed path parameters across all operations,
