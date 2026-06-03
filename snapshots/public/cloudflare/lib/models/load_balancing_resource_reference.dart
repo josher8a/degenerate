@@ -19,6 +19,12 @@ static const List<LoadBalancingResourceReferenceReferenceType> values = [referra
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'referral' => 'referral',
+  'referrer' => 'referrer',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +56,13 @@ static const List<LoadBalancingResourceReferenceResourceType> values = [loadBala
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'load_balancer' => 'loadBalancer',
+  'monitor' => 'monitor',
+  'pool' => 'pool',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -16,6 +16,11 @@ static const List<VectorStoreObjectObject> values = [vectorStore];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'vector_store' => 'vectorStore',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +52,13 @@ static const List<VectorStoreObjectStatus> values = [expired, inProgress, comple
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'expired' => 'expired',
+  'in_progress' => 'inProgress',
+  'completed' => 'completed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

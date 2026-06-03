@@ -34,6 +34,17 @@ static const List<TlsCertificatesAndHostnamesRequestedValidity> values = [$7, $3
 final double value;
 
 double toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  7 => r'$7',
+  30 => r'$30',
+  90 => r'$90',
+  365 => r'$365',
+  730 => r'$730',
+  1095 => r'$1095',
+  5475 => r'$5475',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -33,6 +33,17 @@ static const List<EmbeddingModelVariant1> values = [cfQwenQwen3Embedding06b, cfB
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '@cf/qwen/qwen3-embedding-0.6b' => 'cfQwenQwen3Embedding06b',
+  '@cf/baai/bge-m3' => 'cfBaaiBgeM3',
+  '@cf/baai/bge-large-en-v1.5' => 'cfBaaiBgeLargeEnV15',
+  '@cf/google/embeddinggemma-300m' => 'cfGoogleEmbeddinggemma300m',
+  'google-ai-studio/gemini-embedding-001' => 'googleAiStudioGeminiEmbedding001',
+  'openai/text-embedding-3-small' => 'openaiTextEmbedding3Small',
+  'openai/text-embedding-3-large' => 'openaiTextEmbedding3Large',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

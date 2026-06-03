@@ -21,6 +21,13 @@ static const List<DefaultAllowedUpdatesVariant1> values = [price, promotionCode,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'price' => 'price',
+  'promotion_code' => 'promotionCode',
+  'quantity' => 'quantity',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

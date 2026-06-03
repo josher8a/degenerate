@@ -115,6 +115,44 @@ static const List<TargetLanguage> values = [asmBeng, awaDeva, benBeng, bhoDeva, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'asm_Beng' => 'asmBeng',
+  'awa_Deva' => 'awaDeva',
+  'ben_Beng' => 'benBeng',
+  'bho_Deva' => 'bhoDeva',
+  'brx_Deva' => 'brxDeva',
+  'doi_Deva' => 'doiDeva',
+  'eng_Latn' => 'engLatn',
+  'gom_Deva' => 'gomDeva',
+  'gon_Deva' => 'gonDeva',
+  'guj_Gujr' => 'gujGujr',
+  'hin_Deva' => 'hinDeva',
+  'hne_Deva' => 'hneDeva',
+  'kan_Knda' => 'kanKnda',
+  'kas_Arab' => 'kasArab',
+  'kas_Deva' => 'kasDeva',
+  'kha_Latn' => 'khaLatn',
+  'lus_Latn' => 'lusLatn',
+  'mag_Deva' => 'magDeva',
+  'mai_Deva' => 'maiDeva',
+  'mal_Mlym' => 'malMlym',
+  'mar_Deva' => 'marDeva',
+  'mni_Beng' => 'mniBeng',
+  'mni_Mtei' => 'mniMtei',
+  'npi_Deva' => 'npiDeva',
+  'ory_Orya' => 'oryOrya',
+  'pan_Guru' => 'panGuru',
+  'san_Deva' => 'sanDeva',
+  'sat_Olck' => 'satOlck',
+  'snd_Arab' => 'sndArab',
+  'snd_Deva' => 'sndDeva',
+  'tam_Taml' => 'tamTaml',
+  'tel_Telu' => 'telTelu',
+  'urd_Arab' => 'urdArab',
+  'unr_Deva' => 'unrDeva',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -25,6 +25,14 @@ static const List<FinancialConnectionsAccountCategory> values = [cash, credit, i
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cash' => 'cash',
+  'credit' => 'credit',
+  'investment' => 'investment',
+  'other' => r'$other',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +58,11 @@ static const List<FinancialConnectionsAccountObject> values = [financialConnecti
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'financial_connections.account' => 'financialConnectionsAccount',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +94,13 @@ static const List<FinancialConnectionsAccountStatus> values = [active, disconnec
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'active' => 'active',
+  'disconnected' => 'disconnected',
+  'inactive' => 'inactive',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -134,6 +154,16 @@ static const List<Subcategory> values = [checking, creditCard, lineOfCredit, mor
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'checking' => 'checking',
+  'credit_card' => 'creditCard',
+  'line_of_credit' => 'lineOfCredit',
+  'mortgage' => 'mortgage',
+  'other' => r'$other',
+  'savings' => 'savings',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -158,6 +188,11 @@ static const List<FinancialConnectionsAccountSubscriptions> values = [transactio
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'transactions' => 'transactions',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -185,6 +220,12 @@ static const List<SupportedPaymentMethodTypes> values = [link, usBankAccount];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'link' => 'link',
+  'us_bank_account' => 'usBankAccount',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

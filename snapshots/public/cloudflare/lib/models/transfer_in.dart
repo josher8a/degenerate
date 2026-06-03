@@ -19,6 +19,12 @@ static const List<AcceptFoa> values = [needed, ok];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'needed' => 'needed',
+  'ok' => 'ok',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +65,16 @@ static const List<ApproveTransfer> values = [needed, ok, pending, trying, reject
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'needed' => 'needed',
+  'ok' => 'ok',
+  'pending' => 'pending',
+  'trying' => 'trying',
+  'rejected' => 'rejected',
+  'unknown' => 'unknown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -90,6 +106,13 @@ static const List<DisablePrivacy> values = [needed, ok, unknown];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'needed' => 'needed',
+  'ok' => 'ok',
+  'unknown' => 'unknown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -127,6 +150,15 @@ static const List<EnterAuthCode> values = [needed, ok, pending, trying, rejected
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'needed' => 'needed',
+  'ok' => 'ok',
+  'pending' => 'pending',
+  'trying' => 'trying',
+  'rejected' => 'rejected',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -164,6 +196,15 @@ static const List<UnlockDomain> values = [needed, ok, pending, trying, unknown];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'needed' => 'needed',
+  'ok' => 'ok',
+  'pending' => 'pending',
+  'trying' => 'trying',
+  'unknown' => 'unknown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

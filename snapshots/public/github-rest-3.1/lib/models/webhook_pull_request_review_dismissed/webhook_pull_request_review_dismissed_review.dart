@@ -21,6 +21,13 @@ static const List<ReviewState> values = [dismissed, approved, changesRequested];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'dismissed' => 'dismissed',
+  'approved' => 'approved',
+  'changes_requested' => 'changesRequested',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

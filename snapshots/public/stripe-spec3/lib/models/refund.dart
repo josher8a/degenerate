@@ -16,6 +16,11 @@ static const List<RefundObject> values = [refund];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'refund' => 'refund',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +52,13 @@ static const List<PendingReason> values = [chargePending, insufficientFunds, pro
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'charge_pending' => 'chargePending',
+  'insufficient_funds' => 'insufficientFunds',
+  'processing' => 'processing',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +93,14 @@ static const List<RefundReason> values = [duplicate, expiredUncapturedCharge, fr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'duplicate' => 'duplicate',
+  'expired_uncaptured_charge' => 'expiredUncapturedCharge',
+  'fraudulent' => 'fraudulent',
+  'requested_by_customer' => 'requestedByCustomer',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

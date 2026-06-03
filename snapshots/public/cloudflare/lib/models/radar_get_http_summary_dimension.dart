@@ -52,6 +52,23 @@ static const List<RadarGetHttpSummaryDimension> values = [adm1, $as, botClass, b
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ADM1' => 'adm1',
+  'AS' => r'$as',
+  'BOT_CLASS' => 'botClass',
+  'BROWSER' => 'browser',
+  'BROWSER_FAMILY' => 'browserFamily',
+  'DEVICE_TYPE' => 'deviceType',
+  'HTTP_PROTOCOL' => 'httpProtocol',
+  'HTTP_VERSION' => 'httpVersion',
+  'IP_VERSION' => 'ipVersion',
+  'LOCATION' => 'location',
+  'OS' => 'os',
+  'POST_QUANTUM' => 'postQuantum',
+  'TLS_VERSION' => 'tlsVersion',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

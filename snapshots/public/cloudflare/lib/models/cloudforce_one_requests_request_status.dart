@@ -31,6 +31,16 @@ static const List<CloudforceOneRequestsRequestStatus> values = [open, accepted, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'open' => 'open',
+  'accepted' => 'accepted',
+  'reported' => 'reported',
+  'approved' => 'approved',
+  'completed' => 'completed',
+  'declined' => 'declined',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

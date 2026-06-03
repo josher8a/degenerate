@@ -31,6 +31,16 @@ static const List<CreateImageEditRequestSize> values = [$256x256, $512x512, $102
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '256x256' => r'$256x256',
+  '512x512' => r'$512x512',
+  '1024x1024' => r'$1024x1024',
+  '1536x1024' => r'$1536x1024',
+  '1024x1536' => r'$1024x1536',
+  'auto' => 'auto',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -69,6 +79,15 @@ static const List<CreateImageEditRequestQuality> values = [standard, low, medium
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'standard' => 'standard',
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'auto' => 'auto',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

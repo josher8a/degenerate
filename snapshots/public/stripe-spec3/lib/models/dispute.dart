@@ -18,6 +18,12 @@ static const List<EnhancedEligibilityTypes> values = [visaCompellingEvidence3, v
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'visa_compelling_evidence_3' => 'visaCompellingEvidence3',
+  'visa_compliance' => 'visaCompliance',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -43,6 +49,11 @@ static const List<DisputeObject> values = [dispute];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'dispute' => 'dispute',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -89,6 +100,18 @@ static const List<DisputeStatus> values = [lost, needsResponse, prevented, under
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'lost' => 'lost',
+  'needs_response' => 'needsResponse',
+  'prevented' => 'prevented',
+  'under_review' => 'underReview',
+  'warning_closed' => 'warningClosed',
+  'warning_needs_response' => 'warningNeedsResponse',
+  'warning_under_review' => 'warningUnderReview',
+  'won' => 'won',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

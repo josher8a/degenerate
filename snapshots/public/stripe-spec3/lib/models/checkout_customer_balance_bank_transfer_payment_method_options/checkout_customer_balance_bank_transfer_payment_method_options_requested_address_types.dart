@@ -33,6 +33,17 @@ static const List<CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequest
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'aba' => 'aba',
+  'iban' => 'iban',
+  'sepa' => 'sepa',
+  'sort_code' => 'sortCode',
+  'spei' => 'spei',
+  'swift' => 'swift',
+  'zengin' => 'zengin',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

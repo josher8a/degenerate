@@ -37,6 +37,18 @@ static const List<PaymentIntentCancellationReason> values = [abandoned, automati
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'abandoned' => 'abandoned',
+  'automatic' => 'automatic',
+  'duplicate' => 'duplicate',
+  'expired' => 'expired',
+  'failed_invoice' => 'failedInvoice',
+  'fraudulent' => 'fraudulent',
+  'requested_by_customer' => 'requestedByCustomer',
+  'void_invoice' => 'voidInvoice',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -62,6 +74,11 @@ static const List<PaymentIntentObject> values = [paymentIntent];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'payment_intent' => 'paymentIntent',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -105,6 +122,17 @@ static const List<PaymentIntentStatus> values = [canceled, processing, requiresA
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'canceled' => 'canceled',
+  'processing' => 'processing',
+  'requires_action' => 'requiresAction',
+  'requires_capture' => 'requiresCapture',
+  'requires_confirmation' => 'requiresConfirmation',
+  'requires_payment_method' => 'requiresPaymentMethod',
+  'succeeded' => 'succeeded',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

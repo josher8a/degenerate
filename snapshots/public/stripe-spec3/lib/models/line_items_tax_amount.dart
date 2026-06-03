@@ -58,6 +58,25 @@ static const List<LineItemsTaxAmountTaxabilityReason> values = [customerExempt, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'customer_exempt' => 'customerExempt',
+  'not_collecting' => 'notCollecting',
+  'not_subject_to_tax' => 'notSubjectToTax',
+  'not_supported' => 'notSupported',
+  'portion_product_exempt' => 'portionProductExempt',
+  'portion_reduced_rated' => 'portionReducedRated',
+  'portion_standard_rated' => 'portionStandardRated',
+  'product_exempt' => 'productExempt',
+  'product_exempt_holiday' => 'productExemptHoliday',
+  'proportionally_rated' => 'proportionallyRated',
+  'reduced_rated' => 'reducedRated',
+  'reverse_charge' => 'reverseCharge',
+  'standard_rated' => 'standardRated',
+  'taxable_basis_reduced' => 'taxableBasisReduced',
+  'zero_rated' => 'zeroRated',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

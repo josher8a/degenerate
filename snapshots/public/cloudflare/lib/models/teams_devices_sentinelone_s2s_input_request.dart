@@ -25,6 +25,14 @@ static const List<NetworkStatus> values = [connected, disconnected, disconnectin
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'connected' => 'connected',
+  'disconnected' => 'disconnected',
+  'disconnecting' => 'disconnecting',
+  'connecting' => 'connecting',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -68,6 +76,17 @@ static const List<OperationalState> values = [na, partiallyDisabled, autoFullyDi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'na' => 'na',
+  'partially_disabled' => 'partiallyDisabled',
+  'auto_fully_disabled' => 'autoFullyDisabled',
+  'fully_disabled' => 'fullyDisabled',
+  'auto_partially_disabled' => 'autoPartiallyDisabled',
+  'disabled_error' => 'disabledError',
+  'db_corruption' => 'dbCorruption',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -126,6 +126,48 @@ static const List<CreateThreadAndRunRequestModelVariant2> values = [gpt5, gpt5Mi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'gpt-5' => 'gpt5',
+  'gpt-5-mini' => 'gpt5Mini',
+  'gpt-5-nano' => 'gpt5Nano',
+  'gpt-5-2025-08-07' => 'gpt520250807',
+  'gpt-5-mini-2025-08-07' => 'gpt5Mini20250807',
+  'gpt-5-nano-2025-08-07' => 'gpt5Nano20250807',
+  'gpt-4.1' => 'gpt41',
+  'gpt-4.1-mini' => 'gpt41Mini',
+  'gpt-4.1-nano' => 'gpt41Nano',
+  'gpt-4.1-2025-04-14' => 'gpt4120250414',
+  'gpt-4.1-mini-2025-04-14' => 'gpt41Mini20250414',
+  'gpt-4.1-nano-2025-04-14' => 'gpt41Nano20250414',
+  'gpt-4o' => 'gpt4o',
+  'gpt-4o-2024-11-20' => 'gpt4o20241120',
+  'gpt-4o-2024-08-06' => 'gpt4o20240806',
+  'gpt-4o-2024-05-13' => 'gpt4o20240513',
+  'gpt-4o-mini' => 'gpt4oMini',
+  'gpt-4o-mini-2024-07-18' => 'gpt4oMini20240718',
+  'gpt-4.5-preview' => 'gpt45Preview',
+  'gpt-4.5-preview-2025-02-27' => 'gpt45Preview20250227',
+  'gpt-4-turbo' => 'gpt4Turbo',
+  'gpt-4-turbo-2024-04-09' => 'gpt4Turbo20240409',
+  'gpt-4-0125-preview' => 'gpt40125Preview',
+  'gpt-4-turbo-preview' => 'gpt4TurboPreview',
+  'gpt-4-1106-preview' => 'gpt41106Preview',
+  'gpt-4-vision-preview' => 'gpt4VisionPreview',
+  'gpt-4' => 'gpt4',
+  'gpt-4-0314' => 'gpt40314',
+  'gpt-4-0613' => 'gpt40613',
+  'gpt-4-32k' => 'gpt432k',
+  'gpt-4-32k-0314' => 'gpt432k0314',
+  'gpt-4-32k-0613' => 'gpt432k0613',
+  'gpt-3.5-turbo' => 'gpt35Turbo',
+  'gpt-3.5-turbo-16k' => 'gpt35Turbo16k',
+  'gpt-3.5-turbo-0613' => 'gpt35Turbo0613',
+  'gpt-3.5-turbo-1106' => 'gpt35Turbo1106',
+  'gpt-3.5-turbo-0125' => 'gpt35Turbo0125',
+  'gpt-3.5-turbo-16k-0613' => 'gpt35Turbo16k0613',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

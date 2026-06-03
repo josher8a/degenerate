@@ -34,6 +34,17 @@ static const List<TunnelTunnelType> values = [cfdTunnel, warpConnector, warp, ma
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cfd_tunnel' => 'cfdTunnel',
+  'warp_connector' => 'warpConnector',
+  'warp' => 'warp',
+  'magic' => 'magic',
+  'ip_sec' => 'ipSec',
+  'gre' => 'gre',
+  'cni' => 'cni',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

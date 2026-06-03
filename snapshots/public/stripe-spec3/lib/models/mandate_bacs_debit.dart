@@ -25,6 +25,14 @@ static const List<NetworkStatus> values = [accepted, pending, refused, revoked];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'accepted' => 'accepted',
+  'pending' => 'pending',
+  'refused' => 'refused',
+  'revoked' => 'revoked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -62,6 +70,15 @@ static const List<RevocationReason> values = [accountClosed, bankAccountRestrict
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_closed' => 'accountClosed',
+  'bank_account_restricted' => 'bankAccountRestricted',
+  'bank_ownership_changed' => 'bankOwnershipChanged',
+  'could_not_process' => 'couldNotProcess',
+  'debit_not_authorized' => 'debitNotAuthorized',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

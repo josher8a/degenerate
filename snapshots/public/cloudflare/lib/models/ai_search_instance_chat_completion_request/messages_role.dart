@@ -27,6 +27,15 @@ static const List<MessagesRole> values = [system, developer, user, assistant, to
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'system' => 'system',
+  'developer' => 'developer',
+  'user' => 'user',
+  'assistant' => 'assistant',
+  'tool' => 'tool',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

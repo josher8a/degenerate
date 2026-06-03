@@ -61,6 +61,26 @@ static const List<RadarGetBotsSummaryBotCategory> values = [searchEngineCrawler,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'SEARCH_ENGINE_CRAWLER' => 'searchEngineCrawler',
+  'SEARCH_ENGINE_OPTIMIZATION' => 'searchEngineOptimization',
+  'MONITORING_AND_ANALYTICS' => 'monitoringAndAnalytics',
+  'ADVERTISING_AND_MARKETING' => 'advertisingAndMarketing',
+  'SOCIAL_MEDIA_MARKETING' => 'socialMediaMarketing',
+  'PAGE_PREVIEW' => 'pagePreview',
+  'ACADEMIC_RESEARCH' => 'academicResearch',
+  'SECURITY' => 'security',
+  'ACCESSIBILITY' => 'accessibility',
+  'WEBHOOKS' => 'webhooks',
+  'FEED_FETCHER' => 'feedFetcher',
+  'AI_CRAWLER' => 'aiCrawler',
+  'AGGREGATOR' => 'aggregator',
+  'AI_ASSISTANT' => 'aiAssistant',
+  'AI_SEARCH' => 'aiSearch',
+  'ARCHIVER' => 'archiver',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -19,6 +19,12 @@ static const List<PortalSubscriptionUpdateBillingCycleAnchor> values = [now, unc
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'now' => 'now',
+  'unchanged' => 'unchanged',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -49,6 +55,13 @@ static const List<PortalSubscriptionUpdateDefaultAllowedUpdates> values = [price
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'price' => 'price',
+  'promotion_code' => 'promotionCode',
+  'quantity' => 'quantity',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

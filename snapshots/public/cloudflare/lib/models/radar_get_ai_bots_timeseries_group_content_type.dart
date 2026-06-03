@@ -60,6 +60,26 @@ static const List<RadarGetAiBotsTimeseriesGroupContentType> values = [html, imag
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'HTML' => 'html',
+  'IMAGES' => 'images',
+  'JSON' => r'$json',
+  'JAVASCRIPT' => 'javascript',
+  'CSS' => 'css',
+  'PLAIN_TEXT' => 'plainText',
+  'FONTS' => 'fonts',
+  'XML' => 'xml',
+  'YAML' => 'yaml',
+  'VIDEO' => 'video',
+  'AUDIO' => 'audio',
+  'MARKDOWN' => 'markdown',
+  'DOCUMENTS' => 'documents',
+  'BINARY' => 'binary',
+  'SERIALIZATION' => 'serialization',
+  'OTHER' => r'$other',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

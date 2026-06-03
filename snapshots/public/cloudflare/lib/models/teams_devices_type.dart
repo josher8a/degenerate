@@ -82,6 +82,33 @@ static const List<TeamsDevicesType> values = [file, application, tanium, gateway
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'file' => 'file',
+  'application' => 'application',
+  'tanium' => 'tanium',
+  'gateway' => 'gateway',
+  'warp' => 'warp',
+  'disk_encryption' => 'diskEncryption',
+  'serial_number' => 'serialNumber',
+  'sentinelone' => 'sentinelone',
+  'carbonblack' => 'carbonblack',
+  'firewall' => 'firewall',
+  'os_version' => 'osVersion',
+  'domain_joined' => 'domainJoined',
+  'client_certificate' => 'clientCertificate',
+  'client_certificate_v2' => 'clientCertificateV2',
+  'antivirus' => 'antivirus',
+  'unique_client_id' => 'uniqueClientId',
+  'kolide' => 'kolide',
+  'tanium_s2s' => 'taniumS2s',
+  'crowdstrike_s2s' => 'crowdstrikeS2s',
+  'intune' => 'intune',
+  'workspace_one' => 'workspaceOne',
+  'sentinelone_s2s' => 'sentineloneS2s',
+  'custom_s2s' => 'customS2s',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

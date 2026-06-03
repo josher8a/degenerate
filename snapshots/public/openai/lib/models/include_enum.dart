@@ -44,6 +44,18 @@ static const List<IncludeEnum> values = [fileSearchCallResults, webSearchCallRes
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'file_search_call.results' => 'fileSearchCallResults',
+  'web_search_call.results' => 'webSearchCallResults',
+  'web_search_call.action.sources' => 'webSearchCallActionSources',
+  'message.input_image.image_url' => 'messageInputImageImageUrl',
+  'computer_call_output.output.image_url' => 'computerCallOutputOutputImageUrl',
+  'code_interpreter_call.outputs' => 'codeInterpreterCallOutputs',
+  'reasoning.encrypted_content' => 'reasoningEncryptedContent',
+  'message.output_text.logprobs' => 'messageOutputTextLogprobs',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -16,6 +16,11 @@ static const List<GraderStringCheckType> values = [stringCheck];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'string_check' => 'stringCheck',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +55,14 @@ static const List<GraderStringCheckOperation> values = [eq, ne, like, ilike];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'eq' => 'eq',
+  'ne' => 'ne',
+  'like' => 'like',
+  'ilike' => 'ilike',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

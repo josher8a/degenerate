@@ -28,6 +28,15 @@ static const List<ImagesImageVariantFit> values = [scaleDown, contain, cover, cr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'scale-down' => 'scaleDown',
+  'contain' => 'contain',
+  'cover' => 'cover',
+  'crop' => 'crop',
+  'pad' => 'pad',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -66,6 +75,13 @@ static const List<ImagesImageVariantSchemasMetadata> values = [keep, copyright, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'keep' => 'keep',
+  'copyright' => 'copyright',
+  'none' => 'none',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

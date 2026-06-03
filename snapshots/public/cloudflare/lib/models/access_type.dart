@@ -55,6 +55,24 @@ static const List<AccessType> values = [selfHosted, saas, ssh, vnc, appLauncher,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'self_hosted' => 'selfHosted',
+  'saas' => 'saas',
+  'ssh' => 'ssh',
+  'vnc' => 'vnc',
+  'app_launcher' => 'appLauncher',
+  'warp' => 'warp',
+  'biso' => 'biso',
+  'bookmark' => 'bookmark',
+  'dash_sso' => 'dashSso',
+  'infrastructure' => 'infrastructure',
+  'rdp' => 'rdp',
+  'mcp' => 'mcp',
+  'mcp_portal' => 'mcpPortal',
+  'proxy_endpoint' => 'proxyEndpoint',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

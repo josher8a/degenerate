@@ -22,6 +22,13 @@ static const List<TargetType> values = [global, organization, enterprise];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'global' => 'global',
+  'organization' => 'organization',
+  'enterprise' => 'enterprise',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,6 +63,14 @@ static const List<CodeSecurityConfigurationDependabotDelegatedAlertDismissal> va
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enabled' => 'enabled',
+  'disabled' => 'disabled',
+  'not_set' => 'notSet',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

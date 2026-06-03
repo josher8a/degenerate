@@ -25,6 +25,14 @@ static const List<MinTls> values = [$10, $11, $12, $13];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1.0' => r'$10',
+  '1.1' => r'$11',
+  '1.2' => r'$12',
+  '1.3' => r'$13',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

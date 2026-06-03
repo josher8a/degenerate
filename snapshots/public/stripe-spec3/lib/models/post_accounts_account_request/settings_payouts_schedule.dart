@@ -33,6 +33,17 @@ static const List<WeeklyAnchor> values = [friday, monday, saturday, sunday, thur
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'friday' => 'friday',
+  'monday' => 'monday',
+  'saturday' => 'saturday',
+  'sunday' => 'sunday',
+  'thursday' => 'thursday',
+  'tuesday' => 'tuesday',
+  'wednesday' => 'wednesday',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

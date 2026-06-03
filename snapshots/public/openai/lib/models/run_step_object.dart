@@ -16,6 +16,11 @@ static const List<RunStepObjectObject> values = [threadRunStep];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'thread.run.step' => 'threadRunStep',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -44,6 +49,12 @@ static const List<RunStepObjectType> values = [messageCreation, toolCalls];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'message_creation' => 'messageCreation',
+  'tool_calls' => 'toolCalls',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +92,15 @@ static const List<RunStepObjectStatus> values = [inProgress, cancelled, failed, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'in_progress' => 'inProgress',
+  'cancelled' => 'cancelled',
+  'failed' => 'failed',
+  'completed' => 'completed',
+  'expired' => 'expired',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

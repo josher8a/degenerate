@@ -55,6 +55,24 @@ static const List<RadarGetDnsSummaryDimension> values = [$as, cacheHit, dnssec, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'AS' => r'$as',
+  'CACHE_HIT' => 'cacheHit',
+  'DNSSEC' => 'dnssec',
+  'DNSSEC_AWARE' => 'dnssecAware',
+  'DNSSEC_E2E' => 'dnssecE2E',
+  'IP_VERSION' => 'ipVersion',
+  'LOCATION' => 'location',
+  'MATCHING_ANSWER' => 'matchingAnswer',
+  'PROTOCOL' => 'protocol',
+  'QUERY_TYPE' => 'queryType',
+  'RESPONSE_CODE' => 'responseCode',
+  'RESPONSE_TTL' => 'responseTtl',
+  'TLD' => 'tld',
+  'TLD_DNS_MAGNITUDE' => 'tldDnsMagnitude',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -24,6 +24,14 @@ static const List<UserContentVariant2Type> values = [text, imageUrl, inputAudio,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'text' => 'text',
+  'image_url' => 'imageUrl',
+  'input_audio' => 'inputAudio',
+  'file' => 'file',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

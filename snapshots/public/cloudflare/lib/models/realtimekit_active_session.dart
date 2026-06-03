@@ -19,6 +19,12 @@ static const List<RealtimekitActiveSessionStatus> values = [live, ended];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'LIVE' => 'live',
+  'ENDED' => 'ended',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +56,13 @@ static const List<RealtimekitActiveSessionType> values = [meeting, livestream, p
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'meeting' => 'meeting',
+  'livestream' => 'livestream',
+  'participant' => 'participant',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

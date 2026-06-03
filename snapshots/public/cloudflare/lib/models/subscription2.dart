@@ -39,6 +39,14 @@ static const List<Frequency> values = [weekly, monthly, quarterly, yearly];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'weekly' => 'weekly',
+  'monthly' => 'monthly',
+  'quarterly' => 'quarterly',
+  'yearly' => 'yearly',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -89,6 +97,17 @@ static const List<State> values = [trial, provisioned, paid, awaitingPayment, ca
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'Trial' => 'trial',
+  'Provisioned' => 'provisioned',
+  'Paid' => 'paid',
+  'AwaitingPayment' => 'awaitingPayment',
+  'Cancelled' => 'cancelled',
+  'Failed' => 'failed',
+  'Expired' => 'expired',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

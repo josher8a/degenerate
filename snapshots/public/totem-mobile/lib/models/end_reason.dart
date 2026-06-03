@@ -30,6 +30,16 @@ final class EndReason {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'keeper_ended' => 'keeperEnded',
+      'keeper_absent' => 'keeperAbsent',
+      'room_empty' => 'roomEmpty',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

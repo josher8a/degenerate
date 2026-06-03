@@ -55,6 +55,24 @@ static const List<AccessIdentityProviderType> values = [onetimepin, azureAd, sam
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'onetimepin' => 'onetimepin',
+  'azureAD' => 'azureAd',
+  'saml' => 'saml',
+  'centrify' => 'centrify',
+  'facebook' => 'facebook',
+  'github' => 'github',
+  'google-apps' => 'googleApps',
+  'google' => 'google',
+  'linkedin' => 'linkedin',
+  'oidc' => 'oidc',
+  'okta' => 'okta',
+  'onelogin' => 'onelogin',
+  'pingone' => 'pingone',
+  'yandex' => 'yandex',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

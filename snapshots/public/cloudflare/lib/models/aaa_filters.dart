@@ -24,6 +24,14 @@ static const List<IncidentImpact> values = [incidentImpactNone, incidentImpactMi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INCIDENT_IMPACT_NONE' => 'incidentImpactNone',
+  'INCIDENT_IMPACT_MINOR' => 'incidentImpactMinor',
+  'INCIDENT_IMPACT_MAJOR' => 'incidentImpactMajor',
+  'INCIDENT_IMPACT_CRITICAL' => 'incidentImpactCritical',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -48,6 +56,11 @@ static const List<TrafficExclusions> values = [securityEvents];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'security_events' => 'securityEvents',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

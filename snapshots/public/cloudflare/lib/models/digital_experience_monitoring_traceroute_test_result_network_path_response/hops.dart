@@ -24,6 +24,14 @@ static const List<Mile> values = [clientToApp, clientToCfEgress, clientToCfIngre
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'client-to-app' => 'clientToApp',
+  'client-to-cf-egress' => 'clientToCfEgress',
+  'client-to-cf-ingress' => 'clientToCfIngress',
+  'client-to-isp' => 'clientToIsp',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

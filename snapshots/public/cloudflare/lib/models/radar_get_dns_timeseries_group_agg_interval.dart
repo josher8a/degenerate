@@ -25,6 +25,14 @@ static const List<RadarGetDnsTimeseriesGroupAggInterval> values = [$15m, $1h, $1
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '15m' => r'$15m',
+  '1h' => r'$1h',
+  '1d' => r'$1d',
+  '1w' => r'$1w',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

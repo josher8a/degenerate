@@ -25,6 +25,14 @@ static const List<DefaultForNewRepos> values = [all, none, privateAndInternal, p
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'all' => 'all',
+  'none' => 'none',
+  'private_and_internal' => 'privateAndInternal',
+  'public' => 'public',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

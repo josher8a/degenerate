@@ -48,6 +48,22 @@ static const List<CheckRunWithSimpleCheckSuiteConclusion> values = [waiting, pen
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'waiting' => 'waiting',
+  'pending' => 'pending',
+  'startup_failure' => 'startupFailure',
+  'stale' => 'stale',
+  'success' => 'success',
+  'failure' => 'failure',
+  'neutral' => 'neutral',
+  'cancelled' => 'cancelled',
+  'skipped' => 'skipped',
+  'timed_out' => 'timedOut',
+  'action_required' => 'actionRequired',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -37,6 +37,18 @@ static const List<IssuingDisputeEvidenceReason> values = [canceled, duplicate, f
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'canceled' => 'canceled',
+  'duplicate' => 'duplicate',
+  'fraudulent' => 'fraudulent',
+  'merchandise_not_as_described' => 'merchandiseNotAsDescribed',
+  'no_valid_authorization' => 'noValidAuthorization',
+  'not_received' => 'notReceived',
+  'other' => r'$other',
+  'service_not_as_described' => 'serviceNotAsDescribed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

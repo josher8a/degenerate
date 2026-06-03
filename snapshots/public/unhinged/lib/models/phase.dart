@@ -82,6 +82,28 @@ final class Phase {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'new' => r'$new',
+      'full' => 'full',
+      '🌑' => r'$empty',
+      '🌕' => r'$empty2',
+      'yes' => 'yes',
+      'no' => 'no',
+      'on' => r'$on',
+      'off' => 'off',
+      'true' => r'$true',
+      'false' => r'$false',
+      '~' => r'$empty3',
+      '.inf' => 'inf',
+      '-.inf' => 'inf2',
+      '.nan' => 'nan',
+      'null' => r'$null',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

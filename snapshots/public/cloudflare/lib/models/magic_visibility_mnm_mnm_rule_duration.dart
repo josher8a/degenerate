@@ -37,6 +37,18 @@ static const List<MagicVisibilityMnmMnmRuleDuration> values = [$1m, $5m, $10m, $
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1m' => r'$1m',
+  '5m' => r'$5m',
+  '10m' => r'$10m',
+  '15m' => r'$15m',
+  '20m' => r'$20m',
+  '30m' => r'$30m',
+  '45m' => r'$45m',
+  '60m' => r'$60m',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

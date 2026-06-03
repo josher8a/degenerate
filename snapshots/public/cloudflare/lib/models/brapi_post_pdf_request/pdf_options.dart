@@ -46,6 +46,21 @@ static const List<PdfOptionsFormat> values = [letter, legal, tabloid, ledger, a0
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'letter' => 'letter',
+  'legal' => 'legal',
+  'tabloid' => 'tabloid',
+  'ledger' => 'ledger',
+  'a0' => 'a0',
+  'a1' => 'a1',
+  'a2' => 'a2',
+  'a3' => 'a3',
+  'a4' => 'a4',
+  'a5' => 'a5',
+  'a6' => 'a6',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

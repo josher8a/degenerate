@@ -31,6 +31,16 @@ static const List<TaxRateJurisdictionLevel> values = [city, country, county, dis
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'city' => 'city',
+  'country' => 'country',
+  'county' => 'county',
+  'district' => 'district',
+  'multiple' => 'multiple',
+  'state' => 'state',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,6 +66,11 @@ static const List<TaxRateObject> values = [taxRate];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'tax_rate' => 'taxRate',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

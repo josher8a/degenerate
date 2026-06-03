@@ -43,6 +43,20 @@ static const List<CodeScanningVariantAnalysisLanguage> values = [actions, cpp, c
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'actions' => 'actions',
+  'cpp' => 'cpp',
+  'csharp' => 'csharp',
+  'go' => 'go',
+  'java' => 'java',
+  'javascript' => 'javascript',
+  'python' => 'python',
+  'ruby' => 'ruby',
+  'rust' => 'rust',
+  'swift' => 'swift',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -74,6 +88,13 @@ static const List<FailureReason> values = [noReposQueried, actionsWorkflowRunFai
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'no_repos_queried' => 'noReposQueried',
+  'actions_workflow_run_failed' => 'actionsWorkflowRunFailed',
+  'internal_error' => 'internalError',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

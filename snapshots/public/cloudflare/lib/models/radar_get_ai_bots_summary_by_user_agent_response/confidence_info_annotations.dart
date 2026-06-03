@@ -88,6 +88,35 @@ static const List<DataSource> values = [all, aiBots, aiGateway, bgp, bots, conne
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ALL' => 'all',
+  'AI_BOTS' => 'aiBots',
+  'AI_GATEWAY' => 'aiGateway',
+  'BGP' => 'bgp',
+  'BOTS' => 'bots',
+  'CONNECTION_ANOMALY' => 'connectionAnomaly',
+  'CT' => 'ct',
+  'DNS' => 'dns',
+  'DNS_MAGNITUDE' => 'dnsMagnitude',
+  'DNS_AS112' => 'dnsAs112',
+  'DOS' => 'dos',
+  'EMAIL_ROUTING' => 'emailRouting',
+  'EMAIL_SECURITY' => 'emailSecurity',
+  'FW' => 'fw',
+  'FW_PG' => 'fwPg',
+  'HTTP' => 'http',
+  'HTTP_CONTROL' => 'httpControl',
+  'HTTP_CRAWLER_REFERER' => 'httpCrawlerReferer',
+  'HTTP_ORIGINS' => 'httpOrigins',
+  'IQI' => 'iqi',
+  'LEAKED_CREDENTIALS' => 'leakedCredentials',
+  'NET' => 'net',
+  'ROBOTS_TXT' => 'robotsTxt',
+  'SPEED' => 'speed',
+  'WORKERS_AI' => 'workersAi',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -128,6 +157,16 @@ static const List<AnnotationsEventType> values = [event, general, outage, partia
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'EVENT' => 'event',
+  'GENERAL' => 'general',
+  'OUTAGE' => 'outage',
+  'PARTIAL_PROJECTION' => 'partialProjection',
+  'PIPELINE' => 'pipeline',
+  'TRAFFIC_ANOMALY' => 'trafficAnomaly',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

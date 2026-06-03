@@ -21,6 +21,13 @@ static const List<Reasons> values = [accountRejected, closedByPlatform, $other];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_rejected' => 'accountRejected',
+  'closed_by_platform' => 'closedByPlatform',
+  'other' => r'$other',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

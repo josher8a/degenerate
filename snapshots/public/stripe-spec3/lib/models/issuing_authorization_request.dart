@@ -73,6 +73,30 @@ static const List<IssuingAuthorizationRequestReason> values = [accountDisabled, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_disabled' => 'accountDisabled',
+  'card_active' => 'cardActive',
+  'card_canceled' => 'cardCanceled',
+  'card_expired' => 'cardExpired',
+  'card_inactive' => 'cardInactive',
+  'cardholder_blocked' => 'cardholderBlocked',
+  'cardholder_inactive' => 'cardholderInactive',
+  'cardholder_verification_required' => 'cardholderVerificationRequired',
+  'insecure_authorization_method' => 'insecureAuthorizationMethod',
+  'insufficient_funds' => 'insufficientFunds',
+  'network_fallback' => 'networkFallback',
+  'not_allowed' => 'notAllowed',
+  'pin_blocked' => 'pinBlocked',
+  'spending_controls' => 'spendingControls',
+  'suspected_fraud' => 'suspectedFraud',
+  'verification_failed' => 'verificationFailed',
+  'webhook_approved' => 'webhookApproved',
+  'webhook_declined' => 'webhookDeclined',
+  'webhook_error' => 'webhookError',
+  'webhook_timeout' => 'webhookTimeout',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

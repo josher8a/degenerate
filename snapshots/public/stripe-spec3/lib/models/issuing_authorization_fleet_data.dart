@@ -22,6 +22,13 @@ static const List<IssuingAuthorizationFleetDataPurchaseType> values = [fuelAndNo
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'fuel_and_non_fuel_purchase' => 'fuelAndNonFuelPurchase',
+  'fuel_purchase' => 'fuelPurchase',
+  'non_fuel_purchase' => 'nonFuelPurchase',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +60,13 @@ static const List<IssuingAuthorizationFleetDataServiceType> values = [fullServic
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'full_service' => 'fullService',
+  'non_fuel_transaction' => 'nonFuelTransaction',
+  'self_service' => 'selfService',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

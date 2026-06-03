@@ -22,6 +22,13 @@ static const List<SecretScanningPushProtectionBypassReason> values = [falsePosit
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'false_positive' => 'falsePositive',
+  'used_in_tests' => 'usedInTests',
+  'will_fix_later' => 'willFixLater',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

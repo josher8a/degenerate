@@ -127,6 +127,48 @@ static const List<WaitingroomDefaultTemplateLanguage> values = [enUs, esEs, deDe
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'en-US' => 'enUs',
+  'es-ES' => 'esEs',
+  'de-DE' => 'deDe',
+  'fr-FR' => 'frFr',
+  'it-IT' => 'itIt',
+  'ja-JP' => 'jaJp',
+  'ko-KR' => 'koKr',
+  'pt-BR' => 'ptBr',
+  'zh-CN' => 'zhCn',
+  'zh-TW' => 'zhTw',
+  'nl-NL' => 'nlNl',
+  'pl-PL' => 'plPl',
+  'id-ID' => 'idId',
+  'tr-TR' => 'trTr',
+  'ar-EG' => 'arEg',
+  'ru-RU' => 'ruRu',
+  'fa-IR' => 'faIr',
+  'bg-BG' => 'bgBg',
+  'hr-HR' => 'hrHr',
+  'cs-CZ' => 'csCz',
+  'da-DK' => 'daDk',
+  'fi-FI' => 'fiFi',
+  'lt-LT' => 'ltLt',
+  'ms-MY' => 'msMy',
+  'nb-NO' => 'nbNo',
+  'ro-RO' => 'roRo',
+  'el-GR' => 'elGr',
+  'he-IL' => 'heIl',
+  'hi-IN' => 'hiIn',
+  'hu-HU' => 'huHu',
+  'sr-BA' => 'srBa',
+  'sk-SK' => 'skSk',
+  'sl-SI' => 'slSi',
+  'sv-SE' => 'svSe',
+  'tl-PH' => 'tlPh',
+  'th-TH' => 'thTh',
+  'uk-UA' => 'ukUa',
+  'vi-VN' => 'viVn',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -33,6 +33,17 @@ static const List<IssuingPersonalizationDesignRejectionReasonsCarrierText> value
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'geographic_location' => 'geographicLocation',
+  'inappropriate' => 'inappropriate',
+  'network_name' => 'networkName',
+  'non_fiat_currency' => 'nonFiatCurrency',
+  'other' => r'$other',
+  'other_entity' => 'otherEntity',
+  'promotional_material' => 'promotionalMaterial',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

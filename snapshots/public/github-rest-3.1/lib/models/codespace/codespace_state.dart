@@ -64,6 +64,27 @@ static const List<CodespaceState> values = [unknown, created, queued, provisioni
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'Unknown' => 'unknown',
+  'Created' => 'created',
+  'Queued' => 'queued',
+  'Provisioning' => 'provisioning',
+  'Available' => 'available',
+  'Awaiting' => 'awaiting',
+  'Unavailable' => 'unavailable',
+  'Deleted' => 'deleted',
+  'Moved' => 'moved',
+  'Shutdown' => 'shutdown',
+  'Archived' => 'archived',
+  'Starting' => 'starting',
+  'ShuttingDown' => 'shuttingDown',
+  'Failed' => 'failed',
+  'Exporting' => 'exporting',
+  'Updating' => 'updating',
+  'Rebuilding' => 'rebuilding',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

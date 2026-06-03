@@ -21,6 +21,13 @@ static const List<DependabotListAlertsForRepoSort> values = [created, updated, e
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'created' => 'created',
+  'updated' => 'updated',
+  'epss_percentage' => 'epssPercentage',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

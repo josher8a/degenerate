@@ -29,6 +29,14 @@ static const List<LockReason> values = [offTopic, tooHeated, resolved, spam];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off-topic' => 'offTopic',
+  'too heated' => 'tooHeated',
+  'resolved' => 'resolved',
+  'spam' => 'spam',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

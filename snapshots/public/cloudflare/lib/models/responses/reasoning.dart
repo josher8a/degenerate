@@ -22,6 +22,13 @@ static const List<Effort> values = [low, medium, high];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +60,13 @@ static const List<ReasoningSummary> values = [auto, concise, detailed];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'auto' => 'auto',
+  'concise' => 'concise',
+  'detailed' => 'detailed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

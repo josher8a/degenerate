@@ -52,6 +52,23 @@ static const List<PaymentIntentPaymentMethodOptionsCardNetwork> values = [amex, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'amex' => 'amex',
+  'cartes_bancaires' => 'cartesBancaires',
+  'diners' => 'diners',
+  'discover' => 'discover',
+  'eftpos_au' => 'eftposAu',
+  'girocard' => 'girocard',
+  'interac' => 'interac',
+  'jcb' => 'jcb',
+  'link' => 'link',
+  'mastercard' => 'mastercard',
+  'unionpay' => 'unionpay',
+  'unknown' => 'unknown',
+  'visa' => 'visa',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

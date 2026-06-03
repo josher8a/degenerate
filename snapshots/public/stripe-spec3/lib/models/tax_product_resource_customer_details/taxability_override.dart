@@ -22,6 +22,13 @@ static const List<TaxabilityOverride> values = [customerExempt, none, reverseCha
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'customer_exempt' => 'customerExempt',
+  'none' => 'none',
+  'reverse_charge' => 'reverseCharge',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

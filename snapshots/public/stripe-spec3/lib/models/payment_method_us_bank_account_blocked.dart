@@ -49,6 +49,22 @@ static const List<NetworkCode> values = [r02, r03, r04, r05, r07, r08, r10, r11,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'R02' => 'r02',
+  'R03' => 'r03',
+  'R04' => 'r04',
+  'R05' => 'r05',
+  'R07' => 'r07',
+  'R08' => 'r08',
+  'R10' => 'r10',
+  'R11' => 'r11',
+  'R16' => 'r16',
+  'R20' => 'r20',
+  'R29' => 'r29',
+  'R31' => 'r31',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -92,6 +108,17 @@ static const List<PaymentMethodUsBankAccountBlockedReason> values = [bankAccount
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'bank_account_closed' => 'bankAccountClosed',
+  'bank_account_frozen' => 'bankAccountFrozen',
+  'bank_account_invalid_details' => 'bankAccountInvalidDetails',
+  'bank_account_restricted' => 'bankAccountRestricted',
+  'bank_account_unusable' => 'bankAccountUnusable',
+  'debit_not_authorized' => 'debitNotAuthorized',
+  'tokenized_account_number_deactivated' => 'tokenizedAccountNumberDeactivated',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

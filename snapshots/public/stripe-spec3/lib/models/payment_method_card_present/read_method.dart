@@ -28,6 +28,15 @@ static const List<ReadMethod> values = [contactEmv, contactlessEmv, contactlessM
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'contact_emv' => 'contactEmv',
+  'contactless_emv' => 'contactlessEmv',
+  'contactless_magstripe_mode' => 'contactlessMagstripeMode',
+  'magnetic_stripe_fallback' => 'magneticStripeFallback',
+  'magnetic_stripe_track2' => 'magneticStripeTrack2',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

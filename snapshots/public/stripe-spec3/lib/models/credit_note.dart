@@ -16,6 +16,11 @@ static const List<CreditNoteObject> values = [creditNote];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'credit_note' => 'creditNote',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +55,14 @@ static const List<CreditNoteReason> values = [duplicate, fraudulent, orderChange
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'duplicate' => 'duplicate',
+  'fraudulent' => 'fraudulent',
+  'order_change' => 'orderChange',
+  'product_unsatisfactory' => 'productUnsatisfactory',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -78,6 +91,12 @@ static const List<CreditNoteStatus> values = [issued, $void];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'issued' => 'issued',
+  'void' => r'$void',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -109,6 +128,13 @@ static const List<CreditNoteType> values = [mixed, postPayment, prePayment];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'mixed' => 'mixed',
+  'post_payment' => 'postPayment',
+  'pre_payment' => 'prePayment',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

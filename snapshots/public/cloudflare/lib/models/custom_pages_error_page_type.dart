@@ -43,6 +43,20 @@ static const List<CustomPagesErrorPageType> values = [$1000Errors, $500Errors, b
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1000_errors' => r'$1000Errors',
+  '500_errors' => r'$500Errors',
+  'basic_challenge' => 'basicChallenge',
+  'country_challenge' => 'countryChallenge',
+  'ip_block' => 'ipBlock',
+  'managed_challenge' => 'managedChallenge',
+  'ratelimit_block' => 'ratelimitBlock',
+  'under_attack' => 'underAttack',
+  'waf_block' => 'wafBlock',
+  'waf_challenge' => 'wafChallenge',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

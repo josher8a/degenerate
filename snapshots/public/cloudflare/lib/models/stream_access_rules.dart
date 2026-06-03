@@ -19,6 +19,12 @@ static const List<StreamAccessRulesAction> values = [allow, block];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'allow' => 'allow',
+  'block' => 'block',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +56,13 @@ static const List<StreamAccessRulesType> values = [any, ipSrc, ipGeoipCountry];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'any' => 'any',
+  'ip.src' => 'ipSrc',
+  'ip.geoip.country' => 'ipGeoipCountry',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

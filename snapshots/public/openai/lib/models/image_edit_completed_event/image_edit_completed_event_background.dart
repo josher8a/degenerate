@@ -23,6 +23,13 @@ static const List<ImageEditCompletedEventBackground> values = [transparent, opaq
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'transparent' => 'transparent',
+  'opaque' => 'opaque',
+  'auto' => 'auto',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

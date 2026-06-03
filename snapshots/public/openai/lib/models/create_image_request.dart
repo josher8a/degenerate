@@ -37,6 +37,16 @@ static const List<CreateImageRequestQuality> values = [standard, hd, low, medium
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'standard' => 'standard',
+  'hd' => 'hd',
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'auto' => 'auto',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -83,6 +93,18 @@ static const List<CreateImageRequestSize> values = [auto, $1024x1024, $1536x1024
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'auto' => 'auto',
+  '1024x1024' => r'$1024x1024',
+  '1536x1024' => r'$1536x1024',
+  '1024x1536' => r'$1024x1536',
+  '256x256' => r'$256x256',
+  '512x512' => r'$512x512',
+  '1792x1024' => r'$1792x1024',
+  '1024x1792' => r'$1024x1792',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -111,6 +133,12 @@ static const List<Style> values = [vivid, natural];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'vivid' => 'vivid',
+  'natural' => 'natural',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

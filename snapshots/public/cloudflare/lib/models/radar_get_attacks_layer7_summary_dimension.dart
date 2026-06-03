@@ -34,6 +34,17 @@ static const List<RadarGetAttacksLayer7SummaryDimension> values = [httpMethod, h
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'HTTP_METHOD' => 'httpMethod',
+  'HTTP_VERSION' => 'httpVersion',
+  'IP_VERSION' => 'ipVersion',
+  'MANAGED_RULES' => 'managedRules',
+  'MITIGATION_PRODUCT' => 'mitigationProduct',
+  'VERTICAL' => 'vertical',
+  'INDUSTRY' => 'industry',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

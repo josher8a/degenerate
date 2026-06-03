@@ -32,6 +32,15 @@ static const List<CreateChatCompletionStreamResponseChoicesFinishReason> values 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'stop' => 'stop',
+  'length' => 'length',
+  'tool_calls' => 'toolCalls',
+  'content_filter' => 'contentFilter',
+  'function_call' => 'functionCall',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

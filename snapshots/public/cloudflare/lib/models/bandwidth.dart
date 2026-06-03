@@ -49,6 +49,22 @@ static const List<Bandwidth> values = [$50M, $100M, $200M, $300M, $400M, $500M, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '50M' => r'$50M',
+  '100M' => r'$100M',
+  '200M' => r'$200M',
+  '300M' => r'$300M',
+  '400M' => r'$400M',
+  '500M' => r'$500M',
+  '1G' => r'$1G',
+  '2G' => r'$2G',
+  '5G' => r'$5G',
+  '10G' => r'$10G',
+  '20G' => r'$20G',
+  '50G' => r'$50G',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

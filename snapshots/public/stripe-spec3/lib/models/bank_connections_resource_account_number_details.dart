@@ -19,6 +19,12 @@ static const List<IdentifierType> values = [accountNumber, tokenizedAccountNumbe
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_number' => 'accountNumber',
+  'tokenized_account_number' => 'tokenizedAccountNumber',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +53,12 @@ static const List<BankConnectionsResourceAccountNumberDetailsStatus> values = [d
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'deactivated' => 'deactivated',
+  'transactable' => 'transactable',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -71,6 +83,11 @@ static const List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks> 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ach' => 'ach',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

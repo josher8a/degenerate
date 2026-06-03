@@ -31,6 +31,16 @@ static const List<BaseRole> values = [read, triage, write, maintain, admin, $nul
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'read' => 'read',
+  'triage' => 'triage',
+  'write' => 'write',
+  'maintain' => 'maintain',
+  'admin' => 'admin',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -65,6 +75,14 @@ static const List<OrganizationRoleSource> values = [organization, enterprise, pr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'Organization' => 'organization',
+  'Enterprise' => 'enterprise',
+  'Predefined' => 'predefined',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

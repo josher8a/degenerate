@@ -46,6 +46,21 @@ static const List<DeviceType> values = [bbposChipper2x, bbposWisepad3, bbposWise
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'bbpos_chipper2x' => 'bbposChipper2x',
+  'bbpos_wisepad3' => 'bbposWisepad3',
+  'bbpos_wisepos_e' => 'bbposWiseposE',
+  'mobile_phone_reader' => 'mobilePhoneReader',
+  'simulated_stripe_s700' => 'simulatedStripeS700',
+  'simulated_stripe_s710' => 'simulatedStripeS710',
+  'simulated_wisepos_e' => 'simulatedWiseposE',
+  'stripe_m2' => 'stripeM2',
+  'stripe_s700' => 'stripeS700',
+  'stripe_s710' => 'stripeS710',
+  'verifone_P400' => 'verifoneP400',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

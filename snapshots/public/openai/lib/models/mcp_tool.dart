@@ -51,6 +51,18 @@ static const List<ConnectorId> values = [connectorDropbox, connectorGmail, conne
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'connector_dropbox' => 'connectorDropbox',
+  'connector_gmail' => 'connectorGmail',
+  'connector_googlecalendar' => 'connectorGooglecalendar',
+  'connector_googledrive' => 'connectorGoogledrive',
+  'connector_microsoftteams' => 'connectorMicrosoftteams',
+  'connector_outlookcalendar' => 'connectorOutlookcalendar',
+  'connector_outlookemail' => 'connectorOutlookemail',
+  'connector_sharepoint' => 'connectorSharepoint',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

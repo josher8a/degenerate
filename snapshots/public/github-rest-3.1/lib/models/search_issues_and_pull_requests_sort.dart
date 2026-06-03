@@ -45,6 +45,21 @@ static const List<SearchIssuesAndPullRequestsSort> values = [comments, reactions
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'comments' => 'comments',
+  'reactions' => 'reactions',
+  'reactions-+1' => 'reactions1',
+  'reactions--1' => 'reactions12',
+  'reactions-smile' => 'reactionsSmile',
+  'reactions-thinking_face' => 'reactionsThinkingFace',
+  'reactions-heart' => 'reactionsHeart',
+  'reactions-tada' => 'reactionsTada',
+  'interactions' => 'interactions',
+  'created' => 'created',
+  'updated' => 'updated',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

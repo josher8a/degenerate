@@ -70,6 +70,29 @@ static const List<GelatoSessionLastErrorCode> values = [abandoned, consentDeclin
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'abandoned' => 'abandoned',
+  'consent_declined' => 'consentDeclined',
+  'country_not_supported' => 'countryNotSupported',
+  'device_not_supported' => 'deviceNotSupported',
+  'document_expired' => 'documentExpired',
+  'document_type_not_supported' => 'documentTypeNotSupported',
+  'document_unverified_other' => 'documentUnverifiedOther',
+  'email_unverified_other' => 'emailUnverifiedOther',
+  'email_verification_declined' => 'emailVerificationDeclined',
+  'id_number_insufficient_document_data' => 'idNumberInsufficientDocumentData',
+  'id_number_mismatch' => 'idNumberMismatch',
+  'id_number_unverified_other' => 'idNumberUnverifiedOther',
+  'phone_unverified_other' => 'phoneUnverifiedOther',
+  'phone_verification_declined' => 'phoneVerificationDeclined',
+  'selfie_document_missing_photo' => 'selfieDocumentMissingPhoto',
+  'selfie_face_mismatch' => 'selfieFaceMismatch',
+  'selfie_manipulated' => 'selfieManipulated',
+  'selfie_unverified_other' => 'selfieUnverifiedOther',
+  'under_supported_age' => 'underSupportedAge',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

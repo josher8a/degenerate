@@ -27,6 +27,15 @@ static const List<MinorityOwnedBusinessDesignation> values = [lgbtqiOwnedBusines
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'lgbtqi_owned_business' => 'lgbtqiOwnedBusiness',
+  'minority_owned_business' => 'minorityOwnedBusiness',
+  'none_of_these_apply' => 'noneOfTheseApply',
+  'prefer_not_to_answer' => 'preferNotToAnswer',
+  'women_owned_business' => 'womenOwnedBusiness',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

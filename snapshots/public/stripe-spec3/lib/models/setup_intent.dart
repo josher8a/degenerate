@@ -22,6 +22,13 @@ static const List<SetupIntentCancellationReason> values = [abandoned, duplicate,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'abandoned' => 'abandoned',
+  'duplicate' => 'duplicate',
+  'requested_by_customer' => 'requestedByCustomer',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +54,11 @@ static const List<SetupIntentObject> values = [setupIntent];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'setup_intent' => 'setupIntent',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -87,6 +99,16 @@ static const List<SetupIntentStatus> values = [canceled, processing, requiresAct
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'canceled' => 'canceled',
+  'processing' => 'processing',
+  'requires_action' => 'requiresAction',
+  'requires_confirmation' => 'requiresConfirmation',
+  'requires_payment_method' => 'requiresPaymentMethod',
+  'succeeded' => 'succeeded',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

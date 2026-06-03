@@ -162,6 +162,60 @@ static const List<PostCheckoutSessionsRequestPaymentMethodTypes> values = [acssD
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'acss_debit' => 'acssDebit',
+  'affirm' => 'affirm',
+  'afterpay_clearpay' => 'afterpayClearpay',
+  'alipay' => 'alipay',
+  'alma' => 'alma',
+  'amazon_pay' => 'amazonPay',
+  'au_becs_debit' => 'auBecsDebit',
+  'bacs_debit' => 'bacsDebit',
+  'bancontact' => 'bancontact',
+  'billie' => 'billie',
+  'blik' => 'blik',
+  'boleto' => 'boleto',
+  'card' => 'card',
+  'cashapp' => 'cashapp',
+  'crypto' => 'crypto',
+  'customer_balance' => 'customerBalance',
+  'eps' => 'eps',
+  'fpx' => 'fpx',
+  'giropay' => 'giropay',
+  'grabpay' => 'grabpay',
+  'ideal' => 'ideal',
+  'kakao_pay' => 'kakaoPay',
+  'klarna' => 'klarna',
+  'konbini' => 'konbini',
+  'kr_card' => 'krCard',
+  'link' => 'link',
+  'mb_way' => 'mbWay',
+  'mobilepay' => 'mobilepay',
+  'multibanco' => 'multibanco',
+  'naver_pay' => 'naverPay',
+  'nz_bank_account' => 'nzBankAccount',
+  'oxxo' => 'oxxo',
+  'p24' => 'p24',
+  'pay_by_bank' => 'payByBank',
+  'payco' => 'payco',
+  'paynow' => 'paynow',
+  'paypal' => 'paypal',
+  'payto' => 'payto',
+  'pix' => 'pix',
+  'promptpay' => 'promptpay',
+  'revolut_pay' => 'revolutPay',
+  'samsung_pay' => 'samsungPay',
+  'satispay' => 'satispay',
+  'sepa_debit' => 'sepaDebit',
+  'sofort' => 'sofort',
+  'swish' => 'swish',
+  'twint' => 'twint',
+  'us_bank_account' => 'usBankAccount',
+  'wechat_pay' => 'wechatPay',
+  'zip' => 'zip',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -307,6 +361,51 @@ static const List<PostCheckoutSessionsRequestLocale> values = [auto, bg, cs, da,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'auto' => 'auto',
+  'bg' => 'bg',
+  'cs' => 'cs',
+  'da' => 'da',
+  'de' => 'de',
+  'el' => 'el',
+  'en' => 'en',
+  'en-GB' => 'enGb',
+  'es' => 'es',
+  'es-419' => 'es419',
+  'et' => 'et',
+  'fi' => 'fi',
+  'fil' => 'fil',
+  'fr' => 'fr',
+  'fr-CA' => 'frCa',
+  'hr' => 'hr',
+  'hu' => 'hu',
+  'id' => 'id',
+  'it' => 'it',
+  'ja' => 'ja',
+  'ko' => 'ko',
+  'lt' => 'lt',
+  'lv' => 'lv',
+  'ms' => 'ms',
+  'mt' => 'mt',
+  'nb' => 'nb',
+  'nl' => 'nl',
+  'pl' => 'pl',
+  'pt' => 'pt',
+  'pt-BR' => 'ptBr',
+  'ro' => 'ro',
+  'ru' => 'ru',
+  'sk' => 'sk',
+  'sl' => 'sl',
+  'sv' => 'sv',
+  'th' => 'th',
+  'tr' => 'tr',
+  'vi' => 'vi',
+  'zh' => 'zh',
+  'zh-HK' => 'zhHk',
+  'zh-TW' => 'zhTw',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -335,6 +434,12 @@ static const List<PostCheckoutSessionsRequestOriginContext> values = [mobileApp,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'mobile_app' => 'mobileApp',
+  'web' => 'web',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -366,6 +471,13 @@ static const List<PostCheckoutSessionsRequestUiMode> values = [custom, embedded,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'custom' => 'custom',
+  'embedded' => 'embedded',
+  'hosted' => 'hosted',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

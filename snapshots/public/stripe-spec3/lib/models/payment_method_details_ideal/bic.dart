@@ -76,6 +76,31 @@ static const List<Bic> values = [abnanl2A, adybnl2A, asnbnl21, bitsnl2A, bunqnl2
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ABNANL2A' => 'abnanl2A',
+  'ADYBNL2A' => 'adybnl2A',
+  'ASNBNL21' => 'asnbnl21',
+  'BITSNL2A' => 'bitsnl2A',
+  'BUNQNL2A' => 'bunqnl2A',
+  'BUUTNL2A' => 'buutnl2A',
+  'FNOMNL22' => 'fnomnl22',
+  'FVLBNL22' => 'fvlbnl22',
+  'HANDNL2A' => 'handnl2A',
+  'INGBNL2A' => 'ingbnl2A',
+  'KNABNL2H' => 'knabnl2H',
+  'MLLENL2A' => 'mllenl2A',
+  'MOYONL21' => 'moyonl21',
+  'NNBANL2G' => 'nnbanl2G',
+  'NTSBDEB1' => 'ntsbdeb1',
+  'RABONL2U' => 'rabonl2U',
+  'RBRBNL21' => 'rbrbnl21',
+  'REVOIE23' => 'revoie23',
+  'REVOLT21' => 'revolt21',
+  'SNSBNL2A' => 'snsbnl2A',
+  'TRIONL2U' => 'trionl2U',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

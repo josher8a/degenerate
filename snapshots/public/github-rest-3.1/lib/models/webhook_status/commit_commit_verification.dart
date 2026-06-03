@@ -57,6 +57,25 @@ static const List<VerificationReason> values = [expiredKey, notSigningKey, gpgve
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'expired_key' => 'expiredKey',
+  'not_signing_key' => 'notSigningKey',
+  'gpgverify_error' => 'gpgverifyError',
+  'gpgverify_unavailable' => 'gpgverifyUnavailable',
+  'unsigned' => 'unsigned',
+  'unknown_signature_type' => 'unknownSignatureType',
+  'no_user' => 'noUser',
+  'unverified_email' => 'unverifiedEmail',
+  'bad_email' => 'badEmail',
+  'unknown_key' => 'unknownKey',
+  'malformed_signature' => 'malformedSignature',
+  'invalid' => 'invalid',
+  'valid' => 'valid',
+  'bad_cert' => 'badCert',
+  'ocsp_pending' => 'ocspPending',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

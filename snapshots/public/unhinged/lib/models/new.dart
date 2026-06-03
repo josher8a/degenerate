@@ -51,6 +51,19 @@ final class NewType {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'type' => 'type',
+      'object' => 'object',
+      'array' => 'array',
+      'string' => 'string',
+      'integer' => 'integer',
+      'null' => r'$null',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

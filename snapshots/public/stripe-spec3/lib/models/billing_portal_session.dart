@@ -154,6 +154,57 @@ static const List<BillingPortalSessionLocale> values = [auto, bg, cs, da, de, el
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'auto' => 'auto',
+  'bg' => 'bg',
+  'cs' => 'cs',
+  'da' => 'da',
+  'de' => 'de',
+  'el' => 'el',
+  'en' => 'en',
+  'en-AU' => 'enAu',
+  'en-CA' => 'enCa',
+  'en-GB' => 'enGb',
+  'en-IE' => 'enIe',
+  'en-IN' => 'enIn',
+  'en-NZ' => 'enNz',
+  'en-SG' => 'enSg',
+  'es' => 'es',
+  'es-419' => 'es419',
+  'et' => 'et',
+  'fi' => 'fi',
+  'fil' => 'fil',
+  'fr' => 'fr',
+  'fr-CA' => 'frCa',
+  'hr' => 'hr',
+  'hu' => 'hu',
+  'id' => 'id',
+  'it' => 'it',
+  'ja' => 'ja',
+  'ko' => 'ko',
+  'lt' => 'lt',
+  'lv' => 'lv',
+  'ms' => 'ms',
+  'mt' => 'mt',
+  'nb' => 'nb',
+  'nl' => 'nl',
+  'pl' => 'pl',
+  'pt' => 'pt',
+  'pt-BR' => 'ptBr',
+  'ro' => 'ro',
+  'ru' => 'ru',
+  'sk' => 'sk',
+  'sl' => 'sl',
+  'sv' => 'sv',
+  'th' => 'th',
+  'tr' => 'tr',
+  'vi' => 'vi',
+  'zh' => 'zh',
+  'zh-HK' => 'zhHk',
+  'zh-TW' => 'zhTw',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -179,6 +230,11 @@ static const List<BillingPortalSessionObject> values = [billingPortalSession];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'billing_portal.session' => 'billingPortalSession',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

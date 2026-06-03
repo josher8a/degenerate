@@ -28,6 +28,15 @@ static const List<IssuingAuthorizationFuelDataType> values = [diesel, $other, un
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'diesel' => 'diesel',
+  'other' => r'$other',
+  'unleaded_plus' => 'unleadedPlus',
+  'unleaded_regular' => 'unleadedRegular',
+  'unleaded_super' => 'unleadedSuper',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -74,6 +83,18 @@ static const List<IssuingAuthorizationFuelDataUnit> values = [chargingMinute, im
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'charging_minute' => 'chargingMinute',
+  'imperial_gallon' => 'imperialGallon',
+  'kilogram' => 'kilogram',
+  'kilowatt_hour' => 'kilowattHour',
+  'liter' => 'liter',
+  'other' => r'$other',
+  'pound' => 'pound',
+  'us_gallon' => 'usGallon',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -49,6 +49,21 @@ static const List<EvaluationMetric> values = [cosine, fuzzyMatch, bleu, gleu, me
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cosine' => 'cosine',
+  'fuzzy_match' => 'fuzzyMatch',
+  'bleu' => 'bleu',
+  'gleu' => 'gleu',
+  'meteor' => 'meteor',
+  'rouge_1' => 'rouge1',
+  'rouge_2' => 'rouge2',
+  'rouge_3' => 'rouge3',
+  'rouge_4' => 'rouge4',
+  'rouge_5' => 'rouge5',
+  'rouge_l' => 'rougeL',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -22,6 +22,13 @@ static const List<TerminalConfigurationConfigurationResourceWifiConfigType> valu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enterprise_eap_peap' => 'enterpriseEapPeap',
+  'enterprise_eap_tls' => 'enterpriseEapTls',
+  'personal_psk' => 'personalPsk',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

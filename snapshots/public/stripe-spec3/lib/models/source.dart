@@ -16,6 +16,11 @@ static const List<SourceObject> values = [source];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'source' => 'source',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -92,6 +97,28 @@ static const List<SourceType$1> values = [achCreditTransfer, achDebit, acssDebit
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ach_credit_transfer' => 'achCreditTransfer',
+  'ach_debit' => 'achDebit',
+  'acss_debit' => 'acssDebit',
+  'alipay' => 'alipay',
+  'au_becs_debit' => 'auBecsDebit',
+  'bancontact' => 'bancontact',
+  'card' => 'card',
+  'card_present' => 'cardPresent',
+  'eps' => 'eps',
+  'giropay' => 'giropay',
+  'ideal' => 'ideal',
+  'klarna' => 'klarna',
+  'multibanco' => 'multibanco',
+  'p24' => 'p24',
+  'sepa_debit' => 'sepaDebit',
+  'sofort' => 'sofort',
+  'three_d_secure' => 'threeDSecure',
+  'wechat' => 'wechat',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

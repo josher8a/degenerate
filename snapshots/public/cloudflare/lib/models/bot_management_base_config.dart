@@ -22,6 +22,13 @@ static const List<BotManagementAiBotsProtection> values = [block, disabled, only
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'block' => 'block',
+  'disabled' => 'disabled',
+  'only_on_ad_pages' => 'onlyOnAdPages',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +57,12 @@ static const List<BotManagementCfRobotsVariant> values = [off, policyOnly];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'policy_only' => 'policyOnly',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -78,6 +91,12 @@ static const List<BotManagementCrawlerProtection> values = [enabled, disabled];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enabled' => 'enabled',
+  'disabled' => 'disabled',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

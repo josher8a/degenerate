@@ -58,6 +58,25 @@ static const List<PostFilesRequestPurpose> values = [accountRequirement, additio
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_requirement' => 'accountRequirement',
+  'additional_verification' => 'additionalVerification',
+  'business_icon' => 'businessIcon',
+  'business_logo' => 'businessLogo',
+  'customer_signature' => 'customerSignature',
+  'dispute_evidence' => 'disputeEvidence',
+  'identity_document' => 'identityDocument',
+  'issuing_regulatory_reporting' => 'issuingRegulatoryReporting',
+  'pci_document' => 'pciDocument',
+  'platform_terms_of_service' => 'platformTermsOfService',
+  'tax_document_user_upload' => 'taxDocumentUserUpload',
+  'terminal_android_apk' => 'terminalAndroidApk',
+  'terminal_reader_splashscreen' => 'terminalReaderSplashscreen',
+  'terminal_wifi_certificate' => 'terminalWifiCertificate',
+  'terminal_wifi_private_key' => 'terminalWifiPrivateKey',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

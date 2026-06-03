@@ -37,6 +37,18 @@ static const List<CancellationDetailsFeedback> values = [customerService, lowQua
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'customer_service' => 'customerService',
+  'low_quality' => 'lowQuality',
+  'missing_features' => 'missingFeatures',
+  'other' => r'$other',
+  'switched_service' => 'switchedService',
+  'too_complex' => 'tooComplex',
+  'too_expensive' => 'tooExpensive',
+  'unused' => 'unused',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -68,6 +80,13 @@ static const List<CancellationDetailsReason> values = [cancellationRequested, pa
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cancellation_requested' => 'cancellationRequested',
+  'payment_disputed' => 'paymentDisputed',
+  'payment_failed' => 'paymentFailed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

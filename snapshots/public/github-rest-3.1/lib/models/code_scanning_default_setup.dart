@@ -45,6 +45,21 @@ static const List<CodeScanningDefaultSetupLanguages> values = [actions, cCpp, cs
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'actions' => 'actions',
+  'c-cpp' => 'cCpp',
+  'csharp' => 'csharp',
+  'go' => 'go',
+  'java-kotlin' => 'javaKotlin',
+  'javascript-typescript' => 'javascriptTypescript',
+  'javascript' => 'javascript',
+  'python' => 'python',
+  'ruby' => 'ruby',
+  'typescript' => 'typescript',
+  'swift' => 'swift',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -76,6 +91,13 @@ static const List<CodeScanningDefaultSetupRunnerType> values = [standard, labele
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'standard' => 'standard',
+  'labeled' => 'labeled',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -104,6 +126,12 @@ static const List<Schedule> values = [weekly, $null];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'weekly' => 'weekly',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

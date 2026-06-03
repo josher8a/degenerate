@@ -19,6 +19,12 @@ static const List<ImagesResponseBackground> values = [transparent, opaque];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'transparent' => 'transparent',
+  'opaque' => 'opaque',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +56,13 @@ static const List<ImagesResponseSize> values = [$1024x1024, $1024x1536, $1536x10
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1024x1024' => r'$1024x1024',
+  '1024x1536' => r'$1024x1536',
+  '1536x1024' => r'$1536x1024',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +94,13 @@ static const List<ImagesResponseQuality> values = [low, medium, high];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

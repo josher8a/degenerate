@@ -58,6 +58,25 @@ static const List<RegistryType> values = [mavenRepository, nugetFeed, goproxySer
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'maven_repository' => 'mavenRepository',
+  'nuget_feed' => 'nugetFeed',
+  'goproxy_server' => 'goproxyServer',
+  'npm_registry' => 'npmRegistry',
+  'rubygems_server' => 'rubygemsServer',
+  'cargo_registry' => 'cargoRegistry',
+  'composer_repository' => 'composerRepository',
+  'docker_registry' => 'dockerRegistry',
+  'git_source' => 'gitSource',
+  'helm_registry' => 'helmRegistry',
+  'hex_organization' => 'hexOrganization',
+  'hex_repository' => 'hexRepository',
+  'pub_repository' => 'pubRepository',
+  'python_index' => 'pythonIndex',
+  'terraform_registry' => 'terraformRegistry',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

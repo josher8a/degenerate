@@ -60,6 +60,26 @@ static const List<RealtimeSessionCreateRequestGaModelVariant2> values = [gptReal
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'gpt-realtime' => 'gptRealtime',
+  'gpt-realtime-1.5' => 'gptRealtime15',
+  'gpt-realtime-2025-08-28' => 'gptRealtime20250828',
+  'gpt-4o-realtime-preview' => 'gpt4oRealtimePreview',
+  'gpt-4o-realtime-preview-2024-10-01' => 'gpt4oRealtimePreview20241001',
+  'gpt-4o-realtime-preview-2024-12-17' => 'gpt4oRealtimePreview20241217',
+  'gpt-4o-realtime-preview-2025-06-03' => 'gpt4oRealtimePreview20250603',
+  'gpt-4o-mini-realtime-preview' => 'gpt4oMiniRealtimePreview',
+  'gpt-4o-mini-realtime-preview-2024-12-17' => 'gpt4oMiniRealtimePreview20241217',
+  'gpt-realtime-mini' => 'gptRealtimeMini',
+  'gpt-realtime-mini-2025-10-06' => 'gptRealtimeMini20251006',
+  'gpt-realtime-mini-2025-12-15' => 'gptRealtimeMini20251215',
+  'gpt-audio-1.5' => 'gptAudio15',
+  'gpt-audio-mini' => 'gptAudioMini',
+  'gpt-audio-mini-2025-10-06' => 'gptAudioMini20251006',
+  'gpt-audio-mini-2025-12-15' => 'gptAudioMini20251215',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

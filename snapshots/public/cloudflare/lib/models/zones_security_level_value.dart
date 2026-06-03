@@ -31,6 +31,16 @@ static const List<ZonesSecurityLevelValue> values = [off, essentiallyOff, low, m
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'essentially_off' => 'essentiallyOff',
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'under_attack' => 'underAttack',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

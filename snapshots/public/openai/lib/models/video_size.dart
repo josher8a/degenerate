@@ -24,6 +24,14 @@ static const List<VideoSize> values = [$720x1280, $1280x720, $1024x1792, $1792x1
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '720x1280' => r'$720x1280',
+  '1280x720' => r'$1280x720',
+  '1024x1792' => r'$1024x1792',
+  '1792x1024' => r'$1792x1024',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

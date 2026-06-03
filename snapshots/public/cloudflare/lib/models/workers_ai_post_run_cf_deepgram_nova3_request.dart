@@ -19,6 +19,12 @@ static const List<CustomIntentMode> values = [extended, strict];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'extended' => 'extended',
+  'strict' => 'strict',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +53,12 @@ static const List<CustomTopicMode> values = [extended, strict];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'extended' => 'extended',
+  'strict' => 'strict',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -93,6 +105,18 @@ static const List<WorkersAiPostRunCfDeepgramNova3RequestEncoding> values = [line
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'linear16' => 'linear16',
+  'flac' => 'flac',
+  'mulaw' => 'mulaw',
+  'amr-nb' => 'amrNb',
+  'amr-wb' => 'amrWb',
+  'opus' => 'opus',
+  'speex' => 'speex',
+  'g729' => 'g729',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -124,6 +148,13 @@ static const List<WorkersAiPostRunCfDeepgramNova3RequestMode> values = [general,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'general' => 'general',
+  'medical' => 'medical',
+  'finance' => 'finance',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -22,6 +22,13 @@ static const List<ValuesEditableBy> values = [orgActors, orgAndRepoActors, $null
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'org_actors' => 'orgActors',
+  'org_and_repo_actors' => 'orgAndRepoActors',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

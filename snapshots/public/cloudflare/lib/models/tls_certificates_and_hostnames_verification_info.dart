@@ -25,6 +25,14 @@ static const List<RecordName> values = [recordName, httpUrl, cname, txtName];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'record_name' => 'recordName',
+  'http_url' => 'httpUrl',
+  'cname' => 'cname',
+  'txt_name' => 'txtName',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +67,14 @@ static const List<RecordTarget> values = [recordValue, httpBody, cnameTarget, tx
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'record_value' => 'recordValue',
+  'http_body' => 'httpBody',
+  'cname_target' => 'cnameTarget',
+  'txt_value' => 'txtValue',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

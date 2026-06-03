@@ -33,6 +33,17 @@ static const List<AresTransStatus> values = [a, c, i, n, r, u, y];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'A' => 'a',
+  'C' => 'c',
+  'I' => 'i',
+  'N' => 'n',
+  'R' => 'r',
+  'U' => 'u',
+  'Y' => 'y',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

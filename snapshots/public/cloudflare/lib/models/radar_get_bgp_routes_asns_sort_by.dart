@@ -34,6 +34,17 @@ static const List<RadarGetBgpRoutesAsnsSortBy> values = [cone, pfxs, ipv4, ipv6,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cone' => 'cone',
+  'pfxs' => 'pfxs',
+  'ipv4' => 'ipv4',
+  'ipv6' => 'ipv6',
+  'rpki_valid' => 'rpkiValid',
+  'rpki_invalid' => 'rpkiInvalid',
+  'rpki_unknown' => 'rpkiUnknown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

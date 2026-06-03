@@ -31,6 +31,16 @@ static const List<CreateSpeechRequestResponseFormat> values = [mp3, opus, aac, f
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'mp3' => 'mp3',
+  'opus' => 'opus',
+  'aac' => 'aac',
+  'flac' => 'flac',
+  'wav' => 'wav',
+  'pcm' => 'pcm',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +69,12 @@ static const List<StreamFormat> values = [sse, audio];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'sse' => 'sse',
+  'audio' => 'audio',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

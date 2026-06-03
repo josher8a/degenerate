@@ -31,6 +31,16 @@ static const List<ResourceSharingResourceType> values = [customRuleset, widget, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'custom-ruleset' => 'customRuleset',
+  'widget' => 'widget',
+  'gateway-policy' => 'gatewayPolicy',
+  'gateway-destination-ip' => 'gatewayDestinationIp',
+  'gateway-block-page-settings' => 'gatewayBlockPageSettings',
+  'gateway-extended-email-matching' => 'gatewayExtendedEmailMatching',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

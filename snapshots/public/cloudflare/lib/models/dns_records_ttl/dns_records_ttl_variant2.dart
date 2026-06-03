@@ -15,6 +15,11 @@ static const List<DnsRecordsTtlVariant2> values = [$1];
 final double value;
 
 double toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  1 => r'$1',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -16,6 +16,11 @@ static const List<WorkersErrorWorkerNameInvalidCode> values = [$10016];
 final int value;
 
 int toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  10016 => r'$10016',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

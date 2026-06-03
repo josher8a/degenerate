@@ -46,6 +46,21 @@ static const List<InsightsResourcesPaymentEvaluationDisputeOpenedReason> values 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_not_available' => 'accountNotAvailable',
+  'credit_not_processed' => 'creditNotProcessed',
+  'customer_initiated' => 'customerInitiated',
+  'duplicate' => 'duplicate',
+  'fraudulent' => 'fraudulent',
+  'general' => 'general',
+  'noncompliant' => 'noncompliant',
+  'product_not_received' => 'productNotReceived',
+  'product_unacceptable' => 'productUnacceptable',
+  'subscription_canceled' => 'subscriptionCanceled',
+  'unrecognized' => 'unrecognized',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -28,6 +28,15 @@ static const List<InteractionExpiry> values = [oneDay, threeDays, oneWeek, oneMo
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'one_day' => 'oneDay',
+  'three_days' => 'threeDays',
+  'one_week' => 'oneWeek',
+  'one_month' => 'oneMonth',
+  'six_months' => 'sixMonths',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

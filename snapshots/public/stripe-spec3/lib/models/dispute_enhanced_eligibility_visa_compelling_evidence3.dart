@@ -27,6 +27,15 @@ static const List<RequiredActions> values = [missingCustomerIdentifiers, missing
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'missing_customer_identifiers' => 'missingCustomerIdentifiers',
+  'missing_disputed_transaction_description' => 'missingDisputedTransactionDescription',
+  'missing_merchandise_or_services' => 'missingMerchandiseOrServices',
+  'missing_prior_undisputed_transaction_description' => 'missingPriorUndisputedTransactionDescription',
+  'missing_prior_undisputed_transactions' => 'missingPriorUndisputedTransactions',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -58,6 +67,13 @@ static const List<DisputeEnhancedEligibilityVisaCompellingEvidence3Status> value
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'not_qualified' => 'notQualified',
+  'qualified' => 'qualified',
+  'requires_action' => 'requiresAction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -42,6 +42,20 @@ static const List<EmailSecurityDispositionLabel> values = [malicious, maliciousB
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'MALICIOUS' => 'malicious',
+  'MALICIOUS-BEC' => 'maliciousBec',
+  'SUSPICIOUS' => 'suspicious',
+  'SPOOF' => 'spoof',
+  'SPAM' => 'spam',
+  'BULK' => 'bulk',
+  'ENCRYPTED' => 'encrypted',
+  'EXTERNAL' => r'$external',
+  'UNKNOWN' => 'unknown',
+  'NONE' => 'none',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -28,6 +28,14 @@ static const List<StatusDetailsType> values = [completed, cancelled, failed, inc
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'completed' => 'completed',
+  'cancelled' => 'cancelled',
+  'failed' => 'failed',
+  'incomplete' => 'incomplete',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -67,6 +75,14 @@ static const List<StatusDetailsReason> values = [turnDetected, clientCancelled, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'turn_detected' => 'turnDetected',
+  'client_cancelled' => 'clientCancelled',
+  'max_output_tokens' => 'maxOutputTokens',
+  'content_filter' => 'contentFilter',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

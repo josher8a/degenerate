@@ -39,6 +39,19 @@ static const List<RealtimekitPatchWebhookRequestEvents> values = [meetingStarted
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'meeting.started' => 'meetingStarted',
+  'meeting.ended' => 'meetingEnded',
+  'meeting.participantJoined' => 'meetingParticipantJoined',
+  'meeting.participantLeft' => 'meetingParticipantLeft',
+  'recording.statusUpdate' => 'recordingStatusUpdate',
+  'livestreaming.statusUpdate' => 'livestreamingStatusUpdate',
+  'meeting.chatSynced' => 'meetingChatSynced',
+  'meeting.transcript' => 'meetingTranscript',
+  'meeting.summary' => 'meetingSummary',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

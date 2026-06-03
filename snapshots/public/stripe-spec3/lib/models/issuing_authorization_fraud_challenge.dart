@@ -16,6 +16,11 @@ static const List<Channel> values = [sms];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'sms' => 'sms',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +58,15 @@ static const List<IssuingAuthorizationFraudChallengeStatus> values = [expired, p
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'expired' => 'expired',
+  'pending' => 'pending',
+  'rejected' => 'rejected',
+  'undeliverable' => 'undeliverable',
+  'verified' => 'verified',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +95,12 @@ static const List<UndeliverableReason> values = [noPhoneNumber, unsupportedPhone
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'no_phone_number' => 'noPhoneNumber',
+  'unsupported_phone_number' => 'unsupportedPhoneNumber',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

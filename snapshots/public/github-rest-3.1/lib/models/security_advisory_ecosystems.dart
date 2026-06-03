@@ -52,6 +52,23 @@ static const List<SecurityAdvisoryEcosystems> values = [rubygems, npm, pip, mave
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'rubygems' => 'rubygems',
+  'npm' => 'npm',
+  'pip' => 'pip',
+  'maven' => 'maven',
+  'nuget' => 'nuget',
+  'composer' => 'composer',
+  'go' => 'go',
+  'rust' => 'rust',
+  'erlang' => 'erlang',
+  'actions' => 'actions',
+  'pub' => 'pub',
+  'other' => r'$other',
+  'swift' => 'swift',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -21,6 +21,13 @@ static const List<MessageStatus> values = [inProgress, completed, incomplete];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'in_progress' => 'inProgress',
+  'completed' => 'completed',
+  'incomplete' => 'incomplete',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -66,6 +73,18 @@ static const List<MessageRole> values = [unknown, user, assistant, system, criti
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'unknown' => 'unknown',
+  'user' => 'user',
+  'assistant' => 'assistant',
+  'system' => 'system',
+  'critic' => 'critic',
+  'discriminator' => 'discriminator',
+  'developer' => 'developer',
+  'tool' => 'tool',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -16,6 +16,11 @@ static const List<BillingCreditBalanceTransactionObject> values = [billingCredit
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'billing.credit_balance_transaction' => 'billingCreditBalanceTransaction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -44,6 +49,12 @@ static const List<BillingCreditBalanceTransactionType> values = [credit, debit];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'credit' => 'credit',
+  'debit' => 'debit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

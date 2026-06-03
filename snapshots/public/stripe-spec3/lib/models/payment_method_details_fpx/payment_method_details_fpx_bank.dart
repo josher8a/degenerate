@@ -79,6 +79,32 @@ static const List<PaymentMethodDetailsFpxBank> values = [affinBank, agrobank, al
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'affin_bank' => 'affinBank',
+  'agrobank' => 'agrobank',
+  'alliance_bank' => 'allianceBank',
+  'ambank' => 'ambank',
+  'bank_islam' => 'bankIslam',
+  'bank_muamalat' => 'bankMuamalat',
+  'bank_of_china' => 'bankOfChina',
+  'bank_rakyat' => 'bankRakyat',
+  'bsn' => 'bsn',
+  'cimb' => 'cimb',
+  'deutsche_bank' => 'deutscheBank',
+  'hong_leong_bank' => 'hongLeongBank',
+  'hsbc' => 'hsbc',
+  'kfh' => 'kfh',
+  'maybank2e' => 'maybank2e',
+  'maybank2u' => 'maybank2u',
+  'ocbc' => 'ocbc',
+  'pb_enterprise' => 'pbEnterprise',
+  'public_bank' => 'publicBank',
+  'rhb' => 'rhb',
+  'standard_chartered' => 'standardChartered',
+  'uob' => 'uob',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

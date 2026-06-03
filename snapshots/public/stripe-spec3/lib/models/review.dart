@@ -37,6 +37,18 @@ static const List<ClosedReason> values = [acknowledged, approved, canceled, disp
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'acknowledged' => 'acknowledged',
+  'approved' => 'approved',
+  'canceled' => 'canceled',
+  'disputed' => 'disputed',
+  'payment_never_settled' => 'paymentNeverSettled',
+  'redacted' => 'redacted',
+  'refunded' => 'refunded',
+  'refunded_as_fraud' => 'refundedAsFraud',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -62,6 +74,11 @@ static const List<ReviewObject> values = [review];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'review' => 'review',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -90,6 +107,12 @@ static const List<OpenedReason> values = [manual, rule];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'manual' => 'manual',
+  'rule' => 'rule',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

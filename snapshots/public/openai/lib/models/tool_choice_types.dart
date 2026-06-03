@@ -48,6 +48,18 @@ static const List<ToolChoiceTypesType> values = [fileSearch, webSearchPreview, c
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'file_search' => 'fileSearch',
+  'web_search_preview' => 'webSearchPreview',
+  'computer' => 'computer',
+  'computer_use_preview' => 'computerUsePreview',
+  'computer_use' => 'computerUse',
+  'web_search_preview_2025_03_11' => 'webSearchPreview20250311',
+  'image_generation' => 'imageGeneration',
+  'code_interpreter' => 'codeInterpreter',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

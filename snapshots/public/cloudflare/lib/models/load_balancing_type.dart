@@ -31,6 +31,16 @@ static const List<LoadBalancingType> values = [http, https, tcp, udpIcmp, icmpPi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'http' => 'http',
+  'https' => 'https',
+  'tcp' => 'tcp',
+  'udp_icmp' => 'udpIcmp',
+  'icmp_ping' => 'icmpPing',
+  'smtp' => 'smtp',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

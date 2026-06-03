@@ -27,6 +27,15 @@ static const List<WorkflowState> values = [active, deleted, disabledFork, disabl
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'active' => 'active',
+  'deleted' => 'deleted',
+  'disabled_fork' => 'disabledFork',
+  'disabled_inactivity' => 'disabledInactivity',
+  'disabled_manually' => 'disabledManually',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -16,6 +16,11 @@ static const List<BatchObject> values = [batch];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'batch' => 'batch',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -62,6 +67,18 @@ static const List<BatchStatus> values = [validating, failed, inProgress, finaliz
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'validating' => 'validating',
+  'failed' => 'failed',
+  'in_progress' => 'inProgress',
+  'finalizing' => 'finalizing',
+  'completed' => 'completed',
+  'expired' => 'expired',
+  'cancelling' => 'cancelling',
+  'cancelled' => 'cancelled',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

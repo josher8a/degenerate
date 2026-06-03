@@ -24,6 +24,14 @@ static const List<BankTransferRequestedAddressTypes> values = [iban, sortCode, s
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'iban' => 'iban',
+  'sort_code' => 'sortCode',
+  'spei' => 'spei',
+  'zengin' => 'zengin',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

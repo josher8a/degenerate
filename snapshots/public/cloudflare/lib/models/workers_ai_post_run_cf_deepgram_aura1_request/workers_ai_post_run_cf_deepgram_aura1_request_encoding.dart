@@ -34,6 +34,17 @@ static const List<WorkersAiPostRunCfDeepgramAura1RequestEncoding> values = [line
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'linear16' => 'linear16',
+  'flac' => 'flac',
+  'mulaw' => 'mulaw',
+  'alaw' => 'alaw',
+  'mp3' => 'mp3',
+  'opus' => 'opus',
+  'aac' => 'aac',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

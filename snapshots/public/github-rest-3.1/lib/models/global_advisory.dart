@@ -22,6 +22,13 @@ static const List<GlobalAdvisoryType> values = [reviewed, unreviewed, malware];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'reviewed' => 'reviewed',
+  'unreviewed' => 'unreviewed',
+  'malware' => 'malware',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +66,15 @@ static const List<GlobalAdvisorySeverity> values = [critical, high, medium, low,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'critical' => 'critical',
+  'high' => 'high',
+  'medium' => 'medium',
+  'low' => 'low',
+  'unknown' => 'unknown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

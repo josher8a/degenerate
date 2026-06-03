@@ -34,6 +34,17 @@ static const List<FirewallProducts2> values = [zoneLockdown, uaBlock, bic, hot, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'zoneLockdown' => 'zoneLockdown',
+  'uaBlock' => 'uaBlock',
+  'bic' => 'bic',
+  'hot' => 'hot',
+  'securityLevel' => 'securityLevel',
+  'rateLimit' => 'rateLimit',
+  'waf' => 'waf',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

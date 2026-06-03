@@ -76,6 +76,31 @@ static const List<DvStatus> values = [initializing, pendingValidation, deleted, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'initializing' => 'initializing',
+  'pending_validation' => 'pendingValidation',
+  'deleted' => 'deleted',
+  'pending_issuance' => 'pendingIssuance',
+  'pending_deployment' => 'pendingDeployment',
+  'pending_deletion' => 'pendingDeletion',
+  'pending_expiration' => 'pendingExpiration',
+  'expired' => 'expired',
+  'active' => 'active',
+  'initializing_timed_out' => 'initializingTimedOut',
+  'validation_timed_out' => 'validationTimedOut',
+  'issuance_timed_out' => 'issuanceTimedOut',
+  'deployment_timed_out' => 'deploymentTimedOut',
+  'deletion_timed_out' => 'deletionTimedOut',
+  'pending_cleanup' => 'pendingCleanup',
+  'staging_deployment' => 'stagingDeployment',
+  'staging_active' => 'stagingActive',
+  'deactivating' => 'deactivating',
+  'inactive' => 'inactive',
+  'backup_issued' => 'backupIssued',
+  'holding_deployment' => 'holdingDeployment',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

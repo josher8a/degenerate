@@ -28,6 +28,15 @@ static const List<PagesStageName> values = [queued, initialize, cloneRepo, build
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'queued' => 'queued',
+  'initialize' => 'initialize',
+  'clone_repo' => 'cloneRepo',
+  'build' => 'build',
+  'deploy' => 'deploy',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -65,6 +74,15 @@ static const List<PagesStageStatus> values = [success, idle, active, failure, ca
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'success' => 'success',
+  'idle' => 'idle',
+  'active' => 'active',
+  'failure' => 'failure',
+  'canceled' => 'canceled',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

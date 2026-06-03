@@ -48,6 +48,22 @@ static const List<GetEventListGetSearchOp> values = [equals, not, gt, gte, lt, l
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'equals' => 'equals',
+  'not' => 'not',
+  'gt' => 'gt',
+  'gte' => 'gte',
+  'lt' => 'lt',
+  'lte' => 'lte',
+  'like' => 'like',
+  'contains' => 'contains',
+  'startsWith' => 'startsWith',
+  'endsWith' => 'endsWith',
+  'in' => r'$in',
+  'find' => 'find',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

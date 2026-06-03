@@ -16,6 +16,11 @@ static const List<TopupObject> values = [topup];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'topup' => 'topup',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +58,15 @@ static const List<TopupStatus> values = [canceled, failed, pending, reversed, su
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'canceled' => 'canceled',
+  'failed' => 'failed',
+  'pending' => 'pending',
+  'reversed' => 'reversed',
+  'succeeded' => 'succeeded',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

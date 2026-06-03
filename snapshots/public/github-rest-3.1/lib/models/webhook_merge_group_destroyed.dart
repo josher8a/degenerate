@@ -15,6 +15,11 @@ static const List<WebhookMergeGroupDestroyedAction> values = [destroyed];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'destroyed' => 'destroyed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -46,6 +51,13 @@ static const List<WebhookMergeGroupDestroyedReason> values = [merged, invalidate
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'merged' => 'merged',
+  'invalidated' => 'invalidated',
+  'dequeued' => 'dequeued',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

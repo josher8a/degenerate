@@ -25,6 +25,14 @@ static const List<WorkersBindingKindSecretKeyFormat> values = [raw, pkcs8, spki,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'raw' => 'raw',
+  'pkcs8' => 'pkcs8',
+  'spki' => 'spki',
+  'jwk' => 'jwk',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -70,6 +78,18 @@ static const List<Usages> values = [encrypt, decrypt, sign, verify, deriveKey, d
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'encrypt' => 'encrypt',
+  'decrypt' => 'decrypt',
+  'sign' => 'sign',
+  'verify' => 'verify',
+  'deriveKey' => 'deriveKey',
+  'deriveBits' => 'deriveBits',
+  'wrapKey' => 'wrapKey',
+  'unwrapKey' => 'unwrapKey',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

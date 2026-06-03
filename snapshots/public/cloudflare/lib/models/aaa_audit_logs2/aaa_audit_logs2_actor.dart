@@ -27,6 +27,15 @@ static const List<ActorContext> values = [apiKey, apiToken, dash, oauth, originC
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'api_key' => 'apiKey',
+  'api_token' => 'apiToken',
+  'dash' => 'dash',
+  'oauth' => 'oauth',
+  'origin_ca_key' => 'originCaKey',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -61,6 +70,14 @@ static const List<AaaAuditLogs2ActorType> values = [account, cloudflareAdmin, sy
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account' => 'account',
+  'cloudflare_admin' => 'cloudflareAdmin',
+  'system' => 'system',
+  'user' => 'user',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

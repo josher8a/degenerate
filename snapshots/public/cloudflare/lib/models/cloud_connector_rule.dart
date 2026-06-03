@@ -25,6 +25,14 @@ static const List<CloudConnectorProvider> values = [awsS3, cloudflareR2, gcpStor
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'aws_s3' => 'awsS3',
+  'cloudflare_r2' => 'cloudflareR2',
+  'gcp_storage' => 'gcpStorage',
+  'azure_storage' => 'azureStorage',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

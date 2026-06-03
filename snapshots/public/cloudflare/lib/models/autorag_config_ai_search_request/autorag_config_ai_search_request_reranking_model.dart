@@ -18,6 +18,12 @@ static const List<AutoragConfigAiSearchRequestRerankingModel> values = [cfBaaiBg
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '@cf/baai/bge-reranker-base' => 'cfBaaiBgeRerankerBase',
+  '' => r'$empty',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

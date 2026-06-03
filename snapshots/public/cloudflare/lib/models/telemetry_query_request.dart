@@ -19,6 +19,12 @@ static const List<PatternType> values = [message, error];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'message' => 'message',
+  'error' => 'error',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +65,16 @@ static const List<View> values = [traces, events, calculations, invocations, req
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'traces' => 'traces',
+  'events' => 'events',
+  'calculations' => 'calculations',
+  'invocations' => 'invocations',
+  'requests' => 'requests',
+  'patterns' => 'patterns',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

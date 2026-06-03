@@ -16,6 +16,11 @@ static const List<CustomerBalanceTransactionObject> values = [customerBalanceTra
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'customer_balance_transaction' => 'customerBalanceTransaction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -74,6 +79,22 @@ static const List<CustomerBalanceTransactionType> values = [adjustment, appliedT
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'adjustment' => 'adjustment',
+  'applied_to_invoice' => 'appliedToInvoice',
+  'checkout_session_subscription_payment' => 'checkoutSessionSubscriptionPayment',
+  'checkout_session_subscription_payment_canceled' => 'checkoutSessionSubscriptionPaymentCanceled',
+  'credit_note' => 'creditNote',
+  'initial' => 'initial',
+  'invoice_overpaid' => 'invoiceOverpaid',
+  'invoice_too_large' => 'invoiceTooLarge',
+  'invoice_too_small' => 'invoiceTooSmall',
+  'migration' => 'migration',
+  'unapplied_from_invoice' => 'unappliedFromInvoice',
+  'unspent_receiver_credit' => 'unspentReceiverCredit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

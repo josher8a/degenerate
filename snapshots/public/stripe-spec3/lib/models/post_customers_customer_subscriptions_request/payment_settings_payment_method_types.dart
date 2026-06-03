@@ -138,6 +138,52 @@ static const List<PaymentSettingsPaymentMethodTypesVariant1> values = [achCredit
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ach_credit_transfer' => 'achCreditTransfer',
+  'ach_debit' => 'achDebit',
+  'acss_debit' => 'acssDebit',
+  'affirm' => 'affirm',
+  'amazon_pay' => 'amazonPay',
+  'au_becs_debit' => 'auBecsDebit',
+  'bacs_debit' => 'bacsDebit',
+  'bancontact' => 'bancontact',
+  'boleto' => 'boleto',
+  'card' => 'card',
+  'cashapp' => 'cashapp',
+  'crypto' => 'crypto',
+  'custom' => 'custom',
+  'customer_balance' => 'customerBalance',
+  'eps' => 'eps',
+  'fpx' => 'fpx',
+  'giropay' => 'giropay',
+  'grabpay' => 'grabpay',
+  'ideal' => 'ideal',
+  'jp_credit_transfer' => 'jpCreditTransfer',
+  'kakao_pay' => 'kakaoPay',
+  'klarna' => 'klarna',
+  'konbini' => 'konbini',
+  'kr_card' => 'krCard',
+  'link' => 'link',
+  'multibanco' => 'multibanco',
+  'naver_pay' => 'naverPay',
+  'nz_bank_account' => 'nzBankAccount',
+  'p24' => 'p24',
+  'pay_by_bank' => 'payByBank',
+  'payco' => 'payco',
+  'paynow' => 'paynow',
+  'paypal' => 'paypal',
+  'payto' => 'payto',
+  'promptpay' => 'promptpay',
+  'revolut_pay' => 'revolutPay',
+  'sepa_credit_transfer' => 'sepaCreditTransfer',
+  'sepa_debit' => 'sepaDebit',
+  'sofort' => 'sofort',
+  'swish' => 'swish',
+  'us_bank_account' => 'usBankAccount',
+  'wechat_pay' => 'wechatPay',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

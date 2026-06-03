@@ -41,6 +41,14 @@ static const List<SpectrumConfigProxyProtocol> values = [off, v1, v2, simple];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'v1' => 'v1',
+  'v2' => 'v2',
+  'simple' => 'simple',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -75,6 +83,14 @@ static const List<SpectrumConfigTls> values = [off, flexible, full, strict];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'flexible' => 'flexible',
+  'full' => 'full',
+  'strict' => 'strict',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -106,6 +122,13 @@ static const List<SpectrumConfigTrafficType> values = [direct, http, https];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'direct' => 'direct',
+  'http' => 'http',
+  'https' => 'https',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

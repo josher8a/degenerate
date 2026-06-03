@@ -27,6 +27,15 @@ static const List<ThreeDSecureVersion> values = [$102, $210, $220, $230, $231];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1.0.2' => r'$102',
+  '2.1.0' => r'$210',
+  '2.2.0' => r'$220',
+  '2.3.0' => r'$230',
+  '2.3.1' => r'$231',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

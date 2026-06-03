@@ -42,6 +42,20 @@ static const List<VoiceIdsSharedVariant2> values = [alloy, ash, ballad, coral, e
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'alloy' => 'alloy',
+  'ash' => 'ash',
+  'ballad' => 'ballad',
+  'coral' => 'coral',
+  'echo' => 'echo',
+  'sage' => 'sage',
+  'shimmer' => 'shimmer',
+  'verse' => 'verse',
+  'marin' => 'marin',
+  'cedar' => 'cedar',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

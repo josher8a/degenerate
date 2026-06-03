@@ -21,6 +21,13 @@ static const List<AllowDeletionsEnforcementLevel> values = [off, nonAdmins, ever
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -51,6 +58,13 @@ static const List<AllowForcePushesEnforcementLevel> values = [off, nonAdmins, ev
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +95,13 @@ static const List<WebhooksRuleLinearHistoryRequirementEnforcementLevel> values =
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -112,6 +133,13 @@ static const List<WebhooksRuleLockBranchEnforcementLevel> values = [off, nonAdmi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -142,6 +170,13 @@ static const List<MergeQueueEnforcementLevel> values = [off, nonAdmins, everyone
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -172,6 +207,13 @@ static const List<WebhooksRulePullRequestReviewsEnforcementLevel> values = [off,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -202,6 +244,13 @@ static const List<RequiredConversationResolutionLevel> values = [off, nonAdmins,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -232,6 +281,13 @@ static const List<RequiredDeploymentsEnforcementLevel> values = [off, nonAdmins,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -262,6 +318,13 @@ static const List<WebhooksRuleRequiredStatusChecksEnforcementLevel> values = [of
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -292,6 +355,13 @@ static const List<SignatureRequirementEnforcementLevel> values = [off, nonAdmins
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'non_admins' => 'nonAdmins',
+  'everyone' => 'everyone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

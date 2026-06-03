@@ -60,6 +60,26 @@ static const List<ImportStatus> values = [auth, error, none, detecting, choose, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'auth' => 'auth',
+  'error' => 'error',
+  'none' => 'none',
+  'detecting' => 'detecting',
+  'choose' => 'choose',
+  'auth_failed' => 'authFailed',
+  'importing' => 'importing',
+  'mapping' => 'mapping',
+  'waiting_to_push' => 'waitingToPush',
+  'pushing' => 'pushing',
+  'complete' => 'complete',
+  'setup' => 'setup',
+  'unknown' => 'unknown',
+  'detection_found_multiple' => 'detectionFoundMultiple',
+  'detection_found_nothing' => 'detectionFoundNothing',
+  'detection_needs_auth' => 'detectionNeedsAuth',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

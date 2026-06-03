@@ -40,6 +40,19 @@ static const List<StreamLiveInputStatus> values = [$null, connected, reconnected
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'null' => r'$null',
+  'connected' => 'connected',
+  'reconnected' => 'reconnected',
+  'reconnecting' => 'reconnecting',
+  'client_disconnect' => 'clientDisconnect',
+  'ttl_exceeded' => 'ttlExceeded',
+  'failed_to_connect' => 'failedToConnect',
+  'failed_to_reconnect' => 'failedToReconnect',
+  'new_configuration_accepted' => 'newConfigurationAccepted',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -24,6 +24,14 @@ static const List<EditImageBodyJsonParamQuality> values = [low, medium, high, au
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'auto' => 'auto',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -51,6 +59,12 @@ static const List<EditImageBodyJsonParamInputFidelity> values = [high, low];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'high' => 'high',
+  'low' => 'low',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -84,6 +98,14 @@ static const List<EditImageBodyJsonParamSize> values = [auto, $1024x1024, $1536x
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'auto' => 'auto',
+  '1024x1024' => r'$1024x1024',
+  '1536x1024' => r'$1536x1024',
+  '1024x1536' => r'$1024x1536',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

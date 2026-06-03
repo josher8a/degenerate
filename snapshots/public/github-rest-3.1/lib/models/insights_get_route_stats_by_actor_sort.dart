@@ -30,6 +30,16 @@ static const List<InsightsGetRouteStatsByActorSort> values = [lastRateLimitedTim
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'last_rate_limited_timestamp' => 'lastRateLimitedTimestamp',
+  'last_request_timestamp' => 'lastRequestTimestamp',
+  'rate_limited_request_count' => 'rateLimitedRequestCount',
+  'http_method' => 'httpMethod',
+  'api_route' => 'apiRoute',
+  'total_request_count' => 'totalRequestCount',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -97,6 +97,38 @@ static const List<PaymentMethodDetailsEpsBank> values = [arzteUndApothekerBank, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'arzte_und_apotheker_bank' => 'arzteUndApothekerBank',
+  'austrian_anadi_bank_ag' => 'austrianAnadiBankAg',
+  'bank_austria' => 'bankAustria',
+  'bankhaus_carl_spangler' => 'bankhausCarlSpangler',
+  'bankhaus_schelhammer_und_schattera_ag' => 'bankhausSchelhammerUndSchatteraAg',
+  'bawag_psk_ag' => 'bawagPskAg',
+  'bks_bank_ag' => 'bksBankAg',
+  'brull_kallmus_bank_ag' => 'brullKallmusBankAg',
+  'btv_vier_lander_bank' => 'btvVierLanderBank',
+  'capital_bank_grawe_gruppe_ag' => 'capitalBankGraweGruppeAg',
+  'deutsche_bank_ag' => 'deutscheBankAg',
+  'dolomitenbank' => 'dolomitenbank',
+  'easybank_ag' => 'easybankAg',
+  'erste_bank_und_sparkassen' => 'ersteBankUndSparkassen',
+  'hypo_alpeadriabank_international_ag' => 'hypoAlpeadriabankInternationalAg',
+  'hypo_bank_burgenland_aktiengesellschaft' => 'hypoBankBurgenlandAktiengesellschaft',
+  'hypo_noe_lb_fur_niederosterreich_u_wien' => 'hypoNoeLbFurNiederosterreichUWien',
+  'hypo_oberosterreich_salzburg_steiermark' => 'hypoOberosterreichSalzburgSteiermark',
+  'hypo_tirol_bank_ag' => 'hypoTirolBankAg',
+  'hypo_vorarlberg_bank_ag' => 'hypoVorarlbergBankAg',
+  'marchfelder_bank' => 'marchfelderBank',
+  'oberbank_ag' => 'oberbankAg',
+  'raiffeisen_bankengruppe_osterreich' => 'raiffeisenBankengruppeOsterreich',
+  'schoellerbank_ag' => 'schoellerbankAg',
+  'sparda_bank_wien' => 'spardaBankWien',
+  'volksbank_gruppe' => 'volksbankGruppe',
+  'volkskreditbank_ag' => 'volkskreditbankAg',
+  'vr_bank_braunau' => 'vrBankBraunau',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

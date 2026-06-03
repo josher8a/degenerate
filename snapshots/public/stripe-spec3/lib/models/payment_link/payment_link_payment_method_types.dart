@@ -129,6 +129,49 @@ static const List<PaymentLinkPaymentMethodTypes> values = [affirm, afterpayClear
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'affirm' => 'affirm',
+  'afterpay_clearpay' => 'afterpayClearpay',
+  'alipay' => 'alipay',
+  'alma' => 'alma',
+  'au_becs_debit' => 'auBecsDebit',
+  'bacs_debit' => 'bacsDebit',
+  'bancontact' => 'bancontact',
+  'billie' => 'billie',
+  'blik' => 'blik',
+  'boleto' => 'boleto',
+  'card' => 'card',
+  'cashapp' => 'cashapp',
+  'eps' => 'eps',
+  'fpx' => 'fpx',
+  'giropay' => 'giropay',
+  'grabpay' => 'grabpay',
+  'ideal' => 'ideal',
+  'klarna' => 'klarna',
+  'konbini' => 'konbini',
+  'link' => 'link',
+  'mb_way' => 'mbWay',
+  'mobilepay' => 'mobilepay',
+  'multibanco' => 'multibanco',
+  'oxxo' => 'oxxo',
+  'p24' => 'p24',
+  'pay_by_bank' => 'payByBank',
+  'paynow' => 'paynow',
+  'paypal' => 'paypal',
+  'payto' => 'payto',
+  'pix' => 'pix',
+  'promptpay' => 'promptpay',
+  'satispay' => 'satispay',
+  'sepa_debit' => 'sepaDebit',
+  'sofort' => 'sofort',
+  'swish' => 'swish',
+  'twint' => 'twint',
+  'us_bank_account' => 'usBankAccount',
+  'wechat_pay' => 'wechatPay',
+  'zip' => 'zip',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

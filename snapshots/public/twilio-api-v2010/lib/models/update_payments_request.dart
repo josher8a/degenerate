@@ -31,6 +31,16 @@ static const List<PaymentsEnumCapture> values = [paymentCardNumber, expirationDa
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'payment-card-number' => 'paymentCardNumber',
+  'expiration-date' => 'expirationDate',
+  'security-code' => 'securityCode',
+  'postal-code' => 'postalCode',
+  'bank-routing-number' => 'bankRoutingNumber',
+  'bank-account-number' => 'bankAccountNumber',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +69,12 @@ static const List<PaymentsEnumStatus> values = [complete, cancel];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'complete' => 'complete',
+  'cancel' => 'cancel',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

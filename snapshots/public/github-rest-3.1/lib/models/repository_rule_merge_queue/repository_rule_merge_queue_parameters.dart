@@ -19,6 +19,12 @@ static const List<GroupingStrategy> values = [allgreen, headgreen];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ALLGREEN' => 'allgreen',
+  'HEADGREEN' => 'headgreen',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +56,13 @@ static const List<ParametersMergeMethod> values = [merge, squash, rebase];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'MERGE' => 'merge',
+  'SQUASH' => 'squash',
+  'REBASE' => 'rebase',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

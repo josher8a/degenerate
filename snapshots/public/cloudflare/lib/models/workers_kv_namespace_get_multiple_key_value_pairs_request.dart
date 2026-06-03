@@ -19,6 +19,12 @@ static const List<WorkersKvNamespaceGetMultipleKeyValuePairsRequestType> values 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'text' => 'text',
+  'json' => r'$json',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -15,6 +15,11 @@ static const List<UsageVectorStoresResultObject> values = [organizationUsageVect
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'organization.usage.vector_stores.result' => 'organizationUsageVectorStoresResult',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

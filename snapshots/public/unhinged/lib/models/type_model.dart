@@ -94,6 +94,31 @@ final class EventType {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'ectoplasm_spike' => 'ectoplasmSpike',
+      'null' => r'$null',
+      'true' => r'$true',
+      'false' => r'$false',
+      '0' => r'$0',
+      'NaN' => 'naN',
+      '' => r'$empty',
+      ' ' => r'$empty2',
+      '  ' => r'$empty3',
+      'ectoplasm spike' => 'ectoplasmSpike2',
+      'ectoplasm_spike ' => 'ectoplasmSpike3',
+      '\t' => r'$empty4',
+      '🔥' => r'$empty5',
+      '🔥🔥' => r'$empty6',
+      'toString' => r'$toString',
+      'hasOwnProperty' => 'hasOwnProperty',
+      '__proto__' => 'proto',
+      'constructor' => 'constructor',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

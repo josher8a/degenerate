@@ -24,6 +24,14 @@ static const List<CreateModerationRequestModelVariant2> values = [omniModeration
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'omni-moderation-latest' => 'omniModerationLatest',
+  'omni-moderation-2024-09-26' => 'omniModeration20240926',
+  'text-moderation-latest' => 'textModerationLatest',
+  'text-moderation-stable' => 'textModerationStable',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

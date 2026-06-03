@@ -30,6 +30,16 @@ static const List<CbAvalgo> values = [$0, $1, $2, $3, $4, a];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '0' => r'$0',
+  '1' => r'$1',
+  '2' => r'$2',
+  '3' => r'$3',
+  '4' => r'$4',
+  'A' => 'a',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

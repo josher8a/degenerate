@@ -25,6 +25,13 @@ static const List<TlsCertificatesAndHostnamesSettingId> values = [ciphers, minTl
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ciphers' => 'ciphers',
+  'min_tls_version' => 'minTlsVersion',
+  'http2' => 'http2',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -28,6 +28,15 @@ static const List<MagicTransitError> values = [$empty, couldNotGatherTracerouteD
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '' => r'$empty',
+  'Could not gather traceroute data: Code 1' => 'couldNotGatherTracerouteDataCode1',
+  'Could not gather traceroute data: Code 2' => 'couldNotGatherTracerouteDataCode2',
+  'Could not gather traceroute data: Code 3' => 'couldNotGatherTracerouteDataCode3',
+  'Could not gather traceroute data: Code 4' => 'couldNotGatherTracerouteDataCode4',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

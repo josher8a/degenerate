@@ -21,6 +21,13 @@ static const List<OrgsListMembersFilter> values = [$2faDisabled, $2faInsecure, a
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '2fa_disabled' => r'$2faDisabled',
+  '2fa_insecure' => r'$2faInsecure',
+  'all' => 'all',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -33,6 +33,17 @@ static const List<ListDevicesSortBy> values = [$name, id, clientVersion, lastSee
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'name' => r'$name',
+  'id' => 'id',
+  'client_version' => 'clientVersion',
+  'last_seen_user.email' => 'lastSeenUserEmail',
+  'last_seen_at' => 'lastSeenAt',
+  'active_registrations' => 'activeRegistrations',
+  'created_at' => 'createdAt',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

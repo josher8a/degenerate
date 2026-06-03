@@ -24,6 +24,14 @@ static const List<EmailSecurityListDisplayNamesProvenance> values = [a1SInternal
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'A1S_INTERNAL' => 'a1SInternal',
+  'SNOOPY-CASB_OFFICE_365' => 'snoopyCasbOffice365',
+  'SNOOPY-OFFICE_365' => 'snoopyOffice365',
+  'SNOOPY-GOOGLE_DIRECTORY' => 'snoopyGoogleDirectory',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

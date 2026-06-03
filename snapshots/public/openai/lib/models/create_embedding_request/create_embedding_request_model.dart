@@ -21,6 +21,13 @@ static const List<CreateEmbeddingRequestModelVariant2> values = [textEmbeddingAd
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'text-embedding-ada-002' => 'textEmbeddingAda002',
+  'text-embedding-3-small' => 'textEmbedding3Small',
+  'text-embedding-3-large' => 'textEmbedding3Large',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

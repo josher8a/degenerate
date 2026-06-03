@@ -31,6 +31,16 @@ static const List<RadarGetOriginsSummaryMetric> values = [connectionFailures, re
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'CONNECTION_FAILURES' => 'connectionFailures',
+  'REQUESTS' => 'requests',
+  'RESPONSE_HEADER_RECEIVE_DURATION' => 'responseHeaderReceiveDuration',
+  'TCP_HANDSHAKE_DURATION' => 'tcpHandshakeDuration',
+  'TCP_RTT' => 'tcpRtt',
+  'TLS_HANDSHAKE_DURATION' => 'tlsHandshakeDuration',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

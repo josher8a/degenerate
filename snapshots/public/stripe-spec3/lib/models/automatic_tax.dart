@@ -19,6 +19,12 @@ static const List<AutomaticTaxDisabledReason> values = [finalizationRequiresLoca
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'finalization_requires_location_inputs' => 'finalizationRequiresLocationInputs',
+  'finalization_system_error' => 'finalizationSystemError',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

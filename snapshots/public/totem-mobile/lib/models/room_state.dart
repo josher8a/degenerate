@@ -31,6 +31,16 @@ final class RoomStatus {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'waiting_room' => 'waitingRoom',
+      'active' => 'active',
+      'ended' => 'ended',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);
@@ -72,6 +82,16 @@ final class TurnState {
 
   String toJson() {
     return value;
+  }
+
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'idle' => 'idle',
+      'speaking' => 'speaking',
+      'passing' => 'passing',
+      _ => value,
+    };
   }
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).

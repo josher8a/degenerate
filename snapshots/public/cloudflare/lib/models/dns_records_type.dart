@@ -76,6 +76,31 @@ static const List<DnsRecordsType> values = [a, aaaa, caa, cert, cname, dnskey, d
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'A' => 'a',
+  'AAAA' => 'aaaa',
+  'CAA' => 'caa',
+  'CERT' => 'cert',
+  'CNAME' => 'cname',
+  'DNSKEY' => 'dnskey',
+  'DS' => 'ds',
+  'HTTPS' => 'https',
+  'LOC' => 'loc',
+  'MX' => 'mx',
+  'NAPTR' => 'naptr',
+  'NS' => 'ns',
+  'OPENPGPKEY' => 'openpgpkey',
+  'PTR' => 'ptr',
+  'SMIMEA' => 'smimea',
+  'SRV' => 'srv',
+  'SSHFP' => 'sshfp',
+  'SVCB' => 'svcb',
+  'TLSA' => 'tlsa',
+  'TXT' => 'txt',
+  'URI' => 'uri',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -27,6 +27,15 @@ static const List<Replacements> values = [cardCvc, cardExpiry, cardNumber, cardh
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'card_cvc' => 'cardCvc',
+  'card_expiry' => 'cardExpiry',
+  'card_number' => 'cardNumber',
+  'cardholder_name' => 'cardholderName',
+  'request_signature' => 'requestSignature',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -25,6 +25,14 @@ static const List<FraudDisputabilityLikelihood> values = [neutral, unknown, very
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'neutral' => 'neutral',
+  'unknown' => 'unknown',
+  'very_likely' => 'veryLikely',
+  'very_unlikely' => 'veryUnlikely',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,6 +64,13 @@ static const List<PostTestHelpersIssuingAuthorizationsRequestWallet> values = [a
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'apple_pay' => 'applePay',
+  'google_pay' => 'googlePay',
+  'samsung_pay' => 'samsungPay',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

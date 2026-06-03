@@ -27,6 +27,15 @@ static const List<GetInvoicesStatus> values = [draft, open, paid, uncollectible,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'draft' => 'draft',
+  'open' => 'open',
+  'paid' => 'paid',
+  'uncollectible' => 'uncollectible',
+  'void' => r'$void',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -18,6 +18,12 @@ static const List<DisputeCategories> values = [fraudulent, productNotReceived];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'fraudulent' => 'fraudulent',
+  'product_not_received' => 'productNotReceived',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -49,6 +55,13 @@ static const List<PaypalSellerProtectionStatus> values = [eligible, notEligible,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'eligible' => 'eligible',
+  'not_eligible' => 'notEligible',
+  'partially_eligible' => 'partiallyEligible',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

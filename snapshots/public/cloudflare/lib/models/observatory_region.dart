@@ -76,6 +76,31 @@ static const List<ObservatoryRegion> values = [asiaEast1, asiaNortheast1, asiaNo
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'asia-east1' => 'asiaEast1',
+  'asia-northeast1' => 'asiaNortheast1',
+  'asia-northeast2' => 'asiaNortheast2',
+  'asia-south1' => 'asiaSouth1',
+  'asia-southeast1' => 'asiaSoutheast1',
+  'australia-southeast1' => 'australiaSoutheast1',
+  'europe-north1' => 'europeNorth1',
+  'europe-southwest1' => 'europeSouthwest1',
+  'europe-west1' => 'europeWest1',
+  'europe-west2' => 'europeWest2',
+  'europe-west3' => 'europeWest3',
+  'europe-west4' => 'europeWest4',
+  'europe-west8' => 'europeWest8',
+  'europe-west9' => 'europeWest9',
+  'me-west1' => 'meWest1',
+  'southamerica-east1' => 'southamericaEast1',
+  'us-central1' => 'usCentral1',
+  'us-east1' => 'usEast1',
+  'us-east4' => 'usEast4',
+  'us-south1' => 'usSouth1',
+  'us-west1' => 'usWest1',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

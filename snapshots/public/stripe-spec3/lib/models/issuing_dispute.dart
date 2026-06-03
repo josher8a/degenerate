@@ -73,6 +73,30 @@ static const List<LossReason> values = [cardholderAuthenticationIssuerLiability,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cardholder_authentication_issuer_liability' => 'cardholderAuthenticationIssuerLiability',
+  'eci5_token_transaction_with_tavv' => 'eci5TokenTransactionWithTavv',
+  'excess_disputes_in_timeframe' => 'excessDisputesInTimeframe',
+  'has_not_met_the_minimum_dispute_amount_requirements' => 'hasNotMetTheMinimumDisputeAmountRequirements',
+  'invalid_duplicate_dispute' => 'invalidDuplicateDispute',
+  'invalid_incorrect_amount_dispute' => 'invalidIncorrectAmountDispute',
+  'invalid_no_authorization' => 'invalidNoAuthorization',
+  'invalid_use_of_disputes' => 'invalidUseOfDisputes',
+  'merchandise_delivered_or_shipped' => 'merchandiseDeliveredOrShipped',
+  'merchandise_or_service_as_described' => 'merchandiseOrServiceAsDescribed',
+  'not_cancelled' => 'notCancelled',
+  'other' => r'$other',
+  'refund_issued' => 'refundIssued',
+  'submitted_beyond_allowable_time_limit' => 'submittedBeyondAllowableTimeLimit',
+  'transaction_3ds_required' => 'transaction3dsRequired',
+  'transaction_approved_after_prior_fraud_dispute' => 'transactionApprovedAfterPriorFraudDispute',
+  'transaction_authorized' => 'transactionAuthorized',
+  'transaction_electronically_read' => 'transactionElectronicallyRead',
+  'transaction_qualifies_for_visa_easy_payment_service' => 'transactionQualifiesForVisaEasyPaymentService',
+  'transaction_unattended' => 'transactionUnattended',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -98,6 +122,11 @@ static const List<IssuingDisputeObject> values = [issuingDispute];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'issuing.dispute' => 'issuingDispute',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -135,6 +164,15 @@ static const List<IssuingDisputeStatus> values = [expired, lost, submitted, unsu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'expired' => 'expired',
+  'lost' => 'lost',
+  'submitted' => 'submitted',
+  'unsubmitted' => 'unsubmitted',
+  'won' => 'won',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -96,6 +96,38 @@ static const List<FiltersOperation> values = [includes, notIncludes, startsWith,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'includes' => 'includes',
+  'not_includes' => 'notIncludes',
+  'starts_with' => 'startsWith',
+  'regex' => 'regex',
+  'exists' => 'exists',
+  'is_null' => 'isNull',
+  'in' => r'$in',
+  'not_in' => 'notIn',
+  'eq' => 'eq',
+  'neq' => 'neq',
+  'gt' => 'gt',
+  'gte' => 'gte',
+  'lt' => 'lt',
+  'lte' => 'lte',
+  '=' => r'$empty',
+  '!=' => r'$empty2',
+  '>' => r'$empty3',
+  '>=' => r'$empty4',
+  '<' => r'$empty5',
+  '<=' => r'$empty6',
+  'INCLUDES' => 'includes2',
+  'DOES_NOT_INCLUDE' => 'doesNotInclude',
+  'MATCH_REGEX' => 'matchRegex',
+  'EXISTS' => 'exists2',
+  'DOES_NOT_EXIST' => 'doesNotExist',
+  'IN' => r'$in2',
+  'NOT_IN' => 'notIn2',
+  'STARTS_WITH' => 'startsWith2',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

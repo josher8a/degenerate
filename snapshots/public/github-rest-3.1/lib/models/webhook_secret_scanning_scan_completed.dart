@@ -22,6 +22,13 @@ static const List<WebhookSecretScanningScanCompletedType> values = [backfill, cu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'backfill' => 'backfill',
+  'custom-pattern-backfill' => 'customPatternBackfill',
+  'pattern-version-backfill' => 'patternVersionBackfill',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +66,15 @@ static const List<WebhookSecretScanningScanCompletedSource> values = [git, issue
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'git' => 'git',
+  'issues' => 'issues',
+  'pull-requests' => 'pullRequests',
+  'discussions' => 'discussions',
+  'wiki' => 'wiki',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -93,6 +109,14 @@ static const List<CustomPatternScope> values = [repository, organization, enterp
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'repository' => 'repository',
+  'organization' => 'organization',
+  'enterprise' => 'enterprise',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -24,6 +24,14 @@ static const List<ContentDirectoryType> values = [dir, file, submodule, symlink]
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'dir' => 'dir',
+  'file' => 'file',
+  'submodule' => 'submodule',
+  'symlink' => 'symlink',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

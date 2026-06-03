@@ -42,6 +42,20 @@ static const List<ZarazLoadRuleOp> values = [contains, equals, startsWith, endsW
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'CONTAINS' => 'contains',
+  'EQUALS' => 'equals',
+  'STARTS_WITH' => 'startsWith',
+  'ENDS_WITH' => 'endsWith',
+  'MATCH_REGEX' => 'matchRegex',
+  'NOT_MATCH_REGEX' => 'notMatchRegex',
+  'GREATER_THAN' => 'greaterThan',
+  'GREATER_THAN_OR_EQUAL' => 'greaterThanOrEqual',
+  'LESS_THAN' => 'lessThan',
+  'LESS_THAN_OR_EQUAL' => 'lessThanOrEqual',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

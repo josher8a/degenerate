@@ -33,6 +33,17 @@ static const List<OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'dependency_graph' => 'dependencyGraph',
+  'dependabot_alerts' => 'dependabotAlerts',
+  'dependabot_security_updates' => 'dependabotSecurityUpdates',
+  'advanced_security' => 'advancedSecurity',
+  'code_scanning_default_setup' => 'codeScanningDefaultSetup',
+  'secret_scanning' => 'secretScanning',
+  'secret_scanning_push_protection' => 'secretScanningPushProtection',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

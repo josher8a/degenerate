@@ -16,6 +16,11 @@ static const List<FineTuningJobObject> values = [fineTuningJob];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'fine_tuning.job' => 'fineTuningJob',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,6 +61,16 @@ static const List<FineTuningJobStatus> values = [validatingFiles, queued, runnin
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'validating_files' => 'validatingFiles',
+  'queued' => 'queued',
+  'running' => 'running',
+  'succeeded' => 'succeeded',
+  'failed' => 'failed',
+  'cancelled' => 'cancelled',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -31,6 +31,16 @@ static const List<R2BucketLocation> values = [apac, eeur, enam, weur, wnam, oc];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'apac' => 'apac',
+  'eeur' => 'eeur',
+  'enam' => 'enam',
+  'weur' => 'weur',
+  'wnam' => 'wnam',
+  'oc' => 'oc',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

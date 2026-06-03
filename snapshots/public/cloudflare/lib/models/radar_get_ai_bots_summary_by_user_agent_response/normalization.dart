@@ -37,6 +37,18 @@ static const List<Normalization> values = [percentage, min0Max, minMax, rawValue
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'PERCENTAGE' => 'percentage',
+  'MIN0_MAX' => 'min0Max',
+  'MIN_MAX' => 'minMax',
+  'RAW_VALUES' => 'rawValues',
+  'PERCENTAGE_CHANGE' => 'percentageChange',
+  'ROLLING_AVERAGE' => 'rollingAverage',
+  'OVERLAPPED_PERCENTAGE' => 'overlappedPercentage',
+  'RATIO' => 'ratio',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

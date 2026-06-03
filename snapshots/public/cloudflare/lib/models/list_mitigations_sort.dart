@@ -36,6 +36,18 @@ static const List<ListMitigationsSort> values = [typeasc, typedesc, effectiveDat
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'type,asc' => 'typeasc',
+  'type,desc' => 'typedesc',
+  'effective_date,asc' => 'effectiveDateasc',
+  'effective_date,desc' => 'effectiveDatedesc',
+  'status,asc' => 'statusasc',
+  'status,desc' => 'statusdesc',
+  'entity_type,asc' => 'entityTypeasc',
+  'entity_type,desc' => 'entityTypedesc',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

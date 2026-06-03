@@ -22,6 +22,13 @@ static const List<BelongsToRefType> values = [hostingProvider, isp, organization
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'hosting_provider' => 'hostingProvider',
+  'isp' => 'isp',
+  'organization' => 'organization',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

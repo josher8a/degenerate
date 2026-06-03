@@ -28,6 +28,15 @@ static const List<ZeroTrustGatewayFilters2> values = [http, dns, l4, egress, dns
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'http' => 'http',
+  'dns' => 'dns',
+  'l4' => 'l4',
+  'egress' => 'egress',
+  'dns_resolver' => 'dnsResolver',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

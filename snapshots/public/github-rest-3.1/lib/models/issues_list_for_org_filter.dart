@@ -30,6 +30,16 @@ static const List<IssuesListForOrgFilter> values = [assigned, created, mentioned
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'assigned' => 'assigned',
+  'created' => 'created',
+  'mentioned' => 'mentioned',
+  'subscribed' => 'subscribed',
+  'repos' => 'repos',
+  'all' => 'all',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

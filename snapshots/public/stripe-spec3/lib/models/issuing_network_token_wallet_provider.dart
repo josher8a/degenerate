@@ -25,6 +25,14 @@ static const List<CardNumberSource> values = [app, manual, onFile, $other];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'app' => 'app',
+  'manual' => 'manual',
+  'on_file' => 'onFile',
+  'other' => r'$other',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -130,6 +138,38 @@ static const List<ReasonCodes> values = [accountCardTooNew, accountRecentlyChang
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_card_too_new' => 'accountCardTooNew',
+  'account_recently_changed' => 'accountRecentlyChanged',
+  'account_too_new' => 'accountTooNew',
+  'account_too_new_since_launch' => 'accountTooNewSinceLaunch',
+  'additional_device' => 'additionalDevice',
+  'data_expired' => 'dataExpired',
+  'defer_id_v_decision' => 'deferIdVDecision',
+  'device_recently_lost' => 'deviceRecentlyLost',
+  'good_activity_history' => 'goodActivityHistory',
+  'has_suspended_tokens' => 'hasSuspendedTokens',
+  'high_risk' => 'highRisk',
+  'inactive_account' => 'inactiveAccount',
+  'long_account_tenure' => 'longAccountTenure',
+  'low_account_score' => 'lowAccountScore',
+  'low_device_score' => 'lowDeviceScore',
+  'low_phone_number_score' => 'lowPhoneNumberScore',
+  'network_service_error' => 'networkServiceError',
+  'outside_home_territory' => 'outsideHomeTerritory',
+  'provisioning_cardholder_mismatch' => 'provisioningCardholderMismatch',
+  'provisioning_device_and_cardholder_mismatch' => 'provisioningDeviceAndCardholderMismatch',
+  'provisioning_device_mismatch' => 'provisioningDeviceMismatch',
+  'same_device_no_prior_authentication' => 'sameDeviceNoPriorAuthentication',
+  'same_device_successful_prior_authentication' => 'sameDeviceSuccessfulPriorAuthentication',
+  'software_update' => 'softwareUpdate',
+  'suspicious_activity' => 'suspiciousActivity',
+  'too_many_different_cardholders' => 'tooManyDifferentCardholders',
+  'too_many_recent_attempts' => 'tooManyRecentAttempts',
+  'too_many_recent_tokens' => 'tooManyRecentTokens',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -161,6 +201,13 @@ static const List<SuggestedDecision> values = [approve, decline, requireAuth];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'approve' => 'approve',
+  'decline' => 'decline',
+  'require_auth' => 'requireAuth',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

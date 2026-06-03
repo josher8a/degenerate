@@ -25,6 +25,14 @@ static const List<GelatoSelfieReportErrorCode> values = [selfieDocumentMissingPh
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'selfie_document_missing_photo' => 'selfieDocumentMissingPhoto',
+  'selfie_face_mismatch' => 'selfieFaceMismatch',
+  'selfie_manipulated' => 'selfieManipulated',
+  'selfie_unverified_other' => 'selfieUnverifiedOther',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

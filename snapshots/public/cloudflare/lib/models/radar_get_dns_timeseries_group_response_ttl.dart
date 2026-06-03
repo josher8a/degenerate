@@ -33,6 +33,17 @@ static const List<RadarGetDnsTimeseriesGroupResponseTtl> values = [lte1M, gt1MLt
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'LTE_1M' => 'lte1M',
+  'GT_1M_LTE_5M' => 'gt1MLte5M',
+  'GT_5M_LTE_15M' => 'gt5MLte15M',
+  'GT_15M_LTE_1H' => 'gt15MLte1H',
+  'GT_1H_LTE_1D' => 'gt1HLte1D',
+  'GT_1D_LTE_1W' => 'gt1DLte1W',
+  'GT_1W' => 'gt1W',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

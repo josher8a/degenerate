@@ -21,6 +21,13 @@ static const List<CloudflarePipelinesDecimalEncoding> values = [number, string, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'number' => 'number',
+  'string' => 'string',
+  'bytes' => 'bytes',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -48,6 +55,12 @@ static const List<CloudflarePipelinesTimestampFormat> values = [rfc3339, unixMil
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'rfc3339' => 'rfc3339',
+  'unix_millis' => 'unixMillis',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

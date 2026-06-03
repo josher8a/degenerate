@@ -34,6 +34,17 @@ static const List<AppleStatus> values = [included, notYetIncluded, notIncluded, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INCLUDED' => 'included',
+  'NOT_YET_INCLUDED' => 'notYetIncluded',
+  'NOT_INCLUDED' => 'notIncluded',
+  'NOT_BEFORE' => 'notBefore',
+  'REMOVED' => 'removed',
+  'DISABLED' => 'disabled',
+  'BLOCKED' => 'blocked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -77,6 +88,17 @@ static const List<ChromeStatus> values = [included, notYetIncluded, notIncluded,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INCLUDED' => 'included',
+  'NOT_YET_INCLUDED' => 'notYetIncluded',
+  'NOT_INCLUDED' => 'notIncluded',
+  'NOT_BEFORE' => 'notBefore',
+  'REMOVED' => 'removed',
+  'DISABLED' => 'disabled',
+  'BLOCKED' => 'blocked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -120,6 +142,17 @@ static const List<MicrosoftStatus> values = [included, notYetIncluded, notInclud
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INCLUDED' => 'included',
+  'NOT_YET_INCLUDED' => 'notYetIncluded',
+  'NOT_INCLUDED' => 'notIncluded',
+  'NOT_BEFORE' => 'notBefore',
+  'REMOVED' => 'removed',
+  'DISABLED' => 'disabled',
+  'BLOCKED' => 'blocked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -163,6 +196,17 @@ static const List<MozillaStatus> values = [included, notYetIncluded, notIncluded
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INCLUDED' => 'included',
+  'NOT_YET_INCLUDED' => 'notYetIncluded',
+  'NOT_INCLUDED' => 'notIncluded',
+  'NOT_BEFORE' => 'notBefore',
+  'REMOVED' => 'removed',
+  'DISABLED' => 'disabled',
+  'BLOCKED' => 'blocked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

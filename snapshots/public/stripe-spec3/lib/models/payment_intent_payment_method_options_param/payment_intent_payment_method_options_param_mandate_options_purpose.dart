@@ -48,6 +48,22 @@ static const List<PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose> v
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '' => r'$empty',
+  'dependant_support' => 'dependantSupport',
+  'government' => 'government',
+  'loan' => 'loan',
+  'mortgage' => 'mortgage',
+  'other' => r'$other',
+  'pension' => 'pension',
+  'personal' => 'personal',
+  'retail' => 'retail',
+  'salary' => 'salary',
+  'tax' => 'tax',
+  'utility' => 'utility',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

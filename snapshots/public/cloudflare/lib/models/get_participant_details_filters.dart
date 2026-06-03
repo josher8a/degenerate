@@ -27,6 +27,15 @@ static const List<GetParticipantDetailsFilters> values = [deviceInfo, ipInformat
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'device_info' => 'deviceInfo',
+  'ip_information' => 'ipInformation',
+  'precall_network_information' => 'precallNetworkInformation',
+  'events' => 'events',
+  'quality_stats' => 'qualityStats',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

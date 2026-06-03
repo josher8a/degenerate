@@ -68,6 +68,28 @@ static const List<ResponseErrorCode> values = [serverError, rateLimitExceeded, i
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'server_error' => 'serverError',
+  'rate_limit_exceeded' => 'rateLimitExceeded',
+  'invalid_prompt' => 'invalidPrompt',
+  'vector_store_timeout' => 'vectorStoreTimeout',
+  'invalid_image' => 'invalidImage',
+  'invalid_image_format' => 'invalidImageFormat',
+  'invalid_base64_image' => 'invalidBase64Image',
+  'invalid_image_url' => 'invalidImageUrl',
+  'image_too_large' => 'imageTooLarge',
+  'image_too_small' => 'imageTooSmall',
+  'image_parse_error' => 'imageParseError',
+  'image_content_policy_violation' => 'imageContentPolicyViolation',
+  'invalid_image_mode' => 'invalidImageMode',
+  'image_file_too_large' => 'imageFileTooLarge',
+  'unsupported_image_media_type' => 'unsupportedImageMediaType',
+  'empty_image_file' => 'emptyImageFile',
+  'failed_to_download_image' => 'failedToDownloadImage',
+  'image_file_not_found' => 'imageFileNotFound',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

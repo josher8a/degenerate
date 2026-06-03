@@ -27,6 +27,15 @@ static const List<CreateImageRequestModelVariant2> values = [gptImage15, dallE2,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'gpt-image-1.5' => 'gptImage15',
+  'dall-e-2' => 'dallE2',
+  'dall-e-3' => 'dallE3',
+  'gpt-image-1' => 'gptImage1',
+  'gpt-image-1-mini' => 'gptImage1Mini',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

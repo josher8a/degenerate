@@ -19,6 +19,12 @@ static const List<CodeScanningDefaultSetupUpdateRunnerType> values = [standard, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'standard' => 'standard',
+  'labeled' => 'labeled',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -67,6 +73,19 @@ static const List<CodeScanningDefaultSetupUpdateLanguages> values = [actions, cC
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'actions' => 'actions',
+  'c-cpp' => 'cCpp',
+  'csharp' => 'csharp',
+  'go' => 'go',
+  'java-kotlin' => 'javaKotlin',
+  'javascript-typescript' => 'javascriptTypescript',
+  'python' => 'python',
+  'ruby' => 'ruby',
+  'swift' => 'swift',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -22,6 +22,13 @@ static const List<IssuingCardCancellationReason> values = [designRejected, lost,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'design_rejected' => 'designRejected',
+  'lost' => 'lost',
+  'stolen' => 'stolen',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +54,11 @@ static const List<IssuingCardObject> values = [issuingCard];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'issuing.card' => 'issuingCard',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +93,14 @@ static const List<IssuingCardReplacementReason> values = [damaged, expired, lost
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'damaged' => 'damaged',
+  'expired' => 'expired',
+  'lost' => 'lost',
+  'stolen' => 'stolen',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

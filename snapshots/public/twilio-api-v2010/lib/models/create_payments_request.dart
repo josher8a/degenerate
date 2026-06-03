@@ -19,6 +19,12 @@ static const List<PaymentsEnumPaymentMethod> values = [creditCard, achDebit];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'credit-card' => 'creditCard',
+  'ach-debit' => 'achDebit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +56,13 @@ static const List<PaymentsEnumBankAccountType> values = [consumerChecking, consu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'consumer-checking' => 'consumerChecking',
+  'consumer-savings' => 'consumerSavings',
+  'commercial-checking' => 'commercialChecking',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +94,13 @@ static const List<PaymentsEnumTokenType> values = [oneTime, reusable, paymentMet
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'one-time' => 'oneTime',
+  'reusable' => 'reusable',
+  'payment-method' => 'paymentMethod',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

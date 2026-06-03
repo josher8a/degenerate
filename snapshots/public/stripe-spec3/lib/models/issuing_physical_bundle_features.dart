@@ -22,6 +22,13 @@ static const List<IssuingPhysicalBundleFeaturesCardLogo> values = [optional, $re
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'optional' => 'optional',
+  'required' => r'$required',
+  'unsupported' => 'unsupported',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +60,13 @@ static const List<IssuingPhysicalBundleFeaturesCarrierText> values = [optional, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'optional' => 'optional',
+  'required' => r'$required',
+  'unsupported' => 'unsupported',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -84,6 +98,13 @@ static const List<IssuingPhysicalBundleFeaturesSecondLine> values = [optional, $
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'optional' => 'optional',
+  'required' => r'$required',
+  'unsupported' => 'unsupported',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

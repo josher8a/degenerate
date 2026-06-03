@@ -31,6 +31,16 @@ static const List<ReactionsCreateForReleaseRequestContent> values = [plus1, laug
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '+1' => 'plus1',
+  'laugh' => 'laugh',
+  'heart' => 'heart',
+  'hooray' => 'hooray',
+  'rocket' => 'rocket',
+  'eyes' => 'eyes',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -25,6 +25,14 @@ static const List<AccountBusinessType> values = [company, governmentEntity, indi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'company' => 'company',
+  'government_entity' => 'governmentEntity',
+  'individual' => 'individual',
+  'non_profit' => 'nonProfit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +67,14 @@ static const List<AccountType> values = [custom, express, none, standard];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'custom' => 'custom',
+  'express' => 'express',
+  'none' => 'none',
+  'standard' => 'standard',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

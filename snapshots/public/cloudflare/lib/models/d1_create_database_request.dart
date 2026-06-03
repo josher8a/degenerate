@@ -19,6 +19,12 @@ static const List<D1Jurisdiction> values = [eu, fedramp];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'eu' => 'eu',
+  'fedramp' => 'fedramp',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +65,16 @@ static const List<D1PrimaryLocationHint> values = [wnam, enam, weur, eeur, apac,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'wnam' => 'wnam',
+  'enam' => 'enam',
+  'weur' => 'weur',
+  'eeur' => 'eeur',
+  'apac' => 'apac',
+  'oc' => 'oc',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

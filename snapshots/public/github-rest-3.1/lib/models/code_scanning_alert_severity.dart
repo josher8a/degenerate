@@ -34,6 +34,17 @@ static const List<CodeScanningAlertSeverity> values = [critical, high, medium, l
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'critical' => 'critical',
+  'high' => 'high',
+  'medium' => 'medium',
+  'low' => 'low',
+  'warning' => 'warning',
+  'note' => 'note',
+  'error' => 'error',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

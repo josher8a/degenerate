@@ -103,6 +103,40 @@ static const List<LogpushDataset> values = [accessRequests, auditLogs, auditLogs
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'access_requests' => 'accessRequests',
+  'audit_logs' => 'auditLogs',
+  'audit_logs_v2' => 'auditLogsV2',
+  'biso_user_actions' => 'bisoUserActions',
+  'casb_findings' => 'casbFindings',
+  'device_posture_results' => 'devicePostureResults',
+  'dex_application_tests' => 'dexApplicationTests',
+  'dex_device_state_events' => 'dexDeviceStateEvents',
+  'dlp_forensic_copies' => 'dlpForensicCopies',
+  'dns_firewall_logs' => 'dnsFirewallLogs',
+  'dns_logs' => 'dnsLogs',
+  'email_security_alerts' => 'emailSecurityAlerts',
+  'firewall_events' => 'firewallEvents',
+  'gateway_dns' => 'gatewayDns',
+  'gateway_http' => 'gatewayHttp',
+  'gateway_network' => 'gatewayNetwork',
+  'http_requests' => 'httpRequests',
+  'ipsec_logs' => 'ipsecLogs',
+  'magic_ids_detections' => 'magicIdsDetections',
+  'nel_reports' => 'nelReports',
+  'network_analytics_logs' => 'networkAnalyticsLogs',
+  'page_shield_events' => 'pageShieldEvents',
+  'sinkhole_http_logs' => 'sinkholeHttpLogs',
+  'spectrum_events' => 'spectrumEvents',
+  'ssh_logs' => 'sshLogs',
+  'warp_config_changes' => 'warpConfigChanges',
+  'warp_toggle_changes' => 'warpToggleChanges',
+  'workers_trace_events' => 'workersTraceEvents',
+  'zaraz_events' => 'zarazEvents',
+  'zero_trust_network_sessions' => 'zeroTrustNetworkSessions',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -27,6 +27,15 @@ static const List<ThreeDSecureElectronicCommerceIndicator> values = [$01, $02, $
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '01' => r'$01',
+  '02' => r'$02',
+  '05' => r'$05',
+  '06' => r'$06',
+  '07' => r'$07',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

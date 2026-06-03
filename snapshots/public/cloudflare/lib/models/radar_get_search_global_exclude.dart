@@ -48,6 +48,22 @@ static const List<RadarGetSearchGlobalExclude> values = [adm1S, asns, bots, cert
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ADM1S' => 'adm1S',
+  'ASNS' => 'asns',
+  'BOTS' => 'bots',
+  'CERTIFICATE_AUTHORITIES' => 'certificateAuthorities',
+  'CERTIFICATE_LOGS' => 'certificateLogs',
+  'ORIGINS' => 'origins',
+  'ORIGIN_REGIONS' => 'originRegions',
+  'INDUSTRIES' => 'industries',
+  'LOCATIONS' => 'locations',
+  'NOTEBOOKS' => 'notebooks',
+  'TLDS' => 'tlds',
+  'VERTICALS' => 'verticals',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -16,6 +16,11 @@ static const List<ClimateSupplierObject> values = [climateSupplier];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'climate.supplier' => 'climateSupplier',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +52,13 @@ static const List<RemovalPathway> values = [biomassCarbonRemovalAndStorage, dire
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'biomass_carbon_removal_and_storage' => 'biomassCarbonRemovalAndStorage',
+  'direct_air_capture' => 'directAirCapture',
+  'enhanced_weathering' => 'enhancedWeathering',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

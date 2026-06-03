@@ -34,6 +34,17 @@ static const List<ResourceTaggingZoneResourceType> values = [accessApplicationPo
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'access_application_policy' => 'accessApplicationPolicy',
+  'api_gateway_operation' => 'apiGatewayOperation',
+  'custom_certificate' => 'customCertificate',
+  'custom_hostname' => 'customHostname',
+  'dns_record' => 'dnsRecord',
+  'managed_client_certificate' => 'managedClientCertificate',
+  'zone' => 'zone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

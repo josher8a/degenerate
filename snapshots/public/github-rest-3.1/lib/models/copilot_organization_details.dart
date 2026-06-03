@@ -22,6 +22,13 @@ static const List<PublicCodeSuggestions> values = [allow, block, unconfigured];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'allow' => 'allow',
+  'block' => 'block',
+  'unconfigured' => 'unconfigured',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +60,13 @@ static const List<IdeChat> values = [enabled, disabled, unconfigured];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enabled' => 'enabled',
+  'disabled' => 'disabled',
+  'unconfigured' => 'unconfigured',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -84,6 +98,13 @@ static const List<PlatformChat> values = [enabled, disabled, unconfigured];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enabled' => 'enabled',
+  'disabled' => 'disabled',
+  'unconfigured' => 'unconfigured',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -115,6 +136,13 @@ static const List<Cli> values = [enabled, disabled, unconfigured];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'enabled' => 'enabled',
+  'disabled' => 'disabled',
+  'unconfigured' => 'unconfigured',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -149,6 +177,14 @@ static const List<SeatManagementSetting> values = [assignAll, assignSelected, di
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'assign_all' => 'assignAll',
+  'assign_selected' => 'assignSelected',
+  'disabled' => 'disabled',
+  'unconfigured' => 'unconfigured',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -177,6 +213,12 @@ static const List<CopilotOrganizationDetailsPlanType> values = [business, enterp
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'business' => 'business',
+  'enterprise' => 'enterprise',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

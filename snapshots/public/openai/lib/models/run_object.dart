@@ -16,6 +16,11 @@ static const List<RunObjectObject> values = [threadRun];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'thread.run' => 'threadRun',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -65,6 +70,19 @@ static const List<RunObjectStatus> values = [queued, inProgress, requiresAction,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'queued' => 'queued',
+  'in_progress' => 'inProgress',
+  'requires_action' => 'requiresAction',
+  'cancelling' => 'cancelling',
+  'cancelled' => 'cancelled',
+  'failed' => 'failed',
+  'completed' => 'completed',
+  'incomplete' => 'incomplete',
+  'expired' => 'expired',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

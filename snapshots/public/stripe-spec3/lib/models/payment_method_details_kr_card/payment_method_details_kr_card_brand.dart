@@ -79,6 +79,32 @@ static const List<PaymentMethodDetailsKrCardBrand> values = [bc, citi, hana, hyu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'bc' => 'bc',
+  'citi' => 'citi',
+  'hana' => 'hana',
+  'hyundai' => 'hyundai',
+  'jeju' => 'jeju',
+  'jeonbuk' => 'jeonbuk',
+  'kakaobank' => 'kakaobank',
+  'kbank' => 'kbank',
+  'kdbbank' => 'kdbbank',
+  'kookmin' => 'kookmin',
+  'kwangju' => 'kwangju',
+  'lotte' => 'lotte',
+  'mg' => 'mg',
+  'nh' => 'nh',
+  'post' => 'post',
+  'samsung' => 'samsung',
+  'savingsbank' => 'savingsbank',
+  'shinhan' => 'shinhan',
+  'shinhyup' => 'shinhyup',
+  'suhyup' => 'suhyup',
+  'tossbank' => 'tossbank',
+  'woori' => 'woori',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

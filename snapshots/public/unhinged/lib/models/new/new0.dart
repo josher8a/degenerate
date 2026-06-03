@@ -49,6 +49,19 @@ final class New0 {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      0 => r'$0',
+      1 => r'$1',
+      -1 => 'minus1',
+      2147483647 => r'$2147483647',
+      -2147483648 => 'minus2147483648',
+      9999999999999999 => r'$9999999999999999',
+      _ => '$value',
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

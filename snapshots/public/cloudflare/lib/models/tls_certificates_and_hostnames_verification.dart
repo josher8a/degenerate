@@ -41,6 +41,17 @@ static const List<TlsCertificatesAndHostnamesCertificateStatus> values = [initia
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'initializing' => 'initializing',
+  'authorizing' => 'authorizing',
+  'active' => 'active',
+  'expired' => 'expired',
+  'issuing' => 'issuing',
+  'timing_out' => 'timingOut',
+  'pending_deployment' => 'pendingDeployment',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -72,6 +83,13 @@ static const List<TlsCertificatesAndHostnamesSchemasSignature> values = [ecdsaWi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ECDSAWithSHA256' => 'ecdsaWithSha256',
+  'SHA1WithRSA' => 'sha1WithRsa',
+  'SHA256WithRSA' => 'sha256WithRsa',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -103,6 +121,13 @@ static const List<TlsCertificatesAndHostnamesSchemasValidationMethod> values = [
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'http' => 'http',
+  'cname' => 'cname',
+  'txt' => 'txt',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -138,6 +163,12 @@ static const List<TlsCertificatesAndHostnamesVerificationType> values = [cname, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cname' => 'cname',
+  'meta tag' => 'metaTag',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

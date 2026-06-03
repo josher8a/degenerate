@@ -29,6 +29,15 @@ static const List<CodeInterpreterToolCallStatus> values = [inProgress, completed
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'in_progress' => 'inProgress',
+  'completed' => 'completed',
+  'incomplete' => 'incomplete',
+  'interpreting' => 'interpreting',
+  'failed' => 'failed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -25,6 +25,14 @@ static const List<BalanceType> values = [issuing, payments, refundAndDisputePref
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'issuing' => 'issuing',
+  'payments' => 'payments',
+  'refund_and_dispute_prefunding' => 'refundAndDisputePrefunding',
+  'risk_reserved' => 'riskReserved',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +58,11 @@ static const List<BalanceTransactionObject> values = [balanceTransaction];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'balance_transaction' => 'balanceTransaction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -210,6 +223,56 @@ static const List<BalanceTransactionType> values = [adjustment, advance, advance
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'adjustment' => 'adjustment',
+  'advance' => 'advance',
+  'advance_funding' => 'advanceFunding',
+  'anticipation_repayment' => 'anticipationRepayment',
+  'application_fee' => 'applicationFee',
+  'application_fee_refund' => 'applicationFeeRefund',
+  'charge' => 'charge',
+  'climate_order_purchase' => 'climateOrderPurchase',
+  'climate_order_refund' => 'climateOrderRefund',
+  'connect_collection_transfer' => 'connectCollectionTransfer',
+  'contribution' => 'contribution',
+  'issuing_authorization_hold' => 'issuingAuthorizationHold',
+  'issuing_authorization_release' => 'issuingAuthorizationRelease',
+  'issuing_dispute' => 'issuingDispute',
+  'issuing_transaction' => 'issuingTransaction',
+  'obligation_outbound' => 'obligationOutbound',
+  'obligation_reversal_inbound' => 'obligationReversalInbound',
+  'payment' => 'payment',
+  'payment_failure_refund' => 'paymentFailureRefund',
+  'payment_network_reserve_hold' => 'paymentNetworkReserveHold',
+  'payment_network_reserve_release' => 'paymentNetworkReserveRelease',
+  'payment_refund' => 'paymentRefund',
+  'payment_reversal' => 'paymentReversal',
+  'payment_unreconciled' => 'paymentUnreconciled',
+  'payout' => 'payout',
+  'payout_cancel' => 'payoutCancel',
+  'payout_failure' => 'payoutFailure',
+  'payout_minimum_balance_hold' => 'payoutMinimumBalanceHold',
+  'payout_minimum_balance_release' => 'payoutMinimumBalanceRelease',
+  'refund' => 'refund',
+  'refund_failure' => 'refundFailure',
+  'reserve_hold' => 'reserveHold',
+  'reserve_release' => 'reserveRelease',
+  'reserve_transaction' => 'reserveTransaction',
+  'reserved_funds' => 'reservedFunds',
+  'stripe_balance_payment_debit' => 'stripeBalancePaymentDebit',
+  'stripe_balance_payment_debit_reversal' => 'stripeBalancePaymentDebitReversal',
+  'stripe_fee' => 'stripeFee',
+  'stripe_fx_fee' => 'stripeFxFee',
+  'tax_fee' => 'taxFee',
+  'topup' => 'topup',
+  'topup_reversal' => 'topupReversal',
+  'transfer' => 'transfer',
+  'transfer_cancel' => 'transferCancel',
+  'transfer_failure' => 'transferFailure',
+  'transfer_refund' => 'transferRefund',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

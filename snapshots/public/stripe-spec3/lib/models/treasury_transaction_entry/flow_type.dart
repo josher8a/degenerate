@@ -40,6 +40,19 @@ static const List<FlowType> values = [creditReversal, debitReversal, inboundTran
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'credit_reversal' => 'creditReversal',
+  'debit_reversal' => 'debitReversal',
+  'inbound_transfer' => 'inboundTransfer',
+  'issuing_authorization' => 'issuingAuthorization',
+  'other' => r'$other',
+  'outbound_payment' => 'outboundPayment',
+  'outbound_transfer' => 'outboundTransfer',
+  'received_credit' => 'receivedCredit',
+  'received_debit' => 'receivedDebit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -15,6 +15,11 @@ static const List<WebhookPullRequestDequeuedAction> values = [dequeued];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'dequeued' => 'dequeued',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -72,6 +77,22 @@ static const List<WebhookPullRequestDequeuedReason> values = [unknownRemovalReas
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'UNKNOWN_REMOVAL_REASON' => 'unknownRemovalReason',
+  'MANUAL' => 'manual',
+  'MERGE' => 'merge',
+  'MERGE_CONFLICT' => 'mergeConflict',
+  'CI_FAILURE' => 'ciFailure',
+  'CI_TIMEOUT' => 'ciTimeout',
+  'ALREADY_MERGED' => 'alreadyMerged',
+  'QUEUE_CLEARED' => 'queueCleared',
+  'ROLL_BACK' => 'rollBack',
+  'BRANCH_PROTECTIONS' => 'branchProtections',
+  'GIT_TREE_INVALID' => 'gitTreeInvalid',
+  'INVALID_MERGE_COMMIT' => 'invalidMergeCommit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

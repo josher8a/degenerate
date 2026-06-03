@@ -31,6 +31,16 @@ static const List<ShieldCredentialsJwtKeyRsaAlg> values = [rs256, rs384, rs512, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'RS256' => 'rs256',
+  'RS384' => 'rs384',
+  'RS512' => 'rs512',
+  'PS256' => 'ps256',
+  'PS384' => 'ps384',
+  'PS512' => 'ps512',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,6 +66,11 @@ static const List<ShieldCredentialsJwtKeyRsaKty> values = [rsa];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'RSA' => 'rsa',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

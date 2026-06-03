@@ -24,6 +24,14 @@ static const List<SpectrumAnalyticsDimensions2> values = [event, appId, coloName
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'event' => 'event',
+  'appID' => 'appId',
+  'coloName' => 'coloName',
+  'ipVersion' => 'ipVersion',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

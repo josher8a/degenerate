@@ -22,6 +22,13 @@ static const List<VectorStoreFileObjectLastErrorCode> values = [serverError, uns
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'server_error' => 'serverError',
+  'unsupported_file' => 'unsupportedFile',
+  'invalid_file' => 'invalidFile',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

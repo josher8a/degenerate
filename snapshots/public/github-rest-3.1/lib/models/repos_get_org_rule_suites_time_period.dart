@@ -24,6 +24,14 @@ static const List<ReposGetOrgRuleSuitesTimePeriod> values = [hour, day, week, mo
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'hour' => 'hour',
+  'day' => 'day',
+  'week' => 'week',
+  'month' => 'month',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

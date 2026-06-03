@@ -75,6 +75,31 @@ static const List<PaymentMethodOptionsParam102PreferredLocale> values = [csCz, d
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cs-CZ' => 'csCz',
+  'da-DK' => 'daDk',
+  'de-AT' => 'deAt',
+  'de-DE' => 'deDe',
+  'de-LU' => 'deLu',
+  'el-GR' => 'elGr',
+  'en-GB' => 'enGb',
+  'en-US' => 'enUs',
+  'es-ES' => 'esEs',
+  'fi-FI' => 'fiFi',
+  'fr-BE' => 'frBe',
+  'fr-FR' => 'frFr',
+  'fr-LU' => 'frLu',
+  'hu-HU' => 'huHu',
+  'it-IT' => 'itIt',
+  'nl-BE' => 'nlBe',
+  'nl-NL' => 'nlNl',
+  'pl-PL' => 'plPl',
+  'pt-PT' => 'ptPt',
+  'sk-SK' => 'skSk',
+  'sv-SE' => 'svSe',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

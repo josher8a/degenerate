@@ -19,6 +19,12 @@ static const List<Collect> values = [currentlyDue, eventuallyDue];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'currently_due' => 'currentlyDue',
+  'eventually_due' => 'eventuallyDue',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -49,6 +55,12 @@ static const List<PostAccountLinksRequestType> values = [accountOnboarding, acco
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_onboarding' => 'accountOnboarding',
+  'account_update' => 'accountUpdate',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

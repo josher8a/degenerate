@@ -40,6 +40,19 @@ static const List<WebhookCheckSuiteRequestedCheckSuiteConclusion> values = [succ
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'success' => 'success',
+  'failure' => 'failure',
+  'neutral' => 'neutral',
+  'cancelled' => 'cancelled',
+  'timed_out' => 'timedOut',
+  'action_required' => 'actionRequired',
+  'stale' => 'stale',
+  'null' => r'$null',
+  'skipped' => 'skipped',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -37,6 +37,18 @@ static const List<ZeroTrustGatewaySchemasType> values = [serial, url, domain, em
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'SERIAL' => 'serial',
+  'URL' => 'url',
+  'DOMAIN' => 'domain',
+  'EMAIL' => 'email',
+  'IP' => 'ip',
+  'CATEGORY' => 'category',
+  'LOCATION' => 'location',
+  'DEVICE' => 'device',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

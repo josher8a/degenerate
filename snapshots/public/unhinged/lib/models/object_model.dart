@@ -36,6 +36,18 @@ final class NaN {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'NaN' => 'naN',
+      'nan' => 'nan',
+      'NAN' => 'nan2',
+      '+NaN' => 'naN2',
+      '-NaN' => 'naN3',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);
@@ -91,6 +103,18 @@ final class Infinity {
 
   double toJson() {
     return value;
+  }
+
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      0 => r'$0',
+      1 => r'$1',
+      -1 => 'minus1',
+      1.7976931348623157e+308 => r'$17976931348623157e308',
+      5e-324 => r'$5e324',
+      _ => '$value',
+    };
   }
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).

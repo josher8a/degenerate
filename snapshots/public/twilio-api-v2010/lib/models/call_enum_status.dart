@@ -37,6 +37,18 @@ static const List<CallEnumStatus> values = [queued, ringing, inProgress, complet
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'queued' => 'queued',
+  'ringing' => 'ringing',
+  'in-progress' => 'inProgress',
+  'completed' => 'completed',
+  'busy' => 'busy',
+  'failed' => 'failed',
+  'no-answer' => 'noAnswer',
+  'canceled' => 'canceled',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

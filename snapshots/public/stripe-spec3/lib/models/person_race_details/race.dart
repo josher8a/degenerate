@@ -84,6 +84,34 @@ static const List<Race> values = [africanAmerican, americanIndianOrAlaskaNative,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'african_american' => 'africanAmerican',
+  'american_indian_or_alaska_native' => 'americanIndianOrAlaskaNative',
+  'asian' => 'asian',
+  'asian_indian' => 'asianIndian',
+  'black_or_african_american' => 'blackOrAfricanAmerican',
+  'chinese' => 'chinese',
+  'ethiopian' => 'ethiopian',
+  'filipino' => 'filipino',
+  'guamanian_or_chamorro' => 'guamanianOrChamorro',
+  'haitian' => 'haitian',
+  'jamaican' => 'jamaican',
+  'japanese' => 'japanese',
+  'korean' => 'korean',
+  'native_hawaiian' => 'nativeHawaiian',
+  'native_hawaiian_or_other_pacific_islander' => 'nativeHawaiianOrOtherPacificIslander',
+  'nigerian' => 'nigerian',
+  'other_asian' => 'otherAsian',
+  'other_black_or_african_american' => 'otherBlackOrAfricanAmerican',
+  'other_pacific_islander' => 'otherPacificIslander',
+  'prefer_not_to_answer' => 'preferNotToAnswer',
+  'samoan' => 'samoan',
+  'somali' => 'somali',
+  'vietnamese' => 'vietnamese',
+  'white' => 'white',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

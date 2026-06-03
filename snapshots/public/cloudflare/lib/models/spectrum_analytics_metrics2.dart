@@ -33,6 +33,17 @@ static const List<SpectrumAnalyticsMetrics2> values = [count, bytesIngress, byte
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'count' => 'count',
+  'bytesIngress' => 'bytesIngress',
+  'bytesEgress' => 'bytesEgress',
+  'durationAvg' => 'durationAvg',
+  'durationMedian' => 'durationMedian',
+  'duration90th' => 'duration90th',
+  'duration99th' => 'duration99th',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

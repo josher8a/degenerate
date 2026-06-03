@@ -30,6 +30,16 @@ static const List<RiskLevel> values = [elevated, highest, low, normal, notAssess
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'elevated' => 'elevated',
+  'highest' => 'highest',
+  'low' => 'low',
+  'normal' => 'normal',
+  'not_assessed' => 'notAssessed',
+  'unknown' => 'unknown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

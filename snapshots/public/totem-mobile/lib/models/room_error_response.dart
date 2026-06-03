@@ -82,6 +82,27 @@ final class ErrorCode {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'not_in_room' => 'notInRoom',
+      'not_keeper' => 'notKeeper',
+      'not_current_speaker' => 'notCurrentSpeaker',
+      'not_next_speaker' => 'notNextSpeaker',
+      'banned' => 'banned',
+      'invalid_transition' => 'invalidTransition',
+      'room_not_active' => 'roomNotActive',
+      'room_not_waiting' => 'roomNotWaiting',
+      'room_already_ended' => 'roomAlreadyEnded',
+      'invalid_participant_order' => 'invalidParticipantOrder',
+      'stale_version' => 'staleVersion',
+      'not_joinable' => 'notJoinable',
+      'livekit_error' => 'livekitError',
+      'not_found' => 'notFound',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

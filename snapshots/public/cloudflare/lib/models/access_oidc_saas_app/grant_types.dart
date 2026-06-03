@@ -27,6 +27,15 @@ static const List<GrantTypes> values = [authorizationCode, authorizationCodeWith
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'authorization_code' => 'authorizationCode',
+  'authorization_code_with_pkce' => 'authorizationCodeWithPkce',
+  'refresh_tokens' => 'refreshTokens',
+  'hybrid' => 'hybrid',
+  'implicit' => 'implicit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -19,6 +19,12 @@ static const List<EmailType> values = [creditNote, none];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'credit_note' => 'creditNote',
+  'none' => 'none',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +59,14 @@ static const List<PostCreditNotesRequestReason> values = [duplicate, fraudulent,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'duplicate' => 'duplicate',
+  'fraudulent' => 'fraudulent',
+  'order_change' => 'orderChange',
+  'product_unsatisfactory' => 'productUnsatisfactory',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

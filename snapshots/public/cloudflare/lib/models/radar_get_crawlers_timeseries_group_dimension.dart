@@ -31,6 +31,16 @@ static const List<RadarGetCrawlersTimeseriesGroupDimension> values = [clientType
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'CLIENT_TYPE' => 'clientType',
+  'USER_AGENT' => 'userAgent',
+  'REFERER' => 'referer',
+  'CRAWL_REFER_RATIO' => 'crawlReferRatio',
+  'VERTICAL' => 'vertical',
+  'INDUSTRY' => 'industry',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

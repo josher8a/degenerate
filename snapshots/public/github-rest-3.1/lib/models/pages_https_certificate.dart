@@ -48,6 +48,22 @@ static const List<PagesHttpsCertificateState> values = [$new, authorizationCreat
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'new' => r'$new',
+  'authorization_created' => 'authorizationCreated',
+  'authorization_pending' => 'authorizationPending',
+  'authorized' => 'authorized',
+  'authorization_revoked' => 'authorizationRevoked',
+  'issued' => 'issued',
+  'uploaded' => 'uploaded',
+  'approved' => 'approved',
+  'errored' => 'errored',
+  'bad_authz' => 'badAuthz',
+  'destroy_pending' => 'destroyPending',
+  'dns_changed' => 'dnsChanged',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

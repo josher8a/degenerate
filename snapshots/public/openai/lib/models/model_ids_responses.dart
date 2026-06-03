@@ -54,6 +54,24 @@ static const List<ResponsesOnlyModel> values = [o1Pro, o1Pro20250319, o3Pro, o3P
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'o1-pro' => 'o1Pro',
+  'o1-pro-2025-03-19' => 'o1Pro20250319',
+  'o3-pro' => 'o3Pro',
+  'o3-pro-2025-06-10' => 'o3Pro20250610',
+  'o3-deep-research' => 'o3DeepResearch',
+  'o3-deep-research-2025-06-26' => 'o3DeepResearch20250626',
+  'o4-mini-deep-research' => 'o4MiniDeepResearch',
+  'o4-mini-deep-research-2025-06-26' => 'o4MiniDeepResearch20250626',
+  'computer-use-preview' => 'computerUsePreview',
+  'computer-use-preview-2025-03-11' => 'computerUsePreview20250311',
+  'gpt-5-codex' => 'gpt5Codex',
+  'gpt-5-pro' => 'gpt5Pro',
+  'gpt-5-pro-2025-10-06' => 'gpt5Pro20251006',
+  'gpt-5.1-codex-max' => 'gpt51CodexMax',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

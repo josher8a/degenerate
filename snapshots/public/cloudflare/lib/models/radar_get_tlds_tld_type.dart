@@ -28,6 +28,15 @@ static const List<RadarGetTldsTldType> values = [generic, countryCode, genericRe
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'GENERIC' => 'generic',
+  'COUNTRY_CODE' => 'countryCode',
+  'GENERIC_RESTRICTED' => 'genericRestricted',
+  'INFRASTRUCTURE' => 'infrastructure',
+  'SPONSORED' => 'sponsored',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

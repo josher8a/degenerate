@@ -30,6 +30,16 @@ static const List<AllowedUpdatesVariant1> values = [address, email, $name, phone
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'address' => 'address',
+  'email' => 'email',
+  'name' => r'$name',
+  'phone' => 'phone',
+  'shipping' => 'shipping',
+  'tax_id' => 'taxId',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

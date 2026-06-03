@@ -24,6 +24,14 @@ static const List<CacheThreshold> values = [superStrictMatch, closeEnough, flexi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'super_strict_match' => 'superStrictMatch',
+  'close_enough' => 'closeEnough',
+  'flexible_friend' => 'flexibleFriend',
+  'anything_goes' => 'anythingGoes',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

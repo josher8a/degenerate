@@ -24,6 +24,14 @@ static const List<BrandingSettingsBorderStyle> values = [$empty, pill, rectangul
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '' => r'$empty',
+  'pill' => 'pill',
+  'rectangular' => 'rectangular',
+  'rounded' => 'rounded',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -126,6 +134,37 @@ static const List<FontFamily> values = [$empty, beVietnamPro, bitter, chakraPetc
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '' => r'$empty',
+  'be_vietnam_pro' => 'beVietnamPro',
+  'bitter' => 'bitter',
+  'chakra_petch' => 'chakraPetch',
+  'default' => r'$default',
+  'hahmlet' => 'hahmlet',
+  'inconsolata' => 'inconsolata',
+  'inter' => 'inter',
+  'lato' => 'lato',
+  'lora' => 'lora',
+  'm_plus_1_code' => 'mPlus1Code',
+  'montserrat' => 'montserrat',
+  'noto_sans' => 'notoSans',
+  'noto_sans_jp' => 'notoSansJp',
+  'noto_serif' => 'notoSerif',
+  'nunito' => 'nunito',
+  'open_sans' => 'openSans',
+  'pridi' => 'pridi',
+  'pt_sans' => 'ptSans',
+  'pt_serif' => 'ptSerif',
+  'raleway' => 'raleway',
+  'roboto' => 'roboto',
+  'roboto_slab' => 'robotoSlab',
+  'source_sans_pro' => 'sourceSansPro',
+  'titillium_web' => 'titilliumWeb',
+  'ubuntu_mono' => 'ubuntuMono',
+  'zen_maru_gothic' => 'zenMaruGothic',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -30,6 +30,16 @@ static const List<StatusFrom> values = [inactive, onTrack, atRisk, offTrack, com
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INACTIVE' => 'inactive',
+  'ON_TRACK' => 'onTrack',
+  'AT_RISK' => 'atRisk',
+  'OFF_TRACK' => 'offTrack',
+  'COMPLETE' => 'complete',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -69,6 +79,16 @@ static const List<StatusTo> values = [inactive, onTrack, atRisk, offTrack, compl
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'INACTIVE' => 'inactive',
+  'ON_TRACK' => 'onTrack',
+  'AT_RISK' => 'atRisk',
+  'OFF_TRACK' => 'offTrack',
+  'COMPLETE' => 'complete',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

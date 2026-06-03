@@ -58,6 +58,25 @@ static const List<FieldDataType> values = [assignees, linkedPullRequests, review
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'assignees' => 'assignees',
+  'linked_pull_requests' => 'linkedPullRequests',
+  'reviewers' => 'reviewers',
+  'labels' => 'labels',
+  'milestone' => 'milestone',
+  'repository' => 'repository',
+  'title' => 'title',
+  'text' => 'text',
+  'single_select' => 'singleSelect',
+  'number' => 'number',
+  'date' => 'date',
+  'iteration' => 'iteration',
+  'issue_type' => 'issueType',
+  'parent_issue' => 'parentIssue',
+  'sub_issues_progress' => 'subIssuesProgress',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

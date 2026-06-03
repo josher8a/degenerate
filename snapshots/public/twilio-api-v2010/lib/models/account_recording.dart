@@ -34,6 +34,17 @@ static const List<RecordingEnumStatus> values = [inProgress, paused, stopped, pr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'in-progress' => 'inProgress',
+  'paused' => 'paused',
+  'stopped' => 'stopped',
+  'processing' => 'processing',
+  'completed' => 'completed',
+  'absent' => 'absent',
+  'deleted' => 'deleted',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -77,6 +88,17 @@ static const List<RecordingEnumSource> values = [dialVerb, conference, outboundA
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'DialVerb' => 'dialVerb',
+  'Conference' => 'conference',
+  'OutboundAPI' => 'outboundApi',
+  'Trunking' => 'trunking',
+  'RecordVerb' => 'recordVerb',
+  'StartCallRecordingAPI' => 'startCallRecordingApi',
+  'StartConferenceRecordingAPI' => 'startConferenceRecordingApi',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

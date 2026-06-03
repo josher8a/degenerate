@@ -23,6 +23,13 @@ static const List<ImageGenToolModelVariant2> values = [gptImage1, gptImage1Mini,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'gpt-image-1' => 'gptImage1',
+  'gpt-image-1-mini' => 'gptImage1Mini',
+  'gpt-image-1.5' => 'gptImage15',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

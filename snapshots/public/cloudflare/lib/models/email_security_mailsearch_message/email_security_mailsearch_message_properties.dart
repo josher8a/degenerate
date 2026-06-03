@@ -36,6 +36,18 @@ static const List<AllowlistedPatternType> values = [quarantineRelease, acceptabl
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'quarantine_release' => 'quarantineRelease',
+  'acceptable_sender' => 'acceptableSender',
+  'allowed_sender' => 'allowedSender',
+  'allowed_recipient' => 'allowedRecipient',
+  'domain_similarity' => 'domainSimilarity',
+  'domain_recency' => 'domainRecency',
+  'managed_acceptable_sender' => 'managedAcceptableSender',
+  'outbound_ndr' => 'outboundNdr',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -81,6 +93,18 @@ static const List<WhitelistedPatternType> values = [quarantineRelease, acceptabl
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'quarantine_release' => 'quarantineRelease',
+  'acceptable_sender' => 'acceptableSender',
+  'allowed_sender' => 'allowedSender',
+  'allowed_recipient' => 'allowedRecipient',
+  'domain_similarity' => 'domainSimilarity',
+  'domain_recency' => 'domainRecency',
+  'managed_acceptable_sender' => 'managedAcceptableSender',
+  'outbound_ndr' => 'outboundNdr',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

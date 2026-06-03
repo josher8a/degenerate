@@ -19,6 +19,12 @@ static const List<LegalEntityCompanyOwnershipExemptionReason> values = [qualifie
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'qualified_entity_exceeds_ownership_threshold' => 'qualifiedEntityExceedsOwnershipThreshold',
+  'qualifies_as_financial_institution' => 'qualifiesAsFinancialInstitution',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -110,6 +116,33 @@ static const List<LegalEntityCompanyStructure> values = [freeZoneEstablishment, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'free_zone_establishment' => 'freeZoneEstablishment',
+  'free_zone_llc' => 'freeZoneLlc',
+  'government_instrumentality' => 'governmentInstrumentality',
+  'governmental_unit' => 'governmentalUnit',
+  'incorporated_non_profit' => 'incorporatedNonProfit',
+  'incorporated_partnership' => 'incorporatedPartnership',
+  'limited_liability_partnership' => 'limitedLiabilityPartnership',
+  'llc' => 'llc',
+  'multi_member_llc' => 'multiMemberLlc',
+  'private_company' => 'privateCompany',
+  'private_corporation' => 'privateCorporation',
+  'private_partnership' => 'privatePartnership',
+  'public_company' => 'publicCompany',
+  'public_corporation' => 'publicCorporation',
+  'public_partnership' => 'publicPartnership',
+  'registered_charity' => 'registeredCharity',
+  'single_member_llc' => 'singleMemberLlc',
+  'sole_establishment' => 'soleEstablishment',
+  'sole_proprietorship' => 'soleProprietorship',
+  'tax_exempt_government_instrumentality' => 'taxExemptGovernmentInstrumentality',
+  'unincorporated_association' => 'unincorporatedAssociation',
+  'unincorporated_non_profit' => 'unincorporatedNonProfit',
+  'unincorporated_partnership' => 'unincorporatedPartnership',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

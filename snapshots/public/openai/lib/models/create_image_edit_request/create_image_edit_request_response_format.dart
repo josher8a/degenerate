@@ -19,6 +19,12 @@ static const List<CreateImageEditRequestResponseFormat> values = [url, b64Json];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'url' => 'url',
+  'b64_json' => 'b64Json',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

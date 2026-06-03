@@ -30,6 +30,16 @@ final class SessionStatus {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'waiting' => 'waiting',
+      'started' => 'started',
+      'ended' => 'ended',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);
@@ -71,6 +81,16 @@ final class TotemStatus {
 
   String toJson() {
     return value;
+  }
+
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'none' => 'none',
+      'accepted' => 'accepted',
+      'passing' => 'passing',
+      _ => value,
+    };
   }
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).

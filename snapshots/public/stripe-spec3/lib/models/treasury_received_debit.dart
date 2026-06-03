@@ -28,6 +28,15 @@ static const List<TreasuryReceivedDebitFailureCode> values = [accountClosed, acc
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'account_closed' => 'accountClosed',
+  'account_frozen' => 'accountFrozen',
+  'insufficient_funds' => 'insufficientFunds',
+  'international_transaction' => 'internationalTransaction',
+  'other' => r'$other',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +68,13 @@ static const List<TreasuryReceivedDebitNetwork> values = [ach, card, stripe];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ach' => 'ach',
+  'card' => 'card',
+  'stripe' => 'stripe',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -84,6 +100,11 @@ static const List<TreasuryReceivedDebitObject> values = [treasuryReceivedDebit];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'treasury.received_debit' => 'treasuryReceivedDebit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -20,6 +20,12 @@ static const List<RealtimekitStorageConfigAuthMethod> values = [key, password];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'KEY' => 'key',
+  'PASSWORD' => 'password',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -57,6 +63,15 @@ static const List<RealtimekitStorageConfigType> values = [aws, azure, digitaloce
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'aws' => 'aws',
+  'azure' => 'azure',
+  'digitalocean' => 'digitalocean',
+  'gcs' => 'gcs',
+  'sftp' => 'sftp',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

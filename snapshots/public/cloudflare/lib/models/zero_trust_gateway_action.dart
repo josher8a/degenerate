@@ -61,6 +61,26 @@ static const List<ZeroTrustGatewayAction> values = [$on, off, allow, block, scan
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  'allow' => 'allow',
+  'block' => 'block',
+  'scan' => 'scan',
+  'noscan' => 'noscan',
+  'safesearch' => 'safesearch',
+  'ytrestricted' => 'ytrestricted',
+  'isolate' => 'isolate',
+  'noisolate' => 'noisolate',
+  'override' => r'$override',
+  'l4_override' => 'l4Override',
+  'egress' => 'egress',
+  'resolve' => 'resolve',
+  'quarantine' => 'quarantine',
+  'redirect' => 'redirect',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

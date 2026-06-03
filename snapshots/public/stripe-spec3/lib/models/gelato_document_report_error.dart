@@ -22,6 +22,13 @@ static const List<GelatoDocumentReportErrorCode> values = [documentExpired, docu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'document_expired' => 'documentExpired',
+  'document_type_not_supported' => 'documentTypeNotSupported',
+  'document_unverified_other' => 'documentUnverifiedOther',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

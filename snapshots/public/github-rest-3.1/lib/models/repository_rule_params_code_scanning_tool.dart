@@ -25,6 +25,14 @@ static const List<AlertsThreshold> values = [none, errors, errorsAndWarnings, al
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'none' => 'none',
+  'errors' => 'errors',
+  'errors_and_warnings' => 'errorsAndWarnings',
+  'all' => 'all',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -62,6 +70,15 @@ static const List<SecurityAlertsThreshold> values = [none, critical, highOrHighe
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'none' => 'none',
+  'critical' => 'critical',
+  'high_or_higher' => 'highOrHigher',
+  'medium_or_higher' => 'mediumOrHigher',
+  'all' => 'all',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

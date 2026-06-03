@@ -25,6 +25,14 @@ static const List<IssuingCardholderRequirementsDisabledReason> values = [listed,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'listed' => 'listed',
+  'rejected.listed' => 'rejectedListed',
+  'requirements.past_due' => 'requirementsPastDue',
+  'under_review' => 'underReview',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -73,6 +81,19 @@ static const List<PastDue> values = [companyTaxId, individualCardIssuingUserTerm
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'company.tax_id' => 'companyTaxId',
+  'individual.card_issuing.user_terms_acceptance.date' => 'individualCardIssuingUserTermsAcceptanceDate',
+  'individual.card_issuing.user_terms_acceptance.ip' => 'individualCardIssuingUserTermsAcceptanceIp',
+  'individual.dob.day' => 'individualDobDay',
+  'individual.dob.month' => 'individualDobMonth',
+  'individual.dob.year' => 'individualDobYear',
+  'individual.first_name' => 'individualFirstName',
+  'individual.last_name' => 'individualLastName',
+  'individual.verification.document' => 'individualVerificationDocument',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

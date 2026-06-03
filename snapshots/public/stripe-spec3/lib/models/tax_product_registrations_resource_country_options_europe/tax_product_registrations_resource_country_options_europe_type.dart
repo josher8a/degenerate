@@ -25,6 +25,14 @@ static const List<TaxProductRegistrationsResourceCountryOptionsEuropeType> value
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ioss' => 'ioss',
+  'oss_non_union' => 'ossNonUnion',
+  'oss_union' => 'ossUnion',
+  'standard' => 'standard',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

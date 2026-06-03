@@ -37,6 +37,18 @@ static const List<MagicVisibilityPcapsPcapsStatus> values = [unknown, success, p
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'unknown' => 'unknown',
+  'success' => 'success',
+  'pending' => 'pending',
+  'running' => 'running',
+  'conversion_pending' => 'conversionPending',
+  'conversion_running' => 'conversionRunning',
+  'complete' => 'complete',
+  'failed' => 'failed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

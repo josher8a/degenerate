@@ -24,6 +24,14 @@ static const List<DlpEmailRuleOperator> values = [inList, notInList, matchRegex,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'InList' => 'inList',
+  'NotInList' => 'notInList',
+  'MatchRegex' => 'matchRegex',
+  'NotMatchRegex' => 'notMatchRegex',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -54,6 +62,13 @@ static const List<DlpEmailRuleSelector> values = [recipients, sender, dlpProfile
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'Recipients' => 'recipients',
+  'Sender' => 'sender',
+  'DLPProfiles' => 'dlpProfiles',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

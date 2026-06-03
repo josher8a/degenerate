@@ -24,6 +24,14 @@ static const List<GetIssuingAuthorizationsStatus> values = [closed, expired, pen
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'closed' => 'closed',
+  'expired' => 'expired',
+  'pending' => 'pending',
+  'reversed' => 'reversed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

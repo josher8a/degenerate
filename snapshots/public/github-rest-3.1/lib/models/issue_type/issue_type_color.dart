@@ -40,6 +40,19 @@ static const List<IssueTypeColor> values = [gray, blue, green, yellow, orange, r
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'gray' => 'gray',
+  'blue' => 'blue',
+  'green' => 'green',
+  'yellow' => 'yellow',
+  'orange' => 'orange',
+  'red' => 'red',
+  'pink' => 'pink',
+  'purple' => 'purple',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

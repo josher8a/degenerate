@@ -57,6 +57,25 @@ static const List<LogType> values = [migrationStart, migrationComplete, migratio
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'migrationStart' => 'migrationStart',
+  'migrationComplete' => 'migrationComplete',
+  'migrationAbort' => 'migrationAbort',
+  'migrationError' => 'migrationError',
+  'migrationPause' => 'migrationPause',
+  'migrationResume' => 'migrationResume',
+  'migrationErrorFailedContinuation' => 'migrationErrorFailedContinuation',
+  'importErrorRetryExhaustion' => 'importErrorRetryExhaustion',
+  'importSkippedStorageClass' => 'importSkippedStorageClass',
+  'importSkippedOversized' => 'importSkippedOversized',
+  'importSkippedEmptyObject' => 'importSkippedEmptyObject',
+  'importSkippedUnsupportedContentType' => 'importSkippedUnsupportedContentType',
+  'importSkippedExcludedContentType' => 'importSkippedExcludedContentType',
+  'importSkippedInvalidMedia' => 'importSkippedInvalidMedia',
+  'importSkippedRequiresRetrieval' => 'importSkippedRequiresRetrieval',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

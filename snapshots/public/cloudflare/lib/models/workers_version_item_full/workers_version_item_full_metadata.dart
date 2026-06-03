@@ -43,6 +43,20 @@ static const List<MetadataSource> values = [unknown, api, wrangler, terraform, d
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'unknown' => 'unknown',
+  'api' => 'api',
+  'wrangler' => 'wrangler',
+  'terraform' => 'terraform',
+  'dash' => 'dash',
+  'dash_template' => 'dashTemplate',
+  'integration' => 'integration',
+  'quick_editor' => 'quickEditor',
+  'playground' => 'playground',
+  'workersci' => 'workersci',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

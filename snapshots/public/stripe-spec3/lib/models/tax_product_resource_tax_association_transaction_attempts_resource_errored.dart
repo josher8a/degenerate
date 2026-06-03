@@ -28,6 +28,15 @@ static const List<TaxProductResourceTaxAssociationTransactionAttemptsResourceErr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'another_payment_associated_with_calculation' => 'anotherPaymentAssociatedWithCalculation',
+  'calculation_expired' => 'calculationExpired',
+  'currency_mismatch' => 'currencyMismatch',
+  'original_transaction_voided' => 'originalTransactionVoided',
+  'unique_reference_violation' => 'uniqueReferenceViolation',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

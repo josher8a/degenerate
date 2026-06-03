@@ -66,6 +66,28 @@ static const List<AllowResourceTypes> values = [document, stylesheet, image, med
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'document' => 'document',
+  'stylesheet' => 'stylesheet',
+  'image' => 'image',
+  'media' => 'media',
+  'font' => 'font',
+  'script' => 'script',
+  'texttrack' => 'texttrack',
+  'xhr' => 'xhr',
+  'fetch' => 'fetch',
+  'prefetch' => 'prefetch',
+  'eventsource' => 'eventsource',
+  'websocket' => 'websocket',
+  'manifest' => 'manifest',
+  'signedexchange' => 'signedexchange',
+  'ping' => 'ping',
+  'cspviolationreport' => 'cspviolationreport',
+  'preflight' => 'preflight',
+  'other' => r'$other',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

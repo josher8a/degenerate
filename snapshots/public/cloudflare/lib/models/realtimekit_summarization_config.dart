@@ -40,6 +40,19 @@ static const List<SummaryType> values = [general, teamMeeting, salesCall, client
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'general' => 'general',
+  'team_meeting' => 'teamMeeting',
+  'sales_call' => 'salesCall',
+  'client_check_in' => 'clientCheckIn',
+  'interview' => 'interview',
+  'daily_standup' => 'dailyStandup',
+  'one_on_one_meeting' => 'oneOnOneMeeting',
+  'lecture' => 'lecture',
+  'code_review' => 'codeReview',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -68,6 +81,12 @@ static const List<TextFormat> values = [plainText, markdown];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'plain_text' => 'plainText',
+  'markdown' => 'markdown',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

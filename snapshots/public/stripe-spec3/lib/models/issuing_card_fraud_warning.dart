@@ -25,6 +25,14 @@ static const List<IssuingCardFraudWarningType> values = [cardTestingExposure, fr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'card_testing_exposure' => 'cardTestingExposure',
+  'fraud_dispute_filed' => 'fraudDisputeFiled',
+  'third_party_reported' => 'thirdPartyReported',
+  'user_indicated_fraud' => 'userIndicatedFraud',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

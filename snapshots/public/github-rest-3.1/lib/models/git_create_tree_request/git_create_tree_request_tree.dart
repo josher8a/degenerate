@@ -28,6 +28,15 @@ static const List<TreeMode> values = [$100644, $100755, $040000, $160000, $12000
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '100644' => r'$100644',
+  '100755' => r'$100755',
+  '040000' => r'$040000',
+  '160000' => r'$160000',
+  '120000' => r'$120000',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

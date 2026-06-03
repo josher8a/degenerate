@@ -30,6 +30,16 @@ static const List<ReposListActivitiesActivityType> values = [push, forcePush, br
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'push' => 'push',
+  'force_push' => 'forcePush',
+  'branch_creation' => 'branchCreation',
+  'branch_deletion' => 'branchDeletion',
+  'pr_merge' => 'prMerge',
+  'merge_queue_merge' => 'mergeQueueMerge',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

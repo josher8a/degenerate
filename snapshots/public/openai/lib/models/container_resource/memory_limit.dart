@@ -25,6 +25,14 @@ static const List<MemoryLimit> values = [$1g, $4g, $16g, $64g];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1g' => r'$1g',
+  '4g' => r'$4g',
+  '16g' => r'$16g',
+  '64g' => r'$64g',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

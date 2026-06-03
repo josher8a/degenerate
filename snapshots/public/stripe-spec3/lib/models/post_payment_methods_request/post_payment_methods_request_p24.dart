@@ -90,6 +90,36 @@ static const List<P24Bank> values = [aliorBank, bankMillennium, bankNowyBfgSa, b
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'alior_bank' => 'aliorBank',
+  'bank_millennium' => 'bankMillennium',
+  'bank_nowy_bfg_sa' => 'bankNowyBfgSa',
+  'bank_pekao_sa' => 'bankPekaoSa',
+  'banki_spbdzielcze' => 'bankiSpbdzielcze',
+  'blik' => 'blik',
+  'bnp_paribas' => 'bnpParibas',
+  'boz' => 'boz',
+  'citi_handlowy' => 'citiHandlowy',
+  'credit_agricole' => 'creditAgricole',
+  'envelobank' => 'envelobank',
+  'etransfer_pocztowy24' => 'etransferPocztowy24',
+  'getin_bank' => 'getinBank',
+  'ideabank' => 'ideabank',
+  'ing' => 'ing',
+  'inteligo' => 'inteligo',
+  'mbank_mtransfer' => 'mbankMtransfer',
+  'nest_przelew' => 'nestPrzelew',
+  'noble_pay' => 'noblePay',
+  'pbac_z_ipko' => 'pbacZIpko',
+  'plus_bank' => 'plusBank',
+  'santander_przelew24' => 'santanderPrzelew24',
+  'tmobile_usbugi_bankowe' => 'tmobileUsbugiBankowe',
+  'toyota_bank' => 'toyotaBank',
+  'velobank' => 'velobank',
+  'volkswagen_bank' => 'volkswagenBank',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

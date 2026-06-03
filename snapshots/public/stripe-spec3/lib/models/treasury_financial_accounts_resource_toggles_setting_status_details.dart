@@ -40,6 +40,19 @@ static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCo
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'activating' => 'activating',
+  'capability_not_requested' => 'capabilityNotRequested',
+  'financial_account_closed' => 'financialAccountClosed',
+  'rejected_other' => 'rejectedOther',
+  'rejected_unsupported_business' => 'rejectedUnsupportedBusiness',
+  'requirements_past_due' => 'requirementsPastDue',
+  'requirements_pending_verification' => 'requirementsPendingVerification',
+  'restricted_by_platform' => 'restrictedByPlatform',
+  'restricted_other' => 'restrictedOther',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -71,6 +84,13 @@ static const List<Resolution> values = [contactStripe, provideInformation, remov
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'contact_stripe' => 'contactStripe',
+  'provide_information' => 'provideInformation',
+  'remove_restriction' => 'removeRestriction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -99,6 +119,12 @@ static const List<Restriction> values = [inboundFlows, outboundFlows];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'inbound_flows' => 'inboundFlows',
+  'outbound_flows' => 'outboundFlows',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

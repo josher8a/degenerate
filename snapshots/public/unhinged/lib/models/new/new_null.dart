@@ -54,6 +54,21 @@ final class NewNull {
     return value;
   }
 
+  /// The Dart identifier name for this value, or the raw value if unknown.
+  String get name {
+    return switch (value) {
+      'null' => r'$null',
+      'Null' => r'$null2',
+      'NULL' => r'$null3',
+      '~' => r'$empty',
+      '' => r'$empty2',
+      ' ' => r'$empty3',
+      '\t' => r'$empty4',
+      '\n' => r'$empty5',
+      _ => value,
+    };
+  }
+
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return !values.contains(this);

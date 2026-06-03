@@ -22,6 +22,13 @@ static const List<ProcessingStatus> values = [pending, complete, failed];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'pending' => 'pending',
+  'complete' => 'complete',
+  'failed' => 'failed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

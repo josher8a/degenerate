@@ -58,6 +58,25 @@ static const List<AccountFutureRequirementsDisabledReason> values = [actionRequi
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'action_required.requested_capabilities' => 'actionRequiredRequestedCapabilities',
+  'listed' => 'listed',
+  'other' => r'$other',
+  'platform_paused' => 'platformPaused',
+  'rejected.fraud' => 'rejectedFraud',
+  'rejected.incomplete_verification' => 'rejectedIncompleteVerification',
+  'rejected.listed' => 'rejectedListed',
+  'rejected.other' => 'rejectedOther',
+  'rejected.platform_fraud' => 'rejectedPlatformFraud',
+  'rejected.platform_other' => 'rejectedPlatformOther',
+  'rejected.platform_terms_of_service' => 'rejectedPlatformTermsOfService',
+  'rejected.terms_of_service' => 'rejectedTermsOfService',
+  'requirements.past_due' => 'requirementsPastDue',
+  'requirements.pending_verification' => 'requirementsPendingVerification',
+  'under_review' => 'underReview',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -37,6 +37,18 @@ static const List<AaaComponentsSchemasType> values = [datadog, discord, feishu, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'datadog' => 'datadog',
+  'discord' => 'discord',
+  'feishu' => 'feishu',
+  'gchat' => 'gchat',
+  'generic' => 'generic',
+  'opsgenie' => 'opsgenie',
+  'slack' => 'slack',
+  'splunk' => 'splunk',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

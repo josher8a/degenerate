@@ -61,6 +61,26 @@ static const List<TlsCertificatesAndHostnamesComponentsSchemasStatus> values = [
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'active' => 'active',
+  'pending' => 'pending',
+  'active_redeploying' => 'activeRedeploying',
+  'moved' => 'moved',
+  'pending_deletion' => 'pendingDeletion',
+  'deleted' => 'deleted',
+  'pending_blocked' => 'pendingBlocked',
+  'pending_migration' => 'pendingMigration',
+  'pending_provisioned' => 'pendingProvisioned',
+  'test_pending' => 'testPending',
+  'test_active' => 'testActive',
+  'test_active_apex' => 'testActiveApex',
+  'test_blocked' => 'testBlocked',
+  'test_failed' => 'testFailed',
+  'provisioned' => 'provisioned',
+  'blocked' => 'blocked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

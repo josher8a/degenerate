@@ -72,6 +72,30 @@ static const List<IdealBank> values = [abnAmro, adyen, asnBank, bunq, buut, fino
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'abn_amro' => 'abnAmro',
+  'adyen' => 'adyen',
+  'asn_bank' => 'asnBank',
+  'bunq' => 'bunq',
+  'buut' => 'buut',
+  'finom' => 'finom',
+  'handelsbanken' => 'handelsbanken',
+  'ing' => 'ing',
+  'knab' => 'knab',
+  'mollie' => 'mollie',
+  'moneyou' => 'moneyou',
+  'n26' => 'n26',
+  'nn' => 'nn',
+  'rabobank' => 'rabobank',
+  'regiobank' => 'regiobank',
+  'revolut' => 'revolut',
+  'sns_bank' => 'snsBank',
+  'triodos_bank' => 'triodosBank',
+  'van_lanschot' => 'vanLanschot',
+  'yoursafe' => 'yoursafe',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -35,6 +35,14 @@ static const List<PaymentBehavior> values = [allowIncomplete, defaultIncomplete,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'allow_incomplete' => 'allowIncomplete',
+  'default_incomplete' => 'defaultIncomplete',
+  'error_if_incomplete' => 'errorIfIncomplete',
+  'pending_if_incomplete' => 'pendingIfIncomplete',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

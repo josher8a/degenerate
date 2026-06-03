@@ -30,6 +30,16 @@ static const List<SecurityCenterIssueType> values = [complianceViolation, emailS
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'compliance_violation' => 'complianceViolation',
+  'email_security' => 'emailSecurity',
+  'exposed_infrastructure' => 'exposedInfrastructure',
+  'insecure_configuration' => 'insecureConfiguration',
+  'weak_authentication' => 'weakAuthentication',
+  'configuration_suggestion' => 'configurationSuggestion',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

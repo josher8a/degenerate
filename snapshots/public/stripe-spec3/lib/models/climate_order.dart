@@ -22,6 +22,13 @@ static const List<ClimateOrderCancellationReason> values = [expired, productUnav
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'expired' => 'expired',
+  'product_unavailable' => 'productUnavailable',
+  'requested' => 'requested',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,6 +54,11 @@ static const List<ClimateOrderObject> values = [climateOrder];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'climate.order' => 'climateOrder',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -84,6 +96,15 @@ static const List<ClimateOrderStatus> values = [awaitingFunds, canceled, confirm
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'awaiting_funds' => 'awaitingFunds',
+  'canceled' => 'canceled',
+  'confirmed' => 'confirmed',
+  'delivered' => 'delivered',
+  'open' => 'open',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

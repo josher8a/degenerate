@@ -22,6 +22,13 @@ static const List<CreateImageVariationRequestSize> values = [$256x256, $512x512,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '256x256' => r'$256x256',
+  '512x512' => r'$512x512',
+  '1024x1024' => r'$1024x1024',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

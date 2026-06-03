@@ -87,6 +87,35 @@ static const List<AigConfigDeleteGatewayLogsFiltersKey> values = [id, createdAt,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'id' => 'id',
+  'created_at' => 'createdAt',
+  'request_content_type' => 'requestContentType',
+  'response_content_type' => 'responseContentType',
+  'request_type' => 'requestType',
+  'success' => 'success',
+  'cached' => 'cached',
+  'provider' => 'provider',
+  'model' => 'model',
+  'model_type' => 'modelType',
+  'cost' => 'cost',
+  'tokens' => 'tokens',
+  'tokens_in' => 'tokensIn',
+  'tokens_out' => 'tokensOut',
+  'duration' => 'duration',
+  'feedback' => 'feedback',
+  'event_id' => 'eventId',
+  'metadata.key' => 'metadataKey',
+  'metadata.value' => 'metadataValue',
+  'prompts.prompt_id' => 'promptsPromptId',
+  'prompts.version_id' => 'promptsVersionId',
+  'authentication' => 'authentication',
+  'wholesale' => 'wholesale',
+  'compatibilityMode' => 'compatibilityMode',
+  'dlp_action' => 'dlpAction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

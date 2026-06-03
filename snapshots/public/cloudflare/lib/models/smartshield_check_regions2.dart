@@ -55,6 +55,24 @@ static const List<SmartshieldCheckRegions2> values = [wnam, enam, weu, eeu, nsam
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'WNAM' => 'wnam',
+  'ENAM' => 'enam',
+  'WEU' => 'weu',
+  'EEU' => 'eeu',
+  'NSAM' => 'nsam',
+  'SSAM' => 'ssam',
+  'OC' => 'oc',
+  'ME' => 'me',
+  'NAF' => 'naf',
+  'SAF' => 'saf',
+  'IN' => r'$in',
+  'SEAS' => 'seas',
+  'NEAS' => 'neas',
+  'ALL_REGIONS' => 'allRegions',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

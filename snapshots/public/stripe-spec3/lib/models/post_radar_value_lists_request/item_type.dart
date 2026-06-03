@@ -43,6 +43,20 @@ static const List<ItemType> values = [cardBin, cardFingerprint, caseSensitiveStr
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'card_bin' => 'cardBin',
+  'card_fingerprint' => 'cardFingerprint',
+  'case_sensitive_string' => 'caseSensitiveString',
+  'country' => 'country',
+  'customer_id' => 'customerId',
+  'email' => 'email',
+  'ip_address' => 'ipAddress',
+  'sepa_debit_fingerprint' => 'sepaDebitFingerprint',
+  'string' => 'string',
+  'us_bank_account_fingerprint' => 'usBankAccountFingerprint',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

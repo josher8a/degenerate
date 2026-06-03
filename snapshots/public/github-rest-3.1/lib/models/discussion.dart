@@ -30,6 +30,15 @@ static const List<DiscussionState> values = [open, closed, locked, converting, t
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'open' => 'open',
+  'closed' => 'closed',
+  'locked' => 'locked',
+  'converting' => 'converting',
+  'transferring' => 'transferring',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -67,6 +76,15 @@ static const List<DiscussionStateReason> values = [resolved, outdated, duplicate
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'resolved' => 'resolved',
+  'outdated' => 'outdated',
+  'duplicate' => 'duplicate',
+  'reopened' => 'reopened',
+  'null' => r'$null',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

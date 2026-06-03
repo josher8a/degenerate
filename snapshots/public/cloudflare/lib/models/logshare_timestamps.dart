@@ -22,6 +22,13 @@ static const List<LogshareTimestamps> values = [unix, unixnano, rfc3339];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'unix' => 'unix',
+  'unixnano' => 'unixnano',
+  'rfc3339' => 'rfc3339',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

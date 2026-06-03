@@ -18,6 +18,12 @@ static const List<GetTreasuryTransactionsOrderBy> values = [created, postedAt];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'created' => 'created',
+  'posted_at' => 'postedAt',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

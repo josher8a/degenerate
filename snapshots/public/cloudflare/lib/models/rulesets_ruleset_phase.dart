@@ -85,6 +85,34 @@ static const List<RulesetsRulesetPhase> values = [ddosL4, ddosL7, httpConfigSett
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ddos_l4' => 'ddosL4',
+  'ddos_l7' => 'ddosL7',
+  'http_config_settings' => 'httpConfigSettings',
+  'http_custom_errors' => 'httpCustomErrors',
+  'http_log_custom_fields' => 'httpLogCustomFields',
+  'http_ratelimit' => 'httpRatelimit',
+  'http_request_cache_settings' => 'httpRequestCacheSettings',
+  'http_request_dynamic_redirect' => 'httpRequestDynamicRedirect',
+  'http_request_firewall_custom' => 'httpRequestFirewallCustom',
+  'http_request_firewall_managed' => 'httpRequestFirewallManaged',
+  'http_request_late_transform' => 'httpRequestLateTransform',
+  'http_request_origin' => 'httpRequestOrigin',
+  'http_request_redirect' => 'httpRequestRedirect',
+  'http_request_sanitize' => 'httpRequestSanitize',
+  'http_request_sbfm' => 'httpRequestSbfm',
+  'http_request_transform' => 'httpRequestTransform',
+  'http_response_cache_settings' => 'httpResponseCacheSettings',
+  'http_response_compression' => 'httpResponseCompression',
+  'http_response_firewall_managed' => 'httpResponseFirewallManaged',
+  'http_response_headers_transform' => 'httpResponseHeadersTransform',
+  'magic_transit' => 'magicTransit',
+  'magic_transit_ids_managed' => 'magicTransitIdsManaged',
+  'magic_transit_managed' => 'magicTransitManaged',
+  'magic_transit_ratelimit' => 'magicTransitRatelimit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

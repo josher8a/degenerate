@@ -19,6 +19,12 @@ static const List<PaymentPagesCheckoutSessionBrandingSettingsIconType> values = 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'file' => 'file',
+  'url' => 'url',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

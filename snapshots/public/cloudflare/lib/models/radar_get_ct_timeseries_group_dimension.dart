@@ -55,6 +55,24 @@ static const List<RadarGetCtTimeseriesGroupDimension> values = [ca, caOwner, dur
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'CA' => 'ca',
+  'CA_OWNER' => 'caOwner',
+  'DURATION' => 'duration',
+  'ENTRY_TYPE' => 'entryType',
+  'EXPIRATION_STATUS' => 'expirationStatus',
+  'HAS_IPS' => 'hasIps',
+  'HAS_WILDCARDS' => 'hasWildcards',
+  'LOG' => 'log',
+  'LOG_API' => 'logApi',
+  'LOG_OPERATOR' => 'logOperator',
+  'PUBLIC_KEY_ALGORITHM' => 'publicKeyAlgorithm',
+  'SIGNATURE_ALGORITHM' => 'signatureAlgorithm',
+  'TLD' => 'tld',
+  'VALIDATION_LEVEL' => 'validationLevel',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

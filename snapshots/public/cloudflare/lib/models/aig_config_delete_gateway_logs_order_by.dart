@@ -45,6 +45,21 @@ static const List<AigConfigDeleteGatewayLogsOrderBy> values = [createdAt, provid
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'created_at' => 'createdAt',
+  'provider' => 'provider',
+  'model' => 'model',
+  'model_type' => 'modelType',
+  'success' => 'success',
+  'cached' => 'cached',
+  'cost' => 'cost',
+  'tokens_in' => 'tokensIn',
+  'tokens_out' => 'tokensOut',
+  'duration' => 'duration',
+  'feedback' => 'feedback',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -27,6 +27,15 @@ static const List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult> valu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'CLEAN' => 'clean',
+  'USERNAME_LEAKED' => 'usernameLeaked',
+  'USERNAME_PASSWORD_SIMILAR' => 'usernamePasswordSimilar',
+  'USERNAME_AND_PASSWORD_LEAKED' => 'usernameAndPasswordLeaked',
+  'PASSWORD_LEAKED' => 'passwordLeaked',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

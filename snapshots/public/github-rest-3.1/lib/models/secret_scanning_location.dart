@@ -52,6 +52,23 @@ static const List<SecretScanningLocationType> values = [commit, wikiCommit, issu
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'commit' => 'commit',
+  'wiki_commit' => 'wikiCommit',
+  'issue_title' => 'issueTitle',
+  'issue_body' => 'issueBody',
+  'issue_comment' => 'issueComment',
+  'discussion_title' => 'discussionTitle',
+  'discussion_body' => 'discussionBody',
+  'discussion_comment' => 'discussionComment',
+  'pull_request_title' => 'pullRequestTitle',
+  'pull_request_body' => 'pullRequestBody',
+  'pull_request_comment' => 'pullRequestComment',
+  'pull_request_review' => 'pullRequestReview',
+  'pull_request_review_comment' => 'pullRequestReviewComment',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

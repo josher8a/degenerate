@@ -24,6 +24,14 @@ static const List<DlpConfidence> values = [low, medium, high, veryHigh];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'very_high' => 'veryHigh',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -62,6 +62,22 @@ static const List<McnOnrampLifecycleState> values = [onrampNeedsApply, onrampPen
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'OnrampNeedsApply' => 'onrampNeedsApply',
+  'OnrampPendingPlan' => 'onrampPendingPlan',
+  'OnrampPlanning' => 'onrampPlanning',
+  'OnrampPlanFailed' => 'onrampPlanFailed',
+  'OnrampPendingApproval' => 'onrampPendingApproval',
+  'OnrampPendingApply' => 'onrampPendingApply',
+  'OnrampApplying' => 'onrampApplying',
+  'OnrampApplyFailed' => 'onrampApplyFailed',
+  'OnrampActive' => 'onrampActive',
+  'OnrampPendingDestroy' => 'onrampPendingDestroy',
+  'OnrampDestroying' => 'onrampDestroying',
+  'OnrampDestroyFailed' => 'onrampDestroyFailed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

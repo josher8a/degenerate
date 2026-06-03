@@ -22,6 +22,13 @@ static const List<RulesetsUrlNormalizationScope> values = [incoming, both, none]
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'incoming' => 'incoming',
+  'both' => 'both',
+  'none' => 'none',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,6 +57,12 @@ static const List<RulesetsUrlNormalizationType> values = [cloudflare, rfc3986];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'cloudflare' => 'cloudflare',
+  'rfc3986' => 'rfc3986',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

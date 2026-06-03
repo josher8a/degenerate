@@ -24,6 +24,14 @@ static const List<CreateFineTuningJobRequestModelVariant2> values = [babbage002,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'babbage-002' => 'babbage002',
+  'davinci-002' => 'davinci002',
+  'gpt-3.5-turbo' => 'gpt35Turbo',
+  'gpt-4o-mini' => 'gpt4oMini',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

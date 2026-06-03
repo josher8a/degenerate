@@ -104,6 +104,7 @@ class EnumEmitter {
             ),
           )
           ..methods.add(_buildToJson())
+          ..methods.add(_buildName(className, deduped))
           ..methods.add(_buildIsUnknown())
           ..methods.add(_buildEquals(className))
           ..methods.add(_buildHashCode())
@@ -158,6 +159,34 @@ class EnumEmitter {
         ..name = 'toJson'
         ..returns = refer(dartType)
         ..body = const Code('return value;'),
+    );
+  }
+
+  Method _buildName(String className, List<(String, String)> deduped) {
+    final isString = irEnum.valueKind == PrimitiveKind.string;
+    final seenCaseKeys = <String>{};
+    final cases = deduped.where((pair) {
+      final key = isString ? dartStringLiteral(pair.$1) : pair.$1;
+      return seenCaseKeys.add(key);
+    }).map((pair) {
+      final matchExpr = isString ? dartStringLiteral(pair.$1) : pair.$1;
+      return '  $matchExpr => ${dartStringLiteral(pair.$2)},';
+    }).join('\n');
+    final fallback = isString ? 'value' : r"'$value'";
+    return Method(
+      (m) => m
+        ..name = 'name'
+        ..type = MethodType.getter
+        ..returns = refer('String')
+        ..docs.add(
+          '/// The Dart identifier name for this value, or the raw value if unknown.',
+        )
+        ..body = Code(
+          'return switch (value) {\n'
+          '$cases\n'
+          '  _ => $fallback,\n'
+          '};',
+        ),
     );
   }
 

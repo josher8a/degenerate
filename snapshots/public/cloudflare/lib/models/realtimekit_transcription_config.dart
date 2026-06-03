@@ -43,6 +43,20 @@ static const List<Language> values = [enUs, enIn, de, hi, sv, ru, pl, el, fr, nl
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'en-US' => 'enUs',
+  'en-IN' => 'enIn',
+  'de' => 'de',
+  'hi' => 'hi',
+  'sv' => 'sv',
+  'ru' => 'ru',
+  'pl' => 'pl',
+  'el' => 'el',
+  'fr' => 'fr',
+  'nl' => 'nl',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

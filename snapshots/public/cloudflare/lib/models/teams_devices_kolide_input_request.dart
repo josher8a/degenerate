@@ -28,6 +28,15 @@ static const List<CountOperator> values = [$empty, $empty2, $empty3, $empty4, $e
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '<' => r'$empty',
+  '<=' => r'$empty2',
+  '>' => r'$empty3',
+  '>=' => r'$empty4',
+  '==' => r'$empty5',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

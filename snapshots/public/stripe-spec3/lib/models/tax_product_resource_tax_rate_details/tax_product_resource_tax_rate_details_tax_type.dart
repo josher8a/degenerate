@@ -55,6 +55,24 @@ static const List<TaxProductResourceTaxRateDetailsTaxType> values = [amusementTa
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'amusement_tax' => 'amusementTax',
+  'communications_tax' => 'communicationsTax',
+  'gst' => 'gst',
+  'hst' => 'hst',
+  'igst' => 'igst',
+  'jct' => 'jct',
+  'lease_tax' => 'leaseTax',
+  'pst' => 'pst',
+  'qst' => 'qst',
+  'retail_delivery_fee' => 'retailDeliveryFee',
+  'rst' => 'rst',
+  'sales_tax' => 'salesTax',
+  'service_tax' => 'serviceTax',
+  'vat' => 'vat',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

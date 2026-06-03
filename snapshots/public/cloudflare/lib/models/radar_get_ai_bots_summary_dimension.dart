@@ -28,6 +28,15 @@ static const List<RadarGetAiBotsSummaryDimension> values = [userAgent, crawlPurp
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'USER_AGENT' => 'userAgent',
+  'CRAWL_PURPOSE' => 'crawlPurpose',
+  'INDUSTRY' => 'industry',
+  'VERTICAL' => 'vertical',
+  'CONTENT_TYPE' => 'contentType',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

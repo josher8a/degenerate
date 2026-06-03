@@ -28,6 +28,15 @@ static const List<AccountsTurnstileWidgetsListOrder> values = [id, sitekey, $nam
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'id' => 'id',
+  'sitekey' => 'sitekey',
+  'name' => r'$name',
+  'created_on' => 'createdOn',
+  'modified_on' => 'modifiedOn',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

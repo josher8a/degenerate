@@ -32,6 +32,16 @@ static const List<AudioResponseFormat> values = [$json, text, srt, verboseJson, 
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'json' => r'$json',
+  'text' => 'text',
+  'srt' => 'srt',
+  'verbose_json' => 'verboseJson',
+  'vtt' => 'vtt',
+  'diarized_json' => 'diarizedJson',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,6 +66,11 @@ static const List<TranscriptionInclude> values = [logprobs];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'logprobs' => 'logprobs',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -83,6 +98,12 @@ static const List<TimestampGranularities> values = [word, segment];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'word' => 'word',
+  'segment' => 'segment',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

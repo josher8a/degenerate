@@ -21,6 +21,13 @@ static const List<VideoSeconds> values = [$4, $8, $12];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '4' => r'$4',
+  '8' => r'$8',
+  '12' => r'$12',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

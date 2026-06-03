@@ -22,6 +22,13 @@ static const List<WaitingroomQueueingStatusCode> values = [$200, $202, $429];
 final int value;
 
 int toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  200 => r'$200',
+  202 => r'$202',
+  429 => r'$429',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

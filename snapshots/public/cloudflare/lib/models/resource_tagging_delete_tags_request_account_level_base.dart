@@ -70,6 +70,29 @@ static const List<ResourceTaggingAccountResourceTypeBaseEnum> values = [accessAp
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'access_application' => 'accessApplication',
+  'access_group' => 'accessGroup',
+  'account' => 'account',
+  'ai_gateway' => 'aiGateway',
+  'alerting_policy' => 'alertingPolicy',
+  'alerting_webhook' => 'alertingWebhook',
+  'cloudflared_tunnel' => 'cloudflaredTunnel',
+  'd1_database' => 'd1Database',
+  'durable_object_namespace' => 'durableObjectNamespace',
+  'gateway_list' => 'gatewayList',
+  'gateway_rule' => 'gatewayRule',
+  'image' => 'image',
+  'kv_namespace' => 'kvNamespace',
+  'queue' => 'queue',
+  'r2_bucket' => 'r2Bucket',
+  'resource_share' => 'resourceShare',
+  'stream_live_input' => 'streamLiveInput',
+  'stream_video' => 'streamVideo',
+  'worker' => 'worker',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

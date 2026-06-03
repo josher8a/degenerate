@@ -37,6 +37,18 @@ static const List<OpenAiFilePurpose> values = [assistants, assistantsOutput, bat
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'assistants' => 'assistants',
+  'assistants_output' => 'assistantsOutput',
+  'batch' => 'batch',
+  'batch_output' => 'batchOutput',
+  'fine-tune' => 'fineTune',
+  'fine-tune-results' => 'fineTuneResults',
+  'vision' => 'vision',
+  'user_data' => 'userData',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -68,6 +80,13 @@ static const List<OpenAiFileStatus> values = [uploaded, processed, error];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'uploaded' => 'uploaded',
+  'processed' => 'processed',
+  'error' => 'error',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

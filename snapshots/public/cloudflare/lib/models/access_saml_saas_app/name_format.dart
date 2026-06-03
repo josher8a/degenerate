@@ -22,6 +22,13 @@ static const List<NameFormat> values = [urnoasisnamestcSaml20attrnameFormatunspe
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified' => 'urnoasisnamestcSaml20attrnameFormatunspecified',
+  'urn:oasis:names:tc:SAML:2.0:attrname-format:basic' => 'urnoasisnamestcSaml20attrnameFormatbasic',
+  'urn:oasis:names:tc:SAML:2.0:attrname-format:uri' => 'urnoasisnamestcSaml20attrnameFormaturi',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

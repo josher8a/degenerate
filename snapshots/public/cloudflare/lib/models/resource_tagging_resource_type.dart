@@ -94,6 +94,37 @@ static const List<ResourceTaggingResourceType> values = [accessApplication, acce
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'access_application' => 'accessApplication',
+  'access_application_policy' => 'accessApplicationPolicy',
+  'access_group' => 'accessGroup',
+  'account' => 'account',
+  'ai_gateway' => 'aiGateway',
+  'alerting_policy' => 'alertingPolicy',
+  'alerting_webhook' => 'alertingWebhook',
+  'api_gateway_operation' => 'apiGatewayOperation',
+  'cloudflared_tunnel' => 'cloudflaredTunnel',
+  'custom_certificate' => 'customCertificate',
+  'custom_hostname' => 'customHostname',
+  'd1_database' => 'd1Database',
+  'dns_record' => 'dnsRecord',
+  'durable_object_namespace' => 'durableObjectNamespace',
+  'gateway_list' => 'gatewayList',
+  'gateway_rule' => 'gatewayRule',
+  'image' => 'image',
+  'kv_namespace' => 'kvNamespace',
+  'managed_client_certificate' => 'managedClientCertificate',
+  'queue' => 'queue',
+  'r2_bucket' => 'r2Bucket',
+  'resource_share' => 'resourceShare',
+  'stream_live_input' => 'streamLiveInput',
+  'stream_video' => 'streamVideo',
+  'worker' => 'worker',
+  'worker_version' => 'workerVersion',
+  'zone' => 'zone',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

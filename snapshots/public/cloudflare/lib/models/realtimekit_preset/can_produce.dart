@@ -22,6 +22,13 @@ static const List<CanProduce> values = [allowed, notAllowed, canRequest];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ALLOWED' => 'allowed',
+  'NOT_ALLOWED' => 'notAllowed',
+  'CAN_REQUEST' => 'canRequest',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

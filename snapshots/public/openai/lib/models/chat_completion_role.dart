@@ -31,6 +31,16 @@ static const List<ChatCompletionRole> values = [developer, system, user, assista
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'developer' => 'developer',
+  'system' => 'system',
+  'user' => 'user',
+  'assistant' => 'assistant',
+  'tool' => 'tool',
+  'function' => 'function',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

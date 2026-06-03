@@ -46,6 +46,21 @@ static const List<PagesDeploymentStatusStatus> values = [deploymentInProgress, s
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'deployment_in_progress' => 'deploymentInProgress',
+  'syncing_files' => 'syncingFiles',
+  'finished_file_sync' => 'finishedFileSync',
+  'updating_pages' => 'updatingPages',
+  'purging_cdn' => 'purgingCdn',
+  'deployment_cancelled' => 'deploymentCancelled',
+  'deployment_failed' => 'deploymentFailed',
+  'deployment_content_failed' => 'deploymentContentFailed',
+  'deployment_attempt_error' => 'deploymentAttemptError',
+  'deployment_lost' => 'deploymentLost',
+  'succeed' => 'succeed',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

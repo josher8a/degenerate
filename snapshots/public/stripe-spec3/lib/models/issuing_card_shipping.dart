@@ -25,6 +25,14 @@ static const List<Carrier> values = [dhl, fedex, royalMail, usps];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'dhl' => 'dhl',
+  'fedex' => 'fedex',
+  'royal_mail' => 'royalMail',
+  'usps' => 'usps',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -68,6 +76,17 @@ static const List<IssuingCardShippingStatus> values = [canceled, delivered, fail
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'canceled' => 'canceled',
+  'delivered' => 'delivered',
+  'failure' => 'failure',
+  'pending' => 'pending',
+  'returned' => 'returned',
+  'shipped' => 'shipped',
+  'submitted' => 'submitted',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

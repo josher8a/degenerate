@@ -40,6 +40,19 @@ static const List<ShieldMethod> values = [$get, post, head, options, put, delete
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'GET' => r'$get',
+  'POST' => 'post',
+  'HEAD' => 'head',
+  'OPTIONS' => 'options',
+  'PUT' => 'put',
+  'DELETE' => 'delete',
+  'CONNECT' => 'connect',
+  'PATCH' => 'patch',
+  'TRACE' => 'trace',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -19,6 +19,12 @@ static const List<OutputType> values = [ndjson, csv];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'ndjson' => 'ndjson',
+  'csv' => 'csv',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -53,6 +59,14 @@ static const List<TimestampFormat> values = [unixnano, unix, rfc3339, rfc3339nan
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'unixnano' => 'unixnano',
+  'unix' => 'unix',
+  'rfc3339' => 'rfc3339',
+  'rfc3339nano' => 'rfc3339nano',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

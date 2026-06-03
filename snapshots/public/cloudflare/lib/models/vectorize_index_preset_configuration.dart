@@ -28,6 +28,15 @@ static const List<VectorizeIndexPreset> values = [cfBaaiBgeSmallEnV15, cfBaaiBge
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '@cf/baai/bge-small-en-v1.5' => 'cfBaaiBgeSmallEnV15',
+  '@cf/baai/bge-base-en-v1.5' => 'cfBaaiBgeBaseEnV15',
+  '@cf/baai/bge-large-en-v1.5' => 'cfBaaiBgeLargeEnV15',
+  'openai/text-embedding-ada-002' => 'openaiTextEmbeddingAda002',
+  'cohere/embed-multilingual-v2.0' => 'cohereEmbedMultilingualV20',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

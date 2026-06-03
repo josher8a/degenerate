@@ -16,6 +16,11 @@ static const List<TreasuryTransactionEntryObject> values = [treasuryTransactionE
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'treasury.transaction_entry' => 'treasuryTransactionEntry',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -98,6 +103,30 @@ static const List<TreasuryTransactionEntryType> values = [creditReversal, credit
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'credit_reversal' => 'creditReversal',
+  'credit_reversal_posting' => 'creditReversalPosting',
+  'debit_reversal' => 'debitReversal',
+  'inbound_transfer' => 'inboundTransfer',
+  'inbound_transfer_return' => 'inboundTransferReturn',
+  'issuing_authorization_hold' => 'issuingAuthorizationHold',
+  'issuing_authorization_release' => 'issuingAuthorizationRelease',
+  'other' => r'$other',
+  'outbound_payment' => 'outboundPayment',
+  'outbound_payment_cancellation' => 'outboundPaymentCancellation',
+  'outbound_payment_failure' => 'outboundPaymentFailure',
+  'outbound_payment_posting' => 'outboundPaymentPosting',
+  'outbound_payment_return' => 'outboundPaymentReturn',
+  'outbound_transfer' => 'outboundTransfer',
+  'outbound_transfer_cancellation' => 'outboundTransferCancellation',
+  'outbound_transfer_failure' => 'outboundTransferFailure',
+  'outbound_transfer_posting' => 'outboundTransferPosting',
+  'outbound_transfer_return' => 'outboundTransferReturn',
+  'received_credit' => 'receivedCredit',
+  'received_debit' => 'receivedDebit',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

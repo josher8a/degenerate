@@ -27,6 +27,15 @@ static const List<AudioTranscriptionModelVariant2> values = [whisper1, gpt4oMini
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'whisper-1' => 'whisper1',
+  'gpt-4o-mini-transcribe' => 'gpt4oMiniTranscribe',
+  'gpt-4o-mini-transcribe-2025-12-15' => 'gpt4oMiniTranscribe20251215',
+  'gpt-4o-transcribe' => 'gpt4oTranscribe',
+  'gpt-4o-transcribe-diarize' => 'gpt4oTranscribeDiarize',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

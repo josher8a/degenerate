@@ -25,6 +25,14 @@ static const List<Flow> values = [codeVerification, none, receiver, redirect];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'code_verification' => 'codeVerification',
+  'none' => 'none',
+  'receiver' => 'receiver',
+  'redirect' => 'redirect',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -52,6 +60,12 @@ static const List<PostSourcesRequestUsage> values = [reusable, singleUse];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'reusable' => 'reusable',
+  'single_use' => 'singleUse',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

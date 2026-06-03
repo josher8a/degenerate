@@ -16,6 +16,11 @@ static const List<CustomerCashBalanceTransactionObject> values = [customerCashBa
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'customer_cash_balance_transaction' => 'customerCashBalanceTransaction',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -65,6 +70,19 @@ static const List<CustomerCashBalanceTransactionType> values = [adjustedForOverd
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'adjusted_for_overdraft' => 'adjustedForOverdraft',
+  'applied_to_payment' => 'appliedToPayment',
+  'funded' => 'funded',
+  'funding_reversed' => 'fundingReversed',
+  'refunded_from_payment' => 'refundedFromPayment',
+  'return_canceled' => 'returnCanceled',
+  'return_initiated' => 'returnInitiated',
+  'transferred_to_balance' => 'transferredToBalance',
+  'unapplied_from_payment' => 'unappliedFromPayment',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

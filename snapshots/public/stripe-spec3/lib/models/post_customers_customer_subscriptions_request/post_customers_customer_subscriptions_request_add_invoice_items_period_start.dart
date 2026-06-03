@@ -21,6 +21,13 @@ static const List<StartType> values = [maxItemPeriodStart, now, timestamp];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'max_item_period_start' => 'maxItemPeriodStart',
+  'now' => 'now',
+  'timestamp' => 'timestamp',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -24,6 +24,14 @@ static const List<ListsItemRedirectStatusCode> values = [$301, $302, $307, $308]
 final int value;
 
 int toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  301 => r'$301',
+  302 => r'$302',
+  307 => r'$307',
+  308 => r'$308',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

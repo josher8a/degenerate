@@ -28,6 +28,15 @@ static const List<FirewallMode> values = [simulate, ban, challenge, jsChallenge,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'simulate' => 'simulate',
+  'ban' => 'ban',
+  'challenge' => 'challenge',
+  'js_challenge' => 'jsChallenge',
+  'managed_challenge' => 'managedChallenge',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

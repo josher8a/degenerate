@@ -30,6 +30,16 @@ static const List<CcInstanceTypeVariant1> values = [lite, basic, standard1, stan
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'lite' => 'lite',
+  'basic' => 'basic',
+  'standard-1' => 'standard1',
+  'standard-2' => 'standard2',
+  'standard-3' => 'standard3',
+  'standard-4' => 'standard4',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

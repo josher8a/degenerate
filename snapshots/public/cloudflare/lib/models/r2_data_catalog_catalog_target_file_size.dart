@@ -25,6 +25,14 @@ static const List<R2DataCatalogCatalogTargetFileSize> values = [$64, $128, $256,
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '64' => r'$64',
+  '128' => r'$128',
+  '256' => r'$256',
+  '512' => r'$512',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

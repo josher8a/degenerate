@@ -19,6 +19,12 @@ static const List<Zones0rttValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -48,6 +54,12 @@ static const List<ZonesAdvancedDdosValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -76,6 +88,12 @@ static const List<ZonesAlwaysOnlineValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -104,6 +122,12 @@ static const List<ZonesAlwaysUseHttpsValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -132,6 +156,12 @@ static const List<ZonesBrotliValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -209,6 +239,24 @@ static const List<ZonesChallengeTtlValue> values = [$300, $900, $1800, $2700, $3
 final double value;
 
 double toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  300 => r'$300',
+  900 => r'$900',
+  1800 => r'$1800',
+  2700 => r'$2700',
+  3600 => r'$3600',
+  7200 => r'$7200',
+  10800 => r'$10800',
+  14400 => r'$14400',
+  28800 => r'$28800',
+  57600 => r'$57600',
+  86400 => r'$86400',
+  604800 => r'$604800',
+  2592000.0 => r'$25920000',
+  31536000.0 => r'$315360000',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -237,6 +285,12 @@ static const List<ZonesChinaNetworkEnabledValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -265,6 +319,12 @@ static const List<ZonesCnameFlatteningValue> values = [flattenAtRoot, flattenAll
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'flatten_at_root' => 'flattenAtRoot',
+  'flatten_all' => 'flattenAll',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -293,6 +353,12 @@ static const List<ZonesContentConverterValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -321,6 +387,12 @@ static const List<ZonesEarlyHintsValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -407,6 +479,31 @@ static const List<ZonesEdgeCacheTtlValue> values = [$30, $60, $300, $1200, $1800
 final double value;
 
 double toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  30 => r'$30',
+  60 => r'$60',
+  300 => r'$300',
+  1200 => r'$1200',
+  1800 => r'$1800',
+  3600 => r'$3600',
+  7200 => r'$7200',
+  10800 => r'$10800',
+  14400 => r'$14400',
+  18000 => r'$18000',
+  28800 => r'$28800',
+  43200 => r'$43200',
+  57600 => r'$57600',
+  72000 => r'$72000',
+  86400 => r'$86400',
+  172800 => r'$172800',
+  259200 => r'$259200',
+  345600 => r'$345600',
+  432000 => r'$432000',
+  518400 => r'$518400',
+  604800 => r'$604800',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -438,6 +535,13 @@ static const List<ZonesH2PrioritizationValue> values = [$on, off, custom];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  'custom' => 'custom',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -466,6 +570,12 @@ static const List<ZonesHotlinkProtectionValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -494,6 +604,12 @@ static const List<ZonesHttp2Value> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -522,6 +638,12 @@ static const List<ZonesHttp3Value> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -553,6 +675,13 @@ static const List<ZonesImageResizingValue> values = [$on, off, open];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  'open' => 'open',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -581,6 +710,12 @@ static const List<ZonesIpv6Value> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -658,6 +793,28 @@ static const List<ZonesMaxUploadValue> values = [$100, $125, $150, $175, $200, $
 final int value;
 
 int toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  100 => r'$100',
+  125 => r'$125',
+  150 => r'$150',
+  175 => r'$175',
+  200 => r'$200',
+  225 => r'$225',
+  250 => r'$250',
+  275 => r'$275',
+  300 => r'$300',
+  325 => r'$325',
+  350 => r'$350',
+  375 => r'$375',
+  400 => r'$400',
+  425 => r'$425',
+  450 => r'$450',
+  475 => r'$475',
+  500 => r'$500',
+  1000 => r'$1000',
+  _ => '$value',
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -692,6 +849,14 @@ static const List<ZonesMinTlsVersionValue> values = [$10, $11, $12, $13];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '1.0' => r'$10',
+  '1.1' => r'$11',
+  '1.2' => r'$12',
+  '1.3' => r'$13',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -721,6 +886,12 @@ static const List<ZonesOpportunisticOnionValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -749,6 +920,12 @@ static const List<ZonesOrangeToOrangeValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -777,6 +954,12 @@ static const List<ZonesPrefetchPreloadValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -805,6 +988,12 @@ static const List<ZonesPrivacyPassValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -836,6 +1025,13 @@ static const List<ZonesPseudoIpv4Value> values = [off, addHeader, overwriteHeade
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'add_header' => 'addHeader',
+  'overwrite_header' => 'overwriteHeader',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -864,6 +1060,12 @@ static const List<ZonesRedirectsForAiTrainingValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -892,6 +1094,12 @@ static const List<ZonesReplaceInsecureJsValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -920,6 +1128,12 @@ static const List<ZonesServerSideExcludeValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -948,6 +1162,12 @@ static const List<ZonesSha1SupportValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -976,6 +1196,12 @@ static const List<ZonesTls12OnlyValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1008,6 +1234,13 @@ static const List<ZonesTls13Value> values = [$on, off, zrt];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  'zrt' => 'zrt',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1036,6 +1269,12 @@ static const List<ZonesTlsClientAuthValue> values = [$on, off];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1064,6 +1303,12 @@ static const List<ZonesWebpValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1092,6 +1337,12 @@ static const List<ZonesWebsocketsValue> values = [off, $on];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'on' => r'$on',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

@@ -22,6 +22,13 @@ static const List<TerminalReaderReaderResourceReaderActionStatus> values = [fail
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'failed' => 'failed',
+  'in_progress' => 'inProgress',
+  'succeeded' => 'succeeded',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -65,6 +72,17 @@ static const List<TerminalReaderReaderResourceReaderActionType> values = [collec
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'collect_inputs' => 'collectInputs',
+  'collect_payment_method' => 'collectPaymentMethod',
+  'confirm_payment_intent' => 'confirmPaymentIntent',
+  'process_payment_intent' => 'processPaymentIntent',
+  'process_setup_intent' => 'processSetupIntent',
+  'refund_payment' => 'refundPayment',
+  'set_reader_display' => 'setReaderDisplay',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

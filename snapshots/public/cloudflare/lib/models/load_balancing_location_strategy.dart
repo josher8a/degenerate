@@ -21,6 +21,12 @@ static const List<LoadBalancingLocationStrategyMode> values = [pop, resolverIp];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'pop' => 'pop',
+  'resolver_ip' => 'resolverIp',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +65,14 @@ static const List<PreferEcs> values = [always, never, proximity, geo];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'always' => 'always',
+  'never' => 'never',
+  'proximity' => 'proximity',
+  'geo' => 'geo',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

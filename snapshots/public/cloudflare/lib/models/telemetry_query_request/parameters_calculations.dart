@@ -21,6 +21,13 @@ static const List<KeyType> values = [string, number, boolean];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'string' => 'string',
+  'number' => 'number',
+  'boolean' => 'boolean',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -156,6 +163,48 @@ static const List<CalculationsOperator> values = [uniq, count, max, min, sum, av
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'uniq' => 'uniq',
+  'count' => 'count',
+  'max' => 'max',
+  'min' => 'min',
+  'sum' => 'sum',
+  'avg' => 'avg',
+  'median' => 'median',
+  'p001' => 'p001',
+  'p01' => 'p01',
+  'p05' => 'p05',
+  'p10' => 'p10',
+  'p25' => 'p25',
+  'p75' => 'p75',
+  'p90' => 'p90',
+  'p95' => 'p95',
+  'p99' => 'p99',
+  'p999' => 'p999',
+  'stddev' => 'stddev',
+  'variance' => 'variance',
+  'COUNT_DISTINCT' => 'countDistinct',
+  'COUNT' => 'count2',
+  'MAX' => 'max2',
+  'MIN' => 'min2',
+  'SUM' => 'sum2',
+  'AVG' => 'avg2',
+  'MEDIAN' => 'median2',
+  'P001' => 'p0012',
+  'P01' => 'p012',
+  'P05' => 'p052',
+  'P10' => 'p102',
+  'P25' => 'p252',
+  'P75' => 'p752',
+  'P90' => 'p902',
+  'P95' => 'p952',
+  'P99' => 'p992',
+  'P999' => 'p9992',
+  'STDDEV' => 'stddev2',
+  'VARIANCE' => 'variance2',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

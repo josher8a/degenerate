@@ -51,6 +51,23 @@ static const List<FiltersKey> values = [createdAt, requestContentType, responseC
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'created_at' => 'createdAt',
+  'request_content_type' => 'requestContentType',
+  'response_content_type' => 'responseContentType',
+  'success' => 'success',
+  'cached' => 'cached',
+  'provider' => 'provider',
+  'model' => 'model',
+  'cost' => 'cost',
+  'tokens' => 'tokens',
+  'tokens_in' => 'tokensIn',
+  'tokens_out' => 'tokensOut',
+  'duration' => 'duration',
+  'feedback' => 'feedback',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -84,6 +101,14 @@ static const List<FiltersOperator> values = [eq, contains, lt, gt];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'eq' => 'eq',
+  'contains' => 'contains',
+  'lt' => 'lt',
+  'gt' => 'gt',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

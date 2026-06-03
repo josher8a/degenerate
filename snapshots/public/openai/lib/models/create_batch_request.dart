@@ -34,6 +34,17 @@ static const List<Endpoint> values = [v1Responses, v1ChatCompletions, v1Embeddin
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '/v1/responses' => 'v1Responses',
+  '/v1/chat/completions' => 'v1ChatCompletions',
+  '/v1/embeddings' => 'v1Embeddings',
+  '/v1/completions' => 'v1Completions',
+  '/v1/moderations' => 'v1Moderations',
+  '/v1/images/generations' => 'v1ImagesGenerations',
+  '/v1/images/edits' => 'v1ImagesEdits',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -59,6 +70,11 @@ static const List<CompletionWindow> values = [$24h];
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  '24h' => r'$24h',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

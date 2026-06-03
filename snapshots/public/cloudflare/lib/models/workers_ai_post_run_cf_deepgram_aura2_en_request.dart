@@ -133,6 +133,50 @@ static const List<WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker> values = [ama
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'amalthea' => 'amalthea',
+  'andromeda' => 'andromeda',
+  'apollo' => 'apollo',
+  'arcas' => 'arcas',
+  'aries' => 'aries',
+  'asteria' => 'asteria',
+  'athena' => 'athena',
+  'atlas' => 'atlas',
+  'aurora' => 'aurora',
+  'callista' => 'callista',
+  'cora' => 'cora',
+  'cordelia' => 'cordelia',
+  'delia' => 'delia',
+  'draco' => 'draco',
+  'electra' => 'electra',
+  'harmonia' => 'harmonia',
+  'helena' => 'helena',
+  'hera' => 'hera',
+  'hermes' => 'hermes',
+  'hyperion' => 'hyperion',
+  'iris' => 'iris',
+  'janus' => 'janus',
+  'juno' => 'juno',
+  'jupiter' => 'jupiter',
+  'luna' => 'luna',
+  'mars' => 'mars',
+  'minerva' => 'minerva',
+  'neptune' => 'neptune',
+  'odysseus' => 'odysseus',
+  'ophelia' => 'ophelia',
+  'orion' => 'orion',
+  'orpheus' => 'orpheus',
+  'pandora' => 'pandora',
+  'phoebe' => 'phoebe',
+  'pluto' => 'pluto',
+  'saturn' => 'saturn',
+  'thalia' => 'thalia',
+  'theia' => 'theia',
+  'vesta' => 'vesta',
+  'zeus' => 'zeus',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

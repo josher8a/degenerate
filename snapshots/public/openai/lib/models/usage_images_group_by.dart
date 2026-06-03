@@ -30,6 +30,16 @@ static const List<UsageImagesGroupBy> values = [projectId, userId, apiKeyId, mod
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'project_id' => 'projectId',
+  'user_id' => 'userId',
+  'api_key_id' => 'apiKeyId',
+  'model' => 'model',
+  'size' => 'size',
+  'source' => 'source',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

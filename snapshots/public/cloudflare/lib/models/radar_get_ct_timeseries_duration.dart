@@ -33,6 +33,17 @@ static const List<RadarGetCtTimeseriesDuration> values = [lte3D, gt3DLte7D, gt7D
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'LTE_3D' => 'lte3D',
+  'GT_3D_LTE_7D' => 'gt3DLte7D',
+  'GT_7D_LTE_10D' => 'gt7DLte10D',
+  'GT_10D_LTE_47D' => 'gt10DLte47D',
+  'GT_47D_LTE_100D' => 'gt47DLte100D',
+  'GT_100D_LTE_200D' => 'gt100DLte200D',
+  'GT_200D' => 'gt200D',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

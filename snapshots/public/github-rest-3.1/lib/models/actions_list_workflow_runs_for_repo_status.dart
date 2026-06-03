@@ -54,6 +54,24 @@ static const List<ActionsListWorkflowRunsForRepoStatus> values = [completed, act
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'completed' => 'completed',
+  'action_required' => 'actionRequired',
+  'cancelled' => 'cancelled',
+  'failure' => 'failure',
+  'neutral' => 'neutral',
+  'skipped' => 'skipped',
+  'stale' => 'stale',
+  'success' => 'success',
+  'timed_out' => 'timedOut',
+  'in_progress' => 'inProgress',
+  'queued' => 'queued',
+  'requested' => 'requested',
+  'waiting' => 'waiting',
+  'pending' => 'pending',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||

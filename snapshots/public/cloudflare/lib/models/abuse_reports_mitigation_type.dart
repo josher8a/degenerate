@@ -31,6 +31,16 @@ static const List<AbuseReportsMitigationType> values = [legalBlock, phishingInte
 final String value;
 
 String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'legal_block' => 'legalBlock',
+  'phishing_interstitial' => 'phishingInterstitial',
+  'network_block' => 'networkBlock',
+  'rate_limit_cache' => 'rateLimitCache',
+  'account_suspend' => 'accountSuspend',
+  'redirect_video_stream' => 'redirectVideoStream',
+  _ => value,
+}; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) => identical(this, other) ||
