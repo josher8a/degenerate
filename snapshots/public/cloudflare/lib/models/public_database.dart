@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/PublicDatabase
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicDatabase {const PublicDatabase({required this.host, required this.port, });
+
+factory PublicDatabase.fromJson(Map<String, dynamic> json) { return PublicDatabase(
+  host: json['host'] as String,
+  port: (json['port'] as num).toInt(),
+); }
+
+/// Defines the host (hostname or IP) of your origin database.
+/// 
+/// Example: `'database.example.com'`
+final String host;
+
+/// Defines the port of your origin database. Defaults to 5432 for PostgreSQL or 3306 for MySQL if not specified.
+/// 
+/// Example: `5432`
+final int port;
+
+Map<String, dynamic> toJson() { return {
+  'host': host,
+  'port': port,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
+      json.containsKey('port') && json['port'] is num; } 
+PublicDatabase copyWith({String? host, int? port, }) { return PublicDatabase(
+  host: host ?? this.host,
+  port: port ?? this.port,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is PublicDatabase &&
+          host == other.host &&
+          port == other.port;
+
+@override int get hashCode => Object.hash(host, port);
+
+@override String toString() => 'PublicDatabase(host: $host, port: $port)';
+
+ }

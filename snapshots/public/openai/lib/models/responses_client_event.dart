@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponsesClientEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/response_stream_options.dart';/// Client events accepted by the Responses WebSocket server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_stream_options.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_param.dart';/// Client events accepted by the Responses WebSocket server.
 /// 
 sealed class ResponsesClientEvent {const ResponsesClientEvent();
 
@@ -12,7 +12,7 @@ factory ResponsesClientEvent.fromJson(Map<String, dynamic> json) { return switch
 }; }
 
 /// Build the `response.create` variant.
-factory ResponsesClientEvent.responseCreate({InputParam? input, List<IncludeEnum>? include, bool? parallelToolCalls, bool? store, String? instructions, bool? stream, ResponseStreamOptions? streamOptions, ConversationParam? conversation, List<ContextManagementParam>? contextManagement, }) { return ResponsesClientEventResponseCreate(CreateResponse(input: input, include: include, parallelToolCalls: parallelToolCalls, store: store, instructions: instructions, stream: stream, streamOptions: streamOptions, conversation: conversation, contextManagement: contextManagement)); }
+factory ResponsesClientEvent.responseCreate({String? previousResponseId, ModelIdsResponses? model, Reasoning? reasoning, bool? background, int? maxOutputTokens, int? maxToolCalls, ResponseTextParam? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Prompt? prompt, Truncation? truncation, InputParam? input, List<IncludeEnum>? include, bool? parallelToolCalls, bool? store, String? instructions, bool? stream, ResponseStreamOptions? streamOptions, ConversationParam? conversation, List<ContextManagementParam>? contextManagement, }) { return ResponsesClientEventResponseCreate(CreateResponse(previousResponseId: previousResponseId, model: model, reasoning: reasoning, background: background, maxOutputTokens: maxOutputTokens, maxToolCalls: maxToolCalls, text: text, tools: tools, toolChoice: toolChoice, prompt: prompt, truncation: truncation, input: input, include: include, parallelToolCalls: parallelToolCalls, store: store, instructions: instructions, stream: stream, streamOptions: streamOptions, conversation: conversation, contextManagement: contextManagement)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -35,7 +35,18 @@ final CreateResponse createResponse;
 
 @override Map<String, dynamic> toJson() => {...createResponse.toJson(), 'type': type};
 
-ResponsesClientEventResponseCreate copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return ResponsesClientEventResponseCreate(createResponse.copyWith(
+ResponsesClientEventResponseCreate copyWith({String? Function()? previousResponseId, ModelIdsResponses? Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return ResponsesClientEventResponseCreate(createResponse.copyWith(
+  previousResponseId: previousResponseId,
+  model: model,
+  reasoning: reasoning,
+  background: background,
+  maxOutputTokens: maxOutputTokens,
+  maxToolCalls: maxToolCalls,
+  text: text,
+  tools: tools,
+  toolChoice: toolChoice,
+  prompt: prompt,
+  truncation: truncation,
   input: input,
   include: include,
   parallelToolCalls: parallelToolCalls,

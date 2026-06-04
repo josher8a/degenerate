@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleNonFastForward
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleNonFastForwardType {const RepositoryRuleNonFastForwardType._(this.value);
-
-factory RepositoryRuleNonFastForwardType.fromJson(String json) { return switch (json) {
-  'non_fast_forward' => nonFastForward,
-  _ => RepositoryRuleNonFastForwardType._(json),
-}; }
-
-static const RepositoryRuleNonFastForwardType nonFastForward = RepositoryRuleNonFastForwardType._('non_fast_forward');
-
-static const List<RepositoryRuleNonFastForwardType> values = [nonFastForward];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'non_fast_forward' => 'nonFastForward',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleNonFastForwardType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleNonFastForwardType($value)';
-
- }
-/// Prevent users with push access from force pushing to refs.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_non_fast_forward/repository_rule_non_fast_forward_type.dart';/// Prevent users with push access from force pushing to refs.
 @immutable final class RepositoryRuleNonFastForward {const RepositoryRuleNonFastForward({required this.type});
 
 factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) { return RepositoryRuleNonFastForward(

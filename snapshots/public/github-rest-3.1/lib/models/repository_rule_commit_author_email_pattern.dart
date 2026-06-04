@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleCommitAuthorEmailPattern
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleCommitAuthorEmailPatternType {const RepositoryRuleCommitAuthorEmailPatternType._(this.value);
-
-factory RepositoryRuleCommitAuthorEmailPatternType.fromJson(String json) { return switch (json) {
-  'commit_author_email_pattern' => commitAuthorEmailPattern,
-  _ => RepositoryRuleCommitAuthorEmailPatternType._(json),
-}; }
-
-static const RepositoryRuleCommitAuthorEmailPatternType commitAuthorEmailPattern = RepositoryRuleCommitAuthorEmailPatternType._('commit_author_email_pattern');
-
-static const List<RepositoryRuleCommitAuthorEmailPatternType> values = [commitAuthorEmailPattern];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'commit_author_email_pattern' => 'commitAuthorEmailPattern',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleCommitAuthorEmailPatternType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleCommitAuthorEmailPatternType($value)';
-
- }
-/// Parameters to be used for the commit_author_email_pattern rule
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_commit_author_email_pattern/repository_rule_commit_author_email_pattern_type.dart';/// Parameters to be used for the commit_author_email_pattern rule
 @immutable final class RepositoryRuleCommitAuthorEmailPattern {const RepositoryRuleCommitAuthorEmailPattern({required this.type, this.parameters, });
 
 factory RepositoryRuleCommitAuthorEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitAuthorEmailPattern(

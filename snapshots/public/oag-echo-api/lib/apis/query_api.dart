@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "QueryApi" (11 operations)
 
-import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/bird.dart';import 'package:pub_oag_echo_api/models/data_query.dart';import 'package:pub_oag_echo_api/models/pet.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';import 'package:pub_oag_echo_api/models/test_enum_ref_string_enum_nonref_string_query.dart';import 'package:pub_oag_echo_api/models/test_query_style_form_explode_true_array_string_query_object.dart';/// QueryApi operations.
+import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/data_query.dart';import 'package:pub_oag_echo_api/models/pet.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';import 'package:pub_oag_echo_api/models/test_enum_ref_string_enum_nonref_string_query.dart';import 'package:pub_oag_echo_api/models/test_query_style_deep_object_explode_true_object_all_of_query_object.dart';import 'package:pub_oag_echo_api/models/test_query_style_form_explode_true_array_string_query_object.dart';/// QueryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -270,10 +270,13 @@ return execute(
 /// Test query parameter(s)
 ///
 /// `GET /query/style_deepObject/explode_true/object/allOf`
-Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObjectAllOf({Bird? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<String, Never>> testQueryStyleDeepObjectExplodeTrueObjectAllOf({TestQueryStyleDeepObjectExplodeTrueObjectAllOfQueryObject? queryObject, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queryObject != null) {
-queryParametersList.add(ApiQueryParameter(name: 'query_object', value: queryObject.toString()));
+if (queryObject.size case final size$?) { queryParameters['query_object[size]'] = size$; }
+if (queryObject.color case final color$?) { queryParameters['query_object[color]'] = color$; }
+if (queryObject.id case final id$?) { queryParameters['query_object[id]'] = id$.toString(); }
+if (queryObject.name case final name$?) { queryParameters['query_object[name]'] = name$; }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

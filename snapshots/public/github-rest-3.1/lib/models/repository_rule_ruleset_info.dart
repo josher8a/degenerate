@@ -1,41 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleRulesetInfo
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source for the ruleset that includes this rule.
-@immutable final class RulesetSourceType {const RulesetSourceType._(this.value);
-
-factory RulesetSourceType.fromJson(String json) { return switch (json) {
-  'Repository' => repository,
-  'Organization' => organization,
-  _ => RulesetSourceType._(json),
-}; }
-
-static const RulesetSourceType repository = RulesetSourceType._('Repository');
-
-static const RulesetSourceType organization = RulesetSourceType._('Organization');
-
-static const List<RulesetSourceType> values = [repository, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'Repository' => 'repository',
-  'Organization' => 'organization',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RulesetSourceType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RulesetSourceType($value)';
-
- }
-/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_ruleset_info/ruleset_source_type.dart';/// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
 @immutable final class RepositoryRuleRulesetInfo {const RepositoryRuleRulesetInfo({this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
 
 factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) { return RepositoryRuleRulesetInfo(

@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrowserVncApplication
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_aud.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class BrowserVncApplication3 {const BrowserVncApplication3({this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, });
+
+factory BrowserVncApplication3.fromJson(Map<String, dynamic> json) { return BrowserVncApplication3(
+  aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
+  scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+final AccessSchemasAud? aud;
+
+final AccessTimestamp? createdAt;
+
+final AccessUuid? id;
+
+final AccessSchemasScimConfig? scimConfig;
+
+final AccessTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (aud != null) 'aud': aud?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aud', 'created_at', 'id', 'scim_config', 'updated_at'}.contains(key)); } 
+BrowserVncApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, }) { return BrowserVncApplication3(
+  aud: aud != null ? aud() : this.aud,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  id: id != null ? id() : this.id,
+  scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is BrowserVncApplication3 &&
+          aud == other.aud &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          scimConfig == other.scimConfig &&
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(aud, createdAt, id, scimConfig, updatedAt);
+
+@override String toString() => 'BrowserVncApplication3(aud: $aud, createdAt: $createdAt, id: $id, scimConfig: $scimConfig, updatedAt: $updatedAt)';
+
+ }

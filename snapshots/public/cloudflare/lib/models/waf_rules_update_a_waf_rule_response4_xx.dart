@@ -1,27 +1,53 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WafRulesUpdateAWafRuleResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_anomaly_rule.dart';import 'package:pub_cloudflare/models/waf_managed_rules_traditional_allow_rule.dart';import 'package:pub_cloudflare/models/waf_managed_rules_traditional_deny_rule.dart';import 'package:pub_cloudflare/models/waf_rules_update_a_waf_rule_response4_xx/waf_rules_update_a_waf_rule_response4_xx_result.dart';@immutable final class WafRulesUpdateAWafRuleResponse4Xx {const WafRulesUpdateAWafRuleResponse4Xx({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_messages2.dart';@immutable final class WafRulesUpdateAWafRuleResponse4Xx {const WafRulesUpdateAWafRuleResponse4Xx({required this.result, required this.errors, required this.messages, required this.success, });
 
 factory WafRulesUpdateAWafRuleResponse4Xx.fromJson(Map<String, dynamic> json) { return WafRulesUpdateAWafRuleResponse4Xx(
-  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => WafManagedRulesAnomalyRule.fromJson(v as Map<String, dynamic>), fromB: (v) => WafManagedRulesTraditionalDenyRule.fromJson(v as Map<String, dynamic>), fromC: (v) => WafManagedRulesTraditionalAllowRule.fromJson(v as Map<String, dynamic>),) : null,
+  result: json['result'] as Map<String, dynamic>?,
+  errors: (json['errors'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
 ); }
 
-final WafRulesUpdateAWafRuleResponse4XxResult? result;
+final Map<String,dynamic>? result;
+
+/// Example: `[{code: 7003, message: No route for the URI}]`
+final List<WafManagedRulesMessages2> errors;
+
+/// Example: `[]`
+final List<WafManagedRulesMessages2> messages;
+
+/// Defines whether the API call was successful.
+/// 
+/// Example: `false`
+final bool success;
 
 Map<String, dynamic> toJson() { return {
-  if (result != null) 'result': result?.toJson(),
+  'result': result,
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-WafRulesUpdateAWafRuleResponse4Xx copyWith({WafRulesUpdateAWafRuleResponse4XxResult? Function()? result}) { return WafRulesUpdateAWafRuleResponse4Xx(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+WafRulesUpdateAWafRuleResponse4Xx copyWith({Map<String, dynamic>? Function()? result, List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, }) { return WafRulesUpdateAWafRuleResponse4Xx(
   result: result != null ? result() : this.result,
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is WafRulesUpdateAWafRuleResponse4Xx &&
-          result == other.result;
+          result == other.result &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success;
 
-@override int get hashCode => result.hashCode;
+@override int get hashCode => Object.hash(result, Object.hashAll(errors), Object.hashAll(messages), success);
 
-@override String toString() => 'WafRulesUpdateAWafRuleResponse4Xx(result: $result)';
+@override String toString() => 'WafRulesUpdateAWafRuleResponse4Xx(result: $result, errors: $errors, messages: $messages, success: $success)';
 
  }

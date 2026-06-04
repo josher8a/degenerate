@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TokenValidationTokenConfigurationApi" (6 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/response_common6.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_token_configuration.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';import 'package:pub_cloudflare/models/token_validation_config_create_request.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_request.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_response/token_validation_config_edit_response_result.dart';/// TokenValidationTokenConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_token_configuration.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';import 'package:pub_cloudflare/models/token_validation_config_create_request.dart';import 'package:pub_cloudflare/models/token_validation_config_credentials_update_response.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_request.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_response/token_validation_config_edit_response_result.dart';/// TokenValidationTokenConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -131,7 +131,7 @@ return execute(
 /// Update Token Configuration credentials
 ///
 /// `PUT /zones/{zone_id}/token_validation/config/{config_id}/credentials`
-Future<ApiResult<ResponseCommon6, Never>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenValidationConfigCredentialsUpdateResponse, Never>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -145,7 +145,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TokenValidationConfigCredentialsUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

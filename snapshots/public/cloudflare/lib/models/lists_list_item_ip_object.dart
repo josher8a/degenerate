@@ -1,14 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListsListItemIpObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
-extension type const ListsItemIp(String value) {
-factory ListsItemIp.fromJson(String json) => ListsItemIp(json);
-
-String toJson() => value;
-
-}
-@immutable final class ListsListItemIpObject {const ListsListItemIpObject({required this.ip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_item_ip.dart';@immutable final class ListsListItemIpObject {const ListsListItemIpObject({required this.ip});
 
 factory ListsListItemIpObject.fromJson(Map<String, dynamic> json) { return ListsListItemIpObject(
   ip: ListsItemIp.fromJson(json['ip'] as String),

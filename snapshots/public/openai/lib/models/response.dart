@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Response
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type of this resource - always set to `response`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';/// The object type of this resource - always set to `response`.
 /// 
 @immutable final class ResponseObject {const ResponseObject._(this.value);
 
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 ///   "metadata": {}
 /// }
 /// ```
-@immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.topLogprobs, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.status, this.completedAt, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
+@immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.model, required this.tools, required this.toolChoice, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.topLogprobs, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.previousResponseId, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.prompt, this.truncation, this.status, this.completedAt, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -156,6 +156,17 @@ factory Response.fromJson(Map<String, dynamic> json) { return Response(
   promptCacheKey: json['prompt_cache_key'] as String?,
   serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
   promptCacheRetention: json['prompt_cache_retention'] != null ? PromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
+  previousResponseId: json['previous_response_id'] as String?,
+  model: OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),),
+  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
+  background: json['background'] as bool?,
+  maxOutputTokens: json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null,
+  maxToolCalls: json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null,
+  text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
+  tools: (json['tools'] as List<dynamic>).map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
+  toolChoice: OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),),
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  truncation: json['truncation'] != null ? Truncation.fromJson(json['truncation'] as String) : null,
   id: json['id'] as String,
   object: ResponseObject.fromJson(json['object'] as String),
   status: json['status'] != null ? ResponseStatus.fromJson(json['status'] as String) : null,
@@ -225,6 +236,51 @@ final ServiceTier? serviceTier;
 /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
 final PromptCacheRetention? promptCacheRetention;
+
+/// The unique ID of the previous response to the model. Use this to
+/// create multi-turn conversations. Learn more about
+/// [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
+/// 
+final String? previousResponseId;
+
+/// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI
+/// offers a wide range of models with different capabilities, performance
+/// characteristics, and price points. Refer to the [model guide](/docs/models)
+/// to browse and compare available models.
+/// 
+final ModelIdsResponses model;
+
+final Reasoning? reasoning;
+
+/// Whether to run the model response in the background.
+/// [Learn more](/docs/guides/background).
+/// 
+final bool? background;
+
+/// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+/// 
+final int? maxOutputTokens;
+
+/// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
+/// 
+final int? maxToolCalls;
+
+final ResponseTextParam? text;
+
+final List<Tool> tools;
+
+final ToolChoiceParam toolChoice;
+
+final Prompt? prompt;
+
+/// The truncation strategy to use for the model response.
+/// - `auto`: If the input to this Response exceeds
+///   the model's context window size, the model will truncate the
+///   response to fit the context window by dropping items from the beginning of the conversation.
+/// - `disabled` (default): If the input size will exceed the context window
+///   size for a model, the request will fail with a 400 error.
+/// 
+final Truncation? truncation;
 
 /// Unique identifier for this Response.
 /// 
@@ -297,6 +353,17 @@ Map<String, dynamic> toJson() { return {
   'prompt_cache_key': ?promptCacheKey,
   if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
   if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
+  'previous_response_id': ?previousResponseId,
+  'model': model.toJson(),
+  if (reasoning != null) 'reasoning': reasoning?.toJson(),
+  'background': ?background,
+  'max_output_tokens': ?maxOutputTokens,
+  'max_tool_calls': ?maxToolCalls,
+  if (text != null) 'text': text?.toJson(),
+  'tools': tools.map((e) => e.toJson()).toList(),
+  'tool_choice': toolChoice.toJson(),
+  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (truncation != null) 'truncation': truncation?.toJson(),
   'id': id,
   'object': object.toJson(),
   if (status != null) 'status': status?.toJson(),
@@ -314,6 +381,9 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
       json.containsKey('temperature') && json['temperature'] is num &&
       json.containsKey('top_p') && json['top_p'] is num &&
+      json.containsKey('model') &&
+      json.containsKey('tools') &&
+      json.containsKey('tool_choice') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('created_at') && json['created_at'] is num &&
@@ -344,7 +414,7 @@ if (safetyIdentifier$ != null) {
   if (safetyIdentifier$.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
 return errors; } 
-Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, String? Function()? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(
+Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? Function()? previousResponseId, ModelIdsResponses? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? tools, ToolChoiceParam? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, String? Function()? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   temperature: temperature != null ? temperature() : this.temperature,
@@ -354,6 +424,17 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
   promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
   serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
   promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
+  previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
+  model: model ?? this.model,
+  reasoning: reasoning != null ? reasoning() : this.reasoning,
+  background: background != null ? background() : this.background,
+  maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
+  maxToolCalls: maxToolCalls != null ? maxToolCalls() : this.maxToolCalls,
+  text: text != null ? text() : this.text,
+  tools: tools ?? this.tools,
+  toolChoice: toolChoice ?? this.toolChoice,
+  prompt: prompt != null ? prompt() : this.prompt,
+  truncation: truncation != null ? truncation() : this.truncation,
   id: id ?? this.id,
   object: object ?? this.object,
   status: status != null ? status() : this.status,
@@ -379,6 +460,17 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
           promptCacheKey == other.promptCacheKey &&
           serviceTier == other.serviceTier &&
           promptCacheRetention == other.promptCacheRetention &&
+          previousResponseId == other.previousResponseId &&
+          model == other.model &&
+          reasoning == other.reasoning &&
+          background == other.background &&
+          maxOutputTokens == other.maxOutputTokens &&
+          maxToolCalls == other.maxToolCalls &&
+          text == other.text &&
+          listEquals(tools, other.tools) &&
+          toolChoice == other.toolChoice &&
+          prompt == other.prompt &&
+          truncation == other.truncation &&
           id == other.id &&
           object == other.object &&
           status == other.status &&
@@ -393,8 +485,8 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
           parallelToolCalls == other.parallelToolCalls &&
           conversation == other.conversation;
 
-@override int get hashCode => Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]);
+@override int get hashCode => Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools), toolChoice, prompt, truncation, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]);
 
-@override String toString() => 'Response(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  id: $id,\n  object: $object,\n  status: $status,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  error: $error,\n  incompleteDetails: $incompleteDetails,\n  output: $output,\n  instructions: $instructions,\n  outputText: $outputText,\n  usage: $usage,\n  parallelToolCalls: $parallelToolCalls,\n  conversation: $conversation,\n)';
+@override String toString() => 'Response(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  id: $id,\n  object: $object,\n  status: $status,\n  createdAt: $createdAt,\n  completedAt: $completedAt,\n  error: $error,\n  incompleteDetails: $incompleteDetails,\n  output: $output,\n  instructions: $instructions,\n  outputText: $outputText,\n  usage: $usage,\n  parallelToolCalls: $parallelToolCalls,\n  conversation: $conversation,\n)';
 
  }

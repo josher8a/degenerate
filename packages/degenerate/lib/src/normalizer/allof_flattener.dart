@@ -70,7 +70,9 @@ final class AllOfFlattener {
     for (final sub in allOf) {
       if (sub is! Map<String, dynamic>) continue;
       _mergeSubSchema(sub, mergedProperties, mergedRequired, result);
-      if (sub.containsKey('type')) type = sub['type'] as String?;
+      if (sub.containsKey('type') && sub['type'] is String) {
+        type = sub['type'] as String;
+      }
       if (sub.containsKey('description')) {
         description = sub['description'] as String?;
       }

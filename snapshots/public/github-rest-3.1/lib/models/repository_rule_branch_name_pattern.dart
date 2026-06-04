@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleBranchNamePattern
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType._(this.value);
-
-factory RepositoryRuleBranchNamePatternType.fromJson(String json) { return switch (json) {
-  'branch_name_pattern' => branchNamePattern,
-  _ => RepositoryRuleBranchNamePatternType._(json),
-}; }
-
-static const RepositoryRuleBranchNamePatternType branchNamePattern = RepositoryRuleBranchNamePatternType._('branch_name_pattern');
-
-static const List<RepositoryRuleBranchNamePatternType> values = [branchNamePattern];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'branch_name_pattern' => 'branchNamePattern',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleBranchNamePatternType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleBranchNamePatternType($value)';
-
- }
-/// Parameters to be used for the branch_name_pattern rule
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_type.dart';/// Parameters to be used for the branch_name_pattern rule
 @immutable final class RepositoryRuleBranchNamePattern {const RepositoryRuleBranchNamePattern({required this.type, this.parameters, });
 
 factory RepositoryRuleBranchNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleBranchNamePattern(

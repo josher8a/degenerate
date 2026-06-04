@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/AccessProtectedDatabaseBehindCloudflareTunnel
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessProtectedDatabaseBehindCloudflareTunnel {const AccessProtectedDatabaseBehindCloudflareTunnel({required this.accessClientId, required this.accessClientSecret, required this.host, });
+
+factory AccessProtectedDatabaseBehindCloudflareTunnel.fromJson(Map<String, dynamic> json) { return AccessProtectedDatabaseBehindCloudflareTunnel(
+  accessClientId: json['access_client_id'] as String,
+  accessClientSecret: json['access_client_secret'] as String,
+  host: json['host'] as String,
+); }
+
+/// Defines the Client ID of the Access token to use when connecting to the origin database.
+/// 
+/// Example: `'0123456789abcdef0123456789abcdef.access'`
+final String accessClientId;
+
+/// Defines the Client Secret of the Access Token to use when connecting to the origin database. The API never returns this write-only value.
+/// 
+/// Example: `'0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef'`
+final String accessClientSecret;
+
+/// Defines the host (hostname or IP) of your origin database.
+/// 
+/// Example: `'database.example.com'`
+final String host;
+
+Map<String, dynamic> toJson() { return {
+  'access_client_id': accessClientId,
+  'access_client_secret': accessClientSecret,
+  'host': host,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_client_id') && json['access_client_id'] is String &&
+      json.containsKey('access_client_secret') && json['access_client_secret'] is String &&
+      json.containsKey('host') && json['host'] is String; } 
+AccessProtectedDatabaseBehindCloudflareTunnel copyWith({String? accessClientId, String? accessClientSecret, String? host, }) { return AccessProtectedDatabaseBehindCloudflareTunnel(
+  accessClientId: accessClientId ?? this.accessClientId,
+  accessClientSecret: accessClientSecret ?? this.accessClientSecret,
+  host: host ?? this.host,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is AccessProtectedDatabaseBehindCloudflareTunnel &&
+          accessClientId == other.accessClientId &&
+          accessClientSecret == other.accessClientSecret &&
+          host == other.host;
+
+@override int get hashCode => Object.hash(accessClientId, accessClientSecret, host);
+
+@override String toString() => 'AccessProtectedDatabaseBehindCloudflareTunnel(accessClientId: $accessClientId, accessClientSecret: $accessClientSecret, host: $host)';
+
+ }

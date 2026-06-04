@@ -1252,7 +1252,6 @@ void main() {
 
     test(
       'multiple refs merged into IrObject',
-      skip: 'Needs flattener-level ref resolution',
       () {
         final schemas = <String, dynamic>{
           'HasName': {

@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleMergeQueue
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_merge_queue/repository_rule_merge_queue_parameters.dart';@immutable final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
-
-factory RepositoryRuleMergeQueueType.fromJson(String json) { return switch (json) {
-  'merge_queue' => mergeQueue,
-  _ => RepositoryRuleMergeQueueType._(json),
-}; }
-
-static const RepositoryRuleMergeQueueType mergeQueue = RepositoryRuleMergeQueueType._('merge_queue');
-
-static const List<RepositoryRuleMergeQueueType> values = [mergeQueue];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'merge_queue' => 'mergeQueue',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleMergeQueueType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleMergeQueueType($value)';
-
- }
-/// Merges must be performed via a merge queue.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_merge_queue/repository_rule_merge_queue_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_merge_queue/repository_rule_merge_queue_type.dart';/// Merges must be performed via a merge queue.
 @immutable final class RepositoryRuleMergeQueue {const RepositoryRuleMergeQueue({required this.type, this.parameters, });
 
 factory RepositoryRuleMergeQueue.fromJson(Map<String, dynamic> json) { return RepositoryRuleMergeQueue(

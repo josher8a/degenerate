@@ -1,9 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/response_stream_options.dart';@immutable final class CreateResponse {const CreateResponse({this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_stream_options.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';@immutable final class CreateResponse {const CreateResponse({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
 
 factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateResponse(
+  previousResponseId: json['previous_response_id'] as String?,
+  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),) : null,
+  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
+  background: json['background'] as bool?,
+  maxOutputTokens: json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null,
+  maxToolCalls: json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null,
+  text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
+  toolChoice: json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  truncation: json['truncation'] != null ? Truncation.fromJson(json['truncation'] as String) : null,
   input: json['input'] != null ? OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => IncludeEnum.fromJson(e as String)).toList(),
   parallelToolCalls: json['parallel_tool_calls'] as bool?,
@@ -14,6 +25,51 @@ factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateRespon
   conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationParam2.fromJson(v as Map<String, dynamic>),) : null,
   contextManagement: (json['context_management'] as List<dynamic>?)?.map((e) => ContextManagementParam.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
+
+/// The unique ID of the previous response to the model. Use this to
+/// create multi-turn conversations. Learn more about
+/// [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
+/// 
+final String? previousResponseId;
+
+/// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI
+/// offers a wide range of models with different capabilities, performance
+/// characteristics, and price points. Refer to the [model guide](/docs/models)
+/// to browse and compare available models.
+/// 
+final ModelIdsResponses? model;
+
+final Reasoning? reasoning;
+
+/// Whether to run the model response in the background.
+/// [Learn more](/docs/guides/background).
+/// 
+final bool? background;
+
+/// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+/// 
+final int? maxOutputTokens;
+
+/// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
+/// 
+final int? maxToolCalls;
+
+final ResponseTextParam? text;
+
+final List<Tool>? tools;
+
+final ToolChoiceParam? toolChoice;
+
+final Prompt? prompt;
+
+/// The truncation strategy to use for the model response.
+/// - `auto`: If the input to this Response exceeds
+///   the model's context window size, the model will truncate the
+///   response to fit the context window by dropping items from the beginning of the conversation.
+/// - `disabled` (default): If the input size will exceed the context window
+///   size for a model, the request will fail with a 400 error.
+/// 
+final Truncation? truncation;
 
 final InputParam? input;
 
@@ -60,6 +116,17 @@ final ConversationParam? conversation;
 final List<ContextManagementParam>? contextManagement;
 
 Map<String, dynamic> toJson() { return {
+  'previous_response_id': ?previousResponseId,
+  if (model != null) 'model': model?.toJson(),
+  if (reasoning != null) 'reasoning': reasoning?.toJson(),
+  'background': ?background,
+  'max_output_tokens': ?maxOutputTokens,
+  'max_tool_calls': ?maxToolCalls,
+  if (text != null) 'text': text?.toJson(),
+  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
+  if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
+  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (truncation != null) 'truncation': truncation?.toJson(),
   if (input != null) 'input': input?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
   'parallel_tool_calls': ?parallelToolCalls,
@@ -70,7 +137,7 @@ Map<String, dynamic> toJson() { return {
   if (conversation != null) 'conversation': conversation?.toJson(),
   if (contextManagement != null) 'context_management': contextManagement?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
 final contextManagement$ = contextManagement;
@@ -78,7 +145,18 @@ if (contextManagement$ != null) {
   if (contextManagement$.isEmpty) { errors.add('contextManagement: must have >= 1 items'); }
 }
 return errors; } 
-CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
+CreateResponse copyWith({String? Function()? previousResponseId, ModelIdsResponses? Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
+  previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
+  model: model != null ? model() : this.model,
+  reasoning: reasoning != null ? reasoning() : this.reasoning,
+  background: background != null ? background() : this.background,
+  maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
+  maxToolCalls: maxToolCalls != null ? maxToolCalls() : this.maxToolCalls,
+  text: text != null ? text() : this.text,
+  tools: tools != null ? tools() : this.tools,
+  toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
+  prompt: prompt != null ? prompt() : this.prompt,
+  truncation: truncation != null ? truncation() : this.truncation,
   input: input != null ? input() : this.input,
   include: include != null ? include() : this.include,
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
@@ -91,6 +169,17 @@ CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Funct
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateResponse &&
+          previousResponseId == other.previousResponseId &&
+          model == other.model &&
+          reasoning == other.reasoning &&
+          background == other.background &&
+          maxOutputTokens == other.maxOutputTokens &&
+          maxToolCalls == other.maxToolCalls &&
+          text == other.text &&
+          listEquals(tools, other.tools) &&
+          toolChoice == other.toolChoice &&
+          prompt == other.prompt &&
+          truncation == other.truncation &&
           input == other.input &&
           listEquals(include, other.include) &&
           parallelToolCalls == other.parallelToolCalls &&
@@ -101,8 +190,8 @@ CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Funct
           conversation == other.conversation &&
           listEquals(contextManagement, other.contextManagement);
 
-@override int get hashCode => Object.hash(input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const []));
+@override int get hashCode => Object.hash(previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation, input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const []));
 
-@override String toString() => 'CreateResponse(\n  input: $input,\n  include: $include,\n  parallelToolCalls: $parallelToolCalls,\n  store: $store,\n  instructions: $instructions,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  conversation: $conversation,\n  contextManagement: $contextManagement,\n)';
+@override String toString() => 'CreateResponse(\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  input: $input,\n  include: $include,\n  parallelToolCalls: $parallelToolCalls,\n  store: $store,\n  instructions: $instructions,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  conversation: $conversation,\n  contextManagement: $contextManagement,\n)';
 
  }

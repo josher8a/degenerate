@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SmartTieredCacheApi" (3 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_base.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_result_object.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch.dart';/// SmartTieredCacheApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_base.dart';import 'package:pub_cloudflare/models/cache_rules_cache_reserve_response_value/cache_rules_cache_reserve_response_value_result.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch.dart';/// SmartTieredCacheApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class SmartTieredCacheApi with ApiExecutor {const SmartTieredCacheApi(this
 /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
 ///
 /// `GET /zones/{zone_id}/cache/tiered_cache_smart_topology_enable`
-Future<ApiResult<CacheRulesResultObject?, Never>> smartTieredCacheGetSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesCacheReserveResponseValueResult?, Never>> smartTieredCacheGetSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesCacheReserveResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -36,7 +36,7 @@ return execute(
 /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
 ///
 /// `PATCH /zones/{zone_id}/cache/tiered_cache_smart_topology_enable`
-Future<ApiResult<CacheRulesResultObject?, Never>> smartTieredCachePatchSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, required CacheRulesSmartTieredCachePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesCacheReserveResponseValueResult?, Never>> smartTieredCachePatchSmartTieredCacheSetting({required CacheRulesIdentifier zoneId, required CacheRulesSmartTieredCachePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,7 +51,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? CacheRulesResultObject.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? CacheRulesCacheReserveResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

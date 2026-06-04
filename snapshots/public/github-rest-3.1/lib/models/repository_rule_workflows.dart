@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleWorkflows
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_workflows/repository_rule_workflows_parameters.dart';@immutable final class RepositoryRuleWorkflowsType {const RepositoryRuleWorkflowsType._(this.value);
-
-factory RepositoryRuleWorkflowsType.fromJson(String json) { return switch (json) {
-  'workflows' => workflows,
-  _ => RepositoryRuleWorkflowsType._(json),
-}; }
-
-static const RepositoryRuleWorkflowsType workflows = RepositoryRuleWorkflowsType._('workflows');
-
-static const List<RepositoryRuleWorkflowsType> values = [workflows];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'workflows' => 'workflows',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleWorkflowsType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleWorkflowsType($value)';
-
- }
-/// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_workflows/repository_rule_workflows_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_workflows/repository_rule_workflows_type.dart';/// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
 @immutable final class RepositoryRuleWorkflows {const RepositoryRuleWorkflows({required this.type, this.parameters, });
 
 factory RepositoryRuleWorkflows.fromJson(Map<String, dynamic> json) { return RepositoryRuleWorkflows(

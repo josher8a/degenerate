@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRulePullRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_pull_request/repository_rule_pull_request_parameters.dart';@immutable final class RepositoryRulePullRequestType {const RepositoryRulePullRequestType._(this.value);
-
-factory RepositoryRulePullRequestType.fromJson(String json) { return switch (json) {
-  'pull_request' => pullRequest,
-  _ => RepositoryRulePullRequestType._(json),
-}; }
-
-static const RepositoryRulePullRequestType pullRequest = RepositoryRulePullRequestType._('pull_request');
-
-static const List<RepositoryRulePullRequestType> values = [pullRequest];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'pull_request' => 'pullRequest',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRulePullRequestType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRulePullRequestType($value)';
-
- }
-/// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_pull_request/repository_rule_pull_request_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_pull_request/repository_rule_pull_request_type.dart';/// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
 @immutable final class RepositoryRulePullRequest {const RepositoryRulePullRequest({required this.type, this.parameters, });
 
 factory RepositoryRulePullRequest.fromJson(Map<String, dynamic> json) { return RepositoryRulePullRequest(

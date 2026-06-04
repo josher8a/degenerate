@@ -1,36 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleTagNamePattern
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleTagNamePatternType {const RepositoryRuleTagNamePatternType._(this.value);
-
-factory RepositoryRuleTagNamePatternType.fromJson(String json) { return switch (json) {
-  'tag_name_pattern' => tagNamePattern,
-  _ => RepositoryRuleTagNamePatternType._(json),
-}; }
-
-static const RepositoryRuleTagNamePatternType tagNamePattern = RepositoryRuleTagNamePatternType._('tag_name_pattern');
-
-static const List<RepositoryRuleTagNamePatternType> values = [tagNamePattern];
-
-final String value;
-
-String toJson() { return value; } 
-/// The Dart identifier name for this value, or the raw value if unknown.
-String get name { return switch (value) {
-  'tag_name_pattern' => 'tagNamePattern',
-  _ => value,
-}; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleTagNamePatternType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleTagNamePatternType($value)';
-
- }
-/// Parameters to be used for the tag_name_pattern rule
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';import 'package:pub_github_rest_3_1/models/repository_rule_tag_name_pattern/repository_rule_tag_name_pattern_type.dart';/// Parameters to be used for the tag_name_pattern rule
 @immutable final class RepositoryRuleTagNamePattern {const RepositoryRuleTagNamePattern({required this.type, this.parameters, });
 
 factory RepositoryRuleTagNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleTagNamePattern(

@@ -1,0 +1,28 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: #/components/schemas/BrowserIsolationPermissionsApplication
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policy_link.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/access_app_req_embedded_policies_policies.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/policies_variant3.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';@immutable final class BrowserIsolationPermissionsApplication {const BrowserIsolationPermissionsApplication({this.policies});
+
+factory BrowserIsolationPermissionsApplication.fromJson(Map<String, dynamic> json) { return BrowserIsolationPermissionsApplication(
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessAppPolicyLink.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasUuid.fromJson(v as String), fromC: (v) => PoliciesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
+); }
+
+/// The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.
+final List<AccessAppReqEmbeddedPoliciesPolicies>? policies;
+
+Map<String, dynamic> toJson() { return {
+  if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'policies'}.contains(key)); } 
+BrowserIsolationPermissionsApplication copyWith({List<AccessAppReqEmbeddedPoliciesPolicies>? Function()? policies}) { return BrowserIsolationPermissionsApplication(
+  policies: policies != null ? policies() : this.policies,
+); } 
+@override bool operator ==(Object other) => identical(this, other) ||
+      other is BrowserIsolationPermissionsApplication &&
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hashAll(policies ?? const []);
+
+@override String toString() => 'BrowserIsolationPermissionsApplication(policies: $policies)';
+
+ }

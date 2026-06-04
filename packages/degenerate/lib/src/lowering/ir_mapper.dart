@@ -342,8 +342,11 @@ final class IrMapper {
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
+    // Resolve $ref entries inside allOf so the flattener can merge properties.
+    final preResolved = _resolveAllOfRefs(schema);
+
     // Flatten allOf before further processing.
-    final flattened = _flattener.flatten(schema);
+    final flattened = _flattener.flatten(preResolved);
 
     // After flattening, check for $ref surfaced from allOf.
     if (flattened.containsKey(r'$ref')) {
@@ -1039,6 +1042,39 @@ final class IrMapper {
   }
 
   // ─── Utilities ────────────────────────────────────────────────
+
+  /// Pre-resolve `$ref` entries inside an `allOf` array so the flattener can
+  /// merge their properties. Only activates when **multiple** entries are
+  /// pure `$ref`s — a single ref mixed with inline schemas is handled
+  /// downstream by `_resolveAllOfRef` / `_trySingleRefShortcut`.
+  Map<String, dynamic> _resolveAllOfRefs(Map<String, dynamic> schema) {
+    final allOf = schema['allOf'];
+    if (allOf is! List || allOf.length < 2) return schema;
+    final refCount = allOf.where((sub) =>
+        sub is Map<String, dynamic> &&
+        sub.containsKey(r'$ref') &&
+        sub.length == 1).length;
+    if (refCount < 2) return schema;
+    var changed = false;
+    final resolved = <dynamic>[];
+    for (final sub in allOf) {
+      if (sub is Map<String, dynamic> &&
+          sub.containsKey(r'$ref') &&
+          sub.length == 1) {
+        final refPath = sub[r'$ref'] as String;
+        final rawName = _extractRefName(refPath);
+        final target = _rawSchemas[rawName];
+        if (target is Map<String, dynamic>) {
+          resolved.add(target);
+          changed = true;
+          continue;
+        }
+      }
+      resolved.add(sub);
+    }
+    if (!changed) return schema;
+    return {...schema, 'allOf': resolved};
+  }
 
   /// Handle a `$ref` surfaced from allOf flattening. Returns an [IrTypeRef]
   /// if the result is a pure ref alias; returns `null` (and mutates
