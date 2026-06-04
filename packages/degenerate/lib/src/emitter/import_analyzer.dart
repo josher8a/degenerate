@@ -66,18 +66,16 @@ analyzeApiImports(
       _collectTopLevelTypeName(param.type, names);
       if (isBytesType(param.type)) needsTypedData = true;
     }
-    if (op.requestBody != null && op.requestBody!.content.isNotEmpty) {
-      final bodyContent = preferredContent(op.requestBody!.content)!;
+    if (op.requestBody case final body? when body.content.isNotEmpty) {
+      final bodyContent = preferredContent(body.content)!;
       if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
       final schema = bodyContent.$2.schema;
       _collectTopLevelTypeName(schema, names);
       if (isBytesType(schema)) needsTypedData = true;
     }
     for (final code in [200, 201, 202, 203, 204]) {
-      final resp = op.responses[code];
-      if (resp != null) {
-        final content = preferredContent(resp.content);
-        if (content != null) {
+      if (op.responses[code] case final resp?) {
+        if (preferredContent(resp.content) case final content?) {
           if (isJsonLikeMediaType(content.$1)) needsConvert = true;
           final schema = maybeUnwrap(content.$2.schema);
           _collectTopLevelTypeName(schema, names, ctx);
@@ -86,20 +84,18 @@ analyzeApiImports(
         }
       }
     }
-    final streaming = streamingContent(op);
-    if (streaming != null) {
+    if (streamingContent(op) case final streaming?) {
       needsConvert = true;
       final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
       _collectTopLevelTypeName(eventType, names, ctx);
     }
-    final errorUnion = errorUnionMap[op.operationId];
-    if (errorUnion != null) {
+    if (errorUnionMap[op.operationId] case final errorUnion?) {
       final errorClassName = errorUnion.resolvedClassName;
       names.add(errorClassName);
     } else {
       (String, IrMediaType)? errorContent;
-      if (op.defaultResponse != null) {
-        errorContent = preferredContent(op.defaultResponse!.content);
+      if (op.defaultResponse case final defaultResp?) {
+        errorContent = preferredContent(defaultResp.content);
       }
       if (errorContent == null) {
         for (final MapEntry(:key, :value) in op.responses.entries) {

@@ -629,8 +629,8 @@ final class Generator {
         for (final p in op.parameters) {
           collectTypeRefs(p.type, seeds);
         }
-        if (op.requestBody != null) {
-          for (final c in op.requestBody!.content.values) {
+        if (op.requestBody case final body?) {
+          for (final c in body.content.values) {
             collectTypeRefs(c.schema, seeds);
           }
         }
@@ -639,8 +639,8 @@ final class Generator {
             collectTypeRefs(c.schema, seeds);
           }
         }
-        if (op.defaultResponse != null) {
-          for (final c in op.defaultResponse!.content.values) {
+        if (op.defaultResponse case final defaultResp?) {
+          for (final c in defaultResp.content.values) {
             collectTypeRefs(c.schema, seeds);
           }
         }

@@ -65,9 +65,8 @@ final class ModelEmitter {
 
   List<String> _fieldDocs(IrField f) {
     final parts = <String>[];
-    if (f.description != null) parts.add(f.description!);
-    if (f.example != null) {
-      final ex = f.example;
+    if (f.description case final desc?) parts.add(desc);
+    if (f.example case final ex?) {
       final formatted = ex is String ? "'$ex'" : '$ex';
       parts.add('Example: `$formatted`');
     }
@@ -158,15 +157,13 @@ final class ModelEmitter {
         .join('\n');
 
     // Append overflow map extraction if additionalProperties is defined.
-    if (model.additionalProperties != null) {
+    if (model.additionalProperties case final valueType?) {
       final knownKeysList = model.fields
           .map((f) => dartStringLiteral(f.originalName))
           .toList();
-      // Use explicit <String>{} to avoid Dart parsing empty const {} as a Map.
       final knownKeys = knownKeysList.isEmpty
           ? '<String>{}'
           : '{${knownKeysList.join(', ')}}';
-      final valueType = model.additionalProperties!;
       final isDynamic =
           valueType is IrPrimitive && valueType.kind == PrimitiveKind.dynamic_;
       if (isDynamic) {
@@ -443,8 +440,8 @@ final class ModelEmitter {
 
     final allParams = [...params];
     var allAssignments = assignments;
-    if (model.additionalProperties != null) {
-      final valueTypeName = irTypeName(model.additionalProperties!);
+    if (model.additionalProperties case final ap?) {
+      final valueTypeName = irTypeName(ap);
       allParams.add(
         Parameter(
           (p) => p

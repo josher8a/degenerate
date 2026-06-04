@@ -20,7 +20,7 @@ final class RoundtripEmitter {
   RoundtripEmitter(this.types, this.packageName)
     : _registry = {
         for (final t in types)
-          if (t.emittableName != null) t.emittableName!: t,
+          ?t.emittableName: t,
       };
 
   late final _overlap = VariantOverlapAnalyzer(_registry);
