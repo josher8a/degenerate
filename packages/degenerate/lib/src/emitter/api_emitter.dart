@@ -5,6 +5,18 @@ import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
+/// Shared request context for an operation: partitioned parameters, optional
+/// request body, and its media type. Threaded through [ApiEmitter]'s body
+/// builders and the request prelude writer.
+typedef _RequestContext = ({
+  List<IrParameter> pathParams,
+  List<IrParameter> queryParams,
+  List<IrParameter> headerParams,
+  List<IrParameter> cookieParams,
+  (String, IrMediaType)? requestBodyContent,
+  IrType? bodyType,
+});
+
 /// Emits an API client class from an [IrApi].
 ///
 /// Each API tag becomes a `final class` with methods for each operation,
@@ -227,14 +239,17 @@ final class ApiEmitter {
   /// and streaming operation-body builders.
   bool _writeRequestPrelude(
     StringBuffer buf,
-    IrOperation op, {
-    required List<IrParameter> pathParams,
-    required List<IrParameter> queryParams,
-    required List<IrParameter> headerParams,
-    required List<IrParameter> cookieParams,
-    (String, IrMediaType)? requestBodyContent,
-    IrType? bodyType,
-  }) {
+    IrOperation op,
+    _RequestContext reqCtx,
+  ) {
+    final (
+      :pathParams,
+      :queryParams,
+      :headerParams,
+      :cookieParams,
+      :requestBodyContent,
+      :bodyType,
+    ) = reqCtx;
     final httpMethod = _httpMethodString(op);
 
     // Build path with parameter interpolation (URL-encoded).
@@ -381,18 +396,21 @@ final class ApiEmitter {
     final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
 
     // Build method body
-    final bodyCode = _buildOperationBody(
-      op,
-      returnType,
-      successResponseContent: successResponseContent,
-      errorResponseContent: errorResponseContent,
-      errorUnion: errorUnion,
-      requestBodyContent: requestBodyContent,
-      bodyType: bodyType,
+    final reqCtx = (
       pathParams: parts.path,
       queryParams: parts.query,
       headerParams: parts.header,
       cookieParams: parts.cookie,
+      requestBodyContent: requestBodyContent,
+      bodyType: bodyType,
+    );
+    final bodyCode = _buildOperationBody(
+      op,
+      returnType,
+      reqCtx,
+      successResponseContent: successResponseContent,
+      errorResponseContent: errorResponseContent,
+      errorUnion: errorUnion,
       unwrappedField: unwrapResult.unwrappedField,
       unwrappedFieldIsOptional: unwrappedFieldIsOptional,
     );
@@ -433,30 +451,16 @@ final class ApiEmitter {
 
   String _buildOperationBody(
     IrOperation op,
-    IrType? returnType, {
-    required List<IrParameter> pathParams,
-    required List<IrParameter> queryParams,
-    required List<IrParameter> headerParams,
-    required List<IrParameter> cookieParams,
+    IrType? returnType,
+    _RequestContext reqCtx, {
     (String, IrMediaType)? successResponseContent,
     (String, IrMediaType)? errorResponseContent,
     ErrorUnionInfo? errorUnion,
-    (String, IrMediaType)? requestBodyContent,
-    IrType? bodyType,
     String? unwrappedField,
     bool unwrappedFieldIsOptional = false,
   }) {
     final buf = StringBuffer();
-    if (!_writeRequestPrelude(
-      buf,
-      op,
-      pathParams: pathParams,
-      queryParams: queryParams,
-      headerParams: headerParams,
-      cookieParams: cookieParams,
-      requestBodyContent: requestBodyContent,
-      bodyType: bodyType,
-    )) {
+    if (!_writeRequestPrelude(buf, op, reqCtx)) {
       return buf.toString();
     }
 
@@ -894,16 +898,19 @@ final class ApiEmitter {
     final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
     final eventTypeName = irTypeName(eventType);
 
-    final bodyCode = _buildStreamingOperationBody(
-      op,
-      eventType,
-      streamKind: streamKind,
-      requestBodyContent: requestBodyContent,
-      bodyType: bodyType,
+    final reqCtx = (
       pathParams: parts.path,
       queryParams: parts.query,
       headerParams: parts.header,
       cookieParams: parts.cookie,
+      requestBodyContent: requestBodyContent,
+      bodyType: bodyType,
+    );
+    final bodyCode = _buildStreamingOperationBody(
+      op,
+      eventType,
+      reqCtx,
+      streamKind: streamKind,
     );
 
     final docs = <String>[];
@@ -928,26 +935,12 @@ final class ApiEmitter {
 
   String _buildStreamingOperationBody(
     IrOperation op,
-    IrType eventType, {
-    required List<IrParameter> pathParams,
-    required List<IrParameter> queryParams,
-    required List<IrParameter> headerParams,
-    required List<IrParameter> cookieParams,
+    IrType eventType,
+    _RequestContext reqCtx, {
     StreamKind streamKind = StreamKind.sse,
-    (String, IrMediaType)? requestBodyContent,
-    IrType? bodyType,
   }) {
     final buf = StringBuffer();
-    if (!_writeRequestPrelude(
-      buf,
-      op,
-      pathParams: pathParams,
-      queryParams: queryParams,
-      headerParams: headerParams,
-      cookieParams: cookieParams,
-      requestBodyContent: requestBodyContent,
-      bodyType: bodyType,
-    )) {
+    if (!_writeRequestPrelude(buf, op, reqCtx)) {
       return buf.toString();
     }
 
