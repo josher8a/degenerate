@@ -301,7 +301,7 @@ final class DiscriminatedUnionEmitter {
                 ..required = fieldIsRequiredInCtor(f)
                 ..type = irTypeToReference(
                   f.type,
-                  forceNullable: !fieldIsRequiredInCtor(f),
+                  forceNullable: !f.isRequired && !fieldHasDefault(f),
                 )
                 ..defaultTo = fieldDefaultCode(f),
             ),
