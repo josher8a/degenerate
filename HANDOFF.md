@@ -1774,3 +1774,27 @@ Structural analysis of discriminated unions now lives entirely in `union_analyze
 **Accidental complexity — remaining after batch 10:**
 
 H1 is resolved. H2–H4, M1–M7, L1–L6 from the fresh sweep remain unchanged — they are localized issues (duplication, verbosity, missing helpers) that don't cross layer boundaries.
+
+---
+
+### Candidate improvements — resolution (batch 11)
+
+**Batch 11: Add `IrType.unionVariants` getter, collapse double-dispatch.**
+
+Added a `unionVariants` getter on the `IrType` sealed base that returns the variants list for `IrUntaggedUnion` and `IrAnyOf`, `null` for all other types. This collapses the double-dispatch pattern where both union kinds must always be handled identically with the same `isOneOfEligible` guard.
+
+| # | Target | Status | Notes |
+|---|--------|--------|-------|
+| 2 | `unionVariants` getter + collapse double-dispatch | **Done** | 7 double-arm sites collapsed into single expressions; 2 merged into or-patterns. |
+
+**Changes (−46 lines net):**
+
+| File | Delta | What |
+|------|------:|------|
+| `ir/ir_types.dart` | +9 | `unionVariants` getter on sealed base |
+| `emitter/emit_utils.dart` | −19 | 3 double-dispatch switches → `unionVariants` + `isOneOfTypedef` one-liners |
+| `emitter/import_analyzer.dart` | −27 | `IrUntaggedUnion`/`IrAnyOf` cases merged via or-pattern; `IrTypeRef` OneOf check simplified |
+| `emitter/file_emitter.dart` | −2 | OneOf typedef check merged into single or-pattern arm |
+| `lowering/union_analyzer.dart` | −5 | `_isSpreadable` and `isUnionField` use `unionVariants` |
+
+Remaining `isOneOfEligible`/`isOneOfTypedef` calls: ~16 (down from 36). The remaining ones either have genuinely different logic per union kind (`IrAnyOf` non-typedef path in import_analyzer) or are already single-arm checks on a concrete type.
