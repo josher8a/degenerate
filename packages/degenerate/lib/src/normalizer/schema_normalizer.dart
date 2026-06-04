@@ -1,12 +1,10 @@
-import 'package:degenerate/src/lowering/ir_mapper.dart' show IrMapper;
-
-import 'package:degenerate/src/naming.dart';
+import 'package:degenerate/src/dart_names.dart';
 
 /// Result of normalizing OpenAPI schemas before IR mapping.
 ///
 /// Contains all the metadata computed during the pre-scan phase:
 /// name mappings, discriminator properties, and the set of allocated names.
-/// This context is passed to [IrMapper] so it can perform pure schema→IR
+/// This context is passed to the IR mapper so it can perform pure schema→IR
 /// translation without worrying about name conflicts or discriminator
 /// detection.
 final class NormalizationContext {

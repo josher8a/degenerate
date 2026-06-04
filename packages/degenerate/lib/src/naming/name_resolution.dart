@@ -14,8 +14,8 @@
 /// survivor's final name) plus per-survivor paths for folder placement.
 library;
 
+import 'package:degenerate/src/dart_names.dart' show segmentsOf;
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart' show segmentsOf;
 import 'package:degenerate/src/naming/structural_dedup.dart';
 import 'package:degenerate/src/naming/suffix_resolver.dart';
 

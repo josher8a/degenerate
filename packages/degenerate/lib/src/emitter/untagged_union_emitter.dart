@@ -1,8 +1,8 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart';
 
 /// Emits a sealed class with try-parse from an [IrUntaggedUnion].
 final class UntaggedUnionEmitter {

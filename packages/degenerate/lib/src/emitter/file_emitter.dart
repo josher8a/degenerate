@@ -1,4 +1,5 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/dart_names.dart' show sanitizeFieldName, toTypeName;
 import 'package:degenerate/src/emitter/api_emitter.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
@@ -13,8 +14,6 @@ import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/lowering/union_analyzer.dart';
-import 'package:degenerate/src/naming.dart' show sanitizeFieldName, toTypeName;
 import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Type names exported by `degenerate_runtime` that may collide with

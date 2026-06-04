@@ -858,3 +858,69 @@ enum PrimitiveKind {
         bytes => 'Uint8List',
       };
 }
+
+// ─── IR predicates ────────────────────────────────────────
+
+/// Get the Dart type name string for an [IrType].
+String irTypeName(IrType type) {
+  return switch (type) {
+    IrPrimitive(:final kind) => kind.dartName,
+    IrList(:final items) => 'List<${irTypeName(items)}>',
+    IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
+    _ => type.name!,
+  };
+}
+
+/// Whether a union type should be emitted as a `typedef X = OneOfN<...>`
+/// instead of a sealed class hierarchy.
+bool isOneOfEligible(List<IrType> variants) =>
+    variants.length >= 2 && variants.length <= 9;
+
+// ─── Discriminated union metadata ─────────────────────────
+
+/// Pre-computed metadata for a single variant in a discriminated union.
+final class VariantInfo {
+  const VariantInfo({
+    required this.resolvedType,
+    required this.isSpreadable,
+    this.payloadFields = const [],
+    this.discFieldType,
+    this.discDefault,
+  });
+
+  /// The variant type after resolving any [IrTypeRef] through the registry.
+  final IrType resolvedType;
+
+  /// Whether the variant's `toJson()` output is a map that can be spread
+  /// into the parent union's JSON (objects, discriminated unions, sealed
+  /// non-OneOf unions). `false` for OneOf typedefs, lists, and primitives.
+  final bool isSpreadable;
+
+  /// The variant object's fields minus the discriminator, or empty if the
+  /// variant does not resolve to an [IrObject].
+  final List<IrField> payloadFields;
+
+  /// The type of the discriminator field within the variant's payload object,
+  /// or `null` if the variant is not an object or has no such field.
+  final IrType? discFieldType;
+
+  /// The default value of the discriminator field, or `null` if none.
+  final String? discDefault;
+}
+
+/// Pre-computed metadata for a discriminated union, replacing the analysis
+/// that emitters previously performed by reaching back into the type registry.
+final class DiscUnionMetadata {
+  const DiscUnionMetadata({
+    this.commonFields = const [],
+    this.variants = const {},
+  });
+
+  /// Fields shared (same Dart name and type) by every variant, hoisted onto
+  /// the sealed base as getters. Empty when variants share no fields or when
+  /// any variant cannot be resolved to an object.
+  final List<IrField> commonFields;
+
+  /// Per-variant metadata keyed by discriminator value.
+  final Map<String, VariantInfo> variants;
+}

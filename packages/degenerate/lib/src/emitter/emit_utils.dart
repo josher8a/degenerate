@@ -1,8 +1,7 @@
 import 'package:code_builder/code_builder.dart';
-
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart';
 
 // ─── EmitContext convenience methods ───────────────────
 // Defined as an extension here (rather than on EmitContext itself) to avoid
@@ -118,15 +117,6 @@ Reference _maybeNullable(Reference ref, bool nullable) {
   );
 }
 
-/// Get the Dart type name string for an [IrType].
-String irTypeName(IrType type) {
-  return switch (type) {
-    IrPrimitive(:final kind) => _primitiveKindName(kind),
-    IrList(:final items) => 'List<${irTypeName(items)}>',
-    IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
-    _ => type.name!,
-  };
-}
 
 /// Build the fromJson expression string for a given [IrType].
 /// [accessor] is the expression that accesses the JSON value,
@@ -408,11 +398,6 @@ String _defaultPrimitiveToString(PrimitiveKind kind, String accessor) =>
 // ─── OneOf helpers ──────────────────────────────────────
 
 const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
-
-/// Whether a union type should be emitted as a `typedef X = OneOfN<...>`
-/// instead of a sealed class hierarchy.
-bool isOneOfEligible(List<IrType> variants) =>
-    variants.length >= 2 && variants.length <= 9;
 
 /// Strip angle brackets, commas, and whitespace from type names to produce
 /// a safe Dart identifier fragment.

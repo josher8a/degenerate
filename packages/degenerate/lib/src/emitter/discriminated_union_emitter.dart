@@ -1,9 +1,8 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/lowering/union_analyzer.dart';
-import 'package:degenerate/src/naming.dart';
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 final class DiscriminatedUnionEmitter {
@@ -93,7 +92,7 @@ final class DiscriminatedUnionEmitter {
 
   List<String> _buildDocs() => docCommentLines(union.description);
 
-  /// Pre-computed metadata for this union, produced by [analyzeDiscriminatedUnions].
+  /// Pre-computed metadata for this union, produced by `analyzeDiscriminatedUnions`.
   DiscUnionMetadata get _meta =>
       ctx.unionMetadata[union.name] ?? const DiscUnionMetadata();
 

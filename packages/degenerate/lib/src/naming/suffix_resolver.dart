@@ -10,7 +10,7 @@
 /// and no inline type may shorten onto one.
 library;
 
-import 'package:degenerate/src/naming.dart' show segmentsOf;
+import 'package:degenerate/src/dart_names.dart' show segmentsOf;
 
 /// Resolve final type names from segment paths.
 ///

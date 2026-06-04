@@ -1,8 +1,8 @@
 import 'dart:convert';
 
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
-import 'package:degenerate/src/naming.dart';
 import 'package:degenerate/src/normalizer/allof_flattener.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 

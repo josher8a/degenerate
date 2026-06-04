@@ -6,7 +6,9 @@ library;
 
 import 'dart:io';
 
+import 'package:degenerate/src/dart_names.dart' show toTypeName;
 import 'package:degenerate/src/emitter/file_emitter.dart';
+import 'package:degenerate/src/ir/ir_rewriter.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/api_rewriter.dart';
@@ -15,8 +17,6 @@ import 'package:degenerate/src/lowering/ir_validator.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/lowering/union_analyzer.dart';
-import 'package:degenerate/src/naming.dart' show toTypeName;
-import 'package:degenerate/src/naming/ir_rewriter.dart';
 import 'package:degenerate/src/naming/name_resolution.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';

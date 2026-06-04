@@ -1,10 +1,10 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart';
 
 /// Describes a per-operation error union: the sealed class name and the
 /// status-code-to-schema mapping.

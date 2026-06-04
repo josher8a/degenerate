@@ -1,6 +1,6 @@
 import 'package:degenerate/src/emitter/emit_utils.dart'
     show enumValueName, toSnakeCase;
-import 'package:degenerate/src/naming.dart';
+import 'package:degenerate/src/dart_names.dart';
 import 'package:test/test.dart';
 
 void main() {

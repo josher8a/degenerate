@@ -1,8 +1,8 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart';
 
 /// Emits a final class with nullable variant fields from an [IrAnyOf].
 final class AnyOfEmitter {

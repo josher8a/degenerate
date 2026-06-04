@@ -1,6 +1,6 @@
+import 'package:degenerate/src/ir/ir_rewriter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
-import 'package:degenerate/src/naming/ir_rewriter.dart';
 
 /// Rewrite all type names within an API's operations through [rename].
 IrApi rewriteApiNames(IrApi api, String Function(String) rename) {

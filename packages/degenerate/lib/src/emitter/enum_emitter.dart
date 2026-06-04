@@ -1,7 +1,7 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart';
 
 /// Dart type name for an enum's wire type (value field and fromJson parameter).
 String _enumWireType(PrimitiveKind kind) => switch (kind) {

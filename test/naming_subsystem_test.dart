@@ -1,5 +1,5 @@
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming/ir_rewriter.dart';
+import 'package:degenerate/src/ir/ir_rewriter.dart';
 import 'package:degenerate/src/naming/name_resolution.dart';
 import 'package:degenerate/src/naming/structural_dedup.dart';
 import 'package:degenerate/src/naming/suffix_resolver.dart';

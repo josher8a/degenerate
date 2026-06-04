@@ -1,6 +1,6 @@
+import 'package:degenerate/src/dart_names.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
-import 'package:degenerate/src/naming.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 
 /// Converts OpenAPI path items and operations into IR operation groups.
