@@ -620,59 +620,34 @@ final class Generator {
     List<IrApi> apis,
     List<IrType> allTypes,
   ) {
-    // Build a dependency graph: type name → set of type names it references
-    final deps = <String, Set<String>>{};
-    for (final type in allTypes) {
-      final name = type.emittableName;
-      if (name == null) continue;
-      final refs = <String>{};
-      collectTypeRefs(type, refs);
-      refs.remove(name);
-      deps[name] = refs;
-    }
+    final deps = buildTypeDeps(allTypes);
 
-    // Seed with types directly referenced by API operations
-    final reachable = <String>{};
-    final queue = <String>[];
-
+    // Seed with types directly referenced by API operations.
+    final seeds = <String>{};
     for (final api in apis) {
       for (final op in api.operations) {
         for (final p in op.parameters) {
-          collectTypeRefs(p.type, reachable);
+          collectTypeRefs(p.type, seeds);
         }
         if (op.requestBody != null) {
           for (final c in op.requestBody!.content.values) {
-            collectTypeRefs(c.schema, reachable);
+            collectTypeRefs(c.schema, seeds);
           }
         }
         for (final r in op.responses.values) {
           for (final c in r.content.values) {
-            collectTypeRefs(c.schema, reachable);
+            collectTypeRefs(c.schema, seeds);
           }
         }
         if (op.defaultResponse != null) {
           for (final c in op.defaultResponse!.content.values) {
-            collectTypeRefs(c.schema, reachable);
+            collectTypeRefs(c.schema, seeds);
           }
         }
       }
     }
 
-    queue.addAll(reachable);
-
-    // BFS to find transitive dependencies
-    while (queue.isNotEmpty) {
-      final name = queue.removeLast();
-      final typeDeps = deps[name];
-      if (typeDeps == null) continue;
-      for (final dep in typeDeps) {
-        if (reachable.add(dep)) {
-          queue.add(dep);
-        }
-      }
-    }
-
-    return reachable;
+    return transitiveTypes(seeds, deps);
   }
 
   /// Collect unique string-typed path parameters across all operations,

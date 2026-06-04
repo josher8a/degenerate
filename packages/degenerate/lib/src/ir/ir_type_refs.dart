@@ -21,6 +21,38 @@ void collectTypeRefs(
   _walk(type, names, typeRegistry, walkFields, null);
 }
 
+/// Build a dependency graph: type name → set of type names it references.
+///
+/// Shared by the generator (tree-shaking) and file emitter (mini-barrels).
+Map<String, Set<String>> buildTypeDeps(List<IrType> types) {
+  final deps = <String, Set<String>>{};
+  for (final type in types) {
+    final name = type.emittableName;
+    if (name == null) continue;
+    final refs = <String>{};
+    collectTypeRefs(type, refs);
+    refs.remove(name);
+    deps[name] = refs;
+  }
+  return deps;
+}
+
+/// Compute the transitive closure of type names reachable from [seeds]
+/// through the dependency graph [deps].
+Set<String> transitiveTypes(Set<String> seeds, Map<String, Set<String>> deps) {
+  final reachable = Set<String>.from(seeds);
+  final queue = seeds.toList();
+  while (queue.isNotEmpty) {
+    final name = queue.removeLast();
+    final typeDeps = deps[name];
+    if (typeDeps == null) continue;
+    for (final dep in typeDeps) {
+      if (reachable.add(dep)) queue.add(dep);
+    }
+  }
+  return reachable;
+}
+
 void _walk(
   IrType type,
   Set<String> names,
