@@ -11,8 +11,10 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
+import 'package:degenerate/src/lowering/ir_validator.dart';
 import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
@@ -3340,5 +3342,345 @@ void main() {
     expect(extra, isEmpty,
         reason: 'Names in runtimeExportedNames but not exported by '
             'degenerate_runtime: $extra');
+  });
+
+  // ─── VariantOverlapAnalyzer / collectAmbiguityWarnings ────────
+
+  group('collectAmbiguityWarnings', () {
+    test('two structurally identical object variants produce an ambiguity warning', () {
+      // Both variants have the same required field — neither can provably reject
+      // the other's input, so the pair is ambiguous.
+      const union = IrUntaggedUnion('Ambiguous', [
+        IrObject('VarA', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['id']),
+        IrObject('VarB', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['id']),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, hasLength(1));
+      expect(warnings.first, contains('Ambiguous'));
+      expect(warnings.first, contains('ambiguous'));
+    });
+
+    test('two structurally different variants (different required keys) produce no warning', () {
+      // VarA requires "name" but VarB does not have it — VarA provably rejects
+      // VarB's input, so no ambiguity.
+      const union = IrUntaggedUnion('Distinct', [
+        IrObject('VarA', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['name']),
+        IrObject('VarB', [
+          IrField('count', 'count', IrPrimitive(PrimitiveKind.int), isRequired: true),
+        ], requiredFields: ['count']),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, isEmpty);
+    });
+
+    test('variants with different container types produce no warning', () {
+      // An object and a list can never be confused — fromThrows returns true.
+      const union = IrUntaggedUnion('ObjOrList', [
+        IrObject('Obj', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['id']),
+        IrList(IrPrimitive(PrimitiveKind.string)),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, isEmpty);
+    });
+
+    test('empty variant list produces no warning', () {
+      // collectAmbiguityWarnings skips types that are not IrUntaggedUnion.
+      final warnings = collectAmbiguityWarnings(
+        [const IrObject('Plain', [])],
+        {},
+      );
+      expect(warnings, isEmpty);
+    });
+
+    test('single-variant union produces no warning', () {
+      const union = IrUntaggedUnion('Solo', [
+        IrObject('Only', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['x']),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, isEmpty);
+    });
+
+    test('non-union types in the list are ignored', () {
+      const obj = IrObject('Obj', [
+        IrField('x', 'x', IrPrimitive(PrimitiveKind.string)),
+      ]);
+      const en = IrEnum('Status', ['a', 'b']);
+
+      final warnings = collectAmbiguityWarnings([obj, en], {});
+
+      expect(warnings, isEmpty);
+    });
+
+    test('warning message mentions ambiguous pair count', () {
+      // Three identical variants produce three pairs, all ambiguous.
+      const union = IrUntaggedUnion('Triple', [
+        IrObject('V1', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['x']),
+        IrObject('V2', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['x']),
+        IrObject('V3', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['x']),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, hasLength(1));
+      expect(warnings.first, contains('3 ambiguous variant pairs'));
+    });
+
+    test('scalar variants of different families produce no warning', () {
+      // A string variant and an int variant cannot overlap — different scalar
+      // families — so no warning.
+      const union = IrUntaggedUnion('StrOrInt', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, isEmpty);
+    });
+
+    test('scalar variants of the same family produce a warning', () {
+      // int and double both collapse to the "num" family — they overlap.
+      const union = IrUntaggedUnion('IntOrDouble', [
+        IrPrimitive(PrimitiveKind.int),
+        IrPrimitive(PrimitiveKind.double),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([union], {});
+
+      expect(warnings, hasLength(1));
+      expect(warnings.first, contains('IntOrDouble'));
+    });
+
+    test('IrAnyOf type is excluded from ambiguity analysis', () {
+      // anyOf overlap is expected by definition; collectAmbiguityWarnings only
+      // processes IrUntaggedUnion.
+      const anyOf = IrAnyOf('AnyOfType', [
+        IrObject('V1', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['x']),
+        IrObject('V2', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['x']),
+      ]);
+
+      final warnings = collectAmbiguityWarnings([anyOf], {});
+
+      expect(warnings, isEmpty);
+    });
+
+    test('variants resolved through registry are analysed correctly', () {
+      // The union holds IrTypeRef variants; the registry resolves them to
+      // the structurally-identical objects, which should trigger a warning.
+      const objA = IrObject('ObjA', [
+        IrField('val', 'val', IrPrimitive(PrimitiveKind.int), isRequired: true),
+      ], requiredFields: ['val']);
+      const objB = IrObject('ObjB', [
+        IrField('val', 'val', IrPrimitive(PrimitiveKind.int), isRequired: true),
+      ], requiredFields: ['val']);
+      const union = IrUntaggedUnion('RefUnion', [
+        IrTypeRef('ObjA'),
+        IrTypeRef('ObjB'),
+      ]);
+      final registry = <String, IrType>{'ObjA': objA, 'ObjB': objB};
+
+      final warnings = collectAmbiguityWarnings([union], registry);
+
+      expect(warnings, hasLength(1));
+      expect(warnings.first, contains('RefUnion'));
+    });
+  });
+
+  // ─── IrValidator ─────────────────────────────────────────────
+
+  group('IrValidator', () {
+    test('duplicate emittable names throw IrValidationException', () {
+      // Two IrObject types with the same name are a fatal invariant violation.
+      final types = <IrType>[
+        const IrObject('Widget', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['id']),
+        const IrObject('Widget', [
+          IrField('label', 'label', IrPrimitive(PrimitiveKind.string)),
+        ]),
+      ];
+
+      expect(
+        () => IrValidator(types, []).validate(),
+        throwsA(isA<IrValidationException>()),
+      );
+    });
+
+    test('IrValidationException message lists the duplicate name', () {
+      final types = <IrType>[
+        const IrObject('Dup', []),
+        const IrObject('Dup', []),
+      ];
+
+      try {
+        IrValidator(types, []).validate();
+        fail('Expected IrValidationException');
+      } on IrValidationException catch (e) {
+        expect(e.errors, contains('Duplicate emittable name: Dup'));
+        expect(e.toString(), contains('Dup'));
+      }
+    });
+
+    test('empty discriminated union mapping throws IrValidationException', () {
+      // A discriminated union with no variants is also a fatal error.
+      final types = <IrType>[
+        const IrDiscriminatedUnion('Empty', 'type', {}),
+      ];
+
+      expect(
+        () => IrValidator(types, []).validate(),
+        throwsA(isA<IrValidationException>()),
+      );
+    });
+
+    test('discriminated union error message names the offending type', () {
+      final types = <IrType>[
+        const IrDiscriminatedUnion('MyUnion', 'kind', {}),
+      ];
+
+      try {
+        IrValidator(types, []).validate();
+        fail('Expected IrValidationException');
+      } on IrValidationException catch (e) {
+        expect(e.errors.first, contains('MyUnion'));
+        expect(e.errors.first, contains('no variants'));
+      }
+    });
+
+    test('valid types and empty api list pass without error', () {
+      final types = <IrType>[
+        const IrObject('Pet', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.int), isRequired: true),
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['id', 'name']),
+        const IrEnum('Status', ['active', 'inactive']),
+        const IrDiscriminatedUnion('Shape', 'type', {
+          'circle': IrObject('Circle', [
+            IrField('type', 'type', IrPrimitive(PrimitiveKind.string), isRequired: true),
+            IrField('radius', 'radius', IrPrimitive(PrimitiveKind.double), isRequired: true),
+          ], requiredFields: ['type', 'radius']),
+        }),
+      ];
+
+      expect(() => IrValidator(types, []).validate(), returnsNormally);
+    });
+
+    test('valid types return empty warnings list when all refs are resolved', () {
+      final types = <IrType>[
+        const IrObject('Outer', [
+          IrField('inner', 'inner', IrTypeRef('Inner'), isRequired: true),
+        ], requiredFields: ['inner']),
+        const IrObject('Inner', [
+          IrField('val', 'val', IrPrimitive(PrimitiveKind.string), isRequired: true),
+        ], requiredFields: ['val']),
+      ];
+
+      final warnings = IrValidator(types, []).validate();
+
+      expect(warnings, isEmpty);
+    });
+
+    test('unresolved type ref in object field produces a warning', () {
+      // The field references "Missing" which is not in the type list.
+      final types = <IrType>[
+        const IrObject('Owner', [
+          IrField('pet', 'pet', IrTypeRef('Missing')),
+        ]),
+      ];
+
+      final warnings = IrValidator(types, []).validate();
+
+      expect(warnings, hasLength(1));
+      expect(warnings.first, contains('Owner.pet'));
+      expect(warnings.first, contains('Missing'));
+    });
+
+    test('multiple unresolved refs each produce a distinct warning', () {
+      final types = <IrType>[
+        const IrObject('Multi', [
+          IrField('a', 'a', IrTypeRef('TypeA')),
+          IrField('b', 'b', IrTypeRef('TypeB')),
+        ]),
+      ];
+
+      final warnings = IrValidator(types, []).validate();
+
+      expect(warnings, hasLength(2));
+      expect(warnings.any((w) => w.contains('TypeA')), isTrue);
+      expect(warnings.any((w) => w.contains('TypeB')), isTrue);
+    });
+
+    test('unresolved type ref in operation parameter produces a warning', () {
+      final apis = <IrApi>[
+        const IrApi('PetsApi', [
+          IrOperation(
+            'listPets',
+            'listPets',
+            HttpMethod.get,
+            '/pets',
+            parameters: [
+              IrParameter(
+                'filter',
+                'filter',
+                ParameterLocation.query,
+                IrTypeRef('UnknownFilter'),
+              ),
+            ],
+            responses: {200: IrResponse()},
+          ),
+        ]),
+      ];
+
+      final warnings = IrValidator([], apis).validate();
+
+      expect(warnings, hasLength(1));
+      expect(warnings.first, contains('PetsApi'));
+      expect(warnings.first, contains('listPets'));
+      expect(warnings.first, contains('filter'));
+      expect(warnings.first, contains('UnknownFilter'));
+    });
+
+    test('multiple errors from separate fatal violations are all reported', () {
+      final types = <IrType>[
+        const IrObject('Dup', []),
+        const IrObject('Dup', []),
+        const IrDiscriminatedUnion('Bad', 'type', {}),
+      ];
+
+      try {
+        IrValidator(types, []).validate();
+        fail('Expected IrValidationException');
+      } on IrValidationException catch (e) {
+        expect(e.errors.length, greaterThanOrEqualTo(2));
+      }
+    });
   });
 }

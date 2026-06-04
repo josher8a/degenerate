@@ -95,7 +95,10 @@ final class IrMapper {
     final results = <IrType>[];
     for (final MapEntry(:key, :value) in schemas.entries) {
       final irType = _lowerNamedSchema(key, value);
-      if (irType == null) continue;
+      if (irType == null) {
+        _warnings.add('Schema $key: failed to lower; skipped.');
+        continue;
+      }
       results.add(irType);
     }
 
@@ -236,7 +239,8 @@ final class IrMapper {
       return _lowerBooleanSchema(schema, nameHint: nameHint);
     }
     _warnings.add(
-      'Encountered invalid non-object schema; defaulting to dynamic.',
+      'Encountered invalid non-object schema'
+      '${nameHint != null ? ' for $nameHint' : ''}; defaulting to dynamic.',
     );
     return const IrPrimitive(PrimitiveKind.dynamic_);
   }

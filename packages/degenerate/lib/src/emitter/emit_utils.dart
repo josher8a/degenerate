@@ -223,7 +223,7 @@ String? _asTearoff(String expr, String accessor) {
   final funcName = expr.substring(0, expr.length - accessor.length - 2);
   if (funcName.isEmpty) return null;
   // Must be a simple identifier (no dots, spaces, etc.)
-  if (!RegExp(r'^[a-zA-Z_]\w*$').hasMatch(funcName)) return null;
+  if (!_simpleIdent.hasMatch(funcName)) return null;
   return funcName;
 }
 
@@ -401,7 +401,7 @@ const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 /// Strip angle brackets, commas, and whitespace from type names to produce
 /// a safe Dart identifier fragment.
-String safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
+String safeTypeName(String name) => name.replaceAll(_typeNameUnsafe, '');
 
 /// Whether a named union should become a `typedef` (eligible for OneOf and
 /// not self-referencing through its variants).
@@ -479,6 +479,13 @@ String buildOneOfParseCode(
 String variantClassName(String baseName, String variantKey) {
   return '$baseName${toPascalCase(variantKey)}';
 }
+
+final _simpleIdent = RegExp(r'^[a-zA-Z_]\w*$');
+final _typeNameUnsafe = RegExp(r'[<>,\s]');
+final _bareAngleBrackets = RegExp('<([^>]+)>');
+final _bareBrackets = RegExp(r'\[([^\]]+)\](?!\()');
+final _nonIdentChar = RegExp('[^a-zA-Z0-9_]');
+final _leadingDigit = RegExp('^[0-9]');
 
 /// Unicode characters that Dart warns about in string literals
 /// (text direction overrides, zero-width joiners/spaces, bidi isolates, etc.).
@@ -582,10 +589,10 @@ String escapeDocComment(String line) {
     } else {
       // Outside backticks - escape bare <...> tags and [references].
       var prose = parts[i];
-      prose = prose.replaceAllMapped(RegExp('<([^>]+)>'), (m) => '`<${m[1]}>`');
+      prose = prose.replaceAllMapped(_bareAngleBrackets, (m) => '`<${m[1]}>`');
       // Escape bare [text] that aren't markdown links [text](...).
       prose = prose.replaceAllMapped(
-        RegExp(r'\[([^\]]+)\](?!\()'),
+        _bareBrackets,
         (m) => '`[${m[1]}]`',
       );
       buf.write(prose);
@@ -631,7 +638,7 @@ String toSnakeCase(String input) {
   // Strip characters that are not valid in file names / Dart identifiers
   // before converting to snake_case. This handles $-prefixed names (from
   // sanitizeDartName) and apostrophes/special chars from spec names.
-  final cleaned = input.replaceAll(RegExp('[^a-zA-Z0-9_]'), '');
+  final cleaned = input.replaceAll(_nonIdentChar, '');
   if (cleaned.isEmpty) return 'unnamed';
   final buf = StringBuffer();
   for (var i = 0; i < cleaned.length; i++) {
@@ -643,7 +650,7 @@ String toSnakeCase(String input) {
   }
   var result = buf.toString();
   // Ensure the result doesn't start with a digit (for valid Dart file names)
-  if (RegExp('^[0-9]').hasMatch(result)) {
+  if (_leadingDigit.hasMatch(result)) {
     result = 'n$result';
   }
   // Avoid _test suffix - dart test would pick up these files as test files.

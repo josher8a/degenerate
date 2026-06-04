@@ -15,6 +15,10 @@ final class OperationLowerer {
   final IrMapper irMapper;
   final OpenApiDocument? _doc;
 
+  /// Warnings collected during lowering.
+  List<String> get warnings => _warnings;
+  final _warnings = <String>[];
+
   /// Convenience accessor for the type registry.
   Map<String, IrType> get typeRegistry => irMapper.typeRegistry;
 
@@ -29,7 +33,10 @@ final class OperationLowerer {
 
     for (final MapEntry(key: path, value: pathItemRaw) in paths.entries) {
       var pathItem = pathItemRaw;
-      if (pathItem is! Map<String, dynamic>) continue;
+      if (pathItem is! Map<String, dynamic>) {
+        _warnings.add('Path $path: skipped (not an object).');
+        continue;
+      }
 
       // Resolve path-item-level $ref (e.g. external file refs).
       if (pathItem.containsKey(r'$ref')) {
@@ -38,9 +45,15 @@ final class OperationLowerer {
           if (resolved is Map<String, dynamic>) {
             pathItem = resolved;
           } else {
+            _warnings.add(
+              'Path $path: unresolvable \$ref "${pathItem[r'$ref']}".',
+            );
             continue;
           }
         } else {
+          _warnings.add(
+            'Path $path: cannot resolve \$ref without document context.',
+          );
           continue;
         }
       }
@@ -60,6 +73,9 @@ final class OperationLowerer {
           if (resolved is Map<String, dynamic>) {
             opMap = resolved;
           } else {
+            _warnings.add(
+              '$method $path: unresolvable operation \$ref "${opMap[r'$ref']}".',
+            );
             continue;
           }
         }
@@ -86,6 +102,9 @@ final class OperationLowerer {
             if (resolved is Map<String, dynamic>) {
               opMap = resolved;
             } else {
+              _warnings.add(
+                '$key $path: unresolvable operation \$ref "${opMap[r'$ref']}".',
+              );
               continue;
             }
           }

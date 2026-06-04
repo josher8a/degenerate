@@ -29,15 +29,15 @@ Map<String, String> resolveSuffixNames({
 }) {
   List<String> segsOf(String n) => segmentsOf(n, paths);
 
-  final allSegs = [for (final n in allNames) segsOf(n)];
-
-  bool endsWith(List<String> full, List<String> suffix) {
-    if (suffix.length > full.length) return false;
-    final offset = full.length - suffix.length;
-    for (var i = 0; i < suffix.length; i++) {
-      if (full[offset + i] != suffix[i]) return false;
+  // Build an inverted index: suffix key → count of types sharing that suffix.
+  // This replaces the O(n²) inner scan with O(1) lookups per candidate.
+  final suffixCounts = <String, int>{};
+  for (final n in allNames) {
+    final segs = segsOf(n);
+    for (var k = 1; k <= segs.length; k++) {
+      final key = segs.sublist(segs.length - k).join('\x00');
+      suffixCounts[key] = (suffixCounts[key] ?? 0) + 1;
     }
-    return true;
   }
 
   final result = <String, String>{};
@@ -62,15 +62,8 @@ Map<String, String> resolveSuffixNames({
     String? chosen;
     for (var k = 1; k <= segs.length; k++) {
       final candSegs = segs.sublist(segs.length - k);
-      // Unique iff exactly one type's path ends with these segments.
-      var matches = 0;
-      for (final s in allSegs) {
-        if (endsWith(s, candSegs)) {
-          matches++;
-          if (matches > 1) break;
-        }
-      }
-      if (matches != 1) continue;
+      final key = candSegs.join('\x00');
+      if (suffixCounts[key] != 1) continue;
       // Force UpperCamel: a leaf segment derived from an enum value or field
       // (e.g. `auto`) would otherwise emit an invalid lowercase class name.
       final cand = _typeCase(candSegs.join());

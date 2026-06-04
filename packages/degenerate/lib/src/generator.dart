@@ -283,6 +283,11 @@ final class Generator {
     _log('Lowering operations to IR...');
     final opLowerer = OperationLowerer(irMapper, doc: doc);
     var irApis = opLowerer.lowerPaths(doc.paths);
+    if (opLowerer.warnings.isNotEmpty) {
+      for (final w in opLowerer.warnings) {
+        _log('  Warning (operations): $w');
+      }
+    }
 
     _mergeInlineAndRegistryTypes(irTypes, irMapper);
 
@@ -554,8 +559,7 @@ final class Generator {
 
   void _log(String message) {
     if (config.quiet) return;
-    // ignore: avoid_print -- intentional for CLI output
-    print(message);
+    stderr.writeln(message);
   }
 
   /// Resolve type refs in all API operations.

@@ -103,12 +103,19 @@ ArgParser buildParser() {
           'time. Changes API method signatures; off by default.',
       negatable: false,
     )
+    ..addFlag(
+      'quiet',
+      abbr: 'q',
+      help: 'Suppress progress output.',
+      negatable: false,
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
     ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
 
-void printUsage(ArgParser argParser) {
-  stderr
+void printUsage(ArgParser argParser, {bool toStderr = false}) {
+  final out = toStderr ? stderr : stdout;
+  out
     ..writeln(
       'degenerate - Generate a Dart client'
       ' from an OpenAPI specification.',
@@ -133,7 +140,8 @@ Future<void> main(List<String> arguments) async {
     }
 
     if (results.flag('version')) {
-      stderr.writeln('degenerate version: $packageVersion');
+      // ignore: avoid_print -- CLI output, not debug logging
+      print('degenerate version: $packageVersion');
       return;
     }
 
@@ -142,7 +150,7 @@ Future<void> main(List<String> arguments) async {
       stderr
         ..writeln('Error: --input is required.')
         ..writeln();
-      printUsage(argParser);
+      printUsage(argParser, toStderr: true);
       exit(1);
     }
 
@@ -174,6 +182,7 @@ Future<void> main(List<String> arguments) async {
       emitRoundtripFixtures: results.flag('emit-roundtrip-fixtures'),
       emitTypedFormats: results.flag('emit-typed-formats'),
       emitTypedParams: results.flag('emit-typed-params'),
+      quiet: results.flag('quiet'),
     );
 
     final generator = Generator(config);
@@ -213,10 +222,17 @@ Future<void> main(List<String> arguments) async {
     stderr
       ..writeln('Error: ${e.message}')
       ..writeln();
-    printUsage(argParser);
+    printUsage(argParser, toStderr: true);
     exit(1);
   } on GeneratorException catch (e) {
     stderr.writeln('Error: ${e.message}');
+    exit(1);
+  } on FileSystemException catch (e) {
+    stderr.writeln('Error: ${e.message} (${e.path})');
+    exit(1);
+  // ignore: avoid_catches_without_on_clauses -- final CLI fallback
+  } catch (e) {
+    stderr.writeln('Error: $e');
     exit(1);
   }
 }
