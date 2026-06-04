@@ -93,14 +93,11 @@ List<IrField> _computeCommonFields(
   }
   if (perVariant.length < 2) return const [];
 
-  IrField? matchIn(List<IrField> fields, IrField f) {
-    for (final g in fields) {
-      if (g.name == f.name && irTypeName(g.type) == irTypeName(f.type)) {
-        return g;
-      }
-    }
-    return null;
-  }
+  // Build name-keyed index per variant for O(1) lookups instead of O(F) scans.
+  final perVariantIndex = [
+    for (final fields in perVariant)
+      {for (final f in fields) f.name: f},
+  ];
 
   bool isUnionField(IrType type) {
     final t = _resolve(type, typeRegistry);
@@ -111,7 +108,15 @@ List<IrField> _computeCommonFields(
   final result = <IrField>[];
   for (final f in perVariant.first) {
     if (isUnionField(f.type)) continue;
-    final matches = [for (final fields in perVariant) matchIn(fields, f)];
+    final typeName = irTypeName(f.type);
+    final matches = [
+      for (final index in perVariantIndex)
+        if (index[f.name] case final g?
+            when irTypeName(g.type) == typeName)
+          g
+        else
+          null,
+    ];
     if (matches.any((m) => m == null)) continue;
     final requiredInAll = matches.every(
       (m) => m!.isRequired && !m.type.isNullable,

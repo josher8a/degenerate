@@ -150,6 +150,11 @@ final class FileEmitter {
       typeToFile,
     );
 
+    final apiAnalysisCache = {
+      for (final api in apis)
+        api.name: analyzeApiImports(api, ctx, unwrapFields, errorUnionMap),
+    };
+
     _emitApiFiles(
       files,
       apis,
@@ -159,6 +164,7 @@ final class FileEmitter {
       unwrapFields,
       errorUnionMap,
       warnings,
+      apiAnalysisCache,
     );
 
     warnings?.addAll(collectAmbiguityWarnings(types, ctx.typeRegistry));
@@ -194,12 +200,7 @@ final class FileEmitter {
     if (apis.length > 1) {
       final typeDeps = buildTypeDeps(types);
       for (final api in apis) {
-        final analysis = analyzeApiImports(
-          api,
-          ctx,
-          unwrapFields,
-          errorUnionMap,
-        );
+        final analysis = apiAnalysisCache[api.name]!;
         final reachable = transitiveTypes(analysis.referencedTypes, typeDeps);
         files['${toSnakeCase(api.name)}.dart'] = _emitApiBarrelFile(
           api: api,
@@ -413,6 +414,7 @@ final class FileEmitter {
     List<String> unwrapFields,
     Map<String, ErrorUnionInfo> errorUnionMap,
     List<String>? warnings,
+    Map<String, ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})> apiAnalysisCache,
   ) {
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
@@ -424,7 +426,7 @@ final class FileEmitter {
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
-      final analysis = analyzeApiImports(api, ctx, unwrapFields, errorUnionMap);
+      final analysis = apiAnalysisCache[api.name]!;
 
       final modelImports = _modelImports(
         analysis.referencedTypes,

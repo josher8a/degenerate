@@ -13,6 +13,7 @@ final class VariantOverlapAnalyzer {
   VariantOverlapAnalyzer(this._registry);
 
   final Map<String, IrType> _registry;
+  final _presentKeysCache = <IrType, Set<String>?>{};
 
   IrType resolve(IrType t) => t.resolveRef(_registry);
 
@@ -59,12 +60,16 @@ final class VariantOverlapAnalyzer {
   }
 
   Set<String>? presentKeys(IrType type) {
+    if (_presentKeysCache.containsKey(type)) return _presentKeysCache[type];
     final t = resolve(type);
-    if (t is! IrObject) return null;
-    return {
-      for (final f in t.fields)
-        if (f.isRequired || fieldHasDefault(f)) f.originalName,
-    };
+    final result = t is! IrObject
+        ? null
+        : {
+            for (final f in t.fields)
+              if (f.isRequired || fieldHasDefault(f)) f.originalName,
+          };
+    _presentKeysCache[type] = result;
+    return result;
   }
 
   IrType _elem(IrType t) => switch (t) {

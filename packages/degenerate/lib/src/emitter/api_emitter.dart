@@ -1007,7 +1007,7 @@ final class ApiEmitter {
   (String, IrMediaType)? _successResponseContent(IrOperation op) {
     // Find the first 2xx response with content.
     // Check common codes first, then any other 2xx code.
-    final priorityCodes = [200, 201, 202, 203, 204];
+    const priorityCodes = {200, 201, 202, 203, 204};
     for (final code in priorityCodes) {
       final resp = op.responses[code];
       if (resp != null) {
