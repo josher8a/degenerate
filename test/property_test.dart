@@ -1205,6 +1205,233 @@ void main() {
       },
     }, name: 'disc_union_test', roundtrip: true);
   });
+
+  // ─── Negative fixture synthesis ────────────────────────────
+
+  test('negative fixtures synthesize and validate for constrained spec',
+      () async {
+    final specFile = File(p.join(tempDir.path, 'spec.json'));
+    specFile.writeAsStringSync(jsonEncode({
+      'openapi': '3.1.0',
+      'info': {'title': 'Neg', 'version': '1.0.0'},
+      'paths': {
+        '/items': {
+          'get': {
+            'operationId': 'listItems',
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {
+                      'type': 'array',
+                      'items': {r'$ref': '#/components/schemas/Item'},
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      'components': {
+        'schemas': {
+          'Item': {
+            'type': 'object',
+            'required': ['name', 'score'],
+            'properties': {
+              'name': {
+                'type': 'string',
+                'minLength': 1,
+                'maxLength': 50,
+              },
+              'score': {
+                'type': 'integer',
+                'minimum': 0,
+                'maximum': 100,
+              },
+              'tags': {
+                'type': 'array',
+                'items': {'type': 'string'},
+                'maxItems': 5,
+                'uniqueItems': true,
+              },
+            },
+          },
+        },
+      },
+    }));
+
+    final config = GeneratorConfig(
+      inputPath: specFile.path,
+      outputDir: tempDir.path,
+      packageName: 'neg_test',
+      workspace: true,
+      quiet: true,
+      emitRoundtripFixtures: true,
+    );
+
+    final generator = Generator(config);
+    await generator.generate();
+
+    final outDir = config.resolvedOutputDir!;
+    final negFile = File(p.join(outDir, 'lib', 'negative_fixtures.dart'));
+    expect(negFile.existsSync(), isTrue,
+        reason: 'negative_fixtures.dart should be generated');
+
+    final content = negFile.readAsStringSync();
+    expect(content, contains('canParse'));
+    expect(content, contains('validate'));
+
+    final deps = StringBuffer()
+      ..writeln('name: neg_test')
+      ..writeln('publish_to: none')
+      ..writeln('environment:')
+      ..writeln('  sdk: ^3.8.0')
+      ..writeln('dependencies:')
+      ..writeln('  degenerate_runtime: ^0.1.0')
+      ..writeln('dependency_overrides:')
+      ..writeln('  degenerate_runtime:')
+      ..writeln('    path: $runtimeDir')
+      ..writeln('dev_dependencies:')
+      ..writeln('  test: ^1.25.6');
+    File(p.join(outDir, 'pubspec.yaml')).writeAsStringSync(deps.toString());
+
+    final pubGet = Process.runSync('dart', ['pub', 'get'],
+        workingDirectory: outDir);
+    expect(pubGet.exitCode, equals(0),
+        reason: 'dart pub get failed:\n${pubGet.stderr}');
+
+    final testDir = Directory(p.join(outDir, 'test'));
+    testDir.createSync(recursive: true);
+    File(p.join(testDir.path, 'negative_test.dart')).writeAsStringSync(
+      "import 'package:neg_test/negative_fixtures.dart';\n"
+      "import 'package:test/test.dart';\n"
+      '\n'
+      'void main() {\n'
+      "  test('has canParse fixtures', () {\n"
+      '    expect(canParseFixtures, isNotEmpty);\n'
+      '    for (final f in canParseFixtures) {\n'
+      '      expect(f.canParse(f.sample), isFalse,\n'
+      "          reason: '\${f.schemaName}: \${f.label}');\n"
+      '    }\n'
+      '  });\n'
+      "  test('has validate fixtures', () {\n"
+      '    expect(validateFixtures, isNotEmpty);\n'
+      '    for (final f in validateFixtures) {\n'
+      '      final decoded = f.decode(f.sample);\n'
+      '      final errors = f.validate(decoded);\n'
+      '      expect(errors, isNotEmpty,\n'
+      "          reason: '\${f.schemaName}: \${f.label}');\n"
+      '    }\n'
+      '  });\n'
+      '}\n',
+    );
+
+    final testResult = Process.runSync(
+      'dart', ['test', 'test/negative_test.dart'],
+      workingDirectory: outDir,
+    );
+    if (testResult.exitCode != 0) {
+      fail('negative fixture test failed:\n${testResult.stdout}\n${testResult.stderr}');
+    }
+  });
+
+  // ─── Typed params with diverse types ───────────────────────
+
+  test('--emit-typed-params with multiple path param types compiles',
+      () async {
+    await generateAndAnalyze({
+      'openapi': '3.1.0',
+      'info': {'title': 'Params', 'version': '1.0.0'},
+      'paths': {
+        '/orgs/{orgId}/wallets/{walletId}/txns/{txnId}': {
+          'get': {
+            'operationId': 'getTransaction',
+            'parameters': [
+              {
+                'name': 'orgId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string', 'format': 'uuid'},
+              },
+              {
+                'name': 'walletId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+              {
+                'name': 'txnId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/Transaction'},
+                  },
+                },
+              },
+            },
+          },
+        },
+        '/orgs/{orgId}/users/{userId}': {
+          'get': {
+            'operationId': 'getUser',
+            'parameters': [
+              {
+                'name': 'orgId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string', 'format': 'uuid'},
+              },
+              {
+                'name': 'userId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/User'},
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      'components': {
+        'schemas': {
+          'Transaction': {
+            'type': 'object',
+            'required': ['id', 'amount'],
+            'properties': {
+              'id': {'type': 'string'},
+              'amount': {'type': 'number'},
+            },
+          },
+          'User': {
+            'type': 'object',
+            'required': ['id', 'name'],
+            'properties': {
+              'id': {'type': 'string'},
+              'name': {'type': 'string'},
+            },
+          },
+        },
+      },
+    }, name: 'params_test', typedParams: true);
+  });
 }
 
 Map<String, dynamic> _specWith(Map<String, dynamic> schemas) => {

@@ -4668,4 +4668,339 @@ void main() {
       expect(source, contains('minLength violation'));
     });
   });
+
+  // ─── emit_utils field helpers ────────────────────────────────
+
+  group('emit_utils field helpers', () {
+    test('fieldIsRequiredInCtor: required without default → true', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string),
+          isRequired: true);
+      expect(fieldIsRequiredInCtor(f), isTrue);
+    });
+
+    test('fieldIsRequiredInCtor: required with default → false', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string),
+          isRequired: true, defaultValue: 'hello');
+      expect(fieldIsRequiredInCtor(f), isFalse);
+    });
+
+    test('fieldIsRequiredInCtor: optional → false', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string));
+      expect(fieldIsRequiredInCtor(f), isFalse);
+    });
+
+    test('fieldIsNullableInDart: optional without default → true', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string));
+      expect(fieldIsNullableInDart(f), isTrue);
+    });
+
+    test('fieldIsNullableInDart: required-and-nullable → true', () {
+      const f = IrField('x', 'x',
+          IrPrimitive(PrimitiveKind.string, isNullable: true),
+          isRequired: true);
+      expect(fieldIsNullableInDart(f), isTrue);
+    });
+
+    test('fieldIsNullableInDart: required non-nullable → false', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string),
+          isRequired: true);
+      expect(fieldIsNullableInDart(f), isFalse);
+    });
+
+    test('fieldHasDefault: with default → true', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string),
+          defaultValue: 'hi');
+      expect(fieldHasDefault(f), isTrue);
+    });
+
+    test('fieldHasDefault: without default → false', () {
+      const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string));
+      expect(fieldHasDefault(f), isFalse);
+    });
+
+    test('copyWithAssignment: nullable field uses thunk pattern', () {
+      const f = IrField('note', 'note', IrPrimitive(PrimitiveKind.string));
+      expect(copyWithAssignment(f), contains('note != null ? note() : this.note'));
+    });
+
+    test('copyWithAssignment: required field uses null-coalescing', () {
+      const f = IrField('id', 'id', IrPrimitive(PrimitiveKind.int),
+          isRequired: true);
+      expect(copyWithAssignment(f), contains('id ?? this.id'));
+    });
+
+    test('equalsComparison: list uses listEquals', () {
+      const f = IrField('tags', 'tags', IrList(IrPrimitive(PrimitiveKind.string)),
+          isRequired: true);
+      expect(equalsComparison(f), equals('listEquals(tags, other.tags)'));
+    });
+
+    test('equalsComparison: non-list uses ==', () {
+      const f = IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+          isRequired: true);
+      expect(equalsComparison(f), equals('name == other.name'));
+    });
+
+    test('hashCodeExpr: nullable list uses ?? const []', () {
+      const f = IrField('tags', 'tags', IrList(IrPrimitive(PrimitiveKind.string)));
+      expect(hashCodeExpr(f, isNullable: true),
+          equals('Object.hashAll(tags ?? const [])'));
+    });
+
+    test('hashCodeExpr: required list uses Object.hashAll', () {
+      const f = IrField('tags', 'tags', IrList(IrPrimitive(PrimitiveKind.string)),
+          isRequired: true);
+      expect(hashCodeExpr(f, isNullable: false), equals('Object.hashAll(tags)'));
+    });
+
+    test('toStringField: dollar-prefixed name is escaped', () {
+      const f = IrField(r'$type', r'$type', IrPrimitive(PrimitiveKind.string),
+          isRequired: true);
+      expect(toStringField(f), contains(r'\$type'));
+    });
+
+    test('toStringField: normal name is simple interpolation', () {
+      const f = IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+          isRequired: true);
+      expect(toStringField(f), equals(r'name: $name'));
+    });
+
+    test('toJsonEntry: required non-nullable emits plain value', () {
+      const f = IrField('id', 'id', IrPrimitive(PrimitiveKind.int),
+          isRequired: true);
+      final entry = toJsonEntry(f, "'id'", isNullable: false);
+      expect(entry, contains("'id': id"));
+    });
+
+    test('toJsonEntry: optional uses null-aware syntax', () {
+      const f = IrField('note', 'note', IrPrimitive(PrimitiveKind.string));
+      final entry = toJsonEntry(f, "'note'", isNullable: true);
+      expect(entry, contains("'note': ?note"));
+    });
+
+    test('toJsonEntry: required-but-nullable always emits key', () {
+      const f = IrField('desc', 'desc',
+          IrPrimitive(PrimitiveKind.string, isNullable: true),
+          isRequired: true);
+      final entry = toJsonEntry(f, "'desc'", isNullable: true);
+      expect(entry, contains("'desc': desc"));
+      expect(entry, isNot(contains('if (')));
+    });
+
+    test('typeToStringExpr: string is identity', () {
+      const t = IrPrimitive(PrimitiveKind.string);
+      expect(typeToStringExpr(t, 'v'), equals('v'));
+    });
+
+    test('typeToStringExpr: int uses .toString()', () {
+      const t = IrPrimitive(PrimitiveKind.int);
+      expect(typeToStringExpr(t, 'v'), equals('v.toString()'));
+    });
+
+    test('typeToStringExpr: enum uses .toJson()', () {
+      const t = IrEnum('Status', ['a']);
+      expect(typeToStringExpr(t, 'v'), equals('v.toJson()'));
+    });
+
+    test('isBytesType: bytes primitive → true', () {
+      const t = IrPrimitive(PrimitiveKind.bytes);
+      expect(isBytesType(t), isTrue);
+    });
+
+    test('isBytesType: list of bytes → true', () {
+      const t = IrList(IrPrimitive(PrimitiveKind.bytes));
+      expect(isBytesType(t), isTrue);
+    });
+
+    test('isBytesType: string → false', () {
+      const t = IrPrimitive(PrimitiveKind.string);
+      expect(isBytesType(t), isFalse);
+    });
+
+    test('primitiveSampleLiteral covers all PrimitiveKinds', () {
+      for (final kind in PrimitiveKind.values) {
+        expect(primitiveSampleLiteral(kind), isNotEmpty,
+            reason: '$kind should have a sample literal');
+      }
+    });
+
+    test('constraintsOf: primitive returns constraints', () {
+      const c = IrConstraints(minimum: 0, maximum: 100);
+      const t = IrPrimitive(PrimitiveKind.int, constraints: c);
+      expect(constraintsOf(t).minimum, equals(0));
+      expect(constraintsOf(t).maximum, equals(100));
+    });
+
+    test('constraintsOf: non-primitive returns none', () {
+      const t = IrEnum('X', ['a']);
+      expect(constraintsOf(t), equals(IrConstraints.none));
+    });
+  });
+
+  // ─── analyzeModelImports ────────────────────────────────────
+
+  group('analyzeModelImports', () {
+    test('object collects field type names', () {
+      const obj = IrObject('User', [
+        IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('role', 'role', IrTypeRef('Role'), isRequired: true),
+      ], requiredFields: ['name', 'role']);
+
+      final analysis = analyzeModelImports(obj);
+
+      expect(analysis.referencedNames, contains('User'));
+      expect(analysis.referencedNames, contains('Role'));
+    });
+
+    test('list field sets needsCollection', () {
+      const obj = IrObject('Item', [
+        IrField('tags', 'tags', IrList(IrPrimitive(PrimitiveKind.string)),
+            isRequired: true),
+      ], requiredFields: ['tags']);
+
+      final analysis = analyzeModelImports(obj);
+
+      expect(analysis.needsCollection, isTrue);
+    });
+
+    test('bytes field sets needsConvert and needsTypedData', () {
+      const obj = IrObject('Blob', [
+        IrField('data', 'data', IrPrimitive(PrimitiveKind.bytes),
+            isRequired: true),
+      ], requiredFields: ['data']);
+
+      final analysis = analyzeModelImports(obj);
+
+      expect(analysis.needsConvert, isTrue);
+      expect(analysis.needsTypedData, isTrue);
+    });
+
+    test('enum type only collects its own name', () {
+      const e = IrEnum('Status', ['active', 'inactive']);
+
+      final analysis = analyzeModelImports(e);
+
+      expect(analysis.referencedNames, equals({'Status'}));
+      expect(analysis.needsCollection, isFalse);
+      expect(analysis.needsConvert, isFalse);
+    });
+
+    test('additionalProperties sets needsCollection', () {
+      const obj = IrObject('Meta', [
+        IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ], requiredFields: ['id'],
+          additionalProperties: IrPrimitive(PrimitiveKind.string));
+
+      final analysis = analyzeModelImports(obj);
+
+      expect(analysis.needsCollection, isTrue);
+    });
+  });
+
+  // ─── analyzeApiImports ──────────────────────────────────────
+
+  group('analyzeApiImports', () {
+    test('collects parameter and response type names', () {
+      final api = IrApi('Test', [
+        IrOperation(
+          'getItem', 'getItem',
+          HttpMethod.get, '/items/{id}',
+          parameters: [
+            IrParameter('id', 'id', ParameterLocation.path,
+                IrPrimitive(PrimitiveKind.string), isRequired: true),
+          ],
+          responses: {
+            200: IrResponse(content: {
+              'application/json': IrMediaType(IrTypeRef('Item')),
+            }),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.referencedTypes, contains('Item'));
+      expect(result.needsConvert, isTrue);
+    });
+
+    test('bytes parameter sets needsTypedData', () {
+      final api = IrApi('Upload', [
+        IrOperation(
+          'upload', 'upload',
+          HttpMethod.post, '/upload',
+          parameters: [
+            IrParameter('data', 'data', ParameterLocation.query,
+                IrPrimitive(PrimitiveKind.bytes), isRequired: true),
+          ],
+          responses: {
+            204: IrResponse(content: {}),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.needsTypedData, isTrue);
+    });
+  });
+
+  // ─── Error union dedup typedef alias ────────────────────────
+
+  group('buildErrorUnionMap dedup', () {
+    test('identical error shapes produce typedef alias', () {
+      final sharedError = IrResponse(
+        content: {
+          'application/json': IrMediaType(
+            IrObject('SharedError', [
+              IrField('message', 'message', IrPrimitive(PrimitiveKind.string),
+                  isRequired: true),
+            ], requiredFields: ['message']),
+          ),
+        },
+      );
+
+      final apis = [
+        IrApi('TestApi', [
+          IrOperation('alphaOp', 'alphaOp', HttpMethod.get, '/alpha', responses: {
+            200: IrResponse(content: {
+              'application/json': IrMediaType(
+                IrObject('AlphaResult', [
+                  IrField('ok', 'ok', IrPrimitive(PrimitiveKind.bool),
+                      isRequired: true),
+                ], requiredFields: ['ok']),
+              ),
+            }),
+            400: sharedError,
+          }),
+          IrOperation('betaOp', 'betaOp', HttpMethod.get, '/beta', responses: {
+            200: IrResponse(content: {
+              'application/json': IrMediaType(
+                IrObject('BetaResult', [
+                  IrField('ok', 'ok', IrPrimitive(PrimitiveKind.bool),
+                      isRequired: true),
+                ], requiredFields: ['ok']),
+              ),
+            }),
+            400: sharedError,
+          }),
+        ]),
+      ];
+
+      final ctx = EmitContext(const {});
+      final result = buildErrorUnionMap(apis, ctx);
+
+      expect(result, contains('alphaOp'));
+      expect(result, contains('betaOp'));
+
+      final alpha = result['alphaOp']!;
+      final beta = result['betaOp']!;
+
+      // alphaOp sorts first → concrete; betaOp → alias pointing to alpha's class
+      expect(alpha.isAlias, isFalse);
+      expect(beta.isAlias, isTrue);
+      expect(beta.aliasTarget, equals(alpha.className));
+    });
+  });
 }
