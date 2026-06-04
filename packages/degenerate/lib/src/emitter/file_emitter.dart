@@ -475,12 +475,11 @@ final class FileEmitter {
         type,
         ctx: ctx,
       ).emit(),
-      IrUntaggedUnion(:final variants)
-          when isOneOfTypedef(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description, ctx),
+      IrUntaggedUnion(:final name, :final variants) ||
+      IrAnyOf(:final name, :final variants)
+          when isOneOfTypedef(name, variants) =>
+        _emitOneOfTypedef(name, variants, type.description, ctx),
       IrUntaggedUnion() => UntaggedUnionEmitter(type, ctx: ctx).emit(),
-      IrAnyOf(:final variants) when isOneOfTypedef(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description, ctx),
       IrAnyOf() => AnyOfEmitter(type, ctx: ctx).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
       _ => [],

@@ -95,13 +95,13 @@ IrType _resolve(IrType type, Map<String, IrType> registry) {
   return type;
 }
 
-bool _isSpreadable(IrType resolved) => switch (resolved) {
-  IrObject() || IrDiscriminatedUnion() => true,
-  IrUntaggedUnion(:final variants) => !isOneOfEligible(variants),
-  IrAnyOf(:final variants) => !isOneOfEligible(variants),
-  IrTypeRef() => true,
-  _ => false,
-};
+bool _isSpreadable(IrType resolved) {
+  final vs = resolved.unionVariants;
+  if (vs != null) return !isOneOfEligible(vs);
+  return resolved is IrObject ||
+      resolved is IrDiscriminatedUnion ||
+      resolved is IrTypeRef;
+}
 
 List<IrField> _payloadFields(IrType resolved, String discKey) {
   if (resolved is! IrObject) return const [];
@@ -152,11 +152,8 @@ List<IrField> _computeCommonFields(
 
   bool isUnionField(IrType type) {
     final t = _resolve(type, typeRegistry);
-    return switch (t) {
-      IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
-      IrAnyOf(:final variants) => isOneOfEligible(variants),
-      _ => false,
-    };
+    final vs = t.unionVariants;
+    return vs != null && isOneOfEligible(vs);
   }
 
   final result = <IrField>[];

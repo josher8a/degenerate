@@ -155,58 +155,32 @@ void _collectTopLevelTypeName(
     case IrEnum(:final name):
       names.add(name);
     case IrTypeRef(:final name):
+      final target = ctx?.typeRegistry[name];
+      final targetVs = target?.unionVariants;
       final isInlinedOneOf =
           skipInlinedOneOfRefs &&
-          ctx != null &&
-          switch (ctx.typeRegistry[name]) {
-            IrUntaggedUnion(:final variants)
-                when isOneOfTypedef(name, variants) =>
-              true,
-            IrAnyOf(:final variants) when isOneOfTypedef(name, variants) =>
-              true,
-            _ => false,
-          };
+          targetVs != null &&
+          isOneOfTypedef(name, targetVs);
       if (!isInlinedOneOf) {
         names.add(name);
       }
       resolving ??= {};
       if (ctx != null && resolving.add(name)) {
-        final target = ctx.typeRegistry[name];
-        if (target != null) {
-          final variants = switch (target) {
-            IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-              variants,
-            IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
-            _ => null,
-          };
-          if (variants != null) {
-            for (final v in variants) {
-              _collectTopLevelTypeName(v, names, ctx, resolving, true);
-            }
+        if (targetVs != null && isOneOfEligible(targetVs)) {
+          for (final v in targetVs) {
+            _collectTopLevelTypeName(v, names, ctx, resolving, true);
           }
         }
       }
     case IrDiscriminatedUnion(:final name):
       names.add(name);
-    case IrUntaggedUnion(:final name, :final variants):
-      final skipUntagged =
+    case IrUntaggedUnion(:final name, :final variants) ||
+         IrAnyOf(:final name, :final variants):
+      final skip =
           skipInlinedOneOfRefs &&
           isOneOfEligible(variants) &&
           !isSelfReferencingUnion(name, variants);
-      if (!skipUntagged) {
-        names.add(name);
-      }
-      if (ctx != null && isOneOfEligible(variants)) {
-        for (final v in variants) {
-          _collectTopLevelTypeName(v, names, ctx, resolving, true);
-        }
-      }
-    case IrAnyOf(:final name, :final variants):
-      final skipAnyOf =
-          skipInlinedOneOfRefs &&
-          isOneOfEligible(variants) &&
-          !isSelfReferencingUnion(name, variants);
-      if (!skipAnyOf) {
+      if (!skip) {
         names.add(name);
       }
       if (ctx != null && isOneOfEligible(variants)) {
@@ -319,12 +293,8 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
         if (variant is IrTypeRef) {
           final info = meta?.variants[key];
           final resolved = info?.resolvedType ?? variant;
-          final oneOfVariants = switch (resolved) {
-            IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-              variants,
-            IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
-            _ => null,
-          };
+          final vs = resolved.unionVariants;
+          final oneOfVariants = vs != null && isOneOfEligible(vs) ? vs : null;
           if (oneOfVariants != null) {
             needsOneOf = true;
             for (final v in oneOfVariants) {

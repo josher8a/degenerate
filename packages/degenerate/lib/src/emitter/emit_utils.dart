@@ -40,15 +40,8 @@ extension EmitContextX on EmitContext {
 
   bool isOneOfType(IrType type) {
     final resolved = type.resolveRef(typeRegistry);
-    return switch (resolved) {
-      IrUntaggedUnion(:final name, :final variants)
-          when isOneOfTypedef(name, variants) =>
-        true,
-      IrAnyOf(:final name, :final variants)
-          when isOneOfTypedef(name, variants) =>
-        true,
-      _ => false,
-    };
+    final vs = resolved.unionVariants;
+    return vs != null && isOneOfTypedef(resolved.name!, vs);
   }
 
   bool isUnionType(IrType type) {
@@ -187,12 +180,9 @@ IrType _resolveOneOfRef(
   if (!resolving.add(type.name)) return type; // cycle detected
   final target = ctx.typeRegistry[type.name];
   if (target == null) return type;
-  return switch (target) {
-    IrUntaggedUnion(:final variants) when isOneOfTypedef(type.name, variants) =>
-      target,
-    IrAnyOf(:final variants) when isOneOfTypedef(type.name, variants) => target,
-    _ => type,
-  };
+  final vs = target.unionVariants;
+  if (vs != null && isOneOfTypedef(type.name, vs)) return target;
+  return type;
 }
 
 /// Check if any variant (recursively through List/Map) references [typeName].
@@ -270,7 +260,8 @@ String _buildFromJsonNonNull(
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>'
           : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', ctx: ctx, resolving: resolving)}))',
-    IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+    IrUntaggedUnion(:final variants) || IrAnyOf(:final variants)
+        when isOneOfEligible(variants) =>
       buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
     IrUntaggedUnion(:final name, :final variants) =>
       variants.every((v) => v is IrPrimitive)
@@ -278,8 +269,6 @@ String _buildFromJsonNonNull(
           : '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
-    IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-      buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
     // Cycle-detected OneOf typedef: use generated parse helper function.
     IrTypeRef(:final name) when _isOneOfInRegistry(name, ctx) =>
       'parse$name($accessor)',
@@ -366,12 +355,8 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
 bool _isOneOfInRegistry(String name, EmitContext ctx) {
   final target = ctx.typeRegistry[name];
   if (target == null) return false;
-  return switch (target) {
-    IrUntaggedUnion(:final variants) when isOneOfTypedef(name, variants) =>
-      true,
-    IrAnyOf(:final variants) when isOneOfTypedef(name, variants) => true,
-    _ => false,
-  };
+  final vs = target.unionVariants;
+  return vs != null && isOneOfTypedef(name, vs);
 }
 
 /// Check whether an [IrType] represents a list (used for equality checks).
@@ -438,14 +423,8 @@ bool isOneOfTypedef(String name, List<IrType> variants) =>
 /// [IrTypeRef] through [ctx].
 bool isOneOfType(IrType type, [EmitContext? ctx]) {
   final resolved = ctx != null ? type.resolveRef(ctx.typeRegistry) : type;
-  return switch (resolved) {
-    IrUntaggedUnion(:final name, :final variants) ||
-    IrAnyOf(
-      :final name,
-      :final variants,
-    ) when isOneOfTypedef(name, variants) => true,
-    _ => false,
-  };
+  final vs = resolved.unionVariants;
+  return vs != null && isOneOfTypedef(resolved.name!, vs);
 }
 
 /// Whether a resolved discriminator field type uses a bare literal

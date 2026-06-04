@@ -25,6 +25,15 @@ sealed class IrType {
   /// declaration (primitives, lists, maps, type refs).
   String? get emittableName => this is IrTypeRef ? null : name;
 
+  /// The variant list for [IrUntaggedUnion] and [IrAnyOf], `null` for all
+  /// other types. Collapses the double-dispatch pattern that must otherwise
+  /// match both union kinds identically.
+  List<IrType>? get unionVariants => switch (this) {
+    IrUntaggedUnion(:final variants) => variants,
+    IrAnyOf(:final variants) => variants,
+    _ => null,
+  };
+
   /// Returns a copy of this type with [isNullable] set to true.
   /// If already nullable, returns `this`.
   IrType copyAsNullable();
