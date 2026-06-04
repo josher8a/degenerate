@@ -110,23 +110,7 @@ final class OperationLowerer {
         final uniqueName = deduplicateName(op.dartMethodName, usedMethodNames);
         usedMethodNames.add(uniqueName);
         if (uniqueName != op.dartMethodName) {
-          dedupedOps.add(
-            IrOperation(
-              op.operationId,
-              uniqueName,
-              op.method,
-              op.path,
-              customMethod: op.customMethod,
-              summary: op.summary,
-              description: op.description,
-              parameters: op.parameters,
-              requestBody: op.requestBody,
-              responses: op.responses,
-              defaultResponse: op.defaultResponse,
-              isDeprecated: op.isDeprecated,
-              securityRequirements: op.securityRequirements,
-            ),
-          );
+          dedupedOps.add(op.copyWith(dartMethodName: uniqueName));
         } else {
           dedupedOps.add(op);
         }

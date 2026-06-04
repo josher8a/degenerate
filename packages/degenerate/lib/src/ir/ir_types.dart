@@ -601,13 +601,14 @@ final class IrOperation {
   final List<IrSecurityRequirement>? securityRequirements;
 
   IrOperation copyWith({
+    String? dartMethodName,
     List<IrParameter>? parameters,
     IrRequestBody? requestBody,
     Map<int, IrResponse>? responses,
     IrResponse? defaultResponse,
   }) =>
       IrOperation(
-        operationId, dartMethodName, method, path,
+        operationId, dartMethodName ?? this.dartMethodName, method, path,
         customMethod: customMethod,
         summary: summary,
         description: description,
