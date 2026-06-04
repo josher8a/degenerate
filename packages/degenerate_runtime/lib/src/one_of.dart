@@ -60,17 +60,17 @@ int _oneOfMatchScore(Object? json, Object? value) {
 /// Typed union of 2 variants.
 @immutable
 final class OneOf2<A, B> {
-  const OneOf2._(this.value);
+  const OneOf2._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf2.a(A value) : this._(value);
+  const OneOf2.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf2.b(B value) : this._(value);
+  const OneOf2.b(B value) : this._(value, 1);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf2.from(Object? value) {
-    if (value is A) return OneOf2._(value);
-    if (value is B) return OneOf2._(value);
+    if (value is A) return OneOf2._(value, 0);
+    if (value is B) return OneOf2._(value, 1);
     throw ArgumentError('Value $value is not A or B');
   }
 
@@ -84,7 +84,7 @@ final class OneOf2<A, B> {
     OneOf2<A, B>? best;
     var bestScore = -1;
     try {
-      final v = OneOf2<A, B>._(fromA(json!));
+      final v = OneOf2<A, B>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -94,7 +94,7 @@ final class OneOf2<A, B> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf2<A, B>._(fromB(json!));
+      final v = OneOf2<A, B>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -110,19 +110,44 @@ final class OneOf2<A, B> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is OneOf2<A, B> && value == other.value;
+      identical(this, other) ||
+      other is OneOf2<A, B> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b'];
 
   @override
-  String toString() => 'OneOf2($value)';
+  String toString() => 'OneOf2.${_labels[_index]}($value)';
 }
 
 // ─── OneOf3 ──────────────────────────────────────────────────────
@@ -130,20 +155,20 @@ final class OneOf2<A, B> {
 /// Typed union of 3 variants.
 @immutable
 final class OneOf3<A, B, C> {
-  const OneOf3._(this.value);
+  const OneOf3._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf3.a(A value) : this._(value);
+  const OneOf3.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf3.b(B value) : this._(value);
+  const OneOf3.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf3.c(C value) : this._(value);
+  const OneOf3.c(C value) : this._(value, 2);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf3.from(Object? value) {
-    if (value is A) return OneOf3._(value);
-    if (value is B) return OneOf3._(value);
-    if (value is C) return OneOf3._(value);
+    if (value is A) return OneOf3._(value, 0);
+    if (value is B) return OneOf3._(value, 1);
+    if (value is C) return OneOf3._(value, 2);
     throw ArgumentError('Value $value is not A or B or C');
   }
 
@@ -158,7 +183,7 @@ final class OneOf3<A, B, C> {
     OneOf3<A, B, C>? best;
     var bestScore = -1;
     try {
-      final v = OneOf3<A, B, C>._(fromA(json!));
+      final v = OneOf3<A, B, C>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -168,7 +193,7 @@ final class OneOf3<A, B, C> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf3<A, B, C>._(fromB(json!));
+      final v = OneOf3<A, B, C>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -178,7 +203,7 @@ final class OneOf3<A, B, C> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf3<A, B, C>._(fromC(json!));
+      final v = OneOf3<A, B, C>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -194,6 +219,33 @@ final class OneOf3<A, B, C> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -201,13 +253,15 @@ final class OneOf3<A, B, C> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf3<A, B, C> && value == other.value;
+      other is OneOf3<A, B, C> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c'];
 
   @override
-  String toString() => 'OneOf3($value)';
+  String toString() => 'OneOf3.${_labels[_index]}($value)';
 }
 
 // ─── OneOf4 ──────────────────────────────────────────────────────
@@ -215,23 +269,23 @@ final class OneOf3<A, B, C> {
 /// Typed union of 4 variants.
 @immutable
 final class OneOf4<A, B, C, D> {
-  const OneOf4._(this.value);
+  const OneOf4._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf4.a(A value) : this._(value);
+  const OneOf4.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf4.b(B value) : this._(value);
+  const OneOf4.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf4.c(C value) : this._(value);
+  const OneOf4.c(C value) : this._(value, 2);
   /// Wraps a value of variant D.
-  const OneOf4.d(D value) : this._(value);
+  const OneOf4.d(D value) : this._(value, 3);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf4.from(Object? value) {
-    if (value is A) return OneOf4._(value);
-    if (value is B) return OneOf4._(value);
-    if (value is C) return OneOf4._(value);
-    if (value is D) return OneOf4._(value);
+    if (value is A) return OneOf4._(value, 0);
+    if (value is B) return OneOf4._(value, 1);
+    if (value is C) return OneOf4._(value, 2);
+    if (value is D) return OneOf4._(value, 3);
     throw ArgumentError('Value $value is not A or B or C or D');
   }
 
@@ -247,7 +301,7 @@ final class OneOf4<A, B, C, D> {
     OneOf4<A, B, C, D>? best;
     var bestScore = -1;
     try {
-      final v = OneOf4<A, B, C, D>._(fromA(json!));
+      final v = OneOf4<A, B, C, D>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -257,7 +311,7 @@ final class OneOf4<A, B, C, D> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf4<A, B, C, D>._(fromB(json!));
+      final v = OneOf4<A, B, C, D>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -267,7 +321,7 @@ final class OneOf4<A, B, C, D> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf4<A, B, C, D>._(fromC(json!));
+      final v = OneOf4<A, B, C, D>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -277,7 +331,7 @@ final class OneOf4<A, B, C, D> {
       errors.add(('$C', e));
     }
     try {
-      final v = OneOf4<A, B, C, D>._(fromD(json!));
+      final v = OneOf4<A, B, C, D>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -293,6 +347,38 @@ final class OneOf4<A, B, C, D> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+  /// Whether this holds variant D.
+  bool get isD => _index == 3;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+  /// The value as D, or `null` if this is a different variant.
+  D? get dOrNull => _index == 3 ? value as D : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, required R Function(D) d, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      3 => d(value as D),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -300,13 +386,15 @@ final class OneOf4<A, B, C, D> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf4<A, B, C, D> && value == other.value;
+      other is OneOf4<A, B, C, D> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c', 'd'];
 
   @override
-  String toString() => 'OneOf4($value)';
+  String toString() => 'OneOf4.${_labels[_index]}($value)';
 }
 
 // ─── OneOf5 ──────────────────────────────────────────────────────
@@ -314,26 +402,26 @@ final class OneOf4<A, B, C, D> {
 /// Typed union of 5 variants.
 @immutable
 final class OneOf5<A, B, C, D, E> {
-  const OneOf5._(this.value);
+  const OneOf5._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf5.a(A value) : this._(value);
+  const OneOf5.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf5.b(B value) : this._(value);
+  const OneOf5.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf5.c(C value) : this._(value);
+  const OneOf5.c(C value) : this._(value, 2);
   /// Wraps a value of variant D.
-  const OneOf5.d(D value) : this._(value);
+  const OneOf5.d(D value) : this._(value, 3);
   /// Wraps a value of variant E.
-  const OneOf5.e(E value) : this._(value);
+  const OneOf5.e(E value) : this._(value, 4);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf5.from(Object? value) {
-    if (value is A) return OneOf5._(value);
-    if (value is B) return OneOf5._(value);
-    if (value is C) return OneOf5._(value);
-    if (value is D) return OneOf5._(value);
-    if (value is E) return OneOf5._(value);
+    if (value is A) return OneOf5._(value, 0);
+    if (value is B) return OneOf5._(value, 1);
+    if (value is C) return OneOf5._(value, 2);
+    if (value is D) return OneOf5._(value, 3);
+    if (value is E) return OneOf5._(value, 4);
     throw ArgumentError('Value $value is not A or B or C or D or E');
   }
 
@@ -350,7 +438,7 @@ final class OneOf5<A, B, C, D, E> {
     OneOf5<A, B, C, D, E>? best;
     var bestScore = -1;
     try {
-      final v = OneOf5<A, B, C, D, E>._(fromA(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -360,7 +448,7 @@ final class OneOf5<A, B, C, D, E> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf5<A, B, C, D, E>._(fromB(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -370,7 +458,7 @@ final class OneOf5<A, B, C, D, E> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf5<A, B, C, D, E>._(fromC(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -380,7 +468,7 @@ final class OneOf5<A, B, C, D, E> {
       errors.add(('$C', e));
     }
     try {
-      final v = OneOf5<A, B, C, D, E>._(fromD(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -390,7 +478,7 @@ final class OneOf5<A, B, C, D, E> {
       errors.add(('$D', e));
     }
     try {
-      final v = OneOf5<A, B, C, D, E>._(fromE(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -406,6 +494,43 @@ final class OneOf5<A, B, C, D, E> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+  /// Whether this holds variant D.
+  bool get isD => _index == 3;
+  /// Whether this holds variant E.
+  bool get isE => _index == 4;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+  /// The value as D, or `null` if this is a different variant.
+  D? get dOrNull => _index == 3 ? value as D : null;
+  /// The value as E, or `null` if this is a different variant.
+  E? get eOrNull => _index == 4 ? value as E : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, required R Function(D) d, required R Function(E) e, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      3 => d(value as D),
+      4 => e(value as E),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -413,13 +538,15 @@ final class OneOf5<A, B, C, D, E> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf5<A, B, C, D, E> && value == other.value;
+      other is OneOf5<A, B, C, D, E> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c', 'd', 'e'];
 
   @override
-  String toString() => 'OneOf5($value)';
+  String toString() => 'OneOf5.${_labels[_index]}($value)';
 }
 
 // ─── OneOf6 ──────────────────────────────────────────────────────
@@ -427,29 +554,29 @@ final class OneOf5<A, B, C, D, E> {
 /// Typed union of 6 variants.
 @immutable
 final class OneOf6<A, B, C, D, E, F> {
-  const OneOf6._(this.value);
+  const OneOf6._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf6.a(A value) : this._(value);
+  const OneOf6.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf6.b(B value) : this._(value);
+  const OneOf6.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf6.c(C value) : this._(value);
+  const OneOf6.c(C value) : this._(value, 2);
   /// Wraps a value of variant D.
-  const OneOf6.d(D value) : this._(value);
+  const OneOf6.d(D value) : this._(value, 3);
   /// Wraps a value of variant E.
-  const OneOf6.e(E value) : this._(value);
+  const OneOf6.e(E value) : this._(value, 4);
   /// Wraps a value of variant F.
-  const OneOf6.f(F value) : this._(value);
+  const OneOf6.f(F value) : this._(value, 5);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf6.from(Object? value) {
-    if (value is A) return OneOf6._(value);
-    if (value is B) return OneOf6._(value);
-    if (value is C) return OneOf6._(value);
-    if (value is D) return OneOf6._(value);
-    if (value is E) return OneOf6._(value);
-    if (value is F) return OneOf6._(value);
+    if (value is A) return OneOf6._(value, 0);
+    if (value is B) return OneOf6._(value, 1);
+    if (value is C) return OneOf6._(value, 2);
+    if (value is D) return OneOf6._(value, 3);
+    if (value is E) return OneOf6._(value, 4);
+    if (value is F) return OneOf6._(value, 5);
     throw ArgumentError('Value $value is not A or B or C or D or E or F');
   }
 
@@ -467,7 +594,7 @@ final class OneOf6<A, B, C, D, E, F> {
     OneOf6<A, B, C, D, E, F>? best;
     var bestScore = -1;
     try {
-      final v = OneOf6<A, B, C, D, E, F>._(fromA(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -477,7 +604,7 @@ final class OneOf6<A, B, C, D, E, F> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf6<A, B, C, D, E, F>._(fromB(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -487,7 +614,7 @@ final class OneOf6<A, B, C, D, E, F> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf6<A, B, C, D, E, F>._(fromC(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -497,7 +624,7 @@ final class OneOf6<A, B, C, D, E, F> {
       errors.add(('$C', e));
     }
     try {
-      final v = OneOf6<A, B, C, D, E, F>._(fromD(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -507,7 +634,7 @@ final class OneOf6<A, B, C, D, E, F> {
       errors.add(('$D', e));
     }
     try {
-      final v = OneOf6<A, B, C, D, E, F>._(fromE(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -517,7 +644,7 @@ final class OneOf6<A, B, C, D, E, F> {
       errors.add(('$E', e));
     }
     try {
-      final v = OneOf6<A, B, C, D, E, F>._(fromF(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -533,6 +660,48 @@ final class OneOf6<A, B, C, D, E, F> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+  /// Whether this holds variant D.
+  bool get isD => _index == 3;
+  /// Whether this holds variant E.
+  bool get isE => _index == 4;
+  /// Whether this holds variant F.
+  bool get isF => _index == 5;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+  /// The value as D, or `null` if this is a different variant.
+  D? get dOrNull => _index == 3 ? value as D : null;
+  /// The value as E, or `null` if this is a different variant.
+  E? get eOrNull => _index == 4 ? value as E : null;
+  /// The value as F, or `null` if this is a different variant.
+  F? get fOrNull => _index == 5 ? value as F : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, required R Function(D) d, required R Function(E) e, required R Function(F) f, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      3 => d(value as D),
+      4 => e(value as E),
+      5 => f(value as F),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -540,13 +709,15 @@ final class OneOf6<A, B, C, D, E, F> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf6<A, B, C, D, E, F> && value == other.value;
+      other is OneOf6<A, B, C, D, E, F> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c', 'd', 'e', 'f'];
 
   @override
-  String toString() => 'OneOf6($value)';
+  String toString() => 'OneOf6.${_labels[_index]}($value)';
 }
 
 // ─── OneOf7 ──────────────────────────────────────────────────────
@@ -554,32 +725,32 @@ final class OneOf6<A, B, C, D, E, F> {
 /// Typed union of 7 variants.
 @immutable
 final class OneOf7<A, B, C, D, E, F, G> {
-  const OneOf7._(this.value);
+  const OneOf7._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf7.a(A value) : this._(value);
+  const OneOf7.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf7.b(B value) : this._(value);
+  const OneOf7.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf7.c(C value) : this._(value);
+  const OneOf7.c(C value) : this._(value, 2);
   /// Wraps a value of variant D.
-  const OneOf7.d(D value) : this._(value);
+  const OneOf7.d(D value) : this._(value, 3);
   /// Wraps a value of variant E.
-  const OneOf7.e(E value) : this._(value);
+  const OneOf7.e(E value) : this._(value, 4);
   /// Wraps a value of variant F.
-  const OneOf7.f(F value) : this._(value);
+  const OneOf7.f(F value) : this._(value, 5);
   /// Wraps a value of variant G.
-  const OneOf7.g(G value) : this._(value);
+  const OneOf7.g(G value) : this._(value, 6);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf7.from(Object? value) {
-    if (value is A) return OneOf7._(value);
-    if (value is B) return OneOf7._(value);
-    if (value is C) return OneOf7._(value);
-    if (value is D) return OneOf7._(value);
-    if (value is E) return OneOf7._(value);
-    if (value is F) return OneOf7._(value);
-    if (value is G) return OneOf7._(value);
+    if (value is A) return OneOf7._(value, 0);
+    if (value is B) return OneOf7._(value, 1);
+    if (value is C) return OneOf7._(value, 2);
+    if (value is D) return OneOf7._(value, 3);
+    if (value is E) return OneOf7._(value, 4);
+    if (value is F) return OneOf7._(value, 5);
+    if (value is G) return OneOf7._(value, 6);
     throw ArgumentError('Value $value is not A or B or C or D or E or F or G');
   }
 
@@ -598,7 +769,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
     OneOf7<A, B, C, D, E, F, G>? best;
     var bestScore = -1;
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromA(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -608,7 +779,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromB(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -618,7 +789,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromC(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -628,7 +799,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$C', e));
     }
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromD(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -638,7 +809,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$D', e));
     }
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromE(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -648,7 +819,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$E', e));
     }
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromF(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -658,7 +829,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$F', e));
     }
     try {
-      final v = OneOf7<A, B, C, D, E, F, G>._(fromG(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromG(json!), 6);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -674,6 +845,53 @@ final class OneOf7<A, B, C, D, E, F, G> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+  /// Whether this holds variant D.
+  bool get isD => _index == 3;
+  /// Whether this holds variant E.
+  bool get isE => _index == 4;
+  /// Whether this holds variant F.
+  bool get isF => _index == 5;
+  /// Whether this holds variant G.
+  bool get isG => _index == 6;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+  /// The value as D, or `null` if this is a different variant.
+  D? get dOrNull => _index == 3 ? value as D : null;
+  /// The value as E, or `null` if this is a different variant.
+  E? get eOrNull => _index == 4 ? value as E : null;
+  /// The value as F, or `null` if this is a different variant.
+  F? get fOrNull => _index == 5 ? value as F : null;
+  /// The value as G, or `null` if this is a different variant.
+  G? get gOrNull => _index == 6 ? value as G : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, required R Function(D) d, required R Function(E) e, required R Function(F) f, required R Function(G) g, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      3 => d(value as D),
+      4 => e(value as E),
+      5 => f(value as F),
+      6 => g(value as G),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -681,13 +899,15 @@ final class OneOf7<A, B, C, D, E, F, G> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf7<A, B, C, D, E, F, G> && value == other.value;
+      other is OneOf7<A, B, C, D, E, F, G> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
   @override
-  String toString() => 'OneOf7($value)';
+  String toString() => 'OneOf7.${_labels[_index]}($value)';
 }
 
 // ─── OneOf8 ──────────────────────────────────────────────────────
@@ -695,35 +915,35 @@ final class OneOf7<A, B, C, D, E, F, G> {
 /// Typed union of 8 variants.
 @immutable
 final class OneOf8<A, B, C, D, E, F, G, H> {
-  const OneOf8._(this.value);
+  const OneOf8._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf8.a(A value) : this._(value);
+  const OneOf8.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf8.b(B value) : this._(value);
+  const OneOf8.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf8.c(C value) : this._(value);
+  const OneOf8.c(C value) : this._(value, 2);
   /// Wraps a value of variant D.
-  const OneOf8.d(D value) : this._(value);
+  const OneOf8.d(D value) : this._(value, 3);
   /// Wraps a value of variant E.
-  const OneOf8.e(E value) : this._(value);
+  const OneOf8.e(E value) : this._(value, 4);
   /// Wraps a value of variant F.
-  const OneOf8.f(F value) : this._(value);
+  const OneOf8.f(F value) : this._(value, 5);
   /// Wraps a value of variant G.
-  const OneOf8.g(G value) : this._(value);
+  const OneOf8.g(G value) : this._(value, 6);
   /// Wraps a value of variant H.
-  const OneOf8.h(H value) : this._(value);
+  const OneOf8.h(H value) : this._(value, 7);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf8.from(Object? value) {
-    if (value is A) return OneOf8._(value);
-    if (value is B) return OneOf8._(value);
-    if (value is C) return OneOf8._(value);
-    if (value is D) return OneOf8._(value);
-    if (value is E) return OneOf8._(value);
-    if (value is F) return OneOf8._(value);
-    if (value is G) return OneOf8._(value);
-    if (value is H) return OneOf8._(value);
+    if (value is A) return OneOf8._(value, 0);
+    if (value is B) return OneOf8._(value, 1);
+    if (value is C) return OneOf8._(value, 2);
+    if (value is D) return OneOf8._(value, 3);
+    if (value is E) return OneOf8._(value, 4);
+    if (value is F) return OneOf8._(value, 5);
+    if (value is G) return OneOf8._(value, 6);
+    if (value is H) return OneOf8._(value, 7);
     throw ArgumentError(
       'Value $value is not A or B or C or D or E or F or G or H',
     );
@@ -745,7 +965,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     OneOf8<A, B, C, D, E, F, G, H>? best;
     var bestScore = -1;
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromA(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -755,7 +975,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromB(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -765,7 +985,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromC(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -775,7 +995,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$C', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromD(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -785,7 +1005,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$D', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromE(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -795,7 +1015,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$E', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromF(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -805,7 +1025,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$F', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromG(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromG(json!), 6);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -815,7 +1035,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$G', e));
     }
     try {
-      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromH(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromH(json!), 7);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -831,6 +1051,58 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+  /// Whether this holds variant D.
+  bool get isD => _index == 3;
+  /// Whether this holds variant E.
+  bool get isE => _index == 4;
+  /// Whether this holds variant F.
+  bool get isF => _index == 5;
+  /// Whether this holds variant G.
+  bool get isG => _index == 6;
+  /// Whether this holds variant H.
+  bool get isH => _index == 7;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+  /// The value as D, or `null` if this is a different variant.
+  D? get dOrNull => _index == 3 ? value as D : null;
+  /// The value as E, or `null` if this is a different variant.
+  E? get eOrNull => _index == 4 ? value as E : null;
+  /// The value as F, or `null` if this is a different variant.
+  F? get fOrNull => _index == 5 ? value as F : null;
+  /// The value as G, or `null` if this is a different variant.
+  G? get gOrNull => _index == 6 ? value as G : null;
+  /// The value as H, or `null` if this is a different variant.
+  H? get hOrNull => _index == 7 ? value as H : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, required R Function(D) d, required R Function(E) e, required R Function(F) f, required R Function(G) g, required R Function(H) h, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      3 => d(value as D),
+      4 => e(value as E),
+      5 => f(value as F),
+      6 => g(value as G),
+      7 => h(value as H),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -838,13 +1110,15 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf8<A, B, C, D, E, F, G, H> && value == other.value;
+      other is OneOf8<A, B, C, D, E, F, G, H> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
   @override
-  String toString() => 'OneOf8($value)';
+  String toString() => 'OneOf8.${_labels[_index]}($value)';
 }
 
 // ─── OneOf9 ──────────────────────────────────────────────────────
@@ -852,38 +1126,38 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
 /// Typed union of 9 variants.
 @immutable
 final class OneOf9<A, B, C, D, E, F, G, H, I> {
-  const OneOf9._(this.value);
+  const OneOf9._(this.value, this._index);
 
   /// Wraps a value of variant A.
-  const OneOf9.a(A value) : this._(value);
+  const OneOf9.a(A value) : this._(value, 0);
   /// Wraps a value of variant B.
-  const OneOf9.b(B value) : this._(value);
+  const OneOf9.b(B value) : this._(value, 1);
   /// Wraps a value of variant C.
-  const OneOf9.c(C value) : this._(value);
+  const OneOf9.c(C value) : this._(value, 2);
   /// Wraps a value of variant D.
-  const OneOf9.d(D value) : this._(value);
+  const OneOf9.d(D value) : this._(value, 3);
   /// Wraps a value of variant E.
-  const OneOf9.e(E value) : this._(value);
+  const OneOf9.e(E value) : this._(value, 4);
   /// Wraps a value of variant F.
-  const OneOf9.f(F value) : this._(value);
+  const OneOf9.f(F value) : this._(value, 5);
   /// Wraps a value of variant G.
-  const OneOf9.g(G value) : this._(value);
+  const OneOf9.g(G value) : this._(value, 6);
   /// Wraps a value of variant H.
-  const OneOf9.h(H value) : this._(value);
+  const OneOf9.h(H value) : this._(value, 7);
   /// Wraps a value of variant I.
-  const OneOf9.i(I value) : this._(value);
+  const OneOf9.i(I value) : this._(value, 8);
 
   /// Wraps a typed value, matching by runtime type.
   factory OneOf9.from(Object? value) {
-    if (value is A) return OneOf9._(value);
-    if (value is B) return OneOf9._(value);
-    if (value is C) return OneOf9._(value);
-    if (value is D) return OneOf9._(value);
-    if (value is E) return OneOf9._(value);
-    if (value is F) return OneOf9._(value);
-    if (value is G) return OneOf9._(value);
-    if (value is H) return OneOf9._(value);
-    if (value is I) return OneOf9._(value);
+    if (value is A) return OneOf9._(value, 0);
+    if (value is B) return OneOf9._(value, 1);
+    if (value is C) return OneOf9._(value, 2);
+    if (value is D) return OneOf9._(value, 3);
+    if (value is E) return OneOf9._(value, 4);
+    if (value is F) return OneOf9._(value, 5);
+    if (value is G) return OneOf9._(value, 6);
+    if (value is H) return OneOf9._(value, 7);
+    if (value is I) return OneOf9._(value, 8);
     throw ArgumentError(
       'Value $value is not A or B or C or D or E or F or G or H or I',
     );
@@ -906,7 +1180,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     OneOf9<A, B, C, D, E, F, G, H, I>? best;
     var bestScore = -1;
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromA(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -916,7 +1190,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$A', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromB(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -926,7 +1200,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$B', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromC(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -936,7 +1210,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$C', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromD(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -946,7 +1220,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$D', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromE(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -956,7 +1230,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$E', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromF(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -966,7 +1240,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$F', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromG(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromG(json!), 6);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -976,7 +1250,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$G', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromH(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromH(json!), 7);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -986,7 +1260,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$H', e));
     }
     try {
-      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromI(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromI(json!), 8);
       final score = _oneOfMatchScore(json, v.value);
       if (score > bestScore) {
         bestScore = score;
@@ -1002,6 +1276,63 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
   /// The wrapped value.
   final Object? value;
 
+  /// The variant index (0-based).
+  final int _index;
+
+  /// Whether this holds variant A.
+  bool get isA => _index == 0;
+  /// Whether this holds variant B.
+  bool get isB => _index == 1;
+  /// Whether this holds variant C.
+  bool get isC => _index == 2;
+  /// Whether this holds variant D.
+  bool get isD => _index == 3;
+  /// Whether this holds variant E.
+  bool get isE => _index == 4;
+  /// Whether this holds variant F.
+  bool get isF => _index == 5;
+  /// Whether this holds variant G.
+  bool get isG => _index == 6;
+  /// Whether this holds variant H.
+  bool get isH => _index == 7;
+  /// Whether this holds variant I.
+  bool get isI => _index == 8;
+
+  /// The value as A, or `null` if this is a different variant.
+  A? get aOrNull => _index == 0 ? value as A : null;
+  /// The value as B, or `null` if this is a different variant.
+  B? get bOrNull => _index == 1 ? value as B : null;
+  /// The value as C, or `null` if this is a different variant.
+  C? get cOrNull => _index == 2 ? value as C : null;
+  /// The value as D, or `null` if this is a different variant.
+  D? get dOrNull => _index == 3 ? value as D : null;
+  /// The value as E, or `null` if this is a different variant.
+  E? get eOrNull => _index == 4 ? value as E : null;
+  /// The value as F, or `null` if this is a different variant.
+  F? get fOrNull => _index == 5 ? value as F : null;
+  /// The value as G, or `null` if this is a different variant.
+  G? get gOrNull => _index == 6 ? value as G : null;
+  /// The value as H, or `null` if this is a different variant.
+  H? get hOrNull => _index == 7 ? value as H : null;
+  /// The value as I, or `null` if this is a different variant.
+  I? get iOrNull => _index == 8 ? value as I : null;
+
+  /// Exhaustive pattern match on the variant.
+  R when<R>({required R Function(A) a, required R Function(B) b, required R Function(C) c, required R Function(D) d, required R Function(E) e, required R Function(F) f, required R Function(G) g, required R Function(H) h, required R Function(I) i, }) {
+    return switch (_index) {
+      0 => a(value as A),
+      1 => b(value as B),
+      2 => c(value as C),
+      3 => d(value as D),
+      4 => e(value as E),
+      5 => f(value as F),
+      6 => g(value as G),
+      7 => h(value as H),
+      8 => i(value as I),
+      _ => throw StateError('Invalid variant index: $_index'),
+    };
+  }
+
   /// Serializes to JSON. Primitives pass through; lists/maps are
   /// serialized element-wise; objects use `toJson()`.
   Object? toJson() => _oneOfValueToJson(value);
@@ -1009,11 +1340,13 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is OneOf9<A, B, C, D, E, F, G, H, I> && value == other.value;
+      other is OneOf9<A, B, C, D, E, F, G, H, I> && _index == other._index && value == other.value;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(_index, value);
+
+  static const _labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
 
   @override
-  String toString() => 'OneOf9($value)';
+  String toString() => 'OneOf9.${_labels[_index]}($value)';
 }

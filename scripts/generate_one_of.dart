@@ -111,7 +111,7 @@ void _writeOneOf(StringBuffer buf, int n) {
   buf.writeln('final class $cls {');
 
   // Private const constructor
-  buf.writeln('  const OneOf$n._(this.value);');
+  buf.writeln('  const OneOf$n._(this.value, this._index);');
   buf.writeln();
 
   // Named variant constructors
@@ -119,7 +119,7 @@ void _writeOneOf(StringBuffer buf, int n) {
     final letter = letters[i].toLowerCase();
     final type = letters[i];
     buf.writeln('  /// Wraps a value of variant $type.');
-    buf.writeln('  const OneOf$n.$letter($type value) : this._(value);');
+    buf.writeln('  const OneOf$n.$letter($type value) : this._(value, $i);');
   }
   buf.writeln();
 
@@ -127,7 +127,7 @@ void _writeOneOf(StringBuffer buf, int n) {
   buf.writeln('  /// Wraps a typed value, matching by runtime type.');
   buf.writeln('  factory OneOf$n.from(Object? value) {');
   for (var i = 0; i < n; i++) {
-    buf.writeln('    if (value is ${letters[i]}) return OneOf$n._(value);');
+    buf.writeln('    if (value is ${letters[i]}) return OneOf$n._(value, $i);');
   }
   final throwMsg = "Value \$value is not ${letters.sublist(0, n).join(' or ')}";
   final throwLine = "    throw ArgumentError('$throwMsg');";
@@ -165,7 +165,7 @@ void _writeOneOf(StringBuffer buf, int n) {
   for (var i = 0; i < n; i++) {
     buf.writeln('    try {');
     buf.writeln(
-      '      final v = OneOf$n<$parseTypeParams>._(from${letters[i]}(json!));',
+      '      final v = OneOf$n<$parseTypeParams>._(from${letters[i]}(json!), $i);',
     );
     buf.writeln('      final score = _oneOfMatchScore(json, v.value);');
     buf.writeln('      if (score > bestScore) {');
@@ -186,9 +186,52 @@ void _writeOneOf(StringBuffer buf, int n) {
   buf.writeln('  }');
   buf.writeln();
 
-  // value field
+  // value + index fields
   buf.writeln('  /// The wrapped value.');
   buf.writeln('  final Object? value;');
+  buf.writeln();
+  buf.writeln('  /// The variant index (0-based).');
+  buf.writeln('  final int _index;');
+  buf.writeln();
+
+  // isX getters
+  for (var i = 0; i < n; i++) {
+    final letter = letters[i].toLowerCase();
+    buf.writeln(
+      '  /// Whether this holds variant ${letters[i]}.',
+    );
+    buf.writeln('  bool get is${letters[i]} => _index == $i;');
+  }
+  buf.writeln();
+
+  // typed accessors
+  for (var i = 0; i < n; i++) {
+    final letter = letters[i].toLowerCase();
+    buf.writeln(
+      '  /// The value as ${letters[i]}, or `null` if this is a different variant.',
+    );
+    buf.writeln(
+      '  ${letters[i]}? get ${letter}OrNull => _index == $i ? value as ${letters[i]} : null;',
+    );
+  }
+  buf.writeln();
+
+  // when() exhaustive callback
+  buf.writeln('  /// Exhaustive pattern match on the variant.');
+  buf.write('  R when<R>({');
+  for (var i = 0; i < n; i++) {
+    buf.write('required R Function(${letters[i]}) ${letters[i].toLowerCase()}, ');
+  }
+  buf.writeln('}) {');
+  buf.writeln('    return switch (_index) {');
+  for (var i = 0; i < n; i++) {
+    buf.writeln(
+      '      $i => ${letters[i].toLowerCase()}(value as ${letters[i]}),',
+    );
+  }
+  buf.writeln("      _ => throw StateError('Invalid variant index: \$_index'),");
+  buf.writeln('    };');
+  buf.writeln('  }');
   buf.writeln();
 
   // toJson
@@ -202,20 +245,19 @@ void _writeOneOf(StringBuffer buf, int n) {
   // ==, hashCode, toString
   buf.writeln('  @override');
   buf.writeln('  bool operator ==(Object other) =>');
-  final eqLine =
-      'identical(this, other) || other is $cls && value == other.value;';
-  if (eqLine.length + 6 > 80) {
-    buf.writeln('      identical(this, other) ||');
-    buf.writeln('      other is $cls && value == other.value;');
-  } else {
-    buf.writeln('      $eqLine');
-  }
+  buf.writeln('      identical(this, other) ||');
+  buf.writeln(
+    '      other is $cls && _index == other._index && value == other.value;',
+  );
   buf.writeln();
   buf.writeln('  @override');
-  buf.writeln('  int get hashCode => value.hashCode;');
+  buf.writeln('  int get hashCode => Object.hash(_index, value);');
+  buf.writeln();
+  final toStringLetters = letters.sublist(0, n).map((l) => "'${l.toLowerCase()}'").join(', ');
+  buf.writeln('  static const _labels = [$toStringLetters];');
   buf.writeln();
   buf.writeln('  @override');
-  buf.writeln("  String toString() => 'OneOf$n(\$value)';");
+  buf.writeln("  String toString() => 'OneOf$n.\${_labels[_index]}(\$value)';");
 
   buf.writeln('}');
 }
