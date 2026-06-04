@@ -1138,7 +1138,7 @@ final class ApiEmitter {
       // Fields with defaults are non-nullable even if not required,
       // but only if the default can be represented as a Dart constant.
       final isNullable =
-          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
+          fieldIsNullableInDart(f);
 
       if (isNullable) {
         // Use a case-pattern variable to enable type promotion on nullable
@@ -1171,7 +1171,7 @@ final class ApiEmitter {
     for (final f in fields) {
       final fieldAccessor = 'body.${f.name}';
       final isNullable =
-          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
+          fieldIsNullableInDart(f);
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
           "'${f.originalName}=\${Uri.encodeQueryComponent($valueExpr)}'";
@@ -1215,29 +1215,6 @@ final class ApiEmitter {
         "    ApiMultipartField.text('${f.originalName}', $valueExpr),",
       );
     }
-  }
-
-  /// Whether a field has a default value that the model emitter can represent
-  /// as a Dart compile-time constant. Only these defaults produce non-nullable
-  /// fields in the generated model class.
-  static bool _hasUsableDartDefault(IrField f) {
-    if (f.defaultValue == null) return false;
-    final v = f.defaultValue;
-    return switch (f.type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.bool => v is bool,
-        PrimitiveKind.int ||
-        PrimitiveKind.double ||
-        PrimitiveKind.num => v is num,
-        PrimitiveKind.string => v is String,
-        _ => false,
-      },
-      IrEnum(:final valueKind) => switch (valueKind) {
-        PrimitiveKind.int || PrimitiveKind.double => v is num,
-        _ => v is String,
-      },
-      _ => false,
-    };
   }
 
   /// Get the string expression for a multipart text field value.
