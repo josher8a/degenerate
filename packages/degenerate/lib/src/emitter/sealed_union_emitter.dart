@@ -1,4 +1,5 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
@@ -7,7 +8,7 @@ import 'package:degenerate/src/naming.dart';
 String _safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
 
 /// Fields shared (same Dart name and type) by every variant of [union],
-/// resolving `$ref` variants via [typeRegistry]. These are hoisted onto the
+/// resolving `$ref` variants via [ctx]. These are hoisted onto the
 /// sealed base as getters. Returns empty if any variant can't be resolved to
 /// an object or the variants share no field.
 ///
@@ -15,14 +16,14 @@ String _safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
 /// import the types those getters reference) so both agree on the set.
 List<IrField> discriminatedUnionCommonFields(
   IrDiscriminatedUnion union,
-  Map<String, IrType> typeRegistry,
+  EmitContext ctx,
 ) {
   final discKey = union.discriminatorProperty;
 
   List<IrField>? variantFields(IrType variantType) {
     var resolved = variantType;
     if (resolved is IrTypeRef) {
-      final target = typeRegistry[resolved.name];
+      final target = ctx.typeRegistry[resolved.name];
       if (target == null) return null;
       resolved = target;
     }
@@ -50,7 +51,7 @@ List<IrField> discriminatedUnionCommonFields(
   // OneOf-eligible unions can't be reconstructed in the unknown variant's
   // getter (their runtime parser is `parse`, not `fromJson`), so skip them.
   bool isUnionField(IrType type) {
-    final t = type.resolveRef(typeRegistry);
+    final t = ctx.resolve(type);
     return switch (t) {
       IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
       IrAnyOf(:final variants) => isOneOfEligible(variants),
@@ -81,15 +82,15 @@ List<IrField> discriminatedUnionCommonFields(
 final class DiscriminatedUnionEmitter {
   /// Creates an emitter for the given discriminated [union].
   ///
-  /// [typeRegistry] is used to resolve `$ref` variants to their fields when
-  /// hoisting fields shared by every variant onto the sealed base.
-  const DiscriminatedUnionEmitter(this.union, {this.typeRegistry = const {}});
+  /// [ctx] provides the type registry for resolving `$ref` variants to their
+  /// fields when hoisting fields shared by every variant onto the sealed base.
+  const DiscriminatedUnionEmitter(this.union, {this.ctx = EmitContext.empty});
 
   /// The discriminated union IR to emit.
   final IrDiscriminatedUnion union;
 
-  /// Registry of all named IR types, for resolving ref-variant fields.
-  final Map<String, IrType> typeRegistry;
+  /// Shared emitter context (type registry for resolving refs).
+  final EmitContext ctx;
 
   /// The Dart getter name for the discriminator property.
   String get _discDartName => toCamelCase(union.discriminatorProperty);
@@ -168,7 +169,7 @@ final class DiscriminatedUnionEmitter {
   /// Fields shared by every variant, hoisted onto the sealed base as nullable
   /// getters so common data can be read without pattern-matching.
   List<IrField> get commonFields =>
-      discriminatedUnionCommonFields(union, typeRegistry);
+      discriminatedUnionCommonFields(union, ctx);
 
   /// Abstract getter on the base for a hoisted common field. Non-null when the
   /// field is required in every variant (see [discriminatedUnionCommonFields]).
@@ -240,7 +241,7 @@ final class DiscriminatedUnionEmitter {
   /// fromJson self-referential and the barrel export ambiguous.
   String _variantClassName(String discValue) {
     final name = variantClassName(union.name, discValue);
-    return typeRegistry.containsKey(name) ? '$name\$Variant' : name;
+    return ctx.typeRegistry.containsKey(name) ? '$name\$Variant' : name;
   }
 
   /// Named-constructor name for a variant (e.g. `INDIVIDUAL` → `individual`).
@@ -250,7 +251,7 @@ final class DiscriminatedUnionEmitter {
   }
 
   IrObject? _resolveToObject(IrType type) {
-    final r = type.resolveRef(typeRegistry);
+    final r = ctx.resolve(type);
     return r is IrObject ? r : null;
   }
 
@@ -285,7 +286,7 @@ final class DiscriminatedUnionEmitter {
   /// [IrExtensionType]) need `Type.fromJson('value')`; a `bool`/`int`/`double`
   /// discriminator field needs the bare literal (e.g. `disabled: false`).
   String _discValueExpr(IrType discFieldType, String discValue) {
-    final t = discFieldType.resolveRef(typeRegistry);
+    final t = ctx.resolve(discFieldType);
     return switch (t) {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
@@ -533,7 +534,7 @@ final class DiscriminatedUnionEmitter {
       ..modifier = FieldModifier.final$
       ..type = irTypeToReference(f.type, forceNullable: !f.isRequired)
       ..assignment = Code(
-        buildFromJsonCode(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
+        ctx.fromJson(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired),
       ),
   );
 
@@ -590,7 +591,7 @@ final class DiscriminatedUnionEmitter {
         .map((f) {
           final accessor = 'json[${dartStringLiteral(f.originalName)}]';
           final isOptional = fieldIsNullableInDart(f);
-          return '  ${f.name}: ${buildFromJsonCode(f.type, accessor, isOptional: isOptional)},';
+          return '  ${f.name}: ${ctx.fromJson(f.type, accessor, isOptional: isOptional)},';
         })
         .join('\n');
 
@@ -692,7 +693,7 @@ final class DiscriminatedUnionEmitter {
     // OneOf typedefs return Object? from toJson — can't spread.
     final toJsonExpr = buildToJsonCode(type, fieldName);
     final resolved = type is IrTypeRef
-        ? (typeRegistry[type.name] ?? type)
+        ? (ctx.typeRegistry[type.name] ?? type)
         : type;
     final isSpreadable = switch (resolved) {
       IrObject() || IrDiscriminatedUnion() => true,
@@ -745,7 +746,7 @@ final class DiscriminatedUnionEmitter {
                 ),
               )
               ..body = Code(
-                'return $className(${buildFromJsonCode(type, 'json', paramIsMap: true, typeRegistry: typeRegistry)});',
+                'return $className(${ctx.fromJson(type, 'json', paramIsMap: true)});',
               ),
           ),
         )
@@ -809,14 +810,14 @@ final class UntaggedUnionEmitter {
   /// Creates an emitter for the given untagged [union].
   const UntaggedUnionEmitter(
     this.union, {
-    this.typeRegistry = const {},
+    this.ctx = EmitContext.empty,
   });
 
   /// The untagged union IR to emit.
   final IrUntaggedUnion union;
 
-  /// Registry of all known IR types for resolution.
-  final Map<String, IrType> typeRegistry;
+  /// Shared emitter context (type registry for resolving refs).
+  final EmitContext ctx;
 
   /// Emit the sealed class hierarchy as code_builder specs.
   List<Spec> emit() {
@@ -932,7 +933,7 @@ final class UntaggedUnionEmitter {
       final className = '${union.name}${toPascalCase(safeTypeName)}';
       if (variant is IrObject || variant is IrTypeRef) {
         final refName = typeName;
-        if (isUnionType(variant, typeRegistry)) {
+        if (ctx.isUnionType(variant)) {
           // Union types don't have canParse - just try fromJson.
           // Their own fromJson handles unknown values, so this is
           // unconditional.
@@ -1101,14 +1102,14 @@ final class AnyOfEmitter {
   /// Creates an emitter for the given [anyOf] type.
   const AnyOfEmitter(
     this.anyOf, {
-    this.typeRegistry = const {},
+    this.ctx = EmitContext.empty,
   });
 
   /// The anyOf IR to emit.
   final IrAnyOf anyOf;
 
-  /// Registry of all known IR types for resolution.
-  final Map<String, IrType> typeRegistry;
+  /// Shared emitter context (type registry for resolving refs).
+  final EmitContext ctx;
 
   /// Emit the anyOf class as code_builder specs.
   List<Spec> emit() {
@@ -1195,7 +1196,7 @@ final class AnyOfEmitter {
           f.type is IrDiscriminatedUnion ||
           f.type is IrUntaggedUnion ||
           f.type is IrAnyOf ||
-          isUnionType(f.type, typeRegistry),
+          ctx.isUnionType(f.type),
     );
     final paramType = allObjectLike ? 'Map<String, dynamic>' : 'dynamic';
 
@@ -1206,7 +1207,7 @@ final class AnyOfEmitter {
         !allObjectLike &&
         fields.any(
           (f) =>
-              f.type is IrObject || f.type is IrTypeRef || isUnionType(f.type, typeRegistry),
+              f.type is IrObject || f.type is IrTypeRef || ctx.isUnionType(f.type),
         );
     final prelude = needsMap
         ? 'final map = json is Map<String, dynamic> ? json : null;\n'
@@ -1214,9 +1215,7 @@ final class AnyOfEmitter {
 
     String oneOfArg(String name, IrType type) {
       final accessor = allObjectLike ? 'json' : 'map';
-      final parseCode = buildFromJsonCode(
-        type, accessor, paramIsMap: true, typeRegistry: typeRegistry,
-      );
+      final parseCode = ctx.fromJson(type, accessor, paramIsMap: true);
       return allObjectLike
           ? '  $name: $parseCode,'
           : '  $name: map != null ? $parseCode : null,';
@@ -1241,9 +1240,9 @@ final class AnyOfEmitter {
           '  ${f.name}: json is ${primitiveJsonWireType(inner.kind)} ? ${f.typeName}.fromJson(json) : null,',
         IrList() || IrMap() =>
           '  // ${f.name}: skipped (collection type in anyOf not supported)',
-        _ when isOneOfType(fType, typeRegistry) =>
+        _ when ctx.isOneOfType(fType) =>
           oneOfArg(f.name, fType),
-        _ when isUnionType(fType, typeRegistry) =>
+        _ when ctx.isUnionType(fType) =>
           mapArg(f.name, f.typeName),
         _ => objectArg(f.name, f.typeName),
       };
@@ -1298,7 +1297,7 @@ final class AnyOfEmitter {
           "  '${f.name}': ?${f.name},",
         IrEnum() || IrExtensionType() =>
           "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),",
-        _ when isUnionType(fType, typeRegistry) =>
+        _ when ctx.isUnionType(fType) =>
           "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),",
         _ => '  ...?${f.name}?.toJson(),',
       };

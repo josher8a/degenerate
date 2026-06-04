@@ -1,4 +1,5 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
@@ -29,7 +30,7 @@ final class ErrorUnionInfo {
 /// Returns a map of operationId -> ErrorUnionInfo.
 Map<String, ErrorUnionInfo> buildErrorUnionMap(
   List<IrApi> apis,
-  Map<String, IrType> typeRegistry,
+  EmitContext ctx,
 ) {
   final opErrors = <String, Map<int, (String, IrType)>>{};
   final opDartNames = <String, String>{};
@@ -103,7 +104,7 @@ String _errorClassName(String dartMethodName) {
 Library emitErrorUnionLibrary({
   required String className,
   required Map<int, (String, IrType)> statusErrors,
-  required Map<String, IrType> typeRegistry,
+  required EmitContext ctx,
   required String packageName,
   required Map<String, String> typeToFile,
   List<String> aliases = const [],
@@ -115,7 +116,7 @@ Library emitErrorUnionLibrary({
   final importedTypes = <String>{};
   for (final MapEntry(:value) in sortedEntries) {
     collectTypeRefs(value.$2, importedTypes,
-        typeRegistry: typeRegistry, walkFields: false);
+        typeRegistry: ctx.typeRegistry, walkFields: false);
   }
 
   return Library((lib) {
@@ -137,11 +138,11 @@ Library emitErrorUnionLibrary({
       className,
       sortedEntries,
       hasDefaultEntry,
-      typeRegistry,
+      ctx,
     ));
 
     for (final entry in sortedEntries) {
-      lib.body.add(_buildVariantClass(className, entry, typeRegistry));
+      lib.body.add(_buildVariantClass(className, entry, ctx));
     }
 
     if (!hasDefaultEntry) {
@@ -158,7 +159,7 @@ Class _buildSealedBase(
   String className,
   List<MapEntry<int, (String, IrType)>> sortedEntries,
   bool hasDefaultEntry,
-  Map<String, IrType> typeRegistry,
+  EmitContext ctx,
 ) {
   return Class((b) => b
     ..name = className
@@ -172,7 +173,7 @@ Class _buildSealedBase(
       className,
       sortedEntries,
       hasDefaultEntry,
-      typeRegistry,
+      ctx,
     )));
 }
 
@@ -180,18 +181,14 @@ Constructor _buildFromResponse(
   String className,
   List<MapEntry<int, (String, IrType)>> sortedEntries,
   bool hasDefaultEntry,
-  Map<String, IrType> typeRegistry,
+  EmitContext ctx,
 ) {
   final cases = StringBuffer();
   for (final MapEntry(:key, :value) in sortedEntries) {
     final code = key;
     final typeName = value.$1;
     final variantSuffix = code == -1 ? '\$$typeName' : '\$$code';
-    final deserialize = buildFromJsonCode(
-      value.$2,
-      'jsonDecode(response.body)',
-      typeRegistry: typeRegistry,
-    );
+    final deserialize = ctx.fromJson(value.$2, 'jsonDecode(response.body)');
     if (code == -1) {
       cases.writeln(
         '        _ => $className$variantSuffix($deserialize, response.statusCode),',
@@ -232,7 +229,7 @@ Constructor _buildFromResponse(
 Class _buildVariantClass(
   String className,
   MapEntry<int, (String, IrType)> entry,
-  Map<String, IrType> typeRegistry,
+  EmitContext ctx,
 ) {
   final code = entry.key;
   final typeName = entry.value.$1;

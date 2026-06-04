@@ -1,7 +1,63 @@
 import 'package:code_builder/code_builder.dart';
 
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
+
+// ─── EmitContext convenience methods ───────────────────
+// Defined as an extension here (rather than on EmitContext itself) to avoid
+// a circular import: emit_context.dart stays pure (imports only ir_types),
+// while this extension can reference the codec helpers below.
+
+extension EmitContextX on EmitContext {
+  IrType resolve(IrType type) => type.resolveRef(typeRegistry);
+
+  String fromJson(
+    IrType type,
+    String accessor, {
+    bool isOptional = false,
+    bool paramIsMap = false,
+  }) => buildFromJsonCode(
+    type,
+    accessor,
+    isOptional: isOptional,
+    paramIsMap: paramIsMap,
+    ctx: this,
+  );
+
+  String oneOfParseCode(
+    List<IrType> variants,
+    String accessor, {
+    bool isOptional = false,
+    Set<String>? resolving,
+  }) => buildOneOfParseCode(
+    variants,
+    accessor,
+    isOptional: isOptional,
+    ctx: this,
+    resolving: resolving,
+  );
+
+  bool isOneOfType(IrType type) {
+    final resolved = type.resolveRef(typeRegistry);
+    return switch (resolved) {
+      IrUntaggedUnion(:final name, :final variants)
+          when isOneOfTypedef(name, variants) =>
+        true,
+      IrAnyOf(:final name, :final variants)
+          when isOneOfTypedef(name, variants) =>
+        true,
+      _ => false,
+    };
+  }
+
+  bool isUnionType(IrType type) {
+    final resolved = type.resolveRef(typeRegistry);
+    return resolved is IrDiscriminatedUnion ||
+        resolved is IrUntaggedUnion ||
+        resolved is IrAnyOf;
+  }
+}
 
 final _dartEmitter = DartEmitter(
   allocator: Allocator.simplePrefixing(),
@@ -87,11 +143,11 @@ String buildFromJsonCode(
   String accessor, {
   bool isOptional = false,
   bool paramIsMap = false,
-  Map<String, IrType> typeRegistry = const {},
+  EmitContext ctx = EmitContext.empty,
 }) {
   // Resolve IrTypeRef to its target if it's a OneOf-eligible union (typedef).
   final resolving = <String>{};
-  final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
+  final resolved = _resolveOneOfRef(type, ctx, resolving);
 
   // For simple cast types (String, num, bool), nullable
   // cast syntax works directly.
@@ -99,7 +155,7 @@ String buildFromJsonCode(
     final simpleCast = _simpleCastFromJson(
       resolved,
       accessor,
-      typeRegistry: typeRegistry,
+      ctx: ctx,
       resolving: resolving,
     );
     if (simpleCast != null) return simpleCast;
@@ -109,35 +165,32 @@ String buildFromJsonCode(
     resolved,
     accessor,
     paramIsMap: paramIsMap,
-    typeRegistry: typeRegistry,
+    ctx: ctx,
     resolving: resolving,
   );
   if (!isOptional) return expr;
   return '$accessor != null ? $expr : null';
 }
 
-/// If [type] is an [IrTypeRef] whose target in [registry] is a OneOf-eligible
+/// If [type] is an [IrTypeRef] whose target in [ctx] is a OneOf-eligible
 /// union, return the target type so we emit parse code
 /// instead of `.fromJson()`.
 /// [resolving] tracks names being resolved to prevent infinite recursion on
 /// circular type references.
 IrType _resolveOneOfRef(
   IrType type,
-  Map<String, IrType> registry, [
+  EmitContext ctx, [
   Set<String>? resolving,
 ]) {
   if (type is! IrTypeRef) return type;
   resolving ??= {};
   if (!resolving.add(type.name)) return type; // cycle detected
-  final target = registry[type.name];
+  final target = ctx.typeRegistry[type.name];
   if (target == null) return type;
   return switch (target) {
-    IrUntaggedUnion(:final variants)
-        when isOneOfTypedef(type.name, variants) =>
+    IrUntaggedUnion(:final variants) when isOneOfTypedef(type.name, variants) =>
       target,
-    IrAnyOf(:final variants)
-        when isOneOfTypedef(type.name, variants) =>
-      target,
+    IrAnyOf(:final variants) when isOneOfTypedef(type.name, variants) => target,
     _ => type,
   };
 }
@@ -157,7 +210,7 @@ bool isSelfReferencingUnion(String typeName, List<IrType> variants) {
 String? _simpleCastFromJson(
   IrType type,
   String accessor, {
-  Map<String, IrType> typeRegistry = const {},
+  EmitContext ctx = EmitContext.empty,
   Set<String>? resolving,
 }) {
   return switch (type) {
@@ -169,11 +222,11 @@ String? _simpleCastFromJson(
       _ => null, // needs null-check wrapper
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
     IrMap(:final values) =>
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>?'
-          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', ctx: ctx, resolving: resolving)}))',
     _ => null,
   };
 }
@@ -199,11 +252,11 @@ String _buildFromJsonNonNull(
   IrType type,
   String accessor, {
   bool paramIsMap = false,
-  Map<String, IrType> typeRegistry = const {},
+  EmitContext ctx = EmitContext.empty,
   Set<String>? resolving,
 }) {
   // Resolve IrTypeRef to OneOf-eligible union before switching.
-  final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
+  final resolved = _resolveOneOfRef(type, ctx, resolving);
   return switch (resolved) {
     IrPrimitive(:final kind) => _primitiveFromJsonExpr(kind, accessor),
     IrEnum(:final name, :final valueKind) => switch (valueKind) {
@@ -212,18 +265,13 @@ String _buildFromJsonNonNull(
       _ => '$name.fromJson($accessor as String)',
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
     IrMap(:final values) =>
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>'
-          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', ctx: ctx, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-      buildOneOfParseCode(
-        variants,
-        accessor,
-        typeRegistry: typeRegistry,
-        resolving: resolving,
-      ),
+      buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
     IrUntaggedUnion(:final name, :final variants) =>
       variants.every((v) => v is IrPrimitive)
           ? '$name.fromJson($accessor)'
@@ -231,14 +279,9 @@ String _buildFromJsonNonNull(
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
     IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-      buildOneOfParseCode(
-        variants,
-        accessor,
-        typeRegistry: typeRegistry,
-        resolving: resolving,
-      ),
+      buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),
     // Cycle-detected OneOf typedef: use generated parse helper function.
-    IrTypeRef(:final name) when _isOneOfInRegistry(name, typeRegistry) =>
+    IrTypeRef(:final name) when _isOneOfInRegistry(name, ctx) =>
       'parse$name($accessor)',
     // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
     IrObject(:final name) ||
@@ -296,7 +339,6 @@ bool listItemNeedsToJson(IrType type) {
   };
 }
 
-
 /// The JSON wire type name for a primitive kind.
 ///
 /// E.g. DateTime→String (ISO 8601), int/double→num, bytes→String (base64).
@@ -319,18 +361,10 @@ String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
   return '$accessor as ${primitiveJsonWireType(inner.kind)}';
 }
 
-/// Whether a type resolves to a union through the registry.
-bool isUnionType(IrType type, Map<String, IrType> registry) {
-  final resolved = type.resolveRef(registry);
-  return resolved is IrDiscriminatedUnion ||
-      resolved is IrUntaggedUnion ||
-      resolved is IrAnyOf;
-}
-
 /// Whether a name in the type registry maps to a OneOf-eligible union
 /// (excluding self-referencing types which can't be Dart typedefs).
-bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
-  final target = registry[name];
+bool _isOneOfInRegistry(String name, EmitContext ctx) {
+  final target = ctx.typeRegistry[name];
   if (target == null) return false;
   return switch (target) {
     IrUntaggedUnion(:final variants) when isOneOfTypedef(name, variants) =>
@@ -347,11 +381,11 @@ bool isListType(IrType type) => type is IrList;
 /// List/Map wrappers). Used to determine `dart:typed_data` / `dart:convert`
 /// import needs.
 bool isBytesType(IrType type) => switch (type) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => isBytesType(items),
-      IrMap(:final values) => isBytesType(values),
-      _ => false,
-    };
+  IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
+  IrList(:final items) => isBytesType(items),
+  IrMap(:final values) => isBytesType(values),
+  _ => false,
+};
 
 // ─── Type-to-String serialization ──────────────────────
 
@@ -371,9 +405,10 @@ String typeToStringExpr(
   final primExpr = primitiveExpr ?? _defaultPrimitiveToString;
   return switch (type) {
     IrPrimitive(:final kind) => primExpr(kind, accessor),
-    IrEnum(:final valueKind) => valueKind == PrimitiveKind.string
-        ? '$accessor.toJson()'
-        : '$accessor.toJson().toString()',
+    IrEnum(:final valueKind) =>
+      valueKind == PrimitiveKind.string
+          ? '$accessor.toJson()'
+          : '$accessor.toJson().toString()',
     IrExtensionType(:final inner) =>
       primitiveJsonWireType(inner.kind) == 'String'
           ? '$accessor.toJson()'
@@ -400,17 +435,15 @@ bool isOneOfTypedef(String name, List<IrType> variants) =>
     isOneOfEligible(variants) && !isSelfReferencingUnion(name, variants);
 
 /// Whether [type] is a OneOf-eligible union typedef, optionally resolving
-/// [IrTypeRef] through [typeRegistry].
-bool isOneOfType(IrType type, [Map<String, IrType>? typeRegistry]) {
-  final resolved =
-      typeRegistry != null ? type.resolveRef(typeRegistry) : type;
+/// [IrTypeRef] through [ctx].
+bool isOneOfType(IrType type, [EmitContext? ctx]) {
+  final resolved = ctx != null ? type.resolveRef(ctx.typeRegistry) : type;
   return switch (resolved) {
-    IrUntaggedUnion(:final name, :final variants)
-        when isOneOfTypedef(name, variants) =>
-      true,
-    IrAnyOf(:final name, :final variants)
-        when isOneOfTypedef(name, variants) =>
-      true,
+    IrUntaggedUnion(:final name, :final variants) ||
+    IrAnyOf(
+      :final name,
+      :final variants,
+    ) when isOneOfTypedef(name, variants) => true,
     _ => false,
   };
 }
@@ -452,7 +485,7 @@ String buildOneOfParseCode(
   List<IrType> variants,
   String accessor, {
   bool isOptional = false,
-  Map<String, IrType> typeRegistry = const {},
+  EmitContext ctx = EmitContext.empty,
   Set<String>? resolving,
 }) {
   final n = variants.length;
@@ -465,7 +498,7 @@ String buildOneOfParseCode(
         ? Set<String>.from(resolving)
         : null;
     args.add(
-      'from${_oneOfLetters[i]}: (v) => ${_buildFromJsonNonNull(variant, 'v', typeRegistry: typeRegistry, resolving: branchResolving)}',
+      'from${_oneOfLetters[i]}: (v) => ${_buildFromJsonNonNull(variant, 'v', ctx: ctx, resolving: branchResolving)}',
     );
   }
 
@@ -581,10 +614,7 @@ String escapeDocComment(String line) {
     } else {
       // Outside backticks - escape bare <...> tags and [references].
       var prose = parts[i];
-      prose = prose.replaceAllMapped(
-        RegExp('<([^>]+)>'),
-        (m) => '`<${m[1]}>`',
-      );
+      prose = prose.replaceAllMapped(RegExp('<([^>]+)>'), (m) => '`<${m[1]}>`');
       // Escape bare [text] that aren't markdown links [text](...).
       prose = prose.replaceAllMapped(
         RegExp(r'\[([^\]]+)\](?!\()'),
@@ -807,9 +837,8 @@ String primitiveToJsonExpr(
   PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
   PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
   PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-  PrimitiveKind.bytes => q.isEmpty
-      ? 'base64Encode($accessor)'
-      : 'base64Encode($accessor!)',
+  PrimitiveKind.bytes =>
+    q.isEmpty ? 'base64Encode($accessor)' : 'base64Encode($accessor!)',
   _ => accessor,
 };
 
@@ -831,17 +860,17 @@ Code? fieldDefaultCode(IrField f) {
   if (f.defaultValue == null) return null;
   return switch ((f.defaultValue, f.type)) {
     (Map(isEmpty: true), _) when _isObjectLikeType(f.type) => null,
-    (final String v, IrEnum(:final name)) =>
-      Code('$name.${enumValueName(v)}'),
-    (final String v, IrPrimitive(kind: PrimitiveKind.string)) =>
-      Code(dartStringLiteral(v)),
+    (final String v, IrEnum(:final name)) => Code('$name.${enumValueName(v)}'),
+    (final String v, IrPrimitive(kind: PrimitiveKind.string)) => Code(
+      dartStringLiteral(v),
+    ),
     (String(), _) => null,
     (final bool v, IrPrimitive(kind: PrimitiveKind.bool)) => Code('$v'),
     (bool(), _) => null,
-    (final num v, IrPrimitive(kind: PrimitiveKind.int)) =>
-      Code('${v.toInt()}'),
-    (final num v, IrPrimitive(kind: PrimitiveKind.double)) =>
-      Code('${v.toDouble()}'),
+    (final num v, IrPrimitive(kind: PrimitiveKind.int)) => Code('${v.toInt()}'),
+    (final num v, IrPrimitive(kind: PrimitiveKind.double)) => Code(
+      '${v.toDouble()}',
+    ),
     (final num v, IrPrimitive()) => Code('$v'),
     (num(), _) => null,
     (List(isEmpty: true), _) => const Code('const []'),

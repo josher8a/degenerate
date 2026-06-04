@@ -1,3 +1,4 @@
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
@@ -44,7 +45,7 @@ bool typeNeedsImmutable(IrType type) => switch (type) {
 ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
 analyzeApiImports(
   IrApi api, [
-  Map<String, IrType>? typeRegistry,
+  EmitContext? ctx,
   List<String> unwrapFields = const [],
   Map<String, ErrorUnionInfo> errorUnionMap = const {},
 ]) {
@@ -53,12 +54,12 @@ analyzeApiImports(
   var needsTypedData = false;
 
   IrType maybeUnwrap(IrType type) {
-    if (unwrapFields.isEmpty || typeRegistry == null) return type;
+    if (unwrapFields.isEmpty || ctx == null) return type;
     IrObject? obj;
     if (type is IrObject) {
       obj = type;
     } else if (type is IrTypeRef) {
-      final resolved = typeRegistry[type.name];
+      final resolved = ctx.typeRegistry[type.name];
       if (resolved is IrObject) obj = resolved;
     }
     if (obj == null) return type;
@@ -89,7 +90,7 @@ analyzeApiImports(
         if (content != null) {
           if (isJsonLikeMediaType(content.$1)) needsConvert = true;
           final schema = maybeUnwrap(content.$2.schema);
-          collectTopLevelTypeName(schema, names, typeRegistry);
+          collectTopLevelTypeName(schema, names, ctx);
           if (isBytesType(schema)) needsTypedData = true;
           break;
         }
@@ -99,7 +100,7 @@ analyzeApiImports(
     if (streaming != null) {
       needsConvert = true;
       final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
-      collectTopLevelTypeName(eventType, names, typeRegistry);
+      collectTopLevelTypeName(eventType, names, ctx);
     }
     final errorUnion = errorUnionMap[op.operationId];
     if (errorUnion != null) {
@@ -120,7 +121,7 @@ analyzeApiImports(
       }
       if (errorContent != null) {
         if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
-        collectTopLevelTypeName(errorContent.$2.schema, names, typeRegistry);
+        collectTopLevelTypeName(errorContent.$2.schema, names, ctx);
       }
     }
   }
@@ -134,7 +135,7 @@ analyzeApiImports(
 /// Collect only the top-level type name from a type, without recursing
 /// into fields. For lists/maps, collects the item/value types.
 ///
-/// When [typeRegistry] is provided, resolves IrTypeRef to OneOf-eligible
+/// When [ctx] is provided, resolves IrTypeRef to OneOf-eligible
 /// unions and collects their variant type names (needed for parse code
 /// imports).
 ///
@@ -144,7 +145,7 @@ analyzeApiImports(
 void collectTopLevelTypeName(
   IrType type,
   Set<String> names, [
-  Map<String, IrType>? typeRegistry,
+  EmitContext? ctx,
   Set<String>? resolving,
   bool skipInlinedOneOfRefs = false,
 ]) {
@@ -156,13 +157,12 @@ void collectTopLevelTypeName(
     case IrTypeRef(:final name):
       final isInlinedOneOf =
           skipInlinedOneOfRefs &&
-          typeRegistry != null &&
-          switch (typeRegistry[name]) {
+          ctx != null &&
+          switch (ctx.typeRegistry[name]) {
             IrUntaggedUnion(:final variants)
                 when isOneOfTypedef(name, variants) =>
               true,
-            IrAnyOf(:final variants)
-                when isOneOfTypedef(name, variants) =>
+            IrAnyOf(:final variants) when isOneOfTypedef(name, variants) =>
               true,
             _ => false,
           };
@@ -170,26 +170,18 @@ void collectTopLevelTypeName(
         names.add(name);
       }
       resolving ??= {};
-      if (typeRegistry != null && resolving.add(name)) {
-        final target = typeRegistry[name];
+      if (ctx != null && resolving.add(name)) {
+        final target = ctx.typeRegistry[name];
         if (target != null) {
           final variants = switch (target) {
-            IrUntaggedUnion(:final variants)
-                when isOneOfEligible(variants) =>
+            IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
               variants,
-            IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-              variants,
+            IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
             _ => null,
           };
           if (variants != null) {
             for (final v in variants) {
-              collectTopLevelTypeName(
-                v,
-                names,
-                typeRegistry,
-                resolving,
-                true,
-              );
+              collectTopLevelTypeName(v, names, ctx, resolving, true);
             }
           }
         }
@@ -204,9 +196,9 @@ void collectTopLevelTypeName(
       if (!skipUntagged) {
         names.add(name);
       }
-      if (typeRegistry != null && isOneOfEligible(variants)) {
+      if (ctx != null && isOneOfEligible(variants)) {
         for (final v in variants) {
-          collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
+          collectTopLevelTypeName(v, names, ctx, resolving, true);
         }
       }
     case IrAnyOf(:final name, :final variants):
@@ -217,9 +209,9 @@ void collectTopLevelTypeName(
       if (!skipAnyOf) {
         names.add(name);
       }
-      if (typeRegistry != null && isOneOfEligible(variants)) {
+      if (ctx != null && isOneOfEligible(variants)) {
         for (final v in variants) {
-          collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
+          collectTopLevelTypeName(v, names, ctx, resolving, true);
         }
       }
     case IrExtensionType(:final name):
@@ -228,7 +220,7 @@ void collectTopLevelTypeName(
       collectTopLevelTypeName(
         items,
         names,
-        typeRegistry,
+        ctx,
         resolving,
         skipInlinedOneOfRefs,
       );
@@ -236,7 +228,7 @@ void collectTopLevelTypeName(
       collectTopLevelTypeName(
         values,
         names,
-        typeRegistry,
+        ctx,
         resolving,
         skipInlinedOneOfRefs,
       );
@@ -248,7 +240,7 @@ void collectTopLevelTypeName(
 /// Single-pass model analysis: collects referenced type names and detects
 /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are
 /// needed.
-ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegistry]) {
+ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
   final names = <String>{};
   var needsCollection = false;
   var needsTypedData = false;
@@ -265,13 +257,13 @@ ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegist
     IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
       hasBytesAnywhere,
     ),
-    IrTypeRef(:final name)
-        when typeRegistry != null && bytesVisited.add(name) =>
-      switch (typeRegistry[name]) {
+    IrTypeRef(:final name) when ctx != null && bytesVisited.add(name) =>
+      switch (ctx.typeRegistry[name]) {
         IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
           variants.any(hasBytesAnywhere),
-        IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-          variants.any(hasBytesAnywhere),
+        IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
+          hasBytesAnywhere,
+        ),
         _ => false,
       },
     _ => false,
@@ -280,11 +272,11 @@ ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegist
   bool isOneOfTypeDeep(IrType t) => switch (t) {
     IrList(:final items) => isOneOfTypeDeep(items),
     IrMap(:final values) => isOneOfTypeDeep(values),
-    _ => isOneOfType(t, typeRegistry),
+    _ => isOneOfType(t, ctx),
   };
 
   void checkField(IrType fieldType) {
-    collectTopLevelTypeName(fieldType, names, typeRegistry);
+    collectTopLevelTypeName(fieldType, names, ctx);
     if (isListType(fieldType)) needsCollection = true;
     if (isBytesType(fieldType)) {
       needsTypedData = true;
@@ -316,38 +308,38 @@ ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegist
     ):
       names.add(name);
       for (final variant in mapping.values) {
-        collectTopLevelTypeName(variant, names, typeRegistry);
+        collectTopLevelTypeName(variant, names, ctx);
         if (variant is IrObject) {
           for (final f in variant.fields) {
             if (isListType(f.type)) needsCollection = true;
           }
         }
         if (isBytesType(variant)) needsTypedData = true;
-        if (typeRegistry != null && variant is IrTypeRef) {
-          final resolved = typeRegistry[variant.name];
+        if (ctx != null && variant is IrTypeRef) {
+          final resolved = ctx.typeRegistry[variant.name];
           final oneOfVariants = switch (resolved) {
-            IrUntaggedUnion(:final variants)
-                when isOneOfEligible(variants) => variants,
-            IrAnyOf(:final variants)
-                when isOneOfEligible(variants) => variants,
+            IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+              variants,
+            IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
             _ => null,
           };
           if (oneOfVariants != null) {
             needsOneOf = true;
             for (final v in oneOfVariants) {
-              collectTopLevelTypeName(v, names, typeRegistry);
+              collectTopLevelTypeName(v, names, ctx);
             }
           }
         }
       }
-      if (typeRegistry != null) {
+      if (ctx != null) {
         for (final MapEntry(:key, :value) in mapping.entries) {
-          final resolved = value.resolveRef(typeRegistry);
+          final resolved = ctx.resolve(value);
           if (resolved is IrObject) {
             for (final f in resolved.fields) {
               if (f.originalName == discriminatorProperty) {
-                final nonDiscFields = resolved.fields
-                    .where((g) => g.originalName != discriminatorProperty);
+                final nonDiscFields = resolved.fields.where(
+                  (g) => g.originalName != discriminatorProperty,
+                );
                 if (f.defaultValue == key || nonDiscFields.isEmpty) {
                   continue;
                 }
@@ -378,7 +370,7 @@ ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegist
         }
       } else {
         for (final variant in variants) {
-          collectTopLevelTypeName(variant, names, typeRegistry);
+          collectTopLevelTypeName(variant, names, ctx);
           if (isOneOfTypeDeep(variant)) needsOneOf = true;
           if (isListType(variant)) needsCollection = true;
           if (isBytesType(variant)) {
@@ -394,9 +386,9 @@ ImportAnalysis analyzeModelImports(IrType type, [Map<String, IrType>? typeRegist
         needsConvert = true;
       }
     case IrList(:final items):
-      collectTopLevelTypeName(items, names, typeRegistry);
+      collectTopLevelTypeName(items, names, ctx);
     case IrMap(:final values):
-      collectTopLevelTypeName(values, names, typeRegistry);
+      collectTopLevelTypeName(values, names, ctx);
     case IrPrimitive():
       break;
   }

@@ -1,4 +1,5 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
@@ -12,7 +13,7 @@ final class ApiEmitter {
   /// Creates an emitter for the given [api] group.
   const ApiEmitter(
     this.api, {
-    this.typeRegistry = const {},
+    this.ctx = EmitContext.empty,
     this.unwrapFields = const [],
     this.errorUnionMap = const {},
   });
@@ -20,28 +21,14 @@ final class ApiEmitter {
   /// The API group to emit.
   final IrApi api;
 
-  /// Registry of all known IR types for resolution.
-  final Map<String, IrType> typeRegistry;
+  /// Shared emitter context (type registry for resolving refs).
+  final EmitContext ctx;
 
   /// Fields to unwrap from response envelopes.
   final List<String> unwrapFields;
 
   /// Per-operation error union info (operationId -> ErrorUnionInfo).
   final Map<String, ErrorUnionInfo> errorUnionMap;
-
-  /// Wrapper around [buildFromJsonCode] that passes the type registry.
-  String _fromJson(
-    IrType type,
-    String accessor, {
-    bool isOptional = false,
-    bool paramIsMap = false,
-  }) => buildFromJsonCode(
-    type,
-    accessor,
-    isOptional: isOptional,
-    paramIsMap: paramIsMap,
-    typeRegistry: typeRegistry,
-  );
 
   /// Emit the API client class as code_builder specs.
   List<Spec> emit() {
@@ -484,7 +471,7 @@ final class ApiEmitter {
           '    final json = jsonDecode(response.body) as Map<String, dynamic>;',
         );
         buf.writeln(
-          '    return ${_fromJson(returnType, 'json[${dartStringLiteral(unwrappedField)}]', isOptional: unwrappedFieldIsOptional)};',
+          '    return ${ctx.fromJson(returnType, 'json[${dartStringLiteral(unwrappedField)}]', isOptional: unwrappedFieldIsOptional)};',
         );
       } else {
         final deserialize = _buildDeserializeExpr(
@@ -501,9 +488,7 @@ final class ApiEmitter {
     }
     if (errorUnion != null) {
       final errorClass = errorUnion.resolvedClassName;
-      buf.writeln(
-        '  onError: $errorClass.fromResponse,',
-      );
+      buf.writeln('  onError: $errorClass.fromResponse,');
     } else if (errorResponseContent != null) {
       final errorDeserialize = _buildErrorDeserializeExpr(
         errorResponseContent.$1,
@@ -526,9 +511,9 @@ final class ApiEmitter {
     return switch (type) {
       IrList(:final items) =>
         'final json = jsonDecode(response.body) as List<dynamic>;\n'
-            '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
+            '    return json.map((e) => ${ctx.fromJson(items, 'e')}).toList();',
       IrMap(:final values) => () {
-        final valueExpr = _fromJson(values, 'v');
+        final valueExpr = ctx.fromJson(values, 'v');
         if (valueExpr == 'v') {
           return 'return jsonDecode(response.body) as Map<String, dynamic>;';
         }
@@ -540,7 +525,7 @@ final class ApiEmitter {
         PrimitiveKind.double => 'return double.parse(response.body);',
         PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
         PrimitiveKind.bytes =>
-          'return ${_fromJson(type, 'jsonDecode(response.body)')};',
+          'return ${ctx.fromJson(type, 'jsonDecode(response.body)')};',
         _ => 'return jsonDecode(response.body);',
       },
       _ => null,
@@ -550,7 +535,7 @@ final class ApiEmitter {
   String _buildDeserializeExpr(String mediaType, IrType returnType) {
     if (isJsonLikeMediaType(mediaType)) {
       return _sharedJsonDeserialize(returnType) ??
-          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};';
+          'return ${ctx.fromJson(returnType, 'jsonDecode(response.body)')};';
     }
 
     final unsupportedMessage =
@@ -558,7 +543,8 @@ final class ApiEmitter {
     final primitive = _nonJsonPrimitiveDeserialize(returnType);
     if (primitive != null) return primitive;
     return switch (returnType) {
-      IrExtensionType() => 'return ${_fromJson(returnType, 'response.body')};',
+      IrExtensionType() =>
+        'return ${ctx.fromJson(returnType, 'response.body')};',
       _ =>
         "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
     };
@@ -566,8 +552,7 @@ final class ApiEmitter {
 
   String? _nonJsonPrimitiveDeserialize(IrType type) => switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.dynamic_ ||
-      PrimitiveKind.string => 'return response.body;',
+      PrimitiveKind.dynamic_ || PrimitiveKind.string => 'return response.body;',
       PrimitiveKind.int => 'return int.parse(response.body);',
       PrimitiveKind.double => 'return double.parse(response.body);',
       PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
@@ -598,8 +583,7 @@ final class ApiEmitter {
   }
 
   /// Convert a parameter to its string representation for headers/query values.
-  String _toStringExpr(IrParameter p) =>
-      typeToStringExpr(p.type, p.dartName);
+  String _toStringExpr(IrParameter p) => typeToStringExpr(p.type, p.dartName);
 
   void _writeQueryParameterSerialization(StringBuffer buf, IrParameter p) {
     final style = _queryStyle(p);
@@ -796,7 +780,9 @@ final class ApiEmitter {
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join(',')");
     } else {
-      buf.writeln("queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');");
+      buf.writeln(
+        "queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');",
+      );
     }
   }
 
@@ -813,18 +799,21 @@ final class ApiEmitter {
   }
 
   String _queryScalarExpr(IrType type, String accessor) {
-    return typeToStringExpr(type, accessor, primitiveExpr: (kind, acc) {
-      return switch (kind) {
-        PrimitiveKind.string => acc,
-        PrimitiveKind.dateTime ||
-        PrimitiveKind.uri ||
-        PrimitiveKind.bigInt ||
-        PrimitiveKind.duration =>
-          buildToJsonCode(IrPrimitive(kind), acc),
-        PrimitiveKind.bytes => 'base64Encode($acc)',
-        _ => '$acc.toString()',
-      };
-    });
+    return typeToStringExpr(
+      type,
+      accessor,
+      primitiveExpr: (kind, acc) {
+        return switch (kind) {
+          PrimitiveKind.string => acc,
+          PrimitiveKind.dateTime ||
+          PrimitiveKind.uri ||
+          PrimitiveKind.bigInt ||
+          PrimitiveKind.duration => buildToJsonCode(IrPrimitive(kind), acc),
+          PrimitiveKind.bytes => 'base64Encode($acc)',
+          _ => '$acc.toString()',
+        };
+      },
+    );
   }
 
   bool _canUseSimpleQueryMap(IrParameter p) {
@@ -887,7 +876,7 @@ final class ApiEmitter {
 
   /// Resolve an IrType to an IrObject if possible (through IrTypeRef).
   IrObject? _resolveToObject(IrType type) {
-    final r = type.resolveRef(typeRegistry);
+    final r = ctx.resolve(type);
     return r is IrObject ? r : null;
   }
 
@@ -979,7 +968,7 @@ final class ApiEmitter {
   }
 
   String _buildSseDeserializeExpr(IrType eventType) {
-    return 'return ${_fromJson(eventType, 'jsonDecode(data)')};';
+    return 'return ${ctx.fromJson(eventType, 'jsonDecode(data)')};';
   }
 
   (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
@@ -1019,7 +1008,8 @@ final class ApiEmitter {
           switch (errorType) {
             IrEnum(:final name) =>
               'return $name.fromJson(jsonDecode(response.body) as String);',
-            _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
+            _ =>
+              'return ${ctx.fromJson(errorType, 'jsonDecode(response.body)')};',
           };
     }
 
@@ -1045,9 +1035,7 @@ final class ApiEmitter {
     }
     // Check remaining 2xx codes (206, 207, etc.)
     for (final MapEntry(:key, :value) in op.responses.entries) {
-      if (key >= 200 &&
-          key < 300 &&
-          !priorityCodes.contains(key)) {
+      if (key >= 200 && key < 300 && !priorityCodes.contains(key)) {
         final content = preferredContent(value.content);
         if (content != null) return content;
         if (value.content.isEmpty) return null;
@@ -1124,7 +1112,7 @@ final class ApiEmitter {
   List<IrField>? _resolveObjectFields(IrType type) {
     return switch (type) {
       IrObject(:final fields) => fields,
-      IrTypeRef(:final name) => switch (typeRegistry[name]) {
+      IrTypeRef(:final name) => switch (ctx.typeRegistry[name]) {
         IrObject(:final fields) => fields,
         _ => null,
       },
@@ -1261,14 +1249,18 @@ final class ApiEmitter {
 
   /// Get the string expression for a multipart text field value.
   String _multipartFieldValueExpr(IrType type, String accessor) {
-    return typeToStringExpr(type, accessor, primitiveExpr: (kind, acc) {
-      return switch (kind) {
-        PrimitiveKind.string => acc,
-        PrimitiveKind.dateTime => '$acc.toIso8601String()',
-        PrimitiveKind.duration => '$acc.inMilliseconds.toString()',
-        PrimitiveKind.bytes => acc, // handled separately as file
-        _ => '$acc.toString()',
-      };
-    });
+    return typeToStringExpr(
+      type,
+      accessor,
+      primitiveExpr: (kind, acc) {
+        return switch (kind) {
+          PrimitiveKind.string => acc,
+          PrimitiveKind.dateTime => '$acc.toIso8601String()',
+          PrimitiveKind.duration => '$acc.inMilliseconds.toString()',
+          PrimitiveKind.bytes => acc, // handled separately as file
+          _ => '$acc.toString()',
+        };
+      },
+    );
   }
 }

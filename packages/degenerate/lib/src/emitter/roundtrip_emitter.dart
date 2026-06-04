@@ -1,3 +1,4 @@
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
@@ -23,6 +24,7 @@ final class RoundtripEmitter {
       };
 
   late final _overlap = VariantOverlapAnalyzer(_registry);
+  late final _ctx = EmitContext(_registry);
 
   /// All top-level lowered types.
   final List<IrType> types;
@@ -49,11 +51,7 @@ final class RoundtripEmitter {
       if (name == null) continue;
 
       if (type is IrDiscriminatedUnion) {
-        final decode = buildFromJsonCode(
-          type,
-          'json!',
-          typeRegistry: _registry,
-        );
+        final decode = _ctx.fromJson(type, 'json!');
         final encode = buildToJsonCode(type, '(value! as ${type.name})');
         var any = false;
         for (final entry in type.mapping.entries) {
@@ -77,7 +75,7 @@ final class RoundtripEmitter {
         _ => null,
       };
       if (unionVariants != null && isOneOfType(type)) {
-        final decode = buildFromJsonCode(type, 'json', typeRegistry: _registry);
+        final decode = _ctx.fromJson(type, 'json');
         final encode = buildToJsonCode(type, '(value! as $name)');
         var any = false;
         for (var k = 0; k < unionVariants.length; k++) {
@@ -129,7 +127,7 @@ final class RoundtripEmitter {
         continue;
       }
 
-      final decode = buildFromJsonCode(type, 'json!', typeRegistry: _registry);
+      final decode = _ctx.fromJson(type, 'json!');
       final encode = buildToJsonCode(type, '(value! as ${irTypeName(type)})');
       fixtures.add(_fixture(name, sample, decode, encode));
     }
@@ -326,7 +324,7 @@ final class RoundtripEmitter {
     final vk = _effectiveSampleType(variants[k]);
     for (var j = 0; j < k; j++) {
       final vj = _overlap.resolve(variants[j]);
-      if (isUnionType(vj, _registry)) return false;
+      if (_ctx.isUnionType(vj)) return false;
       if (vj is! IrObject && vj is! IrTypeRef) continue;
       if (!_overlap.canParseRejectsK(_overlap.resolve(variants[j]), vk)) return false;
     }

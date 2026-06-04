@@ -1,5 +1,6 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/api_emitter.dart';
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/error_union_emitter.dart';
@@ -83,13 +84,14 @@ final class FileEmitter {
     }
 
     final typeToFile = <String, String>{};
-    final typeRegistry = <String, IrType>{};
+    final typeRegistryMap = <String, IrType>{};
     for (final type in types) {
       final name = _typeName(type);
       if (name == null) continue;
       typeToFile[name] = fileStemFor(name);
-      typeRegistry[name] = type;
+      typeRegistryMap[name] = type;
     }
+    final ctx = EmitContext(typeRegistryMap);
 
     // ── Determine which small types can be inlined into their parent's file ──
     // Build a map of type name → set of parent type names that reference it.
@@ -148,20 +150,20 @@ final class FileEmitter {
       final children = inlinedChildren[name];
       if (children != null) {
         for (final child in children) {
-          specs.addAll(_emitType(child, typeRegistry));
+          specs.addAll(_emitType(child, ctx));
         }
       }
-      specs.addAll(_emitType(type, typeRegistry));
+      specs.addAll(_emitType(type, ctx));
       if (specs.isEmpty) continue;
 
       // Single-pass analysis: collect imports and detect special types.
       // Also analyze inlined children — they may need dart:convert or
       // dart:typed_data (e.g. a BinaryString extension type wrapping bytes).
-      var modelAnalysis = analyzeModelImports(type, typeRegistry);
+      var modelAnalysis = analyzeModelImports(type, ctx);
       if (children != null) {
         for (final child in children) {
           modelAnalysis =
-              modelAnalysis.merge(analyzeModelImports(child, typeRegistry));
+              modelAnalysis.merge(analyzeModelImports(child, ctx));
         }
       }
       modelAnalysis.referencedNames.remove(name); // Don't import self
@@ -223,7 +225,7 @@ final class FileEmitter {
     }
 
     // Build per-operation error unions (deduped across all APIs).
-    final errorUnionMap = buildErrorUnionMap(apis, typeRegistry);
+    final errorUnionMap = buildErrorUnionMap(apis, ctx);
     final errorUnionFileStems = <String>{};
     final aliasesPerClass = <String, List<String>>{};
     for (final info in errorUnionMap.values) {
@@ -242,7 +244,7 @@ final class FileEmitter {
       final library = emitErrorUnionLibrary(
         className: info.className,
         statusErrors: info.statusErrors,
-        typeRegistry: typeRegistry,
+        ctx: ctx,
         packageName: packageName,
         typeToFile: typeToFile,
         aliases: aliasesPerClass[info.className] ?? const [],
@@ -256,7 +258,7 @@ final class FileEmitter {
       const header = _header;
       final apiEmitter = ApiEmitter(
         api,
-        typeRegistry: typeRegistry,
+        ctx: ctx,
         unwrapFields: unwrapFields,
         errorUnionMap: errorUnionMap,
       );
@@ -264,7 +266,7 @@ final class FileEmitter {
       final specs = apiEmitter.emit();
 
       final analysis = analyzeApiImports(
-        api, typeRegistry, unwrapFields, errorUnionMap,
+        api, ctx, unwrapFields, errorUnionMap,
       );
 
       // Derive imports directly from referenced types using pre-built lookup
@@ -308,7 +310,7 @@ final class FileEmitter {
       files['apis/$fileName.dart'] = emitRaw(library);
     }
 
-    warnings?.addAll(collectAmbiguityWarnings(types, typeRegistry));
+    warnings?.addAll(collectAmbiguityWarnings(types, ctx.typeRegistry));
 
     // Emit root SDK facade
     if (apis.isNotEmpty) {
@@ -347,7 +349,7 @@ final class FileEmitter {
       final typeDeps = _buildTypeDeps(types);
       for (final api in apis) {
         final analysis = analyzeApiImports(
-          api, typeRegistry, unwrapFields, errorUnionMap,
+          api, ctx, unwrapFields, errorUnionMap,
         );
         final reachable = _transitiveTypes(analysis.referencedTypes, typeDeps);
         final apiFileName = toSnakeCase(api.name);
@@ -389,26 +391,26 @@ final class FileEmitter {
     return files;
   }
 
-  List<Spec> _emitType(IrType type, Map<String, IrType> typeRegistry) {
+  List<Spec> _emitType(IrType type, EmitContext ctx) {
     return switch (type) {
-      IrObject() => ModelEmitter(type, typeRegistry: typeRegistry).emit(),
+      IrObject() => ModelEmitter(type, ctx: ctx).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
       IrDiscriminatedUnion() => DiscriminatedUnionEmitter(
         type,
-        typeRegistry: typeRegistry,
+        ctx: ctx,
       ).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfTypedef(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
+        _emitOneOfTypedef(type.name, variants, type.description, ctx),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
-        typeRegistry: typeRegistry,
+        ctx: ctx,
       ).emit(),
       IrAnyOf(:final variants)
           when isOneOfTypedef(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
-      IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
+        _emitOneOfTypedef(type.name, variants, type.description, ctx),
+      IrAnyOf() => AnyOfEmitter(type, ctx: ctx).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
       _ => [],
     };
@@ -424,7 +426,7 @@ final class FileEmitter {
     String name,
     List<IrType> variants,
     String? description,
-    Map<String, IrType> typeRegistry,
+    EmitContext ctx,
   ) {
     final oneOfRef = oneOfTypeReference(variants);
     final specs = <Spec>[
@@ -433,11 +435,8 @@ final class FileEmitter {
     // Check if any variant references this type (direct self-reference).
     if (isSelfReferencingUnion(name, variants)) {
       final resolving = {name};
-      final parseBody = buildOneOfParseCode(
-        variants,
-        'json',
-        typeRegistry: typeRegistry,
-        resolving: resolving,
+      final parseBody = ctx.oneOfParseCode(
+        variants, 'json', resolving: resolving,
       );
       specs.add(Code('$name parse$name(Object? json) => $parseBody;'));
     }

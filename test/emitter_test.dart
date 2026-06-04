@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
 import 'package:degenerate/src/emitter/api_emitter.dart';
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
@@ -2927,15 +2928,15 @@ void main() {
           },
         ),
       ]);
-      final typeRegistry = <String, IrType>{
+      final ctx = EmitContext(<String, IrType>{
         'GetZoneResponse': envelopeType,
         'Zone': const IrObject('Zone', [
           IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
               isRequired: true),
         ]),
-      };
+      });
       final specs = ApiEmitter(api,
-              typeRegistry: typeRegistry, unwrapFields: ['result'])
+              ctx: ctx, unwrapFields: ['result'])
           .emit();
       final source = emitRaw(
         Library(

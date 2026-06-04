@@ -1,3 +1,4 @@
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
@@ -16,6 +17,8 @@ final class NegativeFixtureEmitter {
         for (final t in types)
           if (t.emittableName != null) t.emittableName!: t,
       };
+
+  late final _ctx = EmitContext(_registry);
 
   final List<IrType> types;
   final String packageName;
@@ -283,7 +286,7 @@ final class NegativeFixtureEmitter {
     String dartType,
   ) {
     final decode =
-        buildFromJsonCode(IrTypeRef(dartType), 'json!', typeRegistry: _registry);
+        _ctx.fromJson(IrTypeRef(dartType), 'json!');
     return '  ValidateFixture(\n'
         "    '${_escapeSingle(typeName)}',\n"
         '    ${_quotedLabel(label)},\n'

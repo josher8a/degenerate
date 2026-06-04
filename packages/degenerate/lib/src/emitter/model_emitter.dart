@@ -1,4 +1,5 @@
 import 'package:code_builder/code_builder.dart';
+import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
@@ -10,14 +11,14 @@ final class ModelEmitter {
   /// Creates an emitter for the given [model].
   const ModelEmitter(
     this.model, {
-    this.typeRegistry = const {},
+    this.ctx = EmitContext.empty,
   });
 
   /// The object IR to emit.
   final IrObject model;
 
-  /// Registry of all known IR types for resolution.
-  final Map<String, IrType> typeRegistry;
+  /// Shared emitter context (type registry for resolving refs).
+  final EmitContext ctx;
 
   /// Field name for the overflow map, avoiding collisions with fixed fields.
   String get _overflowFieldName {
@@ -144,12 +145,7 @@ final class ModelEmitter {
           // Fields with defaults have non-nullable types, so fromJson must not
           // produce null.
           final isOptional = fieldIsNullableInDart(f);
-          final code = buildFromJsonCode(
-            f.type,
-            accessor,
-            isOptional: isOptional,
-            typeRegistry: typeRegistry,
-          );
+          final code = ctx.fromJson(f.type, accessor, isOptional: isOptional);
           if (!f.isRequired && fieldHasDefault(f)) {
             // Optional with default: use null-safe extraction or skip entirely.
             // The constructor default handles missing values.
@@ -177,11 +173,7 @@ final class ModelEmitter {
         args +=
             '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key))),';
       } else {
-        final valueExpr = buildFromJsonCode(
-          valueType,
-          'e.value',
-          typeRegistry: typeRegistry,
-        );
+        final valueExpr = ctx.fromJson(valueType, 'e.value');
         args +=
             '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key)).map((e) => MapEntry(e.key, $valueExpr))),';
       }
