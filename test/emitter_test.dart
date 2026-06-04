@@ -12,6 +12,7 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/negative_fixture_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
@@ -4428,5 +4429,243 @@ void main() {
       RoundtripEmitter.formatSamples.keys.toSet(),
       equals(IrMapper.formatTypeNames.keys.toSet()),
     );
+  });
+
+  // ─── RoundtripEmitter ───────────────────────────────────────
+
+  group('RoundtripEmitter', () {
+    test('object type produces fixture with all required fields', () {
+      const types = [
+        IrObject('User', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+          IrField('age', 'age', IrPrimitive(PrimitiveKind.int),
+              isRequired: true),
+        ], requiredFields: ['name', 'age']),
+      ];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains("'User'"));
+      expect(source, contains("'name'"));
+      expect(source, contains("'age'"));
+      expect(source, contains('1 synthesized'));
+      expect(source, contains('0 skipped'));
+    });
+
+    test('enum type produces fixture with first value', () {
+      const types = [
+        IrEnum('Status', ['active', 'pending', 'closed']),
+      ];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains("'Status'"));
+      expect(source, contains("'active'"));
+      expect(source, contains('1 synthesized'));
+    });
+
+    test('cyclic ref is skipped', () {
+      const types = [
+        IrObject('Node', [
+          IrField('child', 'child', IrTypeRef('Node'), isRequired: true),
+        ], requiredFields: ['child']),
+      ];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains('0 synthesized'));
+      expect(source, contains('1 skipped'));
+    });
+
+    test('file header includes correct counts', () {
+      const types = [
+        IrObject('A', [
+          IrField('x', 'x', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['x']),
+        IrObject('B', [
+          IrField('y', 'y', IrPrimitive(PrimitiveKind.int),
+              isRequired: true),
+        ], requiredFields: ['y']),
+      ];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains('2 synthesized'));
+      expect(source, contains("import 'package:test_pkg/test_pkg.dart'"));
+    });
+
+    test('discriminated union produces per-variant fixtures', () {
+      const types = [
+        IrDiscriminatedUnion('Shape', 'kind', {
+          'circle': IrObject(
+            'Circle',
+            [
+              IrField('kind', 'kind', IrPrimitive(PrimitiveKind.string),
+                  isRequired: true),
+              IrField('radius', 'radius', IrPrimitive(PrimitiveKind.double),
+                  isRequired: true),
+            ],
+            requiredFields: ['kind', 'radius'],
+          ),
+          'square': IrObject(
+            'Square',
+            [
+              IrField('kind', 'kind', IrPrimitive(PrimitiveKind.string),
+                  isRequired: true),
+              IrField('side', 'side', IrPrimitive(PrimitiveKind.double),
+                  isRequired: true),
+            ],
+            requiredFields: ['kind', 'side'],
+          ),
+        }),
+      ];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains("'Shape [circle]'"));
+      expect(source, contains("'Shape [square]'"));
+      expect(source, contains("'kind': 'circle'"));
+      expect(source, contains("'kind': 'square'"));
+      expect(source, contains('2 synthesized'));
+    });
+
+    test('optional nullable field is omitted from sample', () {
+      const types = [
+        IrObject('Opt', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.int),
+              isRequired: true),
+          IrField('note', 'note', IrPrimitive(PrimitiveKind.string)),
+        ], requiredFields: ['id']),
+      ];
+
+      final source = RoundtripEmitter(types, 'test_pkg').emit();
+
+      expect(source, contains("'id': 1"));
+      expect(source, isNot(contains("'note'")));
+      expect(source, contains('1 synthesized'));
+    });
+  });
+
+  // ─── NegativeFixtureEmitter ─────────────────────────────────
+
+  group('NegativeFixtureEmitter', () {
+    test('missing required field produces canParse fixture', () {
+      const types = [
+        IrObject('User', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+          IrField('age', 'age', IrPrimitive(PrimitiveKind.int),
+              isRequired: true),
+        ], requiredFields: ['name', 'age']),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNotNull);
+      expect(source, contains('missing required field'));
+      expect(source, contains("'name'"));
+      expect(source, contains("'age'"));
+    });
+
+    test('wrong type for required field produces canParse fixture', () {
+      const types = [
+        IrObject('Item', [
+          IrField('count', 'count', IrPrimitive(PrimitiveKind.int),
+              isRequired: true),
+        ], requiredFields: ['count']),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNotNull);
+      expect(source, contains('wrong type'));
+      expect(source, contains("'not_a_number'"));
+    });
+
+    test('returns null when no objects have required fields', () {
+      const types = [
+        IrObject('Empty', [
+          IrField('note', 'note', IrPrimitive(PrimitiveKind.string)),
+        ]),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNull);
+    });
+
+    test('constraint violations produce validate fixtures', () {
+      const types = [
+        IrObject('Bounded', [
+          IrField(
+            'code',
+            'code',
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
+          IrField(
+            'score',
+            'score',
+            IrPrimitive(PrimitiveKind.int,
+                constraints: IrConstraints(minimum: 0, maximum: 100)),
+            isRequired: true,
+          ),
+        ], requiredFields: ['code', 'score']),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNotNull);
+      expect(source, contains('below minimum'));
+      expect(source, contains('above maximum'));
+    });
+
+    test('file header includes correct fixture counts', () {
+      const types = [
+        IrObject('User', [
+          IrField('email', 'email', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['email']),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNotNull);
+      expect(source, contains('Negative fixtures:'));
+      expect(source, contains('canParse'));
+      expect(source, contains("import 'package:test_pkg/test_pkg.dart'"));
+    });
+
+    test('skips non-object types', () {
+      const types = [
+        IrEnum('Status', ['a', 'b']),
+        IrPrimitive(PrimitiveKind.string),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNull);
+    });
+
+    test('string minLength violation', () {
+      const types = [
+        IrObject('Token', [
+          IrField(
+            'value',
+            'value',
+            IrPrimitive(PrimitiveKind.string,
+                constraints: IrConstraints(minLength: 5)),
+            isRequired: true,
+          ),
+        ], requiredFields: ['value']),
+      ];
+
+      final source = NegativeFixtureEmitter(types, 'test_pkg').emit();
+
+      expect(source, isNotNull);
+      expect(source, contains('minLength violation'));
+    });
   });
 }
