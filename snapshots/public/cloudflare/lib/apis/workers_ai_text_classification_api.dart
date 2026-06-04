@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkersAiTextClassificationApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_reranker_base_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_request.dart';/// WorkersAiTextClassificationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_baai_bge_reranker_base_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_request.dart';/// WorkersAiTextClassificationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

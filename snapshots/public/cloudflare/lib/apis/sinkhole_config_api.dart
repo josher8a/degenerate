@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SinkholeConfigApi" (1 operation)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_sinkholes_identifier.dart';import 'package:pub_cloudflare/models/intel_sinkholes_sinkhole_item.dart';/// SinkholeConfigApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_sinkholes_identifier.dart';import 'package:pub_cloudflare/models/intel_sinkholes_sinkhole_item.dart';/// SinkholeConfigApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

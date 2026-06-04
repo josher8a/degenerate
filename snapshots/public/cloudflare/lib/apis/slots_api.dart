@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SlotsApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_slot_info.dart';import 'package:pub_cloudflare/models/nsc_slot_list.dart';/// SlotsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_slot_info.dart';import 'package:pub_cloudflare/models/nsc_slot_list.dart';/// SlotsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

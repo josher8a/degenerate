@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "Api20100401DataApi" (1 operation)
 
-import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';/// Api20100401DataApi operations.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Api20100401DataApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "R2CatalogManagementApi" (4 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/errors/enable_catalog_error.dart';import 'package:pub_cloudflare/models/errors/list_catalogs_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_activation_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_list.dart';/// R2CatalogManagementApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/errors/enable_catalog_error.dart';import 'package:pub_cloudflare/models/errors/list_catalogs_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_activation_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_list.dart';/// R2CatalogManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

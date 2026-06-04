@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "BatchApi" (4 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch.dart';import 'package:pub_openai/models/create_batch_request.dart';import 'package:pub_openai/models/list_batches_response.dart';/// BatchApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch.dart';import 'package:pub_openai/models/create_batch_request.dart';import 'package:pub_openai/models/list_batches_response.dart';/// BatchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

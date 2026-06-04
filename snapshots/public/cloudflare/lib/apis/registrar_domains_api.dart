@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "RegistrarDomainsApi" (3 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/domain_name.dart';import 'package:pub_cloudflare/models/domain_properties.dart';import 'package:pub_cloudflare/models/domain_update_properties.dart';import 'package:pub_cloudflare/models/identifier3.dart';/// RegistrarDomainsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/domain_name.dart';import 'package:pub_cloudflare/models/domain_properties.dart';import 'package:pub_cloudflare/models/domain_update_properties.dart';import 'package:pub_cloudflare/models/identifier3.dart';/// RegistrarDomainsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

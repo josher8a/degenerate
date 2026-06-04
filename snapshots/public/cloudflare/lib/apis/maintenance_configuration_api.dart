@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MaintenanceConfigurationApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_maintenance_update_params.dart';/// MaintenanceConfigurationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_maintenance_update_params.dart';/// MaintenanceConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

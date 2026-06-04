@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AutoRagRagSearchApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/autorag_config_ai_search_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_search_request.dart';import 'package:pub_cloudflare/models/autorag_config_search_response/autorag_config_search_response_result.dart';import 'package:pub_cloudflare/models/errors/autorag_config_ai_search_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_search_error.dart';/// AutoRagRagSearchApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/autorag_config_ai_search_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_search_request.dart';import 'package:pub_cloudflare/models/autorag_config_search_response/autorag_config_search_response_result.dart';import 'package:pub_cloudflare/models/errors/autorag_config_ai_search_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_search_error.dart';/// AutoRagRagSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

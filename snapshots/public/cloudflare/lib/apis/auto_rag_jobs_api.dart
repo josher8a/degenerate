@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AutoRagJobsApi" (3 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response/autorag_config_get_job_response_result.dart';import 'package:pub_cloudflare/models/errors/autorag_config_get_job_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_list_job_logs_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_list_jobs_error.dart';/// AutoRagJobsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response/autorag_config_get_job_response_result.dart';import 'package:pub_cloudflare/models/errors/autorag_config_get_job_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_list_job_logs_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_list_jobs_error.dart';/// AutoRagJobsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

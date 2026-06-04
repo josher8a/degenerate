@@ -420,6 +420,18 @@ final class IrMapper {
     // Enums (string, integer, number).
     if (flattened.containsKey('enum') &&
         (type == 'string' || type == 'integer' || type == 'number')) {
+      // String enum with exactly {"true", "false"} → bool primitive.
+      if (type == 'string') {
+        final vals = (flattened['enum'] as List).whereType<String>().toSet();
+        if (vals.length == 2 && vals.contains('true') && vals.contains('false')) {
+          return IrPrimitive(
+            PrimitiveKind.bool,
+            description: description,
+            isNullable: nullable,
+          );
+        }
+      }
+
       // If an existing registered enum has the same title and values, reuse it
       // instead of creating a duplicate (e.g. allOf wrapping a named enum).
       final title = flattened['title'] as String?;

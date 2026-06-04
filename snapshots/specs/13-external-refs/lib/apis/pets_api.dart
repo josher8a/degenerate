@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "PetsApi" (3 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_13_external_refs/models/errors/create_pet_error.dart';import 'package:spec_13_external_refs/models/pet.dart';/// PetsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_13_external_refs/models/errors/create_pet_error.dart';import 'package:spec_13_external_refs/models/pet.dart';/// PetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -519,13 +519,19 @@ final class Generator {
   List<IrSecurityScheme> _lowerSecuritySchemes(Map<String, dynamic> raw) {
     final schemes = <IrSecurityScheme>[];
     for (final MapEntry(:key, :value) in raw.entries) {
-      if (value is! Map<String, dynamic>) continue;
+      if (value is! Map<String, dynamic>) {
+        _log('Warning: security scheme "$key" is not a valid object; skipped.');
+        continue;
+      }
       final flows = <IrOAuthFlow>[];
       final rawFlows = value['flows'];
       if (rawFlows is Map<String, dynamic>) {
         for (final MapEntry(key: flowKey, value: flowValue) in rawFlows.entries) {
           final flow = flowValue;
-          if (flow is! Map<String, dynamic>) continue;
+          if (flow is! Map<String, dynamic>) {
+            _log('Warning: OAuth flow "$flowKey" in security scheme "$key" is not a valid object; skipped.');
+            continue;
+          }
           final scopes = <String, String>{};
           final rawScopes = flow['scopes'];
           if (rawScopes is Map<String, dynamic>) {

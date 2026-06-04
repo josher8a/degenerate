@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkersAiImageClassificationApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_microsoft_nonomni_resnet50_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_microsoft_resnet50_error.dart';/// WorkersAiImageClassificationApi operations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_microsoft_nonomni_resnet50_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_microsoft_resnet50_error.dart';/// WorkersAiImageClassificationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

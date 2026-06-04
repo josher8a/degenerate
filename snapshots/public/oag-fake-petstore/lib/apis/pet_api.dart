@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "PetApi" (8 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_fake_petstore/models/find_pets_by_status_status.dart';import 'package:pub_oag_fake_petstore/models/pet.dart';import 'package:pub_oag_fake_petstore/models/response.dart';import 'package:pub_oag_fake_petstore/models/update_pet_with_form_request.dart';import 'package:pub_oag_fake_petstore/models/upload_file_request.dart';import 'package:pub_oag_fake_petstore/models/upload_file_with_required_file_request.dart';/// PetApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_fake_petstore/models/find_pets_by_status_status.dart';import 'package:pub_oag_fake_petstore/models/pet.dart';import 'package:pub_oag_fake_petstore/models/response.dart';import 'package:pub_oag_fake_petstore/models/update_pet_with_form_request.dart';import 'package:pub_oag_fake_petstore/models/upload_file_request.dart';import 'package:pub_oag_fake_petstore/models/upload_file_with_required_file_request.dart';/// PetApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

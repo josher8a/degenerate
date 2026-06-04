@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "UserAgentBlockingRulesApi" (5 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/firewall_components_ua_rule_id.dart';import 'package:pub_cloudflare/models/firewall_description_search.dart';import 'package:pub_cloudflare/models/firewall_firewalluablock.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/user_agent_blocking_rules_create_a_user_agent_blocking_rule_request.dart';import 'package:pub_cloudflare/models/user_agent_blocking_rules_update_a_user_agent_blocking_rule_request.dart';/// UserAgentBlockingRulesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/firewall_components_ua_rule_id.dart';import 'package:pub_cloudflare/models/firewall_description_search.dart';import 'package:pub_cloudflare/models/firewall_firewalluablock.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/user_agent_blocking_rules_create_a_user_agent_blocking_rule_request.dart';import 'package:pub_cloudflare/models/user_agent_blocking_rules_update_a_user_agent_blocking_rule_request.dart';/// UserAgentBlockingRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

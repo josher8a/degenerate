@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AuthApi" (2 operations)
 
-import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';/// AuthApi operations.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// AuthApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

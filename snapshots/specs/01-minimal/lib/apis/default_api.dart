@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DefaultApi" (1 operation)
 
-import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';/// DefaultApi operations.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

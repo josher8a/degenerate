@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "EventsApi" (4 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/event_calendar_schema.dart';import 'package:pub_totem_web/models/filter_options_schema.dart';import 'package:pub_totem_web/models/paged_session_list_schema.dart';import 'package:pub_totem_web/models/session_detail_schema.dart';/// EventsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/event_calendar_schema.dart';import 'package:pub_totem_web/models/filter_options_schema.dart';import 'package:pub_totem_web/models/paged_session_list_schema.dart';import 'package:pub_totem_web/models/session_detail_schema.dart';/// EventsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "GlobalsApi" (10 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/global_path_parameter_get_response.dart';import 'package:pub_speakeasy/models/globals_header_get_response.dart';import 'package:pub_speakeasy/models/globals_hidden_post_request.dart';import 'package:pub_speakeasy/models/globals_hidden_post_response.dart';import 'package:pub_speakeasy/models/globals_kebab_case_param_get_response.dart';import 'package:pub_speakeasy/models/globals_operation_scoped_exclusive_response.dart';import 'package:pub_speakeasy/models/globals_query_parameter_get_response.dart';/// GlobalsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/global_path_parameter_get_response.dart';import 'package:pub_speakeasy/models/globals_header_get_response.dart';import 'package:pub_speakeasy/models/globals_hidden_post_request.dart';import 'package:pub_speakeasy/models/globals_hidden_post_response.dart';import 'package:pub_speakeasy/models/globals_kebab_case_param_get_response.dart';import 'package:pub_speakeasy/models/globals_operation_scoped_exclusive_response.dart';import 'package:pub_speakeasy/models/globals_query_parameter_get_response.dart';/// GlobalsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

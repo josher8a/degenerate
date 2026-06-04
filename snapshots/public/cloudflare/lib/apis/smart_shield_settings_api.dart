@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SmartShieldSettingsApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/smart_shield_get_settings_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/smartshield_identifier.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_body.dart';/// SmartShieldSettingsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/smart_shield_get_settings_error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/smartshield_identifier.dart';import 'package:pub_cloudflare/models/smartshield_smart_shield_settings_patch_body.dart';/// SmartShieldSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

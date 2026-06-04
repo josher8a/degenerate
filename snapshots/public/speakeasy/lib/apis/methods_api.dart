@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MethodsApi" (8 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/method_delete_request.dart';import 'package:pub_speakeasy/models/method_delete_response.dart';import 'package:pub_speakeasy/models/method_get_response.dart';import 'package:pub_speakeasy/models/method_patch_request.dart';import 'package:pub_speakeasy/models/method_patch_response.dart';import 'package:pub_speakeasy/models/method_post_request.dart';import 'package:pub_speakeasy/models/method_post_response.dart';import 'package:pub_speakeasy/models/method_put_request.dart';import 'package:pub_speakeasy/models/method_put_response.dart';/// MethodsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/method_delete_request.dart';import 'package:pub_speakeasy/models/method_delete_response.dart';import 'package:pub_speakeasy/models/method_get_response.dart';import 'package:pub_speakeasy/models/method_patch_request.dart';import 'package:pub_speakeasy/models/method_patch_response.dart';import 'package:pub_speakeasy/models/method_post_request.dart';import 'package:pub_speakeasy/models/method_post_response.dart';import 'package:pub_speakeasy/models/method_put_request.dart';import 'package:pub_speakeasy/models/method_put_response.dart';/// MethodsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "EndpointHealthChecksApi" (5 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_endpoint_health_check.dart';import 'package:pub_cloudflare/models/magic_transit_endpoint_health_check_response.dart';import 'package:pub_cloudflare/models/magic_transit_identifier.dart';import 'package:pub_cloudflare/models/magic_transit_uuid.dart';import 'package:pub_cloudflare/models/response_common45.dart';/// EndpointHealthChecksApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_endpoint_health_check.dart';import 'package:pub_cloudflare/models/magic_transit_endpoint_health_check_response.dart';import 'package:pub_cloudflare/models/magic_transit_identifier.dart';import 'package:pub_cloudflare/models/magic_transit_uuid.dart';import 'package:pub_cloudflare/models/response_common45.dart';/// EndpointHealthChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

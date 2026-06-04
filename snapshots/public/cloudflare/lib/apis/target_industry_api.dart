@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TargetIndustryApi" (3 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_target_industry_list_by_dataset_error.dart';import 'package:pub_cloudflare/models/errors/get_target_industry_list_complete_error.dart';import 'package:pub_cloudflare/models/errors/get_target_industry_list_error.dart';import 'package:pub_cloudflare/models/get_target_industry_list_by_dataset_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_complete_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_response.dart';/// TargetIndustryApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_target_industry_list_by_dataset_error.dart';import 'package:pub_cloudflare/models/errors/get_target_industry_list_complete_error.dart';import 'package:pub_cloudflare/models/errors/get_target_industry_list_error.dart';import 'package:pub_cloudflare/models/get_target_industry_list_by_dataset_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_complete_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_response.dart';/// TargetIndustryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

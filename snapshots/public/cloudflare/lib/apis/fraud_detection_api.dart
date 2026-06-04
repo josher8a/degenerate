@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "FraudDetectionApi" (2 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fraud_fraud_settings.dart';import 'package:pub_cloudflare/models/fraud_identifier.dart';/// FraudDetectionApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fraud_fraud_settings.dart';import 'package:pub_cloudflare/models/fraud_identifier.dart';/// FraudDetectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

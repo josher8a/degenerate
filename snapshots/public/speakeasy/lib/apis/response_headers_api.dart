@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ResponseHeadersApi" (4 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/auth_token.dart';import 'package:pub_speakeasy/models/errors/error_response_headers_error.dart';import 'package:pub_speakeasy/models/errors/response_headers_error.dart';/// ResponseHeadersApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/auth_token.dart';import 'package:pub_speakeasy/models/errors/error_response_headers_error.dart';import 'package:pub_speakeasy/models/errors/response_headers_error.dart';/// ResponseHeadersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

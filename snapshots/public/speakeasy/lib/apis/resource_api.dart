@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ResourceApi" (6 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/create_file_request.dart';import 'package:pub_speakeasy/models/example_resource.dart';import 'package:pub_speakeasy/models/file_resource.dart';/// ResourceApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/create_file_request.dart';import 'package:pub_speakeasy/models/example_resource.dart';import 'package:pub_speakeasy/models/file_resource.dart';/// ResourceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

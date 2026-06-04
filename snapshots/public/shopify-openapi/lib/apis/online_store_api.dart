@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "OnlineStoreApi" (184 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';/// OnlineStoreApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';/// OnlineStoreApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

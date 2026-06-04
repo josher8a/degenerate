@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "UsersApi" (4 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/user.dart';import 'package:pub_openai/models/user_delete_response.dart';import 'package:pub_openai/models/user_list_response.dart';import 'package:pub_openai/models/user_role_update_request.dart';/// UsersApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/user.dart';import 'package:pub_openai/models/user_delete_response.dart';import 'package:pub_openai/models/user_list_response.dart';import 'package:pub_openai/models/user_role_update_request.dart';/// UsersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

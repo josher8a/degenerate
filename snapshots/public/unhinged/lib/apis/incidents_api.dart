@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "IncidentsApi" (2 operations)
 
-import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_unhinged/models/errors/list_incidents_v2draft_error.dart';

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AnalyzeCertificateApi" (1 operation)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/analyze_certificate_analyze_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// AnalyzeCertificateApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/analyze_certificate_analyze_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// AnalyzeCertificateApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

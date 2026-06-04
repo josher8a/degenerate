@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ConversationsApi" (8 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation_item.dart';import 'package:pub_openai/models/conversation_item_list.dart';import 'package:pub_openai/models/conversation_resource.dart';import 'package:pub_openai/models/create_conversation_body.dart';import 'package:pub_openai/models/create_conversation_items_request.dart';import 'package:pub_openai/models/deleted_conversation_resource.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/list_conversation_items_order.dart';import 'package:pub_openai/models/update_conversation_body.dart';/// ConversationsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation_item.dart';import 'package:pub_openai/models/conversation_item_list.dart';import 'package:pub_openai/models/conversation_resource.dart';import 'package:pub_openai/models/create_conversation_body.dart';import 'package:pub_openai/models/create_conversation_items_request.dart';import 'package:pub_openai/models/deleted_conversation_resource.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/list_conversation_items_order.dart';import 'package:pub_openai/models/update_conversation_body.dart';/// ConversationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

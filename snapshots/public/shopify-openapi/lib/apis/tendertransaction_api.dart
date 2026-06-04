@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TendertransactionApi" (6 operations)
 
-import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';/// TendertransactionApi operations.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// TendertransactionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

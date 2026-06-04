@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "EmailSendingSubdomainsApi" (5 operations)
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_create_sending_subdomain_properties.dart';import 'package:pub_cloudflare/models/email_dns_record.dart';import 'package:pub_cloudflare/models/email_identifier.dart';import 'package:pub_cloudflare/models/email_sending_subdomain_identifier.dart';import 'package:pub_cloudflare/models/email_sending_subdomain_properties.dart';import 'package:pub_cloudflare/models/response_common30.dart';/// EmailSendingSubdomainsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_create_sending_subdomain_properties.dart';import 'package:pub_cloudflare/models/email_dns_record.dart';import 'package:pub_cloudflare/models/email_identifier.dart';import 'package:pub_cloudflare/models/email_sending_subdomain_identifier.dart';import 'package:pub_cloudflare/models/email_sending_subdomain_properties.dart';import 'package:pub_cloudflare/models/response_common30.dart';/// EmailSendingSubdomainsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
