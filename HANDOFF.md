@@ -7,7 +7,7 @@
 
 ## Current state
 
-**Fork:** `rc` — unpushed, 31 commits ahead of `063359e`.
+**Fork:** `rc` — 30 commits ahead of `origin/rc`, 51 commits ahead of `063359e`.
 **App:** `fix/degenerate` — regenerated and verified.
 
 | Metric | Value |
@@ -20,7 +20,7 @@
 | Generated files | 417 (business API) |
 | Negative fixtures | 953 canParse + 16 validate (business API) |
 | Round-trip fixtures | 414 synthesized, 0 skipped |
-| Generator LOC | ~13,200 across 36 source files |
+| Generator LOC | ~13,000 across 36 source files |
 
 Corpus (15): petstore, cloudflare, github, k8s, openai, shopify, stripe, totem-mobile, totem-web, twilio, unhinged, speakeasy, oag-fake-petstore, oag-echo-api, circular-tests.
 
@@ -163,7 +163,7 @@ Root-level `wallets_api.dart`, `beneficiaries_api.dart` etc. exporting only the 
 
 ## Key gotchas
 
-- **New IR fields** must propagate through `copyAsNullable`, `ir_rewriter`, `type_ref_resolver`, and any emitter that rebuilds types. If the field affects emitted behavior, it **must** appear in `structural_dedup._body` — otherwise same-shape/different-data types silently merge.
+- **New IR fields** must propagate through `copyAsNullable`, `ir/ir_rewriter`, `type_ref_resolver`, and any emitter that rebuilds types. If the field affects emitted behavior, it **must** appear in `structural_dedup._body` — otherwise same-shape/different-data types silently merge.
 - **Don't reorder union variants** — `OneOfN<A,B>` type-arg order is public signature. Best-match scoring handles dispatch.
 - **`StructuralSigner` must stay memoized** or ref-heavy specs OOM.
 - **Copy ALL fields when rebuilding IR types** (`style`/`explode`/`allowReserved`, `itemSchema`/`encoding`, `customMethod`). Use `IrOperation.copyWith`, `IrParameter.withType`, `IrResponse.copyWith`.
@@ -216,10 +216,12 @@ All paths relative to `packages/degenerate/lib/src/`.
 
 | File | Purpose |
 |------|---------|
-| `emitter/discriminated_union_emitter.dart` | Discriminated unions: sealed base, `$Unknown`, `when<R>()`, common-field hoisting, variant factories. Uses `DiscUnionMetadata`. |
-| `emitter/untagged_union_emitter.dart` | Untagged (oneOf w/o discriminator) unions: sealed try-parse dispatch, variant subclasses, `$Unknown`. |
-| `emitter/anyof_emitter.dart` | AnyOf composites: nullable variant fields, best-effort fromJson. |
-| `emitter/sealed_union_emitter.dart` | Barrel re-exporting the three union emitters above. |
+| `generator.dart` | Top-level pipeline orchestrator: parse → inline → normalize → lower → name-resolve → filter → validate → analyze → emit → write |
+| `dart_names.dart` | Shared string utilities: `toPascalCase`, `toCamelCase`, `sanitizeDartName`, `toTypeName`, `deduplicateName`, reserved-word sets. Not a pipeline stage — used by all layers. |
+| `emitter/discriminated_union_emitter.dart` | Discriminated unions: sealed base, `$Unknown`, `when<R>()`, common-field hoisting, variant factories |
+| `emitter/untagged_union_emitter.dart` | Untagged (oneOf w/o discriminator) unions: sealed try-parse dispatch, variant subclasses, `$Unknown` |
+| `emitter/anyof_emitter.dart` | AnyOf composites: nullable variant fields, best-effort fromJson |
+| `emitter/sealed_union_emitter.dart` | Barrel re-exporting the three union emitters above |
 | `emitter/error_union_emitter.dart` | Per-status sealed error unions with dedup + `fromResponse` factory |
 | `emitter/file_emitter.dart` | Emission orchestrator: inlining, barrel + per-API mini-barrels, source-map comments, roundtrip + negative fixture + ambiguity + error union wiring, SDK facade |
 | `emitter/import_analyzer.dart` | `analyzeModelImports`, `analyzeApiImports`, `collectTopLevelTypeName`, `ImportAnalysis` class |
@@ -232,15 +234,21 @@ All paths relative to `packages/degenerate/lib/src/`.
 | `emitter/extension_type_emitter.dart` | Extension types with format validation |
 | `emitter/enum_emitter.dart` | Enum classes with forward-compat, `.name` getter |
 | `emitter/emit_utils.dart` | Shared codec builders, field helpers, type predicates, `dartStringLiteral`, `safeTypeName`, `fieldIsRequiredInCtor` |
+| `emitter/media_type_utils.dart` | Media type detection and content-type helpers |
 | `lowering/ir_mapper.dart` | Schema → IR, union dispatch, format wrapping, example extraction, field name dedup |
 | `lowering/ir_validator.dart` | Post-lowering IR invariant checks (duplicate names, empty unions) |
 | `lowering/api_rewriter.dart` | Rewrite type names + resolve type refs within API operations |
-| `lowering/union_analyzer.dart` | Pre-computes `DiscUnionMetadata` for all discriminated unions. Consumed by emitters via `EmitContext`. |
-| `naming/` | Dedup pipeline: `structural_dedup`, `suffix_resolver`, `name_resolution`, `ir_rewriter` |
-| `normalizer/schema_normalizer.dart` | Discriminator detection |
+| `lowering/operation_lowerer.dart` | OpenAPI path/operation → `IrApi`/`IrOperation` lowering |
+| `lowering/type_ref_resolver.dart` | Resolve `IrTypeRef` nodes through the type registry |
+| `lowering/union_analyzer.dart` | Pre-computes `DiscUnionMetadata` for all discriminated unions (analysis function; output types live in `ir/ir_types.dart`) |
+| `naming/structural_dedup.dart` | Structural fingerprinting and deduplication |
+| `naming/suffix_resolver.dart` | Shortest unique suffix resolution |
+| `naming/name_resolution.dart` | End-to-end dedup pipeline orchestration |
+| `normalizer/schema_normalizer.dart` | Discriminator detection, name pre-mapping |
 | `normalizer/allof_flattener.dart` | AllOf property/required/type merging (nullable-safe) |
-| `ir/ir_types.dart` | IR type definitions, `IrField`, `IrOperation.copyWith`, `IrType.name`/`unionVariants`/`isClassType` getters, `resolveRef` extension |
+| `ir/ir_types.dart` | IR type definitions, `IrField`, `IrOperation.copyWith`, `IrType.name`/`unionVariants`/`isClassType` getters, `resolveRef` extension, `irTypeName`, `isOneOfEligible`, `VariantInfo`, `DiscUnionMetadata` |
 | `ir/ir_type_refs.dart` | `collectTypeRefs` walker + `buildTypeDeps`/`transitiveTypes` (shared graph construction + BFS) |
+| `ir/ir_rewriter.dart` | `rewriteTypeNames` — deep-copy an IR tree with all type names mapped through a rename function |
 | `parser/ref_inliner.dart` | External `$ref` resolution with cross-file intra-ref support |
 | `parser/openapi_document.dart` | Spec parsing, tolerates YAML float version |
 | `parser/yaml_utils.dart` | Shared YAML-to-Dart-collection converter |
@@ -260,19 +268,20 @@ Runtime `one_of.dart` is generated by `scripts/generate_one_of.dart` at repo roo
 
 ## Changes since `063359e`
 
-31 commits on `rc` (batches 1–17). Key milestones:
+51 commits on `rc` (batches 1–18). Key milestones:
 
 - Batches 1–8: `IrType.name` getter, `resolveRef` extension, unified type-ref collectors, `ImportAnalyzer` extraction, `api_rewriter` extraction, `allof_flattener` decomposition, AnyOf equality, MapEntry destructuring, tuple patterns, final classes, unit tests for ref_inliner/naming/allof_flattener.
 - Batch 9: `EmitContext`, `emitAll` decomposition, shared fixture helpers, `runtimeExportedNames` test validation, nullable-checking consolidation, `IrOperation.copyWith`, function privatization, if-case patterns.
 - Batches 10–17: Layer boundary enforcement (`union_analyzer`), `unionVariants`/`isClassType` getters, reachability traversal unification, `sealed_union_emitter` file split, `if-case` bindings, `fieldIsRequiredInCtor` helper.
+- Batch 18: Strict layer boundaries — break emitter↔lowering cycle, eliminate all cross-layer back-edges, rename `naming.dart` → `dart_names.dart`.
 
-Tests: 549 → 736. LOC: 12,202 → ~13,200. Corpus: 11 → 15 specs. Source files: 28 → 36.
+Tests: 549 → 736. LOC: 12,202 → ~13,000. Corpus: 11 → 15 specs. Source files: 28 → 36.
 
 ---
 
-## Refactoring batches 10–17 (2026-06-04)
+## Refactoring batches 10–18 (2026-06-04)
 
-8 batches resolving the candidate improvements from the analysis above. 36 source files, ~13,200 LOC after all changes. 736 tests pass, 1 skip. 0 lint issues. Byte-identical output across 15 corpus specs.
+9 batches resolving the candidate improvements from the analysis above. 36 source files, ~13,000 LOC after all changes. 736 tests pass, 1 skip. 0 lint issues. Byte-identical output across 15 corpus specs.
 
 ### Pipeline (updated)
 
@@ -297,8 +306,11 @@ Parse → Inline → Normalize → Lower → Name Resolution → Filter → Vali
 | 9 | `fieldIsRequiredInCtor(f)` helper | 16 | **Done** | +3 |
 | 10 | Split `emit_utils.dart` into focused modules | — | **Deferred** | — |
 | 11 | Consolidate nullable-checking | 9 | **Already resolved** | — |
+| 12 | Enforce strict layer boundaries | 18 | **Done** | −2 |
 
 **Batch 17:** Fix — reverted 4 incorrect `!fieldIsRequiredInCtor(f)` substitutions in `forceNullable:` and fixture-filter sites. `!f.isRequired && !fieldHasDefault(f)` (optional-without-default) ≠ `!fieldIsRequiredInCtor(f)` (not-required-in-ctor = optional OR has-default). The helper is only valid for `..required =` and sort predicates.
+
+**Batch 18:** Strict layer boundaries — broke the circular `lowering↔emitter` dependency by moving `irTypeName`, `isOneOfEligible`, `VariantInfo`, and `DiscUnionMetadata` into `ir/ir_types.dart`. Moved `rewriteTypeNames` from `naming/ir_rewriter.dart` → `ir/ir_rewriter.dart` to eliminate the `lowering→naming` back-edge. Removed doc-only `IrMapper` import from `normalizer/schema_normalizer.dart` to eliminate the `normalizer→lowering` back-edge. Renamed `naming.dart` → `dart_names.dart` to distinguish the string utility barrel from the naming pipeline stage. 21 files touched, net −2 lines.
 
 ### Deferred with rationale
 
@@ -308,13 +320,25 @@ Parse → Inline → Normalize → Lower → Name Resolution → Filter → Vali
 
 ### Layer boundary status
 
-Structural analysis of discriminated unions lives entirely in `lowering/union_analyzer.dart`. Emitters consume pre-computed `DiscUnionMetadata`/`VariantInfo` via `EmitContext.unionMetadata`. The type registry is used only as a symbol table for codegen (resolving types to render correct expressions), not for structural analysis. No boundary violations remain.
+Strictly layered — no cycles, no back-edges. Every cross-layer import follows the pipeline direction. `ir/` is a shared foundation consumed by all layers. `dart_names.dart` is a pure utility barrel (string helpers) used by lowering, naming, normalizer, and emitter — it is not a pipeline stage.
+
+Import matrix (rows import from columns):
+
+| From ↓ \ To → | ir | parser | normalizer | lowering | dart_names | emitter |
+|---|---|---|---|---|---|---|
+| **parser** | — | self | — | — | — | — |
+| **normalizer** | — | — | self | — | yes | — |
+| **lowering** | yes | yes | yes | self | yes | — |
+| **naming** | yes | — | — | — | self | — |
+| **emitter** | yes | — | — | — | yes | self |
 
 ### New/changed files (source map additions)
 
 | File | Purpose |
 |------|---------|
-| `lowering/union_analyzer.dart` | Pre-computes `DiscUnionMetadata` for all discriminated unions: common fields, variant payload/disc/spreadability. Consumed by emitters via `EmitContext`. |
+| `lowering/union_analyzer.dart` | `analyzeDiscriminatedUnions` function. Output types (`DiscUnionMetadata`, `VariantInfo`) live in `ir/ir_types.dart`. |
+| `ir/ir_rewriter.dart` | `rewriteTypeNames` — deep-copy an IR tree with all type names mapped through a rename function. Moved from `naming/` to break the `lowering→naming` back-edge. |
+| `dart_names.dart` | Renamed from `naming.dart` to distinguish string utilities from the naming pipeline stage. |
 | `emitter/emit_context.dart` | Shared emitter context: `typeRegistry` + `unionMetadata`. |
 | `emitter/discriminated_union_emitter.dart` | Discriminated unions: sealed base, per-variant subclasses, `$Unknown`, `when<R>()`, common-field hoisting, variant factories. |
 | `emitter/untagged_union_emitter.dart` | Untagged (oneOf without discriminator) unions: sealed try-parse dispatch, variant subclasses, `$Unknown`. |
@@ -333,13 +357,14 @@ Structural analysis of discriminated unions lives entirely in `lowering/union_an
 
 | Layer | Files | LOC | % |
 |-------|------:|----:|--:|
-| Emitter | 17 | 7,300 | 55% |
-| Lowering | 6 | 2,370 | 18% |
-| Naming | 5 | 1,080 | 8% |
-| IR types | 2 | 920 | 7% |
-| Generator | 1 | 780 | 6% |
+| Emitter | 17 | 7,130 | 55% |
+| Lowering | 6 | 2,320 | 18% |
+| IR | 3 | 1,120 | 9% |
+| Naming (pipeline) | 3 | 480 | 4% |
+| Dart names (utility) | 1 | 500 | 4% |
+| Generator | 1 | 750 | 6% |
 | Parser | 3 | 501 | 4% |
-| Normalizer | 2 | 230 | 2% |
+| Normalizer | 2 | 228 | 2% |
 
 ### Accidental complexity — remaining
 
@@ -349,3 +374,136 @@ All HIGH-severity items (H1–H3) resolved. H4 (`runtimeExportedNames`) mitigate
 |----------|----------:|-------|
 | Medium | M2 (fixture duplication ~15L), M3 (5 cycle-detection mechanisms ~48L), M4 (4 type-resolution strategies), M6 (`emit_utils.dart` 930L grab-bag) | All localized; none cross layer boundaries |
 | Low | L1–L6 | Trivial duplication, hardcoded lists, 1 Dart-limitation cast |
+
+---
+
+## Improvement audit (2026-06-04)
+
+Comprehensive audit across test coverage, spec conformance, error handling, generated output quality, and performance. Findings are grounded in actual code; file:line references provided where applicable.
+
+### Test coverage gaps
+
+**Untested modules (zero direct tests):**
+
+| Module | What's missing |
+|--------|---------------|
+| `emitter/variant_overlap.dart` | `collectAmbiguityWarnings` never invoked in any test — entire ambiguity-warning subsystem untested |
+| `lowering/ir_validator.dart` | `IrValidator` has no unit tests; fatal paths (duplicate names, empty union) and warning paths (unresolved refs) only reachable end-to-end |
+| `ir/ir_type_refs.dart` | `collectTypeRefs`, `buildTypeDeps`, `transitiveTypes` — correctness relies entirely on snapshot golden files |
+| `lowering/api_rewriter.dart` | `rewriteApiNames`, `resolveApiTypeRefs` — pipeline-critical, zero direct tests |
+| `emitter/import_analyzer.dart` | `analyzeModelImports`/`analyzeApiImports` never directly instantiated in tests |
+
+**Under-tested logic:**
+
+| Module | Gap |
+|--------|-----|
+| `emitter/error_union_emitter.dart` | Multi-operation dedup/typedef aliasing (a documented gotcha in Key gotchas) has no test |
+| `emitter/roundtrip_emitter.dart` | Synthesis logic untested; only exercised via pre-generated wire fixtures |
+| `emitter/negative_fixture_emitter.dart` | Same as roundtrip — no direct synthesis tests |
+
+**Skipped test:** `lowering_test.dart:1253` — `allOf: [$ref A, $ref B]` multi-ref merge. Skip reason: `'Needs flattener-level ref resolution'`. Real functional gap.
+
+**Property test gaps:** no property tests for extension types, error unions, negative fixture synthesis, or `--emit-typed-params`.
+
+### Spec conformance gaps
+
+**Not handled:**
+
+- `not`, `if`/`then`/`else`, `prefixItems` (tuples), `dependentSchemas`/`dependentRequired`
+- `callbacks`, `links`, `webhooks` (OpenAPI 3.1)
+- `xml` (JSON-only generator)
+- `readOnly`/`writeOnly` (explicitly rejected)
+- `unevaluatedProperties`/`unevaluatedItems`
+- `contentEncoding`/`contentMediaType`/`contentSchema`
+
+**Partially handled:**
+
+| Feature | Status |
+|---------|--------|
+| `anyOf` with collection-type variants | Emitted as `// skipped` comment (`anyof_emitter.dart:141`) |
+| `allOf` flattener sub-schema keys | Merges `properties`/`required`/`type`/`description`; drops `format`/`example`/constraints |
+| Untagged `oneOf` > 9 variants | Capped by runtime `OneOfN` arity |
+| Non-JSON request/response on complex types | `throw UnsupportedError` |
+| Request body `encoding` (multipart) | Explicitly deferred (`operation_lowerer.dart:377`) |
+| Path param serialization styles | Only `simple`; no `matrix`/`label` |
+| `default` response | Parsed but not included in typed error union |
+| OAuth2/OpenID | Metadata only — no token acquisition/refresh |
+| `servers` array | Only `servers[0].url`; no variables, no per-path/operation overrides |
+| `exclusiveMinimum`/`exclusiveMaximum` (OAS 3.0 boolean form) | Ignored; only 3.1 numeric form read (`ir_mapper.dart:506`) |
+| Boolean schemas (`true`/`false`) | Lowered as `dynamic` with warning (`ir_mapper.dart:568`) |
+
+### Error handling / DX gaps
+
+**High:**
+
+| Issue | Location |
+|-------|----------|
+| `FileSystemException` (missing `$ref` file) and `UnsupportedError` (external ref not inlined) uncaught at CLI boundary → raw stack traces | `bin/degenerate.dart:212–220`, `parser/ref_inliner.dart:329`, `parser/openapi_document.dart:95` |
+| Silent operation drop when path-item or operation `$ref` fails to resolve — no warning, operations disappear | `lowering/operation_lowerer.dart:41,44,63,89` |
+| Named schemas that fail to lower silently produce no output | `lowering/ir_mapper.dart:98` |
+
+**Medium:**
+
+| Issue | Location |
+|-------|----------|
+| `'Encountered invalid non-object schema; defaulting to dynamic.'` — no schema name or JSON path | `lowering/ir_mapper.dart:238–240` |
+| Generated error-response fallback emits `return null;` with `// TODO:` — silent failure in generated client | `emitter/api_emitter.dart:1004` |
+| `--quiet` flag exists in `GeneratorConfig` but not wired into CLI `buildParser()` | `bin/degenerate.dart` |
+
+**Low:**
+
+| Issue | Location |
+|-------|----------|
+| Diagnostic output to stdout, errors to stderr (reversed from Unix convention) | `generator.dart:555–558` |
+| `--version` prints to stderr | `bin/degenerate.dart:136` |
+
+### Generated output quality
+
+**Excellent:** `fromJson`/`toJson` correctness, `copyWith` callback pattern for nullable fields, zero `// ignore:` directives, `Object.hash`/`Object.hashAll` throughout, no leaked `dynamic` types, `$Unknown` forward compat with `late final` lazy access.
+
+**Gaps:**
+
+| Issue | Location |
+|-------|----------|
+| Method parameter docs entirely absent in generated API files | All generated `*_api.dart` |
+| `$Unknown` constructor takes mutable map — callers can silently mutate state | `discriminated_union_emitter.dart` |
+| Dead `queryParametersList` variable allocated in every API method, never populated | All generated `*_api.dart` |
+| Numeric query params emitted as `String` instead of `int`/`num` (spec-level, but could be caught) | e.g. `limit` param in generated wallets API |
+
+### Performance
+
+**High — O(n²·k) suffix scan:**
+
+`suffix_resolver.dart:60–72` — inner `allSegs` loop scans all N types per candidate. Cloudflare (10,340 types) → ~120M comparisons. Fix: inverted suffix index for O(1) uniqueness lookup.
+
+**Medium:**
+
+| Issue | Location |
+|-------|----------|
+| `rewriteTypeNames` deep-copies every named type even when rename is identity — no short-circuit | `ir/ir_rewriter.dart:17–102` |
+| 6 uncached inline `RegExp` constructions in emit path; `toSnakeCase` alone creates ~20K objects for Cloudflare | `emitter/emit_utils.dart:226,404,585,588,634,646` |
+
+**Low:**
+
+| Issue | Location |
+|-------|----------|
+| `transitiveTypes` BFS called once per API in mini-barrel loop instead of single reverse-reachability pass | `emitter/file_emitter.dart:195–210` |
+| `analyzeModelImports` called 2× per type; `analyzeApiImports` 3× per API | `emitter/file_emitter.dart` |
+
+**Clean:** `StructuralSigner` memoization is robust. `dart_names.dart` regexps pre-compiled. Pipeline is ~17 sequential O(N) passes — linear overall except suffix resolver.
+
+### Prioritized action list
+
+| Priority | Dimension | Fix |
+|----------|-----------|-----|
+| P0 | DX | Catch `FileSystemException`/`UnsupportedError` at CLI boundary |
+| P0 | DX | Warn on silent operation/schema drops in `operation_lowerer` and `ir_mapper` |
+| P1 | Performance | Inverted suffix index in `suffix_resolver.dart` |
+| P1 | Tests | Unit tests for `variant_overlap.dart`, `ir_validator.dart`, error union dedup path |
+| P1 | Generated | Fix dead `queryParametersList`, add identity guard in `ir_rewriter` |
+| P2 | Performance | Pre-compile 6 inline `RegExp` in `emit_utils.dart` |
+| P2 | Tests | Unit tests for `ir_type_refs.dart`, `api_rewriter.dart`, `import_analyzer.dart` |
+| P2 | Generated | `$Unknown` doc comment re: no `copyWith`; wrap mutable map |
+| P3 | DX | Wire `--quiet` into CLI; fix stdout/stderr convention |
+| P3 | Performance | Identity short-circuit in `rewriteTypeNames`; single-pass reachability for mini-barrels |
+| P3 | Spec | Document unsupported features in CLI `--help` or generated output |
