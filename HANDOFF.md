@@ -1878,27 +1878,6 @@ Zero behavior change — existing `import sealed_union_emitter.dart` still works
 | `emitter/roundtrip_emitter.dart` | 1 | `t.emittableName` → null-aware map element `?` |
 | `generator.dart` | 2 | `op.requestBody`, `op.defaultResponse` |
 
----
-
-### Candidate improvements — resolution (batch 16)
-
-**Batch 16: `fieldIsRequiredInCtor` helper + consolidate nullable-checking (#9 + #11).**
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 9 | `fieldIsRequiredInCtor(f)` helper | **Done** | Replaces 9 raw `f.isRequired && !fieldHasDefault(f)` ternaries across 5 files. |
-| 11 | Consolidate nullable-checking | **Already resolved** | `_hasUsableDartDefault` was eliminated in batch 9. Remaining `!f.isRequired` patterns in discriminated_union_emitter are intentionally different — they apply to hoisted common fields, not model constructor fields. |
-
-**Changes:**
-
-| File | Sites | What |
-|------|------:|------|
-| `emitter/emit_utils.dart` | 1 | New `fieldIsRequiredInCtor(IrField)` helper |
-| `emitter/model_emitter.dart` | 2 | `f.isRequired && !fieldHasDefault(f)` → `fieldIsRequiredInCtor(f)` |
-| `emitter/discriminated_union_emitter.dart` | 4 | Same replacement in variant factory param sorting + required/forceNullable |
-| `emitter/roundtrip_emitter.dart` | 1 | Same replacement in fixture field filter |
-| `emitter/negative_fixture_emitter.dart` | 1 | Same replacement in fixture field filter |
-
 **Generator source map (updated entries):**
 
 | File | Purpose |
