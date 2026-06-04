@@ -1798,3 +1798,21 @@ Added a `unionVariants` getter on the `IrType` sealed base that returns the vari
 | `lowering/union_analyzer.dart` | −5 | `_isSpreadable` and `isUnionField` use `unionVariants` |
 
 Remaining `isOneOfEligible`/`isOneOfTypedef` calls: ~16 (down from 36). The remaining ones either have genuinely different logic per union kind (`IrAnyOf` non-typedef path in import_analyzer) or are already single-arm checks on a concrete type.
+
+---
+
+### Candidate improvements — resolution (batch 12)
+
+**Batch 12: Unify reachability traversals.**
+
+| # | Target | Status | Notes |
+|---|--------|--------|-------|
+| 5 | Unify reachability traversals | **Done** | `buildTypeDeps` + `transitiveTypes` shared in `ir_type_refs.dart`. Duplicate copies deleted from `generator.dart` and `file_emitter.dart`. |
+
+**Changes (−25 lines net):**
+
+| File | Delta | What |
+|------|------:|------|
+| `ir/ir_type_refs.dart` | +32 | Added `buildTypeDeps()` and `transitiveTypes()` — shared graph construction + BFS |
+| `generator.dart` | −22 | Deleted inline graph construction + BFS loop; now calls shared functions |
+| `emitter/file_emitter.dart` | −33 | Deleted `_buildTypeDeps` and `_transitiveTypes`; now calls shared functions |
