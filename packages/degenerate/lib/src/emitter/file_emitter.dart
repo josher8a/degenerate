@@ -212,6 +212,7 @@ final class FileEmitter {
           inlinedTypes: inlining.inlinedInto.keys.toSet(),
           errorUnionFiles: errorUnionFileStems,
           errorUnionMap: errorUnionMap,
+          barrelHide: barrelHide,
         );
       }
     }
@@ -593,6 +594,7 @@ final class FileEmitter {
     Set<String> inlinedTypes = const {},
     Set<String> errorUnionFiles = const {},
     Map<String, ErrorUnionInfo> errorUnionMap = const {},
+    List<String> barrelHide = const [],
   }) {
     final apiFileName = toSnakeCase(api.name);
 
@@ -606,10 +608,12 @@ final class FileEmitter {
       }
     }
 
+    final hiddenNames = barrelHide.toSet();
     final modelExports = <String>{
       for (final name
           in reachableTypes
-              .where((name) => !inlinedTypes.contains(name))
+              .where((name) =>
+                  !inlinedTypes.contains(name) && !hiddenNames.contains(name))
               .where(typeToFile.containsKey))
         'models/${typeToFile[name]!}.dart',
       for (final fileStem in errorUnionFiles.where(usedErrorStems.contains))
