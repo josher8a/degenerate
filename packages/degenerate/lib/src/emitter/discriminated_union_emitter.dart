@@ -290,18 +290,18 @@ final class DiscriminatedUnionEmitter {
         ..docs.add('/// Build the `$discValue` variant.')
         ..optionalParameters.addAll(
           (fields.toList()..sort((a, b) {
-            final aReq = a.isRequired && !fieldHasDefault(a) ? 0 : 1;
-            final bReq = b.isRequired && !fieldHasDefault(b) ? 0 : 1;
+            final aReq = fieldIsRequiredInCtor(a) ? 0 : 1;
+            final bReq = fieldIsRequiredInCtor(b) ? 0 : 1;
             return aReq.compareTo(bReq);
           })).map(
             (f) => Parameter(
               (p) => p
                 ..name = f.name
                 ..named = true
-                ..required = f.isRequired && !fieldHasDefault(f)
+                ..required = fieldIsRequiredInCtor(f)
                 ..type = irTypeToReference(
                   f.type,
-                  forceNullable: !f.isRequired && !fieldHasDefault(f),
+                  forceNullable: !fieldIsRequiredInCtor(f),
                 )
                 ..defaultTo = fieldDefaultCode(f),
             ),

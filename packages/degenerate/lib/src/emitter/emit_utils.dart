@@ -859,6 +859,10 @@ Code? fieldDefaultCode(IrField f) {
 /// Whether [f] has a representable Dart constructor default.
 bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;
 
+/// Whether [f] must be a `required` named parameter in the Dart constructor
+/// (required in the spec and no default value to fall back on).
+bool fieldIsRequiredInCtor(IrField f) => f.isRequired && !fieldHasDefault(f);
+
 /// Whether [f]'s Dart declaration type is nullable (optional without default,
 /// or explicitly nullable in the spec).
 bool fieldIsNullableInDart(IrField f) =>

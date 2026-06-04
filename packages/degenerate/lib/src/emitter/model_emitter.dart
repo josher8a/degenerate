@@ -82,7 +82,7 @@ final class ModelEmitter {
           ..modifier = FieldModifier.final$
           ..type = irTypeToReference(
             f.type,
-            forceNullable: !f.isRequired && !fieldHasDefault(f),
+            forceNullable: !fieldIsRequiredInCtor(f),
           )
           ..docs.addAll(_fieldDocs(f)),
       ),
@@ -106,7 +106,7 @@ final class ModelEmitter {
           ..name = f.name
           ..named = true
           ..toThis = true
-          ..required = f.isRequired && !fieldHasDefault(f)
+          ..required = fieldIsRequiredInCtor(f)
           ..defaultTo = fieldDefaultCode(f),
       );
     }).toList();

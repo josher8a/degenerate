@@ -449,7 +449,7 @@ final class RoundtripEmitter {
       if (f.originalName == skipKey) continue;
       // toJson always emits required and defaulted fields; optional-without-
       // default fields are null → omitted, so leave them out of the sample.
-      if (!f.isRequired && !fieldHasDefault(f)) continue;
+      if (!fieldIsRequiredInCtor(f)) continue;
       final lit = _sampleLiteral(f.type, visited);
       if (lit == null) return null;
       entries.add('${dartStringLiteral(f.originalName)}: $lit');
