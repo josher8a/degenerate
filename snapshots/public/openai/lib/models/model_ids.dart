@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ModelIds
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';typedef ModelIds = OneOf2<ModelIdsShared,ModelIdsResponses>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';/// Variants:
+/// - `.a` → [ModelIdsShared]
+/// - `.b` → [ModelIdsResponses]
+typedef ModelIds = OneOf2<ModelIdsShared,ModelIdsResponses>;

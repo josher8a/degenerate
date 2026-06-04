@@ -38,4 +38,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'McpToolApprovalSetting($value)';
 
  }
+/// Specify which of the MCP server's tools require approval.
+///
+/// Variants:
+/// - `.a` → [McpToolApprovalFilter]
+/// - `.b` → [McpToolApprovalSetting]
 typedef RequireApproval = OneOf2<McpToolApprovalFilter,McpToolApprovalSetting>;

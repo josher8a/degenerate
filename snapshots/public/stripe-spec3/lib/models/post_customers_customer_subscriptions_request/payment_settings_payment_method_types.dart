@@ -194,4 +194,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'PaymentSettingsPaymentMethodTypesVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [List<PaymentSettingsPaymentMethodTypesVariant1>]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
 typedef PaymentSettingsPaymentMethodTypes = OneOf2<List<PaymentSettingsPaymentMethodTypesVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;

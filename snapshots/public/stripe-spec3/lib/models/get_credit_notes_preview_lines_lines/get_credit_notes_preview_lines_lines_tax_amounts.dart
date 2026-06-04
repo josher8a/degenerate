@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetCreditNotesPreviewLinesLines (inline: TaxAmounts)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/get_credit_notes_preview_lines_lines_tax_amounts_variant1.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';typedef GetCreditNotesPreviewLinesLinesTaxAmounts = OneOf2<List<GetCreditNotesPreviewLinesLinesTaxAmountsVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/get_credit_notes_preview_lines_lines_tax_amounts_variant1.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';/// Variants:
+/// - `.a` → [List<GetCreditNotesPreviewLinesLinesTaxAmountsVariant1>]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef GetCreditNotesPreviewLinesLinesTaxAmounts = OneOf2<List<GetCreditNotesPreviewLinesLinesTaxAmountsVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;

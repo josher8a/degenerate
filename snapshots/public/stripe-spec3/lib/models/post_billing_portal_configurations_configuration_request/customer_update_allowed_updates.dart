@@ -50,4 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'AllowedUpdatesVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [List<AllowedUpdatesVariant1>]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
 typedef CustomerUpdateAllowedUpdates = OneOf2<List<AllowedUpdatesVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;

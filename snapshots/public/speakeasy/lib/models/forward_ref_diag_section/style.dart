@@ -96,4 +96,8 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'StyleVariant3($value)';
 
  }
+/// Variants:
+/// - `.a` → [StyleVariant1]
+/// - `.b` → [StyleVariant2]
+/// - `.c` → [StyleVariant3]
 typedef Style = OneOf3<StyleVariant1,StyleVariant2,StyleVariant3>;

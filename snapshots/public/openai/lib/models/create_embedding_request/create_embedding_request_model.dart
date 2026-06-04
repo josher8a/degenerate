@@ -38,4 +38,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateEmbeddingRequestModelVariant2($value)';
 
  }
+/// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+/// 
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateEmbeddingRequestModelVariant2]
 typedef CreateEmbeddingRequestModel = OneOf2<String,CreateEmbeddingRequestModelVariant2>;

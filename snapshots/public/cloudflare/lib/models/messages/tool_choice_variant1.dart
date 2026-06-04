@@ -38,4 +38,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'Variant1Variant1($value)';
 
  }
+/// Controls which (if any) tool is called by the model. 'none' = no tools, 'auto' = model decides, 'required' = must call a tool.
+///
+/// Variants:
+/// - `.a` → [Variant1Variant1]
+/// - `.b` → [Variant1Function]
+/// - `.c` → [Variant1Custom]
+/// - `.d` → [Variant1AllowedTools]
 typedef ToolChoiceVariant1 = OneOf4<Variant1Variant1,Variant1Function,Variant1Custom,Variant1AllowedTools>;

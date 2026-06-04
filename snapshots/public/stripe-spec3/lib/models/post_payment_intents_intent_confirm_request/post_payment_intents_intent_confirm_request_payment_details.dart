@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentIntentsIntentConfirmRequest (inline: PaymentDetails)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';typedef PostPaymentIntentsIntentConfirmRequestPaymentDetails = OneOf2<PaymentDetails,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';/// Provides industry-specific information about the charge.
+///
+/// Variants:
+/// - `.a` → [PaymentDetails]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef PostPaymentIntentsIntentConfirmRequestPaymentDetails = OneOf2<PaymentDetails,GetPaymentMethodConfigurationsApplicationVariant2>;

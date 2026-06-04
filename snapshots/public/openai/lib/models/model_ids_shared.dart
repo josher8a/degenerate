@@ -322,4 +322,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'ModelIdsSharedVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [ModelIdsSharedVariant2]
 typedef ModelIdsShared = OneOf2<String,ModelIdsSharedVariant2>;

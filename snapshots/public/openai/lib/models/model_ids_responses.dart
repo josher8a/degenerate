@@ -82,4 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'ResponsesOnlyModel($value)';
 
  }
+/// Variants:
+/// - `.a` → [ModelIdsShared]
+/// - `.b` → [ResponsesOnlyModel]
 typedef ModelIdsResponses = OneOf2<ModelIdsShared,ResponsesOnlyModel>;

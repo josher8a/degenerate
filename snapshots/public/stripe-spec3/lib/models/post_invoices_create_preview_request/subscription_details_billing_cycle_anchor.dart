@@ -34,4 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'BillingCycleAnchorVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [BillingCycleAnchorVariant1]
+/// - `.b` → [int]
 typedef SubscriptionDetailsBillingCycleAnchor = OneOf2<BillingCycleAnchorVariant1,int>;

@@ -222,4 +222,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'ExcludedPaymentMethodTypesVariant1($value)';
 
  }
+/// The list of payment method types to exclude from use with this payment.
+///
+/// Variants:
+/// - `.a` → [List<ExcludedPaymentMethodTypesVariant1>]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
 typedef PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes = OneOf2<List<ExcludedPaymentMethodTypesVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;

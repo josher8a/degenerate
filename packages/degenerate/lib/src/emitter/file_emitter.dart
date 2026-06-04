@@ -509,8 +509,19 @@ final class FileEmitter {
     EmitContext ctx,
   ) {
     final oneOfRef = oneOfTypeReference(variants);
+    final letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+    final docLines = <String>[];
+    if (description != null) {
+      docLines.addAll(formatDocComment(description));
+      docLines.add('///');
+    }
+    docLines.add('/// Variants:');
+    for (var i = 0; i < variants.length && i < letters.length; i++) {
+      docLines.add('/// - `.${letters[i]}` → [${irTypeName(variants[i])}]');
+    }
+    final docBlock = docLines.join('\n');
     final specs = <Spec>[
-      Code('typedef $name = ${oneOfRef.accept(_dartEmitter)};'),
+      Code('$docBlock\ntypedef $name = ${oneOfRef.accept(_dartEmitter)};'),
     ];
     // Check if any variant references this type (direct self-reference).
     if (isSelfReferencingUnion(name, variants)) {

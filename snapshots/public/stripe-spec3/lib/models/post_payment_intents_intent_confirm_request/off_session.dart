@@ -34,4 +34,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'OffSessionVariant2($value)';
 
  }
+/// Set to `true` to indicate that the customer isn't in your checkout flow during this payment attempt and can't authenticate. Use this parameter in scenarios where you collect card details and [charge them later](https://docs.stripe.com/payments/cards/charging-saved-cards). This parameter can only be used with [`confirm=true`](https://docs.stripe.com/api/payment_intents/create#create_payment_intent-confirm).
+///
+/// Variants:
+/// - `.a` → [bool]
+/// - `.b` → [OffSessionVariant2]
 typedef OffSession = OneOf2<bool,OffSessionVariant2>;

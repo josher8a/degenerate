@@ -32,4 +32,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'Auto($value)';
 
  }
+/// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once
+/// tracing is enabled for a session, the configuration cannot be modified.
+/// 
+/// `auto` will create a trace for the session with default values for the
+/// workflow name, group id, and metadata.
+/// 
+///
+/// Variants:
+/// - `.a` → [Auto]
+/// - `.b` → [TracingConfiguration]
 typedef RealtimeSessionCreateRequestGaTracing = OneOf2<Auto,TracingConfiguration>;

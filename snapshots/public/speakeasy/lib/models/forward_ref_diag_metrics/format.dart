@@ -96,4 +96,8 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'FormatVariant3($value)';
 
  }
+/// Variants:
+/// - `.a` → [FormatVariant1]
+/// - `.b` → [FormatVariant2]
+/// - `.c` → [FormatVariant3]
 typedef Format = OneOf3<FormatVariant1,FormatVariant2,FormatVariant3>;

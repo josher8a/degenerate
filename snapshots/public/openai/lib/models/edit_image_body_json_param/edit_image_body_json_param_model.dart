@@ -42,4 +42,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'EditImageBodyJsonParamModelVariant2($value)';
 
  }
+/// The model to use for image editing.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [EditImageBodyJsonParamModelVariant2]
+/// - `.c` → [dynamic]
 typedef EditImageBodyJsonParamModel = OneOf3<String,EditImageBodyJsonParamModelVariant2,dynamic>;

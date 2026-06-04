@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptions (inline: MbWay)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_mb_way.dart';typedef PaymentIntentPaymentMethodOptionsMbWay = OneOf2<PaymentMethodOptionsMbWay,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_mb_way.dart';/// Variants:
+/// - `.a` → [PaymentMethodOptionsMbWay]
+/// - `.b` → [PaymentIntentTypeSpecificPaymentMethodOptionsClient]
+typedef PaymentIntentPaymentMethodOptionsMbWay = OneOf2<PaymentMethodOptionsMbWay,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;

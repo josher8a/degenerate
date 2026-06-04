@@ -30,4 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'OrganizationListOrganizationsParentIdVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [OrganizationId]
+/// - `.b` → [OrganizationListOrganizationsParentIdVariant2]
 typedef OrganizationListOrganizationsParentId = OneOf2<OrganizationId,OrganizationListOrganizationsParentIdVariant2>;

@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersAiPostRunCfQwenQwen3Embedding06bRequest (inline: Documents)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';typedef Documents = OneOf2<String,List<String>>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [List<String>]
+typedef Documents = OneOf2<String,List<String>>;

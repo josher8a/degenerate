@@ -1,4 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetCtTimeseriesGroupResponse (inline: Result > Serie0)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant1.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant2.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant3.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant4.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant5.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant6.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant7.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant8.dart';typedef RadarGetCtTimeseriesGroupResponseResultSerie0 = OneOf8<Serie0Variant1,Serie0Variant2,Serie0Variant3,Serie0Variant4,Serie0Variant5,Serie0Variant6,Serie0Variant7,Serie0Variant8>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant1.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant2.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant3.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant4.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant5.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant6.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant7.dart';import 'package:pub_cloudflare/models/radar_get_ct_timeseries_group_response/serie0_variant8.dart';/// Variants:
+/// - `.a` → [Serie0Variant1]
+/// - `.b` → [Serie0Variant2]
+/// - `.c` → [Serie0Variant3]
+/// - `.d` → [Serie0Variant4]
+/// - `.e` → [Serie0Variant5]
+/// - `.f` → [Serie0Variant6]
+/// - `.g` → [Serie0Variant7]
+/// - `.h` → [Serie0Variant8]
+typedef RadarGetCtTimeseriesGroupResponseResultSerie0 = OneOf8<Serie0Variant1,Serie0Variant2,Serie0Variant3,Serie0Variant4,Serie0Variant5,Serie0Variant6,Serie0Variant7,Serie0Variant8>;

@@ -9,4 +9,13 @@ factory EvalItemContentText.fromJson(String json) => EvalItemContentText(json);
 String toJson() => value;
 
 }
+/// A single content item: input text, output text, input image, or input audio.
+/// 
+///
+/// Variants:
+/// - `.a` → [EvalItemContentText]
+/// - `.b` → [InputTextContent]
+/// - `.c` → [EvalItemContentOutputText]
+/// - `.d` → [EvalItemInputImage]
+/// - `.e` → [InputAudio]
 typedef EvalItemContentItem = OneOf5<EvalItemContentText,InputTextContent,EvalItemContentOutputText,EvalItemInputImage,InputAudio>;

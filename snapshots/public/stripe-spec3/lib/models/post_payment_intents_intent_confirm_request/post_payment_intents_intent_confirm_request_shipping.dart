@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentIntentsIntentConfirmRequest (inline: Shipping)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_shipping.dart';typedef PostPaymentIntentsIntentConfirmRequestShipping = OneOf2<OptionalFieldsShipping,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_shipping.dart';/// Shipping information for this PaymentIntent.
+///
+/// Variants:
+/// - `.a` → [OptionalFieldsShipping]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef PostPaymentIntentsIntentConfirmRequestShipping = OneOf2<OptionalFieldsShipping,GetPaymentMethodConfigurationsApplicationVariant2>;

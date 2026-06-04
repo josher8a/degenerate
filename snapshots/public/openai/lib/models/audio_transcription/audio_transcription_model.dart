@@ -46,4 +46,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'AudioTranscriptionModelVariant2($value)';
 
  }
+/// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, and `gpt-4o-transcribe-diarize`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
+/// 
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [AudioTranscriptionModelVariant2]
 typedef AudioTranscriptionModel = OneOf2<String,AudioTranscriptionModelVariant2>;

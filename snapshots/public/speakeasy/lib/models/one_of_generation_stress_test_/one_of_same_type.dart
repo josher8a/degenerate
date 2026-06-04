@@ -30,4 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'OneOfSameTypeVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [OneOfSameTypeVariant2]
+/// - `.c` → [dynamic]
 typedef OneOfSameType = OneOf3<String,OneOfSameTypeVariant2,dynamic>;

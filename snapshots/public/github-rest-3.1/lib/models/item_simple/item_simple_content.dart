@@ -1,4 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ItemSimple (inline: Content)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/draft_issue.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple.dart';typedef ItemSimpleContent = OneOf3<Issue,PullRequestSimple,DraftIssue>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/draft_issue.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple.dart';/// The content represented by the item.
+///
+/// Variants:
+/// - `.a` → [Issue]
+/// - `.b` → [PullRequestSimple]
+/// - `.c` → [DraftIssue]
+typedef ItemSimpleContent = OneOf3<Issue,PullRequestSimple,DraftIssue>;

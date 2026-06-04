@@ -46,4 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'VideoModelVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [VideoModelVariant2]
 typedef VideoModel = OneOf2<String,VideoModelVariant2>;

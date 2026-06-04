@@ -36,4 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'ValueVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [ValueVariant1]
+/// - `.b` → [int]
 typedef ValueValue = OneOf2<ValueVariant1,int>;

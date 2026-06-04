@@ -66,4 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'VoiceIdsSharedVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [VoiceIdsSharedVariant2]
 typedef VoiceIdsShared = OneOf2<String,VoiceIdsSharedVariant2>;

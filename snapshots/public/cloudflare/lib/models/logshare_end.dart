@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LogshareEnd
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';typedef LogshareEnd = OneOf2<String,int>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the (exclusive) end of the requested time frame. This can be a unix timestamp (in seconds or nanoseconds), or an absolute timestamp that conforms to RFC 3339. `end` must be at least five minutes earlier than now and must be later than `start`. Difference between `start` and `end` must be not greater than one hour.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [int]
+typedef LogshareEnd = OneOf2<String,int>;

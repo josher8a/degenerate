@@ -88,4 +88,8 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'AigConfigListGatewayLogsFeedbackVariant3($value)';
 
  }
+/// Variants:
+/// - `.a` → [AigConfigListGatewayLogsFeedbackVariant1]
+/// - `.b` → [AigConfigListGatewayLogsFeedbackVariant2]
+/// - `.c` → [AigConfigListGatewayLogsFeedbackVariant3]
 typedef AigConfigListGatewayLogsFeedback = OneOf3<AigConfigListGatewayLogsFeedbackVariant1,AigConfigListGatewayLogsFeedbackVariant2,AigConfigListGatewayLogsFeedbackVariant3>;

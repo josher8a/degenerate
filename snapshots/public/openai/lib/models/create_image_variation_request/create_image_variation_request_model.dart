@@ -30,4 +30,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateImageVariationRequestModelVariant2($value)';
 
  }
+/// The model to use for image generation. Only `dall-e-2` is supported at this time.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateImageVariationRequestModelVariant2]
 typedef CreateImageVariationRequestModel = OneOf2<String,CreateImageVariationRequestModelVariant2>;

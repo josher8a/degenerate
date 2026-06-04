@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostIdentityVerificationSessionsRequest (inline: Options > Document)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';typedef OptionsDocument = OneOf2<DocumentOptions,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';/// Variants:
+/// - `.a` → [DocumentOptions]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef OptionsDocument = OneOf2<DocumentOptions,GetPaymentMethodConfigurationsApplicationVariant2>;

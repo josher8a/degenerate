@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SetupIntentPaymentMethodOptions (inline: SepaDebit)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_sepa_debit.dart';import 'package:pub_stripe_spec3/models/setup_intent_type_specific_payment_method_options_client.dart';typedef SetupIntentPaymentMethodOptionsSepaDebit2 = OneOf2<SetupIntentPaymentMethodOptionsSepaDebit,SetupIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_sepa_debit.dart';import 'package:pub_stripe_spec3/models/setup_intent_type_specific_payment_method_options_client.dart';/// Variants:
+/// - `.a` → [SetupIntentPaymentMethodOptionsSepaDebit]
+/// - `.b` → [SetupIntentTypeSpecificPaymentMethodOptionsClient]
+typedef SetupIntentPaymentMethodOptionsSepaDebit2 = OneOf2<SetupIntentPaymentMethodOptionsSepaDebit,SetupIntentTypeSpecificPaymentMethodOptionsClient>;

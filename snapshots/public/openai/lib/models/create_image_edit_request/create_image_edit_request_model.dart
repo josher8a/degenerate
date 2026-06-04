@@ -46,4 +46,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateImageEditRequestModelVariant2($value)';
 
  }
+/// The model to use for image generation. Defaults to `gpt-image-1.5`.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateImageEditRequestModelVariant2]
 typedef CreateImageEditRequestModel = OneOf2<String,CreateImageEditRequestModelVariant2>;

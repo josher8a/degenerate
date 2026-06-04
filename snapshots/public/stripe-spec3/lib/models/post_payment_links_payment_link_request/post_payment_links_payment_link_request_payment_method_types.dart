@@ -182,4 +182,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1($value)';
 
  }
+/// The list of payment method types that customers can use. Pass an empty string to enable dynamic payment methods that use your [payment method settings](https://dashboard.stripe.com/settings/payment_methods).
+///
+/// Variants:
+/// - `.a` → [List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
 typedef PostPaymentLinksPaymentLinkRequestPaymentMethodTypes = OneOf2<List<PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;

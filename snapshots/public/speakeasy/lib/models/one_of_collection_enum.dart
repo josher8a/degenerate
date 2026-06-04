@@ -34,4 +34,8 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'OneOfCollectionEnumVariant3($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [SimpleObject2]
+/// - `.c` → [List<OneOfCollectionEnumVariant3>]
 typedef OneOfCollectionEnum = OneOf3<String,SimpleObject2,List<OneOfCollectionEnumVariant3>>;

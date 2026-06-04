@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptions (inline: Oxxo)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_oxxo.dart';typedef PaymentIntentPaymentMethodOptionsOxxo = OneOf2<PaymentMethodOptionsOxxo,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_oxxo.dart';/// Variants:
+/// - `.a` → [PaymentMethodOptionsOxxo]
+/// - `.b` → [PaymentIntentTypeSpecificPaymentMethodOptionsClient]
+typedef PaymentIntentPaymentMethodOptionsOxxo = OneOf2<PaymentMethodOptionsOxxo,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;

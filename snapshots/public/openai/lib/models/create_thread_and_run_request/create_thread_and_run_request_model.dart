@@ -178,4 +178,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateThreadAndRunRequestModelVariant2($value)';
 
  }
+/// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateThreadAndRunRequestModelVariant2]
 typedef CreateThreadAndRunRequestModel = OneOf2<String,CreateThreadAndRunRequestModelVariant2>;

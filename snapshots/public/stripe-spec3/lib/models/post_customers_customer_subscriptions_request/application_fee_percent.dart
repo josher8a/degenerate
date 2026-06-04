@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: ApplicationFeePercent)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';typedef ApplicationFeePercent = OneOf2<double,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';/// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account. The request must be made by a platform account on a connected account in order to set an application fee percentage. For more information, see the application fees [documentation](https://stripe.com/docs/connect/subscriptions#collecting-fees-on-subscriptions).
+///
+/// Variants:
+/// - `.a` → [double]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef ApplicationFeePercent = OneOf2<double,GetPaymentMethodConfigurationsApplicationVariant2>;

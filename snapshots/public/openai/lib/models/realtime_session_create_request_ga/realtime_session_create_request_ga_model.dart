@@ -90,4 +90,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'RealtimeSessionCreateRequestGaModelVariant2($value)';
 
  }
+/// The Realtime model used for this session.
+/// 
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [RealtimeSessionCreateRequestGaModelVariant2]
 typedef RealtimeSessionCreateRequestGaModel = OneOf2<String,RealtimeSessionCreateRequestGaModelVariant2>;

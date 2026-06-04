@@ -158,4 +158,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'WaitUntilVariant5($value)';
 
  }
+/// Variants:
+/// - `.a` → [WaitUntilVariant1]
+/// - `.b` → [WaitUntilVariant2]
+/// - `.c` → [WaitUntilVariant3]
+/// - `.d` → [WaitUntilVariant4]
+/// - `.e` → [List<WaitUntilVariant5>]
 typedef WaitUntil = OneOf5<WaitUntilVariant1,WaitUntilVariant2,WaitUntilVariant3,WaitUntilVariant4,List<WaitUntilVariant5>>;

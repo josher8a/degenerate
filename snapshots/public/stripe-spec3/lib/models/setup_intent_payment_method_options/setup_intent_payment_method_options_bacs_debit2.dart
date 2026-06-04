@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SetupIntentPaymentMethodOptions (inline: BacsDebit)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_bacs_debit.dart';import 'package:pub_stripe_spec3/models/setup_intent_type_specific_payment_method_options_client.dart';typedef SetupIntentPaymentMethodOptionsBacsDebit2 = OneOf2<SetupIntentPaymentMethodOptionsBacsDebit,SetupIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_bacs_debit.dart';import 'package:pub_stripe_spec3/models/setup_intent_type_specific_payment_method_options_client.dart';/// Variants:
+/// - `.a` → [SetupIntentPaymentMethodOptionsBacsDebit]
+/// - `.b` → [SetupIntentTypeSpecificPaymentMethodOptionsClient]
+typedef SetupIntentPaymentMethodOptionsBacsDebit2 = OneOf2<SetupIntentPaymentMethodOptionsBacsDebit,SetupIntentTypeSpecificPaymentMethodOptionsClient>;

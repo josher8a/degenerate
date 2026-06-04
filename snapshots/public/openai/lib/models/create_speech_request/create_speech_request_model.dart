@@ -42,4 +42,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateSpeechRequestModelVariant2($value)';
 
  }
+/// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
+/// 
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateSpeechRequestModelVariant2]
 typedef CreateSpeechRequestModel = OneOf2<String,CreateSpeechRequestModelVariant2>;

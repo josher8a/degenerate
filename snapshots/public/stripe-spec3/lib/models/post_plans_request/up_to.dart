@@ -30,4 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'UpToVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [UpToVariant1]
+/// - `.b` → [int]
 typedef UpTo = OneOf2<UpToVariant1,int>;

@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChatCompletionRequestUserMessageContentPart
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_audio.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_file.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';typedef ChatCompletionRequestUserMessageContentPart = OneOf4<ChatCompletionRequestMessageContentPartText,ChatCompletionRequestMessageContentPartImage,ChatCompletionRequestMessageContentPartAudio,ChatCompletionRequestMessageContentPartFile>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_audio.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_file.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';/// Variants:
+/// - `.a` → [ChatCompletionRequestMessageContentPartText]
+/// - `.b` → [ChatCompletionRequestMessageContentPartImage]
+/// - `.c` → [ChatCompletionRequestMessageContentPartAudio]
+/// - `.d` → [ChatCompletionRequestMessageContentPartFile]
+typedef ChatCompletionRequestUserMessageContentPart = OneOf4<ChatCompletionRequestMessageContentPartText,ChatCompletionRequestMessageContentPartImage,ChatCompletionRequestMessageContentPartAudio,ChatCompletionRequestMessageContentPartFile>;

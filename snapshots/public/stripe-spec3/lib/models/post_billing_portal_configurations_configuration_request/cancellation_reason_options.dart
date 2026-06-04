@@ -58,4 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'OptionsVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [List<OptionsVariant1>]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
 typedef CancellationReasonOptions = OneOf2<List<OptionsVariant1>,GetPaymentMethodConfigurationsApplicationVariant2>;

@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersAiPostRunCfQwenQwq32bRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages35.dart';import 'package:pub_cloudflare/models/prompt28.dart';typedef WorkersAiPostRunCfQwenQwq32bRequest = OneOf2<Prompt28,Messages35>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages35.dart';import 'package:pub_cloudflare/models/prompt28.dart';/// Variants:
+/// - `.a` → [Prompt28]
+/// - `.b` → [Messages35]
+typedef WorkersAiPostRunCfQwenQwq32bRequest = OneOf2<Prompt28,Messages35>;

@@ -46,4 +46,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateImageRequestModelVariant2($value)';
 
  }
+/// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateImageRequestModelVariant2]
 typedef CreateImageRequestModel = OneOf2<String,CreateImageRequestModelVariant2>;

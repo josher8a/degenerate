@@ -30,4 +30,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'CreateTranslationRequestModelVariant2($value)';
 
  }
+/// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.
+/// 
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CreateTranslationRequestModelVariant2]
 typedef CreateTranslationRequestModel = OneOf2<String,CreateTranslationRequestModelVariant2>;

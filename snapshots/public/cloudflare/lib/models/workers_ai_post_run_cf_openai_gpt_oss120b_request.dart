@@ -1,4 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersAiPostRunCfOpenaiGptOss120bRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses.dart';import 'package:pub_cloudflare/models/responses_async.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_openai_gpt_oss120b_request/workers_ai_post_run_cf_openai_gpt_oss120b_request_variant1.dart';typedef WorkersAiPostRunCfOpenaiGptOss120bRequest = OneOf3<WorkersAiPostRunCfOpenaiGptOss120bRequestVariant1,Responses,ResponsesAsync>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses.dart';import 'package:pub_cloudflare/models/responses_async.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_openai_gpt_oss120b_request/workers_ai_post_run_cf_openai_gpt_oss120b_request_variant1.dart';/// Variants:
+/// - `.a` → [WorkersAiPostRunCfOpenaiGptOss120bRequestVariant1]
+/// - `.b` → [Responses]
+/// - `.c` → [ResponsesAsync]
+typedef WorkersAiPostRunCfOpenaiGptOss120bRequest = OneOf3<WorkersAiPostRunCfOpenaiGptOss120bRequestVariant1,Responses,ResponsesAsync>;

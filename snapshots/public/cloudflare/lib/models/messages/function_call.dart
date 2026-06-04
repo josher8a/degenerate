@@ -34,4 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'MessagesFunctionCallVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [MessagesFunctionCallVariant1]
+/// - `.b` → [FunctionCallVariant2]
 typedef FunctionCall = OneOf2<MessagesFunctionCallVariant1,FunctionCallVariant2>;

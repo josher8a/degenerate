@@ -54,4 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'EmbeddingModelVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [EmbeddingModelVariant1]
+/// - `.b` → [AiSearchModelVariant2]
 typedef EmbeddingModel = OneOf2<EmbeddingModelVariant1,AiSearchModelVariant2>;

@@ -30,4 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'DelayDaysVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [DelayDaysVariant1]
+/// - `.b` → [int]
 typedef DelayDays = OneOf2<DelayDaysVariant1,int>;

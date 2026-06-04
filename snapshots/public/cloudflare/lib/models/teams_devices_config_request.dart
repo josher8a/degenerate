@@ -1,4 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TeamsDevicesConfigRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_custom_s2s_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_intune_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_kolide_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_sentinelone_s2s_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_tanium_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_uptycs_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_workspace_one_config_request.dart';typedef TeamsDevicesConfigRequest = OneOf8<TeamsDevicesWorkspaceOneConfigRequest,TeamsDevicesCrowdstrikeConfigRequest,TeamsDevicesUptycsConfigRequest,TeamsDevicesIntuneConfigRequest,TeamsDevicesKolideConfigRequest,TeamsDevicesTaniumConfigRequest,TeamsDevicesSentineloneS2sConfigRequest,TeamsDevicesCustomS2sConfigRequest>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_custom_s2s_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_intune_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_kolide_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_sentinelone_s2s_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_tanium_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_uptycs_config_request.dart';import 'package:pub_cloudflare/models/teams_devices_workspace_one_config_request.dart';/// The configuration object containing third-party integration information.
+///
+/// Variants:
+/// - `.a` → [TeamsDevicesWorkspaceOneConfigRequest]
+/// - `.b` → [TeamsDevicesCrowdstrikeConfigRequest]
+/// - `.c` → [TeamsDevicesUptycsConfigRequest]
+/// - `.d` → [TeamsDevicesIntuneConfigRequest]
+/// - `.e` → [TeamsDevicesKolideConfigRequest]
+/// - `.f` → [TeamsDevicesTaniumConfigRequest]
+/// - `.g` → [TeamsDevicesSentineloneS2sConfigRequest]
+/// - `.h` → [TeamsDevicesCustomS2sConfigRequest]
+typedef TeamsDevicesConfigRequest = OneOf8<TeamsDevicesWorkspaceOneConfigRequest,TeamsDevicesCrowdstrikeConfigRequest,TeamsDevicesUptycsConfigRequest,TeamsDevicesIntuneConfigRequest,TeamsDevicesKolideConfigRequest,TeamsDevicesTaniumConfigRequest,TeamsDevicesSentineloneS2sConfigRequest,TeamsDevicesCustomS2sConfigRequest>;

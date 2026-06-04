@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesCreatePreviewRequest (inline: CustomerDetails > Address)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_address.dart';typedef PostInvoicesCreatePreviewRequestCustomerDetailsAddress = OneOf2<OptionalFieldsAddress,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_address.dart';/// Variants:
+/// - `.a` → [OptionalFieldsAddress]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef PostInvoicesCreatePreviewRequestCustomerDetailsAddress = OneOf2<OptionalFieldsAddress,GetPaymentMethodConfigurationsApplicationVariant2>;

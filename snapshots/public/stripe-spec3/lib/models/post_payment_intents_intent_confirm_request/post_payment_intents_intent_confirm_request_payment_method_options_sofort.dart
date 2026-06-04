@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentIntentsIntentConfirmRequest (inline: PaymentMethodOptions > Sofort)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param108.dart';typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSofort = OneOf2<PaymentMethodOptionsParam108,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param108.dart';/// Variants:
+/// - `.a` → [PaymentMethodOptionsParam108]
+/// - `.b` → [GetPaymentMethodConfigurationsApplicationVariant2]
+typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSofort = OneOf2<PaymentMethodOptionsParam108,GetPaymentMethodConfigurationsApplicationVariant2>;

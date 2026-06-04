@@ -38,4 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'PriorityVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [PriorityVariant1]
+/// - `.b` → [int]
 typedef ForwardRefDiagSectionPriority = OneOf2<PriorityVariant1,int>;

@@ -126,4 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'ModelVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [ModelVariant1]
+/// - `.b` → [AiSearchModelVariant2]
 typedef AutoragConfigAiSearchRequestModel = OneOf2<ModelVariant1,AiSearchModelVariant2>;

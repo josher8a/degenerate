@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptions (inline: KrCard)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_kr_card.dart';typedef PaymentIntentPaymentMethodOptionsKrCard = OneOf2<PaymentMethodOptionsKrCard,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_type_specific_payment_method_options_client.dart';import 'package:pub_stripe_spec3/models/payment_method_options_kr_card.dart';/// Variants:
+/// - `.a` → [PaymentMethodOptionsKrCard]
+/// - `.b` → [PaymentIntentTypeSpecificPaymentMethodOptionsClient]
+typedef PaymentIntentPaymentMethodOptionsKrCard = OneOf2<PaymentMethodOptionsKrCard,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;

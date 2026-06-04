@@ -15,4 +15,7 @@ return IntelIpv6(json); }
 String toJson() => value;
 
 }
+/// Variants:
+/// - `.a` → [IntelIpv4]
+/// - `.b` → [IntelIpv6]
 typedef IntelIp = OneOf2<IntelIpv4,IntelIpv6>;

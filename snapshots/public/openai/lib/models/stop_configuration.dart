@@ -1,4 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StopConfiguration
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';typedef StopConfiguration = OneOf2<String?,List<String>>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Not supported with latest reasoning models `o3` and `o4-mini`.
+/// 
+/// Up to 4 sequences where the API will stop generating further tokens. The
+/// returned text will not contain the stop sequence.
+/// 
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [List<String>]
+typedef StopConfiguration = OneOf2<String?,List<String>>;

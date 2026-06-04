@@ -30,4 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'EffectiveDateVariant1($value)';
 
  }
+/// Variants:
+/// - `.a` → [EffectiveDateVariant1]
+/// - `.b` → [int]
+/// - `.c` → [ExpiresAtVariant3]
 typedef EffectiveDate = OneOf3<EffectiveDateVariant1,int,ExpiresAtVariant3>;

@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomerBalanceTransaction (inline: CheckoutSession)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';typedef CustomerBalanceTransactionCheckoutSession = OneOf2<String,CheckoutSession>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';/// The ID of the checkout session (if any) that created the transaction.
+///
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [CheckoutSession]
+typedef CustomerBalanceTransactionCheckoutSession = OneOf2<String,CheckoutSession>;

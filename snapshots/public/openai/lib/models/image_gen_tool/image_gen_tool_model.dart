@@ -40,4 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'ImageGenToolModelVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [ImageGenToolModelVariant2]
 typedef ImageGenToolModel = OneOf2<String,ImageGenToolModelVariant2>;

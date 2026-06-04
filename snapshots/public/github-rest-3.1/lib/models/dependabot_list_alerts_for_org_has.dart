@@ -34,4 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() => 'DependabotListAlertsForOrgHasVariant2($value)';
 
  }
+/// Variants:
+/// - `.a` → [String]
+/// - `.b` → [List<DependabotListAlertsForOrgHasVariant2>]
 typedef DependabotListAlertsForOrgHas = OneOf2<String,List<DependabotListAlertsForOrgHasVariant2>>;

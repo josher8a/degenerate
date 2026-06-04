@@ -1,4 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsersDeleteAttestationsBulkRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request/orgs_delete_attestations_bulk_request_variant1.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request/orgs_delete_attestations_bulk_request_variant2.dart';typedef UsersDeleteAttestationsBulkRequest = OneOf2<OrgsDeleteAttestationsBulkRequestVariant1,OrgsDeleteAttestationsBulkRequestVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request/orgs_delete_attestations_bulk_request_variant1.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request/orgs_delete_attestations_bulk_request_variant2.dart';/// The request body must include either `subject_digests` or `attestation_ids`, but not both.
+///
+/// Variants:
+/// - `.a` → [OrgsDeleteAttestationsBulkRequestVariant1]
+/// - `.b` → [OrgsDeleteAttestationsBulkRequestVariant2]
+typedef UsersDeleteAttestationsBulkRequest = OneOf2<OrgsDeleteAttestationsBulkRequestVariant1,OrgsDeleteAttestationsBulkRequestVariant2>;
