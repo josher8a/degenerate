@@ -414,6 +414,10 @@ const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 bool isOneOfEligible(List<IrType> variants) =>
     variants.length >= 2 && variants.length <= 9;
 
+/// Strip angle brackets, commas, and whitespace from type names to produce
+/// a safe Dart identifier fragment.
+String safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
+
 /// Whether a named union should become a `typedef` (eligible for OneOf and
 /// not self-referencing through its variants).
 bool isOneOfTypedef(String name, List<IrType> variants) =>
