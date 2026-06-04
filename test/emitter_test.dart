@@ -3291,4 +3291,45 @@ void main() {
       _formatOrFail(source);
     });
   });
+
+  test('runtimeExportedNames covers all degenerate_runtime exports', () {
+    final barrelFile = File('packages/degenerate_runtime/lib/degenerate_runtime.dart');
+    final barrelContent = barrelFile.readAsStringSync();
+    final exportPaths = RegExp(r"export\s+'([^']+)'")
+        .allMatches(barrelContent)
+        .map((m) => m.group(1)!)
+        .where((p) => !p.contains('meta.dart'));
+
+    final typePattern = RegExp(
+      r'^\s*(?:sealed |final |abstract |interface )*(?:class|mixin|enum)\s+([A-Z]\w+)'
+      r'|^extension type(?:\s+const)?\s+([A-Z]\w+)'
+      r'|^typedef\s+([A-Z]\w+)',
+      multiLine: true,
+    );
+
+    final actualNames = <String>{};
+    for (final relPath in exportPaths) {
+      final resolved = relPath.replaceFirst(
+        'src/', 'packages/degenerate_runtime/lib/src/',
+      );
+      final file = File(resolved);
+      if (!file.existsSync()) continue;
+      final content = file.readAsStringSync();
+      // Skip types defined inside doc comments.
+      final noDocComments = content.replaceAll(RegExp(r'///.*'), '');
+      for (final m in typePattern.allMatches(noDocComments)) {
+        final name = m.group(1) ?? m.group(2) ?? m.group(3)!;
+        actualNames.add(name);
+      }
+    }
+
+    final missing = actualNames.difference(runtimeExportedNames);
+    final extra = runtimeExportedNames.difference(actualNames);
+    expect(missing, isEmpty,
+        reason: 'Types exported by degenerate_runtime but missing from '
+            'runtimeExportedNames: $missing');
+    expect(extra, isEmpty,
+        reason: 'Names in runtimeExportedNames but not exported by '
+            'degenerate_runtime: $extra');
+  });
 }

@@ -13,21 +13,56 @@ import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
-import 'package:degenerate/src/naming.dart'
-    show sanitizeFieldName, toTypeName;
+import 'package:degenerate/src/naming.dart' show sanitizeFieldName, toTypeName;
+import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Type names exported by `degenerate_runtime` that may collide with
 /// generated schema names. When a collision is detected, the barrel file's
 /// runtime export gets a `hide` clause for the conflicting names.
-const _runtimeExportedNames = <String>{
-  'ApiClient', 'ApiConfig', 'ApiError', 'ApiException', 'ApiExecutor',
-  'ApiMultipartField', 'ApiMultipartFileField', 'ApiMultipartTextField',
-  'ApiOAuthFlow', 'ApiParseException', 'ApiQueryParameter', 'ApiRequest',
-  'ApiResponse', 'ApiResult', 'ApiSecurityRequirement', 'ApiSecurityScheme',
-  'ApiStreamError', 'ApiSuccess', 'AuthInterceptor', 'CancelToken',
-  'CancelledException', 'Handler', 'Interceptor', 'LoggingInterceptor',
-  'OneOf2', 'OneOf3', 'OneOf4', 'OneOf5', 'OneOf6', 'OneOf7', 'OneOf8',
-  'OneOf9', 'RequestOptions', 'RetryInterceptor', 'SseEvent',
+///
+/// Validated by `test/emitter_test.dart` (runtime exported names check).
+@visibleForTesting
+const runtimeExportedNames = <String>{
+  'ApiClient',
+  'ApiConfig',
+  'ApiError',
+  'ApiException',
+  'ApiExecutor',
+  'ApiKeyLocation',
+  'ApiMultipartField',
+  'ApiMultipartFileField',
+  'ApiMultipartTextField',
+  'ApiOAuthFlow',
+  'ApiOAuthFlowType',
+  'ApiParseException',
+  'ApiQueryParameter',
+  'ApiRequest',
+  'ApiResponse',
+  'ApiResult',
+  'ApiSecurityRequirement',
+  'ApiSecurityScheme',
+  'ApiSecuritySchemeType',
+  'ApiStreamError',
+  'ApiSuccess',
+  'AuthInterceptor',
+  'CancelToken',
+  'CancelledException',
+  'Handler',
+  'Interceptor',
+  'LoggingInterceptor',
+  'OneOf2',
+  'OneOf3',
+  'OneOf4',
+  'OneOf5',
+  'OneOf6',
+  'OneOf7',
+  'OneOf8',
+  'OneOf9',
+  'RequestOptions',
+  'RetryInterceptor',
+  'RetryRandom',
+  'RetrySleep',
+  'SseEvent',
   'StreamedApiResponse',
 };
 
@@ -162,8 +197,7 @@ final class FileEmitter {
       var modelAnalysis = analyzeModelImports(type, ctx);
       if (children != null) {
         for (final child in children) {
-          modelAnalysis =
-              modelAnalysis.merge(analyzeModelImports(child, ctx));
+          modelAnalysis = modelAnalysis.merge(analyzeModelImports(child, ctx));
         }
       }
       modelAnalysis.referencedNames.remove(name); // Don't import self
@@ -231,7 +265,8 @@ final class FileEmitter {
     for (final info in errorUnionMap.values) {
       if (info.isAlias) {
         (aliasesPerClass[info.aliasTarget!] ??= []).add(info.className);
-        typeToFile[info.className] = typeToFile[info.aliasTarget!] ??
+        typeToFile[info.className] =
+            typeToFile[info.aliasTarget!] ??
             'errors/${toSnakeCase(info.aliasTarget!)}';
       }
     }
@@ -265,9 +300,7 @@ final class FileEmitter {
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
-      final analysis = analyzeApiImports(
-        api, ctx, unwrapFields, errorUnionMap,
-      );
+      final analysis = analyzeApiImports(api, ctx, unwrapFields, errorUnionMap);
 
       // Derive imports directly from referenced types using pre-built lookup
       final modelImports = _modelImports(
@@ -290,7 +323,7 @@ final class FileEmitter {
             needsTypedData ? [Directive.import('dart:typed_data')] : [],
           )
           ..directives.add(() {
-            final apiCollisions = _runtimeExportedNames.intersection(
+            final apiCollisions = runtimeExportedNames.intersection(
               analysis.referencedTypes,
             );
             return apiCollisions.isEmpty
@@ -301,8 +334,7 @@ final class FileEmitter {
                     'package:degenerate_runtime/degenerate_runtime.dart',
                     hide: apiCollisions.toList()..sort(),
                   );
-          }(),
-          )
+          }())
           ..directives.addAll(modelImports)
           ..body.addAll(specs),
       );
@@ -349,7 +381,10 @@ final class FileEmitter {
       final typeDeps = _buildTypeDeps(types);
       for (final api in apis) {
         final analysis = analyzeApiImports(
-          api, ctx, unwrapFields, errorUnionMap,
+          api,
+          ctx,
+          unwrapFields,
+          errorUnionMap,
         );
         final reachable = _transitiveTypes(analysis.referencedTypes, typeDeps);
         final apiFileName = toSnakeCase(api.name);
@@ -371,10 +406,7 @@ final class FileEmitter {
         types,
         packageName,
       ).emit();
-      final negativeContent = NegativeFixtureEmitter(
-        types,
-        packageName,
-      ).emit();
+      final negativeContent = NegativeFixtureEmitter(types, packageName).emit();
       if (negativeContent != null) {
         files['negative_fixtures.dart'] = negativeContent;
       }
@@ -403,12 +435,8 @@ final class FileEmitter {
       IrUntaggedUnion(:final variants)
           when isOneOfTypedef(type.name, variants) =>
         _emitOneOfTypedef(type.name, variants, type.description, ctx),
-      IrUntaggedUnion() => UntaggedUnionEmitter(
-        type,
-        ctx: ctx,
-      ).emit(),
-      IrAnyOf(:final variants)
-          when isOneOfTypedef(type.name, variants) =>
+      IrUntaggedUnion() => UntaggedUnionEmitter(type, ctx: ctx).emit(),
+      IrAnyOf(:final variants) when isOneOfTypedef(type.name, variants) =>
         _emitOneOfTypedef(type.name, variants, type.description, ctx),
       IrAnyOf() => AnyOfEmitter(type, ctx: ctx).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
@@ -436,13 +464,14 @@ final class FileEmitter {
     if (isSelfReferencingUnion(name, variants)) {
       final resolving = {name};
       final parseBody = ctx.oneOfParseCode(
-        variants, 'json', resolving: resolving,
+        variants,
+        'json',
+        resolving: resolving,
       );
       specs.add(Code('$name parse$name(Object? json) => $parseBody;'));
     }
     return specs;
   }
-
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
@@ -480,11 +509,8 @@ final class FileEmitter {
     ]..sort();
 
     // Hide generated type names that collide with runtime-exported names.
-    final generatedNames = types
-        .map(_typeName)
-        .whereType<String>()
-        .toSet();
-    final collisions = _runtimeExportedNames.intersection(generatedNames);
+    final generatedNames = types.map(_typeName).whereType<String>().toSet();
+    final collisions = runtimeExportedNames.intersection(generatedNames);
 
     final runtimeExport = collisions.isEmpty
         ? Directive.export('package:degenerate_runtime/degenerate_runtime.dart')
@@ -567,13 +593,10 @@ final class FileEmitter {
       for (final fileStem in errorUnionFiles.where(usedErrorStems.contains))
         'models/$fileStem.dart',
     };
-    final relativeExports = <String>[
-      'apis/$apiFileName.dart',
-      ...modelExports,
-    ]..sort();
+    final relativeExports = <String>['apis/$apiFileName.dart', ...modelExports]
+      ..sort();
 
-    final collisions =
-        _runtimeExportedNames.intersection(reachableTypes);
+    final collisions = runtimeExportedNames.intersection(reachableTypes);
     final runtimeExport = collisions.isEmpty
         ? Directive.export('package:degenerate_runtime/degenerate_runtime.dart')
         : Directive.export(
@@ -630,64 +653,101 @@ final class FileEmitter {
         lib.directives.add(Directive.import(path));
       }
 
-      lib.body.add(Class((b) {
-        b
-          ..name = className
-          ..modifier = ClassModifier.final$
-          ..docs.addAll(docs)
-          ..constructors.add(Constructor((c) => c
-            ..requiredParameters.add(
-              Parameter((p) => p
-                ..name = '_config'
-                ..toThis = true),
-            )))
-          ..fields.add(Field((f) => f
-            ..name = '_config'
-            ..modifier = FieldModifier.final$
-            ..type = refer('ApiConfig')));
+      lib.body.add(
+        Class((b) {
+          b
+            ..name = className
+            ..modifier = ClassModifier.final$
+            ..docs.addAll(docs)
+            ..constructors.add(
+              Constructor(
+                (c) => c
+                  ..requiredParameters.add(
+                    Parameter(
+                      (p) => p
+                        ..name = '_config'
+                        ..toThis = true,
+                    ),
+                  ),
+              ),
+            )
+            ..fields.add(
+              Field(
+                (f) => f
+                  ..name = '_config'
+                  ..modifier = FieldModifier.final$
+                  ..type = refer('ApiConfig'),
+              ),
+            );
 
-        if (defaultServerUrl != null) {
-          b.fields.add(Field((f) => f
-            ..name = 'defaultBaseUrl'
-            ..static = true
-            ..modifier = FieldModifier.constant
-            ..assignment = Code(dartStringLiteral(defaultServerUrl))));
-        }
-
-        for (final api in apis) {
-          final fieldName = _facadeFieldName(api.name);
-          if (!seenFields.add(fieldName)) continue;
-          b.fields.add(Field((f) => f
-            ..name = fieldName
-            ..late = true
-            ..modifier = FieldModifier.final$
-            ..type = refer(api.name)
-            ..assignment = Code('${api.name}(_config)')));
-        }
-
-        for (final scheme in securitySchemes) {
-          final helper =
-              _securityHelperMethod(className, packageName, scheme);
-          if (helper != null) {
-            final positional = helper.params.where((p) => !p.named);
-            final named = helper.params.where((p) => p.named);
-            b.methods.add(Method((m) => m
-              ..name = helper.name
-              ..returns = refer(className)
-              ..requiredParameters.addAll(positional.map((p) =>
-                  Parameter((pb) => pb
-                    ..name = p.name
-                    ..type = refer(p.type))))
-              ..optionalParameters.addAll(named.map((p) =>
-                  Parameter((pb) => pb
-                    ..name = p.name
-                    ..type = refer(p.type)
-                    ..named = true
-                    ..required = p.required)))
-              ..body = Code(helper.body)));
+          if (defaultServerUrl != null) {
+            b.fields.add(
+              Field(
+                (f) => f
+                  ..name = 'defaultBaseUrl'
+                  ..static = true
+                  ..modifier = FieldModifier.constant
+                  ..assignment = Code(dartStringLiteral(defaultServerUrl)),
+              ),
+            );
           }
-        }
-      }));
+
+          for (final api in apis) {
+            final fieldName = _facadeFieldName(api.name);
+            if (!seenFields.add(fieldName)) continue;
+            b.fields.add(
+              Field(
+                (f) => f
+                  ..name = fieldName
+                  ..late = true
+                  ..modifier = FieldModifier.final$
+                  ..type = refer(api.name)
+                  ..assignment = Code('${api.name}(_config)'),
+              ),
+            );
+          }
+
+          for (final scheme in securitySchemes) {
+            final helper = _securityHelperMethod(
+              className,
+              packageName,
+              scheme,
+            );
+            if (helper != null) {
+              final positional = helper.params.where((p) => !p.named);
+              final named = helper.params.where((p) => p.named);
+              b.methods.add(
+                Method(
+                  (m) => m
+                    ..name = helper.name
+                    ..returns = refer(className)
+                    ..requiredParameters.addAll(
+                      positional.map(
+                        (p) => Parameter(
+                          (pb) => pb
+                            ..name = p.name
+                            ..type = refer(p.type),
+                        ),
+                      ),
+                    )
+                    ..optionalParameters.addAll(
+                      named.map(
+                        (p) => Parameter(
+                          (pb) => pb
+                            ..name = p.name
+                            ..type = refer(p.type)
+                            ..named = true
+                            ..required = p.required,
+                        ),
+                      ),
+                    )
+                    ..body = Code(helper.body),
+                ),
+              );
+            }
+          }
+        }),
+      );
     });
     return emitRaw(library);
   }
@@ -710,68 +770,107 @@ final class FileEmitter {
         Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
       );
 
-      lib.body.add(Class((b) {
-        b
-          ..name = className
-          ..modifier = ClassModifier.final$
-          ..constructors.add(Constructor((c) => c
-            ..constant = true
-            ..name = '_'));
+      lib.body.add(
+        Class((b) {
+          b
+            ..name = className
+            ..modifier = ClassModifier.final$
+            ..constructors.add(
+              Constructor(
+                (c) => c
+                  ..constant = true
+                  ..name = '_',
+              ),
+            );
 
-        // securitySchemes static field
-        final schemesEntries = securitySchemes
-            .map((s) => "'${escapeDartString(s.name)}': ${_securitySchemeLiteral(s)}")
-            .join(', ');
-        b.fields.add(Field((f) => f
-          ..name = 'securitySchemes'
-          ..static = true
-          ..modifier = FieldModifier.final$
-          ..assignment = Code('<String, ApiSecurityScheme>{$schemesEntries}')));
+          // securitySchemes static field
+          final schemesEntries = securitySchemes
+              .map(
+                (s) =>
+                    "'${escapeDartString(s.name)}': ${_securitySchemeLiteral(s)}",
+              )
+              .join(', ');
+          b.fields.add(
+            Field(
+              (f) => f
+                ..name = 'securitySchemes'
+                ..static = true
+                ..modifier = FieldModifier.final$
+                ..assignment = Code(
+                  '<String, ApiSecurityScheme>{$schemesEntries}',
+                ),
+            ),
+          );
 
-        if (globalSecurity != null) {
-          b.fields.add(Field((f) => f
-            ..name = 'globalRequirements'
-            ..static = true
-            ..modifier = FieldModifier.final$
-            ..assignment =
-                Code(_securityRequirementsLiteral(globalSecurity))));
-        }
-
-        for (final api in apis) {
-          for (final op in api.operations) {
-            if (op.securityRequirements == null) continue;
-            b.fields.add(Field((f) => f
-              ..name = '${op.dartMethodName}Requirements'
-              ..static = true
-              ..modifier = FieldModifier.final$
-              ..assignment = Code(
-                  _securityRequirementsLiteral(op.securityRequirements!))));
+          if (globalSecurity != null) {
+            b.fields.add(
+              Field(
+                (f) => f
+                  ..name = 'globalRequirements'
+                  ..static = true
+                  ..modifier = FieldModifier.final$
+                  ..assignment = Code(
+                    _securityRequirementsLiteral(globalSecurity),
+                  ),
+              ),
+            );
           }
-        }
 
-        for (final scheme in securitySchemes) {
-          final apply = _securityApplyMethod(scheme);
-          if (apply != null) {
-            final positional = apply.params.where((p) => !p.named);
-            final named = apply.params.where((p) => p.named);
-            b.methods.add(Method((m) => m
-              ..name = apply.name
-              ..static = true
-              ..returns = refer('ApiConfig')
-              ..requiredParameters.addAll(positional.map((p) =>
-                  Parameter((pb) => pb
-                    ..name = p.name
-                    ..type = refer(p.type))))
-              ..optionalParameters.addAll(named.map((p) =>
-                  Parameter((pb) => pb
-                    ..name = p.name
-                    ..type = refer(p.type)
-                    ..named = true
-                    ..required = p.required)))
-              ..body = Code(apply.body)));
+          for (final api in apis) {
+            for (final op in api.operations) {
+              if (op.securityRequirements == null) continue;
+              b.fields.add(
+                Field(
+                  (f) => f
+                    ..name = '${op.dartMethodName}Requirements'
+                    ..static = true
+                    ..modifier = FieldModifier.final$
+                    ..assignment = Code(
+                      _securityRequirementsLiteral(op.securityRequirements!),
+                    ),
+                ),
+              );
+            }
           }
-        }
-      }));
+
+          for (final scheme in securitySchemes) {
+            final apply = _securityApplyMethod(scheme);
+            if (apply != null) {
+              final positional = apply.params.where((p) => !p.named);
+              final named = apply.params.where((p) => p.named);
+              b.methods.add(
+                Method(
+                  (m) => m
+                    ..name = apply.name
+                    ..static = true
+                    ..returns = refer('ApiConfig')
+                    ..requiredParameters.addAll(
+                      positional.map(
+                        (p) => Parameter(
+                          (pb) => pb
+                            ..name = p.name
+                            ..type = refer(p.type),
+                        ),
+                      ),
+                    )
+                    ..optionalParameters.addAll(
+                      named.map(
+                        (p) => Parameter(
+                          (pb) => pb
+                            ..name = p.name
+                            ..type = refer(p.type)
+                            ..named = true
+                            ..required = p.required,
+                        ),
+                      ),
+                    )
+                    ..body = Code(apply.body),
+                ),
+              );
+            }
+          }
+        }),
+      );
     });
     return emitRaw(library);
   }
@@ -809,9 +908,7 @@ final class FileEmitter {
       if (location != 'null') args.add('location: $location');
     }
     if (scheme.openIdConnectUrl != null) {
-      args.add(
-        'openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}',
-      );
+      args.add('openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}');
     }
     if (scheme.flows.isNotEmpty) {
       final flowLiterals = scheme.flows.map(_oauthFlowLiteral).join(', ');
@@ -905,19 +1002,29 @@ final class FileEmitter {
       },
       'http' => switch (scheme.scheme) {
         'bearer' => _HelperMethodInfo(
-            methodName,
-            [configParam, const _HelperParam('token', 'String')],
-            r"return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});",
-          ),
+          methodName,
+          [configParam, const _HelperParam('token', 'String')],
+          r"return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer $token'});",
+        ),
         'basic' => _HelperMethodInfo(
-            methodName,
-            [
-              configParam,
-              const _HelperParam('username', 'String', named: true, required: true),
-              const _HelperParam('password', 'String', named: true, required: true),
-            ],
-            r"return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});",
-          ),
+          methodName,
+          [
+            configParam,
+            const _HelperParam(
+              'username',
+              'String',
+              named: true,
+              required: true,
+            ),
+            const _HelperParam(
+              'password',
+              'String',
+              named: true,
+              required: true,
+            ),
+          ],
+          r"return config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic ${base64Encode(utf8.encode('$username:$password'))}'});",
+        ),
         _ => null,
       },
       _ => null,
@@ -935,24 +1042,34 @@ final class FileEmitter {
     final applyName = 'apply$suffix';
     return switch (scheme.type) {
       'apiKey' => _HelperMethodInfo(
-          helperName,
-          [const _HelperParam('value', 'String')],
-          'return $sdkClassName($securityClass.$applyName(_config, value));',
-        ),
+        helperName,
+        [const _HelperParam('value', 'String')],
+        'return $sdkClassName($securityClass.$applyName(_config, value));',
+      ),
       'http' => switch (scheme.scheme) {
         'bearer' => _HelperMethodInfo(
-            helperName,
-            [const _HelperParam('token', 'String')],
-            'return $sdkClassName($securityClass.$applyName(_config, token));',
-          ),
+          helperName,
+          [const _HelperParam('token', 'String')],
+          'return $sdkClassName($securityClass.$applyName(_config, token));',
+        ),
         'basic' => _HelperMethodInfo(
-            helperName,
-            [
-              const _HelperParam('username', 'String', named: true, required: true),
-              const _HelperParam('password', 'String', named: true, required: true),
-            ],
-            'return $sdkClassName($securityClass.$applyName(_config, username: username, password: password));',
-          ),
+          helperName,
+          [
+            const _HelperParam(
+              'username',
+              'String',
+              named: true,
+              required: true,
+            ),
+            const _HelperParam(
+              'password',
+              'String',
+              named: true,
+              required: true,
+            ),
+          ],
+          'return $sdkClassName($securityClass.$applyName(_config, username: username, password: password));',
+        ),
         _ => null,
       },
       _ => null,
@@ -1007,7 +1124,12 @@ final class _HelperMethodInfo {
 }
 
 final class _HelperParam {
-  const _HelperParam(this.name, this.type, {this.named = false, this.required = false});
+  const _HelperParam(
+    this.name,
+    this.type, {
+    this.named = false,
+    this.required = false,
+  });
   final String name;
   final String type;
   final bool named;
