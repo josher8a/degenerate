@@ -30,16 +30,6 @@ final class ImportAnalysis {
   );
 }
 
-/// Whether a type emits classes with @immutable (those with == and hashCode).
-bool typeNeedsImmutable(IrType type) => switch (type) {
-  IrObject() => true,
-  IrEnum() => true,
-  IrDiscriminatedUnion() => true,
-  IrUntaggedUnion() => true,
-  IrAnyOf() => true,
-  _ => false,
-};
-
 /// Single-pass analysis of an API: collects referenced types and determines
 /// whether dart:convert and dart:typed_data imports are needed.
 ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})

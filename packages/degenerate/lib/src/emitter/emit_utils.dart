@@ -827,14 +827,8 @@ String primitiveToJsonExpr(
 
 /// Whether [type] is an object-like type (object, ref, or union) for which an
 /// empty `{}` literal is not a valid Dart default.
-bool _isObjectLikeType(IrType type) => switch (type) {
-  IrObject() ||
-  IrTypeRef() ||
-  IrDiscriminatedUnion() ||
-  IrUntaggedUnion() ||
-  IrAnyOf() => true,
-  _ => false,
-};
+bool _isObjectLikeType(IrType type) =>
+    type.isClassType && type is! IrEnum || type is IrTypeRef;
 
 /// The Dart default-value expression for [f]'s constructor parameter, or null
 /// when the field has no representable default. Shared by the model emitter

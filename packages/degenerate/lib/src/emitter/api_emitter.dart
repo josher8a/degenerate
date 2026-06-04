@@ -967,17 +967,8 @@ final class ApiEmitter {
   (String, IrMediaType)? _preferredRequestBodyContent(IrRequestBody body) =>
       preferredContent(body.content);
 
-  bool _typeNeedsToJson(IrType type) {
-    return switch (type) {
-      IrObject() ||
-      IrTypeRef() ||
-      IrDiscriminatedUnion() ||
-      IrUntaggedUnion() ||
-      IrAnyOf() ||
-      IrEnum() => true,
-      _ => false,
-    };
-  }
+  bool _typeNeedsToJson(IrType type) =>
+      type.isClassType || type is IrTypeRef;
 
   (String, IrMediaType)? _errorResponseContent(IrOperation op) {
     // Check for a default error response first (most common pattern)
@@ -1081,25 +1072,10 @@ final class ApiEmitter {
     };
   }
 
-  bool _supportsNonJsonEncode(IrType type) {
-    return switch (type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ => true,
-        PrimitiveKind.string ||
-        PrimitiveKind.int ||
-        PrimitiveKind.double ||
-        PrimitiveKind.num ||
-        PrimitiveKind.bool ||
-        PrimitiveKind.dateTime ||
-        PrimitiveKind.uri ||
-        PrimitiveKind.bigInt ||
-        PrimitiveKind.duration ||
-        PrimitiveKind.bytes => true,
-      },
-      IrEnum() || IrExtensionType() => true,
-      _ => false,
-    };
-  }
+  bool _supportsNonJsonEncode(IrType type) => switch (type) {
+    IrPrimitive() || IrEnum() || IrExtensionType() => true,
+    _ => false,
+  };
 
   /// Resolve an IrType to its object fields, following type refs.
   List<IrField>? _resolveObjectFields(IrType type) {

@@ -34,6 +34,17 @@ sealed class IrType {
     _ => null,
   };
 
+  /// Whether this type emits a Dart class declaration (with `@immutable`,
+  /// `==`, `hashCode`). True for objects, enums, and all union kinds.
+  bool get isClassType => switch (this) {
+    IrObject() ||
+    IrEnum() ||
+    IrDiscriminatedUnion() ||
+    IrUntaggedUnion() ||
+    IrAnyOf() => true,
+    _ => false,
+  };
+
   /// Returns a copy of this type with [isNullable] set to true.
   /// If already nullable, returns `this`.
   IrType copyAsNullable();

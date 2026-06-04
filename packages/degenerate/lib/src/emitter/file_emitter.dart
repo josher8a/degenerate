@@ -327,8 +327,8 @@ final class FileEmitter {
         packageName,
       );
       final needsImmutable =
-          typeNeedsImmutable(type) ||
-          (children?.any(typeNeedsImmutable) ?? false);
+          type.isClassType ||
+          (children?.any((t) => t.isClassType) ?? false);
       final needsRuntime =
           modelAnalysis.needsOneOf ||
           modelAnalysis.needsCollection ||
