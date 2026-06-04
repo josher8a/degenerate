@@ -165,7 +165,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// Test serialization of outer number types
 ///
 /// `POST /fake/outer/number`
@@ -187,7 +186,6 @@ return execute(
   },
 );
  } 
-///
 /// Test serialization of enum (int) properties with examples
 ///
 /// `POST /fake/property/enum-int`
@@ -209,7 +207,6 @@ return execute(
   },
 );
  } 
-///
 /// Test serialization of outer string types
 ///
 /// `POST /fake/outer/string`
@@ -231,7 +228,6 @@ return execute(
   },
 );
  } 
-///
 /// Test serialization of outer boolean types
 ///
 /// `POST /fake/outer/boolean`
@@ -253,7 +249,6 @@ return execute(
   },
 );
  } 
-///
 /// Test serialization of object with outer number type
 ///
 /// `POST /fake/outer/composite`
@@ -275,7 +270,6 @@ return execute(
   },
 );
  } 
-///
 /// for Java apache and Java native, test toUrlQueryString for maps with BegDecimal keys
 ///
 /// `GET /fake/BigDecimalMap`
@@ -424,7 +418,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `PUT /fake/body-with-query-params`
 Future<ApiResult<void, Never>> testBodyWithQueryParams({required String query, required User body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -448,7 +441,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// For this test, the body for this request must reference a schema named `File`.
 ///
 /// `PUT /fake/body-with-file-schema`
@@ -468,7 +460,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// For this test, the body has to be a binary file.
 ///
 /// `PUT /fake/body-with-binary`
@@ -488,7 +479,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// To test the collection format in query parameters
 ///
 /// `PUT /fake/test-query-parameters`

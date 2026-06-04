@@ -9,7 +9,6 @@ final class EventstreamsApi with ApiExecutor {const EventstreamsApi(this.apiConf
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /eventstreams/json`
 Future<ApiResult<JsonEvent, Never>> json({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -28,7 +27,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into JsonEvent'
   },
 );
  } 
-///
 /// `POST /eventstreams/text`
 Future<ApiResult<TextEvent, TextError>> text({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -48,7 +46,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into TextEvent'
   onError: TextError.fromResponse,
 );
  } 
-///
 /// `POST /eventstreams/multiline`
 Future<ApiResult<TextEvent, Never>> multiline({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -67,7 +64,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into TextEvent'
   },
 );
  } 
-///
 /// `POST /eventstreams/rich`
 Future<ApiResult<RichStream, Never>> rich({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -86,7 +82,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into RichStream
   },
 );
  } 
-///
 /// `POST /eventstreams/differentdataschemas`
 Future<ApiResult<DifferentDataSchemas, Never>> differentDataSchemas({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -105,7 +100,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into DifferentD
   },
 );
  } 
-///
 /// `POST /eventstreams/chat`
 Future<ApiResult<List<ChatCompletionResult2>, Never>> chat({required ChatRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -126,7 +120,6 @@ return execute(
   },
 );
  } 
-///
 /// Exercises x-speakeasy-sse-overload. Server returns SSE when
 /// body.sse is true, JSON otherwise.
 /// 
@@ -152,7 +145,6 @@ return execute(
   onError: SseOverloadChatError.fromResponse,
 );
  } 
-///
 /// SSE chat stream with heartbeat events (no data field) mixed with data events, testing that parsers skip data-less events when data is required
 ///
 /// `POST /eventstreams/chat-heartbeat`
@@ -173,7 +165,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into ChatComple
   },
 );
  } 
-///
 /// `POST /eventstreams/chat-chunked`
 Future<ApiResult<ChatCompletionEvent2, Never>> chatSkipSentinel({required ChatSkipSentinelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -194,7 +185,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into ChatComple
   },
 );
  } 
-///
 /// `POST /eventstreams/stayopen`
 Future<ApiResult<TextEvent, Never>> stayOpen({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -213,7 +203,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into TextEvent'
   },
 );
  } 
-///
 /// SSE union events with comments and partial delivery
 ///
 /// `POST /eventstreams/union-with-comments`
@@ -234,7 +223,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into UnionWithC
   },
 );
  } 
-///
 /// SSE with comments, partial messages and mixed boundaries
 ///
 /// `POST /eventstreams/partial-with-comments`
@@ -255,7 +243,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into PartialWit
   },
 );
  } 
-///
 /// Test SSE endpoint with optional data field in the event schema
 ///
 /// `POST /eventstreams/optionaldata`
@@ -276,7 +263,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into OptionalDa
   },
 );
  } 
-///
 /// SSE parsing edge cases per HTML Living Standard
 ///
 /// `GET /eventstreams/wpt-compliance`
@@ -297,7 +283,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into SseEvent')
   },
 );
  } 
-///
 /// SSE endpoint with mixed JSON and plain text data in a union
 ///
 /// `POST /eventstreams/mixeddata`
@@ -318,7 +303,6 @@ throw UnsupportedError('Cannot decode text/event-stream response into MixedDataE
   },
 );
  } 
-///
 /// SSE endpoint where event schema has nullable id field
 ///
 /// `GET /eventstreams/nullable-id`

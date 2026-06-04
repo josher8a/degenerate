@@ -9,7 +9,6 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /shapes`
 Future<ApiResult<Shape, Never>> createShape({required Shape? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

@@ -9,7 +9,6 @@ final class StatusCodeApi with ApiExecutor {const StatusCodeApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /statusCode/2XX`
 Future<ApiResult<void, Never>> statusCode2Xx({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -25,7 +24,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /statusCode/4XX`
 Future<ApiResult<void, Never>> statusCode4Xx({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -41,7 +39,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /statusCode/5XX`
 Future<ApiResult<void, Never>> statusCode5Xx({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -57,7 +54,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /statusCode/default`
 Future<ApiResult<void, Never>> statusCodeDefault({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

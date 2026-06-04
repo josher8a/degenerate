@@ -9,7 +9,6 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /ping`
 Future<ApiResult<void, Never>> ping({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

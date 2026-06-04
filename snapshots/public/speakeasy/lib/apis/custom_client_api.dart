@@ -9,7 +9,6 @@ final class CustomClientApi with ApiExecutor {const CustomClientApi(this.apiConf
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /anything/customClient/{pathParam}`
 Future<ApiResult<CustomClientPostResponse, Never>> customClientPost({required String pathParam, required String queryStringParam, required String headerParam, SimpleObject? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -36,7 +35,6 @@ return execute(
   },
 );
  } 
-///
 /// Tests HTTP proxy support. The server URL is set to an unreachable host
 /// so the request only succeeds if proxied through the localhost:35456 where
 /// the api test service handles the CONNECT tunnel and forwards the request

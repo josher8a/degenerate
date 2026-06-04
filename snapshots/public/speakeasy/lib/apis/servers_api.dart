@@ -9,7 +9,6 @@ final class ServersApi with ApiExecutor {const ServersApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/selectGlobalServer`
 Future<ApiResult<void, Never>> selectGlobalServer({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -25,7 +24,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// Select a server by ID.
 ///
 /// `GET /anything/selectServerWithID`
@@ -43,7 +41,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/serverWithTemplates`
 Future<ApiResult<void, Never>> serverWithTemplates({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -59,7 +56,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/serversByIDWithTemplates`
 Future<ApiResult<void, Never>> serversByIdWithTemplates({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -75,7 +71,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/serverWithTemplatesGlobal`
 Future<ApiResult<void, Never>> serverWithTemplatesGlobal({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -91,7 +86,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/serverWithProtocolTemplate`
 Future<ApiResult<void, Never>> serverWithProtocolTemplate({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -107,7 +101,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /ping#serversOverrideGlobalServerURL`
 Future<ApiResult<void, Never>> serversOverrideGlobalServerUrl({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -123,7 +116,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /ping#serversOverrideOperationServerURL`
 Future<ApiResult<void, Never>> serversOverrideOperationServerUrl({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

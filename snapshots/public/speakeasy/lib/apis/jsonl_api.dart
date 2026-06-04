@@ -9,7 +9,6 @@ final class JsonlApi with ApiExecutor {const JsonlApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /jsonl`
 Future<ApiResult<JsonlStreamResponse, Never>> jsonlStream({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -28,7 +27,6 @@ throw UnsupportedError('Cannot decode application/jsonl response into JsonlStrea
   },
 );
  } 
-///
 /// The response object has camelCase properties. The sdk should be able to deserialize these properties
 ///
 /// `GET /jsonl/deserialization_verification`
@@ -49,7 +47,6 @@ throw UnsupportedError('Cannot decode application/jsonl response into JsonlDeser
   },
 );
  } 
-///
 /// `GET /jsonl/chunks`
 Future<ApiResult<JsonlStreamChunksResponse, Never>> jsonlStreamChunks({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -68,7 +65,6 @@ throw UnsupportedError('Cannot decode application/jsonl response into JsonlStrea
   },
 );
  } 
-///
 /// `GET /x-ndjson`
 Future<ApiResult<XNdjsonStreamResponse, Never>> xNdjsonStream({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -87,7 +83,6 @@ throw UnsupportedError('Cannot decode application/x-ndjson response into XNdjson
   },
 );
  } 
-///
 /// `GET /x-ndjson/chunks`
 Future<ApiResult<XNdjsonStreamChunksResponse, Never>> xNdjsonStreamChunks({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -9,7 +9,6 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /verbs`
 Future<ApiResult<void, Never>> verbsGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -25,7 +24,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /verbs`
 Future<ApiResult<void, Never>> verbsPost({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -41,7 +39,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `PUT /verbs`
 Future<ApiResult<void, Never>> verbsPut({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -57,7 +54,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `PATCH /verbs`
 Future<ApiResult<void, Never>> verbsPatch({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -73,7 +69,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `DELETE /verbs`
 Future<ApiResult<void, Never>> verbsDelete({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -89,7 +84,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `HEAD /verbs`
 Future<ApiResult<void, Never>> verbsHead({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -105,7 +99,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `OPTIONS /verbs`
 Future<ApiResult<void, Never>> verbsOptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -121,7 +114,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `TRACE /verbs`
 Future<ApiResult<void, Never>> verbsTrace({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

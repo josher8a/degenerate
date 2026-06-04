@@ -9,7 +9,6 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /test`
 Future<ApiResult<BasicObject, Never>> getTest({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -27,7 +26,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /events`
 Future<ApiResult<String, Never>> streamEvents({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -45,7 +43,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /lines`
 Future<ApiResult<StreamLinesEvent, Never>> streamLines({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

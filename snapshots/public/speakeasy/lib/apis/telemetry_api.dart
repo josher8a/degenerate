@@ -9,7 +9,6 @@ final class TelemetryApi with ApiExecutor {const TelemetryApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/telemetry/user-agent`
 Future<ApiResult<TelemetryUserAgentGetResponse, Never>> telemetryUserAgentGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -27,7 +26,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/telemetry/speakeasy-user-agent`
 Future<ApiResult<TelemetrySpeakeasyUserAgentGetResponse, Never>> telemetrySpeakeasyUserAgentGet({required String userAgent, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['User-Agent'] = userAgent;

@@ -9,7 +9,6 @@ final class FlatteningApi with ApiExecutor {const FlatteningApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /anything/flattening/inlineBodyAndParamNoConflict`
 Future<ApiResult<InlineBodyAndParamNoConflictResponse, Never>> inlineBodyAndParamNoConflict({required String paramStr, required InlineBodyAndParamNoConflictRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -35,7 +34,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/flattening/componentBodyAndParamNoConflict`
 Future<ApiResult<ComponentBodyAndParamNoConflictResponse, Never>> componentBodyAndParamNoConflict({required String paramStr, required SimpleObject body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -61,7 +59,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/flattening/inlineBodyAndParamConflict`
 Future<ApiResult<InlineBodyAndParamConflictResponse, Never>> inlineBodyAndParamConflict({required String str, required InlineBodyAndParamConflictRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -87,7 +84,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/flattening/componentBodyAndParamConflict`
 Future<ApiResult<ComponentBodyAndParamConflictResponse, Never>> componentBodyAndParamConflict({required String str, required SimpleObject body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -113,7 +109,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/flattening/conflictingParams/{str}`
 Future<ApiResult<ConflictingParamsResponse, Never>> conflictingParams({required String str, required String str2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -137,7 +132,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/flattening/requiredBodyAllOptional`
 Future<ApiResult<RequiredBodyAllOptionalResponse, Never>> requiredBodyAllOptional({required ObjWithOptionalProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -157,7 +151,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/bodyUnderDataKey`
 Future<ApiResult<BodyUnderDataKeyResponse, BodyUnderDataKeyError>> bodyUnderDataKey({required String paramStr, required BodyUnderDataKeyRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];

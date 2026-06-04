@@ -20,7 +20,6 @@ final class DefaultApi with ApiExecutor {
   @override
   final ApiConfig apiConfig;
 
-  ///
   /// `GET /incidents/{id}/{id}`
   Future<ApiResult<void, Never>> getIncidentsById({
     required String id,
@@ -38,7 +37,6 @@ final class DefaultApi with ApiExecutor {
     return execute(request, onSuccess: (_) {});
   }
 
-  ///
   /// `GET /incidents/{inc%69dent-id}`
   Future<ApiResult<void, Never>> getByEncodedParam({
     required String inc69dentId,
@@ -56,7 +54,6 @@ final class DefaultApi with ApiExecutor {
     return execute(request, onSuccess: (_) {});
   }
 
-  ///
   /// `HAUNT /animals/{animalId}`
   Future<ApiResult<void, Never>> $toString({
     Proto? body,
@@ -76,7 +73,6 @@ final class DefaultApi with ApiExecutor {
     return execute(request, onSuccess: (_) {});
   }
 
-  ///
   /// `PURGE /animals/{animalId}`
   Future<ApiResult<void, Never>> constructor({
     required String animalId,
@@ -94,7 +90,6 @@ final class DefaultApi with ApiExecutor {
     return execute(request, onSuccess: (_) {});
   }
 
-  ///
   /// `QUERY /incidents/search`
   Future<ApiResult<ListModel, Never>> $null({
     ObjectModel? body,
@@ -121,7 +116,6 @@ final class DefaultApi with ApiExecutor {
     );
   }
 
-  ///
   /// `GET /barn/{barnId}/events`
   Future<ApiResult<TypeModel, Never>> streamBarnEvents({
     required String barnId,
@@ -147,7 +141,6 @@ final class DefaultApi with ApiExecutor {
     );
   }
 
-  ///
   /// `GET /prophecies`
   Future<ApiResult<StringModel, Never>> $yield({
     required YieldTopic topic,

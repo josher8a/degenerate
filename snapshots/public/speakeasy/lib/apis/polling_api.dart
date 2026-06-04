@@ -9,7 +9,6 @@ final class PollingApi with ApiExecutor {const PollingApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// Verifies polling delaySeconds functionality. An initial (non-polling)
 /// request should be sent to the endpoint before starting polling requests,
 /// which will set timestamp on the server based on requestID.
@@ -44,7 +43,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling delaySeconds functionality. An initial (non-polling)
 /// request should be sent to the endpoint before starting polling requests,
 /// which will set timestamp on the server based on requestID.
@@ -80,7 +78,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling failureCriteria functionality based on response body.
 /// This endpoint always returns a 200 OK with a status of "failed", which
 /// should always cause an polling error due to the failureCriteria.
@@ -102,7 +99,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling failureCriteria functionality based on response body
 /// when the polling condition references a property with
 /// x-speakeasy-name-override. This endpoint always returns a 200 OK with
@@ -126,7 +122,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling failureCriteria functionality based on response body.
 /// This endpoint always returns a 200 OK with a status of "failed", which
 /// should always cause an polling error due to the failureCriteria.
@@ -148,7 +143,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling failureCriteria functionality based on response body.
 /// This endpoint always returns a 200 OK with a status of "failed", which
 /// should always cause an polling error due to the failureCriteria.
@@ -170,7 +164,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling failureCriteria functionality based on status code.
 /// This endpoint always returns a 202 Accepted, which should always cause
 /// an error due to the failureCriteria.
@@ -192,7 +185,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling intervalSeconds functionality. Based on requestID, the
 /// server will ensure requests are delayed by the expected interval.
 /// 
@@ -226,7 +218,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling intervalSeconds functionality. Based on requestID, the
 /// server will ensure requests are delayed by the expected interval.
 /// 
@@ -261,7 +252,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling limitCount functionality. Based on requestID, the
 /// server will ensure requests are limited by the expected count.
 /// 
@@ -294,7 +284,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling limitCount functionality. Based on requestID, the
 /// server will ensure requests are limited by the expected count.
 /// 
@@ -328,7 +317,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling successCriteria functionality based on response body.
 /// Based on requestID, this endpoint returns 200 OK with initial status of
 /// "pending", then "running", and then "completed".
@@ -356,7 +344,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling successCriteria functionality based on response body.
 /// Based on requestID, this endpoint returns 200 OK with initial status of
 /// "pending", then "running", and then "completed".
@@ -384,7 +371,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling successCriteria functionality based on response body.
 /// Based on requestID, this endpoint returns 200 OK with initial status of
 /// "pending", then "running", and then "completed".
@@ -412,7 +398,6 @@ return execute(
   },
 );
  } 
-///
 /// Verifies polling successCriteria functionality based on status code.
 /// Based on requestID, this endpoint returns a 202 Accepted for the first
 /// request and a 200 OK for subsequent requests.

@@ -9,7 +9,6 @@ final class ResourceApi with ApiExecutor {const ResourceApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /resource`
 Future<ApiResult<ExampleResource, Never>> createResource({required ExampleResource body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -29,7 +28,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /fileResource`
 Future<ApiResult<FileResource, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -52,7 +50,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /datasource/array`
 Future<ApiResult<List<String>, Never>> getArrayDataSource({required String filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -77,7 +74,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /resource/object/{resourceId}`
 Future<ApiResult<ExampleResource, Never>> getResource({required String resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -95,7 +91,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /resource/object/{resourceId}`
 Future<ApiResult<void, Never>> updateResource({required String resourceId, required String augment, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -117,7 +112,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `DELETE /resource/object/{resourceId}`
 Future<ApiResult<void, Never>> deleteResource({required String resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

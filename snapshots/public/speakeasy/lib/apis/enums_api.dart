@@ -9,7 +9,6 @@ final class EnumsApi with ApiExecutor {const EnumsApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /anything/enums/openEnumUnrecognized`
 Future<ApiResult<ThemeResponse, Never>> enumsPostOpenEnumUnrecognized({required ThemeRequestOpaque body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -29,7 +28,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/enums/refToNumberEnum`
 Future<ApiResult<void, Never>> enumsPostRefToNumberEnum({required NumberEnum body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

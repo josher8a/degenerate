@@ -9,7 +9,6 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /users/{userId}`
 Future<ApiResult<User, Never>> getUser({required UserId userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

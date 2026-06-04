@@ -9,7 +9,6 @@ final class OptionalNullableFieldsApi with ApiExecutor {const OptionalNullableFi
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /responseObjectWithOptionalTrueNullableTrueFieldDeserializes`
 Future<ApiResult<ObjectWithOptionalTrueNullableTrueField, Never>> objectWithOptionalTrueNullableTrueField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -35,7 +34,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /responseObjectWithOptionalFalseNullableTrueFieldDeserializes`
 Future<ApiResult<ObjectWithOptionalFalseNullableTrueField, Never>> objectWithOptionalFalseNullableTrueField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -61,7 +59,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /responseObjectWithOptionalTrueNullableFalseFieldDeserializes`
 Future<ApiResult<ObjectWithOptionalTrueNullableFalseField, Never>> objectWithOptionalTrueNullableFalseField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -87,7 +84,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /responseObjectWithOptionalFalseNullableFalseFieldDeserializes`
 Future<ApiResult<ObjectWithOptionalFalseNullableFalseField, Never>> objectWithOptionalFalseNullableFalseField({String? scenario, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -113,7 +109,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/optionalNullableDiscriminatedUnion`
 Future<ApiResult<OptionalNullableDiscriminatedUnionPostResponse, Never>> optionalNullableDiscriminatedUnionPost({required ObjectWithOptionalNullableDiscriminatedUnion body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

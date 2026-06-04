@@ -9,7 +9,6 @@ final class FileProcessingApi with ApiExecutor {const FileProcessingApi(this.api
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /files/process`
 Future<ApiResult<void, Never>> processFile({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -25,7 +24,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /files/processAsync`
 Future<ApiResult<void, Never>> processFileAsync({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

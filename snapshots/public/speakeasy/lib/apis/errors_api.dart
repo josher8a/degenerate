@@ -9,7 +9,6 @@ final class ErrorsApi with ApiExecutor {const ErrorsApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// when `clientServerStatusCodesAsErrors` is true (default)
 /// 4XX and 5XX status codes are treated as errors
 /// 
@@ -29,7 +28,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `x-speakeasy-errors` is used to override the
 /// `clientServerStatusCodesAsErrors` setting
 /// by marking all responses as non-errors.
@@ -50,7 +48,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `x-speakeasy-errors` is used to override the
 /// `clientServerStatusCodesAsErrors` setting
 /// by only marking *unspecified* responses as errors.
@@ -71,7 +68,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /errors/{statusCode}`
 Future<ApiResult<void, StatusGetXSpeakeasyErrorsError>> statusGetXSpeakeasyErrors({required int statusCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -88,7 +84,6 @@ return execute(
   onError: StatusGetXSpeakeasyErrorsError.fromResponse,
 );
  } 
-///
 /// `GET /errors/duplicateExportCollision`
 Future<ApiResult<GetDuplicateExportCollisionResponse, GetDuplicateExportCollisionError>> getDuplicateExportCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -107,7 +102,6 @@ return execute(
   onError: GetDuplicateExportCollisionError.fromResponse,
 );
  } 
-///
 /// In C#, when `x-speakeasy-error-message: true` is set, the `ErrorMessage` method
 /// defined on the generated error model may clash with the enclosing type.
 /// 
@@ -128,7 +122,6 @@ return execute(
   onError: GetErrorMessageCollisionError.fromResponse,
 );
  } 
-///
 /// `GET /anything/connectionError`
 Future<ApiResult<void, Never>> connectionErrorGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -144,7 +137,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /errors/500#errorUnion`
 Future<ApiResult<void, ErrorUnionPostError>> errorUnionPost({required ErrorUnionPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -163,7 +155,6 @@ return execute(
   onError: ErrorUnionPostError.fromResponse,
 );
  } 
-///
 /// `POST /errors/400#errorUnionDiscriminated`
 Future<ApiResult<void, Never>> errorUnionDiscriminatedPost({required ErrorUnionDiscriminatedPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -181,7 +172,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /errors/400#sharedErrorUnion1`
 Future<ApiResult<void, Never>> sharedErrorUnionPost1({required SharedErrorUnionPost1Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -199,7 +189,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /errors/400#sharedErrorUnion2`
 Future<ApiResult<void, Never>> sharedErrorUnionPost2({required SharedErrorUnionPost2Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

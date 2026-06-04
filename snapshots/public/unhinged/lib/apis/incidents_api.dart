@@ -78,7 +78,6 @@ final class IncidentsApi with ApiExecutor {
     );
   }
 
-  ///
   /// `POST /incidents`
   Future<ApiResult<$3Incident, Never>> $empty({
     required New body,

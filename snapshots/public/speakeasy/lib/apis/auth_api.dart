@@ -9,7 +9,6 @@ final class AuthApi with ApiExecutor {const AuthApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/no-auth`
 Future<ApiResult<void, Never>> noAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -25,7 +24,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /basic-auth/{user}/{passwd}`
 Future<ApiResult<BasicAuthResponse, Never>> basicAuth({required String user, required String passwd, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -43,7 +41,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer`
 Future<ApiResult<KeyAuthGlobalResponse, Never>> apiKeyAuthGlobal({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -61,7 +58,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer#operation`
 Future<ApiResult<KeyAuthResponse, Never>> apiKeyAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -79,7 +75,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer#oauth2`
 Future<ApiResult<Oauth2AuthResponse, Never>> oauth2Auth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -97,7 +92,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /transfers#duplicateScopeOAuth2`
 Future<ApiResult<DuplicateScopeAuthResponse, Never>> duplicateScopeAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -115,7 +109,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer#global`
 Future<ApiResult<GlobalBearerAuthResponse, Never>> globalBearerAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -133,7 +126,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer#openIdConnect`
 Future<ApiResult<OpenIdConnectAuthResponse, Never>> openIdConnectAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -151,7 +143,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer#bearer`
 Future<ApiResult<BearerAuthResponse, Never>> bearerAuth({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -169,7 +160,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bearer#oauth2AuthOverride`
 Future<ApiResult<Oauth2OverrideResponse, Never>> oauth2Override({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -187,7 +177,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /auth/token#apiKeyFirst`
 Future<ApiResult<KeyFirstResponse, Never>> hoistedSecurityApiKeyFirst({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -205,7 +194,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /auth/token#hoistedAccessTokenFirst`
 Future<ApiResult<HoistedSecurityAccessTokenFirstResponse, Never>> hoistedSecurityAccessTokenFirst({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -223,7 +211,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /auth/token#hoistedAccessTokenOnly`
 Future<ApiResult<HoistedSecurityAccessTokenOnlyResponse, Never>> hoistedSecurityAccessTokenOnly({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -241,7 +228,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /basic-auth/testUser/testPass#basicHttpOnly`
 Future<ApiResult<HoistedSecurityBasicHttpOnlyResponse, Never>> hoistedSecurityBasicHttpOnly({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -259,7 +245,6 @@ return execute(
   },
 );
  } 
-///
 /// In primary, maintainOpenAPIOrder:false is set (legacy) so security fields are still
 /// sorted alphabetically. This means that if multiple security alternatives are provided
 /// when instantiating the SDK, say apiKeyAuth and basicHttp, then apiKeyAuth will take

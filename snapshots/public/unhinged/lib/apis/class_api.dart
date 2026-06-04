@@ -15,7 +15,6 @@ final class ClassApi with ApiExecutor {
   @override
   final ApiConfig apiConfig;
 
-  ///
   /// `GET /animals/{animalId}`
   Future<ApiResult<Self, Never>> getAnimal({
     required String animalId,

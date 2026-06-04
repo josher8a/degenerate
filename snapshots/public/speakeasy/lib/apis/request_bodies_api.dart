@@ -9,7 +9,6 @@ final class RequestBodiesApi with ApiExecutor {const RequestBodiesApi(this.apiCo
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /multipart_additional_props`
 Future<ApiResult<UploadMultipartAdditionalPropsResponse, Never>> uploadMultipartAdditionalProps({RestoreGenRequestComposed? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -36,7 +35,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/inferredOptionalRequestWrapper`
 Future<ApiResult<RequestBodyGetInferredOptionalRequestWrapperResponse, Never>> requestBodyGetInferredOptionalRequestWrapper({String? keyword, int? offset, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -68,7 +66,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /readonlyorwriteonly#readOnlyInput`
 Future<ApiResult<ReadOnlyObject, Never>> requestBodyReadOnlyInput({required ReadOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -88,7 +85,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /writeonlyoutput#writeOnlyOutput`
 Future<ApiResult<WriteOnlyObject, Never>> requestBodyWriteOnlyOutput({required WriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -108,7 +104,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /readonlyorwriteonly#writeOnly`
 Future<ApiResult<ReadOnlyObject, Never>> requestBodyWriteOnly({required WriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -128,7 +123,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /readonlyandwriteonly`
 Future<ApiResult<ReadWriteObject, Never>> requestBodyReadAndWrite({required ReadWriteObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -148,7 +142,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /readonlyorwriteonly#readOnlyUnion`
 Future<ApiResult<WeaklyTypedOneOfReadOnlyObject, Never>> requestBodyReadOnlyUnion({required WeaklyTypedOneOfReadOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -168,7 +161,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /writeonlyoutput#writeOnlyUnion`
 Future<ApiResult<WeaklyTypedOneOfWriteOnlyObject, Never>> requestBodyWriteOnlyUnion({required WeaklyTypedOneOfWriteOnlyObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -188,7 +180,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /readonlyandwriteonly#readWriteOnlyUnion`
 Future<ApiResult<WeaklyTypedOneOfReadWriteObject, Never>> requestBodyReadWriteOnlyUnion({required WeaklyTypedOneOfReadWriteObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -208,7 +199,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/form/stringArray`
 Future<ApiResult<FormRequestBodyStringArrayResponse, Never>> formRequestBodyStringArray({required FormRequestBodyStringArrayRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -231,7 +221,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/additionalProperties`
 Future<ApiResult<RequestBodyPostApplicationJsonAdditionalPropertiesResponse, Never>> requestBodyPostApplicationJsonAdditionalProperties({required RequestBodyPostApplicationJsonAdditionalPropertiesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -251,7 +240,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/simple`
 Future<ApiResult<RequestBodyPostApplicationJsonSimpleResponse, Never>> requestBodyPostApplicationJsonSimple({required SimpleObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -271,7 +259,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/camelcase`
 Future<ApiResult<RequestBodyPostApplicationJsonSimpleCamelCaseResponse, Never>> requestBodyPostApplicationJsonSimpleCamelCase({required SimpleObjectCamelCase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -291,7 +278,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/deprecatedRequestBodyRef`
 Future<ApiResult<RequestBodyDeprecatedRequestBodyRefPostResponse, Never>> requestBodyDeprecatedRequestBodyRefPost({required DeprecatedObjectWithExample body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -311,7 +297,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/wildcard`
 Future<ApiResult<RequestBodyPostWildcardResponse, Never>> requestBodyPostWildcard({Uint8List? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -331,7 +316,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#array`
 Future<ApiResult<List<SimpleObject>, Never>> requestBodyPostApplicationJsonArray({required List<SimpleObject2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -352,7 +336,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayCamelCase`
 Future<ApiResult<List<SimpleObjectCamelCase>, Never>> requestBodyPostApplicationJsonArrayCamelCase({required List<SimpleObjectCamelCase2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -373,7 +356,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfArrays`
 Future<ApiResult<List<List<SimpleObject>>, Never>> requestBodyPostApplicationJsonArrayOfArray({required List<List<SimpleObject2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -394,7 +376,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfArraysCamelCase`
 Future<ApiResult<List<List<SimpleObjectCamelCase>>, Never>> requestBodyPostApplicationJsonArrayOfArrayCamelCase({required List<List<SimpleObjectCamelCase2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -415,7 +396,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfUnions`
 Future<ApiResult<void, Never>> requestBodyPostApplicationJsonArrayOfUnions({required RequestBodyPostApplicationJsonArrayOfUnionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -433,7 +413,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /requestbody#map`
 Future<ApiResult<Map<String, SimpleObject>, Never>> requestBodyPostApplicationJsonMap({required Map<String,SimpleObject2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -453,7 +432,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapCamelCase`
 Future<ApiResult<Map<String, SimpleObjectCamelCase>, Never>> requestBodyPostApplicationJsonMapCamelCase({required Map<String,SimpleObjectCamelCase2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -473,7 +451,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapOfMaps`
 Future<ApiResult<Map<String, Map<String, SimpleObject>>, Never>> requestBodyPostApplicationJsonMapOfMap({required Map<String,Map<String,SimpleObject2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -493,7 +470,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapOfMapsCamelCase`
 Future<ApiResult<Map<String, Map<String, SimpleObjectCamelCase>>, Never>> requestBodyPostApplicationJsonMapOfMapCamelCase({required Map<String,Map<String,SimpleObjectCamelCase2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -513,7 +489,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapOfAny`
 Future<ApiResult<Map<String, dynamic>, Never>> requestBodyPostApplicationJsonMapOfAny({required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -533,7 +508,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapOfArrays`
 Future<ApiResult<Map<String, List<SimpleObject>>, Never>> requestBodyPostApplicationJsonMapOfArray({required Map<String,List<SimpleObject2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -553,7 +527,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapOfArraysCamelCase`
 Future<ApiResult<Map<String, List<SimpleObjectCamelCase>>, Never>> requestBodyPostApplicationJsonMapOfArrayCamelCase({required Map<String,List<SimpleObjectCamelCase2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -573,7 +546,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfMaps`
 Future<ApiResult<List<Map<String, SimpleObject>>, Never>> requestBodyPostApplicationJsonArrayOfMap({required List<Map<String,SimpleObject2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -594,7 +566,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfMapsCamelCase`
 Future<ApiResult<List<Map<String, SimpleObjectCamelCase>>, Never>> requestBodyPostApplicationJsonArrayOfMapCamelCase({required List<Map<String,SimpleObjectCamelCase2>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -615,7 +586,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#mapOfPrimitives`
 Future<ApiResult<Map<String, String>, Never>> requestBodyPostApplicationJsonMapOfPrimitive({required Map<String,String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -635,7 +605,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfPrimitives`
 Future<ApiResult<List<String>, Never>> requestBodyPostApplicationJsonArrayOfPrimitive({required List<String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -656,7 +625,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody#arrayOfArraysOfPrimitives`
 Future<ApiResult<List<List<String>>, Never>> requestBodyPostApplicationJsonArrayOfArrayOfPrimitive({required List<List<String>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -677,7 +645,6 @@ return execute(
   },
 );
  } 
-///
 /// The OpenAPI description for this operation
 ///
 /// `POST /requestbody#mapOfMapsOfPrimitives`
@@ -699,7 +666,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/array/objResponse`
 Future<ApiResult<ArrObjValue, Never>> requestBodyPostApplicationJsonArrayObj({required List<SimpleObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -719,7 +685,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/array/objResponseCamelCase`
 Future<ApiResult<ArrObjValueCamelCase, Never>> requestBodyPostApplicationJsonArrayObjCamelCase({required List<SimpleObjectCamelCase> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -739,7 +704,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/map/objResponse`
 Future<ApiResult<MapObjValue, Never>> requestBodyPostApplicationJsonMapObj({required Map<String,SimpleObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -759,7 +723,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/map/objResponseCamelCase`
 Future<ApiResult<MapObjValueCamelCase, Never>> requestBodyPostApplicationJsonMapObjCamelCase({required Map<String,SimpleObjectCamelCase> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -779,7 +742,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/deep`
 Future<ApiResult<RequestBodyPostApplicationJsonDeepResponse, Never>> requestBodyPostApplicationJsonDeep({required DeepObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -799,7 +761,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/deep/camelcase`
 Future<ApiResult<RequestBodyPostApplicationJsonDeepCamelCaseResponse, Never>> requestBodyPostApplicationJsonDeepCamelCase({required DeepObjectCamelCase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -819,7 +780,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/application/json/multiple/json/filtered`
 Future<ApiResult<RequestBodyPostApplicationJsonMultipleJsonFilteredResponse, Never>> requestBodyPostApplicationJsonMultipleJsonFiltered({required SimpleObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -839,7 +799,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/multiple/contentTypes/component/filtered`
 Future<ApiResult<RequestBodyPostMultipleContentTypesComponentFilteredResponse, Never>> requestBodyPostMultipleContentTypesComponentFiltered({required SimpleObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -859,7 +818,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/multiple/contentTypes/component/filtered#defaultTest`
 Future<ApiResult<RequestBodyPostMultipleContentTypesComponentFilteredDefaultTestResponse, Never>> requestBodyPostMultipleContentTypesComponentFilteredDefaultTest({required SimpleObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -879,7 +837,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/multiple/contentTypes/inline/filtered`
 Future<ApiResult<RequestBodyPostMultipleContentTypesInlineFilteredResponse, Never>> requestBodyPostMultipleContentTypesInlineFiltered({required RequestBodyPostMultipleContentTypesInlineFilteredRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -899,7 +856,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/multiple/contentTypes/split`
 Future<ApiResult<RequestBodyPostMultipleContentTypesSplitResponse, Never>> requestBodyPostMultipleContentTypesSplit({required RequestBodyPostMultipleContentTypesSplitRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -919,7 +875,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/multiple/contentTypes/split/param`
 Future<ApiResult<RequestBodyPostMultipleContentTypesSplitParamResponse, Never>> requestBodyPostMultipleContentTypesSplitParam({required String paramStr, required RequestBodyPostMultipleContentTypesSplitParamRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -945,7 +900,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/simple`
 Future<ApiResult<RequestBodyPutMultipartSimpleResponse, Never>> requestBodyPutMultipartSimple({required SimpleObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1001,7 +955,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/deep`
 Future<ApiResult<RequestBodyPutMultipartDeepResponse, Never>> requestBodyPutMultipartDeep({required DeepObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1032,7 +985,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/usingUnionOfPrimitiveTypeAndObject`
 Future<ApiResult<RequestBodyPutMultipartUsingUnionOfPrimitiveTypeAndObjectResponse, Never>> requestBodyPutMultipartUsingUnionOfPrimitiveTypeAndObject({required RequestBodyPutMultipartUsingUnionOfPrimitiveTypeAndObjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1057,7 +1009,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/usingDeepUnion`
 Future<ApiResult<RequestBodyPutMultipartUsingDeepUnionResponse, Never>> requestBodyPutMultipartUsingDeepUnion({required RequestBodyPutMultipartUsingDeepUnionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1082,7 +1033,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/file`
 Future<ApiResult<RequestBodyPutMultipartFileResponse, Never>> requestBodyPutMultipartFile({required RequestBodyPutMultipartFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1105,7 +1055,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /requestbody/multipart-form/files`
 Future<ApiResult<RequestBodyPutMultipartFilesArrayResponse, Never>> requestBodyPutMultipartFilesArray({required RequestBodyPutMultipartFilesArrayRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1127,7 +1076,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/fileRef`
 Future<ApiResult<RequestBodyPutMultipartFileRefResponse, Never>> requestBodyPutMultipartFileRef({required RequestBodyPutMultipartFileRefRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1150,7 +1098,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/differentFileName`
 Future<ApiResult<RequestBodyPutMultipartDifferentFileNameResponse, Never>> requestBodyPutMultipartDifferentFileName({required RequestBodyPutMultipartDifferentFileNameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1173,7 +1120,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/withEncoding`
 Future<ApiResult<RequestBodyPutMultipartWithEncodingResponse, Never>> requestBodyPutMultipartWithEncoding({required RequestBodyPutMultipartWithEncodingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1201,7 +1147,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/multipart/nullableArrayWithEncoding`
 Future<ApiResult<RequestBodyPostMultipartNullableArrayWithEncodingResponse, Never>> requestBodyPostMultipartNullableArrayWithEncoding({RequestBodyPostMultipartNullableArrayWithEncodingRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1230,7 +1175,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/multipart/optionalRequestBody`
 Future<ApiResult<RequestBodyPutMultipartOptionalRequestBodyResponse, Never>> requestBodyPutMultipartOptionalRequestBody({RequestBodyPutMultipartOptionalRequestBodyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1255,7 +1199,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/form/simple`
 Future<ApiResult<RequestBodyPostFormSimpleResponse, Never>> requestBodyPostFormSimple({required SimpleObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1311,7 +1254,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/form/deep`
 Future<ApiResult<RequestBodyPostFormDeepResponse, Never>> requestBodyPostFormDeep({required DeepObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1342,11 +1284,9 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/form/map/primitive`
 Future<ApiResult<RequestBodyPostFormMapPrimitiveResponse, Never>> requestBodyPostFormMapPrimitive({required Map<String,String> body, RequestOptions? options, }) async  { throw UnsupportedError('Cannot encode non-JSON application/x-www-form-urlencoded request body from Map<String, String>');
  } 
-///
 /// `PUT /anything/requestBodies/put/string`
 Future<ApiResult<RequestBodyPutStringResponse, Never>> requestBodyPutString({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'text/plain';
@@ -1366,7 +1306,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/bytes`
 Future<ApiResult<RequestBodyPutBytesResponse, Never>> requestBodyPutBytes({required Uint8List body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
@@ -1386,7 +1325,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/stringWithParams`
 Future<ApiResult<RequestBodyPutStringWithParamsResponse, Never>> requestBodyPutStringWithParams({required String queryStringParam, required String body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -1412,7 +1350,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /anything/requestBodies/put/bytesWithParams`
 Future<ApiResult<RequestBodyPutBytesWithParamsResponse, Never>> requestBodyPutBytesWithParams({required String queryStringParam, required Uint8List body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -1438,7 +1375,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/empty-object`
 Future<ApiResult<RequestBodyPostEmptyObjectResponse, Never>> requestBodyPostEmptyObject({required RequestBodyPostEmptyObjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1458,7 +1394,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/null-dictionary`
 Future<ApiResult<RequestBodyPostNullDictionaryResponse, Never>> requestBodyPostNullDictionary({required Map<String,String>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1478,7 +1413,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/null-array`
 Future<ApiResult<RequestBodyPostNullArrayResponse, Never>> requestBodyPostNullArray({required List<String>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1498,7 +1432,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullableRequiredObject`
 Future<ApiResult<NullableObjectPostResponse, Never>> nullableObjectPost({required NullableObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1518,7 +1451,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullableRequiredProperty`
 Future<ApiResult<NullableRequiredPropertyPostResponse, Never>> nullableRequiredPropertyPost({required NullableRequiredPropertyPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1538,7 +1470,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullableRequiredSharedObject`
 Future<ApiResult<NullableRequiredSharedObjectPostResponse, Never>> nullableRequiredSharedObjectPost({required NullableRequiredSharedObjectPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1558,7 +1489,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullableRequiredEmptyObject`
 Future<ApiResult<NullableRequiredEmptyObjectPostResponse, Never>> nullableRequiredEmptyObjectPost({required NullableRequiredEmptyObjectPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1578,7 +1508,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullableOptionalFields`
 Future<ApiResult<NullableOptionalFieldsPostResponse, Never>> nullableOptionalFieldsPost({required NullableOptionalFieldsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1598,7 +1527,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/empty-body-retained-with-all-optional-fields`
 Future<ApiResult<RequestBodyPostEmptyBodyRetainedWithAllOptionalFieldsResponse, Never>> requestBodyPostEmptyBodyRetainedWithAllOptionalFields({RequestBodyPostEmptyBodyRetainedWithAllOptionalFieldsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1618,7 +1546,6 @@ return execute(
   },
 );
  } 
-///
 /// Test endpoint for validating the includeEmptyObjects setting behavior for the go SDK.
 /// This endpoint contains optional objects and arrays to test whether they are
 /// omitted from request bodies when empty, based on the includeEmptyObjects configuration.
@@ -1643,7 +1570,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/{pathBigInt}/{pathBigIntStr}/{pathDecimal}/{pathDecimalStr}/{pathInt64Str}/{pathFloat64Str}/complex-number-types`
 Future<ApiResult<RequestBodyPostComplexNumberTypesResponse, Never>> requestBodyPostComplexNumberTypes({required int pathBigInt, required String pathBigIntStr, required double pathDecimal, required String pathDecimalStr, required String pathInt64Str, required String pathFloat64Str, required int queryBigInt, required String queryBigIntStr, required double queryDecimal, required String queryDecimalStr, required String queryInt64Str, required String queryFloat64Str, required ComplexNumberTypes body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -1674,7 +1600,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/complex-number-types-optional`
 Future<ApiResult<RequestBodyPostComplexNumberTypesOptionalResponse, Never>> requestBodyPostComplexNumberTypesOptional({required OptionalComplexNumberTypes body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1694,7 +1619,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/complex-number-types-nullable`
 Future<ApiResult<RequestBodyPostComplexNumberTypesNullableResponse, Never>> requestBodyPostComplexNumberTypesNullable({required NullableComplexNumberTypes body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1714,7 +1638,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/defaultsAndConsts`
 Future<ApiResult<RequestBodyPostDefaultsAndConstsResponse, Never>> requestBodyPostDefaultsAndConsts({required DefaultsAndConsts body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1734,7 +1657,6 @@ return execute(
   },
 );
  } 
-///
 /// Test that default: "" for an optional property is set to "" when omitted.
 /// Reference: https://linear.app/speakeasy/issue/GEN-1285/bug-params-are-serialized-to-null-if-undefined-even-when-they-have
 /// 
@@ -1758,7 +1680,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullEnum`
 Future<ApiResult<NullEnumPostResponse, Never>> nullEnumPost({required ObjectWithNullEnums body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1778,7 +1699,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/string`
 Future<ApiResult<RequestBodyPostJsonDataTypesStringResponse, Never>> requestBodyPostJsonDataTypesString({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1798,7 +1718,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/integer`
 Future<ApiResult<RequestBodyPostJsonDataTypesIntegerResponse, Never>> requestBodyPostJsonDataTypesInteger({required int body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1818,7 +1737,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/int32`
 Future<ApiResult<RequestBodyPostJsonDataTypesInt32Response, Never>> requestBodyPostJsonDataTypesInt32({required int body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1838,7 +1756,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/bigint`
 Future<ApiResult<RequestBodyPostJsonDataTypesBigIntResponse, Never>> requestBodyPostJsonDataTypesBigInt({required int body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1858,7 +1775,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/bigintStr`
 Future<ApiResult<RequestBodyPostJsonDataTypesBigIntStrResponse, Never>> requestBodyPostJsonDataTypesBigIntStr({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1878,7 +1794,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/number`
 Future<ApiResult<RequestBodyPostJsonDataTypesNumberResponse, Never>> requestBodyPostJsonDataTypesNumber({required double body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1898,7 +1813,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/float32`
 Future<ApiResult<RequestBodyPostJsonDataTypesFloat32Response, Never>> requestBodyPostJsonDataTypesFloat32({required double body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1918,7 +1832,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/decimal`
 Future<ApiResult<RequestBodyPostJsonDataTypesDecimalResponse, Never>> requestBodyPostJsonDataTypesDecimal({required double body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1938,7 +1851,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/decimalStr`
 Future<ApiResult<RequestBodyPostJsonDataTypesDecimalStrResponse, Never>> requestBodyPostJsonDataTypesDecimalStr({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1958,7 +1870,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/boolean`
 Future<ApiResult<RequestBodyPostJsonDataTypesBooleanResponse, Never>> requestBodyPostJsonDataTypesBoolean({required bool body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1978,7 +1889,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/date`
 Future<ApiResult<RequestBodyPostJsonDataTypesDateResponse, Never>> requestBodyPostJsonDataTypesDate({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1998,7 +1908,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/dateTime`
 Future<ApiResult<RequestBodyPostJsonDataTypesDateTimeResponse, Never>> requestBodyPostJsonDataTypesDateTime({required DateTime body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2018,7 +1927,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/map/dateTime`
 Future<ApiResult<RequestBodyPostJsonDataTypesMapDateTimeResponse, Never>> requestBodyPostJsonDataTypesMapDateTime({required Map<String,DateTime> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2038,7 +1946,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/map/bigIntStr`
 Future<ApiResult<RequestBodyPostJsonDataTypesMapBigIntStrResponse, Never>> requestBodyPostJsonDataTypesMapBigIntStr({required Map<String,String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2058,7 +1965,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/map/decimal`
 Future<ApiResult<RequestBodyPostJsonDataTypesMapDecimalResponse, Never>> requestBodyPostJsonDataTypesMapDecimal({required Map<String,double> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2078,7 +1984,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/array/date`
 Future<ApiResult<RequestBodyPostJsonDataTypesArrayDateResponse, Never>> requestBodyPostJsonDataTypesArrayDate({required List<String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2098,7 +2003,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/array/bigInt`
 Future<ApiResult<RequestBodyPostJsonDataTypesArrayBigIntResponse, Never>> requestBodyPostJsonDataTypesArrayBigInt({required List<int> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2118,7 +2022,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/array/decimalStr`
 Future<ApiResult<RequestBodyPostJsonDataTypesArrayDecimalStrResponse, Never>> requestBodyPostJsonDataTypesArrayDecimalStr({required List<String> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2138,7 +2041,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/complexNumberArrays`
 Future<ApiResult<RequestBodyPostJsonDataTypesComplexNumberArraysResponse, Never>> requestBodyPostJsonDataTypesComplexNumberArrays({required ComplexNumberArrays body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2158,7 +2060,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/jsonDataTypes/complexNumberMaps`
 Future<ApiResult<RequestBodyPostJsonDataTypesComplexNumberMapsResponse, Never>> requestBodyPostJsonDataTypesComplexNumberMaps({required ComplexNumberMaps body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2178,7 +2079,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullable/required/string`
 Future<ApiResult<RequestBodyPostNullableRequiredStringBodyResponse, Never>> requestBodyPostNullableRequiredStringBody({required String? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2198,7 +2098,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/nullable/notrequired/string`
 Future<ApiResult<RequestBodyPostNullableNotRequiredStringBodyResponse, Never>> requestBodyPostNullableNotRequiredStringBody({String? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2218,7 +2117,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodies/post/notnullable/notrequired/string`
 Future<ApiResult<RequestBodyPostNotNullableNotRequiredStringBodyResponse, Never>> requestBodyPostNotNullableNotRequiredStringBody({String? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2238,7 +2136,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /optionalRequestBody`
 Future<ApiResult<OptionalRequestBodyPostResponse, Never>> optionalRequestBodyPost({int? pageSize, OptionalRequestBodyPostRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];

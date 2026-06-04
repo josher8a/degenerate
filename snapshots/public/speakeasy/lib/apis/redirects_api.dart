@@ -9,7 +9,6 @@ final class RedirectsApi with ApiExecutor {const RedirectsApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// This endpoint returns a 302 and redirects to /followRedirect/newPage which returns a 200 response. We use this endpoint to test if the http client follows the redirect.
 ///
 /// `GET /followRedirect/oldPage`

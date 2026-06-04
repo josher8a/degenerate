@@ -420,14 +420,12 @@ final class ApiEmitter {
       docs.addAll(formatDocComment(op.summary!));
     }
     if (op.description != null && op.description != op.summary) {
-      docs
-        ..add('///')
-        ..addAll(formatDocComment(op.description!));
+      if (docs.isNotEmpty) docs.add('///');
+      docs.addAll(formatDocComment(op.description!));
     }
     final httpMethod = _httpMethodString(op);
-    docs
-      ..add('///')
-      ..add('/// `$httpMethod ${op.path}`');
+    if (docs.isNotEmpty) docs.add('///');
+    docs.add('/// `$httpMethod ${op.path}`');
 
     return Method(
       (m) => m
@@ -920,7 +918,7 @@ final class ApiEmitter {
       docs.add('/// Stream response.');
     }
     final httpMethod = _httpMethodString(op);
-    docs.add('///');
+    if (docs.isNotEmpty) docs.add('///');
     docs.add('/// `$httpMethod ${op.path}`');
 
     return Method(

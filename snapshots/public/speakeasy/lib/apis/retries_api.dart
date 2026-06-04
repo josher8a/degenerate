@@ -9,7 +9,6 @@ final class RetriesApi with ApiExecutor {const RetriesApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /retries/after`
 Future<ApiResult<RetriesAfterResponse, Never>> retriesAfter({required String requestId, int? numRetries, int? retryAfterVal, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -39,7 +38,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /retries`
 Future<ApiResult<RetriesGetResponse, Never>> retriesGet({required String requestId, int? numRetries, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -66,7 +64,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /retries`
 Future<ApiResult<RetriesPostResponse, Never>> retriesPost({required String requestId, int? numRetries, RetriesPostRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -95,7 +92,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /retries#timeout`
 Future<ApiResult<RetriesGetTimeoutResponse, Never>> retriesGetTimeout({required String requestId, int? numRetries, String? requestId2, String? faultSettings, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -128,7 +124,6 @@ return execute(
   },
 );
  } 
-///
 /// Request with initial connection error then passing retry
 ///
 /// `GET /retries#retryConnectionErrors`
@@ -157,7 +152,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /retriesFlatEmptyResponse`
 Future<ApiResult<void, Never>> retriesFlatEmptyResponsePost({required String requestId, int? numRetries, RetriesFlatEmptyResponsePostRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -184,7 +178,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// A request to a non-valid port to test connection errors
 ///
 /// `GET /retriesConnectError`

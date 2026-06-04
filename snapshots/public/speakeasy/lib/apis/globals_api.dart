@@ -9,7 +9,6 @@ final class GlobalsApi with ApiExecutor {const GlobalsApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/globals/queryParameter`
 Future<ApiResult<GlobalsQueryParameterGetResponse, Never>> globalsQueryParameterGet({required String globalQueryParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -33,7 +32,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/globals/pathParameter/{globalPathParam}`
 Future<ApiResult<GlobalPathParameterGetResponse, Never>> globalPathParameterGet({required int globalPathParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -51,7 +49,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/globals/header`
 Future<ApiResult<GlobalsHeaderGetResponse, Never>> globalsHeaderGet({required bool globalHeaderParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['globalHeaderParam'] = globalHeaderParam.toString();
@@ -70,7 +67,6 @@ return execute(
   },
 );
  } 
-///
 /// Tests that kebab-cased global parameters are correctly converted to
 /// appropriate naming conventions (camelCase, PascalCase, etc.) in generated SDKs.
 /// 
@@ -100,7 +96,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/globals/hidden/{globalHiddenPathParam}`
 Future<ApiResult<GlobalsHiddenPostResponse, Never>> globalsHiddenPost({required String globalHiddenPathParam, required String globalHiddenQueryParam, required String globalHiddenHeaderParam, required GlobalsHiddenPostRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -127,7 +122,6 @@ return execute(
   },
 );
  } 
-///
 /// This operation requires a globally optional path parameter. A failing
 /// test with 404 likely indicates that the path parameter value is not
 /// being templated into the operation request (.../globals//...).
@@ -148,7 +142,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This path requires a globally optional path parameter. A failing
 /// test with 404 likely indicates that the path parameter value is not
 /// being templated into the operation request (.../globals//...).
@@ -169,7 +162,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This operation requires a globally optional hidden path parameter. A
 /// failing test with 404 likely indicates that the path parameter value is
 /// not being templated into the client (.../hidden//...).
@@ -190,7 +182,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This path requires a globally optional hidden path parameter. A failing
 /// test with 404 likely indicates that the path parameter value is not
 /// being templated into the client (.../hidden//...).
@@ -211,7 +202,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// Tests that when an operation defines its own parameters (not redefining globals),
 /// the global parameters should NOT be included when operationScopedParamsNov2025 fix is enabled.
 /// This endpoint defines operation-specific query, path, and header parameters.

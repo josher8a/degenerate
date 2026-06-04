@@ -100,7 +100,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// Test potential namespace conflicts with java.lang.Object
 ///
 /// `POST /anything/conflictingEnum/`
@@ -120,7 +119,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /json`
 Future<ApiResult<HttpBinSimpleJsonObject, Never>> responseBodyJsonGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -138,7 +136,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/ignoredGeneration`
 Future<ApiResult<void, Never>> ignoredGenerationPost({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -156,7 +153,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `PUT /anything/ignoredGeneration`
 Future<ApiResult<IgnoredGenerationPutResponse, Never>> ignoredGenerationPut({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -176,7 +172,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/ignoredPath`
 Future<ApiResult<void, Never>> ignoredPathGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -192,7 +187,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /group/first`
 Future<ApiResult<void, Never>> groupFirstGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -208,7 +202,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /group/second`
 Future<ApiResult<void, Never>> groupSecondGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -224,7 +217,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/nested`
 Future<ApiResult<void, Never>> nestedGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -240,7 +232,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/nested/first`
 Future<ApiResult<void, Never>> nestedFirstGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -256,7 +247,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/nested/second`
 Future<ApiResult<void, Never>> nestedSecondGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -272,7 +262,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/nest/first`
 Future<ApiResult<void, Never>> nestFirstGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -288,7 +277,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/multilineExample`
 Future<ApiResult<void, Never>> multilineExample({MultilineExampleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -306,7 +294,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /anything/additionalPropertiesWithNullableFields`
 Future<ApiResult<PostAdditionalPropertiesWithNullableFieldsResponse, Never>> postAdditionalPropertiesWithNullableFields({required PostAdditionalPropertiesWithNullableFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -326,7 +313,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/unwieldy`
 Future<ApiResult<UnwieldyComponent, Never>> unwieldyGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -344,7 +330,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/trickyToUnmarshalWeakUnion`
 Future<ApiResult<TrickyToUnmarshalWeakUnionResponse, Never>> trickyToUnmarshalWeakUnion({TrickyToUnmarshalWeakUnionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

@@ -9,7 +9,6 @@ final class HooksApi with ApiExecutor {const HooksApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/hooks`
 Future<ApiResult<TestHooksResponse, Never>> testHooks({required String someParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -33,7 +32,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/hooks/beforeCreateRequestPaths/{namespace}`
 Future<ApiResult<TestHooksBeforeCreateRequestPathsResponse, Never>> testHooksBeforeCreateRequestPaths({required String namespace, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -51,7 +49,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/hooks/afterResponseValidation`
 Future<ApiResult<void, Never>> testHooksAfterResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -67,7 +64,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /status/400#testHooksError`
 Future<ApiResult<void, Never>> testHooksError({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -83,7 +79,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /bearer#authorizationHeaderModification`
 Future<ApiResult<AuthorizationHeaderModificationResponse, Never>> authorizationHeaderModification({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -101,7 +96,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/async-hooks`
 Future<ApiResult<TestAsyncHooksResponse, Never>> testAsyncHooks({required String someParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -125,7 +119,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/async-hooks/afterResponse`
 Future<ApiResult<void, Never>> testAsyncHooksAfterResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -141,7 +134,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /status/400#testAsyncHooksError`
 Future<ApiResult<void, Never>> testAsyncHooksError({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -157,7 +149,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/async-hooks/beforeCreateRequestPaths/{namespace}`
 Future<ApiResult<TestAsyncHooksBeforeCreateRequestPathsResponse, Never>> testAsyncHooksBeforeCreateRequestPaths({required String namespace, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -175,7 +166,6 @@ return execute(
   },
 );
  } 
-///
 /// This operation is expected to use global security. The operation-level security gets
 /// hoisted to the global level since the `clientCredentials` scheme is already included
 /// in the global security block. However, the scopes defined in this operation will be
@@ -199,7 +189,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This operation tests OAuth2 ClientCredentials as a security option.
 /// Note the operation security is guaranteed *not* to be hoisted as long
 /// as the basicAuth scheme is not part of the global security block.
@@ -222,7 +211,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This operation uses both the global server and global security configurations.
 /// 
 ///
@@ -243,7 +231,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This operation uses global security, it is therefore expected to have both
 /// `read` and `write` OAuth2 scopes passed to its hook context.
 /// 
@@ -265,7 +252,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// This operation will have its security hoisted to the global level since the
 /// `clientCredentials` scheme is already included in the global security block.
 /// OAuth2 scopes however are expected to be cleared, leading the token request
@@ -290,7 +276,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// Tests that per-operation client credentials with duplicate name overrides
 /// across different groups generate unique credential function names. This
 /// operation and authenticatedRequestDuplicateNameB share the same name override
@@ -315,7 +300,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// Tests that per-operation client credentials with duplicate name overrides
 /// across different groups generate unique credential function names. This
 /// operation shares the same name override as authenticatedRequestDuplicateNameA

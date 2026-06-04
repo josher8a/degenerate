@@ -9,7 +9,6 @@ final class ResponseBodiesApi with ApiExecutor {const ResponseBodiesApi(this.api
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /html`
 Future<ApiResult<String, Never>> responseBodyStringGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -27,7 +26,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /xml`
 Future<ApiResult<String, Never>> responseBodyXmlGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -45,7 +43,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /bytes/100`
 Future<ApiResult<Uint8List, Never>> responseBodyBytesGet({int? seed, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -71,7 +68,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /optional`
 Future<ApiResult<TypedObject12, Never>> responseBodyOptionalGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -89,7 +85,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /readonlyorwriteonly#readOnly`
 Future<ApiResult<ReadOnlyObject, Never>> responseBodyReadOnly({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -107,7 +102,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/responseBodies/additionalProperties`
 Future<ApiResult<ResponseBodyAdditionalPropertiesPostResponse, Never>> responseBodyAdditionalPropertiesPost({required ObjWithStringAdditionalProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -127,7 +121,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/responseBodies/additionalPropertiesAny`
 Future<ApiResult<ResponseBodyAdditionalPropertiesAnyPostResponse, Never>> responseBodyAdditionalPropertiesAnyPost({required ObjWithAnyAdditionalProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -147,7 +140,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/responseBodies/additionalPropertiesComplexNumbers`
 Future<ApiResult<ResponseBodyAdditionalPropertiesComplexNumbersPostResponse, Never>> responseBodyAdditionalPropertiesComplexNumbersPost({required ObjWithComplexNumbersAdditionalProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -167,7 +159,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/responseBodies/additionalPropertiesDate`
 Future<ApiResult<ResponseBodyAdditionalPropertiesDatePostResponse, Never>> responseBodyAdditionalPropertiesDatePost({required ObjWithDateAdditionalProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -187,7 +178,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/responseBodies/additionalPropertiesObject`
 Future<ApiResult<ResponseBodyAdditionalPropertiesObjectPostResponse, Never>> responseBodyAdditionalPropertiesObjectPost({required ObjWithObjAdditionalProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -207,7 +197,6 @@ return execute(
   },
 );
  } 
-///
 /// Test that a response with type: object, additionalProperties: true and no properties
 /// (a free-form object) correctly generates test assertions with an empty map value {}.
 /// Regression test for: empty optional map responses producing empty toEqual() calls.
@@ -230,7 +219,6 @@ return execute(
   },
 );
  } 
-///
 /// Test that default: "" for an optional property is set to "" when omitted.
 /// Reference: https://linear.app/speakeasy/issue/GEN-1285/bug-params-are-serialized-to-null-if-undefined-even-when-they-have
 /// 
@@ -254,7 +242,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/responseBodies/multilineString`
 Future<ApiResult<ResponseBodyMultilineStringPostResponse, Never>> responseBodyMultilineStringPost({required ResponseBodyMultilineStringPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -274,7 +261,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/responseBodies/missing2xxOr3xx`
 Future<ApiResult<void, Never>> responseBodyMissing2xxOr3xxGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -290,7 +276,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/responseBodies/2xxJSONObjectAllOptionalProperties`
 Future<ApiResult<void, Never>> responseBodies2xxJsonObjectAllOptionalProperties({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -306,7 +291,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /filenameTooLong`
 Future<ApiResult<String, Never>> thisIsAnExtremelyLongOperationIdThatWillCauseTheGeneratedPythonFileNameToExceedTheTwoHundredAndFiftyFiveCharacterOperatingSystemLimitWhenCombinedWithThePathAndOtherPrefixesThatTheGeneratorAddsToTheFileNameAutomaticallyAndWeNeedToMakeSureThisIsLongEnoughToTriggerTruncation({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -324,7 +308,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/responseBodies/baseModelOverride`
 Future<ApiResult<BaseModelOverrideModel, Never>> responseBodyBaseModelOverride({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -342,7 +325,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/responseBodies/modelConfigCollision`
 Future<ApiResult<ModelConfigCollisionModel, Never>> responseBodyModelConfigCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -360,7 +342,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /reflect#decimalStr`
 Future<ApiResult<String, Never>> responseBodyDecimalStr({required String body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -380,7 +361,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/overriddenFieldNames`
 Future<ApiResult<OverriddenFieldNamesPostResponse, Never>> overriddenFieldNamesPost({required OverriddenFieldNamesPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -400,7 +380,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/flattenedUnionResponse`
 Future<ApiResult<FlattenedUnionResponseResponse, Never>> flattenedUnionResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -418,7 +397,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/flattenedEnvelopeResponse`
 Future<ApiResult<FlattenedEnvelopeResponseResponse, Never>> flattenedEnvelopeResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -436,7 +414,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/flattenedEnvelopeUnionResponse`
 Future<ApiResult<FlattenedEnvelopeUnionResponseResponse, Never>> flattenedEnvelopeUnionResponse({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -454,7 +431,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/flattenedEnvelopePaginationResponse`
 Future<ApiResult<FlattenedEnvelopePaginationResponseResponse, Never>> flattenedEnvelopePaginationResponse({String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -480,7 +456,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/flattenedEnvelopeUnionPaginationResponse`
 Future<ApiResult<FlattenedEnvelopeUnionPaginationResponseResponse, Never>> flattenedEnvelopeUnionPaginationResponse({String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -506,7 +481,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /noneDefault`
 Future<ApiResult<NoneDefaultModel, Never>> noneDefaultTest({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -524,7 +498,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/responseBodies/mappingCollision`
 Future<ApiResult<MappingConsumer, Never>> responseBodyMappingCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -542,7 +515,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/responseBodies/baseModelCollision`
 Future<ApiResult<BaseModel, Never>> responseBodyBaseModelCollision({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

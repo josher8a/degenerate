@@ -9,7 +9,6 @@ final class GenerationApi with ApiExecutor {const GenerationApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/operationId/colon`
 Future<ApiResult<void, Never>> operationIdColonget({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -25,7 +24,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/{emptyObject}`
 Future<ApiResult<void, Never>> emptyObjectGet({required EmptyObjectGetEmptyObject emptyObject, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -41,7 +39,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/reactHookGetAsMutation`
 Future<ApiResult<String, Never>> reactHookGetAsMutation({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -59,7 +56,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/reactHookPostAsQuery`
 Future<ApiResult<String, Never>> reactHookPostAsQuery({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -77,7 +73,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/reactHookRenamed`
 Future<ApiResult<Map<String, dynamic>, Never>> reactHookRenamed({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -95,7 +90,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/reactHookDisabled`
 Future<ApiResult<Map<String, dynamic>, Never>> reactHookDisabled({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -113,7 +107,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/reactHookCombinedOptions`
 Future<ApiResult<Map<String, dynamic>, Never>> reactHookCombinedOptions({required int page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -137,7 +130,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/circularReference`
 Future<ApiResult<ValidCircularReferenceObject, Never>> circularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -155,7 +147,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/arrayCircularReference`
 Future<ApiResult<List<ArrayCircularReferenceObject3>, Never>> arrayCircularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -174,7 +165,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/objectCircularReference`
 Future<ApiResult<ObjectCircularReferenceObject, Never>> objectCircularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -192,7 +182,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/oneOfCircularReference`
 Future<ApiResult<OneOfCircularReferenceObject, Never>> oneOfCircularReferenceGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -210,7 +199,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/requestBodyCircularReference`
 Future<ApiResult<RequestBodyCircularReferenceResponse, Never>> requestBodyCircularReference({required ValidCircularReferenceObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -230,7 +218,6 @@ return execute(
   },
 );
  } 
-///
 /// A reference cycle that spans three models separated by one degree
 ///
 /// `POST /anything/circularReferenceOneDegree`
@@ -252,7 +239,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/circularReferenceOneOfWithMapAndArrayVariants`
 Future<ApiResult<void, Never>> circularReferenceOneOfWithMapAndArrayVariants({required Map<String,CircularOneOfUnion> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -270,7 +256,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /anything/circularReferenceTreeNode`
 Future<ApiResult<void, Never>> circularReferenceTreeNode({CircularTreeNode? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -288,7 +273,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/circularReferenceOneOfMultiLevel`
 Future<ApiResult<CircularMultiLevelRoot, Never>> circularReferenceOneOfMultiLevel({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -306,7 +290,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/emptyResponseObjectWithComment`
 Future<ApiResult<Map<String, dynamic>, EmptyResponseObjectWithCommentGetError>> emptyResponseObjectWithCommentGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -326,7 +309,6 @@ throw UnsupportedError('Cannot decode application/octet-stream response into Map
   onError: EmptyResponseObjectWithCommentGetError.fromResponse,
 );
  } 
-///
 /// `GET /anything/ignores`
 Future<ApiResult<void, Never>> ignoresGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -342,7 +324,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `POST /anything/ignores`
 Future<ApiResult<HttpBinSimpleJsonObject, Never>> ignoresPost({required IgnoresPostRequest body, String? testParam, String? testParam2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -373,7 +354,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/ignoreAll`
 Future<ApiResult<void, Never>> ignoreAllGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -450,7 +430,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/dateParamWithDefault`
 Future<ApiResult<void, Never>> dateParamWithDefault({required String dateInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -472,7 +451,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/dateTimeParamWithDefault`
 Future<ApiResult<void, Never>> dateTimeParamWithDefault({required DateTime dateTimeInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -494,7 +472,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/decimalParamWithDefault`
 Future<ApiResult<void, Never>> decimalParamWithDefault({required double decimalInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -516,7 +493,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/anchorTypes`
 Future<ApiResult<AnchorTypesGetResponse, Never>> anchorTypesGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -534,7 +510,6 @@ return execute(
   },
 );
  } 
-///
 /// Tests x-speakeasy-name-override behavior across schema composition patterns.
 /// When nameOverrideFeb2026 is enabled, child-level name-overrides in allOf schemas
 /// are no longer hoisted into the parent, preventing unintended renames.
@@ -567,7 +542,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/globalNameOverride`
 Future<ApiResult<GetGlobalNameOverrideResponse, Never>> getGlobalNameOverride({SimpleObject? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -587,7 +561,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/ignoredGeneration`
 Future<ApiResult<IgnoredGenerationGetResponse, Never>> ignoredGenerationGet({required String ignoredParameter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -611,7 +584,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/deprecatedObjectInSchema`
 Future<ApiResult<DeprecatedObjectInSchemaGetResponse, Never>> deprecatedObjectInSchemaGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -629,7 +601,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/deprecatedFieldInSchema`
 Future<ApiResult<void, Never>> deprecatedFieldInSchemaPost({required DeprecatedFieldInObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -647,7 +618,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/typedParameterGeneration`
 Future<ApiResult<void, Never>> typedParameterGenerationGet({String? date, int? bigint, double? decimal, TypedParameterGenerationGetObj? obj, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -682,7 +652,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/flattenedRequestFieldsNameConflicts`
 Future<ApiResult<void, Never>> flattenedRequestFieldsNameConflicts({required ConflictingObject body, String? reason, String? security, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -711,7 +680,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /recursiveTypes`
 Future<ApiResult<RecursiveNodeContainer, Never>> getRecursiveTypes({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -729,7 +697,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /objects`
 Future<ApiResult<ObjectModel, Never>> listObjects({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -747,7 +714,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /promotional_draw`
 Future<ApiResult<PromotionalDrawTest, Never>> getPromotionalDraw({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

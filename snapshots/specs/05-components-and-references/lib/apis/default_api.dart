@@ -9,7 +9,6 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /users`
 Future<ApiResult<List<User>, Never>> listUsers({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -36,7 +35,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /users`
 Future<ApiResult<void, Never>> createUser({required User body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -54,7 +52,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /users/{userId}`
 Future<ApiResult<User, Never>> getUserById({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

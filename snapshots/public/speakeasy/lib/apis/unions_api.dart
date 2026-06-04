@@ -9,7 +9,6 @@ final class UnionsApi with ApiExecutor {const UnionsApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// Exercises a self-referential oneOf schema used as a field inside a request body object. Previously caused an infinite loop in CLI usage schema generation because describeTypeForHelp had no cycle detection.
 /// 
 ///
@@ -32,7 +31,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/stronglyTypedOneOf`
 Future<ApiResult<StronglyTypedOneOfPostResponse, Never>> stronglyTypedOneOfPost({required StronglyTypedOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -52,7 +50,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/stronglyTypedNullableOneOf`
 Future<ApiResult<StronglyTypedNullableOneOfPostResponse, Never>> stronglyTypedNullableOneOfPost({required StronglyTypedNullableOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -72,7 +69,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/stronglyTypedOneOfWithNonStandardDiscriminatorName`
 Future<ApiResult<StronglyTypedOneOfPostWithNonStandardDiscriminatorNameResponse, Never>> stronglyTypedOneOfPostWithNonStandardDiscriminatorName({required StronglyTypedOneOfObjectWithNonStandardDiscriminatorName body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -92,7 +88,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/stronglyTypedOneOfDiscriminated`
 Future<ApiResult<StronglyTypedOneOfDiscriminatedPostResponse, Never>> stronglyTypedOneOfDiscriminatedPost({required StronglyTypedOneOfDiscriminatedObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -112,7 +107,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/constDiscriminatedOneOf`
 Future<ApiResult<ConstDiscriminatedOneOfResponse, Never>> constDiscriminatedOneOf({required ConstDiscriminatedOneOf body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -132,7 +126,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/conflictingDiscriminatorMappingKey`
 Future<ApiResult<ConflictingDiscriminatorMappingKeyResponse, Never>> conflictingDiscriminatorMappingKey({required ConflictingDiscriminatorMappingKey body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -152,7 +145,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/discriminatedOneMultipleMemberships`
 Future<ApiResult<DiscriminatedOneMultipleMembershipsResponse, Never>> discriminatedOneMultipleMemberships({required Vehicle body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -172,7 +164,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/discriminatedOneMultipleMembershipsHasWheels`
 Future<ApiResult<DiscriminatedOneMultipleMembershipsHasWheelsResponse, Never>> discriminatedOneMultipleMembershipsHasWheels({required HasWheels body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -192,7 +183,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/discriminatedNestedUnion`
 Future<ApiResult<NestedDiscUnionResponse, Never>> nestedDiscUnion({required NestedDiscUnion body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -212,7 +202,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/infectedWithAny`
 Future<ApiResult<InfectedWithAnyResponse, Never>> infectedWithAny({required InfectedWithAny body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -232,7 +221,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/mixedUnions`
 Future<ApiResult<MixedUnionTypesResponse, Never>> mixedUnionTypes({required MixedUnionTypes body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -252,7 +240,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/discriminatedOpenEnum`
 Future<ApiResult<DiscriminatedOpenEnumResponse, Never>> discriminatedOpenEnum({required DiscriminatedOpenEnumUnion body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -272,7 +259,6 @@ return execute(
   },
 );
  } 
-///
 /// Test that union types with generic container variants (e.g. array of freeform objects
 /// producing List`<Map<String, Object>`> in Java) generate valid accessor method names.
 /// Regression test for: generic type params leaking into Java union accessor names.
@@ -297,7 +283,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/unionOfArrays`
 Future<ApiResult<UnionOfArraysPostResponse, Never>> unionOfArraysPost({required UnionOfArrays body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -317,7 +302,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/weaklyTypedOneOf`
 Future<ApiResult<WeaklyTypedOneOfPostResponse, Never>> weaklyTypedOneOfPost({required WeaklyTypedOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -337,7 +321,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/weaklyTypedOneOfNullEnum`
 Future<ApiResult<WeaklyTypedOneOfNullEnumPostResponse, Never>> weaklyTypedOneOfNullEnumPost({required WeaklyTypedOneOfNullEnumObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -357,7 +340,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/oneOfOverlappingObjects`
 Future<ApiResult<OneOfOverlappingObjectsResponse, Never>> oneOfOverlappingObjects({required OneOfOverlappingObjectsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -377,7 +359,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/typedObjectOneOf`
 Future<ApiResult<TypedObjectOneOfPostResponse, Never>> typedObjectOneOfPost({required TypedObjectOneOf body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -397,7 +378,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/typedObjectNullableOneOf`
 Future<ApiResult<TypedObjectNullableOneOfPostResponse, Never>> typedObjectNullableOneOfPost({required TypedObjectNullableOneOf body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -417,7 +397,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/collectionOneOf`
 Future<ApiResult<CollectionOneOfPostResponse, Never>> collectionOneOfPost({required CollectionOneOfObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -437,7 +416,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/oneOfCollectionEnum`
 Future<ApiResult<OneOfCollectionEnumResponse, Never>> oneOfCollectionEnum({OneOfCollectionEnum? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -457,7 +435,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/flattenedTypedObject`
 Future<ApiResult<FlattenedTypedObjectPostResponse, Never>> flattenedTypedObjectPost({required FlattenedTypedObject1 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -477,7 +454,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/nullableTypedObject`
 Future<ApiResult<NullableTypedObjectPostResponse, Never>> nullableTypedObjectPost({required NullableTypedObject1 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -497,7 +473,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/nullableOneOfSchema`
 Future<ApiResult<NullableOneOfSchemaPostResponse, Never>> nullableOneOfSchemaPost({required NullableOneOfSchemaPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -517,7 +492,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/nullableOneOfInObject`
 Future<ApiResult<NullableOneOfTypeInObjectPostResponse, Never>> nullableOneOfTypeInObjectPost({required NullableOneOfTypeInObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -537,7 +511,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/nullableOneOfRefInObject`
 Future<ApiResult<NullableOneOfRefInObjectPostResponse, Never>> nullableOneOfRefInObjectPost({required NullableOneOfRefInObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -557,7 +530,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/primitiveTypeOneOf`
 Future<ApiResult<PrimitiveTypeOneOfPostResponse, Never>> primitiveTypeOneOfPost({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -577,7 +549,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/mixedTypeOneOf`
 Future<ApiResult<MixedTypeOneOfPostResponse, Never>> mixedTypeOneOfPost({required MixedTypeOneOfPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -597,7 +568,6 @@ return execute(
   },
 );
  } 
-///
 /// simulating a scenario where union of boolean and string enum was resulting in deserialization issue in ruby target
 ///
 /// `POST /anything/oneOfbooleanAndStringEnum`
@@ -619,7 +589,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/unionDateNull`
 Future<ApiResult<UnionDateNullResponse, Never>> unionDateNull({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -639,7 +608,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/unionDateTimeNull`
 Future<ApiResult<UnionDateTimeNullResponse, Never>> unionDateTimeNull({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -659,7 +627,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/unionDateTimeBigInt`
 Future<ApiResult<UnionDateTimeBigIntResponse, Never>> unionDateTimeBigInt({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -679,7 +646,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/unionBigIntStrDecimal`
 Future<ApiResult<UnionBigIntStrDecimalResponse, Never>> unionBigIntStrDecimal({required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -699,7 +665,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/unionMap`
 Future<ApiResult<UnionMapResponse, Never>> unionMap({required UnionMapRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -719,7 +684,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/union/unionMapOptional`
 Future<ApiResult<UnionMapOptionalResponse, Never>> unionMapOptional({required UnionMapOptionalRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -739,7 +703,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/union/forms/nestedEnums`
 Future<ApiResult<UnionNestedEnumsResponse, Never>> unionNestedEnums({required UnionNestedEnumsRequest2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -761,7 +724,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/arrayOfDiscriminatedUnions`
 Future<ApiResult<ArrayOfDiscriminatedUnionsResponse, Never>> arrayOfDiscriminatedUnions({required List<StronglyTypedOneOfObject2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -781,7 +743,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/enumWithDuplicateMembers`
 Future<ApiResult<EnumWithDuplicateMembersResponse, Never>> enumWithDuplicateMembers({required EnumWithDuplicateMembers body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -801,7 +762,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/arrayOfDiscriminatedUnionsMap`
 Future<ApiResult<ArrayOfDiscriminatedUnionsMapResponse, Never>> arrayOfDiscriminatedUnionsMap({required ArrayOfDiscriminatedUnionsMap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -821,7 +781,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /anything/nestedArrayOfDiscriminatedUnions`
 Future<ApiResult<NestedArrayOfDiscriminatedUnionsResponse, Never>> nestedArrayOfDiscriminatedUnions({required NestedArrayOfDiscriminatedUnions body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -841,7 +800,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/multiMatchAnyOf`
 Future<ApiResult<AnyOfMultiMatch, Never>> multiMatchAnyOf({required AnyOfMultiMatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';

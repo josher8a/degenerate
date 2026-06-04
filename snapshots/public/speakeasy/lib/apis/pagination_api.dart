@@ -51,7 +51,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor_non_numeric`
 Future<ApiResult<PaginationCursorNonNumericResponse, Never>> paginationCursorNonNumeric({String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -77,7 +76,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor_non_numeric_with_limit`
 Future<ApiResult<PaginationCursorNonNumericWithLimitResponse, Never>> paginationCursorNonNumericWithLimit({String? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -106,7 +104,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor_non_numeric#nullable`
 Future<ApiResult<PaginationCursorNonNumericNullableResponse, Never>> paginationCursorNonNumericNullable({String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -132,7 +129,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor_non_numeric#emptyString`
 Future<ApiResult<PaginationCursorNonNumericEmptyStringResponse, Never>> paginationCursorNonNumericEmptyString({required String endCursor, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -159,7 +155,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor_non_numeric#withRetries`
 Future<ApiResult<PaginationWithRetriesResponse, Never>> paginationWithRetries({String? cursor, String? requestId, String? faultSettings, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -191,7 +186,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor/response_envelope`
 Future<ApiResult<PaginationCursorResponseEnvelopeResponse, Never>> paginationCursorResponseEnvelope({String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -217,7 +211,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/page`
 Future<ApiResult<PaginationLimitOffsetPageParamsResponse, Never>> paginationLimitOffsetPageParams({required int page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -241,7 +234,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /pagination/limitoffset/page`
 Future<ApiResult<PaginationLimitOffsetPageBodyResponse, Never>> paginationLimitOffsetPageBody({required LimitOffsetConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -261,7 +253,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/page#const`
 Future<ApiResult<PaginationLimitOffsetPageParamsConstResponse, Never>> paginationLimitOffsetPageParamsConst({int? page, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -290,7 +281,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/page#optionalPageParams`
 Future<ApiResult<PaginationLimitOffsetOptionalPageParamsResponse, Never>> paginationLimitOffsetOptionalPageParams({int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -316,7 +306,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/page#inUnion`
 Future<ApiResult<PaginationLimitOffsetUnionOutputPageParamsResponse, Never>> paginationLimitOffsetUnionOutputPageParams({int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -342,7 +331,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /pagination/limitoffset/deep_outputs/page`
 Future<ApiResult<PaginationLimitOffsetDeepOutputsPageBodyResponse, Never>> paginationLimitOffsetDeepOutputsPageBody({required LimitOffsetConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -362,7 +350,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/offset`
 Future<ApiResult<PaginationLimitOffsetOffsetParamsResponse, Never>> paginationLimitOffsetOffsetParams({int? offset, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -391,7 +378,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /pagination/limitoffset/offset`
 Future<ApiResult<PaginationLimitOffsetOffsetBodyResponse, Never>> paginationLimitOffsetOffsetBody({required LimitOffsetConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -411,7 +397,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/offset#WithDefaults`
 Future<ApiResult<PaginationLimitOffsetDefaultOffsetParamsResponse, Never>> paginationLimitOffsetDefaultOffsetParams({int? offset, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -440,7 +425,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /pagination/limitoffset/offset#WithDefaults`
 Future<ApiResult<PaginationLimitOffsetDefaultOffsetBodyResponse, Never>> paginationLimitOffsetDefaultOffsetBody({required LimitOffsetConfigWithDefaults body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -460,7 +444,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/url`
 Future<ApiResult<PaginationUrlParamsResponse, Never>> paginationUrlParams({required int attempts, String? isReferencePath, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -487,7 +470,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/cursor`
 Future<ApiResult<PaginationCursorParamsResponse, Never>> paginationCursorParams({required int cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -511,7 +493,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /pagination/cursor`
 Future<ApiResult<PaginationCursorBodyResponse, Never>> paginationCursorBody({required PaginationCursorBodyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -531,7 +512,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /pagination/cursor/body_shadowed_field`
 Future<ApiResult<PaginationCursorBodyShadowedFieldResponse, Never>> paginationCursorBodyShadowedField({required Filter body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -551,7 +531,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/offset#paginationBodyFlattenedWithSecurity`
 Future<ApiResult<PaginationBodyFlattenedWithSecurityResponse, Never>> paginationBodyFlattenedWithSecurity({required int limit, required int offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -576,7 +555,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pagination/limitoffset/offset#paginationBodyFlattenedOptionalSecurity`
 Future<ApiResult<PaginationBodyFlattenedOptionalSecurityResponse, Never>> paginationBodyFlattenedOptionalSecurity({required int limit, required int offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -601,7 +579,6 @@ return execute(
   },
 );
  } 
-///
 /// This operation has a request wrapper type that encapsulates the
 /// parameters and request body. The pagination inputs are meant to go in
 /// the request body and we want to test that the generator correctly
@@ -634,7 +611,6 @@ return execute(
   },
 );
  } 
-///
 /// This operation has a request wrapper type that encapsulates both
 /// the parameters (where pagination inputs are) and the request body.
 /// 
@@ -669,7 +645,6 @@ return execute(
   },
 );
  } 
-///
 /// This is a paginated operation where there is both a query parameter and
 /// request body field called "cursor". This ambiguity is used to test that
 /// the generator only updates the appropriate field in the pagination code
@@ -703,7 +678,6 @@ return execute(
   },
 );
  } 
-///
 /// This is a paginated operation where the input is a query parameter
 /// but the number of arguments exceeds maxMethodParams so it ends up
 /// being encapsulated into a request object.
@@ -737,7 +711,6 @@ return execute(
   },
 );
  } 
-///
 /// `PUT /pagination/limitoffset/offset#paginationWrappedOptionalBody`
 Future<ApiResult<PaginationWrappedOptionalBodyResponse, Never>> paginationWrappedOptionalBody({String? requestId, String? idempotencyKey, LimitOffsetConfig? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -763,7 +736,6 @@ return execute(
   },
 );
  } 
-///
 /// `POST /pagination/cursor#paginationRequiredBodyFields`
 Future<ApiResult<ListBalancesResponse, Never>> paginationCursorBodyRequiredFields({required int limit, required ListBalancesRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];

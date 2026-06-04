@@ -9,7 +9,6 @@ final class CoreApi with ApiExecutor {const CoreApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// get available resources
 ///
 /// `GET /api/v1/`
@@ -29,7 +28,6 @@ return execute(
   },
 );
  } 
-///
 /// list objects of kind ComponentStatus
 ///
 /// `GET /api/v1/componentstatuses`
@@ -87,7 +85,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified ComponentStatus
 ///
 /// `GET /api/v1/componentstatuses/{name}`
@@ -115,7 +112,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ConfigMap
 ///
 /// `GET /api/v1/configmaps`
@@ -173,7 +169,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Endpoints
 ///
 /// `GET /api/v1/endpoints`
@@ -231,7 +226,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Event
 ///
 /// `GET /api/v1/events`
@@ -289,7 +283,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind LimitRange
 ///
 /// `GET /api/v1/limitranges`
@@ -347,7 +340,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Namespace
 ///
 /// `GET /api/v1/namespaces`
@@ -405,7 +397,6 @@ return execute(
   },
 );
  } 
-///
 /// create a Namespace
 ///
 /// `POST /api/v1/namespaces`
@@ -444,7 +435,6 @@ return execute(
   },
 );
  } 
-///
 /// create a Binding
 ///
 /// `POST /api/v1/namespaces/{namespace}/bindings`
@@ -483,7 +473,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ConfigMap
 ///
 /// `GET /api/v1/namespaces/{namespace}/configmaps`
@@ -541,7 +530,6 @@ return execute(
   },
 );
  } 
-///
 /// create a ConfigMap
 ///
 /// `POST /api/v1/namespaces/{namespace}/configmaps`
@@ -580,7 +568,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of ConfigMap
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/configmaps`
@@ -649,7 +636,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified ConfigMap
 ///
 /// `GET /api/v1/namespaces/{namespace}/configmaps/{name}`
@@ -677,7 +663,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified ConfigMap
 ///
 /// `PUT /api/v1/namespaces/{namespace}/configmaps/{name}`
@@ -716,7 +701,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified ConfigMap
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/configmaps/{name}`
@@ -758,7 +742,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a ConfigMap
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/configmaps/{name}`
@@ -803,7 +786,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Endpoints
 ///
 /// `GET /api/v1/namespaces/{namespace}/endpoints`
@@ -861,7 +843,6 @@ return execute(
   },
 );
  } 
-///
 /// create Endpoints
 ///
 /// `POST /api/v1/namespaces/{namespace}/endpoints`
@@ -900,7 +881,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of Endpoints
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/endpoints`
@@ -969,7 +949,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Endpoints
 ///
 /// `GET /api/v1/namespaces/{namespace}/endpoints/{name}`
@@ -997,7 +976,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Endpoints
 ///
 /// `PUT /api/v1/namespaces/{namespace}/endpoints/{name}`
@@ -1036,7 +1014,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Endpoints
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/endpoints/{name}`
@@ -1078,7 +1055,6 @@ return execute(
   },
 );
  } 
-///
 /// delete Endpoints
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/endpoints/{name}`
@@ -1123,7 +1099,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Event
 ///
 /// `GET /api/v1/namespaces/{namespace}/events`
@@ -1181,7 +1156,6 @@ return execute(
   },
 );
  } 
-///
 /// create an Event
 ///
 /// `POST /api/v1/namespaces/{namespace}/events`
@@ -1220,7 +1194,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of Event
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/events`
@@ -1289,7 +1262,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Event
 ///
 /// `GET /api/v1/namespaces/{namespace}/events/{name}`
@@ -1317,7 +1289,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Event
 ///
 /// `PUT /api/v1/namespaces/{namespace}/events/{name}`
@@ -1356,7 +1327,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Event
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/events/{name}`
@@ -1398,7 +1368,6 @@ return execute(
   },
 );
  } 
-///
 /// delete an Event
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/events/{name}`
@@ -1443,7 +1412,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind LimitRange
 ///
 /// `GET /api/v1/namespaces/{namespace}/limitranges`
@@ -1501,7 +1469,6 @@ return execute(
   },
 );
  } 
-///
 /// create a LimitRange
 ///
 /// `POST /api/v1/namespaces/{namespace}/limitranges`
@@ -1540,7 +1507,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of LimitRange
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/limitranges`
@@ -1609,7 +1575,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified LimitRange
 ///
 /// `GET /api/v1/namespaces/{namespace}/limitranges/{name}`
@@ -1637,7 +1602,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified LimitRange
 ///
 /// `PUT /api/v1/namespaces/{namespace}/limitranges/{name}`
@@ -1676,7 +1640,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified LimitRange
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/limitranges/{name}`
@@ -1718,7 +1681,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a LimitRange
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/limitranges/{name}`
@@ -1763,7 +1725,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind PersistentVolumeClaim
 ///
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims`
@@ -1821,7 +1782,6 @@ return execute(
   },
 );
  } 
-///
 /// create a PersistentVolumeClaim
 ///
 /// `POST /api/v1/namespaces/{namespace}/persistentvolumeclaims`
@@ -1860,7 +1820,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of PersistentVolumeClaim
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims`
@@ -1929,7 +1888,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified PersistentVolumeClaim
 ///
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
@@ -1957,7 +1915,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified PersistentVolumeClaim
 ///
 /// `PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
@@ -1996,7 +1953,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified PersistentVolumeClaim
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
@@ -2038,7 +1994,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a PersistentVolumeClaim
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
@@ -2083,7 +2038,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified PersistentVolumeClaim
 ///
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
@@ -2111,7 +2065,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified PersistentVolumeClaim
 ///
 /// `PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
@@ -2150,7 +2103,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified PersistentVolumeClaim
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
@@ -2192,7 +2144,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods`
@@ -2250,7 +2201,6 @@ return execute(
   },
 );
  } 
-///
 /// create a Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods`
@@ -2289,7 +2239,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods`
@@ -2358,7 +2307,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}`
@@ -2386,7 +2334,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}`
@@ -2425,7 +2372,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}`
@@ -2467,7 +2413,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}`
@@ -2512,7 +2457,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to attach of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/attach`
@@ -2552,7 +2496,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to attach of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/attach`
@@ -2592,7 +2535,6 @@ return execute(
   },
 );
  } 
-///
 /// create binding of a Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/binding`
@@ -2631,7 +2573,6 @@ return execute(
   },
 );
  } 
-///
 /// read ephemeralcontainers of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
@@ -2659,7 +2600,6 @@ return execute(
   },
 );
  } 
-///
 /// replace ephemeralcontainers of the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
@@ -2698,7 +2638,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update ephemeralcontainers of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
@@ -2740,7 +2679,6 @@ return execute(
   },
 );
  } 
-///
 /// create eviction of a Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/eviction`
@@ -2779,7 +2717,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to exec of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/exec`
@@ -2822,7 +2759,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to exec of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/exec`
@@ -2865,7 +2801,6 @@ return execute(
   },
 );
  } 
-///
 /// read log of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/log`
@@ -2920,7 +2855,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to portforward of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/portforward`
@@ -2948,7 +2882,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to portforward of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/portforward`
@@ -2976,7 +2909,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to proxy of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3004,7 +2936,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to proxy of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3032,7 +2963,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PUT requests to proxy of Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3060,7 +2990,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PATCH requests to proxy of Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3088,7 +3017,6 @@ return execute(
   },
 );
  } 
-///
 /// connect DELETE requests to proxy of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3116,7 +3044,6 @@ return execute(
   },
 );
  } 
-///
 /// connect HEAD requests to proxy of Pod
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3144,7 +3071,6 @@ return execute(
   },
 );
  } 
-///
 /// connect OPTIONS requests to proxy of Pod
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy`
@@ -3172,7 +3098,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to proxy of Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3200,7 +3125,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to proxy of Pod
 ///
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3228,7 +3152,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PUT requests to proxy of Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3256,7 +3179,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PATCH requests to proxy of Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3284,7 +3206,6 @@ return execute(
   },
 );
  } 
-///
 /// connect DELETE requests to proxy of Pod
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3312,7 +3233,6 @@ return execute(
   },
 );
  } 
-///
 /// connect HEAD requests to proxy of Pod
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3340,7 +3260,6 @@ return execute(
   },
 );
  } 
-///
 /// connect OPTIONS requests to proxy of Pod
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
@@ -3368,7 +3287,6 @@ return execute(
   },
 );
  } 
-///
 /// read resize of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/resize`
@@ -3396,7 +3314,6 @@ return execute(
   },
 );
  } 
-///
 /// replace resize of the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/resize`
@@ -3435,7 +3352,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update resize of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/resize`
@@ -3477,7 +3393,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified Pod
 ///
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/status`
@@ -3505,7 +3420,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified Pod
 ///
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/status`
@@ -3544,7 +3458,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified Pod
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/status`
@@ -3586,7 +3499,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind PodTemplate
 ///
 /// `GET /api/v1/namespaces/{namespace}/podtemplates`
@@ -3644,7 +3556,6 @@ return execute(
   },
 );
  } 
-///
 /// create a PodTemplate
 ///
 /// `POST /api/v1/namespaces/{namespace}/podtemplates`
@@ -3683,7 +3594,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of PodTemplate
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/podtemplates`
@@ -3752,7 +3662,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified PodTemplate
 ///
 /// `GET /api/v1/namespaces/{namespace}/podtemplates/{name}`
@@ -3780,7 +3689,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified PodTemplate
 ///
 /// `PUT /api/v1/namespaces/{namespace}/podtemplates/{name}`
@@ -3819,7 +3727,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified PodTemplate
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/podtemplates/{name}`
@@ -3861,7 +3768,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a PodTemplate
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/podtemplates/{name}`
@@ -3906,7 +3812,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers`
@@ -3964,7 +3869,6 @@ return execute(
   },
 );
  } 
-///
 /// create a ReplicationController
 ///
 /// `POST /api/v1/namespaces/{namespace}/replicationcontrollers`
@@ -4003,7 +3907,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of ReplicationController
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/replicationcontrollers`
@@ -4072,7 +3975,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
@@ -4100,7 +4002,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified ReplicationController
 ///
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
@@ -4139,7 +4040,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
@@ -4181,7 +4081,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a ReplicationController
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
@@ -4226,7 +4125,6 @@ return execute(
   },
 );
  } 
-///
 /// read scale of the specified ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
@@ -4254,7 +4152,6 @@ return execute(
   },
 );
  } 
-///
 /// replace scale of the specified ReplicationController
 ///
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
@@ -4293,7 +4190,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update scale of the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
@@ -4335,7 +4231,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified ReplicationController
 ///
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
@@ -4363,7 +4258,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified ReplicationController
 ///
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
@@ -4402,7 +4296,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified ReplicationController
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
@@ -4444,7 +4337,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ResourceQuota
 ///
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas`
@@ -4502,7 +4394,6 @@ return execute(
   },
 );
  } 
-///
 /// create a ResourceQuota
 ///
 /// `POST /api/v1/namespaces/{namespace}/resourcequotas`
@@ -4541,7 +4432,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of ResourceQuota
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/resourcequotas`
@@ -4610,7 +4500,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified ResourceQuota
 ///
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas/{name}`
@@ -4638,7 +4527,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified ResourceQuota
 ///
 /// `PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}`
@@ -4677,7 +4565,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified ResourceQuota
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}`
@@ -4719,7 +4606,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a ResourceQuota
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/resourcequotas/{name}`
@@ -4764,7 +4650,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified ResourceQuota
 ///
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
@@ -4792,7 +4677,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified ResourceQuota
 ///
 /// `PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
@@ -4831,7 +4715,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified ResourceQuota
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
@@ -4873,7 +4756,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Secret
 ///
 /// `GET /api/v1/namespaces/{namespace}/secrets`
@@ -4931,7 +4813,6 @@ return execute(
   },
 );
  } 
-///
 /// create a Secret
 ///
 /// `POST /api/v1/namespaces/{namespace}/secrets`
@@ -4970,7 +4851,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of Secret
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/secrets`
@@ -5039,7 +4919,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Secret
 ///
 /// `GET /api/v1/namespaces/{namespace}/secrets/{name}`
@@ -5067,7 +4946,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Secret
 ///
 /// `PUT /api/v1/namespaces/{namespace}/secrets/{name}`
@@ -5106,7 +4984,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Secret
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/secrets/{name}`
@@ -5148,7 +5025,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a Secret
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/secrets/{name}`
@@ -5193,7 +5069,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ServiceAccount
 ///
 /// `GET /api/v1/namespaces/{namespace}/serviceaccounts`
@@ -5251,7 +5126,6 @@ return execute(
   },
 );
  } 
-///
 /// create a ServiceAccount
 ///
 /// `POST /api/v1/namespaces/{namespace}/serviceaccounts`
@@ -5290,7 +5164,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of ServiceAccount
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/serviceaccounts`
@@ -5359,7 +5232,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified ServiceAccount
 ///
 /// `GET /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
@@ -5387,7 +5259,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified ServiceAccount
 ///
 /// `PUT /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
@@ -5426,7 +5297,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified ServiceAccount
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
@@ -5468,7 +5338,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a ServiceAccount
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
@@ -5513,7 +5382,6 @@ return execute(
   },
 );
  } 
-///
 /// create token of a ServiceAccount
 ///
 /// `POST /api/v1/namespaces/{namespace}/serviceaccounts/{name}/token`
@@ -5552,7 +5420,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services`
@@ -5610,7 +5477,6 @@ return execute(
   },
 );
  } 
-///
 /// create a Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services`
@@ -5649,7 +5515,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services`
@@ -5718,7 +5583,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}`
@@ -5746,7 +5610,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}`
@@ -5785,7 +5648,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}`
@@ -5827,7 +5689,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}`
@@ -5872,7 +5733,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to proxy of Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -5900,7 +5760,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to proxy of Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -5928,7 +5787,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PUT requests to proxy of Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -5956,7 +5814,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PATCH requests to proxy of Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -5984,7 +5841,6 @@ return execute(
   },
 );
  } 
-///
 /// connect DELETE requests to proxy of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -6012,7 +5868,6 @@ return execute(
   },
 );
  } 
-///
 /// connect HEAD requests to proxy of Service
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -6040,7 +5895,6 @@ return execute(
   },
 );
  } 
-///
 /// connect OPTIONS requests to proxy of Service
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy`
@@ -6068,7 +5922,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to proxy of Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6096,7 +5949,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to proxy of Service
 ///
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6124,7 +5976,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PUT requests to proxy of Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6152,7 +6003,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PATCH requests to proxy of Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6180,7 +6030,6 @@ return execute(
   },
 );
  } 
-///
 /// connect DELETE requests to proxy of Service
 ///
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6208,7 +6057,6 @@ return execute(
   },
 );
  } 
-///
 /// connect HEAD requests to proxy of Service
 ///
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6236,7 +6084,6 @@ return execute(
   },
 );
  } 
-///
 /// connect OPTIONS requests to proxy of Service
 ///
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
@@ -6264,7 +6111,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified Service
 ///
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/status`
@@ -6292,7 +6138,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified Service
 ///
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/status`
@@ -6331,7 +6176,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified Service
 ///
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/status`
@@ -6373,7 +6217,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Namespace
 ///
 /// `GET /api/v1/namespaces/{name}`
@@ -6401,7 +6244,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Namespace
 ///
 /// `PUT /api/v1/namespaces/{name}`
@@ -6440,7 +6282,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Namespace
 ///
 /// `PATCH /api/v1/namespaces/{name}`
@@ -6482,7 +6323,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a Namespace
 ///
 /// `DELETE /api/v1/namespaces/{name}`
@@ -6527,7 +6367,6 @@ return execute(
   },
 );
  } 
-///
 /// replace finalize of the specified Namespace
 ///
 /// `PUT /api/v1/namespaces/{name}/finalize`
@@ -6566,7 +6405,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified Namespace
 ///
 /// `GET /api/v1/namespaces/{name}/status`
@@ -6594,7 +6432,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified Namespace
 ///
 /// `PUT /api/v1/namespaces/{name}/status`
@@ -6633,7 +6470,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified Namespace
 ///
 /// `PATCH /api/v1/namespaces/{name}/status`
@@ -6675,7 +6511,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Node
 ///
 /// `GET /api/v1/nodes`
@@ -6733,7 +6568,6 @@ return execute(
   },
 );
  } 
-///
 /// create a Node
 ///
 /// `POST /api/v1/nodes`
@@ -6772,7 +6606,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of Node
 ///
 /// `DELETE /api/v1/nodes`
@@ -6841,7 +6674,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified Node
 ///
 /// `GET /api/v1/nodes/{name}`
@@ -6869,7 +6701,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified Node
 ///
 /// `PUT /api/v1/nodes/{name}`
@@ -6908,7 +6739,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified Node
 ///
 /// `PATCH /api/v1/nodes/{name}`
@@ -6950,7 +6780,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a Node
 ///
 /// `DELETE /api/v1/nodes/{name}`
@@ -6995,7 +6824,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to proxy of Node
 ///
 /// `GET /api/v1/nodes/{name}/proxy`
@@ -7023,7 +6851,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to proxy of Node
 ///
 /// `POST /api/v1/nodes/{name}/proxy`
@@ -7051,7 +6878,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PUT requests to proxy of Node
 ///
 /// `PUT /api/v1/nodes/{name}/proxy`
@@ -7079,7 +6905,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PATCH requests to proxy of Node
 ///
 /// `PATCH /api/v1/nodes/{name}/proxy`
@@ -7107,7 +6932,6 @@ return execute(
   },
 );
  } 
-///
 /// connect DELETE requests to proxy of Node
 ///
 /// `DELETE /api/v1/nodes/{name}/proxy`
@@ -7135,7 +6959,6 @@ return execute(
   },
 );
  } 
-///
 /// connect HEAD requests to proxy of Node
 ///
 /// `HEAD /api/v1/nodes/{name}/proxy`
@@ -7163,7 +6986,6 @@ return execute(
   },
 );
  } 
-///
 /// connect OPTIONS requests to proxy of Node
 ///
 /// `OPTIONS /api/v1/nodes/{name}/proxy`
@@ -7191,7 +7013,6 @@ return execute(
   },
 );
  } 
-///
 /// connect GET requests to proxy of Node
 ///
 /// `GET /api/v1/nodes/{name}/proxy/{path}`
@@ -7219,7 +7040,6 @@ return execute(
   },
 );
  } 
-///
 /// connect POST requests to proxy of Node
 ///
 /// `POST /api/v1/nodes/{name}/proxy/{path}`
@@ -7247,7 +7067,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PUT requests to proxy of Node
 ///
 /// `PUT /api/v1/nodes/{name}/proxy/{path}`
@@ -7275,7 +7094,6 @@ return execute(
   },
 );
  } 
-///
 /// connect PATCH requests to proxy of Node
 ///
 /// `PATCH /api/v1/nodes/{name}/proxy/{path}`
@@ -7303,7 +7121,6 @@ return execute(
   },
 );
  } 
-///
 /// connect DELETE requests to proxy of Node
 ///
 /// `DELETE /api/v1/nodes/{name}/proxy/{path}`
@@ -7331,7 +7148,6 @@ return execute(
   },
 );
  } 
-///
 /// connect HEAD requests to proxy of Node
 ///
 /// `HEAD /api/v1/nodes/{name}/proxy/{path}`
@@ -7359,7 +7175,6 @@ return execute(
   },
 );
  } 
-///
 /// connect OPTIONS requests to proxy of Node
 ///
 /// `OPTIONS /api/v1/nodes/{name}/proxy/{path}`
@@ -7387,7 +7202,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified Node
 ///
 /// `GET /api/v1/nodes/{name}/status`
@@ -7415,7 +7229,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified Node
 ///
 /// `PUT /api/v1/nodes/{name}/status`
@@ -7454,7 +7267,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified Node
 ///
 /// `PATCH /api/v1/nodes/{name}/status`
@@ -7496,7 +7308,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind PersistentVolumeClaim
 ///
 /// `GET /api/v1/persistentvolumeclaims`
@@ -7554,7 +7365,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind PersistentVolume
 ///
 /// `GET /api/v1/persistentvolumes`
@@ -7612,7 +7422,6 @@ return execute(
   },
 );
  } 
-///
 /// create a PersistentVolume
 ///
 /// `POST /api/v1/persistentvolumes`
@@ -7651,7 +7460,6 @@ return execute(
   },
 );
  } 
-///
 /// delete collection of PersistentVolume
 ///
 /// `DELETE /api/v1/persistentvolumes`
@@ -7720,7 +7528,6 @@ return execute(
   },
 );
  } 
-///
 /// read the specified PersistentVolume
 ///
 /// `GET /api/v1/persistentvolumes/{name}`
@@ -7748,7 +7555,6 @@ return execute(
   },
 );
  } 
-///
 /// replace the specified PersistentVolume
 ///
 /// `PUT /api/v1/persistentvolumes/{name}`
@@ -7787,7 +7593,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update the specified PersistentVolume
 ///
 /// `PATCH /api/v1/persistentvolumes/{name}`
@@ -7829,7 +7634,6 @@ return execute(
   },
 );
  } 
-///
 /// delete a PersistentVolume
 ///
 /// `DELETE /api/v1/persistentvolumes/{name}`
@@ -7874,7 +7678,6 @@ return execute(
   },
 );
  } 
-///
 /// read status of the specified PersistentVolume
 ///
 /// `GET /api/v1/persistentvolumes/{name}/status`
@@ -7902,7 +7705,6 @@ return execute(
   },
 );
  } 
-///
 /// replace status of the specified PersistentVolume
 ///
 /// `PUT /api/v1/persistentvolumes/{name}/status`
@@ -7941,7 +7743,6 @@ return execute(
   },
 );
  } 
-///
 /// partially update status of the specified PersistentVolume
 ///
 /// `PATCH /api/v1/persistentvolumes/{name}/status`
@@ -7983,7 +7784,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Pod
 ///
 /// `GET /api/v1/pods`
@@ -8041,7 +7841,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind PodTemplate
 ///
 /// `GET /api/v1/podtemplates`
@@ -8099,7 +7898,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ReplicationController
 ///
 /// `GET /api/v1/replicationcontrollers`
@@ -8157,7 +7955,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ResourceQuota
 ///
 /// `GET /api/v1/resourcequotas`
@@ -8215,7 +8012,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Secret
 ///
 /// `GET /api/v1/secrets`
@@ -8273,7 +8069,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind ServiceAccount
 ///
 /// `GET /api/v1/serviceaccounts`
@@ -8331,7 +8126,6 @@ return execute(
   },
 );
  } 
-///
 /// list or watch objects of kind Service
 ///
 /// `GET /api/v1/services`
@@ -8389,7 +8183,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/configmaps`
@@ -8447,7 +8240,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/endpoints`
@@ -8505,7 +8297,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/events`
@@ -8563,7 +8354,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/limitranges`
@@ -8621,7 +8411,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Namespace. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces`
@@ -8679,7 +8468,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/configmaps`
@@ -8737,7 +8525,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind ConfigMap. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/configmaps/{name}`
@@ -8795,7 +8582,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/endpoints`
@@ -8853,7 +8639,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Endpoints. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/endpoints/{name}`
@@ -8911,7 +8696,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/events`
@@ -8969,7 +8753,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Event. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/events/{name}`
@@ -9027,7 +8810,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/limitranges`
@@ -9085,7 +8867,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind LimitRange. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/limitranges/{name}`
@@ -9143,7 +8924,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims`
@@ -9201,7 +8981,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}`
@@ -9259,7 +9038,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/pods`
@@ -9317,7 +9095,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Pod. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/pods/{name}`
@@ -9375,7 +9152,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/podtemplates`
@@ -9433,7 +9209,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind PodTemplate. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/podtemplates/{name}`
@@ -9491,7 +9266,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers`
@@ -9549,7 +9323,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind ReplicationController. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}`
@@ -9607,7 +9380,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/resourcequotas`
@@ -9665,7 +9437,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/resourcequotas/{name}`
@@ -9723,7 +9494,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/secrets`
@@ -9781,7 +9551,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Secret. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/secrets/{name}`
@@ -9839,7 +9608,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/serviceaccounts`
@@ -9897,7 +9665,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}`
@@ -9955,7 +9722,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/services`
@@ -10013,7 +9779,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Service. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{namespace}/services/{name}`
@@ -10071,7 +9836,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Namespace. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/namespaces/{name}`
@@ -10129,7 +9893,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Node. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/nodes`
@@ -10187,7 +9950,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind Node. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/nodes/{name}`
@@ -10245,7 +10007,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/persistentvolumeclaims`
@@ -10303,7 +10064,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/persistentvolumes`
@@ -10361,7 +10121,6 @@ return execute(
   },
 );
  } 
-///
 /// watch changes to an object of kind PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
 /// `GET /api/v1/watch/persistentvolumes/{name}`
@@ -10419,7 +10178,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/pods`
@@ -10477,7 +10235,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/podtemplates`
@@ -10535,7 +10292,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/replicationcontrollers`
@@ -10593,7 +10349,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/resourcequotas`
@@ -10651,7 +10406,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/secrets`
@@ -10709,7 +10463,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/serviceaccounts`
@@ -10767,7 +10520,6 @@ return execute(
   },
 );
  } 
-///
 /// watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead.
 ///
 /// `GET /api/v1/watch/services`

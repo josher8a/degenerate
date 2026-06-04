@@ -9,7 +9,6 @@ final class DocumentationApi with ApiExecutor {const DocumentationApi(this.apiCo
 
 @override final ApiConfig apiConfig;
 
-///
 /// Gets documentation for some language, I guess.
 ///
 /// `GET /docs/per-language-docs`

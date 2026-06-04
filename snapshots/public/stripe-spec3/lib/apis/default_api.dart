@@ -153,7 +153,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`With `<a href="/docs/connect">`Connect`</a>`, you can create Stripe accounts for your users.
 /// To do this, you’ll first need to `<a href="https://dashboard.stripe.com/account/applications/settings">`register your platform`</a>`.`</p>`
 /// 
@@ -419,7 +418,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
 /// details are not editable by design.`</p>`
@@ -715,7 +713,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
 /// details are not editable by design.`</p>`
@@ -1410,7 +1407,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`List apple pay domains.`</p>`
 ///
 /// `GET /v1/apple_pay/domains`
@@ -1454,7 +1450,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Create an apple pay domain.`</p>`
 ///
 /// `POST /v1/apple_pay/domains`
@@ -1481,7 +1476,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Retrieve an apple pay domain.`</p>`
 ///
 /// `GET /v1/apple_pay/domains/{domain}`
@@ -1513,7 +1507,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Delete an apple pay domain.`</p>`
 ///
 /// `DELETE /v1/apple_pay/domains/{domain}`
@@ -1682,7 +1675,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// 
 ///
 /// `POST /v1/application_fees/{id}/refund`
@@ -3314,7 +3306,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`This method is no longer recommended—use the `<a href="/docs/api/payment_intents">`Payment Intents API`</a>`
 /// to initiate a new payment instead. Confirmation of the PaymentIntent creates the `<code>`Charge`</code>`
 /// object used to request payment.`</p>`
@@ -3544,7 +3535,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Retrieve a dispute for a specified charge.`</p>`
 ///
 /// `GET /v1/charges/{charge}/dispute`
@@ -3576,7 +3566,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute`
@@ -3608,7 +3597,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// 
 ///
 /// `POST /v1/charges/{charge}/dispute/close`
@@ -3784,7 +3772,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Retrieves the details of an existing refund.`</p>`
 ///
 /// `GET /v1/charges/{charge}/refunds/{refund}`
@@ -3816,7 +3803,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Update a specified refund.`</p>`
 ///
 /// `POST /v1/charges/{charge}/refunds/{refund}`
@@ -5717,7 +5703,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/bank_accounts/{id}`
@@ -5866,7 +5851,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/cards/{id}`
@@ -6082,7 +6066,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// 
 ///
 /// `GET /v1/customers/{customer}/discount`
@@ -6252,7 +6235,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`List sources for a specified customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/sources`
@@ -6337,7 +6319,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Retrieve a specified source for a given customer.`</p>`
 ///
 /// `GET /v1/customers/{customer}/sources/{id}`
@@ -6369,7 +6350,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
 /// `POST /v1/customers/{customer}/sources/{id}`
@@ -6753,7 +6733,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// 
 ///
 /// `GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount`
@@ -7536,7 +7515,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
 /// details are not editable by design.`</p>`
@@ -17012,7 +16990,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`List source transactions for a given source.`</p>`
 ///
 /// `GET /v1/sources/{source}/source_transactions`
@@ -17086,7 +17063,6 @@ return execute(
   onError: DeleteAccountsAccountError.fromResponse,
 );
  } 
-///
 /// `<p>`Verify a given source.`</p>`
 ///
 /// `POST /v1/sources/{source}/verify`

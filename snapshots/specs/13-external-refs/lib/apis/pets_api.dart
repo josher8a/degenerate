@@ -9,7 +9,6 @@ final class PetsApi with ApiExecutor {const PetsApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /pets`
 Future<ApiResult<List<Pet>, CreatePetError>> listPets({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -37,7 +36,6 @@ return execute(
   onError: CreatePetError.fromResponse,
 );
  } 
-///
 /// `POST /pets`
 Future<ApiResult<void, CreatePetError>> createPet({required Pet body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -56,7 +54,6 @@ return execute(
   onError: CreatePetError.fromResponse,
 );
  } 
-///
 /// `GET /pets/{petId}`
 Future<ApiResult<Pet, CreatePetError>> getPet({required String petId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 

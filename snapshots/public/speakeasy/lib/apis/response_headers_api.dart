@@ -9,7 +9,6 @@ final class ResponseHeadersApi with ApiExecutor {const ResponseHeadersApi(this.a
 
 @override final ApiConfig apiConfig;
 
-///
 /// `POST /response-headers`
 Future<ApiResult<void, Never>> responseBodyEmptyWithHeaders({required String xStringHeader, required double xNumberHeader, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -32,7 +31,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /response-headers/{statusCode}`
 Future<ApiResult<AuthToken, ResponseHeadersError>> responseHeaders({required int statusCode, required bool includeRequiredHeader, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -57,7 +55,6 @@ return execute(
   onError: ResponseHeadersError.fromResponse,
 );
  } 
-///
 /// `GET /error-response-headers/{statusCode}`
 Future<ApiResult<AuthToken, ErrorResponseHeadersError>> errorResponseHeaders({required int statusCode, required bool includeHeader, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];

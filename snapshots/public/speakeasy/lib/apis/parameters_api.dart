@@ -9,7 +9,6 @@ final class ParametersApi with ApiExecutor {const ParametersApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /anything/mixedParams/path/{pathParam}`
 Future<ApiResult<MixedParametersPrimitivesResponse, Never>> mixedParametersPrimitives({required String pathParam, required String queryStringParam, required String headerParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -34,7 +33,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/allowEmptyValue`
 Future<ApiResult<AllowEmptyValueQueryParamsResponse, Never>> allowEmptyValueQueryParams({String? strParam, List<String>? arrParamOmitEmpty, String? nullableStrParam, int? numParam, List<String>? arrParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -76,7 +74,6 @@ return execute(
   },
 );
  } 
-///
 /// It checks for https://learn.microsoft.com/en-sg/dotnet/csharp/language-reference/compiler-messages/cs1737 within c# sdk. In earlier implementation of generator - requiredPathParam would appear before requiredQueryParam hence triggering cs1737.
 ///
 /// `POST /anything/flatParametersOrdering/{requiredPathParam}`
@@ -111,7 +108,6 @@ return execute(
   },
 );
  } 
-///
 /// It checks for https://learn.microsoft.com/en-sg/dotnet/csharp/language-reference/compiler-messages/cs1737 within c# sdk. In earlier implementation of generator - requiredPathParam would appear before requiredQueryParam hence triggering cs1737.
 ///
 /// `POST /anything/flatParametersOrdering/usingOptionalRequestBody/{requiredPathParam}`
@@ -146,7 +142,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/params/{duplicateParamRequest}`
 Future<ApiResult<DuplicateParamResponse, Never>> duplicateParam({required String duplicateParamRequest, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -164,7 +159,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/params/{param1}/{param2}/{param1}`
 Future<ApiResult<DuplicatePathParamResponse, Never>> duplicatePathParam({required String param1, required String param2, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -182,7 +176,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/mixedParams/path/{path_param}/camelcase`
 Future<ApiResult<MixedParametersCamelCaseResponse, Never>> mixedParametersCamelCase({required String pathParam, required String queryStringParam, required String headerParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -207,7 +200,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/pathParams/str/{strParam}/bool/{boolParam}/int/{intParam}/num/{numParam}`
 Future<ApiResult<SimplePathParameterPrimitivesResponse, Never>> simplePathParameterPrimitives({required String strParam, required bool boolParam, required int intParam, required double numParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -225,7 +217,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/pathParams/obj/{objParam}/objExploded/{objParamExploded}`
 Future<ApiResult<SimplePathParameterObjectsResponse, Never>> simplePathParameterObjects({required SimpleObject objParam, required SimpleObject objParamExploded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -243,7 +234,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/pathParams/arr/{arrParam}`
 Future<ApiResult<SimplePathParameterArraysResponse, Never>> simplePathParameterArrays({required List<String> arrParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -261,7 +251,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/pathParams/map/{mapParam}/mapExploded/{mapParamExploded}`
 Future<ApiResult<SimplePathParameterMapsResponse, Never>> simplePathParameterMaps({required Map<String,String> mapParam, required Map<String,int> mapParamExploded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -279,7 +268,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/pathParams/json/{jsonObj}`
 Future<ApiResult<PathParameterJsonResponse, Never>> pathParameterJson({required SimpleObject jsonObj, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -297,7 +285,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/openEnum/{param-p}/suffix`
 Future<ApiResult<ParameterOpenEnumResponse, Never>> parameterOpenEnum({required OpenEnum paramP, required OpenEnum paramQ, required OpenEnum paramH, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -322,7 +309,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/duplicatePathParameterAtOperationLevel/{param}`
 Future<ApiResult<DuplicatePathParameterAtOperationLevelDoesNotErrorResponse, Never>> duplicatePathParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -340,7 +326,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/duplicatePathParameter/atPathLevel/{param}`
 Future<ApiResult<String, Never>> duplicatePathParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -358,7 +343,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/duplicateQueryParamAtOperationLevel/`
 Future<ApiResult<String, Never>> duplicateQueryParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -382,7 +366,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/duplicateQueryParam/atPathLevel/`
 Future<ApiResult<String, Never>> duplicateQueryParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -406,7 +389,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/duplicateHeaderParamAtOperationLevel/`
 Future<ApiResult<String, Never>> duplicateHeaderParameterAtOperationLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['param'] = param.toString();
@@ -425,7 +407,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/duplicateHeaderParam/atPathLevel/`
 Future<ApiResult<String, Never>> duplicateHeaderParameterAtPathLevelDoesNotError({required int param, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['param'] = param.toString();
@@ -444,7 +425,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/primitive`
 Future<ApiResult<FormQueryParamsPrimitiveResponse, Never>> formQueryParamsPrimitive({required String strParam, required bool boolParam, required int intParam, required double numParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -471,7 +451,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/union`
 Future<ApiResult<FormQueryParamsUnionResponse, Never>> formQueryParamsUnion({required String strParam, FormQueryParamsUnionUnionParam? unionParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -498,7 +477,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/obj`
 Future<ApiResult<FormQueryParamsObjectResponse, Never>> formQueryParamsObject({required SimpleObject objParamExploded, SimpleObject? objParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -525,7 +503,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/camelObj`
 Future<ApiResult<FormQueryParamsCamelObjectResponse, Never>> formQueryParamsCamelObject({required FormQueryParamsCamelObjectObjParamExploded objParamExploded, FormQueryParamsCamelObjectObjParam? objParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -553,7 +530,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/refParamObject`
 Future<ApiResult<FormQueryParamsRefParamObjectResponse, Never>> formQueryParamsRefParamObject({FormQueryParamsRefParamObjectRefObjParamExploded? refObjParamExploded, FormQueryParamsRefParamObjectRefObjParam? refObjParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -585,7 +561,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/array`
 Future<ApiResult<FormQueryParamsArrayResponse, Never>> formQueryParamsArray({List<String>? arrParam, List<int>? arrParamExploded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -616,7 +591,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/pipe/array`
 Future<ApiResult<PipeDelimitedQueryParamsArrayResponse, Never>> pipeDelimitedQueryParamsArray({List<String>? arrParam, List<int>? arrParamExploded, SimpleObject? objParam, Map<String,String>? mapParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -656,7 +630,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/form/map`
 Future<ApiResult<FormQueryParamsMapResponse, Never>> formQueryParamsMap({Map<String,String>? mapParam, Map<String,int>? mapParamExploded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -692,7 +665,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/deepObject/obj`
 Future<ApiResult<DeepObjectQueryParamsObjectResponse, Never>> deepObjectQueryParamsObject({required SimpleObject objParam, DeepObjectQueryParamsObjectObjArrParam? objArrParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -719,7 +691,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/deepObject/deepObj`
 Future<ApiResult<DeepObjectQueryParamsDeepObjectResponse, Never>> deepObjectQueryParamsDeepObject({required DeepObjectQueryParams deepObj, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -743,7 +714,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/deepObject/map`
 Future<ApiResult<DeepObjectQueryParamsMapResponse, Never>> deepObjectQueryParamsMap({required Map<String,String> mapParam, Map<String,List<String>>? mapArrParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -774,7 +744,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/json/obj`
 Future<ApiResult<JsonQueryParamsObjectResponse, Never>> jsonQueryParamsObject({required SimpleObject simpleObjParam, required DeepObject deepObjParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -799,7 +768,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/json/objsmaller`
 Future<ApiResult<JsonQueryParamsObjectSmallerResponse, Never>> jsonQueryParamsObjectSmaller({required SimpleObject simpleObjParam, required DeepObjectSmaller deepObjParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -824,7 +792,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/const`
 Future<ApiResult<ConstQueryParamsResponse, Never>> constQueryParams({required String constParam, String? configurableParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -851,7 +818,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/default`
 Future<ApiResult<DefaultQueryParamsResponse, Never>> defaultQueryParams({String? defaultParam, String? configurableParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -880,7 +846,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/queryParams/mixed`
 Future<ApiResult<MixedQueryParamsResponse, Never>> mixedQueryParams({required SimpleObject jsonParam, required SimpleObject formParam, required SimpleObject deepObjectParam, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -906,7 +871,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/headers/primitive`
 Future<ApiResult<HeaderParamsPrimitiveResponse, Never>> headerParamsPrimitive({required String xHeaderString, required bool xHeaderBoolean, required int xHeaderInteger, required double xHeaderNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-String'] = xHeaderString;
@@ -928,7 +892,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/headers/obj`
 Future<ApiResult<HeaderParamsObjectResponse, Never>> headerParamsObject({required SimpleObject xHeaderObj, required SimpleObject xHeaderObjExplode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-Obj'] = xHeaderObj.toString();
@@ -948,7 +911,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/headers/map`
 Future<ApiResult<HeaderParamsMapResponse, Never>> headerParamsMap({required Map<String,String> xHeaderMap, required Map<String,String> xHeaderMapExplode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-Map'] = xHeaderMap.toString();
@@ -968,7 +930,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/headers/array`
 Future<ApiResult<HeaderParamsArrayResponse, Never>> headerParamsArray({required List<String> xHeaderArray, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['X-Header-Array'] = xHeaderArray.toString();
@@ -987,7 +948,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /anything/headers/nil`
 Future<ApiResult<HeaderParamsNilResponse, Never>> headerParamsNil({required String? nullableHeader, String? optionalHeader, String? optionalNullableHeader, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (optionalHeader != null) {
@@ -1014,7 +974,6 @@ return execute(
   },
 );
  } 
-///
 /// `GET /pathencoding/{param1}/{param2}`
 Future<ApiResult<void, Never>> pathEncoding({required String param1, required String param2, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1030,7 +989,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /queryencoding`
 Future<ApiResult<void, Never>> queryEncoding({required String param1, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
@@ -1052,7 +1010,6 @@ return execute(
   onSuccess: (_) {},
 );
  } 
-///
 /// `GET /anything/queryParams/builtinShadow`
 Future<ApiResult<BuiltinShadowQueryParamsResponse, Never>> builtinShadowQueryParams({String? hash, String? list, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];

@@ -9,7 +9,6 @@ final class HealthApi with ApiExecutor {const HealthApi(this.apiConfig);
 
 @override final ApiConfig apiConfig;
 
-///
 /// `GET /ping`
 Future<ApiResult<void, Never>> check({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
