@@ -356,7 +356,9 @@ final class RoundtripEmitter {
 
   /// A literal for each primitive kind, chosen so `fromJson`→`toJson` is the
   /// identity (canonical ISO date, round-trippable base64, etc.).
-  static const _formatSamples = {
+  /// Sample literals for each typed format. Keep in sync with
+  /// `IrMapper.formatTypeNames`.
+  static const formatSamples = {
     'uuid': "'00000000-0000-0000-0000-000000000000'",
     'email': "'user@example.com'",
     'date': "'2024-01-02'",
@@ -366,7 +368,7 @@ final class RoundtripEmitter {
   };
 
   String? _formatLiteral(String? format) =>
-      format != null ? _formatSamples[format] : null;
+      format != null ? formatSamples[format] : null;
 
   String _primitiveLiteral(PrimitiveKind kind) => primitiveSampleLiteral(kind);
 

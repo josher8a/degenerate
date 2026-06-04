@@ -12,6 +12,7 @@ import 'package:degenerate/src/emitter/file_emitter.dart';
 import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
@@ -677,6 +678,102 @@ void main() {
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('primitive fromJson uses switch expression', () {
+      const union = IrUntaggedUnion('StringOrInt', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('return switch (json)'));
+      expect(source, contains('final String v => StringOrIntString(v)'));
+      expect(source, contains('final int v => StringOrIntInt(v)'));
+      expect(source, contains('_ => StringOrInt\$Unknown(json)'));
+    });
+
+    test('object variant uses canParse dispatch', () {
+      const union = IrUntaggedUnion('CatOrDog', [
+        IrObject('Cat', [
+          IrField('meow', 'meow', IrPrimitive(PrimitiveKind.bool),
+              isRequired: true),
+        ], requiredFields: ['meow']),
+        IrObject('Dog', [
+          IrField('bark', 'bark', IrPrimitive(PrimitiveKind.bool),
+              isRequired: true),
+        ], requiredFields: ['bark']),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('Cat.canParse(json)'));
+      expect(source, contains('return CatOrDogCat(Cat.fromJson(json))'));
+      expect(source, contains('Dog.canParse(json)'));
+      expect(source, contains('return CatOrDogDog(Dog.fromJson(json))'));
+      expect(source, contains('return CatOrDog\$Unknown(json)'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('\$Unknown variant has dynamic value and doc comment', () {
+      const union = IrUntaggedUnion('Val', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('final class Val\$Unknown extends Val'));
+      expect(source, contains('/// An unknown variant'));
+      expect(source, contains("_value ?? ''"));
+    });
+
+    test('duplicate variant type names are deduplicated', () {
+      const union = IrUntaggedUnion('DupUnion', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      // Only one String variant class — not duplicated despite two String variants.
+      expect(
+        'class DupUnionString'.allMatches(source).length,
+        equals(1),
+      );
+    });
+
+    test('auto-generates doc listing variant names', () {
+      const union = IrUntaggedUnion('AB', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.bool),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('/// A value that is one of: `String`, `bool`.'));
+    });
+
+    test('variant has value getter, equals, hashCode, toString', () {
+      const union = IrUntaggedUnion('Val', [
+        IrPrimitive(PrimitiveKind.string),
+      ]);
+
+      final specs = const UntaggedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('String get value'));
+      expect(source, contains('other is ValString && _value == other._value'));
+      expect(source, contains('_value.hashCode'));
+      expect(source, contains(r"'Val.string($_value)'"));
       expect(() => _formatOrFail(source), returnsNormally);
     });
   });
@@ -4322,5 +4419,14 @@ void main() {
       final concrete = result.values.firstWhere((info) => !info.isAlias);
       expect(alias.aliasTarget, equals(concrete.className));
     });
+  });
+
+  // ─── Cross-module invariants ─────────────────────────────────
+
+  test('RoundtripEmitter.formatSamples keys match IrMapper.formatTypeNames', () {
+    expect(
+      RoundtripEmitter.formatSamples.keys.toSet(),
+      equals(IrMapper.formatTypeNames.keys.toSet()),
+    );
   });
 }

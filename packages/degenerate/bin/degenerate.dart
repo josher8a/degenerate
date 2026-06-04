@@ -236,9 +236,13 @@ Future<void> main(List<String> arguments) async {
   } on FileSystemException catch (e) {
     stderr.writeln('Error: ${e.message} (${e.path})');
     exit(1);
+  } on UnsupportedError catch (e) {
+    stderr.writeln('Error: ${e.message}');
+    exit(1);
   // ignore: avoid_catches_without_on_clauses -- final CLI fallback
-  } catch (e) {
+  } catch (e, st) {
     stderr.writeln('Error: $e');
+    stderr.writeln(st);
     exit(1);
   }
 }

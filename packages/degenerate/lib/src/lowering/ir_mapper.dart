@@ -540,7 +540,9 @@ final class IrMapper {
         _ => PrimitiveKind.string,
       };
 
-  static const _formatTypeNames = {
+  /// Formats that produce extension types when `--emit-typed-formats` is on.
+  /// Keep in sync with `RoundtripEmitter._formatSamples`.
+  static const formatTypeNames = {
     'uuid': 'Uuid',
     'email': 'Email',
     'date': 'Date',
@@ -552,7 +554,7 @@ final class IrMapper {
   IrType _wrapFormatType(IrPrimitive prim) {
     if (!emitTypedFormats) return prim;
     if (prim.kind != PrimitiveKind.string) return prim;
-    final typeName = _formatTypeNames[prim.format];
+    final typeName = formatTypeNames[prim.format];
     if (typeName == null) return prim;
     if (!_typeRegistry.containsKey(typeName)) {
       const inner = IrPrimitive(PrimitiveKind.string);
