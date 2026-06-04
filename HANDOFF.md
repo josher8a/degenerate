@@ -1839,6 +1839,26 @@ Remaining `isOneOfEligible`/`isOneOfTypedef` calls: ~16 (down from 36). The rema
 
 Zero behavior change — existing `import sealed_union_emitter.dart` still works via the barrel. Each emitter class now has its own file with only its own imports, independently navigable and testable.
 
+---
+
+### Candidate improvements — resolution (batch 14)
+
+**Batch 14: `IrType.isClassType` getter + collapse type-predicate switches.**
+
+| # | Target | Status | Notes |
+|---|--------|--------|-------|
+| 7 | Add properties on `IrType` base | **Done** | `isClassType` getter replaces `typeNeedsImmutable` and simplifies `_typeNeedsToJson`, `_isObjectLikeType`, `_supportsNonJsonEncode`. |
+
+**Changes (−29 lines net):**
+
+| File | Delta | What |
+|------|------:|------|
+| `ir/ir_types.dart` | +11 | `isClassType` getter on sealed base |
+| `emitter/import_analyzer.dart` | −10 | Deleted `typeNeedsImmutable` function |
+| `emitter/api_emitter.dart` | −18 | `_typeNeedsToJson` → 1-liner via `isClassType`; `_supportsNonJsonEncode` → 2-liner (was 15 lines with exhaustive inner switch) |
+| `emitter/emit_utils.dart` | −4 | `_isObjectLikeType` → 1-liner via `isClassType` |
+| `emitter/file_emitter.dart` | −2 | Direct `type.isClassType` instead of `typeNeedsImmutable(type)` |
+
 **Generator source map (updated entries):**
 
 | File | Purpose |
