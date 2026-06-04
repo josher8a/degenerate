@@ -12,10 +12,14 @@ factory GetCategoryReadError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetCategoryReadError$400 extends GetCategoryReadError {const GetCategoryReadError$400(this.error);
 
 final GetCategoryReadResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

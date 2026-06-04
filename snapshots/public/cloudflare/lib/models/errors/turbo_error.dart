@@ -12,10 +12,14 @@ factory TurboError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class TurboError$400 extends TurboError {const TurboError$400(this.error);
 
 final TurboResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -13,10 +13,14 @@ factory PatchIndicatorUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PatchIndicatorUpdateError$400 extends PatchIndicatorUpdateError {const PatchIndicatorUpdateError$400(this.error);
 
 final PatchIndicatorUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final PatchIndicatorUpdateResponse400 error;
 final class PatchIndicatorUpdateError$404 extends PatchIndicatorUpdateError {const PatchIndicatorUpdateError$404(this.error);
 
 final PatchIndicatorUpdateResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

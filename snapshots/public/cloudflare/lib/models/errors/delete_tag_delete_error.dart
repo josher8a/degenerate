@@ -13,10 +13,14 @@ factory DeleteTagDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteTagDeleteError$400 extends DeleteTagDeleteError {const DeleteTagDeleteError$400(this.error);
 
 final DeleteTagDeleteResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final DeleteTagDeleteResponse400 error;
 final class DeleteTagDeleteError$404 extends DeleteTagDeleteError {const DeleteTagDeleteError$404(this.error);
 
 final DeleteTagDeleteResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

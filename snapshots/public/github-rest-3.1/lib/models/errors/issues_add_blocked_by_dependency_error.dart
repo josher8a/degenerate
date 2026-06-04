@@ -15,10 +15,14 @@ factory IssuesAddBlockedByDependencyError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesAddBlockedByDependencyError$403 extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class IssuesAddBlockedByDependencyError$404 extends IssuesAddBlockedByDepe
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class IssuesAddBlockedByDependencyError$410 extends IssuesAddBlockedByDepe
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 410;
 
  }
 final class IssuesAddBlockedByDependencyError$422 extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

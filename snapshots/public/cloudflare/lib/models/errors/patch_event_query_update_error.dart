@@ -13,10 +13,14 @@ factory PatchEventQueryUpdateError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PatchEventQueryUpdateError$400 extends PatchEventQueryUpdateError {const PatchEventQueryUpdateError$400(this.error);
 
 final PatchEventQueryUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final PatchEventQueryUpdateResponse400 error;
 final class PatchEventQueryUpdateError$404 extends PatchEventQueryUpdateError {const PatchEventQueryUpdateError$404(this.error);
 
 final PatchEventQueryUpdateResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -11,12 +11,16 @@ factory DeleteAccountsBrandProtectionBrandsError.fromResponse(ApiResponse respon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteAccountsBrandProtectionBrandsError$ErrorModel extends DeleteAccountsBrandProtectionBrandsError {const DeleteAccountsBrandProtectionBrandsError$ErrorModel(this.error, this.statusCode, );
 
 final ErrorModel error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }
 typedef DeleteAccountsBrandProtectionBrandsPatternsError = DeleteAccountsBrandProtectionBrandsError;

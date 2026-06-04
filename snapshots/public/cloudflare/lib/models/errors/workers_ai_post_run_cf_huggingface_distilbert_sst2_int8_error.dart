@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error.fromResponse(ApiRes
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error$400 extends WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error$400(this.error);
 
 final WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

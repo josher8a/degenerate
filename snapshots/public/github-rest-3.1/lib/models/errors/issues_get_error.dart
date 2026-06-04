@@ -13,10 +13,14 @@ factory IssuesGetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesGetError$404 extends IssuesGetError {const IssuesGetError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class IssuesGetError$410 extends IssuesGetError {const IssuesGetError$410(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 410;
 

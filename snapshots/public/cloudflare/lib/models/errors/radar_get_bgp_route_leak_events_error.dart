@@ -12,10 +12,14 @@ factory RadarGetBgpRouteLeakEventsError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpRouteLeakEventsError$400 extends RadarGetBgpRouteLeakEventsError {const RadarGetBgpRouteLeakEventsError$400(this.error);
 
 final RadarGetBgpRouteLeakEventsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -12,10 +12,14 @@ factory RadarGetRobotsTxtTopUserAgentsByDirectiveError.fromResponse(ApiResponse 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetRobotsTxtTopUserAgentsByDirectiveError$404 extends RadarGetRobotsTxtTopUserAgentsByDirectiveError {const RadarGetRobotsTxtTopUserAgentsByDirectiveError$404(this.error);
 
 final RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

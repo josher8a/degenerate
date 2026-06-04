@@ -13,10 +13,14 @@ factory AiSearchInstanceChangeJobStatusError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchInstanceChangeJobStatusError$400 extends AiSearchInstanceChangeJobStatusError {const AiSearchInstanceChangeJobStatusError$400(this.error);
 
 final AiSearchInstanceChangeJobStatusResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AiSearchInstanceChangeJobStatusResponse400 error;
 final class AiSearchInstanceChangeJobStatusError$500 extends AiSearchInstanceChangeJobStatusError {const AiSearchInstanceChangeJobStatusError$500(this.error);
 
 final AiSearchInstanceChangeJobStatusResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

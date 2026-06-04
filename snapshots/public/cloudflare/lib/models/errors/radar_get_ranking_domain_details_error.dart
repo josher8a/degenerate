@@ -12,10 +12,14 @@ factory RadarGetRankingDomainDetailsError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetRankingDomainDetailsError$400 extends RadarGetRankingDomainDetailsError {const RadarGetRankingDomainDetailsError$400(this.error);
 
 final RadarGetRankingDomainDetailsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

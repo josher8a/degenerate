@@ -14,10 +14,14 @@ factory SearchCodeError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SearchCodeError$403 extends SearchCodeError {const SearchCodeError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class SearchCodeError$422 extends SearchCodeError {const SearchCodeError$4
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class SearchCodeError$503 extends SearchCodeError {const SearchCodeError$503(this.error);
 
 final SearchCodeResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

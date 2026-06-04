@@ -33,12 +33,16 @@ sealed class GetLivekitTokenError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class GetLivekitTokenError$403 extends GetLivekitTokenError {
   const GetLivekitTokenError$403(this.error);
 
   final ErrorResponseSchema error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 403;
@@ -50,6 +54,9 @@ final class GetLivekitTokenError$404 extends GetLivekitTokenError {
   final ErrorResponseSchema error;
 
   @override
+  Object get typedError => error;
+
+  @override
   int get statusCode => 404;
 }
 
@@ -57,6 +64,9 @@ final class GetLivekitTokenError$500 extends GetLivekitTokenError {
   const GetLivekitTokenError$500(this.error);
 
   final ErrorResponseSchema error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 500;

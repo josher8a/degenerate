@@ -12,10 +12,14 @@ factory RadarGetBgpTopAsnsByPrefixesError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpTopAsnsByPrefixesError$404 extends RadarGetBgpTopAsnsByPrefixesError {const RadarGetBgpTopAsnsByPrefixesError$404(this.error);
 
 final RadarGetBgpTopAsnsByPrefixesResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

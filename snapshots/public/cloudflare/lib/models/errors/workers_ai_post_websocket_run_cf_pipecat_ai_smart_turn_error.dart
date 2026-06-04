@@ -12,10 +12,14 @@ factory WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError.fromResponse(ApiRespo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError$400 extends WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError {const WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError$400(this.error);
 
 final WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

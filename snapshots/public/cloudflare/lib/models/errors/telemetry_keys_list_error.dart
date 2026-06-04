@@ -13,10 +13,14 @@ factory TelemetryKeysListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class TelemetryKeysListError$401 extends TelemetryKeysListError {const TelemetryKeysListError$401(this.error);
 
 final TelemetryKeysListResponse401 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -24,6 +28,8 @@ final TelemetryKeysListResponse401 error;
 final class TelemetryKeysListError$500 extends TelemetryKeysListError {const TelemetryKeysListError$500(this.error);
 
 final TelemetryKeysListResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

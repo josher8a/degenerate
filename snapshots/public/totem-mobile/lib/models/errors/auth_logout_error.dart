@@ -23,12 +23,16 @@ sealed class AuthLogoutError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class AuthLogoutError$400 extends AuthLogoutError {
   const AuthLogoutError$400(this.error);
 
   final ErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 400;

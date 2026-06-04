@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfMetaLlama38bInstructError.fromResponse(ApiResponse res
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfMetaLlama38bInstructError$400 extends WorkersAiPostRunCfMetaLlama38bInstructError {const WorkersAiPostRunCfMetaLlama38bInstructError$400(this.error);
 
 final WorkersAiPostRunCfMetaLlama38bInstructResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -13,10 +13,14 @@ factory WorStatusTerminateWorkflowInstancesError.fromResponse(ApiResponse respon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorStatusTerminateWorkflowInstancesError$400 extends WorStatusTerminateWorkflowInstancesError {const WorStatusTerminateWorkflowInstancesError$400(this.error);
 
 final WorStatusTerminateWorkflowInstancesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final WorStatusTerminateWorkflowInstancesResponse400 error;
 final class WorStatusTerminateWorkflowInstancesError$404 extends WorStatusTerminateWorkflowInstancesError {const WorStatusTerminateWorkflowInstancesError$404(this.error);
 
 final WorStatusTerminateWorkflowInstancesResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

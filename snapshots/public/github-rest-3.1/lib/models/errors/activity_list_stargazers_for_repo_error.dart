@@ -12,10 +12,14 @@ factory ActivityListStargazersForRepoError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActivityListStargazersForRepoError$422 extends ActivityListStargazersForRepoError {const ActivityListStargazersForRepoError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

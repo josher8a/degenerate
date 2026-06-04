@@ -16,10 +16,14 @@ factory DependabotUpdateAlertError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DependabotUpdateAlertError$400 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class DependabotUpdateAlertError$403 extends DependabotUpdateAlertError {c
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class DependabotUpdateAlertError$404 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class DependabotUpdateAlertError$409 extends DependabotUpdateAlertError {c
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class DependabotUpdateAlertError$422 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

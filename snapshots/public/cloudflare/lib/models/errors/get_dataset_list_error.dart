@@ -12,10 +12,14 @@ factory GetDatasetListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetDatasetListError$400 extends GetDatasetListError {const GetDatasetListError$400(this.error);
 
 final GetDatasetListResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

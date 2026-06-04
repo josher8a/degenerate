@@ -13,10 +13,14 @@ factory AiSearchFetchInstancesError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchFetchInstancesError$400 extends AiSearchFetchInstancesError {const AiSearchFetchInstancesError$400(this.error);
 
 final AiSearchFetchInstancesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AiSearchFetchInstancesResponse400 error;
 final class AiSearchFetchInstancesError$404 extends AiSearchFetchInstancesError {const AiSearchFetchInstancesError$404(this.error);
 
 final AiSearchFetchInstancesResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

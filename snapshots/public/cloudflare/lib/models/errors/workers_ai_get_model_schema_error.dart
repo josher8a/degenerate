@@ -12,10 +12,14 @@ factory WorkersAiGetModelSchemaError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiGetModelSchemaError$400 extends WorkersAiGetModelSchemaError {const WorkersAiGetModelSchemaError$400(this.error);
 
 final WorkersAiGetModelSchemaResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

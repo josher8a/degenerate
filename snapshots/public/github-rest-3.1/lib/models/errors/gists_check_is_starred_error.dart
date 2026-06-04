@@ -13,10 +13,14 @@ factory GistsCheckIsStarredError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GistsCheckIsStarredError$403 extends GistsCheckIsStarredError {const GistsCheckIsStarredError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class GistsCheckIsStarredError$404 extends GistsCheckIsStarredError {const GistsCheckIsStarredError$404(this.error);
 
 final GistsCheckIsStarredResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfQwenQwen25Coder32bInstructError.fromResponse(ApiRespon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfQwenQwen25Coder32bInstructError$400 extends WorkersAiPostRunCfQwenQwen25Coder32bInstructError {const WorkersAiPostRunCfQwenQwen25Coder32bInstructError$400(this.error);
 
 final WorkersAiPostRunCfQwenQwen25Coder32bInstructResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

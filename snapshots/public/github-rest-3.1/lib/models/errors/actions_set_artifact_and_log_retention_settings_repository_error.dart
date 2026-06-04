@@ -13,10 +13,14 @@ factory ActionsSetArtifactAndLogRetentionSettingsRepositoryError.fromResponse(Ap
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$404 extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422 extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

@@ -12,10 +12,14 @@ factory GetActiveSessionError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetActiveSessionError$404 extends GetActiveSessionError {const GetActiveSessionError$404(this.error);
 
 final RealtimekitGenericErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

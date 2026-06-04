@@ -14,10 +14,14 @@ factory ReposDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposDeleteError$403 extends ReposDeleteError {const ReposDeleteError$403(this.error);
 
 final ReposDeleteResponse403 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class ReposDeleteError$404 extends ReposDeleteError {const ReposDeleteErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class ReposDeleteError$409 extends ReposDeleteError {const ReposDeleteError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

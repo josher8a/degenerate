@@ -14,10 +14,14 @@ factory GitCreateCommitError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GitCreateCommitError$404 extends GitCreateCommitError {const GitCreateCommitError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class GitCreateCommitError$409 extends GitCreateCommitError {const GitCrea
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class GitCreateCommitError$422 extends GitCreateCommitError {const GitCreateCommitError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

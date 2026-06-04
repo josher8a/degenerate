@@ -12,10 +12,14 @@ factory RadarGetHttpTopAsesByTlsVersionError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetHttpTopAsesByTlsVersionError$404 extends RadarGetHttpTopAsesByTlsVersionError {const RadarGetHttpTopAsesByTlsVersionError$404(this.error);
 
 final RadarGetHttpTopAsesByTlsVersionResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -14,10 +14,14 @@ factory CampaignsGetCampaignSummaryError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CampaignsGetCampaignSummaryError$404 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class CampaignsGetCampaignSummaryError$422 extends CampaignsGetCampaignSum
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CampaignsGetCampaignSummaryError$503 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$503(this.error);
 
 final CampaignsGetCampaignSummaryResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

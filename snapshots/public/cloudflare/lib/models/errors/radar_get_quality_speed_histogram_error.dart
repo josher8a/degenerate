@@ -12,10 +12,14 @@ factory RadarGetQualitySpeedHistogramError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetQualitySpeedHistogramError$400 extends RadarGetQualitySpeedHistogramError {const RadarGetQualitySpeedHistogramError$400(this.error);
 
 final RadarGetQualitySpeedHistogramResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

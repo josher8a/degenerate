@@ -14,10 +14,14 @@ factory ReposCompareCommitsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposCompareCommitsError$404 extends ReposCompareCommitsError {const ReposCompareCommitsError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class ReposCompareCommitsError$500 extends ReposCompareCommitsError {const
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class ReposCompareCommitsError$503 extends ReposCompareCommitsError {const ReposCompareCommitsError$503(this.error);
 
 final ReposCompareCommitsResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

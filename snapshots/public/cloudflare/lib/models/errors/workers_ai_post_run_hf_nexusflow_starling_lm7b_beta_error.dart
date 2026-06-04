@@ -12,10 +12,14 @@ factory WorkersAiPostRunHfNexusflowStarlingLm7bBetaError.fromResponse(ApiRespons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunHfNexusflowStarlingLm7bBetaError$400 extends WorkersAiPostRunHfNexusflowStarlingLm7bBetaError {const WorkersAiPostRunHfNexusflowStarlingLm7bBetaError$400(this.error);
 
 final WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

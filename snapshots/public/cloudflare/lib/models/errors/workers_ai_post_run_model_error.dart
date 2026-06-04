@@ -12,10 +12,14 @@ factory WorkersAiPostRunModelError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunModelError$400 extends WorkersAiPostRunModelError {const WorkersAiPostRunModelError$400(this.error);
 
 final WorkersAiPostRunModelResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

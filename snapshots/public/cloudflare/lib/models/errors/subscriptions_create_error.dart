@@ -14,10 +14,14 @@ factory SubscriptionsCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SubscriptionsCreateError$400 extends SubscriptionsCreateError {const SubscriptionsCreateError$400(this.error);
 
 final Failure error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class SubscriptionsCreateError$404 extends SubscriptionsCreateError {const
 
 final Failure error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class SubscriptionsCreateError$405 extends SubscriptionsCreateError {const SubscriptionsCreateError$405(this.error);
 
 final Failure error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 405;
 

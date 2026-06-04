@@ -12,10 +12,14 @@ factory DeleteGroupMemberDeleteError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteGroupMemberDeleteError$400 extends DeleteGroupMemberDeleteError {const DeleteGroupMemberDeleteError$400(this.error);
 
 final DeleteGroupMemberDeleteResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

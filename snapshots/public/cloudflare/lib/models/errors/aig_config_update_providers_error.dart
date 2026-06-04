@@ -13,10 +13,14 @@ factory AigConfigUpdateProvidersError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigUpdateProvidersError$400 extends AigConfigUpdateProvidersError {const AigConfigUpdateProvidersError$400(this.error);
 
 final AigConfigUpdateProvidersResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AigConfigUpdateProvidersResponse400 error;
 final class AigConfigUpdateProvidersError$404 extends AigConfigUpdateProvidersError {const AigConfigUpdateProvidersError$404(this.error);
 
 final AigConfigUpdateProvidersResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

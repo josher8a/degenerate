@@ -12,10 +12,14 @@ factory SyncServerError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SyncServerError$404 extends SyncServerError {const SyncServerError$404(this.error);
 
 final SyncServerResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

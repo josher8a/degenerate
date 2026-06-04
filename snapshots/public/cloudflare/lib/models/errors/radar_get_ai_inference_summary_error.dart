@@ -12,10 +12,14 @@ factory RadarGetAiInferenceSummaryError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetAiInferenceSummaryError$400 extends RadarGetAiInferenceSummaryError {const RadarGetAiInferenceSummaryError$400(this.error);
 
 final RadarGetAiInferenceSummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

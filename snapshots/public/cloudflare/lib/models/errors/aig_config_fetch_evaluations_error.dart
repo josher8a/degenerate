@@ -12,10 +12,14 @@ factory AigConfigFetchEvaluationsError.fromResponse(ApiResponse response) {     
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigFetchEvaluationsError$404 extends AigConfigFetchEvaluationsError {const AigConfigFetchEvaluationsError$404(this.error);
 
 final AigConfigFetchEvaluationsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

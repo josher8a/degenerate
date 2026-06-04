@@ -13,10 +13,14 @@ factory DeletePermissionDeleteError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeletePermissionDeleteError$400 extends DeletePermissionDeleteError {const DeletePermissionDeleteError$400(this.error);
 
 final DeletePermissionDeleteResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final DeletePermissionDeleteResponse400 error;
 final class DeletePermissionDeleteError$404 extends DeletePermissionDeleteError {const DeletePermissionDeleteError$404(this.error);
 
 final DeletePermissionDeleteResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

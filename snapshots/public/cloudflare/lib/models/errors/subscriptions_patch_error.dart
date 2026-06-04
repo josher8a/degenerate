@@ -13,10 +13,14 @@ factory SubscriptionsPatchError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SubscriptionsPatchError$400 extends SubscriptionsPatchError {const SubscriptionsPatchError$400(this.error);
 
 final Failure error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final Failure error;
 final class SubscriptionsPatchError$404 extends SubscriptionsPatchError {const SubscriptionsPatchError$404(this.error);
 
 final Failure error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfTinyllama11bChatError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfTinyllama11bChatError$400 extends WorkersAiPostRunCfTinyllama11bChatError {const WorkersAiPostRunCfTinyllama11bChatError$400(this.error);
 
 final $0Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

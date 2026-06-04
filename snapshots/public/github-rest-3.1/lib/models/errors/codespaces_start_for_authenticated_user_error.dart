@@ -18,10 +18,14 @@ factory CodespacesStartForAuthenticatedUserError.fromResponse(ApiResponse respon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesStartForAuthenticatedUserError$400 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -30,12 +34,16 @@ final class CodespacesStartForAuthenticatedUserError$401 extends CodespacesStart
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class CodespacesStartForAuthenticatedUserError$402 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$402(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 402;
 
@@ -44,12 +52,16 @@ final class CodespacesStartForAuthenticatedUserError$403 extends CodespacesStart
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class CodespacesStartForAuthenticatedUserError$404 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -58,12 +70,16 @@ final class CodespacesStartForAuthenticatedUserError$409 extends CodespacesStart
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class CodespacesStartForAuthenticatedUserError$500 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

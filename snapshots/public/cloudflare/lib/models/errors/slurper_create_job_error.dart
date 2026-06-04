@@ -12,10 +12,14 @@ factory SlurperCreateJobError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SlurperCreateJobError$409 extends SlurperCreateJobError {const SlurperCreateJobError$409(this.error);
 
 final Failure2 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

@@ -17,10 +17,14 @@ factory CopilotSetCopilotContentExclusionForOrganizationError.fromResponse(ApiRe
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$401 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -29,12 +33,16 @@ final class CopilotSetCopilotContentExclusionForOrganizationError$403 extends Co
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$404 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -43,6 +51,8 @@ final class CopilotSetCopilotContentExclusionForOrganizationError$413 extends Co
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 413;
 
  }
@@ -50,12 +60,16 @@ final class CopilotSetCopilotContentExclusionForOrganizationError$422 extends Co
 
 final ValidationErrorSimple error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$500 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

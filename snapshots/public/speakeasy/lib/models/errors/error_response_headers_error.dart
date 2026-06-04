@@ -12,10 +12,14 @@ factory ErrorResponseHeadersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ErrorResponseHeadersError$429 extends ErrorResponseHeadersError {const ErrorResponseHeadersError$429(this.error);
 
 final String error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 429;
 

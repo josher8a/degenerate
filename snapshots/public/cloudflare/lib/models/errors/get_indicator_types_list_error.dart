@@ -12,10 +12,14 @@ factory GetIndicatorTypesListError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetIndicatorTypesListError$400 extends GetIndicatorTypesListError {const GetIndicatorTypesListError$400(this.error);
 
 final GetIndicatorTypesListResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

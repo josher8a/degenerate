@@ -12,10 +12,14 @@ factory DeleteAccountsBrandProtectionQueriesError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteAccountsBrandProtectionQueriesError$422 extends DeleteAccountsBrandProtectionQueriesError {const DeleteAccountsBrandProtectionQueriesError$422(this.error);
 
 final ErrorModel error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

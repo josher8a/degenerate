@@ -12,10 +12,14 @@ factory PostCreateEventRelationshipError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostCreateEventRelationshipError$400 extends PostCreateEventRelationshipError {const PostCreateEventRelationshipError$400(this.error);
 
 final PostCreateEventRelationshipResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

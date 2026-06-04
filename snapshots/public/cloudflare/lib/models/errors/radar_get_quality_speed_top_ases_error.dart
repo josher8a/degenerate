@@ -12,10 +12,14 @@ factory RadarGetQualitySpeedTopAsesError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetQualitySpeedTopAsesError$404 extends RadarGetQualitySpeedTopAsesError {const RadarGetQualitySpeedTopAsesError$404(this.error);
 
 final RadarGetQualitySpeedTopAsesResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

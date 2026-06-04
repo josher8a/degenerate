@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfOpenaiGptOss120bError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfOpenaiGptOss120bError$400 extends WorkersAiPostRunCfOpenaiGptOss120bError {const WorkersAiPostRunCfOpenaiGptOss120bError$400(this.error);
 
 final WorkersAiPostRunCfOpenaiGptOss120bResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

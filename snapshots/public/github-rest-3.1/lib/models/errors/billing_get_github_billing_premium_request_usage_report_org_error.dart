@@ -16,10 +16,14 @@ factory BillingGetGithubBillingPremiumRequestUsageReportOrgError.fromResponse(Ap
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BillingGetGithubBillingPremiumRequestUsageReportOrgError$400 extends BillingGetGithubBillingPremiumRequestUsageReportOrgError {const BillingGetGithubBillingPremiumRequestUsageReportOrgError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class BillingGetGithubBillingPremiumRequestUsageReportOrgError$403 extends
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class BillingGetGithubBillingPremiumRequestUsageReportOrgError$404 extends BillingGetGithubBillingPremiumRequestUsageReportOrgError {const BillingGetGithubBillingPremiumRequestUsageReportOrgError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class BillingGetGithubBillingPremiumRequestUsageReportOrgError$500 extends
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class BillingGetGithubBillingPremiumRequestUsageReportOrgError$503 extends BillingGetGithubBillingPremiumRequestUsageReportOrgError {const BillingGetGithubBillingPremiumRequestUsageReportOrgError$503(this.error);
 
 final BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

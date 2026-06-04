@@ -14,10 +14,14 @@ factory CodeScanningListAlertInstancesError.fromResponse(ApiResponse response) {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningListAlertInstancesError$403 extends CodeScanningListAlertInstancesError {const CodeScanningListAlertInstancesError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class CodeScanningListAlertInstancesError$404 extends CodeScanningListAler
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningListAlertInstancesError$503 extends CodeScanningListAlertInstancesError {const CodeScanningListAlertInstancesError$503(this.error);
 
 final CodeScanningListAlertInstancesResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

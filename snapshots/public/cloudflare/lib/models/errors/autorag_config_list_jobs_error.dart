@@ -13,10 +13,14 @@ factory AutoragConfigListJobsError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AutoragConfigListJobsError$404 extends AutoragConfigListJobsError {const AutoragConfigListJobsError$404(this.error);
 
 final AutoragConfigListJobsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final AutoragConfigListJobsResponse404 error;
 final class AutoragConfigListJobsError$503 extends AutoragConfigListJobsError {const AutoragConfigListJobsError$503(this.error);
 
 final AutoragConfigListJobsResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

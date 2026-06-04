@@ -14,10 +14,14 @@ factory CodeSecurityAttachEnterpriseConfigurationError.fromResponse(ApiResponse 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeSecurityAttachEnterpriseConfigurationError$403 extends CodeSecurityAttachEnterpriseConfigurationError {const CodeSecurityAttachEnterpriseConfigurationError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class CodeSecurityAttachEnterpriseConfigurationError$404 extends CodeSecur
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeSecurityAttachEnterpriseConfigurationError$409 extends CodeSecurityAttachEnterpriseConfigurationError {const CodeSecurityAttachEnterpriseConfigurationError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

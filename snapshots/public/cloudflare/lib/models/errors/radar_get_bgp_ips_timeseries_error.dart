@@ -12,10 +12,14 @@ factory RadarGetBgpIpsTimeseriesError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpIpsTimeseriesError$400 extends RadarGetBgpIpsTimeseriesError {const RadarGetBgpIpsTimeseriesError$400(this.error);
 
 final RadarGetBgpIpsTimeseriesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

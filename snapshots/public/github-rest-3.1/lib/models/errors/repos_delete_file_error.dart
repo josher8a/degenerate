@@ -15,10 +15,14 @@ factory ReposDeleteFileError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposDeleteFileError$404 extends ReposDeleteFileError {const ReposDeleteFileError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -27,6 +31,8 @@ final class ReposDeleteFileError$409 extends ReposDeleteFileError {const ReposDe
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
@@ -34,12 +40,16 @@ final class ReposDeleteFileError$422 extends ReposDeleteFileError {const ReposDe
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class ReposDeleteFileError$503 extends ReposDeleteFileError {const ReposDeleteFileError$503(this.error);
 
 final ReposDeleteFileResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

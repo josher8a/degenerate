@@ -12,10 +12,14 @@ factory ReposListForksError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposListForksError$400 extends ReposListForksError {const ReposListForksError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

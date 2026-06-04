@@ -12,10 +12,14 @@ factory RadarGetQualityIndexSummaryError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetQualityIndexSummaryError$400 extends RadarGetQualityIndexSummaryError {const RadarGetQualityIndexSummaryError$400(this.error);
 
 final RadarGetQualityIndexSummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

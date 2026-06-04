@@ -12,10 +12,14 @@ factory DeleteServersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteServersError$404 extends DeleteServersError {const DeleteServersError$404(this.error);
 
 final DeleteServersResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

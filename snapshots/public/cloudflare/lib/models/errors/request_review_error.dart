@@ -12,10 +12,14 @@ factory RequestReviewError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RequestReviewError$500 extends RequestReviewError {const RequestReviewError$500(this.error);
 
 final RequestReviewResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

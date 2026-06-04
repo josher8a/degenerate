@@ -12,10 +12,14 @@ factory AwqError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AwqError$400 extends AwqError {const AwqError$400(this.error);
 
 final AwqResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

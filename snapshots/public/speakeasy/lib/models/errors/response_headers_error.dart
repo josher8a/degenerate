@@ -12,10 +12,14 @@ factory ResponseHeadersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ResponseHeadersError$500 extends ResponseHeadersError {const ResponseHeadersError$500(this.error);
 
 final String error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

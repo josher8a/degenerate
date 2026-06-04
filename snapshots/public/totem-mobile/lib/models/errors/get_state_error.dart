@@ -43,12 +43,16 @@ sealed class GetStateError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class GetStateError$400 extends GetStateError {
   const GetStateError$400(this.error);
 
   final RoomErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 400;
@@ -60,6 +64,9 @@ final class GetStateError$403 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
+  Object get typedError => error;
+
+  @override
   int get statusCode => 403;
 }
 
@@ -67,6 +74,9 @@ final class GetStateError$404 extends GetStateError {
   const GetStateError$404(this.error);
 
   final RoomErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 404;
@@ -78,6 +88,9 @@ final class GetStateError$409 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
+  Object get typedError => error;
+
+  @override
   int get statusCode => 409;
 }
 
@@ -85,6 +98,9 @@ final class GetStateError$500 extends GetStateError {
   const GetStateError$500(this.error);
 
   final RoomErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 500;

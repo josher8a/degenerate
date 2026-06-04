@@ -13,10 +13,14 @@ factory WorSendEventWorkflowInstanceError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorSendEventWorkflowInstanceError$400 extends WorSendEventWorkflowInstanceError {const WorSendEventWorkflowInstanceError$400(this.error);
 
 final WorSendEventWorkflowInstanceResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final WorSendEventWorkflowInstanceResponse400 error;
 final class WorSendEventWorkflowInstanceError$404 extends WorSendEventWorkflowInstanceError {const WorSendEventWorkflowInstanceError$404(this.error);
 
 final WorSendEventWorkflowInstanceResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

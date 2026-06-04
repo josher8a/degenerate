@@ -14,10 +14,14 @@ factory GetIndicatorTagsListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetIndicatorTagsListError$400 extends GetIndicatorTagsListError {const GetIndicatorTagsListError$400(this.error);
 
 final GetIndicatorTagsListResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class GetIndicatorTagsListError$404 extends GetIndicatorTagsListError {con
 
 final GetIndicatorTagsListResponse404 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class GetIndicatorTagsListError$500 extends GetIndicatorTagsListError {const GetIndicatorTagsListError$500(this.error);
 
 final GetIndicatorTagsListResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

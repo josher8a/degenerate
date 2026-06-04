@@ -15,10 +15,14 @@ factory ReposCreateForkError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposCreateForkError$400 extends ReposCreateForkError {const ReposCreateForkError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class ReposCreateForkError$403 extends ReposCreateForkError {const ReposCr
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class ReposCreateForkError$404 extends ReposCreateForkError {const ReposCr
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class ReposCreateForkError$422 extends ReposCreateForkError {const ReposCreateForkError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

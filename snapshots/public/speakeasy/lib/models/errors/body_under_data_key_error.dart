@@ -12,10 +12,14 @@ factory BodyUnderDataKeyError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BodyUnderDataKeyError$403 extends BodyUnderDataKeyError {const BodyUnderDataKeyError$403(this.error);
 
 final BodyUnderDataKeyResponse403 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 

@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfGoogleEmbeddinggemma300mError.fromResponse(ApiResponse
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfGoogleEmbeddinggemma300mError$400 extends WorkersAiPostRunCfGoogleEmbeddinggemma300mError {const WorkersAiPostRunCfGoogleEmbeddinggemma300mError$400(this.error);
 
 final WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

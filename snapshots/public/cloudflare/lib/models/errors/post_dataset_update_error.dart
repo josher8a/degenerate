@@ -12,10 +12,14 @@ factory PostDatasetUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostDatasetUpdateError$400 extends PostDatasetUpdateError {const PostDatasetUpdateError$400(this.error);
 
 final PostDatasetUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

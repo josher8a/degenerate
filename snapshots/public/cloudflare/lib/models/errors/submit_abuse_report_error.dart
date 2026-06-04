@@ -13,10 +13,14 @@ factory SubmitAbuseReportError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SubmitAbuseReportError$400 extends SubmitAbuseReportError {const SubmitAbuseReportError$400(this.error);
 
 final AbuseReportsSubmitErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AbuseReportsSubmitErrorResponse error;
 final class SubmitAbuseReportError$500 extends SubmitAbuseReportError {const SubmitAbuseReportError$500(this.error);
 
 final AbuseReportsSubmitErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

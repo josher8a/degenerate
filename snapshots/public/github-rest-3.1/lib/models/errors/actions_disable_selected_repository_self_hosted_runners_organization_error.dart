@@ -15,10 +15,14 @@ factory ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.fromR
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$403 extends ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError {const ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$4
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$4
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$422 extends ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError {const ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

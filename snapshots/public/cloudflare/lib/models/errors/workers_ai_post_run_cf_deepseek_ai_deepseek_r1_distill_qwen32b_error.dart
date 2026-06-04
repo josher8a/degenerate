@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError.fromResponse(A
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError$400 extends WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError {const WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError$400(this.error);
 
 final WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

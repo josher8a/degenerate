@@ -12,10 +12,14 @@ factory RadarGetTrafficAnomaliesError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetTrafficAnomaliesError$400 extends RadarGetTrafficAnomaliesError {const RadarGetTrafficAnomaliesError$400(this.error);
 
 final RadarGetTrafficAnomaliesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

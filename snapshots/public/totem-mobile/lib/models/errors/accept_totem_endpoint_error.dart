@@ -44,12 +44,16 @@ sealed class AcceptTotemEndpointError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class AcceptTotemEndpointError$400 extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$400(this.error);
 
   final ErrorResponseSchema error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 400;
@@ -61,6 +65,9 @@ final class AcceptTotemEndpointError$403 extends AcceptTotemEndpointError {
   final ErrorResponseSchema error;
 
   @override
+  Object get typedError => error;
+
+  @override
   int get statusCode => 403;
 }
 
@@ -70,6 +77,9 @@ final class AcceptTotemEndpointError$404 extends AcceptTotemEndpointError {
   final ErrorResponseSchema error;
 
   @override
+  Object get typedError => error;
+
+  @override
   int get statusCode => 404;
 }
 
@@ -77,6 +87,9 @@ final class AcceptTotemEndpointError$500 extends AcceptTotemEndpointError {
   const AcceptTotemEndpointError$500(this.error);
 
   final ErrorResponseSchema error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 500;

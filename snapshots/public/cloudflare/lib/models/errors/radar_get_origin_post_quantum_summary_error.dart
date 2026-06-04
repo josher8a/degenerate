@@ -12,10 +12,14 @@ factory RadarGetOriginPostQuantumSummaryError.fromResponse(ApiResponse response)
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetOriginPostQuantumSummaryError$400 extends RadarGetOriginPostQuantumSummaryError {const RadarGetOriginPostQuantumSummaryError$400(this.error);
 
 final RadarGetOriginPostQuantumSummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

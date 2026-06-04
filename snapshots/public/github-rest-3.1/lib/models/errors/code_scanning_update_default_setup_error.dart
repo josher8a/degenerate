@@ -16,10 +16,14 @@ factory CodeScanningUpdateDefaultSetupError.fromResponse(ApiResponse response) {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningUpdateDefaultSetupError$403 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -28,12 +32,16 @@ final class CodeScanningUpdateDefaultSetupError$404 extends CodeScanningUpdateDe
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningUpdateDefaultSetupError$409 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 
@@ -42,12 +50,16 @@ final class CodeScanningUpdateDefaultSetupError$422 extends CodeScanningUpdateDe
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CodeScanningUpdateDefaultSetupError$503 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$503(this.error);
 
 final CodeScanningUpdateDefaultSetupResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

@@ -12,10 +12,14 @@ factory AigConfigDeleteGatewayLogsError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigDeleteGatewayLogsError$400 extends AigConfigDeleteGatewayLogsError {const AigConfigDeleteGatewayLogsError$400(this.error);
 
 final AigConfigDeleteGatewayLogsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

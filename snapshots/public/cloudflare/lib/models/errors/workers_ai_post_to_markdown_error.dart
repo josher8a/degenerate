@@ -12,10 +12,14 @@ factory WorkersAiPostToMarkdownError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostToMarkdownError$400 extends WorkersAiPostToMarkdownError {const WorkersAiPostToMarkdownError$400(this.error);
 
 final WorkersAiPostToMarkdownResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

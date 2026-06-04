@@ -13,10 +13,14 @@ factory PublicListApplicationsError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PublicListApplicationsError$401 extends PublicListApplicationsError {const PublicListApplicationsError$401(this.error);
 
 final BaseErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -24,6 +28,8 @@ final BaseErrorResponse error;
 final class PublicListApplicationsError$500 extends PublicListApplicationsError {const PublicListApplicationsError$500(this.error);
 
 final BaseErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

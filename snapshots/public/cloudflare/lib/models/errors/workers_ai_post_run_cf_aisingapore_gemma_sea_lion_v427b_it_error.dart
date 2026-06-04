@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError.fromResponse(ApiRe
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError$400 extends WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError {const WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError$400(this.error);
 
 final $27bItResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

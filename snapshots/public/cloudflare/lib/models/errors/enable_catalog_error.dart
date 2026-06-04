@@ -16,10 +16,14 @@ factory EnableCatalogError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class EnableCatalogError$400 extends EnableCatalogError {const EnableCatalogError$400(this.error);
 
 final ResponseCommonFailure55 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class EnableCatalogError$401 extends EnableCatalogError {const EnableCatal
 
 final ResponseCommonFailure55 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class EnableCatalogError$403 extends EnableCatalogError {const EnableCatalogError$403(this.error);
 
 final ResponseCommonFailure55 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class EnableCatalogError$409 extends EnableCatalogError {const EnableCatal
 
 final ResponseCommonFailure55 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class EnableCatalogError$500 extends EnableCatalogError {const EnableCatalogError$500(this.error);
 
 final ResponseCommonFailure55 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

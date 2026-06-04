@@ -14,10 +14,14 @@ factory WorChangeStatusWorkflowInstanceError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorChangeStatusWorkflowInstanceError$400 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError$400(this.error);
 
 final WorChangeStatusWorkflowInstanceResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class WorChangeStatusWorkflowInstanceError$404 extends WorChangeStatusWork
 
 final WorChangeStatusWorkflowInstanceResponse404 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class WorChangeStatusWorkflowInstanceError$409 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError$409(this.error);
 
 final WorChangeStatusWorkflowInstanceResponse409 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

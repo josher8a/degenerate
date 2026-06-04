@@ -13,10 +13,14 @@ factory CodeScanningGetSarifError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningGetSarifError$403 extends CodeScanningGetSarifError {const CodeScanningGetSarifError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class CodeScanningGetSarifError$503 extends CodeScanningGetSarifError {const CodeScanningGetSarifError$503(this.error);
 
 final CodeScanningGetSarifResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

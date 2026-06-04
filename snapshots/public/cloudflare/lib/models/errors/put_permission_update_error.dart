@@ -13,10 +13,14 @@ factory PutPermissionUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PutPermissionUpdateError$400 extends PutPermissionUpdateError {const PutPermissionUpdateError$400(this.error);
 
 final PutPermissionUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final PutPermissionUpdateResponse400 error;
 final class PutPermissionUpdateError$404 extends PutPermissionUpdateError {const PutPermissionUpdateError$404(this.error);
 
 final PutPermissionUpdateResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

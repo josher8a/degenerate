@@ -12,10 +12,14 @@ factory CloudflareImagesListImagesError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CloudflareImagesListImagesError$400 extends CloudflareImagesListImagesError {const CloudflareImagesListImagesError$400(this.error);
 
 final CloudflareImagesListImagesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

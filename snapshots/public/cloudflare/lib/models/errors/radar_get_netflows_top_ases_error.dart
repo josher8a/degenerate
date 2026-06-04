@@ -12,10 +12,14 @@ factory RadarGetNetflowsTopAsesError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetNetflowsTopAsesError$404 extends RadarGetNetflowsTopAsesError {const RadarGetNetflowsTopAsesError$404(this.error);
 
 final RadarGetNetflowsTopAsesResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

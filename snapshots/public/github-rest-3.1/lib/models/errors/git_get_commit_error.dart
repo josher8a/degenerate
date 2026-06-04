@@ -13,10 +13,14 @@ factory GitGetCommitError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GitGetCommitError$404 extends GitGetCommitError {const GitGetCommitError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class GitGetCommitError$409 extends GitGetCommitError {const GitGetCommitError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

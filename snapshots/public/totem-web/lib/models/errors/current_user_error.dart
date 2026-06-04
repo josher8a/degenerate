@@ -12,10 +12,14 @@ factory CurrentUserError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CurrentUserError$404 extends CurrentUserError {const CurrentUserError$404(this.error);
 
 final Message error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -12,10 +12,14 @@ factory Img2imgError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class Img2imgError$400 extends Img2imgError {const Img2imgError$400(this.error);
 
 final $5Img2imgResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

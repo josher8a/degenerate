@@ -12,10 +12,14 @@ factory RadarGetAsnsRelError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetAsnsRelError$400 extends RadarGetAsnsRelError {const RadarGetAsnsRelError$400(this.error);
 
 final RadarGetAsnsRelResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

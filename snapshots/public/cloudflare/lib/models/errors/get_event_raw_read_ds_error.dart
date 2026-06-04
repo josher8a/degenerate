@@ -13,10 +13,14 @@ factory GetEventRawReadDsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetEventRawReadDsError$404 extends GetEventRawReadDsError {const GetEventRawReadDsError$404(this.error);
 
 final GetEventRawReadDsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final GetEventRawReadDsResponse404 error;
 final class GetEventRawReadDsError$500 extends GetEventRawReadDsError {const GetEventRawReadDsError$500(this.error);
 
 final GetEventRawReadDsResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

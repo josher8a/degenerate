@@ -15,10 +15,14 @@ factory BrapiPostMarkdownError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BrapiPostMarkdownError$400 extends BrapiPostMarkdownError {const BrapiPostMarkdownError$400(this.error);
 
 final BrapiPostMarkdownResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class BrapiPostMarkdownError$422 extends BrapiPostMarkdownError {const Bra
 
 final BrapiPostMarkdownResponse422 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
@@ -34,12 +40,16 @@ final class BrapiPostMarkdownError$429 extends BrapiPostMarkdownError {const Bra
 
 final BrapiPostMarkdownResponse429 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 429;
 
  }
 final class BrapiPostMarkdownError$500 extends BrapiPostMarkdownError {const BrapiPostMarkdownError$500(this.error);
 
 final BrapiPostMarkdownResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

@@ -12,10 +12,14 @@ factory SecretScanningGetAlertError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SecretScanningGetAlertError$503 extends SecretScanningGetAlertError {const SecretScanningGetAlertError$503(this.error);
 
 final SecretScanningGetAlertResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

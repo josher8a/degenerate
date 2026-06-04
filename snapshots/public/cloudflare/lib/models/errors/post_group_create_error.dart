@@ -12,10 +12,14 @@ factory PostGroupCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostGroupCreateError$400 extends PostGroupCreateError {const PostGroupCreateError$400(this.error);
 
 final PostGroupCreateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

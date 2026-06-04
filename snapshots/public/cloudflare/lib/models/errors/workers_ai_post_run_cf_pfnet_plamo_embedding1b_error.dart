@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfPfnetPlamoEmbedding1bError.fromResponse(ApiResponse re
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfPfnetPlamoEmbedding1bError$400 extends WorkersAiPostRunCfPfnetPlamoEmbedding1bError {const WorkersAiPostRunCfPfnetPlamoEmbedding1bError$400(this.error);
 
 final WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

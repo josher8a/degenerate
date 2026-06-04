@@ -13,10 +13,14 @@ factory ListWorkersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ListWorkersError$401 extends ListWorkersError {const ListWorkersError$401(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -24,6 +28,8 @@ final ResponseCommonFailure82 error;
 final class ListWorkersError$500 extends ListWorkersError {const ListWorkersError$500(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

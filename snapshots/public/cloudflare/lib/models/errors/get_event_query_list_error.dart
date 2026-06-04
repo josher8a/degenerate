@@ -12,10 +12,14 @@ factory GetEventQueryListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetEventQueryListError$500 extends GetEventQueryListError {const GetEventQueryListError$500(this.error);
 
 final GetEventQueryListResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

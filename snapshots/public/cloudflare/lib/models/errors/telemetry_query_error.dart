@@ -14,10 +14,14 @@ factory TelemetryQueryError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class TelemetryQueryError$400 extends TelemetryQueryError {const TelemetryQueryError$400(this.error);
 
 final TelemetryQueryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class TelemetryQueryError$401 extends TelemetryQueryError {const Telemetry
 
 final TelemetryQueryResponse401 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class TelemetryQueryError$500 extends TelemetryQueryError {const TelemetryQueryError$500(this.error);
 
 final TelemetryQueryResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

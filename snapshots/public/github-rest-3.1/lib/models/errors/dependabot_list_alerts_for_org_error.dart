@@ -15,10 +15,14 @@ factory DependabotListAlertsForOrgError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DependabotListAlertsForOrgError$400 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class DependabotListAlertsForOrgError$403 extends DependabotListAlertsForO
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class DependabotListAlertsForOrgError$404 extends DependabotListAlertsForO
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class DependabotListAlertsForOrgError$422 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

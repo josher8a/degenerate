@@ -16,10 +16,14 @@ factory ResourcesCatalogPolicyPreviewError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ResourcesCatalogPolicyPreviewError$400 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$400(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class ResourcesCatalogPolicyPreviewError$401 extends ResourcesCatalogPolic
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class ResourcesCatalogPolicyPreviewError$403 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$403(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class ResourcesCatalogPolicyPreviewError$422 extends ResourcesCatalogPolic
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class ResourcesCatalogPolicyPreviewError$500 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$500(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

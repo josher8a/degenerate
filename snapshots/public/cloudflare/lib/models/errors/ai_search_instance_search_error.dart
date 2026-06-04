@@ -12,10 +12,14 @@ factory AiSearchInstanceSearchError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchInstanceSearchError$404 extends AiSearchInstanceSearchError {const AiSearchInstanceSearchError$404(this.error);
 
 final AiSearchInstanceSearchResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

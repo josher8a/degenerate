@@ -12,10 +12,14 @@ factory RadarGetRankingInternetServicesTimeseriesError.fromResponse(ApiResponse 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetRankingInternetServicesTimeseriesError$400 extends RadarGetRankingInternetServicesTimeseriesError {const RadarGetRankingInternetServicesTimeseriesError$400(this.error);
 
 final RadarGetRankingInternetServicesTimeseriesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

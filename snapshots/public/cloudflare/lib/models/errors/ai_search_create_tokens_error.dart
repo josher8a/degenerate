@@ -12,10 +12,14 @@ factory AiSearchCreateTokensError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchCreateTokensError$400 extends AiSearchCreateTokensError {const AiSearchCreateTokensError$400(this.error);
 
 final AiSearchCreateTokensResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

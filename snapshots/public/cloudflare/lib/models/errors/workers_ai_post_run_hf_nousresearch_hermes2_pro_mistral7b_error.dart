@@ -12,10 +12,14 @@ factory WorkersAiPostRunHfNousresearchHermes2ProMistral7bError.fromResponse(ApiR
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunHfNousresearchHermes2ProMistral7bError$400 extends WorkersAiPostRunHfNousresearchHermes2ProMistral7bError {const WorkersAiPostRunHfNousresearchHermes2ProMistral7bError$400(this.error);
 
 final WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

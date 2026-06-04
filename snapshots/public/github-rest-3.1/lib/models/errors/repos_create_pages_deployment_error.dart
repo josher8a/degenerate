@@ -14,10 +14,14 @@ factory ReposCreatePagesDeploymentError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposCreatePagesDeploymentError$400 extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class ReposCreatePagesDeploymentError$404 extends ReposCreatePagesDeployme
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class ReposCreatePagesDeploymentError$422 extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

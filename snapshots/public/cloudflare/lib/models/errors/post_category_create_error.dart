@@ -12,10 +12,14 @@ factory PostCategoryCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostCategoryCreateError$400 extends PostCategoryCreateError {const PostCategoryCreateError$400(this.error);
 
 final PostCategoryCreateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

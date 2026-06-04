@@ -13,10 +13,14 @@ factory SecurityAdvisoriesListGlobalAdvisoriesError.fromResponse(ApiResponse res
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SecurityAdvisoriesListGlobalAdvisoriesError$422 extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 
@@ -24,6 +28,8 @@ final ValidationErrorSimple error;
 final class SecurityAdvisoriesListGlobalAdvisoriesError$429 extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$429(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 429;
 

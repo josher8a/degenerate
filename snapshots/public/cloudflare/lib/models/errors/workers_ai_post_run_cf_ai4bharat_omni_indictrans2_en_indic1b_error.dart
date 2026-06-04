@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError.fromResponse(Ap
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError$400 extends WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bError$400(this.error);
 
 final WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

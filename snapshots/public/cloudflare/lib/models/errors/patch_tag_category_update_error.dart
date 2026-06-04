@@ -14,10 +14,14 @@ factory PatchTagCategoryUpdateError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PatchTagCategoryUpdateError$400 extends PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError$400(this.error);
 
 final PatchTagCategoryUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class PatchTagCategoryUpdateError$404 extends PatchTagCategoryUpdateError 
 
 final PatchTagCategoryUpdateResponse404 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class PatchTagCategoryUpdateError$409 extends PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError$409(this.error);
 
 final PatchTagCategoryUpdateResponse409 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

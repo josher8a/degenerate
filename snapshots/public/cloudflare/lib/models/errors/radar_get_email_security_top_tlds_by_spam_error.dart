@@ -12,10 +12,14 @@ factory RadarGetEmailSecurityTopTldsBySpamError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetEmailSecurityTopTldsBySpamError$404 extends RadarGetEmailSecurityTopTldsBySpamError {const RadarGetEmailSecurityTopTldsBySpamError$404(this.error);
 
 final RadarGetEmailSecurityTopTldsBySpamResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

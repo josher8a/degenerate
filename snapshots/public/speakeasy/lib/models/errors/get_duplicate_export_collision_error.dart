@@ -12,10 +12,14 @@ factory GetDuplicateExportCollisionError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetDuplicateExportCollisionError$408 extends GetDuplicateExportCollisionError {const GetDuplicateExportCollisionError$408(this.error);
 
 final RequestTimeoutErrorData error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 408;
 

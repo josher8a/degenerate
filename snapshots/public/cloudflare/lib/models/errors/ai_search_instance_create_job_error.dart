@@ -13,10 +13,14 @@ factory AiSearchInstanceCreateJobError.fromResponse(ApiResponse response) {     
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchInstanceCreateJobError$400 extends AiSearchInstanceCreateJobError {const AiSearchInstanceCreateJobError$400(this.error);
 
 final AiSearchInstanceCreateJobResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AiSearchInstanceCreateJobResponse400 error;
 final class AiSearchInstanceCreateJobError$500 extends AiSearchInstanceCreateJobError {const AiSearchInstanceCreateJobError$500(this.error);
 
 final AiSearchInstanceCreateJobResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

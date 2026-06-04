@@ -13,10 +13,14 @@ factory GetPermissionListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetPermissionListError$400 extends GetPermissionListError {const GetPermissionListError$400(this.error);
 
 final GetPermissionListResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final GetPermissionListResponse400 error;
 final class GetPermissionListError$404 extends GetPermissionListError {const GetPermissionListError$404(this.error);
 
 final GetPermissionListResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

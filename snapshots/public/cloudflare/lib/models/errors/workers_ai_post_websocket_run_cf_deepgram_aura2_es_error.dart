@@ -12,10 +12,14 @@ factory WorkersAiPostWebsocketRunCfDeepgramAura2EsError.fromResponse(ApiResponse
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostWebsocketRunCfDeepgramAura2EsError$400 extends WorkersAiPostWebsocketRunCfDeepgramAura2EsError {const WorkersAiPostWebsocketRunCfDeepgramAura2EsError$400(this.error);
 
 final WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

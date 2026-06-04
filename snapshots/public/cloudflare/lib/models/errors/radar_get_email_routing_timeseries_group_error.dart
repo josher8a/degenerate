@@ -12,10 +12,14 @@ factory RadarGetEmailRoutingTimeseriesGroupError.fromResponse(ApiResponse respon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetEmailRoutingTimeseriesGroupError$400 extends RadarGetEmailRoutingTimeseriesGroupError {const RadarGetEmailRoutingTimeseriesGroupError$400(this.error);
 
 final RadarGetEmailRoutingTimeseriesGroupResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -11,12 +11,16 @@ factory DeleteAccountsAccountError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteAccountsAccountError$ErrorModel extends DeleteAccountsAccountError {const DeleteAccountsAccountError$ErrorModel(this.error, this.statusCode, );
 
 final ErrorModel error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }
 typedef DeleteAccountsAccountBankAccountsIdError = DeleteAccountsAccountError;

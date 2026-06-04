@@ -12,10 +12,14 @@ factory TextError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class TextError$418 extends TextError {const TextError$418(this.error);
 
 final TeapotJsonError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 418;
 

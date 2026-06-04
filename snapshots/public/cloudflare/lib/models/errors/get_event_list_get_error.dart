@@ -12,10 +12,14 @@ factory GetEventListGetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetEventListGetError$400 extends GetEventListGetError {const GetEventListGetError$400(this.error);
 
 final GetEventListGetResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -12,10 +12,14 @@ factory RadarGetAiInferenceTimeseriesGroupError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetAiInferenceTimeseriesGroupError$400 extends RadarGetAiInferenceTimeseriesGroupError {const RadarGetAiInferenceTimeseriesGroupError$400(this.error);
 
 final RadarGetAiInferenceTimeseriesGroupResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -12,10 +12,14 @@ factory RadarGetDnsTopLocationsError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetDnsTopLocationsError$404 extends RadarGetDnsTopLocationsError {const RadarGetDnsTopLocationsError$404(this.error);
 
 final RadarGetDnsTopLocationsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

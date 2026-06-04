@@ -12,10 +12,14 @@ factory RadarGetGeolocationsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetGeolocationsError$400 extends RadarGetGeolocationsError {const RadarGetGeolocationsError$400(this.error);
 
 final RadarGetGeolocationsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

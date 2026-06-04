@@ -14,10 +14,14 @@ factory ChecksRerequestRunError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ChecksRerequestRunError$403 extends ChecksRerequestRunError {const ChecksRerequestRunError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class ChecksRerequestRunError$404 extends ChecksRerequestRunError {const C
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class ChecksRerequestRunError$422 extends ChecksRerequestRunError {const ChecksRerequestRunError$422(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

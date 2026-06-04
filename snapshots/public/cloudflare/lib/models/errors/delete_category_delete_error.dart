@@ -12,10 +12,14 @@ factory DeleteCategoryDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteCategoryDeleteError$400 extends DeleteCategoryDeleteError {const DeleteCategoryDeleteError$400(this.error);
 
 final DeleteCategoryDeleteResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

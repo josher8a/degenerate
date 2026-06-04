@@ -13,10 +13,14 @@ factory ListEmailsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ListEmailsError$400 extends ListEmailsError {const ListEmailsError$400(this.error);
 
 final ListEmailsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final ListEmailsResponse400 error;
 final class ListEmailsError$500 extends ListEmailsError {const ListEmailsError$500(this.error);
 
 final ListEmailsResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

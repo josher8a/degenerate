@@ -11,11 +11,15 @@ factory GetFooError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetFooError$GetFooResponsedefault extends GetFooError {const GetFooError$GetFooResponsedefault(this.error, this.statusCode, );
 
 final GetFooResponsedefault error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }

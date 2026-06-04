@@ -15,10 +15,14 @@ factory BrapiPostLinksError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BrapiPostLinksError$400 extends BrapiPostLinksError {const BrapiPostLinksError$400(this.error);
 
 final BrapiPostLinksResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class BrapiPostLinksError$422 extends BrapiPostLinksError {const BrapiPost
 
 final BrapiPostLinksResponse422 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
@@ -34,12 +40,16 @@ final class BrapiPostLinksError$429 extends BrapiPostLinksError {const BrapiPost
 
 final BrapiPostLinksResponse429 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 429;
 
  }
 final class BrapiPostLinksError$500 extends BrapiPostLinksError {const BrapiPostLinksError$500(this.error);
 
 final BrapiPostLinksResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

@@ -12,10 +12,14 @@ factory CreateProjectServiceAccountError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CreateProjectServiceAccountError$400 extends CreateProjectServiceAccountError {const CreateProjectServiceAccountError$400(this.error);
 
 final ErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

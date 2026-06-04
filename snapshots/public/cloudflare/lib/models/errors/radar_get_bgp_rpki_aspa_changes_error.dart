@@ -12,10 +12,14 @@ factory RadarGetBgpRpkiAspaChangesError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpRpkiAspaChangesError$400 extends RadarGetBgpRpkiAspaChangesError {const RadarGetBgpRpkiAspaChangesError$400(this.error);
 
 final RadarGetBgpRpkiAspaChangesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

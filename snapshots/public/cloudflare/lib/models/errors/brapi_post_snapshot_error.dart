@@ -15,10 +15,14 @@ factory BrapiPostSnapshotError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BrapiPostSnapshotError$400 extends BrapiPostSnapshotError {const BrapiPostSnapshotError$400(this.error);
 
 final BrapiPostSnapshotResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class BrapiPostSnapshotError$422 extends BrapiPostSnapshotError {const Bra
 
 final BrapiPostSnapshotResponse422 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
@@ -34,12 +40,16 @@ final class BrapiPostSnapshotError$429 extends BrapiPostSnapshotError {const Bra
 
 final BrapiPostSnapshotResponse429 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 429;
 
  }
 final class BrapiPostSnapshotError$500 extends BrapiPostSnapshotError {const BrapiPostSnapshotError$500(this.error);
 
 final BrapiPostSnapshotResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

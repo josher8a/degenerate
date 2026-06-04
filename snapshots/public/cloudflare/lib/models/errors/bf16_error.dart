@@ -12,10 +12,14 @@ factory Bf16Error.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class Bf16Error$400 extends Bf16Error {const Bf16Error$400(this.error);
 
 final Bf16Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

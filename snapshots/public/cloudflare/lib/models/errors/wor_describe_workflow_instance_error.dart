@@ -13,10 +13,14 @@ factory WorDescribeWorkflowInstanceError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorDescribeWorkflowInstanceError$400 extends WorDescribeWorkflowInstanceError {const WorDescribeWorkflowInstanceError$400(this.error);
 
 final WorDescribeWorkflowInstanceResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final WorDescribeWorkflowInstanceResponse400 error;
 final class WorDescribeWorkflowInstanceError$404 extends WorDescribeWorkflowInstanceError {const WorDescribeWorkflowInstanceError$404(this.error);
 
 final WorDescribeWorkflowInstanceResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

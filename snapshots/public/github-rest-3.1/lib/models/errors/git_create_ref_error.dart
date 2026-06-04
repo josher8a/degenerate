@@ -13,10 +13,14 @@ factory GitCreateRefError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GitCreateRefError$409 extends GitCreateRefError {const GitCreateRefError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class GitCreateRefError$422 extends GitCreateRefError {const GitCreateRefError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

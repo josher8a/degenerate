@@ -12,10 +12,14 @@ factory PutGroupUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PutGroupUpdateError$400 extends PutGroupUpdateError {const PutGroupUpdateError$400(this.error);
 
 final PutGroupUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -23,6 +23,7 @@ sealed class ListIncidentsV2draftError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class ListIncidentsV2draftError$ErrorModel
@@ -33,4 +34,7 @@ final class ListIncidentsV2draftError$ErrorModel
 
   @override
   final int statusCode;
+
+  @override
+  Object get typedError => error;
 }

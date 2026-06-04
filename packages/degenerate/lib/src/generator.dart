@@ -432,6 +432,32 @@ final class Generator {
     final fileEmitter = FileEmitter();
     final emitterWarnings = <String>[];
     final securitySchemes = _lowerSecuritySchemes(inlinedDoc.securitySchemes);
+
+    // Make header params that match a security scheme optional so consumers
+    // can rely on an interceptor instead of passing them per-call.
+    final securityHeaderNames = <String>{
+      for (final s in securitySchemes)
+        if (s.type == 'apiKey' &&
+            s.parameterName != null &&
+            (s.location == null || s.location == 'header'))
+          s.parameterName!
+        else if (s.type == 'http')
+          'Authorization',
+    };
+    if (securityHeaderNames.isNotEmpty) {
+      for (final api in irApis) {
+        for (final op in api.operations) {
+          for (var i = 0; i < op.parameters.length; i++) {
+            final p = op.parameters[i];
+            if (p.location == ParameterLocation.header &&
+                p.isRequired &&
+                securityHeaderNames.contains(p.name)) {
+              op.parameters[i] = p.asOptional();
+            }
+          }
+        }
+      }
+    }
     final globalSecurity = _lowerSecurityRequirements(inlinedDoc.security);
     final defaultServerUrl = inlinedDoc.servers.isNotEmpty
         ? inlinedDoc.servers.first['url'] as String?

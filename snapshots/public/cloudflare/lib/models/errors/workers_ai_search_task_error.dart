@@ -12,10 +12,14 @@ factory WorkersAiSearchTaskError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiSearchTaskError$404 extends WorkersAiSearchTaskError {const WorkersAiSearchTaskError$404(this.error);
 
 final WorkersAiSearchTaskResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

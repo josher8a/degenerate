@@ -13,10 +13,14 @@ factory UrlscannerGetScanDomError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class UrlscannerGetScanDomError$400 extends UrlscannerGetScanDomError {const UrlscannerGetScanDomError$400(this.error);
 
 final UrlscannerGetScanDomResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final UrlscannerGetScanDomResponse400 error;
 final class UrlscannerGetScanDomError$404 extends UrlscannerGetScanDomError {const UrlscannerGetScanDomError$404(this.error);
 
 final UrlscannerGetScanDomResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

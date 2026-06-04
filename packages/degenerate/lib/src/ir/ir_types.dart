@@ -691,6 +691,14 @@ final class IrParameter {
         allowReserved: allowReserved,
         defaultValue: defaultValue,
       );
+
+  IrParameter asOptional() => IrParameter(
+        name, dartName, location, type,
+        style: style,
+        explode: explode,
+        allowReserved: allowReserved,
+        defaultValue: defaultValue,
+      );
 }
 
 /// A request body definition.

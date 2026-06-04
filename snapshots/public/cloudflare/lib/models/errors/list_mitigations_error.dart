@@ -12,10 +12,14 @@ factory ListMitigationsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ListMitigationsError$500 extends ListMitigationsError {const ListMitigationsError$500(this.error);
 
 final ListMitigationsResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

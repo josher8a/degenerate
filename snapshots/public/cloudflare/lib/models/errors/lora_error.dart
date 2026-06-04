@@ -12,10 +12,14 @@ factory LoraError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class LoraError$400 extends LoraError {const LoraError$400(this.error);
 
 final $2LoraResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

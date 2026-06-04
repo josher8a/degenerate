@@ -13,10 +13,14 @@ factory PostEventQueryUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostEventQueryUpdateError$400 extends PostEventQueryUpdateError {const PostEventQueryUpdateError$400(this.error);
 
 final PostEventQueryUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final PostEventQueryUpdateResponse400 error;
 final class PostEventQueryUpdateError$404 extends PostEventQueryUpdateError {const PostEventQueryUpdateError$404(this.error);
 
 final PostEventQueryUpdateResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

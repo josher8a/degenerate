@@ -12,10 +12,14 @@ factory PostIndicatorCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostIndicatorCreateError$400 extends PostIndicatorCreateError {const PostIndicatorCreateError$400(this.error);
 
 final PostIndicatorCreateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

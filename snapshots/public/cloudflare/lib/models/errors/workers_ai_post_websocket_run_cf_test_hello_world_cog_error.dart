@@ -12,10 +12,14 @@ factory WorkersAiPostWebsocketRunCfTestHelloWorldCogError.fromResponse(ApiRespon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostWebsocketRunCfTestHelloWorldCogError$400 extends WorkersAiPostWebsocketRunCfTestHelloWorldCogError {const WorkersAiPostWebsocketRunCfTestHelloWorldCogError$400(this.error);
 
 final WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

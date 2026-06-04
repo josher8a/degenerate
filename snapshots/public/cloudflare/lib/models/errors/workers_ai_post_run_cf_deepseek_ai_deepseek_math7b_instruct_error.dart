@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError.fromResponse(Api
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError$400 extends WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError {const WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError$400(this.error);
 
 final WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

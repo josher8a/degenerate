@@ -12,10 +12,14 @@ factory RadarGetEntitiesLocationByAlpha2Error.fromResponse(ApiResponse response)
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetEntitiesLocationByAlpha2Error$404 extends RadarGetEntitiesLocationByAlpha2Error {const RadarGetEntitiesLocationByAlpha2Error$404(this.error);
 
 final RadarGetEntitiesLocationByAlpha2Response404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -14,10 +14,14 @@ factory AppsListAccountsForPlanError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AppsListAccountsForPlanError$401 extends AppsListAccountsForPlanError {const AppsListAccountsForPlanError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -26,12 +30,16 @@ final class AppsListAccountsForPlanError$404 extends AppsListAccountsForPlanErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class AppsListAccountsForPlanError$422 extends AppsListAccountsForPlanError {const AppsListAccountsForPlanError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

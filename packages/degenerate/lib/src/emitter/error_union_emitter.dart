@@ -169,6 +169,12 @@ Class _buildSealedBase(
       ..name = 'statusCode'
       ..type = MethodType.getter
       ..returns = refer('int')))
+    ..methods.add(Method((m) => m
+      ..name = 'typedError'
+      ..type = MethodType.getter
+      ..returns = refer('Object?')
+      ..lambda = true
+      ..body = const Code('null')))
     ..constructors.add(_buildFromResponse(
       className,
       sortedEntries,
@@ -244,6 +250,14 @@ Class _buildVariantClass(
         ..name = 'error'
         ..modifier = FieldModifier.final$
         ..type = refer(typeName)));
+
+    b.methods.add(Method((m) => m
+      ..name = 'typedError'
+      ..type = MethodType.getter
+      ..lambda = true
+      ..annotations.add(refer('override'))
+      ..returns = refer('Object')
+      ..body = const Code('error')));
 
     if (code == -1) {
       b.constructors.add(Constructor((c) => c

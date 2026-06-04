@@ -14,10 +14,14 @@ factory ActivityListNotificationsForAuthenticatedUserError.fromResponse(ApiRespo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActivityListNotificationsForAuthenticatedUserError$401 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -26,12 +30,16 @@ final class ActivityListNotificationsForAuthenticatedUserError$403 extends Activ
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class ActivityListNotificationsForAuthenticatedUserError$422 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

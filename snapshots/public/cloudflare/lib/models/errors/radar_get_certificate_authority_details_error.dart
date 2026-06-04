@@ -12,10 +12,14 @@ factory RadarGetCertificateAuthorityDetailsError.fromResponse(ApiResponse respon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetCertificateAuthorityDetailsError$404 extends RadarGetCertificateAuthorityDetailsError {const RadarGetCertificateAuthorityDetailsError$404(this.error);
 
 final RadarGetCertificateAuthorityDetailsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

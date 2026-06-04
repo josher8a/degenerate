@@ -12,10 +12,14 @@ factory AddWebhookError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AddWebhookError$400 extends AddWebhookError {const AddWebhookError$400(this.error);
 
 final RealtimekitErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

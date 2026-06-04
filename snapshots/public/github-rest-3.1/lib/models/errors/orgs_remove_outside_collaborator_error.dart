@@ -12,10 +12,14 @@ factory OrgsRemoveOutsideCollaboratorError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class OrgsRemoveOutsideCollaboratorError$422 extends OrgsRemoveOutsideCollaboratorError {const OrgsRemoveOutsideCollaboratorError$422(this.error);
 
 final OrgsRemoveOutsideCollaboratorResponse422 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

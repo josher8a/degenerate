@@ -11,12 +11,16 @@ factory CreatePetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CreatePetError$ErrorModel extends CreatePetError {const CreatePetError$ErrorModel(this.error, this.statusCode, );
 
 final ErrorModel error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }
 typedef GetPetError = CreatePetError;

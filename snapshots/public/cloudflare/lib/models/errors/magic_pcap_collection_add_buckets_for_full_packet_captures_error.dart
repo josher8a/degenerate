@@ -11,11 +11,15 @@ factory MagicPcapCollectionAddBucketsForFullPacketCapturesError.fromResponse(Api
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class MagicPcapCollectionAddBucketsForFullPacketCapturesError$MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault extends MagicPcapCollectionAddBucketsForFullPacketCapturesError {const MagicPcapCollectionAddBucketsForFullPacketCapturesError$MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault(this.error, this.statusCode, );
 
 final MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }

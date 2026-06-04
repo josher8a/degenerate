@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error.fromResponse(A
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error$400 extends WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error$400(this.error);
 
 final WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -12,10 +12,14 @@ factory AiSearchInstanceChatCompletionError.fromResponse(ApiResponse response) {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchInstanceChatCompletionError$404 extends AiSearchInstanceChatCompletionError {const AiSearchInstanceChatCompletionError$404(this.error);
 
 final AiSearchInstanceChatCompletionResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

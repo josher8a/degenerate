@@ -12,10 +12,14 @@ factory AigConfigListDatasetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigListDatasetError$400 extends AigConfigListDatasetError {const AigConfigListDatasetError$400(this.error);
 
 final AigConfigListDatasetResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

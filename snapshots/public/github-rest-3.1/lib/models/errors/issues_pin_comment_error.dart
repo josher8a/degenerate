@@ -16,10 +16,14 @@ factory IssuesPinCommentError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesPinCommentError$401 extends IssuesPinCommentError {const IssuesPinCommentError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -28,12 +32,16 @@ final class IssuesPinCommentError$403 extends IssuesPinCommentError {const Issue
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class IssuesPinCommentError$404 extends IssuesPinCommentError {const IssuesPinCommentError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class IssuesPinCommentError$410 extends IssuesPinCommentError {const Issue
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 410;
 
  }
 final class IssuesPinCommentError$422 extends IssuesPinCommentError {const IssuesPinCommentError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

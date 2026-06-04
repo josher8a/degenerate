@@ -13,10 +13,14 @@ factory AigConfigUpdateGatewayError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigUpdateGatewayError$400 extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError$400(this.error);
 
 final AigConfigUpdateGatewayResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AigConfigUpdateGatewayResponse400 error;
 final class AigConfigUpdateGatewayError$404 extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError$404(this.error);
 
 final AigConfigUpdateGatewayResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

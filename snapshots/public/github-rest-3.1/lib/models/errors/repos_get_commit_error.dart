@@ -16,10 +16,14 @@ factory ReposGetCommitError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposGetCommitError$404 extends ReposGetCommitError {const ReposGetCommitError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -28,12 +32,16 @@ final class ReposGetCommitError$409 extends ReposGetCommitError {const ReposGetC
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ReposGetCommitError$422 extends ReposGetCommitError {const ReposGetCommitError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 
@@ -42,12 +50,16 @@ final class ReposGetCommitError$500 extends ReposGetCommitError {const ReposGetC
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class ReposGetCommitError$503 extends ReposGetCommitError {const ReposGetCommitError$503(this.error);
 
 final ReposGetCommitResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

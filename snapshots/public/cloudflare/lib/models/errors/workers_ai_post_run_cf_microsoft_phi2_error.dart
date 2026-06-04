@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfMicrosoftPhi2Error.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfMicrosoftPhi2Error$400 extends WorkersAiPostRunCfMicrosoftPhi2Error {const WorkersAiPostRunCfMicrosoftPhi2Error$400(this.error);
 
 final WorkersAiPostRunCfMicrosoftPhi2Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

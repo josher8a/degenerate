@@ -12,10 +12,14 @@ factory RadarGetBgpRpkiAspaSnapshotError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpRpkiAspaSnapshotError$400 extends RadarGetBgpRpkiAspaSnapshotError {const RadarGetBgpRpkiAspaSnapshotError$400(this.error);
 
 final RadarGetBgpRpkiAspaSnapshotResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -16,10 +16,14 @@ factory SecretScanningUpdateOrgPatternConfigsError.fromResponse(ApiResponse resp
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SecretScanningUpdateOrgPatternConfigsError$400 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class SecretScanningUpdateOrgPatternConfigsError$403 extends SecretScannin
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class SecretScanningUpdateOrgPatternConfigsError$404 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class SecretScanningUpdateOrgPatternConfigsError$409 extends SecretScannin
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class SecretScanningUpdateOrgPatternConfigsError$422 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

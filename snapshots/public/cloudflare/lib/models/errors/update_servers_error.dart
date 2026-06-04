@@ -13,10 +13,14 @@ factory UpdateServersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class UpdateServersError$400 extends UpdateServersError {const UpdateServersError$400(this.error);
 
 final UpdateServersResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final UpdateServersResponse400 error;
 final class UpdateServersError$404 extends UpdateServersError {const UpdateServersError$404(this.error);
 
 final UpdateServersResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

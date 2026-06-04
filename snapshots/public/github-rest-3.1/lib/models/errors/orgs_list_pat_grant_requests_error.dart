@@ -15,10 +15,14 @@ factory OrgsListPatGrantRequestsError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class OrgsListPatGrantRequestsError$403 extends OrgsListPatGrantRequestsError {const OrgsListPatGrantRequestsError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class OrgsListPatGrantRequestsError$404 extends OrgsListPatGrantRequestsEr
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class OrgsListPatGrantRequestsError$422 extends OrgsListPatGrantRequestsEr
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class OrgsListPatGrantRequestsError$500 extends OrgsListPatGrantRequestsError {const OrgsListPatGrantRequestsError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

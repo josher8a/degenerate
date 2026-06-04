@@ -12,10 +12,14 @@ factory EmptyResponseObjectWithCommentGetError.fromResponse(ApiResponse response
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class EmptyResponseObjectWithCommentGetError$404 extends EmptyResponseObjectWithCommentGetError {const EmptyResponseObjectWithCommentGetError$404(this.error);
 
 final String error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -12,10 +12,14 @@ factory SecretScanningListAlertsForRepoError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SecretScanningListAlertsForRepoError$503 extends SecretScanningListAlertsForRepoError {const SecretScanningListAlertsForRepoError$503(this.error);
 
 final SecretScanningListAlertsForRepoResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

@@ -12,10 +12,14 @@ factory SecretScanningCreatePushProtectionBypassError.fromResponse(ApiResponse r
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SecretScanningCreatePushProtectionBypassError$503 extends SecretScanningCreatePushProtectionBypassError {const SecretScanningCreatePushProtectionBypassError$503(this.error);
 
 final SecretScanningCreatePushProtectionBypassResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

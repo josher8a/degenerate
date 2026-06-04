@@ -12,10 +12,14 @@ factory AutoragConfigSearchError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AutoragConfigSearchError$404 extends AutoragConfigSearchError {const AutoragConfigSearchError$404(this.error);
 
 final AutoragConfigSearchResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

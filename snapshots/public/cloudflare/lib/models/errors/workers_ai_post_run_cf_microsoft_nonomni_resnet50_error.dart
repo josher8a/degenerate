@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfMicrosoftNonomniResnet50Error.fromResponse(ApiResponse
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfMicrosoftNonomniResnet50Error$400 extends WorkersAiPostRunCfMicrosoftNonomniResnet50Error {const WorkersAiPostRunCfMicrosoftNonomniResnet50Error$400(this.error);
 
 final WorkersAiPostRunCfMicrosoftNonomniResnet50Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

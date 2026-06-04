@@ -12,10 +12,14 @@ factory GetEventQueryReadError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetEventQueryReadError$404 extends GetEventQueryReadError {const GetEventQueryReadError$404(this.error);
 
 final GetEventQueryReadResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

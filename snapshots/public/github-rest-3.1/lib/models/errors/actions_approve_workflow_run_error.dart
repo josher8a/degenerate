@@ -13,10 +13,14 @@ factory ActionsApproveWorkflowRunError.fromResponse(ApiResponse response) {     
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsApproveWorkflowRunError$403 extends ActionsApproveWorkflowRunError {const ActionsApproveWorkflowRunError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class ActionsApproveWorkflowRunError$404 extends ActionsApproveWorkflowRunError {const ActionsApproveWorkflowRunError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

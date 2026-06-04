@@ -13,10 +13,14 @@ factory GistsListPublicError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GistsListPublicError$403 extends GistsListPublicError {const GistsListPublicError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class GistsListPublicError$422 extends GistsListPublicError {const GistsListPublicError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

@@ -15,10 +15,14 @@ factory GenerateImageRegistryCredentialsError.fromResponse(ApiResponse response)
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GenerateImageRegistryCredentialsError$400 extends GenerateImageRegistryCredentialsError {const GenerateImageRegistryCredentialsError$400(this.error);
 
 final BaseErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class GenerateImageRegistryCredentialsError$404 extends GenerateImageRegis
 
 final BaseErrorResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class GenerateImageRegistryCredentialsError$409 extends GenerateImageRegis
 
 final BaseErrorResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class GenerateImageRegistryCredentialsError$500 extends GenerateImageRegistryCredentialsError {const GenerateImageRegistryCredentialsError$500(this.error);
 
 final BaseErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

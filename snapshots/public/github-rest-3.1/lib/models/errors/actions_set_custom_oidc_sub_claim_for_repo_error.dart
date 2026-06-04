@@ -14,10 +14,14 @@ factory ActionsSetCustomOidcSubClaimForRepoError.fromResponse(ApiResponse respon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsSetCustomOidcSubClaimForRepoError$400 extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class ActionsSetCustomOidcSubClaimForRepoError$404 extends ActionsSetCusto
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class ActionsSetCustomOidcSubClaimForRepoError$422 extends ActionsSetCustomOidcSubClaimForRepoError {const ActionsSetCustomOidcSubClaimForRepoError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

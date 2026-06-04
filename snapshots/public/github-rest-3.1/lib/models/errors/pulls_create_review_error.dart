@@ -13,10 +13,14 @@ factory PullsCreateReviewError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PullsCreateReviewError$403 extends PullsCreateReviewError {const PullsCreateReviewError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class PullsCreateReviewError$422 extends PullsCreateReviewError {const PullsCreateReviewError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

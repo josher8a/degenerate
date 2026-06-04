@@ -12,10 +12,14 @@ factory RadarGetEntitiesLocationsError.fromResponse(ApiResponse response) {     
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetEntitiesLocationsError$400 extends RadarGetEntitiesLocationsError {const RadarGetEntitiesLocationsError$400(this.error);
 
 final RadarGetEntitiesLocationsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

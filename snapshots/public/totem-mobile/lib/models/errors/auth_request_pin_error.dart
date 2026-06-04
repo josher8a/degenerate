@@ -23,12 +23,16 @@ sealed class AuthRequestPinError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class AuthRequestPinError$429 extends AuthRequestPinError {
   const AuthRequestPinError$429(this.error);
 
   final ErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 429;

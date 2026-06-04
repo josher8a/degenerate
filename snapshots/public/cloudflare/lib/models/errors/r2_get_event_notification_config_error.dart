@@ -12,10 +12,14 @@ factory R2GetEventNotificationConfigError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class R2GetEventNotificationConfigError$404 extends R2GetEventNotificationConfigError {const R2GetEventNotificationConfigError$404(this.error);
 
 final ResponseFailure error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

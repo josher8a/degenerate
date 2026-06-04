@@ -12,10 +12,14 @@ factory SseOverloadChatError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SseOverloadChatError$400 extends SseOverloadChatError {const SseOverloadChatError$400(this.error);
 
 final ErrorModel error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

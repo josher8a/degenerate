@@ -12,10 +12,14 @@ factory RadarGetAsBotnetThreatFeedError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetAsBotnetThreatFeedError$400 extends RadarGetAsBotnetThreatFeedError {const RadarGetAsBotnetThreatFeedError$400(this.error);
 
 final RadarGetAsBotnetThreatFeedResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

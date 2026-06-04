@@ -15,10 +15,14 @@ factory ListCatalogsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ListCatalogsError$400 extends ListCatalogsError {const ListCatalogsError$400(this.error);
 
 final ResponseCommonFailure55 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class ListCatalogsError$401 extends ListCatalogsError {const ListCatalogsE
 
 final ResponseCommonFailure55 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
@@ -34,12 +40,16 @@ final class ListCatalogsError$403 extends ListCatalogsError {const ListCatalogsE
 
 final ResponseCommonFailure55 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class ListCatalogsError$500 extends ListCatalogsError {const ListCatalogsError$500(this.error);
 
 final ResponseCommonFailure55 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

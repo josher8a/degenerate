@@ -12,10 +12,14 @@ factory AigConfigGetGatewayDynamicRouteVersionError.fromResponse(ApiResponse res
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigGetGatewayDynamicRouteVersionError$400 extends AigConfigGetGatewayDynamicRouteVersionError {const AigConfigGetGatewayDynamicRouteVersionError$400(this.error);
 
 final AigConfigGetGatewayDynamicRouteVersionResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

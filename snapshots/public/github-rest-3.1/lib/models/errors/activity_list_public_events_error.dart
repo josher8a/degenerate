@@ -13,10 +13,14 @@ factory ActivityListPublicEventsError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActivityListPublicEventsError$403 extends ActivityListPublicEventsError {const ActivityListPublicEventsError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class ActivityListPublicEventsError$503 extends ActivityListPublicEventsError {const ActivityListPublicEventsError$503(this.error);
 
 final ActivityListPublicEventsResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

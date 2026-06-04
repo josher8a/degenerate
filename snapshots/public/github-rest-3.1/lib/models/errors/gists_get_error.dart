@@ -13,10 +13,14 @@ factory GistsGetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GistsGetError$403 extends GistsGetError {const GistsGetError$403(this.error);
 
 final GistsGetResponse403 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final GistsGetResponse403 error;
 final class GistsGetError$404 extends GistsGetError {const GistsGetError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

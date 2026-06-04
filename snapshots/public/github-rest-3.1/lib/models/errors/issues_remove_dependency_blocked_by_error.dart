@@ -16,10 +16,14 @@ factory IssuesRemoveDependencyBlockedByError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesRemoveDependencyBlockedByError$400 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class IssuesRemoveDependencyBlockedByError$401 extends IssuesRemoveDepende
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class IssuesRemoveDependencyBlockedByError$403 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class IssuesRemoveDependencyBlockedByError$404 extends IssuesRemoveDepende
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class IssuesRemoveDependencyBlockedByError$410 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$410(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 410;
 

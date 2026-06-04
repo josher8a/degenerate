@@ -15,10 +15,14 @@ factory PullsGetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PullsGetError$404 extends PullsGetError {const PullsGetError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -27,6 +31,8 @@ final class PullsGetError$406 extends PullsGetError {const PullsGetError$406(thi
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 406;
 
  }
@@ -34,12 +40,16 @@ final class PullsGetError$500 extends PullsGetError {const PullsGetError$500(thi
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class PullsGetError$503 extends PullsGetError {const PullsGetError$503(this.error);
 
 final PullsGetResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

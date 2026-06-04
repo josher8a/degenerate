@@ -12,10 +12,14 @@ factory ActionsDownloadArtifactError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsDownloadArtifactError$410 extends ActionsDownloadArtifactError {const ActionsDownloadArtifactError$410(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 410;
 

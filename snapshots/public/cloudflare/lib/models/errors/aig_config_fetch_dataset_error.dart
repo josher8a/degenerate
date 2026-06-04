@@ -12,10 +12,14 @@ factory AigConfigFetchDatasetError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigFetchDatasetError$404 extends AigConfigFetchDatasetError {const AigConfigFetchDatasetError$404(this.error);
 
 final AigConfigFetchDatasetResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

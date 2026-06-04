@@ -12,10 +12,14 @@ factory RadarGetNetflowsSummaryError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetNetflowsSummaryError$400 extends RadarGetNetflowsSummaryError {const RadarGetNetflowsSummaryError$400(this.error);
 
 final RadarGetNetflowsSummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

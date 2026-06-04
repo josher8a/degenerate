@@ -15,10 +15,14 @@ factory CodeSecurityDeleteConfigurationError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeSecurityDeleteConfigurationError$400 extends CodeSecurityDeleteConfigurationError {const CodeSecurityDeleteConfigurationError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class CodeSecurityDeleteConfigurationError$403 extends CodeSecurityDeleteC
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class CodeSecurityDeleteConfigurationError$404 extends CodeSecurityDeleteC
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeSecurityDeleteConfigurationError$409 extends CodeSecurityDeleteConfigurationError {const CodeSecurityDeleteConfigurationError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

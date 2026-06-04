@@ -13,10 +13,14 @@ factory AutoragConfigFilesError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AutoragConfigFilesError$404 extends AutoragConfigFilesError {const AutoragConfigFilesError$404(this.error);
 
 final AutoragConfigFilesResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final AutoragConfigFilesResponse404 error;
 final class AutoragConfigFilesError$503 extends AutoragConfigFilesError {const AutoragConfigFilesError$503(this.error);
 
 final AutoragConfigFilesResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

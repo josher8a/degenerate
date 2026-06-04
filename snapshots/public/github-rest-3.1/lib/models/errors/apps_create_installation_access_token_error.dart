@@ -15,10 +15,14 @@ factory AppsCreateInstallationAccessTokenError.fromResponse(ApiResponse response
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AppsCreateInstallationAccessTokenError$401 extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -27,6 +31,8 @@ final class AppsCreateInstallationAccessTokenError$403 extends AppsCreateInstall
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class AppsCreateInstallationAccessTokenError$404 extends AppsCreateInstall
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class AppsCreateInstallationAccessTokenError$422 extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

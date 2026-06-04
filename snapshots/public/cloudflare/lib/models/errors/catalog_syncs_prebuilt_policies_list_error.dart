@@ -15,10 +15,14 @@ factory CatalogSyncsPrebuiltPoliciesListError.fromResponse(ApiResponse response)
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CatalogSyncsPrebuiltPoliciesListError$400 extends CatalogSyncsPrebuiltPoliciesListError {const CatalogSyncsPrebuiltPoliciesListError$400(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class CatalogSyncsPrebuiltPoliciesListError$401 extends CatalogSyncsPrebui
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
@@ -34,12 +40,16 @@ final class CatalogSyncsPrebuiltPoliciesListError$403 extends CatalogSyncsPrebui
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class CatalogSyncsPrebuiltPoliciesListError$500 extends CatalogSyncsPrebuiltPoliciesListError {const CatalogSyncsPrebuiltPoliciesListError$500(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

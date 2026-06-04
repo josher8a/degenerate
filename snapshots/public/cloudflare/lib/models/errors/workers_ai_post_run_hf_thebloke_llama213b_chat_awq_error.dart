@@ -12,10 +12,14 @@ factory WorkersAiPostRunHfTheblokeLlama213bChatAwqError.fromResponse(ApiResponse
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunHfTheblokeLlama213bChatAwqError$400 extends WorkersAiPostRunHfTheblokeLlama213bChatAwqError {const WorkersAiPostRunHfTheblokeLlama213bChatAwqError$400(this.error);
 
 final WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

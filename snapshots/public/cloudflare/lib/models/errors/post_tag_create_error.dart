@@ -13,10 +13,14 @@ factory PostTagCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostTagCreateError$400 extends PostTagCreateError {const PostTagCreateError$400(this.error);
 
 final PostTagCreateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final PostTagCreateResponse400 error;
 final class PostTagCreateError$404 extends PostTagCreateError {const PostTagCreateError$404(this.error);
 
 final PostTagCreateResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -12,10 +12,14 @@ factory ActionsDeleteSelfHostedRunnerFromOrgError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsDeleteSelfHostedRunnerFromOrgError$422 extends ActionsDeleteSelfHostedRunnerFromOrgError {const ActionsDeleteSelfHostedRunnerFromOrgError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

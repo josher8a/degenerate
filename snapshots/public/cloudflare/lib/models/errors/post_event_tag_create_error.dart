@@ -12,10 +12,14 @@ factory PostEventTagCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostEventTagCreateError$400 extends PostEventTagCreateError {const PostEventTagCreateError$400(this.error);
 
 final PostEventTagCreateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

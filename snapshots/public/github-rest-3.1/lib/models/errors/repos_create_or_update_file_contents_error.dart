@@ -14,10 +14,14 @@ factory ReposCreateOrUpdateFileContentsError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposCreateOrUpdateFileContentsError$404 extends ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFileContentsError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class ReposCreateOrUpdateFileContentsError$409 extends ReposCreateOrUpdate
 
 final ReposCreateOrUpdateFileContentsResponse409 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ReposCreateOrUpdateFileContentsError$422 extends ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFileContentsError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

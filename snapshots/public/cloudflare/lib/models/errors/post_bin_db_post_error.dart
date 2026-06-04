@@ -12,10 +12,14 @@ factory PostBinDbPostError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostBinDbPostError$400 extends PostBinDbPostError {const PostBinDbPostError$400(this.error);
 
 final PostBinDbPostResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

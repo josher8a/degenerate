@@ -17,10 +17,14 @@ factory EditWorkerError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class EditWorkerError$400 extends EditWorkerError {const EditWorkerError$400(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -29,12 +33,16 @@ final class EditWorkerError$401 extends EditWorkerError {const EditWorkerError$4
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class EditWorkerError$403 extends EditWorkerError {const EditWorkerError$403(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -43,6 +51,8 @@ final class EditWorkerError$404 extends EditWorkerError {const EditWorkerError$4
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -50,12 +60,16 @@ final class EditWorkerError$409 extends EditWorkerError {const EditWorkerError$4
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class EditWorkerError$500 extends EditWorkerError {const EditWorkerError$500(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

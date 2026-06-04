@@ -12,10 +12,14 @@ factory GetIndicatorReadError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetIndicatorReadError$404 extends GetIndicatorReadError {const GetIndicatorReadError$404(this.error);
 
 final GetIndicatorReadResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

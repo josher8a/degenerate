@@ -13,10 +13,14 @@ factory SmartShieldGetSettingsError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SmartShieldGetSettingsError$500 extends SmartShieldGetSettingsError {const SmartShieldGetSettingsError$500(this.error);
 
 final ResponseCommonFailure65 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 
@@ -24,6 +28,8 @@ final ResponseCommonFailure65 error;
 final class SmartShieldGetSettingsError$502 extends SmartShieldGetSettingsError {const SmartShieldGetSettingsError$502(this.error);
 
 final ResponseCommonFailure65 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 502;
 

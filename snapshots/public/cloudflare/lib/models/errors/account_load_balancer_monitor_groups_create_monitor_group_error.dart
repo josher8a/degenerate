@@ -12,10 +12,14 @@ factory AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.fromResponse(Api
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AccountLoadBalancerMonitorGroupsCreateMonitorGroupError$412 extends AccountLoadBalancerMonitorGroupsCreateMonitorGroupError {const AccountLoadBalancerMonitorGroupsCreateMonitorGroupError$412(this.error);
 
 final AccountLoadBalancerMonitorGroupsCreateMonitorGroupResponse412 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 412;
 

@@ -14,10 +14,14 @@ factory SearchIssuesAndPullRequestsError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SearchIssuesAndPullRequestsError$403 extends SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequestsError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class SearchIssuesAndPullRequestsError$422 extends SearchIssuesAndPullRequ
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class SearchIssuesAndPullRequestsError$503 extends SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequestsError$503(this.error);
 
 final SearchIssuesAndPullRequestsResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

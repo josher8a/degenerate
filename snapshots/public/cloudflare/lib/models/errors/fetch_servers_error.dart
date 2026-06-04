@@ -12,10 +12,14 @@ factory FetchServersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class FetchServersError$404 extends FetchServersError {const FetchServersError$404(this.error);
 
 final FetchServersResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

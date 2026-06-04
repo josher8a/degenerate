@@ -14,10 +14,14 @@ factory ActionsSetActionsCacheRetentionLimitForEnterpriseError.fromResponse(ApiR
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$400 extends ActionsSetActionsCacheRetentionLimitForEnterpriseError {const ActionsSetActionsCacheRetentionLimitForEnterpriseError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$403 extends A
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$404 extends ActionsSetActionsCacheRetentionLimitForEnterpriseError {const ActionsSetActionsCacheRetentionLimitForEnterpriseError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

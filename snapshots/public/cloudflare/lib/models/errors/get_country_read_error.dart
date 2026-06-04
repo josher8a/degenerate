@@ -12,10 +12,14 @@ factory GetCountryReadError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetCountryReadError$400 extends GetCountryReadError {const GetCountryReadError$400(this.error);
 
 final GetCountryReadResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

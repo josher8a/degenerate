@@ -12,10 +12,14 @@ factory RadarGetHttpTopLocationsByBotClassError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetHttpTopLocationsByBotClassError$404 extends RadarGetHttpTopLocationsByBotClassError {const RadarGetHttpTopLocationsByBotClassError$404(this.error);
 
 final RadarGetHttpTopLocationsByBotClassResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

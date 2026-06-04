@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfMetaLlama370bInstructFp8FastError.fromResponse(ApiResp
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfMetaLlama370bInstructFp8FastError$400 extends WorkersAiPostRunCfMetaLlama370bInstructFp8FastError {const WorkersAiPostRunCfMetaLlama370bInstructFp8FastError$400(this.error);
 
 final WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

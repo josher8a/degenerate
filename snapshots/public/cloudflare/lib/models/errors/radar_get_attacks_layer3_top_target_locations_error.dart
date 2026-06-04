@@ -12,10 +12,14 @@ factory RadarGetAttacksLayer3TopTargetLocationsError.fromResponse(ApiResponse re
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetAttacksLayer3TopTargetLocationsError$404 extends RadarGetAttacksLayer3TopTargetLocationsError {const RadarGetAttacksLayer3TopTargetLocationsError$404(this.error);
 
 final RadarGetAttacksLayer3TopTargetLocationsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

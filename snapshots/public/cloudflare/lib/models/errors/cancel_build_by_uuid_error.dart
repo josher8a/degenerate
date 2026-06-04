@@ -12,10 +12,14 @@ factory CancelBuildByUuidError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CancelBuildByUuidError$404 extends CancelBuildByUuidError {const CancelBuildByUuidError$404(this.error);
 
 final BuildsErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

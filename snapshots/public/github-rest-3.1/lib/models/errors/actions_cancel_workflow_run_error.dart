@@ -12,10 +12,14 @@ factory ActionsCancelWorkflowRunError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsCancelWorkflowRunError$409 extends ActionsCancelWorkflowRunError {const ActionsCancelWorkflowRunError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 

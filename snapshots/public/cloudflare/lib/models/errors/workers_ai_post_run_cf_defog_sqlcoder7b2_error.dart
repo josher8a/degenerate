@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfDefogSqlcoder7b2Error.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfDefogSqlcoder7b2Error$400 extends WorkersAiPostRunCfDefogSqlcoder7b2Error {const WorkersAiPostRunCfDefogSqlcoder7b2Error$400(this.error);
 
 final WorkersAiPostRunCfDefogSqlcoder7b2Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -16,10 +16,14 @@ factory CodespacesCreateWithRepoForAuthenticatedUserError.fromResponse(ApiRespon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesCreateWithRepoForAuthenticatedUserError$400 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class CodespacesCreateWithRepoForAuthenticatedUserError$401 extends Codesp
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class CodespacesCreateWithRepoForAuthenticatedUserError$403 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class CodespacesCreateWithRepoForAuthenticatedUserError$404 extends Codesp
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodespacesCreateWithRepoForAuthenticatedUserError$503 extends CodespacesCreateWithRepoForAuthenticatedUserError {const CodespacesCreateWithRepoForAuthenticatedUserError$503(this.error);
 
 final CodespacesCreateWithRepoForAuthenticatedUserResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

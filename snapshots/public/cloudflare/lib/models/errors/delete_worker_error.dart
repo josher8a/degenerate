@@ -15,10 +15,14 @@ factory DeleteWorkerError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteWorkerError$400 extends DeleteWorkerError {const DeleteWorkerError$400(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class DeleteWorkerError$401 extends DeleteWorkerError {const DeleteWorkerE
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
@@ -34,12 +40,16 @@ final class DeleteWorkerError$404 extends DeleteWorkerError {const DeleteWorkerE
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class DeleteWorkerError$500 extends DeleteWorkerError {const DeleteWorkerError$500(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

@@ -13,10 +13,14 @@ factory DeleteDatasetDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteDatasetDeleteError$400 extends DeleteDatasetDeleteError {const DeleteDatasetDeleteError$400(this.error);
 
 final DeleteDatasetDeleteResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final DeleteDatasetDeleteResponse400 error;
 final class DeleteDatasetDeleteError$404 extends DeleteDatasetDeleteError {const DeleteDatasetDeleteError$404(this.error);
 
 final DeleteDatasetDeleteResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

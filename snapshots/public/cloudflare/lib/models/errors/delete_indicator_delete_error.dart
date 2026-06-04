@@ -12,10 +12,14 @@ factory DeleteIndicatorDeleteError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteIndicatorDeleteError$404 extends DeleteIndicatorDeleteError {const DeleteIndicatorDeleteError$404(this.error);
 
 final DeleteIndicatorDeleteResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -12,10 +12,14 @@ factory RadarGetDnsAs112TimeseriesGroupError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetDnsAs112TimeseriesGroupError$400 extends RadarGetDnsAs112TimeseriesGroupError {const RadarGetDnsAs112TimeseriesGroupError$400(this.error);
 
 final RadarGetDnsAs112TimeseriesGroupResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

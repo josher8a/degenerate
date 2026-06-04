@@ -12,10 +12,14 @@ factory GetAttackerListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetAttackerListError$400 extends GetAttackerListError {const GetAttackerListError$400(this.error);
 
 final GetAttackerListResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

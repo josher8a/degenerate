@@ -12,10 +12,14 @@ factory DeleteEventDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteEventDeleteError$400 extends DeleteEventDeleteError {const DeleteEventDeleteError$400(this.error);
 
 final DeleteEventDeleteResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

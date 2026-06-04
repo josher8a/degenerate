@@ -12,10 +12,14 @@ factory WorkersAiGetToMarkdownSupportedError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiGetToMarkdownSupportedError$400 extends WorkersAiGetToMarkdownSupportedError {const WorkersAiGetToMarkdownSupportedError$400(this.error);
 
 final WorkersAiGetToMarkdownSupportedResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

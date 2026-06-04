@@ -16,10 +16,14 @@ factory CreateWorkerError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CreateWorkerError$400 extends CreateWorkerError {const CreateWorkerError$400(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class CreateWorkerError$401 extends CreateWorkerError {const CreateWorkerE
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class CreateWorkerError$403 extends CreateWorkerError {const CreateWorkerError$403(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class CreateWorkerError$409 extends CreateWorkerError {const CreateWorkerE
 
 final ResponseCommonFailure82 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class CreateWorkerError$500 extends CreateWorkerError {const CreateWorkerError$500(this.error);
 
 final ResponseCommonFailure82 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

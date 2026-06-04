@@ -14,10 +14,14 @@ factory CodeScanningUploadSarifError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningUploadSarifError$403 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class CodeScanningUploadSarifError$404 extends CodeScanningUploadSarifErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningUploadSarifError$503 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$503(this.error);
 
 final CodeScanningUploadSarifResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

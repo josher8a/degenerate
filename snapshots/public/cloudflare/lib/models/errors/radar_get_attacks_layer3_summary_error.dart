@@ -12,10 +12,14 @@ factory RadarGetAttacksLayer3SummaryError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetAttacksLayer3SummaryError$400 extends RadarGetAttacksLayer3SummaryError {const RadarGetAttacksLayer3SummaryError$400(this.error);
 
 final RadarGetAttacksLayer3SummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

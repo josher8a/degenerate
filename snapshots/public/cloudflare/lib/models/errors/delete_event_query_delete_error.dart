@@ -12,10 +12,14 @@ factory DeleteEventQueryDeleteError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DeleteEventQueryDeleteError$404 extends DeleteEventQueryDeleteError {const DeleteEventQueryDeleteError$404(this.error);
 
 final DeleteEventQueryDeleteResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

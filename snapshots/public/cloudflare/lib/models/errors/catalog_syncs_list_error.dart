@@ -16,10 +16,14 @@ factory CatalogSyncsListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CatalogSyncsListError$400 extends CatalogSyncsListError {const CatalogSyncsListError$400(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class CatalogSyncsListError$401 extends CatalogSyncsListError {const Catal
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class CatalogSyncsListError$403 extends CatalogSyncsListError {const CatalogSyncsListError$403(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class CatalogSyncsListError$404 extends CatalogSyncsListError {const Catal
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CatalogSyncsListError$500 extends CatalogSyncsListError {const CatalogSyncsListError$500(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

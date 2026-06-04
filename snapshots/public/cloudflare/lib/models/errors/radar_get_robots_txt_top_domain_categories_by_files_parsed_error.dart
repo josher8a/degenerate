@@ -12,10 +12,14 @@ factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError.fromResponse(ApiR
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError$404 extends RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError$404(this.error);
 
 final RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

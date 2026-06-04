@@ -28,12 +28,16 @@ sealed class AuthRefreshTokenError {
   }
 
   int get statusCode;
+  Object? get typedError => null;
 }
 
 final class AuthRefreshTokenError$400 extends AuthRefreshTokenError {
   const AuthRefreshTokenError$400(this.error);
 
   final ErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 400;
@@ -43,6 +47,9 @@ final class AuthRefreshTokenError$429 extends AuthRefreshTokenError {
   const AuthRefreshTokenError$429(this.error);
 
   final ErrorResponse error;
+
+  @override
+  Object get typedError => error;
 
   @override
   int get statusCode => 429;

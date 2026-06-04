@@ -13,10 +13,14 @@ factory WorDeleteWorkflowError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorDeleteWorkflowError$400 extends WorDeleteWorkflowError {const WorDeleteWorkflowError$400(this.error);
 
 final WorDeleteWorkflowResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final WorDeleteWorkflowResponse400 error;
 final class WorDeleteWorkflowError$404 extends WorDeleteWorkflowError {const WorDeleteWorkflowError$404(this.error);
 
 final WorDeleteWorkflowResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

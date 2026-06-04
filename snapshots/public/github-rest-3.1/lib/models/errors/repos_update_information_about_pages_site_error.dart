@@ -14,10 +14,14 @@ factory ReposUpdateInformationAboutPagesSiteError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposUpdateInformationAboutPagesSiteError$400 extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class ReposUpdateInformationAboutPagesSiteError$409 extends ReposUpdateInf
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ReposUpdateInformationAboutPagesSiteError$422 extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

@@ -12,10 +12,14 @@ factory PatchEventRawUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PatchEventRawUpdateError$400 extends PatchEventRawUpdateError {const PatchEventRawUpdateError$400(this.error);
 
 final PatchEventRawUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -12,10 +12,14 @@ factory RadarGetReportsDatasetsError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetReportsDatasetsError$400 extends RadarGetReportsDatasetsError {const RadarGetReportsDatasetsError$400(this.error);
 
 final RadarGetReportsDatasetsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

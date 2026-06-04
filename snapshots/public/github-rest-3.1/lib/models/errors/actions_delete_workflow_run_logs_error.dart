@@ -13,10 +13,14 @@ factory ActionsDeleteWorkflowRunLogsError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsDeleteWorkflowRunLogsError$403 extends ActionsDeleteWorkflowRunLogsError {const ActionsDeleteWorkflowRunLogsError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class ActionsDeleteWorkflowRunLogsError$500 extends ActionsDeleteWorkflowRunLogsError {const ActionsDeleteWorkflowRunLogsError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

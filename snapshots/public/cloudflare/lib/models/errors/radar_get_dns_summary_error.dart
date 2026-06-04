@@ -12,10 +12,14 @@ factory RadarGetDnsSummaryError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetDnsSummaryError$400 extends RadarGetDnsSummaryError {const RadarGetDnsSummaryError$400(this.error);
 
 final RadarGetDnsSummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

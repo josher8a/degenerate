@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError.fromResponse(A
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError$400 extends WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError {const WorkersAiPostRunCfMistralaiMistralSmall3124bInstructError$400(this.error);
 
 final WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

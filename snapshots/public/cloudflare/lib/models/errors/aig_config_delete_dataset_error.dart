@@ -12,10 +12,14 @@ factory AigConfigDeleteDatasetError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigDeleteDatasetError$404 extends AigConfigDeleteDatasetError {const AigConfigDeleteDatasetError$404(this.error);
 
 final AigConfigDeleteDatasetResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

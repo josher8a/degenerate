@@ -12,10 +12,14 @@ factory AigConfigGetGatewayLogDetailError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigGetGatewayLogDetailError$404 extends AigConfigGetGatewayLogDetailError {const AigConfigGetGatewayLogDetailError$404(this.error);
 
 final AigConfigGetGatewayLogDetailResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

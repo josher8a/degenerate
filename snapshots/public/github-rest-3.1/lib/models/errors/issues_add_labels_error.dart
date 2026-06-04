@@ -14,10 +14,14 @@ factory IssuesAddLabelsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesAddLabelsError$404 extends IssuesAddLabelsError {const IssuesAddLabelsError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class IssuesAddLabelsError$410 extends IssuesAddLabelsError {const IssuesA
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 410;
 
  }
 final class IssuesAddLabelsError$422 extends IssuesAddLabelsError {const IssuesAddLabelsError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

@@ -12,10 +12,14 @@ factory GetEventRelationshipsError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetEventRelationshipsError$400 extends GetEventRelationshipsError {const GetEventRelationshipsError$400(this.error);
 
 final GetEventRelationshipsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

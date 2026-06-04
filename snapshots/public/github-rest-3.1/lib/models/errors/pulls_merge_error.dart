@@ -16,10 +16,14 @@ factory PullsMergeError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PullsMergeError$403 extends PullsMergeError {const PullsMergeError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -28,12 +32,16 @@ final class PullsMergeError$404 extends PullsMergeError {const PullsMergeError$4
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class PullsMergeError$405 extends PullsMergeError {const PullsMergeError$405(this.error);
 
 final PullsMergeResponse405 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 405;
 
@@ -42,12 +50,16 @@ final class PullsMergeError$409 extends PullsMergeError {const PullsMergeError$4
 
 final PullsMergeResponse409 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class PullsMergeError$422 extends PullsMergeError {const PullsMergeError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

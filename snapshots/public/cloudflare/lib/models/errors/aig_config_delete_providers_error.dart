@@ -12,10 +12,14 @@ factory AigConfigDeleteProvidersError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigDeleteProvidersError$404 extends AigConfigDeleteProvidersError {const AigConfigDeleteProvidersError$404(this.error);
 
 final AigConfigDeleteProvidersResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

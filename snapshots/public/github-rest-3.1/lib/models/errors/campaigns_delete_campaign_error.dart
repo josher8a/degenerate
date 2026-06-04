@@ -13,10 +13,14 @@ factory CampaignsDeleteCampaignError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CampaignsDeleteCampaignError$404 extends CampaignsDeleteCampaignError {const CampaignsDeleteCampaignError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class CampaignsDeleteCampaignError$503 extends CampaignsDeleteCampaignError {const CampaignsDeleteCampaignError$503(this.error);
 
 final CampaignsDeleteCampaignResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

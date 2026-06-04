@@ -16,10 +16,14 @@ factory CodespacesCheckPermissionsForDevcontainerError.fromResponse(ApiResponse 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesCheckPermissionsForDevcontainerError$401 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -28,12 +32,16 @@ final class CodespacesCheckPermissionsForDevcontainerError$403 extends Codespace
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class CodespacesCheckPermissionsForDevcontainerError$404 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class CodespacesCheckPermissionsForDevcontainerError$422 extends Codespace
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CodespacesCheckPermissionsForDevcontainerError$503 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$503(this.error);
 
 final CodespacesCheckPermissionsForDevcontainerResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

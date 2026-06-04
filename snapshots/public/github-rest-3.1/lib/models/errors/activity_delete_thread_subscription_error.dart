@@ -13,10 +13,14 @@ factory ActivityDeleteThreadSubscriptionError.fromResponse(ApiResponse response)
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActivityDeleteThreadSubscriptionError$401 extends ActivityDeleteThreadSubscriptionError {const ActivityDeleteThreadSubscriptionError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class ActivityDeleteThreadSubscriptionError$403 extends ActivityDeleteThreadSubscriptionError {const ActivityDeleteThreadSubscriptionError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 

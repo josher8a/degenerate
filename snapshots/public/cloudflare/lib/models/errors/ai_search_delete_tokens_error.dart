@@ -12,10 +12,14 @@ factory AiSearchDeleteTokensError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchDeleteTokensError$404 extends AiSearchDeleteTokensError {const AiSearchDeleteTokensError$404(this.error);
 
 final AiSearchDeleteTokensResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

@@ -15,10 +15,14 @@ factory CampaignsCreateCampaignError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CampaignsCreateCampaignError$400 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class CampaignsCreateCampaignError$404 extends CampaignsCreateCampaignErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class CampaignsCreateCampaignError$422 extends CampaignsCreateCampaignErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CampaignsCreateCampaignError$503 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$503(this.error);
 
 final CampaignsCreateCampaignResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

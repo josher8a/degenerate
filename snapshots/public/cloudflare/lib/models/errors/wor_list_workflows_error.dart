@@ -12,10 +12,14 @@ factory WorListWorkflowsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorListWorkflowsError$400 extends WorListWorkflowsError {const WorListWorkflowsError$400(this.error);
 
 final WorListWorkflowsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

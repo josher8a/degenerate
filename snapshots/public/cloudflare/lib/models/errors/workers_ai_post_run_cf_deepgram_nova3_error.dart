@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfDeepgramNova3Error.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfDeepgramNova3Error$400 extends WorkersAiPostRunCfDeepgramNova3Error {const WorkersAiPostRunCfDeepgramNova3Error$400(this.error);
 
 final WorkersAiPostRunCfDeepgramNova3Response400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

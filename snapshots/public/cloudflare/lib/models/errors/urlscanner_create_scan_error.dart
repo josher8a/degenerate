@@ -14,10 +14,14 @@ factory UrlscannerCreateScanError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class UrlscannerCreateScanError$400 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$400(this.error);
 
 final UrlscannerCreateScanResponse4002 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -26,12 +30,16 @@ final class UrlscannerCreateScanError$409 extends UrlscannerCreateScanError {con
 
 final UrlscannerCreateScanResponse4092 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class UrlscannerCreateScanError$429 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$429(this.error);
 
 final UrlscannerCreateScanResponse4292 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 429;
 

@@ -12,10 +12,14 @@ factory PayPerCrawlCrawlerCreateStripeConfigError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PayPerCrawlCrawlerCreateStripeConfigError$400 extends PayPerCrawlCrawlerCreateStripeConfigError {const PayPerCrawlCrawlerCreateStripeConfigError$400(this.error);
 
 final ErrorResponse2 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

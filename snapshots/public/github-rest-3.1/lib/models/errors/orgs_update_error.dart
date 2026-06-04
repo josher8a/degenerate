@@ -13,10 +13,14 @@ factory OrgsUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class OrgsUpdateError$409 extends OrgsUpdateError {const OrgsUpdateError$409(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 409;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class OrgsUpdateError$422 extends OrgsUpdateError {const OrgsUpdateError$422(this.error);
 
 final OrgsUpdateResponse422 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

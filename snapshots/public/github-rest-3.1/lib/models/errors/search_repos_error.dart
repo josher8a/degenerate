@@ -13,10 +13,14 @@ factory SearchReposError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SearchReposError$422 extends SearchReposError {const SearchReposError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 
@@ -24,6 +28,8 @@ final ValidationError error;
 final class SearchReposError$503 extends SearchReposError {const SearchReposError$503(this.error);
 
 final SearchReposResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

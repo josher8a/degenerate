@@ -12,10 +12,14 @@ factory SubscriptionsGetError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SubscriptionsGetError$404 extends SubscriptionsGetError {const SubscriptionsGetError$404(this.error);
 
 final Failure error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

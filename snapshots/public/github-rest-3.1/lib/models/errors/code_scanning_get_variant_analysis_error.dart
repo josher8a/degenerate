@@ -13,10 +13,14 @@ factory CodeScanningGetVariantAnalysisError.fromResponse(ApiResponse response) {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningGetVariantAnalysisError$404 extends CodeScanningGetVariantAnalysisError {const CodeScanningGetVariantAnalysisError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class CodeScanningGetVariantAnalysisError$503 extends CodeScanningGetVariantAnalysisError {const CodeScanningGetVariantAnalysisError$503(this.error);
 
 final CodeScanningGetVariantAnalysisResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

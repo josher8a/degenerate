@@ -16,10 +16,14 @@ factory CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.fromRes
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$400 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$401
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$403 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$404
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$500 extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

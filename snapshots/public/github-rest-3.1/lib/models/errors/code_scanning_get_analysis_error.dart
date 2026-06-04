@@ -15,10 +15,14 @@ factory CodeScanningGetAnalysisError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningGetAnalysisError$403 extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class CodeScanningGetAnalysisError$404 extends CodeScanningGetAnalysisErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class CodeScanningGetAnalysisError$422 extends CodeScanningGetAnalysisErro
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CodeScanningGetAnalysisError$503 extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError$503(this.error);
 
 final CodeScanningGetAnalysisResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

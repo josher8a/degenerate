@@ -12,10 +12,14 @@ factory WorkersAiListPublicFinetunesError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiListPublicFinetunesError$400 extends WorkersAiListPublicFinetunesError {const WorkersAiListPublicFinetunesError$400(this.error);
 
 final WorkersAiListPublicFinetunesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

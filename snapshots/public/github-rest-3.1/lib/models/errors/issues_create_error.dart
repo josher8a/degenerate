@@ -17,10 +17,14 @@ factory IssuesCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesCreateError$400 extends IssuesCreateError {const IssuesCreateError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -29,12 +33,16 @@ final class IssuesCreateError$403 extends IssuesCreateError {const IssuesCreateE
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class IssuesCreateError$404 extends IssuesCreateError {const IssuesCreateError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -43,6 +51,8 @@ final class IssuesCreateError$410 extends IssuesCreateError {const IssuesCreateE
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 410;
 
  }
@@ -50,12 +60,16 @@ final class IssuesCreateError$422 extends IssuesCreateError {const IssuesCreateE
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class IssuesCreateError$503 extends IssuesCreateError {const IssuesCreateError$503(this.error);
 
 final IssuesCreateResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

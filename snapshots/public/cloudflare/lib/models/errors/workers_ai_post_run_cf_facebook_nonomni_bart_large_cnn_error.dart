@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfFacebookNonomniBartLargeCnnError.fromResponse(ApiRespo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfFacebookNonomniBartLargeCnnError$400 extends WorkersAiPostRunCfFacebookNonomniBartLargeCnnError {const WorkersAiPostRunCfFacebookNonomniBartLargeCnnError$400(this.error);
 
 final WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

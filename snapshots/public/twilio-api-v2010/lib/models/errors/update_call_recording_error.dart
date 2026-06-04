@@ -12,10 +12,14 @@ factory UpdateCallRecordingError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class UpdateCallRecordingError$408 extends UpdateCallRecordingError {const UpdateCallRecordingError$408(this.error);
 
 final UpdateCallRecordingResponse408 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 408;
 

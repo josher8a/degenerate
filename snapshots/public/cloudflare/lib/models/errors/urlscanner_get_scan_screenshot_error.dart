@@ -13,10 +13,14 @@ factory UrlscannerGetScanScreenshotError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class UrlscannerGetScanScreenshotError$400 extends UrlscannerGetScanScreenshotError {const UrlscannerGetScanScreenshotError$400(this.error);
 
 final UrlscannerGetScanScreenshotResponse4002 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final UrlscannerGetScanScreenshotResponse4002 error;
 final class UrlscannerGetScanScreenshotError$404 extends UrlscannerGetScanScreenshotError {const UrlscannerGetScanScreenshotError$404(this.error);
 
 final UrlscannerGetScanScreenshotResponse4042 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

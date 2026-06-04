@@ -14,10 +14,14 @@ factory ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.fromRespon
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$403 extends ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {const ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$404 ex
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$422 extends ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {const ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

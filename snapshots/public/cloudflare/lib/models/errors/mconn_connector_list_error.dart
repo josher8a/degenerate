@@ -15,10 +15,14 @@ factory MconnConnectorListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class MconnConnectorListError$400 extends MconnConnectorListError {const MconnConnectorListError$400(this.error);
 
 final MconnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class MconnConnectorListError$401 extends MconnConnectorListError {const M
 
 final MconnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
@@ -34,12 +40,16 @@ final class MconnConnectorListError$403 extends MconnConnectorListError {const M
 
 final MconnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class MconnConnectorListError$500 extends MconnConnectorListError {const MconnConnectorListError$500(this.error);
 
 final MconnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

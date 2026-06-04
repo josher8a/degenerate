@@ -12,10 +12,14 @@ factory AiSearchCreateInstancesError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchCreateInstancesError$400 extends AiSearchCreateInstancesError {const AiSearchCreateInstancesError$400(this.error);
 
 final AiSearchCreateInstancesResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

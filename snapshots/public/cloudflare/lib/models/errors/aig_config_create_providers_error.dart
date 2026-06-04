@@ -12,10 +12,14 @@ factory AigConfigCreateProvidersError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigCreateProvidersError$400 extends AigConfigCreateProvidersError {const AigConfigCreateProvidersError$400(this.error);
 
 final AigConfigCreateProvidersResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

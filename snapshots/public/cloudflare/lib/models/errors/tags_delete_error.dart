@@ -12,10 +12,14 @@ factory TagsDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class TagsDeleteError$412 extends TagsDeleteError {const TagsDeleteError$412(this.error);
 
 final ResponseCommonFailure59 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 412;
 

@@ -12,10 +12,14 @@ factory AigConfigListEvaluatorsError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigListEvaluatorsError$400 extends AigConfigListEvaluatorsError {const AigConfigListEvaluatorsError$400(this.error);
 
 final AigConfigListEvaluatorsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -14,10 +14,14 @@ factory CodeScanningGetDefaultSetupError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningGetDefaultSetupError$403 extends CodeScanningGetDefaultSetupError {const CodeScanningGetDefaultSetupError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class CodeScanningGetDefaultSetupError$404 extends CodeScanningGetDefaultS
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningGetDefaultSetupError$503 extends CodeScanningGetDefaultSetupError {const CodeScanningGetDefaultSetupError$503(this.error);
 
 final CodeScanningGetDefaultSetupResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

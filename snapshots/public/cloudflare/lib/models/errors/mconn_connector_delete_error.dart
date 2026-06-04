@@ -16,10 +16,14 @@ factory MconnConnectorDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class MconnConnectorDeleteError$400 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$400(this.error);
 
 final MconnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class MconnConnectorDeleteError$401 extends MconnConnectorDeleteError {con
 
 final MconnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class MconnConnectorDeleteError$403 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$403(this.error);
 
 final MconnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class MconnConnectorDeleteError$404 extends MconnConnectorDeleteError {con
 
 final MconnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class MconnConnectorDeleteError$500 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$500(this.error);
 
 final MconnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

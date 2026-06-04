@@ -12,10 +12,14 @@ factory RadarGetBotsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBotsError$400 extends RadarGetBotsError {const RadarGetBotsError$400(this.error);
 
 final RadarGetBotsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

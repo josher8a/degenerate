@@ -12,10 +12,14 @@ factory GetGroupMemberListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetGroupMemberListError$400 extends GetGroupMemberListError {const GetGroupMemberListError$400(this.error);
 
 final GetGroupMemberListResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

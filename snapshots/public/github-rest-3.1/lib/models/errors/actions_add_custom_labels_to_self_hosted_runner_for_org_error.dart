@@ -13,10 +13,14 @@ factory ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.fromResponse(ApiResp
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$404 extends ActionsAddCustomLabelsToSelfHostedRunnerForOrgError {const ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$422 extends ActionsAddCustomLabelsToSelfHostedRunnerForOrgError {const ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

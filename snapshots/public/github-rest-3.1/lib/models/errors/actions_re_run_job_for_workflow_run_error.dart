@@ -12,10 +12,14 @@ factory ActionsReRunJobForWorkflowRunError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsReRunJobForWorkflowRunError$403 extends ActionsReRunJobForWorkflowRunError {const ActionsReRunJobForWorkflowRunError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 

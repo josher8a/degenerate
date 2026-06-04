@@ -14,10 +14,14 @@ factory CodeScanningDeleteCodeqlDatabaseError.fromResponse(ApiResponse response)
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningDeleteCodeqlDatabaseError$403 extends CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCodeqlDatabaseError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -26,12 +30,16 @@ final class CodeScanningDeleteCodeqlDatabaseError$404 extends CodeScanningDelete
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningDeleteCodeqlDatabaseError$503 extends CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCodeqlDatabaseError$503(this.error);
 
 final CodeScanningDeleteCodeqlDatabaseResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

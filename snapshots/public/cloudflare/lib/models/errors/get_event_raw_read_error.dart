@@ -12,10 +12,14 @@ factory GetEventRawReadError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GetEventRawReadError$400 extends GetEventRawReadError {const GetEventRawReadError$400(this.error);
 
 final GetEventRawReadResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

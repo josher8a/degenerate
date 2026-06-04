@@ -14,10 +14,14 @@ factory ReposCreateOrgRulesetError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposCreateOrgRulesetError$404 extends ReposCreateOrgRulesetError {const ReposCreateOrgRulesetError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class ReposCreateOrgRulesetError$422 extends ReposCreateOrgRulesetError {c
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class ReposCreateOrgRulesetError$500 extends ReposCreateOrgRulesetError {const ReposCreateOrgRulesetError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

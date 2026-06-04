@@ -12,10 +12,14 @@ factory RadarGetLeakedCredentialChecksSummaryError.fromResponse(ApiResponse resp
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetLeakedCredentialChecksSummaryError$400 extends RadarGetLeakedCredentialChecksSummaryError {const RadarGetLeakedCredentialChecksSummaryError$400(this.error);
 
 final RadarGetLeakedCredentialChecksSummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

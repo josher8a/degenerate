@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfZaiOrgGlm47FlashError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfZaiOrgGlm47FlashError$400 extends WorkersAiPostRunCfZaiOrgGlm47FlashError {const WorkersAiPostRunCfZaiOrgGlm47FlashError$400(this.error);
 
 final WorkersAiPostRunCfZaiOrgGlm47FlashResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

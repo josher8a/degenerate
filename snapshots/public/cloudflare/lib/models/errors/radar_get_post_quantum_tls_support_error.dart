@@ -12,10 +12,14 @@ factory RadarGetPostQuantumTlsSupportError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetPostQuantumTlsSupportError$400 extends RadarGetPostQuantumTlsSupportError {const RadarGetPostQuantumTlsSupportError$400(this.error);
 
 final RadarGetPostQuantumTlsSupportResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

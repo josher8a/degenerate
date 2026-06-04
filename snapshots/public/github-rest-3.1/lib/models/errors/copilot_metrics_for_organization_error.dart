@@ -15,10 +15,14 @@ factory CopilotMetricsForOrganizationError.fromResponse(ApiResponse response) { 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CopilotMetricsForOrganizationError$403 extends CopilotMetricsForOrganizationError {const CopilotMetricsForOrganizationError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class CopilotMetricsForOrganizationError$404 extends CopilotMetricsForOrga
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class CopilotMetricsForOrganizationError$422 extends CopilotMetricsForOrga
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CopilotMetricsForOrganizationError$500 extends CopilotMetricsForOrganizationError {const CopilotMetricsForOrganizationError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

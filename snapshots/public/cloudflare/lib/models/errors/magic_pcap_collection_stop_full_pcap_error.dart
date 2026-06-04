@@ -11,11 +11,15 @@ factory MagicPcapCollectionStopFullPcapError.fromResponse(ApiResponse response) 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class MagicPcapCollectionStopFullPcapError$ResponseCommonFailure49 extends MagicPcapCollectionStopFullPcapError {const MagicPcapCollectionStopFullPcapError$ResponseCommonFailure49(this.error, this.statusCode, );
 
 final ResponseCommonFailure49 error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }

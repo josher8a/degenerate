@@ -12,10 +12,14 @@ factory UrlscannerSearchScansError.fromResponse(ApiResponse response) {     try 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class UrlscannerSearchScansError$400 extends UrlscannerSearchScansError {const UrlscannerSearchScansError$400(this.error);
 
 final UrlscannerSearchScansResponse4002 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

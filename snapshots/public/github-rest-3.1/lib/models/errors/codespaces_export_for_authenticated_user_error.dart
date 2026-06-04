@@ -16,10 +16,14 @@ factory CodespacesExportForAuthenticatedUserError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesExportForAuthenticatedUserError$401 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -28,12 +32,16 @@ final class CodespacesExportForAuthenticatedUserError$403 extends CodespacesExpo
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class CodespacesExportForAuthenticatedUserError$404 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class CodespacesExportForAuthenticatedUserError$422 extends CodespacesExpo
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class CodespacesExportForAuthenticatedUserError$500 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

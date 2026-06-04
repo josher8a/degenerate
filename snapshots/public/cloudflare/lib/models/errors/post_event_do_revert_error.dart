@@ -12,10 +12,14 @@ factory PostEventDoRevertError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostEventDoRevertError$400 extends PostEventDoRevertError {const PostEventDoRevertError$400(this.error);
 
 final PostEventDoRevertResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

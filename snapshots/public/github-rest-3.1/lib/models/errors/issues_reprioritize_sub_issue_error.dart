@@ -15,10 +15,14 @@ factory IssuesReprioritizeSubIssueError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesReprioritizeSubIssueError$403 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class IssuesReprioritizeSubIssueError$404 extends IssuesReprioritizeSubIss
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class IssuesReprioritizeSubIssueError$422 extends IssuesReprioritizeSubIss
 
 final ValidationErrorSimple error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class IssuesReprioritizeSubIssueError$503 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$503(this.error);
 
 final IssuesReprioritizeSubIssueResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

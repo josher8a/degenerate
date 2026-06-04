@@ -13,10 +13,14 @@ factory AigConfigUpdateDatasetError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigUpdateDatasetError$400 extends AigConfigUpdateDatasetError {const AigConfigUpdateDatasetError$400(this.error);
 
 final AigConfigUpdateDatasetResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AigConfigUpdateDatasetResponse400 error;
 final class AigConfigUpdateDatasetError$404 extends AigConfigUpdateDatasetError {const AigConfigUpdateDatasetError$404(this.error);
 
 final AigConfigUpdateDatasetResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

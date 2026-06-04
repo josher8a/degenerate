@@ -15,10 +15,14 @@ factory CodespacesAddRepositoryForSecretForAuthenticatedUserError.fromResponse(A
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$401 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -27,6 +31,8 @@ final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$403 extend
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$404 extend
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$500 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

@@ -11,11 +11,15 @@ factory MagicPcapCollectionCreatePcapRequestError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class MagicPcapCollectionCreatePcapRequestError$MagicPcapCollectionCreatePcapRequestResponsedefault extends MagicPcapCollectionCreatePcapRequestError {const MagicPcapCollectionCreatePcapRequestError$MagicPcapCollectionCreatePcapRequestResponsedefault(this.error, this.statusCode, );
 
 final MagicPcapCollectionCreatePcapRequestResponsedefault error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }

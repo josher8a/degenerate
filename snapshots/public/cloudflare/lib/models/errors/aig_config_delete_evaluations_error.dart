@@ -12,10 +12,14 @@ factory AigConfigDeleteEvaluationsError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AigConfigDeleteEvaluationsError$404 extends AigConfigDeleteEvaluationsError {const AigConfigDeleteEvaluationsError$404(this.error);
 
 final AigConfigDeleteEvaluationsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

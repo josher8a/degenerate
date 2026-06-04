@@ -12,10 +12,14 @@ factory CancelResponseError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CancelResponseError$404 extends CancelResponseError {const CancelResponseError$404(this.error);
 
 final ErrorModel error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

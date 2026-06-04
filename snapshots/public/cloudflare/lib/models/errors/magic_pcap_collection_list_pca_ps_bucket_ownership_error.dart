@@ -11,11 +11,15 @@ factory MagicPcapCollectionListPcaPsBucketOwnershipError.fromResponse(ApiRespons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class MagicPcapCollectionListPcaPsBucketOwnershipError$MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault extends MagicPcapCollectionListPcaPsBucketOwnershipError {const MagicPcapCollectionListPcaPsBucketOwnershipError$MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault(this.error, this.statusCode, );
 
 final MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }

@@ -16,10 +16,14 @@ factory ProvidersDiscoverAllError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ProvidersDiscoverAllError$400 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$400(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class ProvidersDiscoverAllError$401 extends ProvidersDiscoverAllError {con
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
 final class ProvidersDiscoverAllError$403 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$403(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -42,12 +50,16 @@ final class ProvidersDiscoverAllError$409 extends ProvidersDiscoverAllError {con
 
 final McnBadResponse error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ProvidersDiscoverAllError$500 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$500(this.error);
 
 final McnBadResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

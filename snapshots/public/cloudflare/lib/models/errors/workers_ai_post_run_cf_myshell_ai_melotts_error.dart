@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfMyshellAiMelottsError.fromResponse(ApiResponse respons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfMyshellAiMelottsError$400 extends WorkersAiPostRunCfMyshellAiMelottsError {const WorkersAiPostRunCfMyshellAiMelottsError$400(this.error);
 
 final WorkersAiPostRunCfMyshellAiMelottsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

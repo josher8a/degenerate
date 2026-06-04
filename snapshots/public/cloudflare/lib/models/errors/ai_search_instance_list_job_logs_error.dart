@@ -13,10 +13,14 @@ factory AiSearchInstanceListJobLogsError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchInstanceListJobLogsError$400 extends AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsError$400(this.error);
 
 final AiSearchInstanceListJobLogsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AiSearchInstanceListJobLogsResponse400 error;
 final class AiSearchInstanceListJobLogsError$500 extends AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsError$500(this.error);
 
 final AiSearchInstanceListJobLogsResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

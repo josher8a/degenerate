@@ -15,10 +15,14 @@ factory CodeScanningGetAutofixError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningGetAutofixError$400 extends CodeScanningGetAutofixError {const CodeScanningGetAutofixError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class CodeScanningGetAutofixError$403 extends CodeScanningGetAutofixError 
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class CodeScanningGetAutofixError$404 extends CodeScanningGetAutofixError 
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningGetAutofixError$503 extends CodeScanningGetAutofixError {const CodeScanningGetAutofixError$503(this.error);
 
 final CodeScanningGetAutofixResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

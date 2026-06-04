@@ -15,10 +15,14 @@ factory GitCreateBlobError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class GitCreateBlobError$403 extends GitCreateBlobError {const GitCreateBlobError$403(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 403;
 
@@ -27,6 +31,8 @@ final class GitCreateBlobError$404 extends GitCreateBlobError {const GitCreateBl
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class GitCreateBlobError$409 extends GitCreateBlobError {const GitCreateBl
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class GitCreateBlobError$422 extends GitCreateBlobError {const GitCreateBlobError$422(this.error);
 
 final GitCreateBlobResponse422 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

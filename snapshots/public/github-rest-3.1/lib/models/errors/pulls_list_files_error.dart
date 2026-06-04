@@ -14,10 +14,14 @@ factory PullsListFilesError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PullsListFilesError$422 extends PullsListFilesError {const PullsListFilesError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 
@@ -26,12 +30,16 @@ final class PullsListFilesError$500 extends PullsListFilesError {const PullsList
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class PullsListFilesError$503 extends PullsListFilesError {const PullsListFilesError$503(this.error);
 
 final PullsListFilesResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

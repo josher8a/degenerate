@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfBlackForestLabsFlux2DevError.fromResponse(ApiResponse 
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfBlackForestLabsFlux2DevError$400 extends WorkersAiPostRunCfBlackForestLabsFlux2DevError {const WorkersAiPostRunCfBlackForestLabsFlux2DevError$400(this.error);
 
 final WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

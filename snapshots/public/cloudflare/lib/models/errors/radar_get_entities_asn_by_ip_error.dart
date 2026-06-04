@@ -12,10 +12,14 @@ factory RadarGetEntitiesAsnByIpError.fromResponse(ApiResponse response) {     tr
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetEntitiesAsnByIpError$404 extends RadarGetEntitiesAsnByIpError {const RadarGetEntitiesAsnByIpError$404(this.error);
 
 final RadarGetEntitiesAsnByIpResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

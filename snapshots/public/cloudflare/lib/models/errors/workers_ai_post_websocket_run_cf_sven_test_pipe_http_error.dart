@@ -12,10 +12,14 @@ factory WorkersAiPostWebsocketRunCfSvenTestPipeHttpError.fromResponse(ApiRespons
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostWebsocketRunCfSvenTestPipeHttpError$400 extends WorkersAiPostWebsocketRunCfSvenTestPipeHttpError {const WorkersAiPostWebsocketRunCfSvenTestPipeHttpError$400(this.error);
 
 final WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

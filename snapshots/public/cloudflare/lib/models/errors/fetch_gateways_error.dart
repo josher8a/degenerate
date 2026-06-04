@@ -12,10 +12,14 @@ factory FetchGatewaysError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class FetchGatewaysError$404 extends FetchGatewaysError {const FetchGatewaysError$404(this.error);
 
 final FetchGatewaysResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

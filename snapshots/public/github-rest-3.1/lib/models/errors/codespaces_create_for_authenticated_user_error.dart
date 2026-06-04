@@ -15,10 +15,14 @@ factory CodespacesCreateForAuthenticatedUserError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodespacesCreateForAuthenticatedUserError$401 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -27,6 +31,8 @@ final class CodespacesCreateForAuthenticatedUserError$403 extends CodespacesCrea
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class CodespacesCreateForAuthenticatedUserError$404 extends CodespacesCrea
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodespacesCreateForAuthenticatedUserError$503 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError$503(this.error);
 
 final CodespacesCreateForAuthenticatedUserResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

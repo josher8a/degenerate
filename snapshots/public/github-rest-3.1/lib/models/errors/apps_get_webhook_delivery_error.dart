@@ -13,10 +13,14 @@ factory AppsGetWebhookDeliveryError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AppsGetWebhookDeliveryError$400 extends AppsGetWebhookDeliveryError {const AppsGetWebhookDeliveryError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class AppsGetWebhookDeliveryError$422 extends AppsGetWebhookDeliveryError {const AppsGetWebhookDeliveryError$422(this.error);
 
 final ValidationError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

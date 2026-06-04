@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError.fromResponse(
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError$400 extends WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError {const WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError$400(this.error);
 
 final WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

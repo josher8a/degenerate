@@ -12,10 +12,14 @@ factory RadarGetEmailSecuritySummaryError.fromResponse(ApiResponse response) {  
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetEmailSecuritySummaryError$400 extends RadarGetEmailSecuritySummaryError {const RadarGetEmailSecuritySummaryError$400(this.error);
 
 final RadarGetEmailSecuritySummaryResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

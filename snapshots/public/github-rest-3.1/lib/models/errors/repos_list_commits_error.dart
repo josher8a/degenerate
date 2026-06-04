@@ -15,10 +15,14 @@ factory ReposListCommitsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ReposListCommitsError$400 extends ReposListCommitsError {const ReposListCommitsError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class ReposListCommitsError$404 extends ReposListCommitsError {const Repos
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
@@ -34,12 +40,16 @@ final class ReposListCommitsError$409 extends ReposListCommitsError {const Repos
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ReposListCommitsError$500 extends ReposListCommitsError {const ReposListCommitsError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

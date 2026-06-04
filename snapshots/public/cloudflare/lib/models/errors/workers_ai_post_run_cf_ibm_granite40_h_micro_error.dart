@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfIbmGranite40HMicroError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfIbmGranite40HMicroError$400 extends WorkersAiPostRunCfIbmGranite40HMicroError {const WorkersAiPostRunCfIbmGranite40HMicroError$400(this.error);
 
 final WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -12,10 +12,14 @@ factory CreateEvalRunError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CreateEvalRunError$400 extends CreateEvalRunError {const CreateEvalRunError$400(this.error);
 
 final ErrorModel error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

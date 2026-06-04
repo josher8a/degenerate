@@ -14,10 +14,14 @@ factory ActionsGenerateRunnerJitconfigForOrgError.fromResponse(ApiResponse respo
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ActionsGenerateRunnerJitconfigForOrgError$404 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -26,12 +30,16 @@ final class ActionsGenerateRunnerJitconfigForOrgError$409 extends ActionsGenerat
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 409;
 
  }
 final class ActionsGenerateRunnerJitconfigForOrgError$422 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError$422(this.error);
 
 final ValidationErrorSimple error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 422;
 

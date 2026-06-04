@@ -13,10 +13,14 @@ factory AiSearchUpdateTokensError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AiSearchUpdateTokensError$400 extends AiSearchUpdateTokensError {const AiSearchUpdateTokensError$400(this.error);
 
 final AiSearchUpdateTokensResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final AiSearchUpdateTokensResponse400 error;
 final class AiSearchUpdateTokensError$404 extends AiSearchUpdateTokensError {const AiSearchUpdateTokensError$404(this.error);
 
 final AiSearchUpdateTokensResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

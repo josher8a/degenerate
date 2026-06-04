@@ -14,10 +14,14 @@ factory DestinationListError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DestinationListError$401 extends DestinationListError {const DestinationListError$401(this.error);
 
 final DestinationListResponse401 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -26,12 +30,16 @@ final class DestinationListError$404 extends DestinationListError {const Destina
 
 final DestinationListResponse404 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class DestinationListError$500 extends DestinationListError {const DestinationListError$500(this.error);
 
 final DestinationListResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

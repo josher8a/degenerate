@@ -13,10 +13,14 @@ factory SecretScanningListAlertsForOrgError.fromResponse(ApiResponse response) {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class SecretScanningListAlertsForOrgError$404 extends SecretScanningListAlertsForOrgError {const SecretScanningListAlertsForOrgError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class SecretScanningListAlertsForOrgError$503 extends SecretScanningListAlertsForOrgError {const SecretScanningListAlertsForOrgError$503(this.error);
 
 final SecretScanningListAlertsForOrgResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

@@ -12,10 +12,14 @@ factory RadarGetRankingTopDomainsError.fromResponse(ApiResponse response) {     
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetRankingTopDomainsError$400 extends RadarGetRankingTopDomainsError {const RadarGetRankingTopDomainsError$400(this.error);
 
 final RadarGetRankingTopDomainsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

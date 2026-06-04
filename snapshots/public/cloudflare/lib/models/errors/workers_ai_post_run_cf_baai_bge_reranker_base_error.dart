@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfBaaiBgeRerankerBaseError.fromResponse(ApiResponse resp
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfBaaiBgeRerankerBaseError$400 extends WorkersAiPostRunCfBaaiBgeRerankerBaseError {const WorkersAiPostRunCfBaaiBgeRerankerBaseError$400(this.error);
 
 final WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

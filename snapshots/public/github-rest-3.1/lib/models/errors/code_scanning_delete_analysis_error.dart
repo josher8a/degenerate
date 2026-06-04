@@ -15,10 +15,14 @@ factory CodeScanningDeleteAnalysisError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CodeScanningDeleteAnalysisError$400 extends CodeScanningDeleteAnalysisError {const CodeScanningDeleteAnalysisError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class CodeScanningDeleteAnalysisError$403 extends CodeScanningDeleteAnalys
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
@@ -34,12 +40,16 @@ final class CodeScanningDeleteAnalysisError$404 extends CodeScanningDeleteAnalys
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class CodeScanningDeleteAnalysisError$503 extends CodeScanningDeleteAnalysisError {const CodeScanningDeleteAnalysisError$503(this.error);
 
 final CodeScanningDeleteAnalysisResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

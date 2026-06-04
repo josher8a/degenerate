@@ -16,10 +16,14 @@ factory ProjectsCreateViewForOrgError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ProjectsCreateViewForOrgError$401 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -28,12 +32,16 @@ final class ProjectsCreateViewForOrgError$403 extends ProjectsCreateViewForOrgEr
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class ProjectsCreateViewForOrgError$404 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class ProjectsCreateViewForOrgError$422 extends ProjectsCreateViewForOrgEr
 
 final ValidationError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
 final class ProjectsCreateViewForOrgError$503 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$503(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

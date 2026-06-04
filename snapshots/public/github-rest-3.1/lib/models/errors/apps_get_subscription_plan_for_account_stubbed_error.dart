@@ -12,10 +12,14 @@ factory AppsGetSubscriptionPlanForAccountStubbedError.fromResponse(ApiResponse r
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AppsGetSubscriptionPlanForAccountStubbedError$401 extends AppsGetSubscriptionPlanForAccountStubbedError {const AppsGetSubscriptionPlanForAccountStubbedError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 

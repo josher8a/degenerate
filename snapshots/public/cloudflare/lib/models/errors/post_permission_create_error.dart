@@ -12,10 +12,14 @@ factory PostPermissionCreateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostPermissionCreateError$400 extends PostPermissionCreateError {const PostPermissionCreateError$400(this.error);
 
 final PostPermissionCreateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

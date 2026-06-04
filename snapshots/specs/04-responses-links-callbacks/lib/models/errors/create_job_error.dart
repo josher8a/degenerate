@@ -11,11 +11,15 @@ factory CreateJobError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CreateJobError$ErrorModel extends CreateJobError {const CreateJobError$ErrorModel(this.error, this.statusCode, );
 
 final ErrorModel error;
 
 @override final int statusCode;
+
+@override Object get typedError => error;
 
  }

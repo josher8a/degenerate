@@ -16,10 +16,14 @@ factory IssuesUnpinCommentError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class IssuesUnpinCommentError$401 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -28,12 +32,16 @@ final class IssuesUnpinCommentError$403 extends IssuesUnpinCommentError {const I
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class IssuesUnpinCommentError$404 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class IssuesUnpinCommentError$410 extends IssuesUnpinCommentError {const I
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 410;
 
  }
 final class IssuesUnpinCommentError$503 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$503(this.error);
 
 final IssuesUnpinCommentResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

@@ -14,10 +14,14 @@ factory DestinationsDeleteError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DestinationsDeleteError$401 extends DestinationsDeleteError {const DestinationsDeleteError$401(this.error);
 
 final DestinationsDeleteResponse401 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -26,12 +30,16 @@ final class DestinationsDeleteError$404 extends DestinationsDeleteError {const D
 
 final DestinationsDeleteResponse404 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class DestinationsDeleteError$500 extends DestinationsDeleteError {const DestinationsDeleteError$500(this.error);
 
 final DestinationsDeleteResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

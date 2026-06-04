@@ -13,10 +13,14 @@ factory WorDescribeWorkflowVersionsError.fromResponse(ApiResponse response) {   
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorDescribeWorkflowVersionsError$400 extends WorDescribeWorkflowVersionsError {const WorDescribeWorkflowVersionsError$400(this.error);
 
 final WorDescribeWorkflowVersionsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -24,6 +28,8 @@ final WorDescribeWorkflowVersionsResponse400 error;
 final class WorDescribeWorkflowVersionsError$404 extends WorDescribeWorkflowVersionsError {const WorDescribeWorkflowVersionsError$404(this.error);
 
 final WorDescribeWorkflowVersionsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

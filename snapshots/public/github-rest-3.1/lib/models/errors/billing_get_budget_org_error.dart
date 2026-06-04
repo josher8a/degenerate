@@ -16,10 +16,14 @@ factory BillingGetBudgetOrgError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BillingGetBudgetOrgError$400 extends BillingGetBudgetOrgError {const BillingGetBudgetOrgError$400(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -28,12 +32,16 @@ final class BillingGetBudgetOrgError$403 extends BillingGetBudgetOrgError {const
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 403;
 
  }
 final class BillingGetBudgetOrgError$404 extends BillingGetBudgetOrgError {const BillingGetBudgetOrgError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -42,12 +50,16 @@ final class BillingGetBudgetOrgError$500 extends BillingGetBudgetOrgError {const
 
 final BasicError error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class BillingGetBudgetOrgError$503 extends BillingGetBudgetOrgError {const BillingGetBudgetOrgError$503(this.error);
 
 final BillingGetBudgetOrgResponse503 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 503;
 

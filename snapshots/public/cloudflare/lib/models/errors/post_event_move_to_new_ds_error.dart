@@ -12,10 +12,14 @@ factory PostEventMoveToNewDsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostEventMoveToNewDsError$400 extends PostEventMoveToNewDsError {const PostEventMoveToNewDsError$400(this.error);
 
 final PostEventMoveToNewDsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

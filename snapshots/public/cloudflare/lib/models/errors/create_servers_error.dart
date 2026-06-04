@@ -12,10 +12,14 @@ factory CreateServersError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class CreateServersError$400 extends CreateServersError {const CreateServersError$400(this.error);
 
 final CreateServersResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

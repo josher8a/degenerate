@@ -12,10 +12,14 @@ factory RadarGetOriginsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetOriginsError$400 extends RadarGetOriginsError {const RadarGetOriginsError$400(this.error);
 
 final RadarGetOriginsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

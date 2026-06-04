@@ -15,10 +15,14 @@ factory BrapiPostJsonError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class BrapiPostJsonError$400 extends BrapiPostJsonError {const BrapiPostJsonError$400(this.error);
 
 final BrapiPostJsonResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class BrapiPostJsonError$422 extends BrapiPostJsonError {const BrapiPostJs
 
 final BrapiPostJsonResponse422 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 422;
 
  }
@@ -34,12 +40,16 @@ final class BrapiPostJsonError$429 extends BrapiPostJsonError {const BrapiPostJs
 
 final BrapiPostJsonResponse429 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 429;
 
  }
 final class BrapiPostJsonError$500 extends BrapiPostJsonError {const BrapiPostJsonError$500(this.error);
 
 final BrapiPostJsonResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

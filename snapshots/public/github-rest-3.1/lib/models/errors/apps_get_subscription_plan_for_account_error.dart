@@ -13,10 +13,14 @@ factory AppsGetSubscriptionPlanForAccountError.fromResponse(ApiResponse response
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AppsGetSubscriptionPlanForAccountError$401 extends AppsGetSubscriptionPlanForAccountError {const AppsGetSubscriptionPlanForAccountError$401(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 401;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class AppsGetSubscriptionPlanForAccountError$404 extends AppsGetSubscriptionPlanForAccountError {const AppsGetSubscriptionPlanForAccountError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

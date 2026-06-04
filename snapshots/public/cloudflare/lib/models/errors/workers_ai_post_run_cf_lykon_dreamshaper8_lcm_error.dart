@@ -12,10 +12,14 @@ factory WorkersAiPostRunCfLykonDreamshaper8LcmError.fromResponse(ApiResponse res
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorkersAiPostRunCfLykonDreamshaper8LcmError$400 extends WorkersAiPostRunCfLykonDreamshaper8LcmError {const WorkersAiPostRunCfLykonDreamshaper8LcmError$400(this.error);
 
 final WorkersAiPostRunCfLykonDreamshaper8LcmResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

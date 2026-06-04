@@ -12,10 +12,14 @@ factory RadarGetGeolocationDetailsError.fromResponse(ApiResponse response) {    
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetGeolocationDetailsError$404 extends RadarGetGeolocationDetailsError {const RadarGetGeolocationDetailsError$404(this.error);
 
 final RadarGetGeolocationDetailsResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

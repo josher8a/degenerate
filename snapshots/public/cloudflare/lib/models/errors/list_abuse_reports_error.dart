@@ -12,10 +12,14 @@ factory ListAbuseReportsError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class ListAbuseReportsError$500 extends ListAbuseReportsError {const ListAbuseReportsError$500(this.error);
 
 final ListAbuseReportsResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

@@ -12,10 +12,14 @@ factory RadarGetBgpRoutesStatsError.fromResponse(ApiResponse response) {     try
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpRoutesStatsError$400 extends RadarGetBgpRoutesStatsError {const RadarGetBgpRoutesStatsError$400(this.error);
 
 final RadarGetBgpRoutesStatsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

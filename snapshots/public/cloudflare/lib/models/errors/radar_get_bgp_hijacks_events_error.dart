@@ -12,10 +12,14 @@ factory RadarGetBgpHijacksEventsError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class RadarGetBgpHijacksEventsError$400 extends RadarGetBgpHijacksEventsError {const RadarGetBgpHijacksEventsError$400(this.error);
 
 final RadarGetBgpHijacksEventsResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

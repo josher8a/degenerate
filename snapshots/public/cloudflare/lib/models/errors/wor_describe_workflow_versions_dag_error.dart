@@ -12,10 +12,14 @@ factory WorDescribeWorkflowVersionsDagError.fromResponse(ApiResponse response) {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class WorDescribeWorkflowVersionsDagError$404 extends WorDescribeWorkflowVersionsDagError {const WorDescribeWorkflowVersionsDagError$404(this.error);
 
 final WorDescribeWorkflowVersionsDagResponse404 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 

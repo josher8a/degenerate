@@ -12,10 +12,14 @@ factory PostEventGraphQlError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class PostEventGraphQlError$400 extends PostEventGraphQlError {const PostEventGraphQlError$400(this.error);
 
 final PostEventGraphQlResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

@@ -14,10 +14,14 @@ factory StatusGetXSpeakeasyErrorsError.fromResponse(ApiResponse response) {     
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class StatusGetXSpeakeasyErrorsError$418 extends StatusGetXSpeakeasyErrorsError {const StatusGetXSpeakeasyErrorsError$418(this.error);
 
 final ErrorModel error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 418;
 
@@ -26,12 +30,16 @@ final class StatusGetXSpeakeasyErrorsError$500 extends StatusGetXSpeakeasyErrors
 
 final ErrorModel error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 500;
 
  }
 final class StatusGetXSpeakeasyErrorsError$501 extends StatusGetXSpeakeasyErrorsError {const StatusGetXSpeakeasyErrorsError$501(this.error);
 
 final StatusGetXSpeakeasyErrorsResponse501 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 501;
 

@@ -12,10 +12,14 @@ factory InpaintingError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class InpaintingError$400 extends InpaintingError {const InpaintingError$400(this.error);
 
 final $5InpaintingResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 

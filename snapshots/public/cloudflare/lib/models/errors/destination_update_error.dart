@@ -15,10 +15,14 @@ factory DestinationUpdateError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class DestinationUpdateError$400 extends DestinationUpdateError {const DestinationUpdateError$400(this.error);
 
 final DestinationUpdateResponse400 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 400;
 
@@ -27,6 +31,8 @@ final class DestinationUpdateError$401 extends DestinationUpdateError {const Des
 
 final DestinationUpdateResponse401 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 401;
 
  }
@@ -34,12 +40,16 @@ final class DestinationUpdateError$404 extends DestinationUpdateError {const Des
 
 final DestinationUpdateResponse404 error;
 
+@override Object get typedError => error;
+
 @override int get statusCode => 404;
 
  }
 final class DestinationUpdateError$500 extends DestinationUpdateError {const DestinationUpdateError$500(this.error);
 
 final DestinationUpdateResponse500 error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

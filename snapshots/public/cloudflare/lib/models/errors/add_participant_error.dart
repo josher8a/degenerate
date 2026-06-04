@@ -12,10 +12,14 @@ factory AddParticipantError.fromResponse(ApiResponse response) {     try {
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class AddParticipantError$500 extends AddParticipantError {const AddParticipantError$500(this.error);
 
 final RealtimekitGenericErrorResponse error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 

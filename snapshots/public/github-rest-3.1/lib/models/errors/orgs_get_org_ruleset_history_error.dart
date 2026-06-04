@@ -13,10 +13,14 @@ factory OrgsGetOrgRulesetHistoryError.fromResponse(ApiResponse response) {     t
     } }
 
 int get statusCode;
+Object? get typedError => null;
+
  }
 final class OrgsGetOrgRulesetHistoryError$404 extends OrgsGetOrgRulesetHistoryError {const OrgsGetOrgRulesetHistoryError$404(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 404;
 
@@ -24,6 +28,8 @@ final BasicError error;
 final class OrgsGetOrgRulesetHistoryError$500 extends OrgsGetOrgRulesetHistoryError {const OrgsGetOrgRulesetHistoryError$500(this.error);
 
 final BasicError error;
+
+@override Object get typedError => error;
 
 @override int get statusCode => 500;
 
