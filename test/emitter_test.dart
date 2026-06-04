@@ -13,6 +13,7 @@ import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
+import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
@@ -3178,7 +3179,11 @@ void main() {
 
     late String source;
     setUpAll(() {
-      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final types = union.mapping.values.toList();
+      final registry = {for (final t in types) (t as IrObject).name: t as IrType};
+      final meta = analyzeDiscriminatedUnions([union, ...types], registry);
+      final ctx = EmitContext(registry, unionMetadata: meta);
+      final specs = DiscriminatedUnionEmitter(union, ctx: ctx).emit();
       final library = Library((b) => b..body.addAll(specs));
       source = emitRaw(library);
     });
@@ -3250,7 +3255,11 @@ void main() {
 
     late String source;
     setUpAll(() {
-      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final types = union.mapping.values.toList();
+      final registry = {for (final t in types) (t as IrObject).name: t as IrType};
+      final meta = analyzeDiscriminatedUnions([union, ...types], registry);
+      final ctx = EmitContext(registry, unionMetadata: meta);
+      final specs = DiscriminatedUnionEmitter(union, ctx: ctx).emit();
       final library = Library((b) => b..body.addAll(specs));
       source = emitRaw(library);
     });

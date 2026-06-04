@@ -13,6 +13,7 @@ import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_type_refs.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/naming.dart' show sanitizeFieldName, toTypeName;
 import 'package:meta/meta.dart' show visibleForTesting;
 
@@ -106,6 +107,7 @@ final class FileEmitter {
     List<String> unwrapFields = const [],
     Map<String, List<String>> typePaths = const {},
     bool emitRoundtripFixtures = false,
+    Map<String, DiscUnionMetadata> unionMetadata = const {},
   }) {
     final files = <String, String>{};
 
@@ -126,7 +128,7 @@ final class FileEmitter {
       typeToFile[name] = fileStemFor(name);
       typeRegistryMap[name] = type;
     }
-    final ctx = EmitContext(typeRegistryMap);
+    final ctx = EmitContext(typeRegistryMap, unionMetadata: unionMetadata);
 
     final inlining = _computeInlining(types, apis, typeToFile);
 

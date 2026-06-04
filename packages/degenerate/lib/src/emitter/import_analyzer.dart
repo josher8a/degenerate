@@ -307,7 +307,8 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
       :final discriminatorProperty,
     ):
       names.add(name);
-      for (final variant in mapping.values) {
+      final meta = ctx?.unionMetadata[name];
+      for (final MapEntry(:key, value: variant) in mapping.entries) {
         _collectTopLevelTypeName(variant, names, ctx);
         if (variant is IrObject) {
           for (final f in variant.fields) {
@@ -315,8 +316,9 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
           }
         }
         if (isBytesType(variant)) needsTypedData = true;
-        if (ctx != null && variant is IrTypeRef) {
-          final resolved = ctx.typeRegistry[variant.name];
+        if (variant is IrTypeRef) {
+          final info = meta?.variants[key];
+          final resolved = info?.resolvedType ?? variant;
           final oneOfVariants = switch (resolved) {
             IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
               variants,
@@ -331,16 +333,13 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
           }
         }
       }
-      if (ctx != null) {
-        for (final MapEntry(:key, :value) in mapping.entries) {
-          final resolved = ctx.resolve(value);
-          if (resolved is IrObject) {
+      if (meta != null) {
+        for (final MapEntry(:key, value: info) in meta.variants.entries) {
+          if (info.resolvedType is IrObject) {
+            final resolved = info.resolvedType as IrObject;
             for (final f in resolved.fields) {
               if (f.originalName == discriminatorProperty) {
-                final nonDiscFields = resolved.fields.where(
-                  (g) => g.originalName != discriminatorProperty,
-                );
-                if (f.defaultValue == key || nonDiscFields.isEmpty) {
+                if (info.discDefault == key || info.payloadFields.isEmpty) {
                   continue;
                 }
               }

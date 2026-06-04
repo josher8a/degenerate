@@ -14,6 +14,7 @@ import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/ir_validator.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
+import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/naming.dart' show toTypeName;
 import 'package:degenerate/src/naming/ir_rewriter.dart';
 import 'package:degenerate/src/naming/name_resolution.dart';
@@ -184,11 +185,17 @@ final class Generator {
       }
     }
 
+    final typeRegistryMap = {
+      for (final t in irTypes) ?t.emittableName: t,
+    };
+    final unionMeta = analyzeDiscriminatedUnions(irTypes, typeRegistryMap);
+
     final (files, outputDir) = _emitFiles(
       inlinedDoc,
       irTypes,
       irApis,
       typePaths,
+      unionMeta,
     );
 
     return _writeFiles(files, outputDir);
@@ -378,6 +385,7 @@ final class Generator {
     List<IrType> irTypes,
     List<IrApi> irApis,
     Map<String, List<String>> typePaths,
+    Map<String, DiscUnionMetadata> unionMetadata,
   ) {
     final outputBase =
         config.outputDir ??
@@ -409,6 +417,7 @@ final class Generator {
       unwrapFields: config.unwrapFields,
       typePaths: typePaths,
       emitRoundtripFixtures: config.emitRoundtripFixtures,
+      unionMetadata: unionMetadata,
     );
 
     if (config.workspace) {

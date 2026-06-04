@@ -2,81 +2,11 @@ import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/naming.dart';
 
 /// Regex to strip angle brackets, commas, and whitespace from type names.
 String _safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
-
-/// Fields shared (same Dart name and type) by every variant of [union],
-/// resolving `$ref` variants via [ctx]. These are hoisted onto the
-/// sealed base as getters. Returns empty if any variant can't be resolved to
-/// an object or the variants share no field.
-///
-/// Shared between the emitter (to emit the getters) and the file emitter (to
-/// import the types those getters reference) so both agree on the set.
-List<IrField> _discriminatedUnionCommonFields(
-  IrDiscriminatedUnion union,
-  EmitContext ctx,
-) {
-  final discKey = union.discriminatorProperty;
-
-  List<IrField>? variantFields(IrType variantType) {
-    var resolved = variantType;
-    if (resolved is IrTypeRef) {
-      final target = ctx.typeRegistry[resolved.name];
-      if (target == null) return null;
-      resolved = target;
-    }
-    if (resolved is! IrObject) return null;
-    return resolved.fields.where((f) => f.originalName != discKey).toList();
-  }
-
-  final perVariant = <List<IrField>>[];
-  for (final variantType in union.mapping.values) {
-    final fields = variantFields(variantType);
-    if (fields == null) return const [];
-    perVariant.add(fields);
-  }
-  if (perVariant.length < 2) return const [];
-
-  IrField? matchIn(List<IrField> fields, IrField f) {
-    for (final g in fields) {
-      if (g.name == f.name && irTypeName(g.type) == irTypeName(f.type)) {
-        return g;
-      }
-    }
-    return null;
-  }
-
-  // OneOf-eligible unions can't be reconstructed in the unknown variant's
-  // getter (their runtime parser is `parse`, not `fromJson`), so skip them.
-  bool isUnionField(IrType type) {
-    final t = ctx.resolve(type);
-    return switch (t) {
-      IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
-      IrAnyOf(:final variants) => isOneOfEligible(variants),
-      _ => false,
-    };
-  }
-
-  final result = <IrField>[];
-  for (final f in perVariant.first) {
-    if (isUnionField(f.type)) continue;
-    final matches = [for (final fields in perVariant) matchIn(fields, f)];
-    if (matches.any((m) => m == null)) continue; // not present in every variant
-    // The hoisted getter is non-null only when the field is required (and
-    // non-nullable) in every variant; otherwise it must be nullable so each
-    // variant's narrower getter remains a valid override. isRequired carries
-    // this decision to the getter emitters.
-    final requiredInAll = matches.every(
-      (m) => m!.isRequired && !m.type.isNullable,
-    );
-    result.add(
-      IrField(f.name, f.originalName, f.type, isRequired: requiredInAll),
-    );
-  }
-  return result;
-}
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 final class DiscriminatedUnionEmitter {
@@ -166,13 +96,16 @@ final class DiscriminatedUnionEmitter {
 
   List<String> _buildDocs() => docCommentLines(union.description);
 
+  /// Pre-computed metadata for this union, produced by [analyzeDiscriminatedUnions].
+  DiscUnionMetadata get _meta =>
+      ctx.unionMetadata[union.name] ?? const DiscUnionMetadata();
+
   /// Fields shared by every variant, hoisted onto the sealed base as nullable
   /// getters so common data can be read without pattern-matching.
-  List<IrField> get commonFields =>
-      _discriminatedUnionCommonFields(union, ctx);
+  List<IrField> get commonFields => _meta.commonFields;
 
   /// Abstract getter on the base for a hoisted common field. Non-null when the
-  /// field is required in every variant (see [_discriminatedUnionCommonFields]).
+  /// field is required in every variant.
   Method _baseCommonGetter(IrField f) => Method(
     (m) => m
       ..name = f.name
@@ -250,42 +183,27 @@ final class DiscriminatedUnionEmitter {
     return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
   }
 
-  IrObject? _resolveToObject(IrType type) {
-    final r = ctx.resolve(type);
-    return r is IrObject ? r : null;
-  }
+  /// Look up the [VariantInfo] for a discriminator value, falling back to
+  /// an unresolved default when metadata is absent.
+  VariantInfo _variantInfo(String discValue) =>
+      _meta.variants[discValue] ??
+      VariantInfo(
+        resolvedType: union.mapping[discValue] ?? const IrTypeRef(''),
+        isSpreadable: false,
+      );
 
-  List<IrField> _variantPayloadFields(IrType variantType) {
-    final obj = _resolveToObject(variantType);
-    if (obj == null) return const [];
-    return obj.fields.where((f) => f.originalName != _discJsonKey).toList();
-  }
-
-  IrType? _payloadDiscFieldType(IrType variantType) {
-    final obj = _resolveToObject(variantType);
-    if (obj == null) return null;
-    for (final f in obj.fields) {
-      if (f.originalName == _discJsonKey) return f.type;
-    }
-    return null;
-  }
-
-  String? _payloadDiscDefault(IrType variantType) {
-    final obj = _resolveToObject(variantType);
-    if (obj == null) return null;
-    for (final f in obj.fields) {
-      if (f.originalName == _discJsonKey) return f.defaultValue as String?;
-    }
-    return null;
-  }
+  List<IrField> _variantPayloadFields(String discValue) =>
+      _variantInfo(discValue).payloadFields;
 
   /// The Dart expression for the discriminator value, given the payload's
-  /// discriminator field [discFieldType]. A `String` literal type-checks only
-  /// when the field is a plain `String`. Closed string types (a Dart `enum` /
-  /// closed class via [IrEnum] or an `extension type` over `String` via
+  /// discriminator field type. A `String` literal type-checks only when the
+  /// field is a plain `String`. Closed string types (a Dart `enum` / closed
+  /// class via [IrEnum] or an `extension type` over `String` via
   /// [IrExtensionType]) need `Type.fromJson('value')`; a `bool`/`int`/`double`
-  /// discriminator field needs the bare literal (e.g. `disabled: false`).
-  String _discValueExpr(IrType discFieldType, String discValue) {
+  /// discriminator field needs the bare literal.
+  String _discValueExpr(String discValue) {
+    final discFieldType = _variantInfo(discValue).discFieldType;
+    if (discFieldType == null) return "'$discValue'";
     final t = ctx.resolve(discFieldType);
     return switch (t) {
       IrEnum(:final name, :final valueKind)
@@ -322,9 +240,10 @@ final class DiscriminatedUnionEmitter {
   Method _buildRefVariantCopyWith(
     String className,
     String fieldName,
+    String discValue,
     IrType type,
   ) {
-    final payloadFields = _variantPayloadFields(type);
+    final payloadFields = _variantPayloadFields(discValue);
     if (payloadFields.isEmpty) {
       return Method(
         (m) => m
@@ -368,7 +287,8 @@ final class DiscriminatedUnionEmitter {
   /// neither name the wrapper class nor restate the discriminator value.
   /// Returns null for variants whose payload isn't an introspectable object.
   Constructor? _buildVariantFactory(String discValue, IrType variantType) {
-    final fields = _variantPayloadFields(variantType);
+    final info = _variantInfo(discValue);
+    final fields = info.payloadFields;
     if (fields.isEmpty && variantType is! IrObject) return null;
 
     final variantClass = _variantClassName(discValue);
@@ -377,12 +297,9 @@ final class DiscriminatedUnionEmitter {
     final String body;
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
-      // Set the discriminator only when the payload has that field and its
-      // default doesn't already match the variant's value.
-      final discField = _payloadDiscFieldType(variantType);
-      final discDefault = _payloadDiscDefault(variantType);
-      final discArg = discField != null && discDefault != discValue
-          ? '$_discDartName: ${_discValueExpr(discField, discValue)}'
+      final discArg = info.discFieldType != null &&
+              info.discDefault != discValue
+          ? '$_discDartName: ${_discValueExpr(discValue)}'
           : null;
       final parts = [
         ?discArg,
@@ -687,22 +604,13 @@ final class DiscriminatedUnionEmitter {
     );
   }
 
-  String _refVariantToJsonBody(IrType type, String fieldName) {
-    // For object-like types, spread their toJson() map into the result.
-    // For non-map types (list, primitive, enum), store under 'data' key.
-    // OneOf typedefs return Object? from toJson — can't spread.
+  String _refVariantToJsonBody(
+    String discValue,
+    IrType type,
+    String fieldName,
+  ) {
     final toJsonExpr = buildToJsonCode(type, fieldName);
-    final resolved = type is IrTypeRef
-        ? (ctx.typeRegistry[type.name] ?? type)
-        : type;
-    final isSpreadable = switch (resolved) {
-      IrObject() || IrDiscriminatedUnion() => true,
-      IrUntaggedUnion(:final variants) => !isOneOfEligible(variants),
-      IrAnyOf(:final variants) => !isOneOfEligible(variants),
-      IrTypeRef() => true,
-      _ => false,
-    };
-    if (isSpreadable) {
+    if (_variantInfo(discValue).isSpreadable) {
       return '{...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $_discDartName}';
     }
     return '{${dartStringLiteral(_discJsonKey)}: $_discDartName, ${dartStringLiteral('data')}: $toJsonExpr}';
@@ -776,10 +684,12 @@ final class DiscriminatedUnionEmitter {
               ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('Map<String, dynamic>')
-              ..body = Code(_refVariantToJsonBody(type, fieldName)),
+              ..body = Code(_refVariantToJsonBody(discValue, type, fieldName)),
           ),
         )
-        ..methods.add(_buildRefVariantCopyWith(className, fieldName, type))
+        ..methods.add(
+          _buildRefVariantCopyWith(className, fieldName, discValue, type),
+        )
         ..methods.add(
           buildEqualsOverride(
             'identical(this, other) ||\n'
