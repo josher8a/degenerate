@@ -128,34 +128,138 @@ final class FileEmitter {
     }
     final ctx = EmitContext(typeRegistryMap);
 
-    // ── Determine which small types can be inlined into their parent's file ──
-    // Build a map of type name → set of parent type names that reference it.
+    final inlining = _computeInlining(types, apis, typeToFile);
+
+    _emitModelFiles(
+      files,
+      types,
+      ctx,
+      typeToFile,
+      packageName,
+      typePaths,
+      inlining,
+    );
+
+    final errorUnionMap = buildErrorUnionMap(apis, ctx);
+    final errorUnionFileStems = _emitErrorUnionFiles(
+      files,
+      errorUnionMap,
+      ctx,
+      packageName,
+      typeToFile,
+    );
+
+    _emitApiFiles(
+      files,
+      apis,
+      ctx,
+      packageName,
+      typeToFile,
+      unwrapFields,
+      errorUnionMap,
+      warnings,
+    );
+
+    warnings?.addAll(collectAmbiguityWarnings(types, ctx.typeRegistry));
+
+    if (apis.isNotEmpty) {
+      files['client/${packageName}_api.dart'] = _emitSdkFacade(
+        apis: apis,
+        securitySchemes: securitySchemes,
+        packageName: packageName,
+        defaultServerUrl: defaultServerUrl,
+      );
+    }
+
+    if (securitySchemes.isNotEmpty || globalSecurity != null) {
+      files['client/${packageName}_security.dart'] = _emitSecurityFile(
+        apis: apis,
+        securitySchemes: securitySchemes,
+        globalSecurity: globalSecurity,
+        packageName: packageName,
+      );
+    }
+
+    files['$packageName.dart'] = _emitBarrelFile(
+      types: types,
+      apis: apis,
+      packageName: packageName,
+      typeToFile: typeToFile,
+      inlinedTypes: inlining.inlinedInto.keys.toSet(),
+      hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
+      errorUnionFiles: errorUnionFileStems,
+    );
+
+    if (apis.length > 1) {
+      final typeDeps = _buildTypeDeps(types);
+      for (final api in apis) {
+        final analysis = analyzeApiImports(
+          api,
+          ctx,
+          unwrapFields,
+          errorUnionMap,
+        );
+        final reachable = _transitiveTypes(analysis.referencedTypes, typeDeps);
+        files['${toSnakeCase(api.name)}.dart'] = _emitApiBarrelFile(
+          api: api,
+          reachableTypes: reachable,
+          packageName: packageName,
+          typeToFile: typeToFile,
+          inlinedTypes: inlining.inlinedInto.keys.toSet(),
+          errorUnionFiles: errorUnionFileStems,
+          errorUnionMap: errorUnionMap,
+        );
+      }
+    }
+
+    if (emitRoundtripFixtures) {
+      files['roundtrip_fixtures.dart'] = RoundtripEmitter(
+        types,
+        packageName,
+      ).emit();
+      final negativeContent = NegativeFixtureEmitter(types, packageName).emit();
+      if (negativeContent != null) {
+        files['negative_fixtures.dart'] = negativeContent;
+      }
+    }
+
+    if (workspace) {
+      files['pubspec.yaml'] = _emitPubspec(
+        packageName: packageName,
+        workspace: true,
+      );
+    }
+
+    return files;
+  }
+
+  /// Determine which small types (enum/extension type) can be inlined into
+  /// their single parent's file.
+  ({Map<String, String> inlinedInto, Map<String, List<IrType>> inlinedChildren})
+  _computeInlining(
+    List<IrType> types,
+    List<IrApi> apis,
+    Map<String, String> typeToFile,
+  ) {
     final referencedBy = <String, Set<String>>{};
     for (final type in types) {
       final parentName = _typeName(type);
       if (parentName == null) continue;
-      // Don't resolve OneOf refs here - indirect references through typedefs
-      // shouldn't prevent inlining. Resolution is done later for imports.
       final analysis = analyzeModelImports(type);
-      analysis.referencedNames.remove(parentName); // exclude self
+      analysis.referencedNames.remove(parentName);
       for (final refName in analysis.referencedNames) {
         (referencedBy[refName] ??= {}).add(parentName);
       }
     }
-    // Also count API references - if an API directly uses a type, it stays
-    // separate.
-    // Don't resolve OneOf variant types here - variants can still be inlined
-    // into their parent typedef file (the parent file provides the import).
+
     final apiReferencedTypes = <String>{};
     for (final api in apis) {
-      final analysis = analyzeApiImports(api); // no typeRegistry
+      final analysis = analyzeApiImports(api);
       apiReferencedTypes.addAll(analysis.referencedTypes);
     }
 
-    // A type is inlineable if it's a small type (enum/extension type),
-    // referenced by exactly one parent, and not directly used by any API.
-    final inlinedInto = <String, String>{}; // child → parent
-    final inlinedChildren = <String, List<IrType>>{}; // parent → children
+    final inlinedInto = <String, String>{};
+    final inlinedChildren = <String, List<IrType>>{};
     for (final type in types) {
       final name = _typeName(type);
       if (name == null) continue;
@@ -166,23 +270,34 @@ final class FileEmitter {
       final parent = parents.first;
       inlinedInto[name] = parent;
       (inlinedChildren[parent] ??= []).add(type);
-      // Redirect imports: anyone importing this type should import the parent's
-      // file
       typeToFile[name] = typeToFile[parent]!;
     }
+    return (inlinedInto: inlinedInto, inlinedChildren: inlinedChildren);
+  }
 
-    // Emit model files
+  /// Emit model files into [files].
+  void _emitModelFiles(
+    Map<String, String> files,
+    List<IrType> types,
+    EmitContext ctx,
+    Map<String, String> typeToFile,
+    String packageName,
+    Map<String, List<String>> typePaths,
+    ({
+      Map<String, String> inlinedInto,
+      Map<String, List<IrType>> inlinedChildren,
+    })
+    inlining,
+  ) {
     for (final type in types) {
       final name = _typeName(type);
       if (name == null) continue;
-      if (inlinedInto.containsKey(name)) continue; // emitted with parent
+      if (inlining.inlinedInto.containsKey(name)) continue;
 
       final fileName = typeToFile[name]!;
-      const header = _header;
+      final children = inlining.inlinedChildren[name];
 
-      // Prepend inlined children before the parent type
       final specs = <Spec>[];
-      final children = inlinedChildren[name];
       if (children != null) {
         for (final child in children) {
           specs.addAll(_emitType(child, ctx));
@@ -191,17 +306,13 @@ final class FileEmitter {
       specs.addAll(_emitType(type, ctx));
       if (specs.isEmpty) continue;
 
-      // Single-pass analysis: collect imports and detect special types.
-      // Also analyze inlined children — they may need dart:convert or
-      // dart:typed_data (e.g. a BinaryString extension type wrapping bytes).
       var modelAnalysis = analyzeModelImports(type, ctx);
       if (children != null) {
         for (final child in children) {
           modelAnalysis = modelAnalysis.merge(analyzeModelImports(child, ctx));
         }
       }
-      modelAnalysis.referencedNames.remove(name); // Don't import self
-      // Remove inlined children from imports (they're in the same file)
+      modelAnalysis.referencedNames.remove(name);
       if (children != null) {
         for (final child in children) {
           modelAnalysis.referencedNames.remove(_typeName(child));
@@ -213,21 +324,16 @@ final class FileEmitter {
         typeToFile,
         packageName,
       );
-
-      final needsCollection = modelAnalysis.needsCollection;
-      final needsTypedData = modelAnalysis.needsTypedData;
-      final needsConvert = modelAnalysis.needsConvert;
-      final needsOneOf = modelAnalysis.needsOneOf;
-
-      // Determine if the runtime import is needed: for @immutable (classes with
-      // == and hashCode), collection helpers, or OneOf types.
       final needsImmutable =
           typeNeedsImmutable(type) ||
           (children?.any(typeNeedsImmutable) ?? false);
-      final needsRuntime = needsOneOf || needsCollection || needsImmutable;
+      final needsRuntime =
+          modelAnalysis.needsOneOf ||
+          modelAnalysis.needsCollection ||
+          needsImmutable;
 
       final library = Library((b) {
-        b.comments.addAll(header);
+        b.comments.addAll(_header);
         final segs = typePaths[name];
         final root = segs != null && segs.isNotEmpty ? segs.first : name;
         if (segs != null && segs.length > 1) {
@@ -238,10 +344,10 @@ final class FileEmitter {
         } else {
           b.comments.add('Source: #/components/schemas/$root');
         }
-        if (needsConvert) {
+        if (modelAnalysis.needsConvert) {
           b.directives.add(Directive.import('dart:convert'));
         }
-        if (needsTypedData) {
+        if (modelAnalysis.needsTypedData) {
           b.directives.add(Directive.import('dart:typed_data'));
         }
         if (needsRuntime) {
@@ -257,9 +363,16 @@ final class FileEmitter {
 
       files['models/$fileName.dart'] = emitRaw(library);
     }
+  }
 
-    // Build per-operation error unions (deduped across all APIs).
-    final errorUnionMap = buildErrorUnionMap(apis, ctx);
+  /// Build and emit error union files. Returns the set of emitted file stems.
+  Set<String> _emitErrorUnionFiles(
+    Map<String, String> files,
+    Map<String, ErrorUnionInfo> errorUnionMap,
+    EmitContext ctx,
+    String packageName,
+    Map<String, String> typeToFile,
+  ) {
     final errorUnionFileStems = <String>{};
     final aliasesPerClass = <String, List<String>>{};
     for (final info in errorUnionMap.values) {
@@ -286,11 +399,22 @@ final class FileEmitter {
       );
       files['models/$fileStem.dart'] = emitRaw(library);
     }
+    return errorUnionFileStems;
+  }
 
-    // Emit API files
+  /// Emit API client files into [files].
+  void _emitApiFiles(
+    Map<String, String> files,
+    List<IrApi> apis,
+    EmitContext ctx,
+    String packageName,
+    Map<String, String> typeToFile,
+    List<String> unwrapFields,
+    Map<String, ErrorUnionInfo> errorUnionMap,
+    List<String>? warnings,
+  ) {
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
-      const header = _header;
       final apiEmitter = ApiEmitter(
         api,
         ctx: ctx,
@@ -299,40 +423,37 @@ final class FileEmitter {
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
-
       final analysis = analyzeApiImports(api, ctx, unwrapFields, errorUnionMap);
 
-      // Derive imports directly from referenced types using pre-built lookup
       final modelImports = _modelImports(
         analysis.referencedTypes,
         typeToFile,
         packageName,
       );
 
-      final needsConvert = analysis.needsConvert;
-      final needsTypedData = analysis.needsTypedData;
-
       final library = Library(
         (b) => b
-          ..comments.addAll(header)
+          ..comments.addAll(_header)
           ..directives.add(Directive.import('dart:async'))
           ..directives.addAll(
-            needsConvert ? [Directive.import('dart:convert')] : [],
+            analysis.needsConvert ? [Directive.import('dart:convert')] : [],
           )
           ..directives.addAll(
-            needsTypedData ? [Directive.import('dart:typed_data')] : [],
+            analysis.needsTypedData
+                ? [Directive.import('dart:typed_data')]
+                : [],
           )
           ..directives.add(() {
-            final apiCollisions = runtimeExportedNames.intersection(
+            final collisions = runtimeExportedNames.intersection(
               analysis.referencedTypes,
             );
-            return apiCollisions.isEmpty
+            return collisions.isEmpty
                 ? Directive.import(
                     'package:degenerate_runtime/degenerate_runtime.dart',
                   )
                 : Directive.import(
                     'package:degenerate_runtime/degenerate_runtime.dart',
-                    hide: apiCollisions.toList()..sort(),
+                    hide: collisions.toList()..sort(),
                   );
           }())
           ..directives.addAll(modelImports)
@@ -341,86 +462,6 @@ final class FileEmitter {
 
       files['apis/$fileName.dart'] = emitRaw(library);
     }
-
-    warnings?.addAll(collectAmbiguityWarnings(types, ctx.typeRegistry));
-
-    // Emit root SDK facade
-    if (apis.isNotEmpty) {
-      final sdkFileName = '${packageName}_api';
-      files['client/$sdkFileName.dart'] = _emitSdkFacade(
-        apis: apis,
-        securitySchemes: securitySchemes,
-        packageName: packageName,
-        defaultServerUrl: defaultServerUrl,
-      );
-    }
-
-    if (securitySchemes.isNotEmpty || globalSecurity != null) {
-      final securityFileName = '${packageName}_security';
-      files['client/$securityFileName.dart'] = _emitSecurityFile(
-        apis: apis,
-        securitySchemes: securitySchemes,
-        globalSecurity: globalSecurity,
-        packageName: packageName,
-      );
-    }
-
-    // Emit barrel file
-    files['$packageName.dart'] = _emitBarrelFile(
-      types: types,
-      apis: apis,
-      packageName: packageName,
-      typeToFile: typeToFile,
-      inlinedTypes: inlinedInto.keys.toSet(),
-      hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
-      errorUnionFiles: errorUnionFileStems,
-    );
-
-    // Emit per-API-group mini-barrels (e.g. wallets.dart, beneficiaries.dart).
-    if (apis.length > 1) {
-      final typeDeps = _buildTypeDeps(types);
-      for (final api in apis) {
-        final analysis = analyzeApiImports(
-          api,
-          ctx,
-          unwrapFields,
-          errorUnionMap,
-        );
-        final reachable = _transitiveTypes(analysis.referencedTypes, typeDeps);
-        final apiFileName = toSnakeCase(api.name);
-        files['$apiFileName.dart'] = _emitApiBarrelFile(
-          api: api,
-          reachableTypes: reachable,
-          packageName: packageName,
-          typeToFile: typeToFile,
-          inlinedTypes: inlinedInto.keys.toSet(),
-          errorUnionFiles: errorUnionFileStems,
-          errorUnionMap: errorUnionMap,
-        );
-      }
-    }
-
-    // Emit the round-trip fixtures registry (test scaffolding, opt-in).
-    if (emitRoundtripFixtures) {
-      files['roundtrip_fixtures.dart'] = RoundtripEmitter(
-        types,
-        packageName,
-      ).emit();
-      final negativeContent = NegativeFixtureEmitter(types, packageName).emit();
-      if (negativeContent != null) {
-        files['negative_fixtures.dart'] = negativeContent;
-      }
-    }
-
-    // Emit pubspec.yaml only in workspace mode
-    if (workspace) {
-      files['pubspec.yaml'] = _emitPubspec(
-        packageName: packageName,
-        workspace: true,
-      );
-    }
-
-    return files;
   }
 
   List<Spec> _emitType(IrType type, EmitContext ctx) {
