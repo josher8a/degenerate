@@ -1212,519 +1212,14 @@ All 10 items resolved. 9 implemented, 1 deferred.
 
 New files: `emit_context.dart` (11 L), `import_analyzer.dart` (411 L), `ir_type_refs.dart` (61 L), `api_rewriter.dart` (145 L).
 
----
-
-## Codebase analysis — fresh sweep (2026-06-03, post batch 9)
-
-Re-analyzed at current `rc` tip after all 9 refactoring batches. 32 source files, 13,072 LOC, ~427 functions, ~2,166 branching constructs.
-
-### System architecture
-
-```
-                                ┌──────────────────────────────────────────────────┐
-                                │              CLI  (bin/degenerate.dart, 222 L)    │
-                                │   17 flags → GeneratorConfig → Generator.run()   │
-                                └──────────────────────┬───────────────────────────┘
-                                                       │
-                          ┌────────────────────────────────────────────────────────────┐
-                          │                Generator  (generator.dart, 769 L)          │
-                          │  13 project imports — top of the DAG, 6-stage pipeline    │
-                          │                                                            │
-                          │  1. _parseSpec()          → OpenApiDocument                │
-                          │  2. _inlineRefs()         → RefInliner resolves $ref       │
-                          │  3. _lowerToIr()          → Normalize + IrMapper + OpLower │
-                          │  4. _applyNameResolution()→ dedup + suffix shortening      │
-                          │  5. _filterOperations()   → tag/path filter + tree-shake   │
-                          │  6. _emitFiles()          → FileEmitter.emitAll()          │
-                          └──┬──────┬──────────┬──────────┬───────────┬────────────────┘
-                             │      │          │          │           │
-                        ┌────▼──┐ ┌─▼────┐ ┌───▼───┐ ┌───▼────┐ ┌───▼──────────┐
-                        │ PARSE │ │INLINE│ │NORMAL.│ │ LOWER  │ │    EMIT      │
-                        └───┬───┘ └──┬───┘ └───┬───┘ └───┬────┘ └──────┬───────┘
-                            │        │         │         │              │
-           ┌────────────────▼─┐  ┌──▼──────┐  │  ┌──────▼──────┐  ┌───▼──────────────────┐
-           │OpenApiDocument   │  │RefInliner│  │  │  ir_mapper  │  │  FileEmitter         │
-           │ (114 L)          │  │ (374 L)  │  │  │  (1242 L)   │  │  (1178 L)            │
-           │                  │  │          │  │  │             │  │  15 project imports   │
-           │ yaml_utils       │  │ external │  │  │ schema→IR   │  │  orchestrates:        │
-           │ (13 L)           │  │ $ref     │  │  │ field dedup │  │                       │
-           └──────────────────┘  │ inlining │  │  │ union       │  │  ┌─────────────────┐  │
-                                 │ cycle    │  │  │ dispatch    │  │  │ModelEmitter     │  │
-                                 │ detect   │  │  │             │  │  │ (547 L)         │  │
-                                 └──────────┘  │  │ api_rewriter│  │  ├─────────────────┤  │
-                                               │  │ (145 L)     │  │  │SealedUnion      │  │
-                        ┌───────────────┐      │  │             │  │  │ Emitter (1367 L)│  │
-                        │SchemaNormalizer│     │  │ operation   │  │  │ 3 classes:      │  │
-                        │ (97 L)        │◄────┘  │ _lowerer    │  │  │  Discriminated   │  │
-                        │               │        │ (515 L)     │  │  │  Untagged        │  │
-                        │AllOfFlattener │        │             │  │  │  AnyOf           │  │
-                        │ (133 L)       │        │ ir_validator│  │  ├─────────────────┤  │
-                        └───────────────┘        │ (101 L)     │  │  │ApiEmitter       │  │
-                                                 │             │  │  │ (1236 L)        │  │
-                                                 │ type_ref    │  │  ├─────────────────┤  │
-                             ┌───────────────────│ _resolver   │  │  │EnumEmitter      │  │
-                             │                   │ (193 L)     │  │  │ (217 L)         │  │
-                             │  IR types         └─────────────┘  │  ├─────────────────┤  │
-                             │  (840 L)                           │  │ExtTypeEmitter   │  │
-                             │                                    │  │ (143 L)         │  │
-                             │ sealed IrType (10 variants):       │  ├─────────────────┤  │
-                             │  IrPrimitive    IrTypeRef          │  │ErrorUnionEmitter│  │
-                             │  IrEnum         IrObject            │  │ (297 L)         │  │
-                             │  IrList         IrDiscriminatedUnion│  ├─────────────────┤  │
-                             │  IrMap          IrUntaggedUnion     │  │RoundtripEmitter │  │
-                             │  IrExtensionType IrAnyOf            │  │ (462 L)         │  │
-                             │                                    │  │NegativeFixture  │  │
-                             │ + IrType.name getter               │  │ Emitter (334 L) │  │
-                             │ + resolveRef() extension           │  ├─────────────────┤  │
-                             │                                    │  │ImportAnalyzer   │  │
-                             │ ir_type_refs.dart (61 L)           │  │ (403 L)         │  │
-                             │ collectTypeRefs walker             │  ├─────────────────┤  │
-                             └────────────────────────────────────┘  │emit_utils       │  │
-                                                                     │ (930 L)         │  │
-                             ┌────────────────────┐                  │EmitContext (11 L)│  │
-                             │  Naming (1080 L)   │◄─────────────────├─────────────────┤  │
-                             │                    │                  │variant_overlap   │  │
-                             │ naming.dart (500)  │                  │ (171 L)         │  │
-                             │ structural_dedup   │                  │media_type_utils  │  │
-                             │ suffix_resolver    │                  │ (99 L)          │  │
-                             │ name_resolution    │                  └─────────────────┘  │
-                             │ ir_rewriter        │                                       │
-                             └────────────────────┘───────────────────────────────────────┘
-```
-
-**Data flow:** OpenAPI JSON/YAML → `OpenApiDocument` (raw `Map<String, dynamic>`) → `RefInliner` (resolve external `$ref`, rewrite to local pointers) → `SchemaNormalizer` + `AllOfFlattener` (detect discriminators, merge allOf, compute name mappings) → `IrMapper` + `OperationLowerer` (lower to `IrType`/`IrOperation`/`IrApi`) → `TypeRefResolver` (resolve refs to non-emittable types) → `IrValidator` (invariant checks) → naming pipeline (`resolveNames` + `rewriteTypeNames`: structural dedup, suffix shortening) → `FileEmitter.emitAll()` (orchestrate 10 emitters → Dart source files).
-
-**Layer boundaries:**
-
-| Boundary | Input | Output |
-|----------|-------|--------|
-| Parser → Normalizer | `Map<String, dynamic>` (raw YAML/JSON schemas) | `NormalizationContext` (name mapping, discriminator properties, used names, warnings) + unchanged raw schemas |
-| Normalizer → Lowering | Raw schemas + `NormalizationContext` | `List<IrType>` + `List<IrApi>` + `Map<String, IrType>` typeRegistry |
-| Lowering → Naming | IR types with potentially colliding names | Same IR types with unique, shortened names via rename map |
-| Naming → Emission | Final IR + typeRegistry | `Map<String, String>` (file path → Dart source) |
-
-**Dependency graph:** Zero circular imports. `generator.dart` (13 project imports) and `file_emitter.dart` (15 project imports) are the two hub nodes. `ir_types.dart` is imported by every subsystem. All 32 files form a clean acyclic DAG.
-
-**Import graph (project-only adjacency):**
-
-```
-Parser layer:
-  openapi_document → yaml_utils
-  ref_inliner      → yaml_utils
-
-Normalizer layer:
-  schema_normalizer → naming.dart, ir_mapper (type only)
-  allof_flattener   → (none)
-
-IR layer:
-  ir_types      → (none)
-  ir_type_refs  → ir_types
-
-Lowering layer:
-  ir_mapper          → ir_types, type_ref_resolver, naming, allof_flattener, schema_normalizer
-  operation_lowerer  → ir_types, ir_mapper, naming, openapi_document
-  type_ref_resolver  → ir_types
-  ir_validator       → ir_types
-  api_rewriter       → ir_types, type_ref_resolver, ir_rewriter
-
-Naming layer:
-  naming.dart        → (none)
-  ir_rewriter        → ir_types
-  name_resolution    → ir_types, naming, structural_dedup, suffix_resolver
-  structural_dedup   → ir_types
-  suffix_resolver    → naming
-
-Emitter layer:
-  file_emitter       → {api,emit_context,emit_utils,enum,error_union,extension_type,
-                         import_analyzer,model,negative_fixture,roundtrip,
-                         sealed_union,variant_overlap}_emitter, ir_types, ir_type_refs, naming
-  emit_context       → ir_types
-  emit_utils         → emit_context, ir_types, naming
-  import_analyzer    → emit_context, emit_utils, error_union_emitter, media_type_utils, ir_types
-  api_emitter        → emit_context, emit_utils, error_union_emitter, media_type_utils, ir_types
-  model_emitter      → emit_context, emit_utils, ir_types
-  sealed_union_emitter → emit_context, emit_utils, ir_types, naming
-  enum_emitter       → emit_utils, ir_types, naming
-  error_union_emitter → emit_context, emit_utils, media_type_utils, ir_type_refs, ir_types, naming
-  extension_type_emitter → emit_utils, ir_types
-  roundtrip_emitter  → emit_context, emit_utils, variant_overlap, ir_types
-  negative_fixture_emitter → emit_context, emit_utils, ir_types
-  variant_overlap    → emit_utils, ir_types
-  media_type_utils   → ir_types
-
-Generator (orchestrator):
-  generator → file_emitter, ir_type_refs, ir_types, api_rewriter, ir_mapper,
-              ir_validator, operation_lowerer, type_ref_resolver, naming,
-              ir_rewriter, name_resolution, schema_normalizer, openapi_document, ref_inliner
-```
-
-**Subsystem weight:**
-
-| Layer | Files | LOC | % of total |
-|-------|------:|----:|-----------:|
-| Emitter | 14 | 7,395 | 57% |
-| Lowering | 5 | 2,196 | 17% |
-| Naming | 5 | 1,080 | 8% |
-| IR types | 2 | 901 | 7% |
-| Generator | 1 | 769 | 6% |
-| Parser | 3 | 501 | 4% |
-| Normalizer | 2 | 230 | 2% |
-
-**Runtime packages (consumed by generated code):**
-- `degenerate_runtime` (22 files, 2,618 L): `ApiClient`/`ApiExecutor` (abstract), `ApiResult` sealed union, `OneOf2`–`OneOf9`, `SseEvent`/JSONL, `Interceptor` chain (auth, retry, logging), `CancelToken`, `paginate`, security types. Zero external deps.
-- `degenerate_http` (2 files, 129 L): `HttpApiClient` — concrete `ApiClient` implementation using `dart:io`. Re-exports all of `degenerate_runtime`.
 
 ---
 
-### Cyclomatic complexity
+## Refactoring batches 10–17 (2026-06-04)
 
-#### Per-file totals (sorted by branch count)
+8 batches resolving the candidate improvements from the analysis above. 36 source files, ~13,200 LOC after all changes. 736 tests pass, 1 skip. 0 lint issues. Byte-identical output across 15 corpus specs.
 
-| # | File | LOC | Branches | Functions | Br/Fn |
-|---|------|-----|----------|-----------|-------|
-| 1 | `lowering/ir_mapper.dart` | 1,242 | 265 | 32 | 8.3 |
-| 2 | `emitter/api_emitter.dart` | 1,236 | 222 | 38 | 5.8 |
-| 3 | `emitter/emit_utils.dart` | 930 | 174 | 42 | 4.1 |
-| 4 | `emitter/sealed_union_emitter.dart` | 1,367 | 155 | 40 | 3.9 |
-| 5 | `generator.dart` | 769 | 135 | 18 | 7.5 |
-| 6 | `emitter/file_emitter.dart` | 1,178 | 129 | 26 | 5.0 |
-| 7 | `emitter/import_analyzer.dart` | 403 | 112 | 5 | **22.4** |
-| 8 | `lowering/operation_lowerer.dart` | 515 | 111 | 18 | 6.2 |
-| 9 | `emitter/roundtrip_emitter.dart` | 462 | 107 | 22 | 4.9 |
-| 10 | `ir/ir_types.dart` | 840 | 100 | 30 | 3.3 |
-| 11 | `emitter/model_emitter.dart` | 547 | 88 | 18 | 4.9 |
-| 12 | `naming.dart` | 500 | 69 | 14 | 4.9 |
-| 13 | `emitter/negative_fixture_emitter.dart` | 334 | 55 | 14 | 3.9 |
-| 14 | `parser/ref_inliner.dart` | 374 | 53 | 13 | 4.1 |
-| 15 | `emitter/variant_overlap.dart` | 171 | 37 | 11 | 3.4 |
-| 16 | `naming/name_resolution.dart` | 233 | 35 | 6 | 5.8 |
-| 17 | `normalizer/allof_flattener.dart` | 133 | 34 | 7 | 4.9 |
-| 18 | `lowering/type_ref_resolver.dart` | 193 | 33 | 6 | 5.5 |
-| 19 | `lowering/api_rewriter.dart` | 145 | 32 | 5 | 6.4 |
-| 20 | `naming/structural_dedup.dart` | 106 | 28 | 4 | 7.0 |
-| 21 | `emitter/error_union_emitter.dart` | 297 | 28 | 10 | 2.8 |
-| 22 | `naming/suffix_resolver.dart` | 138 | 26 | 4 | 6.5 |
-| 23 | `emitter/media_type_utils.dart` | 99 | 24 | 8 | 3.0 |
-| 24 | `parser/openapi_document.dart` | 114 | 27 | 9 | 3.0 |
-| 25 | `lowering/ir_validator.dart` | 101 | 20 | 6 | 3.3 |
-| 26 | `normalizer/schema_normalizer.dart` | 97 | 20 | 1 | **20.0** |
-| 27 | `ir/ir_type_refs.dart` | 61 | 16 | 2 | 8.0 |
-| 28 | `naming/ir_rewriter.dart` | 103 | 15 | 1 | **15.0** |
-| 29 | `emitter/extension_type_emitter.dart` | 143 | 14 | 7 | 2.0 |
-| 30 | `emitter/enum_emitter.dart` | 217 | 14 | 10 | 1.4 |
-| 31 | `parser/yaml_utils.dart` | 13 | 2 | 1 | 2.0 |
-| 32 | `emitter/emit_context.dart` | 11 | 1 | 1 | 1.0 |
-| | **Total** | **13,072** | **2,166** | **427** | **5.1** |
-
-#### Top 20 most complex functions
-
-| # | Br | Lines | Br/Ln | File | Function | Complexity drivers |
-|---|---:|------:|------:|------|----------|--------------------|
-| 1 | **42** | 180 | 0.23 | `ir_mapper.dart:306` | `_lowerSchemaImpl` | Central dispatch: $ref, cycles, allOf, oneOf±disc, anyOf, enums, arrays, objects, maps, primitives w/ nullable extraction |
-| 2 | **40** | 161 | 0.25 | `import_analyzer.dart:243` | `analyzeModelImports` | 10 case arms × 24 ifs × 9 for-loops; walks disc/untagged/anyOf variants recursively |
-| 3 | **30** | 114 | 0.26 | `ir_mapper.dart:831` | `_lowerDiscriminatedUnion` | Resolves disc mappings, extracts enum values, handles inline object variants, fallback heuristics |
-| 4 | **27** | 79 | 0.34 | `model_emitter.dart:371` | `_fieldConstraintChecks` | 17 ifs for minLength/maxLength/pattern/min/max/exclusive/multipleOf/minItems/maxItems/uniqueItems |
-| 5 | **26** | 110 | 0.24 | `operation_lowerer.dart:27` | `lowerPaths` | 12 ifs for `$ref` resolution + type guards; 4 nested for-loops over paths × HTTP methods |
-| 6 | **24** | 108 | 0.22 | `api_emitter.dart:452` | `_buildOperationBody` | Request prelude, success/error deserialization callbacks, unwrapped-field extraction |
-| 7 | **23** | 118 | 0.19 | `api_emitter.dart:240` | `_writeRequestPrelude` | Path interpolation, query/header/cookie serialization, multipart/form/JSON body construction |
-| 8 | **22** | 90 | 0.24 | `api_emitter.dart:359` | `_buildOperation` | Partitions params, resolves return/error types, unwraps envelopes, emits docs |
-| 9 | **21** | 70 | 0.30 | `generator.dart:672` | `_rewritePathParamsAsTyped` | Triple-nested for-loops (APIs → ops → params), 9 ifs for type guards and dedup |
-| 10 | **21** | 39 | **0.54** | `roundtrip_emitter.dart:197` | `_sampleLiteral` | 10 case arms per IrType subtype; recursive through refs/lists/maps/unions |
-| 11 | **20** | 45 | **0.44** | `structural_dedup.dart:61` | `_body` | 10 case arms building structural fingerprints for every IrType variant |
-| 12 | **20** | 68 | 0.29 | `ir_mapper.dart:966` | `_lowerVariantUnion` | Collapses single-value enums, handles inline primitives, deduplicates, applies constructors |
-| 13 | **19** | 95 | 0.20 | `import_analyzer.dart:45` | `analyzeApiImports` | Walks all API operations collecting referenced type names, detects dart:convert/typed_data needs |
-| 14 | **18** | 64 | 0.28 | `api_emitter.dart:699` | `_writeObjectQuerySerialization` | 3 style branches (deepObject, form+explode, default) × isRequired per field |
-| 15 | **18** | 38 | **0.47** | `ir_type_refs.dart:24` | `_walk` | 7 case arms walking full IrType tree with cycle detection |
-| 16 | **18** | 95 | 0.19 | `type_ref_resolver.dart:43` | `_resolveInTypeImpl` | 6 case arms for IrType, deep resolution of object fields, list items, union variants |
-| 17 | **18** | 68 | 0.26 | `ref_inliner.dart:38` | `inline` | 6 `&&` chains for external `$ref` detection; nested conditionals for pre-resolution |
-| 18 | **17** | 63 | 0.27 | `sealed_union_emitter.dart:16` | `discriminatedUnionCommonFields` | 8 ifs for null checks + type guards; `.every`/`.any` predicate lambdas |
-| 19 | **17** | 52 | 0.33 | `schema_normalizer.dart:44` | `normalize` | Walks allOf/oneOf/anyOf/properties with nested conditions for discriminator hoisting |
-| 20 | **16** | 26 | **0.62** | `emit_utils.dart:512` | `dartStringLiteral` | **Highest density.** 5 boolean flags, 4 compound `&&`/`||` conditions, 4 if-blocks for quoting |
-
-#### Branch-density hotspots (≥ 0.40 branches/line)
-
-Short functions packed with decisions — hardest code per line to reason about:
-
-| Br/Ln | Function | File:Line | Br | Lines |
-|------:|----------|-----------|---:|------:|
-| **0.62** | `dartStringLiteral` | `emit_utils.dart:512` | 16 | 26 |
-| **0.54** | `_sampleLiteral` | `roundtrip_emitter.dart:197` | 21 | 39 |
-| **0.47** | `_walk` | `ir_type_refs.dart:24` | 18 | 38 |
-| **0.44** | `_body` | `structural_dedup.dart:61` | 20 | 45 |
-
-#### Concentrated-complexity files (highest Br/Fn with few functions)
-
-| File | Br/Fn | Functions | Branches |
-|------|------:|----------:|---------:|
-| `import_analyzer.dart` | **22.4** | 5 | 112 |
-| `schema_normalizer.dart` | **20.0** | 1 | 20 |
-| `ir_rewriter.dart` | **15.0** | 1 | 15 |
-| `ir_mapper.dart` | **8.3** | 32 | 265 |
-| `ir_type_refs.dart` | **8.0** | 2 | 16 |
-| `generator.dart` | **7.5** | 18 | 135 |
-| `structural_dedup.dart` | **7.0** | 4 | 28 |
-
-#### Observations
-
-- **`import_analyzer.dart`** (22.4 Br/Fn) is the single most concentrated-complexity file — 5 functions carrying 112 branches. `analyzeModelImports` alone has 40 branches in 161 lines; it exhaustively walks every IrType variant to determine import requirements. This is semantic analysis happening at emission time.
-- **The IrType exhaustive-switch pattern** remains the dominant complexity driver. Functions like `rewriteTypeNames`, `_resolveInTypeImpl`, `_body`, `_sampleLiteral`, `_walk`, and `collectTopLevelTypeName` all need 7–10 case arms because `IrType` has 10 subtypes. This is inherent to the sealed IR design.
-- **The two branch-heaviest files** (`ir_mapper.dart` at 265 and `api_emitter.dart` at 222) spread complexity across 32–38 functions, keeping per-function averages manageable (5.8–8.3).
-- **Emitter layer holds 56% of all branches** (941 / 2,166) — consistent with being 57% of total LOC.
-
----
-
-### Accidental complexity
-
-Severity rated by maintenance burden. Each finding cites specific file:line references.
-
-#### HIGH severity
-
-**H1. Emitters performing semantic analysis at emission time.**
-The emitter layer reaches back into the type registry to perform analysis that should be pre-computed in the IR or a dedicated pass:
-
-- `sealed_union_emitter.dart:17-79` — `discriminatedUnionCommonFields` resolves `IrTypeRef` variants via `ctx.typeRegistry`, inspects their fields, computes field intersection. This is structural analysis of the IR at emit time.
-- `sealed_union_emitter.dart:253-300` — four methods (`_resolveToObject`, `_variantPayloadFields`, `_payloadDiscFieldType`, `_payloadDiscDefault`) resolve variant type refs and dig into resolved objects to extract discriminator metadata.
-- `sealed_union_emitter.dart:693-709` — `_refVariantToJsonBody` resolves through the registry to determine "isSpreadable" — an analysis decision.
-- `api_emitter.dart:853-879` — `_maybeUnwrapResponseType` resolves an `IrType` to `IrObject` via the registry, then searches fields by `originalName` for envelope unwrapping. This is a semantic decision at emit time.
-- `import_analyzer.dart:243-403` — `analyzeModelImports` (40 branches, 161 lines) switches on all IrType variants, resolves refs, checks OneOf eligibility, drills into discriminated union variant fields — all to determine which `dart:*` imports are needed.
-
-The discriminated union IR (`IrDiscriminatedUnion`) stores only `Map<String, IrType> mapping`, forcing emitters to dereference `IrTypeRef` entries. If the IR carried pre-resolved variant metadata (common fields, discriminator field type, spreadability), the emitters would be pure template-renderers. **~300 lines** of analysis logic embedded in the emitter layer.
-
-**H2. `isOneOfEligible`/`isOneOfTypedef` guard clauses repeated 36 times across 5 files.**
-The pattern `IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>` must always be paired with `IrAnyOf(:final variants) when isOneOfEligible(variants) =>` to handle both union kinds. This double-dispatch appears in:
-- `emit_utils.dart` (10 sites)
-- `import_analyzer.dart` (17 sites)
-- `file_emitter.dart` (2 sites)
-- `roundtrip_emitter.dart` (3 sites)
-- `variant_overlap.dart` (1 site)
-
-If eligibility criteria change, all 36 sites must be audited. A single `IrType.oneOfVariants(registry) -> List<IrType>?` helper would collapse each double-dispatch into one expression.
-
-**H3. `sealed_union_emitter.dart` — 1,367 lines, 3 full emitter classes in one file.**
-Contains three independent emitters jammed into one file:
-- `DiscriminatedUnionEmitter` (lines 82–806, ~725 lines)
-- `UntaggedUnionEmitter` (lines 809–1098, ~290 lines)
-- `AnyOfEmitter` (lines 1101–1367, ~267 lines)
-
-Each has its own `emit()`, `_buildFromJson()`, variant builders. The `AnyOfEmitter` and `UntaggedUnionEmitter` share structural patterns (sealed bases, variant subclasses, `$Unknown` variants) yet are implemented independently. 13 imports from 4 packages.
-
-**H4. `runtimeExportedNames` — 42 hardcoded names in `file_emitter.dart:25-67`.**
-Manually maintained `const` set of every type exported by `degenerate_runtime`. If the runtime adds or renames a type, this set goes stale and barrel-file `hide` clauses break. Now `@visibleForTesting` and validated by a test — but the test is the only safety net; no compile-time guarantee.
-
-#### MEDIUM severity
-
-**M1. Duplicated transitive-type-reachability traversals — ~80 lines × 2.**
-Two independent implementations of "collect types reachable from seeds + expand transitively":
-- `generator.dart:610-667` — `_collectReachableTypes` (BFS, walks API operations, builds deps graph inline)
-- `file_emitter.dart:576-605` — `_buildTypeDeps` + `_transitiveTypes` (builds same deps graph from `collectTypeRefs`, then BFS-expands)
-
-Both build `Map<String, Set<String>>` dependency graphs from types, then expand a seed set. The graph construction is nearly verbatim duplicated.
-
-**M2. `_sampleLiteral` / `_primitiveLiteral` structurally duplicated in 2 files.**
-- `roundtrip_emitter.dart:197-234` (38 lines, recursive with cycle tracking) and `negative_fixture_emitter.dart:191-213` (23 lines, simpler) — ~80% identical structure for producing sample JSON values per IrType.
-- The shared `primitiveSampleLiteral` in `emit_utils.dart` handles primitives, but the orchestration (object/union/list/map dispatch) is still duplicated.
-
-**M3. 5 independent cycle-detection implementations, none sharing infrastructure.**
-
-| File(s) | Mechanism |
-|---------|-----------|
-| `emit_utils.dart` (buildFromJsonCode) | `Set<String>? resolving` threaded through params |
-| `ir_type_refs.dart` (_walk) | `Set<String>? visited` threaded through params |
-| `type_ref_resolver.dart` | `Set<String> _resolving` instance field, add/remove |
-| `structural_dedup.dart` | `Set<String> _stack` instance field, add/remove |
-| `roundtrip_emitter.dart` | `Set<String> visited` passed through sample synthesis |
-
-Three use optional params (creating nullable-handling overhead); two use instance fields. ~48 lines of parallel logic.
-
-**M4. 4 different type-resolution strategies at different depths.**
-- `IrType.resolveRef` (ir_types.dart): one-step, returns `this` on miss
-- `TypeRefResolver.resolveRef` (type_ref_resolver.dart): follows chains up to depth 20
-- `VariantOverlapAnalyzer.resolve` (variant_overlap.dart): single-step via extension
-- `_resolveOneOfRef` (emit_utils.dart): resolves only to OneOf-eligible targets, with cycle tracking
-
-Each has different depth limits and target-type filtering. A caller must know which to use.
-
-**M5. Nullable checking — 3 divergent approaches.**
-- `fieldIsNullableInDart(IrField)` in `emit_utils.dart:888`: respects `fieldHasDefault`
-- `sealed_union_emitter.dart:575` (variant fields): simpler `!f.isRequired`, ignores defaults
-- `api_emitter.dart:1159` (multipart fields): similar but independent
-
-These can diverge on edge cases involving fields with defaults.
-
-**M6. `emit_utils.dart` — 930 lines, ~15 distinct sub-modules in one file.**
-Conflates: type-to-reference conversion, fromJson/toJson codegen, string escaping, doc comment formatting, `toSnakeCase` (belongs in `naming.dart`), equality/hashCode/toString builders, copyWith helpers, OneOf helpers, fixture sample literals. Every emitter imports it.
-
-**M7. Repeated "resolve ref, check if union, get variants" multi-step pattern — 15+ call sites.**
-```dart
-final resolved = type.resolveRef(typeRegistry);
-return switch (resolved) {
-  IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => ...,
-  IrAnyOf(:final variants) when isOneOfEligible(variants) => ...,
-  _ => ...,
-};
-```
-Appears across `emit_utils.dart`, `import_analyzer.dart`, `roundtrip_emitter.dart`, `file_emitter.dart`. Each is 5+ lines that a single `IrType.oneOfVariants(ctx)` call would replace.
-
-#### LOW severity
-
-**L1.** `_resolveToObject` duplicated in `api_emitter.dart:889` and `sealed_union_emitter.dart:252` — both one-liners via `resolveRef`, 6 lines total.
-
-**L2.** 6 functions are public but only used within their own file: `escapeDocComment`, `discriminatedUnionCommonFields`, `isOctetStreamMediaType`, `isEventStreamMediaType`, `isJsonlMediaType`, `collectTopLevelTypeName`.
-
-**L3.** `_escapeName` / `_escapeSingle` / `escapeNameForString` — 3 places doing overlapping string-escaping logic across `roundtrip_emitter.dart`, `negative_fixture_emitter.dart`, `emit_utils.dart`.
-
-**L4.** `_httpMethods` list in `operation_lowerer.dart:504-514` — 9 hardcoded HTTP methods that must stay synchronized with the `HttpMethod` enum in `ir_types.dart` (10 entries including `custom`).
-
-**L5.** `typeRegistry` still threaded through ~56 sites (down from 154 pre-EmitContext). Remaining are `ctx.typeRegistry` accesses in `import_analyzer.dart` (5), `emit_utils.dart` (6), `file_emitter.dart` (4), `sealed_union_emitter.dart` (3), and non-emitter files.
-
-**L6.** 1 remaining `is`+`as` cast at `generator.dart:721` — Dart limitation (can't promote through compound `&&`).
-
-#### Summary
-
-| Severity | Count | Estimated lines |
-|----------|------:|----------------:|
-| HIGH | 4 | ~400 |
-| MEDIUM | 7 | ~250 |
-| LOW | 6 | ~60 |
-
-**Total estimated accidental complexity: ~700 lines** (out of ~13,000), concentrated in the emitter layer's relationship with the type registry and the `isOneOf*` double-dispatch pattern.
-
----
-
-### Code succinctness
-
-#### Per-file density
-
-| File | Total | Blank | Comment | Logical | Density |
-|------|------:|------:|--------:|--------:|--------:|
-| `lowering/api_rewriter.dart` | 145 | 9 | 2 | 134 | **92.4%** |
-| `emitter/import_analyzer.dart` | 403 | 14 | 18 | 371 | **92.1%** |
-| `emitter/file_emitter.dart` | 1,178 | 78 | 46 | 1,054 | 89.5% |
-| `emitter/error_union_emitter.dart` | 297 | 27 | 8 | 262 | 88.2% |
-| `naming/ir_rewriter.dart` | 103 | 2 | 11 | 90 | 87.4% |
-| `emitter/api_emitter.dart` | 1,236 | 90 | 86 | 1,060 | 85.8% |
-| `emitter/model_emitter.dart` | 547 | 41 | 38 | 468 | 85.6% |
-| `emitter/enum_emitter.dart` | 217 | 16 | 16 | 185 | 85.3% |
-| `emitter/sealed_union_emitter.dart` | 1,367 | 98 | 109 | 1,160 | 84.9% |
-| `parser/yaml_utils.dart` | 13 | 1 | 1 | 11 | 84.6% |
-| `lowering/ir_validator.dart` | 101 | 12 | 6 | 83 | 82.2% |
-| `emitter/negative_fixture_emitter.dart` | 334 | 33 | 32 | 269 | 80.5% |
-| `normalizer/allof_flattener.dart` | 133 | 15 | 11 | 107 | 80.5% |
-| `lowering/type_ref_resolver.dart` | 193 | 8 | 31 | 154 | 79.8% |
-| `emitter/variant_overlap.dart` | 171 | 19 | 18 | 134 | 78.4% |
-| `generator.dart` | 769 | 97 | 77 | 595 | 77.4% |
-| `lowering/operation_lowerer.dart` | 515 | 53 | 69 | 393 | 76.3% |
-| `lowering/ir_mapper.dart` | 1,242 | 115 | 181 | 946 | 76.2% |
-| `ir/ir_type_refs.dart` | 61 | 3 | 12 | 46 | 75.4% |
-| `naming/name_resolution.dart` | 233 | 26 | 32 | 175 | 75.1% |
-| `emitter/extension_type_emitter.dart` | 143 | 13 | 24 | 106 | 74.1% |
-| `emitter/media_type_utils.dart` | 99 | 12 | 15 | 72 | 72.7% |
-| `emitter/emit_utils.dart` | 930 | 77 | 183 | 670 | 72.0% |
-| `emitter/roundtrip_emitter.dart` | 462 | 32 | 98 | 332 | 71.9% |
-| `naming/structural_dedup.dart` | 106 | 9 | 21 | 76 | 71.7% |
-| `parser/ref_inliner.dart` | 374 | 49 | 57 | 268 | 71.7% |
-| `naming.dart` | 500 | 46 | 103 | 351 | 70.2% |
-| `parser/openapi_document.dart` | 114 | 16 | 18 | 80 | 70.2% |
-| `normalizer/schema_normalizer.dart` | 97 | 11 | 28 | 58 | 59.8% |
-| `ir/ir_types.dart` | 840 | 164 | 192 | 484 | **57.6%** |
-| `naming/suffix_resolver.dart` | 138 | 12 | 48 | 78 | **56.5%** |
-| `emitter/emit_context.dart` | 11 | 3 | 2 | 6 | 54.5% |
-| **Total** | **13,072** | **1,334** | **1,733** | **10,005** | **76.5%** |
-
-#### Verbose pattern inventory
-
-| Pattern | Count | Lines | Status |
-|---------|------:|------:|--------|
-| `!= null` guard-then-bang | 224 total, ~25-30 convertible to `if-case` | ~50 | Dart 3 `if (x case final y?)` would eliminate both the null check and the `!` operator |
-| `copyAsNullable()` boilerplate | 10 implementations | ~80 | Dart data-class overhead — no clean alternative without macros |
-| Exhaustive IrType switches with 5+ identical arms | 5 sites | ~60 | `typeNeedsImmutable`, `_typeNeedsToJson`, `_isObjectLikeType`, `_supportsNonJsonEncode`, `_irTypeName` — a shared property on `IrType` would collapse most |
-| `isOneOf*` double-dispatch guards | 36 occurrences | ~72 | Two arms always appear together; a single helper would halve them |
-| `entry.key`/`.value` without destructuring | 11 remaining | ~22 | 5 are in generated-code strings (cannot destructure); 6 are cleanup candidates |
-| `as Ir` unsafe casts | 2 remaining | ~2 | `generator.dart:721` (Dart promotion limit), `type_ref_resolver.dart:159` (widening) |
-| Pure data tables (reserved words, transliteration, format patterns) | stable | ~250 | Correctly factored into single files |
-| Repeated `f.isRequired && !fieldHasDefault(f)` ternary | 4 raw sites beyond `fieldIsNullableInDart` | ~8 | Missing `isRequiredInConstructor(f)` helper |
-
-#### Signal-to-noise ranking
-
-**Best (most succinct):**
-
-1. **`lowering/api_rewriter.dart`** (145 L, 92.4% density) — pure rewriting, zero fat
-2. **`emitter/import_analyzer.dart`** (403 L, 92.1% density) — highest density in codebase (perhaps too dense — 22.4 Br/Fn)
-3. **`emitter/error_union_emitter.dart`** (297 L, 88.2% density) — efficient sealed error emission
-4. **`naming/ir_rewriter.dart`** (103 L, 87.4% density) — mechanical switch-expression rewriting
-5. **`emitter/enum_emitter.dart`** (217 L, 85.3% density) — cleanest emitter
-6. **`emitter/extension_type_emitter.dart`** (143 L, 74.1% density) — tight, minimal ceremony
-7. **`lowering/ir_validator.dart`** (101 L, 82.2% density) — lean validation
-
-**Most verbose:**
-
-1. **`emitter/emit_context.dart`** (11 L, 54.5% density) — trivially small but 5 lines of comments/blanks for 6 logical lines
-2. **`naming/suffix_resolver.dart`** (138 L, 56.5% density) — 48 comment lines for 78 logical lines; over-documented for its size
-3. **`ir/ir_types.dart`** (840 L, 57.6% density) — 164 blank + 192 comment lines + ~80L `copyAsNullable` boilerplate; Dart data-class overhead
-4. **`normalizer/schema_normalizer.dart`** (97 L, 59.8% density) — 28 comment lines for 58 logical; straightforward logic
-5. **`naming.dart`** (500 L, 70.2% density) — 60L `_latinToAscii` table + 120L reserved word sets = 180L of static data, only ~170L of logic
-
-#### Overall assessment
-
-Global density is 76.5%. Switch expressions are used extensively (85+ instances). `MapEntry(:key, :value)` destructuring in 38 loops. The codebase is already well-modernized for Dart 3.
-
-The main reduction opportunities:
-1. **~72 lines** — `isOneOf*` double-dispatch → single helper method
-2. **~60 lines** — exhaustive switches with identical arms → properties on `IrType`
-3. **~50 lines** — `!= null` guard-then-bang → Dart 3 `if-case` bindings (~25 sites)
-4. **~80 lines** — `copyAsNullable` boilerplate (blocked on Dart language)
-5. **~60 lines** — sample-literal duplication between roundtrip/negative emitters
-
----
-
-### Candidate improvements (for discussion)
-
-Ordered by estimated impact ÷ risk. References findings above.
-
-| # | Target | Addresses | Impact | Risk |
-|---|--------|-----------|--------|------|
-| 1 | **Pre-compute variant metadata in IR** — `IrDiscriminatedUnion` carries common fields, disc field type, spreadability flags | H1 | Eliminates ~200 lines of emitter-layer analysis; makes emitters pure template-renderers | **Medium** — IR shape change, all emitters must adapt |
-| 2 | **`IrType.oneOfVariants(ctx)` helper** — single method replaces 36 double-dispatch guards | H2, M7 | Collapse ~72 lines of repeated `isOneOfEligible` double-arm switches | **Low** — additive extension method |
-| 3 | **Split `sealed_union_emitter.dart` into 3 files** | H3 | Better navigability; each emitter becomes independently testable | **Low** — pure extraction |
-| 4 | **Auto-derive `runtimeExportedNames`** from runtime barrel at gen time | H4 | Eliminates staleness risk entirely | **Low** — read + parse, no emitted output change |
-| 5 | **Unify reachability traversals** — one shared `collectReachableTypes` | M1 | Eliminate ~80 lines of duplicated graph construction + BFS | **Low** — both call sites already produce identical results |
-| 6 | **Extract shared fixture helpers** — `_sampleLiteral` orchestration | M2 | Eliminate ~40 lines of structural duplication between roundtrip/negative emitters | **Low** — pure extraction |
-| 7 | **Add properties on `IrType` base** for common queries (`needsImmutable`, `needsToJson`, `isObjectLike`) | Succinctness #3 | Collapse 5 exhaustive switches with 5+ identical arms into property access | **Low** — additive |
-| 8 | **Convert ~25 `!= null` guard-then-bang to `if-case`** | Succinctness #1 | ~50 lines saved, safer (eliminates `!` operator) | **Low** — mechanical |
-| 9 | **`isRequiredInConstructor(f)` helper** | Succinctness #6 | Eliminate 4 raw repeated ternaries | **Low** — one-liner |
-| 10 | **Split `emit_utils.dart` into focused modules** | M6 | Better discoverability; move `toSnakeCase` to `naming.dart` | **Medium** — need to evaluate circular private call chains |
-| 11 | **Consolidate nullable-checking** — one canonical `fieldIsNullableInDart` used everywhere | M5 | Prevent divergence on edge cases | **Low** — need to verify multipart and sealed-union field semantics match |
-
----
-
-### Candidate improvements — resolution (batch 10)
-
-**Batch 10: Enforce layer boundary — pre-compute union metadata.**
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 1 | Pre-compute variant metadata | **Done** | `union_analyzer.dart` (175 L) computes `DiscUnionMetadata` for every `IrDiscriminatedUnion` before emission. Emitters consume via `EmitContext.unionMetadata`. |
-
-**Changes:**
-
-| File | Before | After | Delta |
-|------|-------:|------:|------:|
-| `lowering/union_analyzer.dart` | — | 175 | **+175 (new)** |
-| `emitter/emit_context.dart` | 11 | 19 | +8 |
-| `emitter/sealed_union_emitter.dart` | 1,367 | 1,277 | **−90** |
-| `emitter/import_analyzer.dart` | 403 | 402 | −1 |
-| `emitter/file_emitter.dart` | 1,178 | 1,180 | +2 |
-| `generator.dart` | 769 | 778 | +9 |
-| **Source total** | 13,072 | 13,175 | **+103** |
-
-**What moved where:**
-
-- `_discriminatedUnionCommonFields` (63 lines) — deleted from `sealed_union_emitter.dart`, logic moved to `union_analyzer._computeCommonFields`
-- `_resolveToObject`, `_variantPayloadFields`, `_payloadDiscFieldType`, `_payloadDiscDefault` (28 lines) — deleted from emitter, replaced by `_variantInfo(discValue)` metadata lookup (3 lines)
-- `_refVariantToJsonBody` isSpreadable analysis (12 lines of registry resolution) — replaced by `_variantInfo(discValue).isSpreadable` (1 line)
-- `import_analyzer.dart` discriminated union case — `ctx.typeRegistry[variant.name]` and `ctx.resolve(value)` lookups replaced by `meta.variants[key]` reads
-
-**Pipeline (updated):**
+### Pipeline (updated)
 
 ```
 Parse → Inline → Normalize → Lower → Name Resolution → Filter → Validate
@@ -1732,157 +1227,70 @@ Parse → Inline → Normalize → Lower → Name Resolution → Filter → Vali
 → Emit
 ```
 
-**Layer boundary status:**
+### Resolution table
 
-| Concern | Before batch 10 | After batch 10 |
-|---------|-----------------|----------------|
-| Common fields computation | Emitter (sealed_union_emitter) | Lowering (union_analyzer) |
-| Variant payload field extraction | Emitter (sealed_union_emitter) | Lowering (union_analyzer) |
-| Disc field type/default | Emitter (sealed_union_emitter) | Lowering (union_analyzer) |
-| Spreadability analysis | Emitter (sealed_union_emitter) | Lowering (union_analyzer) |
-| Import analyzer variant resolution | Emitter (import_analyzer via ctx.typeRegistry) | Lowering (union_analyzer via metadata) |
-| Symbol-table lookups for codegen | Emitter (emit_utils, sealed_union_emitter) | Emitter — **legitimate**, not structural analysis |
+| # | Target | Batch | Status | Net Δ |
+|---|--------|------:|--------|------:|
+| 1 | Pre-compute disc union metadata (`union_analyzer.dart`) | 10 | **Done** | +103 |
+| 2 | `IrType.unionVariants` getter, collapse double-dispatch | 11 | **Done** | −46 |
+| 3 | Split `sealed_union_emitter.dart` into 3 files | 13 | **Done** | −45 |
+| 4 | Auto-derive `runtimeExportedNames` at gen time | — | **Deferred** | — |
+| 5 | Unify reachability traversals (`buildTypeDeps`/`transitiveTypes`) | 12 | **Done** | −25 |
+| 6 | Extract shared fixture `_sampleLiteral` | — | **Skipped** | — |
+| 7 | `IrType.isClassType` getter, collapse type-predicate switches | 14 | **Done** | −29 |
+| 8 | `!= null` guard-then-bang → Dart 3 `if-case` bindings | 15 | **Done** | −7 |
+| 9 | `fieldIsRequiredInCtor(f)` helper | 16 | **Done** | +3 |
+| 10 | Split `emit_utils.dart` into focused modules | — | **Deferred** | — |
+| 11 | Consolidate nullable-checking | 9 | **Already resolved** | — |
 
-Structural analysis of discriminated unions now lives entirely in `union_analyzer.dart`. The emitter layer reads pre-computed metadata (`DiscUnionMetadata`, `VariantInfo`) and the type registry as a symbol table for codegen — no boundary violations remain.
+**Batch 17:** Fix — reverted 4 incorrect `!fieldIsRequiredInCtor(f)` substitutions in `forceNullable:` and fixture-filter sites. `!f.isRequired && !fieldHasDefault(f)` (optional-without-default) ≠ `!fieldIsRequiredInCtor(f)` (not-required-in-ctor = optional OR has-default). The helper is only valid for `..required =` and sort predicates.
 
-**Subsystem weight (updated):**
+### Deferred with rationale
 
-| Layer | Files | LOC | % of total |
-|-------|------:|----:|-----------:|
-| Emitter | 14 | 7,308 | 55% |
-| Lowering | 6 | 2,371 | 18% |
-| Naming | 5 | 1,080 | 8% |
-| IR types | 2 | 901 | 7% |
-| Generator | 1 | 778 | 6% |
-| Parser | 3 | 501 | 4% |
-| Normalizer | 2 | 230 | 2% |
+- **#4 `runtimeExportedNames`** — already test-validated (`test/emitter_test.dart` parses runtime barrel and asserts set matches); auto-parsing adds gen-time I/O for 42 rarely-changing names.
+- **#6 `_sampleLiteral` extraction** — overlap is ~15 lines of trivial switch structure; the two emitters have genuinely different requirements (cycle detection, union handling). Abstraction cost equals savings.
+- **#10 `emit_utils.dart` split** — circular private call chains between codec builders (`buildFromJsonCode` → `_resolveOneOfRef` → `_buildFromJsonNonNull` → `buildOneOfParseCode`) still block clean extraction.
 
-**Generator source map (updated entries):**
+### Layer boundary status
+
+Structural analysis of discriminated unions lives entirely in `lowering/union_analyzer.dart`. Emitters consume pre-computed `DiscUnionMetadata`/`VariantInfo` via `EmitContext.unionMetadata`. The type registry is used only as a symbol table for codegen (resolving types to render correct expressions), not for structural analysis. No boundary violations remain.
+
+### New/changed files (source map additions)
 
 | File | Purpose |
 |------|---------|
-| `lowering/union_analyzer.dart` | **New.** Pre-computes `DiscUnionMetadata` (common fields, variant payload/disc/spreadability) for all discriminated unions. Single source of truth, consumed by emitters via `EmitContext.unionMetadata`. |
+| `lowering/union_analyzer.dart` | Pre-computes `DiscUnionMetadata` for all discriminated unions: common fields, variant payload/disc/spreadability. Consumed by emitters via `EmitContext`. |
 | `emitter/emit_context.dart` | Shared emitter context: `typeRegistry` + `unionMetadata`. |
-| `emitter/sealed_union_emitter.dart` | Discriminated + untagged sealed unions. Now reads variant metadata from `union_analyzer` instead of resolving through the registry. |
-
-**Accidental complexity — resolved by batch 10:**
-
-| ID | Item | Resolution |
-|----|------|------------|
-| H1 | Emitters performing semantic analysis at emission time | `union_analyzer.dart` pre-computes all discriminated union metadata; emitters consume via `_meta`/`_variantInfo()` lookups. ~200 lines of analysis deleted from emitter layer. |
-
-**Accidental complexity — remaining after batch 10:**
-
-H1 is resolved. H2–H4, M1–M7, L1–L6 from the fresh sweep remain unchanged — they are localized issues (duplication, verbosity, missing helpers) that don't cross layer boundaries.
-
----
-
-### Candidate improvements — resolution (batch 11)
-
-**Batch 11: Add `IrType.unionVariants` getter, collapse double-dispatch.**
-
-Added a `unionVariants` getter on the `IrType` sealed base that returns the variants list for `IrUntaggedUnion` and `IrAnyOf`, `null` for all other types. This collapses the double-dispatch pattern where both union kinds must always be handled identically with the same `isOneOfEligible` guard.
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 2 | `unionVariants` getter + collapse double-dispatch | **Done** | 7 double-arm sites collapsed into single expressions; 2 merged into or-patterns. |
-
-**Changes (−46 lines net):**
-
-| File | Delta | What |
-|------|------:|------|
-| `ir/ir_types.dart` | +9 | `unionVariants` getter on sealed base |
-| `emitter/emit_utils.dart` | −19 | 3 double-dispatch switches → `unionVariants` + `isOneOfTypedef` one-liners |
-| `emitter/import_analyzer.dart` | −27 | `IrUntaggedUnion`/`IrAnyOf` cases merged via or-pattern; `IrTypeRef` OneOf check simplified |
-| `emitter/file_emitter.dart` | −2 | OneOf typedef check merged into single or-pattern arm |
-| `lowering/union_analyzer.dart` | −5 | `_isSpreadable` and `isUnionField` use `unionVariants` |
-
-Remaining `isOneOfEligible`/`isOneOfTypedef` calls: ~16 (down from 36). The remaining ones either have genuinely different logic per union kind (`IrAnyOf` non-typedef path in import_analyzer) or are already single-arm checks on a concrete type.
-
----
-
-### Candidate improvements — resolution (batch 12)
-
-**Batch 12: Unify reachability traversals.**
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 5 | Unify reachability traversals | **Done** | `buildTypeDeps` + `transitiveTypes` shared in `ir_type_refs.dart`. Duplicate copies deleted from `generator.dart` and `file_emitter.dart`. |
-
-**Changes (−25 lines net):**
-
-| File | Delta | What |
-|------|------:|------|
-| `ir/ir_type_refs.dart` | +32 | Added `buildTypeDeps()` and `transitiveTypes()` — shared graph construction + BFS |
-| `generator.dart` | −22 | Deleted inline graph construction + BFS loop; now calls shared functions |
-| `emitter/file_emitter.dart` | −33 | Deleted `_buildTypeDeps` and `_transitiveTypes`; now calls shared functions |
-
----
-
-### Candidate improvements — resolution (batch 13)
-
-**Batch 13: Split `sealed_union_emitter.dart` into 3 focused files.**
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 3 | Split sealed_union_emitter into 3 files | **Done** | Pure extraction. `sealed_union_emitter.dart` becomes a barrel re-exporting the 3 new files. |
-
-**Changes:**
-
-| File | LOC | What |
-|------|----:|------|
-| `emitter/discriminated_union_emitter.dart` | 681 | **New.** `DiscriminatedUnionEmitter` — disc unions with metadata lookups |
-| `emitter/untagged_union_emitter.dart` | 286 | **New.** `UntaggedUnionEmitter` — sealed try-parse unions |
-| `emitter/anyof_emitter.dart` | 262 | **New.** `AnyOfEmitter` — composite anyOf classes |
-| `emitter/sealed_union_emitter.dart` | 3 | Barrel file re-exporting all three |
-| `emitter/emit_utils.dart` | +3 | `safeTypeName()` moved here (was private `_safeTypeName` in sealed_union_emitter) |
-
-Zero behavior change — existing `import sealed_union_emitter.dart` still works via the barrel. Each emitter class now has its own file with only its own imports, independently navigable and testable.
-
----
-
-### Candidate improvements — resolution (batch 14)
-
-**Batch 14: `IrType.isClassType` getter + collapse type-predicate switches.**
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 7 | Add properties on `IrType` base | **Done** | `isClassType` getter replaces `typeNeedsImmutable` and simplifies `_typeNeedsToJson`, `_isObjectLikeType`, `_supportsNonJsonEncode`. |
-
-**Changes (−29 lines net):**
-
-| File | Delta | What |
-|------|------:|------|
-| `ir/ir_types.dart` | +11 | `isClassType` getter on sealed base |
-| `emitter/import_analyzer.dart` | −10 | Deleted `typeNeedsImmutable` function |
-| `emitter/api_emitter.dart` | −18 | `_typeNeedsToJson` → 1-liner via `isClassType`; `_supportsNonJsonEncode` → 2-liner (was 15 lines with exhaustive inner switch) |
-| `emitter/emit_utils.dart` | −4 | `_isObjectLikeType` → 1-liner via `isClassType` |
-| `emitter/file_emitter.dart` | −2 | Direct `type.isClassType` instead of `typeNeedsImmutable(type)` |
-
----
-
-### Candidate improvements — resolution (batch 15)
-
-**Batch 15: Convert `!= null` guard-then-bang to Dart 3 `if-case` bindings.**
-
-| # | Target | Status | Notes |
-|---|--------|--------|-------|
-| 8 | Convert guard-then-bang to `if-case` | **Done** | 10 sites converted across 4 files. Eliminates `!` bang operator and redundant null checks. |
-
-**Changes (−7 lines net):**
-
-| File | Sites | What |
-|------|------:|------|
-| `emitter/import_analyzer.dart` | 5 | `op.requestBody`, `op.responses[code]`, `streamingContent(op)`, `errorUnionMap[op.operationId]`, `op.defaultResponse` |
-| `emitter/model_emitter.dart` | 3 | `f.description`, `f.example`, `model.additionalProperties` (×2) |
-| `emitter/roundtrip_emitter.dart` | 1 | `t.emittableName` → null-aware map element `?` |
-| `generator.dart` | 2 | `op.requestBody`, `op.defaultResponse` |
-
-**Generator source map (updated entries):**
-
-| File | Purpose |
-|------|---------|
-| `emitter/discriminated_union_emitter.dart` | Discriminated unions: sealed base, per-variant subclasses, `$Unknown`, `when<R>()`, common-field hoisting, variant factories. Uses `DiscUnionMetadata` from `union_analyzer`. |
+| `emitter/discriminated_union_emitter.dart` | Discriminated unions: sealed base, per-variant subclasses, `$Unknown`, `when<R>()`, common-field hoisting, variant factories. |
 | `emitter/untagged_union_emitter.dart` | Untagged (oneOf without discriminator) unions: sealed try-parse dispatch, variant subclasses, `$Unknown`. |
 | `emitter/anyof_emitter.dart` | AnyOf composites: nullable variant fields, best-effort fromJson parsing. |
 | `emitter/sealed_union_emitter.dart` | Barrel re-exporting the three union emitters above. |
+| `ir/ir_type_refs.dart` | `collectTypeRefs` walker + `buildTypeDeps`/`transitiveTypes` (shared graph construction + BFS). |
+
+### IrType sealed base additions
+
+| Getter | Returns | Replaces |
+|--------|---------|----------|
+| `unionVariants` | `List<IrType>?` — variants for `IrUntaggedUnion`/`IrAnyOf`, null otherwise | 36→16 `isOneOfEligible` double-dispatch sites |
+| `isClassType` | `bool` — true for Object, Enum, DiscriminatedUnion, UntaggedUnion, AnyOf | `typeNeedsImmutable()`, simplifies `_typeNeedsToJson`, `_isObjectLikeType`, `_supportsNonJsonEncode` |
+
+### Subsystem weight (updated)
+
+| Layer | Files | LOC | % |
+|-------|------:|----:|--:|
+| Emitter | 17 | 7,300 | 55% |
+| Lowering | 6 | 2,370 | 18% |
+| Naming | 5 | 1,080 | 8% |
+| IR types | 2 | 920 | 7% |
+| Generator | 1 | 780 | 6% |
+| Parser | 3 | 501 | 4% |
+| Normalizer | 2 | 230 | 2% |
+
+### Accidental complexity — remaining
+
+All HIGH-severity items (H1–H3) resolved. H4 (`runtimeExportedNames`) mitigated by test validation.
+
+| Severity | Remaining | Notes |
+|----------|----------:|-------|
+| Medium | M2 (fixture duplication ~15L), M3 (5 cycle-detection mechanisms ~48L), M4 (4 type-resolution strategies), M6 (`emit_utils.dart` 930L grab-bag) | All localized; none cross layer boundaries |
+| Low | L1–L6 | Trivial duplication, hardcoded lists, 1 Dart-limitation cast |
