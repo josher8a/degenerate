@@ -681,9 +681,9 @@ final class Generator {
       for (final op in api.operations) {
         for (final p in op.parameters) {
           if (p.location != ParameterLocation.path) continue;
-          if (p.type is! IrPrimitive) continue;
-          if ((p.type as IrPrimitive).kind != PrimitiveKind.string) continue;
-          paramNames.add(p.name);
+          if (p.type case IrPrimitive(kind: PrimitiveKind.string)) {
+            paramNames.add(p.name);
+          }
         }
       }
     }

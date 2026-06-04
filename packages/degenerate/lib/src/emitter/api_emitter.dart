@@ -1200,7 +1200,7 @@ final class ApiEmitter {
   /// Get the string expression for a form-urlencoded field value.
   String _formFieldValueExpr(IrType type, String accessor) {
     // Bytes must be base64-encoded for form-urlencoded bodies.
-    if (type is IrPrimitive && type.kind == PrimitiveKind.bytes) {
+    if (type case IrPrimitive(kind: PrimitiveKind.bytes)) {
       return 'base64Encode($accessor)';
     }
     return _multipartFieldValueExpr(type, accessor);
