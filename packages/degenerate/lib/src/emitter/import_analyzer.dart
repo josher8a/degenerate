@@ -73,14 +73,14 @@ analyzeApiImports(
 
   for (final op in api.operations) {
     for (final param in op.parameters) {
-      collectTopLevelTypeName(param.type, names);
+      _collectTopLevelTypeName(param.type, names);
       if (isBytesType(param.type)) needsTypedData = true;
     }
     if (op.requestBody != null && op.requestBody!.content.isNotEmpty) {
       final bodyContent = preferredContent(op.requestBody!.content)!;
       if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
       final schema = bodyContent.$2.schema;
-      collectTopLevelTypeName(schema, names);
+      _collectTopLevelTypeName(schema, names);
       if (isBytesType(schema)) needsTypedData = true;
     }
     for (final code in [200, 201, 202, 203, 204]) {
@@ -90,7 +90,7 @@ analyzeApiImports(
         if (content != null) {
           if (isJsonLikeMediaType(content.$1)) needsConvert = true;
           final schema = maybeUnwrap(content.$2.schema);
-          collectTopLevelTypeName(schema, names, ctx);
+          _collectTopLevelTypeName(schema, names, ctx);
           if (isBytesType(schema)) needsTypedData = true;
           break;
         }
@@ -100,7 +100,7 @@ analyzeApiImports(
     if (streaming != null) {
       needsConvert = true;
       final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
-      collectTopLevelTypeName(eventType, names, ctx);
+      _collectTopLevelTypeName(eventType, names, ctx);
     }
     final errorUnion = errorUnionMap[op.operationId];
     if (errorUnion != null) {
@@ -121,7 +121,7 @@ analyzeApiImports(
       }
       if (errorContent != null) {
         if (isJsonLikeMediaType(errorContent.$1)) needsConvert = true;
-        collectTopLevelTypeName(errorContent.$2.schema, names, ctx);
+        _collectTopLevelTypeName(errorContent.$2.schema, names, ctx);
       }
     }
   }
@@ -142,7 +142,7 @@ analyzeApiImports(
 /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
 /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
 /// to [names] because they are fully inlined in the parse code.
-void collectTopLevelTypeName(
+void _collectTopLevelTypeName(
   IrType type,
   Set<String> names, [
   EmitContext? ctx,
@@ -181,7 +181,7 @@ void collectTopLevelTypeName(
           };
           if (variants != null) {
             for (final v in variants) {
-              collectTopLevelTypeName(v, names, ctx, resolving, true);
+              _collectTopLevelTypeName(v, names, ctx, resolving, true);
             }
           }
         }
@@ -198,7 +198,7 @@ void collectTopLevelTypeName(
       }
       if (ctx != null && isOneOfEligible(variants)) {
         for (final v in variants) {
-          collectTopLevelTypeName(v, names, ctx, resolving, true);
+          _collectTopLevelTypeName(v, names, ctx, resolving, true);
         }
       }
     case IrAnyOf(:final name, :final variants):
@@ -211,13 +211,13 @@ void collectTopLevelTypeName(
       }
       if (ctx != null && isOneOfEligible(variants)) {
         for (final v in variants) {
-          collectTopLevelTypeName(v, names, ctx, resolving, true);
+          _collectTopLevelTypeName(v, names, ctx, resolving, true);
         }
       }
     case IrExtensionType(:final name):
       names.add(name);
     case IrList(:final items):
-      collectTopLevelTypeName(
+      _collectTopLevelTypeName(
         items,
         names,
         ctx,
@@ -225,7 +225,7 @@ void collectTopLevelTypeName(
         skipInlinedOneOfRefs,
       );
     case IrMap(:final values):
-      collectTopLevelTypeName(
+      _collectTopLevelTypeName(
         values,
         names,
         ctx,
@@ -276,7 +276,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
   };
 
   void checkField(IrType fieldType) {
-    collectTopLevelTypeName(fieldType, names, ctx);
+    _collectTopLevelTypeName(fieldType, names, ctx);
     if (isListType(fieldType)) needsCollection = true;
     if (isBytesType(fieldType)) {
       needsTypedData = true;
@@ -308,7 +308,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
     ):
       names.add(name);
       for (final variant in mapping.values) {
-        collectTopLevelTypeName(variant, names, ctx);
+        _collectTopLevelTypeName(variant, names, ctx);
         if (variant is IrObject) {
           for (final f in variant.fields) {
             if (isListType(f.type)) needsCollection = true;
@@ -326,7 +326,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
           if (oneOfVariants != null) {
             needsOneOf = true;
             for (final v in oneOfVariants) {
-              collectTopLevelTypeName(v, names, ctx);
+              _collectTopLevelTypeName(v, names, ctx);
             }
           }
         }
@@ -344,7 +344,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
                   continue;
                 }
               }
-              collectTopLevelTypeName(f.type, names);
+              _collectTopLevelTypeName(f.type, names);
               if (isBytesType(f.type)) needsTypedData = true;
             }
           }
@@ -354,7 +354,7 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
       names.add(name);
       if (isOneOfEligible(variants)) needsOneOf = true;
       for (final variant in variants) {
-        collectTopLevelTypeName(variant, names);
+        _collectTopLevelTypeName(variant, names);
         if (isBytesType(variant)) needsTypedData = true;
       }
       if (!isOneOfEligible(variants) && variants.any(isBytesType)) {
@@ -365,12 +365,12 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
       if (isOneOfTypedef(name, variants)) {
         needsOneOf = true;
         for (final variant in variants) {
-          collectTopLevelTypeName(variant, names);
+          _collectTopLevelTypeName(variant, names);
           if (isBytesType(variant)) needsTypedData = true;
         }
       } else {
         for (final variant in variants) {
-          collectTopLevelTypeName(variant, names, ctx);
+          _collectTopLevelTypeName(variant, names, ctx);
           if (isOneOfTypeDeep(variant)) needsOneOf = true;
           if (isListType(variant)) needsCollection = true;
           if (isBytesType(variant)) {
@@ -386,9 +386,9 @@ ImportAnalysis analyzeModelImports(IrType type, [EmitContext? ctx]) {
         needsConvert = true;
       }
     case IrList(:final items):
-      collectTopLevelTypeName(items, names, ctx);
+      _collectTopLevelTypeName(items, names, ctx);
     case IrMap(:final values):
-      collectTopLevelTypeName(values, names, ctx);
+      _collectTopLevelTypeName(values, names, ctx);
     case IrPrimitive():
       break;
   }

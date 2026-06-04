@@ -38,7 +38,7 @@ bool isJsonLikeMediaType(String mediaType) {
     if (isFormUrlencodedMediaType(key)) return (key, value);
   }
   for (final MapEntry(:key, :value) in content.entries) {
-    if (isOctetStreamMediaType(key)) return (key, value);
+    if (_isOctetStreamMediaType(key)) return (key, value);
   }
   final first = content.entries.first;
   return (first.key, first.value);
@@ -55,17 +55,17 @@ bool isFormUrlencodedMediaType(String mediaType) {
 }
 
 /// Whether the media type is application/octet-stream.
-bool isOctetStreamMediaType(String mediaType) {
+bool _isOctetStreamMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == 'application/octet-stream';
 }
 
 /// Whether the media type is text/event-stream (SSE).
-bool isEventStreamMediaType(String mediaType) {
+bool _isEventStreamMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == 'text/event-stream';
 }
 
 /// Whether the media type is JSONL/NDJSON.
-bool isJsonlMediaType(String mediaType) {
+bool _isJsonlMediaType(String mediaType) {
   final normalized = normalizeMediaType(mediaType);
   return normalized == 'application/jsonl' ||
       normalized == 'application/x-ndjson' ||
@@ -86,10 +86,10 @@ enum StreamKind {
   for (final MapEntry(:key, :value) in op.responses.entries) {
     if (key >= 200 && key < 300) {
       for (final MapEntry(key: contentKey, value: contentValue) in value.content.entries) {
-        if (isEventStreamMediaType(contentKey)) {
+        if (_isEventStreamMediaType(contentKey)) {
           return (contentKey, contentValue, StreamKind.sse);
         }
-        if (isJsonlMediaType(contentKey)) {
+        if (_isJsonlMediaType(contentKey)) {
           return (contentKey, contentValue, StreamKind.jsonl);
         }
       }

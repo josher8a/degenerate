@@ -14,7 +14,7 @@ String _safeTypeName(String name) => name.replaceAll(RegExp(r'[<>,\s]'), '');
 ///
 /// Shared between the emitter (to emit the getters) and the file emitter (to
 /// import the types those getters reference) so both agree on the set.
-List<IrField> discriminatedUnionCommonFields(
+List<IrField> _discriminatedUnionCommonFields(
   IrDiscriminatedUnion union,
   EmitContext ctx,
 ) {
@@ -169,10 +169,10 @@ final class DiscriminatedUnionEmitter {
   /// Fields shared by every variant, hoisted onto the sealed base as nullable
   /// getters so common data can be read without pattern-matching.
   List<IrField> get commonFields =>
-      discriminatedUnionCommonFields(union, ctx);
+      _discriminatedUnionCommonFields(union, ctx);
 
   /// Abstract getter on the base for a hoisted common field. Non-null when the
-  /// field is required in every variant (see [discriminatedUnionCommonFields]).
+  /// field is required in every variant (see [_discriminatedUnionCommonFields]).
   Method _baseCommonGetter(IrField f) => Method(
     (m) => m
       ..name = f.name
