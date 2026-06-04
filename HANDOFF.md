@@ -1859,6 +1859,25 @@ Zero behavior change — existing `import sealed_union_emitter.dart` still works
 | `emitter/emit_utils.dart` | −4 | `_isObjectLikeType` → 1-liner via `isClassType` |
 | `emitter/file_emitter.dart` | −2 | Direct `type.isClassType` instead of `typeNeedsImmutable(type)` |
 
+---
+
+### Candidate improvements — resolution (batch 15)
+
+**Batch 15: Convert `!= null` guard-then-bang to Dart 3 `if-case` bindings.**
+
+| # | Target | Status | Notes |
+|---|--------|--------|-------|
+| 8 | Convert guard-then-bang to `if-case` | **Done** | 10 sites converted across 4 files. Eliminates `!` bang operator and redundant null checks. |
+
+**Changes (−7 lines net):**
+
+| File | Sites | What |
+|------|------:|------|
+| `emitter/import_analyzer.dart` | 5 | `op.requestBody`, `op.responses[code]`, `streamingContent(op)`, `errorUnionMap[op.operationId]`, `op.defaultResponse` |
+| `emitter/model_emitter.dart` | 3 | `f.description`, `f.example`, `model.additionalProperties` (×2) |
+| `emitter/roundtrip_emitter.dart` | 1 | `t.emittableName` → null-aware map element `?` |
+| `generator.dart` | 2 | `op.requestBody`, `op.defaultResponse` |
+
 **Generator source map (updated entries):**
 
 | File | Purpose |
