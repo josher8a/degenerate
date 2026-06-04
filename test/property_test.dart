@@ -27,6 +27,7 @@ void main() {
     String name = 'prop_test',
     bool roundtrip = false,
     bool typedParams = false,
+    bool typedFormats = false,
   }) async {
     final specFile = File(p.join(tempDir.path, 'spec.json'));
     specFile.writeAsStringSync(jsonEncode(spec));
@@ -39,6 +40,7 @@ void main() {
       quiet: true,
       emitRoundtripFixtures: roundtrip,
       emitTypedParams: typedParams,
+      emitTypedFormats: typedFormats,
     );
 
     final generator = Generator(config);
@@ -1067,6 +1069,142 @@ void main() {
       roundtrip: true,
     );
   }, timeout: const Timeout(Duration(minutes: 3)));
+
+  // ─── Extension types (typed formats) ───────────────────────
+
+  test('extension types compile and round-trip with --emit-typed-formats',
+      () async {
+    await generateAndAnalyze({
+      'openapi': '3.1.0',
+      'info': {'title': 'Fmt', 'version': '1.0.0'},
+      'paths': {
+        '/users/{userId}': {
+          'get': {
+            'operationId': 'getUser',
+            'parameters': [
+              {
+                'name': 'userId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string', 'format': 'uuid'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/User'},
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      'components': {
+        'schemas': {
+          'User': {
+            'type': 'object',
+            'required': ['id', 'email', 'ip', 'createdAt'],
+            'properties': {
+              'id': {'type': 'string', 'format': 'uuid'},
+              'email': {'type': 'string', 'format': 'email'},
+              'ip': {'type': 'string', 'format': 'ipv4'},
+              'ipv6': {'type': 'string', 'format': 'ipv6'},
+              'loginTime': {'type': 'string', 'format': 'time'},
+              'createdAt': {'type': 'string', 'format': 'date'},
+              'name': {'type': 'string'},
+            },
+          },
+        },
+      },
+    }, name: 'fmt_test', roundtrip: true, typedFormats: true);
+  });
+
+  // ─── Discriminated unions with mapping ─────────────────────
+
+  test('discriminated union with explicit mapping compiles and round-trips',
+      () async {
+    await generateAndAnalyze({
+      'openapi': '3.1.0',
+      'info': {'title': 'DiscUnion', 'version': '1.0.0'},
+      'paths': {
+        '/shapes': {
+          'post': {
+            'operationId': 'createShape',
+            'requestBody': {
+              'required': true,
+              'content': {
+                'application/json': {
+                  'schema': {r'$ref': '#/components/schemas/Shape'},
+                },
+              },
+            },
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/Shape'},
+                  },
+                },
+              },
+              '400': {
+                'description': 'Bad request',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/ErrorBody'},
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      'components': {
+        'schemas': {
+          'Shape': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Circle'},
+              {r'$ref': '#/components/schemas/Square'},
+            ],
+            'discriminator': {
+              'propertyName': 'kind',
+              'mapping': {
+                'circle': '#/components/schemas/Circle',
+                'square': '#/components/schemas/Square',
+              },
+            },
+          },
+          'Circle': {
+            'type': 'object',
+            'required': ['kind', 'radius'],
+            'properties': {
+              'kind': {'type': 'string'},
+              'radius': {'type': 'number'},
+            },
+          },
+          'Square': {
+            'type': 'object',
+            'required': ['kind', 'side'],
+            'properties': {
+              'kind': {'type': 'string'},
+              'side': {'type': 'number'},
+            },
+          },
+          'ErrorBody': {
+            'type': 'object',
+            'required': ['message'],
+            'properties': {
+              'message': {'type': 'string'},
+              'code': {'type': 'integer'},
+            },
+          },
+        },
+      },
+    }, name: 'disc_union_test', roundtrip: true);
+  });
 }
 
 Map<String, dynamic> _specWith(Map<String, dynamic> schemas) => {
