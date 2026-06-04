@@ -17,7 +17,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 /// cut; widen as needed.
 final class RoundtripEmitter {
   /// Creates an emitter over the full set of lowered [types] for [packageName].
-  RoundtripEmitter(this.types, this.packageName)
+  RoundtripEmitter(this.types, this.packageName, {this.barrelHide = const []})
     : _registry = {
         for (final t in types)
           ?t.emittableName: t,
@@ -31,6 +31,9 @@ final class RoundtripEmitter {
 
   /// The generated package name (used for the barrel import).
   final String packageName;
+
+  /// Type names excluded from the main barrel (need direct model imports).
+  final List<String> barrelHide;
 
   final Map<String, IrType> _registry;
 
@@ -147,8 +150,17 @@ final class RoundtripEmitter {
     if (needsConvert) {
       buf.writeln("import 'dart:convert';");
     }
+    buf.writeln("import 'package:$packageName/$packageName.dart';");
+    final allFixtureContent = fixtures.join('\n');
+    for (final name in barrelHide) {
+      if (_registry.containsKey(name) &&
+          RegExp('\\b$name\\b').hasMatch(allFixtureContent)) {
+        buf.writeln(
+          "import 'package:$packageName/models/${toSnakeCase(name)}.dart';",
+        );
+      }
+    }
     buf
-      ..writeln("import 'package:$packageName/$packageName.dart';")
       ..writeln()
       ..writeln('/// A synthesized round-trip fixture. A correct codec makes')
       ..writeln('/// `encode(decode(sample))` deep-equal `sample`.')

@@ -107,6 +107,7 @@ final class FileEmitter {
     Map<String, List<String>> typePaths = const {},
     bool emitRoundtripFixtures = false,
     Map<String, DiscUnionMetadata> unionMetadata = const {},
+    List<String> barrelHide = const [],
   }) {
     final files = <String, String>{};
 
@@ -195,6 +196,7 @@ final class FileEmitter {
       inlinedTypes: inlining.inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
       errorUnionFiles: errorUnionFileStems,
+      barrelHide: barrelHide,
     );
 
     if (apis.length > 1) {
@@ -218,8 +220,13 @@ final class FileEmitter {
       files['roundtrip_fixtures.dart'] = RoundtripEmitter(
         types,
         packageName,
+        barrelHide: barrelHide,
       ).emit();
-      final negativeContent = NegativeFixtureEmitter(types, packageName).emit();
+      final negativeContent = NegativeFixtureEmitter(
+        types,
+        packageName,
+        barrelHide: barrelHide,
+      ).emit();
       if (negativeContent != null) {
         files['negative_fixtures.dart'] = negativeContent;
       }
@@ -533,7 +540,9 @@ final class FileEmitter {
     Set<String> inlinedTypes = const {},
     bool hasSecurityFile = false,
     Set<String> errorUnionFiles = const {},
+    List<String> barrelHide = const [],
   }) {
+    final hiddenNames = barrelHide.toSet();
     final relativeExports = <String>[
       if (apis.isNotEmpty) 'client/${packageName}_api.dart',
       if (hasSecurityFile) 'client/${packageName}_security.dart',
@@ -541,7 +550,8 @@ final class FileEmitter {
           in types
               .map(_typeName)
               .whereType<String>()
-              .where((name) => !inlinedTypes.contains(name))
+              .where((name) =>
+                  !inlinedTypes.contains(name) && !hiddenNames.contains(name))
               .toSet()
               .toList()
             ..sort())

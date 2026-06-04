@@ -12,7 +12,8 @@ import 'package:degenerate/src/ir/ir_types.dart';
 ///   constraints — `validate()` must return a non-empty list whose first entry
 ///   matches the expected message.
 final class NegativeFixtureEmitter {
-  NegativeFixtureEmitter(this.types, this.packageName)
+  NegativeFixtureEmitter(this.types, this.packageName,
+      {this.barrelHide = const []})
     : _registry = {
         for (final t in types)
           if (t.emittableName != null) t.emittableName!: t,
@@ -22,6 +23,7 @@ final class NegativeFixtureEmitter {
 
   final List<IrType> types;
   final String packageName;
+  final List<String> barrelHide;
   final Map<String, IrType> _registry;
 
   /// Returns the file content, or null if there are no negative fixtures
@@ -285,7 +287,17 @@ final class NegativeFixtureEmitter {
         '// Negative fixtures: ${canParse.length} canParse, '
         '${validate.length} validate.',
       )
-      ..writeln("import 'package:$packageName/$packageName.dart';")
+      ..writeln("import 'package:$packageName/$packageName.dart';");
+    final allFixtureContent = canParse.join('\n') + validate.join('\n');
+    for (final name in barrelHide) {
+      if (_registry.containsKey(name) &&
+          RegExp('\\b$name\\b').hasMatch(allFixtureContent)) {
+        buf.writeln(
+          "import 'package:$packageName/models/${toSnakeCase(name)}.dart';",
+        );
+      }
+    }
+    buf
       ..writeln()
       ..writeln('/// A fixture asserting `canParse` returns false.')
       ..writeln('class CanParseFixture {')

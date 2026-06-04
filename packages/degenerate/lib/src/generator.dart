@@ -61,6 +61,7 @@ final class GeneratorConfig {
     this.emitRoundtripFixtures = false,
     this.emitTypedFormats = false,
     this.emitTypedParams = false,
+    this.barrelHide = const [],
   });
 
   /// Path to the input OpenAPI spec file.
@@ -136,6 +137,12 @@ final class GeneratorConfig {
   /// `orgId`). Prevents wrong-ID-in-wrong-slot bugs at compile time. Off by
   /// default — changes API method signatures.
   final bool emitTypedParams;
+
+  /// Type names to exclude from the main barrel file. The model files are
+  /// still generated and can be imported directly; they just won't appear in
+  /// the top-level `export` directives. Use this when a generated type name
+  /// clashes with a consumer dependency (e.g. `Provider` vs Riverpod).
+  final List<String> barrelHide;
 }
 
 /// The main code generator pipeline.
@@ -442,6 +449,7 @@ final class Generator {
       typePaths: typePaths,
       emitRoundtripFixtures: config.emitRoundtripFixtures,
       unionMetadata: unionMetadata,
+      barrelHide: config.barrelHide,
     );
 
     if (config.workspace) {

@@ -103,6 +103,14 @@ ArgParser buildParser() {
           'time. Changes API method signatures; off by default.',
       negatable: false,
     )
+    ..addMultiOption(
+      'barrel-hide',
+      help:
+          'Type names to exclude from the main barrel export. The model\n'
+          'files are still generated; they just won\'t be re-exported.\n'
+          'Use when a generated name clashes with a consumer dependency\n'
+          '(e.g. --barrel-hide Provider to avoid Riverpod clash).',
+    )
     ..addFlag(
       'quiet',
       abbr: 'q',
@@ -188,6 +196,7 @@ Future<void> main(List<String> arguments) async {
       emitRoundtripFixtures: results.flag('emit-roundtrip-fixtures'),
       emitTypedFormats: results.flag('emit-typed-formats'),
       emitTypedParams: results.flag('emit-typed-params'),
+      barrelHide: results.multiOption('barrel-hide'),
       quiet: results.flag('quiet'),
     );
 
