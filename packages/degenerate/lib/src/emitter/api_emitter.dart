@@ -1001,7 +1001,7 @@ final class ApiEmitter {
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     final primitive = _nonJsonPrimitiveDeserialize(errorType);
     if (primitive != null) return primitive;
-    return '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;';
+    return "// TODO: Unsupported non-JSON error schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');";
   }
 
   (String, IrMediaType)? _successResponseContent(IrOperation op) {

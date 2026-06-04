@@ -125,7 +125,13 @@ void printUsage(ArgParser argParser, {bool toStderr = false}) {
     ..writeln('  degenerate [options]')
     ..writeln()
     ..writeln('Options:')
-    ..writeln(argParser.usage);
+    ..writeln(argParser.usage)
+    ..writeln()
+    ..writeln('Unsupported OpenAPI features:')
+    ..writeln('  not, if/then/else, prefixItems, dependentSchemas,')
+    ..writeln('  callbacks, links, webhooks, xml, readOnly/writeOnly,')
+    ..writeln('  non-simple path param styles, multipart encoding,')
+    ..writeln('  server variables, OAuth2 token flows.');
 }
 
 Future<void> main(List<String> arguments) async {

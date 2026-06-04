@@ -6,8 +6,10 @@ import 'package:degenerate/src/emitter/api_emitter.dart';
 import 'package:degenerate/src/emitter/emit_context.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/enum_emitter.dart';
+import 'package:degenerate/src/emitter/error_union_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/file_emitter.dart';
+import 'package:degenerate/src/emitter/import_analyzer.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
@@ -1693,7 +1695,7 @@ void main() {
       final source = emitRaw(library);
 
       expect(source, contains('// TODO: Unsupported non-JSON error schema'));
-      expect(source, contains('return null;'));
+      expect(source, contains('throw UnsupportedError('));
     });
 
     test('emits multipart/form-data body from object schema', () {
@@ -3681,6 +3683,448 @@ void main() {
       } on IrValidationException catch (e) {
         expect(e.errors.length, greaterThanOrEqualTo(2));
       }
+    });
+  });
+
+  // ─── analyzeModelImports ──────────────────────────────────────
+
+  group('analyzeModelImports', () {
+    test('collects ref names from IrObject fields', () {
+      const model = IrObject('Order', [
+        IrField('item', 'item', IrTypeRef('Item'), isRequired: true),
+        IrField('user', 'user', IrTypeRef('User'), isRequired: true),
+      ], requiredFields: ['item', 'user']);
+
+      final analysis = analyzeModelImports(model);
+
+      expect(analysis.referencedNames, contains('Item'));
+      expect(analysis.referencedNames, contains('User'));
+    });
+
+    test('collects inner ref name from IrList(IrTypeRef(...)) field', () {
+      const model = IrObject('Basket', [
+        IrField('tags', 'tags', IrList(IrTypeRef('Tag'))),
+      ]);
+
+      final analysis = analyzeModelImports(model);
+
+      expect(analysis.referencedNames, contains('Tag'));
+    });
+
+    test('detects needsCollection when a list field exists', () {
+      const model = IrObject('Container', [
+        IrField('items', 'items', IrList(IrPrimitive(PrimitiveKind.string))),
+      ]);
+
+      final analysis = analyzeModelImports(model);
+
+      expect(analysis.needsCollection, isTrue);
+    });
+
+    test('needsCollection is false when no list fields exist', () {
+      const model = IrObject('Simple', [
+        IrField('name', 'name', IrPrimitive(PrimitiveKind.string)),
+      ]);
+
+      final analysis = analyzeModelImports(model);
+
+      expect(analysis.needsCollection, isFalse);
+    });
+
+    test('detects needsTypedData when a bytes field exists', () {
+      const model = IrObject('Blob', [
+        IrField('data', 'data', IrPrimitive(PrimitiveKind.bytes),
+            isRequired: true),
+      ], requiredFields: ['data']);
+
+      final analysis = analyzeModelImports(model);
+
+      expect(analysis.needsTypedData, isTrue);
+    });
+
+    test('needsTypedData is false when no bytes fields exist', () {
+      const model = IrObject('Plain', [
+        IrField('value', 'value', IrPrimitive(PrimitiveKind.string)),
+      ]);
+
+      final analysis = analyzeModelImports(model);
+
+      expect(analysis.needsTypedData, isFalse);
+    });
+  });
+
+  // ─── analyzeApiImports ───────────────────────────────────────
+
+  group('analyzeApiImports', () {
+    test('collects types from operation parameters', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items/{id}',
+          parameters: [
+            IrParameter(
+              'id',
+              'id',
+              ParameterLocation.path,
+              IrTypeRef('ItemId'),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.referencedTypes, contains('ItemId'));
+    });
+
+    test('collects types from operation request body', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'createItem',
+          'createItem',
+          HttpMethod.post,
+          '/items',
+          requestBody: IrRequestBody({
+            'application/json': IrMediaType(IrTypeRef('CreateItemRequest')),
+          }, isRequired: true),
+          responses: {201: IrResponse()},
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.referencedTypes, contains('CreateItemRequest'));
+    });
+
+    test('collects types from operation success responses', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'listItems',
+          'listItems',
+          HttpMethod.get,
+          '/items',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(IrTypeRef('Item')),
+              },
+            ),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.referencedTypes, contains('Item'));
+    });
+
+    test('collects types from 4xx error responses', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'deleteItem',
+          'deleteItem',
+          HttpMethod.delete,
+          '/items/{id}',
+          responses: {
+            204: IrResponse(),
+            404: IrResponse(
+              content: {
+                'application/json': IrMediaType(IrTypeRef('NotFoundError')),
+              },
+            ),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.referencedTypes, contains('NotFoundError'));
+    });
+
+    test('detects needsConvert for JSON media type in request body', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'createItem',
+          'createItem',
+          HttpMethod.post,
+          '/items',
+          requestBody: IrRequestBody({
+            'application/json': IrMediaType(IrTypeRef('CreateItemRequest')),
+          }, isRequired: true),
+          responses: {200: IrResponse()},
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.needsConvert, isTrue);
+    });
+
+    test('detects needsConvert for JSON media type in success response', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getItem',
+          'getItem',
+          HttpMethod.get,
+          '/items/1',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(IrTypeRef('Item')),
+              },
+            ),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.needsConvert, isTrue);
+    });
+
+    test('needsConvert is false when only non-JSON media types are used', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'getText',
+          'getText',
+          HttpMethod.get,
+          '/text',
+          responses: {
+            200: IrResponse(
+              content: {
+                'text/plain': IrMediaType(IrPrimitive(PrimitiveKind.string)),
+              },
+            ),
+          },
+        ),
+      ]);
+
+      final result = analyzeApiImports(api);
+
+      expect(result.needsConvert, isFalse);
+    });
+  });
+
+  // ─── buildErrorUnionMap dedup ─────────────────────────────────
+
+  group('buildErrorUnionMap', () {
+    EmitContext _emptyCtx() => EmitContext(const {});
+
+    test('single operation with error responses gets a non-alias ErrorUnionInfo', () {
+      final apis = [
+        const IrApi('TestApi', [
+          IrOperation(
+            'createPet',
+            'createPet',
+            HttpMethod.post,
+            '/pets',
+            responses: {
+              201: IrResponse(),
+              400: IrResponse(
+                content: {
+                  'application/json': IrMediaType(
+                    IrObject(
+                      'ValidationError',
+                      [
+                        IrField(
+                          'message',
+                          'message',
+                          IrPrimitive(PrimitiveKind.string),
+                          isRequired: true,
+                        ),
+                      ],
+                      requiredFields: ['message'],
+                    ),
+                  ),
+                },
+              ),
+            },
+          ),
+        ]),
+      ];
+
+      final result = buildErrorUnionMap(apis, _emptyCtx());
+
+      expect(result, contains('createPet'));
+      expect(result['createPet']!.isAlias, isFalse);
+    });
+
+    test('two operations with identical error sets produce one concrete class and one alias', () {
+      const errorResponse = IrResponse(
+        content: {
+          'application/json': IrMediaType(
+            IrObject(
+              'ApiError',
+              [
+                IrField(
+                  'code',
+                  'code',
+                  IrPrimitive(PrimitiveKind.int),
+                  isRequired: true,
+                ),
+              ],
+              requiredFields: ['code'],
+            ),
+          ),
+        },
+      );
+
+      final apis = [
+        const IrApi('TestApi', [
+          IrOperation(
+            'alphaOp',
+            'alphaOp',
+            HttpMethod.get,
+            '/alpha',
+            responses: {200: IrResponse(), 400: errorResponse},
+          ),
+          IrOperation(
+            'betaOp',
+            'betaOp',
+            HttpMethod.get,
+            '/beta',
+            responses: {200: IrResponse(), 400: errorResponse},
+          ),
+        ]),
+      ];
+
+      final result = buildErrorUnionMap(apis, _emptyCtx());
+
+      expect(result, contains('alphaOp'));
+      expect(result, contains('betaOp'));
+      final concrete = result.values.where((info) => !info.isAlias);
+      final aliases = result.values.where((info) => info.isAlias);
+      expect(concrete, hasLength(1));
+      expect(aliases, hasLength(1));
+    });
+
+    test('two operations with different error sets produce two distinct concrete classes', () {
+      final apis = [
+        const IrApi('TestApi', [
+          IrOperation(
+            'opA',
+            'opA',
+            HttpMethod.get,
+            '/a',
+            responses: {
+              400: IrResponse(
+                content: {
+                  'application/json': IrMediaType(
+                    IrObject(
+                      'ErrorA',
+                      [IrField('msg', 'msg', IrPrimitive(PrimitiveKind.string))],
+                    ),
+                  ),
+                },
+              ),
+            },
+          ),
+          IrOperation(
+            'opB',
+            'opB',
+            HttpMethod.get,
+            '/b',
+            responses: {
+              400: IrResponse(
+                content: {
+                  'application/json': IrMediaType(
+                    IrObject(
+                      'ErrorB',
+                      [IrField('detail', 'detail', IrPrimitive(PrimitiveKind.string))],
+                    ),
+                  ),
+                },
+              ),
+            },
+          ),
+        ]),
+      ];
+
+      final result = buildErrorUnionMap(apis, _emptyCtx());
+
+      expect(result, contains('opA'));
+      expect(result, contains('opB'));
+      expect(result['opA']!.isAlias, isFalse);
+      expect(result['opB']!.isAlias, isFalse);
+    });
+
+    test('operation with no error responses (all 2xx) is excluded from the map', () {
+      final apis = [
+        const IrApi('TestApi', [
+          IrOperation(
+            'listItems',
+            'listItems',
+            HttpMethod.get,
+            '/items',
+            responses: {
+              200: IrResponse(
+                content: {
+                  'application/json': IrMediaType(
+                    IrList(IrPrimitive(PrimitiveKind.string)),
+                  ),
+                },
+              ),
+              201: IrResponse(),
+            },
+          ),
+        ]),
+      ];
+
+      final result = buildErrorUnionMap(apis, _emptyCtx());
+
+      expect(result, isNot(contains('listItems')));
+      expect(result, isEmpty);
+    });
+
+    test('aliasTarget on the alias points to the concrete class name', () {
+      const sharedError = IrResponse(
+        content: {
+          'application/json': IrMediaType(
+            IrObject(
+              'SharedError',
+              [
+                IrField(
+                  'reason',
+                  'reason',
+                  IrPrimitive(PrimitiveKind.string),
+                  isRequired: true,
+                ),
+              ],
+              requiredFields: ['reason'],
+            ),
+          ),
+        },
+      );
+
+      // alphaOp sorts before betaOp, so alphaOp is the primary/concrete one
+      final apis = [
+        const IrApi('TestApi', [
+          IrOperation(
+            'alphaAction',
+            'alphaAction',
+            HttpMethod.post,
+            '/alpha',
+            responses: {200: IrResponse(), 422: sharedError},
+          ),
+          IrOperation(
+            'betaAction',
+            'betaAction',
+            HttpMethod.post,
+            '/beta',
+            responses: {200: IrResponse(), 422: sharedError},
+          ),
+        ]),
+      ];
+
+      final result = buildErrorUnionMap(apis, _emptyCtx());
+
+      final alias = result.values.firstWhere((info) => info.isAlias);
+      final concrete = result.values.firstWhere((info) => !info.isAlias);
+      expect(alias.aliasTarget, equals(concrete.className));
     });
   });
 }
