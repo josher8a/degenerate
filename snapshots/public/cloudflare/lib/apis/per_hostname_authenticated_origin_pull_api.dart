@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PerHostnameAuthenticatedOriginPullApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/per_hostname_authenticated_origin_pull_enable_or_disable_a_hostname_for_client_authentication_request.dart';import 'package:pub_cloudflare/models/per_hostname_authenticated_origin_pull_upload_a_hostname_client_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_authenticated_origin_pull.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_certid_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_hostname.dart';/// PerHostnameAuthenticatedOriginPullApi operations.
 ///

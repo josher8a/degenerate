@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "BlogApi" (2 operations)
 
 import 'dart:async';
 import 'dart:convert';

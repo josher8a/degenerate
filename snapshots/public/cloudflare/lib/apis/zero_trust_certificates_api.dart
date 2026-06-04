@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ZeroTrustCertificatesApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_certificates.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_generate_cert_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_uuid.dart';/// ZeroTrustCertificatesApi operations.
 ///

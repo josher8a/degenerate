@@ -1,7 +1,11 @@
-/// Pipeline: Parse (YAML/JSON) -> Inline (resolve external $ref files) ->
-/// Normalize (name canonicalization, discriminator detection) ->
-/// Lower (schemas to IR, with inline allOf flattening and $ref resolution) ->
-/// Emit (IR to Dart via code_builder) -> Write.
+/// Pipeline: Parse (YAML/JSON) → Inline (resolve external $ref files) →
+/// Normalize (name canonicalization, discriminator detection) →
+/// Lower (schemas to IR, with inline allOf flattening and $ref resolution) →
+/// Name Resolution (structural dedup + suffix shortening) →
+/// Filter (tags/paths, deprecated, tree-shaking) →
+/// Validate (IR invariant checks) →
+/// Union Analysis (pre-compute discriminated union metadata) →
+/// Emit (IR to Dart via code_builder) → Write.
 library;
 
 import 'dart:io';

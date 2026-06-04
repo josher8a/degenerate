@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "WorkersAiFinetuneApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_create_finetune_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_list_finetunes_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_list_public_finetunes_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_upload_finetune_asset_error.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_request.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_response/workers_ai_create_finetune_response_result.dart';import 'package:pub_cloudflare/models/workers_ai_list_finetunes_response/workers_ai_list_finetunes_response_result.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_request.dart';import 'package:pub_cloudflare/models/workers_ai_upload_finetune_asset_response.dart';/// WorkersAiFinetuneApi operations.
 ///

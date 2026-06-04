@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "TriggersApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_create_build_request.dart';import 'package:pub_cloudflare/models/builds_create_trigger_request.dart';import 'package:pub_cloudflare/models/builds_trigger_uuid.dart';import 'package:pub_cloudflare/models/builds_update_trigger_request.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// TriggersApi operations.
 ///

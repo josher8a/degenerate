@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DevicePostureRulesApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/device_posture_rules_create_device_posture_rule_request.dart';import 'package:pub_cloudflare/models/device_posture_rules_update_device_posture_rule_request.dart';import 'package:pub_cloudflare/models/teams_devices_device_posture_rules.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_uuid.dart';/// DevicePostureRulesApi operations.
 ///

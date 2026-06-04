@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "IndicatorsApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/post_indicator_type_create_error.dart';import 'package:pub_cloudflare/models/post_indicator_type_create_request.dart';import 'package:pub_cloudflare/models/post_indicator_type_create_response.dart';/// IndicatorsApi operations.
 ///

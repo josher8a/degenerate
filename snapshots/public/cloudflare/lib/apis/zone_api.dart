@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ZoneApi" (7 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/cache_purge_identifier.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zone_activation_identifier.dart';import 'package:pub_cloudflare/models/zone_purge_request.dart';import 'package:pub_cloudflare/models/zones0_patch_request.dart';import 'package:pub_cloudflare/models/zones_get_direction.dart';import 'package:pub_cloudflare/models/zones_get_match.dart';import 'package:pub_cloudflare/models/zones_get_order.dart';import 'package:pub_cloudflare/models/zones_get_status.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_post_request.dart';import 'package:pub_cloudflare/models/zones_zone.dart';/// ZoneApi operations.
 ///

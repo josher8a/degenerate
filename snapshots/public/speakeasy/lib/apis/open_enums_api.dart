@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "OpenEnumsApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/object_with_enum_explicitly_open.dart';import 'package:pub_speakeasy/models/object_with_enum_in_both.dart';import 'package:pub_speakeasy/models/object_with_enum_in_request_only.dart';import 'package:pub_speakeasy/models/open_enums_response_usage_both_request_and_response_response.dart';import 'package:pub_speakeasy/models/open_enums_response_usage_explicitly_open_response.dart';import 'package:pub_speakeasy/models/open_enums_response_usage_request_only_response.dart';import 'package:pub_speakeasy/models/open_enums_response_usage_response_only_response.dart';/// OpenEnumsApi operations.
 ///

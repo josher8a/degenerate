@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "SpectrumApplicationsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/spectrum_applications_list_spectrum_applications_direction.dart';import 'package:pub_cloudflare/models/spectrum_applications_list_spectrum_applications_order.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_collection/spectrum_config_app_config_collection_result.dart';import 'package:pub_cloudflare/models/spectrum_config_app_config_single/spectrum_config_app_config_single_result.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_paygo_app_config.dart';import 'package:pub_cloudflare/models/spectrum_config_update_app_config.dart';/// SpectrumApplicationsApi operations.
 ///

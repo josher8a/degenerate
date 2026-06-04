@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "UserSInvitesApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_invite_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_user_invite.dart';import 'package:pub_cloudflare/models/user_s_invites_respond_to_invitation_request.dart';/// UserSInvitesApi operations.
 ///

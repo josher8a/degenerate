@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RadarSearchApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_search_global_error.dart';import 'package:pub_cloudflare/models/radar_get_search_global_exclude.dart';import 'package:pub_cloudflare/models/radar_get_search_global_format.dart';import 'package:pub_cloudflare/models/radar_get_search_global_include.dart';import 'package:pub_cloudflare/models/radar_get_search_global_response/radar_get_search_global_response_result.dart';/// RadarSearchApi operations.
 ///

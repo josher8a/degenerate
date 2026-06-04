@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ScansApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_get_open_ports_response/get_get_open_ports_response_result.dart';import 'package:pub_cloudflare/models/post_config_create_request.dart';import 'package:pub_cloudflare/models/post_config_update_request.dart';import 'package:pub_cloudflare/models/scan_config.dart';/// ScansApi operations.
 ///

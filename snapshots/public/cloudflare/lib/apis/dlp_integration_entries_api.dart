@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DlpIntegrationEntriesApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_integration_entry.dart';import 'package:pub_cloudflare/models/dlp_new_predefined_entry.dart';import 'package:pub_cloudflare/models/dlp_predefined_entry_update.dart';/// DlpIntegrationEntriesApi operations.
 ///

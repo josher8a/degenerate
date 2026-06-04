@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "BotnetThreatFeedApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/botnet_threat_feed_delete_asn_response/botnet_threat_feed_delete_asn_response_result.dart';import 'package:pub_cloudflare/models/botnet_threat_feed_get_day_report_response/botnet_threat_feed_get_day_report_response_result.dart';import 'package:pub_cloudflare/models/dos_asn.dart';import 'package:pub_cloudflare/models/dos_identifier.dart';import 'package:pub_cloudflare/models/dos_timestamp.dart';/// BotnetThreatFeedApi operations.
 ///

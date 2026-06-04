@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DnsSettingsForAZoneApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_patch.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';/// DnsSettingsForAZoneApi operations.
 ///

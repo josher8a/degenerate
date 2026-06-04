@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DnsAnalyticsApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_dimensions.dart';import 'package:pub_cloudflare/models/dns_analytics_filters.dart';import 'package:pub_cloudflare/models/dns_analytics_identifier.dart';import 'package:pub_cloudflare/models/dns_analytics_limit.dart';import 'package:pub_cloudflare/models/dns_analytics_metrics.dart';import 'package:pub_cloudflare/models/dns_analytics_report_bytime.dart';import 'package:pub_cloudflare/models/dns_analytics_result.dart';import 'package:pub_cloudflare/models/dns_analytics_since.dart';import 'package:pub_cloudflare/models/dns_analytics_sort.dart';import 'package:pub_cloudflare/models/dns_analytics_time_delta.dart';import 'package:pub_cloudflare/models/dns_analytics_until.dart';/// DnsAnalyticsApi operations.
 ///

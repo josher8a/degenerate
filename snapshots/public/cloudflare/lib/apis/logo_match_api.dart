@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "LogoMatchApi" (9 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/delete_accounts_brand_protection_brands_error.dart';import 'package:pub_cloudflare/models/errors/delete_accounts_brand_protection_queries_error.dart';import 'package:pub_cloudflare/models/image_file.dart';import 'package:pub_cloudflare/models/logo.dart';import 'package:pub_cloudflare/models/logo_match.dart';/// LogoMatchApi operations.
 ///

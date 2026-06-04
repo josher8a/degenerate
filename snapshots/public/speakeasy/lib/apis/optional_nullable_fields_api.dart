@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "OptionalNullableFieldsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/object_with_optional_false_nullable_false_field.dart';import 'package:pub_speakeasy/models/object_with_optional_false_nullable_true_field.dart';import 'package:pub_speakeasy/models/object_with_optional_nullable_discriminated_union.dart';import 'package:pub_speakeasy/models/object_with_optional_true_nullable_false_field.dart';import 'package:pub_speakeasy/models/object_with_optional_true_nullable_true_field.dart';import 'package:pub_speakeasy/models/optional_nullable_discriminated_union_post_response.dart';/// OptionalNullableFieldsApi operations.
 ///

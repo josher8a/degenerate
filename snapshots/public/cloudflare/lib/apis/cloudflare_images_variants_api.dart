@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CloudflareImagesVariantsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_account_identifier.dart';import 'package:pub_cloudflare/models/images_image_variant_definition.dart';import 'package:pub_cloudflare/models/images_image_variant_identifier.dart';import 'package:pub_cloudflare/models/images_image_variant_patch_request.dart';import 'package:pub_cloudflare/models/images_image_variant_response.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';/// CloudflareImagesVariantsApi operations.
 ///

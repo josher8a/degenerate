@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "TableMaintenanceConfigurationApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/disable_catalog_error.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_maintenance_update_params.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config_response.dart';/// TableMaintenanceConfigurationApi operations.
 ///

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "WorkerDomainApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_domain_attach_to_domain_request.dart';import 'package:pub_cloudflare/models/workers_account_identifier.dart';import 'package:pub_cloudflare/models/workers_domain.dart';import 'package:pub_cloudflare/models/workers_domain_identifier.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';import 'package:pub_cloudflare/models/workers_zone_name.dart';/// WorkerDomainApi operations.
 ///

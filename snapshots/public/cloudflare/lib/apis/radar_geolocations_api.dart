@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RadarGeolocationsApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_geolocation_details_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_geolocations_error.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_format.dart';import 'package:pub_cloudflare/models/radar_get_geolocation_details_response/radar_get_geolocation_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_geolocations_format.dart';import 'package:pub_cloudflare/models/radar_get_geolocations_response/radar_get_geolocations_response_result.dart';/// RadarGeolocationsApi operations.
 ///

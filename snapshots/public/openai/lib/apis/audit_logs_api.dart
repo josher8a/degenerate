@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AuditLogsApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log_event_type.dart';import 'package:pub_openai/models/list_audit_logs_effective_at.dart';import 'package:pub_openai/models/list_audit_logs_response.dart';/// AuditLogsApi operations.
 ///

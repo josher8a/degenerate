@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RadarLocationsApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_location_by_alpha2_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_entities_locations_error.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_location_by_alpha2_response/radar_get_entities_location_by_alpha2_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_continent.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_locations_response/radar_get_entities_locations_response_result.dart';/// RadarLocationsApi operations.
 ///

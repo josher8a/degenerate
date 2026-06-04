@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "MagicInterconnectsApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_components_schemas_modified_tunnels_collection_response/magic_components_schemas_modified_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_modified_response/magic_components_schemas_tunnel_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnel_single_response/magic_components_schemas_tunnel_single_response_result.dart';import 'package:pub_cloudflare/models/magic_components_schemas_tunnels_collection_response/magic_components_schemas_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_interconnect_tunnel_update_request.dart';/// MagicInterconnectsApi operations.
 ///

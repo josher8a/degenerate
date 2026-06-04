@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "IpAddressManagementServiceBindingsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_account_identifier.dart';import 'package:pub_cloudflare/models/addressing_create_binding_request.dart';import 'package:pub_cloudflare/models/addressing_prefix_identifier.dart';import 'package:pub_cloudflare/models/addressing_service_binding.dart';import 'package:pub_cloudflare/models/addressing_service_binding_identifier.dart';import 'package:pub_cloudflare/models/ip_address_management_service_bindings_list_services_response/ip_address_management_service_bindings_list_services_response_result.dart';import 'package:pub_cloudflare/models/response_common4.dart';/// IpAddressManagementServiceBindingsApi operations.
 ///

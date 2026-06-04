@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DeviceManagedNetworksApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_managed_networks_create_device_managed_network_request.dart';import 'package:pub_cloudflare/models/device_managed_networks_update_device_managed_network_request.dart';import 'package:pub_cloudflare/models/teams_devices_device_managed_networks.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_uuid.dart';/// DeviceManagedNetworksApi operations.
 ///

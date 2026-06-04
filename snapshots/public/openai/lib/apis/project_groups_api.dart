@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ProjectGroupsApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite_project_group_body.dart';import 'package:pub_openai/models/list_project_groups_order.dart';import 'package:pub_openai/models/project_group.dart';import 'package:pub_openai/models/project_group_deleted_resource.dart';import 'package:pub_openai/models/project_group_list_resource.dart';/// ProjectGroupsApi operations.
 ///

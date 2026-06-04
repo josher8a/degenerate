@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "WorkersApi" (8 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_external_script_id.dart';import 'package:pub_cloudflare/models/errors/create_worker_error.dart';import 'package:pub_cloudflare/models/errors/delete_worker_error.dart';import 'package:pub_cloudflare/models/errors/edit_worker_error.dart';import 'package:pub_cloudflare/models/errors/get_worker_error.dart';import 'package:pub_cloudflare/models/errors/list_workers_error.dart';import 'package:pub_cloudflare/models/list_workers_order.dart';import 'package:pub_cloudflare/models/list_workers_order_by.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_worker.dart';/// WorkersApi operations.
 ///

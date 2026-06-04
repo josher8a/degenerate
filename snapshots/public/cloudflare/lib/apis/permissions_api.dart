@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PermissionsApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_permission_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_permission_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_permission_list_error.dart';import 'package:pub_cloudflare/models/errors/post_permission_create_error.dart';import 'package:pub_cloudflare/models/errors/put_permission_update_error.dart';import 'package:pub_cloudflare/models/get_permission_list_response.dart';import 'package:pub_cloudflare/models/post_permission_create_request.dart';import 'package:pub_cloudflare/models/post_permission_create_response.dart';import 'package:pub_cloudflare/models/put_permission_update_request.dart';import 'package:pub_cloudflare/models/put_permission_update_response.dart';/// PermissionsApi operations.
 ///

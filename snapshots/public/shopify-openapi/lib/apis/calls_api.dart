@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CallsApi" (2 operations)
 
 import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';/// CallsApi operations.
 ///

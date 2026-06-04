@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "LogsReceivedApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logcontrol_identifier.dart';import 'package:pub_cloudflare/models/logcontrol_retention_flag.dart';import 'package:pub_cloudflare/models/logshare_count.dart';import 'package:pub_cloudflare/models/logshare_end.dart';import 'package:pub_cloudflare/models/logshare_fields.dart';import 'package:pub_cloudflare/models/logshare_fields_response.dart';import 'package:pub_cloudflare/models/logshare_identifier.dart';import 'package:pub_cloudflare/models/logshare_logs_response_json_lines.dart';import 'package:pub_cloudflare/models/logshare_ray_identifier.dart';import 'package:pub_cloudflare/models/logshare_sample.dart';import 'package:pub_cloudflare/models/logshare_start.dart';import 'package:pub_cloudflare/models/logshare_timestamps.dart';/// LogsReceivedApi operations.
 ///

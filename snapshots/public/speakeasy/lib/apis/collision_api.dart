@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CollisionApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/inline_type_name_collision_cascading_response.dart';import 'package:pub_speakeasy/models/inline_type_name_collision_response.dart';/// CollisionApi operations.
 ///

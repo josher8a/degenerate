@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PerHostnameTlsSettingsApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/per_hostname_tls_settings_put_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_hostname.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_per_hostname_settings_response_collection/tls_certificates_and_hostnames_per_hostname_settings_response_collection_result.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_setting_id.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_setting_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_setting_object_delete.dart';/// PerHostnameTlsSettingsApi operations.
 ///

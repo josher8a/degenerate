@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DefaultApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_extension_types/models/user.dart';import 'package:spec_extension_types/models/user_id.dart';/// DefaultApi operations.
 ///

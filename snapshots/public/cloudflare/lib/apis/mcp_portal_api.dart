@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "McpPortalApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_request.dart';import 'package:pub_cloudflare/models/create_portals_response/create_portals_response_result.dart';import 'package:pub_cloudflare/models/errors/create_portals_error.dart';import 'package:pub_cloudflare/models/errors/delete_portals_error.dart';import 'package:pub_cloudflare/models/errors/fetch_gateways_error.dart';import 'package:pub_cloudflare/models/errors/list_portals_error.dart';import 'package:pub_cloudflare/models/errors/update_portals_error.dart';import 'package:pub_cloudflare/models/fetch_gateways_response/fetch_gateways_response_result.dart';import 'package:pub_cloudflare/models/update_portals_request.dart';/// McpPortalApi operations.
 ///

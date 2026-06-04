@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DefaultApi" (1 operation)
 
 import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_fake_petstore/models/errors/get_foo_error.dart';/// DefaultApi operations.
 ///

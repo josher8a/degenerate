@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DefaultApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_11_circular/models/category.dart';import 'package:spec_11_circular/models/department.dart';import 'package:spec_11_circular/models/employee.dart';import 'package:spec_11_circular/models/file_system_node.dart';/// DefaultApi operations.
 ///

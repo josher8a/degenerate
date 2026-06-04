@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "WorkersAiSummarizationApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_facebook_bart_large_cnn_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_bart_large_cnn_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_request.dart';/// WorkersAiSummarizationApi operations.
 ///

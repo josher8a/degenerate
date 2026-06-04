@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "TagCategoryApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_tag_category_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_tag_category_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_tag_category_list_error.dart';import 'package:pub_cloudflare/models/errors/patch_tag_category_update_error.dart';import 'package:pub_cloudflare/models/errors/post_tag_category_create_error.dart';import 'package:pub_cloudflare/models/get_tag_category_list_response.dart';import 'package:pub_cloudflare/models/patch_tag_category_update_request.dart';import 'package:pub_cloudflare/models/patch_tag_category_update_response.dart';import 'package:pub_cloudflare/models/post_tag_category_create_request.dart';import 'package:pub_cloudflare/models/post_tag_category_create_response.dart';/// TagCategoryApi operations.
 ///

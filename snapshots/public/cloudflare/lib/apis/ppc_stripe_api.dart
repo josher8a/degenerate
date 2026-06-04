@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PpcStripeApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/pay_per_crawl_crawler_create_stripe_config_error.dart';import 'package:pub_cloudflare/models/no_result_response.dart';import 'package:pub_cloudflare/models/pay_per_crawl_stripe_connect_resp.dart';import 'package:pub_cloudflare/models/pay_per_crawl_stripe_connection.dart';/// PpcStripeApi operations.
 ///

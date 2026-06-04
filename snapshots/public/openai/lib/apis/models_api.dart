@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ModelsApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_model_response.dart';import 'package:pub_openai/models/list_models_response.dart';import 'package:pub_openai/models/model.dart';/// ModelsApi operations.
 ///

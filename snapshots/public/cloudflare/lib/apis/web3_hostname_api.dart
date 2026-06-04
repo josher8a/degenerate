@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "Web3HostnameApi" (12 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/web3_content_list_details.dart';import 'package:pub_cloudflare/models/web3_content_list_entry.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_collection_response/web3_content_list_entry_collection_response_result.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_create_request.dart';import 'package:pub_cloudflare/models/web3_content_list_update_request.dart';import 'package:pub_cloudflare/models/web3_create_request.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_modify_request.dart';import 'package:pub_cloudflare/models/web3_web3_hostname.dart';/// Web3HostnameApi operations.
 ///

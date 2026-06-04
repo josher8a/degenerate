@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PollingApi" (15 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/polling.dart';import 'package:pub_speakeasy/models/polling_name_override.dart';import 'package:pub_speakeasy/models/polling_nested.dart';import 'package:pub_speakeasy/models/polling_optional.dart';/// PollingApi operations.
 ///

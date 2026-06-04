@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "FilesApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_file_request.dart';import 'package:pub_openai/models/delete_file_response.dart';import 'package:pub_openai/models/list_files_order.dart';import 'package:pub_openai/models/list_files_response.dart';import 'package:pub_openai/models/open_ai_file.dart';/// FilesApi operations.
 ///

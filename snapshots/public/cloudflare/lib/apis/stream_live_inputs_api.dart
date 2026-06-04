@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "StreamLiveInputsApi" (11 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_create_input_request.dart';import 'package:pub_cloudflare/models/stream_create_output_request.dart';import 'package:pub_cloudflare/models/stream_include_counts.dart';import 'package:pub_cloudflare/models/stream_live_input.dart';import 'package:pub_cloudflare/models/stream_live_input_identifier.dart';import 'package:pub_cloudflare/models/stream_live_input_response_collection/stream_live_input_response_collection_result.dart';import 'package:pub_cloudflare/models/stream_output.dart';import 'package:pub_cloudflare/models/stream_output_identifier.dart';import 'package:pub_cloudflare/models/stream_schemas_identifier.dart';import 'package:pub_cloudflare/models/stream_update_input_request.dart';import 'package:pub_cloudflare/models/stream_update_output_request.dart';/// StreamLiveInputsApi operations.
 ///

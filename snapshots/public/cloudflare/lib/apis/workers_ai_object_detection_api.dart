@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "WorkersAiObjectDetectionApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_facebook_nonomni_detr_resnet50_error.dart';/// WorkersAiObjectDetectionApi operations.
 ///

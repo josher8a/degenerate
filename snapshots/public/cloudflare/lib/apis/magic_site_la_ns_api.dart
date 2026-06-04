@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "MagicSiteLaNsApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_lan.dart';import 'package:pub_cloudflare/models/magic_lan_update_request.dart';import 'package:pub_cloudflare/models/magic_lans_add_single_request.dart';/// MagicSiteLaNsApi operations.
 ///

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AppsApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_app_request.dart';import 'package:pub_cloudflare/models/create_app_response.dart';import 'package:pub_cloudflare/models/get_apps_response.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';/// AppsApi operations.
 ///

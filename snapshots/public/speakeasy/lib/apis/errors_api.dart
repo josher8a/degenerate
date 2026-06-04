@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ErrorsApi" (11 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_union_discriminated_post_request.dart';import 'package:pub_speakeasy/models/error_union_post_request.dart';import 'package:pub_speakeasy/models/errors/error_union_post_error.dart';import 'package:pub_speakeasy/models/errors/get_duplicate_export_collision_error.dart';import 'package:pub_speakeasy/models/errors/get_error_message_collision_error.dart';import 'package:pub_speakeasy/models/errors/status_get_x_speakeasy_errors_error.dart';import 'package:pub_speakeasy/models/get_duplicate_export_collision_response.dart';import 'package:pub_speakeasy/models/shared_error_union_post1_request.dart';import 'package:pub_speakeasy/models/shared_error_union_post2_request.dart';/// ErrorsApi operations.
 ///

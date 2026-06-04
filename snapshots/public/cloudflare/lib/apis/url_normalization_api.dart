@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "UrlNormalizationApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_url_normalization.dart';import 'package:pub_cloudflare/models/rulesets_zone_id.dart';/// UrlNormalizationApi operations.
 ///

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DnsInternalViewsForAnAccountApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/dns_settings_direction.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';import 'package:pub_cloudflare/models/dns_settings_match.dart';import 'package:pub_cloudflare/models/dns_settings_order.dart';import 'package:pub_cloudflare/models/dns_settings_page.dart';import 'package:pub_cloudflare/models/dns_settings_per_page.dart';/// DnsInternalViewsForAnAccountApi operations.
 ///

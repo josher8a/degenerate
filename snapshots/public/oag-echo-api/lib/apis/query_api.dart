@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "QueryApi" (11 operations)
 
 import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/bird.dart';import 'package:pub_oag_echo_api/models/data_query.dart';import 'package:pub_oag_echo_api/models/pet.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';import 'package:pub_oag_echo_api/models/test_enum_ref_string_enum_nonref_string_query.dart';import 'package:pub_oag_echo_api/models/test_query_style_form_explode_true_array_string_query_object.dart';/// QueryApi operations.
 ///

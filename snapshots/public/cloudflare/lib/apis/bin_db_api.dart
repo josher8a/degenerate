@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "BinDbApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_bin_db_get_binary_error.dart';import 'package:pub_cloudflare/models/errors/post_bin_db_post_error.dart';import 'package:pub_cloudflare/models/post_bin_db_post_request.dart';import 'package:pub_cloudflare/models/post_bin_db_post_response.dart';/// BinDbApi operations.
 ///

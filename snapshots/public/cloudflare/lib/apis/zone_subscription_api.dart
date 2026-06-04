@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ZoneSubscriptionApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/subscription2.dart';/// ZoneSubscriptionApi operations.
 ///

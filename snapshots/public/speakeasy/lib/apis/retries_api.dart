@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RetriesApi" (7 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/retries_after_response.dart';import 'package:pub_speakeasy/models/retries_connect_error_get_response.dart';import 'package:pub_speakeasy/models/retries_flat_empty_response_post_request.dart';import 'package:pub_speakeasy/models/retries_get_response.dart';import 'package:pub_speakeasy/models/retries_get_retry_connection_errors_response.dart';import 'package:pub_speakeasy/models/retries_get_timeout_response.dart';import 'package:pub_speakeasy/models/retries_post_request.dart';import 'package:pub_speakeasy/models/retries_post_response.dart';/// RetriesApi operations.
 ///

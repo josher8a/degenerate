@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AiSearchInstancesJobsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_request.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response/ai_search_instance_change_job_status_response_result.dart';import 'package:pub_cloudflare/models/ai_search_instance_create_job_request.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/errors/ai_search_instance_change_job_status_error.dart';import 'package:pub_cloudflare/models/errors/ai_search_instance_create_job_error.dart';import 'package:pub_cloudflare/models/errors/ai_search_instance_get_job_error.dart';import 'package:pub_cloudflare/models/errors/ai_search_instance_list_job_logs_error.dart';import 'package:pub_cloudflare/models/errors/ai_search_instance_list_jobs_error.dart';/// AiSearchInstancesJobsApi operations.
 ///

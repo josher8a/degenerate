@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CampaignsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';import 'package:pub_github_rest_3_1/models/campaign_summary.dart';import 'package:pub_github_rest_3_1/models/campaigns_list_org_campaigns_direction.dart';import 'package:pub_github_rest_3_1/models/campaigns_list_org_campaigns_sort.dart';import 'package:pub_github_rest_3_1/models/campaigns_update_campaign_request.dart';import 'package:pub_github_rest_3_1/models/errors/campaigns_create_campaign_error.dart';import 'package:pub_github_rest_3_1/models/errors/campaigns_delete_campaign_error.dart';import 'package:pub_github_rest_3_1/models/errors/campaigns_get_campaign_summary_error.dart';import 'package:pub_github_rest_3_1/models/errors/campaigns_list_org_campaigns_error.dart';import 'package:pub_github_rest_3_1/models/errors/campaigns_update_campaign_error.dart';/// CampaignsApi operations.
 ///

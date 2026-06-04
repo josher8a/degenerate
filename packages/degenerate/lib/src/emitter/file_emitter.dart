@@ -437,6 +437,8 @@ final class FileEmitter {
       final library = Library(
         (b) => b
           ..comments.addAll(_header)
+          ..comments.add('Source: tag "${api.name}" '
+              '(${api.operations.length} operation${api.operations.length == 1 ? '' : 's'})')
           ..directives.add(Directive.import('dart:async'))
           ..directives.addAll(
             analysis.needsConvert ? [Directive.import('dart:convert')] : [],

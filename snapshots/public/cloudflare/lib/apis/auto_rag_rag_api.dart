@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AutoRagRagApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_files_response/autorag_config_files_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_files_status.dart';import 'package:pub_cloudflare/models/autorag_config_sync_response/autorag_config_sync_response_result.dart';import 'package:pub_cloudflare/models/errors/autorag_config_files_error.dart';import 'package:pub_cloudflare/models/errors/autorag_config_sync_error.dart';/// AutoRagRagApi operations.
 ///

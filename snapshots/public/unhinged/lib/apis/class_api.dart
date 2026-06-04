@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ClassApi" (1 operation)
 
 import 'dart:async';
 import 'dart:convert';

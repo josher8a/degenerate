@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PathApi" (1 operation)
 
 import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';import 'package:pub_oag_echo_api/models/tests_path_stringpath_string_integerpath_integerenum_nonref_string_pathenum_ref_string_path_enum_nonref_string_path.dart';/// PathApi operations.
 ///

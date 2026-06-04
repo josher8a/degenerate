@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AiGatewayProviderConfigsApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_providers_request.dart';import 'package:pub_cloudflare/models/aig_config_create_providers_response/aig_config_create_providers_response_result.dart';import 'package:pub_cloudflare/models/aig_config_update_providers_request.dart';import 'package:pub_cloudflare/models/errors/aig_config_create_providers_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_delete_providers_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_list_providers_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_update_providers_error.dart';/// AiGatewayProviderConfigsApi operations.
 ///

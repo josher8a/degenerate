@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "TelemetryApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/telemetry_speakeasy_user_agent_get_response.dart';import 'package:pub_speakeasy/models/telemetry_user_agent_get_response.dart';/// TelemetryApi operations.
 ///

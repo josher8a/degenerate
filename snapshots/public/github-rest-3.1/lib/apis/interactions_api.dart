@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "InteractionsApi" (9 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/errors/activity_list_stargazers_for_repo_error.dart';import 'package:pub_github_rest_3_1/models/interaction_limit.dart';import 'package:pub_github_rest_3_1/models/interaction_limit_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_authenticated_user_response/interactions_get_restrictions_for_authenticated_user_response_variant2.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_org_response.dart';import 'package:pub_github_rest_3_1/models/interactions_get_restrictions_for_repo_response.dart';/// InteractionsApi operations.
 ///

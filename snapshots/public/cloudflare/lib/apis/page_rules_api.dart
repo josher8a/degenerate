@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PageRulesApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_rules_create_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_edit_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_direction.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_match.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_order.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_status.dart';import 'package:pub_cloudflare/models/page_rules_update_a_page_rule_request.dart';import 'package:pub_cloudflare/models/response_single_id5/response_single_id5_result.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// PageRulesApi operations.
 ///

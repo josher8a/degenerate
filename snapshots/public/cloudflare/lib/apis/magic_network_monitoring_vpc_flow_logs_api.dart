@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "MagicNetworkMonitoringVpcFlowLogsApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_account_identifier.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_vpc_flows_single_response.dart';/// MagicNetworkMonitoringVpcFlowLogsApi operations.
 ///

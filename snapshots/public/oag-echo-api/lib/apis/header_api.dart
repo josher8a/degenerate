@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "HeaderApi" (1 operation)
 
 import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';import 'package:pub_oag_echo_api/models/test_header_integer_boolean_string_enums_enum_nonref_string_header.dart';/// HeaderApi operations.
 ///

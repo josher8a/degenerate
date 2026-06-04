@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CancellationApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/cancellation_hook_response.dart';import 'package:pub_speakeasy/models/cancelled_request_response.dart';/// CancellationApi operations.
 ///

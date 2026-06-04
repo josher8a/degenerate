@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DiagnosticsApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/diagnostics_traceroute_request.dart';import 'package:pub_cloudflare/models/magic_transit_identifier.dart';import 'package:pub_cloudflare/models/magic_transit_target_result.dart';/// DiagnosticsApi operations.
 ///

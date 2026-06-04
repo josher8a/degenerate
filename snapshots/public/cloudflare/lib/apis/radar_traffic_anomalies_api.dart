@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RadarTrafficAnomaliesApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_traffic_anomalies_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_traffic_anomalies_top_error.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_format.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_response/radar_get_traffic_anomalies_response_result.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_status.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_format.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_response/radar_get_traffic_anomalies_top_response_result.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_top_status.dart';import 'package:pub_cloudflare/models/radar_get_traffic_anomalies_type.dart';/// RadarTrafficAnomaliesApi operations.
 ///

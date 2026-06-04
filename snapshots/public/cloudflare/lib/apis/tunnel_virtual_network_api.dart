@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "TunnelVirtualNetworkApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_create_a_virtual_network_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_get_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_update_request.dart';/// TunnelVirtualNetworkApi operations.
 ///

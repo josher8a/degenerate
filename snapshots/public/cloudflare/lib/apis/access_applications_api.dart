@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AccessApplicationsApi" (9 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_id.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_request.dart';import 'package:pub_cloudflare/models/access_app_response.dart';import 'package:pub_cloudflare/models/access_app_settings_request.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_policy_check_response/access_policy_check_response_result.dart';/// AccessApplicationsApi operations.
 ///

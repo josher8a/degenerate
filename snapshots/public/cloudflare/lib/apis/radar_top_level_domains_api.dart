@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RadarTopLevelDomainsApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_tld_details_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_tlds_error.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_format.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response/radar_get_tld_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tlds_format.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response/radar_get_tlds_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tlds_tld_type.dart';/// RadarTopLevelDomainsApi operations.
 ///

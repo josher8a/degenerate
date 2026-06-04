@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ImagesApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_request.dart';import 'package:pub_openai/models/create_image_variation_request.dart';import 'package:pub_openai/models/edit_image_body_json_param.dart';import 'package:pub_openai/models/image_edit_stream_event.dart';import 'package:pub_openai/models/image_gen_stream_event.dart';import 'package:pub_openai/models/images_response.dart';/// ImagesApi operations.
 ///

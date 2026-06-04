@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DurableObjectsNamespaceApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_namespace.dart';import 'package:pub_cloudflare/models/workers_object.dart';import 'package:pub_cloudflare/models/workers_schemas_id.dart';/// DurableObjectsNamespaceApi operations.
 ///

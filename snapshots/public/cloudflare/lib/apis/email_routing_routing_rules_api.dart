@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "EmailRoutingRoutingRulesApi" (7 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_catch_all_rule.dart';import 'package:pub_cloudflare/models/email_create_rule_properties.dart';import 'package:pub_cloudflare/models/email_identifier.dart';import 'package:pub_cloudflare/models/email_rule_identifier.dart';import 'package:pub_cloudflare/models/email_rule_properties.dart';import 'package:pub_cloudflare/models/email_update_catch_all_rule_properties.dart';import 'package:pub_cloudflare/models/email_update_rule_properties.dart';/// EmailRoutingRoutingRulesApi operations.
 ///

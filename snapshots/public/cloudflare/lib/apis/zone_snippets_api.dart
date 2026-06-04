@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ZoneSnippetsApi" (8 operations)
 
 import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_page.dart';import 'package:pub_cloudflare/models/snippets_per_page.dart';import 'package:pub_cloudflare/models/snippets_snippet.dart';import 'package:pub_cloudflare/models/snippets_snippet_name.dart';import 'package:pub_cloudflare/models/snippets_zone_id.dart';import 'package:pub_cloudflare/models/update_zone_snippet_request.dart';import 'package:pub_cloudflare/models/update_zone_snippet_rules_request.dart';/// ZoneSnippetsApi operations.
 ///

@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "WorkersAiTranslationApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_error.dart';import 'package:pub_cloudflare/models/errors/workers_ai_post_run_cf_meta_m2m10012b_error.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_meta_m2m10012b_request.dart';/// WorkersAiTranslationApi operations.
 ///

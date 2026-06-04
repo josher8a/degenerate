@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ShieldClientCertificatesForAZoneApi" (7 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/client_certificate_for_a_zone_create_client_certificate_request.dart';import 'package:pub_cloudflare/models/client_certificate_for_a_zone_edit_client_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_client_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_association.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_associations_response/tls_certificates_and_hostnames_hostname_associations_response_result.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// ShieldClientCertificatesForAZoneApi operations.
 ///

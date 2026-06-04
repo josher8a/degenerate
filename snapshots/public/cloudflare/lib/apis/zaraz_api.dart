@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ZarazApi" (10 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_zones_zone_identifier_zaraz_history_sort_field.dart';import 'package:pub_cloudflare/models/get_zones_zone_identifier_zaraz_history_sort_order.dart';import 'package:pub_cloudflare/models/zaraz_identifier.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_body.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_history_response/zaraz_zaraz_config_history_response_result_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_return.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_history_response/zaraz_zaraz_history_response_result.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_workflow.dart';/// ZarazApi operations.
 ///

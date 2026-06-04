@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RealtimeApi" (8 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_call_create_request.dart';import 'package:pub_openai/models/realtime_call_refer_request.dart';import 'package:pub_openai/models/realtime_call_reject_request.dart';import 'package:pub_openai/models/realtime_create_client_secret_request.dart';import 'package:pub_openai/models/realtime_create_client_secret_response.dart';import 'package:pub_openai/models/realtime_session_create_request.dart';import 'package:pub_openai/models/realtime_session_create_request_ga.dart';import 'package:pub_openai/models/realtime_session_create_response.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response.dart';/// RealtimeApi operations.
 ///

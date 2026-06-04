@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DomainSearchApi" (9 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/delete_accounts_brand_protection_brands_error.dart';import 'package:pub_cloudflare/models/errors/delete_accounts_brand_protection_queries_error.dart';import 'package:pub_cloudflare/models/query.dart';import 'package:pub_cloudflare/models/query_bulk.dart';import 'package:pub_cloudflare/models/query_match.dart';/// DomainSearchApi operations.
 ///

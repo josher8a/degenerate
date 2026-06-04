@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "MagicSiteNetFlowConfigApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_netflow_config.dart';import 'package:pub_cloudflare/models/magic_netflow_config_request.dart';/// MagicSiteNetFlowConfigApi operations.
 ///

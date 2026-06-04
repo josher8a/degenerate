@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "AiGatewayGatewaysApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_request.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_response/aig_config_create_gateway_response_result.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request.dart';import 'package:pub_cloudflare/models/errors/aig_config_create_gateway_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_delete_gateway_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_fetch_gateway_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_get_gateway_url_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_list_gateway_error.dart';import 'package:pub_cloudflare/models/errors/aig_config_update_gateway_error.dart';/// AiGatewayGatewaysApi operations.
 ///

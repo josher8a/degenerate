@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RadarTcpResetsAndTimeoutsApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/radar_get_tcp_resets_timeouts_summary_error.dart';import 'package:pub_cloudflare/models/errors/radar_get_tcp_resets_timeouts_timeseries_group_error.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_summary_response/radar_get_tcp_resets_timeouts_summary_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_timeseries_group_response/radar_get_tcp_resets_timeouts_timeseries_group_response_result.dart';/// RadarTcpResetsAndTimeoutsApi operations.
 ///

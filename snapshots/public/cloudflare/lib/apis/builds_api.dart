@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "BuildsApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_cursor.dart';import 'package:pub_cloudflare/models/builds_external_script_ids.dart';import 'package:pub_cloudflare/models/builds_version_ids.dart';import 'package:pub_cloudflare/models/errors/cancel_build_by_uuid_error.dart';/// BuildsApi operations.
 ///

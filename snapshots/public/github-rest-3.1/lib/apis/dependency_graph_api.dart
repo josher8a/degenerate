@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DependencyGraphApi" (3 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_create_repository_snapshot_response.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff2.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom.dart';import 'package:pub_github_rest_3_1/models/errors/actions_approve_workflow_run_error.dart';import 'package:pub_github_rest_3_1/models/snapshot.dart';/// DependencyGraphApi operations.
 ///

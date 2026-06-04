@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CollectionsApi" (1 operation)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/collections_containing_null_request.dart';import 'package:pub_speakeasy/models/collections_containing_null_response.dart';/// CollectionsApi operations.
 ///

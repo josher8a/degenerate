@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "RolesApi" (8 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/list_project_roles_order.dart';import 'package:pub_openai/models/list_roles_order.dart';import 'package:pub_openai/models/public_create_organization_role_body.dart';import 'package:pub_openai/models/public_role_list_resource.dart';import 'package:pub_openai/models/public_update_organization_role_body.dart';import 'package:pub_openai/models/role.dart';import 'package:pub_openai/models/role_deleted_resource.dart';/// RolesApi operations.
 ///

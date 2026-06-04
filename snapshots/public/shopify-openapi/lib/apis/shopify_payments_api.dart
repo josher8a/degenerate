@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ShopifyPaymentsApi" (22 operations)
 
 import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';/// ShopifyPaymentsApi operations.
 ///

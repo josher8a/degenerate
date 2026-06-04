@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ZoneCacheSettingsApi" (9 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_base.dart';import 'package:pub_cloudflare/models/cache_rules_identifier.dart';import 'package:pub_cloudflare/models/cache_rules_result_object.dart';import 'package:pub_cloudflare/models/response_common10.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_cache_reserve_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_regional_tiered_cache_setting_request.dart';import 'package:pub_cloudflare/models/zone_cache_settings_change_variants_setting_request.dart';/// ZoneCacheSettingsApi operations.
 ///

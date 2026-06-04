@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "MagicSiteAcLsApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl.dart';import 'package:pub_cloudflare/models/magic_acl_update_request.dart';import 'package:pub_cloudflare/models/magic_acls_add_single_request.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';/// MagicSiteAcLsApi operations.
 ///

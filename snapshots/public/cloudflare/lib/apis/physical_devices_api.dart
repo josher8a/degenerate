@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "PhysicalDevicesApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/list_devices_active_registrations.dart';import 'package:pub_cloudflare/models/list_devices_sort_by.dart';import 'package:pub_cloudflare/models/list_devices_sort_order.dart';import 'package:pub_cloudflare/models/teams_devices_physical_device.dart';/// PhysicalDevicesApi operations.
 ///

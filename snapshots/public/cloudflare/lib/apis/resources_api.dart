@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ResourcesApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/catalog_syncs_list_error.dart';import 'package:pub_cloudflare/models/errors/resources_catalog_policy_preview_error.dart';import 'package:pub_cloudflare/models/mcn_account_id.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';import 'package:pub_cloudflare/models/mcn_resource_type.dart';import 'package:pub_cloudflare/models/mcn_resources_catalog_policy_preview_request.dart';import 'package:pub_cloudflare/models/mcn_resources_catalog_policy_preview_response.dart';/// ResourcesApi operations.
 ///

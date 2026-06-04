@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "ArgoSmartRoutingApi" (2 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_config_identifier.dart';import 'package:pub_cloudflare/models/argo_config_patch.dart';import 'package:pub_cloudflare/models/argo_config_result_object.dart';/// ArgoSmartRoutingApi operations.
 ///

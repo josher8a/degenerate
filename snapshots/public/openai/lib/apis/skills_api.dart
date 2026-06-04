@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "SkillsApi" (11 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_skill_body.dart';import 'package:pub_openai/models/create_skill_version_body.dart';import 'package:pub_openai/models/deleted_skill_resource.dart';import 'package:pub_openai/models/deleted_skill_version_resource.dart';import 'package:pub_openai/models/order_enum.dart';import 'package:pub_openai/models/set_default_skill_version_body.dart';import 'package:pub_openai/models/skill_list_resource.dart';import 'package:pub_openai/models/skill_resource.dart';import 'package:pub_openai/models/skill_version_list_resource.dart';import 'package:pub_openai/models/skill_version_resource.dart';/// SkillsApi operations.
 ///

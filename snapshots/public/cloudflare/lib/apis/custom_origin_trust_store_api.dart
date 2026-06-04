@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CustomOriginTrustStoreApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/custom_origin_trust_store_create_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_trust_store.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// CustomOriginTrustStoreApi operations.
 ///

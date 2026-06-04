@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DestinationsApi" (4 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_request.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result.dart';import 'package:pub_cloudflare/models/destination_list_order.dart';import 'package:pub_cloudflare/models/destination_list_order_by.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_result.dart';import 'package:pub_cloudflare/models/destination_update_request.dart';import 'package:pub_cloudflare/models/errors/destination_create_error.dart';import 'package:pub_cloudflare/models/errors/destination_list_error.dart';import 'package:pub_cloudflare/models/errors/destination_update_error.dart';import 'package:pub_cloudflare/models/errors/destinations_delete_error.dart';/// DestinationsApi operations.
 ///

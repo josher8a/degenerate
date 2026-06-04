@@ -3,6 +3,8 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 
+final _paramNameWhitespace = RegExp(r'[\n\r]+\s*');
+
 /// Converts OpenAPI path items and operations into IR operation groups.
 ///
 /// Operations are grouped by their first tag into [IrApi] instances. Each
@@ -252,7 +254,7 @@ final class OperationLowerer {
   IrParameter _lowerParameter(Map<String, dynamic> param) {
     final rawName = param['name'] as String? ?? '';
     // Sanitize: strip newlines and excess whitespace from parameter names.
-    final name = rawName.replaceAll(RegExp(r'[\n\r]+\s*'), ' ').trim();
+    final name = rawName.replaceAll(_paramNameWhitespace, ' ').trim();
     // Handle special suffix characters common in OpenAPI (e.g. Twilio range
     // filters).
     final suffixedName = _applyParamSuffix(name);

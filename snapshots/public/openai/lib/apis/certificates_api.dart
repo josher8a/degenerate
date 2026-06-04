@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "CertificatesApi" (10 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/certificate.dart';import 'package:pub_openai/models/delete_certificate_response.dart';import 'package:pub_openai/models/get_certificate_include.dart';import 'package:pub_openai/models/list_certificates_response.dart';import 'package:pub_openai/models/list_organization_certificates_order.dart';import 'package:pub_openai/models/list_project_certificates_order.dart';import 'package:pub_openai/models/modify_certificate_request.dart';import 'package:pub_openai/models/toggle_certificates_request.dart';import 'package:pub_openai/models/upload_certificate_request.dart';/// CertificatesApi operations.
 ///

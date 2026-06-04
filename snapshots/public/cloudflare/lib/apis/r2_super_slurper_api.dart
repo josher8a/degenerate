@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "R2SuperSlurperApi" (11 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_ip_profile_response/delete_ip_profile_response_result.dart';import 'package:pub_cloudflare/models/errors/slurper_create_job_error.dart';import 'package:pub_cloudflare/models/r2_slurper_connectivity_response.dart';import 'package:pub_cloudflare/models/r2_slurper_create_job_request.dart';import 'package:pub_cloudflare/models/r2_slurper_job_log_response.dart';import 'package:pub_cloudflare/models/r2_slurper_job_progress_response.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_target_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_source_job_schema.dart';/// R2SuperSlurperApi operations.
 ///

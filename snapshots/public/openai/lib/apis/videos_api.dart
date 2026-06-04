@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "VideosApi" (6 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_video_body.dart';import 'package:pub_openai/models/create_video_remix_body.dart';import 'package:pub_openai/models/deleted_video_resource.dart';import 'package:pub_openai/models/order_enum.dart';import 'package:pub_openai/models/video_content_variant.dart';import 'package:pub_openai/models/video_list_resource.dart';import 'package:pub_openai/models/video_resource.dart';/// VideosApi operations.
 ///

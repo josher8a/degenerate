@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// Source: tag "DexRulesApi" (5 operations)
 
 import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_create_rule_body.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_rule.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_list_rules_response.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_patch_rule_body.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';import 'package:pub_cloudflare/models/list_dex_rules_sort_by.dart';import 'package:pub_cloudflare/models/list_dex_rules_sort_order.dart';/// DexRulesApi operations.
 ///
