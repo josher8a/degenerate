@@ -681,6 +681,202 @@ void main() {
     });
   });
 
+  // ─── AnyOf emission ──────────────────────────────────────────
+
+  group('AnyOfEmitter', () {
+    test('emits final class with nullable variant fields', () {
+      const anyOf = IrAnyOf('PetOrOwner', [
+        IrObject('Pet', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['name']),
+        IrObject('Owner', [
+          IrField('email', 'email', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['email']),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('final class PetOrOwner'));
+      expect(source, contains('@immutable'));
+      expect(source, contains('final Pet? pet;'));
+      expect(source, contains('final Owner? owner;'));
+      expect(source, contains('const PetOrOwner({'));
+      expect(source, contains('bool get isValid'));
+      expect(source, contains('pet != null || owner != null'));
+    });
+
+    test('two-object anyOf is valid Dart', () {
+      const anyOf = IrAnyOf('PetOrOwner', [
+        IrObject('Pet', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['name']),
+        IrObject('Owner', [
+          IrField('email', 'email', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['email']),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('fromJson uses canParse guard for object variants', () {
+      const anyOf = IrAnyOf('PetOrOwner', [
+        IrObject('Pet', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['name']),
+        IrObject('Owner', [
+          IrField('email', 'email', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['email']),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('Pet.canParse(json) ? Pet.fromJson(json) : null'));
+      expect(
+          source, contains('Owner.canParse(json) ? Owner.fromJson(json) : null'));
+    });
+
+    test('primitive variants use type-check guards', () {
+      const anyOf = IrAnyOf('StringOrInt', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('json is String ? json : null'));
+      expect(source, contains('json is num ? json.toInt() : null'));
+      expect(source, contains('factory StringOrInt.fromJson(dynamic json)'));
+    });
+
+    test('mixed object + primitive uses map guard', () {
+      const anyOf = IrAnyOf('Result', [
+        IrObject('Data', [
+          IrField('value', 'value', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['value']),
+        IrPrimitive(PrimitiveKind.string),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('final map = json is Map<String, dynamic>'));
+      expect(source, contains('map != null && Data.canParse(map)'));
+      expect(source, contains('json is String ? json : null'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('enum variant uses String type check', () {
+      const anyOf = IrAnyOf('StatusOrName', [
+        IrEnum('Status', ['active', 'inactive']),
+        IrPrimitive(PrimitiveKind.string),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('json is String ? Status.fromJson(json) : null'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('collection type variants are skipped with comment', () {
+      const anyOf = IrAnyOf('Mixed', [
+        IrObject('Data', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.int),
+              isRequired: true),
+        ], requiredFields: ['id']),
+        IrList(IrPrimitive(PrimitiveKind.string)),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('// listString: skipped'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('duplicate variant type names are deduplicated', () {
+      const anyOf = IrAnyOf('DupTest', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.string),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      // Second String variant should be deduped away, not emitted twice.
+      expect('String?'.allMatches(source).length, equals(1));
+    });
+
+    test('description propagates as doc comment', () {
+      const anyOf = IrAnyOf('Described', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.int),
+      ], description: 'A string or integer value.');
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('/// A string or integer value.'));
+    });
+
+    test('toJson spreads object variants, wraps enums', () {
+      const anyOf = IrAnyOf('PetOrStatus', [
+        IrObject('Pet', [
+          IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['name']),
+        IrEnum('Status', ['active']),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('...?pet?.toJson()'));
+      expect(source, contains("'status': status!.toJson()"));
+    });
+
+    test('equals uses list-aware comparison for list fields', () {
+      const anyOf = IrAnyOf('WithList', [
+        IrPrimitive(PrimitiveKind.string),
+        IrList(IrPrimitive(PrimitiveKind.int)),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('listEquals(listint, other.listint)'));
+      expect(source, contains('Object.hashAll(listint ?? const [])'));
+    });
+
+    test('extension type variant uses wire type check', () {
+      const anyOf = IrAnyOf('IdOrName', [
+        IrExtensionType('UserId', IrPrimitive(PrimitiveKind.string)),
+        IrPrimitive(PrimitiveKind.int),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('json is String ? UserId.fromJson(json) : null'));
+      expect(source,
+          contains("if (userId != null) 'userId': userId!.toJson()"));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
   // ─── API emission ────────────────────────────────────────────
 
   group('ApiEmitter', () {

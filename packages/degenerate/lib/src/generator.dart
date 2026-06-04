@@ -166,9 +166,9 @@ final class Generator {
 
     try {
       final irWarnings = IrValidator(irTypes, irApis).validate();
-      if (irWarnings.isNotEmpty && config.verbose) {
+      if (irWarnings.isNotEmpty) {
         for (final w in irWarnings) {
-          _log('  IR validation warning: $w');
+          _log('  Warning (IR validation): $w');
         }
       }
     } on IrValidationException catch (e) {
@@ -309,21 +309,36 @@ final class Generator {
         .whereType<String>()
         .toSet();
 
+    var inlineSkipped = 0;
     var inlineAdded = 0;
     for (final t in irMapper.inlineTypes) {
       final name = t.emittableName;
-      if (name != null && !existingNames.add(name)) continue;
+      if (name != null && !existingNames.add(name)) {
+        inlineSkipped++;
+        continue;
+      }
       irTypes.add(t);
       inlineAdded++;
     }
-    if (config.verbose && inlineAdded > 0) {
-      _log('  $inlineAdded inline types added');
-    }
 
+    var registrySkipped = 0;
     for (final MapEntry(:value) in irMapper.typeRegistry.entries) {
       final regName = value.emittableName;
-      if (regName != null && !existingNames.add(regName)) continue;
+      if (regName != null && !existingNames.add(regName)) {
+        registrySkipped++;
+        continue;
+      }
       irTypes.add(value);
+    }
+
+    if (config.verbose) {
+      if (inlineAdded > 0) _log('  $inlineAdded inline types added');
+      if (inlineSkipped > 0) {
+        _log('  $inlineSkipped inline types deduped (name already in registry)');
+      }
+      if (registrySkipped > 0) {
+        _log('  $registrySkipped registry types deduped (name collision)');
+      }
     }
   }
 
@@ -685,7 +700,11 @@ final class Generator {
       if (existingNames.contains(typeName)) {
         typeName = '${typeName}Param';
       }
-      if (!existingNames.add(typeName)) continue;
+      if (!existingNames.add(typeName)) {
+        _log('  Warning: typed param "$paramName" skipped '
+            '("$typeName" name collision)');
+        continue;
+      }
       paramToType[paramName] = typeName;
       irTypes.add(IrExtensionType(
         typeName,
