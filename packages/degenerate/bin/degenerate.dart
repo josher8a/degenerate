@@ -104,6 +104,13 @@ ArgParser buildParser() {
       negatable: false,
     )
     ..addMultiOption(
+      'optional-headers',
+      help:
+          'Header parameter names to emit as optional instead of required.\n'
+          'Use when the header is provided via ApiConfig.defaultHeaders\n'
+          'or an interceptor (e.g. --optional-headers device-id).',
+    )
+    ..addMultiOption(
       'barrel-hide',
       help:
           'Type names to exclude from the main barrel export. The model\n'
@@ -197,6 +204,7 @@ Future<void> main(List<String> arguments) async {
       emitTypedFormats: results.flag('emit-typed-formats'),
       emitTypedParams: results.flag('emit-typed-params'),
       barrelHide: results.multiOption('barrel-hide'),
+      optionalHeaders: results.multiOption('optional-headers'),
       quiet: results.flag('quiet'),
     );
 

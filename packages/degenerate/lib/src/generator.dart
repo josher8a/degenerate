@@ -62,6 +62,7 @@ final class GeneratorConfig {
     this.emitTypedFormats = false,
     this.emitTypedParams = false,
     this.barrelHide = const [],
+    this.optionalHeaders = const [],
   });
 
   /// Path to the input OpenAPI spec file.
@@ -143,6 +144,11 @@ final class GeneratorConfig {
   /// the top-level `export` directives. Use this when a generated type name
   /// clashes with a consumer dependency (e.g. `Provider` vs Riverpod).
   final List<String> barrelHide;
+
+  /// Header parameter names to emit as optional. Use when the header is
+  /// provided via `ApiConfig.defaultHeaders` or an interceptor rather than
+  /// per-call. Matched case-insensitively against the original param name.
+  final List<String> optionalHeaders;
 }
 
 /// The main code generator pipeline.
@@ -444,14 +450,19 @@ final class Generator {
         else if (s.type == 'http')
           'Authorization',
     };
-    if (securityHeaderNames.isNotEmpty) {
+    final optionalHeaderNames = {
+      ...securityHeaderNames,
+      ...config.optionalHeaders.map((h) => h.toLowerCase()),
+    };
+    if (optionalHeaderNames.isNotEmpty) {
       for (final api in irApis) {
         for (final op in api.operations) {
           for (var i = 0; i < op.parameters.length; i++) {
             final p = op.parameters[i];
             if (p.location == ParameterLocation.header &&
                 p.isRequired &&
-                securityHeaderNames.contains(p.name)) {
+                (securityHeaderNames.contains(p.name) ||
+                    optionalHeaderNames.contains(p.name.toLowerCase()))) {
               op.parameters[i] = p.asOptional();
             }
           }
