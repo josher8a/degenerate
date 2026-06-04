@@ -1816,3 +1816,34 @@ Remaining `isOneOfEligible`/`isOneOfTypedef` calls: ~16 (down from 36). The rema
 | `ir/ir_type_refs.dart` | +32 | Added `buildTypeDeps()` and `transitiveTypes()` — shared graph construction + BFS |
 | `generator.dart` | −22 | Deleted inline graph construction + BFS loop; now calls shared functions |
 | `emitter/file_emitter.dart` | −33 | Deleted `_buildTypeDeps` and `_transitiveTypes`; now calls shared functions |
+
+---
+
+### Candidate improvements — resolution (batch 13)
+
+**Batch 13: Split `sealed_union_emitter.dart` into 3 focused files.**
+
+| # | Target | Status | Notes |
+|---|--------|--------|-------|
+| 3 | Split sealed_union_emitter into 3 files | **Done** | Pure extraction. `sealed_union_emitter.dart` becomes a barrel re-exporting the 3 new files. |
+
+**Changes:**
+
+| File | LOC | What |
+|------|----:|------|
+| `emitter/discriminated_union_emitter.dart` | 681 | **New.** `DiscriminatedUnionEmitter` — disc unions with metadata lookups |
+| `emitter/untagged_union_emitter.dart` | 286 | **New.** `UntaggedUnionEmitter` — sealed try-parse unions |
+| `emitter/anyof_emitter.dart` | 262 | **New.** `AnyOfEmitter` — composite anyOf classes |
+| `emitter/sealed_union_emitter.dart` | 3 | Barrel file re-exporting all three |
+| `emitter/emit_utils.dart` | +3 | `safeTypeName()` moved here (was private `_safeTypeName` in sealed_union_emitter) |
+
+Zero behavior change — existing `import sealed_union_emitter.dart` still works via the barrel. Each emitter class now has its own file with only its own imports, independently navigable and testable.
+
+**Generator source map (updated entries):**
+
+| File | Purpose |
+|------|---------|
+| `emitter/discriminated_union_emitter.dart` | Discriminated unions: sealed base, per-variant subclasses, `$Unknown`, `when<R>()`, common-field hoisting, variant factories. Uses `DiscUnionMetadata` from `union_analyzer`. |
+| `emitter/untagged_union_emitter.dart` | Untagged (oneOf without discriminator) unions: sealed try-parse dispatch, variant subclasses, `$Unknown`. |
+| `emitter/anyof_emitter.dart` | AnyOf composites: nullable variant fields, best-effort fromJson parsing. |
+| `emitter/sealed_union_emitter.dart` | Barrel re-exporting the three union emitters above. |
