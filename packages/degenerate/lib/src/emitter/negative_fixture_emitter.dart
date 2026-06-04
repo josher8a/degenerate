@@ -232,28 +232,10 @@ final class NegativeFixtureEmitter {
     return entries;
   }
 
-  String _primitiveLiteral(PrimitiveKind kind) => switch (kind) {
-    PrimitiveKind.dynamic_ => "'dynamic'",
-    PrimitiveKind.string => "'string'",
-    PrimitiveKind.int => '1',
-    PrimitiveKind.double => '1.5',
-    PrimitiveKind.num => '1',
-    PrimitiveKind.bool => 'true',
-    PrimitiveKind.dateTime => "'2024-01-02T03:04:05.000Z'",
-    PrimitiveKind.uri => "'https://example.com'",
-    PrimitiveKind.bigInt => "'123'",
-    PrimitiveKind.duration => '1000',
-    PrimitiveKind.bytes => "'AQID'",
-  };
+  String _primitiveLiteral(PrimitiveKind kind) => primitiveSampleLiteral(kind);
 
-  IrConstraints _constraintsOf(IrType type) {
-    final t = type.resolveRef(_registry);
-    return switch (t) {
-      IrPrimitive(:final constraints) => constraints,
-      IrList(:final constraints) => constraints,
-      _ => IrConstraints.none,
-    };
-  }
+  IrConstraints _constraintsOf(IrType type) =>
+      constraintsOf(type.resolveRef(_registry));
 
   // ---------------------------------------------------------------------------
   // Code generation

@@ -350,11 +350,7 @@ final class ModelEmitter {
   }
 
   /// The validation constraints carried by [type], or [IrConstraints.none].
-  IrConstraints _constraintsOf(IrType type) => switch (type) {
-    IrPrimitive(:final constraints) => constraints,
-    IrList(:final constraints) => constraints,
-    _ => IrConstraints.none,
-  };
+  IrConstraints _constraintsOf(IrType type) => constraintsOf(type);
 
   /// Constraint-check statements for field [f], reading the value via
   /// [accessor] and appending violations to the [acc] accumulator. Gated by

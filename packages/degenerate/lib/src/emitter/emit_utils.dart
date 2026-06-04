@@ -905,3 +905,26 @@ String toJsonEntry(IrField f, String key, {required bool isNullable}) {
   }
   return '  $key: ${buildToJsonCode(f.type, f.name)},';
 }
+
+// ─── Shared fixture helpers ────────────────────────────
+
+/// A JSON-literal string for a [PrimitiveKind] sample value.
+String primitiveSampleLiteral(PrimitiveKind kind) => switch (kind) {
+  PrimitiveKind.dynamic_ => "'dynamic'",
+  PrimitiveKind.string => "'string'",
+  PrimitiveKind.int => '1',
+  PrimitiveKind.double => '1.5',
+  PrimitiveKind.num => '1',
+  PrimitiveKind.bool => 'true',
+  PrimitiveKind.dateTime => "'2024-01-02T03:04:05.000Z'",
+  PrimitiveKind.uri => "'https://example.com'",
+  PrimitiveKind.bigInt => "'123'",
+  PrimitiveKind.duration => '1000',
+  PrimitiveKind.bytes => "'AQID'",
+};
+
+/// Extract [IrConstraints] from a type (primitives and lists carry them).
+IrConstraints constraintsOf(IrType type) => switch (type) {
+  IrPrimitive(:final constraints) || IrList(:final constraints) => constraints,
+  _ => IrConstraints.none,
+};

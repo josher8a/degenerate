@@ -368,19 +368,7 @@ final class RoundtripEmitter {
   String? _formatLiteral(String? format) =>
       format != null ? _formatSamples[format] : null;
 
-  String _primitiveLiteral(PrimitiveKind kind) => switch (kind) {
-    PrimitiveKind.dynamic_ => "'dynamic'",
-    PrimitiveKind.string => "'string'",
-    PrimitiveKind.int => '1',
-    PrimitiveKind.double => '1.5',
-    PrimitiveKind.num => '1',
-    PrimitiveKind.bool => 'true',
-    PrimitiveKind.dateTime => "'2024-01-02T03:04:05.000Z'",
-    PrimitiveKind.uri => "'https://example.com'",
-    PrimitiveKind.bigInt => "'123'",
-    PrimitiveKind.duration => '1000',
-    PrimitiveKind.bytes => "'AQID'", // base64 of [1, 2, 3]
-  };
+  String _primitiveLiteral(PrimitiveKind kind) => primitiveSampleLiteral(kind);
 
   /// A map literal for an object's wire form, including exactly the fields
   /// `toJson` always emits (required, or optional-with-default) so the sample
