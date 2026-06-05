@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChecksListForSuiteStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+      ChecksListForSuiteStatus$queued() => queued(),
+      ChecksListForSuiteStatus$inProgress() => inProgress(),
+      ChecksListForSuiteStatus$completed() => completed(),
+      ChecksListForSuiteStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+      ChecksListForSuiteStatus$queued() => queued != null ? queued() : orElse(value),
+      ChecksListForSuiteStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ChecksListForSuiteStatus$completed() => completed != null ? completed() : orElse(value),
+      ChecksListForSuiteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChecksListForSuiteStatus($value)';
 
  }

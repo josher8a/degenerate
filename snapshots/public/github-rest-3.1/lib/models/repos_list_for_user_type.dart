@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListForUserType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() owner, required W Function() member, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListForUserType$all() => all(),
+      ReposListForUserType$owner() => owner(),
+      ReposListForUserType$member() => member(),
+      ReposListForUserType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? owner, W Function()? member, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListForUserType$all() => all != null ? all() : orElse(value),
+      ReposListForUserType$owner() => owner != null ? owner() : orElse(value),
+      ReposListForUserType$member() => member != null ? member() : orElse(value),
+      ReposListForUserType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListForUserType($value)';
 
  }

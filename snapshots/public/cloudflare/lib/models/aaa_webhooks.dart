@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AaaComponentsSchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() datadog, required W Function() discord, required W Function() feishu, required W Function() gchat, required W Function() generic, required W Function() opsgenie, required W Function() slack, required W Function() splunk, required W Function(String value) $unknown, }) { return switch (this) {
+      AaaComponentsSchemasType$datadog() => datadog(),
+      AaaComponentsSchemasType$discord() => discord(),
+      AaaComponentsSchemasType$feishu() => feishu(),
+      AaaComponentsSchemasType$gchat() => gchat(),
+      AaaComponentsSchemasType$generic() => generic(),
+      AaaComponentsSchemasType$opsgenie() => opsgenie(),
+      AaaComponentsSchemasType$slack() => slack(),
+      AaaComponentsSchemasType$splunk() => splunk(),
+      AaaComponentsSchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? datadog, W Function()? discord, W Function()? feishu, W Function()? gchat, W Function()? generic, W Function()? opsgenie, W Function()? slack, W Function()? splunk, W Function(String value)? $unknown, }) { return switch (this) {
+      AaaComponentsSchemasType$datadog() => datadog != null ? datadog() : orElse(value),
+      AaaComponentsSchemasType$discord() => discord != null ? discord() : orElse(value),
+      AaaComponentsSchemasType$feishu() => feishu != null ? feishu() : orElse(value),
+      AaaComponentsSchemasType$gchat() => gchat != null ? gchat() : orElse(value),
+      AaaComponentsSchemasType$generic() => generic != null ? generic() : orElse(value),
+      AaaComponentsSchemasType$opsgenie() => opsgenie != null ? opsgenie() : orElse(value),
+      AaaComponentsSchemasType$slack() => slack != null ? slack() : orElse(value),
+      AaaComponentsSchemasType$splunk() => splunk != null ? splunk() : orElse(value),
+      AaaComponentsSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AaaComponentsSchemasType($value)';
 
  }

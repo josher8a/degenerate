@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetAccountAuditLogsActionResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function(String value) $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActionResult$success() => success(),
+      GetAccountAuditLogsActionResult$failure() => failure(),
+      GetAccountAuditLogsActionResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function(String value)? $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActionResult$success() => success != null ? success() : orElse(value),
+      GetAccountAuditLogsActionResult$failure() => failure != null ? failure() : orElse(value),
+      GetAccountAuditLogsActionResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetAccountAuditLogsActionResult($value)';
 
  }

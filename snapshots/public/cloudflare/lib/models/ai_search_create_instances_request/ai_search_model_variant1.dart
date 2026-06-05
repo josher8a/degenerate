@@ -125,6 +125,68 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AiSearchModelVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cfMetaLlama3370bInstructFp8Fast, required W Function() cfZaiOrgGlm47Flash, required W Function() cfMetaLlama318bInstructFast, required W Function() cfMetaLlama318bInstructFp8, required W Function() cfMetaLlama4Scout17b16eInstruct, required W Function() cfQwenQwen330bA3bFp8, required W Function() cfDeepseekAiDeepseekR1DistillQwen32b, required W Function() cfMoonshotaiKimiK2Instruct, required W Function() cfGoogleGemma312bIt, required W Function() anthropicClaude37Sonnet, required W Function() anthropicClaudeSonnet4, required W Function() anthropicClaudeOpus4, required W Function() anthropicClaude35Haiku, required W Function() cerebrasQwen3235bA22bInstruct, required W Function() cerebrasQwen3235bA22bThinking, required W Function() cerebrasLlama3370b, required W Function() cerebrasLlama4Maverick17b128eInstruct, required W Function() cerebrasLlama4Scout17b16eInstruct, required W Function() cerebrasGptOss120b, required W Function() googleAiStudioGemini25Flash, required W Function() googleAiStudioGemini25Pro, required W Function() grokGrok4, required W Function() groqLlama3370bVersatile, required W Function() groqLlama318bInstant, required W Function() openaiGpt5, required W Function() openaiGpt5Mini, required W Function() openaiGpt5Nano, required W Function(String value) $unknown, }) { return switch (this) {
+      AiSearchModelVariant1$cfMetaLlama3370bInstructFp8Fast() => cfMetaLlama3370bInstructFp8Fast(),
+      AiSearchModelVariant1$cfZaiOrgGlm47Flash() => cfZaiOrgGlm47Flash(),
+      AiSearchModelVariant1$cfMetaLlama318bInstructFast() => cfMetaLlama318bInstructFast(),
+      AiSearchModelVariant1$cfMetaLlama318bInstructFp8() => cfMetaLlama318bInstructFp8(),
+      AiSearchModelVariant1$cfMetaLlama4Scout17b16eInstruct() => cfMetaLlama4Scout17b16eInstruct(),
+      AiSearchModelVariant1$cfQwenQwen330bA3bFp8() => cfQwenQwen330bA3bFp8(),
+      AiSearchModelVariant1$cfDeepseekAiDeepseekR1DistillQwen32b() => cfDeepseekAiDeepseekR1DistillQwen32b(),
+      AiSearchModelVariant1$cfMoonshotaiKimiK2Instruct() => cfMoonshotaiKimiK2Instruct(),
+      AiSearchModelVariant1$cfGoogleGemma312bIt() => cfGoogleGemma312bIt(),
+      AiSearchModelVariant1$anthropicClaude37Sonnet() => anthropicClaude37Sonnet(),
+      AiSearchModelVariant1$anthropicClaudeSonnet4() => anthropicClaudeSonnet4(),
+      AiSearchModelVariant1$anthropicClaudeOpus4() => anthropicClaudeOpus4(),
+      AiSearchModelVariant1$anthropicClaude35Haiku() => anthropicClaude35Haiku(),
+      AiSearchModelVariant1$cerebrasQwen3235bA22bInstruct() => cerebrasQwen3235bA22bInstruct(),
+      AiSearchModelVariant1$cerebrasQwen3235bA22bThinking() => cerebrasQwen3235bA22bThinking(),
+      AiSearchModelVariant1$cerebrasLlama3370b() => cerebrasLlama3370b(),
+      AiSearchModelVariant1$cerebrasLlama4Maverick17b128eInstruct() => cerebrasLlama4Maverick17b128eInstruct(),
+      AiSearchModelVariant1$cerebrasLlama4Scout17b16eInstruct() => cerebrasLlama4Scout17b16eInstruct(),
+      AiSearchModelVariant1$cerebrasGptOss120b() => cerebrasGptOss120b(),
+      AiSearchModelVariant1$googleAiStudioGemini25Flash() => googleAiStudioGemini25Flash(),
+      AiSearchModelVariant1$googleAiStudioGemini25Pro() => googleAiStudioGemini25Pro(),
+      AiSearchModelVariant1$grokGrok4() => grokGrok4(),
+      AiSearchModelVariant1$groqLlama3370bVersatile() => groqLlama3370bVersatile(),
+      AiSearchModelVariant1$groqLlama318bInstant() => groqLlama318bInstant(),
+      AiSearchModelVariant1$openaiGpt5() => openaiGpt5(),
+      AiSearchModelVariant1$openaiGpt5Mini() => openaiGpt5Mini(),
+      AiSearchModelVariant1$openaiGpt5Nano() => openaiGpt5Nano(),
+      AiSearchModelVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfMetaLlama3370bInstructFp8Fast, W Function()? cfZaiOrgGlm47Flash, W Function()? cfMetaLlama318bInstructFast, W Function()? cfMetaLlama318bInstructFp8, W Function()? cfMetaLlama4Scout17b16eInstruct, W Function()? cfQwenQwen330bA3bFp8, W Function()? cfDeepseekAiDeepseekR1DistillQwen32b, W Function()? cfMoonshotaiKimiK2Instruct, W Function()? cfGoogleGemma312bIt, W Function()? anthropicClaude37Sonnet, W Function()? anthropicClaudeSonnet4, W Function()? anthropicClaudeOpus4, W Function()? anthropicClaude35Haiku, W Function()? cerebrasQwen3235bA22bInstruct, W Function()? cerebrasQwen3235bA22bThinking, W Function()? cerebrasLlama3370b, W Function()? cerebrasLlama4Maverick17b128eInstruct, W Function()? cerebrasLlama4Scout17b16eInstruct, W Function()? cerebrasGptOss120b, W Function()? googleAiStudioGemini25Flash, W Function()? googleAiStudioGemini25Pro, W Function()? grokGrok4, W Function()? groqLlama3370bVersatile, W Function()? groqLlama318bInstant, W Function()? openaiGpt5, W Function()? openaiGpt5Mini, W Function()? openaiGpt5Nano, W Function(String value)? $unknown, }) { return switch (this) {
+      AiSearchModelVariant1$cfMetaLlama3370bInstructFp8Fast() => cfMetaLlama3370bInstructFp8Fast != null ? cfMetaLlama3370bInstructFp8Fast() : orElse(value),
+      AiSearchModelVariant1$cfZaiOrgGlm47Flash() => cfZaiOrgGlm47Flash != null ? cfZaiOrgGlm47Flash() : orElse(value),
+      AiSearchModelVariant1$cfMetaLlama318bInstructFast() => cfMetaLlama318bInstructFast != null ? cfMetaLlama318bInstructFast() : orElse(value),
+      AiSearchModelVariant1$cfMetaLlama318bInstructFp8() => cfMetaLlama318bInstructFp8 != null ? cfMetaLlama318bInstructFp8() : orElse(value),
+      AiSearchModelVariant1$cfMetaLlama4Scout17b16eInstruct() => cfMetaLlama4Scout17b16eInstruct != null ? cfMetaLlama4Scout17b16eInstruct() : orElse(value),
+      AiSearchModelVariant1$cfQwenQwen330bA3bFp8() => cfQwenQwen330bA3bFp8 != null ? cfQwenQwen330bA3bFp8() : orElse(value),
+      AiSearchModelVariant1$cfDeepseekAiDeepseekR1DistillQwen32b() => cfDeepseekAiDeepseekR1DistillQwen32b != null ? cfDeepseekAiDeepseekR1DistillQwen32b() : orElse(value),
+      AiSearchModelVariant1$cfMoonshotaiKimiK2Instruct() => cfMoonshotaiKimiK2Instruct != null ? cfMoonshotaiKimiK2Instruct() : orElse(value),
+      AiSearchModelVariant1$cfGoogleGemma312bIt() => cfGoogleGemma312bIt != null ? cfGoogleGemma312bIt() : orElse(value),
+      AiSearchModelVariant1$anthropicClaude37Sonnet() => anthropicClaude37Sonnet != null ? anthropicClaude37Sonnet() : orElse(value),
+      AiSearchModelVariant1$anthropicClaudeSonnet4() => anthropicClaudeSonnet4 != null ? anthropicClaudeSonnet4() : orElse(value),
+      AiSearchModelVariant1$anthropicClaudeOpus4() => anthropicClaudeOpus4 != null ? anthropicClaudeOpus4() : orElse(value),
+      AiSearchModelVariant1$anthropicClaude35Haiku() => anthropicClaude35Haiku != null ? anthropicClaude35Haiku() : orElse(value),
+      AiSearchModelVariant1$cerebrasQwen3235bA22bInstruct() => cerebrasQwen3235bA22bInstruct != null ? cerebrasQwen3235bA22bInstruct() : orElse(value),
+      AiSearchModelVariant1$cerebrasQwen3235bA22bThinking() => cerebrasQwen3235bA22bThinking != null ? cerebrasQwen3235bA22bThinking() : orElse(value),
+      AiSearchModelVariant1$cerebrasLlama3370b() => cerebrasLlama3370b != null ? cerebrasLlama3370b() : orElse(value),
+      AiSearchModelVariant1$cerebrasLlama4Maverick17b128eInstruct() => cerebrasLlama4Maverick17b128eInstruct != null ? cerebrasLlama4Maverick17b128eInstruct() : orElse(value),
+      AiSearchModelVariant1$cerebrasLlama4Scout17b16eInstruct() => cerebrasLlama4Scout17b16eInstruct != null ? cerebrasLlama4Scout17b16eInstruct() : orElse(value),
+      AiSearchModelVariant1$cerebrasGptOss120b() => cerebrasGptOss120b != null ? cerebrasGptOss120b() : orElse(value),
+      AiSearchModelVariant1$googleAiStudioGemini25Flash() => googleAiStudioGemini25Flash != null ? googleAiStudioGemini25Flash() : orElse(value),
+      AiSearchModelVariant1$googleAiStudioGemini25Pro() => googleAiStudioGemini25Pro != null ? googleAiStudioGemini25Pro() : orElse(value),
+      AiSearchModelVariant1$grokGrok4() => grokGrok4 != null ? grokGrok4() : orElse(value),
+      AiSearchModelVariant1$groqLlama3370bVersatile() => groqLlama3370bVersatile != null ? groqLlama3370bVersatile() : orElse(value),
+      AiSearchModelVariant1$groqLlama318bInstant() => groqLlama318bInstant != null ? groqLlama318bInstant() : orElse(value),
+      AiSearchModelVariant1$openaiGpt5() => openaiGpt5 != null ? openaiGpt5() : orElse(value),
+      AiSearchModelVariant1$openaiGpt5Mini() => openaiGpt5Mini != null ? openaiGpt5Mini() : orElse(value),
+      AiSearchModelVariant1$openaiGpt5Nano() => openaiGpt5Nano != null ? openaiGpt5Nano() : orElse(value),
+      AiSearchModelVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AiSearchModelVariant1($value)';
 
  }

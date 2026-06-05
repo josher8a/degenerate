@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DestinationListOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() created, required W Function() updated, required W Function(String value) $unknown, }) { return switch (this) {
+      DestinationListOrderBy$created() => created(),
+      DestinationListOrderBy$updated() => updated(),
+      DestinationListOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function(String value)? $unknown, }) { return switch (this) {
+      DestinationListOrderBy$created() => created != null ? created() : orElse(value),
+      DestinationListOrderBy$updated() => updated != null ? updated() : orElse(value),
+      DestinationListOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DestinationListOrderBy($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BudgetScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enterprise, required W Function() organization, required W Function() repository, required W Function() costCenter, required W Function(String value) $unknown, }) { return switch (this) {
+      BudgetScope$enterprise() => enterprise(),
+      BudgetScope$organization() => organization(),
+      BudgetScope$repository() => repository(),
+      BudgetScope$costCenter() => costCenter(),
+      BudgetScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterprise, W Function()? organization, W Function()? repository, W Function()? costCenter, W Function(String value)? $unknown, }) { return switch (this) {
+      BudgetScope$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      BudgetScope$organization() => organization != null ? organization() : orElse(value),
+      BudgetScope$repository() => repository != null ? repository() : orElse(value),
+      BudgetScope$costCenter() => costCenter != null ? costCenter() : orElse(value),
+      BudgetScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BudgetScope($value)';
 
  }

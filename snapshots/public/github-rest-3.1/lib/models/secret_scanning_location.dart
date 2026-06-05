@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretScanningLocationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() commit, required W Function() wikiCommit, required W Function() issueTitle, required W Function() issueBody, required W Function() issueComment, required W Function() discussionTitle, required W Function() discussionBody, required W Function() discussionComment, required W Function() pullRequestTitle, required W Function() pullRequestBody, required W Function() pullRequestComment, required W Function() pullRequestReview, required W Function() pullRequestReviewComment, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretScanningLocationType$commit() => commit(),
+      SecretScanningLocationType$wikiCommit() => wikiCommit(),
+      SecretScanningLocationType$issueTitle() => issueTitle(),
+      SecretScanningLocationType$issueBody() => issueBody(),
+      SecretScanningLocationType$issueComment() => issueComment(),
+      SecretScanningLocationType$discussionTitle() => discussionTitle(),
+      SecretScanningLocationType$discussionBody() => discussionBody(),
+      SecretScanningLocationType$discussionComment() => discussionComment(),
+      SecretScanningLocationType$pullRequestTitle() => pullRequestTitle(),
+      SecretScanningLocationType$pullRequestBody() => pullRequestBody(),
+      SecretScanningLocationType$pullRequestComment() => pullRequestComment(),
+      SecretScanningLocationType$pullRequestReview() => pullRequestReview(),
+      SecretScanningLocationType$pullRequestReviewComment() => pullRequestReviewComment(),
+      SecretScanningLocationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? commit, W Function()? wikiCommit, W Function()? issueTitle, W Function()? issueBody, W Function()? issueComment, W Function()? discussionTitle, W Function()? discussionBody, W Function()? discussionComment, W Function()? pullRequestTitle, W Function()? pullRequestBody, W Function()? pullRequestComment, W Function()? pullRequestReview, W Function()? pullRequestReviewComment, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretScanningLocationType$commit() => commit != null ? commit() : orElse(value),
+      SecretScanningLocationType$wikiCommit() => wikiCommit != null ? wikiCommit() : orElse(value),
+      SecretScanningLocationType$issueTitle() => issueTitle != null ? issueTitle() : orElse(value),
+      SecretScanningLocationType$issueBody() => issueBody != null ? issueBody() : orElse(value),
+      SecretScanningLocationType$issueComment() => issueComment != null ? issueComment() : orElse(value),
+      SecretScanningLocationType$discussionTitle() => discussionTitle != null ? discussionTitle() : orElse(value),
+      SecretScanningLocationType$discussionBody() => discussionBody != null ? discussionBody() : orElse(value),
+      SecretScanningLocationType$discussionComment() => discussionComment != null ? discussionComment() : orElse(value),
+      SecretScanningLocationType$pullRequestTitle() => pullRequestTitle != null ? pullRequestTitle() : orElse(value),
+      SecretScanningLocationType$pullRequestBody() => pullRequestBody != null ? pullRequestBody() : orElse(value),
+      SecretScanningLocationType$pullRequestComment() => pullRequestComment != null ? pullRequestComment() : orElse(value),
+      SecretScanningLocationType$pullRequestReview() => pullRequestReview != null ? pullRequestReview() : orElse(value),
+      SecretScanningLocationType$pullRequestReviewComment() => pullRequestReviewComment != null ? pullRequestReviewComment() : orElse(value),
+      SecretScanningLocationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretScanningLocationType($value)';
 
  }

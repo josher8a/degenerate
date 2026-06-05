@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesTrustStoresEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() system, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesTrustStoresEnum$system() => system(),
+      TeamsDevicesTrustStoresEnum$user() => user(),
+      TeamsDevicesTrustStoresEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesTrustStoresEnum$system() => system != null ? system() : orElse(value),
+      TeamsDevicesTrustStoresEnum$user() => user != null ? user() : orElse(value),
+      TeamsDevicesTrustStoresEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesTrustStoresEnum($value)';
 
  }

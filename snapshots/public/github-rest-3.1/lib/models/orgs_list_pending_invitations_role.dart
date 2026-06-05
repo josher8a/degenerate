@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsListPendingInvitationsRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() admin, required W Function() directMember, required W Function() billingManager, required W Function() hiringManager, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsListPendingInvitationsRole$all() => all(),
+      OrgsListPendingInvitationsRole$admin() => admin(),
+      OrgsListPendingInvitationsRole$directMember() => directMember(),
+      OrgsListPendingInvitationsRole$billingManager() => billingManager(),
+      OrgsListPendingInvitationsRole$hiringManager() => hiringManager(),
+      OrgsListPendingInvitationsRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? admin, W Function()? directMember, W Function()? billingManager, W Function()? hiringManager, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsListPendingInvitationsRole$all() => all != null ? all() : orElse(value),
+      OrgsListPendingInvitationsRole$admin() => admin != null ? admin() : orElse(value),
+      OrgsListPendingInvitationsRole$directMember() => directMember != null ? directMember() : orElse(value),
+      OrgsListPendingInvitationsRole$billingManager() => billingManager != null ? billingManager() : orElse(value),
+      OrgsListPendingInvitationsRole$hiringManager() => hiringManager != null ? hiringManager() : orElse(value),
+      OrgsListPendingInvitationsRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsListPendingInvitationsRole($value)';
 
  }

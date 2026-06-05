@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UrlscannerGetScanScreenshotResolution$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() tablet, required W Function(String value) $unknown, }) { return switch (this) {
+      UrlscannerGetScanScreenshotResolution$desktop() => desktop(),
+      UrlscannerGetScanScreenshotResolution$mobile() => mobile(),
+      UrlscannerGetScanScreenshotResolution$tablet() => tablet(),
+      UrlscannerGetScanScreenshotResolution$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? tablet, W Function(String value)? $unknown, }) { return switch (this) {
+      UrlscannerGetScanScreenshotResolution$desktop() => desktop != null ? desktop() : orElse(value),
+      UrlscannerGetScanScreenshotResolution$mobile() => mobile != null ? mobile() : orElse(value),
+      UrlscannerGetScanScreenshotResolution$tablet() => tablet != null ? tablet() : orElse(value),
+      UrlscannerGetScanScreenshotResolution$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UrlscannerGetScanScreenshotResolution($value)';
 
  }

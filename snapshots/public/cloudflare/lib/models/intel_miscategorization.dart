@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IndicatorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() domain, required W Function() ipv4, required W Function() ipv6, required W Function() url, required W Function(String value) $unknown, }) { return switch (this) {
+      IndicatorType$domain() => domain(),
+      IndicatorType$ipv4() => ipv4(),
+      IndicatorType$ipv6() => ipv6(),
+      IndicatorType$url() => url(),
+      IndicatorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? ipv4, W Function()? ipv6, W Function()? url, W Function(String value)? $unknown, }) { return switch (this) {
+      IndicatorType$domain() => domain != null ? domain() : orElse(value),
+      IndicatorType$ipv4() => ipv4 != null ? ipv4() : orElse(value),
+      IndicatorType$ipv6() => ipv6 != null ? ipv6() : orElse(value),
+      IndicatorType$url() => url != null ? url() : orElse(value),
+      IndicatorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IndicatorType($value)';
 
  }

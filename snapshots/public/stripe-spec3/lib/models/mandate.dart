@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mandate, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateObject$mandate() => mandate(),
+      MandateObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mandate, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateObject$mandate() => mandate != null ? mandate() : orElse(value),
+      MandateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() inactive, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateStatus$active() => active(),
+      MandateStatus$inactive() => inactive(),
+      MandateStatus$pending() => pending(),
+      MandateStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateStatus$active() => active != null ? active() : orElse(value),
+      MandateStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      MandateStatus$pending() => pending != null ? pending() : orElse(value),
+      MandateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateStatus($value)';
 
  }
@@ -138,6 +162,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() multiUse, required W Function() singleUse, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateType$multiUse() => multiUse(),
+      MandateType$singleUse() => singleUse(),
+      MandateType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? multiUse, W Function()? singleUse, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateType$multiUse() => multiUse != null ? multiUse() : orElse(value),
+      MandateType$singleUse() => singleUse != null ? singleUse() : orElse(value),
+      MandateType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateType($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBgpPfx2asRpkiStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() valid, required W Function() invalid, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBgpPfx2asRpkiStatus$valid() => valid(),
+      RadarGetBgpPfx2asRpkiStatus$invalid() => invalid(),
+      RadarGetBgpPfx2asRpkiStatus$unknown() => unknown(),
+      RadarGetBgpPfx2asRpkiStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? valid, W Function()? invalid, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBgpPfx2asRpkiStatus$valid() => valid != null ? valid() : orElse(value),
+      RadarGetBgpPfx2asRpkiStatus$invalid() => invalid != null ? invalid() : orElse(value),
+      RadarGetBgpPfx2asRpkiStatus$unknown() => unknown != null ? unknown() : orElse(value),
+      RadarGetBgpPfx2asRpkiStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBgpPfx2asRpkiStatus($value)';
 
  }

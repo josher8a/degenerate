@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateFineTuningJobRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() babbage002, required W Function() davinci002, required W Function() gpt35Turbo, required W Function() gpt4oMini, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateFineTuningJobRequestModelVariant2$babbage002() => babbage002(),
+      CreateFineTuningJobRequestModelVariant2$davinci002() => davinci002(),
+      CreateFineTuningJobRequestModelVariant2$gpt35Turbo() => gpt35Turbo(),
+      CreateFineTuningJobRequestModelVariant2$gpt4oMini() => gpt4oMini(),
+      CreateFineTuningJobRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? babbage002, W Function()? davinci002, W Function()? gpt35Turbo, W Function()? gpt4oMini, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateFineTuningJobRequestModelVariant2$babbage002() => babbage002 != null ? babbage002() : orElse(value),
+      CreateFineTuningJobRequestModelVariant2$davinci002() => davinci002 != null ? davinci002() : orElse(value),
+      CreateFineTuningJobRequestModelVariant2$gpt35Turbo() => gpt35Turbo != null ? gpt35Turbo() : orElse(value),
+      CreateFineTuningJobRequestModelVariant2$gpt4oMini() => gpt4oMini != null ? gpt4oMini() : orElse(value),
+      CreateFineTuningJobRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateFineTuningJobRequestModelVariant2($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditNote, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailType$creditNote() => creditNote(),
+      EmailType$none() => none(),
+      EmailType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNote, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailType$creditNote() => creditNote != null ? creditNote() : orElse(value),
+      EmailType$none() => none != null ? none() : orElse(value),
+      EmailType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailType($value)';
 
  }
@@ -90,6 +102,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostCreditNotesRequestReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() orderChange, required W Function() productUnsatisfactory, required W Function(String value) $unknown, }) { return switch (this) {
+      PostCreditNotesRequestReason$duplicate() => duplicate(),
+      PostCreditNotesRequestReason$fraudulent() => fraudulent(),
+      PostCreditNotesRequestReason$orderChange() => orderChange(),
+      PostCreditNotesRequestReason$productUnsatisfactory() => productUnsatisfactory(),
+      PostCreditNotesRequestReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? orderChange, W Function()? productUnsatisfactory, W Function(String value)? $unknown, }) { return switch (this) {
+      PostCreditNotesRequestReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      PostCreditNotesRequestReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      PostCreditNotesRequestReason$orderChange() => orderChange != null ? orderChange() : orElse(value),
+      PostCreditNotesRequestReason$productUnsatisfactory() => productUnsatisfactory != null ? productUnsatisfactory() : orElse(value),
+      PostCreditNotesRequestReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostCreditNotesRequestReason($value)';
 
  }

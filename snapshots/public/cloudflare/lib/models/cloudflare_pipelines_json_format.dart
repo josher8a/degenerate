@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesDecimalEncoding$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() number, required W Function() string, required W Function() bytes, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudflarePipelinesDecimalEncoding$number() => number(),
+      CloudflarePipelinesDecimalEncoding$string() => string(),
+      CloudflarePipelinesDecimalEncoding$bytes() => bytes(),
+      CloudflarePipelinesDecimalEncoding$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? number, W Function()? string, W Function()? bytes, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudflarePipelinesDecimalEncoding$number() => number != null ? number() : orElse(value),
+      CloudflarePipelinesDecimalEncoding$string() => string != null ? string() : orElse(value),
+      CloudflarePipelinesDecimalEncoding$bytes() => bytes != null ? bytes() : orElse(value),
+      CloudflarePipelinesDecimalEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudflarePipelinesDecimalEncoding($value)';
 
  }
@@ -93,6 +107,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesTimestampFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rfc3339, required W Function() unixMillis, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudflarePipelinesTimestampFormat$rfc3339() => rfc3339(),
+      CloudflarePipelinesTimestampFormat$unixMillis() => unixMillis(),
+      CloudflarePipelinesTimestampFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc3339, W Function()? unixMillis, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudflarePipelinesTimestampFormat$rfc3339() => rfc3339 != null ? rfc3339() : orElse(value),
+      CloudflarePipelinesTimestampFormat$unixMillis() => unixMillis != null ? unixMillis() : orElse(value),
+      CloudflarePipelinesTimestampFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudflarePipelinesTimestampFormat($value)';
 
  }

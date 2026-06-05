@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SearchUsersSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() followers, required W Function() repositories, required W Function() joined, required W Function(String value) $unknown, }) { return switch (this) {
+      SearchUsersSort$followers() => followers(),
+      SearchUsersSort$repositories() => repositories(),
+      SearchUsersSort$joined() => joined(),
+      SearchUsersSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? followers, W Function()? repositories, W Function()? joined, W Function(String value)? $unknown, }) { return switch (this) {
+      SearchUsersSort$followers() => followers != null ? followers() : orElse(value),
+      SearchUsersSort$repositories() => repositories != null ? repositories() : orElse(value),
+      SearchUsersSort$joined() => joined != null ? joined() : orElse(value),
+      SearchUsersSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SearchUsersSort($value)';
 
  }

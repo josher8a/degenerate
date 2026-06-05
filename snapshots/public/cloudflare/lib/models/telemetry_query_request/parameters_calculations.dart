@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is KeyType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() string, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) { return switch (this) {
+      KeyType$string() => string(),
+      KeyType$number() => number(),
+      KeyType$boolean() => boolean(),
+      KeyType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) { return switch (this) {
+      KeyType$string() => string != null ? string() : orElse(value),
+      KeyType$number() => number != null ? number() : orElse(value),
+      KeyType$boolean() => boolean != null ? boolean() : orElse(value),
+      KeyType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'KeyType($value)';
 
  }
@@ -237,6 +251,90 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CalculationsOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() uniq, required W Function() count, required W Function() max, required W Function() min, required W Function() sum, required W Function() avg, required W Function() median, required W Function() p001, required W Function() p01, required W Function() p05, required W Function() p10, required W Function() p25, required W Function() p75, required W Function() p90, required W Function() p95, required W Function() p99, required W Function() p999, required W Function() stddev, required W Function() variance, required W Function() countDistinct, required W Function() count2, required W Function() max2, required W Function() min2, required W Function() sum2, required W Function() avg2, required W Function() median2, required W Function() p0012, required W Function() p012, required W Function() p052, required W Function() p102, required W Function() p252, required W Function() p752, required W Function() p902, required W Function() p952, required W Function() p992, required W Function() p9992, required W Function() stddev2, required W Function() variance2, required W Function(String value) $unknown, }) { return switch (this) {
+      CalculationsOperator$uniq() => uniq(),
+      CalculationsOperator$count() => count(),
+      CalculationsOperator$max() => max(),
+      CalculationsOperator$min() => min(),
+      CalculationsOperator$sum() => sum(),
+      CalculationsOperator$avg() => avg(),
+      CalculationsOperator$median() => median(),
+      CalculationsOperator$p001() => p001(),
+      CalculationsOperator$p01() => p01(),
+      CalculationsOperator$p05() => p05(),
+      CalculationsOperator$p10() => p10(),
+      CalculationsOperator$p25() => p25(),
+      CalculationsOperator$p75() => p75(),
+      CalculationsOperator$p90() => p90(),
+      CalculationsOperator$p95() => p95(),
+      CalculationsOperator$p99() => p99(),
+      CalculationsOperator$p999() => p999(),
+      CalculationsOperator$stddev() => stddev(),
+      CalculationsOperator$variance() => variance(),
+      CalculationsOperator$countDistinct() => countDistinct(),
+      CalculationsOperator$count2() => count2(),
+      CalculationsOperator$max2() => max2(),
+      CalculationsOperator$min2() => min2(),
+      CalculationsOperator$sum2() => sum2(),
+      CalculationsOperator$avg2() => avg2(),
+      CalculationsOperator$median2() => median2(),
+      CalculationsOperator$p0012() => p0012(),
+      CalculationsOperator$p012() => p012(),
+      CalculationsOperator$p052() => p052(),
+      CalculationsOperator$p102() => p102(),
+      CalculationsOperator$p252() => p252(),
+      CalculationsOperator$p752() => p752(),
+      CalculationsOperator$p902() => p902(),
+      CalculationsOperator$p952() => p952(),
+      CalculationsOperator$p992() => p992(),
+      CalculationsOperator$p9992() => p9992(),
+      CalculationsOperator$stddev2() => stddev2(),
+      CalculationsOperator$variance2() => variance2(),
+      CalculationsOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uniq, W Function()? count, W Function()? max, W Function()? min, W Function()? sum, W Function()? avg, W Function()? median, W Function()? p001, W Function()? p01, W Function()? p05, W Function()? p10, W Function()? p25, W Function()? p75, W Function()? p90, W Function()? p95, W Function()? p99, W Function()? p999, W Function()? stddev, W Function()? variance, W Function()? countDistinct, W Function()? count2, W Function()? max2, W Function()? min2, W Function()? sum2, W Function()? avg2, W Function()? median2, W Function()? p0012, W Function()? p012, W Function()? p052, W Function()? p102, W Function()? p252, W Function()? p752, W Function()? p902, W Function()? p952, W Function()? p992, W Function()? p9992, W Function()? stddev2, W Function()? variance2, W Function(String value)? $unknown, }) { return switch (this) {
+      CalculationsOperator$uniq() => uniq != null ? uniq() : orElse(value),
+      CalculationsOperator$count() => count != null ? count() : orElse(value),
+      CalculationsOperator$max() => max != null ? max() : orElse(value),
+      CalculationsOperator$min() => min != null ? min() : orElse(value),
+      CalculationsOperator$sum() => sum != null ? sum() : orElse(value),
+      CalculationsOperator$avg() => avg != null ? avg() : orElse(value),
+      CalculationsOperator$median() => median != null ? median() : orElse(value),
+      CalculationsOperator$p001() => p001 != null ? p001() : orElse(value),
+      CalculationsOperator$p01() => p01 != null ? p01() : orElse(value),
+      CalculationsOperator$p05() => p05 != null ? p05() : orElse(value),
+      CalculationsOperator$p10() => p10 != null ? p10() : orElse(value),
+      CalculationsOperator$p25() => p25 != null ? p25() : orElse(value),
+      CalculationsOperator$p75() => p75 != null ? p75() : orElse(value),
+      CalculationsOperator$p90() => p90 != null ? p90() : orElse(value),
+      CalculationsOperator$p95() => p95 != null ? p95() : orElse(value),
+      CalculationsOperator$p99() => p99 != null ? p99() : orElse(value),
+      CalculationsOperator$p999() => p999 != null ? p999() : orElse(value),
+      CalculationsOperator$stddev() => stddev != null ? stddev() : orElse(value),
+      CalculationsOperator$variance() => variance != null ? variance() : orElse(value),
+      CalculationsOperator$countDistinct() => countDistinct != null ? countDistinct() : orElse(value),
+      CalculationsOperator$count2() => count2 != null ? count2() : orElse(value),
+      CalculationsOperator$max2() => max2 != null ? max2() : orElse(value),
+      CalculationsOperator$min2() => min2 != null ? min2() : orElse(value),
+      CalculationsOperator$sum2() => sum2 != null ? sum2() : orElse(value),
+      CalculationsOperator$avg2() => avg2 != null ? avg2() : orElse(value),
+      CalculationsOperator$median2() => median2 != null ? median2() : orElse(value),
+      CalculationsOperator$p0012() => p0012 != null ? p0012() : orElse(value),
+      CalculationsOperator$p012() => p012 != null ? p012() : orElse(value),
+      CalculationsOperator$p052() => p052 != null ? p052() : orElse(value),
+      CalculationsOperator$p102() => p102 != null ? p102() : orElse(value),
+      CalculationsOperator$p252() => p252 != null ? p252() : orElse(value),
+      CalculationsOperator$p752() => p752 != null ? p752() : orElse(value),
+      CalculationsOperator$p902() => p902 != null ? p902() : orElse(value),
+      CalculationsOperator$p952() => p952 != null ? p952() : orElse(value),
+      CalculationsOperator$p992() => p992 != null ? p992() : orElse(value),
+      CalculationsOperator$p9992() => p9992 != null ? p9992() : orElse(value),
+      CalculationsOperator$stddev2() => stddev2 != null ? stddev2() : orElse(value),
+      CalculationsOperator$variance2() => variance2 != null ? variance2() : orElse(value),
+      CalculationsOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CalculationsOperator($value)';
 
  }

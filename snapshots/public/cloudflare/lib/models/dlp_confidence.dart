@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DlpConfidence$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() veryHigh, required W Function(String value) $unknown, }) { return switch (this) {
+      DlpConfidence$low() => low(),
+      DlpConfidence$medium() => medium(),
+      DlpConfidence$high() => high(),
+      DlpConfidence$veryHigh() => veryHigh(),
+      DlpConfidence$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? veryHigh, W Function(String value)? $unknown, }) { return switch (this) {
+      DlpConfidence$low() => low != null ? low() : orElse(value),
+      DlpConfidence$medium() => medium != null ? medium() : orElse(value),
+      DlpConfidence$high() => high != null ? high() : orElse(value),
+      DlpConfidence$veryHigh() => veryHigh != null ? veryHigh() : orElse(value),
+      DlpConfidence$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DlpConfidence($value)';
 
  }

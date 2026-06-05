@@ -51,6 +51,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ComparisonFilterType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() ne, required W Function() gt, required W Function() gte, required W Function() lt, required W Function() lte, required W Function(String value) $unknown, }) { return switch (this) {
+      ComparisonFilterType$eq() => eq(),
+      ComparisonFilterType$ne() => ne(),
+      ComparisonFilterType$gt() => gt(),
+      ComparisonFilterType$gte() => gte(),
+      ComparisonFilterType$lt() => lt(),
+      ComparisonFilterType$lte() => lte(),
+      ComparisonFilterType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? gt, W Function()? gte, W Function()? lt, W Function()? lte, W Function(String value)? $unknown, }) { return switch (this) {
+      ComparisonFilterType$eq() => eq != null ? eq() : orElse(value),
+      ComparisonFilterType$ne() => ne != null ? ne() : orElse(value),
+      ComparisonFilterType$gt() => gt != null ? gt() : orElse(value),
+      ComparisonFilterType$gte() => gte != null ? gte() : orElse(value),
+      ComparisonFilterType$lt() => lt != null ? lt() : orElse(value),
+      ComparisonFilterType$lte() => lte != null ? lte() : orElse(value),
+      ComparisonFilterType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ComparisonFilterType($value)';
 
  }

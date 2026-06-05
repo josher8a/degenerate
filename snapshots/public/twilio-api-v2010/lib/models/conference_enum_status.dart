@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConferenceEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() init, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+      ConferenceEnumStatus$init() => init(),
+      ConferenceEnumStatus$inProgress() => inProgress(),
+      ConferenceEnumStatus$completed() => completed(),
+      ConferenceEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? init, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+      ConferenceEnumStatus$init() => init != null ? init() : orElse(value),
+      ConferenceEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ConferenceEnumStatus$completed() => completed != null ? completed() : orElse(value),
+      ConferenceEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConferenceEnumStatus($value)';
 
  }

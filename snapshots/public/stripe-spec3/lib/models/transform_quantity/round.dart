@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Round$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() down, required W Function() up, required W Function(String value) $unknown, }) { return switch (this) {
+      Round$down() => down(),
+      Round$up() => up(),
+      Round$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? down, W Function()? up, W Function(String value)? $unknown, }) { return switch (this) {
+      Round$down() => down != null ? down() : orElse(value),
+      Round$up() => up != null ? up() : orElse(value),
+      Round$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Round($value)';
 
  }

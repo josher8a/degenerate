@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutAcssDebitMandateOptionsPaymentSchedule$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() combined, required W Function() interval, required W Function() sporadic, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$combined() => combined(),
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$interval() => interval(),
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$sporadic() => sporadic(),
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? combined, W Function()? interval, W Function()? sporadic, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$combined() => combined != null ? combined() : orElse(value),
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$interval() => interval != null ? interval() : orElse(value),
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$sporadic() => sporadic != null ? sporadic() : orElse(value),
+      CheckoutAcssDebitMandateOptionsPaymentSchedule$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutAcssDebitMandateOptionsPaymentSchedule($value)';
 
  }

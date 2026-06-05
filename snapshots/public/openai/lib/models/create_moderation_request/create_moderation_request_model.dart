@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateModerationRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() omniModerationLatest, required W Function() omniModeration20240926, required W Function() textModerationLatest, required W Function() textModerationStable, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateModerationRequestModelVariant2$omniModerationLatest() => omniModerationLatest(),
+      CreateModerationRequestModelVariant2$omniModeration20240926() => omniModeration20240926(),
+      CreateModerationRequestModelVariant2$textModerationLatest() => textModerationLatest(),
+      CreateModerationRequestModelVariant2$textModerationStable() => textModerationStable(),
+      CreateModerationRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? omniModerationLatest, W Function()? omniModeration20240926, W Function()? textModerationLatest, W Function()? textModerationStable, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateModerationRequestModelVariant2$omniModerationLatest() => omniModerationLatest != null ? omniModerationLatest() : orElse(value),
+      CreateModerationRequestModelVariant2$omniModeration20240926() => omniModeration20240926 != null ? omniModeration20240926() : orElse(value),
+      CreateModerationRequestModelVariant2$textModerationLatest() => textModerationLatest != null ? textModerationLatest() : orElse(value),
+      CreateModerationRequestModelVariant2$textModerationStable() => textModerationStable != null ? textModerationStable() : orElse(value),
+      CreateModerationRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateModerationRequestModelVariant2($value)';
 
  }

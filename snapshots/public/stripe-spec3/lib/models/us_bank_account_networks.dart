@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Supported$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ach, required W Function() usDomesticWire, required W Function(String value) $unknown, }) { return switch (this) {
+      Supported$ach() => ach(),
+      Supported$usDomesticWire() => usDomesticWire(),
+      Supported$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? usDomesticWire, W Function(String value)? $unknown, }) { return switch (this) {
+      Supported$ach() => ach != null ? ach() : orElse(value),
+      Supported$usDomesticWire() => usDomesticWire != null ? usDomesticWire() : orElse(value),
+      Supported$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Supported($value)';
 
  }

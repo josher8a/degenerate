@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisputeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chargeback, required W Function() claim, required W Function(String value) $unknown, }) { return switch (this) {
+      DisputeType$chargeback() => chargeback(),
+      DisputeType$claim() => claim(),
+      DisputeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargeback, W Function()? claim, W Function(String value)? $unknown, }) { return switch (this) {
+      DisputeType$chargeback() => chargeback != null ? chargeback() : orElse(value),
+      DisputeType$claim() => claim != null ? claim() : orElse(value),
+      DisputeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisputeType($value)';
 
  }

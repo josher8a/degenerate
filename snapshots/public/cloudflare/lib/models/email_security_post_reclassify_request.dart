@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ExpectedDisposition$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() bulk, required W Function() malicious, required W Function() spam, required W Function() spoof, required W Function() suspicious, required W Function(String value) $unknown, }) { return switch (this) {
+      ExpectedDisposition$none() => none(),
+      ExpectedDisposition$bulk() => bulk(),
+      ExpectedDisposition$malicious() => malicious(),
+      ExpectedDisposition$spam() => spam(),
+      ExpectedDisposition$spoof() => spoof(),
+      ExpectedDisposition$suspicious() => suspicious(),
+      ExpectedDisposition$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? bulk, W Function()? malicious, W Function()? spam, W Function()? spoof, W Function()? suspicious, W Function(String value)? $unknown, }) { return switch (this) {
+      ExpectedDisposition$none() => none != null ? none() : orElse(value),
+      ExpectedDisposition$bulk() => bulk != null ? bulk() : orElse(value),
+      ExpectedDisposition$malicious() => malicious != null ? malicious() : orElse(value),
+      ExpectedDisposition$spam() => spam != null ? spam() : orElse(value),
+      ExpectedDisposition$spoof() => spoof != null ? spoof() : orElse(value),
+      ExpectedDisposition$suspicious() => suspicious != null ? suspicious() : orElse(value),
+      ExpectedDisposition$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ExpectedDisposition($value)';
 
  }

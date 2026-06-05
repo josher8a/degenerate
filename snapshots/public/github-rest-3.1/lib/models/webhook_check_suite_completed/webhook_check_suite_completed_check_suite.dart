@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() $null, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookCheckSuiteCompletedCheckSuiteStatus$requested() => requested(),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress() => inProgress(),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$completed() => completed(),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$queued() => queued(),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$$null() => $null(),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$pending() => pending(),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? $null, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookCheckSuiteCompletedCheckSuiteStatus$requested() => requested != null ? requested() : orElse(value),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$completed() => completed != null ? completed() : orElse(value),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$queued() => queued != null ? queued() : orElse(value),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$$null() => $null != null ? $null() : orElse(value),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$pending() => pending != null ? pending() : orElse(value),
+      WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteStatus($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsTimeseriesAggInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $15m, required W Function() $1h, required W Function() $1d, required W Function() $1w, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesAggInterval$$15m() => $15m(),
+      RadarGetDnsTimeseriesAggInterval$$1h() => $1h(),
+      RadarGetDnsTimeseriesAggInterval$$1d() => $1d(),
+      RadarGetDnsTimeseriesAggInterval$$1w() => $1w(),
+      RadarGetDnsTimeseriesAggInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W Function()? $1h, W Function()? $1d, W Function()? $1w, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesAggInterval$$15m() => $15m != null ? $15m() : orElse(value),
+      RadarGetDnsTimeseriesAggInterval$$1h() => $1h != null ? $1h() : orElse(value),
+      RadarGetDnsTimeseriesAggInterval$$1d() => $1d != null ? $1d() : orElse(value),
+      RadarGetDnsTimeseriesAggInterval$$1w() => $1w != null ? $1w() : orElse(value),
+      RadarGetDnsTimeseriesAggInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsTimeseriesAggInterval($value)';
 
  }

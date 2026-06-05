@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClaimedBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() acquirer, required W Function() issuer, required W Function(String value) $unknown, }) { return switch (this) {
+      ClaimedBy$acquirer() => acquirer(),
+      ClaimedBy$issuer() => issuer(),
+      ClaimedBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acquirer, W Function()? issuer, W Function(String value)? $unknown, }) { return switch (this) {
+      ClaimedBy$acquirer() => acquirer != null ? acquirer() : orElse(value),
+      ClaimedBy$issuer() => issuer != null ? issuer() : orElse(value),
+      ClaimedBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClaimedBy($value)';
 
  }

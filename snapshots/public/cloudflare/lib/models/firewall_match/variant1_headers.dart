@@ -33,6 +33,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallHeaderOp$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() ne, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallHeaderOp$eq() => eq(),
+      FirewallHeaderOp$ne() => ne(),
+      FirewallHeaderOp$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallHeaderOp$eq() => eq != null ? eq() : orElse(value),
+      FirewallHeaderOp$ne() => ne != null ? ne() : orElse(value),
+      FirewallHeaderOp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallHeaderOp($value)';
 
  }

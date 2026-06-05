@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitRecordingStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() invoked, required W Function() recording, required W Function() uploading, required W Function() uploaded, required W Function() errored, required W Function() paused, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitRecordingStatus$invoked() => invoked(),
+      RealtimekitRecordingStatus$recording() => recording(),
+      RealtimekitRecordingStatus$uploading() => uploading(),
+      RealtimekitRecordingStatus$uploaded() => uploaded(),
+      RealtimekitRecordingStatus$errored() => errored(),
+      RealtimekitRecordingStatus$paused() => paused(),
+      RealtimekitRecordingStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoked, W Function()? recording, W Function()? uploading, W Function()? uploaded, W Function()? errored, W Function()? paused, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitRecordingStatus$invoked() => invoked != null ? invoked() : orElse(value),
+      RealtimekitRecordingStatus$recording() => recording != null ? recording() : orElse(value),
+      RealtimekitRecordingStatus$uploading() => uploading != null ? uploading() : orElse(value),
+      RealtimekitRecordingStatus$uploaded() => uploaded != null ? uploaded() : orElse(value),
+      RealtimekitRecordingStatus$errored() => errored != null ? errored() : orElse(value),
+      RealtimekitRecordingStatus$paused() => paused != null ? paused() : orElse(value),
+      RealtimekitRecordingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitRecordingStatus($value)';
 
  }

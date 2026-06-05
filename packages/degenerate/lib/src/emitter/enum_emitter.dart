@@ -92,6 +92,8 @@ final class EnumEmitter {
           ..methods.add(_buildToJson())
           ..methods.add(_buildName(className, deduped))
           ..methods.add(_buildIsUnknown())
+          ..methods.add(_buildWhen(className, deduped))
+          ..methods.add(_buildMaybeWhen(className, deduped))
           ..methods.add(_buildToString(className)),
       ),
     );
@@ -268,6 +270,79 @@ final class EnumEmitter {
           '/// Whether this value is unknown (not defined in the OpenAPI spec).',
         )
         ..body = Code('return this is $unknownClass;'),
+    );
+  }
+
+  Method _buildWhen(String className, List<(String, String)> deduped) {
+    final dartType = _enumWireType(irEnum.valueKind);
+    final cases = deduped
+        .map((p) => '$className\$${p.$2}() => ${p.$2}(),')
+        .join('\n      ');
+    return Method(
+      (m) => m
+        ..name = 'when'
+        ..types.add(refer('W'))
+        ..returns = refer('W')
+        ..docs.add('/// Exhaustive match on the enum value.')
+        ..optionalParameters.addAll([
+          ...deduped.map(
+            (p) => Parameter((pb) => pb
+              ..name = p.$2
+              ..named = true
+              ..required = true
+              ..type = refer('W Function()')),
+          ),
+          Parameter((pb) => pb
+            ..name = r'$unknown'
+            ..named = true
+            ..required = true
+            ..type = refer('W Function($dartType value)')),
+        ])
+        ..body = Code(
+          'return switch (this) {\n'
+          '      $cases\n'
+          '      $className\$Unknown(:final value) => \$unknown(value),\n'
+          '    };',
+        ),
+    );
+  }
+
+  Method _buildMaybeWhen(String className, List<(String, String)> deduped) {
+    final dartType = _enumWireType(irEnum.valueKind);
+    final cases = deduped
+        .map((p) =>
+            '$className\$${p.$2}() => ${p.$2} != null ? ${p.$2}() : orElse(value),')
+        .join('\n      ');
+    return Method(
+      (m) => m
+        ..name = 'maybeWhen'
+        ..types.add(refer('W'))
+        ..returns = refer('W')
+        ..docs.add('/// Partial match with a required fallback for unhandled variants.')
+        ..optionalParameters.addAll([
+          Parameter((pb) => pb
+            ..name = 'orElse'
+            ..named = true
+            ..required = true
+            ..type = refer('W Function($dartType value)')),
+          ...deduped.map(
+            (p) => Parameter((pb) => pb
+              ..name = p.$2
+              ..named = true
+              ..type = refer('W Function()?')),
+          ),
+          Parameter((pb) => pb
+            ..name = r'$unknown'
+            ..named = true
+            ..type = refer('W Function($dartType value)?')),
+        ])
+        ..body = Code(
+          'return switch (this) {\n'
+          '      $cases\n'
+          '      $className\$Unknown(:final value) =>'
+          ' \$unknown != null ? \$unknown(value) : orElse(value),\n'
+          '    };',
+        ),
     );
   }
 

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhooksAlertState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() autoDismissed, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhooksAlertState$autoDismissed() => autoDismissed(),
+      WebhooksAlertState$open() => open(),
+      WebhooksAlertState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? autoDismissed, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhooksAlertState$autoDismissed() => autoDismissed != null ? autoDismissed() : orElse(value),
+      WebhooksAlertState$open() => open != null ? open() : orElse(value),
+      WebhooksAlertState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhooksAlertState($value)';
 
  }

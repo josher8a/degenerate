@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuesListMilestonesState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() closed, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuesListMilestonesState$open() => open(),
+      IssuesListMilestonesState$closed() => closed(),
+      IssuesListMilestonesState$all() => all(),
+      IssuesListMilestonesState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? closed, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuesListMilestonesState$open() => open != null ? open() : orElse(value),
+      IssuesListMilestonesState$closed() => closed != null ? closed() : orElse(value),
+      IssuesListMilestonesState$all() => all != null ? all() : orElse(value),
+      IssuesListMilestonesState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuesListMilestonesState($value)';
 
  }

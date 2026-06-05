@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodCardWalletType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amexExpressCheckout, required W Function() applePay, required W Function() googlePay, required W Function() link, required W Function() masterpass, required W Function() samsungPay, required W Function() visaCheckout, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodCardWalletType$amexExpressCheckout() => amexExpressCheckout(),
+      PaymentMethodCardWalletType$applePay() => applePay(),
+      PaymentMethodCardWalletType$googlePay() => googlePay(),
+      PaymentMethodCardWalletType$link() => link(),
+      PaymentMethodCardWalletType$masterpass() => masterpass(),
+      PaymentMethodCardWalletType$samsungPay() => samsungPay(),
+      PaymentMethodCardWalletType$visaCheckout() => visaCheckout(),
+      PaymentMethodCardWalletType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amexExpressCheckout, W Function()? applePay, W Function()? googlePay, W Function()? link, W Function()? masterpass, W Function()? samsungPay, W Function()? visaCheckout, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodCardWalletType$amexExpressCheckout() => amexExpressCheckout != null ? amexExpressCheckout() : orElse(value),
+      PaymentMethodCardWalletType$applePay() => applePay != null ? applePay() : orElse(value),
+      PaymentMethodCardWalletType$googlePay() => googlePay != null ? googlePay() : orElse(value),
+      PaymentMethodCardWalletType$link() => link != null ? link() : orElse(value),
+      PaymentMethodCardWalletType$masterpass() => masterpass != null ? masterpass() : orElse(value),
+      PaymentMethodCardWalletType$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
+      PaymentMethodCardWalletType$visaCheckout() => visaCheckout != null ? visaCheckout() : orElse(value),
+      PaymentMethodCardWalletType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodCardWalletType($value)';
 
  }

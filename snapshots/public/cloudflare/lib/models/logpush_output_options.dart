@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutputType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ndjson, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+      OutputType$ndjson() => ndjson(),
+      OutputType$csv() => csv(),
+      OutputType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ndjson, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+      OutputType$ndjson() => ndjson != null ? ndjson() : orElse(value),
+      OutputType$csv() => csv != null ? csv() : orElse(value),
+      OutputType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OutputType($value)';
 
  }
@@ -90,6 +102,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TimestampFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unixnano, required W Function() unix, required W Function() rfc3339, required W Function() rfc3339nano, required W Function(String value) $unknown, }) { return switch (this) {
+      TimestampFormat$unixnano() => unixnano(),
+      TimestampFormat$unix() => unix(),
+      TimestampFormat$rfc3339() => rfc3339(),
+      TimestampFormat$rfc3339nano() => rfc3339nano(),
+      TimestampFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unixnano, W Function()? unix, W Function()? rfc3339, W Function()? rfc3339nano, W Function(String value)? $unknown, }) { return switch (this) {
+      TimestampFormat$unixnano() => unixnano != null ? unixnano() : orElse(value),
+      TimestampFormat$unix() => unix != null ? unix() : orElse(value),
+      TimestampFormat$rfc3339() => rfc3339 != null ? rfc3339() : orElse(value),
+      TimestampFormat$rfc3339nano() => rfc3339nano != null ? rfc3339nano() : orElse(value),
+      TimestampFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TimestampFormat($value)';
 
  }

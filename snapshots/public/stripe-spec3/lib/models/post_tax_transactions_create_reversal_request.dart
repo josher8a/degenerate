@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostTaxTransactionsCreateReversalRequestMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() full, required W Function() partial, required W Function(String value) $unknown, }) { return switch (this) {
+      PostTaxTransactionsCreateReversalRequestMode$full() => full(),
+      PostTaxTransactionsCreateReversalRequestMode$partial() => partial(),
+      PostTaxTransactionsCreateReversalRequestMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function(String value)? $unknown, }) { return switch (this) {
+      PostTaxTransactionsCreateReversalRequestMode$full() => full != null ? full() : orElse(value),
+      PostTaxTransactionsCreateReversalRequestMode$partial() => partial != null ? partial() : orElse(value),
+      PostTaxTransactionsCreateReversalRequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostTaxTransactionsCreateReversalRequestMode($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssueFieldValueDataType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() singleSelect, required W Function() number, required W Function() date, required W Function(String value) $unknown, }) { return switch (this) {
+      IssueFieldValueDataType$text() => text(),
+      IssueFieldValueDataType$singleSelect() => singleSelect(),
+      IssueFieldValueDataType$number() => number(),
+      IssueFieldValueDataType$date() => date(),
+      IssueFieldValueDataType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? singleSelect, W Function()? number, W Function()? date, W Function(String value)? $unknown, }) { return switch (this) {
+      IssueFieldValueDataType$text() => text != null ? text() : orElse(value),
+      IssueFieldValueDataType$singleSelect() => singleSelect != null ? singleSelect() : orElse(value),
+      IssueFieldValueDataType$number() => number != null ? number() : orElse(value),
+      IssueFieldValueDataType$date() => date != null ? date() : orElse(value),
+      IssueFieldValueDataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssueFieldValueDataType($value)';
 
  }

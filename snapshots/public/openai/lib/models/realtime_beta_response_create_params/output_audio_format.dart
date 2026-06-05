@@ -31,6 +31,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutputAudioFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pcm16, required W Function() g711Ulaw, required W Function() g711Alaw, required W Function(String value) $unknown, }) { return switch (this) {
+      OutputAudioFormat$pcm16() => pcm16(),
+      OutputAudioFormat$g711Ulaw() => g711Ulaw(),
+      OutputAudioFormat$g711Alaw() => g711Alaw(),
+      OutputAudioFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcm16, W Function()? g711Ulaw, W Function()? g711Alaw, W Function(String value)? $unknown, }) { return switch (this) {
+      OutputAudioFormat$pcm16() => pcm16 != null ? pcm16() : orElse(value),
+      OutputAudioFormat$g711Ulaw() => g711Ulaw != null ? g711Ulaw() : orElse(value),
+      OutputAudioFormat$g711Alaw() => g711Alaw != null ? g711Alaw() : orElse(value),
+      OutputAudioFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OutputAudioFormat($value)';
 
  }

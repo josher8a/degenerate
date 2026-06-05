@@ -51,6 +51,46 @@ sealed class NaN {
     return this is NaN$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() naN,
+    required W Function() nan,
+    required W Function() nan2,
+    required W Function() naN2,
+    required W Function() naN3,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      NaN$naN() => naN(),
+      NaN$nan() => nan(),
+      NaN$nan2() => nan2(),
+      NaN$naN2() => naN2(),
+      NaN$naN3() => naN3(),
+      NaN$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? naN,
+    W Function()? nan,
+    W Function()? nan2,
+    W Function()? naN2,
+    W Function()? naN3,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      NaN$naN() => naN != null ? naN() : orElse(value),
+      NaN$nan() => nan != null ? nan() : orElse(value),
+      NaN$nan2() => nan2 != null ? nan2() : orElse(value),
+      NaN$naN2() => naN2 != null ? naN2() : orElse(value),
+      NaN$naN3() => naN3 != null ? naN3() : orElse(value),
+      NaN$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'NaN($value)';
 }
@@ -193,6 +233,49 @@ sealed class Infinity {
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return this is Infinity$Unknown;
+  }
+
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() $0,
+    required W Function() $1,
+    required W Function() minus1,
+    required W Function() $17976931348623157e308,
+    required W Function() $5e324,
+    required W Function(double value) $unknown,
+  }) {
+    return switch (this) {
+      Infinity$$0() => $0(),
+      Infinity$$1() => $1(),
+      Infinity$minus1() => minus1(),
+      Infinity$$17976931348623157e308() => $17976931348623157e308(),
+      Infinity$$5e324() => $5e324(),
+      Infinity$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(double value) orElse,
+    W Function()? $0,
+    W Function()? $1,
+    W Function()? minus1,
+    W Function()? $17976931348623157e308,
+    W Function()? $5e324,
+    W Function(double value)? $unknown,
+  }) {
+    return switch (this) {
+      Infinity$$0() => $0 != null ? $0() : orElse(value),
+      Infinity$$1() => $1 != null ? $1() : orElse(value),
+      Infinity$minus1() => minus1 != null ? minus1() : orElse(value),
+      Infinity$$17976931348623157e308() =>
+        $17976931348623157e308 != null
+            ? $17976931348623157e308()
+            : orElse(value),
+      Infinity$$5e324() => $5e324 != null ? $5e324() : orElse(value),
+      Infinity$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
   }
 
   @override

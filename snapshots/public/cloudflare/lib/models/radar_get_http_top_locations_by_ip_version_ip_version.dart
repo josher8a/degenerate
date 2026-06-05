@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopLocationsByIpVersionIpVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() iPv4, required W Function() iPv6, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByIpVersionIpVersion$iPv4() => iPv4(),
+      RadarGetHttpTopLocationsByIpVersionIpVersion$iPv6() => iPv6(),
+      RadarGetHttpTopLocationsByIpVersionIpVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W Function()? iPv6, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByIpVersionIpVersion$iPv4() => iPv4 != null ? iPv4() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionIpVersion$iPv6() => iPv6 != null ? iPv6() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionIpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopLocationsByIpVersionIpVersion($value)';
 
  }

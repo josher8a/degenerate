@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DigitalExperienceMonitoringSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lastSeen, required W Function() hourly, required W Function() raw, required W Function(String value) $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringSource$lastSeen() => lastSeen(),
+      DigitalExperienceMonitoringSource$hourly() => hourly(),
+      DigitalExperienceMonitoringSource$raw() => raw(),
+      DigitalExperienceMonitoringSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastSeen, W Function()? hourly, W Function()? raw, W Function(String value)? $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringSource$lastSeen() => lastSeen != null ? lastSeen() : orElse(value),
+      DigitalExperienceMonitoringSource$hourly() => hourly != null ? hourly() : orElse(value),
+      DigitalExperienceMonitoringSource$raw() => raw != null ? raw() : orElse(value),
+      DigitalExperienceMonitoringSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DigitalExperienceMonitoringSource($value)';
 
  }

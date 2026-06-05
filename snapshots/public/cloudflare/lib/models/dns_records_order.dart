@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnsRecordsOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() type, required W Function() $name, required W Function() content, required W Function() ttl, required W Function() proxied, required W Function(String value) $unknown, }) { return switch (this) {
+      DnsRecordsOrder$type() => type(),
+      DnsRecordsOrder$$name() => $name(),
+      DnsRecordsOrder$content() => content(),
+      DnsRecordsOrder$ttl() => ttl(),
+      DnsRecordsOrder$proxied() => proxied(),
+      DnsRecordsOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? type, W Function()? $name, W Function()? content, W Function()? ttl, W Function()? proxied, W Function(String value)? $unknown, }) { return switch (this) {
+      DnsRecordsOrder$type() => type != null ? type() : orElse(value),
+      DnsRecordsOrder$$name() => $name != null ? $name() : orElse(value),
+      DnsRecordsOrder$content() => content != null ? content() : orElse(value),
+      DnsRecordsOrder$ttl() => ttl != null ? ttl() : orElse(value),
+      DnsRecordsOrder$proxied() => proxied != null ? proxied() : orElse(value),
+      DnsRecordsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnsRecordsOrder($value)';
 
  }

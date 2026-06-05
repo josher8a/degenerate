@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdentityVerificationReportObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() identityVerificationReport, required W Function(String value) $unknown, }) { return switch (this) {
+      IdentityVerificationReportObject$identityVerificationReport() => identityVerificationReport(),
+      IdentityVerificationReportObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? identityVerificationReport, W Function(String value)? $unknown, }) { return switch (this) {
+      IdentityVerificationReportObject$identityVerificationReport() => identityVerificationReport != null ? identityVerificationReport() : orElse(value),
+      IdentityVerificationReportObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdentityVerificationReportObject($value)';
 
  }

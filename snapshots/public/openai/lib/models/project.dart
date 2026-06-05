@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProjectObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organizationProject, required W Function(String value) $unknown, }) { return switch (this) {
+      ProjectObject$organizationProject() => organizationProject(),
+      ProjectObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProject, W Function(String value)? $unknown, }) { return switch (this) {
+      ProjectObject$organizationProject() => organizationProject != null ? organizationProject() : orElse(value),
+      ProjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProjectObject($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProjectStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() archived, required W Function(String value) $unknown, }) { return switch (this) {
+      ProjectStatus$active() => active(),
+      ProjectStatus$archived() => archived(),
+      ProjectStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function(String value)? $unknown, }) { return switch (this) {
+      ProjectStatus$active() => active != null ? active() : orElse(value),
+      ProjectStatus$archived() => archived != null ? archived() : orElse(value),
+      ProjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProjectStatus($value)';
 
  }

@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetAccountAuditLogsActorContext$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() apiKey, required W Function() apiToken, required W Function() dash, required W Function() oauth, required W Function() originCaKey, required W Function(String value) $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActorContext$apiKey() => apiKey(),
+      GetAccountAuditLogsActorContext$apiToken() => apiToken(),
+      GetAccountAuditLogsActorContext$dash() => dash(),
+      GetAccountAuditLogsActorContext$oauth() => oauth(),
+      GetAccountAuditLogsActorContext$originCaKey() => originCaKey(),
+      GetAccountAuditLogsActorContext$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, W Function()? apiToken, W Function()? dash, W Function()? oauth, W Function()? originCaKey, W Function(String value)? $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActorContext$apiKey() => apiKey != null ? apiKey() : orElse(value),
+      GetAccountAuditLogsActorContext$apiToken() => apiToken != null ? apiToken() : orElse(value),
+      GetAccountAuditLogsActorContext$dash() => dash != null ? dash() : orElse(value),
+      GetAccountAuditLogsActorContext$oauth() => oauth != null ? oauth() : orElse(value),
+      GetAccountAuditLogsActorContext$originCaKey() => originCaKey != null ? originCaKey() : orElse(value),
+      GetAccountAuditLogsActorContext$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetAccountAuditLogsActorContext($value)';
 
  }

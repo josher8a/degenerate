@@ -44,6 +44,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AaaSchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() email, required W Function() pagerduty, required W Function() webhook, required W Function(String value) $unknown, }) { return switch (this) {
+      AaaSchemasType$email() => email(),
+      AaaSchemasType$pagerduty() => pagerduty(),
+      AaaSchemasType$webhook() => webhook(),
+      AaaSchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? pagerduty, W Function()? webhook, W Function(String value)? $unknown, }) { return switch (this) {
+      AaaSchemasType$email() => email != null ? email() : orElse(value),
+      AaaSchemasType$pagerduty() => pagerduty != null ? pagerduty() : orElse(value),
+      AaaSchemasType$webhook() => webhook != null ? webhook() : orElse(value),
+      AaaSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AaaSchemasType($value)';
 
  }

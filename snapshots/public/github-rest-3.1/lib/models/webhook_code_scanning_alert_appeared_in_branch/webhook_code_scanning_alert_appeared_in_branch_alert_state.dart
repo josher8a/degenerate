@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookCodeScanningAlertAppearedInBranchAlertState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() dismissed, required W Function() fixed, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookCodeScanningAlertAppearedInBranchAlertState$open() => open(),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$dismissed() => dismissed(),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$fixed() => fixed(),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$$null() => $null(),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? dismissed, W Function()? fixed, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookCodeScanningAlertAppearedInBranchAlertState$open() => open != null ? open() : orElse(value),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$dismissed() => dismissed != null ? dismissed() : orElse(value),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$fixed() => fixed != null ? fixed() : orElse(value),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$$null() => $null != null ? $null() : orElse(value),
+      WebhookCodeScanningAlertAppearedInBranchAlertState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAlertState($value)';
 
  }

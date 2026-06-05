@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Collect$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() currentlyDue, required W Function() eventuallyDue, required W Function(String value) $unknown, }) { return switch (this) {
+      Collect$currentlyDue() => currentlyDue(),
+      Collect$eventuallyDue() => eventuallyDue(),
+      Collect$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? currentlyDue, W Function()? eventuallyDue, W Function(String value)? $unknown, }) { return switch (this) {
+      Collect$currentlyDue() => currentlyDue != null ? currentlyDue() : orElse(value),
+      Collect$eventuallyDue() => eventuallyDue != null ? eventuallyDue() : orElse(value),
+      Collect$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Collect($value)';
 
  }
@@ -84,6 +96,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostAccountLinksRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountOnboarding, required W Function() accountUpdate, required W Function(String value) $unknown, }) { return switch (this) {
+      PostAccountLinksRequestType$accountOnboarding() => accountOnboarding(),
+      PostAccountLinksRequestType$accountUpdate() => accountUpdate(),
+      PostAccountLinksRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountOnboarding, W Function()? accountUpdate, W Function(String value)? $unknown, }) { return switch (this) {
+      PostAccountLinksRequestType$accountOnboarding() => accountOnboarding != null ? accountOnboarding() : orElse(value),
+      PostAccountLinksRequestType$accountUpdate() => accountUpdate != null ? accountUpdate() : orElse(value),
+      PostAccountLinksRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostAccountLinksRequestType($value)';
 
  }

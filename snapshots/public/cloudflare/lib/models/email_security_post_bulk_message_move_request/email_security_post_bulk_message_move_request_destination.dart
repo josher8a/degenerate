@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityPostBulkMessageMoveRequestDestination$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inbox, required W Function() junkEmail, required W Function() deletedItems, required W Function() recoverableItemsDeletions, required W Function() recoverableItemsPurges, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityPostBulkMessageMoveRequestDestination$inbox() => inbox(),
+      EmailSecurityPostBulkMessageMoveRequestDestination$junkEmail() => junkEmail(),
+      EmailSecurityPostBulkMessageMoveRequestDestination$deletedItems() => deletedItems(),
+      EmailSecurityPostBulkMessageMoveRequestDestination$recoverableItemsDeletions() => recoverableItemsDeletions(),
+      EmailSecurityPostBulkMessageMoveRequestDestination$recoverableItemsPurges() => recoverableItemsPurges(),
+      EmailSecurityPostBulkMessageMoveRequestDestination$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inbox, W Function()? junkEmail, W Function()? deletedItems, W Function()? recoverableItemsDeletions, W Function()? recoverableItemsPurges, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityPostBulkMessageMoveRequestDestination$inbox() => inbox != null ? inbox() : orElse(value),
+      EmailSecurityPostBulkMessageMoveRequestDestination$junkEmail() => junkEmail != null ? junkEmail() : orElse(value),
+      EmailSecurityPostBulkMessageMoveRequestDestination$deletedItems() => deletedItems != null ? deletedItems() : orElse(value),
+      EmailSecurityPostBulkMessageMoveRequestDestination$recoverableItemsDeletions() => recoverableItemsDeletions != null ? recoverableItemsDeletions() : orElse(value),
+      EmailSecurityPostBulkMessageMoveRequestDestination$recoverableItemsPurges() => recoverableItemsPurges != null ? recoverableItemsPurges() : orElse(value),
+      EmailSecurityPostBulkMessageMoveRequestDestination$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityPostBulkMessageMoveRequestDestination($value)';
 
  }

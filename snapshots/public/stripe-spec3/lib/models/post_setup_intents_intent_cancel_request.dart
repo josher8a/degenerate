@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostSetupIntentsIntentCancelRequestCancellationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abandoned, required W Function() duplicate, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+      PostSetupIntentsIntentCancelRequestCancellationReason$abandoned() => abandoned(),
+      PostSetupIntentsIntentCancelRequestCancellationReason$duplicate() => duplicate(),
+      PostSetupIntentsIntentCancelRequestCancellationReason$requestedByCustomer() => requestedByCustomer(),
+      PostSetupIntentsIntentCancelRequestCancellationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? duplicate, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+      PostSetupIntentsIntentCancelRequestCancellationReason$abandoned() => abandoned != null ? abandoned() : orElse(value),
+      PostSetupIntentsIntentCancelRequestCancellationReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      PostSetupIntentsIntentCancelRequestCancellationReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
+      PostSetupIntentsIntentCancelRequestCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostSetupIntentsIntentCancelRequestCancellationReason($value)';
 
  }

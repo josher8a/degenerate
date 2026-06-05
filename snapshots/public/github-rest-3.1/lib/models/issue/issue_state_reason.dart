@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssueStateReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() reopened, required W Function() notPlanned, required W Function() duplicate, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      IssueStateReason$completed() => completed(),
+      IssueStateReason$reopened() => reopened(),
+      IssueStateReason$notPlanned() => notPlanned(),
+      IssueStateReason$duplicate() => duplicate(),
+      IssueStateReason$$null() => $null(),
+      IssueStateReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? reopened, W Function()? notPlanned, W Function()? duplicate, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      IssueStateReason$completed() => completed != null ? completed() : orElse(value),
+      IssueStateReason$reopened() => reopened != null ? reopened() : orElse(value),
+      IssueStateReason$notPlanned() => notPlanned != null ? notPlanned() : orElse(value),
+      IssueStateReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      IssueStateReason$$null() => $null != null ? $null() : orElse(value),
+      IssueStateReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssueStateReason($value)';
 
  }

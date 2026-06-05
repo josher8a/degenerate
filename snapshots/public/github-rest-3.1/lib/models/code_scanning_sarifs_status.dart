@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProcessingStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      ProcessingStatus$pending() => pending(),
+      ProcessingStatus$complete() => complete(),
+      ProcessingStatus$failed() => failed(),
+      ProcessingStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      ProcessingStatus$pending() => pending != null ? pending() : orElse(value),
+      ProcessingStatus$complete() => complete != null ? complete() : orElse(value),
+      ProcessingStatus$failed() => failed != null ? failed() : orElse(value),
+      ProcessingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProcessingStatus($value)';
 
  }

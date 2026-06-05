@@ -86,6 +86,48 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodespaceState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() created, required W Function() queued, required W Function() provisioning, required W Function() available, required W Function() awaiting, required W Function() unavailable, required W Function() deleted, required W Function() moved, required W Function() shutdown, required W Function() archived, required W Function() starting, required W Function() shuttingDown, required W Function() failed, required W Function() exporting, required W Function() updating, required W Function() rebuilding, required W Function(String value) $unknown, }) { return switch (this) {
+      CodespaceState$unknown() => unknown(),
+      CodespaceState$created() => created(),
+      CodespaceState$queued() => queued(),
+      CodespaceState$provisioning() => provisioning(),
+      CodespaceState$available() => available(),
+      CodespaceState$awaiting() => awaiting(),
+      CodespaceState$unavailable() => unavailable(),
+      CodespaceState$deleted() => deleted(),
+      CodespaceState$moved() => moved(),
+      CodespaceState$shutdown() => shutdown(),
+      CodespaceState$archived() => archived(),
+      CodespaceState$starting() => starting(),
+      CodespaceState$shuttingDown() => shuttingDown(),
+      CodespaceState$failed() => failed(),
+      CodespaceState$exporting() => exporting(),
+      CodespaceState$updating() => updating(),
+      CodespaceState$rebuilding() => rebuilding(),
+      CodespaceState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? created, W Function()? queued, W Function()? provisioning, W Function()? available, W Function()? awaiting, W Function()? unavailable, W Function()? deleted, W Function()? moved, W Function()? shutdown, W Function()? archived, W Function()? starting, W Function()? shuttingDown, W Function()? failed, W Function()? exporting, W Function()? updating, W Function()? rebuilding, W Function(String value)? $unknown, }) { return switch (this) {
+      CodespaceState$unknown() => unknown != null ? unknown() : orElse(value),
+      CodespaceState$created() => created != null ? created() : orElse(value),
+      CodespaceState$queued() => queued != null ? queued() : orElse(value),
+      CodespaceState$provisioning() => provisioning != null ? provisioning() : orElse(value),
+      CodespaceState$available() => available != null ? available() : orElse(value),
+      CodespaceState$awaiting() => awaiting != null ? awaiting() : orElse(value),
+      CodespaceState$unavailable() => unavailable != null ? unavailable() : orElse(value),
+      CodespaceState$deleted() => deleted != null ? deleted() : orElse(value),
+      CodespaceState$moved() => moved != null ? moved() : orElse(value),
+      CodespaceState$shutdown() => shutdown != null ? shutdown() : orElse(value),
+      CodespaceState$archived() => archived != null ? archived() : orElse(value),
+      CodespaceState$starting() => starting != null ? starting() : orElse(value),
+      CodespaceState$shuttingDown() => shuttingDown != null ? shuttingDown() : orElse(value),
+      CodespaceState$failed() => failed != null ? failed() : orElse(value),
+      CodespaceState$exporting() => exporting != null ? exporting() : orElse(value),
+      CodespaceState$updating() => updating != null ? updating() : orElse(value),
+      CodespaceState$rebuilding() => rebuilding != null ? rebuilding() : orElse(value),
+      CodespaceState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodespaceState($value)';
 
  }

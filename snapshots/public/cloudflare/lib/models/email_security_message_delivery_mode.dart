@@ -61,6 +61,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityMessageDeliveryMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() direct, required W Function() bcc, required W Function() journal, required W Function() reviewSubmission, required W Function() dmarcUnverified, required W Function() dmarcFailureReport, required W Function() dmarcAggregateReport, required W Function() threatIntelSubmission, required W Function() simulationSubmission, required W Function() api, required W Function() retroScan, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityMessageDeliveryMode$direct() => direct(),
+      EmailSecurityMessageDeliveryMode$bcc() => bcc(),
+      EmailSecurityMessageDeliveryMode$journal() => journal(),
+      EmailSecurityMessageDeliveryMode$reviewSubmission() => reviewSubmission(),
+      EmailSecurityMessageDeliveryMode$dmarcUnverified() => dmarcUnverified(),
+      EmailSecurityMessageDeliveryMode$dmarcFailureReport() => dmarcFailureReport(),
+      EmailSecurityMessageDeliveryMode$dmarcAggregateReport() => dmarcAggregateReport(),
+      EmailSecurityMessageDeliveryMode$threatIntelSubmission() => threatIntelSubmission(),
+      EmailSecurityMessageDeliveryMode$simulationSubmission() => simulationSubmission(),
+      EmailSecurityMessageDeliveryMode$api() => api(),
+      EmailSecurityMessageDeliveryMode$retroScan() => retroScan(),
+      EmailSecurityMessageDeliveryMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? bcc, W Function()? journal, W Function()? reviewSubmission, W Function()? dmarcUnverified, W Function()? dmarcFailureReport, W Function()? dmarcAggregateReport, W Function()? threatIntelSubmission, W Function()? simulationSubmission, W Function()? api, W Function()? retroScan, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityMessageDeliveryMode$direct() => direct != null ? direct() : orElse(value),
+      EmailSecurityMessageDeliveryMode$bcc() => bcc != null ? bcc() : orElse(value),
+      EmailSecurityMessageDeliveryMode$journal() => journal != null ? journal() : orElse(value),
+      EmailSecurityMessageDeliveryMode$reviewSubmission() => reviewSubmission != null ? reviewSubmission() : orElse(value),
+      EmailSecurityMessageDeliveryMode$dmarcUnverified() => dmarcUnverified != null ? dmarcUnverified() : orElse(value),
+      EmailSecurityMessageDeliveryMode$dmarcFailureReport() => dmarcFailureReport != null ? dmarcFailureReport() : orElse(value),
+      EmailSecurityMessageDeliveryMode$dmarcAggregateReport() => dmarcAggregateReport != null ? dmarcAggregateReport() : orElse(value),
+      EmailSecurityMessageDeliveryMode$threatIntelSubmission() => threatIntelSubmission != null ? threatIntelSubmission() : orElse(value),
+      EmailSecurityMessageDeliveryMode$simulationSubmission() => simulationSubmission != null ? simulationSubmission() : orElse(value),
+      EmailSecurityMessageDeliveryMode$api() => api != null ? api() : orElse(value),
+      EmailSecurityMessageDeliveryMode$retroScan() => retroScan != null ? retroScan() : orElse(value),
+      EmailSecurityMessageDeliveryMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityMessageDeliveryMode($value)';
 
  }

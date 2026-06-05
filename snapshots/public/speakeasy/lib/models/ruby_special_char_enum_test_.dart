@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RubySpecialCharEnumTest$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() polarModelsOrganization, required W Function() simpleValue, required W Function() valuewithsemicolons, required W Function() keyvalue, required W Function() itsQuoted, required W Function() backslash, required W Function(String value) $unknown, }) { return switch (this) {
+      RubySpecialCharEnumTest$polarModelsOrganization() => polarModelsOrganization(),
+      RubySpecialCharEnumTest$simpleValue() => simpleValue(),
+      RubySpecialCharEnumTest$valuewithsemicolons() => valuewithsemicolons(),
+      RubySpecialCharEnumTest$keyvalue() => keyvalue(),
+      RubySpecialCharEnumTest$itsQuoted() => itsQuoted(),
+      RubySpecialCharEnumTest$backslash() => backslash(),
+      RubySpecialCharEnumTest$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? polarModelsOrganization, W Function()? simpleValue, W Function()? valuewithsemicolons, W Function()? keyvalue, W Function()? itsQuoted, W Function()? backslash, W Function(String value)? $unknown, }) { return switch (this) {
+      RubySpecialCharEnumTest$polarModelsOrganization() => polarModelsOrganization != null ? polarModelsOrganization() : orElse(value),
+      RubySpecialCharEnumTest$simpleValue() => simpleValue != null ? simpleValue() : orElse(value),
+      RubySpecialCharEnumTest$valuewithsemicolons() => valuewithsemicolons != null ? valuewithsemicolons() : orElse(value),
+      RubySpecialCharEnumTest$keyvalue() => keyvalue != null ? keyvalue() : orElse(value),
+      RubySpecialCharEnumTest$itsQuoted() => itsQuoted != null ? itsQuoted() : orElse(value),
+      RubySpecialCharEnumTest$backslash() => backslash != null ? backslash() : orElse(value),
+      RubySpecialCharEnumTest$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RubySpecialCharEnumTest($value)';
 
  }

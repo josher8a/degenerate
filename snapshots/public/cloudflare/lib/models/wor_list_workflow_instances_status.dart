@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorListWorkflowInstancesStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() running, required W Function() paused, required W Function() errored, required W Function() terminated, required W Function() complete, required W Function() waitingForPause, required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+      WorListWorkflowInstancesStatus$queued() => queued(),
+      WorListWorkflowInstancesStatus$running() => running(),
+      WorListWorkflowInstancesStatus$paused() => paused(),
+      WorListWorkflowInstancesStatus$errored() => errored(),
+      WorListWorkflowInstancesStatus$terminated() => terminated(),
+      WorListWorkflowInstancesStatus$complete() => complete(),
+      WorListWorkflowInstancesStatus$waitingForPause() => waitingForPause(),
+      WorListWorkflowInstancesStatus$waiting() => waiting(),
+      WorListWorkflowInstancesStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? running, W Function()? paused, W Function()? errored, W Function()? terminated, W Function()? complete, W Function()? waitingForPause, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+      WorListWorkflowInstancesStatus$queued() => queued != null ? queued() : orElse(value),
+      WorListWorkflowInstancesStatus$running() => running != null ? running() : orElse(value),
+      WorListWorkflowInstancesStatus$paused() => paused != null ? paused() : orElse(value),
+      WorListWorkflowInstancesStatus$errored() => errored != null ? errored() : orElse(value),
+      WorListWorkflowInstancesStatus$terminated() => terminated != null ? terminated() : orElse(value),
+      WorListWorkflowInstancesStatus$complete() => complete != null ? complete() : orElse(value),
+      WorListWorkflowInstancesStatus$waitingForPause() => waitingForPause != null ? waitingForPause() : orElse(value),
+      WorListWorkflowInstancesStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      WorListWorkflowInstancesStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorListWorkflowInstancesStatus($value)';
 
  }

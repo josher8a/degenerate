@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RequirementCollection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() application, required W Function() stripe, required W Function(String value) $unknown, }) { return switch (this) {
+      RequirementCollection$application() => application(),
+      RequirementCollection$stripe() => stripe(),
+      RequirementCollection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? application, W Function()? stripe, W Function(String value)? $unknown, }) { return switch (this) {
+      RequirementCollection$application() => application != null ? application() : orElse(value),
+      RequirementCollection$stripe() => stripe != null ? stripe() : orElse(value),
+      RequirementCollection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RequirementCollection($value)';
 
  }

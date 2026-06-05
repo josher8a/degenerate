@@ -66,6 +66,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex() => amex(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires() => cartesBancaires(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners() => diners(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover() => discover(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu() => eftposAu(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac() => interac(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb() => jcb(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link() => link(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard() => mastercard(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay() => unionpay(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown() => unknown(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa() => visa(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex() => amex != null ? amex() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners() => diners != null ? diners() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover() => discover != null ? discover() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu() => eftposAu != null ? eftposAu() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac() => interac != null ? interac() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb() => jcb != null ? jcb() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link() => link != null ? link() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay() => unionpay != null ? unionpay() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa() => visa != null ? visa() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)';
 
  }
@@ -220,6 +252,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() credit, required W Function() debit, required W Function() prepaid, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit() => credit(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit() => debit(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid() => prepaid(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown() => unknown(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, W Function()? debit, W Function()? prepaid, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit() => credit != null ? credit() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit() => debit != null ? debit() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid() => prepaid != null ? prepaid() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)';
 
  }
@@ -334,6 +382,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex() => amex(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires() => cartesBancaires(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners() => diners(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover() => discover(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu() => eftposAu(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac() => interac(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb() => jcb(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link() => link(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard() => mastercard(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay() => unionpay(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown() => unknown(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa() => visa(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex() => amex != null ? amex() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners() => diners != null ? diners() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover() => discover != null ? discover() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu() => eftposAu != null ? eftposAu() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac() => interac != null ? interac() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb() => jcb != null ? jcb() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link() => link != null ? link() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay() => unionpay != null ? unionpay() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa() => visa != null ? visa() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)';
 
  }
@@ -480,6 +560,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StoredCredentialUsage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() recurring, required W Function() unscheduled, required W Function(String value) $unknown, }) { return switch (this) {
+      StoredCredentialUsage$recurring() => recurring(),
+      StoredCredentialUsage$unscheduled() => unscheduled(),
+      StoredCredentialUsage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recurring, W Function()? unscheduled, W Function(String value)? $unknown, }) { return switch (this) {
+      StoredCredentialUsage$recurring() => recurring != null ? recurring() : orElse(value),
+      StoredCredentialUsage$unscheduled() => unscheduled != null ? unscheduled() : orElse(value),
+      StoredCredentialUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StoredCredentialUsage($value)';
 
  }

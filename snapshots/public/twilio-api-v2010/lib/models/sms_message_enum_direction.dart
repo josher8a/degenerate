@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SmsMessageEnumDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inbound, required W Function() outboundApi, required W Function() outboundCall, required W Function() outboundReply, required W Function(String value) $unknown, }) { return switch (this) {
+      SmsMessageEnumDirection$inbound() => inbound(),
+      SmsMessageEnumDirection$outboundApi() => outboundApi(),
+      SmsMessageEnumDirection$outboundCall() => outboundCall(),
+      SmsMessageEnumDirection$outboundReply() => outboundReply(),
+      SmsMessageEnumDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inbound, W Function()? outboundApi, W Function()? outboundCall, W Function()? outboundReply, W Function(String value)? $unknown, }) { return switch (this) {
+      SmsMessageEnumDirection$inbound() => inbound != null ? inbound() : orElse(value),
+      SmsMessageEnumDirection$outboundApi() => outboundApi != null ? outboundApi() : orElse(value),
+      SmsMessageEnumDirection$outboundCall() => outboundCall != null ? outboundCall() : orElse(value),
+      SmsMessageEnumDirection$outboundReply() => outboundReply != null ? outboundReply() : orElse(value),
+      SmsMessageEnumDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SmsMessageEnumDirection($value)';
 
  }

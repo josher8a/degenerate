@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinksResourceConsentCollectionPromotions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinksResourceConsentCollectionPromotions$auto() => auto(),
+      PaymentLinksResourceConsentCollectionPromotions$none() => none(),
+      PaymentLinksResourceConsentCollectionPromotions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinksResourceConsentCollectionPromotions$auto() => auto != null ? auto() : orElse(value),
+      PaymentLinksResourceConsentCollectionPromotions$none() => none != null ? none() : orElse(value),
+      PaymentLinksResourceConsentCollectionPromotions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinksResourceConsentCollectionPromotions($value)';
 
  }

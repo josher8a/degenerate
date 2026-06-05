@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiInferenceSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() model, required W Function() task, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiInferenceSummaryDimension$model() => model(),
+      RadarGetAiInferenceSummaryDimension$task() => task(),
+      RadarGetAiInferenceSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? model, W Function()? task, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiInferenceSummaryDimension$model() => model != null ? model() : orElse(value),
+      RadarGetAiInferenceSummaryDimension$task() => task != null ? task() : orElse(value),
+      RadarGetAiInferenceSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiInferenceSummaryDimension($value)';
 
  }

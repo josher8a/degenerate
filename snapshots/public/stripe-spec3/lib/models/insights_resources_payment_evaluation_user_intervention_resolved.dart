@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abandoned, required W Function() failed, required W Function() passed, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned() => abandoned(),
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed() => failed(),
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed() => passed(),
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? failed, W Function()? passed, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned() => abandoned != null ? abandoned() : orElse(value),
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed() => failed != null ? failed() : orElse(value),
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed() => passed != null ? passed() : orElse(value),
+      InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)';
 
  }

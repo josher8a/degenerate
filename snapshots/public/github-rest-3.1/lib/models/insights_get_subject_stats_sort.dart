@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsGetSubjectStatsSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lastRateLimitedTimestamp, required W Function() lastRequestTimestamp, required W Function() rateLimitedRequestCount, required W Function() subjectName, required W Function() totalRequestCount, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsGetSubjectStatsSort$lastRateLimitedTimestamp() => lastRateLimitedTimestamp(),
+      InsightsGetSubjectStatsSort$lastRequestTimestamp() => lastRequestTimestamp(),
+      InsightsGetSubjectStatsSort$rateLimitedRequestCount() => rateLimitedRequestCount(),
+      InsightsGetSubjectStatsSort$subjectName() => subjectName(),
+      InsightsGetSubjectStatsSort$totalRequestCount() => totalRequestCount(),
+      InsightsGetSubjectStatsSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRateLimitedTimestamp, W Function()? lastRequestTimestamp, W Function()? rateLimitedRequestCount, W Function()? subjectName, W Function()? totalRequestCount, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsGetSubjectStatsSort$lastRateLimitedTimestamp() => lastRateLimitedTimestamp != null ? lastRateLimitedTimestamp() : orElse(value),
+      InsightsGetSubjectStatsSort$lastRequestTimestamp() => lastRequestTimestamp != null ? lastRequestTimestamp() : orElse(value),
+      InsightsGetSubjectStatsSort$rateLimitedRequestCount() => rateLimitedRequestCount != null ? rateLimitedRequestCount() : orElse(value),
+      InsightsGetSubjectStatsSort$subjectName() => subjectName != null ? subjectName() : orElse(value),
+      InsightsGetSubjectStatsSort$totalRequestCount() => totalRequestCount != null ? totalRequestCount() : orElse(value),
+      InsightsGetSubjectStatsSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsGetSubjectStatsSort($value)';
 
  }

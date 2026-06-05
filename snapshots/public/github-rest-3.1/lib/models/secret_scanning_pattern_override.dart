@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultSetting$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+      DefaultSetting$disabled() => disabled(),
+      DefaultSetting$enabled() => enabled(),
+      DefaultSetting$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+      DefaultSetting$disabled() => disabled != null ? disabled() : orElse(value),
+      DefaultSetting$enabled() => enabled != null ? enabled() : orElse(value),
+      DefaultSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultSetting($value)';
 
  }
@@ -90,6 +102,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnterpriseSetting$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      EnterpriseSetting$notSet() => notSet(),
+      EnterpriseSetting$disabled() => disabled(),
+      EnterpriseSetting$enabled() => enabled(),
+      EnterpriseSetting$$null() => $null(),
+      EnterpriseSetting$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      EnterpriseSetting$notSet() => notSet != null ? notSet() : orElse(value),
+      EnterpriseSetting$disabled() => disabled != null ? disabled() : orElse(value),
+      EnterpriseSetting$enabled() => enabled != null ? enabled() : orElse(value),
+      EnterpriseSetting$$null() => $null != null ? $null() : orElse(value),
+      EnterpriseSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnterpriseSetting($value)';
 
  }
@@ -168,6 +196,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Setting$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() notSet, required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+      Setting$notSet() => notSet(),
+      Setting$disabled() => disabled(),
+      Setting$enabled() => enabled(),
+      Setting$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notSet, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+      Setting$notSet() => notSet != null ? notSet() : orElse(value),
+      Setting$disabled() => disabled != null ? disabled() : orElse(value),
+      Setting$enabled() => enabled != null ? enabled() : orElse(value),
+      Setting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Setting($value)';
 
  }

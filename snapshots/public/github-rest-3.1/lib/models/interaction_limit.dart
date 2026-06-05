@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InteractionExpiry$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oneDay, required W Function() threeDays, required W Function() oneWeek, required W Function() oneMonth, required W Function() sixMonths, required W Function(String value) $unknown, }) { return switch (this) {
+      InteractionExpiry$oneDay() => oneDay(),
+      InteractionExpiry$threeDays() => threeDays(),
+      InteractionExpiry$oneWeek() => oneWeek(),
+      InteractionExpiry$oneMonth() => oneMonth(),
+      InteractionExpiry$sixMonths() => sixMonths(),
+      InteractionExpiry$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneDay, W Function()? threeDays, W Function()? oneWeek, W Function()? oneMonth, W Function()? sixMonths, W Function(String value)? $unknown, }) { return switch (this) {
+      InteractionExpiry$oneDay() => oneDay != null ? oneDay() : orElse(value),
+      InteractionExpiry$threeDays() => threeDays != null ? threeDays() : orElse(value),
+      InteractionExpiry$oneWeek() => oneWeek != null ? oneWeek() : orElse(value),
+      InteractionExpiry$oneMonth() => oneMonth != null ? oneMonth() : orElse(value),
+      InteractionExpiry$sixMonths() => sixMonths != null ? sixMonths() : orElse(value),
+      InteractionExpiry$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InteractionExpiry($value)';
 
  }

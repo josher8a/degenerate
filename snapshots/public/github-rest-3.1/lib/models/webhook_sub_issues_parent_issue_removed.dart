@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookSubIssuesParentIssueRemovedAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() parentIssueRemoved, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookSubIssuesParentIssueRemovedAction$parentIssueRemoved() => parentIssueRemoved(),
+      WebhookSubIssuesParentIssueRemovedAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? parentIssueRemoved, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookSubIssuesParentIssueRemovedAction$parentIssueRemoved() => parentIssueRemoved != null ? parentIssueRemoved() : orElse(value),
+      WebhookSubIssuesParentIssueRemovedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookSubIssuesParentIssueRemovedAction($value)';
 
  }

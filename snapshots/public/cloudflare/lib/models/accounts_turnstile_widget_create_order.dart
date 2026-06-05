@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountsTurnstileWidgetCreateOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() id, required W Function() sitekey, required W Function() $name, required W Function() createdOn, required W Function() modifiedOn, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountsTurnstileWidgetCreateOrder$id() => id(),
+      AccountsTurnstileWidgetCreateOrder$sitekey() => sitekey(),
+      AccountsTurnstileWidgetCreateOrder$$name() => $name(),
+      AccountsTurnstileWidgetCreateOrder$createdOn() => createdOn(),
+      AccountsTurnstileWidgetCreateOrder$modifiedOn() => modifiedOn(),
+      AccountsTurnstileWidgetCreateOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? sitekey, W Function()? $name, W Function()? createdOn, W Function()? modifiedOn, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountsTurnstileWidgetCreateOrder$id() => id != null ? id() : orElse(value),
+      AccountsTurnstileWidgetCreateOrder$sitekey() => sitekey != null ? sitekey() : orElse(value),
+      AccountsTurnstileWidgetCreateOrder$$name() => $name != null ? $name() : orElse(value),
+      AccountsTurnstileWidgetCreateOrder$createdOn() => createdOn != null ? createdOn() : orElse(value),
+      AccountsTurnstileWidgetCreateOrder$modifiedOn() => modifiedOn != null ? modifiedOn() : orElse(value),
+      AccountsTurnstileWidgetCreateOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountsTurnstileWidgetCreateOrder($value)';
 
  }

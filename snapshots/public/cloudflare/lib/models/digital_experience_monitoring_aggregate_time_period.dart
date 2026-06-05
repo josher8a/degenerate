@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DigitalExperienceMonitoringAggregateTimePeriodUnits$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() hours, required W Function() days, required W Function() testRuns, required W Function(String value) $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$hours() => hours(),
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$days() => days(),
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$testRuns() => testRuns(),
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hours, W Function()? days, W Function()? testRuns, W Function(String value)? $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$hours() => hours != null ? hours() : orElse(value),
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$days() => days != null ? days() : orElse(value),
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$testRuns() => testRuns != null ? testRuns() : orElse(value),
+      DigitalExperienceMonitoringAggregateTimePeriodUnits$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DigitalExperienceMonitoringAggregateTimePeriodUnits($value)';
 
  }

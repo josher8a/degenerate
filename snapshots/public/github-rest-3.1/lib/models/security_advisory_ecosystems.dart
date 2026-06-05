@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityAdvisoryEcosystems$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rubygems, required W Function() npm, required W Function() pip, required W Function() maven, required W Function() nuget, required W Function() composer, required W Function() go, required W Function() rust, required W Function() erlang, required W Function() actions, required W Function() pub, required W Function() $other, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityAdvisoryEcosystems$rubygems() => rubygems(),
+      SecurityAdvisoryEcosystems$npm() => npm(),
+      SecurityAdvisoryEcosystems$pip() => pip(),
+      SecurityAdvisoryEcosystems$maven() => maven(),
+      SecurityAdvisoryEcosystems$nuget() => nuget(),
+      SecurityAdvisoryEcosystems$composer() => composer(),
+      SecurityAdvisoryEcosystems$go() => go(),
+      SecurityAdvisoryEcosystems$rust() => rust(),
+      SecurityAdvisoryEcosystems$erlang() => erlang(),
+      SecurityAdvisoryEcosystems$actions() => actions(),
+      SecurityAdvisoryEcosystems$pub() => pub(),
+      SecurityAdvisoryEcosystems$$other() => $other(),
+      SecurityAdvisoryEcosystems$swift() => swift(),
+      SecurityAdvisoryEcosystems$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rubygems, W Function()? npm, W Function()? pip, W Function()? maven, W Function()? nuget, W Function()? composer, W Function()? go, W Function()? rust, W Function()? erlang, W Function()? actions, W Function()? pub, W Function()? $other, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityAdvisoryEcosystems$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      SecurityAdvisoryEcosystems$npm() => npm != null ? npm() : orElse(value),
+      SecurityAdvisoryEcosystems$pip() => pip != null ? pip() : orElse(value),
+      SecurityAdvisoryEcosystems$maven() => maven != null ? maven() : orElse(value),
+      SecurityAdvisoryEcosystems$nuget() => nuget != null ? nuget() : orElse(value),
+      SecurityAdvisoryEcosystems$composer() => composer != null ? composer() : orElse(value),
+      SecurityAdvisoryEcosystems$go() => go != null ? go() : orElse(value),
+      SecurityAdvisoryEcosystems$rust() => rust != null ? rust() : orElse(value),
+      SecurityAdvisoryEcosystems$erlang() => erlang != null ? erlang() : orElse(value),
+      SecurityAdvisoryEcosystems$actions() => actions != null ? actions() : orElse(value),
+      SecurityAdvisoryEcosystems$pub() => pub != null ? pub() : orElse(value),
+      SecurityAdvisoryEcosystems$$other() => $other != null ? $other() : orElse(value),
+      SecurityAdvisoryEcosystems$swift() => swift != null ? swift() : orElse(value),
+      SecurityAdvisoryEcosystems$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityAdvisoryEcosystems($value)';
 
  }

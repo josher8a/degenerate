@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardShippingType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bulk, required W Function() individual, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardShippingType$bulk() => bulk(),
+      IssuingCardShippingType$individual() => individual(),
+      IssuingCardShippingType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bulk, W Function()? individual, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardShippingType$bulk() => bulk != null ? bulk() : orElse(value),
+      IssuingCardShippingType$individual() => individual != null ? individual() : orElse(value),
+      IssuingCardShippingType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardShippingType($value)';
 
  }

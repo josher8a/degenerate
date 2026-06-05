@@ -102,6 +102,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DvStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() pendingValidation, required W Function() deleted, required W Function() pendingIssuance, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() pendingExpiration, required W Function() expired, required W Function() active, required W Function() initializingTimedOut, required W Function() validationTimedOut, required W Function() issuanceTimedOut, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function() pendingCleanup, required W Function() stagingDeployment, required W Function() stagingActive, required W Function() deactivating, required W Function() inactive, required W Function() backupIssued, required W Function() holdingDeployment, required W Function(String value) $unknown, }) { return switch (this) {
+      DvStatus$initializing() => initializing(),
+      DvStatus$pendingValidation() => pendingValidation(),
+      DvStatus$deleted() => deleted(),
+      DvStatus$pendingIssuance() => pendingIssuance(),
+      DvStatus$pendingDeployment() => pendingDeployment(),
+      DvStatus$pendingDeletion() => pendingDeletion(),
+      DvStatus$pendingExpiration() => pendingExpiration(),
+      DvStatus$expired() => expired(),
+      DvStatus$active() => active(),
+      DvStatus$initializingTimedOut() => initializingTimedOut(),
+      DvStatus$validationTimedOut() => validationTimedOut(),
+      DvStatus$issuanceTimedOut() => issuanceTimedOut(),
+      DvStatus$deploymentTimedOut() => deploymentTimedOut(),
+      DvStatus$deletionTimedOut() => deletionTimedOut(),
+      DvStatus$pendingCleanup() => pendingCleanup(),
+      DvStatus$stagingDeployment() => stagingDeployment(),
+      DvStatus$stagingActive() => stagingActive(),
+      DvStatus$deactivating() => deactivating(),
+      DvStatus$inactive() => inactive(),
+      DvStatus$backupIssued() => backupIssued(),
+      DvStatus$holdingDeployment() => holdingDeployment(),
+      DvStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingValidation, W Function()? deleted, W Function()? pendingIssuance, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? pendingExpiration, W Function()? expired, W Function()? active, W Function()? initializingTimedOut, W Function()? validationTimedOut, W Function()? issuanceTimedOut, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function()? pendingCleanup, W Function()? stagingDeployment, W Function()? stagingActive, W Function()? deactivating, W Function()? inactive, W Function()? backupIssued, W Function()? holdingDeployment, W Function(String value)? $unknown, }) { return switch (this) {
+      DvStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      DvStatus$pendingValidation() => pendingValidation != null ? pendingValidation() : orElse(value),
+      DvStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      DvStatus$pendingIssuance() => pendingIssuance != null ? pendingIssuance() : orElse(value),
+      DvStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
+      DvStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
+      DvStatus$pendingExpiration() => pendingExpiration != null ? pendingExpiration() : orElse(value),
+      DvStatus$expired() => expired != null ? expired() : orElse(value),
+      DvStatus$active() => active != null ? active() : orElse(value),
+      DvStatus$initializingTimedOut() => initializingTimedOut != null ? initializingTimedOut() : orElse(value),
+      DvStatus$validationTimedOut() => validationTimedOut != null ? validationTimedOut() : orElse(value),
+      DvStatus$issuanceTimedOut() => issuanceTimedOut != null ? issuanceTimedOut() : orElse(value),
+      DvStatus$deploymentTimedOut() => deploymentTimedOut != null ? deploymentTimedOut() : orElse(value),
+      DvStatus$deletionTimedOut() => deletionTimedOut != null ? deletionTimedOut() : orElse(value),
+      DvStatus$pendingCleanup() => pendingCleanup != null ? pendingCleanup() : orElse(value),
+      DvStatus$stagingDeployment() => stagingDeployment != null ? stagingDeployment() : orElse(value),
+      DvStatus$stagingActive() => stagingActive != null ? stagingActive() : orElse(value),
+      DvStatus$deactivating() => deactivating != null ? deactivating() : orElse(value),
+      DvStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      DvStatus$backupIssued() => backupIssued != null ? backupIssued() : orElse(value),
+      DvStatus$holdingDeployment() => holdingDeployment != null ? holdingDeployment() : orElse(value),
+      DvStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DvStatus($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UseLfs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() optIn, required W Function() optOut, required W Function(String value) $unknown, }) { return switch (this) {
+      UseLfs$optIn() => optIn(),
+      UseLfs$optOut() => optOut(),
+      UseLfs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W Function()? optOut, W Function(String value)? $unknown, }) { return switch (this) {
+      UseLfs$optIn() => optIn != null ? optIn() : orElse(value),
+      UseLfs$optOut() => optOut != null ? optOut() : orElse(value),
+      UseLfs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UseLfs($value)';
 
  }

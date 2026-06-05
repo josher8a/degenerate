@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() deleted, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$active() => active(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$deleted() => deleted(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$active() => active != null ? active() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$deleted() => deleted != null ? deleted() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SmartUnionNestedOuterBKind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() x, required W Function(String value) $unknown, }) { return switch (this) {
+      SmartUnionNestedOuterBKind$x() => x(),
+      SmartUnionNestedOuterBKind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? x, W Function(String value)? $unknown, }) { return switch (this) {
+      SmartUnionNestedOuterBKind$x() => x != null ? x() : orElse(value),
+      SmartUnionNestedOuterBKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SmartUnionNestedOuterBKind($value)';
 
  }
@@ -63,6 +73,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Name$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() y, required W Function(String value) $unknown, }) { return switch (this) {
+      Name$y() => y(),
+      Name$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? y, W Function(String value)? $unknown, }) { return switch (this) {
+      Name$y() => y != null ? y() : orElse(value),
+      Name$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Name($value)';
 
  }

@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPersonalizationDesignRejectionReasonsCardLogo$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() geographicLocation, required W Function() inappropriate, required W Function() networkName, required W Function() nonBinaryImage, required W Function() nonFiatCurrency, required W Function() $other, required W Function() otherEntity, required W Function() promotionalMaterial, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$geographicLocation() => geographicLocation(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$inappropriate() => inappropriate(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$networkName() => networkName(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$nonBinaryImage() => nonBinaryImage(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$nonFiatCurrency() => nonFiatCurrency(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$$other() => $other(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$otherEntity() => otherEntity(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$promotionalMaterial() => promotionalMaterial(),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? geographicLocation, W Function()? inappropriate, W Function()? networkName, W Function()? nonBinaryImage, W Function()? nonFiatCurrency, W Function()? $other, W Function()? otherEntity, W Function()? promotionalMaterial, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$geographicLocation() => geographicLocation != null ? geographicLocation() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$inappropriate() => inappropriate != null ? inappropriate() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$networkName() => networkName != null ? networkName() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$nonBinaryImage() => nonBinaryImage != null ? nonBinaryImage() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$nonFiatCurrency() => nonFiatCurrency != null ? nonFiatCurrency() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$$other() => $other != null ? $other() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$otherEntity() => otherEntity != null ? otherEntity() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$promotionalMaterial() => promotionalMaterial != null ? promotionalMaterial() : orElse(value),
+      IssuingPersonalizationDesignRejectionReasonsCardLogo$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPersonalizationDesignRejectionReasonsCardLogo($value)';
 
  }

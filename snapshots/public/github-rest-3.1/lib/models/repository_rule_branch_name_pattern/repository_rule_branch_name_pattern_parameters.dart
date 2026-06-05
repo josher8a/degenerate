@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Operator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() startsWith, required W Function() endsWith, required W Function() contains, required W Function() regex, required W Function(String value) $unknown, }) { return switch (this) {
+      Operator$startsWith() => startsWith(),
+      Operator$endsWith() => endsWith(),
+      Operator$contains() => contains(),
+      Operator$regex() => regex(),
+      Operator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? startsWith, W Function()? endsWith, W Function()? contains, W Function()? regex, W Function(String value)? $unknown, }) { return switch (this) {
+      Operator$startsWith() => startsWith != null ? startsWith() : orElse(value),
+      Operator$endsWith() => endsWith != null ? endsWith() : orElse(value),
+      Operator$contains() => contains != null ? contains() : orElse(value),
+      Operator$regex() => regex != null ? regex() : orElse(value),
+      Operator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Operator($value)';
 
  }

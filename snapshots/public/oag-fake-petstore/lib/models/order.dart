@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrderStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() placed, required W Function() approved, required W Function() delivered, required W Function(String value) $unknown, }) { return switch (this) {
+      OrderStatus$placed() => placed(),
+      OrderStatus$approved() => approved(),
+      OrderStatus$delivered() => delivered(),
+      OrderStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? placed, W Function()? approved, W Function()? delivered, W Function(String value)? $unknown, }) { return switch (this) {
+      OrderStatus$placed() => placed != null ? placed() : orElse(value),
+      OrderStatus$approved() => approved != null ? approved() : orElse(value),
+      OrderStatus$delivered() => delivered != null ? delivered() : orElse(value),
+      OrderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrderStatus($value)';
 
  }

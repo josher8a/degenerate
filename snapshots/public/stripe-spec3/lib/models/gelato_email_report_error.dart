@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoEmailReportErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() emailUnverifiedOther, required W Function() emailVerificationDeclined, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoEmailReportErrorCode$emailUnverifiedOther() => emailUnverifiedOther(),
+      GelatoEmailReportErrorCode$emailVerificationDeclined() => emailVerificationDeclined(),
+      GelatoEmailReportErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailUnverifiedOther, W Function()? emailVerificationDeclined, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoEmailReportErrorCode$emailUnverifiedOther() => emailUnverifiedOther != null ? emailUnverifiedOther() : orElse(value),
+      GelatoEmailReportErrorCode$emailVerificationDeclined() => emailVerificationDeclined != null ? emailVerificationDeclined() : orElse(value),
+      GelatoEmailReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoEmailReportErrorCode($value)';
 
  }

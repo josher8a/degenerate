@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$npm() => npm(),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$maven() => maven(),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$rubygems() => rubygems(),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$docker() => docker(),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$nuget() => nuget(),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$container() => container(),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$npm() => npm != null ? npm() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$maven() => maven != null ? maven() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$docker() => docker != null ? docker() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$container() => container != null ? container() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType($value)';
 
  }

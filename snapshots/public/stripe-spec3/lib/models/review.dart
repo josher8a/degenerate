@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClosedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() acknowledged, required W Function() approved, required W Function() canceled, required W Function() disputed, required W Function() paymentNeverSettled, required W Function() redacted, required W Function() refunded, required W Function() refundedAsFraud, required W Function(String value) $unknown, }) { return switch (this) {
+      ClosedReason$acknowledged() => acknowledged(),
+      ClosedReason$approved() => approved(),
+      ClosedReason$canceled() => canceled(),
+      ClosedReason$disputed() => disputed(),
+      ClosedReason$paymentNeverSettled() => paymentNeverSettled(),
+      ClosedReason$redacted() => redacted(),
+      ClosedReason$refunded() => refunded(),
+      ClosedReason$refundedAsFraud() => refundedAsFraud(),
+      ClosedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acknowledged, W Function()? approved, W Function()? canceled, W Function()? disputed, W Function()? paymentNeverSettled, W Function()? redacted, W Function()? refunded, W Function()? refundedAsFraud, W Function(String value)? $unknown, }) { return switch (this) {
+      ClosedReason$acknowledged() => acknowledged != null ? acknowledged() : orElse(value),
+      ClosedReason$approved() => approved != null ? approved() : orElse(value),
+      ClosedReason$canceled() => canceled != null ? canceled() : orElse(value),
+      ClosedReason$disputed() => disputed != null ? disputed() : orElse(value),
+      ClosedReason$paymentNeverSettled() => paymentNeverSettled != null ? paymentNeverSettled() : orElse(value),
+      ClosedReason$redacted() => redacted != null ? redacted() : orElse(value),
+      ClosedReason$refunded() => refunded != null ? refunded() : orElse(value),
+      ClosedReason$refundedAsFraud() => refundedAsFraud != null ? refundedAsFraud() : orElse(value),
+      ClosedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClosedReason($value)';
 
  }
@@ -156,6 +180,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReviewObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() review, required W Function(String value) $unknown, }) { return switch (this) {
+      ReviewObject$review() => review(),
+      ReviewObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? review, W Function(String value)? $unknown, }) { return switch (this) {
+      ReviewObject$review() => review != null ? review() : orElse(value),
+      ReviewObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReviewObject($value)';
 
  }
@@ -203,6 +237,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OpenedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() manual, required W Function() rule, required W Function(String value) $unknown, }) { return switch (this) {
+      OpenedReason$manual() => manual(),
+      OpenedReason$rule() => rule(),
+      OpenedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? manual, W Function()? rule, W Function(String value)? $unknown, }) { return switch (this) {
+      OpenedReason$manual() => manual != null ? manual() : orElse(value),
+      OpenedReason$rule() => rule != null ? rule() : orElse(value),
+      OpenedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OpenedReason($value)';
 
  }

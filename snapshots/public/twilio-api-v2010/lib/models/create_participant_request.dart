@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConferenceStatusCallbackMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+      ConferenceStatusCallbackMethod$$get() => $get(),
+      ConferenceStatusCallbackMethod$post() => post(),
+      ConferenceStatusCallbackMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+      ConferenceStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
+      ConferenceStatusCallbackMethod$post() => post != null ? post() : orElse(value),
+      ConferenceStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConferenceStatusCallbackMethod($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConferenceRecordingStatusCallbackMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+      ConferenceRecordingStatusCallbackMethod$$get() => $get(),
+      ConferenceRecordingStatusCallbackMethod$post() => post(),
+      ConferenceRecordingStatusCallbackMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+      ConferenceRecordingStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
+      ConferenceRecordingStatusCallbackMethod$post() => post != null ? post() : orElse(value),
+      ConferenceRecordingStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConferenceRecordingStatusCallbackMethod($value)';
 
  }
@@ -138,6 +162,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AmdStatusCallbackMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+      AmdStatusCallbackMethod$$get() => $get(),
+      AmdStatusCallbackMethod$post() => post(),
+      AmdStatusCallbackMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+      AmdStatusCallbackMethod$$get() => $get != null ? $get() : orElse(value),
+      AmdStatusCallbackMethod$post() => post != null ? post() : orElse(value),
+      AmdStatusCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AmdStatusCallbackMethod($value)';
 
  }

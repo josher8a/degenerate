@@ -48,6 +48,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageRequestQuality$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() hd, required W Function() low, required W Function() medium, required W Function() high, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageRequestQuality$standard() => standard(),
+      CreateImageRequestQuality$hd() => hd(),
+      CreateImageRequestQuality$low() => low(),
+      CreateImageRequestQuality$medium() => medium(),
+      CreateImageRequestQuality$high() => high(),
+      CreateImageRequestQuality$auto() => auto(),
+      CreateImageRequestQuality$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? hd, W Function()? low, W Function()? medium, W Function()? high, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageRequestQuality$standard() => standard != null ? standard() : orElse(value),
+      CreateImageRequestQuality$hd() => hd != null ? hd() : orElse(value),
+      CreateImageRequestQuality$low() => low != null ? low() : orElse(value),
+      CreateImageRequestQuality$medium() => medium != null ? medium() : orElse(value),
+      CreateImageRequestQuality$high() => high != null ? high() : orElse(value),
+      CreateImageRequestQuality$auto() => auto != null ? auto() : orElse(value),
+      CreateImageRequestQuality$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageRequestQuality($value)';
 
  }
@@ -164,6 +184,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageRequestSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() $1024x1024, required W Function() $1536x1024, required W Function() $1024x1536, required W Function() $256x256, required W Function() $512x512, required W Function() $1792x1024, required W Function() $1024x1792, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageRequestSize$auto() => auto(),
+      CreateImageRequestSize$$1024x1024() => $1024x1024(),
+      CreateImageRequestSize$$1536x1024() => $1536x1024(),
+      CreateImageRequestSize$$1024x1536() => $1024x1536(),
+      CreateImageRequestSize$$256x256() => $256x256(),
+      CreateImageRequestSize$$512x512() => $512x512(),
+      CreateImageRequestSize$$1792x1024() => $1792x1024(),
+      CreateImageRequestSize$$1024x1792() => $1024x1792(),
+      CreateImageRequestSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $1024x1024, W Function()? $1536x1024, W Function()? $1024x1536, W Function()? $256x256, W Function()? $512x512, W Function()? $1792x1024, W Function()? $1024x1792, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageRequestSize$auto() => auto != null ? auto() : orElse(value),
+      CreateImageRequestSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
+      CreateImageRequestSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
+      CreateImageRequestSize$$1024x1536() => $1024x1536 != null ? $1024x1536() : orElse(value),
+      CreateImageRequestSize$$256x256() => $256x256 != null ? $256x256() : orElse(value),
+      CreateImageRequestSize$$512x512() => $512x512 != null ? $512x512() : orElse(value),
+      CreateImageRequestSize$$1792x1024() => $1792x1024 != null ? $1792x1024() : orElse(value),
+      CreateImageRequestSize$$1024x1792() => $1024x1792 != null ? $1024x1792() : orElse(value),
+      CreateImageRequestSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageRequestSize($value)';
 
  }
@@ -274,6 +318,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Style$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() vivid, required W Function() natural, required W Function(String value) $unknown, }) { return switch (this) {
+      Style$vivid() => vivid(),
+      Style$natural() => natural(),
+      Style$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vivid, W Function()? natural, W Function(String value)? $unknown, }) { return switch (this) {
+      Style$vivid() => vivid != null ? vivid() : orElse(value),
+      Style$natural() => natural != null ? natural() : orElse(value),
+      Style$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Style($value)';
 
  }

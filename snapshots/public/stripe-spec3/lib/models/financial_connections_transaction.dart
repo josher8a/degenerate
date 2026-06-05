@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinancialConnectionsTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() financialConnectionsTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      FinancialConnectionsTransactionObject$financialConnectionsTransaction() => financialConnectionsTransaction(),
+      FinancialConnectionsTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      FinancialConnectionsTransactionObject$financialConnectionsTransaction() => financialConnectionsTransaction != null ? financialConnectionsTransaction() : orElse(value),
+      FinancialConnectionsTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinancialConnectionsTransactionObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinancialConnectionsTransactionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() posted, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+      FinancialConnectionsTransactionStatus$pending() => pending(),
+      FinancialConnectionsTransactionStatus$posted() => posted(),
+      FinancialConnectionsTransactionStatus$$void() => $void(),
+      FinancialConnectionsTransactionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? posted, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+      FinancialConnectionsTransactionStatus$pending() => pending != null ? pending() : orElse(value),
+      FinancialConnectionsTransactionStatus$posted() => posted != null ? posted() : orElse(value),
+      FinancialConnectionsTransactionStatus$$void() => $void != null ? $void() : orElse(value),
+      FinancialConnectionsTransactionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinancialConnectionsTransactionStatus($value)';
 
  }

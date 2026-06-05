@@ -36,6 +36,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() full, required W Function() partial, required W Function() secondary, required W Function() internal, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesType$full() => full(),
+      ZonesType$partial() => partial(),
+      ZonesType$secondary() => secondary(),
+      ZonesType$internal() => internal(),
+      ZonesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function()? secondary, W Function()? internal, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesType$full() => full != null ? full() : orElse(value),
+      ZonesType$partial() => partial != null ? partial() : orElse(value),
+      ZonesType$secondary() => secondary != null ? secondary() : orElse(value),
+      ZonesType$internal() => internal != null ? internal() : orElse(value),
+      ZonesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesType($value)';
 
  }

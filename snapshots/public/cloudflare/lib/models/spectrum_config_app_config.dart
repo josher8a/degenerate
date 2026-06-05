@@ -50,6 +50,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumConfigProxyProtocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() v1, required W Function() v2, required W Function() simple, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumConfigProxyProtocol$off() => off(),
+      SpectrumConfigProxyProtocol$v1() => v1(),
+      SpectrumConfigProxyProtocol$v2() => v2(),
+      SpectrumConfigProxyProtocol$simple() => simple(),
+      SpectrumConfigProxyProtocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? v1, W Function()? v2, W Function()? simple, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumConfigProxyProtocol$off() => off != null ? off() : orElse(value),
+      SpectrumConfigProxyProtocol$v1() => v1 != null ? v1() : orElse(value),
+      SpectrumConfigProxyProtocol$v2() => v2 != null ? v2() : orElse(value),
+      SpectrumConfigProxyProtocol$simple() => simple != null ? simple() : orElse(value),
+      SpectrumConfigProxyProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumConfigProxyProtocol($value)';
 
  }
@@ -132,6 +148,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumConfigTls$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() flexible, required W Function() full, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumConfigTls$off() => off(),
+      SpectrumConfigTls$flexible() => flexible(),
+      SpectrumConfigTls$full() => full(),
+      SpectrumConfigTls$strict() => strict(),
+      SpectrumConfigTls$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? flexible, W Function()? full, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumConfigTls$off() => off != null ? off() : orElse(value),
+      SpectrumConfigTls$flexible() => flexible != null ? flexible() : orElse(value),
+      SpectrumConfigTls$full() => full != null ? full() : orElse(value),
+      SpectrumConfigTls$strict() => strict != null ? strict() : orElse(value),
+      SpectrumConfigTls$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumConfigTls($value)';
 
  }
@@ -210,6 +242,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumConfigTrafficType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() direct, required W Function() http, required W Function() https, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumConfigTrafficType$direct() => direct(),
+      SpectrumConfigTrafficType$http() => http(),
+      SpectrumConfigTrafficType$https() => https(),
+      SpectrumConfigTrafficType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? http, W Function()? https, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumConfigTrafficType$direct() => direct != null ? direct() : orElse(value),
+      SpectrumConfigTrafficType$http() => http != null ? http() : orElse(value),
+      SpectrumConfigTrafficType$https() => https != null ? https() : orElse(value),
+      SpectrumConfigTrafficType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumConfigTrafficType($value)';
 
  }

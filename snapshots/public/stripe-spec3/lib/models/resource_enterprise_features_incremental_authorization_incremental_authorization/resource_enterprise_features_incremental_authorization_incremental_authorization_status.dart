@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() available, required W Function() unavailable, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$available() => available(),
+      ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$unavailable() => unavailable(),
+      ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? available, W Function()? unavailable, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$available() => available != null ? available() : orElse(value),
+      ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$unavailable() => unavailable != null ? unavailable() : orElse(value),
+      ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus($value)';
 
  }

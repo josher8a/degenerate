@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallUaConfigurationTarget$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ua, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallUaConfigurationTarget$ua() => ua(),
+      FirewallUaConfigurationTarget$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ua, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallUaConfigurationTarget$ua() => ua != null ? ua() : orElse(value),
+      FirewallUaConfigurationTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallUaConfigurationTarget($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumStr$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumStr$one() => one(),
+      EnumStr$two() => two(),
+      EnumStr$three() => three(),
+      EnumStr$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumStr$one() => one != null ? one() : orElse(value),
+      EnumStr$two() => two != null ? two() : orElse(value),
+      EnumStr$three() => three != null ? three() : orElse(value),
+      EnumStr$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumStr($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumNumber$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+      EnumNumber$$1() => $1(),
+      EnumNumber$$2() => $2(),
+      EnumNumber$$3() => $3(),
+      EnumNumber$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+      EnumNumber$$1() => $1 != null ? $1() : orElse(value),
+      EnumNumber$$2() => $2 != null ? $2() : orElse(value),
+      EnumNumber$$3() => $3 != null ? $3() : orElse(value),
+      EnumNumber$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumNumber($value)';
 
  }

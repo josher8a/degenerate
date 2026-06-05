@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoSelfieReportErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() selfieDocumentMissingPhoto, required W Function() selfieFaceMismatch, required W Function() selfieManipulated, required W Function() selfieUnverifiedOther, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoSelfieReportErrorCode$selfieDocumentMissingPhoto() => selfieDocumentMissingPhoto(),
+      GelatoSelfieReportErrorCode$selfieFaceMismatch() => selfieFaceMismatch(),
+      GelatoSelfieReportErrorCode$selfieManipulated() => selfieManipulated(),
+      GelatoSelfieReportErrorCode$selfieUnverifiedOther() => selfieUnverifiedOther(),
+      GelatoSelfieReportErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfieDocumentMissingPhoto, W Function()? selfieFaceMismatch, W Function()? selfieManipulated, W Function()? selfieUnverifiedOther, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoSelfieReportErrorCode$selfieDocumentMissingPhoto() => selfieDocumentMissingPhoto != null ? selfieDocumentMissingPhoto() : orElse(value),
+      GelatoSelfieReportErrorCode$selfieFaceMismatch() => selfieFaceMismatch != null ? selfieFaceMismatch() : orElse(value),
+      GelatoSelfieReportErrorCode$selfieManipulated() => selfieManipulated != null ? selfieManipulated() : orElse(value),
+      GelatoSelfieReportErrorCode$selfieUnverifiedOther() => selfieUnverifiedOther != null ? selfieUnverifiedOther() : orElse(value),
+      GelatoSelfieReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoSelfieReportErrorCode($value)';
 
  }

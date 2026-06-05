@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetInvoicePaymentsPaymentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() paymentIntent, required W Function() paymentRecord, required W Function(String value) $unknown, }) { return switch (this) {
+      GetInvoicePaymentsPaymentType$paymentIntent() => paymentIntent(),
+      GetInvoicePaymentsPaymentType$paymentRecord() => paymentRecord(),
+      GetInvoicePaymentsPaymentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentIntent, W Function()? paymentRecord, W Function(String value)? $unknown, }) { return switch (this) {
+      GetInvoicePaymentsPaymentType$paymentIntent() => paymentIntent != null ? paymentIntent() : orElse(value),
+      GetInvoicePaymentsPaymentType$paymentRecord() => paymentRecord != null ? paymentRecord() : orElse(value),
+      GetInvoicePaymentsPaymentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetInvoicePaymentsPaymentType($value)';
 
  }

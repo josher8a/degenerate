@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AigConfigDeleteGatewayLogsFiltersOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() neq, required W Function() contains, required W Function() lt, required W Function() gt, required W Function(String value) $unknown, }) { return switch (this) {
+      AigConfigDeleteGatewayLogsFiltersOperator$eq() => eq(),
+      AigConfigDeleteGatewayLogsFiltersOperator$neq() => neq(),
+      AigConfigDeleteGatewayLogsFiltersOperator$contains() => contains(),
+      AigConfigDeleteGatewayLogsFiltersOperator$lt() => lt(),
+      AigConfigDeleteGatewayLogsFiltersOperator$gt() => gt(),
+      AigConfigDeleteGatewayLogsFiltersOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? neq, W Function()? contains, W Function()? lt, W Function()? gt, W Function(String value)? $unknown, }) { return switch (this) {
+      AigConfigDeleteGatewayLogsFiltersOperator$eq() => eq != null ? eq() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersOperator$neq() => neq != null ? neq() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersOperator$contains() => contains != null ? contains() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersOperator$lt() => lt != null ? lt() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersOperator$gt() => gt != null ? gt() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AigConfigDeleteGatewayLogsFiltersOperator($value)';
 
  }

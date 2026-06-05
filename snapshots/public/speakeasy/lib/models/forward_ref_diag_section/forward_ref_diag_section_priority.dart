@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PriorityVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() high, required W Function() medium, required W Function() low, required W Function(String value) $unknown, }) { return switch (this) {
+      PriorityVariant1$high() => high(),
+      PriorityVariant1$medium() => medium(),
+      PriorityVariant1$low() => low(),
+      PriorityVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? high, W Function()? medium, W Function()? low, W Function(String value)? $unknown, }) { return switch (this) {
+      PriorityVariant1$high() => high != null ? high() : orElse(value),
+      PriorityVariant1$medium() => medium != null ? medium() : orElse(value),
+      PriorityVariant1$low() => low != null ? low() : orElse(value),
+      PriorityVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PriorityVariant1($value)';
 
  }

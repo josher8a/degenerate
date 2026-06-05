@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnPlannedAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noOp, required W Function() create, required W Function() update, required W Function() replace, required W Function() destroy, required W Function(String value) $unknown, }) { return switch (this) {
+      McnPlannedAction$noOp() => noOp(),
+      McnPlannedAction$create() => create(),
+      McnPlannedAction$update() => update(),
+      McnPlannedAction$replace() => replace(),
+      McnPlannedAction$destroy() => destroy(),
+      McnPlannedAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noOp, W Function()? create, W Function()? update, W Function()? replace, W Function()? destroy, W Function(String value)? $unknown, }) { return switch (this) {
+      McnPlannedAction$noOp() => noOp != null ? noOp() : orElse(value),
+      McnPlannedAction$create() => create != null ? create() : orElse(value),
+      McnPlannedAction$update() => update != null ? update() : orElse(value),
+      McnPlannedAction$replace() => replace != null ? replace() : orElse(value),
+      McnPlannedAction$destroy() => destroy != null ? destroy() : orElse(value),
+      McnPlannedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnPlannedAction($value)';
 
  }

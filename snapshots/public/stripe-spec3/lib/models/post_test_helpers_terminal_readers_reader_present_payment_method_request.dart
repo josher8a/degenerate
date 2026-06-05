@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() card, required W Function() cardPresent, required W Function() interacPresent, required W Function(String value) $unknown, }) { return switch (this) {
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$card() => card(),
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$cardPresent() => cardPresent(),
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$interacPresent() => interacPresent(),
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? card, W Function()? cardPresent, W Function()? interacPresent, W Function(String value)? $unknown, }) { return switch (this) {
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$card() => card != null ? card() : orElse(value),
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$cardPresent() => cardPresent != null ? cardPresent() : orElse(value),
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$interacPresent() => interacPresent != null ? interacPresent() : orElse(value),
+      PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType($value)';
 
  }

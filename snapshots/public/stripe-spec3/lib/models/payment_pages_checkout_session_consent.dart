@@ -27,6 +27,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentPagesCheckoutSessionConsentPromotions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() optIn, required W Function() optOut, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentPagesCheckoutSessionConsentPromotions$optIn() => optIn(),
+      PaymentPagesCheckoutSessionConsentPromotions$optOut() => optOut(),
+      PaymentPagesCheckoutSessionConsentPromotions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optIn, W Function()? optOut, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentPagesCheckoutSessionConsentPromotions$optIn() => optIn != null ? optIn() : orElse(value),
+      PaymentPagesCheckoutSessionConsentPromotions$optOut() => optOut != null ? optOut() : orElse(value),
+      PaymentPagesCheckoutSessionConsentPromotions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentPagesCheckoutSessionConsentPromotions($value)';
 
  }
@@ -79,6 +91,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentPagesCheckoutSessionConsentTermsOfService$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentPagesCheckoutSessionConsentTermsOfService$accepted() => accepted(),
+      PaymentPagesCheckoutSessionConsentTermsOfService$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentPagesCheckoutSessionConsentTermsOfService$accepted() => accepted != null ? accepted() : orElse(value),
+      PaymentPagesCheckoutSessionConsentTermsOfService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentPagesCheckoutSessionConsentTermsOfService($value)';
 
  }

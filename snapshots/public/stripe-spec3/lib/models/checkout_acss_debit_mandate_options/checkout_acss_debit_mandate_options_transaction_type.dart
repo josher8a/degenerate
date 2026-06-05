@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutAcssDebitMandateOptionsTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() business, required W Function() personal, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutAcssDebitMandateOptionsTransactionType$business() => business(),
+      CheckoutAcssDebitMandateOptionsTransactionType$personal() => personal(),
+      CheckoutAcssDebitMandateOptionsTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? business, W Function()? personal, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutAcssDebitMandateOptionsTransactionType$business() => business != null ? business() : orElse(value),
+      CheckoutAcssDebitMandateOptionsTransactionType$personal() => personal != null ? personal() : orElse(value),
+      CheckoutAcssDebitMandateOptionsTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutAcssDebitMandateOptionsTransactionType($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardShippingAddressValidationResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() indeterminate, required W Function() likelyDeliverable, required W Function() likelyUndeliverable, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardShippingAddressValidationResult$indeterminate() => indeterminate(),
+      IssuingCardShippingAddressValidationResult$likelyDeliverable() => likelyDeliverable(),
+      IssuingCardShippingAddressValidationResult$likelyUndeliverable() => likelyUndeliverable(),
+      IssuingCardShippingAddressValidationResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? indeterminate, W Function()? likelyDeliverable, W Function()? likelyUndeliverable, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardShippingAddressValidationResult$indeterminate() => indeterminate != null ? indeterminate() : orElse(value),
+      IssuingCardShippingAddressValidationResult$likelyDeliverable() => likelyDeliverable != null ? likelyDeliverable() : orElse(value),
+      IssuingCardShippingAddressValidationResult$likelyUndeliverable() => likelyUndeliverable != null ? likelyUndeliverable() : orElse(value),
+      IssuingCardShippingAddressValidationResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardShippingAddressValidationResult($value)';
 
  }

@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() authenticationFailed, required W Function() doNotHonor, required W Function() expired, required W Function() incorrectCvc, required W Function() incorrectNumber, required W Function() incorrectPostalCode, required W Function() insufficientFunds, required W Function() invalidAccount, required W Function() lostCard, required W Function() $other, required W Function() processingError, required W Function() reportedStolen, required W Function() tryAgainLater, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed() => authenticationFailed(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor() => doNotHonor(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$expired() => expired(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc() => incorrectCvc(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber() => incorrectNumber(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode() => incorrectPostalCode(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds() => insufficientFunds(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount() => invalidAccount(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard() => lostCard(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$$other() => $other(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$processingError() => processingError(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen() => reportedStolen(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater() => tryAgainLater(),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenticationFailed, W Function()? doNotHonor, W Function()? expired, W Function()? incorrectCvc, W Function()? incorrectNumber, W Function()? incorrectPostalCode, W Function()? insufficientFunds, W Function()? invalidAccount, W Function()? lostCard, W Function()? $other, W Function()? processingError, W Function()? reportedStolen, W Function()? tryAgainLater, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed() => authenticationFailed != null ? authenticationFailed() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor() => doNotHonor != null ? doNotHonor() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$expired() => expired != null ? expired() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc() => incorrectCvc != null ? incorrectCvc() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber() => incorrectNumber != null ? incorrectNumber() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode() => incorrectPostalCode != null ? incorrectPostalCode() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds() => insufficientFunds != null ? insufficientFunds() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount() => invalidAccount != null ? invalidAccount() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard() => lostCard != null ? lostCard() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$$other() => $other != null ? $other() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$processingError() => processingError != null ? processingError() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen() => reportedStolen != null ? reportedStolen() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater() => tryAgainLater != null ? tryAgainLater() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)';
 
  }

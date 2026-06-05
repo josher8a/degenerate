@@ -39,6 +39,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DlpPayloadLogMaskingLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() full, required W Function() partial, required W Function() clear, required W Function() $default, required W Function(String value) $unknown, }) { return switch (this) {
+      DlpPayloadLogMaskingLevel$full() => full(),
+      DlpPayloadLogMaskingLevel$partial() => partial(),
+      DlpPayloadLogMaskingLevel$clear() => clear(),
+      DlpPayloadLogMaskingLevel$$default() => $default(),
+      DlpPayloadLogMaskingLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function()? clear, W Function()? $default, W Function(String value)? $unknown, }) { return switch (this) {
+      DlpPayloadLogMaskingLevel$full() => full != null ? full() : orElse(value),
+      DlpPayloadLogMaskingLevel$partial() => partial != null ? partial() : orElse(value),
+      DlpPayloadLogMaskingLevel$clear() => clear != null ? clear() : orElse(value),
+      DlpPayloadLogMaskingLevel$$default() => $default != null ? $default() : orElse(value),
+      DlpPayloadLogMaskingLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DlpPayloadLogMaskingLevel($value)';
 
  }

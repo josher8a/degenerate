@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() legacyCustom, required W Function() sniCustom, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesType$legacyCustom() => legacyCustom(),
+      TlsCertificatesAndHostnamesType$sniCustom() => sniCustom(),
+      TlsCertificatesAndHostnamesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacyCustom, W Function()? sniCustom, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesType$legacyCustom() => legacyCustom != null ? legacyCustom() : orElse(value),
+      TlsCertificatesAndHostnamesType$sniCustom() => sniCustom != null ? sniCustom() : orElse(value),
+      TlsCertificatesAndHostnamesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesType($value)';
 
  }

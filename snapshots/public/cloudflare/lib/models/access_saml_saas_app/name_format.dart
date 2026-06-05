@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NameFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() urnoasisnamestcSaml20attrnameFormatunspecified, required W Function() urnoasisnamestcSaml20attrnameFormatbasic, required W Function() urnoasisnamestcSaml20attrnameFormaturi, required W Function(String value) $unknown, }) { return switch (this) {
+      NameFormat$urnoasisnamestcSaml20attrnameFormatunspecified() => urnoasisnamestcSaml20attrnameFormatunspecified(),
+      NameFormat$urnoasisnamestcSaml20attrnameFormatbasic() => urnoasisnamestcSaml20attrnameFormatbasic(),
+      NameFormat$urnoasisnamestcSaml20attrnameFormaturi() => urnoasisnamestcSaml20attrnameFormaturi(),
+      NameFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? urnoasisnamestcSaml20attrnameFormatunspecified, W Function()? urnoasisnamestcSaml20attrnameFormatbasic, W Function()? urnoasisnamestcSaml20attrnameFormaturi, W Function(String value)? $unknown, }) { return switch (this) {
+      NameFormat$urnoasisnamestcSaml20attrnameFormatunspecified() => urnoasisnamestcSaml20attrnameFormatunspecified != null ? urnoasisnamestcSaml20attrnameFormatunspecified() : orElse(value),
+      NameFormat$urnoasisnamestcSaml20attrnameFormatbasic() => urnoasisnamestcSaml20attrnameFormatbasic != null ? urnoasisnamestcSaml20attrnameFormatbasic() : orElse(value),
+      NameFormat$urnoasisnamestcSaml20attrnameFormaturi() => urnoasisnamestcSaml20attrnameFormaturi != null ? urnoasisnamestcSaml20attrnameFormaturi() : orElse(value),
+      NameFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NameFormat($value)';
 
  }

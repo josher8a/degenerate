@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ValidationEnabled$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $true, required W Function() $false, required W Function(String value) $unknown, }) { return switch (this) {
+      ValidationEnabled$$true() => $true(),
+      ValidationEnabled$$false() => $false(),
+      ValidationEnabled$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W Function()? $false, W Function(String value)? $unknown, }) { return switch (this) {
+      ValidationEnabled$$true() => $true != null ? $true() : orElse(value),
+      ValidationEnabled$$false() => $false != null ? $false() : orElse(value),
+      ValidationEnabled$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ValidationEnabled($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PermissionTo$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() write, required W Function() admin, required W Function() read, required W Function(String value) $unknown, }) { return switch (this) {
+      PermissionTo$write() => write(),
+      PermissionTo$admin() => admin(),
+      PermissionTo$read() => read(),
+      PermissionTo$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function()? admin, W Function()? read, W Function(String value)? $unknown, }) { return switch (this) {
+      PermissionTo$write() => write != null ? write() : orElse(value),
+      PermissionTo$admin() => admin != null ? admin() : orElse(value),
+      PermissionTo$read() => read != null ? read() : orElse(value),
+      PermissionTo$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PermissionTo($value)';
 
  }

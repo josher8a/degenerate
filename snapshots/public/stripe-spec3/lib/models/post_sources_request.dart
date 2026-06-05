@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Flow$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() codeVerification, required W Function() none, required W Function() receiver, required W Function() redirect, required W Function(String value) $unknown, }) { return switch (this) {
+      Flow$codeVerification() => codeVerification(),
+      Flow$none() => none(),
+      Flow$receiver() => receiver(),
+      Flow$redirect() => redirect(),
+      Flow$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? codeVerification, W Function()? none, W Function()? receiver, W Function()? redirect, W Function(String value)? $unknown, }) { return switch (this) {
+      Flow$codeVerification() => codeVerification != null ? codeVerification() : orElse(value),
+      Flow$none() => none != null ? none() : orElse(value),
+      Flow$receiver() => receiver != null ? receiver() : orElse(value),
+      Flow$redirect() => redirect != null ? redirect() : orElse(value),
+      Flow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Flow($value)';
 
  }
@@ -107,6 +123,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostSourcesRequestUsage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() reusable, required W Function() singleUse, required W Function(String value) $unknown, }) { return switch (this) {
+      PostSourcesRequestUsage$reusable() => reusable(),
+      PostSourcesRequestUsage$singleUse() => singleUse(),
+      PostSourcesRequestUsage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reusable, W Function()? singleUse, W Function(String value)? $unknown, }) { return switch (this) {
+      PostSourcesRequestUsage$reusable() => reusable != null ? reusable() : orElse(value),
+      PostSourcesRequestUsage$singleUse() => singleUse != null ? singleUse() : orElse(value),
+      PostSourcesRequestUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostSourcesRequestUsage($value)';
 
  }

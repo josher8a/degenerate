@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBotsTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bot, required W Function() botKind, required W Function() botOperator, required W Function() botCategory, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBotsTimeseriesGroupDimension$bot() => bot(),
+      RadarGetBotsTimeseriesGroupDimension$botKind() => botKind(),
+      RadarGetBotsTimeseriesGroupDimension$botOperator() => botOperator(),
+      RadarGetBotsTimeseriesGroupDimension$botCategory() => botCategory(),
+      RadarGetBotsTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bot, W Function()? botKind, W Function()? botOperator, W Function()? botCategory, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBotsTimeseriesGroupDimension$bot() => bot != null ? bot() : orElse(value),
+      RadarGetBotsTimeseriesGroupDimension$botKind() => botKind != null ? botKind() : orElse(value),
+      RadarGetBotsTimeseriesGroupDimension$botOperator() => botOperator != null ? botOperator() : orElse(value),
+      RadarGetBotsTimeseriesGroupDimension$botCategory() => botCategory != null ? botCategory() : orElse(value),
+      RadarGetBotsTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBotsTimeseriesGroupDimension($value)';
 
  }

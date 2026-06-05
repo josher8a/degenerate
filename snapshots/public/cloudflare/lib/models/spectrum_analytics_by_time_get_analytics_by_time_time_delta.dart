@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() year, required W Function() quarter, required W Function() month, required W Function() week, required W Function() day, required W Function() hour, required W Function() dekaminute, required W Function() minute, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year() => year(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter() => quarter(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month() => month(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week() => week(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day() => day(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour() => hour(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute() => dekaminute(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute() => minute(),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? year, W Function()? quarter, W Function()? month, W Function()? week, W Function()? day, W Function()? hour, W Function()? dekaminute, W Function()? minute, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year() => year != null ? year() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter() => quarter != null ? quarter() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month() => month != null ? month() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week() => week != null ? week() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day() => day != null ? day() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour() => hour != null ? hour() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute() => dekaminute != null ? dekaminute() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute() => minute != null ? minute() : orElse(value),
+      SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta($value)';
 
  }

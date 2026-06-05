@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiBotsTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() userAgent, required W Function() crawlPurpose, required W Function() industry, required W Function() vertical, required W Function() contentType, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiBotsTimeseriesGroupDimension$userAgent() => userAgent(),
+      RadarGetAiBotsTimeseriesGroupDimension$crawlPurpose() => crawlPurpose(),
+      RadarGetAiBotsTimeseriesGroupDimension$industry() => industry(),
+      RadarGetAiBotsTimeseriesGroupDimension$vertical() => vertical(),
+      RadarGetAiBotsTimeseriesGroupDimension$contentType() => contentType(),
+      RadarGetAiBotsTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? userAgent, W Function()? crawlPurpose, W Function()? industry, W Function()? vertical, W Function()? contentType, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiBotsTimeseriesGroupDimension$userAgent() => userAgent != null ? userAgent() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupDimension$crawlPurpose() => crawlPurpose != null ? crawlPurpose() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupDimension$contentType() => contentType != null ? contentType() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiBotsTimeseriesGroupDimension($value)';
 
  }

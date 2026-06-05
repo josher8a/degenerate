@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalFlowsFlowAfterCompletionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() hostedConfirmation, required W Function() portalHomepage, required W Function() redirect, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalFlowsFlowAfterCompletionType$hostedConfirmation() => hostedConfirmation(),
+      PortalFlowsFlowAfterCompletionType$portalHomepage() => portalHomepage(),
+      PortalFlowsFlowAfterCompletionType$redirect() => redirect(),
+      PortalFlowsFlowAfterCompletionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedConfirmation, W Function()? portalHomepage, W Function()? redirect, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalFlowsFlowAfterCompletionType$hostedConfirmation() => hostedConfirmation != null ? hostedConfirmation() : orElse(value),
+      PortalFlowsFlowAfterCompletionType$portalHomepage() => portalHomepage != null ? portalHomepage() : orElse(value),
+      PortalFlowsFlowAfterCompletionType$redirect() => redirect != null ? redirect() : orElse(value),
+      PortalFlowsFlowAfterCompletionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalFlowsFlowAfterCompletionType($value)';
 
  }

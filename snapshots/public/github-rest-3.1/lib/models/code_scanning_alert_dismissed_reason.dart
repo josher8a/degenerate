@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningAlertDismissedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() usedInTests, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningAlertDismissedReason$falsePositive() => falsePositive(),
+      CodeScanningAlertDismissedReason$wontFix() => wontFix(),
+      CodeScanningAlertDismissedReason$usedInTests() => usedInTests(),
+      CodeScanningAlertDismissedReason$$null() => $null(),
+      CodeScanningAlertDismissedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? usedInTests, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningAlertDismissedReason$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
+      CodeScanningAlertDismissedReason$wontFix() => wontFix != null ? wontFix() : orElse(value),
+      CodeScanningAlertDismissedReason$usedInTests() => usedInTests != null ? usedInTests() : orElse(value),
+      CodeScanningAlertDismissedReason$$null() => $null != null ? $null() : orElse(value),
+      CodeScanningAlertDismissedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningAlertDismissedReason($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingBillResourceInvoicingTaxesTaxTaxBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingBillResourceInvoicingTaxesTaxTaxBehavior$exclusive() => exclusive(),
+      BillingBillResourceInvoicingTaxesTaxTaxBehavior$inclusive() => inclusive(),
+      BillingBillResourceInvoicingTaxesTaxTaxBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingBillResourceInvoicingTaxesTaxTaxBehavior$exclusive() => exclusive != null ? exclusive() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxBehavior$inclusive() => inclusive != null ? inclusive() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingBillResourceInvoicingTaxesTaxTaxBehavior($value)';
 
  }

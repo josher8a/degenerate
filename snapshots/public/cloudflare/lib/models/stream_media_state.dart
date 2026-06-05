@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamMediaState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pendingupload, required W Function() downloading, required W Function() queued, required W Function() inprogress, required W Function() ready, required W Function() error, required W Function() liveInprogress, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamMediaState$pendingupload() => pendingupload(),
+      StreamMediaState$downloading() => downloading(),
+      StreamMediaState$queued() => queued(),
+      StreamMediaState$inprogress() => inprogress(),
+      StreamMediaState$ready() => ready(),
+      StreamMediaState$error() => error(),
+      StreamMediaState$liveInprogress() => liveInprogress(),
+      StreamMediaState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingupload, W Function()? downloading, W Function()? queued, W Function()? inprogress, W Function()? ready, W Function()? error, W Function()? liveInprogress, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamMediaState$pendingupload() => pendingupload != null ? pendingupload() : orElse(value),
+      StreamMediaState$downloading() => downloading != null ? downloading() : orElse(value),
+      StreamMediaState$queued() => queued != null ? queued() : orElse(value),
+      StreamMediaState$inprogress() => inprogress != null ? inprogress() : orElse(value),
+      StreamMediaState$ready() => ready != null ? ready() : orElse(value),
+      StreamMediaState$error() => error != null ? error() : orElse(value),
+      StreamMediaState$liveInprogress() => liveInprogress != null ? liveInprogress() : orElse(value),
+      StreamMediaState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamMediaState($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetTrafficAnomaliesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() location, required W Function() $as, required W Function() origin, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetTrafficAnomaliesType$location() => location(),
+      RadarGetTrafficAnomaliesType$$as() => $as(),
+      RadarGetTrafficAnomaliesType$origin() => origin(),
+      RadarGetTrafficAnomaliesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? location, W Function()? $as, W Function()? origin, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetTrafficAnomaliesType$location() => location != null ? location() : orElse(value),
+      RadarGetTrafficAnomaliesType$$as() => $as != null ? $as() : orElse(value),
+      RadarGetTrafficAnomaliesType$origin() => origin != null ? origin() : orElse(value),
+      RadarGetTrafficAnomaliesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetTrafficAnomaliesType($value)';
 
  }

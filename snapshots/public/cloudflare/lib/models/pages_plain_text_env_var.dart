@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesPlainTextEnvVarType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() plainText, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesPlainTextEnvVarType$plainText() => plainText(),
+      PagesPlainTextEnvVarType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? plainText, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesPlainTextEnvVarType$plainText() => plainText != null ? plainText() : orElse(value),
+      PagesPlainTextEnvVarType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesPlainTextEnvVarType($value)';
 
  }

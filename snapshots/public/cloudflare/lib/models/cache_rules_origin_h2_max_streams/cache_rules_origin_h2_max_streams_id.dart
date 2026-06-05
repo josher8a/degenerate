@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CacheRulesOriginH2MaxStreamsId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() originH2MaxStreams, required W Function(String value) $unknown, }) { return switch (this) {
+      CacheRulesOriginH2MaxStreamsId$originH2MaxStreams() => originH2MaxStreams(),
+      CacheRulesOriginH2MaxStreamsId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? originH2MaxStreams, W Function(String value)? $unknown, }) { return switch (this) {
+      CacheRulesOriginH2MaxStreamsId$originH2MaxStreams() => originH2MaxStreams != null ? originH2MaxStreams() : orElse(value),
+      CacheRulesOriginH2MaxStreamsId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CacheRulesOriginH2MaxStreamsId($value)';
 
  }

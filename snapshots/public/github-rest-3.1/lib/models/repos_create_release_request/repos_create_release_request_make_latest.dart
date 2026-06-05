@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposCreateReleaseRequestMakeLatest$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $true, required W Function() $false, required W Function() legacy, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposCreateReleaseRequestMakeLatest$$true() => $true(),
+      ReposCreateReleaseRequestMakeLatest$$false() => $false(),
+      ReposCreateReleaseRequestMakeLatest$legacy() => legacy(),
+      ReposCreateReleaseRequestMakeLatest$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W Function()? $false, W Function()? legacy, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposCreateReleaseRequestMakeLatest$$true() => $true != null ? $true() : orElse(value),
+      ReposCreateReleaseRequestMakeLatest$$false() => $false != null ? $false() : orElse(value),
+      ReposCreateReleaseRequestMakeLatest$legacy() => legacy != null ? legacy() : orElse(value),
+      ReposCreateReleaseRequestMakeLatest$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposCreateReleaseRequestMakeLatest($value)';
 
  }

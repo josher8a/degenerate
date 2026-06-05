@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityAdvisoryCreditTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() analyst, required W Function() finder, required W Function() reporter, required W Function() coordinator, required W Function() remediationDeveloper, required W Function() remediationReviewer, required W Function() remediationVerifier, required W Function() tool, required W Function() sponsor, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityAdvisoryCreditTypes$analyst() => analyst(),
+      SecurityAdvisoryCreditTypes$finder() => finder(),
+      SecurityAdvisoryCreditTypes$reporter() => reporter(),
+      SecurityAdvisoryCreditTypes$coordinator() => coordinator(),
+      SecurityAdvisoryCreditTypes$remediationDeveloper() => remediationDeveloper(),
+      SecurityAdvisoryCreditTypes$remediationReviewer() => remediationReviewer(),
+      SecurityAdvisoryCreditTypes$remediationVerifier() => remediationVerifier(),
+      SecurityAdvisoryCreditTypes$tool() => tool(),
+      SecurityAdvisoryCreditTypes$sponsor() => sponsor(),
+      SecurityAdvisoryCreditTypes$$other() => $other(),
+      SecurityAdvisoryCreditTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? analyst, W Function()? finder, W Function()? reporter, W Function()? coordinator, W Function()? remediationDeveloper, W Function()? remediationReviewer, W Function()? remediationVerifier, W Function()? tool, W Function()? sponsor, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityAdvisoryCreditTypes$analyst() => analyst != null ? analyst() : orElse(value),
+      SecurityAdvisoryCreditTypes$finder() => finder != null ? finder() : orElse(value),
+      SecurityAdvisoryCreditTypes$reporter() => reporter != null ? reporter() : orElse(value),
+      SecurityAdvisoryCreditTypes$coordinator() => coordinator != null ? coordinator() : orElse(value),
+      SecurityAdvisoryCreditTypes$remediationDeveloper() => remediationDeveloper != null ? remediationDeveloper() : orElse(value),
+      SecurityAdvisoryCreditTypes$remediationReviewer() => remediationReviewer != null ? remediationReviewer() : orElse(value),
+      SecurityAdvisoryCreditTypes$remediationVerifier() => remediationVerifier != null ? remediationVerifier() : orElse(value),
+      SecurityAdvisoryCreditTypes$tool() => tool != null ? tool() : orElse(value),
+      SecurityAdvisoryCreditTypes$sponsor() => sponsor != null ? sponsor() : orElse(value),
+      SecurityAdvisoryCreditTypes$$other() => $other != null ? $other() : orElse(value),
+      SecurityAdvisoryCreditTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityAdvisoryCreditTypes($value)';
 
  }

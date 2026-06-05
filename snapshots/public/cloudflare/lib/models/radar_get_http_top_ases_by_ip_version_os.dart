@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopAsesByIpVersionOs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopAsesByIpVersionOs$windows() => windows(),
+      RadarGetHttpTopAsesByIpVersionOs$macosx() => macosx(),
+      RadarGetHttpTopAsesByIpVersionOs$ios() => ios(),
+      RadarGetHttpTopAsesByIpVersionOs$android() => android(),
+      RadarGetHttpTopAsesByIpVersionOs$chromeos() => chromeos(),
+      RadarGetHttpTopAsesByIpVersionOs$linux() => linux(),
+      RadarGetHttpTopAsesByIpVersionOs$smartTv() => smartTv(),
+      RadarGetHttpTopAsesByIpVersionOs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopAsesByIpVersionOs$windows() => windows != null ? windows() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$macosx() => macosx != null ? macosx() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$ios() => ios != null ? ios() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$android() => android != null ? android() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$linux() => linux != null ? linux() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
+      RadarGetHttpTopAsesByIpVersionOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopAsesByIpVersionOs($value)';
 
  }

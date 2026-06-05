@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesGetPackageVersionForOrganizationPackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesGetPackageVersionForOrganizationPackageType$npm() => npm(),
+      PackagesGetPackageVersionForOrganizationPackageType$maven() => maven(),
+      PackagesGetPackageVersionForOrganizationPackageType$rubygems() => rubygems(),
+      PackagesGetPackageVersionForOrganizationPackageType$docker() => docker(),
+      PackagesGetPackageVersionForOrganizationPackageType$nuget() => nuget(),
+      PackagesGetPackageVersionForOrganizationPackageType$container() => container(),
+      PackagesGetPackageVersionForOrganizationPackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesGetPackageVersionForOrganizationPackageType$npm() => npm != null ? npm() : orElse(value),
+      PackagesGetPackageVersionForOrganizationPackageType$maven() => maven != null ? maven() : orElse(value),
+      PackagesGetPackageVersionForOrganizationPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackagesGetPackageVersionForOrganizationPackageType$docker() => docker != null ? docker() : orElse(value),
+      PackagesGetPackageVersionForOrganizationPackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackagesGetPackageVersionForOrganizationPackageType$container() => container != null ? container() : orElse(value),
+      PackagesGetPackageVersionForOrganizationPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesGetPackageVersionForOrganizationPackageType($value)';
 
  }

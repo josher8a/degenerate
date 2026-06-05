@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FraudType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() madeWithLostCard, required W Function() madeWithStolenCard, required W Function() $other, required W Function() unauthorizedUseOfCard, required W Function(String value) $unknown, }) { return switch (this) {
+      FraudType$madeWithLostCard() => madeWithLostCard(),
+      FraudType$madeWithStolenCard() => madeWithStolenCard(),
+      FraudType$$other() => $other(),
+      FraudType$unauthorizedUseOfCard() => unauthorizedUseOfCard(),
+      FraudType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? madeWithLostCard, W Function()? madeWithStolenCard, W Function()? $other, W Function()? unauthorizedUseOfCard, W Function(String value)? $unknown, }) { return switch (this) {
+      FraudType$madeWithLostCard() => madeWithLostCard != null ? madeWithLostCard() : orElse(value),
+      FraudType$madeWithStolenCard() => madeWithStolenCard != null ? madeWithStolenCard() : orElse(value),
+      FraudType$$other() => $other != null ? $other() : orElse(value),
+      FraudType$unauthorizedUseOfCard() => unauthorizedUseOfCard != null ? unauthorizedUseOfCard() : orElse(value),
+      FraudType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FraudType($value)';
 
  }

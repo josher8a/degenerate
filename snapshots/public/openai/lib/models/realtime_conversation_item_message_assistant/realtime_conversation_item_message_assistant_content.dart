@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeConversationItemMessageAssistantContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() outputText, required W Function() outputAudio, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeConversationItemMessageAssistantContentType$outputText() => outputText(),
+      RealtimeConversationItemMessageAssistantContentType$outputAudio() => outputAudio(),
+      RealtimeConversationItemMessageAssistantContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? outputText, W Function()? outputAudio, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeConversationItemMessageAssistantContentType$outputText() => outputText != null ? outputText() : orElse(value),
+      RealtimeConversationItemMessageAssistantContentType$outputAudio() => outputAudio != null ? outputAudio() : orElse(value),
+      RealtimeConversationItemMessageAssistantContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeConversationItemMessageAssistantContentType($value)';
 
  }

@@ -28,6 +28,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingLocationStrategyMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pop, required W Function() resolverIp, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingLocationStrategyMode$pop() => pop(),
+      LoadBalancingLocationStrategyMode$resolverIp() => resolverIp(),
+      LoadBalancingLocationStrategyMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pop, W Function()? resolverIp, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingLocationStrategyMode$pop() => pop != null ? pop() : orElse(value),
+      LoadBalancingLocationStrategyMode$resolverIp() => resolverIp != null ? resolverIp() : orElse(value),
+      LoadBalancingLocationStrategyMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingLocationStrategyMode($value)';
 
  }
@@ -96,6 +108,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PreferEcs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() never, required W Function() proximity, required W Function() geo, required W Function(String value) $unknown, }) { return switch (this) {
+      PreferEcs$always() => always(),
+      PreferEcs$never() => never(),
+      PreferEcs$proximity() => proximity(),
+      PreferEcs$geo() => geo(),
+      PreferEcs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function()? proximity, W Function()? geo, W Function(String value)? $unknown, }) { return switch (this) {
+      PreferEcs$always() => always != null ? always() : orElse(value),
+      PreferEcs$never() => never != null ? never() : orElse(value),
+      PreferEcs$proximity() => proximity != null ? proximity() : orElse(value),
+      PreferEcs$geo() => geo != null ? geo() : orElse(value),
+      PreferEcs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PreferEcs($value)';
 
  }

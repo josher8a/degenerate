@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerBalanceTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerBalanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerBalanceTransactionObject$customerBalanceTransaction() => customerBalanceTransaction(),
+      CustomerBalanceTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerBalanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerBalanceTransactionObject$customerBalanceTransaction() => customerBalanceTransaction != null ? customerBalanceTransaction() : orElse(value),
+      CustomerBalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerBalanceTransactionObject($value)';
 
  }
@@ -109,6 +119,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerBalanceTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adjustment, required W Function() appliedToInvoice, required W Function() checkoutSessionSubscriptionPayment, required W Function() checkoutSessionSubscriptionPaymentCanceled, required W Function() creditNote, required W Function() initial, required W Function() invoiceOverpaid, required W Function() invoiceTooLarge, required W Function() invoiceTooSmall, required W Function() migration, required W Function() unappliedFromInvoice, required W Function() unspentReceiverCredit, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerBalanceTransactionType$adjustment() => adjustment(),
+      CustomerBalanceTransactionType$appliedToInvoice() => appliedToInvoice(),
+      CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment() => checkoutSessionSubscriptionPayment(),
+      CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled() => checkoutSessionSubscriptionPaymentCanceled(),
+      CustomerBalanceTransactionType$creditNote() => creditNote(),
+      CustomerBalanceTransactionType$initial() => initial(),
+      CustomerBalanceTransactionType$invoiceOverpaid() => invoiceOverpaid(),
+      CustomerBalanceTransactionType$invoiceTooLarge() => invoiceTooLarge(),
+      CustomerBalanceTransactionType$invoiceTooSmall() => invoiceTooSmall(),
+      CustomerBalanceTransactionType$migration() => migration(),
+      CustomerBalanceTransactionType$unappliedFromInvoice() => unappliedFromInvoice(),
+      CustomerBalanceTransactionType$unspentReceiverCredit() => unspentReceiverCredit(),
+      CustomerBalanceTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustment, W Function()? appliedToInvoice, W Function()? checkoutSessionSubscriptionPayment, W Function()? checkoutSessionSubscriptionPaymentCanceled, W Function()? creditNote, W Function()? initial, W Function()? invoiceOverpaid, W Function()? invoiceTooLarge, W Function()? invoiceTooSmall, W Function()? migration, W Function()? unappliedFromInvoice, W Function()? unspentReceiverCredit, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerBalanceTransactionType$adjustment() => adjustment != null ? adjustment() : orElse(value),
+      CustomerBalanceTransactionType$appliedToInvoice() => appliedToInvoice != null ? appliedToInvoice() : orElse(value),
+      CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment() => checkoutSessionSubscriptionPayment != null ? checkoutSessionSubscriptionPayment() : orElse(value),
+      CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled() => checkoutSessionSubscriptionPaymentCanceled != null ? checkoutSessionSubscriptionPaymentCanceled() : orElse(value),
+      CustomerBalanceTransactionType$creditNote() => creditNote != null ? creditNote() : orElse(value),
+      CustomerBalanceTransactionType$initial() => initial != null ? initial() : orElse(value),
+      CustomerBalanceTransactionType$invoiceOverpaid() => invoiceOverpaid != null ? invoiceOverpaid() : orElse(value),
+      CustomerBalanceTransactionType$invoiceTooLarge() => invoiceTooLarge != null ? invoiceTooLarge() : orElse(value),
+      CustomerBalanceTransactionType$invoiceTooSmall() => invoiceTooSmall != null ? invoiceTooSmall() : orElse(value),
+      CustomerBalanceTransactionType$migration() => migration != null ? migration() : orElse(value),
+      CustomerBalanceTransactionType$unappliedFromInvoice() => unappliedFromInvoice != null ? unappliedFromInvoice() : orElse(value),
+      CustomerBalanceTransactionType$unspentReceiverCredit() => unspentReceiverCredit != null ? unspentReceiverCredit() : orElse(value),
+      CustomerBalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerBalanceTransactionType($value)';
 
  }

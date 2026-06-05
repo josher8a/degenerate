@@ -57,6 +57,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VoiceIdsSharedVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() alloy, required W Function() ash, required W Function() ballad, required W Function() coral, required W Function() echo, required W Function() sage, required W Function() shimmer, required W Function() verse, required W Function() marin, required W Function() cedar, required W Function(String value) $unknown, }) { return switch (this) {
+      VoiceIdsSharedVariant2$alloy() => alloy(),
+      VoiceIdsSharedVariant2$ash() => ash(),
+      VoiceIdsSharedVariant2$ballad() => ballad(),
+      VoiceIdsSharedVariant2$coral() => coral(),
+      VoiceIdsSharedVariant2$echo() => echo(),
+      VoiceIdsSharedVariant2$sage() => sage(),
+      VoiceIdsSharedVariant2$shimmer() => shimmer(),
+      VoiceIdsSharedVariant2$verse() => verse(),
+      VoiceIdsSharedVariant2$marin() => marin(),
+      VoiceIdsSharedVariant2$cedar() => cedar(),
+      VoiceIdsSharedVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? alloy, W Function()? ash, W Function()? ballad, W Function()? coral, W Function()? echo, W Function()? sage, W Function()? shimmer, W Function()? verse, W Function()? marin, W Function()? cedar, W Function(String value)? $unknown, }) { return switch (this) {
+      VoiceIdsSharedVariant2$alloy() => alloy != null ? alloy() : orElse(value),
+      VoiceIdsSharedVariant2$ash() => ash != null ? ash() : orElse(value),
+      VoiceIdsSharedVariant2$ballad() => ballad != null ? ballad() : orElse(value),
+      VoiceIdsSharedVariant2$coral() => coral != null ? coral() : orElse(value),
+      VoiceIdsSharedVariant2$echo() => echo != null ? echo() : orElse(value),
+      VoiceIdsSharedVariant2$sage() => sage != null ? sage() : orElse(value),
+      VoiceIdsSharedVariant2$shimmer() => shimmer != null ? shimmer() : orElse(value),
+      VoiceIdsSharedVariant2$verse() => verse != null ? verse() : orElse(value),
+      VoiceIdsSharedVariant2$marin() => marin != null ? marin() : orElse(value),
+      VoiceIdsSharedVariant2$cedar() => cedar != null ? cedar() : orElse(value),
+      VoiceIdsSharedVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VoiceIdsSharedVariant2($value)';
 
  }

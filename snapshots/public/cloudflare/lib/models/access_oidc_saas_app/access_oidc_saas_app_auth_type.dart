@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessOidcSaasAppAuthType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() saml, required W Function() oidc, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessOidcSaasAppAuthType$saml() => saml(),
+      AccessOidcSaasAppAuthType$oidc() => oidc(),
+      AccessOidcSaasAppAuthType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? saml, W Function()? oidc, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessOidcSaasAppAuthType$saml() => saml != null ? saml() : orElse(value),
+      AccessOidcSaasAppAuthType$oidc() => oidc != null ? oidc() : orElse(value),
+      AccessOidcSaasAppAuthType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessOidcSaasAppAuthType($value)';
 
  }

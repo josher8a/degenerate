@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPhysicalBundleFeaturesCardLogo$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleFeaturesCardLogo$optional() => optional(),
+      IssuingPhysicalBundleFeaturesCardLogo$$required() => $required(),
+      IssuingPhysicalBundleFeaturesCardLogo$unsupported() => unsupported(),
+      IssuingPhysicalBundleFeaturesCardLogo$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleFeaturesCardLogo$optional() => optional != null ? optional() : orElse(value),
+      IssuingPhysicalBundleFeaturesCardLogo$$required() => $required != null ? $required() : orElse(value),
+      IssuingPhysicalBundleFeaturesCardLogo$unsupported() => unsupported != null ? unsupported() : orElse(value),
+      IssuingPhysicalBundleFeaturesCardLogo$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPhysicalBundleFeaturesCardLogo($value)';
 
  }
@@ -99,6 +113,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPhysicalBundleFeaturesCarrierText$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleFeaturesCarrierText$optional() => optional(),
+      IssuingPhysicalBundleFeaturesCarrierText$$required() => $required(),
+      IssuingPhysicalBundleFeaturesCarrierText$unsupported() => unsupported(),
+      IssuingPhysicalBundleFeaturesCarrierText$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleFeaturesCarrierText$optional() => optional != null ? optional() : orElse(value),
+      IssuingPhysicalBundleFeaturesCarrierText$$required() => $required != null ? $required() : orElse(value),
+      IssuingPhysicalBundleFeaturesCarrierText$unsupported() => unsupported != null ? unsupported() : orElse(value),
+      IssuingPhysicalBundleFeaturesCarrierText$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPhysicalBundleFeaturesCarrierText($value)';
 
  }
@@ -168,6 +196,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPhysicalBundleFeaturesSecondLine$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() optional, required W Function() $required, required W Function() unsupported, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleFeaturesSecondLine$optional() => optional(),
+      IssuingPhysicalBundleFeaturesSecondLine$$required() => $required(),
+      IssuingPhysicalBundleFeaturesSecondLine$unsupported() => unsupported(),
+      IssuingPhysicalBundleFeaturesSecondLine$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? optional, W Function()? $required, W Function()? unsupported, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleFeaturesSecondLine$optional() => optional != null ? optional() : orElse(value),
+      IssuingPhysicalBundleFeaturesSecondLine$$required() => $required != null ? $required() : orElse(value),
+      IssuingPhysicalBundleFeaturesSecondLine$unsupported() => unsupported != null ? unsupported() : orElse(value),
+      IssuingPhysicalBundleFeaturesSecondLine$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPhysicalBundleFeaturesSecondLine($value)';
 
  }

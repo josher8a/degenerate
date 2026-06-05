@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() euBankTransfer, required W Function() gbBankTransfer, required W Function() jpBankTransfer, required W Function() mxBankTransfer, required W Function() usBankTransfer, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$euBankTransfer() => euBankTransfer(),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$gbBankTransfer() => gbBankTransfer(),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$jpBankTransfer() => jpBankTransfer(),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$mxBankTransfer() => mxBankTransfer(),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$usBankTransfer() => usBankTransfer(),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? euBankTransfer, W Function()? gbBankTransfer, W Function()? jpBankTransfer, W Function()? mxBankTransfer, W Function()? usBankTransfer, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$euBankTransfer() => euBankTransfer != null ? euBankTransfer() : orElse(value),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$gbBankTransfer() => gbBankTransfer != null ? gbBankTransfer() : orElse(value),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$jpBankTransfer() => jpBankTransfer != null ? jpBankTransfer() : orElse(value),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$mxBankTransfer() => mxBankTransfer != null ? mxBankTransfer() : orElse(value),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$usBankTransfer() => usBankTransfer != null ? usBankTransfer() : orElse(value),
+      CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType($value)';
 
  }

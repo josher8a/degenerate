@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WatermarkPosition$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() leftTop, required W Function() rightTop, required W Function() leftBottom, required W Function() rightBottom, required W Function(String value) $unknown, }) { return switch (this) {
+      WatermarkPosition$leftTop() => leftTop(),
+      WatermarkPosition$rightTop() => rightTop(),
+      WatermarkPosition$leftBottom() => leftBottom(),
+      WatermarkPosition$rightBottom() => rightBottom(),
+      WatermarkPosition$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? leftTop, W Function()? rightTop, W Function()? leftBottom, W Function()? rightBottom, W Function(String value)? $unknown, }) { return switch (this) {
+      WatermarkPosition$leftTop() => leftTop != null ? leftTop() : orElse(value),
+      WatermarkPosition$rightTop() => rightTop != null ? rightTop() : orElse(value),
+      WatermarkPosition$leftBottom() => leftBottom != null ? leftBottom() : orElse(value),
+      WatermarkPosition$rightBottom() => rightBottom != null ? rightBottom() : orElse(value),
+      WatermarkPosition$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WatermarkPosition($value)';
 
  }

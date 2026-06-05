@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxRegistrationObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() taxRegistration, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxRegistrationObject$taxRegistration() => taxRegistration(),
+      TaxRegistrationObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRegistration, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxRegistrationObject$taxRegistration() => taxRegistration != null ? taxRegistration() : orElse(value),
+      TaxRegistrationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxRegistrationObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxRegistrationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() expired, required W Function() scheduled, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxRegistrationStatus$active() => active(),
+      TaxRegistrationStatus$expired() => expired(),
+      TaxRegistrationStatus$scheduled() => scheduled(),
+      TaxRegistrationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? scheduled, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxRegistrationStatus$active() => active != null ? active() : orElse(value),
+      TaxRegistrationStatus$expired() => expired != null ? expired() : orElse(value),
+      TaxRegistrationStatus$scheduled() => scheduled != null ? scheduled() : orElse(value),
+      TaxRegistrationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxRegistrationStatus($value)';
 
  }

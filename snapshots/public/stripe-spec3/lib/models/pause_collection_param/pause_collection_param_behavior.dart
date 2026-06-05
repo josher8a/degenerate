@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PauseCollectionParamBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() keepAsDraft, required W Function() markUncollectible, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+      PauseCollectionParamBehavior$keepAsDraft() => keepAsDraft(),
+      PauseCollectionParamBehavior$markUncollectible() => markUncollectible(),
+      PauseCollectionParamBehavior$$void() => $void(),
+      PauseCollectionParamBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? keepAsDraft, W Function()? markUncollectible, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+      PauseCollectionParamBehavior$keepAsDraft() => keepAsDraft != null ? keepAsDraft() : orElse(value),
+      PauseCollectionParamBehavior$markUncollectible() => markUncollectible != null ? markUncollectible() : orElse(value),
+      PauseCollectionParamBehavior$$void() => $void != null ? $void() : orElse(value),
+      PauseCollectionParamBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PauseCollectionParamBehavior($value)';
 
  }

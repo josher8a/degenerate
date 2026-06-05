@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckRunConclusion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() skipped, required W Function() timedOut, required W Function() actionRequired, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckRunConclusion$success() => success(),
+      CheckRunConclusion$failure() => failure(),
+      CheckRunConclusion$neutral() => neutral(),
+      CheckRunConclusion$cancelled() => cancelled(),
+      CheckRunConclusion$skipped() => skipped(),
+      CheckRunConclusion$timedOut() => timedOut(),
+      CheckRunConclusion$actionRequired() => actionRequired(),
+      CheckRunConclusion$$null() => $null(),
+      CheckRunConclusion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? skipped, W Function()? timedOut, W Function()? actionRequired, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckRunConclusion$success() => success != null ? success() : orElse(value),
+      CheckRunConclusion$failure() => failure != null ? failure() : orElse(value),
+      CheckRunConclusion$neutral() => neutral != null ? neutral() : orElse(value),
+      CheckRunConclusion$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      CheckRunConclusion$skipped() => skipped != null ? skipped() : orElse(value),
+      CheckRunConclusion$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      CheckRunConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
+      CheckRunConclusion$$null() => $null != null ? $null() : orElse(value),
+      CheckRunConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckRunConclusion($value)';
 
  }

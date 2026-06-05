@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Ownership$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() blocked, required W Function() error, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      Ownership$pending() => pending(),
+      Ownership$active() => active(),
+      Ownership$deactivated() => deactivated(),
+      Ownership$blocked() => blocked(),
+      Ownership$error() => error(),
+      Ownership$unknown() => unknown(),
+      Ownership$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? blocked, W Function()? error, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      Ownership$pending() => pending != null ? pending() : orElse(value),
+      Ownership$active() => active != null ? active() : orElse(value),
+      Ownership$deactivated() => deactivated != null ? deactivated() : orElse(value),
+      Ownership$blocked() => blocked != null ? blocked() : orElse(value),
+      Ownership$error() => error != null ? error() : orElse(value),
+      Ownership$unknown() => unknown != null ? unknown() : orElse(value),
+      Ownership$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Ownership($value)';
 
  }
@@ -150,6 +170,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StatusSsl$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() error, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      StatusSsl$initializing() => initializing(),
+      StatusSsl$pending() => pending(),
+      StatusSsl$active() => active(),
+      StatusSsl$deactivated() => deactivated(),
+      StatusSsl$error() => error(),
+      StatusSsl$unknown() => unknown(),
+      StatusSsl$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? error, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      StatusSsl$initializing() => initializing != null ? initializing() : orElse(value),
+      StatusSsl$pending() => pending != null ? pending() : orElse(value),
+      StatusSsl$active() => active != null ? active() : orElse(value),
+      StatusSsl$deactivated() => deactivated != null ? deactivated() : orElse(value),
+      StatusSsl$error() => error != null ? error() : orElse(value),
+      StatusSsl$unknown() => unknown != null ? unknown() : orElse(value),
+      StatusSsl$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StatusSsl($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer3TopAttacksMagnitude$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mitigatedBytes, required W Function() mitigatedAttacks, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedBytes() => mitigatedBytes(),
+      RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedAttacks() => mitigatedAttacks(),
+      RadarGetAttacksLayer3TopAttacksMagnitude$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mitigatedBytes, W Function()? mitigatedAttacks, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedBytes() => mitigatedBytes != null ? mitigatedBytes() : orElse(value),
+      RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedAttacks() => mitigatedAttacks != null ? mitigatedAttacks() : orElse(value),
+      RadarGetAttacksLayer3TopAttacksMagnitude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer3TopAttacksMagnitude($value)';
 
  }

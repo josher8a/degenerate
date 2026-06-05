@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AppPermissionsOrganizationProjects$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+      AppPermissionsOrganizationProjects$read() => read(),
+      AppPermissionsOrganizationProjects$write() => write(),
+      AppPermissionsOrganizationProjects$admin() => admin(),
+      AppPermissionsOrganizationProjects$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+      AppPermissionsOrganizationProjects$read() => read != null ? read() : orElse(value),
+      AppPermissionsOrganizationProjects$write() => write != null ? write() : orElse(value),
+      AppPermissionsOrganizationProjects$admin() => admin != null ? admin() : orElse(value),
+      AppPermissionsOrganizationProjects$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AppPermissionsOrganizationProjects($value)';
 
  }

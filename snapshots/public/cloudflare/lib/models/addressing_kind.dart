@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AddressingKind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() zone, required W Function() account, required W Function(String value) $unknown, }) { return switch (this) {
+      AddressingKind$zone() => zone(),
+      AddressingKind$account() => account(),
+      AddressingKind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? zone, W Function()? account, W Function(String value)? $unknown, }) { return switch (this) {
+      AddressingKind$zone() => zone != null ? zone() : orElse(value),
+      AddressingKind$account() => account != null ? account() : orElse(value),
+      AddressingKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AddressingKind($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BalanceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuing, required W Function() payments, required W Function() refundAndDisputePrefunding, required W Function() riskReserved, required W Function(String value) $unknown, }) { return switch (this) {
+      BalanceType$issuing() => issuing(),
+      BalanceType$payments() => payments(),
+      BalanceType$refundAndDisputePrefunding() => refundAndDisputePrefunding(),
+      BalanceType$riskReserved() => riskReserved(),
+      BalanceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuing, W Function()? payments, W Function()? refundAndDisputePrefunding, W Function()? riskReserved, W Function(String value)? $unknown, }) { return switch (this) {
+      BalanceType$issuing() => issuing != null ? issuing() : orElse(value),
+      BalanceType$payments() => payments != null ? payments() : orElse(value),
+      BalanceType$refundAndDisputePrefunding() => refundAndDisputePrefunding != null ? refundAndDisputePrefunding() : orElse(value),
+      BalanceType$riskReserved() => riskReserved != null ? riskReserved() : orElse(value),
+      BalanceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BalanceType($value)';
 
  }
@@ -104,6 +120,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BalanceTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() balanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      BalanceTransactionObject$balanceTransaction() => balanceTransaction(),
+      BalanceTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? balanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      BalanceTransactionObject$balanceTransaction() => balanceTransaction != null ? balanceTransaction() : orElse(value),
+      BalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BalanceTransactionObject($value)';
 
  }
@@ -327,6 +353,106 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BalanceTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adjustment, required W Function() advance, required W Function() advanceFunding, required W Function() anticipationRepayment, required W Function() applicationFee, required W Function() applicationFeeRefund, required W Function() charge, required W Function() climateOrderPurchase, required W Function() climateOrderRefund, required W Function() connectCollectionTransfer, required W Function() contribution, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() issuingDispute, required W Function() issuingTransaction, required W Function() obligationOutbound, required W Function() obligationReversalInbound, required W Function() payment, required W Function() paymentFailureRefund, required W Function() paymentNetworkReserveHold, required W Function() paymentNetworkReserveRelease, required W Function() paymentRefund, required W Function() paymentReversal, required W Function() paymentUnreconciled, required W Function() payout, required W Function() payoutCancel, required W Function() payoutFailure, required W Function() payoutMinimumBalanceHold, required W Function() payoutMinimumBalanceRelease, required W Function() refund, required W Function() refundFailure, required W Function() reserveHold, required W Function() reserveRelease, required W Function() reserveTransaction, required W Function() reservedFunds, required W Function() stripeBalancePaymentDebit, required W Function() stripeBalancePaymentDebitReversal, required W Function() stripeFee, required W Function() stripeFxFee, required W Function() taxFee, required W Function() topup, required W Function() topupReversal, required W Function() transfer, required W Function() transferCancel, required W Function() transferFailure, required W Function() transferRefund, required W Function(String value) $unknown, }) { return switch (this) {
+      BalanceTransactionType$adjustment() => adjustment(),
+      BalanceTransactionType$advance() => advance(),
+      BalanceTransactionType$advanceFunding() => advanceFunding(),
+      BalanceTransactionType$anticipationRepayment() => anticipationRepayment(),
+      BalanceTransactionType$applicationFee() => applicationFee(),
+      BalanceTransactionType$applicationFeeRefund() => applicationFeeRefund(),
+      BalanceTransactionType$charge() => charge(),
+      BalanceTransactionType$climateOrderPurchase() => climateOrderPurchase(),
+      BalanceTransactionType$climateOrderRefund() => climateOrderRefund(),
+      BalanceTransactionType$connectCollectionTransfer() => connectCollectionTransfer(),
+      BalanceTransactionType$contribution() => contribution(),
+      BalanceTransactionType$issuingAuthorizationHold() => issuingAuthorizationHold(),
+      BalanceTransactionType$issuingAuthorizationRelease() => issuingAuthorizationRelease(),
+      BalanceTransactionType$issuingDispute() => issuingDispute(),
+      BalanceTransactionType$issuingTransaction() => issuingTransaction(),
+      BalanceTransactionType$obligationOutbound() => obligationOutbound(),
+      BalanceTransactionType$obligationReversalInbound() => obligationReversalInbound(),
+      BalanceTransactionType$payment() => payment(),
+      BalanceTransactionType$paymentFailureRefund() => paymentFailureRefund(),
+      BalanceTransactionType$paymentNetworkReserveHold() => paymentNetworkReserveHold(),
+      BalanceTransactionType$paymentNetworkReserveRelease() => paymentNetworkReserveRelease(),
+      BalanceTransactionType$paymentRefund() => paymentRefund(),
+      BalanceTransactionType$paymentReversal() => paymentReversal(),
+      BalanceTransactionType$paymentUnreconciled() => paymentUnreconciled(),
+      BalanceTransactionType$payout() => payout(),
+      BalanceTransactionType$payoutCancel() => payoutCancel(),
+      BalanceTransactionType$payoutFailure() => payoutFailure(),
+      BalanceTransactionType$payoutMinimumBalanceHold() => payoutMinimumBalanceHold(),
+      BalanceTransactionType$payoutMinimumBalanceRelease() => payoutMinimumBalanceRelease(),
+      BalanceTransactionType$refund() => refund(),
+      BalanceTransactionType$refundFailure() => refundFailure(),
+      BalanceTransactionType$reserveHold() => reserveHold(),
+      BalanceTransactionType$reserveRelease() => reserveRelease(),
+      BalanceTransactionType$reserveTransaction() => reserveTransaction(),
+      BalanceTransactionType$reservedFunds() => reservedFunds(),
+      BalanceTransactionType$stripeBalancePaymentDebit() => stripeBalancePaymentDebit(),
+      BalanceTransactionType$stripeBalancePaymentDebitReversal() => stripeBalancePaymentDebitReversal(),
+      BalanceTransactionType$stripeFee() => stripeFee(),
+      BalanceTransactionType$stripeFxFee() => stripeFxFee(),
+      BalanceTransactionType$taxFee() => taxFee(),
+      BalanceTransactionType$topup() => topup(),
+      BalanceTransactionType$topupReversal() => topupReversal(),
+      BalanceTransactionType$transfer() => transfer(),
+      BalanceTransactionType$transferCancel() => transferCancel(),
+      BalanceTransactionType$transferFailure() => transferFailure(),
+      BalanceTransactionType$transferRefund() => transferRefund(),
+      BalanceTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustment, W Function()? advance, W Function()? advanceFunding, W Function()? anticipationRepayment, W Function()? applicationFee, W Function()? applicationFeeRefund, W Function()? charge, W Function()? climateOrderPurchase, W Function()? climateOrderRefund, W Function()? connectCollectionTransfer, W Function()? contribution, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? issuingDispute, W Function()? issuingTransaction, W Function()? obligationOutbound, W Function()? obligationReversalInbound, W Function()? payment, W Function()? paymentFailureRefund, W Function()? paymentNetworkReserveHold, W Function()? paymentNetworkReserveRelease, W Function()? paymentRefund, W Function()? paymentReversal, W Function()? paymentUnreconciled, W Function()? payout, W Function()? payoutCancel, W Function()? payoutFailure, W Function()? payoutMinimumBalanceHold, W Function()? payoutMinimumBalanceRelease, W Function()? refund, W Function()? refundFailure, W Function()? reserveHold, W Function()? reserveRelease, W Function()? reserveTransaction, W Function()? reservedFunds, W Function()? stripeBalancePaymentDebit, W Function()? stripeBalancePaymentDebitReversal, W Function()? stripeFee, W Function()? stripeFxFee, W Function()? taxFee, W Function()? topup, W Function()? topupReversal, W Function()? transfer, W Function()? transferCancel, W Function()? transferFailure, W Function()? transferRefund, W Function(String value)? $unknown, }) { return switch (this) {
+      BalanceTransactionType$adjustment() => adjustment != null ? adjustment() : orElse(value),
+      BalanceTransactionType$advance() => advance != null ? advance() : orElse(value),
+      BalanceTransactionType$advanceFunding() => advanceFunding != null ? advanceFunding() : orElse(value),
+      BalanceTransactionType$anticipationRepayment() => anticipationRepayment != null ? anticipationRepayment() : orElse(value),
+      BalanceTransactionType$applicationFee() => applicationFee != null ? applicationFee() : orElse(value),
+      BalanceTransactionType$applicationFeeRefund() => applicationFeeRefund != null ? applicationFeeRefund() : orElse(value),
+      BalanceTransactionType$charge() => charge != null ? charge() : orElse(value),
+      BalanceTransactionType$climateOrderPurchase() => climateOrderPurchase != null ? climateOrderPurchase() : orElse(value),
+      BalanceTransactionType$climateOrderRefund() => climateOrderRefund != null ? climateOrderRefund() : orElse(value),
+      BalanceTransactionType$connectCollectionTransfer() => connectCollectionTransfer != null ? connectCollectionTransfer() : orElse(value),
+      BalanceTransactionType$contribution() => contribution != null ? contribution() : orElse(value),
+      BalanceTransactionType$issuingAuthorizationHold() => issuingAuthorizationHold != null ? issuingAuthorizationHold() : orElse(value),
+      BalanceTransactionType$issuingAuthorizationRelease() => issuingAuthorizationRelease != null ? issuingAuthorizationRelease() : orElse(value),
+      BalanceTransactionType$issuingDispute() => issuingDispute != null ? issuingDispute() : orElse(value),
+      BalanceTransactionType$issuingTransaction() => issuingTransaction != null ? issuingTransaction() : orElse(value),
+      BalanceTransactionType$obligationOutbound() => obligationOutbound != null ? obligationOutbound() : orElse(value),
+      BalanceTransactionType$obligationReversalInbound() => obligationReversalInbound != null ? obligationReversalInbound() : orElse(value),
+      BalanceTransactionType$payment() => payment != null ? payment() : orElse(value),
+      BalanceTransactionType$paymentFailureRefund() => paymentFailureRefund != null ? paymentFailureRefund() : orElse(value),
+      BalanceTransactionType$paymentNetworkReserveHold() => paymentNetworkReserveHold != null ? paymentNetworkReserveHold() : orElse(value),
+      BalanceTransactionType$paymentNetworkReserveRelease() => paymentNetworkReserveRelease != null ? paymentNetworkReserveRelease() : orElse(value),
+      BalanceTransactionType$paymentRefund() => paymentRefund != null ? paymentRefund() : orElse(value),
+      BalanceTransactionType$paymentReversal() => paymentReversal != null ? paymentReversal() : orElse(value),
+      BalanceTransactionType$paymentUnreconciled() => paymentUnreconciled != null ? paymentUnreconciled() : orElse(value),
+      BalanceTransactionType$payout() => payout != null ? payout() : orElse(value),
+      BalanceTransactionType$payoutCancel() => payoutCancel != null ? payoutCancel() : orElse(value),
+      BalanceTransactionType$payoutFailure() => payoutFailure != null ? payoutFailure() : orElse(value),
+      BalanceTransactionType$payoutMinimumBalanceHold() => payoutMinimumBalanceHold != null ? payoutMinimumBalanceHold() : orElse(value),
+      BalanceTransactionType$payoutMinimumBalanceRelease() => payoutMinimumBalanceRelease != null ? payoutMinimumBalanceRelease() : orElse(value),
+      BalanceTransactionType$refund() => refund != null ? refund() : orElse(value),
+      BalanceTransactionType$refundFailure() => refundFailure != null ? refundFailure() : orElse(value),
+      BalanceTransactionType$reserveHold() => reserveHold != null ? reserveHold() : orElse(value),
+      BalanceTransactionType$reserveRelease() => reserveRelease != null ? reserveRelease() : orElse(value),
+      BalanceTransactionType$reserveTransaction() => reserveTransaction != null ? reserveTransaction() : orElse(value),
+      BalanceTransactionType$reservedFunds() => reservedFunds != null ? reservedFunds() : orElse(value),
+      BalanceTransactionType$stripeBalancePaymentDebit() => stripeBalancePaymentDebit != null ? stripeBalancePaymentDebit() : orElse(value),
+      BalanceTransactionType$stripeBalancePaymentDebitReversal() => stripeBalancePaymentDebitReversal != null ? stripeBalancePaymentDebitReversal() : orElse(value),
+      BalanceTransactionType$stripeFee() => stripeFee != null ? stripeFee() : orElse(value),
+      BalanceTransactionType$stripeFxFee() => stripeFxFee != null ? stripeFxFee() : orElse(value),
+      BalanceTransactionType$taxFee() => taxFee != null ? taxFee() : orElse(value),
+      BalanceTransactionType$topup() => topup != null ? topup() : orElse(value),
+      BalanceTransactionType$topupReversal() => topupReversal != null ? topupReversal() : orElse(value),
+      BalanceTransactionType$transfer() => transfer != null ? transfer() : orElse(value),
+      BalanceTransactionType$transferCancel() => transferCancel != null ? transferCancel() : orElse(value),
+      BalanceTransactionType$transferFailure() => transferFailure != null ? transferFailure() : orElse(value),
+      BalanceTransactionType$transferRefund() => transferRefund != null ? transferRefund() : orElse(value),
+      BalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BalanceTransactionType($value)';
 
  }

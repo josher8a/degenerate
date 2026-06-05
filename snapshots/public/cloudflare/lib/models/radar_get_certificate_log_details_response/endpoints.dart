@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Endpoint$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() addChainNew, required W Function() addChainOld, required W Function() addPreChainNew, required W Function() addPreChainOld, required W Function() getEntries, required W Function() getRoots, required W Function() getSth, required W Function(String value) $unknown, }) { return switch (this) {
+      Endpoint$addChainNew() => addChainNew(),
+      Endpoint$addChainOld() => addChainOld(),
+      Endpoint$addPreChainNew() => addPreChainNew(),
+      Endpoint$addPreChainOld() => addPreChainOld(),
+      Endpoint$getEntries() => getEntries(),
+      Endpoint$getRoots() => getRoots(),
+      Endpoint$getSth() => getSth(),
+      Endpoint$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? addChainNew, W Function()? addChainOld, W Function()? addPreChainNew, W Function()? addPreChainOld, W Function()? getEntries, W Function()? getRoots, W Function()? getSth, W Function(String value)? $unknown, }) { return switch (this) {
+      Endpoint$addChainNew() => addChainNew != null ? addChainNew() : orElse(value),
+      Endpoint$addChainOld() => addChainOld != null ? addChainOld() : orElse(value),
+      Endpoint$addPreChainNew() => addPreChainNew != null ? addPreChainNew() : orElse(value),
+      Endpoint$addPreChainOld() => addPreChainOld != null ? addPreChainOld() : orElse(value),
+      Endpoint$getEntries() => getEntries != null ? getEntries() : orElse(value),
+      Endpoint$getRoots() => getRoots != null ? getRoots() : orElse(value),
+      Endpoint$getSth() => getSth != null ? getSth() : orElse(value),
+      Endpoint$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Endpoint($value)';
 
  }

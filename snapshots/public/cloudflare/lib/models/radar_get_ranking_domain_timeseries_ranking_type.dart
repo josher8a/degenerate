@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetRankingDomainTimeseriesRankingType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() popular, required W Function() trendingRise, required W Function() trendingSteady, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetRankingDomainTimeseriesRankingType$popular() => popular(),
+      RadarGetRankingDomainTimeseriesRankingType$trendingRise() => trendingRise(),
+      RadarGetRankingDomainTimeseriesRankingType$trendingSteady() => trendingSteady(),
+      RadarGetRankingDomainTimeseriesRankingType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? popular, W Function()? trendingRise, W Function()? trendingSteady, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetRankingDomainTimeseriesRankingType$popular() => popular != null ? popular() : orElse(value),
+      RadarGetRankingDomainTimeseriesRankingType$trendingRise() => trendingRise != null ? trendingRise() : orElse(value),
+      RadarGetRankingDomainTimeseriesRankingType$trendingSteady() => trendingSteady != null ? trendingSteady() : orElse(value),
+      RadarGetRankingDomainTimeseriesRankingType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetRankingDomainTimeseriesRankingType($value)';
 
  }

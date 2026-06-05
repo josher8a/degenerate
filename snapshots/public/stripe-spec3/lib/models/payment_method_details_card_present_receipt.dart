@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsCardPresentReceiptAccountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() checking, required W Function() credit, required W Function() prepaid, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsCardPresentReceiptAccountType$checking() => checking(),
+      PaymentMethodDetailsCardPresentReceiptAccountType$credit() => credit(),
+      PaymentMethodDetailsCardPresentReceiptAccountType$prepaid() => prepaid(),
+      PaymentMethodDetailsCardPresentReceiptAccountType$unknown() => unknown(),
+      PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? credit, W Function()? prepaid, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsCardPresentReceiptAccountType$checking() => checking != null ? checking() : orElse(value),
+      PaymentMethodDetailsCardPresentReceiptAccountType$credit() => credit != null ? credit() : orElse(value),
+      PaymentMethodDetailsCardPresentReceiptAccountType$prepaid() => prepaid != null ? prepaid() : orElse(value),
+      PaymentMethodDetailsCardPresentReceiptAccountType$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsCardPresentReceiptAccountType($value)';
 
  }

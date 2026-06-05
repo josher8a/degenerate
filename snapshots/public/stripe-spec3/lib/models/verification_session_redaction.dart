@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VerificationSessionRedactionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() processing, required W Function() redacted, required W Function(String value) $unknown, }) { return switch (this) {
+      VerificationSessionRedactionStatus$processing() => processing(),
+      VerificationSessionRedactionStatus$redacted() => redacted(),
+      VerificationSessionRedactionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? processing, W Function()? redacted, W Function(String value)? $unknown, }) { return switch (this) {
+      VerificationSessionRedactionStatus$processing() => processing != null ? processing() : orElse(value),
+      VerificationSessionRedactionStatus$redacted() => redacted != null ? redacted() : orElse(value),
+      VerificationSessionRedactionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VerificationSessionRedactionStatus($value)';
 
  }

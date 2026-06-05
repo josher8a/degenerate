@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DvType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dv, required W Function(String value) $unknown, }) { return switch (this) {
+      DvType$dv() => dv(),
+      DvType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dv, W Function(String value)? $unknown, }) { return switch (this) {
+      DvType$dv() => dv != null ? dv() : orElse(value),
+      DvType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DvType($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IpAccessRulesForAZoneListIpAccessRulesOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() configurationTarget, required W Function() configurationValue, required W Function() mode, required W Function(String value) $unknown, }) { return switch (this) {
+      IpAccessRulesForAZoneListIpAccessRulesOrder$configurationTarget() => configurationTarget(),
+      IpAccessRulesForAZoneListIpAccessRulesOrder$configurationValue() => configurationValue(),
+      IpAccessRulesForAZoneListIpAccessRulesOrder$mode() => mode(),
+      IpAccessRulesForAZoneListIpAccessRulesOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? configurationTarget, W Function()? configurationValue, W Function()? mode, W Function(String value)? $unknown, }) { return switch (this) {
+      IpAccessRulesForAZoneListIpAccessRulesOrder$configurationTarget() => configurationTarget != null ? configurationTarget() : orElse(value),
+      IpAccessRulesForAZoneListIpAccessRulesOrder$configurationValue() => configurationValue != null ? configurationValue() : orElse(value),
+      IpAccessRulesForAZoneListIpAccessRulesOrder$mode() => mode != null ? mode() : orElse(value),
+      IpAccessRulesForAZoneListIpAccessRulesOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IpAccessRulesForAZoneListIpAccessRulesOrder($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Pooling$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mean, required W Function() cls, required W Function(String value) $unknown, }) { return switch (this) {
+      Pooling$mean() => mean(),
+      Pooling$cls() => cls(),
+      Pooling$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mean, W Function()? cls, W Function(String value)? $unknown, }) { return switch (this) {
+      Pooling$mean() => mean != null ? mean() : orElse(value),
+      Pooling$cls() => cls != null ? cls() : orElse(value),
+      Pooling$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Pooling($value)';
 
  }

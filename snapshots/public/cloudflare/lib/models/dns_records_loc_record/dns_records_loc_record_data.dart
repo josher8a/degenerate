@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LatDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() n, required W Function() s, required W Function(String value) $unknown, }) { return switch (this) {
+      LatDirection$n() => n(),
+      LatDirection$s() => s(),
+      LatDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? n, W Function()? s, W Function(String value)? $unknown, }) { return switch (this) {
+      LatDirection$n() => n != null ? n() : orElse(value),
+      LatDirection$s() => s != null ? s() : orElse(value),
+      LatDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LatDirection($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LongDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() e, required W Function() w, required W Function(String value) $unknown, }) { return switch (this) {
+      LongDirection$e() => e(),
+      LongDirection$w() => w(),
+      LongDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? e, W Function()? w, W Function(String value)? $unknown, }) { return switch (this) {
+      LongDirection$e() => e != null ? e() : orElse(value),
+      LongDirection$w() => w != null ? w() : orElse(value),
+      LongDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LongDirection($value)';
 
  }

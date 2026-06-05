@@ -113,6 +113,62 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Race$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() africanAmerican, required W Function() americanIndianOrAlaskaNative, required W Function() asian, required W Function() asianIndian, required W Function() blackOrAfricanAmerican, required W Function() chinese, required W Function() ethiopian, required W Function() filipino, required W Function() guamanianOrChamorro, required W Function() haitian, required W Function() jamaican, required W Function() japanese, required W Function() korean, required W Function() nativeHawaiian, required W Function() nativeHawaiianOrOtherPacificIslander, required W Function() nigerian, required W Function() otherAsian, required W Function() otherBlackOrAfricanAmerican, required W Function() otherPacificIslander, required W Function() preferNotToAnswer, required W Function() samoan, required W Function() somali, required W Function() vietnamese, required W Function() white, required W Function(String value) $unknown, }) { return switch (this) {
+      Race$africanAmerican() => africanAmerican(),
+      Race$americanIndianOrAlaskaNative() => americanIndianOrAlaskaNative(),
+      Race$asian() => asian(),
+      Race$asianIndian() => asianIndian(),
+      Race$blackOrAfricanAmerican() => blackOrAfricanAmerican(),
+      Race$chinese() => chinese(),
+      Race$ethiopian() => ethiopian(),
+      Race$filipino() => filipino(),
+      Race$guamanianOrChamorro() => guamanianOrChamorro(),
+      Race$haitian() => haitian(),
+      Race$jamaican() => jamaican(),
+      Race$japanese() => japanese(),
+      Race$korean() => korean(),
+      Race$nativeHawaiian() => nativeHawaiian(),
+      Race$nativeHawaiianOrOtherPacificIslander() => nativeHawaiianOrOtherPacificIslander(),
+      Race$nigerian() => nigerian(),
+      Race$otherAsian() => otherAsian(),
+      Race$otherBlackOrAfricanAmerican() => otherBlackOrAfricanAmerican(),
+      Race$otherPacificIslander() => otherPacificIslander(),
+      Race$preferNotToAnswer() => preferNotToAnswer(),
+      Race$samoan() => samoan(),
+      Race$somali() => somali(),
+      Race$vietnamese() => vietnamese(),
+      Race$white() => white(),
+      Race$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? africanAmerican, W Function()? americanIndianOrAlaskaNative, W Function()? asian, W Function()? asianIndian, W Function()? blackOrAfricanAmerican, W Function()? chinese, W Function()? ethiopian, W Function()? filipino, W Function()? guamanianOrChamorro, W Function()? haitian, W Function()? jamaican, W Function()? japanese, W Function()? korean, W Function()? nativeHawaiian, W Function()? nativeHawaiianOrOtherPacificIslander, W Function()? nigerian, W Function()? otherAsian, W Function()? otherBlackOrAfricanAmerican, W Function()? otherPacificIslander, W Function()? preferNotToAnswer, W Function()? samoan, W Function()? somali, W Function()? vietnamese, W Function()? white, W Function(String value)? $unknown, }) { return switch (this) {
+      Race$africanAmerican() => africanAmerican != null ? africanAmerican() : orElse(value),
+      Race$americanIndianOrAlaskaNative() => americanIndianOrAlaskaNative != null ? americanIndianOrAlaskaNative() : orElse(value),
+      Race$asian() => asian != null ? asian() : orElse(value),
+      Race$asianIndian() => asianIndian != null ? asianIndian() : orElse(value),
+      Race$blackOrAfricanAmerican() => blackOrAfricanAmerican != null ? blackOrAfricanAmerican() : orElse(value),
+      Race$chinese() => chinese != null ? chinese() : orElse(value),
+      Race$ethiopian() => ethiopian != null ? ethiopian() : orElse(value),
+      Race$filipino() => filipino != null ? filipino() : orElse(value),
+      Race$guamanianOrChamorro() => guamanianOrChamorro != null ? guamanianOrChamorro() : orElse(value),
+      Race$haitian() => haitian != null ? haitian() : orElse(value),
+      Race$jamaican() => jamaican != null ? jamaican() : orElse(value),
+      Race$japanese() => japanese != null ? japanese() : orElse(value),
+      Race$korean() => korean != null ? korean() : orElse(value),
+      Race$nativeHawaiian() => nativeHawaiian != null ? nativeHawaiian() : orElse(value),
+      Race$nativeHawaiianOrOtherPacificIslander() => nativeHawaiianOrOtherPacificIslander != null ? nativeHawaiianOrOtherPacificIslander() : orElse(value),
+      Race$nigerian() => nigerian != null ? nigerian() : orElse(value),
+      Race$otherAsian() => otherAsian != null ? otherAsian() : orElse(value),
+      Race$otherBlackOrAfricanAmerican() => otherBlackOrAfricanAmerican != null ? otherBlackOrAfricanAmerican() : orElse(value),
+      Race$otherPacificIslander() => otherPacificIslander != null ? otherPacificIslander() : orElse(value),
+      Race$preferNotToAnswer() => preferNotToAnswer != null ? preferNotToAnswer() : orElse(value),
+      Race$samoan() => samoan != null ? samoan() : orElse(value),
+      Race$somali() => somali != null ? somali() : orElse(value),
+      Race$vietnamese() => vietnamese != null ? vietnamese() : orElse(value),
+      Race$white() => white != null ? white() : orElse(value),
+      Race$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Race($value)';
 
  }

@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesRequestedValidity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $7, required W Function() $30, required W Function() $90, required W Function() $365, required W Function() $730, required W Function() $1095, required W Function() $5475, required W Function(double value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesRequestedValidity$$7() => $7(),
+      TlsCertificatesAndHostnamesRequestedValidity$$30() => $30(),
+      TlsCertificatesAndHostnamesRequestedValidity$$90() => $90(),
+      TlsCertificatesAndHostnamesRequestedValidity$$365() => $365(),
+      TlsCertificatesAndHostnamesRequestedValidity$$730() => $730(),
+      TlsCertificatesAndHostnamesRequestedValidity$$1095() => $1095(),
+      TlsCertificatesAndHostnamesRequestedValidity$$5475() => $5475(),
+      TlsCertificatesAndHostnamesRequestedValidity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $7, W Function()? $30, W Function()? $90, W Function()? $365, W Function()? $730, W Function()? $1095, W Function()? $5475, W Function(double value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesRequestedValidity$$7() => $7 != null ? $7() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$$30() => $30 != null ? $30() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$$90() => $90 != null ? $90() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$$365() => $365 != null ? $365() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$$730() => $730 != null ? $730() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$$1095() => $1095 != null ? $1095() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$$5475() => $5475 != null ? $5475() : orElse(value),
+      TlsCertificatesAndHostnamesRequestedValidity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesRequestedValidity($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZarazZarazWorkflow$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() realtime, required W Function() preview, required W Function(String value) $unknown, }) { return switch (this) {
+      ZarazZarazWorkflow$realtime() => realtime(),
+      ZarazZarazWorkflow$preview() => preview(),
+      ZarazZarazWorkflow$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtime, W Function()? preview, W Function(String value)? $unknown, }) { return switch (this) {
+      ZarazZarazWorkflow$realtime() => realtime != null ? realtime() : orElse(value),
+      ZarazZarazWorkflow$preview() => preview != null ? preview() : orElse(value),
+      ZarazZarazWorkflow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZarazZarazWorkflow($value)';
 
  }

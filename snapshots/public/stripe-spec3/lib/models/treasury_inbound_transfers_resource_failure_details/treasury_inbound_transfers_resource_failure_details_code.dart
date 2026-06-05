@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryInboundTransfersResourceFailureDetailsCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountClosed, required W Function() accountFrozen, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() debitNotAuthorized, required W Function() incorrectAccountHolderAddress, required W Function() incorrectAccountHolderName, required W Function() incorrectAccountHolderTaxId, required W Function() insufficientFunds, required W Function() invalidAccountNumber, required W Function() invalidCurrency, required W Function() noAccount, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryInboundTransfersResourceFailureDetailsCode$accountClosed() => accountClosed(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$accountFrozen() => accountFrozen(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$bankAccountRestricted() => bankAccountRestricted(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$bankOwnershipChanged() => bankOwnershipChanged(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$debitNotAuthorized() => debitNotAuthorized(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$incorrectAccountHolderAddress() => incorrectAccountHolderAddress(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$incorrectAccountHolderName() => incorrectAccountHolderName(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$incorrectAccountHolderTaxId() => incorrectAccountHolderTaxId(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$insufficientFunds() => insufficientFunds(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$invalidAccountNumber() => invalidAccountNumber(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$invalidCurrency() => invalidCurrency(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$noAccount() => noAccount(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$$other() => $other(),
+      TreasuryInboundTransfersResourceFailureDetailsCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? accountFrozen, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? debitNotAuthorized, W Function()? incorrectAccountHolderAddress, W Function()? incorrectAccountHolderName, W Function()? incorrectAccountHolderTaxId, W Function()? insufficientFunds, W Function()? invalidAccountNumber, W Function()? invalidCurrency, W Function()? noAccount, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryInboundTransfersResourceFailureDetailsCode$accountClosed() => accountClosed != null ? accountClosed() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$accountFrozen() => accountFrozen != null ? accountFrozen() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$bankAccountRestricted() => bankAccountRestricted != null ? bankAccountRestricted() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$bankOwnershipChanged() => bankOwnershipChanged != null ? bankOwnershipChanged() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$debitNotAuthorized() => debitNotAuthorized != null ? debitNotAuthorized() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$incorrectAccountHolderAddress() => incorrectAccountHolderAddress != null ? incorrectAccountHolderAddress() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$incorrectAccountHolderName() => incorrectAccountHolderName != null ? incorrectAccountHolderName() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$incorrectAccountHolderTaxId() => incorrectAccountHolderTaxId != null ? incorrectAccountHolderTaxId() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$insufficientFunds() => insufficientFunds != null ? insufficientFunds() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$invalidAccountNumber() => invalidAccountNumber != null ? invalidAccountNumber() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$invalidCurrency() => invalidCurrency != null ? invalidCurrency() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$noAccount() => noAccount != null ? noAccount() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$$other() => $other != null ? $other() : orElse(value),
+      TreasuryInboundTransfersResourceFailureDetailsCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryInboundTransfersResourceFailureDetailsCode($value)';
 
  }

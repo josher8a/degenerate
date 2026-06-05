@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageStatus$inProgress() => inProgress(),
+      MessageStatus$completed() => completed(),
+      MessageStatus$incomplete() => incomplete(),
+      MessageStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      MessageStatus$completed() => completed != null ? completed() : orElse(value),
+      MessageStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      MessageStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageStatus($value)';
 
  }
@@ -117,6 +131,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() user, required W Function() assistant, required W Function() system, required W Function() critic, required W Function() discriminator, required W Function() developer, required W Function() tool, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageRole$unknown() => unknown(),
+      MessageRole$user() => user(),
+      MessageRole$assistant() => assistant(),
+      MessageRole$system() => system(),
+      MessageRole$critic() => critic(),
+      MessageRole$discriminator() => discriminator(),
+      MessageRole$developer() => developer(),
+      MessageRole$tool() => tool(),
+      MessageRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? user, W Function()? assistant, W Function()? system, W Function()? critic, W Function()? discriminator, W Function()? developer, W Function()? tool, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageRole$unknown() => unknown != null ? unknown() : orElse(value),
+      MessageRole$user() => user != null ? user() : orElse(value),
+      MessageRole$assistant() => assistant != null ? assistant() : orElse(value),
+      MessageRole$system() => system != null ? system() : orElse(value),
+      MessageRole$critic() => critic != null ? critic() : orElse(value),
+      MessageRole$discriminator() => discriminator != null ? discriminator() : orElse(value),
+      MessageRole$developer() => developer != null ? developer() : orElse(value),
+      MessageRole$tool() => tool != null ? tool() : orElse(value),
+      MessageRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageRole($value)';
 
  }

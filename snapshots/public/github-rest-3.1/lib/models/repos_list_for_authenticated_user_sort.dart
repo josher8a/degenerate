@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListForAuthenticatedUserSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() created, required W Function() updated, required W Function() pushed, required W Function() fullName, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListForAuthenticatedUserSort$created() => created(),
+      ReposListForAuthenticatedUserSort$updated() => updated(),
+      ReposListForAuthenticatedUserSort$pushed() => pushed(),
+      ReposListForAuthenticatedUserSort$fullName() => fullName(),
+      ReposListForAuthenticatedUserSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? pushed, W Function()? fullName, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListForAuthenticatedUserSort$created() => created != null ? created() : orElse(value),
+      ReposListForAuthenticatedUserSort$updated() => updated != null ? updated() : orElse(value),
+      ReposListForAuthenticatedUserSort$pushed() => pushed != null ? pushed() : orElse(value),
+      ReposListForAuthenticatedUserSort$fullName() => fullName != null ? fullName() : orElse(value),
+      ReposListForAuthenticatedUserSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListForAuthenticatedUserSort($value)';
 
  }

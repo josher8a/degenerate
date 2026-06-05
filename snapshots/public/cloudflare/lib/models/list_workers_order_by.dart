@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListWorkersOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deployedOn, required W Function() updatedOn, required W Function() createdOn, required W Function() $name, required W Function(String value) $unknown, }) { return switch (this) {
+      ListWorkersOrderBy$deployedOn() => deployedOn(),
+      ListWorkersOrderBy$updatedOn() => updatedOn(),
+      ListWorkersOrderBy$createdOn() => createdOn(),
+      ListWorkersOrderBy$$name() => $name(),
+      ListWorkersOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployedOn, W Function()? updatedOn, W Function()? createdOn, W Function()? $name, W Function(String value)? $unknown, }) { return switch (this) {
+      ListWorkersOrderBy$deployedOn() => deployedOn != null ? deployedOn() : orElse(value),
+      ListWorkersOrderBy$updatedOn() => updatedOn != null ? updatedOn() : orElse(value),
+      ListWorkersOrderBy$createdOn() => createdOn != null ? createdOn() : orElse(value),
+      ListWorkersOrderBy$$name() => $name != null ? $name() : orElse(value),
+      ListWorkersOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListWorkersOrderBy($value)';
 
  }

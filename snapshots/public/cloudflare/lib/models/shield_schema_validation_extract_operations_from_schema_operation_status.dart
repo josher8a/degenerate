@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $new, required W Function() existing, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$$new() => $new(),
+      ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$existing() => existing(),
+      ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W Function()? existing, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$$new() => $new != null ? $new() : orElse(value),
+      ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$existing() => existing != null ? existing() : orElse(value),
+      ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldSchemaValidationExtractOperationsFromSchemaOperationStatus($value)';
 
  }

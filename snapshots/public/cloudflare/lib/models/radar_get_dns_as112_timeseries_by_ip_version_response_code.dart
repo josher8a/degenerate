@@ -93,6 +93,52 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsAs112TimeseriesByIpVersionResponseCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noerror, required W Function() formerr, required W Function() servfail, required W Function() nxdomain, required W Function() notimp, required W Function() refused, required W Function() yxdomain, required W Function() yxrrset, required W Function() nxrrset, required W Function() notauth, required W Function() notzone, required W Function() badsig, required W Function() badkey, required W Function() badtime, required W Function() badmode, required W Function() badname, required W Function() badalg, required W Function() badtrunc, required W Function() badcookie, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$noerror() => noerror(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$formerr() => formerr(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$servfail() => servfail(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$nxdomain() => nxdomain(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$notimp() => notimp(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$refused() => refused(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$yxdomain() => yxdomain(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$yxrrset() => yxrrset(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$nxrrset() => nxrrset(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$notauth() => notauth(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$notzone() => notzone(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badsig() => badsig(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badkey() => badkey(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badtime() => badtime(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badmode() => badmode(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badname() => badname(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badalg() => badalg(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badtrunc() => badtrunc(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badcookie() => badcookie(),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror, W Function()? formerr, W Function()? servfail, W Function()? nxdomain, W Function()? notimp, W Function()? refused, W Function()? yxdomain, W Function()? yxrrset, W Function()? nxrrset, W Function()? notauth, W Function()? notzone, W Function()? badsig, W Function()? badkey, W Function()? badtime, W Function()? badmode, W Function()? badname, W Function()? badalg, W Function()? badtrunc, W Function()? badcookie, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$noerror() => noerror != null ? noerror() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$formerr() => formerr != null ? formerr() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$servfail() => servfail != null ? servfail() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$nxdomain() => nxdomain != null ? nxdomain() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$notimp() => notimp != null ? notimp() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$refused() => refused != null ? refused() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$yxdomain() => yxdomain != null ? yxdomain() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$yxrrset() => yxrrset != null ? yxrrset() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$nxrrset() => nxrrset != null ? nxrrset() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$notauth() => notauth != null ? notauth() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$notzone() => notzone != null ? notzone() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badsig() => badsig != null ? badsig() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badkey() => badkey != null ? badkey() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badtime() => badtime != null ? badtime() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badmode() => badmode != null ? badmode() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badname() => badname != null ? badname() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badalg() => badalg != null ? badalg() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badtrunc() => badtrunc != null ? badtrunc() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$badcookie() => badcookie != null ? badcookie() : orElse(value),
+      RadarGetDnsAs112TimeseriesByIpVersionResponseCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsAs112TimeseriesByIpVersionResponseCode($value)';
 
  }

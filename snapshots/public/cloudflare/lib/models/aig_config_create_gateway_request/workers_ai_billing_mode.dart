@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiBillingMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() postpaid, required W Function() unified, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiBillingMode$postpaid() => postpaid(),
+      WorkersAiBillingMode$unified() => unified(),
+      WorkersAiBillingMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? postpaid, W Function()? unified, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiBillingMode$postpaid() => postpaid != null ? postpaid() : orElse(value),
+      WorkersAiBillingMode$unified() => unified != null ? unified() : orElse(value),
+      WorkersAiBillingMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiBillingMode($value)';
 
  }

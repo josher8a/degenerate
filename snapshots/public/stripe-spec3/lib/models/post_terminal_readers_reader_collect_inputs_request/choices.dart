@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChoicesStyle$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() primary, required W Function() secondary, required W Function(String value) $unknown, }) { return switch (this) {
+      ChoicesStyle$primary() => primary(),
+      ChoicesStyle$secondary() => secondary(),
+      ChoicesStyle$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? primary, W Function()? secondary, W Function(String value)? $unknown, }) { return switch (this) {
+      ChoicesStyle$primary() => primary != null ? primary() : orElse(value),
+      ChoicesStyle$secondary() => secondary != null ? secondary() : orElse(value),
+      ChoicesStyle$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChoicesStyle($value)';
 
  }

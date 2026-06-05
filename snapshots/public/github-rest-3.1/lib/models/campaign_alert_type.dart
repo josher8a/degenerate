@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CampaignAlertType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() codeScanning, required W Function() secretScanning, required W Function(String value) $unknown, }) { return switch (this) {
+      CampaignAlertType$codeScanning() => codeScanning(),
+      CampaignAlertType$secretScanning() => secretScanning(),
+      CampaignAlertType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? codeScanning, W Function()? secretScanning, W Function(String value)? $unknown, }) { return switch (this) {
+      CampaignAlertType$codeScanning() => codeScanning != null ? codeScanning() : orElse(value),
+      CampaignAlertType$secretScanning() => secretScanning != null ? secretScanning() : orElse(value),
+      CampaignAlertType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CampaignAlertType($value)';
 
  }

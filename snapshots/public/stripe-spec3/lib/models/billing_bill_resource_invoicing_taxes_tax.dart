@@ -82,6 +82,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerExempt, required W Function() notAvailable, required W Function() notCollecting, required W Function() notSubjectToTax, required W Function() notSupported, required W Function() portionProductExempt, required W Function() portionReducedRated, required W Function() portionStandardRated, required W Function() productExempt, required W Function() productExemptHoliday, required W Function() proportionallyRated, required W Function() reducedRated, required W Function() reverseCharge, required W Function() standardRated, required W Function() taxableBasisReduced, required W Function() zeroRated, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$customerExempt() => customerExempt(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notAvailable() => notAvailable(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notCollecting() => notCollecting(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSubjectToTax() => notSubjectToTax(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSupported() => notSupported(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionProductExempt() => portionProductExempt(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionReducedRated() => portionReducedRated(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionStandardRated() => portionStandardRated(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExempt() => productExempt(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExemptHoliday() => productExemptHoliday(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$proportionallyRated() => proportionallyRated(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reducedRated() => reducedRated(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reverseCharge() => reverseCharge(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$standardRated() => standardRated(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$taxableBasisReduced() => taxableBasisReduced(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$zeroRated() => zeroRated(),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerExempt, W Function()? notAvailable, W Function()? notCollecting, W Function()? notSubjectToTax, W Function()? notSupported, W Function()? portionProductExempt, W Function()? portionReducedRated, W Function()? portionStandardRated, W Function()? productExempt, W Function()? productExemptHoliday, W Function()? proportionallyRated, W Function()? reducedRated, W Function()? reverseCharge, W Function()? standardRated, W Function()? taxableBasisReduced, W Function()? zeroRated, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$customerExempt() => customerExempt != null ? customerExempt() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notAvailable() => notAvailable != null ? notAvailable() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notCollecting() => notCollecting != null ? notCollecting() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSubjectToTax() => notSubjectToTax != null ? notSubjectToTax() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSupported() => notSupported != null ? notSupported() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionProductExempt() => portionProductExempt != null ? portionProductExempt() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionReducedRated() => portionReducedRated != null ? portionReducedRated() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionStandardRated() => portionStandardRated != null ? portionStandardRated() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExempt() => productExempt != null ? productExempt() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExemptHoliday() => productExemptHoliday != null ? productExemptHoliday() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$proportionallyRated() => proportionallyRated != null ? proportionallyRated() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reducedRated() => reducedRated != null ? reducedRated() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reverseCharge() => reverseCharge != null ? reverseCharge() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$standardRated() => standardRated != null ? standardRated() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$taxableBasisReduced() => taxableBasisReduced != null ? taxableBasisReduced() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$zeroRated() => zeroRated != null ? zeroRated() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingBillResourceInvoicingTaxesTaxTaxabilityReason($value)';
 
  }
@@ -260,6 +300,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingBillResourceInvoicingTaxesTaxType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() taxRateDetails, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingBillResourceInvoicingTaxesTaxType$taxRateDetails() => taxRateDetails(),
+      BillingBillResourceInvoicingTaxesTaxType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxRateDetails, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingBillResourceInvoicingTaxesTaxType$taxRateDetails() => taxRateDetails != null ? taxRateDetails() : orElse(value),
+      BillingBillResourceInvoicingTaxesTaxType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingBillResourceInvoicingTaxesTaxType($value)';
 
  }

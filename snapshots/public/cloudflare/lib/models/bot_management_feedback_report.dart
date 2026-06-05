@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BotManagementFeedbackType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() falsePositive, required W Function() falseNegative, required W Function(String value) $unknown, }) { return switch (this) {
+      BotManagementFeedbackType$falsePositive() => falsePositive(),
+      BotManagementFeedbackType$falseNegative() => falseNegative(),
+      BotManagementFeedbackType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? falseNegative, W Function(String value)? $unknown, }) { return switch (this) {
+      BotManagementFeedbackType$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
+      BotManagementFeedbackType$falseNegative() => falseNegative != null ? falseNegative() : orElse(value),
+      BotManagementFeedbackType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BotManagementFeedbackType($value)';
 
  }

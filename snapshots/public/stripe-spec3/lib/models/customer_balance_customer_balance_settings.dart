@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() automatic, required W Function() manual, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerBalanceCustomerBalanceSettingsReconciliationMode$automatic() => automatic(),
+      CustomerBalanceCustomerBalanceSettingsReconciliationMode$manual() => manual(),
+      CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automatic, W Function()? manual, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerBalanceCustomerBalanceSettingsReconciliationMode$automatic() => automatic != null ? automatic() : orElse(value),
+      CustomerBalanceCustomerBalanceSettingsReconciliationMode$manual() => manual != null ? manual() : orElse(value),
+      CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)';
 
  }

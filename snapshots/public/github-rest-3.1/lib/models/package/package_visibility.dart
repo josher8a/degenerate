@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackageVisibility$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() private, required W Function() public, required W Function(String value) $unknown, }) { return switch (this) {
+      PackageVisibility$private() => private(),
+      PackageVisibility$public() => public(),
+      PackageVisibility$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? private, W Function()? public, W Function(String value)? $unknown, }) { return switch (this) {
+      PackageVisibility$private() => private != null ? private() : orElse(value),
+      PackageVisibility$public() => public != null ? public() : orElse(value),
+      PackageVisibility$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackageVisibility($value)';
 
  }

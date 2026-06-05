@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Hate$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      Hate$text() => text(),
+      Hate$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      Hate$text() => text != null ? text() : orElse(value),
+      Hate$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Hate($value)';
 
  }
@@ -63,6 +73,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HateThreatening$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      HateThreatening$text() => text(),
+      HateThreatening$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      HateThreatening$text() => text != null ? text() : orElse(value),
+      HateThreatening$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HateThreatening($value)';
 
  }
@@ -105,6 +125,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Harassment$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      Harassment$text() => text(),
+      Harassment$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      Harassment$text() => text != null ? text() : orElse(value),
+      Harassment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Harassment($value)';
 
  }
@@ -147,6 +177,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HarassmentThreatening$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      HarassmentThreatening$text() => text(),
+      HarassmentThreatening$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      HarassmentThreatening$text() => text != null ? text() : orElse(value),
+      HarassmentThreatening$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HarassmentThreatening($value)';
 
  }
@@ -189,6 +229,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Illicit$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      Illicit$text() => text(),
+      Illicit$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      Illicit$text() => text != null ? text() : orElse(value),
+      Illicit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Illicit($value)';
 
  }
@@ -231,6 +281,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IllicitViolent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      IllicitViolent$text() => text(),
+      IllicitViolent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      IllicitViolent$text() => text != null ? text() : orElse(value),
+      IllicitViolent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IllicitViolent($value)';
 
  }
@@ -277,6 +337,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SelfHarm$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      SelfHarm$text() => text(),
+      SelfHarm$image() => image(),
+      SelfHarm$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      SelfHarm$text() => text != null ? text() : orElse(value),
+      SelfHarm$image() => image != null ? image() : orElse(value),
+      SelfHarm$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SelfHarm($value)';
 
  }
@@ -332,6 +404,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SelfHarmIntent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      SelfHarmIntent$text() => text(),
+      SelfHarmIntent$image() => image(),
+      SelfHarmIntent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      SelfHarmIntent$text() => text != null ? text() : orElse(value),
+      SelfHarmIntent$image() => image != null ? image() : orElse(value),
+      SelfHarmIntent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SelfHarmIntent($value)';
 
  }
@@ -387,6 +471,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SelfHarmInstructions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      SelfHarmInstructions$text() => text(),
+      SelfHarmInstructions$image() => image(),
+      SelfHarmInstructions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      SelfHarmInstructions$text() => text != null ? text() : orElse(value),
+      SelfHarmInstructions$image() => image != null ? image() : orElse(value),
+      SelfHarmInstructions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SelfHarmInstructions($value)';
 
  }
@@ -442,6 +538,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Sexual$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      Sexual$text() => text(),
+      Sexual$image() => image(),
+      Sexual$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      Sexual$text() => text != null ? text() : orElse(value),
+      Sexual$image() => image != null ? image() : orElse(value),
+      Sexual$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Sexual($value)';
 
  }
@@ -493,6 +601,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SexualMinors$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      SexualMinors$text() => text(),
+      SexualMinors$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      SexualMinors$text() => text != null ? text() : orElse(value),
+      SexualMinors$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SexualMinors($value)';
 
  }
@@ -539,6 +657,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Violence$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      Violence$text() => text(),
+      Violence$image() => image(),
+      Violence$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      Violence$text() => text != null ? text() : orElse(value),
+      Violence$image() => image != null ? image() : orElse(value),
+      Violence$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Violence($value)';
 
  }
@@ -594,6 +724,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ViolenceGraphic$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      ViolenceGraphic$text() => text(),
+      ViolenceGraphic$image() => image(),
+      ViolenceGraphic$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      ViolenceGraphic$text() => text != null ? text() : orElse(value),
+      ViolenceGraphic$image() => image != null ? image() : orElse(value),
+      ViolenceGraphic$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ViolenceGraphic($value)';
 
  }

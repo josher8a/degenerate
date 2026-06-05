@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() digitalGoods, required W Function() donation, required W Function() physicalGoods, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$digitalGoods() => digitalGoods(),
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$donation() => donation(),
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$physicalGoods() => physicalGoods(),
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? digitalGoods, W Function()? donation, W Function()? physicalGoods, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$digitalGoods() => digitalGoods != null ? digitalGoods() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$donation() => donation != null ? donation() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$physicalGoods() => physicalGoods != null ? physicalGoods() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory($value)';
 
  }

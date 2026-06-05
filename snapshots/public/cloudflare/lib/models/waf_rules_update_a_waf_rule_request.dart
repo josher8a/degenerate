@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WafRulesUpdateAWafRuleRequestMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $default, required W Function() disable, required W Function() simulate, required W Function() block, required W Function() challenge, required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      WafRulesUpdateAWafRuleRequestMode$$default() => $default(),
+      WafRulesUpdateAWafRuleRequestMode$disable() => disable(),
+      WafRulesUpdateAWafRuleRequestMode$simulate() => simulate(),
+      WafRulesUpdateAWafRuleRequestMode$block() => block(),
+      WafRulesUpdateAWafRuleRequestMode$challenge() => challenge(),
+      WafRulesUpdateAWafRuleRequestMode$$on() => $on(),
+      WafRulesUpdateAWafRuleRequestMode$off() => off(),
+      WafRulesUpdateAWafRuleRequestMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $default, W Function()? disable, W Function()? simulate, W Function()? block, W Function()? challenge, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      WafRulesUpdateAWafRuleRequestMode$$default() => $default != null ? $default() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$disable() => disable != null ? disable() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$simulate() => simulate != null ? simulate() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$block() => block != null ? block() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$challenge() => challenge != null ? challenge() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$$on() => $on != null ? $on() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$off() => off != null ? off() : orElse(value),
+      WafRulesUpdateAWafRuleRequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WafRulesUpdateAWafRuleRequestMode($value)';
 
  }

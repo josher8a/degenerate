@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ValueType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() string, required W Function() singleSelect, required W Function() multiSelect, required W Function() trueFalse, required W Function() url, required W Function(String value) $unknown, }) { return switch (this) {
+      ValueType$string() => string(),
+      ValueType$singleSelect() => singleSelect(),
+      ValueType$multiSelect() => multiSelect(),
+      ValueType$trueFalse() => trueFalse(),
+      ValueType$url() => url(),
+      ValueType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? singleSelect, W Function()? multiSelect, W Function()? trueFalse, W Function()? url, W Function(String value)? $unknown, }) { return switch (this) {
+      ValueType$string() => string != null ? string() : orElse(value),
+      ValueType$singleSelect() => singleSelect != null ? singleSelect() : orElse(value),
+      ValueType$multiSelect() => multiSelect != null ? multiSelect() : orElse(value),
+      ValueType$trueFalse() => trueFalse != null ? trueFalse() : orElse(value),
+      ValueType$url() => url != null ? url() : orElse(value),
+      ValueType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ValueType($value)';
 
  }

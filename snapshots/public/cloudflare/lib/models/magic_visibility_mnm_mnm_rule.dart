@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityMnmMnmRulePrefixMatch$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exact, required W Function() subnet, required W Function() supernet, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRulePrefixMatch$exact() => exact(),
+      MagicVisibilityMnmMnmRulePrefixMatch$subnet() => subnet(),
+      MagicVisibilityMnmMnmRulePrefixMatch$supernet() => supernet(),
+      MagicVisibilityMnmMnmRulePrefixMatch$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exact, W Function()? subnet, W Function()? supernet, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRulePrefixMatch$exact() => exact != null ? exact() : orElse(value),
+      MagicVisibilityMnmMnmRulePrefixMatch$subnet() => subnet != null ? subnet() : orElse(value),
+      MagicVisibilityMnmMnmRulePrefixMatch$supernet() => supernet != null ? supernet() : orElse(value),
+      MagicVisibilityMnmMnmRulePrefixMatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityMnmMnmRulePrefixMatch($value)';
 
  }
@@ -99,6 +113,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityMnmMnmRuleType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() threshold, required W Function() zscore, required W Function() advancedDdos, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleType$threshold() => threshold(),
+      MagicVisibilityMnmMnmRuleType$zscore() => zscore(),
+      MagicVisibilityMnmMnmRuleType$advancedDdos() => advancedDdos(),
+      MagicVisibilityMnmMnmRuleType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threshold, W Function()? zscore, W Function()? advancedDdos, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleType$threshold() => threshold != null ? threshold() : orElse(value),
+      MagicVisibilityMnmMnmRuleType$zscore() => zscore != null ? zscore() : orElse(value),
+      MagicVisibilityMnmMnmRuleType$advancedDdos() => advancedDdos != null ? advancedDdos() : orElse(value),
+      MagicVisibilityMnmMnmRuleType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityMnmMnmRuleType($value)';
 
  }
@@ -168,6 +196,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$low() => low(),
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$medium() => medium(),
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$high() => high(),
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$low() => low != null ? low() : orElse(value),
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$medium() => medium != null ? medium() : orElse(value),
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$high() => high != null ? high() : orElse(value),
+      MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityMnmMnmRuleZscoreSensitivity($value)';
 
  }
@@ -233,6 +275,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityMnmMnmRuleZscoreTarget$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bits, required W Function() packets, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleZscoreTarget$bits() => bits(),
+      MagicVisibilityMnmMnmRuleZscoreTarget$packets() => packets(),
+      MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bits, W Function()? packets, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleZscoreTarget$bits() => bits != null ? bits() : orElse(value),
+      MagicVisibilityMnmMnmRuleZscoreTarget$packets() => packets != null ? packets() : orElse(value),
+      MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityMnmMnmRuleZscoreTarget($value)';
 
  }

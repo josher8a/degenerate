@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiBotsSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() userAgent, required W Function() crawlPurpose, required W Function() industry, required W Function() vertical, required W Function() contentType, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiBotsSummaryDimension$userAgent() => userAgent(),
+      RadarGetAiBotsSummaryDimension$crawlPurpose() => crawlPurpose(),
+      RadarGetAiBotsSummaryDimension$industry() => industry(),
+      RadarGetAiBotsSummaryDimension$vertical() => vertical(),
+      RadarGetAiBotsSummaryDimension$contentType() => contentType(),
+      RadarGetAiBotsSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? userAgent, W Function()? crawlPurpose, W Function()? industry, W Function()? vertical, W Function()? contentType, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiBotsSummaryDimension$userAgent() => userAgent != null ? userAgent() : orElse(value),
+      RadarGetAiBotsSummaryDimension$crawlPurpose() => crawlPurpose != null ? crawlPurpose() : orElse(value),
+      RadarGetAiBotsSummaryDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetAiBotsSummaryDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetAiBotsSummaryDimension$contentType() => contentType != null ? contentType() : orElse(value),
+      RadarGetAiBotsSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiBotsSummaryDimension($value)';
 
  }

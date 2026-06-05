@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesTimestampUnit$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() second, required W Function() millisecond, required W Function() microsecond, required W Function() nanosecond, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudflarePipelinesTimestampUnit$second() => second(),
+      CloudflarePipelinesTimestampUnit$millisecond() => millisecond(),
+      CloudflarePipelinesTimestampUnit$microsecond() => microsecond(),
+      CloudflarePipelinesTimestampUnit$nanosecond() => nanosecond(),
+      CloudflarePipelinesTimestampUnit$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? second, W Function()? millisecond, W Function()? microsecond, W Function()? nanosecond, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudflarePipelinesTimestampUnit$second() => second != null ? second() : orElse(value),
+      CloudflarePipelinesTimestampUnit$millisecond() => millisecond != null ? millisecond() : orElse(value),
+      CloudflarePipelinesTimestampUnit$microsecond() => microsecond != null ? microsecond() : orElse(value),
+      CloudflarePipelinesTimestampUnit$nanosecond() => nanosecond != null ? nanosecond() : orElse(value),
+      CloudflarePipelinesTimestampUnit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudflarePipelinesTimestampUnit($value)';
 
  }

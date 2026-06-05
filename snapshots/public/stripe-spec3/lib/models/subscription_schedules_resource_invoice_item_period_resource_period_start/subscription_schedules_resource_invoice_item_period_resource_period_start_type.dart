@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() maxItemPeriodStart, required W Function() phaseStart, required W Function() timestamp, required W Function(String value) $unknown, }) { return switch (this) {
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$maxItemPeriodStart() => maxItemPeriodStart(),
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$phaseStart() => phaseStart(),
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$timestamp() => timestamp(),
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxItemPeriodStart, W Function()? phaseStart, W Function()? timestamp, W Function(String value)? $unknown, }) { return switch (this) {
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$maxItemPeriodStart() => maxItemPeriodStart != null ? maxItemPeriodStart() : orElse(value),
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$phaseStart() => phaseStart != null ? phaseStart() : orElse(value),
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$timestamp() => timestamp != null ? timestamp() : orElse(value),
+      SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType($value)';
 
  }

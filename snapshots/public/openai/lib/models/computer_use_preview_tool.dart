@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ComputerEnvironment$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() mac, required W Function() linux, required W Function() ubuntu, required W Function() browser, required W Function(String value) $unknown, }) { return switch (this) {
+      ComputerEnvironment$windows() => windows(),
+      ComputerEnvironment$mac() => mac(),
+      ComputerEnvironment$linux() => linux(),
+      ComputerEnvironment$ubuntu() => ubuntu(),
+      ComputerEnvironment$browser() => browser(),
+      ComputerEnvironment$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? mac, W Function()? linux, W Function()? ubuntu, W Function()? browser, W Function(String value)? $unknown, }) { return switch (this) {
+      ComputerEnvironment$windows() => windows != null ? windows() : orElse(value),
+      ComputerEnvironment$mac() => mac != null ? mac() : orElse(value),
+      ComputerEnvironment$linux() => linux != null ? linux() : orElse(value),
+      ComputerEnvironment$ubuntu() => ubuntu != null ? ubuntu() : orElse(value),
+      ComputerEnvironment$browser() => browser != null ? browser() : orElse(value),
+      ComputerEnvironment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ComputerEnvironment($value)';
 
  }

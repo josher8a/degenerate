@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssueTypeColor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() gray, required W Function() blue, required W Function() green, required W Function() yellow, required W Function() orange, required W Function() red, required W Function() pink, required W Function() purple, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      IssueTypeColor$gray() => gray(),
+      IssueTypeColor$blue() => blue(),
+      IssueTypeColor$green() => green(),
+      IssueTypeColor$yellow() => yellow(),
+      IssueTypeColor$orange() => orange(),
+      IssueTypeColor$red() => red(),
+      IssueTypeColor$pink() => pink(),
+      IssueTypeColor$purple() => purple(),
+      IssueTypeColor$$null() => $null(),
+      IssueTypeColor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gray, W Function()? blue, W Function()? green, W Function()? yellow, W Function()? orange, W Function()? red, W Function()? pink, W Function()? purple, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      IssueTypeColor$gray() => gray != null ? gray() : orElse(value),
+      IssueTypeColor$blue() => blue != null ? blue() : orElse(value),
+      IssueTypeColor$green() => green != null ? green() : orElse(value),
+      IssueTypeColor$yellow() => yellow != null ? yellow() : orElse(value),
+      IssueTypeColor$orange() => orange != null ? orange() : orElse(value),
+      IssueTypeColor$red() => red != null ? red() : orElse(value),
+      IssueTypeColor$pink() => pink != null ? pink() : orElse(value),
+      IssueTypeColor$purple() => purple != null ? purple() : orElse(value),
+      IssueTypeColor$$null() => $null != null ? $null() : orElse(value),
+      IssueTypeColor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssueTypeColor($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2SlurperJobStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() running, required W Function() paused, required W Function() aborted, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+      R2SlurperJobStatus$running() => running(),
+      R2SlurperJobStatus$paused() => paused(),
+      R2SlurperJobStatus$aborted() => aborted(),
+      R2SlurperJobStatus$completed() => completed(),
+      R2SlurperJobStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? running, W Function()? paused, W Function()? aborted, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+      R2SlurperJobStatus$running() => running != null ? running() : orElse(value),
+      R2SlurperJobStatus$paused() => paused != null ? paused() : orElse(value),
+      R2SlurperJobStatus$aborted() => aborted != null ? aborted() : orElse(value),
+      R2SlurperJobStatus$completed() => completed != null ? completed() : orElse(value),
+      R2SlurperJobStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2SlurperJobStatus($value)';
 
  }

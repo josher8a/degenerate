@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditReversal, required W Function() $other, required W Function() outboundPayment, required W Function() outboundTransfer, required W Function() payout, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$creditReversal() => creditReversal(),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$$other() => $other(),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundPayment() => outboundPayment(),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundTransfer() => outboundTransfer(),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$payout() => payout(),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? $other, W Function()? outboundPayment, W Function()? outboundTransfer, W Function()? payout, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$$other() => $other != null ? $other() : orElse(value),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundPayment() => outboundPayment != null ? outboundPayment() : orElse(value),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundTransfer() => outboundTransfer != null ? outboundTransfer() : orElse(value),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$payout() => payout != null ? payout() : orElse(value),
+      TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryReceivedCreditsResourceSourceFlowsDetailsType($value)';
 
  }

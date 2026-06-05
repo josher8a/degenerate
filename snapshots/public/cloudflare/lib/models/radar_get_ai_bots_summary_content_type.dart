@@ -81,6 +81,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiBotsSummaryContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() html, required W Function() images, required W Function() $json, required W Function() javascript, required W Function() css, required W Function() plainText, required W Function() fonts, required W Function() xml, required W Function() yaml, required W Function() video, required W Function() audio, required W Function() markdown, required W Function() documents, required W Function() binary, required W Function() serialization, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiBotsSummaryContentType$html() => html(),
+      RadarGetAiBotsSummaryContentType$images() => images(),
+      RadarGetAiBotsSummaryContentType$$json() => $json(),
+      RadarGetAiBotsSummaryContentType$javascript() => javascript(),
+      RadarGetAiBotsSummaryContentType$css() => css(),
+      RadarGetAiBotsSummaryContentType$plainText() => plainText(),
+      RadarGetAiBotsSummaryContentType$fonts() => fonts(),
+      RadarGetAiBotsSummaryContentType$xml() => xml(),
+      RadarGetAiBotsSummaryContentType$yaml() => yaml(),
+      RadarGetAiBotsSummaryContentType$video() => video(),
+      RadarGetAiBotsSummaryContentType$audio() => audio(),
+      RadarGetAiBotsSummaryContentType$markdown() => markdown(),
+      RadarGetAiBotsSummaryContentType$documents() => documents(),
+      RadarGetAiBotsSummaryContentType$binary() => binary(),
+      RadarGetAiBotsSummaryContentType$serialization() => serialization(),
+      RadarGetAiBotsSummaryContentType$$other() => $other(),
+      RadarGetAiBotsSummaryContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W Function()? images, W Function()? $json, W Function()? javascript, W Function()? css, W Function()? plainText, W Function()? fonts, W Function()? xml, W Function()? yaml, W Function()? video, W Function()? audio, W Function()? markdown, W Function()? documents, W Function()? binary, W Function()? serialization, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiBotsSummaryContentType$html() => html != null ? html() : orElse(value),
+      RadarGetAiBotsSummaryContentType$images() => images != null ? images() : orElse(value),
+      RadarGetAiBotsSummaryContentType$$json() => $json != null ? $json() : orElse(value),
+      RadarGetAiBotsSummaryContentType$javascript() => javascript != null ? javascript() : orElse(value),
+      RadarGetAiBotsSummaryContentType$css() => css != null ? css() : orElse(value),
+      RadarGetAiBotsSummaryContentType$plainText() => plainText != null ? plainText() : orElse(value),
+      RadarGetAiBotsSummaryContentType$fonts() => fonts != null ? fonts() : orElse(value),
+      RadarGetAiBotsSummaryContentType$xml() => xml != null ? xml() : orElse(value),
+      RadarGetAiBotsSummaryContentType$yaml() => yaml != null ? yaml() : orElse(value),
+      RadarGetAiBotsSummaryContentType$video() => video != null ? video() : orElse(value),
+      RadarGetAiBotsSummaryContentType$audio() => audio != null ? audio() : orElse(value),
+      RadarGetAiBotsSummaryContentType$markdown() => markdown != null ? markdown() : orElse(value),
+      RadarGetAiBotsSummaryContentType$documents() => documents != null ? documents() : orElse(value),
+      RadarGetAiBotsSummaryContentType$binary() => binary != null ? binary() : orElse(value),
+      RadarGetAiBotsSummaryContentType$serialization() => serialization != null ? serialization() : orElse(value),
+      RadarGetAiBotsSummaryContentType$$other() => $other != null ? $other() : orElse(value),
+      RadarGetAiBotsSummaryContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiBotsSummaryContentType($value)';
 
  }

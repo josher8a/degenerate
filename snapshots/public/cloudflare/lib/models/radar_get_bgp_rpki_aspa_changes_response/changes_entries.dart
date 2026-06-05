@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EntriesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerAdded, required W Function() customerRemoved, required W Function() providersAdded, required W Function() providersRemoved, required W Function(String value) $unknown, }) { return switch (this) {
+      EntriesType$customerAdded() => customerAdded(),
+      EntriesType$customerRemoved() => customerRemoved(),
+      EntriesType$providersAdded() => providersAdded(),
+      EntriesType$providersRemoved() => providersRemoved(),
+      EntriesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerAdded, W Function()? customerRemoved, W Function()? providersAdded, W Function()? providersRemoved, W Function(String value)? $unknown, }) { return switch (this) {
+      EntriesType$customerAdded() => customerAdded != null ? customerAdded() : orElse(value),
+      EntriesType$customerRemoved() => customerRemoved != null ? customerRemoved() : orElse(value),
+      EntriesType$providersAdded() => providersAdded != null ? providersAdded() : orElse(value),
+      EntriesType$providersRemoved() => providersRemoved != null ? providersRemoved() : orElse(value),
+      EntriesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EntriesType($value)';
 
  }

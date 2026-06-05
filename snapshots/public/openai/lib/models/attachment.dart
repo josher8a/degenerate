@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AttachmentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() image, required W Function() file, required W Function(String value) $unknown, }) { return switch (this) {
+      AttachmentType$image() => image(),
+      AttachmentType$file() => file(),
+      AttachmentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? image, W Function()? file, W Function(String value)? $unknown, }) { return switch (this) {
+      AttachmentType$image() => image != null ? image() : orElse(value),
+      AttachmentType$file() => file != null ? file() : orElse(value),
+      AttachmentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AttachmentType($value)';
 
  }

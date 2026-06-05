@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalCustomerUpdateAllowedUpdates$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() address, required W Function() email, required W Function() $name, required W Function() phone, required W Function() shipping, required W Function() taxId, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalCustomerUpdateAllowedUpdates$address() => address(),
+      PortalCustomerUpdateAllowedUpdates$email() => email(),
+      PortalCustomerUpdateAllowedUpdates$$name() => $name(),
+      PortalCustomerUpdateAllowedUpdates$phone() => phone(),
+      PortalCustomerUpdateAllowedUpdates$shipping() => shipping(),
+      PortalCustomerUpdateAllowedUpdates$taxId() => taxId(),
+      PortalCustomerUpdateAllowedUpdates$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? address, W Function()? email, W Function()? $name, W Function()? phone, W Function()? shipping, W Function()? taxId, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalCustomerUpdateAllowedUpdates$address() => address != null ? address() : orElse(value),
+      PortalCustomerUpdateAllowedUpdates$email() => email != null ? email() : orElse(value),
+      PortalCustomerUpdateAllowedUpdates$$name() => $name != null ? $name() : orElse(value),
+      PortalCustomerUpdateAllowedUpdates$phone() => phone != null ? phone() : orElse(value),
+      PortalCustomerUpdateAllowedUpdates$shipping() => shipping != null ? shipping() : orElse(value),
+      PortalCustomerUpdateAllowedUpdates$taxId() => taxId != null ? taxId() : orElse(value),
+      PortalCustomerUpdateAllowedUpdates$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalCustomerUpdateAllowedUpdates($value)';
 
  }

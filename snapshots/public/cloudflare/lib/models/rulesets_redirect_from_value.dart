@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsRedirectFromValueStatusCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $301, required W Function() $302, required W Function() $303, required W Function() $307, required W Function() $308, required W Function(int value) $unknown, }) { return switch (this) {
+      RulesetsRedirectFromValueStatusCode$$301() => $301(),
+      RulesetsRedirectFromValueStatusCode$$302() => $302(),
+      RulesetsRedirectFromValueStatusCode$$303() => $303(),
+      RulesetsRedirectFromValueStatusCode$$307() => $307(),
+      RulesetsRedirectFromValueStatusCode$$308() => $308(),
+      RulesetsRedirectFromValueStatusCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Function()? $302, W Function()? $303, W Function()? $307, W Function()? $308, W Function(int value)? $unknown, }) { return switch (this) {
+      RulesetsRedirectFromValueStatusCode$$301() => $301 != null ? $301() : orElse(value),
+      RulesetsRedirectFromValueStatusCode$$302() => $302 != null ? $302() : orElse(value),
+      RulesetsRedirectFromValueStatusCode$$303() => $303 != null ? $303() : orElse(value),
+      RulesetsRedirectFromValueStatusCode$$307() => $307 != null ? $307() : orElse(value),
+      RulesetsRedirectFromValueStatusCode$$308() => $308 != null ? $308() : orElse(value),
+      RulesetsRedirectFromValueStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsRedirectFromValueStatusCode($value)';
 
  }

@@ -82,6 +82,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesComponentsSchemasStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() pending, required W Function() activeRedeploying, required W Function() moved, required W Function() pendingDeletion, required W Function() deleted, required W Function() pendingBlocked, required W Function() pendingMigration, required W Function() pendingProvisioned, required W Function() testPending, required W Function() testActive, required W Function() testActiveApex, required W Function() testBlocked, required W Function() testFailed, required W Function() provisioned, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$active() => active(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pending() => pending(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$activeRedeploying() => activeRedeploying(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$moved() => moved(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingDeletion() => pendingDeletion(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$deleted() => deleted(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingBlocked() => pendingBlocked(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingMigration() => pendingMigration(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingProvisioned() => pendingProvisioned(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testPending() => testPending(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testActive() => testActive(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testActiveApex() => testActiveApex(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testBlocked() => testBlocked(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testFailed() => testFailed(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$provisioned() => provisioned(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$blocked() => blocked(),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function()? activeRedeploying, W Function()? moved, W Function()? pendingDeletion, W Function()? deleted, W Function()? pendingBlocked, W Function()? pendingMigration, W Function()? pendingProvisioned, W Function()? testPending, W Function()? testActive, W Function()? testActiveApex, W Function()? testBlocked, W Function()? testFailed, W Function()? provisioned, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$active() => active != null ? active() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pending() => pending != null ? pending() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$activeRedeploying() => activeRedeploying != null ? activeRedeploying() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$moved() => moved != null ? moved() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingBlocked() => pendingBlocked != null ? pendingBlocked() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingMigration() => pendingMigration != null ? pendingMigration() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$pendingProvisioned() => pendingProvisioned != null ? pendingProvisioned() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testPending() => testPending != null ? testPending() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testActive() => testActive != null ? testActive() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testActiveApex() => testActiveApex != null ? testActiveApex() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testBlocked() => testBlocked != null ? testBlocked() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$testFailed() => testFailed != null ? testFailed() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$provisioned() => provisioned != null ? provisioned() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      TlsCertificatesAndHostnamesComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasStatus($value)';
 
  }

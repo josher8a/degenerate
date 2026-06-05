@@ -62,6 +62,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountNotAvailable, required W Function() creditNotProcessed, required W Function() customerInitiated, required W Function() duplicate, required W Function() fraudulent, required W Function() general, required W Function() noncompliant, required W Function() productNotReceived, required W Function() productUnacceptable, required W Function() subscriptionCanceled, required W Function() unrecognized, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$accountNotAvailable() => accountNotAvailable(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$creditNotProcessed() => creditNotProcessed(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$customerInitiated() => customerInitiated(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$duplicate() => duplicate(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$fraudulent() => fraudulent(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$general() => general(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$noncompliant() => noncompliant(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$productNotReceived() => productNotReceived(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$productUnacceptable() => productUnacceptable(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$subscriptionCanceled() => subscriptionCanceled(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$unrecognized() => unrecognized(),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountNotAvailable, W Function()? creditNotProcessed, W Function()? customerInitiated, W Function()? duplicate, W Function()? fraudulent, W Function()? general, W Function()? noncompliant, W Function()? productNotReceived, W Function()? productUnacceptable, W Function()? subscriptionCanceled, W Function()? unrecognized, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$accountNotAvailable() => accountNotAvailable != null ? accountNotAvailable() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$creditNotProcessed() => creditNotProcessed != null ? creditNotProcessed() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$customerInitiated() => customerInitiated != null ? customerInitiated() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$general() => general != null ? general() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$noncompliant() => noncompliant != null ? noncompliant() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$productNotReceived() => productNotReceived != null ? productNotReceived() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$productUnacceptable() => productUnacceptable != null ? productUnacceptable() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$subscriptionCanceled() => subscriptionCanceled != null ? subscriptionCanceled() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$unrecognized() => unrecognized != null ? unrecognized() : orElse(value),
+      InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)';
 
  }

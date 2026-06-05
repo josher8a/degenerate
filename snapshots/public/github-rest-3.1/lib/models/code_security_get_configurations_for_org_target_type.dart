@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeSecurityGetConfigurationsForOrgTargetType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() global, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityGetConfigurationsForOrgTargetType$global() => global(),
+      CodeSecurityGetConfigurationsForOrgTargetType$all() => all(),
+      CodeSecurityGetConfigurationsForOrgTargetType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? global, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityGetConfigurationsForOrgTargetType$global() => global != null ? global() : orElse(value),
+      CodeSecurityGetConfigurationsForOrgTargetType$all() => all != null ? all() : orElse(value),
+      CodeSecurityGetConfigurationsForOrgTargetType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeSecurityGetConfigurationsForOrgTargetType($value)';
 
  }

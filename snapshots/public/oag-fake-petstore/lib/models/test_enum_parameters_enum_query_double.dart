@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TestEnumParametersEnumQueryDouble$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $11, required W Function() minus12, required W Function(double value) $unknown, }) { return switch (this) {
+      TestEnumParametersEnumQueryDouble$$11() => $11(),
+      TestEnumParametersEnumQueryDouble$minus12() => minus12(),
+      TestEnumParametersEnumQueryDouble$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $11, W Function()? minus12, W Function(double value)? $unknown, }) { return switch (this) {
+      TestEnumParametersEnumQueryDouble$$11() => $11 != null ? $11() : orElse(value),
+      TestEnumParametersEnumQueryDouble$minus12() => minus12 != null ? minus12() : orElse(value),
+      TestEnumParametersEnumQueryDouble$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TestEnumParametersEnumQueryDouble($value)';
 
  }

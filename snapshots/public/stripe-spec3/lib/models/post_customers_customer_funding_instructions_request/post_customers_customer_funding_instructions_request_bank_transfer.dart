@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BankTransferRequestedAddressTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() iban, required W Function() sortCode, required W Function() spei, required W Function() zengin, required W Function(String value) $unknown, }) { return switch (this) {
+      BankTransferRequestedAddressTypes$iban() => iban(),
+      BankTransferRequestedAddressTypes$sortCode() => sortCode(),
+      BankTransferRequestedAddressTypes$spei() => spei(),
+      BankTransferRequestedAddressTypes$zengin() => zengin(),
+      BankTransferRequestedAddressTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? iban, W Function()? sortCode, W Function()? spei, W Function()? zengin, W Function(String value)? $unknown, }) { return switch (this) {
+      BankTransferRequestedAddressTypes$iban() => iban != null ? iban() : orElse(value),
+      BankTransferRequestedAddressTypes$sortCode() => sortCode != null ? sortCode() : orElse(value),
+      BankTransferRequestedAddressTypes$spei() => spei != null ? spei() : orElse(value),
+      BankTransferRequestedAddressTypes$zengin() => zengin != null ? zengin() : orElse(value),
+      BankTransferRequestedAddressTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BankTransferRequestedAddressTypes($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateSpeechRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tts1, required W Function() tts1Hd, required W Function() gpt4oMiniTts, required W Function() gpt4oMiniTts20251215, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateSpeechRequestModelVariant2$tts1() => tts1(),
+      CreateSpeechRequestModelVariant2$tts1Hd() => tts1Hd(),
+      CreateSpeechRequestModelVariant2$gpt4oMiniTts() => gpt4oMiniTts(),
+      CreateSpeechRequestModelVariant2$gpt4oMiniTts20251215() => gpt4oMiniTts20251215(),
+      CreateSpeechRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tts1, W Function()? tts1Hd, W Function()? gpt4oMiniTts, W Function()? gpt4oMiniTts20251215, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateSpeechRequestModelVariant2$tts1() => tts1 != null ? tts1() : orElse(value),
+      CreateSpeechRequestModelVariant2$tts1Hd() => tts1Hd != null ? tts1Hd() : orElse(value),
+      CreateSpeechRequestModelVariant2$gpt4oMiniTts() => gpt4oMiniTts != null ? gpt4oMiniTts() : orElse(value),
+      CreateSpeechRequestModelVariant2$gpt4oMiniTts20251215() => gpt4oMiniTts20251215 != null ? gpt4oMiniTts20251215() : orElse(value),
+      CreateSpeechRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateSpeechRequestModelVariant2($value)';
 
  }

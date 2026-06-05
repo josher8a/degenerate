@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LimitType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() count, required W Function() cost, required W Function(String value) $unknown, }) { return switch (this) {
+      LimitType$count() => count(),
+      LimitType$cost() => cost(),
+      LimitType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? count, W Function()? cost, W Function(String value)? $unknown, }) { return switch (this) {
+      LimitType$count() => count != null ? count() : orElse(value),
+      LimitType$cost() => cost != null ? cost() : orElse(value),
+      LimitType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LimitType($value)';
 
  }

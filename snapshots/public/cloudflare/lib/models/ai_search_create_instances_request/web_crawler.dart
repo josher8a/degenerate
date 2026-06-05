@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ParseType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sitemap, required W Function() feedRss, required W Function() crawl, required W Function(String value) $unknown, }) { return switch (this) {
+      ParseType$sitemap() => sitemap(),
+      ParseType$feedRss() => feedRss(),
+      ParseType$crawl() => crawl(),
+      ParseType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sitemap, W Function()? feedRss, W Function()? crawl, W Function(String value)? $unknown, }) { return switch (this) {
+      ParseType$sitemap() => sitemap != null ? sitemap() : orElse(value),
+      ParseType$feedRss() => feedRss != null ? feedRss() : orElse(value),
+      ParseType$crawl() => crawl != null ? crawl() : orElse(value),
+      ParseType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ParseType($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnsRecordsTtlVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function(double value) $unknown, }) { return switch (this) {
+      DnsRecordsTtlVariant2$$1() => $1(),
+      DnsRecordsTtlVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $1, W Function(double value)? $unknown, }) { return switch (this) {
+      DnsRecordsTtlVariant2$$1() => $1 != null ? $1() : orElse(value),
+      DnsRecordsTtlVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnsRecordsTtlVariant2($value)';
 
  }

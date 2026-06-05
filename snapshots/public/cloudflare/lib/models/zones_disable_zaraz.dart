@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesDisableZarazId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disableZaraz, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesDisableZarazId$disableZaraz() => disableZaraz(),
+      ZonesDisableZarazId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disableZaraz, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesDisableZarazId$disableZaraz() => disableZaraz != null ? disableZaraz() : orElse(value),
+      ZonesDisableZarazId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesDisableZarazId($value)';
 
  }

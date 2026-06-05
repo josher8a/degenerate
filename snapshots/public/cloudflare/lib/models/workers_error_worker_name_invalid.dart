@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersErrorWorkerNameInvalidCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $10016, required W Function(int value) $unknown, }) { return switch (this) {
+      WorkersErrorWorkerNameInvalidCode$$10016() => $10016(),
+      WorkersErrorWorkerNameInvalidCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $10016, W Function(int value)? $unknown, }) { return switch (this) {
+      WorkersErrorWorkerNameInvalidCode$$10016() => $10016 != null ? $10016() : orElse(value),
+      WorkersErrorWorkerNameInvalidCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersErrorWorkerNameInvalidCode($value)';
 
  }

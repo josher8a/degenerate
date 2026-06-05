@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserSAccountMembershipsListMembershipsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() pending, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+      UserSAccountMembershipsListMembershipsStatus$accepted() => accepted(),
+      UserSAccountMembershipsListMembershipsStatus$pending() => pending(),
+      UserSAccountMembershipsListMembershipsStatus$rejected() => rejected(),
+      UserSAccountMembershipsListMembershipsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+      UserSAccountMembershipsListMembershipsStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      UserSAccountMembershipsListMembershipsStatus$pending() => pending != null ? pending() : orElse(value),
+      UserSAccountMembershipsListMembershipsStatus$rejected() => rejected != null ? rejected() : orElse(value),
+      UserSAccountMembershipsListMembershipsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UserSAccountMembershipsListMembershipsStatus($value)';
 
  }

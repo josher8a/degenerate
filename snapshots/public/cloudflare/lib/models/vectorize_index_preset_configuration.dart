@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorizeIndexPreset$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cfBaaiBgeSmallEnV15, required W Function() cfBaaiBgeBaseEnV15, required W Function() cfBaaiBgeLargeEnV15, required W Function() openaiTextEmbeddingAda002, required W Function() cohereEmbedMultilingualV20, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorizeIndexPreset$cfBaaiBgeSmallEnV15() => cfBaaiBgeSmallEnV15(),
+      VectorizeIndexPreset$cfBaaiBgeBaseEnV15() => cfBaaiBgeBaseEnV15(),
+      VectorizeIndexPreset$cfBaaiBgeLargeEnV15() => cfBaaiBgeLargeEnV15(),
+      VectorizeIndexPreset$openaiTextEmbeddingAda002() => openaiTextEmbeddingAda002(),
+      VectorizeIndexPreset$cohereEmbedMultilingualV20() => cohereEmbedMultilingualV20(),
+      VectorizeIndexPreset$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfBaaiBgeSmallEnV15, W Function()? cfBaaiBgeBaseEnV15, W Function()? cfBaaiBgeLargeEnV15, W Function()? openaiTextEmbeddingAda002, W Function()? cohereEmbedMultilingualV20, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorizeIndexPreset$cfBaaiBgeSmallEnV15() => cfBaaiBgeSmallEnV15 != null ? cfBaaiBgeSmallEnV15() : orElse(value),
+      VectorizeIndexPreset$cfBaaiBgeBaseEnV15() => cfBaaiBgeBaseEnV15 != null ? cfBaaiBgeBaseEnV15() : orElse(value),
+      VectorizeIndexPreset$cfBaaiBgeLargeEnV15() => cfBaaiBgeLargeEnV15 != null ? cfBaaiBgeLargeEnV15() : orElse(value),
+      VectorizeIndexPreset$openaiTextEmbeddingAda002() => openaiTextEmbeddingAda002 != null ? openaiTextEmbeddingAda002() : orElse(value),
+      VectorizeIndexPreset$cohereEmbedMultilingualV20() => cohereEmbedMultilingualV20 != null ? cohereEmbedMultilingualV20() : orElse(value),
+      VectorizeIndexPreset$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorizeIndexPreset($value)';
 
  }

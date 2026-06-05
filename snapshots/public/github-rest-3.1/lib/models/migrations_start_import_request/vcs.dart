@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Vcs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() subversion, required W Function() git, required W Function() mercurial, required W Function() tfvc, required W Function(String value) $unknown, }) { return switch (this) {
+      Vcs$subversion() => subversion(),
+      Vcs$git() => git(),
+      Vcs$mercurial() => mercurial(),
+      Vcs$tfvc() => tfvc(),
+      Vcs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? subversion, W Function()? git, W Function()? mercurial, W Function()? tfvc, W Function(String value)? $unknown, }) { return switch (this) {
+      Vcs$subversion() => subversion != null ? subversion() : orElse(value),
+      Vcs$git() => git != null ? git() : orElse(value),
+      Vcs$mercurial() => mercurial != null ? mercurial() : orElse(value),
+      Vcs$tfvc() => tfvc != null ? tfvc() : orElse(value),
+      Vcs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Vcs($value)';
 
  }

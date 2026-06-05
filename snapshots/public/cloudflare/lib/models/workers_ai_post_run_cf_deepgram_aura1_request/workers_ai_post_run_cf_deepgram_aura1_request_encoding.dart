@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() linear16, required W Function() flac, required W Function() mulaw, required W Function() alaw, required W Function() mp3, required W Function() opus, required W Function() aac, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16() => linear16(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac() => flac(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw() => mulaw(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw() => alaw(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3() => mp3(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus() => opus(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac() => aac(),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function()? flac, W Function()? mulaw, W Function()? alaw, W Function()? mp3, W Function()? opus, W Function()? aac, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16() => linear16 != null ? linear16() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac() => flac != null ? flac() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw() => mulaw != null ? mulaw() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw() => alaw != null ? alaw() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3() => mp3 != null ? mp3() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus() => opus != null ? opus() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac() => aac != null ? aac() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestEncoding($value)';
 
  }

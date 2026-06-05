@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() taxTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxTransactionObject$taxTransaction() => taxTransaction(),
+      TaxTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxTransactionObject$taxTransaction() => taxTransaction != null ? taxTransaction() : orElse(value),
+      TaxTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxTransactionObject($value)';
 
  }

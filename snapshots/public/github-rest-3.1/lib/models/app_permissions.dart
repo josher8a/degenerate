@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Codespaces$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      Codespaces$read() => read(),
+      Codespaces$write() => write(),
+      Codespaces$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      Codespaces$read() => read != null ? read() : orElse(value),
+      Codespaces$write() => write != null ? write() : orElse(value),
+      Codespaces$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Codespaces($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotSecrets$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotSecrets$read() => read(),
+      DependabotSecrets$write() => write(),
+      DependabotSecrets$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotSecrets$read() => read != null ? read() : orElse(value),
+      DependabotSecrets$write() => write != null ? write() : orElse(value),
+      DependabotSecrets$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotSecrets($value)';
 
  }
@@ -138,6 +162,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RepositoryCustomProperties$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      RepositoryCustomProperties$read() => read(),
+      RepositoryCustomProperties$write() => write(),
+      RepositoryCustomProperties$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      RepositoryCustomProperties$read() => read != null ? read() : orElse(value),
+      RepositoryCustomProperties$write() => write != null ? write() : orElse(value),
+      RepositoryCustomProperties$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RepositoryCustomProperties($value)';
 
  }
@@ -190,6 +226,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AppPermissionsWorkflows$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      AppPermissionsWorkflows$write() => write(),
+      AppPermissionsWorkflows$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      AppPermissionsWorkflows$write() => write != null ? write() : orElse(value),
+      AppPermissionsWorkflows$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AppPermissionsWorkflows($value)';
 
  }
@@ -237,6 +283,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomPropertiesForOrganizations$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomPropertiesForOrganizations$read() => read(),
+      CustomPropertiesForOrganizations$write() => write(),
+      CustomPropertiesForOrganizations$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomPropertiesForOrganizations$read() => read != null ? read() : orElse(value),
+      CustomPropertiesForOrganizations$write() => write != null ? write() : orElse(value),
+      CustomPropertiesForOrganizations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomPropertiesForOrganizations($value)';
 
  }
@@ -293,6 +351,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationCustomRoles$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationCustomRoles$read() => read(),
+      OrganizationCustomRoles$write() => write(),
+      OrganizationCustomRoles$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationCustomRoles$read() => read != null ? read() : orElse(value),
+      OrganizationCustomRoles$write() => write != null ? write() : orElse(value),
+      OrganizationCustomRoles$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationCustomRoles($value)';
 
  }
@@ -349,6 +419,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationCustomOrgRoles$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationCustomOrgRoles$read() => read(),
+      OrganizationCustomOrgRoles$write() => write(),
+      OrganizationCustomOrgRoles$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationCustomOrgRoles$read() => read != null ? read() : orElse(value),
+      OrganizationCustomOrgRoles$write() => write != null ? write() : orElse(value),
+      OrganizationCustomOrgRoles$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationCustomOrgRoles($value)';
 
  }
@@ -409,6 +491,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationCustomProperties$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationCustomProperties$read() => read(),
+      OrganizationCustomProperties$write() => write(),
+      OrganizationCustomProperties$admin() => admin(),
+      OrganizationCustomProperties$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationCustomProperties$read() => read != null ? read() : orElse(value),
+      OrganizationCustomProperties$write() => write != null ? write() : orElse(value),
+      OrganizationCustomProperties$admin() => admin != null ? admin() : orElse(value),
+      OrganizationCustomProperties$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationCustomProperties($value)';
 
  }
@@ -470,6 +566,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationCopilotSeatManagement$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationCopilotSeatManagement$write() => write(),
+      OrganizationCopilotSeatManagement$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationCopilotSeatManagement$write() => write != null ? write() : orElse(value),
+      OrganizationCopilotSeatManagement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationCopilotSeatManagement($value)';
 
  }
@@ -517,6 +623,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationAnnouncementBanners$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationAnnouncementBanners$read() => read(),
+      OrganizationAnnouncementBanners$write() => write(),
+      OrganizationAnnouncementBanners$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationAnnouncementBanners$read() => read != null ? read() : orElse(value),
+      OrganizationAnnouncementBanners$write() => write != null ? write() : orElse(value),
+      OrganizationAnnouncementBanners$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationAnnouncementBanners($value)';
 
  }
@@ -569,6 +687,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationEvents$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationEvents$read() => read(),
+      OrganizationEvents$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationEvents$read() => read != null ? read() : orElse(value),
+      OrganizationEvents$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationEvents($value)';
 
  }
@@ -616,6 +744,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationPersonalAccessTokens$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationPersonalAccessTokens$read() => read(),
+      OrganizationPersonalAccessTokens$write() => write(),
+      OrganizationPersonalAccessTokens$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationPersonalAccessTokens$read() => read != null ? read() : orElse(value),
+      OrganizationPersonalAccessTokens$write() => write != null ? write() : orElse(value),
+      OrganizationPersonalAccessTokens$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationPersonalAccessTokens($value)';
 
  }
@@ -672,6 +812,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationPersonalAccessTokenRequests$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationPersonalAccessTokenRequests$read() => read(),
+      OrganizationPersonalAccessTokenRequests$write() => write(),
+      OrganizationPersonalAccessTokenRequests$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationPersonalAccessTokenRequests$read() => read != null ? read() : orElse(value),
+      OrganizationPersonalAccessTokenRequests$write() => write != null ? write() : orElse(value),
+      OrganizationPersonalAccessTokenRequests$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationPersonalAccessTokenRequests($value)';
 
  }
@@ -724,6 +876,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AppPermissionsOrganizationPlan$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function(String value) $unknown, }) { return switch (this) {
+      AppPermissionsOrganizationPlan$read() => read(),
+      AppPermissionsOrganizationPlan$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function(String value)? $unknown, }) { return switch (this) {
+      AppPermissionsOrganizationPlan$read() => read != null ? read() : orElse(value),
+      AppPermissionsOrganizationPlan$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AppPermissionsOrganizationPlan($value)';
 
  }
@@ -771,6 +933,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailAddresses$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailAddresses$read() => read(),
+      EmailAddresses$write() => write(),
+      EmailAddresses$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailAddresses$read() => read != null ? read() : orElse(value),
+      EmailAddresses$write() => write != null ? write() : orElse(value),
+      EmailAddresses$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailAddresses($value)';
 
  }
@@ -827,6 +1001,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Followers$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      Followers$read() => read(),
+      Followers$write() => write(),
+      Followers$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      Followers$read() => read != null ? read() : orElse(value),
+      Followers$write() => write != null ? write() : orElse(value),
+      Followers$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Followers($value)';
 
  }
@@ -883,6 +1069,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GitSshKeys$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      GitSshKeys$read() => read(),
+      GitSshKeys$write() => write(),
+      GitSshKeys$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      GitSshKeys$read() => read != null ? read() : orElse(value),
+      GitSshKeys$write() => write != null ? write() : orElse(value),
+      GitSshKeys$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GitSshKeys($value)';
 
  }
@@ -939,6 +1137,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GpgKeys$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      GpgKeys$read() => read(),
+      GpgKeys$write() => write(),
+      GpgKeys$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      GpgKeys$read() => read != null ? read() : orElse(value),
+      GpgKeys$write() => write != null ? write() : orElse(value),
+      GpgKeys$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GpgKeys($value)';
 
  }
@@ -995,6 +1205,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InteractionLimits$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      InteractionLimits$read() => read(),
+      InteractionLimits$write() => write(),
+      InteractionLimits$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      InteractionLimits$read() => read != null ? read() : orElse(value),
+      InteractionLimits$write() => write != null ? write() : orElse(value),
+      InteractionLimits$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InteractionLimits($value)';
 
  }
@@ -1047,6 +1269,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Profile$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      Profile$write() => write(),
+      Profile$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      Profile$write() => write != null ? write() : orElse(value),
+      Profile$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Profile($value)';
 
  }
@@ -1094,6 +1326,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Starring$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function(String value) $unknown, }) { return switch (this) {
+      Starring$read() => read(),
+      Starring$write() => write(),
+      Starring$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function(String value)? $unknown, }) { return switch (this) {
+      Starring$read() => read != null ? read() : orElse(value),
+      Starring$write() => write != null ? write() : orElse(value),
+      Starring$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Starring($value)';
 
  }
@@ -1154,6 +1398,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnterpriseCustomPropertiesForOrganizations$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+      EnterpriseCustomPropertiesForOrganizations$read() => read(),
+      EnterpriseCustomPropertiesForOrganizations$write() => write(),
+      EnterpriseCustomPropertiesForOrganizations$admin() => admin(),
+      EnterpriseCustomPropertiesForOrganizations$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+      EnterpriseCustomPropertiesForOrganizations$read() => read != null ? read() : orElse(value),
+      EnterpriseCustomPropertiesForOrganizations$write() => write != null ? write() : orElse(value),
+      EnterpriseCustomPropertiesForOrganizations$admin() => admin != null ? admin() : orElse(value),
+      EnterpriseCustomPropertiesForOrganizations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnterpriseCustomPropertiesForOrganizations($value)';
 
  }

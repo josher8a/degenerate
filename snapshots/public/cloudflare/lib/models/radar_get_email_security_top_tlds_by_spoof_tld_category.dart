@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailSecurityTopTldsBySpoofTldCategory$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() classic, required W Function() country, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailSecurityTopTldsBySpoofTldCategory$classic() => classic(),
+      RadarGetEmailSecurityTopTldsBySpoofTldCategory$country() => country(),
+      RadarGetEmailSecurityTopTldsBySpoofTldCategory$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? classic, W Function()? country, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailSecurityTopTldsBySpoofTldCategory$classic() => classic != null ? classic() : orElse(value),
+      RadarGetEmailSecurityTopTldsBySpoofTldCategory$country() => country != null ? country() : orElse(value),
+      RadarGetEmailSecurityTopTldsBySpoofTldCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailSecurityTopTldsBySpoofTldCategory($value)';
 
  }

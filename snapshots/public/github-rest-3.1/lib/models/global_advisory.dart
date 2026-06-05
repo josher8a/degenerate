@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GlobalAdvisoryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() reviewed, required W Function() unreviewed, required W Function() malware, required W Function(String value) $unknown, }) { return switch (this) {
+      GlobalAdvisoryType$reviewed() => reviewed(),
+      GlobalAdvisoryType$unreviewed() => unreviewed(),
+      GlobalAdvisoryType$malware() => malware(),
+      GlobalAdvisoryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reviewed, W Function()? unreviewed, W Function()? malware, W Function(String value)? $unknown, }) { return switch (this) {
+      GlobalAdvisoryType$reviewed() => reviewed != null ? reviewed() : orElse(value),
+      GlobalAdvisoryType$unreviewed() => unreviewed != null ? unreviewed() : orElse(value),
+      GlobalAdvisoryType$malware() => malware != null ? malware() : orElse(value),
+      GlobalAdvisoryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GlobalAdvisoryType($value)';
 
  }
@@ -107,6 +121,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GlobalAdvisorySeverity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() critical, required W Function() high, required W Function() medium, required W Function() low, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      GlobalAdvisorySeverity$critical() => critical(),
+      GlobalAdvisorySeverity$high() => high(),
+      GlobalAdvisorySeverity$medium() => medium(),
+      GlobalAdvisorySeverity$low() => low(),
+      GlobalAdvisorySeverity$unknown() => unknown(),
+      GlobalAdvisorySeverity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical, W Function()? high, W Function()? medium, W Function()? low, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      GlobalAdvisorySeverity$critical() => critical != null ? critical() : orElse(value),
+      GlobalAdvisorySeverity$high() => high != null ? high() : orElse(value),
+      GlobalAdvisorySeverity$medium() => medium != null ? medium() : orElse(value),
+      GlobalAdvisorySeverity$low() => low != null ? low() : orElse(value),
+      GlobalAdvisorySeverity$unknown() => unknown != null ? unknown() : orElse(value),
+      GlobalAdvisorySeverity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GlobalAdvisorySeverity($value)';
 
  }

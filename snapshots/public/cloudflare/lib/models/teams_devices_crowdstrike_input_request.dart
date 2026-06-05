@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesCrowdstrikeInputRequestState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() online, required W Function() offline, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesCrowdstrikeInputRequestState$online() => online(),
+      TeamsDevicesCrowdstrikeInputRequestState$offline() => offline(),
+      TeamsDevicesCrowdstrikeInputRequestState$unknown() => unknown(),
+      TeamsDevicesCrowdstrikeInputRequestState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, W Function()? offline, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesCrowdstrikeInputRequestState$online() => online != null ? online() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestState$offline() => offline != null ? offline() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestState$unknown() => unknown != null ? unknown() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesCrowdstrikeInputRequestState($value)';
 
  }
@@ -107,6 +121,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VersionOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() $empty3, required W Function() $empty4, required W Function() $empty5, required W Function(String value) $unknown, }) { return switch (this) {
+      VersionOperator$$empty() => $empty(),
+      VersionOperator$$empty2() => $empty2(),
+      VersionOperator$$empty3() => $empty3(),
+      VersionOperator$$empty4() => $empty4(),
+      VersionOperator$$empty5() => $empty5(),
+      VersionOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? $empty3, W Function()? $empty4, W Function()? $empty5, W Function(String value)? $unknown, }) { return switch (this) {
+      VersionOperator$$empty() => $empty != null ? $empty() : orElse(value),
+      VersionOperator$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      VersionOperator$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      VersionOperator$$empty4() => $empty4 != null ? $empty4() : orElse(value),
+      VersionOperator$$empty5() => $empty5 != null ? $empty5() : orElse(value),
+      VersionOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VersionOperator($value)';
 
  }

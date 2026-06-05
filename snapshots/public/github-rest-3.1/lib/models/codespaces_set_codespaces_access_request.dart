@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodespacesSetCodespacesAccessRequestVisibility$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disabled, required W Function() selectedMembers, required W Function() allMembers, required W Function() allMembersAndOutsideCollaborators, required W Function(String value) $unknown, }) { return switch (this) {
+      CodespacesSetCodespacesAccessRequestVisibility$disabled() => disabled(),
+      CodespacesSetCodespacesAccessRequestVisibility$selectedMembers() => selectedMembers(),
+      CodespacesSetCodespacesAccessRequestVisibility$allMembers() => allMembers(),
+      CodespacesSetCodespacesAccessRequestVisibility$allMembersAndOutsideCollaborators() => allMembersAndOutsideCollaborators(),
+      CodespacesSetCodespacesAccessRequestVisibility$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? selectedMembers, W Function()? allMembers, W Function()? allMembersAndOutsideCollaborators, W Function(String value)? $unknown, }) { return switch (this) {
+      CodespacesSetCodespacesAccessRequestVisibility$disabled() => disabled != null ? disabled() : orElse(value),
+      CodespacesSetCodespacesAccessRequestVisibility$selectedMembers() => selectedMembers != null ? selectedMembers() : orElse(value),
+      CodespacesSetCodespacesAccessRequestVisibility$allMembers() => allMembers != null ? allMembers() : orElse(value),
+      CodespacesSetCodespacesAccessRequestVisibility$allMembersAndOutsideCollaborators() => allMembersAndOutsideCollaborators != null ? allMembersAndOutsideCollaborators() : orElse(value),
+      CodespacesSetCodespacesAccessRequestVisibility$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodespacesSetCodespacesAccessRequestVisibility($value)';
 
  }

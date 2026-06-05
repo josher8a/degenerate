@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetSessionParticipantsView$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() raw, required W Function() consolidated, required W Function(String value) $unknown, }) { return switch (this) {
+      GetSessionParticipantsView$raw() => raw(),
+      GetSessionParticipantsView$consolidated() => consolidated(),
+      GetSessionParticipantsView$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? raw, W Function()? consolidated, W Function(String value)? $unknown, }) { return switch (this) {
+      GetSessionParticipantsView$raw() => raw != null ? raw() : orElse(value),
+      GetSessionParticipantsView$consolidated() => consolidated != null ? consolidated() : orElse(value),
+      GetSessionParticipantsView$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetSessionParticipantsView($value)';
 
  }

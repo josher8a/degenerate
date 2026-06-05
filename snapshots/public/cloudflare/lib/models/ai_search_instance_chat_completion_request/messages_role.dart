@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessagesRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() system, required W Function() developer, required W Function() user, required W Function() assistant, required W Function() tool, required W Function(String value) $unknown, }) { return switch (this) {
+      MessagesRole$system() => system(),
+      MessagesRole$developer() => developer(),
+      MessagesRole$user() => user(),
+      MessagesRole$assistant() => assistant(),
+      MessagesRole$tool() => tool(),
+      MessagesRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? system, W Function()? developer, W Function()? user, W Function()? assistant, W Function()? tool, W Function(String value)? $unknown, }) { return switch (this) {
+      MessagesRole$system() => system != null ? system() : orElse(value),
+      MessagesRole$developer() => developer != null ? developer() : orElse(value),
+      MessagesRole$user() => user != null ? user() : orElse(value),
+      MessagesRole$assistant() => assistant != null ? assistant() : orElse(value),
+      MessagesRole$tool() => tool != null ? tool() : orElse(value),
+      MessagesRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessagesRole($value)';
 
  }

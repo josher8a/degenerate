@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListCollaboratorsPermission$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pull, required W Function() triage, required W Function() push, required W Function() maintain, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListCollaboratorsPermission$pull() => pull(),
+      ReposListCollaboratorsPermission$triage() => triage(),
+      ReposListCollaboratorsPermission$push() => push(),
+      ReposListCollaboratorsPermission$maintain() => maintain(),
+      ReposListCollaboratorsPermission$admin() => admin(),
+      ReposListCollaboratorsPermission$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W Function()? triage, W Function()? push, W Function()? maintain, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListCollaboratorsPermission$pull() => pull != null ? pull() : orElse(value),
+      ReposListCollaboratorsPermission$triage() => triage != null ? triage() : orElse(value),
+      ReposListCollaboratorsPermission$push() => push != null ? push() : orElse(value),
+      ReposListCollaboratorsPermission$maintain() => maintain != null ? maintain() : orElse(value),
+      ReposListCollaboratorsPermission$admin() => admin != null ? admin() : orElse(value),
+      ReposListCollaboratorsPermission$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListCollaboratorsPermission($value)';
 
  }

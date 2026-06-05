@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PageStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() built, required W Function() building, required W Function() errored, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      PageStatus$built() => built(),
+      PageStatus$building() => building(),
+      PageStatus$errored() => errored(),
+      PageStatus$$null() => $null(),
+      PageStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? built, W Function()? building, W Function()? errored, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      PageStatus$built() => built != null ? built() : orElse(value),
+      PageStatus$building() => building != null ? building() : orElse(value),
+      PageStatus$errored() => errored != null ? errored() : orElse(value),
+      PageStatus$$null() => $null != null ? $null() : orElse(value),
+      PageStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PageStatus($value)';
 
  }
@@ -116,6 +132,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProtectedDomainState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() verified, required W Function() unverified, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      ProtectedDomainState$pending() => pending(),
+      ProtectedDomainState$verified() => verified(),
+      ProtectedDomainState$unverified() => unverified(),
+      ProtectedDomainState$$null() => $null(),
+      ProtectedDomainState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? verified, W Function()? unverified, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      ProtectedDomainState$pending() => pending != null ? pending() : orElse(value),
+      ProtectedDomainState$verified() => verified != null ? verified() : orElse(value),
+      ProtectedDomainState$unverified() => unverified != null ? unverified() : orElse(value),
+      ProtectedDomainState$$null() => $null != null ? $null() : orElse(value),
+      ProtectedDomainState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProtectedDomainState($value)';
 
  }
@@ -194,6 +226,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BuildType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() legacy, required W Function() workflow, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      BuildType$legacy() => legacy(),
+      BuildType$workflow() => workflow(),
+      BuildType$$null() => $null(),
+      BuildType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? legacy, W Function()? workflow, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      BuildType$legacy() => legacy != null ? legacy() : orElse(value),
+      BuildType$workflow() => workflow != null ? workflow() : orElse(value),
+      BuildType$$null() => $null != null ? $null() : orElse(value),
+      BuildType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BuildType($value)';
 
  }

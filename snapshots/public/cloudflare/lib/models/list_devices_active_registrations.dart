@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListDevicesActiveRegistrations$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() include, required W Function() only, required W Function() exclude, required W Function(String value) $unknown, }) { return switch (this) {
+      ListDevicesActiveRegistrations$include() => include(),
+      ListDevicesActiveRegistrations$only() => only(),
+      ListDevicesActiveRegistrations$exclude() => exclude(),
+      ListDevicesActiveRegistrations$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? include, W Function()? only, W Function()? exclude, W Function(String value)? $unknown, }) { return switch (this) {
+      ListDevicesActiveRegistrations$include() => include != null ? include() : orElse(value),
+      ListDevicesActiveRegistrations$only() => only != null ? only() : orElse(value),
+      ListDevicesActiveRegistrations$exclude() => exclude != null ? exclude() : orElse(value),
+      ListDevicesActiveRegistrations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListDevicesActiveRegistrations($value)';
 
  }

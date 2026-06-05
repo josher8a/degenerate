@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmbeddingModelVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cfQwenQwen3Embedding06b, required W Function() cfBaaiBgeM3, required W Function() cfBaaiBgeLargeEnV15, required W Function() cfGoogleEmbeddinggemma300m, required W Function() googleAiStudioGeminiEmbedding001, required W Function() openaiTextEmbedding3Small, required W Function() openaiTextEmbedding3Large, required W Function(String value) $unknown, }) { return switch (this) {
+      EmbeddingModelVariant1$cfQwenQwen3Embedding06b() => cfQwenQwen3Embedding06b(),
+      EmbeddingModelVariant1$cfBaaiBgeM3() => cfBaaiBgeM3(),
+      EmbeddingModelVariant1$cfBaaiBgeLargeEnV15() => cfBaaiBgeLargeEnV15(),
+      EmbeddingModelVariant1$cfGoogleEmbeddinggemma300m() => cfGoogleEmbeddinggemma300m(),
+      EmbeddingModelVariant1$googleAiStudioGeminiEmbedding001() => googleAiStudioGeminiEmbedding001(),
+      EmbeddingModelVariant1$openaiTextEmbedding3Small() => openaiTextEmbedding3Small(),
+      EmbeddingModelVariant1$openaiTextEmbedding3Large() => openaiTextEmbedding3Large(),
+      EmbeddingModelVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfQwenQwen3Embedding06b, W Function()? cfBaaiBgeM3, W Function()? cfBaaiBgeLargeEnV15, W Function()? cfGoogleEmbeddinggemma300m, W Function()? googleAiStudioGeminiEmbedding001, W Function()? openaiTextEmbedding3Small, W Function()? openaiTextEmbedding3Large, W Function(String value)? $unknown, }) { return switch (this) {
+      EmbeddingModelVariant1$cfQwenQwen3Embedding06b() => cfQwenQwen3Embedding06b != null ? cfQwenQwen3Embedding06b() : orElse(value),
+      EmbeddingModelVariant1$cfBaaiBgeM3() => cfBaaiBgeM3 != null ? cfBaaiBgeM3() : orElse(value),
+      EmbeddingModelVariant1$cfBaaiBgeLargeEnV15() => cfBaaiBgeLargeEnV15 != null ? cfBaaiBgeLargeEnV15() : orElse(value),
+      EmbeddingModelVariant1$cfGoogleEmbeddinggemma300m() => cfGoogleEmbeddinggemma300m != null ? cfGoogleEmbeddinggemma300m() : orElse(value),
+      EmbeddingModelVariant1$googleAiStudioGeminiEmbedding001() => googleAiStudioGeminiEmbedding001 != null ? googleAiStudioGeminiEmbedding001() : orElse(value),
+      EmbeddingModelVariant1$openaiTextEmbedding3Small() => openaiTextEmbedding3Small != null ? openaiTextEmbedding3Small() : orElse(value),
+      EmbeddingModelVariant1$openaiTextEmbedding3Large() => openaiTextEmbedding3Large != null ? openaiTextEmbedding3Large() : orElse(value),
+      EmbeddingModelVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmbeddingModelVariant1($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BankConnectionsResourceAccountholderType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() account, required W Function() customer, required W Function(String value) $unknown, }) { return switch (this) {
+      BankConnectionsResourceAccountholderType$account() => account(),
+      BankConnectionsResourceAccountholderType$customer() => customer(),
+      BankConnectionsResourceAccountholderType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? customer, W Function(String value)? $unknown, }) { return switch (this) {
+      BankConnectionsResourceAccountholderType$account() => account != null ? account() : orElse(value),
+      BankConnectionsResourceAccountholderType$customer() => customer != null ? customer() : orElse(value),
+      BankConnectionsResourceAccountholderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BankConnectionsResourceAccountholderType($value)';
 
  }

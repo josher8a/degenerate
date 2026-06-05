@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DosAsnType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() hostingProvider, required W Function() isp, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+      DosAsnType$hostingProvider() => hostingProvider(),
+      DosAsnType$isp() => isp(),
+      DosAsnType$organization() => organization(),
+      DosAsnType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostingProvider, W Function()? isp, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+      DosAsnType$hostingProvider() => hostingProvider != null ? hostingProvider() : orElse(value),
+      DosAsnType$isp() => isp != null ? isp() : orElse(value),
+      DosAsnType$organization() => organization != null ? organization() : orElse(value),
+      DosAsnType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DosAsnType($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClientKeyParamCustomerAcceptanceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() online, required W Function(String value) $unknown, }) { return switch (this) {
+      ClientKeyParamCustomerAcceptanceType$online() => online(),
+      ClientKeyParamCustomerAcceptanceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? online, W Function(String value)? $unknown, }) { return switch (this) {
+      ClientKeyParamCustomerAcceptanceType$online() => online != null ? online() : orElse(value),
+      ClientKeyParamCustomerAcceptanceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClientKeyParamCustomerAcceptanceType($value)';
 
  }

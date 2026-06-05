@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Channel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mono, required W Function() stereo, required W Function(String value) $unknown, }) { return switch (this) {
+      Channel$mono() => mono(),
+      Channel$stereo() => stereo(),
+      Channel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mono, W Function()? stereo, W Function(String value)? $unknown, }) { return switch (this) {
+      Channel$mono() => mono != null ? mono() : orElse(value),
+      Channel$stereo() => stereo != null ? stereo() : orElse(value),
+      Channel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Channel($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitAudioConfigCodec$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mp3, required W Function() aac, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitAudioConfigCodec$mp3() => mp3(),
+      RealtimekitAudioConfigCodec$aac() => aac(),
+      RealtimekitAudioConfigCodec$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W Function()? aac, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitAudioConfigCodec$mp3() => mp3 != null ? mp3() : orElse(value),
+      RealtimekitAudioConfigCodec$aac() => aac != null ? aac() : orElse(value),
+      RealtimekitAudioConfigCodec$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitAudioConfigCodec($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RepositoryRulesetSourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() repository, required W Function() organization, required W Function() enterprise, required W Function(String value) $unknown, }) { return switch (this) {
+      RepositoryRulesetSourceType$repository() => repository(),
+      RepositoryRulesetSourceType$organization() => organization(),
+      RepositoryRulesetSourceType$enterprise() => enterprise(),
+      RepositoryRulesetSourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? repository, W Function()? organization, W Function()? enterprise, W Function(String value)? $unknown, }) { return switch (this) {
+      RepositoryRulesetSourceType$repository() => repository != null ? repository() : orElse(value),
+      RepositoryRulesetSourceType$organization() => organization != null ? organization() : orElse(value),
+      RepositoryRulesetSourceType$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      RepositoryRulesetSourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RepositoryRulesetSourceType($value)';
 
  }
@@ -104,6 +118,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CurrentUserCanBypass$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() pullRequestsOnly, required W Function() never, required W Function() exempt, required W Function(String value) $unknown, }) { return switch (this) {
+      CurrentUserCanBypass$always() => always(),
+      CurrentUserCanBypass$pullRequestsOnly() => pullRequestsOnly(),
+      CurrentUserCanBypass$never() => never(),
+      CurrentUserCanBypass$exempt() => exempt(),
+      CurrentUserCanBypass$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? pullRequestsOnly, W Function()? never, W Function()? exempt, W Function(String value)? $unknown, }) { return switch (this) {
+      CurrentUserCanBypass$always() => always != null ? always() : orElse(value),
+      CurrentUserCanBypass$pullRequestsOnly() => pullRequestsOnly != null ? pullRequestsOnly() : orElse(value),
+      CurrentUserCanBypass$never() => never != null ? never() : orElse(value),
+      CurrentUserCanBypass$exempt() => exempt != null ? exempt() : orElse(value),
+      CurrentUserCanBypass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CurrentUserCanBypass($value)';
 
  }

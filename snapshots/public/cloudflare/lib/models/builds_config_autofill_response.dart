@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BuildsPackageManager$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() yarn, required W Function() pnpm, required W Function() bun, required W Function() uv, required W Function(String value) $unknown, }) { return switch (this) {
+      BuildsPackageManager$npm() => npm(),
+      BuildsPackageManager$yarn() => yarn(),
+      BuildsPackageManager$pnpm() => pnpm(),
+      BuildsPackageManager$bun() => bun(),
+      BuildsPackageManager$uv() => uv(),
+      BuildsPackageManager$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? yarn, W Function()? pnpm, W Function()? bun, W Function()? uv, W Function(String value)? $unknown, }) { return switch (this) {
+      BuildsPackageManager$npm() => npm != null ? npm() : orElse(value),
+      BuildsPackageManager$yarn() => yarn != null ? yarn() : orElse(value),
+      BuildsPackageManager$pnpm() => pnpm != null ? pnpm() : orElse(value),
+      BuildsPackageManager$bun() => bun != null ? bun() : orElse(value),
+      BuildsPackageManager$uv() => uv != null ? uv() : orElse(value),
+      BuildsPackageManager$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BuildsPackageManager($value)';
 
  }

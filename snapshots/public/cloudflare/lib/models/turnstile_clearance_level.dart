@@ -36,6 +36,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TurnstileClearanceLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noClearance, required W Function() jschallenge, required W Function() managed, required W Function() interactive, required W Function(String value) $unknown, }) { return switch (this) {
+      TurnstileClearanceLevel$noClearance() => noClearance(),
+      TurnstileClearanceLevel$jschallenge() => jschallenge(),
+      TurnstileClearanceLevel$managed() => managed(),
+      TurnstileClearanceLevel$interactive() => interactive(),
+      TurnstileClearanceLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noClearance, W Function()? jschallenge, W Function()? managed, W Function()? interactive, W Function(String value)? $unknown, }) { return switch (this) {
+      TurnstileClearanceLevel$noClearance() => noClearance != null ? noClearance() : orElse(value),
+      TurnstileClearanceLevel$jschallenge() => jschallenge != null ? jschallenge() : orElse(value),
+      TurnstileClearanceLevel$managed() => managed != null ? managed() : orElse(value),
+      TurnstileClearanceLevel$interactive() => interactive != null ? interactive() : orElse(value),
+      TurnstileClearanceLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TurnstileClearanceLevel($value)';
 
  }

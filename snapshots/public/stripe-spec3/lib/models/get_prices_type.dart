@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetPricesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oneTime, required W Function() recurring, required W Function(String value) $unknown, }) { return switch (this) {
+      GetPricesType$oneTime() => oneTime(),
+      GetPricesType$recurring() => recurring(),
+      GetPricesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? recurring, W Function(String value)? $unknown, }) { return switch (this) {
+      GetPricesType$oneTime() => oneTime != null ? oneTime() : orElse(value),
+      GetPricesType$recurring() => recurring != null ? recurring() : orElse(value),
+      GetPricesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetPricesType($value)';
 
  }

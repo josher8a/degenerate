@@ -78,6 +78,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FieldDataType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() assignees, required W Function() linkedPullRequests, required W Function() reviewers, required W Function() labels, required W Function() milestone, required W Function() repository, required W Function() title, required W Function() text, required W Function() singleSelect, required W Function() number, required W Function() date, required W Function() iteration, required W Function() issueType, required W Function() parentIssue, required W Function() subIssuesProgress, required W Function(String value) $unknown, }) { return switch (this) {
+      FieldDataType$assignees() => assignees(),
+      FieldDataType$linkedPullRequests() => linkedPullRequests(),
+      FieldDataType$reviewers() => reviewers(),
+      FieldDataType$labels() => labels(),
+      FieldDataType$milestone() => milestone(),
+      FieldDataType$repository() => repository(),
+      FieldDataType$title() => title(),
+      FieldDataType$text() => text(),
+      FieldDataType$singleSelect() => singleSelect(),
+      FieldDataType$number() => number(),
+      FieldDataType$date() => date(),
+      FieldDataType$iteration() => iteration(),
+      FieldDataType$issueType() => issueType(),
+      FieldDataType$parentIssue() => parentIssue(),
+      FieldDataType$subIssuesProgress() => subIssuesProgress(),
+      FieldDataType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignees, W Function()? linkedPullRequests, W Function()? reviewers, W Function()? labels, W Function()? milestone, W Function()? repository, W Function()? title, W Function()? text, W Function()? singleSelect, W Function()? number, W Function()? date, W Function()? iteration, W Function()? issueType, W Function()? parentIssue, W Function()? subIssuesProgress, W Function(String value)? $unknown, }) { return switch (this) {
+      FieldDataType$assignees() => assignees != null ? assignees() : orElse(value),
+      FieldDataType$linkedPullRequests() => linkedPullRequests != null ? linkedPullRequests() : orElse(value),
+      FieldDataType$reviewers() => reviewers != null ? reviewers() : orElse(value),
+      FieldDataType$labels() => labels != null ? labels() : orElse(value),
+      FieldDataType$milestone() => milestone != null ? milestone() : orElse(value),
+      FieldDataType$repository() => repository != null ? repository() : orElse(value),
+      FieldDataType$title() => title != null ? title() : orElse(value),
+      FieldDataType$text() => text != null ? text() : orElse(value),
+      FieldDataType$singleSelect() => singleSelect != null ? singleSelect() : orElse(value),
+      FieldDataType$number() => number != null ? number() : orElse(value),
+      FieldDataType$date() => date != null ? date() : orElse(value),
+      FieldDataType$iteration() => iteration != null ? iteration() : orElse(value),
+      FieldDataType$issueType() => issueType != null ? issueType() : orElse(value),
+      FieldDataType$parentIssue() => parentIssue != null ? parentIssue() : orElse(value),
+      FieldDataType$subIssuesProgress() => subIssuesProgress != null ? subIssuesProgress() : orElse(value),
+      FieldDataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FieldDataType($value)';
 
  }

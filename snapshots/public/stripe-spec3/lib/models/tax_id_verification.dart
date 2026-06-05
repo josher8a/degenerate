@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxIdVerificationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() unavailable, required W Function() unverified, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxIdVerificationStatus$pending() => pending(),
+      TaxIdVerificationStatus$unavailable() => unavailable(),
+      TaxIdVerificationStatus$unverified() => unverified(),
+      TaxIdVerificationStatus$verified() => verified(),
+      TaxIdVerificationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? unavailable, W Function()? unverified, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxIdVerificationStatus$pending() => pending != null ? pending() : orElse(value),
+      TaxIdVerificationStatus$unavailable() => unavailable != null ? unavailable() : orElse(value),
+      TaxIdVerificationStatus$unverified() => unverified != null ? unverified() : orElse(value),
+      TaxIdVerificationStatus$verified() => verified != null ? verified() : orElse(value),
+      TaxIdVerificationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxIdVerificationStatus($value)';
 
  }

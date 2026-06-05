@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AuthenticationTokenRepositorySelection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() selected, required W Function(String value) $unknown, }) { return switch (this) {
+      AuthenticationTokenRepositorySelection$all() => all(),
+      AuthenticationTokenRepositorySelection$selected() => selected(),
+      AuthenticationTokenRepositorySelection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? selected, W Function(String value)? $unknown, }) { return switch (this) {
+      AuthenticationTokenRepositorySelection$all() => all != null ? all() : orElse(value),
+      AuthenticationTokenRepositorySelection$selected() => selected != null ? selected() : orElse(value),
+      AuthenticationTokenRepositorySelection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AuthenticationTokenRepositorySelection($value)';
 
  }

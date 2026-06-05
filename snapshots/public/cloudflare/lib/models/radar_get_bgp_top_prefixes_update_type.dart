@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBgpTopPrefixesUpdateType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() announcement, required W Function() withdrawal, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBgpTopPrefixesUpdateType$announcement() => announcement(),
+      RadarGetBgpTopPrefixesUpdateType$withdrawal() => withdrawal(),
+      RadarGetBgpTopPrefixesUpdateType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? announcement, W Function()? withdrawal, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBgpTopPrefixesUpdateType$announcement() => announcement != null ? announcement() : orElse(value),
+      RadarGetBgpTopPrefixesUpdateType$withdrawal() => withdrawal != null ? withdrawal() : orElse(value),
+      RadarGetBgpTopPrefixesUpdateType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBgpTopPrefixesUpdateType($value)';
 
  }

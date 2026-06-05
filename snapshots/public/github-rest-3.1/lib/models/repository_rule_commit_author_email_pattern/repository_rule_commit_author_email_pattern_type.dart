@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RepositoryRuleCommitAuthorEmailPatternType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() commitAuthorEmailPattern, required W Function(String value) $unknown, }) { return switch (this) {
+      RepositoryRuleCommitAuthorEmailPatternType$commitAuthorEmailPattern() => commitAuthorEmailPattern(),
+      RepositoryRuleCommitAuthorEmailPatternType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? commitAuthorEmailPattern, W Function(String value)? $unknown, }) { return switch (this) {
+      RepositoryRuleCommitAuthorEmailPatternType$commitAuthorEmailPattern() => commitAuthorEmailPattern != null ? commitAuthorEmailPattern() : orElse(value),
+      RepositoryRuleCommitAuthorEmailPatternType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RepositoryRuleCommitAuthorEmailPatternType($value)';
 
  }

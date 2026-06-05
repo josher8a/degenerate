@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SameSiteAttribute$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lax, required W Function() strict, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      SameSiteAttribute$lax() => lax(),
+      SameSiteAttribute$strict() => strict(),
+      SameSiteAttribute$none() => none(),
+      SameSiteAttribute$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lax, W Function()? strict, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      SameSiteAttribute$lax() => lax != null ? lax() : orElse(value),
+      SameSiteAttribute$strict() => strict != null ? strict() : orElse(value),
+      SameSiteAttribute$none() => none != null ? none() : orElse(value),
+      SameSiteAttribute$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SameSiteAttribute($value)';
 
  }
@@ -93,6 +107,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PageShieldCookieType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() firstParty, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      PageShieldCookieType$firstParty() => firstParty(),
+      PageShieldCookieType$unknown() => unknown(),
+      PageShieldCookieType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstParty, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      PageShieldCookieType$firstParty() => firstParty != null ? firstParty() : orElse(value),
+      PageShieldCookieType$unknown() => unknown != null ? unknown() : orElse(value),
+      PageShieldCookieType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PageShieldCookieType($value)';
 
  }

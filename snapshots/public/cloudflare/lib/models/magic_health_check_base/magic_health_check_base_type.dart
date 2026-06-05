@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicHealthCheckBaseType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() reply, required W Function() request, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicHealthCheckBaseType$reply() => reply(),
+      MagicHealthCheckBaseType$request() => request(),
+      MagicHealthCheckBaseType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reply, W Function()? request, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicHealthCheckBaseType$reply() => reply != null ? reply() : orElse(value),
+      MagicHealthCheckBaseType$request() => request != null ? request() : orElse(value),
+      MagicHealthCheckBaseType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicHealthCheckBaseType($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileNamingStrategy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() serial, required W Function() uuid, required W Function() uuidV7, required W Function() ulid, required W Function(String value) $unknown, }) { return switch (this) {
+      FileNamingStrategy$serial() => serial(),
+      FileNamingStrategy$uuid() => uuid(),
+      FileNamingStrategy$uuidV7() => uuidV7(),
+      FileNamingStrategy$ulid() => ulid(),
+      FileNamingStrategy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, W Function()? uuid, W Function()? uuidV7, W Function()? ulid, W Function(String value)? $unknown, }) { return switch (this) {
+      FileNamingStrategy$serial() => serial != null ? serial() : orElse(value),
+      FileNamingStrategy$uuid() => uuid != null ? uuid() : orElse(value),
+      FileNamingStrategy$uuidV7() => uuidV7 != null ? uuidV7() : orElse(value),
+      FileNamingStrategy$ulid() => ulid != null ? ulid() : orElse(value),
+      FileNamingStrategy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileNamingStrategy($value)';
 
  }

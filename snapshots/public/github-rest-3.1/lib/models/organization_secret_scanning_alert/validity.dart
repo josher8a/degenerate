@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Validity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() inactive, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      Validity$active() => active(),
+      Validity$inactive() => inactive(),
+      Validity$unknown() => unknown(),
+      Validity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      Validity$active() => active != null ? active() : orElse(value),
+      Validity$inactive() => inactive != null ? inactive() : orElse(value),
+      Validity$unknown() => unknown != null ? unknown() : orElse(value),
+      Validity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Validity($value)';
 
  }

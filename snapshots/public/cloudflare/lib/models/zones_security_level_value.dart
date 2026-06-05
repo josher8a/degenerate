@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesSecurityLevelValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() essentiallyOff, required W Function() low, required W Function() medium, required W Function() high, required W Function() underAttack, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesSecurityLevelValue$off() => off(),
+      ZonesSecurityLevelValue$essentiallyOff() => essentiallyOff(),
+      ZonesSecurityLevelValue$low() => low(),
+      ZonesSecurityLevelValue$medium() => medium(),
+      ZonesSecurityLevelValue$high() => high(),
+      ZonesSecurityLevelValue$underAttack() => underAttack(),
+      ZonesSecurityLevelValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? essentiallyOff, W Function()? low, W Function()? medium, W Function()? high, W Function()? underAttack, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesSecurityLevelValue$off() => off != null ? off() : orElse(value),
+      ZonesSecurityLevelValue$essentiallyOff() => essentiallyOff != null ? essentiallyOff() : orElse(value),
+      ZonesSecurityLevelValue$low() => low != null ? low() : orElse(value),
+      ZonesSecurityLevelValue$medium() => medium != null ? medium() : orElse(value),
+      ZonesSecurityLevelValue$high() => high != null ? high() : orElse(value),
+      ZonesSecurityLevelValue$underAttack() => underAttack != null ? underAttack() : orElse(value),
+      ZonesSecurityLevelValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesSecurityLevelValue($value)';
 
  }

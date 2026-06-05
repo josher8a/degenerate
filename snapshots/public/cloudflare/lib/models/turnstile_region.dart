@@ -27,6 +27,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TurnstileRegion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() world, required W Function() china, required W Function(String value) $unknown, }) { return switch (this) {
+      TurnstileRegion$world() => world(),
+      TurnstileRegion$china() => china(),
+      TurnstileRegion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? world, W Function()? china, W Function(String value)? $unknown, }) { return switch (this) {
+      TurnstileRegion$world() => world != null ? world() : orElse(value),
+      TurnstileRegion$china() => china != null ? china() : orElse(value),
+      TurnstileRegion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TurnstileRegion($value)';
 
  }

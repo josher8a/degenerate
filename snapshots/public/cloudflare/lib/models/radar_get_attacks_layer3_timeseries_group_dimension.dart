@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() protocol, required W Function() ipVersion, required W Function() vector, required W Function() duration, required W Function() bitrate, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TimeseriesGroupDimension$protocol() => protocol(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$ipVersion() => ipVersion(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$vector() => vector(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$duration() => duration(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$bitrate() => bitrate(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$vertical() => vertical(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$industry() => industry(),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol, W Function()? ipVersion, W Function()? vector, W Function()? duration, W Function()? bitrate, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TimeseriesGroupDimension$protocol() => protocol != null ? protocol() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$vector() => vector != null ? vector() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$duration() => duration != null ? duration() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$bitrate() => bitrate != null ? bitrate() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupDimension($value)';
 
  }

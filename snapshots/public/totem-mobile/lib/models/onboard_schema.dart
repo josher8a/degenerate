@@ -77,6 +77,65 @@ sealed class ReferralChoices {
     return this is ReferralChoices$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() $default,
+    required W Function() search,
+    required W Function() social,
+    required W Function() keeper,
+    required W Function() pamphlet,
+    required W Function() blog,
+    required W Function() newsletter,
+    required W Function() dream,
+    required W Function() $other,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      ReferralChoices$$default() => $default(),
+      ReferralChoices$search() => search(),
+      ReferralChoices$social() => social(),
+      ReferralChoices$keeper() => keeper(),
+      ReferralChoices$pamphlet() => pamphlet(),
+      ReferralChoices$blog() => blog(),
+      ReferralChoices$newsletter() => newsletter(),
+      ReferralChoices$dream() => dream(),
+      ReferralChoices$$other() => $other(),
+      ReferralChoices$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? $default,
+    W Function()? search,
+    W Function()? social,
+    W Function()? keeper,
+    W Function()? pamphlet,
+    W Function()? blog,
+    W Function()? newsletter,
+    W Function()? dream,
+    W Function()? $other,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      ReferralChoices$$default() =>
+        $default != null ? $default() : orElse(value),
+      ReferralChoices$search() => search != null ? search() : orElse(value),
+      ReferralChoices$social() => social != null ? social() : orElse(value),
+      ReferralChoices$keeper() => keeper != null ? keeper() : orElse(value),
+      ReferralChoices$pamphlet() =>
+        pamphlet != null ? pamphlet() : orElse(value),
+      ReferralChoices$blog() => blog != null ? blog() : orElse(value),
+      ReferralChoices$newsletter() =>
+        newsletter != null ? newsletter() : orElse(value),
+      ReferralChoices$dream() => dream != null ? dream() : orElse(value),
+      ReferralChoices$$other() => $other != null ? $other() : orElse(value),
+      ReferralChoices$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'ReferralChoices($value)';
 }

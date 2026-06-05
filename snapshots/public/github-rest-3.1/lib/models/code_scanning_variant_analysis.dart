@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningVariantAnalysisLanguage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() actions, required W Function() cpp, required W Function() csharp, required W Function() go, required W Function() java, required W Function() javascript, required W Function() python, required W Function() ruby, required W Function() rust, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningVariantAnalysisLanguage$actions() => actions(),
+      CodeScanningVariantAnalysisLanguage$cpp() => cpp(),
+      CodeScanningVariantAnalysisLanguage$csharp() => csharp(),
+      CodeScanningVariantAnalysisLanguage$go() => go(),
+      CodeScanningVariantAnalysisLanguage$java() => java(),
+      CodeScanningVariantAnalysisLanguage$javascript() => javascript(),
+      CodeScanningVariantAnalysisLanguage$python() => python(),
+      CodeScanningVariantAnalysisLanguage$ruby() => ruby(),
+      CodeScanningVariantAnalysisLanguage$rust() => rust(),
+      CodeScanningVariantAnalysisLanguage$swift() => swift(),
+      CodeScanningVariantAnalysisLanguage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cpp, W Function()? csharp, W Function()? go, W Function()? java, W Function()? javascript, W Function()? python, W Function()? ruby, W Function()? rust, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningVariantAnalysisLanguage$actions() => actions != null ? actions() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$cpp() => cpp != null ? cpp() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$csharp() => csharp != null ? csharp() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$go() => go != null ? go() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$java() => java != null ? java() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$javascript() => javascript != null ? javascript() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$python() => python != null ? python() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$ruby() => ruby != null ? ruby() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$rust() => rust != null ? rust() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$swift() => swift != null ? swift() : orElse(value),
+      CodeScanningVariantAnalysisLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningVariantAnalysisLanguage($value)';
 
  }
@@ -190,6 +218,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FailureReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noReposQueried, required W Function() actionsWorkflowRunFailed, required W Function() internalError, required W Function(String value) $unknown, }) { return switch (this) {
+      FailureReason$noReposQueried() => noReposQueried(),
+      FailureReason$actionsWorkflowRunFailed() => actionsWorkflowRunFailed(),
+      FailureReason$internalError() => internalError(),
+      FailureReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noReposQueried, W Function()? actionsWorkflowRunFailed, W Function()? internalError, W Function(String value)? $unknown, }) { return switch (this) {
+      FailureReason$noReposQueried() => noReposQueried != null ? noReposQueried() : orElse(value),
+      FailureReason$actionsWorkflowRunFailed() => actionsWorkflowRunFailed != null ? actionsWorkflowRunFailed() : orElse(value),
+      FailureReason$internalError() => internalError != null ? internalError() : orElse(value),
+      FailureReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FailureReason($value)';
 
  }

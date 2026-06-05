@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoIdNumberReportErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() idNumberInsufficientDocumentData, required W Function() idNumberMismatch, required W Function() idNumberUnverifiedOther, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData() => idNumberInsufficientDocumentData(),
+      GelatoIdNumberReportErrorCode$idNumberMismatch() => idNumberMismatch(),
+      GelatoIdNumberReportErrorCode$idNumberUnverifiedOther() => idNumberUnverifiedOther(),
+      GelatoIdNumberReportErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? idNumberInsufficientDocumentData, W Function()? idNumberMismatch, W Function()? idNumberUnverifiedOther, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData() => idNumberInsufficientDocumentData != null ? idNumberInsufficientDocumentData() : orElse(value),
+      GelatoIdNumberReportErrorCode$idNumberMismatch() => idNumberMismatch != null ? idNumberMismatch() : orElse(value),
+      GelatoIdNumberReportErrorCode$idNumberUnverifiedOther() => idNumberUnverifiedOther != null ? idNumberUnverifiedOther() : orElse(value),
+      GelatoIdNumberReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoIdNumberReportErrorCode($value)';
 
  }

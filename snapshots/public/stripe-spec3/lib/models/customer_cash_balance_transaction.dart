@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerCashBalanceTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerCashBalanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerCashBalanceTransactionObject$customerCashBalanceTransaction() => customerCashBalanceTransaction(),
+      CustomerCashBalanceTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerCashBalanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerCashBalanceTransactionObject$customerCashBalanceTransaction() => customerCashBalanceTransaction != null ? customerCashBalanceTransaction() : orElse(value),
+      CustomerCashBalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerCashBalanceTransactionObject($value)';
 
  }
@@ -97,6 +107,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerCashBalanceTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adjustedForOverdraft, required W Function() appliedToPayment, required W Function() funded, required W Function() fundingReversed, required W Function() refundedFromPayment, required W Function() returnCanceled, required W Function() returnInitiated, required W Function() transferredToBalance, required W Function() unappliedFromPayment, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerCashBalanceTransactionType$adjustedForOverdraft() => adjustedForOverdraft(),
+      CustomerCashBalanceTransactionType$appliedToPayment() => appliedToPayment(),
+      CustomerCashBalanceTransactionType$funded() => funded(),
+      CustomerCashBalanceTransactionType$fundingReversed() => fundingReversed(),
+      CustomerCashBalanceTransactionType$refundedFromPayment() => refundedFromPayment(),
+      CustomerCashBalanceTransactionType$returnCanceled() => returnCanceled(),
+      CustomerCashBalanceTransactionType$returnInitiated() => returnInitiated(),
+      CustomerCashBalanceTransactionType$transferredToBalance() => transferredToBalance(),
+      CustomerCashBalanceTransactionType$unappliedFromPayment() => unappliedFromPayment(),
+      CustomerCashBalanceTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adjustedForOverdraft, W Function()? appliedToPayment, W Function()? funded, W Function()? fundingReversed, W Function()? refundedFromPayment, W Function()? returnCanceled, W Function()? returnInitiated, W Function()? transferredToBalance, W Function()? unappliedFromPayment, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerCashBalanceTransactionType$adjustedForOverdraft() => adjustedForOverdraft != null ? adjustedForOverdraft() : orElse(value),
+      CustomerCashBalanceTransactionType$appliedToPayment() => appliedToPayment != null ? appliedToPayment() : orElse(value),
+      CustomerCashBalanceTransactionType$funded() => funded != null ? funded() : orElse(value),
+      CustomerCashBalanceTransactionType$fundingReversed() => fundingReversed != null ? fundingReversed() : orElse(value),
+      CustomerCashBalanceTransactionType$refundedFromPayment() => refundedFromPayment != null ? refundedFromPayment() : orElse(value),
+      CustomerCashBalanceTransactionType$returnCanceled() => returnCanceled != null ? returnCanceled() : orElse(value),
+      CustomerCashBalanceTransactionType$returnInitiated() => returnInitiated != null ? returnInitiated() : orElse(value),
+      CustomerCashBalanceTransactionType$transferredToBalance() => transferredToBalance != null ? transferredToBalance() : orElse(value),
+      CustomerCashBalanceTransactionType$unappliedFromPayment() => unappliedFromPayment != null ? unappliedFromPayment() : orElse(value),
+      CustomerCashBalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerCashBalanceTransactionType($value)';
 
  }

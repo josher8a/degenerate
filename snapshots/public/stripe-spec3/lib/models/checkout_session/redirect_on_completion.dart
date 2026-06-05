@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RedirectOnCompletion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() ifRequired, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      RedirectOnCompletion$always() => always(),
+      RedirectOnCompletion$ifRequired() => ifRequired(),
+      RedirectOnCompletion$never() => never(),
+      RedirectOnCompletion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      RedirectOnCompletion$always() => always != null ? always() : orElse(value),
+      RedirectOnCompletion$ifRequired() => ifRequired != null ? ifRequired() : orElse(value),
+      RedirectOnCompletion$never() => never != null ? never() : orElse(value),
+      RedirectOnCompletion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RedirectOnCompletion($value)';
 
  }

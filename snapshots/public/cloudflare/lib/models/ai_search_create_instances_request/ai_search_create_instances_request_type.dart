@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AiSearchCreateInstancesRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() r2, required W Function() webCrawler, required W Function(String value) $unknown, }) { return switch (this) {
+      AiSearchCreateInstancesRequestType$r2() => r2(),
+      AiSearchCreateInstancesRequestType$webCrawler() => webCrawler(),
+      AiSearchCreateInstancesRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? r2, W Function()? webCrawler, W Function(String value)? $unknown, }) { return switch (this) {
+      AiSearchCreateInstancesRequestType$r2() => r2 != null ? r2() : orElse(value),
+      AiSearchCreateInstancesRequestType$webCrawler() => webCrawler != null ? webCrawler() : orElse(value),
+      AiSearchCreateInstancesRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AiSearchCreateInstancesRequestType($value)';
 
  }

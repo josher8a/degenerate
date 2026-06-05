@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalReaderReaderResourceInputType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() email, required W Function() numeric, required W Function() phone, required W Function() selection, required W Function() signature, required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceInputType$email() => email(),
+      TerminalReaderReaderResourceInputType$numeric() => numeric(),
+      TerminalReaderReaderResourceInputType$phone() => phone(),
+      TerminalReaderReaderResourceInputType$selection() => selection(),
+      TerminalReaderReaderResourceInputType$signature() => signature(),
+      TerminalReaderReaderResourceInputType$text() => text(),
+      TerminalReaderReaderResourceInputType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? numeric, W Function()? phone, W Function()? selection, W Function()? signature, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceInputType$email() => email != null ? email() : orElse(value),
+      TerminalReaderReaderResourceInputType$numeric() => numeric != null ? numeric() : orElse(value),
+      TerminalReaderReaderResourceInputType$phone() => phone != null ? phone() : orElse(value),
+      TerminalReaderReaderResourceInputType$selection() => selection != null ? selection() : orElse(value),
+      TerminalReaderReaderResourceInputType$signature() => signature != null ? signature() : orElse(value),
+      TerminalReaderReaderResourceInputType$text() => text != null ? text() : orElse(value),
+      TerminalReaderReaderResourceInputType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalReaderReaderResourceInputType($value)';
 
  }

@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Ethnicity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cuban, required W Function() hispanicOrLatino, required W Function() mexican, required W Function() notHispanicOrLatino, required W Function() otherHispanicOrLatino, required W Function() preferNotToAnswer, required W Function() puertoRican, required W Function(String value) $unknown, }) { return switch (this) {
+      Ethnicity$cuban() => cuban(),
+      Ethnicity$hispanicOrLatino() => hispanicOrLatino(),
+      Ethnicity$mexican() => mexican(),
+      Ethnicity$notHispanicOrLatino() => notHispanicOrLatino(),
+      Ethnicity$otherHispanicOrLatino() => otherHispanicOrLatino(),
+      Ethnicity$preferNotToAnswer() => preferNotToAnswer(),
+      Ethnicity$puertoRican() => puertoRican(),
+      Ethnicity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cuban, W Function()? hispanicOrLatino, W Function()? mexican, W Function()? notHispanicOrLatino, W Function()? otherHispanicOrLatino, W Function()? preferNotToAnswer, W Function()? puertoRican, W Function(String value)? $unknown, }) { return switch (this) {
+      Ethnicity$cuban() => cuban != null ? cuban() : orElse(value),
+      Ethnicity$hispanicOrLatino() => hispanicOrLatino != null ? hispanicOrLatino() : orElse(value),
+      Ethnicity$mexican() => mexican != null ? mexican() : orElse(value),
+      Ethnicity$notHispanicOrLatino() => notHispanicOrLatino != null ? notHispanicOrLatino() : orElse(value),
+      Ethnicity$otherHispanicOrLatino() => otherHispanicOrLatino != null ? otherHispanicOrLatino() : orElse(value),
+      Ethnicity$preferNotToAnswer() => preferNotToAnswer != null ? preferNotToAnswer() : orElse(value),
+      Ethnicity$puertoRican() => puertoRican != null ? puertoRican() : orElse(value),
+      Ethnicity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Ethnicity($value)';
 
  }

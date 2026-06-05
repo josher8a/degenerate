@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetQualitySpeedTopLocationsOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bandwidthDownload, required W Function() bandwidthUpload, required W Function() latencyIdle, required W Function() latencyLoaded, required W Function() jitterIdle, required W Function() jitterLoaded, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetQualitySpeedTopLocationsOrderBy$bandwidthDownload() => bandwidthDownload(),
+      RadarGetQualitySpeedTopLocationsOrderBy$bandwidthUpload() => bandwidthUpload(),
+      RadarGetQualitySpeedTopLocationsOrderBy$latencyIdle() => latencyIdle(),
+      RadarGetQualitySpeedTopLocationsOrderBy$latencyLoaded() => latencyLoaded(),
+      RadarGetQualitySpeedTopLocationsOrderBy$jitterIdle() => jitterIdle(),
+      RadarGetQualitySpeedTopLocationsOrderBy$jitterLoaded() => jitterLoaded(),
+      RadarGetQualitySpeedTopLocationsOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidthDownload, W Function()? bandwidthUpload, W Function()? latencyIdle, W Function()? latencyLoaded, W Function()? jitterIdle, W Function()? jitterLoaded, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetQualitySpeedTopLocationsOrderBy$bandwidthDownload() => bandwidthDownload != null ? bandwidthDownload() : orElse(value),
+      RadarGetQualitySpeedTopLocationsOrderBy$bandwidthUpload() => bandwidthUpload != null ? bandwidthUpload() : orElse(value),
+      RadarGetQualitySpeedTopLocationsOrderBy$latencyIdle() => latencyIdle != null ? latencyIdle() : orElse(value),
+      RadarGetQualitySpeedTopLocationsOrderBy$latencyLoaded() => latencyLoaded != null ? latencyLoaded() : orElse(value),
+      RadarGetQualitySpeedTopLocationsOrderBy$jitterIdle() => jitterIdle != null ? jitterIdle() : orElse(value),
+      RadarGetQualitySpeedTopLocationsOrderBy$jitterLoaded() => jitterLoaded != null ? jitterLoaded() : orElse(value),
+      RadarGetQualitySpeedTopLocationsOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetQualitySpeedTopLocationsOrderBy($value)';
 
  }

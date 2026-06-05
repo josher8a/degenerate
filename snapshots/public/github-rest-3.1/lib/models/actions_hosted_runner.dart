@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActionsHostedRunnerStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ready, required W Function() provisioning, required W Function() shutdown, required W Function() deleting, required W Function() stuck, required W Function(String value) $unknown, }) { return switch (this) {
+      ActionsHostedRunnerStatus$ready() => ready(),
+      ActionsHostedRunnerStatus$provisioning() => provisioning(),
+      ActionsHostedRunnerStatus$shutdown() => shutdown(),
+      ActionsHostedRunnerStatus$deleting() => deleting(),
+      ActionsHostedRunnerStatus$stuck() => stuck(),
+      ActionsHostedRunnerStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W Function()? provisioning, W Function()? shutdown, W Function()? deleting, W Function()? stuck, W Function(String value)? $unknown, }) { return switch (this) {
+      ActionsHostedRunnerStatus$ready() => ready != null ? ready() : orElse(value),
+      ActionsHostedRunnerStatus$provisioning() => provisioning != null ? provisioning() : orElse(value),
+      ActionsHostedRunnerStatus$shutdown() => shutdown != null ? shutdown() : orElse(value),
+      ActionsHostedRunnerStatus$deleting() => deleting != null ? deleting() : orElse(value),
+      ActionsHostedRunnerStatus$stuck() => stuck != null ? stuck() : orElse(value),
+      ActionsHostedRunnerStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActionsHostedRunnerStatus($value)';
 
  }

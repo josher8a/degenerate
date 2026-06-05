@@ -72,6 +72,58 @@ sealed class NewNull {
     return this is NewNull$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() $null,
+    required W Function() $null2,
+    required W Function() $null3,
+    required W Function() $empty,
+    required W Function() $empty2,
+    required W Function() $empty3,
+    required W Function() $empty4,
+    required W Function() $empty5,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      NewNull$$null() => $null(),
+      NewNull$$null2() => $null2(),
+      NewNull$$null3() => $null3(),
+      NewNull$$empty() => $empty(),
+      NewNull$$empty2() => $empty2(),
+      NewNull$$empty3() => $empty3(),
+      NewNull$$empty4() => $empty4(),
+      NewNull$$empty5() => $empty5(),
+      NewNull$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? $null,
+    W Function()? $null2,
+    W Function()? $null3,
+    W Function()? $empty,
+    W Function()? $empty2,
+    W Function()? $empty3,
+    W Function()? $empty4,
+    W Function()? $empty5,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      NewNull$$null() => $null != null ? $null() : orElse(value),
+      NewNull$$null2() => $null2 != null ? $null2() : orElse(value),
+      NewNull$$null3() => $null3 != null ? $null3() : orElse(value),
+      NewNull$$empty() => $empty != null ? $empty() : orElse(value),
+      NewNull$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      NewNull$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      NewNull$$empty4() => $empty4 != null ? $empty4() : orElse(value),
+      NewNull$$empty5() => $empty5 != null ? $empty5() : orElse(value),
+      NewNull$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'NewNull($value)';
 }

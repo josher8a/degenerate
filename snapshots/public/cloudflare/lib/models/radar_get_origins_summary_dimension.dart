@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetOriginsSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() region, required W Function() successRate, required W Function() percentile, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetOriginsSummaryDimension$region() => region(),
+      RadarGetOriginsSummaryDimension$successRate() => successRate(),
+      RadarGetOriginsSummaryDimension$percentile() => percentile(),
+      RadarGetOriginsSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? region, W Function()? successRate, W Function()? percentile, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetOriginsSummaryDimension$region() => region != null ? region() : orElse(value),
+      RadarGetOriginsSummaryDimension$successRate() => successRate != null ? successRate() : orElse(value),
+      RadarGetOriginsSummaryDimension$percentile() => percentile != null ? percentile() : orElse(value),
+      RadarGetOriginsSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetOriginsSummaryDimension($value)';
 
  }

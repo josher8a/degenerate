@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListGroupRoleAssignmentsOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+      ListGroupRoleAssignmentsOrder$asc() => asc(),
+      ListGroupRoleAssignmentsOrder$desc() => desc(),
+      ListGroupRoleAssignmentsOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+      ListGroupRoleAssignmentsOrder$asc() => asc != null ? asc() : orElse(value),
+      ListGroupRoleAssignmentsOrder$desc() => desc != null ? desc() : orElse(value),
+      ListGroupRoleAssignmentsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListGroupRoleAssignmentsOrder($value)';
 
  }

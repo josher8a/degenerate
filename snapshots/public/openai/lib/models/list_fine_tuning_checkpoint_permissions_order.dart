@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListFineTuningCheckpointPermissionsOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ascending, required W Function() descending, required W Function(String value) $unknown, }) { return switch (this) {
+      ListFineTuningCheckpointPermissionsOrder$ascending() => ascending(),
+      ListFineTuningCheckpointPermissionsOrder$descending() => descending(),
+      ListFineTuningCheckpointPermissionsOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ascending, W Function()? descending, W Function(String value)? $unknown, }) { return switch (this) {
+      ListFineTuningCheckpointPermissionsOrder$ascending() => ascending != null ? ascending() : orElse(value),
+      ListFineTuningCheckpointPermissionsOrder$descending() => descending != null ? descending() : orElse(value),
+      ListFineTuningCheckpointPermissionsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListFineTuningCheckpointPermissionsOrder($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RepositoryRuleFilePathRestrictionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() filePathRestriction, required W Function(String value) $unknown, }) { return switch (this) {
+      RepositoryRuleFilePathRestrictionType$filePathRestriction() => filePathRestriction(),
+      RepositoryRuleFilePathRestrictionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? filePathRestriction, W Function(String value)? $unknown, }) { return switch (this) {
+      RepositoryRuleFilePathRestrictionType$filePathRestriction() => filePathRestriction != null ? filePathRestriction() : orElse(value),
+      RepositoryRuleFilePathRestrictionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RepositoryRuleFilePathRestrictionType($value)';
 
  }

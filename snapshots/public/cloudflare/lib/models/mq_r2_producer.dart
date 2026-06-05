@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MqR2ProducerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() r2Bucket, required W Function(String value) $unknown, }) { return switch (this) {
+      MqR2ProducerType$r2Bucket() => r2Bucket(),
+      MqR2ProducerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? r2Bucket, W Function(String value)? $unknown, }) { return switch (this) {
+      MqR2ProducerType$r2Bucket() => r2Bucket != null ? r2Bucket() : orElse(value),
+      MqR2ProducerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MqR2ProducerType($value)';
 
  }

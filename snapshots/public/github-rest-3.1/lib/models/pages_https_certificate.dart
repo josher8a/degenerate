@@ -65,6 +65,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesHttpsCertificateState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $new, required W Function() authorizationCreated, required W Function() authorizationPending, required W Function() authorized, required W Function() authorizationRevoked, required W Function() issued, required W Function() uploaded, required W Function() approved, required W Function() errored, required W Function() badAuthz, required W Function() destroyPending, required W Function() dnsChanged, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesHttpsCertificateState$$new() => $new(),
+      PagesHttpsCertificateState$authorizationCreated() => authorizationCreated(),
+      PagesHttpsCertificateState$authorizationPending() => authorizationPending(),
+      PagesHttpsCertificateState$authorized() => authorized(),
+      PagesHttpsCertificateState$authorizationRevoked() => authorizationRevoked(),
+      PagesHttpsCertificateState$issued() => issued(),
+      PagesHttpsCertificateState$uploaded() => uploaded(),
+      PagesHttpsCertificateState$approved() => approved(),
+      PagesHttpsCertificateState$errored() => errored(),
+      PagesHttpsCertificateState$badAuthz() => badAuthz(),
+      PagesHttpsCertificateState$destroyPending() => destroyPending(),
+      PagesHttpsCertificateState$dnsChanged() => dnsChanged(),
+      PagesHttpsCertificateState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $new, W Function()? authorizationCreated, W Function()? authorizationPending, W Function()? authorized, W Function()? authorizationRevoked, W Function()? issued, W Function()? uploaded, W Function()? approved, W Function()? errored, W Function()? badAuthz, W Function()? destroyPending, W Function()? dnsChanged, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesHttpsCertificateState$$new() => $new != null ? $new() : orElse(value),
+      PagesHttpsCertificateState$authorizationCreated() => authorizationCreated != null ? authorizationCreated() : orElse(value),
+      PagesHttpsCertificateState$authorizationPending() => authorizationPending != null ? authorizationPending() : orElse(value),
+      PagesHttpsCertificateState$authorized() => authorized != null ? authorized() : orElse(value),
+      PagesHttpsCertificateState$authorizationRevoked() => authorizationRevoked != null ? authorizationRevoked() : orElse(value),
+      PagesHttpsCertificateState$issued() => issued != null ? issued() : orElse(value),
+      PagesHttpsCertificateState$uploaded() => uploaded != null ? uploaded() : orElse(value),
+      PagesHttpsCertificateState$approved() => approved != null ? approved() : orElse(value),
+      PagesHttpsCertificateState$errored() => errored != null ? errored() : orElse(value),
+      PagesHttpsCertificateState$badAuthz() => badAuthz != null ? badAuthz() : orElse(value),
+      PagesHttpsCertificateState$destroyPending() => destroyPending != null ? destroyPending() : orElse(value),
+      PagesHttpsCertificateState$dnsChanged() => dnsChanged != null ? dnsChanged() : orElse(value),
+      PagesHttpsCertificateState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesHttpsCertificateState($value)';
 
  }

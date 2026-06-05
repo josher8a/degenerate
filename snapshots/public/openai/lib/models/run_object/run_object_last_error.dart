@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunObjectLastErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() serverError, required W Function() rateLimitExceeded, required W Function() invalidPrompt, required W Function(String value) $unknown, }) { return switch (this) {
+      RunObjectLastErrorCode$serverError() => serverError(),
+      RunObjectLastErrorCode$rateLimitExceeded() => rateLimitExceeded(),
+      RunObjectLastErrorCode$invalidPrompt() => invalidPrompt(),
+      RunObjectLastErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? rateLimitExceeded, W Function()? invalidPrompt, W Function(String value)? $unknown, }) { return switch (this) {
+      RunObjectLastErrorCode$serverError() => serverError != null ? serverError() : orElse(value),
+      RunObjectLastErrorCode$rateLimitExceeded() => rateLimitExceeded != null ? rateLimitExceeded() : orElse(value),
+      RunObjectLastErrorCode$invalidPrompt() => invalidPrompt != null ? invalidPrompt() : orElse(value),
+      RunObjectLastErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunObjectLastErrorCode($value)';
 
  }

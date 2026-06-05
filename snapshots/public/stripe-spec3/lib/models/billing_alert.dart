@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingAlertObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() billingAlert, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingAlertObject$billingAlert() => billingAlert(),
+      BillingAlertObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingAlert, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingAlertObject$billingAlert() => billingAlert != null ? billingAlert() : orElse(value),
+      BillingAlertObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingAlertObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingAlertStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() archived, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingAlertStatus$active() => active(),
+      BillingAlertStatus$archived() => archived(),
+      BillingAlertStatus$inactive() => inactive(),
+      BillingAlertStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingAlertStatus$active() => active != null ? active() : orElse(value),
+      BillingAlertStatus$archived() => archived != null ? archived() : orElse(value),
+      BillingAlertStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      BillingAlertStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingAlertStatus($value)';
 
  }

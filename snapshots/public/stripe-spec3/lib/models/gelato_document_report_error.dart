@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoDocumentReportErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() documentExpired, required W Function() documentTypeNotSupported, required W Function() documentUnverifiedOther, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoDocumentReportErrorCode$documentExpired() => documentExpired(),
+      GelatoDocumentReportErrorCode$documentTypeNotSupported() => documentTypeNotSupported(),
+      GelatoDocumentReportErrorCode$documentUnverifiedOther() => documentUnverifiedOther(),
+      GelatoDocumentReportErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? documentExpired, W Function()? documentTypeNotSupported, W Function()? documentUnverifiedOther, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoDocumentReportErrorCode$documentExpired() => documentExpired != null ? documentExpired() : orElse(value),
+      GelatoDocumentReportErrorCode$documentTypeNotSupported() => documentTypeNotSupported != null ? documentTypeNotSupported() : orElse(value),
+      GelatoDocumentReportErrorCode$documentUnverifiedOther() => documentUnverifiedOther != null ? documentUnverifiedOther() : orElse(value),
+      GelatoDocumentReportErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoDocumentReportErrorCode($value)';
 
  }

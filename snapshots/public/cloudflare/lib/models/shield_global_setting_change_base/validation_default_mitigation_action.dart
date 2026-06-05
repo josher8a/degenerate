@@ -36,6 +36,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ValidationDefaultMitigationAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() log, required W Function() block, required W Function(String value) $unknown, }) { return switch (this) {
+      ValidationDefaultMitigationAction$none() => none(),
+      ValidationDefaultMitigationAction$log() => log(),
+      ValidationDefaultMitigationAction$block() => block(),
+      ValidationDefaultMitigationAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? log, W Function()? block, W Function(String value)? $unknown, }) { return switch (this) {
+      ValidationDefaultMitigationAction$none() => none != null ? none() : orElse(value),
+      ValidationDefaultMitigationAction$log() => log != null ? log() : orElse(value),
+      ValidationDefaultMitigationAction$block() => block != null ? block() : orElse(value),
+      ValidationDefaultMitigationAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ValidationDefaultMitigationAction($value)';
 
  }

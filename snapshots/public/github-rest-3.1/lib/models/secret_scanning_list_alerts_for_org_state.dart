@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretScanningListAlertsForOrgState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() resolved, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretScanningListAlertsForOrgState$open() => open(),
+      SecretScanningListAlertsForOrgState$resolved() => resolved(),
+      SecretScanningListAlertsForOrgState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? resolved, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretScanningListAlertsForOrgState$open() => open != null ? open() : orElse(value),
+      SecretScanningListAlertsForOrgState$resolved() => resolved != null ? resolved() : orElse(value),
+      SecretScanningListAlertsForOrgState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretScanningListAlertsForOrgState($value)';
 
  }

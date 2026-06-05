@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is D1JurisdictionNullable$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eu, required W Function() fedramp, required W Function(String value) $unknown, }) { return switch (this) {
+      D1JurisdictionNullable$eu() => eu(),
+      D1JurisdictionNullable$fedramp() => fedramp(),
+      D1JurisdictionNullable$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eu, W Function()? fedramp, W Function(String value)? $unknown, }) { return switch (this) {
+      D1JurisdictionNullable$eu() => eu != null ? eu() : orElse(value),
+      D1JurisdictionNullable$fedramp() => fedramp != null ? fedramp() : orElse(value),
+      D1JurisdictionNullable$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'D1JurisdictionNullable($value)';
 
  }

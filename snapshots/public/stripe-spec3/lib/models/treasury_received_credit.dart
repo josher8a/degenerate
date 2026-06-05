@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryReceivedCreditFailureCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountClosed, required W Function() accountFrozen, required W Function() internationalTransaction, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditFailureCode$accountClosed() => accountClosed(),
+      TreasuryReceivedCreditFailureCode$accountFrozen() => accountFrozen(),
+      TreasuryReceivedCreditFailureCode$internationalTransaction() => internationalTransaction(),
+      TreasuryReceivedCreditFailureCode$$other() => $other(),
+      TreasuryReceivedCreditFailureCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? accountFrozen, W Function()? internationalTransaction, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditFailureCode$accountClosed() => accountClosed != null ? accountClosed() : orElse(value),
+      TreasuryReceivedCreditFailureCode$accountFrozen() => accountFrozen != null ? accountFrozen() : orElse(value),
+      TreasuryReceivedCreditFailureCode$internationalTransaction() => internationalTransaction != null ? internationalTransaction() : orElse(value),
+      TreasuryReceivedCreditFailureCode$$other() => $other != null ? $other() : orElse(value),
+      TreasuryReceivedCreditFailureCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryReceivedCreditFailureCode($value)';
 
  }
@@ -116,6 +132,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryReceivedCreditNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ach, required W Function() card, required W Function() stripe, required W Function() usDomesticWire, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditNetwork$ach() => ach(),
+      TreasuryReceivedCreditNetwork$card() => card(),
+      TreasuryReceivedCreditNetwork$stripe() => stripe(),
+      TreasuryReceivedCreditNetwork$usDomesticWire() => usDomesticWire(),
+      TreasuryReceivedCreditNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? card, W Function()? stripe, W Function()? usDomesticWire, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditNetwork$ach() => ach != null ? ach() : orElse(value),
+      TreasuryReceivedCreditNetwork$card() => card != null ? card() : orElse(value),
+      TreasuryReceivedCreditNetwork$stripe() => stripe != null ? stripe() : orElse(value),
+      TreasuryReceivedCreditNetwork$usDomesticWire() => usDomesticWire != null ? usDomesticWire() : orElse(value),
+      TreasuryReceivedCreditNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryReceivedCreditNetwork($value)';
 
  }
@@ -186,6 +218,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryReceivedCreditObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() treasuryReceivedCredit, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditObject$treasuryReceivedCredit() => treasuryReceivedCredit(),
+      TreasuryReceivedCreditObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryReceivedCredit, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryReceivedCreditObject$treasuryReceivedCredit() => treasuryReceivedCredit != null ? treasuryReceivedCredit() : orElse(value),
+      TreasuryReceivedCreditObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryReceivedCreditObject($value)';
 
  }

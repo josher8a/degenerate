@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessOidcSaasAppScopes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() openid, required W Function() groups, required W Function() email, required W Function() profile, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessOidcSaasAppScopes$openid() => openid(),
+      AccessOidcSaasAppScopes$groups() => groups(),
+      AccessOidcSaasAppScopes$email() => email(),
+      AccessOidcSaasAppScopes$profile() => profile(),
+      AccessOidcSaasAppScopes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? openid, W Function()? groups, W Function()? email, W Function()? profile, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessOidcSaasAppScopes$openid() => openid != null ? openid() : orElse(value),
+      AccessOidcSaasAppScopes$groups() => groups != null ? groups() : orElse(value),
+      AccessOidcSaasAppScopes$email() => email != null ? email() : orElse(value),
+      AccessOidcSaasAppScopes$profile() => profile != null ? profile() : orElse(value),
+      AccessOidcSaasAppScopes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessOidcSaasAppScopes($value)';
 
  }

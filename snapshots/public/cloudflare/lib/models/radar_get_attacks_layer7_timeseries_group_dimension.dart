@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() httpMethod, required W Function() httpVersion, required W Function() ipVersion, required W Function() managedRules, required W Function() mitigationProduct, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TimeseriesGroupDimension$httpMethod() => httpMethod(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$httpVersion() => httpVersion(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$ipVersion() => ipVersion(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$managedRules() => managedRules(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$mitigationProduct() => mitigationProduct(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$vertical() => vertical(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$industry() => industry(),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMethod, W Function()? httpVersion, W Function()? ipVersion, W Function()? managedRules, W Function()? mitigationProduct, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TimeseriesGroupDimension$httpMethod() => httpMethod != null ? httpMethod() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$httpVersion() => httpVersion != null ? httpVersion() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$managedRules() => managedRules != null ? managedRules() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$mitigationProduct() => mitigationProduct != null ? mitigationProduct() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupDimension($value)';
 
  }

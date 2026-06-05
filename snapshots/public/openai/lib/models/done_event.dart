@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DoneEventEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() done, required W Function(String value) $unknown, }) { return switch (this) {
+      DoneEventEvent$done() => done(),
+      DoneEventEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? done, W Function(String value)? $unknown, }) { return switch (this) {
+      DoneEventEvent$done() => done != null ? done() : orElse(value),
+      DoneEventEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DoneEventEvent($value)';
 
  }
@@ -63,6 +73,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DoneEventData$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() done, required W Function(String value) $unknown, }) { return switch (this) {
+      DoneEventData$done() => done(),
+      DoneEventData$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? done, W Function(String value)? $unknown, }) { return switch (this) {
+      DoneEventData$done() => done != null ? done() : orElse(value),
+      DoneEventData$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DoneEventData($value)';
 
  }

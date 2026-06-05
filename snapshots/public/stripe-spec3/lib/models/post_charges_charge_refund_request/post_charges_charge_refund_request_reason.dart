@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostChargesChargeRefundRequestReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+      PostChargesChargeRefundRequestReason$duplicate() => duplicate(),
+      PostChargesChargeRefundRequestReason$fraudulent() => fraudulent(),
+      PostChargesChargeRefundRequestReason$requestedByCustomer() => requestedByCustomer(),
+      PostChargesChargeRefundRequestReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+      PostChargesChargeRefundRequestReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      PostChargesChargeRefundRequestReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      PostChargesChargeRefundRequestReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
+      PostChargesChargeRefundRequestReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostChargesChargeRefundRequestReason($value)';
 
  }

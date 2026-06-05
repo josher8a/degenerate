@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingCycleAnchorVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() now, required W Function() unchanged, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingCycleAnchorVariant1$now() => now(),
+      BillingCycleAnchorVariant1$unchanged() => unchanged(),
+      BillingCycleAnchorVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function()? unchanged, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingCycleAnchorVariant1$now() => now != null ? now() : orElse(value),
+      BillingCycleAnchorVariant1$unchanged() => unchanged != null ? unchanged() : orElse(value),
+      BillingCycleAnchorVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingCycleAnchorVariant1($value)';
 
  }

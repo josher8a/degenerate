@@ -65,6 +65,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EvaluationMetric$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cosine, required W Function() fuzzyMatch, required W Function() bleu, required W Function() gleu, required W Function() meteor, required W Function() rouge1, required W Function() rouge2, required W Function() rouge3, required W Function() rouge4, required W Function() rouge5, required W Function() rougeL, required W Function(String value) $unknown, }) { return switch (this) {
+      EvaluationMetric$cosine() => cosine(),
+      EvaluationMetric$fuzzyMatch() => fuzzyMatch(),
+      EvaluationMetric$bleu() => bleu(),
+      EvaluationMetric$gleu() => gleu(),
+      EvaluationMetric$meteor() => meteor(),
+      EvaluationMetric$rouge1() => rouge1(),
+      EvaluationMetric$rouge2() => rouge2(),
+      EvaluationMetric$rouge3() => rouge3(),
+      EvaluationMetric$rouge4() => rouge4(),
+      EvaluationMetric$rouge5() => rouge5(),
+      EvaluationMetric$rougeL() => rougeL(),
+      EvaluationMetric$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cosine, W Function()? fuzzyMatch, W Function()? bleu, W Function()? gleu, W Function()? meteor, W Function()? rouge1, W Function()? rouge2, W Function()? rouge3, W Function()? rouge4, W Function()? rouge5, W Function()? rougeL, W Function(String value)? $unknown, }) { return switch (this) {
+      EvaluationMetric$cosine() => cosine != null ? cosine() : orElse(value),
+      EvaluationMetric$fuzzyMatch() => fuzzyMatch != null ? fuzzyMatch() : orElse(value),
+      EvaluationMetric$bleu() => bleu != null ? bleu() : orElse(value),
+      EvaluationMetric$gleu() => gleu != null ? gleu() : orElse(value),
+      EvaluationMetric$meteor() => meteor != null ? meteor() : orElse(value),
+      EvaluationMetric$rouge1() => rouge1 != null ? rouge1() : orElse(value),
+      EvaluationMetric$rouge2() => rouge2 != null ? rouge2() : orElse(value),
+      EvaluationMetric$rouge3() => rouge3 != null ? rouge3() : orElse(value),
+      EvaluationMetric$rouge4() => rouge4 != null ? rouge4() : orElse(value),
+      EvaluationMetric$rouge5() => rouge5 != null ? rouge5() : orElse(value),
+      EvaluationMetric$rougeL() => rougeL != null ? rougeL() : orElse(value),
+      EvaluationMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EvaluationMetric($value)';
 
  }

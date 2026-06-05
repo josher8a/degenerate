@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ViaMcpServerPortalDestinationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() viaMcpServerPortal, required W Function(String value) $unknown, }) { return switch (this) {
+      ViaMcpServerPortalDestinationType$viaMcpServerPortal() => viaMcpServerPortal(),
+      ViaMcpServerPortalDestinationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? viaMcpServerPortal, W Function(String value)? $unknown, }) { return switch (this) {
+      ViaMcpServerPortalDestinationType$viaMcpServerPortal() => viaMcpServerPortal != null ? viaMcpServerPortal() : orElse(value),
+      ViaMcpServerPortalDestinationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ViaMcpServerPortalDestinationType($value)';
 
  }

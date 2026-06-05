@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ScreenshotOptionsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() png, required W Function() jpeg, required W Function() webp, required W Function(String value) $unknown, }) { return switch (this) {
+      ScreenshotOptionsType$png() => png(),
+      ScreenshotOptionsType$jpeg() => jpeg(),
+      ScreenshotOptionsType$webp() => webp(),
+      ScreenshotOptionsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? png, W Function()? jpeg, W Function()? webp, W Function(String value)? $unknown, }) { return switch (this) {
+      ScreenshotOptionsType$png() => png != null ? png() : orElse(value),
+      ScreenshotOptionsType$jpeg() => jpeg != null ? jpeg() : orElse(value),
+      ScreenshotOptionsType$webp() => webp != null ? webp() : orElse(value),
+      ScreenshotOptionsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ScreenshotOptionsType($value)';
 
  }

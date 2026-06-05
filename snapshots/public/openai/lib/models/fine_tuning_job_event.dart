@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FineTuningJobEventObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fineTuningJobEvent, required W Function(String value) $unknown, }) { return switch (this) {
+      FineTuningJobEventObject$fineTuningJobEvent() => fineTuningJobEvent(),
+      FineTuningJobEventObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuningJobEvent, W Function(String value)? $unknown, }) { return switch (this) {
+      FineTuningJobEventObject$fineTuningJobEvent() => fineTuningJobEvent != null ? fineTuningJobEvent() : orElse(value),
+      FineTuningJobEventObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FineTuningJobEventObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Level$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() info, required W Function() warn, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      Level$info() => info(),
+      Level$warn() => warn(),
+      Level$error() => error(),
+      Level$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? info, W Function()? warn, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      Level$info() => info != null ? info() : orElse(value),
+      Level$warn() => warn != null ? warn() : orElse(value),
+      Level$error() => error != null ? error() : orElse(value),
+      Level$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Level($value)';
 
  }
@@ -138,6 +162,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FineTuningJobEventType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() message, required W Function() metrics, required W Function(String value) $unknown, }) { return switch (this) {
+      FineTuningJobEventType$message() => message(),
+      FineTuningJobEventType$metrics() => metrics(),
+      FineTuningJobEventType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? metrics, W Function(String value)? $unknown, }) { return switch (this) {
+      FineTuningJobEventType$message() => message != null ? message() : orElse(value),
+      FineTuningJobEventType$metrics() => metrics != null ? metrics() : orElse(value),
+      FineTuningJobEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FineTuningJobEventType($value)';
 
  }

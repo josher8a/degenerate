@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBgpRoutesAsnsSortBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cone, required W Function() pfxs, required W Function() ipv4, required W Function() ipv6, required W Function() rpkiValid, required W Function() rpkiInvalid, required W Function() rpkiUnknown, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBgpRoutesAsnsSortBy$cone() => cone(),
+      RadarGetBgpRoutesAsnsSortBy$pfxs() => pfxs(),
+      RadarGetBgpRoutesAsnsSortBy$ipv4() => ipv4(),
+      RadarGetBgpRoutesAsnsSortBy$ipv6() => ipv6(),
+      RadarGetBgpRoutesAsnsSortBy$rpkiValid() => rpkiValid(),
+      RadarGetBgpRoutesAsnsSortBy$rpkiInvalid() => rpkiInvalid(),
+      RadarGetBgpRoutesAsnsSortBy$rpkiUnknown() => rpkiUnknown(),
+      RadarGetBgpRoutesAsnsSortBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cone, W Function()? pfxs, W Function()? ipv4, W Function()? ipv6, W Function()? rpkiValid, W Function()? rpkiInvalid, W Function()? rpkiUnknown, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBgpRoutesAsnsSortBy$cone() => cone != null ? cone() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$pfxs() => pfxs != null ? pfxs() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$ipv4() => ipv4 != null ? ipv4() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$ipv6() => ipv6 != null ? ipv6() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$rpkiValid() => rpkiValid != null ? rpkiValid() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$rpkiInvalid() => rpkiInvalid != null ? rpkiInvalid() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$rpkiUnknown() => rpkiUnknown != null ? rpkiUnknown() : orElse(value),
+      RadarGetBgpRoutesAsnsSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBgpRoutesAsnsSortBy($value)';
 
  }

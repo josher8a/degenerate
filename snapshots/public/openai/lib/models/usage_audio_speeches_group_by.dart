@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageAudioSpeechesGroupBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() projectId, required W Function() userId, required W Function() apiKeyId, required W Function() model, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageAudioSpeechesGroupBy$projectId() => projectId(),
+      UsageAudioSpeechesGroupBy$userId() => userId(),
+      UsageAudioSpeechesGroupBy$apiKeyId() => apiKeyId(),
+      UsageAudioSpeechesGroupBy$model() => model(),
+      UsageAudioSpeechesGroupBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectId, W Function()? userId, W Function()? apiKeyId, W Function()? model, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageAudioSpeechesGroupBy$projectId() => projectId != null ? projectId() : orElse(value),
+      UsageAudioSpeechesGroupBy$userId() => userId != null ? userId() : orElse(value),
+      UsageAudioSpeechesGroupBy$apiKeyId() => apiKeyId != null ? apiKeyId() : orElse(value),
+      UsageAudioSpeechesGroupBy$model() => model != null ? model() : orElse(value),
+      UsageAudioSpeechesGroupBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageAudioSpeechesGroupBy($value)';
 
  }

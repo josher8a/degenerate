@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WafRulesListWafRulesOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() priority, required W Function() groupId, required W Function() description, required W Function(String value) $unknown, }) { return switch (this) {
+      WafRulesListWafRulesOrder$priority() => priority(),
+      WafRulesListWafRulesOrder$groupId() => groupId(),
+      WafRulesListWafRulesOrder$description() => description(),
+      WafRulesListWafRulesOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? priority, W Function()? groupId, W Function()? description, W Function(String value)? $unknown, }) { return switch (this) {
+      WafRulesListWafRulesOrder$priority() => priority != null ? priority() : orElse(value),
+      WafRulesListWafRulesOrder$groupId() => groupId != null ? groupId() : orElse(value),
+      WafRulesListWafRulesOrder$description() => description != null ? description() : orElse(value),
+      WafRulesListWafRulesOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WafRulesListWafRulesOrder($value)';
 
  }

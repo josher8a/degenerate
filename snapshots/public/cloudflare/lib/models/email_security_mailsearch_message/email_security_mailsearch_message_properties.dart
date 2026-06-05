@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowlistedPatternType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() quarantineRelease, required W Function() acceptableSender, required W Function() allowedSender, required W Function() allowedRecipient, required W Function() domainSimilarity, required W Function() domainRecency, required W Function() managedAcceptableSender, required W Function() outboundNdr, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowlistedPatternType$quarantineRelease() => quarantineRelease(),
+      AllowlistedPatternType$acceptableSender() => acceptableSender(),
+      AllowlistedPatternType$allowedSender() => allowedSender(),
+      AllowlistedPatternType$allowedRecipient() => allowedRecipient(),
+      AllowlistedPatternType$domainSimilarity() => domainSimilarity(),
+      AllowlistedPatternType$domainRecency() => domainRecency(),
+      AllowlistedPatternType$managedAcceptableSender() => managedAcceptableSender(),
+      AllowlistedPatternType$outboundNdr() => outboundNdr(),
+      AllowlistedPatternType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? quarantineRelease, W Function()? acceptableSender, W Function()? allowedSender, W Function()? allowedRecipient, W Function()? domainSimilarity, W Function()? domainRecency, W Function()? managedAcceptableSender, W Function()? outboundNdr, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowlistedPatternType$quarantineRelease() => quarantineRelease != null ? quarantineRelease() : orElse(value),
+      AllowlistedPatternType$acceptableSender() => acceptableSender != null ? acceptableSender() : orElse(value),
+      AllowlistedPatternType$allowedSender() => allowedSender != null ? allowedSender() : orElse(value),
+      AllowlistedPatternType$allowedRecipient() => allowedRecipient != null ? allowedRecipient() : orElse(value),
+      AllowlistedPatternType$domainSimilarity() => domainSimilarity != null ? domainSimilarity() : orElse(value),
+      AllowlistedPatternType$domainRecency() => domainRecency != null ? domainRecency() : orElse(value),
+      AllowlistedPatternType$managedAcceptableSender() => managedAcceptableSender != null ? managedAcceptableSender() : orElse(value),
+      AllowlistedPatternType$outboundNdr() => outboundNdr != null ? outboundNdr() : orElse(value),
+      AllowlistedPatternType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowlistedPatternType($value)';
 
  }
@@ -182,6 +206,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WhitelistedPatternType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() quarantineRelease, required W Function() acceptableSender, required W Function() allowedSender, required W Function() allowedRecipient, required W Function() domainSimilarity, required W Function() domainRecency, required W Function() managedAcceptableSender, required W Function() outboundNdr, required W Function(String value) $unknown, }) { return switch (this) {
+      WhitelistedPatternType$quarantineRelease() => quarantineRelease(),
+      WhitelistedPatternType$acceptableSender() => acceptableSender(),
+      WhitelistedPatternType$allowedSender() => allowedSender(),
+      WhitelistedPatternType$allowedRecipient() => allowedRecipient(),
+      WhitelistedPatternType$domainSimilarity() => domainSimilarity(),
+      WhitelistedPatternType$domainRecency() => domainRecency(),
+      WhitelistedPatternType$managedAcceptableSender() => managedAcceptableSender(),
+      WhitelistedPatternType$outboundNdr() => outboundNdr(),
+      WhitelistedPatternType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? quarantineRelease, W Function()? acceptableSender, W Function()? allowedSender, W Function()? allowedRecipient, W Function()? domainSimilarity, W Function()? domainRecency, W Function()? managedAcceptableSender, W Function()? outboundNdr, W Function(String value)? $unknown, }) { return switch (this) {
+      WhitelistedPatternType$quarantineRelease() => quarantineRelease != null ? quarantineRelease() : orElse(value),
+      WhitelistedPatternType$acceptableSender() => acceptableSender != null ? acceptableSender() : orElse(value),
+      WhitelistedPatternType$allowedSender() => allowedSender != null ? allowedSender() : orElse(value),
+      WhitelistedPatternType$allowedRecipient() => allowedRecipient != null ? allowedRecipient() : orElse(value),
+      WhitelistedPatternType$domainSimilarity() => domainSimilarity != null ? domainSimilarity() : orElse(value),
+      WhitelistedPatternType$domainRecency() => domainRecency != null ? domainRecency() : orElse(value),
+      WhitelistedPatternType$managedAcceptableSender() => managedAcceptableSender != null ? managedAcceptableSender() : orElse(value),
+      WhitelistedPatternType$outboundNdr() => outboundNdr != null ? outboundNdr() : orElse(value),
+      WhitelistedPatternType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WhitelistedPatternType($value)';
 
  }

@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeBetaClientEventConversationItemRetrieveType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() conversationItemRetrieve, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeBetaClientEventConversationItemRetrieveType$conversationItemRetrieve() => conversationItemRetrieve(),
+      RealtimeBetaClientEventConversationItemRetrieveType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversationItemRetrieve, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeBetaClientEventConversationItemRetrieveType$conversationItemRetrieve() => conversationItemRetrieve != null ? conversationItemRetrieve() : orElse(value),
+      RealtimeBetaClientEventConversationItemRetrieveType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeBetaClientEventConversationItemRetrieveType($value)';
 
  }

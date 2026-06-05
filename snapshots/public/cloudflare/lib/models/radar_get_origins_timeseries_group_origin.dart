@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetOriginsTimeseriesGroupOrigin$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amazon, required W Function() google, required W Function() microsoft, required W Function() oracle, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetOriginsTimeseriesGroupOrigin$amazon() => amazon(),
+      RadarGetOriginsTimeseriesGroupOrigin$google() => google(),
+      RadarGetOriginsTimeseriesGroupOrigin$microsoft() => microsoft(),
+      RadarGetOriginsTimeseriesGroupOrigin$oracle() => oracle(),
+      RadarGetOriginsTimeseriesGroupOrigin$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amazon, W Function()? google, W Function()? microsoft, W Function()? oracle, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetOriginsTimeseriesGroupOrigin$amazon() => amazon != null ? amazon() : orElse(value),
+      RadarGetOriginsTimeseriesGroupOrigin$google() => google != null ? google() : orElse(value),
+      RadarGetOriginsTimeseriesGroupOrigin$microsoft() => microsoft != null ? microsoft() : orElse(value),
+      RadarGetOriginsTimeseriesGroupOrigin$oracle() => oracle != null ? oracle() : orElse(value),
+      RadarGetOriginsTimeseriesGroupOrigin$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetOriginsTimeseriesGroupOrigin($value)';
 
  }

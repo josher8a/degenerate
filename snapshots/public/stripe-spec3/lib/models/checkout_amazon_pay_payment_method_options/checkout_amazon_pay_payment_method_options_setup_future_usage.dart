@@ -32,6 +32,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() offSession, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none() => none(),
+      CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$offSession() => offSession(),
+      CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? offSession, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$none() => none != null ? none() : orElse(value),
+      CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$offSession() => offSession != null ? offSession() : orElse(value),
+      CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage($value)';
 
  }

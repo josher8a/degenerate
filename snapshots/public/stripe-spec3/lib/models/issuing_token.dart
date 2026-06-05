@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingTokenNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingTokenNetwork$mastercard() => mastercard(),
+      IssuingTokenNetwork$visa() => visa(),
+      IssuingTokenNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingTokenNetwork$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      IssuingTokenNetwork$visa() => visa != null ? visa() : orElse(value),
+      IssuingTokenNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingTokenNetwork($value)';
 
  }
@@ -78,6 +90,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingTokenObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingToken, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingTokenObject$issuingToken() => issuingToken(),
+      IssuingTokenObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingToken, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingTokenObject$issuingToken() => issuingToken != null ? issuingToken() : orElse(value),
+      IssuingTokenObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingTokenObject($value)';
 
  }
@@ -133,6 +155,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingTokenStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() deleted, required W Function() requested, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingTokenStatus$active() => active(),
+      IssuingTokenStatus$deleted() => deleted(),
+      IssuingTokenStatus$requested() => requested(),
+      IssuingTokenStatus$suspended() => suspended(),
+      IssuingTokenStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function()? requested, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingTokenStatus$active() => active != null ? active() : orElse(value),
+      IssuingTokenStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      IssuingTokenStatus$requested() => requested != null ? requested() : orElse(value),
+      IssuingTokenStatus$suspended() => suspended != null ? suspended() : orElse(value),
+      IssuingTokenStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingTokenStatus($value)';
 
  }
@@ -211,6 +249,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WalletProvider$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) { return switch (this) {
+      WalletProvider$applePay() => applePay(),
+      WalletProvider$googlePay() => googlePay(),
+      WalletProvider$samsungPay() => samsungPay(),
+      WalletProvider$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) { return switch (this) {
+      WalletProvider$applePay() => applePay != null ? applePay() : orElse(value),
+      WalletProvider$googlePay() => googlePay != null ? googlePay() : orElse(value),
+      WalletProvider$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
+      WalletProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WalletProvider($value)';
 
  }

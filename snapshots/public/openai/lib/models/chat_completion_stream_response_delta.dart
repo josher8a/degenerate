@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatCompletionStreamResponseDeltaRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() developer, required W Function() system, required W Function() user, required W Function() assistant, required W Function() tool, required W Function(String value) $unknown, }) { return switch (this) {
+      ChatCompletionStreamResponseDeltaRole$developer() => developer(),
+      ChatCompletionStreamResponseDeltaRole$system() => system(),
+      ChatCompletionStreamResponseDeltaRole$user() => user(),
+      ChatCompletionStreamResponseDeltaRole$assistant() => assistant(),
+      ChatCompletionStreamResponseDeltaRole$tool() => tool(),
+      ChatCompletionStreamResponseDeltaRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? developer, W Function()? system, W Function()? user, W Function()? assistant, W Function()? tool, W Function(String value)? $unknown, }) { return switch (this) {
+      ChatCompletionStreamResponseDeltaRole$developer() => developer != null ? developer() : orElse(value),
+      ChatCompletionStreamResponseDeltaRole$system() => system != null ? system() : orElse(value),
+      ChatCompletionStreamResponseDeltaRole$user() => user != null ? user() : orElse(value),
+      ChatCompletionStreamResponseDeltaRole$assistant() => assistant != null ? assistant() : orElse(value),
+      ChatCompletionStreamResponseDeltaRole$tool() => tool != null ? tool() : orElse(value),
+      ChatCompletionStreamResponseDeltaRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChatCompletionStreamResponseDeltaRole($value)';
 
  }

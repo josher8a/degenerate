@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$chrome() => chrome(),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$edge() => edge(),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$firefox() => firefox(),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$safari() => safari(),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$edge() => edge != null ? edge() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$safari() => safari != null ? safari() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByBotClassBrowserFamily($value)';
 
  }

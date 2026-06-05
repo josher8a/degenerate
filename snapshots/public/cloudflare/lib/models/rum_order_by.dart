@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RumOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() host, required W Function() created, required W Function(String value) $unknown, }) { return switch (this) {
+      RumOrderBy$host() => host(),
+      RumOrderBy$created() => created(),
+      RumOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W Function()? created, W Function(String value)? $unknown, }) { return switch (this) {
+      RumOrderBy$host() => host != null ? host() : orElse(value),
+      RumOrderBy$created() => created != null ? created() : orElse(value),
+      RumOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RumOrderBy($value)';
 
  }

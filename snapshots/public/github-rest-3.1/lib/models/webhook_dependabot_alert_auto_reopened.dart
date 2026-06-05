@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookDependabotAlertAutoReopenedAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() autoReopened, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookDependabotAlertAutoReopenedAction$autoReopened() => autoReopened(),
+      WebhookDependabotAlertAutoReopenedAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? autoReopened, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookDependabotAlertAutoReopenedAction$autoReopened() => autoReopened != null ? autoReopened() : orElse(value),
+      WebhookDependabotAlertAutoReopenedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookDependabotAlertAutoReopenedAction($value)';
 
  }

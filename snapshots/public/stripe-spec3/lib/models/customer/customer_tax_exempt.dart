@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerTaxExempt$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exempt, required W Function() none, required W Function() reverse, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerTaxExempt$exempt() => exempt(),
+      CustomerTaxExempt$none() => none(),
+      CustomerTaxExempt$reverse() => reverse(),
+      CustomerTaxExempt$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, W Function()? none, W Function()? reverse, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerTaxExempt$exempt() => exempt != null ? exempt() : orElse(value),
+      CustomerTaxExempt$none() => none != null ? none() : orElse(value),
+      CustomerTaxExempt$reverse() => reverse != null ? reverse() : orElse(value),
+      CustomerTaxExempt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerTaxExempt($value)';
 
  }

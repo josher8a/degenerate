@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityPcapsPcapsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() success, required W Function() pending, required W Function() running, required W Function() conversionPending, required W Function() conversionRunning, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityPcapsPcapsStatus$unknown() => unknown(),
+      MagicVisibilityPcapsPcapsStatus$success() => success(),
+      MagicVisibilityPcapsPcapsStatus$pending() => pending(),
+      MagicVisibilityPcapsPcapsStatus$running() => running(),
+      MagicVisibilityPcapsPcapsStatus$conversionPending() => conversionPending(),
+      MagicVisibilityPcapsPcapsStatus$conversionRunning() => conversionRunning(),
+      MagicVisibilityPcapsPcapsStatus$complete() => complete(),
+      MagicVisibilityPcapsPcapsStatus$failed() => failed(),
+      MagicVisibilityPcapsPcapsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? success, W Function()? pending, W Function()? running, W Function()? conversionPending, W Function()? conversionRunning, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityPcapsPcapsStatus$unknown() => unknown != null ? unknown() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$success() => success != null ? success() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$pending() => pending != null ? pending() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$running() => running != null ? running() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$conversionPending() => conversionPending != null ? conversionPending() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$conversionRunning() => conversionRunning != null ? conversionRunning() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$complete() => complete != null ? complete() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$failed() => failed != null ? failed() : orElse(value),
+      MagicVisibilityPcapsPcapsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityPcapsPcapsStatus($value)';
 
  }

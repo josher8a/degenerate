@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BrandsBlocked$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() americanExpress, required W Function() discoverGlobalNetwork, required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      BrandsBlocked$americanExpress() => americanExpress(),
+      BrandsBlocked$discoverGlobalNetwork() => discoverGlobalNetwork(),
+      BrandsBlocked$mastercard() => mastercard(),
+      BrandsBlocked$visa() => visa(),
+      BrandsBlocked$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? americanExpress, W Function()? discoverGlobalNetwork, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      BrandsBlocked$americanExpress() => americanExpress != null ? americanExpress() : orElse(value),
+      BrandsBlocked$discoverGlobalNetwork() => discoverGlobalNetwork != null ? discoverGlobalNetwork() : orElse(value),
+      BrandsBlocked$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      BrandsBlocked$visa() => visa != null ? visa() : orElse(value),
+      BrandsBlocked$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BrandsBlocked($value)';
 
  }

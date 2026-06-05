@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() compliant, required W Function() noncompliant, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$compliant() => compliant(),
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$noncompliant() => noncompliant(),
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$unknown() => unknown(),
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? compliant, W Function()? noncompliant, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$compliant() => compliant != null ? compliant() : orElse(value),
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$noncompliant() => noncompliant != null ? noncompliant() : orElse(value),
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$unknown() => unknown != null ? unknown() : orElse(value),
+      TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesWorkspaceOneInputRequestComplianceStatus($value)';
 
  }

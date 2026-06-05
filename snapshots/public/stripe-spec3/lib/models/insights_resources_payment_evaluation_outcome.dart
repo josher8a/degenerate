@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationOutcomeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() failed, required W Function() merchantBlocked, required W Function() rejected, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationOutcomeType$failed() => failed(),
+      InsightsResourcesPaymentEvaluationOutcomeType$merchantBlocked() => merchantBlocked(),
+      InsightsResourcesPaymentEvaluationOutcomeType$rejected() => rejected(),
+      InsightsResourcesPaymentEvaluationOutcomeType$succeeded() => succeeded(),
+      InsightsResourcesPaymentEvaluationOutcomeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? merchantBlocked, W Function()? rejected, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationOutcomeType$failed() => failed != null ? failed() : orElse(value),
+      InsightsResourcesPaymentEvaluationOutcomeType$merchantBlocked() => merchantBlocked != null ? merchantBlocked() : orElse(value),
+      InsightsResourcesPaymentEvaluationOutcomeType$rejected() => rejected != null ? rejected() : orElse(value),
+      InsightsResourcesPaymentEvaluationOutcomeType$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      InsightsResourcesPaymentEvaluationOutcomeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationOutcomeType($value)';
 
  }

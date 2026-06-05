@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SchemasFrequency$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() weekly, required W Function() monthly, required W Function() quarterly, required W Function() yearly, required W Function(String value) $unknown, }) { return switch (this) {
+      SchemasFrequency$weekly() => weekly(),
+      SchemasFrequency$monthly() => monthly(),
+      SchemasFrequency$quarterly() => quarterly(),
+      SchemasFrequency$yearly() => yearly(),
+      SchemasFrequency$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? weekly, W Function()? monthly, W Function()? quarterly, W Function()? yearly, W Function(String value)? $unknown, }) { return switch (this) {
+      SchemasFrequency$weekly() => weekly != null ? weekly() : orElse(value),
+      SchemasFrequency$monthly() => monthly != null ? monthly() : orElse(value),
+      SchemasFrequency$quarterly() => quarterly != null ? quarterly() : orElse(value),
+      SchemasFrequency$yearly() => yearly != null ? yearly() : orElse(value),
+      SchemasFrequency$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SchemasFrequency($value)';
 
  }

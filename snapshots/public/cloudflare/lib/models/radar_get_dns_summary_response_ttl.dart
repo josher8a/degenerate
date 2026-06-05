@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsSummaryResponseTtl$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lte1M, required W Function() gt1MLte5M, required W Function() gt5MLte15M, required W Function() gt15MLte1H, required W Function() gt1HLte1D, required W Function() gt1DLte1W, required W Function() gt1W, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsSummaryResponseTtl$lte1M() => lte1M(),
+      RadarGetDnsSummaryResponseTtl$gt1MLte5M() => gt1MLte5M(),
+      RadarGetDnsSummaryResponseTtl$gt5MLte15M() => gt5MLte15M(),
+      RadarGetDnsSummaryResponseTtl$gt15MLte1H() => gt15MLte1H(),
+      RadarGetDnsSummaryResponseTtl$gt1HLte1D() => gt1HLte1D(),
+      RadarGetDnsSummaryResponseTtl$gt1DLte1W() => gt1DLte1W(),
+      RadarGetDnsSummaryResponseTtl$gt1W() => gt1W(),
+      RadarGetDnsSummaryResponseTtl$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W Function()? gt1MLte5M, W Function()? gt5MLte15M, W Function()? gt15MLte1H, W Function()? gt1HLte1D, W Function()? gt1DLte1W, W Function()? gt1W, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsSummaryResponseTtl$lte1M() => lte1M != null ? lte1M() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$gt1MLte5M() => gt1MLte5M != null ? gt1MLte5M() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$gt5MLte15M() => gt5MLte15M != null ? gt5MLte15M() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$gt15MLte1H() => gt15MLte1H != null ? gt15MLte1H() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$gt1HLte1D() => gt1HLte1D != null ? gt1HLte1D() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$gt1DLte1W() => gt1DLte1W != null ? gt1DLte1W() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$gt1W() => gt1W != null ? gt1W() : orElse(value),
+      RadarGetDnsSummaryResponseTtl$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsSummaryResponseTtl($value)';
 
  }

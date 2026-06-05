@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TypedObject3Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() obj3, required W Function(String value) $unknown, }) { return switch (this) {
+      TypedObject3Type$obj3() => obj3(),
+      TypedObject3Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? obj3, W Function(String value)? $unknown, }) { return switch (this) {
+      TypedObject3Type$obj3() => obj3 != null ? obj3() : orElse(value),
+      TypedObject3Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TypedObject3Type($value)';
 
  }

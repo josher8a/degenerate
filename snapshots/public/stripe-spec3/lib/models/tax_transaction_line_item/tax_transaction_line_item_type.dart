@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxTransactionLineItemType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() reversal, required W Function() transaction, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxTransactionLineItemType$reversal() => reversal(),
+      TaxTransactionLineItemType$transaction() => transaction(),
+      TaxTransactionLineItemType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? reversal, W Function()? transaction, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxTransactionLineItemType$reversal() => reversal != null ? reversal() : orElse(value),
+      TaxTransactionLineItemType$transaction() => transaction != null ? transaction() : orElse(value),
+      TaxTransactionLineItemType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxTransactionLineItemType($value)';
 
  }

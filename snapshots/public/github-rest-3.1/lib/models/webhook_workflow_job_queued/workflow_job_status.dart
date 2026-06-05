@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkflowJobStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkflowJobStatus$queued() => queued(),
+      WorkflowJobStatus$inProgress() => inProgress(),
+      WorkflowJobStatus$completed() => completed(),
+      WorkflowJobStatus$waiting() => waiting(),
+      WorkflowJobStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkflowJobStatus$queued() => queued != null ? queued() : orElse(value),
+      WorkflowJobStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      WorkflowJobStatus$completed() => completed != null ? completed() : orElse(value),
+      WorkflowJobStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      WorkflowJobStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkflowJobStatus($value)';
 
  }

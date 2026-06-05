@@ -27,6 +27,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesOpportunisticEncryptionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesOpportunisticEncryptionValue$$on() => $on(),
+      ZonesOpportunisticEncryptionValue$off() => off(),
+      ZonesOpportunisticEncryptionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesOpportunisticEncryptionValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesOpportunisticEncryptionValue$off() => off != null ? off() : orElse(value),
+      ZonesOpportunisticEncryptionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesOpportunisticEncryptionValue($value)';
 
  }

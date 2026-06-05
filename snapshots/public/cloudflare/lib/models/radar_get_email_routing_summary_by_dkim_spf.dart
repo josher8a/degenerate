@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingSummaryByDkimSpf$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingSummaryByDkimSpf$pass() => pass(),
+      RadarGetEmailRoutingSummaryByDkimSpf$none() => none(),
+      RadarGetEmailRoutingSummaryByDkimSpf$fail() => fail(),
+      RadarGetEmailRoutingSummaryByDkimSpf$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingSummaryByDkimSpf$pass() => pass != null ? pass() : orElse(value),
+      RadarGetEmailRoutingSummaryByDkimSpf$none() => none != null ? none() : orElse(value),
+      RadarGetEmailRoutingSummaryByDkimSpf$fail() => fail != null ? fail() : orElse(value),
+      RadarGetEmailRoutingSummaryByDkimSpf$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingSummaryByDkimSpf($value)';
 
  }

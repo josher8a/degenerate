@@ -66,6 +66,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() angus, required W Function() asteria, required W Function() arcas, required W Function() orion, required W Function() orpheus, required W Function() athena, required W Function() luna, required W Function() zeus, required W Function() perseus, required W Function() helios, required W Function() hera, required W Function() stella, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus() => angus(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$asteria() => asteria(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$arcas() => arcas(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orion() => orion(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orpheus() => orpheus(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$athena() => athena(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$luna() => luna(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$zeus() => zeus(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$perseus() => perseus(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$helios() => helios(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$hera() => hera(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$stella() => stella(),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? angus, W Function()? asteria, W Function()? arcas, W Function()? orion, W Function()? orpheus, W Function()? athena, W Function()? luna, W Function()? zeus, W Function()? perseus, W Function()? helios, W Function()? hera, W Function()? stella, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$angus() => angus != null ? angus() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$asteria() => asteria != null ? asteria() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$arcas() => arcas != null ? arcas() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orion() => orion != null ? orion() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$orpheus() => orpheus != null ? orpheus() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$athena() => athena != null ? athena() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$luna() => luna != null ? luna() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$zeus() => zeus != null ? zeus() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$perseus() => perseus != null ? perseus() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$helios() => helios != null ? helios() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$hera() => hera != null ? hera() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$stella() => stella != null ? stella() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestSpeaker$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestSpeaker($value)';
 
  }

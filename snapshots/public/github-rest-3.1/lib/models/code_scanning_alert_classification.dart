@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningAlertClassification$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() source, required W Function() generated, required W Function() test, required W Function() $library, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningAlertClassification$source() => source(),
+      CodeScanningAlertClassification$generated() => generated(),
+      CodeScanningAlertClassification$test() => test(),
+      CodeScanningAlertClassification$$library() => $library(),
+      CodeScanningAlertClassification$$null() => $null(),
+      CodeScanningAlertClassification$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? source, W Function()? generated, W Function()? test, W Function()? $library, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningAlertClassification$source() => source != null ? source() : orElse(value),
+      CodeScanningAlertClassification$generated() => generated != null ? generated() : orElse(value),
+      CodeScanningAlertClassification$test() => test != null ? test() : orElse(value),
+      CodeScanningAlertClassification$$library() => $library != null ? $library() : orElse(value),
+      CodeScanningAlertClassification$$null() => $null != null ? $null() : orElse(value),
+      CodeScanningAlertClassification$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningAlertClassification($value)';
 
  }

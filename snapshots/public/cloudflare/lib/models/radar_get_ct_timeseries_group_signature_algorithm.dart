@@ -77,6 +77,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtTimeseriesGroupSignatureAlgorithm$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dsaSha1, required W Function() dsaSha256, required W Function() ecdsaSha1, required W Function() ecdsaSha256, required W Function() ecdsaSha384, required W Function() ecdsaSha512, required W Function() pssSha256, required W Function() pssSha384, required W Function() pssSha512, required W Function() rsaMd2, required W Function() rsaMd5, required W Function() rsaSha1, required W Function() rsaSha256, required W Function() rsaSha384, required W Function() rsaSha512, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$dsaSha1() => dsaSha1(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$dsaSha256() => dsaSha256(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha1() => ecdsaSha1(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha256() => ecdsaSha256(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha384() => ecdsaSha384(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha512() => ecdsaSha512(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$pssSha256() => pssSha256(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$pssSha384() => pssSha384(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$pssSha512() => pssSha512(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaMd2() => rsaMd2(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaMd5() => rsaMd5(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha1() => rsaSha1(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha256() => rsaSha256(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha384() => rsaSha384(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha512() => rsaSha512(),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsaSha1, W Function()? dsaSha256, W Function()? ecdsaSha1, W Function()? ecdsaSha256, W Function()? ecdsaSha384, W Function()? ecdsaSha512, W Function()? pssSha256, W Function()? pssSha384, W Function()? pssSha512, W Function()? rsaMd2, W Function()? rsaMd5, W Function()? rsaSha1, W Function()? rsaSha256, W Function()? rsaSha384, W Function()? rsaSha512, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$dsaSha1() => dsaSha1 != null ? dsaSha1() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$dsaSha256() => dsaSha256 != null ? dsaSha256() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha1() => ecdsaSha1 != null ? ecdsaSha1() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha256() => ecdsaSha256 != null ? ecdsaSha256() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha384() => ecdsaSha384 != null ? ecdsaSha384() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$ecdsaSha512() => ecdsaSha512 != null ? ecdsaSha512() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$pssSha256() => pssSha256 != null ? pssSha256() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$pssSha384() => pssSha384 != null ? pssSha384() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$pssSha512() => pssSha512 != null ? pssSha512() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaMd2() => rsaMd2 != null ? rsaMd2() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaMd5() => rsaMd5 != null ? rsaMd5() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha1() => rsaSha1 != null ? rsaSha1() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha256() => rsaSha256 != null ? rsaSha256() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha384() => rsaSha384 != null ? rsaSha384() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$rsaSha512() => rsaSha512 != null ? rsaSha512() : orElse(value),
+      RadarGetCtTimeseriesGroupSignatureAlgorithm$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtTimeseriesGroupSignatureAlgorithm($value)';
 
  }

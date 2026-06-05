@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Enum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function() fourAndMore, required W Function(String value) $unknown, }) { return switch (this) {
+      Enum$one() => one(),
+      Enum$two() => two(),
+      Enum$three() => three(),
+      Enum$fourAndMore() => fourAndMore(),
+      Enum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function()? fourAndMore, W Function(String value)? $unknown, }) { return switch (this) {
+      Enum$one() => one != null ? one() : orElse(value),
+      Enum$two() => two != null ? two() : orElse(value),
+      Enum$three() => three != null ? three() : orElse(value),
+      Enum$fourAndMore() => fourAndMore != null ? fourAndMore() : orElse(value),
+      Enum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Enum($value)';
 
  }

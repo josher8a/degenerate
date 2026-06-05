@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ToolRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tool, required W Function(String value) $unknown, }) { return switch (this) {
+      ToolRole$tool() => tool(),
+      ToolRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tool, W Function(String value)? $unknown, }) { return switch (this) {
+      ToolRole$tool() => tool != null ? tool() : orElse(value),
+      ToolRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ToolRole($value)';
 
  }

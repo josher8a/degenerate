@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateOptionsAmountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() fixed, required W Function() maximum, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateOptionsAmountType$$empty() => $empty(),
+      MandateOptionsAmountType$fixed() => fixed(),
+      MandateOptionsAmountType$maximum() => maximum(),
+      MandateOptionsAmountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? fixed, W Function()? maximum, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateOptionsAmountType$$empty() => $empty != null ? $empty() : orElse(value),
+      MandateOptionsAmountType$fixed() => fixed != null ? fixed() : orElse(value),
+      MandateOptionsAmountType$maximum() => maximum != null ? maximum() : orElse(value),
+      MandateOptionsAmountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateOptionsAmountType($value)';
 
  }

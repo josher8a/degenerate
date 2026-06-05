@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityPatternType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() email, required W Function() domain, required W Function() ip, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityPatternType$email() => email(),
+      EmailSecurityPatternType$domain() => domain(),
+      EmailSecurityPatternType$ip() => ip(),
+      EmailSecurityPatternType$unknown() => unknown(),
+      EmailSecurityPatternType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? domain, W Function()? ip, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityPatternType$email() => email != null ? email() : orElse(value),
+      EmailSecurityPatternType$domain() => domain != null ? domain() : orElse(value),
+      EmailSecurityPatternType$ip() => ip != null ? ip() : orElse(value),
+      EmailSecurityPatternType$unknown() => unknown != null ? unknown() : orElse(value),
+      EmailSecurityPatternType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityPatternType($value)';
 
  }

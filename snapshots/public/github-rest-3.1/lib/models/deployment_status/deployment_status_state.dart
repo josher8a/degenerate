@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DeploymentStatusState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() error, required W Function() failure, required W Function() inactive, required W Function() pending, required W Function() success, required W Function() queued, required W Function() inProgress, required W Function(String value) $unknown, }) { return switch (this) {
+      DeploymentStatusState$error() => error(),
+      DeploymentStatusState$failure() => failure(),
+      DeploymentStatusState$inactive() => inactive(),
+      DeploymentStatusState$pending() => pending(),
+      DeploymentStatusState$success() => success(),
+      DeploymentStatusState$queued() => queued(),
+      DeploymentStatusState$inProgress() => inProgress(),
+      DeploymentStatusState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W Function()? failure, W Function()? inactive, W Function()? pending, W Function()? success, W Function()? queued, W Function()? inProgress, W Function(String value)? $unknown, }) { return switch (this) {
+      DeploymentStatusState$error() => error != null ? error() : orElse(value),
+      DeploymentStatusState$failure() => failure != null ? failure() : orElse(value),
+      DeploymentStatusState$inactive() => inactive != null ? inactive() : orElse(value),
+      DeploymentStatusState$pending() => pending != null ? pending() : orElse(value),
+      DeploymentStatusState$success() => success != null ? success() : orElse(value),
+      DeploymentStatusState$queued() => queued != null ? queued() : orElse(value),
+      DeploymentStatusState$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      DeploymentStatusState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DeploymentStatusState($value)';
 
  }

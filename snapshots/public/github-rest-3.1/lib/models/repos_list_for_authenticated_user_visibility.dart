@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListForAuthenticatedUserVisibility$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() public, required W Function() private, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListForAuthenticatedUserVisibility$all() => all(),
+      ReposListForAuthenticatedUserVisibility$public() => public(),
+      ReposListForAuthenticatedUserVisibility$private() => private(),
+      ReposListForAuthenticatedUserVisibility$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? public, W Function()? private, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListForAuthenticatedUserVisibility$all() => all != null ? all() : orElse(value),
+      ReposListForAuthenticatedUserVisibility$public() => public != null ? public() : orElse(value),
+      ReposListForAuthenticatedUserVisibility$private() => private != null ? private() : orElse(value),
+      ReposListForAuthenticatedUserVisibility$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListForAuthenticatedUserVisibility($value)';
 
  }

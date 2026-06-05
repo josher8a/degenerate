@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetQualityIndexSummaryMetric$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bandwidth, required W Function() dns, required W Function() latency, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetQualityIndexSummaryMetric$bandwidth() => bandwidth(),
+      RadarGetQualityIndexSummaryMetric$dns() => dns(),
+      RadarGetQualityIndexSummaryMetric$latency() => latency(),
+      RadarGetQualityIndexSummaryMetric$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidth, W Function()? dns, W Function()? latency, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetQualityIndexSummaryMetric$bandwidth() => bandwidth != null ? bandwidth() : orElse(value),
+      RadarGetQualityIndexSummaryMetric$dns() => dns != null ? dns() : orElse(value),
+      RadarGetQualityIndexSummaryMetric$latency() => latency != null ? latency() : orElse(value),
+      RadarGetQualityIndexSummaryMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetQualityIndexSummaryMetric($value)';
 
  }

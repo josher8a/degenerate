@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesPolishValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() lossless, required W Function() lossy, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesPolishValue$off() => off(),
+      ZonesPolishValue$lossless() => lossless(),
+      ZonesPolishValue$lossy() => lossy(),
+      ZonesPolishValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? lossless, W Function()? lossy, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesPolishValue$off() => off != null ? off() : orElse(value),
+      ZonesPolishValue$lossless() => lossless != null ? lossless() : orElse(value),
+      ZonesPolishValue$lossy() => lossy != null ? lossy() : orElse(value),
+      ZonesPolishValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesPolishValue($value)';
 
  }

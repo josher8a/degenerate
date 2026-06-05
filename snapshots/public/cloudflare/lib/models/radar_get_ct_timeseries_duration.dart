@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtTimeseriesDuration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lte3D, required W Function() gt3DLte7D, required W Function() gt7DLte10D, required W Function() gt10DLte47D, required W Function() gt47DLte100D, required W Function() gt100DLte200D, required W Function() gt200D, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesDuration$lte3D() => lte3D(),
+      RadarGetCtTimeseriesDuration$gt3DLte7D() => gt3DLte7D(),
+      RadarGetCtTimeseriesDuration$gt7DLte10D() => gt7DLte10D(),
+      RadarGetCtTimeseriesDuration$gt10DLte47D() => gt10DLte47D(),
+      RadarGetCtTimeseriesDuration$gt47DLte100D() => gt47DLte100D(),
+      RadarGetCtTimeseriesDuration$gt100DLte200D() => gt100DLte200D(),
+      RadarGetCtTimeseriesDuration$gt200D() => gt200D(),
+      RadarGetCtTimeseriesDuration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte3D, W Function()? gt3DLte7D, W Function()? gt7DLte10D, W Function()? gt10DLte47D, W Function()? gt47DLte100D, W Function()? gt100DLte200D, W Function()? gt200D, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesDuration$lte3D() => lte3D != null ? lte3D() : orElse(value),
+      RadarGetCtTimeseriesDuration$gt3DLte7D() => gt3DLte7D != null ? gt3DLte7D() : orElse(value),
+      RadarGetCtTimeseriesDuration$gt7DLte10D() => gt7DLte10D != null ? gt7DLte10D() : orElse(value),
+      RadarGetCtTimeseriesDuration$gt10DLte47D() => gt10DLte47D != null ? gt10DLte47D() : orElse(value),
+      RadarGetCtTimeseriesDuration$gt47DLte100D() => gt47DLte100D != null ? gt47DLte100D() : orElse(value),
+      RadarGetCtTimeseriesDuration$gt100DLte200D() => gt100DLte200D != null ? gt100DLte200D() : orElse(value),
+      RadarGetCtTimeseriesDuration$gt200D() => gt200D != null ? gt200D() : orElse(value),
+      RadarGetCtTimeseriesDuration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtTimeseriesDuration($value)';
 
  }

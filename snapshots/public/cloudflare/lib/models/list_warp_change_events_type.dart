@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListWarpChangeEventsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() config, required W Function() toggle, required W Function(String value) $unknown, }) { return switch (this) {
+      ListWarpChangeEventsType$config() => config(),
+      ListWarpChangeEventsType$toggle() => toggle(),
+      ListWarpChangeEventsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? config, W Function()? toggle, W Function(String value)? $unknown, }) { return switch (this) {
+      ListWarpChangeEventsType$config() => config != null ? config() : orElse(value),
+      ListWarpChangeEventsType$toggle() => toggle != null ? toggle() : orElse(value),
+      ListWarpChangeEventsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListWarpChangeEventsType($value)';
 
  }

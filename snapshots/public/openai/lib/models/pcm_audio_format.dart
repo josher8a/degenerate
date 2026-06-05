@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PcmAudioFormatType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() audioPcm, required W Function(String value) $unknown, }) { return switch (this) {
+      PcmAudioFormatType$audioPcm() => audioPcm(),
+      PcmAudioFormatType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? audioPcm, W Function(String value)? $unknown, }) { return switch (this) {
+      PcmAudioFormatType$audioPcm() => audioPcm != null ? audioPcm() : orElse(value),
+      PcmAudioFormatType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PcmAudioFormatType($value)';
 
  }
@@ -65,6 +75,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Rate$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $24000, required W Function(int value) $unknown, }) { return switch (this) {
+      Rate$$24000() => $24000(),
+      Rate$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $24000, W Function(int value)? $unknown, }) { return switch (this) {
+      Rate$$24000() => $24000 != null ? $24000() : orElse(value),
+      Rate$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Rate($value)';
 
  }

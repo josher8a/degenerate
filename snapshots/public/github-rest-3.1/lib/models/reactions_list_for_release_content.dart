@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReactionsListForReleaseContent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() plus1, required W Function() laugh, required W Function() heart, required W Function() hooray, required W Function() rocket, required W Function() eyes, required W Function(String value) $unknown, }) { return switch (this) {
+      ReactionsListForReleaseContent$plus1() => plus1(),
+      ReactionsListForReleaseContent$laugh() => laugh(),
+      ReactionsListForReleaseContent$heart() => heart(),
+      ReactionsListForReleaseContent$hooray() => hooray(),
+      ReactionsListForReleaseContent$rocket() => rocket(),
+      ReactionsListForReleaseContent$eyes() => eyes(),
+      ReactionsListForReleaseContent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W Function()? laugh, W Function()? heart, W Function()? hooray, W Function()? rocket, W Function()? eyes, W Function(String value)? $unknown, }) { return switch (this) {
+      ReactionsListForReleaseContent$plus1() => plus1 != null ? plus1() : orElse(value),
+      ReactionsListForReleaseContent$laugh() => laugh != null ? laugh() : orElse(value),
+      ReactionsListForReleaseContent$heart() => heart != null ? heart() : orElse(value),
+      ReactionsListForReleaseContent$hooray() => hooray != null ? hooray() : orElse(value),
+      ReactionsListForReleaseContent$rocket() => rocket != null ? rocket() : orElse(value),
+      ReactionsListForReleaseContent$eyes() => eyes != null ? eyes() : orElse(value),
+      ReactionsListForReleaseContent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReactionsListForReleaseContent($value)';
 
  }

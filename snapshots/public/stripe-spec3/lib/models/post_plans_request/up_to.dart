@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UpToVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inf, required W Function(String value) $unknown, }) { return switch (this) {
+      UpToVariant1$inf() => inf(),
+      UpToVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inf, W Function(String value)? $unknown, }) { return switch (this) {
+      UpToVariant1$inf() => inf != null ? inf() : orElse(value),
+      UpToVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UpToVariant1($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ExampleBoatType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() boat, required W Function(String value) $unknown, }) { return switch (this) {
+      ExampleBoatType$boat() => boat(),
+      ExampleBoatType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? boat, W Function(String value)? $unknown, }) { return switch (this) {
+      ExampleBoatType$boat() => boat != null ? boat() : orElse(value),
+      ExampleBoatType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ExampleBoatType($value)';
 
  }

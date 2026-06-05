@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingResourceReferenceReferenceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() referral, required W Function() referrer, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingResourceReferenceReferenceType$referral() => referral(),
+      LoadBalancingResourceReferenceReferenceType$referrer() => referrer(),
+      LoadBalancingResourceReferenceReferenceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? referral, W Function()? referrer, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingResourceReferenceReferenceType$referral() => referral != null ? referral() : orElse(value),
+      LoadBalancingResourceReferenceReferenceType$referrer() => referrer != null ? referrer() : orElse(value),
+      LoadBalancingResourceReferenceReferenceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingResourceReferenceReferenceType($value)';
 
  }
@@ -86,6 +98,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingResourceReferenceResourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() loadBalancer, required W Function() monitor, required W Function() pool, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingResourceReferenceResourceType$loadBalancer() => loadBalancer(),
+      LoadBalancingResourceReferenceResourceType$monitor() => monitor(),
+      LoadBalancingResourceReferenceResourceType$pool() => pool(),
+      LoadBalancingResourceReferenceResourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? loadBalancer, W Function()? monitor, W Function()? pool, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingResourceReferenceResourceType$loadBalancer() => loadBalancer != null ? loadBalancer() : orElse(value),
+      LoadBalancingResourceReferenceResourceType$monitor() => monitor != null ? monitor() : orElse(value),
+      LoadBalancingResourceReferenceResourceType$pool() => pool != null ? pool() : orElse(value),
+      LoadBalancingResourceReferenceResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingResourceReferenceResourceType($value)';
 
  }

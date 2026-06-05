@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PdfPageSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() a4, required W Function() auto, required W Function() letter, required W Function(String value) $unknown, }) { return switch (this) {
+      PdfPageSize$a4() => a4(),
+      PdfPageSize$auto() => auto(),
+      PdfPageSize$letter() => letter(),
+      PdfPageSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a4, W Function()? auto, W Function()? letter, W Function(String value)? $unknown, }) { return switch (this) {
+      PdfPageSize$a4() => a4 != null ? a4() : orElse(value),
+      PdfPageSize$auto() => auto != null ? auto() : orElse(value),
+      PdfPageSize$letter() => letter != null ? letter() : orElse(value),
+      PdfPageSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PdfPageSize($value)';
 
  }

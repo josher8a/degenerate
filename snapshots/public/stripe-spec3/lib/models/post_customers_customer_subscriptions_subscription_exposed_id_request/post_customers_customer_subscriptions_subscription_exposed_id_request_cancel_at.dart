@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CancelAtVariant3$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() maxPeriodEnd, required W Function() minPeriodEnd, required W Function(String value) $unknown, }) { return switch (this) {
+      CancelAtVariant3$maxPeriodEnd() => maxPeriodEnd(),
+      CancelAtVariant3$minPeriodEnd() => minPeriodEnd(),
+      CancelAtVariant3$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxPeriodEnd, W Function()? minPeriodEnd, W Function(String value)? $unknown, }) { return switch (this) {
+      CancelAtVariant3$maxPeriodEnd() => maxPeriodEnd != null ? maxPeriodEnd() : orElse(value),
+      CancelAtVariant3$minPeriodEnd() => minPeriodEnd != null ? minPeriodEnd() : orElse(value),
+      CancelAtVariant3$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CancelAtVariant3($value)';
 
  }

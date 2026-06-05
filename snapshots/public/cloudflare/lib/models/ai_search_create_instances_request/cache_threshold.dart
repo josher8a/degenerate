@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CacheThreshold$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() superStrictMatch, required W Function() closeEnough, required W Function() flexibleFriend, required W Function() anythingGoes, required W Function(String value) $unknown, }) { return switch (this) {
+      CacheThreshold$superStrictMatch() => superStrictMatch(),
+      CacheThreshold$closeEnough() => closeEnough(),
+      CacheThreshold$flexibleFriend() => flexibleFriend(),
+      CacheThreshold$anythingGoes() => anythingGoes(),
+      CacheThreshold$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? superStrictMatch, W Function()? closeEnough, W Function()? flexibleFriend, W Function()? anythingGoes, W Function(String value)? $unknown, }) { return switch (this) {
+      CacheThreshold$superStrictMatch() => superStrictMatch != null ? superStrictMatch() : orElse(value),
+      CacheThreshold$closeEnough() => closeEnough != null ? closeEnough() : orElse(value),
+      CacheThreshold$flexibleFriend() => flexibleFriend != null ? flexibleFriend() : orElse(value),
+      CacheThreshold$anythingGoes() => anythingGoes != null ? anythingGoes() : orElse(value),
+      CacheThreshold$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CacheThreshold($value)';
 
  }

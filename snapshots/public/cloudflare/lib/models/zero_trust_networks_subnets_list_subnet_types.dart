@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustNetworksSubnetsListSubnetTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cloudflareSource, required W Function() warp, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource() => cloudflareSource(),
+      ZeroTrustNetworksSubnetsListSubnetTypes$warp() => warp(),
+      ZeroTrustNetworksSubnetsListSubnetTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudflareSource, W Function()? warp, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustNetworksSubnetsListSubnetTypes$cloudflareSource() => cloudflareSource != null ? cloudflareSource() : orElse(value),
+      ZeroTrustNetworksSubnetsListSubnetTypes$warp() => warp != null ? warp() : orElse(value),
+      ZeroTrustNetworksSubnetsListSubnetTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustNetworksSubnetsListSubnetTypes($value)';
 
  }

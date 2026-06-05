@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityScannableFolder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allItems, required W Function() inbox, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityScannableFolder$allItems() => allItems(),
+      EmailSecurityScannableFolder$inbox() => inbox(),
+      EmailSecurityScannableFolder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allItems, W Function()? inbox, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityScannableFolder$allItems() => allItems != null ? allItems() : orElse(value),
+      EmailSecurityScannableFolder$inbox() => inbox != null ? inbox() : orElse(value),
+      EmailSecurityScannableFolder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityScannableFolder($value)';
 
  }

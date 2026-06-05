@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodOptionsParamPreferredLanguage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function() nl, required W Function() pl, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodOptionsParamPreferredLanguage$$empty() => $empty(),
+      PaymentMethodOptionsParamPreferredLanguage$de() => de(),
+      PaymentMethodOptionsParamPreferredLanguage$en() => en(),
+      PaymentMethodOptionsParamPreferredLanguage$es() => es(),
+      PaymentMethodOptionsParamPreferredLanguage$fr() => fr(),
+      PaymentMethodOptionsParamPreferredLanguage$it() => it(),
+      PaymentMethodOptionsParamPreferredLanguage$nl() => nl(),
+      PaymentMethodOptionsParamPreferredLanguage$pl() => pl(),
+      PaymentMethodOptionsParamPreferredLanguage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function()? nl, W Function()? pl, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodOptionsParamPreferredLanguage$$empty() => $empty != null ? $empty() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$de() => de != null ? de() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$en() => en != null ? en() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$es() => es != null ? es() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$fr() => fr != null ? fr() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$it() => it != null ? it() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$nl() => nl != null ? nl() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$pl() => pl != null ? pl() : orElse(value),
+      PaymentMethodOptionsParamPreferredLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodOptionsParamPreferredLanguage($value)';
 
  }

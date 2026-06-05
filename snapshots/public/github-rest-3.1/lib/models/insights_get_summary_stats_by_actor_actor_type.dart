@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsGetSummaryStatsByActorActorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() installation, required W Function() classicPat, required W Function() fineGrainedPat, required W Function() oauthApp, required W Function() githubAppUserToServer, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsGetSummaryStatsByActorActorType$installation() => installation(),
+      InsightsGetSummaryStatsByActorActorType$classicPat() => classicPat(),
+      InsightsGetSummaryStatsByActorActorType$fineGrainedPat() => fineGrainedPat(),
+      InsightsGetSummaryStatsByActorActorType$oauthApp() => oauthApp(),
+      InsightsGetSummaryStatsByActorActorType$githubAppUserToServer() => githubAppUserToServer(),
+      InsightsGetSummaryStatsByActorActorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? installation, W Function()? classicPat, W Function()? fineGrainedPat, W Function()? oauthApp, W Function()? githubAppUserToServer, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsGetSummaryStatsByActorActorType$installation() => installation != null ? installation() : orElse(value),
+      InsightsGetSummaryStatsByActorActorType$classicPat() => classicPat != null ? classicPat() : orElse(value),
+      InsightsGetSummaryStatsByActorActorType$fineGrainedPat() => fineGrainedPat != null ? fineGrainedPat() : orElse(value),
+      InsightsGetSummaryStatsByActorActorType$oauthApp() => oauthApp != null ? oauthApp() : orElse(value),
+      InsightsGetSummaryStatsByActorActorType$githubAppUserToServer() => githubAppUserToServer != null ? githubAppUserToServer() : orElse(value),
+      InsightsGetSummaryStatsByActorActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsGetSummaryStatsByActorActorType($value)';
 
  }

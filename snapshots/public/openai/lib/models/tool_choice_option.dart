@@ -31,6 +31,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ToolChoiceOptionVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() auto, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+      ToolChoiceOptionVariant1$none() => none(),
+      ToolChoiceOptionVariant1$auto() => auto(),
+      ToolChoiceOptionVariant1$$required() => $required(),
+      ToolChoiceOptionVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? auto, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+      ToolChoiceOptionVariant1$none() => none != null ? none() : orElse(value),
+      ToolChoiceOptionVariant1$auto() => auto != null ? auto() : orElse(value),
+      ToolChoiceOptionVariant1$$required() => $required != null ? $required() : orElse(value),
+      ToolChoiceOptionVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ToolChoiceOptionVariant1($value)';
 
  }

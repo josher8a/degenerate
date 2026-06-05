@@ -43,6 +43,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AudioResponseFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() text, required W Function() srt, required W Function() verboseJson, required W Function() vtt, required W Function() diarizedJson, required W Function(String value) $unknown, }) { return switch (this) {
+      AudioResponseFormat$$json() => $json(),
+      AudioResponseFormat$text() => text(),
+      AudioResponseFormat$srt() => srt(),
+      AudioResponseFormat$verboseJson() => verboseJson(),
+      AudioResponseFormat$vtt() => vtt(),
+      AudioResponseFormat$diarizedJson() => diarizedJson(),
+      AudioResponseFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? text, W Function()? srt, W Function()? verboseJson, W Function()? vtt, W Function()? diarizedJson, W Function(String value)? $unknown, }) { return switch (this) {
+      AudioResponseFormat$$json() => $json != null ? $json() : orElse(value),
+      AudioResponseFormat$text() => text != null ? text() : orElse(value),
+      AudioResponseFormat$srt() => srt != null ? srt() : orElse(value),
+      AudioResponseFormat$verboseJson() => verboseJson != null ? verboseJson() : orElse(value),
+      AudioResponseFormat$vtt() => vtt != null ? vtt() : orElse(value),
+      AudioResponseFormat$diarizedJson() => diarizedJson != null ? diarizedJson() : orElse(value),
+      AudioResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AudioResponseFormat($value)';
 
  }
@@ -130,6 +150,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TranscriptionInclude$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() logprobs, required W Function(String value) $unknown, }) { return switch (this) {
+      TranscriptionInclude$logprobs() => logprobs(),
+      TranscriptionInclude$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? logprobs, W Function(String value)? $unknown, }) { return switch (this) {
+      TranscriptionInclude$logprobs() => logprobs != null ? logprobs() : orElse(value),
+      TranscriptionInclude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TranscriptionInclude($value)';
 
  }
@@ -176,6 +206,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TimestampGranularities$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() word, required W Function() segment, required W Function(String value) $unknown, }) { return switch (this) {
+      TimestampGranularities$word() => word(),
+      TimestampGranularities$segment() => segment(),
+      TimestampGranularities$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? word, W Function()? segment, W Function(String value)? $unknown, }) { return switch (this) {
+      TimestampGranularities$word() => word != null ? word() : orElse(value),
+      TimestampGranularities$segment() => segment != null ? segment() : orElse(value),
+      TimestampGranularities$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TimestampGranularities($value)';
 
  }

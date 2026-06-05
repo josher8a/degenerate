@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() traceroute, required W Function(String value) $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$http() => http(),
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$traceroute() => traceroute(),
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? traceroute, W Function(String value)? $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$http() => http != null ? http() : orElse(value),
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$traceroute() => traceroute != null ? traceroute() : orElse(value),
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasDataKind($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AmountTaxDisplay$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() excludeTax, required W Function() includeInclusiveTax, required W Function(String value) $unknown, }) { return switch (this) {
+      AmountTaxDisplay$$empty() => $empty(),
+      AmountTaxDisplay$excludeTax() => excludeTax(),
+      AmountTaxDisplay$includeInclusiveTax() => includeInclusiveTax(),
+      AmountTaxDisplay$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? excludeTax, W Function()? includeInclusiveTax, W Function(String value)? $unknown, }) { return switch (this) {
+      AmountTaxDisplay$$empty() => $empty != null ? $empty() : orElse(value),
+      AmountTaxDisplay$excludeTax() => excludeTax != null ? excludeTax() : orElse(value),
+      AmountTaxDisplay$includeInclusiveTax() => includeInclusiveTax != null ? includeInclusiveTax() : orElse(value),
+      AmountTaxDisplay$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AmountTaxDisplay($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorizeIndexMetric$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cosine, required W Function() euclidean, required W Function() dotProduct, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorizeIndexMetric$cosine() => cosine(),
+      VectorizeIndexMetric$euclidean() => euclidean(),
+      VectorizeIndexMetric$dotProduct() => dotProduct(),
+      VectorizeIndexMetric$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cosine, W Function()? euclidean, W Function()? dotProduct, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorizeIndexMetric$cosine() => cosine != null ? cosine() : orElse(value),
+      VectorizeIndexMetric$euclidean() => euclidean != null ? euclidean() : orElse(value),
+      VectorizeIndexMetric$dotProduct() => dotProduct != null ? dotProduct() : orElse(value),
+      VectorizeIndexMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorizeIndexMetric($value)';
 
  }

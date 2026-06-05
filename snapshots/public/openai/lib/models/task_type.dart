@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaskType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() thought, required W Function(String value) $unknown, }) { return switch (this) {
+      TaskType$custom() => custom(),
+      TaskType$thought() => thought(),
+      TaskType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? thought, W Function(String value)? $unknown, }) { return switch (this) {
+      TaskType$custom() => custom != null ? custom() : orElse(value),
+      TaskType$thought() => thought != null ? thought() : orElse(value),
+      TaskType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaskType($value)';
 
  }

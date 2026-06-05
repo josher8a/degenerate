@@ -40,6 +40,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileSearchToolCallStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() searching, required W Function() completed, required W Function() incomplete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      FileSearchToolCallStatus$inProgress() => inProgress(),
+      FileSearchToolCallStatus$searching() => searching(),
+      FileSearchToolCallStatus$completed() => completed(),
+      FileSearchToolCallStatus$incomplete() => incomplete(),
+      FileSearchToolCallStatus$failed() => failed(),
+      FileSearchToolCallStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? searching, W Function()? completed, W Function()? incomplete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      FileSearchToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      FileSearchToolCallStatus$searching() => searching != null ? searching() : orElse(value),
+      FileSearchToolCallStatus$completed() => completed != null ? completed() : orElse(value),
+      FileSearchToolCallStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      FileSearchToolCallStatus$failed() => failed != null ? failed() : orElse(value),
+      FileSearchToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileSearchToolCallStatus($value)';
 
  }

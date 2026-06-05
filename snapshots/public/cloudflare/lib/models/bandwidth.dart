@@ -66,6 +66,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Bandwidth$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $50M, required W Function() $100M, required W Function() $200M, required W Function() $300M, required W Function() $400M, required W Function() $500M, required W Function() $1G, required W Function() $2G, required W Function() $5G, required W Function() $10G, required W Function() $20G, required W Function() $50G, required W Function(String value) $unknown, }) { return switch (this) {
+      Bandwidth$$50M() => $50M(),
+      Bandwidth$$100M() => $100M(),
+      Bandwidth$$200M() => $200M(),
+      Bandwidth$$300M() => $300M(),
+      Bandwidth$$400M() => $400M(),
+      Bandwidth$$500M() => $500M(),
+      Bandwidth$$1G() => $1G(),
+      Bandwidth$$2G() => $2G(),
+      Bandwidth$$5G() => $5G(),
+      Bandwidth$$10G() => $10G(),
+      Bandwidth$$20G() => $20G(),
+      Bandwidth$$50G() => $50G(),
+      Bandwidth$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $50M, W Function()? $100M, W Function()? $200M, W Function()? $300M, W Function()? $400M, W Function()? $500M, W Function()? $1G, W Function()? $2G, W Function()? $5G, W Function()? $10G, W Function()? $20G, W Function()? $50G, W Function(String value)? $unknown, }) { return switch (this) {
+      Bandwidth$$50M() => $50M != null ? $50M() : orElse(value),
+      Bandwidth$$100M() => $100M != null ? $100M() : orElse(value),
+      Bandwidth$$200M() => $200M != null ? $200M() : orElse(value),
+      Bandwidth$$300M() => $300M != null ? $300M() : orElse(value),
+      Bandwidth$$400M() => $400M != null ? $400M() : orElse(value),
+      Bandwidth$$500M() => $500M != null ? $500M() : orElse(value),
+      Bandwidth$$1G() => $1G != null ? $1G() : orElse(value),
+      Bandwidth$$2G() => $2G != null ? $2G() : orElse(value),
+      Bandwidth$$5G() => $5G != null ? $5G() : orElse(value),
+      Bandwidth$$10G() => $10G != null ? $10G() : orElse(value),
+      Bandwidth$$20G() => $20G != null ? $20G() : orElse(value),
+      Bandwidth$$50G() => $50G != null ? $50G() : orElse(value),
+      Bandwidth$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Bandwidth($value)';
 
  }

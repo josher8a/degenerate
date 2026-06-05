@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SourceFlowType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditReversal, required W Function() $other, required W Function() outboundPayment, required W Function() outboundTransfer, required W Function() payout, required W Function(String value) $unknown, }) { return switch (this) {
+      SourceFlowType$creditReversal() => creditReversal(),
+      SourceFlowType$$other() => $other(),
+      SourceFlowType$outboundPayment() => outboundPayment(),
+      SourceFlowType$outboundTransfer() => outboundTransfer(),
+      SourceFlowType$payout() => payout(),
+      SourceFlowType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? $other, W Function()? outboundPayment, W Function()? outboundTransfer, W Function()? payout, W Function(String value)? $unknown, }) { return switch (this) {
+      SourceFlowType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
+      SourceFlowType$$other() => $other != null ? $other() : orElse(value),
+      SourceFlowType$outboundPayment() => outboundPayment != null ? outboundPayment() : orElse(value),
+      SourceFlowType$outboundTransfer() => outboundTransfer != null ? outboundTransfer() : orElse(value),
+      SourceFlowType$payout() => payout != null ? payout() : orElse(value),
+      SourceFlowType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SourceFlowType($value)';
 
  }

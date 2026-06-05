@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningAlertSeverity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() critical, required W Function() high, required W Function() medium, required W Function() low, required W Function() warning, required W Function() note, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningAlertSeverity$critical() => critical(),
+      CodeScanningAlertSeverity$high() => high(),
+      CodeScanningAlertSeverity$medium() => medium(),
+      CodeScanningAlertSeverity$low() => low(),
+      CodeScanningAlertSeverity$warning() => warning(),
+      CodeScanningAlertSeverity$note() => note(),
+      CodeScanningAlertSeverity$error() => error(),
+      CodeScanningAlertSeverity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? critical, W Function()? high, W Function()? medium, W Function()? low, W Function()? warning, W Function()? note, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningAlertSeverity$critical() => critical != null ? critical() : orElse(value),
+      CodeScanningAlertSeverity$high() => high != null ? high() : orElse(value),
+      CodeScanningAlertSeverity$medium() => medium != null ? medium() : orElse(value),
+      CodeScanningAlertSeverity$low() => low != null ? low() : orElse(value),
+      CodeScanningAlertSeverity$warning() => warning != null ? warning() : orElse(value),
+      CodeScanningAlertSeverity$note() => note != null ? note() : orElse(value),
+      CodeScanningAlertSeverity$error() => error != null ? error() : orElse(value),
+      CodeScanningAlertSeverity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningAlertSeverity($value)';
 
  }

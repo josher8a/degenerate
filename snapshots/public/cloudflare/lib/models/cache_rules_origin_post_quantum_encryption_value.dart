@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CacheRulesOriginPostQuantumEncryptionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() preferred, required W Function() supported, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      CacheRulesOriginPostQuantumEncryptionValue$preferred() => preferred(),
+      CacheRulesOriginPostQuantumEncryptionValue$supported() => supported(),
+      CacheRulesOriginPostQuantumEncryptionValue$off() => off(),
+      CacheRulesOriginPostQuantumEncryptionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? preferred, W Function()? supported, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      CacheRulesOriginPostQuantumEncryptionValue$preferred() => preferred != null ? preferred() : orElse(value),
+      CacheRulesOriginPostQuantumEncryptionValue$supported() => supported != null ? supported() : orElse(value),
+      CacheRulesOriginPostQuantumEncryptionValue$off() => off != null ? off() : orElse(value),
+      CacheRulesOriginPostQuantumEncryptionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CacheRulesOriginPostQuantumEncryptionValue($value)';
 
  }

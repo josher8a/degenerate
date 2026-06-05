@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkflowState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() deleted, required W Function() disabledFork, required W Function() disabledInactivity, required W Function() disabledManually, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkflowState$active() => active(),
+      WorkflowState$deleted() => deleted(),
+      WorkflowState$disabledFork() => disabledFork(),
+      WorkflowState$disabledInactivity() => disabledInactivity(),
+      WorkflowState$disabledManually() => disabledManually(),
+      WorkflowState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function()? disabledFork, W Function()? disabledInactivity, W Function()? disabledManually, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkflowState$active() => active != null ? active() : orElse(value),
+      WorkflowState$deleted() => deleted != null ? deleted() : orElse(value),
+      WorkflowState$disabledFork() => disabledFork != null ? disabledFork() : orElse(value),
+      WorkflowState$disabledInactivity() => disabledInactivity != null ? disabledInactivity() : orElse(value),
+      WorkflowState$disabledManually() => disabledManually != null ? disabledManually() : orElse(value),
+      WorkflowState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkflowState($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DmarcStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() good, required W Function() invalid, required W Function(String value) $unknown, }) { return switch (this) {
+      DmarcStatus$none() => none(),
+      DmarcStatus$good() => good(),
+      DmarcStatus$invalid() => invalid(),
+      DmarcStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? good, W Function()? invalid, W Function(String value)? $unknown, }) { return switch (this) {
+      DmarcStatus$none() => none != null ? none() : orElse(value),
+      DmarcStatus$good() => good != null ? good() : orElse(value),
+      DmarcStatus$invalid() => invalid != null ? invalid() : orElse(value),
+      DmarcStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DmarcStatus($value)';
 
  }

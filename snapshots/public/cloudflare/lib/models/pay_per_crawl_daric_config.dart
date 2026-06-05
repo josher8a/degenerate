@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PayPerCrawlBotAccessMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() charge, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+      PayPerCrawlBotAccessMode$charge() => charge(),
+      PayPerCrawlBotAccessMode$bypass() => bypass(),
+      PayPerCrawlBotAccessMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? charge, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+      PayPerCrawlBotAccessMode$charge() => charge != null ? charge() : orElse(value),
+      PayPerCrawlBotAccessMode$bypass() => bypass != null ? bypass() : orElse(value),
+      PayPerCrawlBotAccessMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PayPerCrawlBotAccessMode($value)';
 
  }

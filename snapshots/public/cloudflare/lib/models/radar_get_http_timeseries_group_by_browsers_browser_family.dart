@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome() => chrome(),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$edge() => edge(),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$firefox() => firefox(),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$safari() => safari(),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$edge() => edge != null ? edge() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$safari() => safari != null ? safari() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByBrowsersBrowserFamily($value)';
 
  }

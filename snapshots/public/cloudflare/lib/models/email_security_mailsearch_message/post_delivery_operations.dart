@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostDeliveryOperations$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() preview, required W Function() quarantineRelease, required W Function() submission, required W Function() move, required W Function(String value) $unknown, }) { return switch (this) {
+      PostDeliveryOperations$preview() => preview(),
+      PostDeliveryOperations$quarantineRelease() => quarantineRelease(),
+      PostDeliveryOperations$submission() => submission(),
+      PostDeliveryOperations$move() => move(),
+      PostDeliveryOperations$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview, W Function()? quarantineRelease, W Function()? submission, W Function()? move, W Function(String value)? $unknown, }) { return switch (this) {
+      PostDeliveryOperations$preview() => preview != null ? preview() : orElse(value),
+      PostDeliveryOperations$quarantineRelease() => quarantineRelease != null ? quarantineRelease() : orElse(value),
+      PostDeliveryOperations$submission() => submission != null ? submission() : orElse(value),
+      PostDeliveryOperations$move() => move != null ? move() : orElse(value),
+      PostDeliveryOperations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostDeliveryOperations($value)';
 
  }

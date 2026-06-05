@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() anotherPaymentAssociatedWithCalculation, required W Function() calculationExpired, required W Function() currencyMismatch, required W Function() originalTransactionVoided, required W Function() uniqueReferenceViolation, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation() => anotherPaymentAssociatedWithCalculation(),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$calculationExpired() => calculationExpired(),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$currencyMismatch() => currencyMismatch(),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$originalTransactionVoided() => originalTransactionVoided(),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$uniqueReferenceViolation() => uniqueReferenceViolation(),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? anotherPaymentAssociatedWithCalculation, W Function()? calculationExpired, W Function()? currencyMismatch, W Function()? originalTransactionVoided, W Function()? uniqueReferenceViolation, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$anotherPaymentAssociatedWithCalculation() => anotherPaymentAssociatedWithCalculation != null ? anotherPaymentAssociatedWithCalculation() : orElse(value),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$calculationExpired() => calculationExpired != null ? calculationExpired() : orElse(value),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$currencyMismatch() => currencyMismatch != null ? currencyMismatch() : orElse(value),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$originalTransactionVoided() => originalTransactionVoided != null ? originalTransactionVoided() : orElse(value),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$uniqueReferenceViolation() => uniqueReferenceViolation != null ? uniqueReferenceViolation() : orElse(value),
+      TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductResourceTaxAssociationTransactionAttemptsResourceErroredReason($value)';
 
  }

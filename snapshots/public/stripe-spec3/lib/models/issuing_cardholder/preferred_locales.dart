@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PreferredLocales$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() de, required W Function() en, required W Function() es, required W Function() fr, required W Function() it, required W Function(String value) $unknown, }) { return switch (this) {
+      PreferredLocales$de() => de(),
+      PreferredLocales$en() => en(),
+      PreferredLocales$es() => es(),
+      PreferredLocales$fr() => fr(),
+      PreferredLocales$it() => it(),
+      PreferredLocales$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Function()? en, W Function()? es, W Function()? fr, W Function()? it, W Function(String value)? $unknown, }) { return switch (this) {
+      PreferredLocales$de() => de != null ? de() : orElse(value),
+      PreferredLocales$en() => en != null ? en() : orElse(value),
+      PreferredLocales$es() => es != null ? es() : orElse(value),
+      PreferredLocales$fr() => fr != null ? fr() : orElse(value),
+      PreferredLocales$it() => it != null ? it() : orElse(value),
+      PreferredLocales$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PreferredLocales($value)';
 
  }

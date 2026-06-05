@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2SippySourceProvider$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aws, required W Function() gcs, required W Function() s3, required W Function(String value) $unknown, }) { return switch (this) {
+      R2SippySourceProvider$aws() => aws(),
+      R2SippySourceProvider$gcs() => gcs(),
+      R2SippySourceProvider$s3() => s3(),
+      R2SippySourceProvider$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function()? gcs, W Function()? s3, W Function(String value)? $unknown, }) { return switch (this) {
+      R2SippySourceProvider$aws() => aws != null ? aws() : orElse(value),
+      R2SippySourceProvider$gcs() => gcs != null ? gcs() : orElse(value),
+      R2SippySourceProvider$s3() => s3 != null ? s3() : orElse(value),
+      R2SippySourceProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2SippySourceProvider($value)';
 
  }

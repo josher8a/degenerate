@@ -90,6 +90,50 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailDnsRecordType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() a, required W Function() aaaa, required W Function() cname, required W Function() https, required W Function() txt, required W Function() srv, required W Function() loc, required W Function() mx, required W Function() ns, required W Function() cert, required W Function() dnskey, required W Function() ds, required W Function() naptr, required W Function() smimea, required W Function() sshfp, required W Function() svcb, required W Function() tlsa, required W Function() uri, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailDnsRecordType$a() => a(),
+      EmailDnsRecordType$aaaa() => aaaa(),
+      EmailDnsRecordType$cname() => cname(),
+      EmailDnsRecordType$https() => https(),
+      EmailDnsRecordType$txt() => txt(),
+      EmailDnsRecordType$srv() => srv(),
+      EmailDnsRecordType$loc() => loc(),
+      EmailDnsRecordType$mx() => mx(),
+      EmailDnsRecordType$ns() => ns(),
+      EmailDnsRecordType$cert() => cert(),
+      EmailDnsRecordType$dnskey() => dnskey(),
+      EmailDnsRecordType$ds() => ds(),
+      EmailDnsRecordType$naptr() => naptr(),
+      EmailDnsRecordType$smimea() => smimea(),
+      EmailDnsRecordType$sshfp() => sshfp(),
+      EmailDnsRecordType$svcb() => svcb(),
+      EmailDnsRecordType$tlsa() => tlsa(),
+      EmailDnsRecordType$uri() => uri(),
+      EmailDnsRecordType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? cname, W Function()? https, W Function()? txt, W Function()? srv, W Function()? loc, W Function()? mx, W Function()? ns, W Function()? cert, W Function()? dnskey, W Function()? ds, W Function()? naptr, W Function()? smimea, W Function()? sshfp, W Function()? svcb, W Function()? tlsa, W Function()? uri, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailDnsRecordType$a() => a != null ? a() : orElse(value),
+      EmailDnsRecordType$aaaa() => aaaa != null ? aaaa() : orElse(value),
+      EmailDnsRecordType$cname() => cname != null ? cname() : orElse(value),
+      EmailDnsRecordType$https() => https != null ? https() : orElse(value),
+      EmailDnsRecordType$txt() => txt != null ? txt() : orElse(value),
+      EmailDnsRecordType$srv() => srv != null ? srv() : orElse(value),
+      EmailDnsRecordType$loc() => loc != null ? loc() : orElse(value),
+      EmailDnsRecordType$mx() => mx != null ? mx() : orElse(value),
+      EmailDnsRecordType$ns() => ns != null ? ns() : orElse(value),
+      EmailDnsRecordType$cert() => cert != null ? cert() : orElse(value),
+      EmailDnsRecordType$dnskey() => dnskey != null ? dnskey() : orElse(value),
+      EmailDnsRecordType$ds() => ds != null ? ds() : orElse(value),
+      EmailDnsRecordType$naptr() => naptr != null ? naptr() : orElse(value),
+      EmailDnsRecordType$smimea() => smimea != null ? smimea() : orElse(value),
+      EmailDnsRecordType$sshfp() => sshfp != null ? sshfp() : orElse(value),
+      EmailDnsRecordType$svcb() => svcb != null ? svcb() : orElse(value),
+      EmailDnsRecordType$tlsa() => tlsa != null ? tlsa() : orElse(value),
+      EmailDnsRecordType$uri() => uri != null ? uri() : orElse(value),
+      EmailDnsRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailDnsRecordType($value)';
 
  }

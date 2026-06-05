@@ -106,6 +106,58 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsFpxBank$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() affinBank, required W Function() agrobank, required W Function() allianceBank, required W Function() ambank, required W Function() bankIslam, required W Function() bankMuamalat, required W Function() bankOfChina, required W Function() bankRakyat, required W Function() bsn, required W Function() cimb, required W Function() deutscheBank, required W Function() hongLeongBank, required W Function() hsbc, required W Function() kfh, required W Function() maybank2e, required W Function() maybank2u, required W Function() ocbc, required W Function() pbEnterprise, required W Function() publicBank, required W Function() rhb, required W Function() standardChartered, required W Function() uob, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsFpxBank$affinBank() => affinBank(),
+      PaymentMethodDetailsFpxBank$agrobank() => agrobank(),
+      PaymentMethodDetailsFpxBank$allianceBank() => allianceBank(),
+      PaymentMethodDetailsFpxBank$ambank() => ambank(),
+      PaymentMethodDetailsFpxBank$bankIslam() => bankIslam(),
+      PaymentMethodDetailsFpxBank$bankMuamalat() => bankMuamalat(),
+      PaymentMethodDetailsFpxBank$bankOfChina() => bankOfChina(),
+      PaymentMethodDetailsFpxBank$bankRakyat() => bankRakyat(),
+      PaymentMethodDetailsFpxBank$bsn() => bsn(),
+      PaymentMethodDetailsFpxBank$cimb() => cimb(),
+      PaymentMethodDetailsFpxBank$deutscheBank() => deutscheBank(),
+      PaymentMethodDetailsFpxBank$hongLeongBank() => hongLeongBank(),
+      PaymentMethodDetailsFpxBank$hsbc() => hsbc(),
+      PaymentMethodDetailsFpxBank$kfh() => kfh(),
+      PaymentMethodDetailsFpxBank$maybank2e() => maybank2e(),
+      PaymentMethodDetailsFpxBank$maybank2u() => maybank2u(),
+      PaymentMethodDetailsFpxBank$ocbc() => ocbc(),
+      PaymentMethodDetailsFpxBank$pbEnterprise() => pbEnterprise(),
+      PaymentMethodDetailsFpxBank$publicBank() => publicBank(),
+      PaymentMethodDetailsFpxBank$rhb() => rhb(),
+      PaymentMethodDetailsFpxBank$standardChartered() => standardChartered(),
+      PaymentMethodDetailsFpxBank$uob() => uob(),
+      PaymentMethodDetailsFpxBank$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? affinBank, W Function()? agrobank, W Function()? allianceBank, W Function()? ambank, W Function()? bankIslam, W Function()? bankMuamalat, W Function()? bankOfChina, W Function()? bankRakyat, W Function()? bsn, W Function()? cimb, W Function()? deutscheBank, W Function()? hongLeongBank, W Function()? hsbc, W Function()? kfh, W Function()? maybank2e, W Function()? maybank2u, W Function()? ocbc, W Function()? pbEnterprise, W Function()? publicBank, W Function()? rhb, W Function()? standardChartered, W Function()? uob, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsFpxBank$affinBank() => affinBank != null ? affinBank() : orElse(value),
+      PaymentMethodDetailsFpxBank$agrobank() => agrobank != null ? agrobank() : orElse(value),
+      PaymentMethodDetailsFpxBank$allianceBank() => allianceBank != null ? allianceBank() : orElse(value),
+      PaymentMethodDetailsFpxBank$ambank() => ambank != null ? ambank() : orElse(value),
+      PaymentMethodDetailsFpxBank$bankIslam() => bankIslam != null ? bankIslam() : orElse(value),
+      PaymentMethodDetailsFpxBank$bankMuamalat() => bankMuamalat != null ? bankMuamalat() : orElse(value),
+      PaymentMethodDetailsFpxBank$bankOfChina() => bankOfChina != null ? bankOfChina() : orElse(value),
+      PaymentMethodDetailsFpxBank$bankRakyat() => bankRakyat != null ? bankRakyat() : orElse(value),
+      PaymentMethodDetailsFpxBank$bsn() => bsn != null ? bsn() : orElse(value),
+      PaymentMethodDetailsFpxBank$cimb() => cimb != null ? cimb() : orElse(value),
+      PaymentMethodDetailsFpxBank$deutscheBank() => deutscheBank != null ? deutscheBank() : orElse(value),
+      PaymentMethodDetailsFpxBank$hongLeongBank() => hongLeongBank != null ? hongLeongBank() : orElse(value),
+      PaymentMethodDetailsFpxBank$hsbc() => hsbc != null ? hsbc() : orElse(value),
+      PaymentMethodDetailsFpxBank$kfh() => kfh != null ? kfh() : orElse(value),
+      PaymentMethodDetailsFpxBank$maybank2e() => maybank2e != null ? maybank2e() : orElse(value),
+      PaymentMethodDetailsFpxBank$maybank2u() => maybank2u != null ? maybank2u() : orElse(value),
+      PaymentMethodDetailsFpxBank$ocbc() => ocbc != null ? ocbc() : orElse(value),
+      PaymentMethodDetailsFpxBank$pbEnterprise() => pbEnterprise != null ? pbEnterprise() : orElse(value),
+      PaymentMethodDetailsFpxBank$publicBank() => publicBank != null ? publicBank() : orElse(value),
+      PaymentMethodDetailsFpxBank$rhb() => rhb != null ? rhb() : orElse(value),
+      PaymentMethodDetailsFpxBank$standardChartered() => standardChartered != null ? standardChartered() : orElse(value),
+      PaymentMethodDetailsFpxBank$uob() => uob != null ? uob() : orElse(value),
+      PaymentMethodDetailsFpxBank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsFpxBank($value)';
 
  }

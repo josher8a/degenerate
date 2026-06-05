@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ExpiryCheck$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() match, required W Function() mismatch, required W Function() notProvided, required W Function(String value) $unknown, }) { return switch (this) {
+      ExpiryCheck$match() => match(),
+      ExpiryCheck$mismatch() => mismatch(),
+      ExpiryCheck$notProvided() => notProvided(),
+      ExpiryCheck$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W Function()? mismatch, W Function()? notProvided, W Function(String value)? $unknown, }) { return switch (this) {
+      ExpiryCheck$match() => match != null ? match() : orElse(value),
+      ExpiryCheck$mismatch() => mismatch != null ? mismatch() : orElse(value),
+      ExpiryCheck$notProvided() => notProvided != null ? notProvided() : orElse(value),
+      ExpiryCheck$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ExpiryCheck($value)';
 
  }

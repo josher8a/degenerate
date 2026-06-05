@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListFilesInVectorStoreBatchFilter$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      ListFilesInVectorStoreBatchFilter$inProgress() => inProgress(),
+      ListFilesInVectorStoreBatchFilter$completed() => completed(),
+      ListFilesInVectorStoreBatchFilter$failed() => failed(),
+      ListFilesInVectorStoreBatchFilter$cancelled() => cancelled(),
+      ListFilesInVectorStoreBatchFilter$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      ListFilesInVectorStoreBatchFilter$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ListFilesInVectorStoreBatchFilter$completed() => completed != null ? completed() : orElse(value),
+      ListFilesInVectorStoreBatchFilter$failed() => failed != null ? failed() : orElse(value),
+      ListFilesInVectorStoreBatchFilter$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      ListFilesInVectorStoreBatchFilter$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListFilesInVectorStoreBatchFilter($value)';
 
  }

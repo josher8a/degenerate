@@ -62,6 +62,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PdfOptionsFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() letter, required W Function() legal, required W Function() tabloid, required W Function() ledger, required W Function() a0, required W Function() a1, required W Function() a2, required W Function() a3, required W Function() a4, required W Function() a5, required W Function() a6, required W Function(String value) $unknown, }) { return switch (this) {
+      PdfOptionsFormat$letter() => letter(),
+      PdfOptionsFormat$legal() => legal(),
+      PdfOptionsFormat$tabloid() => tabloid(),
+      PdfOptionsFormat$ledger() => ledger(),
+      PdfOptionsFormat$a0() => a0(),
+      PdfOptionsFormat$a1() => a1(),
+      PdfOptionsFormat$a2() => a2(),
+      PdfOptionsFormat$a3() => a3(),
+      PdfOptionsFormat$a4() => a4(),
+      PdfOptionsFormat$a5() => a5(),
+      PdfOptionsFormat$a6() => a6(),
+      PdfOptionsFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? letter, W Function()? legal, W Function()? tabloid, W Function()? ledger, W Function()? a0, W Function()? a1, W Function()? a2, W Function()? a3, W Function()? a4, W Function()? a5, W Function()? a6, W Function(String value)? $unknown, }) { return switch (this) {
+      PdfOptionsFormat$letter() => letter != null ? letter() : orElse(value),
+      PdfOptionsFormat$legal() => legal != null ? legal() : orElse(value),
+      PdfOptionsFormat$tabloid() => tabloid != null ? tabloid() : orElse(value),
+      PdfOptionsFormat$ledger() => ledger != null ? ledger() : orElse(value),
+      PdfOptionsFormat$a0() => a0 != null ? a0() : orElse(value),
+      PdfOptionsFormat$a1() => a1 != null ? a1() : orElse(value),
+      PdfOptionsFormat$a2() => a2 != null ? a2() : orElse(value),
+      PdfOptionsFormat$a3() => a3 != null ? a3() : orElse(value),
+      PdfOptionsFormat$a4() => a4 != null ? a4() : orElse(value),
+      PdfOptionsFormat$a5() => a5 != null ? a5() : orElse(value),
+      PdfOptionsFormat$a6() => a6 != null ? a6() : orElse(value),
+      PdfOptionsFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PdfOptionsFormat($value)';
 
  }

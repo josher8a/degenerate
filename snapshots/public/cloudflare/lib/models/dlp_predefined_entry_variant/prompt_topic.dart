@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DlpPromptTopicType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() intent, required W Function() content, required W Function(String value) $unknown, }) { return switch (this) {
+      DlpPromptTopicType$intent() => intent(),
+      DlpPromptTopicType$content() => content(),
+      DlpPromptTopicType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? intent, W Function()? content, W Function(String value)? $unknown, }) { return switch (this) {
+      DlpPromptTopicType$intent() => intent != null ? intent() : orElse(value),
+      DlpPromptTopicType$content() => content != null ? content() : orElse(value),
+      DlpPromptTopicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DlpPromptTopicType($value)';
 
  }
@@ -76,6 +88,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PromptTopicType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() promptTopic, required W Function(String value) $unknown, }) { return switch (this) {
+      PromptTopicType$promptTopic() => promptTopic(),
+      PromptTopicType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? promptTopic, W Function(String value)? $unknown, }) { return switch (this) {
+      PromptTopicType$promptTopic() => promptTopic != null ? promptTopic() : orElse(value),
+      PromptTopicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PromptTopicType($value)';
 
  }

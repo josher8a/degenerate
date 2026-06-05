@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ipVersion, required W Function() encrypted, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingSummaryDimension$ipVersion() => ipVersion(),
+      RadarGetEmailRoutingSummaryDimension$encrypted() => encrypted(),
+      RadarGetEmailRoutingSummaryDimension$arc() => arc(),
+      RadarGetEmailRoutingSummaryDimension$dkim() => dkim(),
+      RadarGetEmailRoutingSummaryDimension$dmarc() => dmarc(),
+      RadarGetEmailRoutingSummaryDimension$spf() => spf(),
+      RadarGetEmailRoutingSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersion, W Function()? encrypted, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingSummaryDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetEmailRoutingSummaryDimension$encrypted() => encrypted != null ? encrypted() : orElse(value),
+      RadarGetEmailRoutingSummaryDimension$arc() => arc != null ? arc() : orElse(value),
+      RadarGetEmailRoutingSummaryDimension$dkim() => dkim != null ? dkim() : orElse(value),
+      RadarGetEmailRoutingSummaryDimension$dmarc() => dmarc != null ? dmarc() : orElse(value),
+      RadarGetEmailRoutingSummaryDimension$spf() => spf != null ? spf() : orElse(value),
+      RadarGetEmailRoutingSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingSummaryDimension($value)';
 
  }

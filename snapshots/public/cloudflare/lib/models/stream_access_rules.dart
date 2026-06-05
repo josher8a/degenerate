@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamAccessRulesAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allow, required W Function() block, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamAccessRulesAction$allow() => allow(),
+      StreamAccessRulesAction$block() => block(),
+      StreamAccessRulesAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? block, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamAccessRulesAction$allow() => allow != null ? allow() : orElse(value),
+      StreamAccessRulesAction$block() => block != null ? block() : orElse(value),
+      StreamAccessRulesAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamAccessRulesAction($value)';
 
  }
@@ -86,6 +98,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamAccessRulesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() any, required W Function() ipSrc, required W Function() ipGeoipCountry, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamAccessRulesType$any() => any(),
+      StreamAccessRulesType$ipSrc() => ipSrc(),
+      StreamAccessRulesType$ipGeoipCountry() => ipGeoipCountry(),
+      StreamAccessRulesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W Function()? ipSrc, W Function()? ipGeoipCountry, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamAccessRulesType$any() => any != null ? any() : orElse(value),
+      StreamAccessRulesType$ipSrc() => ipSrc != null ? ipSrc() : orElse(value),
+      StreamAccessRulesType$ipGeoipCountry() => ipGeoipCountry != null ? ipGeoipCountry() : orElse(value),
+      StreamAccessRulesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamAccessRulesType($value)';
 
  }

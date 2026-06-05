@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AresTransStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() a, required W Function() c, required W Function() i, required W Function() n, required W Function() r, required W Function() u, required W Function() y, required W Function(String value) $unknown, }) { return switch (this) {
+      AresTransStatus$a() => a(),
+      AresTransStatus$c() => c(),
+      AresTransStatus$i() => i(),
+      AresTransStatus$n() => n(),
+      AresTransStatus$r() => r(),
+      AresTransStatus$u() => u(),
+      AresTransStatus$y() => y(),
+      AresTransStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? c, W Function()? i, W Function()? n, W Function()? r, W Function()? u, W Function()? y, W Function(String value)? $unknown, }) { return switch (this) {
+      AresTransStatus$a() => a != null ? a() : orElse(value),
+      AresTransStatus$c() => c != null ? c() : orElse(value),
+      AresTransStatus$i() => i != null ? i() : orElse(value),
+      AresTransStatus$n() => n != null ? n() : orElse(value),
+      AresTransStatus$r() => r != null ? r() : orElse(value),
+      AresTransStatus$u() => u != null ? u() : orElse(value),
+      AresTransStatus$y() => y != null ? y() : orElse(value),
+      AresTransStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AresTransStatus($value)';
 
  }

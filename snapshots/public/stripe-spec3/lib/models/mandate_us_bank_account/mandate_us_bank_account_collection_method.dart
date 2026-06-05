@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateUsBankAccountCollectionMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() paper, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateUsBankAccountCollectionMethod$paper() => paper(),
+      MandateUsBankAccountCollectionMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paper, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateUsBankAccountCollectionMethod$paper() => paper != null ? paper() : orElse(value),
+      MandateUsBankAccountCollectionMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateUsBankAccountCollectionMethod($value)';
 
  }

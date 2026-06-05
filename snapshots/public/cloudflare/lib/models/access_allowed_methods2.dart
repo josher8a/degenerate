@@ -53,6 +53,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessAllowedMethods2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function() head, required W Function() put, required W Function() delete, required W Function() connect, required W Function() options, required W Function() trace, required W Function() patch, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessAllowedMethods2$$get() => $get(),
+      AccessAllowedMethods2$post() => post(),
+      AccessAllowedMethods2$head() => head(),
+      AccessAllowedMethods2$put() => put(),
+      AccessAllowedMethods2$delete() => delete(),
+      AccessAllowedMethods2$connect() => connect(),
+      AccessAllowedMethods2$options() => options(),
+      AccessAllowedMethods2$trace() => trace(),
+      AccessAllowedMethods2$patch() => patch(),
+      AccessAllowedMethods2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? head, W Function()? put, W Function()? delete, W Function()? connect, W Function()? options, W Function()? trace, W Function()? patch, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessAllowedMethods2$$get() => $get != null ? $get() : orElse(value),
+      AccessAllowedMethods2$post() => post != null ? post() : orElse(value),
+      AccessAllowedMethods2$head() => head != null ? head() : orElse(value),
+      AccessAllowedMethods2$put() => put != null ? put() : orElse(value),
+      AccessAllowedMethods2$delete() => delete != null ? delete() : orElse(value),
+      AccessAllowedMethods2$connect() => connect != null ? connect() : orElse(value),
+      AccessAllowedMethods2$options() => options != null ? options() : orElse(value),
+      AccessAllowedMethods2$trace() => trace != null ? trace() : orElse(value),
+      AccessAllowedMethods2$patch() => patch != null ? patch() : orElse(value),
+      AccessAllowedMethods2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessAllowedMethods2($value)';
 
  }

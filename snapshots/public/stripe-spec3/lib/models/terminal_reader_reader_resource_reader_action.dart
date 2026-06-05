@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalReaderReaderResourceReaderActionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() failed, required W Function() inProgress, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceReaderActionStatus$failed() => failed(),
+      TerminalReaderReaderResourceReaderActionStatus$inProgress() => inProgress(),
+      TerminalReaderReaderResourceReaderActionStatus$succeeded() => succeeded(),
+      TerminalReaderReaderResourceReaderActionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? inProgress, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceReaderActionStatus$failed() => failed != null ? failed() : orElse(value),
+      TerminalReaderReaderResourceReaderActionStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      TerminalReaderReaderResourceReaderActionStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      TerminalReaderReaderResourceReaderActionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalReaderReaderResourceReaderActionStatus($value)';
 
  }
@@ -115,6 +129,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalReaderReaderResourceReaderActionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() collectInputs, required W Function() collectPaymentMethod, required W Function() confirmPaymentIntent, required W Function() processPaymentIntent, required W Function() processSetupIntent, required W Function() refundPayment, required W Function() setReaderDisplay, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceReaderActionType$collectInputs() => collectInputs(),
+      TerminalReaderReaderResourceReaderActionType$collectPaymentMethod() => collectPaymentMethod(),
+      TerminalReaderReaderResourceReaderActionType$confirmPaymentIntent() => confirmPaymentIntent(),
+      TerminalReaderReaderResourceReaderActionType$processPaymentIntent() => processPaymentIntent(),
+      TerminalReaderReaderResourceReaderActionType$processSetupIntent() => processSetupIntent(),
+      TerminalReaderReaderResourceReaderActionType$refundPayment() => refundPayment(),
+      TerminalReaderReaderResourceReaderActionType$setReaderDisplay() => setReaderDisplay(),
+      TerminalReaderReaderResourceReaderActionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? collectInputs, W Function()? collectPaymentMethod, W Function()? confirmPaymentIntent, W Function()? processPaymentIntent, W Function()? processSetupIntent, W Function()? refundPayment, W Function()? setReaderDisplay, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceReaderActionType$collectInputs() => collectInputs != null ? collectInputs() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$collectPaymentMethod() => collectPaymentMethod != null ? collectPaymentMethod() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$confirmPaymentIntent() => confirmPaymentIntent != null ? confirmPaymentIntent() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$processPaymentIntent() => processPaymentIntent != null ? processPaymentIntent() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$processSetupIntent() => processSetupIntent != null ? processSetupIntent() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$refundPayment() => refundPayment != null ? refundPayment() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$setReaderDisplay() => setReaderDisplay != null ? setReaderDisplay() : orElse(value),
+      TerminalReaderReaderResourceReaderActionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalReaderReaderResourceReaderActionType($value)';
 
  }

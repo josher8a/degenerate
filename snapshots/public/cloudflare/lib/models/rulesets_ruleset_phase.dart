@@ -114,6 +114,62 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsRulesetPhase$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ddosL4, required W Function() ddosL7, required W Function() httpConfigSettings, required W Function() httpCustomErrors, required W Function() httpLogCustomFields, required W Function() httpRatelimit, required W Function() httpRequestCacheSettings, required W Function() httpRequestDynamicRedirect, required W Function() httpRequestFirewallCustom, required W Function() httpRequestFirewallManaged, required W Function() httpRequestLateTransform, required W Function() httpRequestOrigin, required W Function() httpRequestRedirect, required W Function() httpRequestSanitize, required W Function() httpRequestSbfm, required W Function() httpRequestTransform, required W Function() httpResponseCacheSettings, required W Function() httpResponseCompression, required W Function() httpResponseFirewallManaged, required W Function() httpResponseHeadersTransform, required W Function() magicTransit, required W Function() magicTransitIdsManaged, required W Function() magicTransitManaged, required W Function() magicTransitRatelimit, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsRulesetPhase$ddosL4() => ddosL4(),
+      RulesetsRulesetPhase$ddosL7() => ddosL7(),
+      RulesetsRulesetPhase$httpConfigSettings() => httpConfigSettings(),
+      RulesetsRulesetPhase$httpCustomErrors() => httpCustomErrors(),
+      RulesetsRulesetPhase$httpLogCustomFields() => httpLogCustomFields(),
+      RulesetsRulesetPhase$httpRatelimit() => httpRatelimit(),
+      RulesetsRulesetPhase$httpRequestCacheSettings() => httpRequestCacheSettings(),
+      RulesetsRulesetPhase$httpRequestDynamicRedirect() => httpRequestDynamicRedirect(),
+      RulesetsRulesetPhase$httpRequestFirewallCustom() => httpRequestFirewallCustom(),
+      RulesetsRulesetPhase$httpRequestFirewallManaged() => httpRequestFirewallManaged(),
+      RulesetsRulesetPhase$httpRequestLateTransform() => httpRequestLateTransform(),
+      RulesetsRulesetPhase$httpRequestOrigin() => httpRequestOrigin(),
+      RulesetsRulesetPhase$httpRequestRedirect() => httpRequestRedirect(),
+      RulesetsRulesetPhase$httpRequestSanitize() => httpRequestSanitize(),
+      RulesetsRulesetPhase$httpRequestSbfm() => httpRequestSbfm(),
+      RulesetsRulesetPhase$httpRequestTransform() => httpRequestTransform(),
+      RulesetsRulesetPhase$httpResponseCacheSettings() => httpResponseCacheSettings(),
+      RulesetsRulesetPhase$httpResponseCompression() => httpResponseCompression(),
+      RulesetsRulesetPhase$httpResponseFirewallManaged() => httpResponseFirewallManaged(),
+      RulesetsRulesetPhase$httpResponseHeadersTransform() => httpResponseHeadersTransform(),
+      RulesetsRulesetPhase$magicTransit() => magicTransit(),
+      RulesetsRulesetPhase$magicTransitIdsManaged() => magicTransitIdsManaged(),
+      RulesetsRulesetPhase$magicTransitManaged() => magicTransitManaged(),
+      RulesetsRulesetPhase$magicTransitRatelimit() => magicTransitRatelimit(),
+      RulesetsRulesetPhase$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddosL4, W Function()? ddosL7, W Function()? httpConfigSettings, W Function()? httpCustomErrors, W Function()? httpLogCustomFields, W Function()? httpRatelimit, W Function()? httpRequestCacheSettings, W Function()? httpRequestDynamicRedirect, W Function()? httpRequestFirewallCustom, W Function()? httpRequestFirewallManaged, W Function()? httpRequestLateTransform, W Function()? httpRequestOrigin, W Function()? httpRequestRedirect, W Function()? httpRequestSanitize, W Function()? httpRequestSbfm, W Function()? httpRequestTransform, W Function()? httpResponseCacheSettings, W Function()? httpResponseCompression, W Function()? httpResponseFirewallManaged, W Function()? httpResponseHeadersTransform, W Function()? magicTransit, W Function()? magicTransitIdsManaged, W Function()? magicTransitManaged, W Function()? magicTransitRatelimit, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsRulesetPhase$ddosL4() => ddosL4 != null ? ddosL4() : orElse(value),
+      RulesetsRulesetPhase$ddosL7() => ddosL7 != null ? ddosL7() : orElse(value),
+      RulesetsRulesetPhase$httpConfigSettings() => httpConfigSettings != null ? httpConfigSettings() : orElse(value),
+      RulesetsRulesetPhase$httpCustomErrors() => httpCustomErrors != null ? httpCustomErrors() : orElse(value),
+      RulesetsRulesetPhase$httpLogCustomFields() => httpLogCustomFields != null ? httpLogCustomFields() : orElse(value),
+      RulesetsRulesetPhase$httpRatelimit() => httpRatelimit != null ? httpRatelimit() : orElse(value),
+      RulesetsRulesetPhase$httpRequestCacheSettings() => httpRequestCacheSettings != null ? httpRequestCacheSettings() : orElse(value),
+      RulesetsRulesetPhase$httpRequestDynamicRedirect() => httpRequestDynamicRedirect != null ? httpRequestDynamicRedirect() : orElse(value),
+      RulesetsRulesetPhase$httpRequestFirewallCustom() => httpRequestFirewallCustom != null ? httpRequestFirewallCustom() : orElse(value),
+      RulesetsRulesetPhase$httpRequestFirewallManaged() => httpRequestFirewallManaged != null ? httpRequestFirewallManaged() : orElse(value),
+      RulesetsRulesetPhase$httpRequestLateTransform() => httpRequestLateTransform != null ? httpRequestLateTransform() : orElse(value),
+      RulesetsRulesetPhase$httpRequestOrigin() => httpRequestOrigin != null ? httpRequestOrigin() : orElse(value),
+      RulesetsRulesetPhase$httpRequestRedirect() => httpRequestRedirect != null ? httpRequestRedirect() : orElse(value),
+      RulesetsRulesetPhase$httpRequestSanitize() => httpRequestSanitize != null ? httpRequestSanitize() : orElse(value),
+      RulesetsRulesetPhase$httpRequestSbfm() => httpRequestSbfm != null ? httpRequestSbfm() : orElse(value),
+      RulesetsRulesetPhase$httpRequestTransform() => httpRequestTransform != null ? httpRequestTransform() : orElse(value),
+      RulesetsRulesetPhase$httpResponseCacheSettings() => httpResponseCacheSettings != null ? httpResponseCacheSettings() : orElse(value),
+      RulesetsRulesetPhase$httpResponseCompression() => httpResponseCompression != null ? httpResponseCompression() : orElse(value),
+      RulesetsRulesetPhase$httpResponseFirewallManaged() => httpResponseFirewallManaged != null ? httpResponseFirewallManaged() : orElse(value),
+      RulesetsRulesetPhase$httpResponseHeadersTransform() => httpResponseHeadersTransform != null ? httpResponseHeadersTransform() : orElse(value),
+      RulesetsRulesetPhase$magicTransit() => magicTransit != null ? magicTransit() : orElse(value),
+      RulesetsRulesetPhase$magicTransitIdsManaged() => magicTransitIdsManaged != null ? magicTransitIdsManaged() : orElse(value),
+      RulesetsRulesetPhase$magicTransitManaged() => magicTransitManaged != null ? magicTransitManaged() : orElse(value),
+      RulesetsRulesetPhase$magicTransitRatelimit() => magicTransitRatelimit != null ? magicTransitRatelimit() : orElse(value),
+      RulesetsRulesetPhase$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsRulesetPhase($value)';
 
  }

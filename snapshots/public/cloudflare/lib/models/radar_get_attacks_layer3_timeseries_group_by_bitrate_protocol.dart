@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() udp, required W Function() tcp, required W Function() icmp, required W Function() gre, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$udp() => udp(),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$tcp() => tcp(),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$icmp() => icmp(),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$gre() => gre(),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? icmp, W Function()? gre, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$udp() => udp != null ? udp() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$tcp() => tcp != null ? tcp() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$icmp() => icmp != null ? icmp() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$gre() => gre != null ? gre() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByBitrateProtocol($value)';
 
  }

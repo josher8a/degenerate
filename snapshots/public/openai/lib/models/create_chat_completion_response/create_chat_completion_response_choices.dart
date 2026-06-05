@@ -42,6 +42,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateChatCompletionResponseChoicesFinishReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() stop, required W Function() length, required W Function() toolCalls, required W Function() contentFilter, required W Function() functionCall, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateChatCompletionResponseChoicesFinishReason$stop() => stop(),
+      CreateChatCompletionResponseChoicesFinishReason$length() => length(),
+      CreateChatCompletionResponseChoicesFinishReason$toolCalls() => toolCalls(),
+      CreateChatCompletionResponseChoicesFinishReason$contentFilter() => contentFilter(),
+      CreateChatCompletionResponseChoicesFinishReason$functionCall() => functionCall(),
+      CreateChatCompletionResponseChoicesFinishReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W Function()? length, W Function()? toolCalls, W Function()? contentFilter, W Function()? functionCall, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateChatCompletionResponseChoicesFinishReason$stop() => stop != null ? stop() : orElse(value),
+      CreateChatCompletionResponseChoicesFinishReason$length() => length != null ? length() : orElse(value),
+      CreateChatCompletionResponseChoicesFinishReason$toolCalls() => toolCalls != null ? toolCalls() : orElse(value),
+      CreateChatCompletionResponseChoicesFinishReason$contentFilter() => contentFilter != null ? contentFilter() : orElse(value),
+      CreateChatCompletionResponseChoicesFinishReason$functionCall() => functionCall != null ? functionCall() : orElse(value),
+      CreateChatCompletionResponseChoicesFinishReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateChatCompletionResponseChoicesFinishReason($value)';
 
  }

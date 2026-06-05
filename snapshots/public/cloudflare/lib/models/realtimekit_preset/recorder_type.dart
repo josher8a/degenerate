@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RecorderType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() recorder, required W Function() livestreamer, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      RecorderType$recorder() => recorder(),
+      RecorderType$livestreamer() => livestreamer(),
+      RecorderType$none() => none(),
+      RecorderType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recorder, W Function()? livestreamer, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      RecorderType$recorder() => recorder != null ? recorder() : orElse(value),
+      RecorderType$livestreamer() => livestreamer != null ? livestreamer() : orElse(value),
+      RecorderType$none() => none != null ? none() : orElse(value),
+      RecorderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RecorderType($value)';
 
  }

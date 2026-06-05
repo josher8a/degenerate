@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileInputDetail$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      FileInputDetail$low() => low(),
+      FileInputDetail$high() => high(),
+      FileInputDetail$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      FileInputDetail$low() => low != null ? low() : orElse(value),
+      FileInputDetail$high() => high != null ? high() : orElse(value),
+      FileInputDetail$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileInputDetail($value)';
 
  }

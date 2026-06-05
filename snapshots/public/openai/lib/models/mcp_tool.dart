@@ -64,6 +64,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConnectorId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() connectorDropbox, required W Function() connectorGmail, required W Function() connectorGooglecalendar, required W Function() connectorGoogledrive, required W Function() connectorMicrosoftteams, required W Function() connectorOutlookcalendar, required W Function() connectorOutlookemail, required W Function() connectorSharepoint, required W Function(String value) $unknown, }) { return switch (this) {
+      ConnectorId$connectorDropbox() => connectorDropbox(),
+      ConnectorId$connectorGmail() => connectorGmail(),
+      ConnectorId$connectorGooglecalendar() => connectorGooglecalendar(),
+      ConnectorId$connectorGoogledrive() => connectorGoogledrive(),
+      ConnectorId$connectorMicrosoftteams() => connectorMicrosoftteams(),
+      ConnectorId$connectorOutlookcalendar() => connectorOutlookcalendar(),
+      ConnectorId$connectorOutlookemail() => connectorOutlookemail(),
+      ConnectorId$connectorSharepoint() => connectorSharepoint(),
+      ConnectorId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectorDropbox, W Function()? connectorGmail, W Function()? connectorGooglecalendar, W Function()? connectorGoogledrive, W Function()? connectorMicrosoftteams, W Function()? connectorOutlookcalendar, W Function()? connectorOutlookemail, W Function()? connectorSharepoint, W Function(String value)? $unknown, }) { return switch (this) {
+      ConnectorId$connectorDropbox() => connectorDropbox != null ? connectorDropbox() : orElse(value),
+      ConnectorId$connectorGmail() => connectorGmail != null ? connectorGmail() : orElse(value),
+      ConnectorId$connectorGooglecalendar() => connectorGooglecalendar != null ? connectorGooglecalendar() : orElse(value),
+      ConnectorId$connectorGoogledrive() => connectorGoogledrive != null ? connectorGoogledrive() : orElse(value),
+      ConnectorId$connectorMicrosoftteams() => connectorMicrosoftteams != null ? connectorMicrosoftteams() : orElse(value),
+      ConnectorId$connectorOutlookcalendar() => connectorOutlookcalendar != null ? connectorOutlookcalendar() : orElse(value),
+      ConnectorId$connectorOutlookemail() => connectorOutlookemail != null ? connectorOutlookemail() : orElse(value),
+      ConnectorId$connectorSharepoint() => connectorSharepoint != null ? connectorSharepoint() : orElse(value),
+      ConnectorId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConnectorId($value)';
 
  }

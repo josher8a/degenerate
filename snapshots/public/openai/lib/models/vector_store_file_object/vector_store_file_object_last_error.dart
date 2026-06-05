@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorStoreFileObjectLastErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() serverError, required W Function() unsupportedFile, required W Function() invalidFile, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorStoreFileObjectLastErrorCode$serverError() => serverError(),
+      VectorStoreFileObjectLastErrorCode$unsupportedFile() => unsupportedFile(),
+      VectorStoreFileObjectLastErrorCode$invalidFile() => invalidFile(),
+      VectorStoreFileObjectLastErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? unsupportedFile, W Function()? invalidFile, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorStoreFileObjectLastErrorCode$serverError() => serverError != null ? serverError() : orElse(value),
+      VectorStoreFileObjectLastErrorCode$unsupportedFile() => unsupportedFile != null ? unsupportedFile() : orElse(value),
+      VectorStoreFileObjectLastErrorCode$invalidFile() => invalidFile != null ? invalidFile() : orElse(value),
+      VectorStoreFileObjectLastErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorStoreFileObjectLastErrorCode($value)';
 
  }

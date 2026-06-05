@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProfileAvatarTypeEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() td, required W Function() im, required W Function(String value) $unknown, }) { return switch (this) {
+      ProfileAvatarTypeEnum$td() => td(),
+      ProfileAvatarTypeEnum$im() => im(),
+      ProfileAvatarTypeEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? td, W Function()? im, W Function(String value)? $unknown, }) { return switch (this) {
+      ProfileAvatarTypeEnum$td() => td != null ? td() : orElse(value),
+      ProfileAvatarTypeEnum$im() => im != null ? im() : orElse(value),
+      ProfileAvatarTypeEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProfileAvatarTypeEnum($value)';
 
  }

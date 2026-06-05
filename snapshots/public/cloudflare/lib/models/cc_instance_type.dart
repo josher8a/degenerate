@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CcInstanceTypeVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lite, required W Function() basic, required W Function() standard1, required W Function() standard2, required W Function() standard3, required W Function() standard4, required W Function(String value) $unknown, }) { return switch (this) {
+      CcInstanceTypeVariant1$lite() => lite(),
+      CcInstanceTypeVariant1$basic() => basic(),
+      CcInstanceTypeVariant1$standard1() => standard1(),
+      CcInstanceTypeVariant1$standard2() => standard2(),
+      CcInstanceTypeVariant1$standard3() => standard3(),
+      CcInstanceTypeVariant1$standard4() => standard4(),
+      CcInstanceTypeVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lite, W Function()? basic, W Function()? standard1, W Function()? standard2, W Function()? standard3, W Function()? standard4, W Function(String value)? $unknown, }) { return switch (this) {
+      CcInstanceTypeVariant1$lite() => lite != null ? lite() : orElse(value),
+      CcInstanceTypeVariant1$basic() => basic != null ? basic() : orElse(value),
+      CcInstanceTypeVariant1$standard1() => standard1 != null ? standard1() : orElse(value),
+      CcInstanceTypeVariant1$standard2() => standard2 != null ? standard2() : orElse(value),
+      CcInstanceTypeVariant1$standard3() => standard3 != null ? standard3() : orElse(value),
+      CcInstanceTypeVariant1$standard4() => standard4 != null ? standard4() : orElse(value),
+      CcInstanceTypeVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CcInstanceTypeVariant1($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GeolocationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() continent, required W Function() country, required W Function() adm1, required W Function(String value) $unknown, }) { return switch (this) {
+      GeolocationType$continent() => continent(),
+      GeolocationType$country() => country(),
+      GeolocationType$adm1() => adm1(),
+      GeolocationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? continent, W Function()? country, W Function()? adm1, W Function(String value)? $unknown, }) { return switch (this) {
+      GeolocationType$continent() => continent != null ? continent() : orElse(value),
+      GeolocationType$country() => country != null ? country() : orElse(value),
+      GeolocationType$adm1() => adm1 != null ? adm1() : orElse(value),
+      GeolocationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GeolocationType($value)';
 
  }

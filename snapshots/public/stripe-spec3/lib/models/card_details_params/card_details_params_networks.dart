@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CardDetailsParamsNetworksPreferred$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cartesBancaires, required W Function() mastercard, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      CardDetailsParamsNetworksPreferred$cartesBancaires() => cartesBancaires(),
+      CardDetailsParamsNetworksPreferred$mastercard() => mastercard(),
+      CardDetailsParamsNetworksPreferred$visa() => visa(),
+      CardDetailsParamsNetworksPreferred$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cartesBancaires, W Function()? mastercard, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      CardDetailsParamsNetworksPreferred$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
+      CardDetailsParamsNetworksPreferred$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      CardDetailsParamsNetworksPreferred$visa() => visa != null ? visa() : orElse(value),
+      CardDetailsParamsNetworksPreferred$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CardDetailsParamsNetworksPreferred($value)';
 
  }

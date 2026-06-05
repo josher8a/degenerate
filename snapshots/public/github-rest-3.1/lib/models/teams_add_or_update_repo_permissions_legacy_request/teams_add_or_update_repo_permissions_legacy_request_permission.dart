@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pull, required W Function() push, required W Function() admin, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$pull() => pull(),
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$push() => push(),
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$admin() => admin(),
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pull, W Function()? push, W Function()? admin, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$pull() => pull != null ? pull() : orElse(value),
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$push() => push != null ? push() : orElse(value),
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$admin() => admin != null ? admin() : orElse(value),
+      TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission($value)';
 
  }

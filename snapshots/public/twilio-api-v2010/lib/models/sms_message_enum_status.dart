@@ -69,6 +69,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SmsMessageEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() sending, required W Function() sent, required W Function() failed, required W Function() delivered, required W Function() undelivered, required W Function() receiving, required W Function() received, required W Function() accepted, required W Function() scheduled, required W Function() read, required W Function() partiallyDelivered, required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+      SmsMessageEnumStatus$queued() => queued(),
+      SmsMessageEnumStatus$sending() => sending(),
+      SmsMessageEnumStatus$sent() => sent(),
+      SmsMessageEnumStatus$failed() => failed(),
+      SmsMessageEnumStatus$delivered() => delivered(),
+      SmsMessageEnumStatus$undelivered() => undelivered(),
+      SmsMessageEnumStatus$receiving() => receiving(),
+      SmsMessageEnumStatus$received() => received(),
+      SmsMessageEnumStatus$accepted() => accepted(),
+      SmsMessageEnumStatus$scheduled() => scheduled(),
+      SmsMessageEnumStatus$read() => read(),
+      SmsMessageEnumStatus$partiallyDelivered() => partiallyDelivered(),
+      SmsMessageEnumStatus$canceled() => canceled(),
+      SmsMessageEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? sending, W Function()? sent, W Function()? failed, W Function()? delivered, W Function()? undelivered, W Function()? receiving, W Function()? received, W Function()? accepted, W Function()? scheduled, W Function()? read, W Function()? partiallyDelivered, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+      SmsMessageEnumStatus$queued() => queued != null ? queued() : orElse(value),
+      SmsMessageEnumStatus$sending() => sending != null ? sending() : orElse(value),
+      SmsMessageEnumStatus$sent() => sent != null ? sent() : orElse(value),
+      SmsMessageEnumStatus$failed() => failed != null ? failed() : orElse(value),
+      SmsMessageEnumStatus$delivered() => delivered != null ? delivered() : orElse(value),
+      SmsMessageEnumStatus$undelivered() => undelivered != null ? undelivered() : orElse(value),
+      SmsMessageEnumStatus$receiving() => receiving != null ? receiving() : orElse(value),
+      SmsMessageEnumStatus$received() => received != null ? received() : orElse(value),
+      SmsMessageEnumStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      SmsMessageEnumStatus$scheduled() => scheduled != null ? scheduled() : orElse(value),
+      SmsMessageEnumStatus$read() => read != null ? read() : orElse(value),
+      SmsMessageEnumStatus$partiallyDelivered() => partiallyDelivered != null ? partiallyDelivered() : orElse(value),
+      SmsMessageEnumStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      SmsMessageEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SmsMessageEnumStatus($value)';
 
  }

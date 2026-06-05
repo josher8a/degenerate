@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DlpEmailRuleOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inList, required W Function() notInList, required W Function() matchRegex, required W Function() notMatchRegex, required W Function(String value) $unknown, }) { return switch (this) {
+      DlpEmailRuleOperator$inList() => inList(),
+      DlpEmailRuleOperator$notInList() => notInList(),
+      DlpEmailRuleOperator$matchRegex() => matchRegex(),
+      DlpEmailRuleOperator$notMatchRegex() => notMatchRegex(),
+      DlpEmailRuleOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inList, W Function()? notInList, W Function()? matchRegex, W Function()? notMatchRegex, W Function(String value)? $unknown, }) { return switch (this) {
+      DlpEmailRuleOperator$inList() => inList != null ? inList() : orElse(value),
+      DlpEmailRuleOperator$notInList() => notInList != null ? notInList() : orElse(value),
+      DlpEmailRuleOperator$matchRegex() => matchRegex != null ? matchRegex() : orElse(value),
+      DlpEmailRuleOperator$notMatchRegex() => notMatchRegex != null ? notMatchRegex() : orElse(value),
+      DlpEmailRuleOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DlpEmailRuleOperator($value)';
 
  }
@@ -110,6 +126,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DlpEmailRuleSelector$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() recipients, required W Function() sender, required W Function() dlpProfiles, required W Function(String value) $unknown, }) { return switch (this) {
+      DlpEmailRuleSelector$recipients() => recipients(),
+      DlpEmailRuleSelector$sender() => sender(),
+      DlpEmailRuleSelector$dlpProfiles() => dlpProfiles(),
+      DlpEmailRuleSelector$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recipients, W Function()? sender, W Function()? dlpProfiles, W Function(String value)? $unknown, }) { return switch (this) {
+      DlpEmailRuleSelector$recipients() => recipients != null ? recipients() : orElse(value),
+      DlpEmailRuleSelector$sender() => sender != null ? sender() : orElse(value),
+      DlpEmailRuleSelector$dlpProfiles() => dlpProfiles != null ? dlpProfiles() : orElse(value),
+      DlpEmailRuleSelector$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DlpEmailRuleSelector($value)';
 
  }

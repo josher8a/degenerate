@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayBlockPageSettingsMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() customizedBlockPage, required W Function() redirectUri, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewayBlockPageSettingsMode$$empty() => $empty(),
+      ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage() => customizedBlockPage(),
+      ZeroTrustGatewayBlockPageSettingsMode$redirectUri() => redirectUri(),
+      ZeroTrustGatewayBlockPageSettingsMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? customizedBlockPage, W Function()? redirectUri, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewayBlockPageSettingsMode$$empty() => $empty != null ? $empty() : orElse(value),
+      ZeroTrustGatewayBlockPageSettingsMode$customizedBlockPage() => customizedBlockPage != null ? customizedBlockPage() : orElse(value),
+      ZeroTrustGatewayBlockPageSettingsMode$redirectUri() => redirectUri != null ? redirectUri() : orElse(value),
+      ZeroTrustGatewayBlockPageSettingsMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewayBlockPageSettingsMode($value)';
 
  }

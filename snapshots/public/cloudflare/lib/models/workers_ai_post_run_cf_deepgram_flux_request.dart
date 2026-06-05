@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() linear16, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16() => linear16(),
+      WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16() => linear16 != null ? linear16() : orElse(value),
+      WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MipOptOut$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $true, required W Function() $false, required W Function(String value) $unknown, }) { return switch (this) {
+      MipOptOut$$true() => $true(),
+      MipOptOut$$false() => $false(),
+      MipOptOut$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $true, W Function()? $false, W Function(String value)? $unknown, }) { return switch (this) {
+      MipOptOut$$true() => $true != null ? $true() : orElse(value),
+      MipOptOut$$false() => $false != null ? $false() : orElse(value),
+      MipOptOut$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MipOptOut($value)';
 
  }

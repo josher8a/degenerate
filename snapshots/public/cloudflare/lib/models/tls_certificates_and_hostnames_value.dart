@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesValueVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $10, required W Function() $11, required W Function() $12, required W Function() $13, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValueVariant2$$10() => $10(),
+      TlsCertificatesAndHostnamesValueVariant2$$11() => $11(),
+      TlsCertificatesAndHostnamesValueVariant2$$12() => $12(),
+      TlsCertificatesAndHostnamesValueVariant2$$13() => $13(),
+      TlsCertificatesAndHostnamesValueVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W Function()? $11, W Function()? $12, W Function()? $13, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValueVariant2$$10() => $10 != null ? $10() : orElse(value),
+      TlsCertificatesAndHostnamesValueVariant2$$11() => $11 != null ? $11() : orElse(value),
+      TlsCertificatesAndHostnamesValueVariant2$$12() => $12 != null ? $12() : orElse(value),
+      TlsCertificatesAndHostnamesValueVariant2$$13() => $13 != null ? $13() : orElse(value),
+      TlsCertificatesAndHostnamesValueVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesValueVariant2($value)';
 
  }
@@ -108,6 +124,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesValueVariant3$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValueVariant3$$on() => $on(),
+      TlsCertificatesAndHostnamesValueVariant3$off() => off(),
+      TlsCertificatesAndHostnamesValueVariant3$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValueVariant3$$on() => $on != null ? $on() : orElse(value),
+      TlsCertificatesAndHostnamesValueVariant3$off() => off != null ? off() : orElse(value),
+      TlsCertificatesAndHostnamesValueVariant3$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesValueVariant3($value)';
 
  }

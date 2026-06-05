@@ -206,6 +206,108 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingPortalSessionLocale$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enAu, required W Function() enCa, required W Function() enGb, required W Function() enIe, required W Function() enIn, required W Function() enNz, required W Function() enSg, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingPortalSessionLocale$auto() => auto(),
+      BillingPortalSessionLocale$bg() => bg(),
+      BillingPortalSessionLocale$cs() => cs(),
+      BillingPortalSessionLocale$da() => da(),
+      BillingPortalSessionLocale$de() => de(),
+      BillingPortalSessionLocale$el() => el(),
+      BillingPortalSessionLocale$en() => en(),
+      BillingPortalSessionLocale$enAu() => enAu(),
+      BillingPortalSessionLocale$enCa() => enCa(),
+      BillingPortalSessionLocale$enGb() => enGb(),
+      BillingPortalSessionLocale$enIe() => enIe(),
+      BillingPortalSessionLocale$enIn() => enIn(),
+      BillingPortalSessionLocale$enNz() => enNz(),
+      BillingPortalSessionLocale$enSg() => enSg(),
+      BillingPortalSessionLocale$es() => es(),
+      BillingPortalSessionLocale$es419() => es419(),
+      BillingPortalSessionLocale$et() => et(),
+      BillingPortalSessionLocale$fi() => fi(),
+      BillingPortalSessionLocale$fil() => fil(),
+      BillingPortalSessionLocale$fr() => fr(),
+      BillingPortalSessionLocale$frCa() => frCa(),
+      BillingPortalSessionLocale$hr() => hr(),
+      BillingPortalSessionLocale$hu() => hu(),
+      BillingPortalSessionLocale$id() => id(),
+      BillingPortalSessionLocale$it() => it(),
+      BillingPortalSessionLocale$ja() => ja(),
+      BillingPortalSessionLocale$ko() => ko(),
+      BillingPortalSessionLocale$lt() => lt(),
+      BillingPortalSessionLocale$lv() => lv(),
+      BillingPortalSessionLocale$ms() => ms(),
+      BillingPortalSessionLocale$mt() => mt(),
+      BillingPortalSessionLocale$nb() => nb(),
+      BillingPortalSessionLocale$nl() => nl(),
+      BillingPortalSessionLocale$pl() => pl(),
+      BillingPortalSessionLocale$pt() => pt(),
+      BillingPortalSessionLocale$ptBr() => ptBr(),
+      BillingPortalSessionLocale$ro() => ro(),
+      BillingPortalSessionLocale$ru() => ru(),
+      BillingPortalSessionLocale$sk() => sk(),
+      BillingPortalSessionLocale$sl() => sl(),
+      BillingPortalSessionLocale$sv() => sv(),
+      BillingPortalSessionLocale$th() => th(),
+      BillingPortalSessionLocale$tr() => tr(),
+      BillingPortalSessionLocale$vi() => vi(),
+      BillingPortalSessionLocale$zh() => zh(),
+      BillingPortalSessionLocale$zhHk() => zhHk(),
+      BillingPortalSessionLocale$zhTw() => zhTw(),
+      BillingPortalSessionLocale$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enAu, W Function()? enCa, W Function()? enGb, W Function()? enIe, W Function()? enIn, W Function()? enNz, W Function()? enSg, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingPortalSessionLocale$auto() => auto != null ? auto() : orElse(value),
+      BillingPortalSessionLocale$bg() => bg != null ? bg() : orElse(value),
+      BillingPortalSessionLocale$cs() => cs != null ? cs() : orElse(value),
+      BillingPortalSessionLocale$da() => da != null ? da() : orElse(value),
+      BillingPortalSessionLocale$de() => de != null ? de() : orElse(value),
+      BillingPortalSessionLocale$el() => el != null ? el() : orElse(value),
+      BillingPortalSessionLocale$en() => en != null ? en() : orElse(value),
+      BillingPortalSessionLocale$enAu() => enAu != null ? enAu() : orElse(value),
+      BillingPortalSessionLocale$enCa() => enCa != null ? enCa() : orElse(value),
+      BillingPortalSessionLocale$enGb() => enGb != null ? enGb() : orElse(value),
+      BillingPortalSessionLocale$enIe() => enIe != null ? enIe() : orElse(value),
+      BillingPortalSessionLocale$enIn() => enIn != null ? enIn() : orElse(value),
+      BillingPortalSessionLocale$enNz() => enNz != null ? enNz() : orElse(value),
+      BillingPortalSessionLocale$enSg() => enSg != null ? enSg() : orElse(value),
+      BillingPortalSessionLocale$es() => es != null ? es() : orElse(value),
+      BillingPortalSessionLocale$es419() => es419 != null ? es419() : orElse(value),
+      BillingPortalSessionLocale$et() => et != null ? et() : orElse(value),
+      BillingPortalSessionLocale$fi() => fi != null ? fi() : orElse(value),
+      BillingPortalSessionLocale$fil() => fil != null ? fil() : orElse(value),
+      BillingPortalSessionLocale$fr() => fr != null ? fr() : orElse(value),
+      BillingPortalSessionLocale$frCa() => frCa != null ? frCa() : orElse(value),
+      BillingPortalSessionLocale$hr() => hr != null ? hr() : orElse(value),
+      BillingPortalSessionLocale$hu() => hu != null ? hu() : orElse(value),
+      BillingPortalSessionLocale$id() => id != null ? id() : orElse(value),
+      BillingPortalSessionLocale$it() => it != null ? it() : orElse(value),
+      BillingPortalSessionLocale$ja() => ja != null ? ja() : orElse(value),
+      BillingPortalSessionLocale$ko() => ko != null ? ko() : orElse(value),
+      BillingPortalSessionLocale$lt() => lt != null ? lt() : orElse(value),
+      BillingPortalSessionLocale$lv() => lv != null ? lv() : orElse(value),
+      BillingPortalSessionLocale$ms() => ms != null ? ms() : orElse(value),
+      BillingPortalSessionLocale$mt() => mt != null ? mt() : orElse(value),
+      BillingPortalSessionLocale$nb() => nb != null ? nb() : orElse(value),
+      BillingPortalSessionLocale$nl() => nl != null ? nl() : orElse(value),
+      BillingPortalSessionLocale$pl() => pl != null ? pl() : orElse(value),
+      BillingPortalSessionLocale$pt() => pt != null ? pt() : orElse(value),
+      BillingPortalSessionLocale$ptBr() => ptBr != null ? ptBr() : orElse(value),
+      BillingPortalSessionLocale$ro() => ro != null ? ro() : orElse(value),
+      BillingPortalSessionLocale$ru() => ru != null ? ru() : orElse(value),
+      BillingPortalSessionLocale$sk() => sk != null ? sk() : orElse(value),
+      BillingPortalSessionLocale$sl() => sl != null ? sl() : orElse(value),
+      BillingPortalSessionLocale$sv() => sv != null ? sv() : orElse(value),
+      BillingPortalSessionLocale$th() => th != null ? th() : orElse(value),
+      BillingPortalSessionLocale$tr() => tr != null ? tr() : orElse(value),
+      BillingPortalSessionLocale$vi() => vi != null ? vi() : orElse(value),
+      BillingPortalSessionLocale$zh() => zh != null ? zh() : orElse(value),
+      BillingPortalSessionLocale$zhHk() => zhHk != null ? zhHk() : orElse(value),
+      BillingPortalSessionLocale$zhTw() => zhTw != null ? zhTw() : orElse(value),
+      BillingPortalSessionLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingPortalSessionLocale($value)';
 
  }
@@ -663,6 +765,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingPortalSessionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() billingPortalSession, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingPortalSessionObject$billingPortalSession() => billingPortalSession(),
+      BillingPortalSessionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingPortalSession, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingPortalSessionObject$billingPortalSession() => billingPortalSession != null ? billingPortalSession() : orElse(value),
+      BillingPortalSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingPortalSessionObject($value)';
 
  }

@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SourceTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sourceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      SourceTransactionObject$sourceTransaction() => sourceTransaction(),
+      SourceTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sourceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      SourceTransactionObject$sourceTransaction() => sourceTransaction != null ? sourceTransaction() : orElse(value),
+      SourceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SourceTransactionObject($value)';
 
  }
@@ -125,6 +135,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SourceTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() achCreditTransfer, required W Function() achDebit, required W Function() alipay, required W Function() bancontact, required W Function() card, required W Function() cardPresent, required W Function() eps, required W Function() giropay, required W Function() ideal, required W Function() klarna, required W Function() multibanco, required W Function() p24, required W Function() sepaDebit, required W Function() sofort, required W Function() threeDSecure, required W Function() wechat, required W Function(String value) $unknown, }) { return switch (this) {
+      SourceTransactionType$achCreditTransfer() => achCreditTransfer(),
+      SourceTransactionType$achDebit() => achDebit(),
+      SourceTransactionType$alipay() => alipay(),
+      SourceTransactionType$bancontact() => bancontact(),
+      SourceTransactionType$card() => card(),
+      SourceTransactionType$cardPresent() => cardPresent(),
+      SourceTransactionType$eps() => eps(),
+      SourceTransactionType$giropay() => giropay(),
+      SourceTransactionType$ideal() => ideal(),
+      SourceTransactionType$klarna() => klarna(),
+      SourceTransactionType$multibanco() => multibanco(),
+      SourceTransactionType$p24() => p24(),
+      SourceTransactionType$sepaDebit() => sepaDebit(),
+      SourceTransactionType$sofort() => sofort(),
+      SourceTransactionType$threeDSecure() => threeDSecure(),
+      SourceTransactionType$wechat() => wechat(),
+      SourceTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? achCreditTransfer, W Function()? achDebit, W Function()? alipay, W Function()? bancontact, W Function()? card, W Function()? cardPresent, W Function()? eps, W Function()? giropay, W Function()? ideal, W Function()? klarna, W Function()? multibanco, W Function()? p24, W Function()? sepaDebit, W Function()? sofort, W Function()? threeDSecure, W Function()? wechat, W Function(String value)? $unknown, }) { return switch (this) {
+      SourceTransactionType$achCreditTransfer() => achCreditTransfer != null ? achCreditTransfer() : orElse(value),
+      SourceTransactionType$achDebit() => achDebit != null ? achDebit() : orElse(value),
+      SourceTransactionType$alipay() => alipay != null ? alipay() : orElse(value),
+      SourceTransactionType$bancontact() => bancontact != null ? bancontact() : orElse(value),
+      SourceTransactionType$card() => card != null ? card() : orElse(value),
+      SourceTransactionType$cardPresent() => cardPresent != null ? cardPresent() : orElse(value),
+      SourceTransactionType$eps() => eps != null ? eps() : orElse(value),
+      SourceTransactionType$giropay() => giropay != null ? giropay() : orElse(value),
+      SourceTransactionType$ideal() => ideal != null ? ideal() : orElse(value),
+      SourceTransactionType$klarna() => klarna != null ? klarna() : orElse(value),
+      SourceTransactionType$multibanco() => multibanco != null ? multibanco() : orElse(value),
+      SourceTransactionType$p24() => p24 != null ? p24() : orElse(value),
+      SourceTransactionType$sepaDebit() => sepaDebit != null ? sepaDebit() : orElse(value),
+      SourceTransactionType$sofort() => sofort != null ? sofort() : orElse(value),
+      SourceTransactionType$threeDSecure() => threeDSecure != null ? threeDSecure() : orElse(value),
+      SourceTransactionType$wechat() => wechat != null ? wechat() : orElse(value),
+      SourceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SourceTransactionType($value)';
 
  }

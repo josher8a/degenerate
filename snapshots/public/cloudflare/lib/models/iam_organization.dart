@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IamComponentsSchemasStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() member, required W Function() invited, required W Function(String value) $unknown, }) { return switch (this) {
+      IamComponentsSchemasStatus$member() => member(),
+      IamComponentsSchemasStatus$invited() => invited(),
+      IamComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? member, W Function()? invited, W Function(String value)? $unknown, }) { return switch (this) {
+      IamComponentsSchemasStatus$member() => member != null ? member() : orElse(value),
+      IamComponentsSchemasStatus$invited() => invited != null ? invited() : orElse(value),
+      IamComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IamComponentsSchemasStatus($value)';
 
  }

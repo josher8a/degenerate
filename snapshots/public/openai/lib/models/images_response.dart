@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImagesResponseBackground$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transparent, required W Function() opaque, required W Function(String value) $unknown, }) { return switch (this) {
+      ImagesResponseBackground$transparent() => transparent(),
+      ImagesResponseBackground$opaque() => opaque(),
+      ImagesResponseBackground$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function(String value)? $unknown, }) { return switch (this) {
+      ImagesResponseBackground$transparent() => transparent != null ? transparent() : orElse(value),
+      ImagesResponseBackground$opaque() => opaque != null ? opaque() : orElse(value),
+      ImagesResponseBackground$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImagesResponseBackground($value)';
 
  }
@@ -86,6 +98,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImagesResponseSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1024x1024, required W Function() $1024x1536, required W Function() $1536x1024, required W Function(String value) $unknown, }) { return switch (this) {
+      ImagesResponseSize$$1024x1024() => $1024x1024(),
+      ImagesResponseSize$$1024x1536() => $1024x1536(),
+      ImagesResponseSize$$1536x1024() => $1536x1024(),
+      ImagesResponseSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x1024, W Function()? $1024x1536, W Function()? $1536x1024, W Function(String value)? $unknown, }) { return switch (this) {
+      ImagesResponseSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
+      ImagesResponseSize$$1024x1536() => $1024x1536 != null ? $1024x1536() : orElse(value),
+      ImagesResponseSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
+      ImagesResponseSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImagesResponseSize($value)';
 
  }
@@ -155,6 +181,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImagesResponseQuality$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      ImagesResponseQuality$low() => low(),
+      ImagesResponseQuality$medium() => medium(),
+      ImagesResponseQuality$high() => high(),
+      ImagesResponseQuality$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      ImagesResponseQuality$low() => low != null ? low() : orElse(value),
+      ImagesResponseQuality$medium() => medium != null ? medium() : orElse(value),
+      ImagesResponseQuality$high() => high != null ? high() : orElse(value),
+      ImagesResponseQuality$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImagesResponseQuality($value)';
 
  }

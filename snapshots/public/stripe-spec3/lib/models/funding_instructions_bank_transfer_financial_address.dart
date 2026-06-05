@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ach, required W Function() bacs, required W Function() domesticWireUs, required W Function() fps, required W Function() sepa, required W Function() spei, required W Function() swift, required W Function() zengin, required W Function(String value) $unknown, }) { return switch (this) {
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$ach() => ach(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$bacs() => bacs(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$domesticWireUs() => domesticWireUs(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$fps() => fps(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$sepa() => sepa(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$spei() => spei(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$swift() => swift(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$zengin() => zengin(),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? bacs, W Function()? domesticWireUs, W Function()? fps, W Function()? sepa, W Function()? spei, W Function()? swift, W Function()? zengin, W Function(String value)? $unknown, }) { return switch (this) {
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$ach() => ach != null ? ach() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$bacs() => bacs != null ? bacs() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$domesticWireUs() => domesticWireUs != null ? domesticWireUs() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$fps() => fps != null ? fps() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$sepa() => sepa != null ? sepa() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$spei() => spei != null ? spei() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$swift() => swift != null ? swift() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$zengin() => zengin != null ? zengin() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)';
 
  }
@@ -175,6 +199,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FundingInstructionsBankTransferFinancialAddressType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aba, required W Function() iban, required W Function() sortCode, required W Function() spei, required W Function() swift, required W Function() zengin, required W Function(String value) $unknown, }) { return switch (this) {
+      FundingInstructionsBankTransferFinancialAddressType$aba() => aba(),
+      FundingInstructionsBankTransferFinancialAddressType$iban() => iban(),
+      FundingInstructionsBankTransferFinancialAddressType$sortCode() => sortCode(),
+      FundingInstructionsBankTransferFinancialAddressType$spei() => spei(),
+      FundingInstructionsBankTransferFinancialAddressType$swift() => swift(),
+      FundingInstructionsBankTransferFinancialAddressType$zengin() => zengin(),
+      FundingInstructionsBankTransferFinancialAddressType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aba, W Function()? iban, W Function()? sortCode, W Function()? spei, W Function()? swift, W Function()? zengin, W Function(String value)? $unknown, }) { return switch (this) {
+      FundingInstructionsBankTransferFinancialAddressType$aba() => aba != null ? aba() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressType$iban() => iban != null ? iban() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressType$sortCode() => sortCode != null ? sortCode() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressType$spei() => spei != null ? spei() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressType$swift() => swift != null ? swift() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressType$zengin() => zengin != null ? zengin() : orElse(value),
+      FundingInstructionsBankTransferFinancialAddressType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FundingInstructionsBankTransferFinancialAddressType($value)';
 
  }

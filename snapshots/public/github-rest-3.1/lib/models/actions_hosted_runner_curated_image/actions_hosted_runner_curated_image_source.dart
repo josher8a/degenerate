@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActionsHostedRunnerCuratedImageSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() github, required W Function() partner, required W Function() custom, required W Function(String value) $unknown, }) { return switch (this) {
+      ActionsHostedRunnerCuratedImageSource$github() => github(),
+      ActionsHostedRunnerCuratedImageSource$partner() => partner(),
+      ActionsHostedRunnerCuratedImageSource$custom() => custom(),
+      ActionsHostedRunnerCuratedImageSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? github, W Function()? partner, W Function()? custom, W Function(String value)? $unknown, }) { return switch (this) {
+      ActionsHostedRunnerCuratedImageSource$github() => github != null ? github() : orElse(value),
+      ActionsHostedRunnerCuratedImageSource$partner() => partner != null ? partner() : orElse(value),
+      ActionsHostedRunnerCuratedImageSource$custom() => custom != null ? custom() : orElse(value),
+      ActionsHostedRunnerCuratedImageSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActionsHostedRunnerCuratedImageSource($value)';
 
  }

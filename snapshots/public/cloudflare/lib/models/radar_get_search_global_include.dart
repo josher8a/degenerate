@@ -65,6 +65,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetSearchGlobalInclude$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adm1S, required W Function() asns, required W Function() bots, required W Function() certificateAuthorities, required W Function() certificateLogs, required W Function() origins, required W Function() originRegions, required W Function() industries, required W Function() locations, required W Function() notebooks, required W Function() tlds, required W Function() verticals, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetSearchGlobalInclude$adm1S() => adm1S(),
+      RadarGetSearchGlobalInclude$asns() => asns(),
+      RadarGetSearchGlobalInclude$bots() => bots(),
+      RadarGetSearchGlobalInclude$certificateAuthorities() => certificateAuthorities(),
+      RadarGetSearchGlobalInclude$certificateLogs() => certificateLogs(),
+      RadarGetSearchGlobalInclude$origins() => origins(),
+      RadarGetSearchGlobalInclude$originRegions() => originRegions(),
+      RadarGetSearchGlobalInclude$industries() => industries(),
+      RadarGetSearchGlobalInclude$locations() => locations(),
+      RadarGetSearchGlobalInclude$notebooks() => notebooks(),
+      RadarGetSearchGlobalInclude$tlds() => tlds(),
+      RadarGetSearchGlobalInclude$verticals() => verticals(),
+      RadarGetSearchGlobalInclude$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1S, W Function()? asns, W Function()? bots, W Function()? certificateAuthorities, W Function()? certificateLogs, W Function()? origins, W Function()? originRegions, W Function()? industries, W Function()? locations, W Function()? notebooks, W Function()? tlds, W Function()? verticals, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetSearchGlobalInclude$adm1S() => adm1S != null ? adm1S() : orElse(value),
+      RadarGetSearchGlobalInclude$asns() => asns != null ? asns() : orElse(value),
+      RadarGetSearchGlobalInclude$bots() => bots != null ? bots() : orElse(value),
+      RadarGetSearchGlobalInclude$certificateAuthorities() => certificateAuthorities != null ? certificateAuthorities() : orElse(value),
+      RadarGetSearchGlobalInclude$certificateLogs() => certificateLogs != null ? certificateLogs() : orElse(value),
+      RadarGetSearchGlobalInclude$origins() => origins != null ? origins() : orElse(value),
+      RadarGetSearchGlobalInclude$originRegions() => originRegions != null ? originRegions() : orElse(value),
+      RadarGetSearchGlobalInclude$industries() => industries != null ? industries() : orElse(value),
+      RadarGetSearchGlobalInclude$locations() => locations != null ? locations() : orElse(value),
+      RadarGetSearchGlobalInclude$notebooks() => notebooks != null ? notebooks() : orElse(value),
+      RadarGetSearchGlobalInclude$tlds() => tlds != null ? tlds() : orElse(value),
+      RadarGetSearchGlobalInclude$verticals() => verticals != null ? verticals() : orElse(value),
+      RadarGetSearchGlobalInclude$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetSearchGlobalInclude($value)';
 
  }

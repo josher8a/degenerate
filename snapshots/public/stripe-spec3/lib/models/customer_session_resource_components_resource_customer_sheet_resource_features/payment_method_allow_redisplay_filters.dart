@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodAllowRedisplayFilters$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() limited, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodAllowRedisplayFilters$always() => always(),
+      PaymentMethodAllowRedisplayFilters$limited() => limited(),
+      PaymentMethodAllowRedisplayFilters$unspecified() => unspecified(),
+      PaymentMethodAllowRedisplayFilters$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? limited, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodAllowRedisplayFilters$always() => always != null ? always() : orElse(value),
+      PaymentMethodAllowRedisplayFilters$limited() => limited != null ? limited() : orElse(value),
+      PaymentMethodAllowRedisplayFilters$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      PaymentMethodAllowRedisplayFilters$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodAllowRedisplayFilters($value)';
 
  }

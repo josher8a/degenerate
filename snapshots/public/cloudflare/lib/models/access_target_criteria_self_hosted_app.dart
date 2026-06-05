@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessProtocolSelfHostedApp$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rdp, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessProtocolSelfHostedApp$rdp() => rdp(),
+      AccessProtocolSelfHostedApp$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rdp, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessProtocolSelfHostedApp$rdp() => rdp != null ? rdp() : orElse(value),
+      AccessProtocolSelfHostedApp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessProtocolSelfHostedApp($value)';
 
  }

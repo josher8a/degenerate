@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() authenticationRequired, required W Function() blockedForFraud, required W Function() invalidPayment, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired() => authenticationRequired(),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$blockedForFraud() => blockedForFraud(),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$invalidPayment() => invalidPayment(),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$$other() => $other(),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? authenticationRequired, W Function()? blockedForFraud, W Function()? invalidPayment, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$authenticationRequired() => authenticationRequired != null ? authenticationRequired() : orElse(value),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$blockedForFraud() => blockedForFraud != null ? blockedForFraud() : orElse(value),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$invalidPayment() => invalidPayment != null ? invalidPayment() : orElse(value),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$$other() => $other != null ? $other() : orElse(value),
+      InsightsResourcesPaymentEvaluationMerchantBlockedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomEnabledOriginCommands2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() revoke, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomEnabledOriginCommands2$revoke() => revoke(),
+      WaitingroomEnabledOriginCommands2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? revoke, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomEnabledOriginCommands2$revoke() => revoke != null ? revoke() : orElse(value),
+      WaitingroomEnabledOriginCommands2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomEnabledOriginCommands2($value)';
 
  }

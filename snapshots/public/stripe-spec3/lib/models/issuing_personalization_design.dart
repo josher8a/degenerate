@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPersonalizationDesignObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingPersonalizationDesign, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPersonalizationDesignObject$issuingPersonalizationDesign() => issuingPersonalizationDesign(),
+      IssuingPersonalizationDesignObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingPersonalizationDesign, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPersonalizationDesignObject$issuingPersonalizationDesign() => issuingPersonalizationDesign != null ? issuingPersonalizationDesign() : orElse(value),
+      IssuingPersonalizationDesignObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPersonalizationDesignObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPersonalizationDesignStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() inactive, required W Function() rejected, required W Function() review, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPersonalizationDesignStatus$active() => active(),
+      IssuingPersonalizationDesignStatus$inactive() => inactive(),
+      IssuingPersonalizationDesignStatus$rejected() => rejected(),
+      IssuingPersonalizationDesignStatus$review() => review(),
+      IssuingPersonalizationDesignStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? rejected, W Function()? review, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPersonalizationDesignStatus$active() => active != null ? active() : orElse(value),
+      IssuingPersonalizationDesignStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      IssuingPersonalizationDesignStatus$rejected() => rejected != null ? rejected() : orElse(value),
+      IssuingPersonalizationDesignStatus$review() => review != null ? review() : orElse(value),
+      IssuingPersonalizationDesignStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPersonalizationDesignStatus($value)';
 
  }

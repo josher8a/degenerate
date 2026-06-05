@@ -39,6 +39,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateTranslationRequestResponseFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() text, required W Function() srt, required W Function() verboseJson, required W Function() vtt, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateTranslationRequestResponseFormat$$json() => $json(),
+      CreateTranslationRequestResponseFormat$text() => text(),
+      CreateTranslationRequestResponseFormat$srt() => srt(),
+      CreateTranslationRequestResponseFormat$verboseJson() => verboseJson(),
+      CreateTranslationRequestResponseFormat$vtt() => vtt(),
+      CreateTranslationRequestResponseFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? text, W Function()? srt, W Function()? verboseJson, W Function()? vtt, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateTranslationRequestResponseFormat$$json() => $json != null ? $json() : orElse(value),
+      CreateTranslationRequestResponseFormat$text() => text != null ? text() : orElse(value),
+      CreateTranslationRequestResponseFormat$srt() => srt != null ? srt() : orElse(value),
+      CreateTranslationRequestResponseFormat$verboseJson() => verboseJson != null ? verboseJson() : orElse(value),
+      CreateTranslationRequestResponseFormat$vtt() => vtt != null ? vtt() : orElse(value),
+      CreateTranslationRequestResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateTranslationRequestResponseFormat($value)';
 
  }

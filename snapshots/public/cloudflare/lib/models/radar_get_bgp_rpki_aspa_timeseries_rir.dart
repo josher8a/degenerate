@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBgpRpkiAspaTimeseriesRir$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ripeNcc, required W Function() arin, required W Function() apnic, required W Function() lacnic, required W Function() afrinic, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBgpRpkiAspaTimeseriesRir$ripeNcc() => ripeNcc(),
+      RadarGetBgpRpkiAspaTimeseriesRir$arin() => arin(),
+      RadarGetBgpRpkiAspaTimeseriesRir$apnic() => apnic(),
+      RadarGetBgpRpkiAspaTimeseriesRir$lacnic() => lacnic(),
+      RadarGetBgpRpkiAspaTimeseriesRir$afrinic() => afrinic(),
+      RadarGetBgpRpkiAspaTimeseriesRir$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ripeNcc, W Function()? arin, W Function()? apnic, W Function()? lacnic, W Function()? afrinic, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBgpRpkiAspaTimeseriesRir$ripeNcc() => ripeNcc != null ? ripeNcc() : orElse(value),
+      RadarGetBgpRpkiAspaTimeseriesRir$arin() => arin != null ? arin() : orElse(value),
+      RadarGetBgpRpkiAspaTimeseriesRir$apnic() => apnic != null ? apnic() : orElse(value),
+      RadarGetBgpRpkiAspaTimeseriesRir$lacnic() => lacnic != null ? lacnic() : orElse(value),
+      RadarGetBgpRpkiAspaTimeseriesRir$afrinic() => afrinic != null ? afrinic() : orElse(value),
+      RadarGetBgpRpkiAspaTimeseriesRir$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBgpRpkiAspaTimeseriesRir($value)';
 
  }

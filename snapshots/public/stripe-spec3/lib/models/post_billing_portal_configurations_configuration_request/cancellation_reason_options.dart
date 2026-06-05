@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OptionsVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+      OptionsVariant1$customerService() => customerService(),
+      OptionsVariant1$lowQuality() => lowQuality(),
+      OptionsVariant1$missingFeatures() => missingFeatures(),
+      OptionsVariant1$$other() => $other(),
+      OptionsVariant1$switchedService() => switchedService(),
+      OptionsVariant1$tooComplex() => tooComplex(),
+      OptionsVariant1$tooExpensive() => tooExpensive(),
+      OptionsVariant1$unused() => unused(),
+      OptionsVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+      OptionsVariant1$customerService() => customerService != null ? customerService() : orElse(value),
+      OptionsVariant1$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
+      OptionsVariant1$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
+      OptionsVariant1$$other() => $other != null ? $other() : orElse(value),
+      OptionsVariant1$switchedService() => switchedService != null ? switchedService() : orElse(value),
+      OptionsVariant1$tooComplex() => tooComplex != null ? tooComplex() : orElse(value),
+      OptionsVariant1$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
+      OptionsVariant1$unused() => unused != null ? unused() : orElse(value),
+      OptionsVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OptionsVariant1($value)';
 
  }

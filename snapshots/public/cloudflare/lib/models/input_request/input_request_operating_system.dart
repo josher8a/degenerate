@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InputRequestOperatingSystem$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() linux, required W Function() mac, required W Function(String value) $unknown, }) { return switch (this) {
+      InputRequestOperatingSystem$windows() => windows(),
+      InputRequestOperatingSystem$linux() => linux(),
+      InputRequestOperatingSystem$mac() => mac(),
+      InputRequestOperatingSystem$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? linux, W Function()? mac, W Function(String value)? $unknown, }) { return switch (this) {
+      InputRequestOperatingSystem$windows() => windows != null ? windows() : orElse(value),
+      InputRequestOperatingSystem$linux() => linux != null ? linux() : orElse(value),
+      InputRequestOperatingSystem$mac() => mac != null ? mac() : orElse(value),
+      InputRequestOperatingSystem$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InputRequestOperatingSystem($value)';
 
  }

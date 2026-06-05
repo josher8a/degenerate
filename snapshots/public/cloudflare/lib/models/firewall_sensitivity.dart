@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallSensitivity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() high, required W Function() medium, required W Function() low, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallSensitivity$high() => high(),
+      FirewallSensitivity$medium() => medium(),
+      FirewallSensitivity$low() => low(),
+      FirewallSensitivity$off() => off(),
+      FirewallSensitivity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? high, W Function()? medium, W Function()? low, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallSensitivity$high() => high != null ? high() : orElse(value),
+      FirewallSensitivity$medium() => medium != null ? medium() : orElse(value),
+      FirewallSensitivity$low() => low != null ? low() : orElse(value),
+      FirewallSensitivity$off() => off != null ? off() : orElse(value),
+      FirewallSensitivity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallSensitivity($value)';
 
  }

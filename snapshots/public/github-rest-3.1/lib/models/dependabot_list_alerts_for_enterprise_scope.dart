@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotListAlertsForEnterpriseScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() development, required W Function() runtime, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotListAlertsForEnterpriseScope$development() => development(),
+      DependabotListAlertsForEnterpriseScope$runtime() => runtime(),
+      DependabotListAlertsForEnterpriseScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? development, W Function()? runtime, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotListAlertsForEnterpriseScope$development() => development != null ? development() : orElse(value),
+      DependabotListAlertsForEnterpriseScope$runtime() => runtime != null ? runtime() : orElse(value),
+      DependabotListAlertsForEnterpriseScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotListAlertsForEnterpriseScope($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CommandType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pcap, required W Function() warpDiag, required W Function(String value) $unknown, }) { return switch (this) {
+      CommandType$pcap() => pcap(),
+      CommandType$warpDiag() => warpDiag(),
+      CommandType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pcap, W Function()? warpDiag, W Function(String value)? $unknown, }) { return switch (this) {
+      CommandType$pcap() => pcap != null ? pcap() : orElse(value),
+      CommandType$warpDiag() => warpDiag != null ? warpDiag() : orElse(value),
+      CommandType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CommandType($value)';
 
  }

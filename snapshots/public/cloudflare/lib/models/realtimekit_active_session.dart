@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitActiveSessionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() live, required W Function() ended, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitActiveSessionStatus$live() => live(),
+      RealtimekitActiveSessionStatus$ended() => ended(),
+      RealtimekitActiveSessionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W Function()? ended, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitActiveSessionStatus$live() => live != null ? live() : orElse(value),
+      RealtimekitActiveSessionStatus$ended() => ended != null ? ended() : orElse(value),
+      RealtimekitActiveSessionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitActiveSessionStatus($value)';
 
  }
@@ -86,6 +98,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitActiveSessionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() meeting, required W Function() livestream, required W Function() participant, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitActiveSessionType$meeting() => meeting(),
+      RealtimekitActiveSessionType$livestream() => livestream(),
+      RealtimekitActiveSessionType$participant() => participant(),
+      RealtimekitActiveSessionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? meeting, W Function()? livestream, W Function()? participant, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitActiveSessionType$meeting() => meeting != null ? meeting() : orElse(value),
+      RealtimekitActiveSessionType$livestream() => livestream != null ? livestream() : orElse(value),
+      RealtimekitActiveSessionType$participant() => participant != null ? participant() : orElse(value),
+      RealtimekitActiveSessionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitActiveSessionType($value)';
 
  }

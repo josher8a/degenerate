@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CacheRulesOriginMaxHttpVersionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $2, required W Function() $1, required W Function(String value) $unknown, }) { return switch (this) {
+      CacheRulesOriginMaxHttpVersionValue$$2() => $2(),
+      CacheRulesOriginMaxHttpVersionValue$$1() => $1(),
+      CacheRulesOriginMaxHttpVersionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2, W Function()? $1, W Function(String value)? $unknown, }) { return switch (this) {
+      CacheRulesOriginMaxHttpVersionValue$$2() => $2 != null ? $2() : orElse(value),
+      CacheRulesOriginMaxHttpVersionValue$$1() => $1 != null ? $1() : orElse(value),
+      CacheRulesOriginMaxHttpVersionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CacheRulesOriginMaxHttpVersionValue($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetIdentityVerificationSessionsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresInput, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+      GetIdentityVerificationSessionsStatus$canceled() => canceled(),
+      GetIdentityVerificationSessionsStatus$processing() => processing(),
+      GetIdentityVerificationSessionsStatus$requiresInput() => requiresInput(),
+      GetIdentityVerificationSessionsStatus$verified() => verified(),
+      GetIdentityVerificationSessionsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresInput, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+      GetIdentityVerificationSessionsStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      GetIdentityVerificationSessionsStatus$processing() => processing != null ? processing() : orElse(value),
+      GetIdentityVerificationSessionsStatus$requiresInput() => requiresInput != null ? requiresInput() : orElse(value),
+      GetIdentityVerificationSessionsStatus$verified() => verified != null ? verified() : orElse(value),
+      GetIdentityVerificationSessionsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetIdentityVerificationSessionsStatus($value)';
 
  }

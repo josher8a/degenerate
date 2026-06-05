@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetParticipantDetailsFilters$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deviceInfo, required W Function() ipInformation, required W Function() precallNetworkInformation, required W Function() events, required W Function() qualityStats, required W Function(String value) $unknown, }) { return switch (this) {
+      GetParticipantDetailsFilters$deviceInfo() => deviceInfo(),
+      GetParticipantDetailsFilters$ipInformation() => ipInformation(),
+      GetParticipantDetailsFilters$precallNetworkInformation() => precallNetworkInformation(),
+      GetParticipantDetailsFilters$events() => events(),
+      GetParticipantDetailsFilters$qualityStats() => qualityStats(),
+      GetParticipantDetailsFilters$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deviceInfo, W Function()? ipInformation, W Function()? precallNetworkInformation, W Function()? events, W Function()? qualityStats, W Function(String value)? $unknown, }) { return switch (this) {
+      GetParticipantDetailsFilters$deviceInfo() => deviceInfo != null ? deviceInfo() : orElse(value),
+      GetParticipantDetailsFilters$ipInformation() => ipInformation != null ? ipInformation() : orElse(value),
+      GetParticipantDetailsFilters$precallNetworkInformation() => precallNetworkInformation != null ? precallNetworkInformation() : orElse(value),
+      GetParticipantDetailsFilters$events() => events != null ? events() : orElse(value),
+      GetParticipantDetailsFilters$qualityStats() => qualityStats != null ? qualityStats() : orElse(value),
+      GetParticipantDetailsFilters$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetParticipantDetailsFilters($value)';
 
  }

@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListActivitiesActivityType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() push, required W Function() forcePush, required W Function() branchCreation, required W Function() branchDeletion, required W Function() prMerge, required W Function() mergeQueueMerge, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListActivitiesActivityType$push() => push(),
+      ReposListActivitiesActivityType$forcePush() => forcePush(),
+      ReposListActivitiesActivityType$branchCreation() => branchCreation(),
+      ReposListActivitiesActivityType$branchDeletion() => branchDeletion(),
+      ReposListActivitiesActivityType$prMerge() => prMerge(),
+      ReposListActivitiesActivityType$mergeQueueMerge() => mergeQueueMerge(),
+      ReposListActivitiesActivityType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W Function()? forcePush, W Function()? branchCreation, W Function()? branchDeletion, W Function()? prMerge, W Function()? mergeQueueMerge, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListActivitiesActivityType$push() => push != null ? push() : orElse(value),
+      ReposListActivitiesActivityType$forcePush() => forcePush != null ? forcePush() : orElse(value),
+      ReposListActivitiesActivityType$branchCreation() => branchCreation != null ? branchCreation() : orElse(value),
+      ReposListActivitiesActivityType$branchDeletion() => branchDeletion != null ? branchDeletion() : orElse(value),
+      ReposListActivitiesActivityType$prMerge() => prMerge != null ? prMerge() : orElse(value),
+      ReposListActivitiesActivityType$mergeQueueMerge() => mergeQueueMerge != null ? mergeQueueMerge() : orElse(value),
+      ReposListActivitiesActivityType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListActivitiesActivityType($value)';
 
  }

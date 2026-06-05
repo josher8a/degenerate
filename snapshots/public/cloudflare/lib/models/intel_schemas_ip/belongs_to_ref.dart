@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BelongsToRefType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() hostingProvider, required W Function() isp, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+      BelongsToRefType$hostingProvider() => hostingProvider(),
+      BelongsToRefType$isp() => isp(),
+      BelongsToRefType$organization() => organization(),
+      BelongsToRefType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostingProvider, W Function()? isp, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+      BelongsToRefType$hostingProvider() => hostingProvider != null ? hostingProvider() : orElse(value),
+      BelongsToRefType$isp() => isp != null ? isp() : orElse(value),
+      BelongsToRefType$organization() => organization != null ? organization() : orElse(value),
+      BelongsToRefType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BelongsToRefType($value)';
 
  }

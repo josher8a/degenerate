@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CardPaymentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oneOff, required W Function() recurring, required W Function() setupOneOff, required W Function() setupRecurring, required W Function(String value) $unknown, }) { return switch (this) {
+      CardPaymentType$oneOff() => oneOff(),
+      CardPaymentType$recurring() => recurring(),
+      CardPaymentType$setupOneOff() => setupOneOff(),
+      CardPaymentType$setupRecurring() => setupRecurring(),
+      CardPaymentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneOff, W Function()? recurring, W Function()? setupOneOff, W Function()? setupRecurring, W Function(String value)? $unknown, }) { return switch (this) {
+      CardPaymentType$oneOff() => oneOff != null ? oneOff() : orElse(value),
+      CardPaymentType$recurring() => recurring != null ? recurring() : orElse(value),
+      CardPaymentType$setupOneOff() => setupOneOff != null ? setupOneOff() : orElse(value),
+      CardPaymentType$setupRecurring() => setupRecurring != null ? setupRecurring() : orElse(value),
+      CardPaymentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CardPaymentType($value)';
 
  }

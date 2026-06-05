@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BuildsBuildStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() initializing, required W Function() running, required W Function() stopped, required W Function(String value) $unknown, }) { return switch (this) {
+      BuildsBuildStatus$queued() => queued(),
+      BuildsBuildStatus$initializing() => initializing(),
+      BuildsBuildStatus$running() => running(),
+      BuildsBuildStatus$stopped() => stopped(),
+      BuildsBuildStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? initializing, W Function()? running, W Function()? stopped, W Function(String value)? $unknown, }) { return switch (this) {
+      BuildsBuildStatus$queued() => queued != null ? queued() : orElse(value),
+      BuildsBuildStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      BuildsBuildStatus$running() => running != null ? running() : orElse(value),
+      BuildsBuildStatus$stopped() => stopped != null ? stopped() : orElse(value),
+      BuildsBuildStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BuildsBuildStatus($value)';
 
  }

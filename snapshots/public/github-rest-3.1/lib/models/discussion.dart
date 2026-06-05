@@ -40,6 +40,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DiscussionState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() closed, required W Function() locked, required W Function() converting, required W Function() transferring, required W Function(String value) $unknown, }) { return switch (this) {
+      DiscussionState$open() => open(),
+      DiscussionState$closed() => closed(),
+      DiscussionState$locked() => locked(),
+      DiscussionState$converting() => converting(),
+      DiscussionState$transferring() => transferring(),
+      DiscussionState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? closed, W Function()? locked, W Function()? converting, W Function()? transferring, W Function(String value)? $unknown, }) { return switch (this) {
+      DiscussionState$open() => open != null ? open() : orElse(value),
+      DiscussionState$closed() => closed != null ? closed() : orElse(value),
+      DiscussionState$locked() => locked != null ? locked() : orElse(value),
+      DiscussionState$converting() => converting != null ? converting() : orElse(value),
+      DiscussionState$transferring() => transferring != null ? transferring() : orElse(value),
+      DiscussionState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DiscussionState($value)';
 
  }
@@ -135,6 +153,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DiscussionStateReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() resolved, required W Function() outdated, required W Function() duplicate, required W Function() reopened, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      DiscussionStateReason$resolved() => resolved(),
+      DiscussionStateReason$outdated() => outdated(),
+      DiscussionStateReason$duplicate() => duplicate(),
+      DiscussionStateReason$reopened() => reopened(),
+      DiscussionStateReason$$null() => $null(),
+      DiscussionStateReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved, W Function()? outdated, W Function()? duplicate, W Function()? reopened, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      DiscussionStateReason$resolved() => resolved != null ? resolved() : orElse(value),
+      DiscussionStateReason$outdated() => outdated != null ? outdated() : orElse(value),
+      DiscussionStateReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      DiscussionStateReason$reopened() => reopened != null ? reopened() : orElse(value),
+      DiscussionStateReason$$null() => $null != null ? $null() : orElse(value),
+      DiscussionStateReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DiscussionStateReason($value)';
 
  }

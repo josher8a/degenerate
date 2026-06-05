@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallSchemasAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() block, required W Function() challenge, required W Function() jsChallenge, required W Function() managedChallenge, required W Function() allow, required W Function() log, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallSchemasAction$block() => block(),
+      FirewallSchemasAction$challenge() => challenge(),
+      FirewallSchemasAction$jsChallenge() => jsChallenge(),
+      FirewallSchemasAction$managedChallenge() => managedChallenge(),
+      FirewallSchemasAction$allow() => allow(),
+      FirewallSchemasAction$log() => log(),
+      FirewallSchemasAction$bypass() => bypass(),
+      FirewallSchemasAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W Function()? challenge, W Function()? jsChallenge, W Function()? managedChallenge, W Function()? allow, W Function()? log, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallSchemasAction$block() => block != null ? block() : orElse(value),
+      FirewallSchemasAction$challenge() => challenge != null ? challenge() : orElse(value),
+      FirewallSchemasAction$jsChallenge() => jsChallenge != null ? jsChallenge() : orElse(value),
+      FirewallSchemasAction$managedChallenge() => managedChallenge != null ? managedChallenge() : orElse(value),
+      FirewallSchemasAction$allow() => allow != null ? allow() : orElse(value),
+      FirewallSchemasAction$log() => log != null ? log() : orElse(value),
+      FirewallSchemasAction$bypass() => bypass != null ? bypass() : orElse(value),
+      FirewallSchemasAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallSchemasAction($value)';
 
  }

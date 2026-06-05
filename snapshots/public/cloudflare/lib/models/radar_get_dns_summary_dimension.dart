@@ -74,6 +74,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $as, required W Function() cacheHit, required W Function() dnssec, required W Function() dnssecAware, required W Function() dnssecE2E, required W Function() ipVersion, required W Function() location, required W Function() matchingAnswer, required W Function() protocol, required W Function() queryType, required W Function() responseCode, required W Function() responseTtl, required W Function() tld, required W Function() tldDnsMagnitude, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsSummaryDimension$$as() => $as(),
+      RadarGetDnsSummaryDimension$cacheHit() => cacheHit(),
+      RadarGetDnsSummaryDimension$dnssec() => dnssec(),
+      RadarGetDnsSummaryDimension$dnssecAware() => dnssecAware(),
+      RadarGetDnsSummaryDimension$dnssecE2E() => dnssecE2E(),
+      RadarGetDnsSummaryDimension$ipVersion() => ipVersion(),
+      RadarGetDnsSummaryDimension$location() => location(),
+      RadarGetDnsSummaryDimension$matchingAnswer() => matchingAnswer(),
+      RadarGetDnsSummaryDimension$protocol() => protocol(),
+      RadarGetDnsSummaryDimension$queryType() => queryType(),
+      RadarGetDnsSummaryDimension$responseCode() => responseCode(),
+      RadarGetDnsSummaryDimension$responseTtl() => responseTtl(),
+      RadarGetDnsSummaryDimension$tld() => tld(),
+      RadarGetDnsSummaryDimension$tldDnsMagnitude() => tldDnsMagnitude(),
+      RadarGetDnsSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $as, W Function()? cacheHit, W Function()? dnssec, W Function()? dnssecAware, W Function()? dnssecE2E, W Function()? ipVersion, W Function()? location, W Function()? matchingAnswer, W Function()? protocol, W Function()? queryType, W Function()? responseCode, W Function()? responseTtl, W Function()? tld, W Function()? tldDnsMagnitude, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsSummaryDimension$$as() => $as != null ? $as() : orElse(value),
+      RadarGetDnsSummaryDimension$cacheHit() => cacheHit != null ? cacheHit() : orElse(value),
+      RadarGetDnsSummaryDimension$dnssec() => dnssec != null ? dnssec() : orElse(value),
+      RadarGetDnsSummaryDimension$dnssecAware() => dnssecAware != null ? dnssecAware() : orElse(value),
+      RadarGetDnsSummaryDimension$dnssecE2E() => dnssecE2E != null ? dnssecE2E() : orElse(value),
+      RadarGetDnsSummaryDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetDnsSummaryDimension$location() => location != null ? location() : orElse(value),
+      RadarGetDnsSummaryDimension$matchingAnswer() => matchingAnswer != null ? matchingAnswer() : orElse(value),
+      RadarGetDnsSummaryDimension$protocol() => protocol != null ? protocol() : orElse(value),
+      RadarGetDnsSummaryDimension$queryType() => queryType != null ? queryType() : orElse(value),
+      RadarGetDnsSummaryDimension$responseCode() => responseCode != null ? responseCode() : orElse(value),
+      RadarGetDnsSummaryDimension$responseTtl() => responseTtl != null ? responseTtl() : orElse(value),
+      RadarGetDnsSummaryDimension$tld() => tld != null ? tld() : orElse(value),
+      RadarGetDnsSummaryDimension$tldDnsMagnitude() => tldDnsMagnitude != null ? tldDnsMagnitude() : orElse(value),
+      RadarGetDnsSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsSummaryDimension($value)';
 
  }

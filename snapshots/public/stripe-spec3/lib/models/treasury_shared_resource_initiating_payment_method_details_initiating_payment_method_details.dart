@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() payments, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$payments() => payments(),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? payments, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$payments() => payments != null ? payments() : orElse(value),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance($value)';
 
  }
@@ -81,6 +91,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() balance, required W Function() financialAccount, required W Function() issuingCard, required W Function() stripe, required W Function() usBankAccount, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$balance() => balance(),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$financialAccount() => financialAccount(),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$issuingCard() => issuingCard(),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$stripe() => stripe(),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$usBankAccount() => usBankAccount(),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? balance, W Function()? financialAccount, W Function()? issuingCard, W Function()? stripe, W Function()? usBankAccount, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$balance() => balance != null ? balance() : orElse(value),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$financialAccount() => financialAccount != null ? financialAccount() : orElse(value),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$issuingCard() => issuingCard != null ? issuingCard() : orElse(value),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$stripe() => stripe != null ? stripe() : orElse(value),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$usBankAccount() => usBankAccount != null ? usBankAccount() : orElse(value),
+      TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)';
 
  }

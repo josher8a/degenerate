@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetIssuingTokensStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() deleted, required W Function() requested, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+      GetIssuingTokensStatus$active() => active(),
+      GetIssuingTokensStatus$deleted() => deleted(),
+      GetIssuingTokensStatus$requested() => requested(),
+      GetIssuingTokensStatus$suspended() => suspended(),
+      GetIssuingTokensStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function()? requested, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+      GetIssuingTokensStatus$active() => active != null ? active() : orElse(value),
+      GetIssuingTokensStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      GetIssuingTokensStatus$requested() => requested != null ? requested() : orElse(value),
+      GetIssuingTokensStatus$suspended() => suspended != null ? suspended() : orElse(value),
+      GetIssuingTokensStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetIssuingTokensStatus($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Key2Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function() serviceAccount, required W Function(String value) $unknown, }) { return switch (this) {
+      Key2Type$user() => user(),
+      Key2Type$serviceAccount() => serviceAccount(),
+      Key2Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? serviceAccount, W Function(String value)? $unknown, }) { return switch (this) {
+      Key2Type$user() => user != null ? user() : orElse(value),
+      Key2Type$serviceAccount() => serviceAccount != null ? serviceAccount() : orElse(value),
+      Key2Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Key2Type($value)';
 
  }

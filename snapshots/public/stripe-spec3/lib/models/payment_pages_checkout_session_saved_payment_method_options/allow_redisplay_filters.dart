@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowRedisplayFilters$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() limited, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowRedisplayFilters$always() => always(),
+      AllowRedisplayFilters$limited() => limited(),
+      AllowRedisplayFilters$unspecified() => unspecified(),
+      AllowRedisplayFilters$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? limited, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowRedisplayFilters$always() => always != null ? always() : orElse(value),
+      AllowRedisplayFilters$limited() => limited != null ? limited() : orElse(value),
+      AllowRedisplayFilters$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      AllowRedisplayFilters$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowRedisplayFilters($value)';
 
  }

@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() activating, required W Function() capabilityNotRequested, required W Function() financialAccountClosed, required W Function() rejectedOther, required W Function() rejectedUnsupportedBusiness, required W Function() requirementsPastDue, required W Function() requirementsPendingVerification, required W Function() restrictedByPlatform, required W Function() restrictedOther, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating() => activating(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested() => capabilityNotRequested(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed() => financialAccountClosed(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther() => rejectedOther(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness() => rejectedUnsupportedBusiness(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue() => requirementsPastDue(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification() => requirementsPendingVerification(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform() => restrictedByPlatform(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther() => restrictedOther(),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? activating, W Function()? capabilityNotRequested, W Function()? financialAccountClosed, W Function()? rejectedOther, W Function()? rejectedUnsupportedBusiness, W Function()? requirementsPastDue, W Function()? requirementsPendingVerification, W Function()? restrictedByPlatform, W Function()? restrictedOther, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating() => activating != null ? activating() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested() => capabilityNotRequested != null ? capabilityNotRequested() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed() => financialAccountClosed != null ? financialAccountClosed() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther() => rejectedOther != null ? rejectedOther() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness() => rejectedUnsupportedBusiness != null ? rejectedUnsupportedBusiness() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue() => requirementsPastDue != null ? requirementsPastDue() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification() => requirementsPendingVerification != null ? requirementsPendingVerification() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform() => restrictedByPlatform != null ? restrictedByPlatform() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther() => restrictedOther != null ? restrictedOther() : orElse(value),
+      TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)';
 
  }
@@ -177,6 +203,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Resolution$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() contactStripe, required W Function() provideInformation, required W Function() removeRestriction, required W Function(String value) $unknown, }) { return switch (this) {
+      Resolution$contactStripe() => contactStripe(),
+      Resolution$provideInformation() => provideInformation(),
+      Resolution$removeRestriction() => removeRestriction(),
+      Resolution$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactStripe, W Function()? provideInformation, W Function()? removeRestriction, W Function(String value)? $unknown, }) { return switch (this) {
+      Resolution$contactStripe() => contactStripe != null ? contactStripe() : orElse(value),
+      Resolution$provideInformation() => provideInformation != null ? provideInformation() : orElse(value),
+      Resolution$removeRestriction() => removeRestriction != null ? removeRestriction() : orElse(value),
+      Resolution$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Resolution($value)';
 
  }
@@ -242,6 +282,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Restriction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inboundFlows, required W Function() outboundFlows, required W Function(String value) $unknown, }) { return switch (this) {
+      Restriction$inboundFlows() => inboundFlows(),
+      Restriction$outboundFlows() => outboundFlows(),
+      Restriction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundFlows, W Function()? outboundFlows, W Function(String value)? $unknown, }) { return switch (this) {
+      Restriction$inboundFlows() => inboundFlows != null ? inboundFlows() : orElse(value),
+      Restriction$outboundFlows() => outboundFlows != null ? outboundFlows() : orElse(value),
+      Restriction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Restriction($value)';
 
  }

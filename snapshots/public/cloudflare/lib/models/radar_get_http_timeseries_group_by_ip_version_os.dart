@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByIpVersionOs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByIpVersionOs$windows() => windows(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$macosx() => macosx(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$ios() => ios(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$android() => android(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$chromeos() => chromeos(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$linux() => linux(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$smartTv() => smartTv(),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByIpVersionOs$windows() => windows != null ? windows() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$macosx() => macosx != null ? macosx() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$ios() => ios != null ? ios() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$android() => android != null ? android() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$linux() => linux != null ? linux() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByIpVersionOs($value)';
 
  }

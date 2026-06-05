@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnvironmentApprovalsState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() approved, required W Function() rejected, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      EnvironmentApprovalsState$approved() => approved(),
+      EnvironmentApprovalsState$rejected() => rejected(),
+      EnvironmentApprovalsState$pending() => pending(),
+      EnvironmentApprovalsState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved, W Function()? rejected, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      EnvironmentApprovalsState$approved() => approved != null ? approved() : orElse(value),
+      EnvironmentApprovalsState$rejected() => rejected != null ? rejected() : orElse(value),
+      EnvironmentApprovalsState$pending() => pending != null ? pending() : orElse(value),
+      EnvironmentApprovalsState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnvironmentApprovalsState($value)';
 
  }

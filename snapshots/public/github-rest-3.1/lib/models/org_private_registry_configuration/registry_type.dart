@@ -78,6 +78,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RegistryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mavenRepository, required W Function() nugetFeed, required W Function() goproxyServer, required W Function() npmRegistry, required W Function() rubygemsServer, required W Function() cargoRegistry, required W Function() composerRepository, required W Function() dockerRegistry, required W Function() gitSource, required W Function() helmRegistry, required W Function() hexOrganization, required W Function() hexRepository, required W Function() pubRepository, required W Function() pythonIndex, required W Function() terraformRegistry, required W Function(String value) $unknown, }) { return switch (this) {
+      RegistryType$mavenRepository() => mavenRepository(),
+      RegistryType$nugetFeed() => nugetFeed(),
+      RegistryType$goproxyServer() => goproxyServer(),
+      RegistryType$npmRegistry() => npmRegistry(),
+      RegistryType$rubygemsServer() => rubygemsServer(),
+      RegistryType$cargoRegistry() => cargoRegistry(),
+      RegistryType$composerRepository() => composerRepository(),
+      RegistryType$dockerRegistry() => dockerRegistry(),
+      RegistryType$gitSource() => gitSource(),
+      RegistryType$helmRegistry() => helmRegistry(),
+      RegistryType$hexOrganization() => hexOrganization(),
+      RegistryType$hexRepository() => hexRepository(),
+      RegistryType$pubRepository() => pubRepository(),
+      RegistryType$pythonIndex() => pythonIndex(),
+      RegistryType$terraformRegistry() => terraformRegistry(),
+      RegistryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mavenRepository, W Function()? nugetFeed, W Function()? goproxyServer, W Function()? npmRegistry, W Function()? rubygemsServer, W Function()? cargoRegistry, W Function()? composerRepository, W Function()? dockerRegistry, W Function()? gitSource, W Function()? helmRegistry, W Function()? hexOrganization, W Function()? hexRepository, W Function()? pubRepository, W Function()? pythonIndex, W Function()? terraformRegistry, W Function(String value)? $unknown, }) { return switch (this) {
+      RegistryType$mavenRepository() => mavenRepository != null ? mavenRepository() : orElse(value),
+      RegistryType$nugetFeed() => nugetFeed != null ? nugetFeed() : orElse(value),
+      RegistryType$goproxyServer() => goproxyServer != null ? goproxyServer() : orElse(value),
+      RegistryType$npmRegistry() => npmRegistry != null ? npmRegistry() : orElse(value),
+      RegistryType$rubygemsServer() => rubygemsServer != null ? rubygemsServer() : orElse(value),
+      RegistryType$cargoRegistry() => cargoRegistry != null ? cargoRegistry() : orElse(value),
+      RegistryType$composerRepository() => composerRepository != null ? composerRepository() : orElse(value),
+      RegistryType$dockerRegistry() => dockerRegistry != null ? dockerRegistry() : orElse(value),
+      RegistryType$gitSource() => gitSource != null ? gitSource() : orElse(value),
+      RegistryType$helmRegistry() => helmRegistry != null ? helmRegistry() : orElse(value),
+      RegistryType$hexOrganization() => hexOrganization != null ? hexOrganization() : orElse(value),
+      RegistryType$hexRepository() => hexRepository != null ? hexRepository() : orElse(value),
+      RegistryType$pubRepository() => pubRepository != null ? pubRepository() : orElse(value),
+      RegistryType$pythonIndex() => pythonIndex != null ? pythonIndex() : orElse(value),
+      RegistryType$terraformRegistry() => terraformRegistry != null ? terraformRegistry() : orElse(value),
+      RegistryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RegistryType($value)';
 
  }

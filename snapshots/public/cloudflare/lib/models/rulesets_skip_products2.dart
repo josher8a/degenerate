@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsSkipProducts2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bic, required W Function() hot, required W Function() rateLimit, required W Function() securityLevel, required W Function() uaBlock, required W Function() waf, required W Function() zoneLockdown, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsSkipProducts2$bic() => bic(),
+      RulesetsSkipProducts2$hot() => hot(),
+      RulesetsSkipProducts2$rateLimit() => rateLimit(),
+      RulesetsSkipProducts2$securityLevel() => securityLevel(),
+      RulesetsSkipProducts2$uaBlock() => uaBlock(),
+      RulesetsSkipProducts2$waf() => waf(),
+      RulesetsSkipProducts2$zoneLockdown() => zoneLockdown(),
+      RulesetsSkipProducts2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bic, W Function()? hot, W Function()? rateLimit, W Function()? securityLevel, W Function()? uaBlock, W Function()? waf, W Function()? zoneLockdown, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsSkipProducts2$bic() => bic != null ? bic() : orElse(value),
+      RulesetsSkipProducts2$hot() => hot != null ? hot() : orElse(value),
+      RulesetsSkipProducts2$rateLimit() => rateLimit != null ? rateLimit() : orElse(value),
+      RulesetsSkipProducts2$securityLevel() => securityLevel != null ? securityLevel() : orElse(value),
+      RulesetsSkipProducts2$uaBlock() => uaBlock != null ? uaBlock() : orElse(value),
+      RulesetsSkipProducts2$waf() => waf != null ? waf() : orElse(value),
+      RulesetsSkipProducts2$zoneLockdown() => zoneLockdown != null ? zoneLockdown() : orElse(value),
+      RulesetsSkipProducts2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsSkipProducts2($value)';
 
  }

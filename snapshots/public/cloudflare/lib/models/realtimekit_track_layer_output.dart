@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitTrackLayerOutputType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() realtimekitBucket, required W Function() storageConfig, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitTrackLayerOutputType$realtimekitBucket() => realtimekitBucket(),
+      RealtimekitTrackLayerOutputType$storageConfig() => storageConfig(),
+      RealtimekitTrackLayerOutputType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtimekitBucket, W Function()? storageConfig, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitTrackLayerOutputType$realtimekitBucket() => realtimekitBucket != null ? realtimekitBucket() : orElse(value),
+      RealtimekitTrackLayerOutputType$storageConfig() => storageConfig != null ? storageConfig() : orElse(value),
+      RealtimekitTrackLayerOutputType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitTrackLayerOutputType($value)';
 
  }

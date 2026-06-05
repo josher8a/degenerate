@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopLocationsByBrowserFamilyOs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByBrowserFamilyOs$windows() => windows(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$macosx() => macosx(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$ios() => ios(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$android() => android(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$chromeos() => chromeos(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$linux() => linux(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$smartTv() => smartTv(),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByBrowserFamilyOs$windows() => windows != null ? windows() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$macosx() => macosx != null ? macosx() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$ios() => ios != null ? ios() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$android() => android != null ? android() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$linux() => linux != null ? linux() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
+      RadarGetHttpTopLocationsByBrowserFamilyOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopLocationsByBrowserFamilyOs($value)';
 
  }

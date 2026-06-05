@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdentityVerificationSessionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() identityVerificationSession, required W Function(String value) $unknown, }) { return switch (this) {
+      IdentityVerificationSessionObject$identityVerificationSession() => identityVerificationSession(),
+      IdentityVerificationSessionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? identityVerificationSession, W Function(String value)? $unknown, }) { return switch (this) {
+      IdentityVerificationSessionObject$identityVerificationSession() => identityVerificationSession != null ? identityVerificationSession() : orElse(value),
+      IdentityVerificationSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdentityVerificationSessionObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdentityVerificationSessionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresInput, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+      IdentityVerificationSessionStatus$canceled() => canceled(),
+      IdentityVerificationSessionStatus$processing() => processing(),
+      IdentityVerificationSessionStatus$requiresInput() => requiresInput(),
+      IdentityVerificationSessionStatus$verified() => verified(),
+      IdentityVerificationSessionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresInput, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+      IdentityVerificationSessionStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      IdentityVerificationSessionStatus$processing() => processing != null ? processing() : orElse(value),
+      IdentityVerificationSessionStatus$requiresInput() => requiresInput != null ? requiresInput() : orElse(value),
+      IdentityVerificationSessionStatus$verified() => verified != null ? verified() : orElse(value),
+      IdentityVerificationSessionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdentityVerificationSessionStatus($value)';
 
  }

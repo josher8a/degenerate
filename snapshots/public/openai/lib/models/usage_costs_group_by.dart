@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageCostsGroupBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() projectId, required W Function() lineItem, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageCostsGroupBy$projectId() => projectId(),
+      UsageCostsGroupBy$lineItem() => lineItem(),
+      UsageCostsGroupBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectId, W Function()? lineItem, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageCostsGroupBy$projectId() => projectId != null ? projectId() : orElse(value),
+      UsageCostsGroupBy$lineItem() => lineItem != null ? lineItem() : orElse(value),
+      UsageCostsGroupBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageCostsGroupBy($value)';
 
  }

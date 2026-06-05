@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListDevicesSortBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $name, required W Function() id, required W Function() clientVersion, required W Function() lastSeenUserEmail, required W Function() lastSeenAt, required W Function() activeRegistrations, required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+      ListDevicesSortBy$$name() => $name(),
+      ListDevicesSortBy$id() => id(),
+      ListDevicesSortBy$clientVersion() => clientVersion(),
+      ListDevicesSortBy$lastSeenUserEmail() => lastSeenUserEmail(),
+      ListDevicesSortBy$lastSeenAt() => lastSeenAt(),
+      ListDevicesSortBy$activeRegistrations() => activeRegistrations(),
+      ListDevicesSortBy$createdAt() => createdAt(),
+      ListDevicesSortBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W Function()? id, W Function()? clientVersion, W Function()? lastSeenUserEmail, W Function()? lastSeenAt, W Function()? activeRegistrations, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+      ListDevicesSortBy$$name() => $name != null ? $name() : orElse(value),
+      ListDevicesSortBy$id() => id != null ? id() : orElse(value),
+      ListDevicesSortBy$clientVersion() => clientVersion != null ? clientVersion() : orElse(value),
+      ListDevicesSortBy$lastSeenUserEmail() => lastSeenUserEmail != null ? lastSeenUserEmail() : orElse(value),
+      ListDevicesSortBy$lastSeenAt() => lastSeenAt != null ? lastSeenAt() : orElse(value),
+      ListDevicesSortBy$activeRegistrations() => activeRegistrations != null ? activeRegistrations() : orElse(value),
+      ListDevicesSortBy$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      ListDevicesSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListDevicesSortBy($value)';
 
  }

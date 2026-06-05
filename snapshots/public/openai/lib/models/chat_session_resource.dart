@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatSessionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() expired, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      ChatSessionStatus$active() => active(),
+      ChatSessionStatus$expired() => expired(),
+      ChatSessionStatus$cancelled() => cancelled(),
+      ChatSessionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      ChatSessionStatus$active() => active != null ? active() : orElse(value),
+      ChatSessionStatus$expired() => expired != null ? expired() : orElse(value),
+      ChatSessionStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      ChatSessionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChatSessionStatus($value)';
 
  }
@@ -90,6 +104,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatSessionResourceObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chatkitSession, required W Function(String value) $unknown, }) { return switch (this) {
+      ChatSessionResourceObject$chatkitSession() => chatkitSession(),
+      ChatSessionResourceObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chatkitSession, W Function(String value)? $unknown, }) { return switch (this) {
+      ChatSessionResourceObject$chatkitSession() => chatkitSession != null ? chatkitSession() : orElse(value),
+      ChatSessionResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChatSessionResourceObject($value)';
 
  }

@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListRegistrationsSortBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() id, required W Function() userName, required W Function() userEmail, required W Function() lastSeenAt, required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+      ListRegistrationsSortBy$id() => id(),
+      ListRegistrationsSortBy$userName() => userName(),
+      ListRegistrationsSortBy$userEmail() => userEmail(),
+      ListRegistrationsSortBy$lastSeenAt() => lastSeenAt(),
+      ListRegistrationsSortBy$createdAt() => createdAt(),
+      ListRegistrationsSortBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? userName, W Function()? userEmail, W Function()? lastSeenAt, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+      ListRegistrationsSortBy$id() => id != null ? id() : orElse(value),
+      ListRegistrationsSortBy$userName() => userName != null ? userName() : orElse(value),
+      ListRegistrationsSortBy$userEmail() => userEmail != null ? userEmail() : orElse(value),
+      ListRegistrationsSortBy$lastSeenAt() => lastSeenAt != null ? lastSeenAt() : orElse(value),
+      ListRegistrationsSortBy$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      ListRegistrationsSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListRegistrationsSortBy($value)';
 
  }

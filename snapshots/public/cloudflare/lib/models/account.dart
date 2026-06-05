@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() enterprise, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountType$standard() => standard(),
+      AccountType$enterprise() => enterprise(),
+      AccountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? enterprise, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountType$standard() => standard != null ? standard() : orElse(value),
+      AccountType$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      AccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountType($value)';
 
  }

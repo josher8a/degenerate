@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DeletedConversationResourceObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() conversationDeleted, required W Function(String value) $unknown, }) { return switch (this) {
+      DeletedConversationResourceObject$conversationDeleted() => conversationDeleted(),
+      DeletedConversationResourceObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? conversationDeleted, W Function(String value)? $unknown, }) { return switch (this) {
+      DeletedConversationResourceObject$conversationDeleted() => conversationDeleted != null ? conversationDeleted() : orElse(value),
+      DeletedConversationResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DeletedConversationResourceObject($value)';
 
  }

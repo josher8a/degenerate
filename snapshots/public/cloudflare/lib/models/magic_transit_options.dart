@@ -45,6 +45,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicTransitPacketType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() icmp, required W Function() tcp, required W Function() udp, required W Function() gre, required W Function() greicmp, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicTransitPacketType$icmp() => icmp(),
+      MagicTransitPacketType$tcp() => tcp(),
+      MagicTransitPacketType$udp() => udp(),
+      MagicTransitPacketType$gre() => gre(),
+      MagicTransitPacketType$greicmp() => greicmp(),
+      MagicTransitPacketType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? icmp, W Function()? tcp, W Function()? udp, W Function()? gre, W Function()? greicmp, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicTransitPacketType$icmp() => icmp != null ? icmp() : orElse(value),
+      MagicTransitPacketType$tcp() => tcp != null ? tcp() : orElse(value),
+      MagicTransitPacketType$udp() => udp != null ? udp() : orElse(value),
+      MagicTransitPacketType$gre() => gre != null ? gre() : orElse(value),
+      MagicTransitPacketType$greicmp() => greicmp != null ? greicmp() : orElse(value),
+      MagicTransitPacketType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicTransitPacketType($value)';
 
  }

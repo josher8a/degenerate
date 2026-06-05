@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutboundPaymentsPaymentMethodDetailsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() financialAccount, required W Function() usBankAccount, required W Function(String value) $unknown, }) { return switch (this) {
+      OutboundPaymentsPaymentMethodDetailsType$financialAccount() => financialAccount(),
+      OutboundPaymentsPaymentMethodDetailsType$usBankAccount() => usBankAccount(),
+      OutboundPaymentsPaymentMethodDetailsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialAccount, W Function()? usBankAccount, W Function(String value)? $unknown, }) { return switch (this) {
+      OutboundPaymentsPaymentMethodDetailsType$financialAccount() => financialAccount != null ? financialAccount() : orElse(value),
+      OutboundPaymentsPaymentMethodDetailsType$usBankAccount() => usBankAccount != null ? usBankAccount() : orElse(value),
+      OutboundPaymentsPaymentMethodDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OutboundPaymentsPaymentMethodDetailsType($value)';
 
  }

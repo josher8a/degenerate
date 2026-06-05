@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActiveLockReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() resolved, required W Function() offTopic, required W Function() tooHeated, required W Function() spam, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      ActiveLockReason$resolved() => resolved(),
+      ActiveLockReason$offTopic() => offTopic(),
+      ActiveLockReason$tooHeated() => tooHeated(),
+      ActiveLockReason$spam() => spam(),
+      ActiveLockReason$$null() => $null(),
+      ActiveLockReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolved, W Function()? offTopic, W Function()? tooHeated, W Function()? spam, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      ActiveLockReason$resolved() => resolved != null ? resolved() : orElse(value),
+      ActiveLockReason$offTopic() => offTopic != null ? offTopic() : orElse(value),
+      ActiveLockReason$tooHeated() => tooHeated != null ? tooHeated() : orElse(value),
+      ActiveLockReason$spam() => spam != null ? spam() : orElse(value),
+      ActiveLockReason$$null() => $null != null ? $null() : orElse(value),
+      ActiveLockReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActiveLockReason($value)';
 
  }

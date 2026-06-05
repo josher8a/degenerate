@@ -74,6 +74,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ca, required W Function() caOwner, required W Function() duration, required W Function() entryType, required W Function() expirationStatus, required W Function() hasIps, required W Function() hasWildcards, required W Function() log, required W Function() logApi, required W Function() logOperator, required W Function() publicKeyAlgorithm, required W Function() signatureAlgorithm, required W Function() tld, required W Function() validationLevel, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesGroupDimension$ca() => ca(),
+      RadarGetCtTimeseriesGroupDimension$caOwner() => caOwner(),
+      RadarGetCtTimeseriesGroupDimension$duration() => duration(),
+      RadarGetCtTimeseriesGroupDimension$entryType() => entryType(),
+      RadarGetCtTimeseriesGroupDimension$expirationStatus() => expirationStatus(),
+      RadarGetCtTimeseriesGroupDimension$hasIps() => hasIps(),
+      RadarGetCtTimeseriesGroupDimension$hasWildcards() => hasWildcards(),
+      RadarGetCtTimeseriesGroupDimension$log() => log(),
+      RadarGetCtTimeseriesGroupDimension$logApi() => logApi(),
+      RadarGetCtTimeseriesGroupDimension$logOperator() => logOperator(),
+      RadarGetCtTimeseriesGroupDimension$publicKeyAlgorithm() => publicKeyAlgorithm(),
+      RadarGetCtTimeseriesGroupDimension$signatureAlgorithm() => signatureAlgorithm(),
+      RadarGetCtTimeseriesGroupDimension$tld() => tld(),
+      RadarGetCtTimeseriesGroupDimension$validationLevel() => validationLevel(),
+      RadarGetCtTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Function()? caOwner, W Function()? duration, W Function()? entryType, W Function()? expirationStatus, W Function()? hasIps, W Function()? hasWildcards, W Function()? log, W Function()? logApi, W Function()? logOperator, W Function()? publicKeyAlgorithm, W Function()? signatureAlgorithm, W Function()? tld, W Function()? validationLevel, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesGroupDimension$ca() => ca != null ? ca() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$caOwner() => caOwner != null ? caOwner() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$duration() => duration != null ? duration() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$entryType() => entryType != null ? entryType() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$expirationStatus() => expirationStatus != null ? expirationStatus() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$hasIps() => hasIps != null ? hasIps() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$hasWildcards() => hasWildcards != null ? hasWildcards() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$log() => log != null ? log() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$logApi() => logApi != null ? logApi() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$logOperator() => logOperator != null ? logOperator() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$publicKeyAlgorithm() => publicKeyAlgorithm != null ? publicKeyAlgorithm() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$signatureAlgorithm() => signatureAlgorithm != null ? signatureAlgorithm() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$tld() => tld != null ? tld() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$validationLevel() => validationLevel != null ? validationLevel() : orElse(value),
+      RadarGetCtTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtTimeseriesGroupDimension($value)';
 
  }

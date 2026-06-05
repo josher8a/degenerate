@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() file, required W Function(String value) $unknown, }) { return switch (this) {
+      FileObject$file() => file(),
+      FileObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function(String value)? $unknown, }) { return switch (this) {
+      FileObject$file() => file != null ? file() : orElse(value),
+      FileObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileObject($value)';
 
  }
@@ -145,6 +155,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FilePurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() documentProviderIdentityDocument, required W Function() financeReportRun, required W Function() financialAccountStatement, required W Function() identityDocument, required W Function() identityDocumentDownloadable, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() selfie, required W Function() sigmaScheduledQuery, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) { return switch (this) {
+      FilePurpose$accountRequirement() => accountRequirement(),
+      FilePurpose$additionalVerification() => additionalVerification(),
+      FilePurpose$businessIcon() => businessIcon(),
+      FilePurpose$businessLogo() => businessLogo(),
+      FilePurpose$customerSignature() => customerSignature(),
+      FilePurpose$disputeEvidence() => disputeEvidence(),
+      FilePurpose$documentProviderIdentityDocument() => documentProviderIdentityDocument(),
+      FilePurpose$financeReportRun() => financeReportRun(),
+      FilePurpose$financialAccountStatement() => financialAccountStatement(),
+      FilePurpose$identityDocument() => identityDocument(),
+      FilePurpose$identityDocumentDownloadable() => identityDocumentDownloadable(),
+      FilePurpose$issuingRegulatoryReporting() => issuingRegulatoryReporting(),
+      FilePurpose$pciDocument() => pciDocument(),
+      FilePurpose$platformTermsOfService() => platformTermsOfService(),
+      FilePurpose$selfie() => selfie(),
+      FilePurpose$sigmaScheduledQuery() => sigmaScheduledQuery(),
+      FilePurpose$taxDocumentUserUpload() => taxDocumentUserUpload(),
+      FilePurpose$terminalAndroidApk() => terminalAndroidApk(),
+      FilePurpose$terminalReaderSplashscreen() => terminalReaderSplashscreen(),
+      FilePurpose$terminalWifiCertificate() => terminalWifiCertificate(),
+      FilePurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey(),
+      FilePurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? documentProviderIdentityDocument, W Function()? financeReportRun, W Function()? financialAccountStatement, W Function()? identityDocument, W Function()? identityDocumentDownloadable, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? selfie, W Function()? sigmaScheduledQuery, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) { return switch (this) {
+      FilePurpose$accountRequirement() => accountRequirement != null ? accountRequirement() : orElse(value),
+      FilePurpose$additionalVerification() => additionalVerification != null ? additionalVerification() : orElse(value),
+      FilePurpose$businessIcon() => businessIcon != null ? businessIcon() : orElse(value),
+      FilePurpose$businessLogo() => businessLogo != null ? businessLogo() : orElse(value),
+      FilePurpose$customerSignature() => customerSignature != null ? customerSignature() : orElse(value),
+      FilePurpose$disputeEvidence() => disputeEvidence != null ? disputeEvidence() : orElse(value),
+      FilePurpose$documentProviderIdentityDocument() => documentProviderIdentityDocument != null ? documentProviderIdentityDocument() : orElse(value),
+      FilePurpose$financeReportRun() => financeReportRun != null ? financeReportRun() : orElse(value),
+      FilePurpose$financialAccountStatement() => financialAccountStatement != null ? financialAccountStatement() : orElse(value),
+      FilePurpose$identityDocument() => identityDocument != null ? identityDocument() : orElse(value),
+      FilePurpose$identityDocumentDownloadable() => identityDocumentDownloadable != null ? identityDocumentDownloadable() : orElse(value),
+      FilePurpose$issuingRegulatoryReporting() => issuingRegulatoryReporting != null ? issuingRegulatoryReporting() : orElse(value),
+      FilePurpose$pciDocument() => pciDocument != null ? pciDocument() : orElse(value),
+      FilePurpose$platformTermsOfService() => platformTermsOfService != null ? platformTermsOfService() : orElse(value),
+      FilePurpose$selfie() => selfie != null ? selfie() : orElse(value),
+      FilePurpose$sigmaScheduledQuery() => sigmaScheduledQuery != null ? sigmaScheduledQuery() : orElse(value),
+      FilePurpose$taxDocumentUserUpload() => taxDocumentUserUpload != null ? taxDocumentUserUpload() : orElse(value),
+      FilePurpose$terminalAndroidApk() => terminalAndroidApk != null ? terminalAndroidApk() : orElse(value),
+      FilePurpose$terminalReaderSplashscreen() => terminalReaderSplashscreen != null ? terminalReaderSplashscreen() : orElse(value),
+      FilePurpose$terminalWifiCertificate() => terminalWifiCertificate != null ? terminalWifiCertificate() : orElse(value),
+      FilePurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey != null ? terminalWifiPrivateKey() : orElse(value),
+      FilePurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FilePurpose($value)';
 
  }

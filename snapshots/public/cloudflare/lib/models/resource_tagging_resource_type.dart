@@ -126,6 +126,68 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingResourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accessApplication, required W Function() accessApplicationPolicy, required W Function() accessGroup, required W Function() account, required W Function() aiGateway, required W Function() alertingPolicy, required W Function() alertingWebhook, required W Function() apiGatewayOperation, required W Function() cloudflaredTunnel, required W Function() customCertificate, required W Function() customHostname, required W Function() d1Database, required W Function() dnsRecord, required W Function() durableObjectNamespace, required W Function() gatewayList, required W Function() gatewayRule, required W Function() image, required W Function() kvNamespace, required W Function() managedClientCertificate, required W Function() queue, required W Function() r2Bucket, required W Function() resourceShare, required W Function() streamLiveInput, required W Function() streamVideo, required W Function() worker, required W Function() workerVersion, required W Function() zone, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceTaggingResourceType$accessApplication() => accessApplication(),
+      ResourceTaggingResourceType$accessApplicationPolicy() => accessApplicationPolicy(),
+      ResourceTaggingResourceType$accessGroup() => accessGroup(),
+      ResourceTaggingResourceType$account() => account(),
+      ResourceTaggingResourceType$aiGateway() => aiGateway(),
+      ResourceTaggingResourceType$alertingPolicy() => alertingPolicy(),
+      ResourceTaggingResourceType$alertingWebhook() => alertingWebhook(),
+      ResourceTaggingResourceType$apiGatewayOperation() => apiGatewayOperation(),
+      ResourceTaggingResourceType$cloudflaredTunnel() => cloudflaredTunnel(),
+      ResourceTaggingResourceType$customCertificate() => customCertificate(),
+      ResourceTaggingResourceType$customHostname() => customHostname(),
+      ResourceTaggingResourceType$d1Database() => d1Database(),
+      ResourceTaggingResourceType$dnsRecord() => dnsRecord(),
+      ResourceTaggingResourceType$durableObjectNamespace() => durableObjectNamespace(),
+      ResourceTaggingResourceType$gatewayList() => gatewayList(),
+      ResourceTaggingResourceType$gatewayRule() => gatewayRule(),
+      ResourceTaggingResourceType$image() => image(),
+      ResourceTaggingResourceType$kvNamespace() => kvNamespace(),
+      ResourceTaggingResourceType$managedClientCertificate() => managedClientCertificate(),
+      ResourceTaggingResourceType$queue() => queue(),
+      ResourceTaggingResourceType$r2Bucket() => r2Bucket(),
+      ResourceTaggingResourceType$resourceShare() => resourceShare(),
+      ResourceTaggingResourceType$streamLiveInput() => streamLiveInput(),
+      ResourceTaggingResourceType$streamVideo() => streamVideo(),
+      ResourceTaggingResourceType$worker() => worker(),
+      ResourceTaggingResourceType$workerVersion() => workerVersion(),
+      ResourceTaggingResourceType$zone() => zone(),
+      ResourceTaggingResourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessApplication, W Function()? accessApplicationPolicy, W Function()? accessGroup, W Function()? account, W Function()? aiGateway, W Function()? alertingPolicy, W Function()? alertingWebhook, W Function()? apiGatewayOperation, W Function()? cloudflaredTunnel, W Function()? customCertificate, W Function()? customHostname, W Function()? d1Database, W Function()? dnsRecord, W Function()? durableObjectNamespace, W Function()? gatewayList, W Function()? gatewayRule, W Function()? image, W Function()? kvNamespace, W Function()? managedClientCertificate, W Function()? queue, W Function()? r2Bucket, W Function()? resourceShare, W Function()? streamLiveInput, W Function()? streamVideo, W Function()? worker, W Function()? workerVersion, W Function()? zone, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceTaggingResourceType$accessApplication() => accessApplication != null ? accessApplication() : orElse(value),
+      ResourceTaggingResourceType$accessApplicationPolicy() => accessApplicationPolicy != null ? accessApplicationPolicy() : orElse(value),
+      ResourceTaggingResourceType$accessGroup() => accessGroup != null ? accessGroup() : orElse(value),
+      ResourceTaggingResourceType$account() => account != null ? account() : orElse(value),
+      ResourceTaggingResourceType$aiGateway() => aiGateway != null ? aiGateway() : orElse(value),
+      ResourceTaggingResourceType$alertingPolicy() => alertingPolicy != null ? alertingPolicy() : orElse(value),
+      ResourceTaggingResourceType$alertingWebhook() => alertingWebhook != null ? alertingWebhook() : orElse(value),
+      ResourceTaggingResourceType$apiGatewayOperation() => apiGatewayOperation != null ? apiGatewayOperation() : orElse(value),
+      ResourceTaggingResourceType$cloudflaredTunnel() => cloudflaredTunnel != null ? cloudflaredTunnel() : orElse(value),
+      ResourceTaggingResourceType$customCertificate() => customCertificate != null ? customCertificate() : orElse(value),
+      ResourceTaggingResourceType$customHostname() => customHostname != null ? customHostname() : orElse(value),
+      ResourceTaggingResourceType$d1Database() => d1Database != null ? d1Database() : orElse(value),
+      ResourceTaggingResourceType$dnsRecord() => dnsRecord != null ? dnsRecord() : orElse(value),
+      ResourceTaggingResourceType$durableObjectNamespace() => durableObjectNamespace != null ? durableObjectNamespace() : orElse(value),
+      ResourceTaggingResourceType$gatewayList() => gatewayList != null ? gatewayList() : orElse(value),
+      ResourceTaggingResourceType$gatewayRule() => gatewayRule != null ? gatewayRule() : orElse(value),
+      ResourceTaggingResourceType$image() => image != null ? image() : orElse(value),
+      ResourceTaggingResourceType$kvNamespace() => kvNamespace != null ? kvNamespace() : orElse(value),
+      ResourceTaggingResourceType$managedClientCertificate() => managedClientCertificate != null ? managedClientCertificate() : orElse(value),
+      ResourceTaggingResourceType$queue() => queue != null ? queue() : orElse(value),
+      ResourceTaggingResourceType$r2Bucket() => r2Bucket != null ? r2Bucket() : orElse(value),
+      ResourceTaggingResourceType$resourceShare() => resourceShare != null ? resourceShare() : orElse(value),
+      ResourceTaggingResourceType$streamLiveInput() => streamLiveInput != null ? streamLiveInput() : orElse(value),
+      ResourceTaggingResourceType$streamVideo() => streamVideo != null ? streamVideo() : orElse(value),
+      ResourceTaggingResourceType$worker() => worker != null ? worker() : orElse(value),
+      ResourceTaggingResourceType$workerVersion() => workerVersion != null ? workerVersion() : orElse(value),
+      ResourceTaggingResourceType$zone() => zone != null ? zone() : orElse(value),
+      ResourceTaggingResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceTaggingResourceType($value)';
 
  }

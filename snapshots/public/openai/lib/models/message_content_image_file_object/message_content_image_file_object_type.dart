@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageContentImageFileObjectType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() imageFile, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageContentImageFileObjectType$imageFile() => imageFile(),
+      MessageContentImageFileObjectType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? imageFile, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageContentImageFileObjectType$imageFile() => imageFile != null ? imageFile() : orElse(value),
+      MessageContentImageFileObjectType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageContentImageFileObjectType($value)';
 
  }

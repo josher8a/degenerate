@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseModalities2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() audio, required W Function(String value) $unknown, }) { return switch (this) {
+      ResponseModalities2$text() => text(),
+      ResponseModalities2$audio() => audio(),
+      ResponseModalities2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? audio, W Function(String value)? $unknown, }) { return switch (this) {
+      ResponseModalities2$text() => text != null ? text() : orElse(value),
+      ResponseModalities2$audio() => audio != null ? audio() : orElse(value),
+      ResponseModalities2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResponseModalities2($value)';
 
  }

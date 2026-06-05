@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumUsedInResponseOnly$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() pending, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumUsedInResponseOnly$success() => success(),
+      EnumUsedInResponseOnly$pending() => pending(),
+      EnumUsedInResponseOnly$failed() => failed(),
+      EnumUsedInResponseOnly$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? pending, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumUsedInResponseOnly$success() => success != null ? success() : orElse(value),
+      EnumUsedInResponseOnly$pending() => pending != null ? pending() : orElse(value),
+      EnumUsedInResponseOnly$failed() => failed != null ? failed() : orElse(value),
+      EnumUsedInResponseOnly$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumUsedInResponseOnly($value)';
 
  }

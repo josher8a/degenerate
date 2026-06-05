@@ -81,6 +81,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImportStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auth, required W Function() error, required W Function() none, required W Function() detecting, required W Function() choose, required W Function() authFailed, required W Function() importing, required W Function() mapping, required W Function() waitingToPush, required W Function() pushing, required W Function() complete, required W Function() setup, required W Function() unknown, required W Function() detectionFoundMultiple, required W Function() detectionFoundNothing, required W Function() detectionNeedsAuth, required W Function(String value) $unknown, }) { return switch (this) {
+      ImportStatus$auth() => auth(),
+      ImportStatus$error() => error(),
+      ImportStatus$none() => none(),
+      ImportStatus$detecting() => detecting(),
+      ImportStatus$choose() => choose(),
+      ImportStatus$authFailed() => authFailed(),
+      ImportStatus$importing() => importing(),
+      ImportStatus$mapping() => mapping(),
+      ImportStatus$waitingToPush() => waitingToPush(),
+      ImportStatus$pushing() => pushing(),
+      ImportStatus$complete() => complete(),
+      ImportStatus$setup() => setup(),
+      ImportStatus$unknown() => unknown(),
+      ImportStatus$detectionFoundMultiple() => detectionFoundMultiple(),
+      ImportStatus$detectionFoundNothing() => detectionFoundNothing(),
+      ImportStatus$detectionNeedsAuth() => detectionNeedsAuth(),
+      ImportStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auth, W Function()? error, W Function()? none, W Function()? detecting, W Function()? choose, W Function()? authFailed, W Function()? importing, W Function()? mapping, W Function()? waitingToPush, W Function()? pushing, W Function()? complete, W Function()? setup, W Function()? unknown, W Function()? detectionFoundMultiple, W Function()? detectionFoundNothing, W Function()? detectionNeedsAuth, W Function(String value)? $unknown, }) { return switch (this) {
+      ImportStatus$auth() => auth != null ? auth() : orElse(value),
+      ImportStatus$error() => error != null ? error() : orElse(value),
+      ImportStatus$none() => none != null ? none() : orElse(value),
+      ImportStatus$detecting() => detecting != null ? detecting() : orElse(value),
+      ImportStatus$choose() => choose != null ? choose() : orElse(value),
+      ImportStatus$authFailed() => authFailed != null ? authFailed() : orElse(value),
+      ImportStatus$importing() => importing != null ? importing() : orElse(value),
+      ImportStatus$mapping() => mapping != null ? mapping() : orElse(value),
+      ImportStatus$waitingToPush() => waitingToPush != null ? waitingToPush() : orElse(value),
+      ImportStatus$pushing() => pushing != null ? pushing() : orElse(value),
+      ImportStatus$complete() => complete != null ? complete() : orElse(value),
+      ImportStatus$setup() => setup != null ? setup() : orElse(value),
+      ImportStatus$unknown() => unknown != null ? unknown() : orElse(value),
+      ImportStatus$detectionFoundMultiple() => detectionFoundMultiple != null ? detectionFoundMultiple() : orElse(value),
+      ImportStatus$detectionFoundNothing() => detectionFoundNothing != null ? detectionFoundNothing() : orElse(value),
+      ImportStatus$detectionNeedsAuth() => detectionNeedsAuth != null ? detectionNeedsAuth() : orElse(value),
+      ImportStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImportStatus($value)';
 
  }

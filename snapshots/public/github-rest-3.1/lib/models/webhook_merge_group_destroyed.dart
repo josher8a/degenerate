@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookMergeGroupDestroyedAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() destroyed, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookMergeGroupDestroyedAction$destroyed() => destroyed(),
+      WebhookMergeGroupDestroyedAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? destroyed, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookMergeGroupDestroyedAction$destroyed() => destroyed != null ? destroyed() : orElse(value),
+      WebhookMergeGroupDestroyedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookMergeGroupDestroyedAction($value)';
 
  }
@@ -72,6 +82,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookMergeGroupDestroyedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() merged, required W Function() invalidated, required W Function() dequeued, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookMergeGroupDestroyedReason$merged() => merged(),
+      WebhookMergeGroupDestroyedReason$invalidated() => invalidated(),
+      WebhookMergeGroupDestroyedReason$dequeued() => dequeued(),
+      WebhookMergeGroupDestroyedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merged, W Function()? invalidated, W Function()? dequeued, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookMergeGroupDestroyedReason$merged() => merged != null ? merged() : orElse(value),
+      WebhookMergeGroupDestroyedReason$invalidated() => invalidated != null ? invalidated() : orElse(value),
+      WebhookMergeGroupDestroyedReason$dequeued() => dequeued != null ? dequeued() : orElse(value),
+      WebhookMergeGroupDestroyedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookMergeGroupDestroyedReason($value)';
 
  }

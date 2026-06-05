@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RuleSuiteEvaluationResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() fail, required W Function() bypass, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      RuleSuiteEvaluationResult$pass() => pass(),
+      RuleSuiteEvaluationResult$fail() => fail(),
+      RuleSuiteEvaluationResult$bypass() => bypass(),
+      RuleSuiteEvaluationResult$$null() => $null(),
+      RuleSuiteEvaluationResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? fail, W Function()? bypass, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      RuleSuiteEvaluationResult$pass() => pass != null ? pass() : orElse(value),
+      RuleSuiteEvaluationResult$fail() => fail != null ? fail() : orElse(value),
+      RuleSuiteEvaluationResult$bypass() => bypass != null ? bypass() : orElse(value),
+      RuleSuiteEvaluationResult$$null() => $null != null ? $null() : orElse(value),
+      RuleSuiteEvaluationResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RuleSuiteEvaluationResult($value)';
 
  }

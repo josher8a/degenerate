@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ok, required W Function() alreadyRunning, required W Function(String value) $unknown, }) { return switch (this) {
+      WorBatchTerminateWorkflowInstancesResponseResultStatus$ok() => ok(),
+      WorBatchTerminateWorkflowInstancesResponseResultStatus$alreadyRunning() => alreadyRunning(),
+      WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ok, W Function()? alreadyRunning, W Function(String value)? $unknown, }) { return switch (this) {
+      WorBatchTerminateWorkflowInstancesResponseResultStatus$ok() => ok != null ? ok() : orElse(value),
+      WorBatchTerminateWorkflowInstancesResponseResultStatus$alreadyRunning() => alreadyRunning != null ? alreadyRunning() : orElse(value),
+      WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorBatchTerminateWorkflowInstancesResponseResultStatus($value)';
 
  }

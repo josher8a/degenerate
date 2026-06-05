@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConfigContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() form, required W Function(String value) $unknown, }) { return switch (this) {
+      ConfigContentType$$json() => $json(),
+      ConfigContentType$form() => form(),
+      ConfigContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? form, W Function(String value)? $unknown, }) { return switch (this) {
+      ConfigContentType$$json() => $json != null ? $json() : orElse(value),
+      ConfigContentType$form() => form != null ? form() : orElse(value),
+      ConfigContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConfigContentType($value)';
 
  }

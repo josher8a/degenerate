@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SiprecEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() stopped, required W Function(String value) $unknown, }) { return switch (this) {
+      SiprecEnumStatus$inProgress() => inProgress(),
+      SiprecEnumStatus$stopped() => stopped(),
+      SiprecEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? stopped, W Function(String value)? $unknown, }) { return switch (this) {
+      SiprecEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      SiprecEnumStatus$stopped() => stopped != null ? stopped() : orElse(value),
+      SiprecEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SiprecEnumStatus($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Environment$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() preview, required W Function() production, required W Function(String value) $unknown, }) { return switch (this) {
+      Environment$preview() => preview(),
+      Environment$production() => production(),
+      Environment$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview, W Function()? production, W Function(String value)? $unknown, }) { return switch (this) {
+      Environment$preview() => preview != null ? preview() : orElse(value),
+      Environment$production() => production != null ? production() : orElse(value),
+      Environment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Environment($value)';
 
  }

@@ -37,6 +37,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageEditRequestBackground$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transparent, required W Function() opaque, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageEditRequestBackground$transparent() => transparent(),
+      CreateImageEditRequestBackground$opaque() => opaque(),
+      CreateImageEditRequestBackground$auto() => auto(),
+      CreateImageEditRequestBackground$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageEditRequestBackground$transparent() => transparent != null ? transparent() : orElse(value),
+      CreateImageEditRequestBackground$opaque() => opaque != null ? opaque() : orElse(value),
+      CreateImageEditRequestBackground$auto() => auto != null ? auto() : orElse(value),
+      CreateImageEditRequestBackground$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageEditRequestBackground($value)';
 
  }

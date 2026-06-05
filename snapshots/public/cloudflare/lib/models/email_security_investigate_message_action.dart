@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityInvestigateMessageAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() preview, required W Function() quarantineReleased, required W Function() moved, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityInvestigateMessageAction$preview() => preview(),
+      EmailSecurityInvestigateMessageAction$quarantineReleased() => quarantineReleased(),
+      EmailSecurityInvestigateMessageAction$moved() => moved(),
+      EmailSecurityInvestigateMessageAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? preview, W Function()? quarantineReleased, W Function()? moved, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityInvestigateMessageAction$preview() => preview != null ? preview() : orElse(value),
+      EmailSecurityInvestigateMessageAction$quarantineReleased() => quarantineReleased != null ? quarantineReleased() : orElse(value),
+      EmailSecurityInvestigateMessageAction$moved() => moved != null ? moved() : orElse(value),
+      EmailSecurityInvestigateMessageAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityInvestigateMessageAction($value)';
 
  }

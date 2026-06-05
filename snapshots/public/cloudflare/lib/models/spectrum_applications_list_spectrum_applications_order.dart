@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumApplicationsListSpectrumApplicationsOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() protocol, required W Function() appId, required W Function() createdOn, required W Function() modifiedOn, required W Function() dns, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumApplicationsListSpectrumApplicationsOrder$protocol() => protocol(),
+      SpectrumApplicationsListSpectrumApplicationsOrder$appId() => appId(),
+      SpectrumApplicationsListSpectrumApplicationsOrder$createdOn() => createdOn(),
+      SpectrumApplicationsListSpectrumApplicationsOrder$modifiedOn() => modifiedOn(),
+      SpectrumApplicationsListSpectrumApplicationsOrder$dns() => dns(),
+      SpectrumApplicationsListSpectrumApplicationsOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? protocol, W Function()? appId, W Function()? createdOn, W Function()? modifiedOn, W Function()? dns, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumApplicationsListSpectrumApplicationsOrder$protocol() => protocol != null ? protocol() : orElse(value),
+      SpectrumApplicationsListSpectrumApplicationsOrder$appId() => appId != null ? appId() : orElse(value),
+      SpectrumApplicationsListSpectrumApplicationsOrder$createdOn() => createdOn != null ? createdOn() : orElse(value),
+      SpectrumApplicationsListSpectrumApplicationsOrder$modifiedOn() => modifiedOn != null ? modifiedOn() : orElse(value),
+      SpectrumApplicationsListSpectrumApplicationsOrder$dns() => dns != null ? dns() : orElse(value),
+      SpectrumApplicationsListSpectrumApplicationsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumApplicationsListSpectrumApplicationsOrder($value)';
 
  }

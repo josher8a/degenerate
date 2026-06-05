@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ValidationDataMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() txt, required W Function(String value) $unknown, }) { return switch (this) {
+      ValidationDataMethod$http() => http(),
+      ValidationDataMethod$txt() => txt(),
+      ValidationDataMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? txt, W Function(String value)? $unknown, }) { return switch (this) {
+      ValidationDataMethod$http() => http != null ? http() : orElse(value),
+      ValidationDataMethod$txt() => txt != null ? txt() : orElse(value),
+      ValidationDataMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ValidationDataMethod($value)';
 
  }
@@ -92,6 +104,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ValidationDataStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      ValidationDataStatus$initializing() => initializing(),
+      ValidationDataStatus$pending() => pending(),
+      ValidationDataStatus$active() => active(),
+      ValidationDataStatus$deactivated() => deactivated(),
+      ValidationDataStatus$error() => error(),
+      ValidationDataStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      ValidationDataStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      ValidationDataStatus$pending() => pending != null ? pending() : orElse(value),
+      ValidationDataStatus$active() => active != null ? active() : orElse(value),
+      ValidationDataStatus$deactivated() => deactivated != null ? deactivated() : orElse(value),
+      ValidationDataStatus$error() => error != null ? error() : orElse(value),
+      ValidationDataStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ValidationDataStatus($value)';
 
  }

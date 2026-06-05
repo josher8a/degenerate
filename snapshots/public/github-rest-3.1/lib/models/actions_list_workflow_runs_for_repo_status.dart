@@ -73,6 +73,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActionsListWorkflowRunsForRepoStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() actionRequired, required W Function() cancelled, required W Function() failure, required W Function() neutral, required W Function() skipped, required W Function() stale, required W Function() success, required W Function() timedOut, required W Function() inProgress, required W Function() queued, required W Function() requested, required W Function() waiting, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      ActionsListWorkflowRunsForRepoStatus$completed() => completed(),
+      ActionsListWorkflowRunsForRepoStatus$actionRequired() => actionRequired(),
+      ActionsListWorkflowRunsForRepoStatus$cancelled() => cancelled(),
+      ActionsListWorkflowRunsForRepoStatus$failure() => failure(),
+      ActionsListWorkflowRunsForRepoStatus$neutral() => neutral(),
+      ActionsListWorkflowRunsForRepoStatus$skipped() => skipped(),
+      ActionsListWorkflowRunsForRepoStatus$stale() => stale(),
+      ActionsListWorkflowRunsForRepoStatus$success() => success(),
+      ActionsListWorkflowRunsForRepoStatus$timedOut() => timedOut(),
+      ActionsListWorkflowRunsForRepoStatus$inProgress() => inProgress(),
+      ActionsListWorkflowRunsForRepoStatus$queued() => queued(),
+      ActionsListWorkflowRunsForRepoStatus$requested() => requested(),
+      ActionsListWorkflowRunsForRepoStatus$waiting() => waiting(),
+      ActionsListWorkflowRunsForRepoStatus$pending() => pending(),
+      ActionsListWorkflowRunsForRepoStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? actionRequired, W Function()? cancelled, W Function()? failure, W Function()? neutral, W Function()? skipped, W Function()? stale, W Function()? success, W Function()? timedOut, W Function()? inProgress, W Function()? queued, W Function()? requested, W Function()? waiting, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      ActionsListWorkflowRunsForRepoStatus$completed() => completed != null ? completed() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$failure() => failure != null ? failure() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$neutral() => neutral != null ? neutral() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$skipped() => skipped != null ? skipped() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$stale() => stale != null ? stale() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$success() => success != null ? success() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$queued() => queued != null ? queued() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$requested() => requested != null ? requested() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$pending() => pending != null ? pending() : orElse(value),
+      ActionsListWorkflowRunsForRepoStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActionsListWorkflowRunsForRepoStatus($value)';
 
  }

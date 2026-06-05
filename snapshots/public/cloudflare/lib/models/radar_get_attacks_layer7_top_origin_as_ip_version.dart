@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7TopOriginAsIpVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() iPv4, required W Function() iPv6, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TopOriginAsIpVersion$iPv4() => iPv4(),
+      RadarGetAttacksLayer7TopOriginAsIpVersion$iPv6() => iPv6(),
+      RadarGetAttacksLayer7TopOriginAsIpVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? iPv4, W Function()? iPv6, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TopOriginAsIpVersion$iPv4() => iPv4 != null ? iPv4() : orElse(value),
+      RadarGetAttacksLayer7TopOriginAsIpVersion$iPv6() => iPv6 != null ? iPv6() : orElse(value),
+      RadarGetAttacksLayer7TopOriginAsIpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7TopOriginAsIpVersion($value)';
 
  }

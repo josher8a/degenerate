@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() encrypted, required W Function() notEncrypted, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$encrypted() => encrypted(),
+      RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$notEncrypted() => notEncrypted(),
+      RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypted, W Function()? notEncrypted, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$encrypted() => encrypted != null ? encrypted() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$notEncrypted() => notEncrypted != null ? notEncrypted() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByIpVersionEncrypted($value)';
 
  }

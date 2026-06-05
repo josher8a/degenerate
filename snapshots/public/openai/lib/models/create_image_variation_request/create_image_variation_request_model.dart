@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageVariationRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dallE2, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageVariationRequestModelVariant2$dallE2() => dallE2(),
+      CreateImageVariationRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dallE2, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageVariationRequestModelVariant2$dallE2() => dallE2 != null ? dallE2() : orElse(value),
+      CreateImageVariationRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageVariationRequestModelVariant2($value)';
 
  }

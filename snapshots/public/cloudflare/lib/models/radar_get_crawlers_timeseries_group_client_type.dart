@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCrawlersTimeseriesGroupClientType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() human, required W Function() nonAiBot, required W Function() aiBot, required W Function() mixedPurpose, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCrawlersTimeseriesGroupClientType$human() => human(),
+      RadarGetCrawlersTimeseriesGroupClientType$nonAiBot() => nonAiBot(),
+      RadarGetCrawlersTimeseriesGroupClientType$aiBot() => aiBot(),
+      RadarGetCrawlersTimeseriesGroupClientType$mixedPurpose() => mixedPurpose(),
+      RadarGetCrawlersTimeseriesGroupClientType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? human, W Function()? nonAiBot, W Function()? aiBot, W Function()? mixedPurpose, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCrawlersTimeseriesGroupClientType$human() => human != null ? human() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupClientType$nonAiBot() => nonAiBot != null ? nonAiBot() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupClientType$aiBot() => aiBot != null ? aiBot() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupClientType$mixedPurpose() => mixedPurpose != null ? mixedPurpose() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupClientType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCrawlersTimeseriesGroupClientType($value)';
 
  }

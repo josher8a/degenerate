@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnOnrampCloudType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aws, required W Function() azure, required W Function() google, required W Function(String value) $unknown, }) { return switch (this) {
+      McnOnrampCloudType$aws() => aws(),
+      McnOnrampCloudType$azure() => azure(),
+      McnOnrampCloudType$google() => google(),
+      McnOnrampCloudType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function()? azure, W Function()? google, W Function(String value)? $unknown, }) { return switch (this) {
+      McnOnrampCloudType$aws() => aws != null ? aws() : orElse(value),
+      McnOnrampCloudType$azure() => azure != null ? azure() : orElse(value),
+      McnOnrampCloudType$google() => google != null ? google() : orElse(value),
+      McnOnrampCloudType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnOnrampCloudType($value)';
 
  }

@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() checking, required W Function() creditCard, required W Function() lineOfCredit, required W Function() mortgage, required W Function() savings, required W Function(String value) $unknown, }) { return switch (this) {
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking() => checking(),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$creditCard() => creditCard(),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$lineOfCredit() => lineOfCredit(),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$mortgage() => mortgage(),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$savings() => savings(),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? creditCard, W Function()? lineOfCredit, W Function()? mortgage, W Function()? savings, W Function(String value)? $unknown, }) { return switch (this) {
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$checking() => checking != null ? checking() : orElse(value),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$creditCard() => creditCard != null ? creditCard() : orElse(value),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$lineOfCredit() => lineOfCredit != null ? lineOfCredit() : orElse(value),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$mortgage() => mortgage != null ? mortgage() : orElse(value),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$savings() => savings != null ? savings() : orElse(value),
+      BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BankConnectionsResourceLinkAccountSessionFiltersAccountSubcategories($value)';
 
  }

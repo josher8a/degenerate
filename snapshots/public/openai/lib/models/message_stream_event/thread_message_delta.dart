@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreadMessageDeltaEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() threadMessageDelta, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreadMessageDeltaEvent$threadMessageDelta() => threadMessageDelta(),
+      ThreadMessageDeltaEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadMessageDelta, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreadMessageDeltaEvent$threadMessageDelta() => threadMessageDelta != null ? threadMessageDelta() : orElse(value),
+      ThreadMessageDeltaEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreadMessageDeltaEvent($value)';
 
  }

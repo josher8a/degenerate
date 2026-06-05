@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CallerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organization, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      CallerType$organization() => organization(),
+      CallerType$user() => user(),
+      CallerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organization, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      CallerType$organization() => organization != null ? organization() : orElse(value),
+      CallerType$user() => user != null ? user() : orElse(value),
+      CallerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CallerType($value)';
 
  }

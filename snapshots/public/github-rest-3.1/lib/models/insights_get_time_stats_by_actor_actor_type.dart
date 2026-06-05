@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsGetTimeStatsByActorActorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() installation, required W Function() classicPat, required W Function() fineGrainedPat, required W Function() oauthApp, required W Function() githubAppUserToServer, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsGetTimeStatsByActorActorType$installation() => installation(),
+      InsightsGetTimeStatsByActorActorType$classicPat() => classicPat(),
+      InsightsGetTimeStatsByActorActorType$fineGrainedPat() => fineGrainedPat(),
+      InsightsGetTimeStatsByActorActorType$oauthApp() => oauthApp(),
+      InsightsGetTimeStatsByActorActorType$githubAppUserToServer() => githubAppUserToServer(),
+      InsightsGetTimeStatsByActorActorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? installation, W Function()? classicPat, W Function()? fineGrainedPat, W Function()? oauthApp, W Function()? githubAppUserToServer, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsGetTimeStatsByActorActorType$installation() => installation != null ? installation() : orElse(value),
+      InsightsGetTimeStatsByActorActorType$classicPat() => classicPat != null ? classicPat() : orElse(value),
+      InsightsGetTimeStatsByActorActorType$fineGrainedPat() => fineGrainedPat != null ? fineGrainedPat() : orElse(value),
+      InsightsGetTimeStatsByActorActorType$oauthApp() => oauthApp != null ? oauthApp() : orElse(value),
+      InsightsGetTimeStatsByActorActorType$githubAppUserToServer() => githubAppUserToServer != null ? githubAppUserToServer() : orElse(value),
+      InsightsGetTimeStatsByActorActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsGetTimeStatsByActorActorType($value)';
 
  }

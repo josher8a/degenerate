@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorBatchCreateWorkflowInstanceResponseResultStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() running, required W Function() paused, required W Function() errored, required W Function() terminated, required W Function() complete, required W Function() waitingForPause, required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+      WorBatchCreateWorkflowInstanceResponseResultStatus$queued() => queued(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$running() => running(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$paused() => paused(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$errored() => errored(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$terminated() => terminated(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$complete() => complete(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$waitingForPause() => waitingForPause(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$waiting() => waiting(),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? running, W Function()? paused, W Function()? errored, W Function()? terminated, W Function()? complete, W Function()? waitingForPause, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+      WorBatchCreateWorkflowInstanceResponseResultStatus$queued() => queued != null ? queued() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$running() => running != null ? running() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$paused() => paused != null ? paused() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$errored() => errored != null ? errored() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$terminated() => terminated != null ? terminated() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$complete() => complete != null ? complete() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$waitingForPause() => waitingForPause != null ? waitingForPause() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      WorBatchCreateWorkflowInstanceResponseResultStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorBatchCreateWorkflowInstanceResponseResultStatus($value)';
 
  }

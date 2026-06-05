@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsAs112TopLocationsFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TopLocationsFormat$$json() => $json(),
+      RadarGetDnsAs112TopLocationsFormat$csv() => csv(),
+      RadarGetDnsAs112TopLocationsFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TopLocationsFormat$$json() => $json != null ? $json() : orElse(value),
+      RadarGetDnsAs112TopLocationsFormat$csv() => csv != null ? csv() : orElse(value),
+      RadarGetDnsAs112TopLocationsFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsAs112TopLocationsFormat($value)';
 
  }

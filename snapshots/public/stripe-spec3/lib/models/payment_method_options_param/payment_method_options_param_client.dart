@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodOptionsParamClient$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() android, required W Function() ios, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodOptionsParamClient$android() => android(),
+      PaymentMethodOptionsParamClient$ios() => ios(),
+      PaymentMethodOptionsParamClient$web() => web(),
+      PaymentMethodOptionsParamClient$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? android, W Function()? ios, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodOptionsParamClient$android() => android != null ? android() : orElse(value),
+      PaymentMethodOptionsParamClient$ios() => ios != null ? ios() : orElse(value),
+      PaymentMethodOptionsParamClient$web() => web != null ? web() : orElse(value),
+      PaymentMethodOptionsParamClient$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodOptionsParamClient($value)';
 
  }

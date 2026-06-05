@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreeDSecureExemptionIndicator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lowRisk, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreeDSecureExemptionIndicator$lowRisk() => lowRisk(),
+      ThreeDSecureExemptionIndicator$none() => none(),
+      ThreeDSecureExemptionIndicator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lowRisk, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreeDSecureExemptionIndicator$lowRisk() => lowRisk != null ? lowRisk() : orElse(value),
+      ThreeDSecureExemptionIndicator$none() => none != null ? none() : orElse(value),
+      ThreeDSecureExemptionIndicator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreeDSecureExemptionIndicator($value)';
 
  }

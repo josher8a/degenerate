@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Provider$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() anrok, required W Function() avalara, required W Function() sphere, required W Function() stripe, required W Function(String value) $unknown, }) { return switch (this) {
+      Provider$anrok() => anrok(),
+      Provider$avalara() => avalara(),
+      Provider$sphere() => sphere(),
+      Provider$stripe() => stripe(),
+      Provider$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? anrok, W Function()? avalara, W Function()? sphere, W Function()? stripe, W Function(String value)? $unknown, }) { return switch (this) {
+      Provider$anrok() => anrok != null ? anrok() : orElse(value),
+      Provider$avalara() => avalara != null ? avalara() : orElse(value),
+      Provider$sphere() => sphere != null ? sphere() : orElse(value),
+      Provider$stripe() => stripe != null ? stripe() : orElse(value),
+      Provider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Provider($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetNetflowsSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adm1, required W Function() $as, required W Function() location, required W Function() product, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetNetflowsSummaryDimension$adm1() => adm1(),
+      RadarGetNetflowsSummaryDimension$$as() => $as(),
+      RadarGetNetflowsSummaryDimension$location() => location(),
+      RadarGetNetflowsSummaryDimension$product() => product(),
+      RadarGetNetflowsSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W Function()? $as, W Function()? location, W Function()? product, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetNetflowsSummaryDimension$adm1() => adm1 != null ? adm1() : orElse(value),
+      RadarGetNetflowsSummaryDimension$$as() => $as != null ? $as() : orElse(value),
+      RadarGetNetflowsSummaryDimension$location() => location != null ? location() : orElse(value),
+      RadarGetNetflowsSummaryDimension$product() => product != null ? product() : orElse(value),
+      RadarGetNetflowsSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetNetflowsSummaryDimension($value)';
 
  }

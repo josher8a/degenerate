@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudforceOneRequestsRequestStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() accepted, required W Function() reported, required W Function() approved, required W Function() completed, required W Function() declined, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudforceOneRequestsRequestStatus$open() => open(),
+      CloudforceOneRequestsRequestStatus$accepted() => accepted(),
+      CloudforceOneRequestsRequestStatus$reported() => reported(),
+      CloudforceOneRequestsRequestStatus$approved() => approved(),
+      CloudforceOneRequestsRequestStatus$completed() => completed(),
+      CloudforceOneRequestsRequestStatus$declined() => declined(),
+      CloudforceOneRequestsRequestStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? accepted, W Function()? reported, W Function()? approved, W Function()? completed, W Function()? declined, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudforceOneRequestsRequestStatus$open() => open != null ? open() : orElse(value),
+      CloudforceOneRequestsRequestStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      CloudforceOneRequestsRequestStatus$reported() => reported != null ? reported() : orElse(value),
+      CloudforceOneRequestsRequestStatus$approved() => approved != null ? approved() : orElse(value),
+      CloudforceOneRequestsRequestStatus$completed() => completed != null ? completed() : orElse(value),
+      CloudforceOneRequestsRequestStatus$declined() => declined != null ? declined() : orElse(value),
+      CloudforceOneRequestsRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudforceOneRequestsRequestStatus($value)';
 
  }

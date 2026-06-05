@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesDeploymentGetDeploymentsEnv$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() production, required W Function() preview, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesDeploymentGetDeploymentsEnv$production() => production(),
+      PagesDeploymentGetDeploymentsEnv$preview() => preview(),
+      PagesDeploymentGetDeploymentsEnv$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? production, W Function()? preview, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesDeploymentGetDeploymentsEnv$production() => production != null ? production() : orElse(value),
+      PagesDeploymentGetDeploymentsEnv$preview() => preview != null ? preview() : orElse(value),
+      PagesDeploymentGetDeploymentsEnv$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesDeploymentGetDeploymentsEnv($value)';
 
  }

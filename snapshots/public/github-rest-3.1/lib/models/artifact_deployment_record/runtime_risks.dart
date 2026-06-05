@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RuntimeRisks$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() criticalResource, required W Function() internetExposed, required W Function() lateralMovement, required W Function() sensitiveData, required W Function(String value) $unknown, }) { return switch (this) {
+      RuntimeRisks$criticalResource() => criticalResource(),
+      RuntimeRisks$internetExposed() => internetExposed(),
+      RuntimeRisks$lateralMovement() => lateralMovement(),
+      RuntimeRisks$sensitiveData() => sensitiveData(),
+      RuntimeRisks$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? criticalResource, W Function()? internetExposed, W Function()? lateralMovement, W Function()? sensitiveData, W Function(String value)? $unknown, }) { return switch (this) {
+      RuntimeRisks$criticalResource() => criticalResource != null ? criticalResource() : orElse(value),
+      RuntimeRisks$internetExposed() => internetExposed != null ? internetExposed() : orElse(value),
+      RuntimeRisks$lateralMovement() => lateralMovement != null ? lateralMovement() : orElse(value),
+      RuntimeRisks$sensitiveData() => sensitiveData != null ? sensitiveData() : orElse(value),
+      RuntimeRisks$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RuntimeRisks($value)';
 
  }

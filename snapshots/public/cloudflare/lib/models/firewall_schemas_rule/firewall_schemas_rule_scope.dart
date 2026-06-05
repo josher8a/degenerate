@@ -33,6 +33,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ScopeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+      ScopeType$user() => user(),
+      ScopeType$organization() => organization(),
+      ScopeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+      ScopeType$user() => user != null ? user() : orElse(value),
+      ScopeType$organization() => organization != null ? organization() : orElse(value),
+      ScopeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ScopeType($value)';
 
  }

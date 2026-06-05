@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ParticipantEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() connecting, required W Function() ringing, required W Function() connected, required W Function() complete, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      ParticipantEnumStatus$queued() => queued(),
+      ParticipantEnumStatus$connecting() => connecting(),
+      ParticipantEnumStatus$ringing() => ringing(),
+      ParticipantEnumStatus$connected() => connected(),
+      ParticipantEnumStatus$complete() => complete(),
+      ParticipantEnumStatus$failed() => failed(),
+      ParticipantEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? connecting, W Function()? ringing, W Function()? connected, W Function()? complete, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      ParticipantEnumStatus$queued() => queued != null ? queued() : orElse(value),
+      ParticipantEnumStatus$connecting() => connecting != null ? connecting() : orElse(value),
+      ParticipantEnumStatus$ringing() => ringing != null ? ringing() : orElse(value),
+      ParticipantEnumStatus$connected() => connected != null ? connected() : orElse(value),
+      ParticipantEnumStatus$complete() => complete != null ? complete() : orElse(value),
+      ParticipantEnumStatus$failed() => failed != null ? failed() : orElse(value),
+      ParticipantEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ParticipantEnumStatus($value)';
 
  }

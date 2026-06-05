@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RequestIncrementalAuthorization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ifAvailable, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      RequestIncrementalAuthorization$ifAvailable() => ifAvailable(),
+      RequestIncrementalAuthorization$never() => never(),
+      RequestIncrementalAuthorization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvailable, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      RequestIncrementalAuthorization$ifAvailable() => ifAvailable != null ? ifAvailable() : orElse(value),
+      RequestIncrementalAuthorization$never() => never != null ? never() : orElse(value),
+      RequestIncrementalAuthorization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RequestIncrementalAuthorization($value)';
 
  }

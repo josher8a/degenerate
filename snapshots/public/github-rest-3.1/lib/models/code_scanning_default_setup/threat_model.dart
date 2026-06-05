@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreatModel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() remote, required W Function() remoteAndLocal, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreatModel$remote() => remote(),
+      ThreatModel$remoteAndLocal() => remoteAndLocal(),
+      ThreatModel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? remote, W Function()? remoteAndLocal, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreatModel$remote() => remote != null ? remote() : orElse(value),
+      ThreatModel$remoteAndLocal() => remoteAndLocal != null ? remoteAndLocal() : orElse(value),
+      ThreatModel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreatModel($value)';
 
  }

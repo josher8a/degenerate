@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SofortCountry$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() at, required W Function() be, required W Function() de, required W Function() es, required W Function() it, required W Function() nl, required W Function(String value) $unknown, }) { return switch (this) {
+      SofortCountry$at() => at(),
+      SofortCountry$be() => be(),
+      SofortCountry$de() => de(),
+      SofortCountry$es() => es(),
+      SofortCountry$it() => it(),
+      SofortCountry$nl() => nl(),
+      SofortCountry$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? at, W Function()? be, W Function()? de, W Function()? es, W Function()? it, W Function()? nl, W Function(String value)? $unknown, }) { return switch (this) {
+      SofortCountry$at() => at != null ? at() : orElse(value),
+      SofortCountry$be() => be != null ? be() : orElse(value),
+      SofortCountry$de() => de != null ? de() : orElse(value),
+      SofortCountry$es() => es != null ? es() : orElse(value),
+      SofortCountry$it() => it != null ? it() : orElse(value),
+      SofortCountry$nl() => nl != null ? nl() : orElse(value),
+      SofortCountry$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SofortCountry($value)';
 
  }

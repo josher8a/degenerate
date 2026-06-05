@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Api$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rfc6962, required W Function() $static, required W Function(String value) $unknown, }) { return switch (this) {
+      Api$rfc6962() => rfc6962(),
+      Api$$static() => $static(),
+      Api$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962, W Function()? $static, W Function(String value)? $unknown, }) { return switch (this) {
+      Api$rfc6962() => rfc6962 != null ? rfc6962() : orElse(value),
+      Api$$static() => $static != null ? $static() : orElse(value),
+      Api$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Api($value)';
 
  }

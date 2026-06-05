@@ -39,6 +39,34 @@ sealed class RemoveReason {
     return this is RemoveReason$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() remove,
+    required W Function() ban,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      RemoveReason$remove() => remove(),
+      RemoveReason$ban() => ban(),
+      RemoveReason$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? remove,
+    W Function()? ban,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      RemoveReason$remove() => remove != null ? remove() : orElse(value),
+      RemoveReason$ban() => ban != null ? ban() : orElse(value),
+      RemoveReason$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'RemoveReason($value)';
 }

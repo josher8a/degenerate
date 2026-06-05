@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeBetaServerEventResponseTextDoneType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() responseOutputTextDone, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeBetaServerEventResponseTextDoneType$responseOutputTextDone() => responseOutputTextDone(),
+      RealtimeBetaServerEventResponseTextDoneType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseOutputTextDone, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeBetaServerEventResponseTextDoneType$responseOutputTextDone() => responseOutputTextDone != null ? responseOutputTextDone() : orElse(value),
+      RealtimeBetaServerEventResponseTextDoneType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeBetaServerEventResponseTextDoneType($value)';
 
  }

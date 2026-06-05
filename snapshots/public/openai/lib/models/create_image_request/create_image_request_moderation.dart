@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageRequestModeration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageRequestModeration$low() => low(),
+      CreateImageRequestModeration$auto() => auto(),
+      CreateImageRequestModeration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageRequestModeration$low() => low != null ? low() : orElse(value),
+      CreateImageRequestModeration$auto() => auto != null ? auto() : orElse(value),
+      CreateImageRequestModeration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageRequestModeration($value)';
 
  }

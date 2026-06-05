@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryTransactionsResourceFlowDetailsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditReversal, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() issuingAuthorization, required W Function() $other, required W Function() outboundPayment, required W Function() outboundTransfer, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryTransactionsResourceFlowDetailsType$creditReversal() => creditReversal(),
+      TreasuryTransactionsResourceFlowDetailsType$debitReversal() => debitReversal(),
+      TreasuryTransactionsResourceFlowDetailsType$inboundTransfer() => inboundTransfer(),
+      TreasuryTransactionsResourceFlowDetailsType$issuingAuthorization() => issuingAuthorization(),
+      TreasuryTransactionsResourceFlowDetailsType$$other() => $other(),
+      TreasuryTransactionsResourceFlowDetailsType$outboundPayment() => outboundPayment(),
+      TreasuryTransactionsResourceFlowDetailsType$outboundTransfer() => outboundTransfer(),
+      TreasuryTransactionsResourceFlowDetailsType$receivedCredit() => receivedCredit(),
+      TreasuryTransactionsResourceFlowDetailsType$receivedDebit() => receivedDebit(),
+      TreasuryTransactionsResourceFlowDetailsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? issuingAuthorization, W Function()? $other, W Function()? outboundPayment, W Function()? outboundTransfer, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryTransactionsResourceFlowDetailsType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$debitReversal() => debitReversal != null ? debitReversal() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$inboundTransfer() => inboundTransfer != null ? inboundTransfer() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$issuingAuthorization() => issuingAuthorization != null ? issuingAuthorization() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$$other() => $other != null ? $other() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$outboundPayment() => outboundPayment != null ? outboundPayment() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$outboundTransfer() => outboundTransfer != null ? outboundTransfer() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$receivedCredit() => receivedCredit != null ? receivedCredit() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$receivedDebit() => receivedDebit != null ? receivedDebit() : orElse(value),
+      TreasuryTransactionsResourceFlowDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryTransactionsResourceFlowDetailsType($value)';
 
  }

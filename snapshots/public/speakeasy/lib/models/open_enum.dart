@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OpenEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $101, required W Function() $404, required W Function(int value) $unknown, }) { return switch (this) {
+      OpenEnum$$101() => $101(),
+      OpenEnum$$404() => $404(),
+      OpenEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $101, W Function()? $404, W Function(int value)? $unknown, }) { return switch (this) {
+      OpenEnum$$101() => $101 != null ? $101() : orElse(value),
+      OpenEnum$$404() => $404 != null ? $404() : orElse(value),
+      OpenEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OpenEnum($value)';
 
  }

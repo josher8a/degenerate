@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() balance, required W Function() ownership, required W Function() transactions, required W Function(String value) $unknown, }) { return switch (this) {
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$balance() => balance(),
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$ownership() => ownership(),
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$transactions() => transactions(),
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? balance, W Function()? ownership, W Function()? transactions, W Function(String value)? $unknown, }) { return switch (this) {
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$balance() => balance != null ? balance() : orElse(value),
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$ownership() => ownership != null ? ownership() : orElse(value),
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$transactions() => transactions != null ? transactions() : orElse(value),
+      PostFinancialConnectionsAccountsAccountRefreshRequestFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostFinancialConnectionsAccountsAccountRefreshRequestFeatures($value)';
 
  }

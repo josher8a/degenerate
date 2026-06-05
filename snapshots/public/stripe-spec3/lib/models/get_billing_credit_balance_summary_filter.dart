@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetBillingCreditBalanceSummaryFilterType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applicabilityScope, required W Function() creditGrant, required W Function(String value) $unknown, }) { return switch (this) {
+      GetBillingCreditBalanceSummaryFilterType$applicabilityScope() => applicabilityScope(),
+      GetBillingCreditBalanceSummaryFilterType$creditGrant() => creditGrant(),
+      GetBillingCreditBalanceSummaryFilterType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicabilityScope, W Function()? creditGrant, W Function(String value)? $unknown, }) { return switch (this) {
+      GetBillingCreditBalanceSummaryFilterType$applicabilityScope() => applicabilityScope != null ? applicabilityScope() : orElse(value),
+      GetBillingCreditBalanceSummaryFilterType$creditGrant() => creditGrant != null ? creditGrant() : orElse(value),
+      GetBillingCreditBalanceSummaryFilterType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetBillingCreditBalanceSummaryFilterType($value)';
 
  }

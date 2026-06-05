@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Key4Object$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organizationProjectServiceAccountApiKey, required W Function(String value) $unknown, }) { return switch (this) {
+      Key4Object$organizationProjectServiceAccountApiKey() => organizationProjectServiceAccountApiKey(),
+      Key4Object$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationProjectServiceAccountApiKey, W Function(String value)? $unknown, }) { return switch (this) {
+      Key4Object$organizationProjectServiceAccountApiKey() => organizationProjectServiceAccountApiKey != null ? organizationProjectServiceAccountApiKey() : orElse(value),
+      Key4Object$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Key4Object($value)';
 
  }

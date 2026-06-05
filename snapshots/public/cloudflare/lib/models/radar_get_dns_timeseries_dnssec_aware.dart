@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsTimeseriesDnssecAware$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() supported, required W Function() notSupported, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesDnssecAware$supported() => supported(),
+      RadarGetDnsTimeseriesDnssecAware$notSupported() => notSupported(),
+      RadarGetDnsTimeseriesDnssecAware$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? supported, W Function()? notSupported, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesDnssecAware$supported() => supported != null ? supported() : orElse(value),
+      RadarGetDnsTimeseriesDnssecAware$notSupported() => notSupported != null ? notSupported() : orElse(value),
+      RadarGetDnsTimeseriesDnssecAware$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsTimeseriesDnssecAware($value)';
 
  }

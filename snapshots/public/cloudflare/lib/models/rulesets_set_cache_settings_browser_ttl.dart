@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsSetCacheSettingsBrowserTtlMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() respectOrigin, required W Function() bypassByDefault, required W Function() overrideOrigin, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsSetCacheSettingsBrowserTtlMode$respectOrigin() => respectOrigin(),
+      RulesetsSetCacheSettingsBrowserTtlMode$bypassByDefault() => bypassByDefault(),
+      RulesetsSetCacheSettingsBrowserTtlMode$overrideOrigin() => overrideOrigin(),
+      RulesetsSetCacheSettingsBrowserTtlMode$bypass() => bypass(),
+      RulesetsSetCacheSettingsBrowserTtlMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? respectOrigin, W Function()? bypassByDefault, W Function()? overrideOrigin, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsSetCacheSettingsBrowserTtlMode$respectOrigin() => respectOrigin != null ? respectOrigin() : orElse(value),
+      RulesetsSetCacheSettingsBrowserTtlMode$bypassByDefault() => bypassByDefault != null ? bypassByDefault() : orElse(value),
+      RulesetsSetCacheSettingsBrowserTtlMode$overrideOrigin() => overrideOrigin != null ? overrideOrigin() : orElse(value),
+      RulesetsSetCacheSettingsBrowserTtlMode$bypass() => bypass != null ? bypass() : orElse(value),
+      RulesetsSetCacheSettingsBrowserTtlMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsSetCacheSettingsBrowserTtlMode($value)';
 
  }

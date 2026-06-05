@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreeDSecureVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $102, required W Function() $210, required W Function() $220, required W Function() $230, required W Function() $231, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreeDSecureVersion$$102() => $102(),
+      ThreeDSecureVersion$$210() => $210(),
+      ThreeDSecureVersion$$220() => $220(),
+      ThreeDSecureVersion$$230() => $230(),
+      ThreeDSecureVersion$$231() => $231(),
+      ThreeDSecureVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $102, W Function()? $210, W Function()? $220, W Function()? $230, W Function()? $231, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreeDSecureVersion$$102() => $102 != null ? $102() : orElse(value),
+      ThreeDSecureVersion$$210() => $210 != null ? $210() : orElse(value),
+      ThreeDSecureVersion$$220() => $220 != null ? $220() : orElse(value),
+      ThreeDSecureVersion$$230() => $230 != null ? $230() : orElse(value),
+      ThreeDSecureVersion$$231() => $231 != null ? $231() : orElse(value),
+      ThreeDSecureVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreeDSecureVersion($value)';
 
  }

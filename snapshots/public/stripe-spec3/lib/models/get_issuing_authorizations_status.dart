@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetIssuingAuthorizationsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() closed, required W Function() expired, required W Function() pending, required W Function() reversed, required W Function(String value) $unknown, }) { return switch (this) {
+      GetIssuingAuthorizationsStatus$closed() => closed(),
+      GetIssuingAuthorizationsStatus$expired() => expired(),
+      GetIssuingAuthorizationsStatus$pending() => pending(),
+      GetIssuingAuthorizationsStatus$reversed() => reversed(),
+      GetIssuingAuthorizationsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? expired, W Function()? pending, W Function()? reversed, W Function(String value)? $unknown, }) { return switch (this) {
+      GetIssuingAuthorizationsStatus$closed() => closed != null ? closed() : orElse(value),
+      GetIssuingAuthorizationsStatus$expired() => expired != null ? expired() : orElse(value),
+      GetIssuingAuthorizationsStatus$pending() => pending != null ? pending() : orElse(value),
+      GetIssuingAuthorizationsStatus$reversed() => reversed != null ? reversed() : orElse(value),
+      GetIssuingAuthorizationsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetIssuingAuthorizationsStatus($value)';
 
  }

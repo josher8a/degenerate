@@ -89,6 +89,50 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowResourceTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() document, required W Function() stylesheet, required W Function() image, required W Function() media, required W Function() font, required W Function() script, required W Function() texttrack, required W Function() xhr, required W Function() fetch, required W Function() prefetch, required W Function() eventsource, required W Function() websocket, required W Function() manifest, required W Function() signedexchange, required W Function() ping, required W Function() cspviolationreport, required W Function() preflight, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowResourceTypes$document() => document(),
+      AllowResourceTypes$stylesheet() => stylesheet(),
+      AllowResourceTypes$image() => image(),
+      AllowResourceTypes$media() => media(),
+      AllowResourceTypes$font() => font(),
+      AllowResourceTypes$script() => script(),
+      AllowResourceTypes$texttrack() => texttrack(),
+      AllowResourceTypes$xhr() => xhr(),
+      AllowResourceTypes$fetch() => fetch(),
+      AllowResourceTypes$prefetch() => prefetch(),
+      AllowResourceTypes$eventsource() => eventsource(),
+      AllowResourceTypes$websocket() => websocket(),
+      AllowResourceTypes$manifest() => manifest(),
+      AllowResourceTypes$signedexchange() => signedexchange(),
+      AllowResourceTypes$ping() => ping(),
+      AllowResourceTypes$cspviolationreport() => cspviolationreport(),
+      AllowResourceTypes$preflight() => preflight(),
+      AllowResourceTypes$$other() => $other(),
+      AllowResourceTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? document, W Function()? stylesheet, W Function()? image, W Function()? media, W Function()? font, W Function()? script, W Function()? texttrack, W Function()? xhr, W Function()? fetch, W Function()? prefetch, W Function()? eventsource, W Function()? websocket, W Function()? manifest, W Function()? signedexchange, W Function()? ping, W Function()? cspviolationreport, W Function()? preflight, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowResourceTypes$document() => document != null ? document() : orElse(value),
+      AllowResourceTypes$stylesheet() => stylesheet != null ? stylesheet() : orElse(value),
+      AllowResourceTypes$image() => image != null ? image() : orElse(value),
+      AllowResourceTypes$media() => media != null ? media() : orElse(value),
+      AllowResourceTypes$font() => font != null ? font() : orElse(value),
+      AllowResourceTypes$script() => script != null ? script() : orElse(value),
+      AllowResourceTypes$texttrack() => texttrack != null ? texttrack() : orElse(value),
+      AllowResourceTypes$xhr() => xhr != null ? xhr() : orElse(value),
+      AllowResourceTypes$fetch() => fetch != null ? fetch() : orElse(value),
+      AllowResourceTypes$prefetch() => prefetch != null ? prefetch() : orElse(value),
+      AllowResourceTypes$eventsource() => eventsource != null ? eventsource() : orElse(value),
+      AllowResourceTypes$websocket() => websocket != null ? websocket() : orElse(value),
+      AllowResourceTypes$manifest() => manifest != null ? manifest() : orElse(value),
+      AllowResourceTypes$signedexchange() => signedexchange != null ? signedexchange() : orElse(value),
+      AllowResourceTypes$ping() => ping != null ? ping() : orElse(value),
+      AllowResourceTypes$cspviolationreport() => cspviolationreport != null ? cspviolationreport() : orElse(value),
+      AllowResourceTypes$preflight() => preflight != null ? preflight() : orElse(value),
+      AllowResourceTypes$$other() => $other != null ? $other() : orElse(value),
+      AllowResourceTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowResourceTypes($value)';
 
  }

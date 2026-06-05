@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Formula$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() count, required W Function() last, required W Function() sum, required W Function(String value) $unknown, }) { return switch (this) {
+      Formula$count() => count(),
+      Formula$last() => last(),
+      Formula$sum() => sum(),
+      Formula$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? count, W Function()? last, W Function()? sum, W Function(String value)? $unknown, }) { return switch (this) {
+      Formula$count() => count != null ? count() : orElse(value),
+      Formula$last() => last != null ? last() : orElse(value),
+      Formula$sum() => sum != null ? sum() : orElse(value),
+      Formula$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Formula($value)';
 
  }

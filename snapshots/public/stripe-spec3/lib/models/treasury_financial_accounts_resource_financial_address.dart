@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ach, required W Function() usDomesticWire, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$ach() => ach(),
+      TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$usDomesticWire() => usDomesticWire(),
+      TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? usDomesticWire, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$ach() => ach != null ? ach() : orElse(value),
+      TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$usDomesticWire() => usDomesticWire != null ? usDomesticWire() : orElse(value),
+      TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks($value)';
 
  }
@@ -77,6 +89,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryFinancialAccountsResourceFinancialAddressType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aba, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceFinancialAddressType$aba() => aba(),
+      TreasuryFinancialAccountsResourceFinancialAddressType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aba, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceFinancialAddressType$aba() => aba != null ? aba() : orElse(value),
+      TreasuryFinancialAccountsResourceFinancialAddressType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressType($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationRefundedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() $other, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationRefundedReason$duplicate() => duplicate(),
+      InsightsResourcesPaymentEvaluationRefundedReason$fraudulent() => fraudulent(),
+      InsightsResourcesPaymentEvaluationRefundedReason$$other() => $other(),
+      InsightsResourcesPaymentEvaluationRefundedReason$requestedByCustomer() => requestedByCustomer(),
+      InsightsResourcesPaymentEvaluationRefundedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? $other, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationRefundedReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      InsightsResourcesPaymentEvaluationRefundedReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      InsightsResourcesPaymentEvaluationRefundedReason$$other() => $other != null ? $other() : orElse(value),
+      InsightsResourcesPaymentEvaluationRefundedReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
+      InsightsResourcesPaymentEvaluationRefundedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationRefundedReason($value)';
 
  }

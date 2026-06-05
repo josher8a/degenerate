@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FlowType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditReversal, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() issuingAuthorization, required W Function() $other, required W Function() outboundPayment, required W Function() outboundTransfer, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) { return switch (this) {
+      FlowType$creditReversal() => creditReversal(),
+      FlowType$debitReversal() => debitReversal(),
+      FlowType$inboundTransfer() => inboundTransfer(),
+      FlowType$issuingAuthorization() => issuingAuthorization(),
+      FlowType$$other() => $other(),
+      FlowType$outboundPayment() => outboundPayment(),
+      FlowType$outboundTransfer() => outboundTransfer(),
+      FlowType$receivedCredit() => receivedCredit(),
+      FlowType$receivedDebit() => receivedDebit(),
+      FlowType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? issuingAuthorization, W Function()? $other, W Function()? outboundPayment, W Function()? outboundTransfer, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) { return switch (this) {
+      FlowType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
+      FlowType$debitReversal() => debitReversal != null ? debitReversal() : orElse(value),
+      FlowType$inboundTransfer() => inboundTransfer != null ? inboundTransfer() : orElse(value),
+      FlowType$issuingAuthorization() => issuingAuthorization != null ? issuingAuthorization() : orElse(value),
+      FlowType$$other() => $other != null ? $other() : orElse(value),
+      FlowType$outboundPayment() => outboundPayment != null ? outboundPayment() : orElse(value),
+      FlowType$outboundTransfer() => outboundTransfer != null ? outboundTransfer() : orElse(value),
+      FlowType$receivedCredit() => receivedCredit != null ? receivedCredit() : orElse(value),
+      FlowType$receivedDebit() => receivedDebit != null ? receivedDebit() : orElse(value),
+      FlowType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FlowType($value)';
 
  }

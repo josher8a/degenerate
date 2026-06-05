@@ -74,6 +74,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ca, required W Function() caOwner, required W Function() duration, required W Function() entryType, required W Function() expirationStatus, required W Function() hasIps, required W Function() hasWildcards, required W Function() log, required W Function() logApi, required W Function() logOperator, required W Function() publicKeyAlgorithm, required W Function() signatureAlgorithm, required W Function() tld, required W Function() validationLevel, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtSummaryDimension$ca() => ca(),
+      RadarGetCtSummaryDimension$caOwner() => caOwner(),
+      RadarGetCtSummaryDimension$duration() => duration(),
+      RadarGetCtSummaryDimension$entryType() => entryType(),
+      RadarGetCtSummaryDimension$expirationStatus() => expirationStatus(),
+      RadarGetCtSummaryDimension$hasIps() => hasIps(),
+      RadarGetCtSummaryDimension$hasWildcards() => hasWildcards(),
+      RadarGetCtSummaryDimension$log() => log(),
+      RadarGetCtSummaryDimension$logApi() => logApi(),
+      RadarGetCtSummaryDimension$logOperator() => logOperator(),
+      RadarGetCtSummaryDimension$publicKeyAlgorithm() => publicKeyAlgorithm(),
+      RadarGetCtSummaryDimension$signatureAlgorithm() => signatureAlgorithm(),
+      RadarGetCtSummaryDimension$tld() => tld(),
+      RadarGetCtSummaryDimension$validationLevel() => validationLevel(),
+      RadarGetCtSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ca, W Function()? caOwner, W Function()? duration, W Function()? entryType, W Function()? expirationStatus, W Function()? hasIps, W Function()? hasWildcards, W Function()? log, W Function()? logApi, W Function()? logOperator, W Function()? publicKeyAlgorithm, W Function()? signatureAlgorithm, W Function()? tld, W Function()? validationLevel, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtSummaryDimension$ca() => ca != null ? ca() : orElse(value),
+      RadarGetCtSummaryDimension$caOwner() => caOwner != null ? caOwner() : orElse(value),
+      RadarGetCtSummaryDimension$duration() => duration != null ? duration() : orElse(value),
+      RadarGetCtSummaryDimension$entryType() => entryType != null ? entryType() : orElse(value),
+      RadarGetCtSummaryDimension$expirationStatus() => expirationStatus != null ? expirationStatus() : orElse(value),
+      RadarGetCtSummaryDimension$hasIps() => hasIps != null ? hasIps() : orElse(value),
+      RadarGetCtSummaryDimension$hasWildcards() => hasWildcards != null ? hasWildcards() : orElse(value),
+      RadarGetCtSummaryDimension$log() => log != null ? log() : orElse(value),
+      RadarGetCtSummaryDimension$logApi() => logApi != null ? logApi() : orElse(value),
+      RadarGetCtSummaryDimension$logOperator() => logOperator != null ? logOperator() : orElse(value),
+      RadarGetCtSummaryDimension$publicKeyAlgorithm() => publicKeyAlgorithm != null ? publicKeyAlgorithm() : orElse(value),
+      RadarGetCtSummaryDimension$signatureAlgorithm() => signatureAlgorithm != null ? signatureAlgorithm() : orElse(value),
+      RadarGetCtSummaryDimension$tld() => tld != null ? tld() : orElse(value),
+      RadarGetCtSummaryDimension$validationLevel() => validationLevel != null ? validationLevel() : orElse(value),
+      RadarGetCtSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtSummaryDimension($value)';
 
  }

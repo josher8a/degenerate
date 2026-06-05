@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomQueueingStatusCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $200, required W Function() $202, required W Function() $429, required W Function(int value) $unknown, }) { return switch (this) {
+      WaitingroomQueueingStatusCode$$200() => $200(),
+      WaitingroomQueueingStatusCode$$202() => $202(),
+      WaitingroomQueueingStatusCode$$429() => $429(),
+      WaitingroomQueueingStatusCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $200, W Function()? $202, W Function()? $429, W Function(int value)? $unknown, }) { return switch (this) {
+      WaitingroomQueueingStatusCode$$200() => $200 != null ? $200() : orElse(value),
+      WaitingroomQueueingStatusCode$$202() => $202 != null ? $202() : orElse(value),
+      WaitingroomQueueingStatusCode$$429() => $429 != null ? $429() : orElse(value),
+      WaitingroomQueueingStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomQueueingStatusCode($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerAcceptanceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() offline, required W Function() online, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerAcceptanceType$offline() => offline(),
+      CustomerAcceptanceType$online() => online(),
+      CustomerAcceptanceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline, W Function()? online, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerAcceptanceType$offline() => offline != null ? offline() : orElse(value),
+      CustomerAcceptanceType$online() => online != null ? online() : orElse(value),
+      CustomerAcceptanceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerAcceptanceType($value)';
 
  }

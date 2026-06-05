@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsRulesetKind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() managed, required W Function() custom, required W Function() root, required W Function() zone, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsRulesetKind$managed() => managed(),
+      RulesetsRulesetKind$custom() => custom(),
+      RulesetsRulesetKind$root() => root(),
+      RulesetsRulesetKind$zone() => zone(),
+      RulesetsRulesetKind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? managed, W Function()? custom, W Function()? root, W Function()? zone, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsRulesetKind$managed() => managed != null ? managed() : orElse(value),
+      RulesetsRulesetKind$custom() => custom != null ? custom() : orElse(value),
+      RulesetsRulesetKind$root() => root != null ? root() : orElse(value),
+      RulesetsRulesetKind$zone() => zone != null ? zone() : orElse(value),
+      RulesetsRulesetKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsRulesetKind($value)';
 
  }

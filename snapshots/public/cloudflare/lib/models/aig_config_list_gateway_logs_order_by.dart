@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AigConfigListGatewayLogsOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() createdAt, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() success, required W Function() cached, required W Function(String value) $unknown, }) { return switch (this) {
+      AigConfigListGatewayLogsOrderBy$createdAt() => createdAt(),
+      AigConfigListGatewayLogsOrderBy$provider() => provider(),
+      AigConfigListGatewayLogsOrderBy$model() => model(),
+      AigConfigListGatewayLogsOrderBy$modelType() => modelType(),
+      AigConfigListGatewayLogsOrderBy$success() => success(),
+      AigConfigListGatewayLogsOrderBy$cached() => cached(),
+      AigConfigListGatewayLogsOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? success, W Function()? cached, W Function(String value)? $unknown, }) { return switch (this) {
+      AigConfigListGatewayLogsOrderBy$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      AigConfigListGatewayLogsOrderBy$provider() => provider != null ? provider() : orElse(value),
+      AigConfigListGatewayLogsOrderBy$model() => model != null ? model() : orElse(value),
+      AigConfigListGatewayLogsOrderBy$modelType() => modelType != null ? modelType() : orElse(value),
+      AigConfigListGatewayLogsOrderBy$success() => success != null ? success() : orElse(value),
+      AigConfigListGatewayLogsOrderBy$cached() => cached != null ? cached() : orElse(value),
+      AigConfigListGatewayLogsOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AigConfigListGatewayLogsOrderBy($value)';
 
  }

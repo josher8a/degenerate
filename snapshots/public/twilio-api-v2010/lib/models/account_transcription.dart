@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TranscriptionEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      TranscriptionEnumStatus$inProgress() => inProgress(),
+      TranscriptionEnumStatus$completed() => completed(),
+      TranscriptionEnumStatus$failed() => failed(),
+      TranscriptionEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      TranscriptionEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      TranscriptionEnumStatus$completed() => completed != null ? completed() : orElse(value),
+      TranscriptionEnumStatus$failed() => failed != null ? failed() : orElse(value),
+      TranscriptionEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TranscriptionEnumStatus($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetAccountAuditLogsActionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() create, required W Function() delete, required W Function() view, required W Function() update, required W Function(String value) $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActionType$create() => create(),
+      GetAccountAuditLogsActionType$delete() => delete(),
+      GetAccountAuditLogsActionType$view() => view(),
+      GetAccountAuditLogsActionType$update() => update(),
+      GetAccountAuditLogsActionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? create, W Function()? delete, W Function()? view, W Function()? update, W Function(String value)? $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActionType$create() => create != null ? create() : orElse(value),
+      GetAccountAuditLogsActionType$delete() => delete != null ? delete() : orElse(value),
+      GetAccountAuditLogsActionType$view() => view != null ? view() : orElse(value),
+      GetAccountAuditLogsActionType$update() => update != null ? update() : orElse(value),
+      GetAccountAuditLogsActionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetAccountAuditLogsActionType($value)';
 
  }

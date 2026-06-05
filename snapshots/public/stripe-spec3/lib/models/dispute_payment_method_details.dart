@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisputePaymentMethodDetailsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amazonPay, required W Function() card, required W Function() klarna, required W Function() paypal, required W Function(String value) $unknown, }) { return switch (this) {
+      DisputePaymentMethodDetailsType$amazonPay() => amazonPay(),
+      DisputePaymentMethodDetailsType$card() => card(),
+      DisputePaymentMethodDetailsType$klarna() => klarna(),
+      DisputePaymentMethodDetailsType$paypal() => paypal(),
+      DisputePaymentMethodDetailsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amazonPay, W Function()? card, W Function()? klarna, W Function()? paypal, W Function(String value)? $unknown, }) { return switch (this) {
+      DisputePaymentMethodDetailsType$amazonPay() => amazonPay != null ? amazonPay() : orElse(value),
+      DisputePaymentMethodDetailsType$card() => card != null ? card() : orElse(value),
+      DisputePaymentMethodDetailsType$klarna() => klarna != null ? klarna() : orElse(value),
+      DisputePaymentMethodDetailsType$paypal() => paypal != null ? paypal() : orElse(value),
+      DisputePaymentMethodDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisputePaymentMethodDetailsType($value)';
 
  }

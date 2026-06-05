@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClimateOrderCancellationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() expired, required W Function() productUnavailable, required W Function() requested, required W Function(String value) $unknown, }) { return switch (this) {
+      ClimateOrderCancellationReason$expired() => expired(),
+      ClimateOrderCancellationReason$productUnavailable() => productUnavailable(),
+      ClimateOrderCancellationReason$requested() => requested(),
+      ClimateOrderCancellationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? productUnavailable, W Function()? requested, W Function(String value)? $unknown, }) { return switch (this) {
+      ClimateOrderCancellationReason$expired() => expired != null ? expired() : orElse(value),
+      ClimateOrderCancellationReason$productUnavailable() => productUnavailable != null ? productUnavailable() : orElse(value),
+      ClimateOrderCancellationReason$requested() => requested != null ? requested() : orElse(value),
+      ClimateOrderCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClimateOrderCancellationReason($value)';
 
  }
@@ -91,6 +105,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClimateOrderObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() climateOrder, required W Function(String value) $unknown, }) { return switch (this) {
+      ClimateOrderObject$climateOrder() => climateOrder(),
+      ClimateOrderObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateOrder, W Function(String value)? $unknown, }) { return switch (this) {
+      ClimateOrderObject$climateOrder() => climateOrder != null ? climateOrder() : orElse(value),
+      ClimateOrderObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClimateOrderObject($value)';
 
  }
@@ -150,6 +174,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClimateOrderStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() awaitingFunds, required W Function() canceled, required W Function() confirmed, required W Function() delivered, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      ClimateOrderStatus$awaitingFunds() => awaitingFunds(),
+      ClimateOrderStatus$canceled() => canceled(),
+      ClimateOrderStatus$confirmed() => confirmed(),
+      ClimateOrderStatus$delivered() => delivered(),
+      ClimateOrderStatus$open() => open(),
+      ClimateOrderStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? awaitingFunds, W Function()? canceled, W Function()? confirmed, W Function()? delivered, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      ClimateOrderStatus$awaitingFunds() => awaitingFunds != null ? awaitingFunds() : orElse(value),
+      ClimateOrderStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      ClimateOrderStatus$confirmed() => confirmed != null ? confirmed() : orElse(value),
+      ClimateOrderStatus$delivered() => delivered != null ? delivered() : orElse(value),
+      ClimateOrderStatus$open() => open != null ? open() : orElse(value),
+      ClimateOrderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClimateOrderStatus($value)';
 
  }

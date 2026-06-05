@@ -101,6 +101,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetFilesPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() documentProviderIdentityDocument, required W Function() financeReportRun, required W Function() financialAccountStatement, required W Function() identityDocument, required W Function() identityDocumentDownloadable, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() selfie, required W Function() sigmaScheduledQuery, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) { return switch (this) {
+      GetFilesPurpose$accountRequirement() => accountRequirement(),
+      GetFilesPurpose$additionalVerification() => additionalVerification(),
+      GetFilesPurpose$businessIcon() => businessIcon(),
+      GetFilesPurpose$businessLogo() => businessLogo(),
+      GetFilesPurpose$customerSignature() => customerSignature(),
+      GetFilesPurpose$disputeEvidence() => disputeEvidence(),
+      GetFilesPurpose$documentProviderIdentityDocument() => documentProviderIdentityDocument(),
+      GetFilesPurpose$financeReportRun() => financeReportRun(),
+      GetFilesPurpose$financialAccountStatement() => financialAccountStatement(),
+      GetFilesPurpose$identityDocument() => identityDocument(),
+      GetFilesPurpose$identityDocumentDownloadable() => identityDocumentDownloadable(),
+      GetFilesPurpose$issuingRegulatoryReporting() => issuingRegulatoryReporting(),
+      GetFilesPurpose$pciDocument() => pciDocument(),
+      GetFilesPurpose$platformTermsOfService() => platformTermsOfService(),
+      GetFilesPurpose$selfie() => selfie(),
+      GetFilesPurpose$sigmaScheduledQuery() => sigmaScheduledQuery(),
+      GetFilesPurpose$taxDocumentUserUpload() => taxDocumentUserUpload(),
+      GetFilesPurpose$terminalAndroidApk() => terminalAndroidApk(),
+      GetFilesPurpose$terminalReaderSplashscreen() => terminalReaderSplashscreen(),
+      GetFilesPurpose$terminalWifiCertificate() => terminalWifiCertificate(),
+      GetFilesPurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey(),
+      GetFilesPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? documentProviderIdentityDocument, W Function()? financeReportRun, W Function()? financialAccountStatement, W Function()? identityDocument, W Function()? identityDocumentDownloadable, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? selfie, W Function()? sigmaScheduledQuery, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) { return switch (this) {
+      GetFilesPurpose$accountRequirement() => accountRequirement != null ? accountRequirement() : orElse(value),
+      GetFilesPurpose$additionalVerification() => additionalVerification != null ? additionalVerification() : orElse(value),
+      GetFilesPurpose$businessIcon() => businessIcon != null ? businessIcon() : orElse(value),
+      GetFilesPurpose$businessLogo() => businessLogo != null ? businessLogo() : orElse(value),
+      GetFilesPurpose$customerSignature() => customerSignature != null ? customerSignature() : orElse(value),
+      GetFilesPurpose$disputeEvidence() => disputeEvidence != null ? disputeEvidence() : orElse(value),
+      GetFilesPurpose$documentProviderIdentityDocument() => documentProviderIdentityDocument != null ? documentProviderIdentityDocument() : orElse(value),
+      GetFilesPurpose$financeReportRun() => financeReportRun != null ? financeReportRun() : orElse(value),
+      GetFilesPurpose$financialAccountStatement() => financialAccountStatement != null ? financialAccountStatement() : orElse(value),
+      GetFilesPurpose$identityDocument() => identityDocument != null ? identityDocument() : orElse(value),
+      GetFilesPurpose$identityDocumentDownloadable() => identityDocumentDownloadable != null ? identityDocumentDownloadable() : orElse(value),
+      GetFilesPurpose$issuingRegulatoryReporting() => issuingRegulatoryReporting != null ? issuingRegulatoryReporting() : orElse(value),
+      GetFilesPurpose$pciDocument() => pciDocument != null ? pciDocument() : orElse(value),
+      GetFilesPurpose$platformTermsOfService() => platformTermsOfService != null ? platformTermsOfService() : orElse(value),
+      GetFilesPurpose$selfie() => selfie != null ? selfie() : orElse(value),
+      GetFilesPurpose$sigmaScheduledQuery() => sigmaScheduledQuery != null ? sigmaScheduledQuery() : orElse(value),
+      GetFilesPurpose$taxDocumentUserUpload() => taxDocumentUserUpload != null ? taxDocumentUserUpload() : orElse(value),
+      GetFilesPurpose$terminalAndroidApk() => terminalAndroidApk != null ? terminalAndroidApk() : orElse(value),
+      GetFilesPurpose$terminalReaderSplashscreen() => terminalReaderSplashscreen != null ? terminalReaderSplashscreen() : orElse(value),
+      GetFilesPurpose$terminalWifiCertificate() => terminalWifiCertificate != null ? terminalWifiCertificate() : orElse(value),
+      GetFilesPurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey != null ? terminalWifiPrivateKey() : orElse(value),
+      GetFilesPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetFilesPurpose($value)';
 
  }

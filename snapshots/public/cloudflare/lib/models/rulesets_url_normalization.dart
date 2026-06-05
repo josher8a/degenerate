@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsUrlNormalizationScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() incoming, required W Function() both, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsUrlNormalizationScope$incoming() => incoming(),
+      RulesetsUrlNormalizationScope$both() => both(),
+      RulesetsUrlNormalizationScope$none() => none(),
+      RulesetsUrlNormalizationScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? incoming, W Function()? both, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsUrlNormalizationScope$incoming() => incoming != null ? incoming() : orElse(value),
+      RulesetsUrlNormalizationScope$both() => both != null ? both() : orElse(value),
+      RulesetsUrlNormalizationScope$none() => none != null ? none() : orElse(value),
+      RulesetsUrlNormalizationScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsUrlNormalizationScope($value)';
 
  }
@@ -95,6 +109,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsUrlNormalizationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cloudflare, required W Function() rfc3986, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsUrlNormalizationType$cloudflare() => cloudflare(),
+      RulesetsUrlNormalizationType$rfc3986() => rfc3986(),
+      RulesetsUrlNormalizationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cloudflare, W Function()? rfc3986, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsUrlNormalizationType$cloudflare() => cloudflare != null ? cloudflare() : orElse(value),
+      RulesetsUrlNormalizationType$rfc3986() => rfc3986 != null ? rfc3986() : orElse(value),
+      RulesetsUrlNormalizationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsUrlNormalizationType($value)';
 
  }

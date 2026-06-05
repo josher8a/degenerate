@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RecordingAddOnResultEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() completed, required W Function() deleted, required W Function() failed, required W Function() inProgress, required W Function() init, required W Function() processing, required W Function() queued, required W Function(String value) $unknown, }) { return switch (this) {
+      RecordingAddOnResultEnumStatus$canceled() => canceled(),
+      RecordingAddOnResultEnumStatus$completed() => completed(),
+      RecordingAddOnResultEnumStatus$deleted() => deleted(),
+      RecordingAddOnResultEnumStatus$failed() => failed(),
+      RecordingAddOnResultEnumStatus$inProgress() => inProgress(),
+      RecordingAddOnResultEnumStatus$init() => init(),
+      RecordingAddOnResultEnumStatus$processing() => processing(),
+      RecordingAddOnResultEnumStatus$queued() => queued(),
+      RecordingAddOnResultEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? completed, W Function()? deleted, W Function()? failed, W Function()? inProgress, W Function()? init, W Function()? processing, W Function()? queued, W Function(String value)? $unknown, }) { return switch (this) {
+      RecordingAddOnResultEnumStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      RecordingAddOnResultEnumStatus$completed() => completed != null ? completed() : orElse(value),
+      RecordingAddOnResultEnumStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      RecordingAddOnResultEnumStatus$failed() => failed != null ? failed() : orElse(value),
+      RecordingAddOnResultEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      RecordingAddOnResultEnumStatus$init() => init != null ? init() : orElse(value),
+      RecordingAddOnResultEnumStatus$processing() => processing != null ? processing() : orElse(value),
+      RecordingAddOnResultEnumStatus$queued() => queued != null ? queued() : orElse(value),
+      RecordingAddOnResultEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RecordingAddOnResultEnumStatus($value)';
 
  }

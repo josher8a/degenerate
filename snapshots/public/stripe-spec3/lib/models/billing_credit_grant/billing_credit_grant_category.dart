@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingCreditGrantCategory$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() paid, required W Function() promotional, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingCreditGrantCategory$paid() => paid(),
+      BillingCreditGrantCategory$promotional() => promotional(),
+      BillingCreditGrantCategory$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paid, W Function()? promotional, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingCreditGrantCategory$paid() => paid != null ? paid() : orElse(value),
+      BillingCreditGrantCategory$promotional() => promotional != null ? promotional() : orElse(value),
+      BillingCreditGrantCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingCreditGrantCategory($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SetupAttemptPaymentMethodDetailsCardWalletType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() link, required W Function(String value) $unknown, }) { return switch (this) {
+      SetupAttemptPaymentMethodDetailsCardWalletType$applePay() => applePay(),
+      SetupAttemptPaymentMethodDetailsCardWalletType$googlePay() => googlePay(),
+      SetupAttemptPaymentMethodDetailsCardWalletType$link() => link(),
+      SetupAttemptPaymentMethodDetailsCardWalletType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? link, W Function(String value)? $unknown, }) { return switch (this) {
+      SetupAttemptPaymentMethodDetailsCardWalletType$applePay() => applePay != null ? applePay() : orElse(value),
+      SetupAttemptPaymentMethodDetailsCardWalletType$googlePay() => googlePay != null ? googlePay() : orElse(value),
+      SetupAttemptPaymentMethodDetailsCardWalletType$link() => link != null ? link() : orElse(value),
+      SetupAttemptPaymentMethodDetailsCardWalletType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SetupAttemptPaymentMethodDetailsCardWalletType($value)';
 
  }

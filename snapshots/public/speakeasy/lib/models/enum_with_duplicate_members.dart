@@ -31,6 +31,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumField$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() one, required W Function() one2, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumField$one() => one(),
+      EnumField$one2() => one2(),
+      EnumField$two() => two(),
+      EnumField$three() => three(),
+      EnumField$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? one2, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumField$one() => one != null ? one() : orElse(value),
+      EnumField$one2() => one2 != null ? one2() : orElse(value),
+      EnumField$two() => two != null ? two() : orElse(value),
+      EnumField$three() => three != null ? three() : orElse(value),
+      EnumField$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumField($value)';
 
  }

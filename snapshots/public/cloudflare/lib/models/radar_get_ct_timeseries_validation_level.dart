@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtTimeseriesValidationLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() domain, required W Function() organization, required W Function() extended, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesValidationLevel$domain() => domain(),
+      RadarGetCtTimeseriesValidationLevel$organization() => organization(),
+      RadarGetCtTimeseriesValidationLevel$extended() => extended(),
+      RadarGetCtTimeseriesValidationLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domain, W Function()? organization, W Function()? extended, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesValidationLevel$domain() => domain != null ? domain() : orElse(value),
+      RadarGetCtTimeseriesValidationLevel$organization() => organization != null ? organization() : orElse(value),
+      RadarGetCtTimeseriesValidationLevel$extended() => extended != null ? extended() : orElse(value),
+      RadarGetCtTimeseriesValidationLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtTimeseriesValidationLevel($value)';
 
  }

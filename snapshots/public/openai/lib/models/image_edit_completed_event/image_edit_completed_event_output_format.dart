@@ -31,6 +31,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageEditCompletedEventOutputFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() png, required W Function() webp, required W Function() jpeg, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageEditCompletedEventOutputFormat$png() => png(),
+      ImageEditCompletedEventOutputFormat$webp() => webp(),
+      ImageEditCompletedEventOutputFormat$jpeg() => jpeg(),
+      ImageEditCompletedEventOutputFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? png, W Function()? webp, W Function()? jpeg, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageEditCompletedEventOutputFormat$png() => png != null ? png() : orElse(value),
+      ImageEditCompletedEventOutputFormat$webp() => webp != null ? webp() : orElse(value),
+      ImageEditCompletedEventOutputFormat$jpeg() => jpeg != null ? jpeg() : orElse(value),
+      ImageEditCompletedEventOutputFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageEditCompletedEventOutputFormat($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PullsListSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() created, required W Function() updated, required W Function() popularity, required W Function() longRunning, required W Function(String value) $unknown, }) { return switch (this) {
+      PullsListSort$created() => created(),
+      PullsListSort$updated() => updated(),
+      PullsListSort$popularity() => popularity(),
+      PullsListSort$longRunning() => longRunning(),
+      PullsListSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? popularity, W Function()? longRunning, W Function(String value)? $unknown, }) { return switch (this) {
+      PullsListSort$created() => created != null ? created() : orElse(value),
+      PullsListSort$updated() => updated != null ? updated() : orElse(value),
+      PullsListSort$popularity() => popularity != null ? popularity() : orElse(value),
+      PullsListSort$longRunning() => longRunning != null ? longRunning() : orElse(value),
+      PullsListSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PullsListSort($value)';
 
  }

@@ -97,6 +97,54 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdealBank$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abnAmro, required W Function() adyen, required W Function() asnBank, required W Function() bunq, required W Function() buut, required W Function() finom, required W Function() handelsbanken, required W Function() ing, required W Function() knab, required W Function() mollie, required W Function() moneyou, required W Function() n26, required W Function() nn, required W Function() rabobank, required W Function() regiobank, required W Function() revolut, required W Function() snsBank, required W Function() triodosBank, required W Function() vanLanschot, required W Function() yoursafe, required W Function(String value) $unknown, }) { return switch (this) {
+      IdealBank$abnAmro() => abnAmro(),
+      IdealBank$adyen() => adyen(),
+      IdealBank$asnBank() => asnBank(),
+      IdealBank$bunq() => bunq(),
+      IdealBank$buut() => buut(),
+      IdealBank$finom() => finom(),
+      IdealBank$handelsbanken() => handelsbanken(),
+      IdealBank$ing() => ing(),
+      IdealBank$knab() => knab(),
+      IdealBank$mollie() => mollie(),
+      IdealBank$moneyou() => moneyou(),
+      IdealBank$n26() => n26(),
+      IdealBank$nn() => nn(),
+      IdealBank$rabobank() => rabobank(),
+      IdealBank$regiobank() => regiobank(),
+      IdealBank$revolut() => revolut(),
+      IdealBank$snsBank() => snsBank(),
+      IdealBank$triodosBank() => triodosBank(),
+      IdealBank$vanLanschot() => vanLanschot(),
+      IdealBank$yoursafe() => yoursafe(),
+      IdealBank$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro, W Function()? adyen, W Function()? asnBank, W Function()? bunq, W Function()? buut, W Function()? finom, W Function()? handelsbanken, W Function()? ing, W Function()? knab, W Function()? mollie, W Function()? moneyou, W Function()? n26, W Function()? nn, W Function()? rabobank, W Function()? regiobank, W Function()? revolut, W Function()? snsBank, W Function()? triodosBank, W Function()? vanLanschot, W Function()? yoursafe, W Function(String value)? $unknown, }) { return switch (this) {
+      IdealBank$abnAmro() => abnAmro != null ? abnAmro() : orElse(value),
+      IdealBank$adyen() => adyen != null ? adyen() : orElse(value),
+      IdealBank$asnBank() => asnBank != null ? asnBank() : orElse(value),
+      IdealBank$bunq() => bunq != null ? bunq() : orElse(value),
+      IdealBank$buut() => buut != null ? buut() : orElse(value),
+      IdealBank$finom() => finom != null ? finom() : orElse(value),
+      IdealBank$handelsbanken() => handelsbanken != null ? handelsbanken() : orElse(value),
+      IdealBank$ing() => ing != null ? ing() : orElse(value),
+      IdealBank$knab() => knab != null ? knab() : orElse(value),
+      IdealBank$mollie() => mollie != null ? mollie() : orElse(value),
+      IdealBank$moneyou() => moneyou != null ? moneyou() : orElse(value),
+      IdealBank$n26() => n26 != null ? n26() : orElse(value),
+      IdealBank$nn() => nn != null ? nn() : orElse(value),
+      IdealBank$rabobank() => rabobank != null ? rabobank() : orElse(value),
+      IdealBank$regiobank() => regiobank != null ? regiobank() : orElse(value),
+      IdealBank$revolut() => revolut != null ? revolut() : orElse(value),
+      IdealBank$snsBank() => snsBank != null ? snsBank() : orElse(value),
+      IdealBank$triodosBank() => triodosBank != null ? triodosBank() : orElse(value),
+      IdealBank$vanLanschot() => vanLanschot != null ? vanLanschot() : orElse(value),
+      IdealBank$yoursafe() => yoursafe != null ? yoursafe() : orElse(value),
+      IdealBank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdealBank($value)';
 
  }

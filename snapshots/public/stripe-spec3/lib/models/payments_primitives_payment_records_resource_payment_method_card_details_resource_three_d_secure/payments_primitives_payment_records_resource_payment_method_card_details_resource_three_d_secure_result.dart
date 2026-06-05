@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() attemptAcknowledged, required W Function() authenticated, required W Function() exempted, required W Function() failed, required W Function() notSupported, required W Function() processingError, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$attemptAcknowledged() => attemptAcknowledged(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$authenticated() => authenticated(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$exempted() => exempted(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$failed() => failed(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$notSupported() => notSupported(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$processingError() => processingError(),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? attemptAcknowledged, W Function()? authenticated, W Function()? exempted, W Function()? failed, W Function()? notSupported, W Function()? processingError, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$attemptAcknowledged() => attemptAcknowledged != null ? attemptAcknowledged() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$authenticated() => authenticated != null ? authenticated() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$exempted() => exempted != null ? exempted() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$failed() => failed != null ? failed() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$notSupported() => notSupported != null ? notSupported() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$processingError() => processingError != null ? processingError() : orElse(value),
+      PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult($value)';
 
  }

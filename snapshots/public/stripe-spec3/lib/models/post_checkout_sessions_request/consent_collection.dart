@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConsentCollectionPromotions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      ConsentCollectionPromotions$auto() => auto(),
+      ConsentCollectionPromotions$none() => none(),
+      ConsentCollectionPromotions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      ConsentCollectionPromotions$auto() => auto != null ? auto() : orElse(value),
+      ConsentCollectionPromotions$none() => none != null ? none() : orElse(value),
+      ConsentCollectionPromotions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConsentCollectionPromotions($value)';
 
  }
@@ -80,6 +92,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConsentCollectionTermsOfService$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+      ConsentCollectionTermsOfService$none() => none(),
+      ConsentCollectionTermsOfService$$required() => $required(),
+      ConsentCollectionTermsOfService$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+      ConsentCollectionTermsOfService$none() => none != null ? none() : orElse(value),
+      ConsentCollectionTermsOfService$$required() => $required != null ? $required() : orElse(value),
+      ConsentCollectionTermsOfService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConsentCollectionTermsOfService($value)';
 
  }

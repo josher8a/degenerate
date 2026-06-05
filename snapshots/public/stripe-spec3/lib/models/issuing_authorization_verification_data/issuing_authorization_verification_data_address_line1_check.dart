@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationVerificationDataAddressLine1Check$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() match, required W Function() mismatch, required W Function() notProvided, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationVerificationDataAddressLine1Check$match() => match(),
+      IssuingAuthorizationVerificationDataAddressLine1Check$mismatch() => mismatch(),
+      IssuingAuthorizationVerificationDataAddressLine1Check$notProvided() => notProvided(),
+      IssuingAuthorizationVerificationDataAddressLine1Check$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? match, W Function()? mismatch, W Function()? notProvided, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationVerificationDataAddressLine1Check$match() => match != null ? match() : orElse(value),
+      IssuingAuthorizationVerificationDataAddressLine1Check$mismatch() => mismatch != null ? mismatch() : orElse(value),
+      IssuingAuthorizationVerificationDataAddressLine1Check$notProvided() => notProvided != null ? notProvided() : orElse(value),
+      IssuingAuthorizationVerificationDataAddressLine1Check$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationVerificationDataAddressLine1Check($value)';
 
  }

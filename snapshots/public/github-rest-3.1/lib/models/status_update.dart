@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StatusUpdateStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inactive, required W Function() onTrack, required W Function() atRisk, required W Function() offTrack, required W Function() complete, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      StatusUpdateStatus$inactive() => inactive(),
+      StatusUpdateStatus$onTrack() => onTrack(),
+      StatusUpdateStatus$atRisk() => atRisk(),
+      StatusUpdateStatus$offTrack() => offTrack(),
+      StatusUpdateStatus$complete() => complete(),
+      StatusUpdateStatus$$null() => $null(),
+      StatusUpdateStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive, W Function()? onTrack, W Function()? atRisk, W Function()? offTrack, W Function()? complete, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      StatusUpdateStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      StatusUpdateStatus$onTrack() => onTrack != null ? onTrack() : orElse(value),
+      StatusUpdateStatus$atRisk() => atRisk != null ? atRisk() : orElse(value),
+      StatusUpdateStatus$offTrack() => offTrack != null ? offTrack() : orElse(value),
+      StatusUpdateStatus$complete() => complete != null ? complete() : orElse(value),
+      StatusUpdateStatus$$null() => $null != null ? $null() : orElse(value),
+      StatusUpdateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StatusUpdateStatus($value)';
 
  }

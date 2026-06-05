@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupSpf$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailSecurityTimeseriesGroupSpf$pass() => pass(),
+      RadarGetEmailSecurityTimeseriesGroupSpf$none() => none(),
+      RadarGetEmailSecurityTimeseriesGroupSpf$fail() => fail(),
+      RadarGetEmailSecurityTimeseriesGroupSpf$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailSecurityTimeseriesGroupSpf$pass() => pass != null ? pass() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupSpf$none() => none != null ? none() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupSpf$fail() => fail != null ? fail() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupSpf$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupSpf($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() percentageChange, required W Function() min0Max, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange() => percentageChange(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$min0Max() => min0Max(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentageChange, W Function()? min0Max, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$percentageChange() => percentageChange != null ? percentageChange() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$min0Max() => min0Max != null ? min0Max() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupNormalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupNormalization($value)';
 
  }

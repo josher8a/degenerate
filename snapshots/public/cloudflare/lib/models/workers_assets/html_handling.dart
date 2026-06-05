@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HtmlHandling$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() autoTrailingSlash, required W Function() forceTrailingSlash, required W Function() dropTrailingSlash, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      HtmlHandling$autoTrailingSlash() => autoTrailingSlash(),
+      HtmlHandling$forceTrailingSlash() => forceTrailingSlash(),
+      HtmlHandling$dropTrailingSlash() => dropTrailingSlash(),
+      HtmlHandling$none() => none(),
+      HtmlHandling$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? autoTrailingSlash, W Function()? forceTrailingSlash, W Function()? dropTrailingSlash, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      HtmlHandling$autoTrailingSlash() => autoTrailingSlash != null ? autoTrailingSlash() : orElse(value),
+      HtmlHandling$forceTrailingSlash() => forceTrailingSlash != null ? forceTrailingSlash() : orElse(value),
+      HtmlHandling$dropTrailingSlash() => dropTrailingSlash != null ? dropTrailingSlash() : orElse(value),
+      HtmlHandling$none() => none != null ? none() : orElse(value),
+      HtmlHandling$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HtmlHandling($value)';
 
  }

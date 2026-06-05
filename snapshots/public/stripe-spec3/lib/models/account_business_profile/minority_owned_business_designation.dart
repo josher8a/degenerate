@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MinorityOwnedBusinessDesignation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lgbtqiOwnedBusiness, required W Function() minorityOwnedBusiness, required W Function() noneOfTheseApply, required W Function() preferNotToAnswer, required W Function() womenOwnedBusiness, required W Function(String value) $unknown, }) { return switch (this) {
+      MinorityOwnedBusinessDesignation$lgbtqiOwnedBusiness() => lgbtqiOwnedBusiness(),
+      MinorityOwnedBusinessDesignation$minorityOwnedBusiness() => minorityOwnedBusiness(),
+      MinorityOwnedBusinessDesignation$noneOfTheseApply() => noneOfTheseApply(),
+      MinorityOwnedBusinessDesignation$preferNotToAnswer() => preferNotToAnswer(),
+      MinorityOwnedBusinessDesignation$womenOwnedBusiness() => womenOwnedBusiness(),
+      MinorityOwnedBusinessDesignation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lgbtqiOwnedBusiness, W Function()? minorityOwnedBusiness, W Function()? noneOfTheseApply, W Function()? preferNotToAnswer, W Function()? womenOwnedBusiness, W Function(String value)? $unknown, }) { return switch (this) {
+      MinorityOwnedBusinessDesignation$lgbtqiOwnedBusiness() => lgbtqiOwnedBusiness != null ? lgbtqiOwnedBusiness() : orElse(value),
+      MinorityOwnedBusinessDesignation$minorityOwnedBusiness() => minorityOwnedBusiness != null ? minorityOwnedBusiness() : orElse(value),
+      MinorityOwnedBusinessDesignation$noneOfTheseApply() => noneOfTheseApply != null ? noneOfTheseApply() : orElse(value),
+      MinorityOwnedBusinessDesignation$preferNotToAnswer() => preferNotToAnswer != null ? preferNotToAnswer() : orElse(value),
+      MinorityOwnedBusinessDesignation$womenOwnedBusiness() => womenOwnedBusiness != null ? womenOwnedBusiness() : orElse(value),
+      MinorityOwnedBusinessDesignation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MinorityOwnedBusinessDesignation($value)';
 
  }

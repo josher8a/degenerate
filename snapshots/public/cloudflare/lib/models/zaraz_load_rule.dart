@@ -57,6 +57,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZarazLoadRuleOp$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() contains, required W Function() equals, required W Function() startsWith, required W Function() endsWith, required W Function() matchRegex, required W Function() notMatchRegex, required W Function() greaterThan, required W Function() greaterThanOrEqual, required W Function() lessThan, required W Function() lessThanOrEqual, required W Function(String value) $unknown, }) { return switch (this) {
+      ZarazLoadRuleOp$contains() => contains(),
+      ZarazLoadRuleOp$equals() => equals(),
+      ZarazLoadRuleOp$startsWith() => startsWith(),
+      ZarazLoadRuleOp$endsWith() => endsWith(),
+      ZarazLoadRuleOp$matchRegex() => matchRegex(),
+      ZarazLoadRuleOp$notMatchRegex() => notMatchRegex(),
+      ZarazLoadRuleOp$greaterThan() => greaterThan(),
+      ZarazLoadRuleOp$greaterThanOrEqual() => greaterThanOrEqual(),
+      ZarazLoadRuleOp$lessThan() => lessThan(),
+      ZarazLoadRuleOp$lessThanOrEqual() => lessThanOrEqual(),
+      ZarazLoadRuleOp$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? contains, W Function()? equals, W Function()? startsWith, W Function()? endsWith, W Function()? matchRegex, W Function()? notMatchRegex, W Function()? greaterThan, W Function()? greaterThanOrEqual, W Function()? lessThan, W Function()? lessThanOrEqual, W Function(String value)? $unknown, }) { return switch (this) {
+      ZarazLoadRuleOp$contains() => contains != null ? contains() : orElse(value),
+      ZarazLoadRuleOp$equals() => equals != null ? equals() : orElse(value),
+      ZarazLoadRuleOp$startsWith() => startsWith != null ? startsWith() : orElse(value),
+      ZarazLoadRuleOp$endsWith() => endsWith != null ? endsWith() : orElse(value),
+      ZarazLoadRuleOp$matchRegex() => matchRegex != null ? matchRegex() : orElse(value),
+      ZarazLoadRuleOp$notMatchRegex() => notMatchRegex != null ? notMatchRegex() : orElse(value),
+      ZarazLoadRuleOp$greaterThan() => greaterThan != null ? greaterThan() : orElse(value),
+      ZarazLoadRuleOp$greaterThanOrEqual() => greaterThanOrEqual != null ? greaterThanOrEqual() : orElse(value),
+      ZarazLoadRuleOp$lessThan() => lessThan != null ? lessThan() : orElse(value),
+      ZarazLoadRuleOp$lessThanOrEqual() => lessThanOrEqual != null ? lessThanOrEqual() : orElse(value),
+      ZarazLoadRuleOp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZarazLoadRuleOp($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotListAlertsForOrgHasVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() patch, required W Function() deployment, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotListAlertsForOrgHasVariant2$patch() => patch(),
+      DependabotListAlertsForOrgHasVariant2$deployment() => deployment(),
+      DependabotListAlertsForOrgHasVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? patch, W Function()? deployment, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotListAlertsForOrgHasVariant2$patch() => patch != null ? patch() : orElse(value),
+      DependabotListAlertsForOrgHasVariant2$deployment() => deployment != null ? deployment() : orElse(value),
+      DependabotListAlertsForOrgHasVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotListAlertsForOrgHasVariant2($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PendingInvoiceItemsBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exclude, required W Function() include, required W Function(String value) $unknown, }) { return switch (this) {
+      PendingInvoiceItemsBehavior$exclude() => exclude(),
+      PendingInvoiceItemsBehavior$include() => include(),
+      PendingInvoiceItemsBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclude, W Function()? include, W Function(String value)? $unknown, }) { return switch (this) {
+      PendingInvoiceItemsBehavior$exclude() => exclude != null ? exclude() : orElse(value),
+      PendingInvoiceItemsBehavior$include() => include != null ? include() : orElse(value),
+      PendingInvoiceItemsBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PendingInvoiceItemsBehavior($value)';
 
  }

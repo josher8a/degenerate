@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAnnotationsEventType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() event, required W Function() general, required W Function() outage, required W Function() partialProjection, required W Function() pipeline, required W Function() trafficAnomaly, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAnnotationsEventType$event() => event(),
+      RadarGetAnnotationsEventType$general() => general(),
+      RadarGetAnnotationsEventType$outage() => outage(),
+      RadarGetAnnotationsEventType$partialProjection() => partialProjection(),
+      RadarGetAnnotationsEventType$pipeline() => pipeline(),
+      RadarGetAnnotationsEventType$trafficAnomaly() => trafficAnomaly(),
+      RadarGetAnnotationsEventType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? general, W Function()? outage, W Function()? partialProjection, W Function()? pipeline, W Function()? trafficAnomaly, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAnnotationsEventType$event() => event != null ? event() : orElse(value),
+      RadarGetAnnotationsEventType$general() => general != null ? general() : orElse(value),
+      RadarGetAnnotationsEventType$outage() => outage != null ? outage() : orElse(value),
+      RadarGetAnnotationsEventType$partialProjection() => partialProjection != null ? partialProjection() : orElse(value),
+      RadarGetAnnotationsEventType$pipeline() => pipeline != null ? pipeline() : orElse(value),
+      RadarGetAnnotationsEventType$trafficAnomaly() => trafficAnomaly != null ? trafficAnomaly() : orElse(value),
+      RadarGetAnnotationsEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAnnotationsEventType($value)';
 
  }

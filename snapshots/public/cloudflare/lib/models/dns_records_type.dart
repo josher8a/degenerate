@@ -102,6 +102,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnsRecordsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() a, required W Function() aaaa, required W Function() caa, required W Function() cert, required W Function() cname, required W Function() dnskey, required W Function() ds, required W Function() https, required W Function() loc, required W Function() mx, required W Function() naptr, required W Function() ns, required W Function() openpgpkey, required W Function() ptr, required W Function() smimea, required W Function() srv, required W Function() sshfp, required W Function() svcb, required W Function() tlsa, required W Function() txt, required W Function() uri, required W Function(String value) $unknown, }) { return switch (this) {
+      DnsRecordsType$a() => a(),
+      DnsRecordsType$aaaa() => aaaa(),
+      DnsRecordsType$caa() => caa(),
+      DnsRecordsType$cert() => cert(),
+      DnsRecordsType$cname() => cname(),
+      DnsRecordsType$dnskey() => dnskey(),
+      DnsRecordsType$ds() => ds(),
+      DnsRecordsType$https() => https(),
+      DnsRecordsType$loc() => loc(),
+      DnsRecordsType$mx() => mx(),
+      DnsRecordsType$naptr() => naptr(),
+      DnsRecordsType$ns() => ns(),
+      DnsRecordsType$openpgpkey() => openpgpkey(),
+      DnsRecordsType$ptr() => ptr(),
+      DnsRecordsType$smimea() => smimea(),
+      DnsRecordsType$srv() => srv(),
+      DnsRecordsType$sshfp() => sshfp(),
+      DnsRecordsType$svcb() => svcb(),
+      DnsRecordsType$tlsa() => tlsa(),
+      DnsRecordsType$txt() => txt(),
+      DnsRecordsType$uri() => uri(),
+      DnsRecordsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a, W Function()? aaaa, W Function()? caa, W Function()? cert, W Function()? cname, W Function()? dnskey, W Function()? ds, W Function()? https, W Function()? loc, W Function()? mx, W Function()? naptr, W Function()? ns, W Function()? openpgpkey, W Function()? ptr, W Function()? smimea, W Function()? srv, W Function()? sshfp, W Function()? svcb, W Function()? tlsa, W Function()? txt, W Function()? uri, W Function(String value)? $unknown, }) { return switch (this) {
+      DnsRecordsType$a() => a != null ? a() : orElse(value),
+      DnsRecordsType$aaaa() => aaaa != null ? aaaa() : orElse(value),
+      DnsRecordsType$caa() => caa != null ? caa() : orElse(value),
+      DnsRecordsType$cert() => cert != null ? cert() : orElse(value),
+      DnsRecordsType$cname() => cname != null ? cname() : orElse(value),
+      DnsRecordsType$dnskey() => dnskey != null ? dnskey() : orElse(value),
+      DnsRecordsType$ds() => ds != null ? ds() : orElse(value),
+      DnsRecordsType$https() => https != null ? https() : orElse(value),
+      DnsRecordsType$loc() => loc != null ? loc() : orElse(value),
+      DnsRecordsType$mx() => mx != null ? mx() : orElse(value),
+      DnsRecordsType$naptr() => naptr != null ? naptr() : orElse(value),
+      DnsRecordsType$ns() => ns != null ? ns() : orElse(value),
+      DnsRecordsType$openpgpkey() => openpgpkey != null ? openpgpkey() : orElse(value),
+      DnsRecordsType$ptr() => ptr != null ? ptr() : orElse(value),
+      DnsRecordsType$smimea() => smimea != null ? smimea() : orElse(value),
+      DnsRecordsType$srv() => srv != null ? srv() : orElse(value),
+      DnsRecordsType$sshfp() => sshfp != null ? sshfp() : orElse(value),
+      DnsRecordsType$svcb() => svcb != null ? svcb() : orElse(value),
+      DnsRecordsType$tlsa() => tlsa != null ? tlsa() : orElse(value),
+      DnsRecordsType$txt() => txt != null ? txt() : orElse(value),
+      DnsRecordsType$uri() => uri != null ? uri() : orElse(value),
+      DnsRecordsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnsRecordsType($value)';
 
  }

@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7SummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() httpMethod, required W Function() httpVersion, required W Function() ipVersion, required W Function() managedRules, required W Function() mitigationProduct, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7SummaryDimension$httpMethod() => httpMethod(),
+      RadarGetAttacksLayer7SummaryDimension$httpVersion() => httpVersion(),
+      RadarGetAttacksLayer7SummaryDimension$ipVersion() => ipVersion(),
+      RadarGetAttacksLayer7SummaryDimension$managedRules() => managedRules(),
+      RadarGetAttacksLayer7SummaryDimension$mitigationProduct() => mitigationProduct(),
+      RadarGetAttacksLayer7SummaryDimension$vertical() => vertical(),
+      RadarGetAttacksLayer7SummaryDimension$industry() => industry(),
+      RadarGetAttacksLayer7SummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httpMethod, W Function()? httpVersion, W Function()? ipVersion, W Function()? managedRules, W Function()? mitigationProduct, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7SummaryDimension$httpMethod() => httpMethod != null ? httpMethod() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$httpVersion() => httpVersion != null ? httpVersion() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$managedRules() => managedRules != null ? managedRules() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$mitigationProduct() => mitigationProduct != null ? mitigationProduct() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetAttacksLayer7SummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7SummaryDimension($value)';
 
  }

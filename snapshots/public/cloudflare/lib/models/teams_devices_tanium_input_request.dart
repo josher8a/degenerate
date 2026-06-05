@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RiskLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() critical, required W Function(String value) $unknown, }) { return switch (this) {
+      RiskLevel$low() => low(),
+      RiskLevel$medium() => medium(),
+      RiskLevel$high() => high(),
+      RiskLevel$critical() => critical(),
+      RiskLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? critical, W Function(String value)? $unknown, }) { return switch (this) {
+      RiskLevel$low() => low != null ? low() : orElse(value),
+      RiskLevel$medium() => medium != null ? medium() : orElse(value),
+      RiskLevel$high() => high != null ? high() : orElse(value),
+      RiskLevel$critical() => critical != null ? critical() : orElse(value),
+      RiskLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RiskLevel($value)';
 
  }
@@ -120,6 +136,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ScoreOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() $empty3, required W Function() $empty4, required W Function() $empty5, required W Function(String value) $unknown, }) { return switch (this) {
+      ScoreOperator$$empty() => $empty(),
+      ScoreOperator$$empty2() => $empty2(),
+      ScoreOperator$$empty3() => $empty3(),
+      ScoreOperator$$empty4() => $empty4(),
+      ScoreOperator$$empty5() => $empty5(),
+      ScoreOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? $empty3, W Function()? $empty4, W Function()? $empty5, W Function(String value)? $unknown, }) { return switch (this) {
+      ScoreOperator$$empty() => $empty != null ? $empty() : orElse(value),
+      ScoreOperator$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      ScoreOperator$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      ScoreOperator$$empty4() => $empty4 != null ? $empty4() : orElse(value),
+      ScoreOperator$$empty5() => $empty5 != null ? $empty5() : orElse(value),
+      ScoreOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ScoreOperator($value)';
 
  }

@@ -81,6 +81,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeSessionCreateRequestGaModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() gptRealtime, required W Function() gptRealtime15, required W Function() gptRealtime20250828, required W Function() gpt4oRealtimePreview, required W Function() gpt4oRealtimePreview20241001, required W Function() gpt4oRealtimePreview20241217, required W Function() gpt4oRealtimePreview20250603, required W Function() gpt4oMiniRealtimePreview, required W Function() gpt4oMiniRealtimePreview20241217, required W Function() gptRealtimeMini, required W Function() gptRealtimeMini20251006, required W Function() gptRealtimeMini20251215, required W Function() gptAudio15, required W Function() gptAudioMini, required W Function() gptAudioMini20251006, required W Function() gptAudioMini20251215, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtime() => gptRealtime(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtime15() => gptRealtime15(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtime20250828() => gptRealtime20250828(),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview() => gpt4oRealtimePreview(),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241001() => gpt4oRealtimePreview20241001(),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241217() => gpt4oRealtimePreview20241217(),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20250603() => gpt4oRealtimePreview20250603(),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview() => gpt4oMiniRealtimePreview(),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview20241217() => gpt4oMiniRealtimePreview20241217(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini() => gptRealtimeMini(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251006() => gptRealtimeMini20251006(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251215() => gptRealtimeMini20251215(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudio15() => gptAudio15(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini() => gptAudioMini(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251006() => gptAudioMini20251006(),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251215() => gptAudioMini20251215(),
+      RealtimeSessionCreateRequestGaModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptRealtime, W Function()? gptRealtime15, W Function()? gptRealtime20250828, W Function()? gpt4oRealtimePreview, W Function()? gpt4oRealtimePreview20241001, W Function()? gpt4oRealtimePreview20241217, W Function()? gpt4oRealtimePreview20250603, W Function()? gpt4oMiniRealtimePreview, W Function()? gpt4oMiniRealtimePreview20241217, W Function()? gptRealtimeMini, W Function()? gptRealtimeMini20251006, W Function()? gptRealtimeMini20251215, W Function()? gptAudio15, W Function()? gptAudioMini, W Function()? gptAudioMini20251006, W Function()? gptAudioMini20251215, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtime() => gptRealtime != null ? gptRealtime() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtime15() => gptRealtime15 != null ? gptRealtime15() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtime20250828() => gptRealtime20250828 != null ? gptRealtime20250828() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview() => gpt4oRealtimePreview != null ? gpt4oRealtimePreview() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241001() => gpt4oRealtimePreview20241001 != null ? gpt4oRealtimePreview20241001() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20241217() => gpt4oRealtimePreview20241217 != null ? gpt4oRealtimePreview20241217() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oRealtimePreview20250603() => gpt4oRealtimePreview20250603 != null ? gpt4oRealtimePreview20250603() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview() => gpt4oMiniRealtimePreview != null ? gpt4oMiniRealtimePreview() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gpt4oMiniRealtimePreview20241217() => gpt4oMiniRealtimePreview20241217 != null ? gpt4oMiniRealtimePreview20241217() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini() => gptRealtimeMini != null ? gptRealtimeMini() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251006() => gptRealtimeMini20251006 != null ? gptRealtimeMini20251006() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptRealtimeMini20251215() => gptRealtimeMini20251215 != null ? gptRealtimeMini20251215() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudio15() => gptAudio15 != null ? gptAudio15() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini() => gptAudioMini != null ? gptAudioMini() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251006() => gptAudioMini20251006 != null ? gptAudioMini20251006() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$gptAudioMini20251215() => gptAudioMini20251215 != null ? gptAudioMini20251215() : orElse(value),
+      RealtimeSessionCreateRequestGaModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeSessionCreateRequestGaModelVariant2($value)';
 
  }

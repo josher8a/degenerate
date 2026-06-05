@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MoneyMovementType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() card, required W Function(String value) $unknown, }) { return switch (this) {
+      MoneyMovementType$card() => card(),
+      MoneyMovementType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? card, W Function(String value)? $unknown, }) { return switch (this) {
+      MoneyMovementType$card() => card != null ? card() : orElse(value),
+      MoneyMovementType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MoneyMovementType($value)';
 
  }

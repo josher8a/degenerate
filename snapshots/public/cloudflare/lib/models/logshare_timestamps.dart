@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LogshareTimestamps$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unix, required W Function() unixnano, required W Function() rfc3339, required W Function(String value) $unknown, }) { return switch (this) {
+      LogshareTimestamps$unix() => unix(),
+      LogshareTimestamps$unixnano() => unixnano(),
+      LogshareTimestamps$rfc3339() => rfc3339(),
+      LogshareTimestamps$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unix, W Function()? unixnano, W Function()? rfc3339, W Function(String value)? $unknown, }) { return switch (this) {
+      LogshareTimestamps$unix() => unix != null ? unix() : orElse(value),
+      LogshareTimestamps$unixnano() => unixnano != null ? unixnano() : orElse(value),
+      LogshareTimestamps$rfc3339() => rfc3339 != null ? rfc3339() : orElse(value),
+      LogshareTimestamps$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LogshareTimestamps($value)';
 
  }

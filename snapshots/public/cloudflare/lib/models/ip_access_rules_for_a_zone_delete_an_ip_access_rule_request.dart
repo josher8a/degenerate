@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Cascade$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() basic, required W Function() aggressive, required W Function(String value) $unknown, }) { return switch (this) {
+      Cascade$none() => none(),
+      Cascade$basic() => basic(),
+      Cascade$aggressive() => aggressive(),
+      Cascade$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? basic, W Function()? aggressive, W Function(String value)? $unknown, }) { return switch (this) {
+      Cascade$none() => none != null ? none() : orElse(value),
+      Cascade$basic() => basic != null ? basic() : orElse(value),
+      Cascade$aggressive() => aggressive != null ? aggressive() : orElse(value),
+      Cascade$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Cascade($value)';
 
  }

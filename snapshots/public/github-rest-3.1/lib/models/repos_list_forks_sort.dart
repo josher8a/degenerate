@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListForksSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() newest, required W Function() oldest, required W Function() stargazers, required W Function() watchers, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListForksSort$newest() => newest(),
+      ReposListForksSort$oldest() => oldest(),
+      ReposListForksSort$stargazers() => stargazers(),
+      ReposListForksSort$watchers() => watchers(),
+      ReposListForksSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? newest, W Function()? oldest, W Function()? stargazers, W Function()? watchers, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListForksSort$newest() => newest != null ? newest() : orElse(value),
+      ReposListForksSort$oldest() => oldest != null ? oldest() : orElse(value),
+      ReposListForksSort$stargazers() => stargazers != null ? stargazers() : orElse(value),
+      ReposListForksSort$watchers() => watchers != null ? watchers() : orElse(value),
+      ReposListForksSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListForksSort($value)';
 
  }

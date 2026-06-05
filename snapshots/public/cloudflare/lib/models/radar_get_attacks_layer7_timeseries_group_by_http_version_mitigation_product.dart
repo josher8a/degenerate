@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ddos, required W Function() waf, required W Function() botManagement, required W Function() accessRules, required W Function() ipReputation, required W Function() apiShield, required W Function() dataLossPrevention, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$ddos() => ddos(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$waf() => waf(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$botManagement() => botManagement(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$accessRules() => accessRules(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$ipReputation() => ipReputation(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$apiShield() => apiShield(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$dataLossPrevention() => dataLossPrevention(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ddos, W Function()? waf, W Function()? botManagement, W Function()? accessRules, W Function()? ipReputation, W Function()? apiShield, W Function()? dataLossPrevention, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$ddos() => ddos != null ? ddos() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$waf() => waf != null ? waf() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$botManagement() => botManagement != null ? botManagement() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$accessRules() => accessRules != null ? accessRules() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$ipReputation() => ipReputation != null ? ipReputation() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$apiShield() => apiShield != null ? apiShield() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$dataLossPrevention() => dataLossPrevention != null ? dataLossPrevention() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByHttpVersionMitigationProduct($value)';
 
  }

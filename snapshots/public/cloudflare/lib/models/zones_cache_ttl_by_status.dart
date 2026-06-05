@@ -33,6 +33,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesCacheTtlByStatusId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cacheTtlByStatus, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesCacheTtlByStatusId$cacheTtlByStatus() => cacheTtlByStatus(),
+      ZonesCacheTtlByStatusId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cacheTtlByStatus, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesCacheTtlByStatusId$cacheTtlByStatus() => cacheTtlByStatus != null ? cacheTtlByStatus() : orElse(value),
+      ZonesCacheTtlByStatusId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesCacheTtlByStatusId($value)';
 
  }

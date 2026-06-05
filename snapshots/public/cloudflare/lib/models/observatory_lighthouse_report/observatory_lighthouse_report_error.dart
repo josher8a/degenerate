@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ObservatoryLighthouseErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() notReachable, required W Function() dnsFailure, required W Function() notHtml, required W Function() lighthouseTimeout, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      ObservatoryLighthouseErrorCode$notReachable() => notReachable(),
+      ObservatoryLighthouseErrorCode$dnsFailure() => dnsFailure(),
+      ObservatoryLighthouseErrorCode$notHtml() => notHtml(),
+      ObservatoryLighthouseErrorCode$lighthouseTimeout() => lighthouseTimeout(),
+      ObservatoryLighthouseErrorCode$unknown() => unknown(),
+      ObservatoryLighthouseErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notReachable, W Function()? dnsFailure, W Function()? notHtml, W Function()? lighthouseTimeout, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      ObservatoryLighthouseErrorCode$notReachable() => notReachable != null ? notReachable() : orElse(value),
+      ObservatoryLighthouseErrorCode$dnsFailure() => dnsFailure != null ? dnsFailure() : orElse(value),
+      ObservatoryLighthouseErrorCode$notHtml() => notHtml != null ? notHtml() : orElse(value),
+      ObservatoryLighthouseErrorCode$lighthouseTimeout() => lighthouseTimeout != null ? lighthouseTimeout() : orElse(value),
+      ObservatoryLighthouseErrorCode$unknown() => unknown != null ? unknown() : orElse(value),
+      ObservatoryLighthouseErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ObservatoryLighthouseErrorCode($value)';
 
  }

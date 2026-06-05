@@ -26,6 +26,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesResponseBufferingId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() responseBuffering, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesResponseBufferingId$responseBuffering() => responseBuffering(),
+      ZonesResponseBufferingId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseBuffering, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesResponseBufferingId$responseBuffering() => responseBuffering != null ? responseBuffering() : orElse(value),
+      ZonesResponseBufferingId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesResponseBufferingId($value)';
 
  }

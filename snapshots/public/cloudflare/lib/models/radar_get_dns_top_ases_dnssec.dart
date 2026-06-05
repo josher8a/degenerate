@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsTopAsesDnssec$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() invalid, required W Function() insecure, required W Function() secure, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsTopAsesDnssec$invalid() => invalid(),
+      RadarGetDnsTopAsesDnssec$insecure() => insecure(),
+      RadarGetDnsTopAsesDnssec$secure() => secure(),
+      RadarGetDnsTopAsesDnssec$$other() => $other(),
+      RadarGetDnsTopAsesDnssec$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? invalid, W Function()? insecure, W Function()? secure, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsTopAsesDnssec$invalid() => invalid != null ? invalid() : orElse(value),
+      RadarGetDnsTopAsesDnssec$insecure() => insecure != null ? insecure() : orElse(value),
+      RadarGetDnsTopAsesDnssec$secure() => secure != null ? secure() : orElse(value),
+      RadarGetDnsTopAsesDnssec$$other() => $other != null ? $other() : orElse(value),
+      RadarGetDnsTopAsesDnssec$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsTopAsesDnssec($value)';
 
  }

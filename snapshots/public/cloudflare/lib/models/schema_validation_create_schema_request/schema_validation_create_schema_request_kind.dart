@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SchemaValidationCreateSchemaRequestKind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() openapiV3, required W Function(String value) $unknown, }) { return switch (this) {
+      SchemaValidationCreateSchemaRequestKind$openapiV3() => openapiV3(),
+      SchemaValidationCreateSchemaRequestKind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? openapiV3, W Function(String value)? $unknown, }) { return switch (this) {
+      SchemaValidationCreateSchemaRequestKind$openapiV3() => openapiV3 != null ? openapiV3() : orElse(value),
+      SchemaValidationCreateSchemaRequestKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SchemaValidationCreateSchemaRequestKind($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorChangeStatusWorkflowInstanceRequestStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() resume, required W Function() pause, required W Function() terminate, required W Function() restart, required W Function(String value) $unknown, }) { return switch (this) {
+      WorChangeStatusWorkflowInstanceRequestStatus$resume() => resume(),
+      WorChangeStatusWorkflowInstanceRequestStatus$pause() => pause(),
+      WorChangeStatusWorkflowInstanceRequestStatus$terminate() => terminate(),
+      WorChangeStatusWorkflowInstanceRequestStatus$restart() => restart(),
+      WorChangeStatusWorkflowInstanceRequestStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? resume, W Function()? pause, W Function()? terminate, W Function()? restart, W Function(String value)? $unknown, }) { return switch (this) {
+      WorChangeStatusWorkflowInstanceRequestStatus$resume() => resume != null ? resume() : orElse(value),
+      WorChangeStatusWorkflowInstanceRequestStatus$pause() => pause != null ? pause() : orElse(value),
+      WorChangeStatusWorkflowInstanceRequestStatus$terminate() => terminate != null ? terminate() : orElse(value),
+      WorChangeStatusWorkflowInstanceRequestStatus$restart() => restart != null ? restart() : orElse(value),
+      WorChangeStatusWorkflowInstanceRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorChangeStatusWorkflowInstanceRequestStatus($value)';
 
  }

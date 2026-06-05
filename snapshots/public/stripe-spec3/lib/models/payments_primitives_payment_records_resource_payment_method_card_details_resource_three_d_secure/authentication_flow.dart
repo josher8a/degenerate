@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AuthenticationFlow$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() challenge, required W Function() frictionless, required W Function(String value) $unknown, }) { return switch (this) {
+      AuthenticationFlow$challenge() => challenge(),
+      AuthenticationFlow$frictionless() => frictionless(),
+      AuthenticationFlow$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? challenge, W Function()? frictionless, W Function(String value)? $unknown, }) { return switch (this) {
+      AuthenticationFlow$challenge() => challenge != null ? challenge() : orElse(value),
+      AuthenticationFlow$frictionless() => frictionless != null ? frictionless() : orElse(value),
+      AuthenticationFlow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AuthenticationFlow($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookPullRequestDequeuedAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dequeued, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookPullRequestDequeuedAction$dequeued() => dequeued(),
+      WebhookPullRequestDequeuedAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dequeued, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookPullRequestDequeuedAction$dequeued() => dequeued != null ? dequeued() : orElse(value),
+      WebhookPullRequestDequeuedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookPullRequestDequeuedAction($value)';
 
  }
@@ -107,6 +117,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookPullRequestDequeuedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknownRemovalReason, required W Function() manual, required W Function() merge, required W Function() mergeConflict, required W Function() ciFailure, required W Function() ciTimeout, required W Function() alreadyMerged, required W Function() queueCleared, required W Function() rollBack, required W Function() branchProtections, required W Function() gitTreeInvalid, required W Function() invalidMergeCommit, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookPullRequestDequeuedReason$unknownRemovalReason() => unknownRemovalReason(),
+      WebhookPullRequestDequeuedReason$manual() => manual(),
+      WebhookPullRequestDequeuedReason$merge() => merge(),
+      WebhookPullRequestDequeuedReason$mergeConflict() => mergeConflict(),
+      WebhookPullRequestDequeuedReason$ciFailure() => ciFailure(),
+      WebhookPullRequestDequeuedReason$ciTimeout() => ciTimeout(),
+      WebhookPullRequestDequeuedReason$alreadyMerged() => alreadyMerged(),
+      WebhookPullRequestDequeuedReason$queueCleared() => queueCleared(),
+      WebhookPullRequestDequeuedReason$rollBack() => rollBack(),
+      WebhookPullRequestDequeuedReason$branchProtections() => branchProtections(),
+      WebhookPullRequestDequeuedReason$gitTreeInvalid() => gitTreeInvalid(),
+      WebhookPullRequestDequeuedReason$invalidMergeCommit() => invalidMergeCommit(),
+      WebhookPullRequestDequeuedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknownRemovalReason, W Function()? manual, W Function()? merge, W Function()? mergeConflict, W Function()? ciFailure, W Function()? ciTimeout, W Function()? alreadyMerged, W Function()? queueCleared, W Function()? rollBack, W Function()? branchProtections, W Function()? gitTreeInvalid, W Function()? invalidMergeCommit, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookPullRequestDequeuedReason$unknownRemovalReason() => unknownRemovalReason != null ? unknownRemovalReason() : orElse(value),
+      WebhookPullRequestDequeuedReason$manual() => manual != null ? manual() : orElse(value),
+      WebhookPullRequestDequeuedReason$merge() => merge != null ? merge() : orElse(value),
+      WebhookPullRequestDequeuedReason$mergeConflict() => mergeConflict != null ? mergeConflict() : orElse(value),
+      WebhookPullRequestDequeuedReason$ciFailure() => ciFailure != null ? ciFailure() : orElse(value),
+      WebhookPullRequestDequeuedReason$ciTimeout() => ciTimeout != null ? ciTimeout() : orElse(value),
+      WebhookPullRequestDequeuedReason$alreadyMerged() => alreadyMerged != null ? alreadyMerged() : orElse(value),
+      WebhookPullRequestDequeuedReason$queueCleared() => queueCleared != null ? queueCleared() : orElse(value),
+      WebhookPullRequestDequeuedReason$rollBack() => rollBack != null ? rollBack() : orElse(value),
+      WebhookPullRequestDequeuedReason$branchProtections() => branchProtections != null ? branchProtections() : orElse(value),
+      WebhookPullRequestDequeuedReason$gitTreeInvalid() => gitTreeInvalid != null ? gitTreeInvalid() : orElse(value),
+      WebhookPullRequestDequeuedReason$invalidMergeCommit() => invalidMergeCommit != null ? invalidMergeCommit() : orElse(value),
+      WebhookPullRequestDequeuedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookPullRequestDequeuedReason($value)';
 
  }

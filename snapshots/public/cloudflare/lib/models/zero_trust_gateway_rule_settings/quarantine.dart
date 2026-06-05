@@ -69,6 +69,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exe, required W Function() pdf, required W Function() doc, required W Function() docm, required W Function() docx, required W Function() rtf, required W Function() ppt, required W Function() pptx, required W Function() xls, required W Function() xlsm, required W Function() xlsx, required W Function() zip, required W Function() rar, required W Function(String value) $unknown, }) { return switch (this) {
+      FileTypes$exe() => exe(),
+      FileTypes$pdf() => pdf(),
+      FileTypes$doc() => doc(),
+      FileTypes$docm() => docm(),
+      FileTypes$docx() => docx(),
+      FileTypes$rtf() => rtf(),
+      FileTypes$ppt() => ppt(),
+      FileTypes$pptx() => pptx(),
+      FileTypes$xls() => xls(),
+      FileTypes$xlsm() => xlsm(),
+      FileTypes$xlsx() => xlsx(),
+      FileTypes$zip() => zip(),
+      FileTypes$rar() => rar(),
+      FileTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exe, W Function()? pdf, W Function()? doc, W Function()? docm, W Function()? docx, W Function()? rtf, W Function()? ppt, W Function()? pptx, W Function()? xls, W Function()? xlsm, W Function()? xlsx, W Function()? zip, W Function()? rar, W Function(String value)? $unknown, }) { return switch (this) {
+      FileTypes$exe() => exe != null ? exe() : orElse(value),
+      FileTypes$pdf() => pdf != null ? pdf() : orElse(value),
+      FileTypes$doc() => doc != null ? doc() : orElse(value),
+      FileTypes$docm() => docm != null ? docm() : orElse(value),
+      FileTypes$docx() => docx != null ? docx() : orElse(value),
+      FileTypes$rtf() => rtf != null ? rtf() : orElse(value),
+      FileTypes$ppt() => ppt != null ? ppt() : orElse(value),
+      FileTypes$pptx() => pptx != null ? pptx() : orElse(value),
+      FileTypes$xls() => xls != null ? xls() : orElse(value),
+      FileTypes$xlsm() => xlsm != null ? xlsm() : orElse(value),
+      FileTypes$xlsx() => xlsx != null ? xlsx() : orElse(value),
+      FileTypes$zip() => zip != null ? zip() : orElse(value),
+      FileTypes$rar() => rar != null ? rar() : orElse(value),
+      FileTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileTypes($value)';
 
  }

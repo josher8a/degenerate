@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inboundGoods, required W Function() smallSeller, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$inboundGoods() => inboundGoods(),
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$smallSeller() => smallSeller(),
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$standard() => standard(),
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundGoods, W Function()? smallSeller, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$inboundGoods() => inboundGoods != null ? inboundGoods() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$smallSeller() => smallSeller != null ? smallSeller() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$standard() => standard != null ? standard() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme($value)';
 
  }

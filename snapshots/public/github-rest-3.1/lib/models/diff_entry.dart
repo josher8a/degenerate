@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DiffEntryStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() added, required W Function() removed, required W Function() modified, required W Function() renamed, required W Function() copied, required W Function() changed, required W Function() unchanged, required W Function(String value) $unknown, }) { return switch (this) {
+      DiffEntryStatus$added() => added(),
+      DiffEntryStatus$removed() => removed(),
+      DiffEntryStatus$modified() => modified(),
+      DiffEntryStatus$renamed() => renamed(),
+      DiffEntryStatus$copied() => copied(),
+      DiffEntryStatus$changed() => changed(),
+      DiffEntryStatus$unchanged() => unchanged(),
+      DiffEntryStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? added, W Function()? removed, W Function()? modified, W Function()? renamed, W Function()? copied, W Function()? changed, W Function()? unchanged, W Function(String value)? $unknown, }) { return switch (this) {
+      DiffEntryStatus$added() => added != null ? added() : orElse(value),
+      DiffEntryStatus$removed() => removed != null ? removed() : orElse(value),
+      DiffEntryStatus$modified() => modified != null ? modified() : orElse(value),
+      DiffEntryStatus$renamed() => renamed != null ? renamed() : orElse(value),
+      DiffEntryStatus$copied() => copied != null ? copied() : orElse(value),
+      DiffEntryStatus$changed() => changed != null ? changed() : orElse(value),
+      DiffEntryStatus$unchanged() => unchanged != null ? unchanged() : orElse(value),
+      DiffEntryStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DiffEntryStatus($value)';
 
  }

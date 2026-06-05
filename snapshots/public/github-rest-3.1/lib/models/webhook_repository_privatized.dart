@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookRepositoryPrivatizedAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() privatized, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookRepositoryPrivatizedAction$privatized() => privatized(),
+      WebhookRepositoryPrivatizedAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? privatized, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookRepositoryPrivatizedAction$privatized() => privatized != null ? privatized() : orElse(value),
+      WebhookRepositoryPrivatizedAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookRepositoryPrivatizedAction($value)';
 
  }

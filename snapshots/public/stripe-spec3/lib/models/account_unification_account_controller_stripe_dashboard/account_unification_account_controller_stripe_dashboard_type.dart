@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountUnificationAccountControllerStripeDashboardType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() express, required W Function() full, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountUnificationAccountControllerStripeDashboardType$express() => express(),
+      AccountUnificationAccountControllerStripeDashboardType$full() => full(),
+      AccountUnificationAccountControllerStripeDashboardType$none() => none(),
+      AccountUnificationAccountControllerStripeDashboardType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? express, W Function()? full, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountUnificationAccountControllerStripeDashboardType$express() => express != null ? express() : orElse(value),
+      AccountUnificationAccountControllerStripeDashboardType$full() => full != null ? full() : orElse(value),
+      AccountUnificationAccountControllerStripeDashboardType$none() => none != null ? none() : orElse(value),
+      AccountUnificationAccountControllerStripeDashboardType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountUnificationAccountControllerStripeDashboardType($value)';
 
  }

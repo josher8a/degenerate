@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ExternalAccountPayoutBankAccountAccountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() checking, required W Function() futsu, required W Function() savings, required W Function() toza, required W Function(String value) $unknown, }) { return switch (this) {
+      ExternalAccountPayoutBankAccountAccountType$checking() => checking(),
+      ExternalAccountPayoutBankAccountAccountType$futsu() => futsu(),
+      ExternalAccountPayoutBankAccountAccountType$savings() => savings(),
+      ExternalAccountPayoutBankAccountAccountType$toza() => toza(),
+      ExternalAccountPayoutBankAccountAccountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? futsu, W Function()? savings, W Function()? toza, W Function(String value)? $unknown, }) { return switch (this) {
+      ExternalAccountPayoutBankAccountAccountType$checking() => checking != null ? checking() : orElse(value),
+      ExternalAccountPayoutBankAccountAccountType$futsu() => futsu != null ? futsu() : orElse(value),
+      ExternalAccountPayoutBankAccountAccountType$savings() => savings != null ? savings() : orElse(value),
+      ExternalAccountPayoutBankAccountAccountType$toza() => toza != null ? toza() : orElse(value),
+      ExternalAccountPayoutBankAccountAccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ExternalAccountPayoutBankAccountAccountType($value)';
 
  }

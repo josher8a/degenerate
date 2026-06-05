@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalSubscriptionUpdateBillingCycleAnchor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() now, required W Function() unchanged, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalSubscriptionUpdateBillingCycleAnchor$now() => now(),
+      PortalSubscriptionUpdateBillingCycleAnchor$unchanged() => unchanged(),
+      PortalSubscriptionUpdateBillingCycleAnchor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? now, W Function()? unchanged, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalSubscriptionUpdateBillingCycleAnchor$now() => now != null ? now() : orElse(value),
+      PortalSubscriptionUpdateBillingCycleAnchor$unchanged() => unchanged != null ? unchanged() : orElse(value),
+      PortalSubscriptionUpdateBillingCycleAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalSubscriptionUpdateBillingCycleAnchor($value)';
 
  }
@@ -85,6 +97,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() price, required W Function() promotionCode, required W Function() quantity, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalSubscriptionUpdateDefaultAllowedUpdates$price() => price(),
+      PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode() => promotionCode(),
+      PortalSubscriptionUpdateDefaultAllowedUpdates$quantity() => quantity(),
+      PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? price, W Function()? promotionCode, W Function()? quantity, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalSubscriptionUpdateDefaultAllowedUpdates$price() => price != null ? price() : orElse(value),
+      PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode() => promotionCode != null ? promotionCode() : orElse(value),
+      PortalSubscriptionUpdateDefaultAllowedUpdates$quantity() => quantity != null ? quantity() : orElse(value),
+      PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)';
 
  }

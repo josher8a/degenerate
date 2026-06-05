@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InboxProvider$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() microsoft, required W Function() google, required W Function(String value) $unknown, }) { return switch (this) {
+      InboxProvider$microsoft() => microsoft(),
+      InboxProvider$google() => google(),
+      InboxProvider$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? microsoft, W Function()? google, W Function(String value)? $unknown, }) { return switch (this) {
+      InboxProvider$microsoft() => microsoft != null ? microsoft() : orElse(value),
+      InboxProvider$google() => google != null ? google() : orElse(value),
+      InboxProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InboxProvider($value)';
 
  }

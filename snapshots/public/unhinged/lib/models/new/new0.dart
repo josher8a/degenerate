@@ -65,6 +65,56 @@ sealed class New0 {
     return this is New0$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() $0,
+    required W Function() $02,
+    required W Function() $1,
+    required W Function() minus1,
+    required W Function() $2147483647,
+    required W Function() minus2147483648,
+    required W Function() $9999999999999999,
+    required W Function(int value) $unknown,
+  }) {
+    return switch (this) {
+      New0$$0() => $0(),
+      New0$$02() => $02(),
+      New0$$1() => $1(),
+      New0$minus1() => minus1(),
+      New0$$2147483647() => $2147483647(),
+      New0$minus2147483648() => minus2147483648(),
+      New0$$9999999999999999() => $9999999999999999(),
+      New0$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(int value) orElse,
+    W Function()? $0,
+    W Function()? $02,
+    W Function()? $1,
+    W Function()? minus1,
+    W Function()? $2147483647,
+    W Function()? minus2147483648,
+    W Function()? $9999999999999999,
+    W Function(int value)? $unknown,
+  }) {
+    return switch (this) {
+      New0$$0() => $0 != null ? $0() : orElse(value),
+      New0$$02() => $02 != null ? $02() : orElse(value),
+      New0$$1() => $1 != null ? $1() : orElse(value),
+      New0$minus1() => minus1 != null ? minus1() : orElse(value),
+      New0$$2147483647() => $2147483647 != null ? $2147483647() : orElse(value),
+      New0$minus2147483648() =>
+        minus2147483648 != null ? minus2147483648() : orElse(value),
+      New0$$9999999999999999() =>
+        $9999999999999999 != null ? $9999999999999999() : orElse(value),
+      New0$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'New0($value)';
 }

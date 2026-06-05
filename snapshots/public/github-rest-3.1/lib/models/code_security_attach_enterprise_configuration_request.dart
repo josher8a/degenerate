@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() allWithoutConfigurations, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityAttachEnterpriseConfigurationRequestScope$all() => all(),
+      CodeSecurityAttachEnterpriseConfigurationRequestScope$allWithoutConfigurations() => allWithoutConfigurations(),
+      CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? allWithoutConfigurations, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityAttachEnterpriseConfigurationRequestScope$all() => all != null ? all() : orElse(value),
+      CodeSecurityAttachEnterpriseConfigurationRequestScope$allWithoutConfigurations() => allWithoutConfigurations != null ? allWithoutConfigurations() : orElse(value),
+      CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeSecurityAttachEnterpriseConfigurationRequestScope($value)';
 
  }

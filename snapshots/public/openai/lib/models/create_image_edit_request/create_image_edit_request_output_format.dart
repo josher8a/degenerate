@@ -33,6 +33,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageEditRequestOutputFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() png, required W Function() jpeg, required W Function() webp, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageEditRequestOutputFormat$png() => png(),
+      CreateImageEditRequestOutputFormat$jpeg() => jpeg(),
+      CreateImageEditRequestOutputFormat$webp() => webp(),
+      CreateImageEditRequestOutputFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? png, W Function()? jpeg, W Function()? webp, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageEditRequestOutputFormat$png() => png != null ? png() : orElse(value),
+      CreateImageEditRequestOutputFormat$jpeg() => jpeg != null ? jpeg() : orElse(value),
+      CreateImageEditRequestOutputFormat$webp() => webp != null ? webp() : orElse(value),
+      CreateImageEditRequestOutputFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageEditRequestOutputFormat($value)';
 
  }

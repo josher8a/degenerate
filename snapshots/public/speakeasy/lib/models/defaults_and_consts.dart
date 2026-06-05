@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConstEnumStr$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+      ConstEnumStr$one() => one(),
+      ConstEnumStr$two() => two(),
+      ConstEnumStr$three() => three(),
+      ConstEnumStr$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+      ConstEnumStr$one() => one != null ? one() : orElse(value),
+      ConstEnumStr$two() => two != null ? two() : orElse(value),
+      ConstEnumStr$three() => three != null ? three() : orElse(value),
+      ConstEnumStr$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConstEnumStr($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConstEnumInt$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+      ConstEnumInt$$1() => $1(),
+      ConstEnumInt$$2() => $2(),
+      ConstEnumInt$$3() => $3(),
+      ConstEnumInt$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+      ConstEnumInt$$1() => $1 != null ? $1() : orElse(value),
+      ConstEnumInt$$2() => $2 != null ? $2() : orElse(value),
+      ConstEnumInt$$3() => $3 != null ? $3() : orElse(value),
+      ConstEnumInt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConstEnumInt($value)';
 
  }
@@ -165,6 +193,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultEnumStr$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() one, required W Function() two, required W Function() three, required W Function(String value) $unknown, }) { return switch (this) {
+      DefaultEnumStr$one() => one(),
+      DefaultEnumStr$two() => two(),
+      DefaultEnumStr$three() => three(),
+      DefaultEnumStr$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? one, W Function()? two, W Function()? three, W Function(String value)? $unknown, }) { return switch (this) {
+      DefaultEnumStr$one() => one != null ? one() : orElse(value),
+      DefaultEnumStr$two() => two != null ? two() : orElse(value),
+      DefaultEnumStr$three() => three != null ? three() : orElse(value),
+      DefaultEnumStr$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultEnumStr($value)';
 
  }
@@ -233,6 +275,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultEnumInt$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+      DefaultEnumInt$$1() => $1(),
+      DefaultEnumInt$$2() => $2(),
+      DefaultEnumInt$$3() => $3(),
+      DefaultEnumInt$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+      DefaultEnumInt$$1() => $1 != null ? $1() : orElse(value),
+      DefaultEnumInt$$2() => $2 != null ? $2() : orElse(value),
+      DefaultEnumInt$$3() => $3 != null ? $3() : orElse(value),
+      DefaultEnumInt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultEnumInt($value)';
 
  }

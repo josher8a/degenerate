@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PartType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() audio, required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      PartType$audio() => audio(),
+      PartType$text() => text(),
+      PartType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? audio, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      PartType$audio() => audio != null ? audio() : orElse(value),
+      PartType$text() => text != null ? text() : orElse(value),
+      PartType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PartType($value)';
 
  }

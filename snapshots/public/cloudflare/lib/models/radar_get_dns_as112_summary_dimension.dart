@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsAs112SummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dnssec, required W Function() edns, required W Function() ipVersion, required W Function() protocol, required W Function() queryType, required W Function() responseCode, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsAs112SummaryDimension$dnssec() => dnssec(),
+      RadarGetDnsAs112SummaryDimension$edns() => edns(),
+      RadarGetDnsAs112SummaryDimension$ipVersion() => ipVersion(),
+      RadarGetDnsAs112SummaryDimension$protocol() => protocol(),
+      RadarGetDnsAs112SummaryDimension$queryType() => queryType(),
+      RadarGetDnsAs112SummaryDimension$responseCode() => responseCode(),
+      RadarGetDnsAs112SummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, W Function()? edns, W Function()? ipVersion, W Function()? protocol, W Function()? queryType, W Function()? responseCode, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsAs112SummaryDimension$dnssec() => dnssec != null ? dnssec() : orElse(value),
+      RadarGetDnsAs112SummaryDimension$edns() => edns != null ? edns() : orElse(value),
+      RadarGetDnsAs112SummaryDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetDnsAs112SummaryDimension$protocol() => protocol != null ? protocol() : orElse(value),
+      RadarGetDnsAs112SummaryDimension$queryType() => queryType != null ? queryType() : orElse(value),
+      RadarGetDnsAs112SummaryDimension$responseCode() => responseCode != null ? responseCode() : orElse(value),
+      RadarGetDnsAs112SummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsAs112SummaryDimension($value)';
 
  }

@@ -61,6 +61,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActiveFeatures$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) { return switch (this) {
+      ActiveFeatures$cardIssuing() => cardIssuing(),
+      ActiveFeatures$depositInsurance() => depositInsurance(),
+      ActiveFeatures$financialAddressesAba() => financialAddressesAba(),
+      ActiveFeatures$financialAddressesAbaForwarding() => financialAddressesAbaForwarding(),
+      ActiveFeatures$inboundTransfersAch() => inboundTransfersAch(),
+      ActiveFeatures$intraStripeFlows() => intraStripeFlows(),
+      ActiveFeatures$outboundPaymentsAch() => outboundPaymentsAch(),
+      ActiveFeatures$outboundPaymentsUsDomesticWire() => outboundPaymentsUsDomesticWire(),
+      ActiveFeatures$outboundTransfersAch() => outboundTransfersAch(),
+      ActiveFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire(),
+      ActiveFeatures$remoteDepositCapture() => remoteDepositCapture(),
+      ActiveFeatures$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) { return switch (this) {
+      ActiveFeatures$cardIssuing() => cardIssuing != null ? cardIssuing() : orElse(value),
+      ActiveFeatures$depositInsurance() => depositInsurance != null ? depositInsurance() : orElse(value),
+      ActiveFeatures$financialAddressesAba() => financialAddressesAba != null ? financialAddressesAba() : orElse(value),
+      ActiveFeatures$financialAddressesAbaForwarding() => financialAddressesAbaForwarding != null ? financialAddressesAbaForwarding() : orElse(value),
+      ActiveFeatures$inboundTransfersAch() => inboundTransfersAch != null ? inboundTransfersAch() : orElse(value),
+      ActiveFeatures$intraStripeFlows() => intraStripeFlows != null ? intraStripeFlows() : orElse(value),
+      ActiveFeatures$outboundPaymentsAch() => outboundPaymentsAch != null ? outboundPaymentsAch() : orElse(value),
+      ActiveFeatures$outboundPaymentsUsDomesticWire() => outboundPaymentsUsDomesticWire != null ? outboundPaymentsUsDomesticWire() : orElse(value),
+      ActiveFeatures$outboundTransfersAch() => outboundTransfersAch != null ? outboundTransfersAch() : orElse(value),
+      ActiveFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire != null ? outboundTransfersUsDomesticWire() : orElse(value),
+      ActiveFeatures$remoteDepositCapture() => remoteDepositCapture != null ? remoteDepositCapture() : orElse(value),
+      ActiveFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActiveFeatures($value)';
 
  }
@@ -194,6 +224,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryFinancialAccountObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() treasuryFinancialAccount, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountObject$treasuryFinancialAccount() => treasuryFinancialAccount(),
+      TreasuryFinancialAccountObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryFinancialAccount, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountObject$treasuryFinancialAccount() => treasuryFinancialAccount != null ? treasuryFinancialAccount() : orElse(value),
+      TreasuryFinancialAccountObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryFinancialAccountObject($value)';
 
  }
@@ -276,6 +316,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PendingFeatures$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) { return switch (this) {
+      PendingFeatures$cardIssuing() => cardIssuing(),
+      PendingFeatures$depositInsurance() => depositInsurance(),
+      PendingFeatures$financialAddressesAba() => financialAddressesAba(),
+      PendingFeatures$financialAddressesAbaForwarding() => financialAddressesAbaForwarding(),
+      PendingFeatures$inboundTransfersAch() => inboundTransfersAch(),
+      PendingFeatures$intraStripeFlows() => intraStripeFlows(),
+      PendingFeatures$outboundPaymentsAch() => outboundPaymentsAch(),
+      PendingFeatures$outboundPaymentsUsDomesticWire() => outboundPaymentsUsDomesticWire(),
+      PendingFeatures$outboundTransfersAch() => outboundTransfersAch(),
+      PendingFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire(),
+      PendingFeatures$remoteDepositCapture() => remoteDepositCapture(),
+      PendingFeatures$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) { return switch (this) {
+      PendingFeatures$cardIssuing() => cardIssuing != null ? cardIssuing() : orElse(value),
+      PendingFeatures$depositInsurance() => depositInsurance != null ? depositInsurance() : orElse(value),
+      PendingFeatures$financialAddressesAba() => financialAddressesAba != null ? financialAddressesAba() : orElse(value),
+      PendingFeatures$financialAddressesAbaForwarding() => financialAddressesAbaForwarding != null ? financialAddressesAbaForwarding() : orElse(value),
+      PendingFeatures$inboundTransfersAch() => inboundTransfersAch != null ? inboundTransfersAch() : orElse(value),
+      PendingFeatures$intraStripeFlows() => intraStripeFlows != null ? intraStripeFlows() : orElse(value),
+      PendingFeatures$outboundPaymentsAch() => outboundPaymentsAch != null ? outboundPaymentsAch() : orElse(value),
+      PendingFeatures$outboundPaymentsUsDomesticWire() => outboundPaymentsUsDomesticWire != null ? outboundPaymentsUsDomesticWire() : orElse(value),
+      PendingFeatures$outboundTransfersAch() => outboundTransfersAch != null ? outboundTransfersAch() : orElse(value),
+      PendingFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire != null ? outboundTransfersUsDomesticWire() : orElse(value),
+      PendingFeatures$remoteDepositCapture() => remoteDepositCapture != null ? remoteDepositCapture() : orElse(value),
+      PendingFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PendingFeatures($value)';
 
  }
@@ -448,6 +518,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RestrictedFeatures$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cardIssuing, required W Function() depositInsurance, required W Function() financialAddressesAba, required W Function() financialAddressesAbaForwarding, required W Function() inboundTransfersAch, required W Function() intraStripeFlows, required W Function() outboundPaymentsAch, required W Function() outboundPaymentsUsDomesticWire, required W Function() outboundTransfersAch, required W Function() outboundTransfersUsDomesticWire, required W Function() remoteDepositCapture, required W Function(String value) $unknown, }) { return switch (this) {
+      RestrictedFeatures$cardIssuing() => cardIssuing(),
+      RestrictedFeatures$depositInsurance() => depositInsurance(),
+      RestrictedFeatures$financialAddressesAba() => financialAddressesAba(),
+      RestrictedFeatures$financialAddressesAbaForwarding() => financialAddressesAbaForwarding(),
+      RestrictedFeatures$inboundTransfersAch() => inboundTransfersAch(),
+      RestrictedFeatures$intraStripeFlows() => intraStripeFlows(),
+      RestrictedFeatures$outboundPaymentsAch() => outboundPaymentsAch(),
+      RestrictedFeatures$outboundPaymentsUsDomesticWire() => outboundPaymentsUsDomesticWire(),
+      RestrictedFeatures$outboundTransfersAch() => outboundTransfersAch(),
+      RestrictedFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire(),
+      RestrictedFeatures$remoteDepositCapture() => remoteDepositCapture(),
+      RestrictedFeatures$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardIssuing, W Function()? depositInsurance, W Function()? financialAddressesAba, W Function()? financialAddressesAbaForwarding, W Function()? inboundTransfersAch, W Function()? intraStripeFlows, W Function()? outboundPaymentsAch, W Function()? outboundPaymentsUsDomesticWire, W Function()? outboundTransfersAch, W Function()? outboundTransfersUsDomesticWire, W Function()? remoteDepositCapture, W Function(String value)? $unknown, }) { return switch (this) {
+      RestrictedFeatures$cardIssuing() => cardIssuing != null ? cardIssuing() : orElse(value),
+      RestrictedFeatures$depositInsurance() => depositInsurance != null ? depositInsurance() : orElse(value),
+      RestrictedFeatures$financialAddressesAba() => financialAddressesAba != null ? financialAddressesAba() : orElse(value),
+      RestrictedFeatures$financialAddressesAbaForwarding() => financialAddressesAbaForwarding != null ? financialAddressesAbaForwarding() : orElse(value),
+      RestrictedFeatures$inboundTransfersAch() => inboundTransfersAch != null ? inboundTransfersAch() : orElse(value),
+      RestrictedFeatures$intraStripeFlows() => intraStripeFlows != null ? intraStripeFlows() : orElse(value),
+      RestrictedFeatures$outboundPaymentsAch() => outboundPaymentsAch != null ? outboundPaymentsAch() : orElse(value),
+      RestrictedFeatures$outboundPaymentsUsDomesticWire() => outboundPaymentsUsDomesticWire != null ? outboundPaymentsUsDomesticWire() : orElse(value),
+      RestrictedFeatures$outboundTransfersAch() => outboundTransfersAch != null ? outboundTransfersAch() : orElse(value),
+      RestrictedFeatures$outboundTransfersUsDomesticWire() => outboundTransfersUsDomesticWire != null ? outboundTransfersUsDomesticWire() : orElse(value),
+      RestrictedFeatures$remoteDepositCapture() => remoteDepositCapture != null ? remoteDepositCapture() : orElse(value),
+      RestrictedFeatures$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RestrictedFeatures($value)';
 
  }
@@ -585,6 +685,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryFinancialAccountStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() closed, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountStatus$closed() => closed(),
+      TreasuryFinancialAccountStatus$open() => open(),
+      TreasuryFinancialAccountStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountStatus$closed() => closed != null ? closed() : orElse(value),
+      TreasuryFinancialAccountStatus$open() => open != null ? open() : orElse(value),
+      TreasuryFinancialAccountStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryFinancialAccountStatus($value)';
 
  }

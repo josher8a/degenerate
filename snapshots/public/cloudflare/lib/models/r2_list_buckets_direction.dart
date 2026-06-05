@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2ListBucketsDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+      R2ListBucketsDirection$asc() => asc(),
+      R2ListBucketsDirection$desc() => desc(),
+      R2ListBucketsDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+      R2ListBucketsDirection$asc() => asc != null ? asc() : orElse(value),
+      R2ListBucketsDirection$desc() => desc != null ? desc() : orElse(value),
+      R2ListBucketsDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2ListBucketsDirection($value)';
 
  }

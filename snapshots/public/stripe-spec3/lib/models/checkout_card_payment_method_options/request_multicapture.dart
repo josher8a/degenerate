@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RequestMulticapture$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ifAvailable, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      RequestMulticapture$ifAvailable() => ifAvailable(),
+      RequestMulticapture$never() => never(),
+      RequestMulticapture$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ifAvailable, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      RequestMulticapture$ifAvailable() => ifAvailable != null ? ifAvailable() : orElse(value),
+      RequestMulticapture$never() => never != null ? never() : orElse(value),
+      RequestMulticapture$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RequestMulticapture($value)';
 
  }

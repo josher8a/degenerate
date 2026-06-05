@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationEventType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disputeOpened, required W Function() earlyFraudWarningReceived, required W Function() refunded, required W Function() userInterventionRaised, required W Function() userInterventionResolved, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationEventType$disputeOpened() => disputeOpened(),
+      InsightsResourcesPaymentEvaluationEventType$earlyFraudWarningReceived() => earlyFraudWarningReceived(),
+      InsightsResourcesPaymentEvaluationEventType$refunded() => refunded(),
+      InsightsResourcesPaymentEvaluationEventType$userInterventionRaised() => userInterventionRaised(),
+      InsightsResourcesPaymentEvaluationEventType$userInterventionResolved() => userInterventionResolved(),
+      InsightsResourcesPaymentEvaluationEventType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disputeOpened, W Function()? earlyFraudWarningReceived, W Function()? refunded, W Function()? userInterventionRaised, W Function()? userInterventionResolved, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationEventType$disputeOpened() => disputeOpened != null ? disputeOpened() : orElse(value),
+      InsightsResourcesPaymentEvaluationEventType$earlyFraudWarningReceived() => earlyFraudWarningReceived != null ? earlyFraudWarningReceived() : orElse(value),
+      InsightsResourcesPaymentEvaluationEventType$refunded() => refunded != null ? refunded() : orElse(value),
+      InsightsResourcesPaymentEvaluationEventType$userInterventionRaised() => userInterventionRaised != null ? userInterventionRaised() : orElse(value),
+      InsightsResourcesPaymentEvaluationEventType$userInterventionResolved() => userInterventionResolved != null ? userInterventionResolved() : orElse(value),
+      InsightsResourcesPaymentEvaluationEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationEventType($value)';
 
  }

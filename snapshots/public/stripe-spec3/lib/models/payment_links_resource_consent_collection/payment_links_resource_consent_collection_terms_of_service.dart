@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinksResourceConsentCollectionTermsOfService$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinksResourceConsentCollectionTermsOfService$none() => none(),
+      PaymentLinksResourceConsentCollectionTermsOfService$$required() => $required(),
+      PaymentLinksResourceConsentCollectionTermsOfService$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinksResourceConsentCollectionTermsOfService$none() => none != null ? none() : orElse(value),
+      PaymentLinksResourceConsentCollectionTermsOfService$$required() => $required != null ? $required() : orElse(value),
+      PaymentLinksResourceConsentCollectionTermsOfService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinksResourceConsentCollectionTermsOfService($value)';
 
  }

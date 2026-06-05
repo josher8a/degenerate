@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageGenActionEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() generate, required W Function() edit, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenActionEnum$generate() => generate(),
+      ImageGenActionEnum$edit() => edit(),
+      ImageGenActionEnum$auto() => auto(),
+      ImageGenActionEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? generate, W Function()? edit, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenActionEnum$generate() => generate != null ? generate() : orElse(value),
+      ImageGenActionEnum$edit() => edit != null ? edit() : orElse(value),
+      ImageGenActionEnum$auto() => auto != null ? auto() : orElse(value),
+      ImageGenActionEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageGenActionEnum($value)';
 
  }
@@ -95,6 +109,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageGenToolModeration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() low, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolModeration$auto() => auto(),
+      ImageGenToolModeration$low() => low(),
+      ImageGenToolModeration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? low, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolModeration$auto() => auto != null ? auto() : orElse(value),
+      ImageGenToolModeration$low() => low != null ? low() : orElse(value),
+      ImageGenToolModeration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageGenToolModeration($value)';
 
  }

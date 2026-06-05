@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingMeterEventAdjustmentStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() complete, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingMeterEventAdjustmentStatus$complete() => complete(),
+      BillingMeterEventAdjustmentStatus$pending() => pending(),
+      BillingMeterEventAdjustmentStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingMeterEventAdjustmentStatus$complete() => complete != null ? complete() : orElse(value),
+      BillingMeterEventAdjustmentStatus$pending() => pending != null ? pending() : orElse(value),
+      BillingMeterEventAdjustmentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingMeterEventAdjustmentStatus($value)';
 
  }

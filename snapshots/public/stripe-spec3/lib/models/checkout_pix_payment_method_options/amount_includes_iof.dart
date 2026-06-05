@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AmountIncludesIof$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      AmountIncludesIof$always() => always(),
+      AmountIncludesIof$never() => never(),
+      AmountIncludesIof$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      AmountIncludesIof$always() => always != null ? always() : orElse(value),
+      AmountIncludesIof$never() => never != null ? never() : orElse(value),
+      AmountIncludesIof$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AmountIncludesIof($value)';
 
  }

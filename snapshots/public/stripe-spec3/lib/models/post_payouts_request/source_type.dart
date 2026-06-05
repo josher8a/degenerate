@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bankAccount, required W Function() card, required W Function() fpx, required W Function(String value) $unknown, }) { return switch (this) {
+      SourceType$bankAccount() => bankAccount(),
+      SourceType$card() => card(),
+      SourceType$fpx() => fpx(),
+      SourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccount, W Function()? card, W Function()? fpx, W Function(String value)? $unknown, }) { return switch (this) {
+      SourceType$bankAccount() => bankAccount != null ? bankAccount() : orElse(value),
+      SourceType$card() => card != null ? card() : orElse(value),
+      SourceType$fpx() => fpx != null ? fpx() : orElse(value),
+      SourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SourceType($value)';
 
  }

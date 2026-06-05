@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MqEventSourceR2Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() r2, required W Function(String value) $unknown, }) { return switch (this) {
+      MqEventSourceR2Type$r2() => r2(),
+      MqEventSourceR2Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? r2, W Function(String value)? $unknown, }) { return switch (this) {
+      MqEventSourceR2Type$r2() => r2 != null ? r2() : orElse(value),
+      MqEventSourceR2Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MqEventSourceR2Type($value)';
 
  }

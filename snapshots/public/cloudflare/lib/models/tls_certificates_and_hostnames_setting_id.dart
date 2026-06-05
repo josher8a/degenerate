@@ -33,6 +33,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesSettingId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ciphers, required W Function() minTlsVersion, required W Function() http2, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesSettingId$ciphers() => ciphers(),
+      TlsCertificatesAndHostnamesSettingId$minTlsVersion() => minTlsVersion(),
+      TlsCertificatesAndHostnamesSettingId$http2() => http2(),
+      TlsCertificatesAndHostnamesSettingId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ciphers, W Function()? minTlsVersion, W Function()? http2, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesSettingId$ciphers() => ciphers != null ? ciphers() : orElse(value),
+      TlsCertificatesAndHostnamesSettingId$minTlsVersion() => minTlsVersion != null ? minTlsVersion() : orElse(value),
+      TlsCertificatesAndHostnamesSettingId$http2() => http2 != null ? http2() : orElse(value),
+      TlsCertificatesAndHostnamesSettingId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesSettingId($value)';
 
  }

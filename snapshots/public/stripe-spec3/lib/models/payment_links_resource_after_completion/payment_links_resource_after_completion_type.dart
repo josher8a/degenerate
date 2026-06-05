@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinksResourceAfterCompletionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() hostedConfirmation, required W Function() redirect, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinksResourceAfterCompletionType$hostedConfirmation() => hostedConfirmation(),
+      PaymentLinksResourceAfterCompletionType$redirect() => redirect(),
+      PaymentLinksResourceAfterCompletionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hostedConfirmation, W Function()? redirect, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinksResourceAfterCompletionType$hostedConfirmation() => hostedConfirmation != null ? hostedConfirmation() : orElse(value),
+      PaymentLinksResourceAfterCompletionType$redirect() => redirect != null ? redirect() : orElse(value),
+      PaymentLinksResourceAfterCompletionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinksResourceAfterCompletionType($value)';
 
  }

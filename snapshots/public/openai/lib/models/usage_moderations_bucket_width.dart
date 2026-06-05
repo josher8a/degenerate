@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageModerationsBucketWidth$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1m, required W Function() $1h, required W Function() $1d, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageModerationsBucketWidth$$1m() => $1m(),
+      UsageModerationsBucketWidth$$1h() => $1h(),
+      UsageModerationsBucketWidth$$1d() => $1d(),
+      UsageModerationsBucketWidth$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W Function()? $1h, W Function()? $1d, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageModerationsBucketWidth$$1m() => $1m != null ? $1m() : orElse(value),
+      UsageModerationsBucketWidth$$1h() => $1h != null ? $1h() : orElse(value),
+      UsageModerationsBucketWidth$$1d() => $1d != null ? $1d() : orElse(value),
+      UsageModerationsBucketWidth$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageModerationsBucketWidth($value)';
 
  }

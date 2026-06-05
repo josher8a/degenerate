@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinishAttestationFailureK$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() finishAttestationFailure, required W Function(String value) $unknown, }) { return switch (this) {
+      FinishAttestationFailureK$finishAttestationFailure() => finishAttestationFailure(),
+      FinishAttestationFailureK$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? finishAttestationFailure, W Function(String value)? $unknown, }) { return switch (this) {
+      FinishAttestationFailureK$finishAttestationFailure() => finishAttestationFailure != null ? finishAttestationFailure() : orElse(value),
+      FinishAttestationFailureK$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinishAttestationFailureK($value)';
 
  }

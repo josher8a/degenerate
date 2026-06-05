@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardSpendingLimitInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allTime, required W Function() daily, required W Function() monthly, required W Function() perAuthorization, required W Function() weekly, required W Function() yearly, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardSpendingLimitInterval$allTime() => allTime(),
+      IssuingCardSpendingLimitInterval$daily() => daily(),
+      IssuingCardSpendingLimitInterval$monthly() => monthly(),
+      IssuingCardSpendingLimitInterval$perAuthorization() => perAuthorization(),
+      IssuingCardSpendingLimitInterval$weekly() => weekly(),
+      IssuingCardSpendingLimitInterval$yearly() => yearly(),
+      IssuingCardSpendingLimitInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allTime, W Function()? daily, W Function()? monthly, W Function()? perAuthorization, W Function()? weekly, W Function()? yearly, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardSpendingLimitInterval$allTime() => allTime != null ? allTime() : orElse(value),
+      IssuingCardSpendingLimitInterval$daily() => daily != null ? daily() : orElse(value),
+      IssuingCardSpendingLimitInterval$monthly() => monthly != null ? monthly() : orElse(value),
+      IssuingCardSpendingLimitInterval$perAuthorization() => perAuthorization != null ? perAuthorization() : orElse(value),
+      IssuingCardSpendingLimitInterval$weekly() => weekly != null ? weekly() : orElse(value),
+      IssuingCardSpendingLimitInterval$yearly() => yearly != null ? yearly() : orElse(value),
+      IssuingCardSpendingLimitInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardSpendingLimitInterval($value)';
 
  }

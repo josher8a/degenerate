@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DexEndpointsHttpTestDetailsInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() minute, required W Function() hour, required W Function(String value) $unknown, }) { return switch (this) {
+      DexEndpointsHttpTestDetailsInterval$minute() => minute(),
+      DexEndpointsHttpTestDetailsInterval$hour() => hour(),
+      DexEndpointsHttpTestDetailsInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? minute, W Function()? hour, W Function(String value)? $unknown, }) { return switch (this) {
+      DexEndpointsHttpTestDetailsInterval$minute() => minute != null ? minute() : orElse(value),
+      DexEndpointsHttpTestDetailsInterval$hour() => hour != null ? hour() : orElse(value),
+      DexEndpointsHttpTestDetailsInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DexEndpointsHttpTestDetailsInterval($value)';
 
  }

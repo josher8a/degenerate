@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardholderObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingCardholder, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardholderObject$issuingCardholder() => issuingCardholder(),
+      IssuingCardholderObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingCardholder, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardholderObject$issuingCardholder() => issuingCardholder != null ? issuingCardholder() : orElse(value),
+      IssuingCardholderObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardholderObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardholderStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() blocked, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardholderStatus$active() => active(),
+      IssuingCardholderStatus$blocked() => blocked(),
+      IssuingCardholderStatus$inactive() => inactive(),
+      IssuingCardholderStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? blocked, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardholderStatus$active() => active != null ? active() : orElse(value),
+      IssuingCardholderStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      IssuingCardholderStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      IssuingCardholderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardholderStatus($value)';
 
  }

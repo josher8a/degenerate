@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DvMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() txt, required W Function() email, required W Function(String value) $unknown, }) { return switch (this) {
+      DvMethod$http() => http(),
+      DvMethod$txt() => txt(),
+      DvMethod$email() => email(),
+      DvMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? txt, W Function()? email, W Function(String value)? $unknown, }) { return switch (this) {
+      DvMethod$http() => http != null ? http() : orElse(value),
+      DvMethod$txt() => txt != null ? txt() : orElse(value),
+      DvMethod$email() => email != null ? email() : orElse(value),
+      DvMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DvMethod($value)';
 
  }

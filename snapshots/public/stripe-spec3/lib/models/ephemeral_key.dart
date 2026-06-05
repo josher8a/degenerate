@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EphemeralKeyObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ephemeralKey, required W Function(String value) $unknown, }) { return switch (this) {
+      EphemeralKeyObject$ephemeralKey() => ephemeralKey(),
+      EphemeralKeyObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ephemeralKey, W Function(String value)? $unknown, }) { return switch (this) {
+      EphemeralKeyObject$ephemeralKey() => ephemeralKey != null ? ephemeralKey() : orElse(value),
+      EphemeralKeyObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EphemeralKeyObject($value)';
 
  }

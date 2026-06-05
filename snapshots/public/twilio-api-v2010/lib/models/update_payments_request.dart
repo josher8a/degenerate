@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsEnumCapture$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() paymentCardNumber, required W Function() expirationDate, required W Function() securityCode, required W Function() postalCode, required W Function() bankRoutingNumber, required W Function() bankAccountNumber, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsEnumCapture$paymentCardNumber() => paymentCardNumber(),
+      PaymentsEnumCapture$expirationDate() => expirationDate(),
+      PaymentsEnumCapture$securityCode() => securityCode(),
+      PaymentsEnumCapture$postalCode() => postalCode(),
+      PaymentsEnumCapture$bankRoutingNumber() => bankRoutingNumber(),
+      PaymentsEnumCapture$bankAccountNumber() => bankAccountNumber(),
+      PaymentsEnumCapture$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentCardNumber, W Function()? expirationDate, W Function()? securityCode, W Function()? postalCode, W Function()? bankRoutingNumber, W Function()? bankAccountNumber, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsEnumCapture$paymentCardNumber() => paymentCardNumber != null ? paymentCardNumber() : orElse(value),
+      PaymentsEnumCapture$expirationDate() => expirationDate != null ? expirationDate() : orElse(value),
+      PaymentsEnumCapture$securityCode() => securityCode != null ? securityCode() : orElse(value),
+      PaymentsEnumCapture$postalCode() => postalCode != null ? postalCode() : orElse(value),
+      PaymentsEnumCapture$bankRoutingNumber() => bankRoutingNumber != null ? bankRoutingNumber() : orElse(value),
+      PaymentsEnumCapture$bankAccountNumber() => bankAccountNumber != null ? bankAccountNumber() : orElse(value),
+      PaymentsEnumCapture$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsEnumCapture($value)';
 
  }
@@ -134,6 +154,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() complete, required W Function() cancel, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsEnumStatus$complete() => complete(),
+      PaymentsEnumStatus$cancel() => cancel(),
+      PaymentsEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? cancel, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsEnumStatus$complete() => complete != null ? complete() : orElse(value),
+      PaymentsEnumStatus$cancel() => cancel != null ? cancel() : orElse(value),
+      PaymentsEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsEnumStatus($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersUsageModel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() bundled, required W Function() unbound, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersUsageModel$standard() => standard(),
+      WorkersUsageModel$bundled() => bundled(),
+      WorkersUsageModel$unbound() => unbound(),
+      WorkersUsageModel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? bundled, W Function()? unbound, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersUsageModel$standard() => standard != null ? standard() : orElse(value),
+      WorkersUsageModel$bundled() => bundled != null ? bundled() : orElse(value),
+      WorkersUsageModel$unbound() => unbound != null ? unbound() : orElse(value),
+      WorkersUsageModel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersUsageModel($value)';
 
  }

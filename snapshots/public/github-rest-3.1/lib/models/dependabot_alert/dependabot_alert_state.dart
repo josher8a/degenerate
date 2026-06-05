@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotAlertState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() autoDismissed, required W Function() dismissed, required W Function() fixed, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotAlertState$autoDismissed() => autoDismissed(),
+      DependabotAlertState$dismissed() => dismissed(),
+      DependabotAlertState$fixed() => fixed(),
+      DependabotAlertState$open() => open(),
+      DependabotAlertState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? autoDismissed, W Function()? dismissed, W Function()? fixed, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotAlertState$autoDismissed() => autoDismissed != null ? autoDismissed() : orElse(value),
+      DependabotAlertState$dismissed() => dismissed != null ? dismissed() : orElse(value),
+      DependabotAlertState$fixed() => fixed != null ? fixed() : orElse(value),
+      DependabotAlertState$open() => open != null ? open() : orElse(value),
+      DependabotAlertState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotAlertState($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerTaxLocationSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() billingAddress, required W Function() ipAddress, required W Function() paymentMethod, required W Function() shippingDestination, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerTaxLocationSource$billingAddress() => billingAddress(),
+      CustomerTaxLocationSource$ipAddress() => ipAddress(),
+      CustomerTaxLocationSource$paymentMethod() => paymentMethod(),
+      CustomerTaxLocationSource$shippingDestination() => shippingDestination(),
+      CustomerTaxLocationSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingAddress, W Function()? ipAddress, W Function()? paymentMethod, W Function()? shippingDestination, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerTaxLocationSource$billingAddress() => billingAddress != null ? billingAddress() : orElse(value),
+      CustomerTaxLocationSource$ipAddress() => ipAddress != null ? ipAddress() : orElse(value),
+      CustomerTaxLocationSource$paymentMethod() => paymentMethod != null ? paymentMethod() : orElse(value),
+      CustomerTaxLocationSource$shippingDestination() => shippingDestination != null ? shippingDestination() : orElse(value),
+      CustomerTaxLocationSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerTaxLocationSource($value)';
 
  }

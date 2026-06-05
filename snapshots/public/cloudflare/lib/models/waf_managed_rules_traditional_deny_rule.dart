@@ -45,6 +45,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WafManagedRulesModeDenyTraditional$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $default, required W Function() disable, required W Function() simulate, required W Function() block, required W Function() challenge, required W Function(String value) $unknown, }) { return switch (this) {
+      WafManagedRulesModeDenyTraditional$$default() => $default(),
+      WafManagedRulesModeDenyTraditional$disable() => disable(),
+      WafManagedRulesModeDenyTraditional$simulate() => simulate(),
+      WafManagedRulesModeDenyTraditional$block() => block(),
+      WafManagedRulesModeDenyTraditional$challenge() => challenge(),
+      WafManagedRulesModeDenyTraditional$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $default, W Function()? disable, W Function()? simulate, W Function()? block, W Function()? challenge, W Function(String value)? $unknown, }) { return switch (this) {
+      WafManagedRulesModeDenyTraditional$$default() => $default != null ? $default() : orElse(value),
+      WafManagedRulesModeDenyTraditional$disable() => disable != null ? disable() : orElse(value),
+      WafManagedRulesModeDenyTraditional$simulate() => simulate != null ? simulate() : orElse(value),
+      WafManagedRulesModeDenyTraditional$block() => block != null ? block() : orElse(value),
+      WafManagedRulesModeDenyTraditional$challenge() => challenge != null ? challenge() : orElse(value),
+      WafManagedRulesModeDenyTraditional$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WafManagedRulesModeDenyTraditional($value)';
 
  }

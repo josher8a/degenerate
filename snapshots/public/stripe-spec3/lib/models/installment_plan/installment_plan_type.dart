@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InstallmentPlanType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bonus, required W Function() fixedCount, required W Function() revolving, required W Function(String value) $unknown, }) { return switch (this) {
+      InstallmentPlanType$bonus() => bonus(),
+      InstallmentPlanType$fixedCount() => fixedCount(),
+      InstallmentPlanType$revolving() => revolving(),
+      InstallmentPlanType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bonus, W Function()? fixedCount, W Function()? revolving, W Function(String value)? $unknown, }) { return switch (this) {
+      InstallmentPlanType$bonus() => bonus != null ? bonus() : orElse(value),
+      InstallmentPlanType$fixedCount() => fixedCount != null ? fixedCount() : orElse(value),
+      InstallmentPlanType$revolving() => revolving != null ? revolving() : orElse(value),
+      InstallmentPlanType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InstallmentPlanType($value)';
 
  }

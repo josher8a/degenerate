@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SubscriptionsListOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() createdAt, required W Function() $name, required W Function() enabled, required W Function() source, required W Function(String value) $unknown, }) { return switch (this) {
+      SubscriptionsListOrder$createdAt() => createdAt(),
+      SubscriptionsListOrder$$name() => $name(),
+      SubscriptionsListOrder$enabled() => enabled(),
+      SubscriptionsListOrder$source() => source(),
+      SubscriptionsListOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function()? $name, W Function()? enabled, W Function()? source, W Function(String value)? $unknown, }) { return switch (this) {
+      SubscriptionsListOrder$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      SubscriptionsListOrder$$name() => $name != null ? $name() : orElse(value),
+      SubscriptionsListOrder$enabled() => enabled != null ? enabled() : orElse(value),
+      SubscriptionsListOrder$source() => source != null ? source() : orElse(value),
+      SubscriptionsListOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SubscriptionsListOrder($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chrome, required W Function() edge, required W Function() firefox, required W Function() safari, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome() => chrome(),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$edge() => edge(),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$firefox() => firefox(),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$safari() => safari(),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chrome, W Function()? edge, W Function()? firefox, W Function()? safari, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$chrome() => chrome != null ? chrome() : orElse(value),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$edge() => edge != null ? edge() : orElse(value),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$firefox() => firefox != null ? firefox() : orElse(value),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$safari() => safari != null ? safari() : orElse(value),
+      RadarGetHttpTopLocationsByTlsVersionBrowserFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopLocationsByTlsVersionBrowserFamily($value)';
 
  }

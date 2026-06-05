@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EncodingFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() float, required W Function() base64, required W Function(String value) $unknown, }) { return switch (this) {
+      EncodingFormat$float() => float(),
+      EncodingFormat$base64() => base64(),
+      EncodingFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? float, W Function()? base64, W Function(String value)? $unknown, }) { return switch (this) {
+      EncodingFormat$float() => float != null ? float() : orElse(value),
+      EncodingFormat$base64() => base64 != null ? base64() : orElse(value),
+      EncodingFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EncodingFormat($value)';
 
  }

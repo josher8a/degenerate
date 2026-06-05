@@ -105,6 +105,94 @@ sealed class ErrorCode {
     return this is ErrorCode$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() notInRoom,
+    required W Function() notKeeper,
+    required W Function() notCurrentSpeaker,
+    required W Function() notNextSpeaker,
+    required W Function() banned,
+    required W Function() invalidTransition,
+    required W Function() roomNotActive,
+    required W Function() roomNotWaiting,
+    required W Function() roomAlreadyEnded,
+    required W Function() invalidParticipantOrder,
+    required W Function() staleVersion,
+    required W Function() notJoinable,
+    required W Function() livekitError,
+    required W Function() notFound,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      ErrorCode$notInRoom() => notInRoom(),
+      ErrorCode$notKeeper() => notKeeper(),
+      ErrorCode$notCurrentSpeaker() => notCurrentSpeaker(),
+      ErrorCode$notNextSpeaker() => notNextSpeaker(),
+      ErrorCode$banned() => banned(),
+      ErrorCode$invalidTransition() => invalidTransition(),
+      ErrorCode$roomNotActive() => roomNotActive(),
+      ErrorCode$roomNotWaiting() => roomNotWaiting(),
+      ErrorCode$roomAlreadyEnded() => roomAlreadyEnded(),
+      ErrorCode$invalidParticipantOrder() => invalidParticipantOrder(),
+      ErrorCode$staleVersion() => staleVersion(),
+      ErrorCode$notJoinable() => notJoinable(),
+      ErrorCode$livekitError() => livekitError(),
+      ErrorCode$notFound() => notFound(),
+      ErrorCode$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? notInRoom,
+    W Function()? notKeeper,
+    W Function()? notCurrentSpeaker,
+    W Function()? notNextSpeaker,
+    W Function()? banned,
+    W Function()? invalidTransition,
+    W Function()? roomNotActive,
+    W Function()? roomNotWaiting,
+    W Function()? roomAlreadyEnded,
+    W Function()? invalidParticipantOrder,
+    W Function()? staleVersion,
+    W Function()? notJoinable,
+    W Function()? livekitError,
+    W Function()? notFound,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      ErrorCode$notInRoom() => notInRoom != null ? notInRoom() : orElse(value),
+      ErrorCode$notKeeper() => notKeeper != null ? notKeeper() : orElse(value),
+      ErrorCode$notCurrentSpeaker() =>
+        notCurrentSpeaker != null ? notCurrentSpeaker() : orElse(value),
+      ErrorCode$notNextSpeaker() =>
+        notNextSpeaker != null ? notNextSpeaker() : orElse(value),
+      ErrorCode$banned() => banned != null ? banned() : orElse(value),
+      ErrorCode$invalidTransition() =>
+        invalidTransition != null ? invalidTransition() : orElse(value),
+      ErrorCode$roomNotActive() =>
+        roomNotActive != null ? roomNotActive() : orElse(value),
+      ErrorCode$roomNotWaiting() =>
+        roomNotWaiting != null ? roomNotWaiting() : orElse(value),
+      ErrorCode$roomAlreadyEnded() =>
+        roomAlreadyEnded != null ? roomAlreadyEnded() : orElse(value),
+      ErrorCode$invalidParticipantOrder() =>
+        invalidParticipantOrder != null
+            ? invalidParticipantOrder()
+            : orElse(value),
+      ErrorCode$staleVersion() =>
+        staleVersion != null ? staleVersion() : orElse(value),
+      ErrorCode$notJoinable() =>
+        notJoinable != null ? notJoinable() : orElse(value),
+      ErrorCode$livekitError() =>
+        livekitError != null ? livekitError() : orElse(value),
+      ErrorCode$notFound() => notFound != null ? notFound() : orElse(value),
+      ErrorCode$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'ErrorCode($value)';
 }

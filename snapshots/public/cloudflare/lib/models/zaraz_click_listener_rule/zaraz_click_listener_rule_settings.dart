@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SettingsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() xpath, required W Function() css, required W Function(String value) $unknown, }) { return switch (this) {
+      SettingsType$xpath() => xpath(),
+      SettingsType$css() => css(),
+      SettingsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? xpath, W Function()? css, W Function(String value)? $unknown, }) { return switch (this) {
+      SettingsType$xpath() => xpath != null ? xpath() : orElse(value),
+      SettingsType$css() => css != null ? css() : orElse(value),
+      SettingsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SettingsType($value)';
 
  }

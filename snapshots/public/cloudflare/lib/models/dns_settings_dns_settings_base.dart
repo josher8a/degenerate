@@ -65,6 +65,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnsSettingsZoneMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() cdnOnly, required W Function() dnsOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      DnsSettingsZoneMode$standard() => standard(),
+      DnsSettingsZoneMode$cdnOnly() => cdnOnly(),
+      DnsSettingsZoneMode$dnsOnly() => dnsOnly(),
+      DnsSettingsZoneMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? cdnOnly, W Function()? dnsOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      DnsSettingsZoneMode$standard() => standard != null ? standard() : orElse(value),
+      DnsSettingsZoneMode$cdnOnly() => cdnOnly != null ? cdnOnly() : orElse(value),
+      DnsSettingsZoneMode$dnsOnly() => dnsOnly != null ? dnsOnly() : orElse(value),
+      DnsSettingsZoneMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnsSettingsZoneMode($value)';
 
  }

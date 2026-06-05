@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReactionContent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() plus1, required W Function() minus1, required W Function() laugh, required W Function() confused, required W Function() heart, required W Function() hooray, required W Function() rocket, required W Function() eyes, required W Function(String value) $unknown, }) { return switch (this) {
+      ReactionContent$plus1() => plus1(),
+      ReactionContent$minus1() => minus1(),
+      ReactionContent$laugh() => laugh(),
+      ReactionContent$confused() => confused(),
+      ReactionContent$heart() => heart(),
+      ReactionContent$hooray() => hooray(),
+      ReactionContent$rocket() => rocket(),
+      ReactionContent$eyes() => eyes(),
+      ReactionContent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W Function()? minus1, W Function()? laugh, W Function()? confused, W Function()? heart, W Function()? hooray, W Function()? rocket, W Function()? eyes, W Function(String value)? $unknown, }) { return switch (this) {
+      ReactionContent$plus1() => plus1 != null ? plus1() : orElse(value),
+      ReactionContent$minus1() => minus1 != null ? minus1() : orElse(value),
+      ReactionContent$laugh() => laugh != null ? laugh() : orElse(value),
+      ReactionContent$confused() => confused != null ? confused() : orElse(value),
+      ReactionContent$heart() => heart != null ? heart() : orElse(value),
+      ReactionContent$hooray() => hooray != null ? hooray() : orElse(value),
+      ReactionContent$rocket() => rocket != null ? rocket() : orElse(value),
+      ReactionContent$eyes() => eyes != null ? eyes() : orElse(value),
+      ReactionContent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReactionContent($value)';
 
  }

@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountLinkObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountLink, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountLinkObject$accountLink() => accountLink(),
+      AccountLinkObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountLink, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountLinkObject$accountLink() => accountLink != null ? accountLink() : orElse(value),
+      AccountLinkObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountLinkObject($value)';
 
  }

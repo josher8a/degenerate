@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoDocumentReportType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() drivingLicense, required W Function() idCard, required W Function() passport, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoDocumentReportType$drivingLicense() => drivingLicense(),
+      GelatoDocumentReportType$idCard() => idCard(),
+      GelatoDocumentReportType$passport() => passport(),
+      GelatoDocumentReportType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? drivingLicense, W Function()? idCard, W Function()? passport, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoDocumentReportType$drivingLicense() => drivingLicense != null ? drivingLicense() : orElse(value),
+      GelatoDocumentReportType$idCard() => idCard != null ? idCard() : orElse(value),
+      GelatoDocumentReportType$passport() => passport != null ? passport() : orElse(value),
+      GelatoDocumentReportType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoDocumentReportType($value)';
 
  }

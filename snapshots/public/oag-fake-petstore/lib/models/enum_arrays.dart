@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is JustSymbol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function(String value) $unknown, }) { return switch (this) {
+      JustSymbol$$empty() => $empty(),
+      JustSymbol$$empty2() => $empty2(),
+      JustSymbol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function(String value)? $unknown, }) { return switch (this) {
+      JustSymbol$$empty() => $empty != null ? $empty() : orElse(value),
+      JustSymbol$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      JustSymbol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'JustSymbol($value)';
 
  }
@@ -80,6 +92,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ArrayEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fish, required W Function() crab, required W Function(String value) $unknown, }) { return switch (this) {
+      ArrayEnum$fish() => fish(),
+      ArrayEnum$crab() => crab(),
+      ArrayEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fish, W Function()? crab, W Function(String value)? $unknown, }) { return switch (this) {
+      ArrayEnum$fish() => fish != null ? fish() : orElse(value),
+      ArrayEnum$crab() => crab != null ? crab() : orElse(value),
+      ArrayEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ArrayEnum($value)';
 
  }

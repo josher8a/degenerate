@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enableAll, required W Function() disableAll, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$enableAll() => enableAll(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$disableAll() => disableAll(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enableAll, W Function()? disableAll, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$enableAll() => enableAll != null ? enableAll() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$disableAll() => disableAll != null ? disableAll() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement($value)';
 
  }

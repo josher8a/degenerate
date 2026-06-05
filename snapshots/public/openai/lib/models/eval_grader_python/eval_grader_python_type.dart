@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EvalGraderPythonType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() python, required W Function(String value) $unknown, }) { return switch (this) {
+      EvalGraderPythonType$python() => python(),
+      EvalGraderPythonType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? python, W Function(String value)? $unknown, }) { return switch (this) {
+      EvalGraderPythonType$python() => python != null ? python() : orElse(value),
+      EvalGraderPythonType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EvalGraderPythonType($value)';
 
  }

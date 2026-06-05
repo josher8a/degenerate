@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretScanningPushProtectionBypassReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() falsePositive, required W Function() usedInTests, required W Function() willFixLater, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretScanningPushProtectionBypassReason$falsePositive() => falsePositive(),
+      SecretScanningPushProtectionBypassReason$usedInTests() => usedInTests(),
+      SecretScanningPushProtectionBypassReason$willFixLater() => willFixLater(),
+      SecretScanningPushProtectionBypassReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? usedInTests, W Function()? willFixLater, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretScanningPushProtectionBypassReason$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
+      SecretScanningPushProtectionBypassReason$usedInTests() => usedInTests != null ? usedInTests() : orElse(value),
+      SecretScanningPushProtectionBypassReason$willFixLater() => willFixLater != null ? willFixLater() : orElse(value),
+      SecretScanningPushProtectionBypassReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretScanningPushProtectionBypassReason($value)';
 
  }

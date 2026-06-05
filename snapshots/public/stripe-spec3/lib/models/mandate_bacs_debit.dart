@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NetworkStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() pending, required W Function() refused, required W Function() revoked, required W Function(String value) $unknown, }) { return switch (this) {
+      NetworkStatus$accepted() => accepted(),
+      NetworkStatus$pending() => pending(),
+      NetworkStatus$refused() => refused(),
+      NetworkStatus$revoked() => revoked(),
+      NetworkStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? refused, W Function()? revoked, W Function(String value)? $unknown, }) { return switch (this) {
+      NetworkStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      NetworkStatus$pending() => pending != null ? pending() : orElse(value),
+      NetworkStatus$refused() => refused != null ? refused() : orElse(value),
+      NetworkStatus$revoked() => revoked != null ? revoked() : orElse(value),
+      NetworkStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NetworkStatus($value)';
 
  }
@@ -120,6 +136,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RevocationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountClosed, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() couldNotProcess, required W Function() debitNotAuthorized, required W Function(String value) $unknown, }) { return switch (this) {
+      RevocationReason$accountClosed() => accountClosed(),
+      RevocationReason$bankAccountRestricted() => bankAccountRestricted(),
+      RevocationReason$bankOwnershipChanged() => bankOwnershipChanged(),
+      RevocationReason$couldNotProcess() => couldNotProcess(),
+      RevocationReason$debitNotAuthorized() => debitNotAuthorized(),
+      RevocationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? couldNotProcess, W Function()? debitNotAuthorized, W Function(String value)? $unknown, }) { return switch (this) {
+      RevocationReason$accountClosed() => accountClosed != null ? accountClosed() : orElse(value),
+      RevocationReason$bankAccountRestricted() => bankAccountRestricted != null ? bankAccountRestricted() : orElse(value),
+      RevocationReason$bankOwnershipChanged() => bankOwnershipChanged != null ? bankOwnershipChanged() : orElse(value),
+      RevocationReason$couldNotProcess() => couldNotProcess != null ? couldNotProcess() : orElse(value),
+      RevocationReason$debitNotAuthorized() => debitNotAuthorized != null ? debitNotAuthorized() : orElse(value),
+      RevocationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RevocationReason($value)';
 
  }

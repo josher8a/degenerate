@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Endpoint$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() v1Responses, required W Function() v1ChatCompletions, required W Function() v1Embeddings, required W Function() v1Completions, required W Function() v1Moderations, required W Function() v1ImagesGenerations, required W Function() v1ImagesEdits, required W Function(String value) $unknown, }) { return switch (this) {
+      Endpoint$v1Responses() => v1Responses(),
+      Endpoint$v1ChatCompletions() => v1ChatCompletions(),
+      Endpoint$v1Embeddings() => v1Embeddings(),
+      Endpoint$v1Completions() => v1Completions(),
+      Endpoint$v1Moderations() => v1Moderations(),
+      Endpoint$v1ImagesGenerations() => v1ImagesGenerations(),
+      Endpoint$v1ImagesEdits() => v1ImagesEdits(),
+      Endpoint$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1Responses, W Function()? v1ChatCompletions, W Function()? v1Embeddings, W Function()? v1Completions, W Function()? v1Moderations, W Function()? v1ImagesGenerations, W Function()? v1ImagesEdits, W Function(String value)? $unknown, }) { return switch (this) {
+      Endpoint$v1Responses() => v1Responses != null ? v1Responses() : orElse(value),
+      Endpoint$v1ChatCompletions() => v1ChatCompletions != null ? v1ChatCompletions() : orElse(value),
+      Endpoint$v1Embeddings() => v1Embeddings != null ? v1Embeddings() : orElse(value),
+      Endpoint$v1Completions() => v1Completions != null ? v1Completions() : orElse(value),
+      Endpoint$v1Moderations() => v1Moderations != null ? v1Moderations() : orElse(value),
+      Endpoint$v1ImagesGenerations() => v1ImagesGenerations != null ? v1ImagesGenerations() : orElse(value),
+      Endpoint$v1ImagesEdits() => v1ImagesEdits != null ? v1ImagesEdits() : orElse(value),
+      Endpoint$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Endpoint($value)';
 
  }
@@ -143,6 +165,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CompletionWindow$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $24h, required W Function(String value) $unknown, }) { return switch (this) {
+      CompletionWindow$$24h() => $24h(),
+      CompletionWindow$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $24h, W Function(String value)? $unknown, }) { return switch (this) {
+      CompletionWindow$$24h() => $24h != null ? $24h() : orElse(value),
+      CompletionWindow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CompletionWindow($value)';
 
  }

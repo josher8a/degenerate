@@ -81,6 +81,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiBotsTimeseriesContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() html, required W Function() images, required W Function() $json, required W Function() javascript, required W Function() css, required W Function() plainText, required W Function() fonts, required W Function() xml, required W Function() yaml, required W Function() video, required W Function() audio, required W Function() markdown, required W Function() documents, required W Function() binary, required W Function() serialization, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiBotsTimeseriesContentType$html() => html(),
+      RadarGetAiBotsTimeseriesContentType$images() => images(),
+      RadarGetAiBotsTimeseriesContentType$$json() => $json(),
+      RadarGetAiBotsTimeseriesContentType$javascript() => javascript(),
+      RadarGetAiBotsTimeseriesContentType$css() => css(),
+      RadarGetAiBotsTimeseriesContentType$plainText() => plainText(),
+      RadarGetAiBotsTimeseriesContentType$fonts() => fonts(),
+      RadarGetAiBotsTimeseriesContentType$xml() => xml(),
+      RadarGetAiBotsTimeseriesContentType$yaml() => yaml(),
+      RadarGetAiBotsTimeseriesContentType$video() => video(),
+      RadarGetAiBotsTimeseriesContentType$audio() => audio(),
+      RadarGetAiBotsTimeseriesContentType$markdown() => markdown(),
+      RadarGetAiBotsTimeseriesContentType$documents() => documents(),
+      RadarGetAiBotsTimeseriesContentType$binary() => binary(),
+      RadarGetAiBotsTimeseriesContentType$serialization() => serialization(),
+      RadarGetAiBotsTimeseriesContentType$$other() => $other(),
+      RadarGetAiBotsTimeseriesContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? html, W Function()? images, W Function()? $json, W Function()? javascript, W Function()? css, W Function()? plainText, W Function()? fonts, W Function()? xml, W Function()? yaml, W Function()? video, W Function()? audio, W Function()? markdown, W Function()? documents, W Function()? binary, W Function()? serialization, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiBotsTimeseriesContentType$html() => html != null ? html() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$images() => images != null ? images() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$$json() => $json != null ? $json() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$javascript() => javascript != null ? javascript() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$css() => css != null ? css() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$plainText() => plainText != null ? plainText() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$fonts() => fonts != null ? fonts() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$xml() => xml != null ? xml() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$yaml() => yaml != null ? yaml() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$video() => video != null ? video() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$audio() => audio != null ? audio() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$markdown() => markdown != null ? markdown() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$documents() => documents != null ? documents() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$binary() => binary != null ? binary() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$serialization() => serialization != null ? serialization() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$$other() => $other != null ? $other() : orElse(value),
+      RadarGetAiBotsTimeseriesContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiBotsTimeseriesContentType($value)';
 
  }

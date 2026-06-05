@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PriceModel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() free, required W Function() flatRate, required W Function() perUnit, required W Function(String value) $unknown, }) { return switch (this) {
+      PriceModel$free() => free(),
+      PriceModel$flatRate() => flatRate(),
+      PriceModel$perUnit() => perUnit(),
+      PriceModel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function()? flatRate, W Function()? perUnit, W Function(String value)? $unknown, }) { return switch (this) {
+      PriceModel$free() => free != null ? free() : orElse(value),
+      PriceModel$flatRate() => flatRate != null ? flatRate() : orElse(value),
+      PriceModel$perUnit() => perUnit != null ? perUnit() : orElse(value),
+      PriceModel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PriceModel($value)';
 
  }

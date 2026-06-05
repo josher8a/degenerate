@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountCapabilityFutureRequirementsDisabledReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $other, required W Function() pausedInactivity, required W Function() pendingOnboarding, required W Function() pendingReview, required W Function() platformDisabled, required W Function() platformPaused, required W Function() rejectedInactivity, required W Function() rejectedOther, required W Function() rejectedUnsupportedBusiness, required W Function() requirementsFieldsNeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountCapabilityFutureRequirementsDisabledReason$$other() => $other(),
+      AccountCapabilityFutureRequirementsDisabledReason$pausedInactivity() => pausedInactivity(),
+      AccountCapabilityFutureRequirementsDisabledReason$pendingOnboarding() => pendingOnboarding(),
+      AccountCapabilityFutureRequirementsDisabledReason$pendingReview() => pendingReview(),
+      AccountCapabilityFutureRequirementsDisabledReason$platformDisabled() => platformDisabled(),
+      AccountCapabilityFutureRequirementsDisabledReason$platformPaused() => platformPaused(),
+      AccountCapabilityFutureRequirementsDisabledReason$rejectedInactivity() => rejectedInactivity(),
+      AccountCapabilityFutureRequirementsDisabledReason$rejectedOther() => rejectedOther(),
+      AccountCapabilityFutureRequirementsDisabledReason$rejectedUnsupportedBusiness() => rejectedUnsupportedBusiness(),
+      AccountCapabilityFutureRequirementsDisabledReason$requirementsFieldsNeeded() => requirementsFieldsNeeded(),
+      AccountCapabilityFutureRequirementsDisabledReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, W Function()? pausedInactivity, W Function()? pendingOnboarding, W Function()? pendingReview, W Function()? platformDisabled, W Function()? platformPaused, W Function()? rejectedInactivity, W Function()? rejectedOther, W Function()? rejectedUnsupportedBusiness, W Function()? requirementsFieldsNeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountCapabilityFutureRequirementsDisabledReason$$other() => $other != null ? $other() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$pausedInactivity() => pausedInactivity != null ? pausedInactivity() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$pendingOnboarding() => pendingOnboarding != null ? pendingOnboarding() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$pendingReview() => pendingReview != null ? pendingReview() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$platformDisabled() => platformDisabled != null ? platformDisabled() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$platformPaused() => platformPaused != null ? platformPaused() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$rejectedInactivity() => rejectedInactivity != null ? rejectedInactivity() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$rejectedOther() => rejectedOther != null ? rejectedOther() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$rejectedUnsupportedBusiness() => rejectedUnsupportedBusiness != null ? rejectedUnsupportedBusiness() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$requirementsFieldsNeeded() => requirementsFieldsNeeded != null ? requirementsFieldsNeeded() : orElse(value),
+      AccountCapabilityFutureRequirementsDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountCapabilityFutureRequirementsDisabledReason($value)';
 
  }

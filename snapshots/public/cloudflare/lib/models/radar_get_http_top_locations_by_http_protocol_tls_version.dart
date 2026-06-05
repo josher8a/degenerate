@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopLocationsByHttpProtocolTlsVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tlSv10, required W Function() tlSv11, required W Function() tlSv12, required W Function() tlSv13, required W Function() tlSvQuic, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv10() => tlSv10(),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv11() => tlSv11(),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv12() => tlSv12(),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv13() => tlSv13(),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSvQuic() => tlSvQuic(),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, W Function()? tlSv11, W Function()? tlSv12, W Function()? tlSv13, W Function()? tlSvQuic, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv10() => tlSv10 != null ? tlSv10() : orElse(value),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv11() => tlSv11 != null ? tlSv11() : orElse(value),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv12() => tlSv12 != null ? tlSv12() : orElse(value),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSv13() => tlSv13 != null ? tlSv13() : orElse(value),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$tlSvQuic() => tlSvQuic != null ? tlSvQuic() : orElse(value),
+      RadarGetHttpTopLocationsByHttpProtocolTlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopLocationsByHttpProtocolTlsVersion($value)';
 
  }

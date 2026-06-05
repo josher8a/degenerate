@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GrammarSyntax1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lark, required W Function() regex, required W Function(String value) $unknown, }) { return switch (this) {
+      GrammarSyntax1$lark() => lark(),
+      GrammarSyntax1$regex() => regex(),
+      GrammarSyntax1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lark, W Function()? regex, W Function(String value)? $unknown, }) { return switch (this) {
+      GrammarSyntax1$lark() => lark != null ? lark() : orElse(value),
+      GrammarSyntax1$regex() => regex != null ? regex() : orElse(value),
+      GrammarSyntax1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GrammarSyntax1($value)';
 
  }

@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SummaryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() general, required W Function() teamMeeting, required W Function() salesCall, required W Function() clientCheckIn, required W Function() interview, required W Function() dailyStandup, required W Function() oneOnOneMeeting, required W Function() lecture, required W Function() codeReview, required W Function(String value) $unknown, }) { return switch (this) {
+      SummaryType$general() => general(),
+      SummaryType$teamMeeting() => teamMeeting(),
+      SummaryType$salesCall() => salesCall(),
+      SummaryType$clientCheckIn() => clientCheckIn(),
+      SummaryType$interview() => interview(),
+      SummaryType$dailyStandup() => dailyStandup(),
+      SummaryType$oneOnOneMeeting() => oneOnOneMeeting(),
+      SummaryType$lecture() => lecture(),
+      SummaryType$codeReview() => codeReview(),
+      SummaryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? general, W Function()? teamMeeting, W Function()? salesCall, W Function()? clientCheckIn, W Function()? interview, W Function()? dailyStandup, W Function()? oneOnOneMeeting, W Function()? lecture, W Function()? codeReview, W Function(String value)? $unknown, }) { return switch (this) {
+      SummaryType$general() => general != null ? general() : orElse(value),
+      SummaryType$teamMeeting() => teamMeeting != null ? teamMeeting() : orElse(value),
+      SummaryType$salesCall() => salesCall != null ? salesCall() : orElse(value),
+      SummaryType$clientCheckIn() => clientCheckIn != null ? clientCheckIn() : orElse(value),
+      SummaryType$interview() => interview != null ? interview() : orElse(value),
+      SummaryType$dailyStandup() => dailyStandup != null ? dailyStandup() : orElse(value),
+      SummaryType$oneOnOneMeeting() => oneOnOneMeeting != null ? oneOnOneMeeting() : orElse(value),
+      SummaryType$lecture() => lecture != null ? lecture() : orElse(value),
+      SummaryType$codeReview() => codeReview != null ? codeReview() : orElse(value),
+      SummaryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SummaryType($value)';
 
  }
@@ -173,6 +199,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TextFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() plainText, required W Function() markdown, required W Function(String value) $unknown, }) { return switch (this) {
+      TextFormat$plainText() => plainText(),
+      TextFormat$markdown() => markdown(),
+      TextFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? plainText, W Function()? markdown, W Function(String value)? $unknown, }) { return switch (this) {
+      TextFormat$plainText() => plainText != null ? plainText() : orElse(value),
+      TextFormat$markdown() => markdown != null ? markdown() : orElse(value),
+      TextFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TextFormat($value)';
 
  }

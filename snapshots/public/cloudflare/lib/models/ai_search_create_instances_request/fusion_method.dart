@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FusionMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() max, required W Function() rrf, required W Function(String value) $unknown, }) { return switch (this) {
+      FusionMethod$max() => max(),
+      FusionMethod$rrf() => rrf(),
+      FusionMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? max, W Function()? rrf, W Function(String value)? $unknown, }) { return switch (this) {
+      FusionMethod$max() => max != null ? max() : orElse(value),
+      FusionMethod$rrf() => rrf != null ? rrf() : orElse(value),
+      FusionMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FusionMethod($value)';
 
  }

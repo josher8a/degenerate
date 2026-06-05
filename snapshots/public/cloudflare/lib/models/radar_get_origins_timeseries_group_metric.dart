@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetOriginsTimeseriesGroupMetric$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() connectionFailures, required W Function() requests, required W Function() responseHeaderReceiveDuration, required W Function() tcpHandshakeDuration, required W Function() tcpRtt, required W Function() tlsHandshakeDuration, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetOriginsTimeseriesGroupMetric$connectionFailures() => connectionFailures(),
+      RadarGetOriginsTimeseriesGroupMetric$requests() => requests(),
+      RadarGetOriginsTimeseriesGroupMetric$responseHeaderReceiveDuration() => responseHeaderReceiveDuration(),
+      RadarGetOriginsTimeseriesGroupMetric$tcpHandshakeDuration() => tcpHandshakeDuration(),
+      RadarGetOriginsTimeseriesGroupMetric$tcpRtt() => tcpRtt(),
+      RadarGetOriginsTimeseriesGroupMetric$tlsHandshakeDuration() => tlsHandshakeDuration(),
+      RadarGetOriginsTimeseriesGroupMetric$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? connectionFailures, W Function()? requests, W Function()? responseHeaderReceiveDuration, W Function()? tcpHandshakeDuration, W Function()? tcpRtt, W Function()? tlsHandshakeDuration, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetOriginsTimeseriesGroupMetric$connectionFailures() => connectionFailures != null ? connectionFailures() : orElse(value),
+      RadarGetOriginsTimeseriesGroupMetric$requests() => requests != null ? requests() : orElse(value),
+      RadarGetOriginsTimeseriesGroupMetric$responseHeaderReceiveDuration() => responseHeaderReceiveDuration != null ? responseHeaderReceiveDuration() : orElse(value),
+      RadarGetOriginsTimeseriesGroupMetric$tcpHandshakeDuration() => tcpHandshakeDuration != null ? tcpHandshakeDuration() : orElse(value),
+      RadarGetOriginsTimeseriesGroupMetric$tcpRtt() => tcpRtt != null ? tcpRtt() : orElse(value),
+      RadarGetOriginsTimeseriesGroupMetric$tlsHandshakeDuration() => tlsHandshakeDuration != null ? tlsHandshakeDuration() : orElse(value),
+      RadarGetOriginsTimeseriesGroupMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetOriginsTimeseriesGroupMetric($value)';
 
  }

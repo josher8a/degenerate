@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CancellationDetailsFeedback$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+      CancellationDetailsFeedback$customerService() => customerService(),
+      CancellationDetailsFeedback$lowQuality() => lowQuality(),
+      CancellationDetailsFeedback$missingFeatures() => missingFeatures(),
+      CancellationDetailsFeedback$$other() => $other(),
+      CancellationDetailsFeedback$switchedService() => switchedService(),
+      CancellationDetailsFeedback$tooComplex() => tooComplex(),
+      CancellationDetailsFeedback$tooExpensive() => tooExpensive(),
+      CancellationDetailsFeedback$unused() => unused(),
+      CancellationDetailsFeedback$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+      CancellationDetailsFeedback$customerService() => customerService != null ? customerService() : orElse(value),
+      CancellationDetailsFeedback$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
+      CancellationDetailsFeedback$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
+      CancellationDetailsFeedback$$other() => $other != null ? $other() : orElse(value),
+      CancellationDetailsFeedback$switchedService() => switchedService != null ? switchedService() : orElse(value),
+      CancellationDetailsFeedback$tooComplex() => tooComplex != null ? tooComplex() : orElse(value),
+      CancellationDetailsFeedback$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
+      CancellationDetailsFeedback$unused() => unused != null ? unused() : orElse(value),
+      CancellationDetailsFeedback$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CancellationDetailsFeedback($value)';
 
  }
@@ -164,6 +188,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CancellationDetailsReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cancellationRequested, required W Function() paymentDisputed, required W Function() paymentFailed, required W Function(String value) $unknown, }) { return switch (this) {
+      CancellationDetailsReason$cancellationRequested() => cancellationRequested(),
+      CancellationDetailsReason$paymentDisputed() => paymentDisputed(),
+      CancellationDetailsReason$paymentFailed() => paymentFailed(),
+      CancellationDetailsReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancellationRequested, W Function()? paymentDisputed, W Function()? paymentFailed, W Function(String value)? $unknown, }) { return switch (this) {
+      CancellationDetailsReason$cancellationRequested() => cancellationRequested != null ? cancellationRequested() : orElse(value),
+      CancellationDetailsReason$paymentDisputed() => paymentDisputed != null ? paymentDisputed() : orElse(value),
+      CancellationDetailsReason$paymentFailed() => paymentFailed != null ? paymentFailed() : orElse(value),
+      CancellationDetailsReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CancellationDetailsReason($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountBusinessType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() company, required W Function() governmentEntity, required W Function() individual, required W Function() nonProfit, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountBusinessType$company() => company(),
+      AccountBusinessType$governmentEntity() => governmentEntity(),
+      AccountBusinessType$individual() => individual(),
+      AccountBusinessType$nonProfit() => nonProfit(),
+      AccountBusinessType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? company, W Function()? governmentEntity, W Function()? individual, W Function()? nonProfit, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountBusinessType$company() => company != null ? company() : orElse(value),
+      AccountBusinessType$governmentEntity() => governmentEntity != null ? governmentEntity() : orElse(value),
+      AccountBusinessType$individual() => individual != null ? individual() : orElse(value),
+      AccountBusinessType$nonProfit() => nonProfit != null ? nonProfit() : orElse(value),
+      AccountBusinessType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountBusinessType($value)';
 
  }
@@ -116,6 +132,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() express, required W Function() none, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountType$custom() => custom(),
+      AccountType$express() => express(),
+      AccountType$none() => none(),
+      AccountType$standard() => standard(),
+      AccountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? express, W Function()? none, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountType$custom() => custom != null ? custom() : orElse(value),
+      AccountType$express() => express != null ? express() : orElse(value),
+      AccountType$none() => none != null ? none() : orElse(value),
+      AccountType$standard() => standard != null ? standard() : orElse(value),
+      AccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountType($value)';
 
  }

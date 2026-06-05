@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AvailablePayoutMethods$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() instant, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      AvailablePayoutMethods$instant() => instant(),
+      AvailablePayoutMethods$standard() => standard(),
+      AvailablePayoutMethods$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? instant, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      AvailablePayoutMethods$instant() => instant != null ? instant() : orElse(value),
+      AvailablePayoutMethods$standard() => standard != null ? standard() : orElse(value),
+      AvailablePayoutMethods$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AvailablePayoutMethods($value)';
 
  }

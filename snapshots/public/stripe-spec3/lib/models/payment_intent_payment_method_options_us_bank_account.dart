@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() goods, required W Function() $other, required W Function() services, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$goods() => goods(),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$$other() => $other(),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$services() => services(),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$unspecified() => unspecified(),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? goods, W Function()? $other, W Function()? services, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$goods() => goods != null ? goods() : orElse(value),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$$other() => $other != null ? $other() : orElse(value),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$services() => services != null ? services() : orElse(value),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pill, required W Function() rectangular, required W Function() rounded, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$pill() => pill(),
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rectangular() => rectangular(),
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rounded() => rounded(),
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pill, W Function()? rectangular, W Function()? rounded, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$pill() => pill != null ? pill() : orElse(value),
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rectangular() => rectangular != null ? rectangular() : orElse(value),
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rounded() => rounded != null ? rounded() : orElse(value),
+      PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)';
 
  }

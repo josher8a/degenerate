@@ -34,6 +34,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SquashMergeCommitMessage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() prBody, required W Function() commitMessages, required W Function() blank, required W Function(String value) $unknown, }) { return switch (this) {
+      SquashMergeCommitMessage$prBody() => prBody(),
+      SquashMergeCommitMessage$commitMessages() => commitMessages(),
+      SquashMergeCommitMessage$blank() => blank(),
+      SquashMergeCommitMessage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? prBody, W Function()? commitMessages, W Function()? blank, W Function(String value)? $unknown, }) { return switch (this) {
+      SquashMergeCommitMessage$prBody() => prBody != null ? prBody() : orElse(value),
+      SquashMergeCommitMessage$commitMessages() => commitMessages != null ? commitMessages() : orElse(value),
+      SquashMergeCommitMessage$blank() => blank != null ? blank() : orElse(value),
+      SquashMergeCommitMessage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SquashMergeCommitMessage($value)';
 
  }

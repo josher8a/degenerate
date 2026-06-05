@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinkCustomerCreation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinkCustomerCreation$always() => always(),
+      PaymentLinkCustomerCreation$ifRequired() => ifRequired(),
+      PaymentLinkCustomerCreation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinkCustomerCreation$always() => always != null ? always() : orElse(value),
+      PaymentLinkCustomerCreation$ifRequired() => ifRequired != null ? ifRequired() : orElse(value),
+      PaymentLinkCustomerCreation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinkCustomerCreation($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamEnumTrack$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inboundTrack, required W Function() outboundTrack, required W Function() bothTracks, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamEnumTrack$inboundTrack() => inboundTrack(),
+      StreamEnumTrack$outboundTrack() => outboundTrack(),
+      StreamEnumTrack$bothTracks() => bothTracks(),
+      StreamEnumTrack$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inboundTrack, W Function()? outboundTrack, W Function()? bothTracks, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamEnumTrack$inboundTrack() => inboundTrack != null ? inboundTrack() : orElse(value),
+      StreamEnumTrack$outboundTrack() => outboundTrack != null ? outboundTrack() : orElse(value),
+      StreamEnumTrack$bothTracks() => bothTracks != null ? bothTracks() : orElse(value),
+      StreamEnumTrack$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamEnumTrack($value)';
 
  }

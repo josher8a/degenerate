@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RepositoryAdvisoryState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() published, required W Function() closed, required W Function() withdrawn, required W Function() draft, required W Function() triage, required W Function(String value) $unknown, }) { return switch (this) {
+      RepositoryAdvisoryState$published() => published(),
+      RepositoryAdvisoryState$closed() => closed(),
+      RepositoryAdvisoryState$withdrawn() => withdrawn(),
+      RepositoryAdvisoryState$draft() => draft(),
+      RepositoryAdvisoryState$triage() => triage(),
+      RepositoryAdvisoryState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? published, W Function()? closed, W Function()? withdrawn, W Function()? draft, W Function()? triage, W Function(String value)? $unknown, }) { return switch (this) {
+      RepositoryAdvisoryState$published() => published != null ? published() : orElse(value),
+      RepositoryAdvisoryState$closed() => closed != null ? closed() : orElse(value),
+      RepositoryAdvisoryState$withdrawn() => withdrawn != null ? withdrawn() : orElse(value),
+      RepositoryAdvisoryState$draft() => draft != null ? draft() : orElse(value),
+      RepositoryAdvisoryState$triage() => triage != null ? triage() : orElse(value),
+      RepositoryAdvisoryState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RepositoryAdvisoryState($value)';
 
  }

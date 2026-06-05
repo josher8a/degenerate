@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FallbackMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+      FallbackMethod$$get() => $get(),
+      FallbackMethod$post() => post(),
+      FallbackMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+      FallbackMethod$$get() => $get != null ? $get() : orElse(value),
+      FallbackMethod$post() => post != null ? post() : orElse(value),
+      FallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FallbackMethod($value)';
 
  }

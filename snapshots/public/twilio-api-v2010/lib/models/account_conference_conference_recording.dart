@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConferenceRecordingEnumSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dialVerb, required W Function() conference, required W Function() outboundApi, required W Function() trunking, required W Function() recordVerb, required W Function() startCallRecordingApi, required W Function() startConferenceRecordingApi, required W Function(String value) $unknown, }) { return switch (this) {
+      ConferenceRecordingEnumSource$dialVerb() => dialVerb(),
+      ConferenceRecordingEnumSource$conference() => conference(),
+      ConferenceRecordingEnumSource$outboundApi() => outboundApi(),
+      ConferenceRecordingEnumSource$trunking() => trunking(),
+      ConferenceRecordingEnumSource$recordVerb() => recordVerb(),
+      ConferenceRecordingEnumSource$startCallRecordingApi() => startCallRecordingApi(),
+      ConferenceRecordingEnumSource$startConferenceRecordingApi() => startConferenceRecordingApi(),
+      ConferenceRecordingEnumSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dialVerb, W Function()? conference, W Function()? outboundApi, W Function()? trunking, W Function()? recordVerb, W Function()? startCallRecordingApi, W Function()? startConferenceRecordingApi, W Function(String value)? $unknown, }) { return switch (this) {
+      ConferenceRecordingEnumSource$dialVerb() => dialVerb != null ? dialVerb() : orElse(value),
+      ConferenceRecordingEnumSource$conference() => conference != null ? conference() : orElse(value),
+      ConferenceRecordingEnumSource$outboundApi() => outboundApi != null ? outboundApi() : orElse(value),
+      ConferenceRecordingEnumSource$trunking() => trunking != null ? trunking() : orElse(value),
+      ConferenceRecordingEnumSource$recordVerb() => recordVerb != null ? recordVerb() : orElse(value),
+      ConferenceRecordingEnumSource$startCallRecordingApi() => startCallRecordingApi != null ? startCallRecordingApi() : orElse(value),
+      ConferenceRecordingEnumSource$startConferenceRecordingApi() => startConferenceRecordingApi != null ? startConferenceRecordingApi() : orElse(value),
+      ConferenceRecordingEnumSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConferenceRecordingEnumSource($value)';
 
  }

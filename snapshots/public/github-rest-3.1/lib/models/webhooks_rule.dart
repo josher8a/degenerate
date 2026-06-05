@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowDeletionsEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowDeletionsEnforcementLevel$off() => off(),
+      AllowDeletionsEnforcementLevel$nonAdmins() => nonAdmins(),
+      AllowDeletionsEnforcementLevel$everyone() => everyone(),
+      AllowDeletionsEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowDeletionsEnforcementLevel$off() => off != null ? off() : orElse(value),
+      AllowDeletionsEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      AllowDeletionsEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      AllowDeletionsEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowDeletionsEnforcementLevel($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowForcePushesEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowForcePushesEnforcementLevel$off() => off(),
+      AllowForcePushesEnforcementLevel$nonAdmins() => nonAdmins(),
+      AllowForcePushesEnforcementLevel$everyone() => everyone(),
+      AllowForcePushesEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowForcePushesEnforcementLevel$off() => off != null ? off() : orElse(value),
+      AllowForcePushesEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      AllowForcePushesEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      AllowForcePushesEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowForcePushesEnforcementLevel($value)';
 
  }
@@ -165,6 +193,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$off() => off(),
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins() => nonAdmins(),
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone() => everyone(),
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$off() => off != null ? off() : orElse(value),
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhooksRuleLinearHistoryRequirementEnforcementLevel($value)';
 
  }
@@ -234,6 +276,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhooksRuleLockBranchEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhooksRuleLockBranchEnforcementLevel$off() => off(),
+      WebhooksRuleLockBranchEnforcementLevel$nonAdmins() => nonAdmins(),
+      WebhooksRuleLockBranchEnforcementLevel$everyone() => everyone(),
+      WebhooksRuleLockBranchEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhooksRuleLockBranchEnforcementLevel$off() => off != null ? off() : orElse(value),
+      WebhooksRuleLockBranchEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      WebhooksRuleLockBranchEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      WebhooksRuleLockBranchEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhooksRuleLockBranchEnforcementLevel($value)';
 
  }
@@ -302,6 +358,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MergeQueueEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      MergeQueueEnforcementLevel$off() => off(),
+      MergeQueueEnforcementLevel$nonAdmins() => nonAdmins(),
+      MergeQueueEnforcementLevel$everyone() => everyone(),
+      MergeQueueEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      MergeQueueEnforcementLevel$off() => off != null ? off() : orElse(value),
+      MergeQueueEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      MergeQueueEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      MergeQueueEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MergeQueueEnforcementLevel($value)';
 
  }
@@ -370,6 +440,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhooksRulePullRequestReviewsEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhooksRulePullRequestReviewsEnforcementLevel$off() => off(),
+      WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins() => nonAdmins(),
+      WebhooksRulePullRequestReviewsEnforcementLevel$everyone() => everyone(),
+      WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhooksRulePullRequestReviewsEnforcementLevel$off() => off != null ? off() : orElse(value),
+      WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      WebhooksRulePullRequestReviewsEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhooksRulePullRequestReviewsEnforcementLevel($value)';
 
  }
@@ -438,6 +522,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RequiredConversationResolutionLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      RequiredConversationResolutionLevel$off() => off(),
+      RequiredConversationResolutionLevel$nonAdmins() => nonAdmins(),
+      RequiredConversationResolutionLevel$everyone() => everyone(),
+      RequiredConversationResolutionLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      RequiredConversationResolutionLevel$off() => off != null ? off() : orElse(value),
+      RequiredConversationResolutionLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      RequiredConversationResolutionLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      RequiredConversationResolutionLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RequiredConversationResolutionLevel($value)';
 
  }
@@ -506,6 +604,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RequiredDeploymentsEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      RequiredDeploymentsEnforcementLevel$off() => off(),
+      RequiredDeploymentsEnforcementLevel$nonAdmins() => nonAdmins(),
+      RequiredDeploymentsEnforcementLevel$everyone() => everyone(),
+      RequiredDeploymentsEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      RequiredDeploymentsEnforcementLevel$off() => off != null ? off() : orElse(value),
+      RequiredDeploymentsEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      RequiredDeploymentsEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      RequiredDeploymentsEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RequiredDeploymentsEnforcementLevel($value)';
 
  }
@@ -574,6 +686,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$off() => off(),
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins() => nonAdmins(),
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone() => everyone(),
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$off() => off != null ? off() : orElse(value),
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhooksRuleRequiredStatusChecksEnforcementLevel($value)';
 
  }
@@ -642,6 +768,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SignatureRequirementEnforcementLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() nonAdmins, required W Function() everyone, required W Function(String value) $unknown, }) { return switch (this) {
+      SignatureRequirementEnforcementLevel$off() => off(),
+      SignatureRequirementEnforcementLevel$nonAdmins() => nonAdmins(),
+      SignatureRequirementEnforcementLevel$everyone() => everyone(),
+      SignatureRequirementEnforcementLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? nonAdmins, W Function()? everyone, W Function(String value)? $unknown, }) { return switch (this) {
+      SignatureRequirementEnforcementLevel$off() => off != null ? off() : orElse(value),
+      SignatureRequirementEnforcementLevel$nonAdmins() => nonAdmins != null ? nonAdmins() : orElse(value),
+      SignatureRequirementEnforcementLevel$everyone() => everyone != null ? everyone() : orElse(value),
+      SignatureRequirementEnforcementLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SignatureRequirementEnforcementLevel($value)';
 
  }

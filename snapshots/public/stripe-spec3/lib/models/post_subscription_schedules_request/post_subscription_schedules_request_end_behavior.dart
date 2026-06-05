@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostSubscriptionSchedulesRequestEndBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cancel, required W Function() none, required W Function() release, required W Function() renew, required W Function(String value) $unknown, }) { return switch (this) {
+      PostSubscriptionSchedulesRequestEndBehavior$cancel() => cancel(),
+      PostSubscriptionSchedulesRequestEndBehavior$none() => none(),
+      PostSubscriptionSchedulesRequestEndBehavior$release() => release(),
+      PostSubscriptionSchedulesRequestEndBehavior$renew() => renew(),
+      PostSubscriptionSchedulesRequestEndBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cancel, W Function()? none, W Function()? release, W Function()? renew, W Function(String value)? $unknown, }) { return switch (this) {
+      PostSubscriptionSchedulesRequestEndBehavior$cancel() => cancel != null ? cancel() : orElse(value),
+      PostSubscriptionSchedulesRequestEndBehavior$none() => none != null ? none() : orElse(value),
+      PostSubscriptionSchedulesRequestEndBehavior$release() => release != null ? release() : orElse(value),
+      PostSubscriptionSchedulesRequestEndBehavior$renew() => renew != null ? renew() : orElse(value),
+      PostSubscriptionSchedulesRequestEndBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostSubscriptionSchedulesRequestEndBehavior($value)';
 
  }

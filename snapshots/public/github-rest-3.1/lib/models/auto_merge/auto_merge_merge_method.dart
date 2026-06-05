@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AutoMergeMergeMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() merge, required W Function() squash, required W Function() rebase, required W Function(String value) $unknown, }) { return switch (this) {
+      AutoMergeMergeMethod$merge() => merge(),
+      AutoMergeMergeMethod$squash() => squash(),
+      AutoMergeMergeMethod$rebase() => rebase(),
+      AutoMergeMergeMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W Function()? squash, W Function()? rebase, W Function(String value)? $unknown, }) { return switch (this) {
+      AutoMergeMergeMethod$merge() => merge != null ? merge() : orElse(value),
+      AutoMergeMergeMethod$squash() => squash != null ? squash() : orElse(value),
+      AutoMergeMergeMethod$rebase() => rebase != null ? rebase() : orElse(value),
+      AutoMergeMergeMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AutoMergeMergeMethod($value)';
 
  }

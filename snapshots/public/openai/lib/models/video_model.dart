@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VideoModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sora2, required W Function() sora2Pro, required W Function() sora220251006, required W Function() sora2Pro20251006, required W Function() sora220251208, required W Function(String value) $unknown, }) { return switch (this) {
+      VideoModelVariant2$sora2() => sora2(),
+      VideoModelVariant2$sora2Pro() => sora2Pro(),
+      VideoModelVariant2$sora220251006() => sora220251006(),
+      VideoModelVariant2$sora2Pro20251006() => sora2Pro20251006(),
+      VideoModelVariant2$sora220251208() => sora220251208(),
+      VideoModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sora2, W Function()? sora2Pro, W Function()? sora220251006, W Function()? sora2Pro20251006, W Function()? sora220251208, W Function(String value)? $unknown, }) { return switch (this) {
+      VideoModelVariant2$sora2() => sora2 != null ? sora2() : orElse(value),
+      VideoModelVariant2$sora2Pro() => sora2Pro != null ? sora2Pro() : orElse(value),
+      VideoModelVariant2$sora220251006() => sora220251006 != null ? sora220251006() : orElse(value),
+      VideoModelVariant2$sora2Pro20251006() => sora2Pro20251006 != null ? sora2Pro20251006() : orElse(value),
+      VideoModelVariant2$sora220251208() => sora220251208 != null ? sora220251208() : orElse(value),
+      VideoModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VideoModelVariant2($value)';
 
  }

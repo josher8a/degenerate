@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopLocationsByIpVersionTlsVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tlSv10, required W Function() tlSv11, required W Function() tlSv12, required W Function() tlSv13, required W Function() tlSvQuic, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv10() => tlSv10(),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv11() => tlSv11(),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv12() => tlSv12(),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv13() => tlSv13(),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSvQuic() => tlSvQuic(),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, W Function()? tlSv11, W Function()? tlSv12, W Function()? tlSv13, W Function()? tlSvQuic, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv10() => tlSv10 != null ? tlSv10() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv11() => tlSv11 != null ? tlSv11() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv12() => tlSv12 != null ? tlSv12() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSv13() => tlSv13 != null ? tlSv13() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$tlSvQuic() => tlSvQuic != null ? tlSvQuic() : orElse(value),
+      RadarGetHttpTopLocationsByIpVersionTlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopLocationsByIpVersionTlsVersion($value)';
 
  }

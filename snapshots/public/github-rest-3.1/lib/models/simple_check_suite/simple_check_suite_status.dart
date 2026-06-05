@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SimpleCheckSuiteStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() pending, required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+      SimpleCheckSuiteStatus$queued() => queued(),
+      SimpleCheckSuiteStatus$inProgress() => inProgress(),
+      SimpleCheckSuiteStatus$completed() => completed(),
+      SimpleCheckSuiteStatus$pending() => pending(),
+      SimpleCheckSuiteStatus$waiting() => waiting(),
+      SimpleCheckSuiteStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? pending, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+      SimpleCheckSuiteStatus$queued() => queued != null ? queued() : orElse(value),
+      SimpleCheckSuiteStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      SimpleCheckSuiteStatus$completed() => completed != null ? completed() : orElse(value),
+      SimpleCheckSuiteStatus$pending() => pending != null ? pending() : orElse(value),
+      SimpleCheckSuiteStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      SimpleCheckSuiteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SimpleCheckSuiteStatus($value)';
 
  }

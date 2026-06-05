@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomPropertySourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organization, required W Function() enterprise, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomPropertySourceType$organization() => organization(),
+      CustomPropertySourceType$enterprise() => enterprise(),
+      CustomPropertySourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organization, W Function()? enterprise, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomPropertySourceType$organization() => organization != null ? organization() : orElse(value),
+      CustomPropertySourceType$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      CustomPropertySourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomPropertySourceType($value)';
 
  }

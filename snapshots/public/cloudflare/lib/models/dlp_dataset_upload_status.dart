@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DlpDatasetUploadStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() empty, required W Function() uploading, required W Function() pending, required W Function() processing, required W Function() failed, required W Function() complete, required W Function(String value) $unknown, }) { return switch (this) {
+      DlpDatasetUploadStatus$empty() => empty(),
+      DlpDatasetUploadStatus$uploading() => uploading(),
+      DlpDatasetUploadStatus$pending() => pending(),
+      DlpDatasetUploadStatus$processing() => processing(),
+      DlpDatasetUploadStatus$failed() => failed(),
+      DlpDatasetUploadStatus$complete() => complete(),
+      DlpDatasetUploadStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? empty, W Function()? uploading, W Function()? pending, W Function()? processing, W Function()? failed, W Function()? complete, W Function(String value)? $unknown, }) { return switch (this) {
+      DlpDatasetUploadStatus$empty() => empty != null ? empty() : orElse(value),
+      DlpDatasetUploadStatus$uploading() => uploading != null ? uploading() : orElse(value),
+      DlpDatasetUploadStatus$pending() => pending != null ? pending() : orElse(value),
+      DlpDatasetUploadStatus$processing() => processing != null ? processing() : orElse(value),
+      DlpDatasetUploadStatus$failed() => failed != null ? failed() : orElse(value),
+      DlpDatasetUploadStatus$complete() => complete != null ? complete() : orElse(value),
+      DlpDatasetUploadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DlpDatasetUploadStatus($value)';
 
  }

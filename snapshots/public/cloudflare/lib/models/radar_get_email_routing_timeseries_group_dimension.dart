@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ipVersion, required W Function() encrypted, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion() => ipVersion(),
+      RadarGetEmailRoutingTimeseriesGroupDimension$encrypted() => encrypted(),
+      RadarGetEmailRoutingTimeseriesGroupDimension$arc() => arc(),
+      RadarGetEmailRoutingTimeseriesGroupDimension$dkim() => dkim(),
+      RadarGetEmailRoutingTimeseriesGroupDimension$dmarc() => dmarc(),
+      RadarGetEmailRoutingTimeseriesGroupDimension$spf() => spf(),
+      RadarGetEmailRoutingTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipVersion, W Function()? encrypted, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupDimension$encrypted() => encrypted != null ? encrypted() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupDimension$arc() => arc != null ? arc() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupDimension$dkim() => dkim != null ? dkim() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupDimension$dmarc() => dmarc != null ? dmarc() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupDimension$spf() => spf != null ? spf() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupDimension($value)';
 
  }

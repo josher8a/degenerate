@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7SummaryByMitigationProductFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() csv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7SummaryByMitigationProductFormat$$json() => $json(),
+      RadarGetAttacksLayer7SummaryByMitigationProductFormat$csv() => csv(),
+      RadarGetAttacksLayer7SummaryByMitigationProductFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? csv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7SummaryByMitigationProductFormat$$json() => $json != null ? $json() : orElse(value),
+      RadarGetAttacksLayer7SummaryByMitigationProductFormat$csv() => csv != null ? csv() : orElse(value),
+      RadarGetAttacksLayer7SummaryByMitigationProductFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7SummaryByMitigationProductFormat($value)';
 
  }

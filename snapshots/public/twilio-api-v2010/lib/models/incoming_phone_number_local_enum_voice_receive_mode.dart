@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IncomingPhoneNumberLocalEnumVoiceReceiveMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() voice, required W Function() fax, required W Function(String value) $unknown, }) { return switch (this) {
+      IncomingPhoneNumberLocalEnumVoiceReceiveMode$voice() => voice(),
+      IncomingPhoneNumberLocalEnumVoiceReceiveMode$fax() => fax(),
+      IncomingPhoneNumberLocalEnumVoiceReceiveMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? voice, W Function()? fax, W Function(String value)? $unknown, }) { return switch (this) {
+      IncomingPhoneNumberLocalEnumVoiceReceiveMode$voice() => voice != null ? voice() : orElse(value),
+      IncomingPhoneNumberLocalEnumVoiceReceiveMode$fax() => fax != null ? fax() : orElse(value),
+      IncomingPhoneNumberLocalEnumVoiceReceiveMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IncomingPhoneNumberLocalEnumVoiceReceiveMode($value)';
 
  }

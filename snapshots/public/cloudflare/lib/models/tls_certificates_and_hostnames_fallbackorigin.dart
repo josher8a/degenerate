@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() pendingDeployment, required W Function() pendingDeletion, required W Function() active, required W Function() deploymentTimedOut, required W Function() deletionTimedOut, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$initializing() => initializing(),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeployment() => pendingDeployment(),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeletion() => pendingDeletion(),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$active() => active(),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deploymentTimedOut() => deploymentTimedOut(),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deletionTimedOut() => deletionTimedOut(),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingDeployment, W Function()? pendingDeletion, W Function()? active, W Function()? deploymentTimedOut, W Function()? deletionTimedOut, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$active() => active != null ? active() : orElse(value),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deploymentTimedOut() => deploymentTimedOut != null ? deploymentTimedOut() : orElse(value),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deletionTimedOut() => deletionTimedOut != null ? deletionTimedOut() : orElse(value),
+      TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus($value)';
 
  }

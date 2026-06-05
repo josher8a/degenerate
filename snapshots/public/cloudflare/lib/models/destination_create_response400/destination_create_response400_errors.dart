@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DestinationCreateResponse400ErrorsMessage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() badRequest, required W Function(String value) $unknown, }) { return switch (this) {
+      DestinationCreateResponse400ErrorsMessage$badRequest() => badRequest(),
+      DestinationCreateResponse400ErrorsMessage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? badRequest, W Function(String value)? $unknown, }) { return switch (this) {
+      DestinationCreateResponse400ErrorsMessage$badRequest() => badRequest != null ? badRequest() : orElse(value),
+      DestinationCreateResponse400ErrorsMessage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DestinationCreateResponse400ErrorsMessage($value)';
 
  }

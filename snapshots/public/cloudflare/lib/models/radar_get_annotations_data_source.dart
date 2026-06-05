@@ -118,6 +118,64 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAnnotationsDataSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() aiBots, required W Function() aiGateway, required W Function() bgp, required W Function() bots, required W Function() connectionAnomaly, required W Function() ct, required W Function() dns, required W Function() dnsMagnitude, required W Function() dnsAs112, required W Function() dos, required W Function() emailRouting, required W Function() emailSecurity, required W Function() fw, required W Function() fwPg, required W Function() http, required W Function() httpControl, required W Function() httpCrawlerReferer, required W Function() httpOrigins, required W Function() iqi, required W Function() leakedCredentials, required W Function() net, required W Function() robotsTxt, required W Function() speed, required W Function() workersAi, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAnnotationsDataSource$all() => all(),
+      RadarGetAnnotationsDataSource$aiBots() => aiBots(),
+      RadarGetAnnotationsDataSource$aiGateway() => aiGateway(),
+      RadarGetAnnotationsDataSource$bgp() => bgp(),
+      RadarGetAnnotationsDataSource$bots() => bots(),
+      RadarGetAnnotationsDataSource$connectionAnomaly() => connectionAnomaly(),
+      RadarGetAnnotationsDataSource$ct() => ct(),
+      RadarGetAnnotationsDataSource$dns() => dns(),
+      RadarGetAnnotationsDataSource$dnsMagnitude() => dnsMagnitude(),
+      RadarGetAnnotationsDataSource$dnsAs112() => dnsAs112(),
+      RadarGetAnnotationsDataSource$dos() => dos(),
+      RadarGetAnnotationsDataSource$emailRouting() => emailRouting(),
+      RadarGetAnnotationsDataSource$emailSecurity() => emailSecurity(),
+      RadarGetAnnotationsDataSource$fw() => fw(),
+      RadarGetAnnotationsDataSource$fwPg() => fwPg(),
+      RadarGetAnnotationsDataSource$http() => http(),
+      RadarGetAnnotationsDataSource$httpControl() => httpControl(),
+      RadarGetAnnotationsDataSource$httpCrawlerReferer() => httpCrawlerReferer(),
+      RadarGetAnnotationsDataSource$httpOrigins() => httpOrigins(),
+      RadarGetAnnotationsDataSource$iqi() => iqi(),
+      RadarGetAnnotationsDataSource$leakedCredentials() => leakedCredentials(),
+      RadarGetAnnotationsDataSource$net() => net(),
+      RadarGetAnnotationsDataSource$robotsTxt() => robotsTxt(),
+      RadarGetAnnotationsDataSource$speed() => speed(),
+      RadarGetAnnotationsDataSource$workersAi() => workersAi(),
+      RadarGetAnnotationsDataSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? aiBots, W Function()? aiGateway, W Function()? bgp, W Function()? bots, W Function()? connectionAnomaly, W Function()? ct, W Function()? dns, W Function()? dnsMagnitude, W Function()? dnsAs112, W Function()? dos, W Function()? emailRouting, W Function()? emailSecurity, W Function()? fw, W Function()? fwPg, W Function()? http, W Function()? httpControl, W Function()? httpCrawlerReferer, W Function()? httpOrigins, W Function()? iqi, W Function()? leakedCredentials, W Function()? net, W Function()? robotsTxt, W Function()? speed, W Function()? workersAi, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAnnotationsDataSource$all() => all != null ? all() : orElse(value),
+      RadarGetAnnotationsDataSource$aiBots() => aiBots != null ? aiBots() : orElse(value),
+      RadarGetAnnotationsDataSource$aiGateway() => aiGateway != null ? aiGateway() : orElse(value),
+      RadarGetAnnotationsDataSource$bgp() => bgp != null ? bgp() : orElse(value),
+      RadarGetAnnotationsDataSource$bots() => bots != null ? bots() : orElse(value),
+      RadarGetAnnotationsDataSource$connectionAnomaly() => connectionAnomaly != null ? connectionAnomaly() : orElse(value),
+      RadarGetAnnotationsDataSource$ct() => ct != null ? ct() : orElse(value),
+      RadarGetAnnotationsDataSource$dns() => dns != null ? dns() : orElse(value),
+      RadarGetAnnotationsDataSource$dnsMagnitude() => dnsMagnitude != null ? dnsMagnitude() : orElse(value),
+      RadarGetAnnotationsDataSource$dnsAs112() => dnsAs112 != null ? dnsAs112() : orElse(value),
+      RadarGetAnnotationsDataSource$dos() => dos != null ? dos() : orElse(value),
+      RadarGetAnnotationsDataSource$emailRouting() => emailRouting != null ? emailRouting() : orElse(value),
+      RadarGetAnnotationsDataSource$emailSecurity() => emailSecurity != null ? emailSecurity() : orElse(value),
+      RadarGetAnnotationsDataSource$fw() => fw != null ? fw() : orElse(value),
+      RadarGetAnnotationsDataSource$fwPg() => fwPg != null ? fwPg() : orElse(value),
+      RadarGetAnnotationsDataSource$http() => http != null ? http() : orElse(value),
+      RadarGetAnnotationsDataSource$httpControl() => httpControl != null ? httpControl() : orElse(value),
+      RadarGetAnnotationsDataSource$httpCrawlerReferer() => httpCrawlerReferer != null ? httpCrawlerReferer() : orElse(value),
+      RadarGetAnnotationsDataSource$httpOrigins() => httpOrigins != null ? httpOrigins() : orElse(value),
+      RadarGetAnnotationsDataSource$iqi() => iqi != null ? iqi() : orElse(value),
+      RadarGetAnnotationsDataSource$leakedCredentials() => leakedCredentials != null ? leakedCredentials() : orElse(value),
+      RadarGetAnnotationsDataSource$net() => net != null ? net() : orElse(value),
+      RadarGetAnnotationsDataSource$robotsTxt() => robotsTxt != null ? robotsTxt() : orElse(value),
+      RadarGetAnnotationsDataSource$speed() => speed != null ? speed() : orElse(value),
+      RadarGetAnnotationsDataSource$workersAi() => workersAi != null ? workersAi() : orElse(value),
+      RadarGetAnnotationsDataSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAnnotationsDataSource($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$applePay() => applePay(),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$googlePay() => googlePay(),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$samsungPay() => samsungPay(),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$unknown() => unknown(),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$applePay() => applePay != null ? applePay() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$googlePay() => googlePay != null ? googlePay() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)';
 
  }

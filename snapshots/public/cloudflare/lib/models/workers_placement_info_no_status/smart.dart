@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SmartMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() smart, required W Function(String value) $unknown, }) { return switch (this) {
+      SmartMode$smart() => smart(),
+      SmartMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? smart, W Function(String value)? $unknown, }) { return switch (this) {
+      SmartMode$smart() => smart != null ? smart() : orElse(value),
+      SmartMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SmartMode($value)';
 
  }

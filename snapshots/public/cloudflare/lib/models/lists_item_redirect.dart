@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListsItemRedirectStatusCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $301, required W Function() $302, required W Function() $307, required W Function() $308, required W Function(int value) $unknown, }) { return switch (this) {
+      ListsItemRedirectStatusCode$$301() => $301(),
+      ListsItemRedirectStatusCode$$302() => $302(),
+      ListsItemRedirectStatusCode$$307() => $307(),
+      ListsItemRedirectStatusCode$$308() => $308(),
+      ListsItemRedirectStatusCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Function()? $302, W Function()? $307, W Function()? $308, W Function(int value)? $unknown, }) { return switch (this) {
+      ListsItemRedirectStatusCode$$301() => $301 != null ? $301() : orElse(value),
+      ListsItemRedirectStatusCode$$302() => $302 != null ? $302() : orElse(value),
+      ListsItemRedirectStatusCode$$307() => $307 != null ? $307() : orElse(value),
+      ListsItemRedirectStatusCode$$308() => $308 != null ? $308() : orElse(value),
+      ListsItemRedirectStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListsItemRedirectStatusCode($value)';
 
  }

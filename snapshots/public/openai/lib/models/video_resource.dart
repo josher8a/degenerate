@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VideoStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      VideoStatus$queued() => queued(),
+      VideoStatus$inProgress() => inProgress(),
+      VideoStatus$completed() => completed(),
+      VideoStatus$failed() => failed(),
+      VideoStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      VideoStatus$queued() => queued != null ? queued() : orElse(value),
+      VideoStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      VideoStatus$completed() => completed != null ? completed() : orElse(value),
+      VideoStatus$failed() => failed != null ? failed() : orElse(value),
+      VideoStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VideoStatus($value)';
 
  }
@@ -103,6 +119,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VideoResourceObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() video, required W Function(String value) $unknown, }) { return switch (this) {
+      VideoResourceObject$video() => video(),
+      VideoResourceObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? video, W Function(String value)? $unknown, }) { return switch (this) {
+      VideoResourceObject$video() => video != null ? video() : orElse(value),
+      VideoResourceObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VideoResourceObject($value)';
 
  }

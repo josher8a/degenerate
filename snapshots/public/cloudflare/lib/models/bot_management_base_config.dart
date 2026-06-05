@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BotManagementAiBotsProtection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() block, required W Function() disabled, required W Function() onlyOnAdPages, required W Function(String value) $unknown, }) { return switch (this) {
+      BotManagementAiBotsProtection$block() => block(),
+      BotManagementAiBotsProtection$disabled() => disabled(),
+      BotManagementAiBotsProtection$onlyOnAdPages() => onlyOnAdPages(),
+      BotManagementAiBotsProtection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W Function()? disabled, W Function()? onlyOnAdPages, W Function(String value)? $unknown, }) { return switch (this) {
+      BotManagementAiBotsProtection$block() => block != null ? block() : orElse(value),
+      BotManagementAiBotsProtection$disabled() => disabled != null ? disabled() : orElse(value),
+      BotManagementAiBotsProtection$onlyOnAdPages() => onlyOnAdPages != null ? onlyOnAdPages() : orElse(value),
+      BotManagementAiBotsProtection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BotManagementAiBotsProtection($value)';
 
  }
@@ -95,6 +109,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BotManagementCfRobotsVariant$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() policyOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      BotManagementCfRobotsVariant$off() => off(),
+      BotManagementCfRobotsVariant$policyOnly() => policyOnly(),
+      BotManagementCfRobotsVariant$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? policyOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      BotManagementCfRobotsVariant$off() => off != null ? off() : orElse(value),
+      BotManagementCfRobotsVariant$policyOnly() => policyOnly != null ? policyOnly() : orElse(value),
+      BotManagementCfRobotsVariant$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BotManagementCfRobotsVariant($value)';
 
  }
@@ -151,6 +177,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BotManagementCrawlerProtection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      BotManagementCrawlerProtection$enabled() => enabled(),
+      BotManagementCrawlerProtection$disabled() => disabled(),
+      BotManagementCrawlerProtection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      BotManagementCrawlerProtection$enabled() => enabled != null ? enabled() : orElse(value),
+      BotManagementCrawlerProtection$disabled() => disabled != null ? disabled() : orElse(value),
+      BotManagementCrawlerProtection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BotManagementCrawlerProtection($value)';
 
  }

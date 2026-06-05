@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetQuotesStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() canceled, required W Function() draft, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      GetQuotesStatus$accepted() => accepted(),
+      GetQuotesStatus$canceled() => canceled(),
+      GetQuotesStatus$draft() => draft(),
+      GetQuotesStatus$open() => open(),
+      GetQuotesStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? canceled, W Function()? draft, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      GetQuotesStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      GetQuotesStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      GetQuotesStatus$draft() => draft != null ? draft() : orElse(value),
+      GetQuotesStatus$open() => open != null ? open() : orElse(value),
+      GetQuotesStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetQuotesStatus($value)';
 
  }

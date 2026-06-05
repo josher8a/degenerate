@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GitCreateTagRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() commit, required W Function() tree, required W Function() blob, required W Function(String value) $unknown, }) { return switch (this) {
+      GitCreateTagRequestType$commit() => commit(),
+      GitCreateTagRequestType$tree() => tree(),
+      GitCreateTagRequestType$blob() => blob(),
+      GitCreateTagRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? commit, W Function()? tree, W Function()? blob, W Function(String value)? $unknown, }) { return switch (this) {
+      GitCreateTagRequestType$commit() => commit != null ? commit() : orElse(value),
+      GitCreateTagRequestType$tree() => tree != null ? tree() : orElse(value),
+      GitCreateTagRequestType$blob() => blob != null ? blob() : orElse(value),
+      GitCreateTagRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GitCreateTagRequestType($value)';
 
  }

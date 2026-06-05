@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Zones0rttValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      Zones0rttValue$$on() => $on(),
+      Zones0rttValue$off() => off(),
+      Zones0rttValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      Zones0rttValue$$on() => $on != null ? $on() : orElse(value),
+      Zones0rttValue$off() => off != null ? off() : orElse(value),
+      Zones0rttValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Zones0rttValue($value)';
 
  }
@@ -83,6 +95,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesAdvancedDdosValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesAdvancedDdosValue$$on() => $on(),
+      ZonesAdvancedDdosValue$off() => off(),
+      ZonesAdvancedDdosValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesAdvancedDdosValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesAdvancedDdosValue$off() => off != null ? off() : orElse(value),
+      ZonesAdvancedDdosValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesAdvancedDdosValue($value)';
 
  }
@@ -139,6 +163,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesAlwaysOnlineValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesAlwaysOnlineValue$$on() => $on(),
+      ZonesAlwaysOnlineValue$off() => off(),
+      ZonesAlwaysOnlineValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesAlwaysOnlineValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesAlwaysOnlineValue$off() => off != null ? off() : orElse(value),
+      ZonesAlwaysOnlineValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesAlwaysOnlineValue($value)';
 
  }
@@ -195,6 +231,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesAlwaysUseHttpsValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesAlwaysUseHttpsValue$$on() => $on(),
+      ZonesAlwaysUseHttpsValue$off() => off(),
+      ZonesAlwaysUseHttpsValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesAlwaysUseHttpsValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesAlwaysUseHttpsValue$off() => off != null ? off() : orElse(value),
+      ZonesAlwaysUseHttpsValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesAlwaysUseHttpsValue($value)';
 
  }
@@ -251,6 +299,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesBrotliValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesBrotliValue$off() => off(),
+      ZonesBrotliValue$$on() => $on(),
+      ZonesBrotliValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesBrotliValue$off() => off != null ? off() : orElse(value),
+      ZonesBrotliValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesBrotliValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesBrotliValue($value)';
 
  }
@@ -368,6 +428,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesChallengeTtlValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $300, required W Function() $900, required W Function() $1800, required W Function() $2700, required W Function() $3600, required W Function() $7200, required W Function() $10800, required W Function() $14400, required W Function() $28800, required W Function() $57600, required W Function() $86400, required W Function() $604800, required W Function() $25920000, required W Function() $315360000, required W Function(double value) $unknown, }) { return switch (this) {
+      ZonesChallengeTtlValue$$300() => $300(),
+      ZonesChallengeTtlValue$$900() => $900(),
+      ZonesChallengeTtlValue$$1800() => $1800(),
+      ZonesChallengeTtlValue$$2700() => $2700(),
+      ZonesChallengeTtlValue$$3600() => $3600(),
+      ZonesChallengeTtlValue$$7200() => $7200(),
+      ZonesChallengeTtlValue$$10800() => $10800(),
+      ZonesChallengeTtlValue$$14400() => $14400(),
+      ZonesChallengeTtlValue$$28800() => $28800(),
+      ZonesChallengeTtlValue$$57600() => $57600(),
+      ZonesChallengeTtlValue$$86400() => $86400(),
+      ZonesChallengeTtlValue$$604800() => $604800(),
+      ZonesChallengeTtlValue$$25920000() => $25920000(),
+      ZonesChallengeTtlValue$$315360000() => $315360000(),
+      ZonesChallengeTtlValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $300, W Function()? $900, W Function()? $1800, W Function()? $2700, W Function()? $3600, W Function()? $7200, W Function()? $10800, W Function()? $14400, W Function()? $28800, W Function()? $57600, W Function()? $86400, W Function()? $604800, W Function()? $25920000, W Function()? $315360000, W Function(double value)? $unknown, }) { return switch (this) {
+      ZonesChallengeTtlValue$$300() => $300 != null ? $300() : orElse(value),
+      ZonesChallengeTtlValue$$900() => $900 != null ? $900() : orElse(value),
+      ZonesChallengeTtlValue$$1800() => $1800 != null ? $1800() : orElse(value),
+      ZonesChallengeTtlValue$$2700() => $2700 != null ? $2700() : orElse(value),
+      ZonesChallengeTtlValue$$3600() => $3600 != null ? $3600() : orElse(value),
+      ZonesChallengeTtlValue$$7200() => $7200 != null ? $7200() : orElse(value),
+      ZonesChallengeTtlValue$$10800() => $10800 != null ? $10800() : orElse(value),
+      ZonesChallengeTtlValue$$14400() => $14400 != null ? $14400() : orElse(value),
+      ZonesChallengeTtlValue$$28800() => $28800 != null ? $28800() : orElse(value),
+      ZonesChallengeTtlValue$$57600() => $57600 != null ? $57600() : orElse(value),
+      ZonesChallengeTtlValue$$86400() => $86400 != null ? $86400() : orElse(value),
+      ZonesChallengeTtlValue$$604800() => $604800 != null ? $604800() : orElse(value),
+      ZonesChallengeTtlValue$$25920000() => $25920000 != null ? $25920000() : orElse(value),
+      ZonesChallengeTtlValue$$315360000() => $315360000 != null ? $315360000() : orElse(value),
+      ZonesChallengeTtlValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesChallengeTtlValue($value)';
 
  }
@@ -532,6 +628,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesChinaNetworkEnabledValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesChinaNetworkEnabledValue$$on() => $on(),
+      ZonesChinaNetworkEnabledValue$off() => off(),
+      ZonesChinaNetworkEnabledValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesChinaNetworkEnabledValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesChinaNetworkEnabledValue$off() => off != null ? off() : orElse(value),
+      ZonesChinaNetworkEnabledValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesChinaNetworkEnabledValue($value)';
 
  }
@@ -588,6 +696,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesCnameFlatteningValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() flattenAtRoot, required W Function() flattenAll, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesCnameFlatteningValue$flattenAtRoot() => flattenAtRoot(),
+      ZonesCnameFlatteningValue$flattenAll() => flattenAll(),
+      ZonesCnameFlatteningValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? flattenAtRoot, W Function()? flattenAll, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesCnameFlatteningValue$flattenAtRoot() => flattenAtRoot != null ? flattenAtRoot() : orElse(value),
+      ZonesCnameFlatteningValue$flattenAll() => flattenAll != null ? flattenAll() : orElse(value),
+      ZonesCnameFlatteningValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesCnameFlatteningValue($value)';
 
  }
@@ -644,6 +764,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesContentConverterValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesContentConverterValue$off() => off(),
+      ZonesContentConverterValue$$on() => $on(),
+      ZonesContentConverterValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesContentConverterValue$off() => off != null ? off() : orElse(value),
+      ZonesContentConverterValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesContentConverterValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesContentConverterValue($value)';
 
  }
@@ -700,6 +832,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesEarlyHintsValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesEarlyHintsValue$$on() => $on(),
+      ZonesEarlyHintsValue$off() => off(),
+      ZonesEarlyHintsValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesEarlyHintsValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesEarlyHintsValue$off() => off != null ? off() : orElse(value),
+      ZonesEarlyHintsValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesEarlyHintsValue($value)';
 
  }
@@ -833,6 +977,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesEdgeCacheTtlValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $30, required W Function() $60, required W Function() $300, required W Function() $1200, required W Function() $1800, required W Function() $3600, required W Function() $7200, required W Function() $10800, required W Function() $14400, required W Function() $18000, required W Function() $28800, required W Function() $43200, required W Function() $57600, required W Function() $72000, required W Function() $86400, required W Function() $172800, required W Function() $259200, required W Function() $345600, required W Function() $432000, required W Function() $518400, required W Function() $604800, required W Function(double value) $unknown, }) { return switch (this) {
+      ZonesEdgeCacheTtlValue$$30() => $30(),
+      ZonesEdgeCacheTtlValue$$60() => $60(),
+      ZonesEdgeCacheTtlValue$$300() => $300(),
+      ZonesEdgeCacheTtlValue$$1200() => $1200(),
+      ZonesEdgeCacheTtlValue$$1800() => $1800(),
+      ZonesEdgeCacheTtlValue$$3600() => $3600(),
+      ZonesEdgeCacheTtlValue$$7200() => $7200(),
+      ZonesEdgeCacheTtlValue$$10800() => $10800(),
+      ZonesEdgeCacheTtlValue$$14400() => $14400(),
+      ZonesEdgeCacheTtlValue$$18000() => $18000(),
+      ZonesEdgeCacheTtlValue$$28800() => $28800(),
+      ZonesEdgeCacheTtlValue$$43200() => $43200(),
+      ZonesEdgeCacheTtlValue$$57600() => $57600(),
+      ZonesEdgeCacheTtlValue$$72000() => $72000(),
+      ZonesEdgeCacheTtlValue$$86400() => $86400(),
+      ZonesEdgeCacheTtlValue$$172800() => $172800(),
+      ZonesEdgeCacheTtlValue$$259200() => $259200(),
+      ZonesEdgeCacheTtlValue$$345600() => $345600(),
+      ZonesEdgeCacheTtlValue$$432000() => $432000(),
+      ZonesEdgeCacheTtlValue$$518400() => $518400(),
+      ZonesEdgeCacheTtlValue$$604800() => $604800(),
+      ZonesEdgeCacheTtlValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $30, W Function()? $60, W Function()? $300, W Function()? $1200, W Function()? $1800, W Function()? $3600, W Function()? $7200, W Function()? $10800, W Function()? $14400, W Function()? $18000, W Function()? $28800, W Function()? $43200, W Function()? $57600, W Function()? $72000, W Function()? $86400, W Function()? $172800, W Function()? $259200, W Function()? $345600, W Function()? $432000, W Function()? $518400, W Function()? $604800, W Function(double value)? $unknown, }) { return switch (this) {
+      ZonesEdgeCacheTtlValue$$30() => $30 != null ? $30() : orElse(value),
+      ZonesEdgeCacheTtlValue$$60() => $60 != null ? $60() : orElse(value),
+      ZonesEdgeCacheTtlValue$$300() => $300 != null ? $300() : orElse(value),
+      ZonesEdgeCacheTtlValue$$1200() => $1200 != null ? $1200() : orElse(value),
+      ZonesEdgeCacheTtlValue$$1800() => $1800 != null ? $1800() : orElse(value),
+      ZonesEdgeCacheTtlValue$$3600() => $3600 != null ? $3600() : orElse(value),
+      ZonesEdgeCacheTtlValue$$7200() => $7200 != null ? $7200() : orElse(value),
+      ZonesEdgeCacheTtlValue$$10800() => $10800 != null ? $10800() : orElse(value),
+      ZonesEdgeCacheTtlValue$$14400() => $14400 != null ? $14400() : orElse(value),
+      ZonesEdgeCacheTtlValue$$18000() => $18000 != null ? $18000() : orElse(value),
+      ZonesEdgeCacheTtlValue$$28800() => $28800 != null ? $28800() : orElse(value),
+      ZonesEdgeCacheTtlValue$$43200() => $43200 != null ? $43200() : orElse(value),
+      ZonesEdgeCacheTtlValue$$57600() => $57600 != null ? $57600() : orElse(value),
+      ZonesEdgeCacheTtlValue$$72000() => $72000 != null ? $72000() : orElse(value),
+      ZonesEdgeCacheTtlValue$$86400() => $86400 != null ? $86400() : orElse(value),
+      ZonesEdgeCacheTtlValue$$172800() => $172800 != null ? $172800() : orElse(value),
+      ZonesEdgeCacheTtlValue$$259200() => $259200 != null ? $259200() : orElse(value),
+      ZonesEdgeCacheTtlValue$$345600() => $345600 != null ? $345600() : orElse(value),
+      ZonesEdgeCacheTtlValue$$432000() => $432000 != null ? $432000() : orElse(value),
+      ZonesEdgeCacheTtlValue$$518400() => $518400 != null ? $518400() : orElse(value),
+      ZonesEdgeCacheTtlValue$$604800() => $604800 != null ? $604800() : orElse(value),
+      ZonesEdgeCacheTtlValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesEdgeCacheTtlValue($value)';
 
  }
@@ -1064,6 +1258,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesH2PrioritizationValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function() custom, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesH2PrioritizationValue$$on() => $on(),
+      ZonesH2PrioritizationValue$off() => off(),
+      ZonesH2PrioritizationValue$custom() => custom(),
+      ZonesH2PrioritizationValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function()? custom, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesH2PrioritizationValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesH2PrioritizationValue$off() => off != null ? off() : orElse(value),
+      ZonesH2PrioritizationValue$custom() => custom != null ? custom() : orElse(value),
+      ZonesH2PrioritizationValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesH2PrioritizationValue($value)';
 
  }
@@ -1129,6 +1337,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesHotlinkProtectionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesHotlinkProtectionValue$$on() => $on(),
+      ZonesHotlinkProtectionValue$off() => off(),
+      ZonesHotlinkProtectionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesHotlinkProtectionValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesHotlinkProtectionValue$off() => off != null ? off() : orElse(value),
+      ZonesHotlinkProtectionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesHotlinkProtectionValue($value)';
 
  }
@@ -1185,6 +1405,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesHttp2Value$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesHttp2Value$$on() => $on(),
+      ZonesHttp2Value$off() => off(),
+      ZonesHttp2Value$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesHttp2Value$$on() => $on != null ? $on() : orElse(value),
+      ZonesHttp2Value$off() => off != null ? off() : orElse(value),
+      ZonesHttp2Value$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesHttp2Value($value)';
 
  }
@@ -1241,6 +1473,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesHttp3Value$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesHttp3Value$$on() => $on(),
+      ZonesHttp3Value$off() => off(),
+      ZonesHttp3Value$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesHttp3Value$$on() => $on != null ? $on() : orElse(value),
+      ZonesHttp3Value$off() => off != null ? off() : orElse(value),
+      ZonesHttp3Value$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesHttp3Value($value)';
 
  }
@@ -1301,6 +1545,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesImageResizingValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesImageResizingValue$$on() => $on(),
+      ZonesImageResizingValue$off() => off(),
+      ZonesImageResizingValue$open() => open(),
+      ZonesImageResizingValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesImageResizingValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesImageResizingValue$off() => off != null ? off() : orElse(value),
+      ZonesImageResizingValue$open() => open != null ? open() : orElse(value),
+      ZonesImageResizingValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesImageResizingValue($value)';
 
  }
@@ -1366,6 +1624,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesIpv6Value$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesIpv6Value$off() => off(),
+      ZonesIpv6Value$$on() => $on(),
+      ZonesIpv6Value$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesIpv6Value$off() => off != null ? off() : orElse(value),
+      ZonesIpv6Value$$on() => $on != null ? $on() : orElse(value),
+      ZonesIpv6Value$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesIpv6Value($value)';
 
  }
@@ -1487,6 +1757,50 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesMaxUploadValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $100, required W Function() $125, required W Function() $150, required W Function() $175, required W Function() $200, required W Function() $225, required W Function() $250, required W Function() $275, required W Function() $300, required W Function() $325, required W Function() $350, required W Function() $375, required W Function() $400, required W Function() $425, required W Function() $450, required W Function() $475, required W Function() $500, required W Function() $1000, required W Function(int value) $unknown, }) { return switch (this) {
+      ZonesMaxUploadValue$$100() => $100(),
+      ZonesMaxUploadValue$$125() => $125(),
+      ZonesMaxUploadValue$$150() => $150(),
+      ZonesMaxUploadValue$$175() => $175(),
+      ZonesMaxUploadValue$$200() => $200(),
+      ZonesMaxUploadValue$$225() => $225(),
+      ZonesMaxUploadValue$$250() => $250(),
+      ZonesMaxUploadValue$$275() => $275(),
+      ZonesMaxUploadValue$$300() => $300(),
+      ZonesMaxUploadValue$$325() => $325(),
+      ZonesMaxUploadValue$$350() => $350(),
+      ZonesMaxUploadValue$$375() => $375(),
+      ZonesMaxUploadValue$$400() => $400(),
+      ZonesMaxUploadValue$$425() => $425(),
+      ZonesMaxUploadValue$$450() => $450(),
+      ZonesMaxUploadValue$$475() => $475(),
+      ZonesMaxUploadValue$$500() => $500(),
+      ZonesMaxUploadValue$$1000() => $1000(),
+      ZonesMaxUploadValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $100, W Function()? $125, W Function()? $150, W Function()? $175, W Function()? $200, W Function()? $225, W Function()? $250, W Function()? $275, W Function()? $300, W Function()? $325, W Function()? $350, W Function()? $375, W Function()? $400, W Function()? $425, W Function()? $450, W Function()? $475, W Function()? $500, W Function()? $1000, W Function(int value)? $unknown, }) { return switch (this) {
+      ZonesMaxUploadValue$$100() => $100 != null ? $100() : orElse(value),
+      ZonesMaxUploadValue$$125() => $125 != null ? $125() : orElse(value),
+      ZonesMaxUploadValue$$150() => $150 != null ? $150() : orElse(value),
+      ZonesMaxUploadValue$$175() => $175 != null ? $175() : orElse(value),
+      ZonesMaxUploadValue$$200() => $200 != null ? $200() : orElse(value),
+      ZonesMaxUploadValue$$225() => $225 != null ? $225() : orElse(value),
+      ZonesMaxUploadValue$$250() => $250 != null ? $250() : orElse(value),
+      ZonesMaxUploadValue$$275() => $275 != null ? $275() : orElse(value),
+      ZonesMaxUploadValue$$300() => $300 != null ? $300() : orElse(value),
+      ZonesMaxUploadValue$$325() => $325 != null ? $325() : orElse(value),
+      ZonesMaxUploadValue$$350() => $350 != null ? $350() : orElse(value),
+      ZonesMaxUploadValue$$375() => $375 != null ? $375() : orElse(value),
+      ZonesMaxUploadValue$$400() => $400 != null ? $400() : orElse(value),
+      ZonesMaxUploadValue$$425() => $425 != null ? $425() : orElse(value),
+      ZonesMaxUploadValue$$450() => $450 != null ? $450() : orElse(value),
+      ZonesMaxUploadValue$$475() => $475 != null ? $475() : orElse(value),
+      ZonesMaxUploadValue$$500() => $500 != null ? $500() : orElse(value),
+      ZonesMaxUploadValue$$1000() => $1000 != null ? $1000() : orElse(value),
+      ZonesMaxUploadValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesMaxUploadValue($value)';
 
  }
@@ -1695,6 +2009,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesMinTlsVersionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $10, required W Function() $11, required W Function() $12, required W Function() $13, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesMinTlsVersionValue$$10() => $10(),
+      ZonesMinTlsVersionValue$$11() => $11(),
+      ZonesMinTlsVersionValue$$12() => $12(),
+      ZonesMinTlsVersionValue$$13() => $13(),
+      ZonesMinTlsVersionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W Function()? $11, W Function()? $12, W Function()? $13, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesMinTlsVersionValue$$10() => $10 != null ? $10() : orElse(value),
+      ZonesMinTlsVersionValue$$11() => $11 != null ? $11() : orElse(value),
+      ZonesMinTlsVersionValue$$12() => $12 != null ? $12() : orElse(value),
+      ZonesMinTlsVersionValue$$13() => $13 != null ? $13() : orElse(value),
+      ZonesMinTlsVersionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesMinTlsVersionValue($value)';
 
  }
@@ -1770,6 +2100,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesOpportunisticOnionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesOpportunisticOnionValue$$on() => $on(),
+      ZonesOpportunisticOnionValue$off() => off(),
+      ZonesOpportunisticOnionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesOpportunisticOnionValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesOpportunisticOnionValue$off() => off != null ? off() : orElse(value),
+      ZonesOpportunisticOnionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesOpportunisticOnionValue($value)';
 
  }
@@ -1826,6 +2168,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesOrangeToOrangeValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesOrangeToOrangeValue$$on() => $on(),
+      ZonesOrangeToOrangeValue$off() => off(),
+      ZonesOrangeToOrangeValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesOrangeToOrangeValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesOrangeToOrangeValue$off() => off != null ? off() : orElse(value),
+      ZonesOrangeToOrangeValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesOrangeToOrangeValue($value)';
 
  }
@@ -1882,6 +2236,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesPrefetchPreloadValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesPrefetchPreloadValue$$on() => $on(),
+      ZonesPrefetchPreloadValue$off() => off(),
+      ZonesPrefetchPreloadValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesPrefetchPreloadValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesPrefetchPreloadValue$off() => off != null ? off() : orElse(value),
+      ZonesPrefetchPreloadValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesPrefetchPreloadValue($value)';
 
  }
@@ -1938,6 +2304,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesPrivacyPassValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesPrivacyPassValue$$on() => $on(),
+      ZonesPrivacyPassValue$off() => off(),
+      ZonesPrivacyPassValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesPrivacyPassValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesPrivacyPassValue$off() => off != null ? off() : orElse(value),
+      ZonesPrivacyPassValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesPrivacyPassValue($value)';
 
  }
@@ -1998,6 +2376,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesPseudoIpv4Value$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() addHeader, required W Function() overwriteHeader, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesPseudoIpv4Value$off() => off(),
+      ZonesPseudoIpv4Value$addHeader() => addHeader(),
+      ZonesPseudoIpv4Value$overwriteHeader() => overwriteHeader(),
+      ZonesPseudoIpv4Value$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? addHeader, W Function()? overwriteHeader, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesPseudoIpv4Value$off() => off != null ? off() : orElse(value),
+      ZonesPseudoIpv4Value$addHeader() => addHeader != null ? addHeader() : orElse(value),
+      ZonesPseudoIpv4Value$overwriteHeader() => overwriteHeader != null ? overwriteHeader() : orElse(value),
+      ZonesPseudoIpv4Value$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesPseudoIpv4Value($value)';
 
  }
@@ -2063,6 +2455,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesRedirectsForAiTrainingValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesRedirectsForAiTrainingValue$off() => off(),
+      ZonesRedirectsForAiTrainingValue$$on() => $on(),
+      ZonesRedirectsForAiTrainingValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesRedirectsForAiTrainingValue$off() => off != null ? off() : orElse(value),
+      ZonesRedirectsForAiTrainingValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesRedirectsForAiTrainingValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesRedirectsForAiTrainingValue($value)';
 
  }
@@ -2119,6 +2523,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesReplaceInsecureJsValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesReplaceInsecureJsValue$$on() => $on(),
+      ZonesReplaceInsecureJsValue$off() => off(),
+      ZonesReplaceInsecureJsValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesReplaceInsecureJsValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesReplaceInsecureJsValue$off() => off != null ? off() : orElse(value),
+      ZonesReplaceInsecureJsValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesReplaceInsecureJsValue($value)';
 
  }
@@ -2175,6 +2591,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesServerSideExcludeValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesServerSideExcludeValue$$on() => $on(),
+      ZonesServerSideExcludeValue$off() => off(),
+      ZonesServerSideExcludeValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesServerSideExcludeValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesServerSideExcludeValue$off() => off != null ? off() : orElse(value),
+      ZonesServerSideExcludeValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesServerSideExcludeValue($value)';
 
  }
@@ -2231,6 +2659,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesSha1SupportValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesSha1SupportValue$off() => off(),
+      ZonesSha1SupportValue$$on() => $on(),
+      ZonesSha1SupportValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesSha1SupportValue$off() => off != null ? off() : orElse(value),
+      ZonesSha1SupportValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesSha1SupportValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesSha1SupportValue($value)';
 
  }
@@ -2287,6 +2727,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesTls12OnlyValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesTls12OnlyValue$off() => off(),
+      ZonesTls12OnlyValue$$on() => $on(),
+      ZonesTls12OnlyValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesTls12OnlyValue$off() => off != null ? off() : orElse(value),
+      ZonesTls12OnlyValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesTls12OnlyValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesTls12OnlyValue($value)';
 
  }
@@ -2348,6 +2800,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesTls13Value$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function() zrt, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesTls13Value$$on() => $on(),
+      ZonesTls13Value$off() => off(),
+      ZonesTls13Value$zrt() => zrt(),
+      ZonesTls13Value$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function()? zrt, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesTls13Value$$on() => $on != null ? $on() : orElse(value),
+      ZonesTls13Value$off() => off != null ? off() : orElse(value),
+      ZonesTls13Value$zrt() => zrt != null ? zrt() : orElse(value),
+      ZonesTls13Value$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesTls13Value($value)';
 
  }
@@ -2413,6 +2879,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesTlsClientAuthValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesTlsClientAuthValue$$on() => $on(),
+      ZonesTlsClientAuthValue$off() => off(),
+      ZonesTlsClientAuthValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesTlsClientAuthValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesTlsClientAuthValue$off() => off != null ? off() : orElse(value),
+      ZonesTlsClientAuthValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesTlsClientAuthValue($value)';
 
  }
@@ -2469,6 +2947,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesWebpValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesWebpValue$off() => off(),
+      ZonesWebpValue$$on() => $on(),
+      ZonesWebpValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesWebpValue$off() => off != null ? off() : orElse(value),
+      ZonesWebpValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesWebpValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesWebpValue($value)';
 
  }
@@ -2525,6 +3015,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesWebsocketsValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() $on, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesWebsocketsValue$off() => off(),
+      ZonesWebsocketsValue$$on() => $on(),
+      ZonesWebsocketsValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? $on, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesWebsocketsValue$off() => off != null ? off() : orElse(value),
+      ZonesWebsocketsValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesWebsocketsValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesWebsocketsValue($value)';
 
  }

@@ -41,6 +41,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HealthchecksStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() healthy, required W Function() unhealthy, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+      HealthchecksStatus$unknown() => unknown(),
+      HealthchecksStatus$healthy() => healthy(),
+      HealthchecksStatus$unhealthy() => unhealthy(),
+      HealthchecksStatus$suspended() => suspended(),
+      HealthchecksStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? healthy, W Function()? unhealthy, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+      HealthchecksStatus$unknown() => unknown != null ? unknown() : orElse(value),
+      HealthchecksStatus$healthy() => healthy != null ? healthy() : orElse(value),
+      HealthchecksStatus$unhealthy() => unhealthy != null ? unhealthy() : orElse(value),
+      HealthchecksStatus$suspended() => suspended != null ? suspended() : orElse(value),
+      HealthchecksStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HealthchecksStatus($value)';
 
  }

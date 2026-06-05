@@ -40,6 +40,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeBetaResponseStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() cancelled, required W Function() failed, required W Function() incomplete, required W Function() inProgress, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeBetaResponseStatus$completed() => completed(),
+      RealtimeBetaResponseStatus$cancelled() => cancelled(),
+      RealtimeBetaResponseStatus$failed() => failed(),
+      RealtimeBetaResponseStatus$incomplete() => incomplete(),
+      RealtimeBetaResponseStatus$inProgress() => inProgress(),
+      RealtimeBetaResponseStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? cancelled, W Function()? failed, W Function()? incomplete, W Function()? inProgress, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeBetaResponseStatus$completed() => completed != null ? completed() : orElse(value),
+      RealtimeBetaResponseStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      RealtimeBetaResponseStatus$failed() => failed != null ? failed() : orElse(value),
+      RealtimeBetaResponseStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      RealtimeBetaResponseStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      RealtimeBetaResponseStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeBetaResponseStatus($value)';
 
  }

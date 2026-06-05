@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PullRequestReviewCommentStartSide$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() left, required W Function() right, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      PullRequestReviewCommentStartSide$left() => left(),
+      PullRequestReviewCommentStartSide$right() => right(),
+      PullRequestReviewCommentStartSide$$null() => $null(),
+      PullRequestReviewCommentStartSide$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W Function()? right, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      PullRequestReviewCommentStartSide$left() => left != null ? left() : orElse(value),
+      PullRequestReviewCommentStartSide$right() => right != null ? right() : orElse(value),
+      PullRequestReviewCommentStartSide$$null() => $null != null ? $null() : orElse(value),
+      PullRequestReviewCommentStartSide$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PullRequestReviewCommentStartSide($value)';
 
  }

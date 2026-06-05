@@ -78,6 +78,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LineItemsTaxAmountTaxabilityReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerExempt, required W Function() notCollecting, required W Function() notSubjectToTax, required W Function() notSupported, required W Function() portionProductExempt, required W Function() portionReducedRated, required W Function() portionStandardRated, required W Function() productExempt, required W Function() productExemptHoliday, required W Function() proportionallyRated, required W Function() reducedRated, required W Function() reverseCharge, required W Function() standardRated, required W Function() taxableBasisReduced, required W Function() zeroRated, required W Function(String value) $unknown, }) { return switch (this) {
+      LineItemsTaxAmountTaxabilityReason$customerExempt() => customerExempt(),
+      LineItemsTaxAmountTaxabilityReason$notCollecting() => notCollecting(),
+      LineItemsTaxAmountTaxabilityReason$notSubjectToTax() => notSubjectToTax(),
+      LineItemsTaxAmountTaxabilityReason$notSupported() => notSupported(),
+      LineItemsTaxAmountTaxabilityReason$portionProductExempt() => portionProductExempt(),
+      LineItemsTaxAmountTaxabilityReason$portionReducedRated() => portionReducedRated(),
+      LineItemsTaxAmountTaxabilityReason$portionStandardRated() => portionStandardRated(),
+      LineItemsTaxAmountTaxabilityReason$productExempt() => productExempt(),
+      LineItemsTaxAmountTaxabilityReason$productExemptHoliday() => productExemptHoliday(),
+      LineItemsTaxAmountTaxabilityReason$proportionallyRated() => proportionallyRated(),
+      LineItemsTaxAmountTaxabilityReason$reducedRated() => reducedRated(),
+      LineItemsTaxAmountTaxabilityReason$reverseCharge() => reverseCharge(),
+      LineItemsTaxAmountTaxabilityReason$standardRated() => standardRated(),
+      LineItemsTaxAmountTaxabilityReason$taxableBasisReduced() => taxableBasisReduced(),
+      LineItemsTaxAmountTaxabilityReason$zeroRated() => zeroRated(),
+      LineItemsTaxAmountTaxabilityReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerExempt, W Function()? notCollecting, W Function()? notSubjectToTax, W Function()? notSupported, W Function()? portionProductExempt, W Function()? portionReducedRated, W Function()? portionStandardRated, W Function()? productExempt, W Function()? productExemptHoliday, W Function()? proportionallyRated, W Function()? reducedRated, W Function()? reverseCharge, W Function()? standardRated, W Function()? taxableBasisReduced, W Function()? zeroRated, W Function(String value)? $unknown, }) { return switch (this) {
+      LineItemsTaxAmountTaxabilityReason$customerExempt() => customerExempt != null ? customerExempt() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$notCollecting() => notCollecting != null ? notCollecting() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$notSubjectToTax() => notSubjectToTax != null ? notSubjectToTax() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$notSupported() => notSupported != null ? notSupported() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$portionProductExempt() => portionProductExempt != null ? portionProductExempt() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$portionReducedRated() => portionReducedRated != null ? portionReducedRated() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$portionStandardRated() => portionStandardRated != null ? portionStandardRated() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$productExempt() => productExempt != null ? productExempt() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$productExemptHoliday() => productExemptHoliday != null ? productExemptHoliday() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$proportionallyRated() => proportionallyRated != null ? proportionallyRated() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$reducedRated() => reducedRated != null ? reducedRated() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$reverseCharge() => reverseCharge != null ? reverseCharge() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$standardRated() => standardRated != null ? standardRated() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$taxableBasisReduced() => taxableBasisReduced != null ? taxableBasisReduced() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$zeroRated() => zeroRated != null ? zeroRated() : orElse(value),
+      LineItemsTaxAmountTaxabilityReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LineItemsTaxAmountTaxabilityReason($value)';
 
  }

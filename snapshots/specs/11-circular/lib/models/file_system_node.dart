@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Kind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() file, required W Function() directory, required W Function() symlink, required W Function(String value) $unknown, }) { return switch (this) {
+      Kind$file() => file(),
+      Kind$directory() => directory(),
+      Kind$symlink() => symlink(),
+      Kind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function()? directory, W Function()? symlink, W Function(String value)? $unknown, }) { return switch (this) {
+      Kind$file() => file != null ? file() : orElse(value),
+      Kind$directory() => directory != null ? directory() : orElse(value),
+      Kind$symlink() => symlink != null ? symlink() : orElse(value),
+      Kind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Kind($value)';
 
  }

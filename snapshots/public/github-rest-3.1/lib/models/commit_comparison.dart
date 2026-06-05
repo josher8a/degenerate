@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CommitComparisonStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() diverged, required W Function() ahead, required W Function() behind, required W Function() $identical, required W Function(String value) $unknown, }) { return switch (this) {
+      CommitComparisonStatus$diverged() => diverged(),
+      CommitComparisonStatus$ahead() => ahead(),
+      CommitComparisonStatus$behind() => behind(),
+      CommitComparisonStatus$$identical() => $identical(),
+      CommitComparisonStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? diverged, W Function()? ahead, W Function()? behind, W Function()? $identical, W Function(String value)? $unknown, }) { return switch (this) {
+      CommitComparisonStatus$diverged() => diverged != null ? diverged() : orElse(value),
+      CommitComparisonStatus$ahead() => ahead != null ? ahead() : orElse(value),
+      CommitComparisonStatus$behind() => behind != null ? behind() : orElse(value),
+      CommitComparisonStatus$$identical() => $identical != null ? $identical() : orElse(value),
+      CommitComparisonStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CommitComparisonStatus($value)';
 
  }

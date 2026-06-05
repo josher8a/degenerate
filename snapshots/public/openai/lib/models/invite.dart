@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InviteObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organizationInvite, required W Function(String value) $unknown, }) { return switch (this) {
+      InviteObject$organizationInvite() => organizationInvite(),
+      InviteObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationInvite, W Function(String value)? $unknown, }) { return switch (this) {
+      InviteObject$organizationInvite() => organizationInvite != null ? organizationInvite() : orElse(value),
+      InviteObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InviteObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InviteStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() expired, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      InviteStatus$accepted() => accepted(),
+      InviteStatus$expired() => expired(),
+      InviteStatus$pending() => pending(),
+      InviteStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? expired, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      InviteStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      InviteStatus$expired() => expired != null ? expired() : orElse(value),
+      InviteStatus$pending() => pending != null ? pending() : orElse(value),
+      InviteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InviteStatus($value)';
 
  }

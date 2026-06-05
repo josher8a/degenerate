@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is L4Protocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tcp, required W Function() udp, required W Function(String value) $unknown, }) { return switch (this) {
+      L4Protocol$tcp() => tcp(),
+      L4Protocol$udp() => udp(),
+      L4Protocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tcp, W Function()? udp, W Function(String value)? $unknown, }) { return switch (this) {
+      L4Protocol$tcp() => tcp != null ? tcp() : orElse(value),
+      L4Protocol$udp() => udp != null ? udp() : orElse(value),
+      L4Protocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'L4Protocol($value)';
 
  }
@@ -77,6 +89,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PrivateDestinationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() private, required W Function(String value) $unknown, }) { return switch (this) {
+      PrivateDestinationType$private() => private(),
+      PrivateDestinationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? private, W Function(String value)? $unknown, }) { return switch (this) {
+      PrivateDestinationType$private() => private != null ? private() : orElse(value),
+      PrivateDestinationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PrivateDestinationType($value)';
 
  }

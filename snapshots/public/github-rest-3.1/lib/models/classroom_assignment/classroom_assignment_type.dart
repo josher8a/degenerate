@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClassroomAssignmentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() individual, required W Function() group, required W Function(String value) $unknown, }) { return switch (this) {
+      ClassroomAssignmentType$individual() => individual(),
+      ClassroomAssignmentType$group() => group(),
+      ClassroomAssignmentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? individual, W Function()? group, W Function(String value)? $unknown, }) { return switch (this) {
+      ClassroomAssignmentType$individual() => individual != null ? individual() : orElse(value),
+      ClassroomAssignmentType$group() => group != null ? group() : orElse(value),
+      ClassroomAssignmentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClassroomAssignmentType($value)';
 
  }

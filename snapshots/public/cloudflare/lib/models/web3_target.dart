@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Web3Target$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ethereum, required W Function() ipfs, required W Function() ipfsUniversalPath, required W Function(String value) $unknown, }) { return switch (this) {
+      Web3Target$ethereum() => ethereum(),
+      Web3Target$ipfs() => ipfs(),
+      Web3Target$ipfsUniversalPath() => ipfsUniversalPath(),
+      Web3Target$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ethereum, W Function()? ipfs, W Function()? ipfsUniversalPath, W Function(String value)? $unknown, }) { return switch (this) {
+      Web3Target$ethereum() => ethereum != null ? ethereum() : orElse(value),
+      Web3Target$ipfs() => ipfs != null ? ipfs() : orElse(value),
+      Web3Target$ipfsUniversalPath() => ipfsUniversalPath != null ? ipfsUniversalPath() : orElse(value),
+      Web3Target$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Web3Target($value)';
 
  }

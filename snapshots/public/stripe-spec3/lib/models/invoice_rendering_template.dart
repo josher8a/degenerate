@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceRenderingTemplateObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() invoiceRenderingTemplate, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceRenderingTemplateObject$invoiceRenderingTemplate() => invoiceRenderingTemplate(),
+      InvoiceRenderingTemplateObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoiceRenderingTemplate, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceRenderingTemplateObject$invoiceRenderingTemplate() => invoiceRenderingTemplate != null ? invoiceRenderingTemplate() : orElse(value),
+      InvoiceRenderingTemplateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceRenderingTemplateObject($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceRenderingTemplateStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() archived, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceRenderingTemplateStatus$active() => active(),
+      InvoiceRenderingTemplateStatus$archived() => archived(),
+      InvoiceRenderingTemplateStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? archived, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceRenderingTemplateStatus$active() => active != null ? active() : orElse(value),
+      InvoiceRenderingTemplateStatus$archived() => archived != null ? archived() : orElse(value),
+      InvoiceRenderingTemplateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceRenderingTemplateStatus($value)';
 
  }

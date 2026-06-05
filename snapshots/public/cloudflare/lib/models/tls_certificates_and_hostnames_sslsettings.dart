@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EarlyHints$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      EarlyHints$$on() => $on(),
+      EarlyHints$off() => off(),
+      EarlyHints$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      EarlyHints$$on() => $on != null ? $on() : orElse(value),
+      EarlyHints$off() => off != null ? off() : orElse(value),
+      EarlyHints$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EarlyHints($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Http2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      Http2$$on() => $on(),
+      Http2$off() => off(),
+      Http2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      Http2$$on() => $on != null ? $on() : orElse(value),
+      Http2$off() => off != null ? off() : orElse(value),
+      Http2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Http2($value)';
 
  }
@@ -146,6 +170,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MinTlsVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $10, required W Function() $11, required W Function() $12, required W Function() $13, required W Function(String value) $unknown, }) { return switch (this) {
+      MinTlsVersion$$10() => $10(),
+      MinTlsVersion$$11() => $11(),
+      MinTlsVersion$$12() => $12(),
+      MinTlsVersion$$13() => $13(),
+      MinTlsVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W Function()? $11, W Function()? $12, W Function()? $13, W Function(String value)? $unknown, }) { return switch (this) {
+      MinTlsVersion$$10() => $10 != null ? $10() : orElse(value),
+      MinTlsVersion$$11() => $11 != null ? $11() : orElse(value),
+      MinTlsVersion$$12() => $12 != null ? $12() : orElse(value),
+      MinTlsVersion$$13() => $13 != null ? $13() : orElse(value),
+      MinTlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MinTlsVersion($value)';
 
  }
@@ -220,6 +260,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Tls13$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      Tls13$$on() => $on(),
+      Tls13$off() => off(),
+      Tls13$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      Tls13$$on() => $on != null ? $on() : orElse(value),
+      Tls13$off() => off != null ? off() : orElse(value),
+      Tls13$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Tls13($value)';
 
  }

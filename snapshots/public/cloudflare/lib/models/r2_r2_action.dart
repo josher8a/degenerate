@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2R2Action$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() putObject, required W Function() copyObject, required W Function() deleteObject, required W Function() completeMultipartUpload, required W Function() lifecycleDeletion, required W Function(String value) $unknown, }) { return switch (this) {
+      R2R2Action$putObject() => putObject(),
+      R2R2Action$copyObject() => copyObject(),
+      R2R2Action$deleteObject() => deleteObject(),
+      R2R2Action$completeMultipartUpload() => completeMultipartUpload(),
+      R2R2Action$lifecycleDeletion() => lifecycleDeletion(),
+      R2R2Action$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? putObject, W Function()? copyObject, W Function()? deleteObject, W Function()? completeMultipartUpload, W Function()? lifecycleDeletion, W Function(String value)? $unknown, }) { return switch (this) {
+      R2R2Action$putObject() => putObject != null ? putObject() : orElse(value),
+      R2R2Action$copyObject() => copyObject != null ? copyObject() : orElse(value),
+      R2R2Action$deleteObject() => deleteObject != null ? deleteObject() : orElse(value),
+      R2R2Action$completeMultipartUpload() => completeMultipartUpload != null ? completeMultipartUpload() : orElse(value),
+      R2R2Action$lifecycleDeletion() => lifecycleDeletion != null ? lifecycleDeletion() : orElse(value),
+      R2R2Action$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2R2Action($value)';
 
  }

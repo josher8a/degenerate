@@ -35,6 +35,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesSslValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() flexible, required W Function() full, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesSslValue$off() => off(),
+      ZonesSslValue$flexible() => flexible(),
+      ZonesSslValue$full() => full(),
+      ZonesSslValue$strict() => strict(),
+      ZonesSslValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? flexible, W Function()? full, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesSslValue$off() => off != null ? off() : orElse(value),
+      ZonesSslValue$flexible() => flexible != null ? flexible() : orElse(value),
+      ZonesSslValue$full() => full != null ? full() : orElse(value),
+      ZonesSslValue$strict() => strict != null ? strict() : orElse(value),
+      ZonesSslValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesSslValue($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IneligibleReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() missingAgreement, required W Function() missingCardholderContact, required W Function() unsupportedRegion, required W Function(String value) $unknown, }) { return switch (this) {
+      IneligibleReason$missingAgreement() => missingAgreement(),
+      IneligibleReason$missingCardholderContact() => missingCardholderContact(),
+      IneligibleReason$unsupportedRegion() => unsupportedRegion(),
+      IneligibleReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? missingAgreement, W Function()? missingCardholderContact, W Function()? unsupportedRegion, W Function(String value)? $unknown, }) { return switch (this) {
+      IneligibleReason$missingAgreement() => missingAgreement != null ? missingAgreement() : orElse(value),
+      IneligibleReason$missingCardholderContact() => missingCardholderContact != null ? missingCardholderContact() : orElse(value),
+      IneligibleReason$unsupportedRegion() => unsupportedRegion != null ? unsupportedRegion() : orElse(value),
+      IneligibleReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IneligibleReason($value)';
 
  }

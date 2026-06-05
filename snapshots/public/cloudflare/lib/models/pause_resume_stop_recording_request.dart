@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PauseResumeStopRecordingRequestAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() stop, required W Function() pause, required W Function() resume, required W Function(String value) $unknown, }) { return switch (this) {
+      PauseResumeStopRecordingRequestAction$stop() => stop(),
+      PauseResumeStopRecordingRequestAction$pause() => pause(),
+      PauseResumeStopRecordingRequestAction$resume() => resume(),
+      PauseResumeStopRecordingRequestAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stop, W Function()? pause, W Function()? resume, W Function(String value)? $unknown, }) { return switch (this) {
+      PauseResumeStopRecordingRequestAction$stop() => stop != null ? stop() : orElse(value),
+      PauseResumeStopRecordingRequestAction$pause() => pause != null ? pause() : orElse(value),
+      PauseResumeStopRecordingRequestAction$resume() => resume != null ? resume() : orElse(value),
+      PauseResumeStopRecordingRequestAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PauseResumeStopRecordingRequestAction($value)';
 
  }

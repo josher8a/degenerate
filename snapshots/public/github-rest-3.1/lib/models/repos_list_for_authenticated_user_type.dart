@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListForAuthenticatedUserType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() owner, required W Function() public, required W Function() private, required W Function() member, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListForAuthenticatedUserType$all() => all(),
+      ReposListForAuthenticatedUserType$owner() => owner(),
+      ReposListForAuthenticatedUserType$public() => public(),
+      ReposListForAuthenticatedUserType$private() => private(),
+      ReposListForAuthenticatedUserType$member() => member(),
+      ReposListForAuthenticatedUserType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? owner, W Function()? public, W Function()? private, W Function()? member, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListForAuthenticatedUserType$all() => all != null ? all() : orElse(value),
+      ReposListForAuthenticatedUserType$owner() => owner != null ? owner() : orElse(value),
+      ReposListForAuthenticatedUserType$public() => public != null ? public() : orElse(value),
+      ReposListForAuthenticatedUserType$private() => private != null ? private() : orElse(value),
+      ReposListForAuthenticatedUserType$member() => member != null ? member() : orElse(value),
+      ReposListForAuthenticatedUserType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListForAuthenticatedUserType($value)';
 
  }

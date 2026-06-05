@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageTriggerEnumTriggerField$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() count, required W Function() usage, required W Function() price, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageTriggerEnumTriggerField$count() => count(),
+      UsageTriggerEnumTriggerField$usage() => usage(),
+      UsageTriggerEnumTriggerField$price() => price(),
+      UsageTriggerEnumTriggerField$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? count, W Function()? usage, W Function()? price, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageTriggerEnumTriggerField$count() => count != null ? count() : orElse(value),
+      UsageTriggerEnumTriggerField$usage() => usage != null ? usage() : orElse(value),
+      UsageTriggerEnumTriggerField$price() => price != null ? price() : orElse(value),
+      UsageTriggerEnumTriggerField$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageTriggerEnumTriggerField($value)';
 
  }

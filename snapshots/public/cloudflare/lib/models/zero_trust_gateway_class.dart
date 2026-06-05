@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayClass$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() free, required W Function() premium, required W Function() blocked, required W Function() removalPending, required W Function() noBlock, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewayClass$free() => free(),
+      ZeroTrustGatewayClass$premium() => premium(),
+      ZeroTrustGatewayClass$blocked() => blocked(),
+      ZeroTrustGatewayClass$removalPending() => removalPending(),
+      ZeroTrustGatewayClass$noBlock() => noBlock(),
+      ZeroTrustGatewayClass$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function()? premium, W Function()? blocked, W Function()? removalPending, W Function()? noBlock, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewayClass$free() => free != null ? free() : orElse(value),
+      ZeroTrustGatewayClass$premium() => premium != null ? premium() : orElse(value),
+      ZeroTrustGatewayClass$blocked() => blocked != null ? blocked() : orElse(value),
+      ZeroTrustGatewayClass$removalPending() => removalPending != null ? removalPending() : orElse(value),
+      ZeroTrustGatewayClass$noBlock() => noBlock != null ? noBlock() : orElse(value),
+      ZeroTrustGatewayClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewayClass($value)';
 
  }

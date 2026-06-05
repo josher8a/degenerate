@@ -69,6 +69,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FiltersKey$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() createdAt, required W Function() requestContentType, required W Function() responseContentType, required W Function() success, required W Function() cached, required W Function() provider, required W Function() model, required W Function() cost, required W Function() tokens, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function(String value) $unknown, }) { return switch (this) {
+      FiltersKey$createdAt() => createdAt(),
+      FiltersKey$requestContentType() => requestContentType(),
+      FiltersKey$responseContentType() => responseContentType(),
+      FiltersKey$success() => success(),
+      FiltersKey$cached() => cached(),
+      FiltersKey$provider() => provider(),
+      FiltersKey$model() => model(),
+      FiltersKey$cost() => cost(),
+      FiltersKey$tokens() => tokens(),
+      FiltersKey$tokensIn() => tokensIn(),
+      FiltersKey$tokensOut() => tokensOut(),
+      FiltersKey$duration() => duration(),
+      FiltersKey$feedback() => feedback(),
+      FiltersKey$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function()? requestContentType, W Function()? responseContentType, W Function()? success, W Function()? cached, W Function()? provider, W Function()? model, W Function()? cost, W Function()? tokens, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function(String value)? $unknown, }) { return switch (this) {
+      FiltersKey$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      FiltersKey$requestContentType() => requestContentType != null ? requestContentType() : orElse(value),
+      FiltersKey$responseContentType() => responseContentType != null ? responseContentType() : orElse(value),
+      FiltersKey$success() => success != null ? success() : orElse(value),
+      FiltersKey$cached() => cached != null ? cached() : orElse(value),
+      FiltersKey$provider() => provider != null ? provider() : orElse(value),
+      FiltersKey$model() => model != null ? model() : orElse(value),
+      FiltersKey$cost() => cost != null ? cost() : orElse(value),
+      FiltersKey$tokens() => tokens != null ? tokens() : orElse(value),
+      FiltersKey$tokensIn() => tokensIn != null ? tokensIn() : orElse(value),
+      FiltersKey$tokensOut() => tokensOut != null ? tokensOut() : orElse(value),
+      FiltersKey$duration() => duration != null ? duration() : orElse(value),
+      FiltersKey$feedback() => feedback != null ? feedback() : orElse(value),
+      FiltersKey$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FiltersKey($value)';
 
  }
@@ -231,6 +265,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FiltersOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() contains, required W Function() lt, required W Function() gt, required W Function(String value) $unknown, }) { return switch (this) {
+      FiltersOperator$eq() => eq(),
+      FiltersOperator$contains() => contains(),
+      FiltersOperator$lt() => lt(),
+      FiltersOperator$gt() => gt(),
+      FiltersOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? contains, W Function()? lt, W Function()? gt, W Function(String value)? $unknown, }) { return switch (this) {
+      FiltersOperator$eq() => eq != null ? eq() : orElse(value),
+      FiltersOperator$contains() => contains != null ? contains() : orElse(value),
+      FiltersOperator$lt() => lt != null ? lt() : orElse(value),
+      FiltersOperator$gt() => gt != null ? gt() : orElse(value),
+      FiltersOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FiltersOperator($value)';
 
  }

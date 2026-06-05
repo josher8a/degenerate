@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationFuelDataType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() diesel, required W Function() $other, required W Function() unleadedPlus, required W Function() unleadedRegular, required W Function() unleadedSuper, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationFuelDataType$diesel() => diesel(),
+      IssuingAuthorizationFuelDataType$$other() => $other(),
+      IssuingAuthorizationFuelDataType$unleadedPlus() => unleadedPlus(),
+      IssuingAuthorizationFuelDataType$unleadedRegular() => unleadedRegular(),
+      IssuingAuthorizationFuelDataType$unleadedSuper() => unleadedSuper(),
+      IssuingAuthorizationFuelDataType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, W Function()? $other, W Function()? unleadedPlus, W Function()? unleadedRegular, W Function()? unleadedSuper, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationFuelDataType$diesel() => diesel != null ? diesel() : orElse(value),
+      IssuingAuthorizationFuelDataType$$other() => $other != null ? $other() : orElse(value),
+      IssuingAuthorizationFuelDataType$unleadedPlus() => unleadedPlus != null ? unleadedPlus() : orElse(value),
+      IssuingAuthorizationFuelDataType$unleadedRegular() => unleadedRegular != null ? unleadedRegular() : orElse(value),
+      IssuingAuthorizationFuelDataType$unleadedSuper() => unleadedSuper != null ? unleadedSuper() : orElse(value),
+      IssuingAuthorizationFuelDataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationFuelDataType($value)';
 
  }
@@ -145,6 +163,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationFuelDataUnit$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chargingMinute, required W Function() imperialGallon, required W Function() kilogram, required W Function() kilowattHour, required W Function() liter, required W Function() $other, required W Function() pound, required W Function() usGallon, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationFuelDataUnit$chargingMinute() => chargingMinute(),
+      IssuingAuthorizationFuelDataUnit$imperialGallon() => imperialGallon(),
+      IssuingAuthorizationFuelDataUnit$kilogram() => kilogram(),
+      IssuingAuthorizationFuelDataUnit$kilowattHour() => kilowattHour(),
+      IssuingAuthorizationFuelDataUnit$liter() => liter(),
+      IssuingAuthorizationFuelDataUnit$$other() => $other(),
+      IssuingAuthorizationFuelDataUnit$pound() => pound(),
+      IssuingAuthorizationFuelDataUnit$usGallon() => usGallon(),
+      IssuingAuthorizationFuelDataUnit$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargingMinute, W Function()? imperialGallon, W Function()? kilogram, W Function()? kilowattHour, W Function()? liter, W Function()? $other, W Function()? pound, W Function()? usGallon, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationFuelDataUnit$chargingMinute() => chargingMinute != null ? chargingMinute() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$imperialGallon() => imperialGallon != null ? imperialGallon() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$kilogram() => kilogram != null ? kilogram() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$kilowattHour() => kilowattHour != null ? kilowattHour() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$liter() => liter != null ? liter() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$$other() => $other != null ? $other() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$pound() => pound != null ? pound() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$usGallon() => usGallon != null ? usGallon() : orElse(value),
+      IssuingAuthorizationFuelDataUnit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationFuelDataUnit($value)';
 
  }

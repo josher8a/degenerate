@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessScimConfigAuthenticationOauth2Scheme$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oauth2, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessScimConfigAuthenticationOauth2Scheme$oauth2() => oauth2(),
+      AccessScimConfigAuthenticationOauth2Scheme$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth2, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessScimConfigAuthenticationOauth2Scheme$oauth2() => oauth2 != null ? oauth2() : orElse(value),
+      AccessScimConfigAuthenticationOauth2Scheme$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessScimConfigAuthenticationOauth2Scheme($value)';
 
  }

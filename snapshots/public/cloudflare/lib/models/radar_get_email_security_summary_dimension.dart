@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailSecuritySummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() spam, required W Function() malicious, required W Function() spoof, required W Function() threatCategory, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function() tlsVersion, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailSecuritySummaryDimension$spam() => spam(),
+      RadarGetEmailSecuritySummaryDimension$malicious() => malicious(),
+      RadarGetEmailSecuritySummaryDimension$spoof() => spoof(),
+      RadarGetEmailSecuritySummaryDimension$threatCategory() => threatCategory(),
+      RadarGetEmailSecuritySummaryDimension$arc() => arc(),
+      RadarGetEmailSecuritySummaryDimension$dkim() => dkim(),
+      RadarGetEmailSecuritySummaryDimension$dmarc() => dmarc(),
+      RadarGetEmailSecuritySummaryDimension$spf() => spf(),
+      RadarGetEmailSecuritySummaryDimension$tlsVersion() => tlsVersion(),
+      RadarGetEmailSecuritySummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W Function()? malicious, W Function()? spoof, W Function()? threatCategory, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function()? tlsVersion, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailSecuritySummaryDimension$spam() => spam != null ? spam() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$malicious() => malicious != null ? malicious() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$spoof() => spoof != null ? spoof() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$threatCategory() => threatCategory != null ? threatCategory() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$arc() => arc != null ? arc() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$dkim() => dkim != null ? dkim() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$dmarc() => dmarc != null ? dmarc() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$spf() => spf != null ? spf() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$tlsVersion() => tlsVersion != null ? tlsVersion() : orElse(value),
+      RadarGetEmailSecuritySummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailSecuritySummaryDimension($value)';
 
  }

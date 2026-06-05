@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkerScriptSearchWorkersOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() createdOn, required W Function() modifiedOn, required W Function() $name, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkerScriptSearchWorkersOrderBy$createdOn() => createdOn(),
+      WorkerScriptSearchWorkersOrderBy$modifiedOn() => modifiedOn(),
+      WorkerScriptSearchWorkersOrderBy$$name() => $name(),
+      WorkerScriptSearchWorkersOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdOn, W Function()? modifiedOn, W Function()? $name, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkerScriptSearchWorkersOrderBy$createdOn() => createdOn != null ? createdOn() : orElse(value),
+      WorkerScriptSearchWorkersOrderBy$modifiedOn() => modifiedOn != null ? modifiedOn() : orElse(value),
+      WorkerScriptSearchWorkersOrderBy$$name() => $name != null ? $name() : orElse(value),
+      WorkerScriptSearchWorkersOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkerScriptSearchWorkersOrderBy($value)';
 
  }

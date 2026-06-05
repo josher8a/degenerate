@@ -39,6 +39,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $01, required W Function() $02, required W Function() $05, required W Function() $06, required W Function() $07, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01() => $01(),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$02() => $02(),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$05() => $05(),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$06() => $06(),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$07() => $07(),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $01, W Function()? $02, W Function()? $05, W Function()? $06, W Function()? $07, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$01() => $01 != null ? $01() : orElse(value),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$02() => $02 != null ? $02() : orElse(value),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$05() => $05 != null ? $05() : orElse(value),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$06() => $06 != null ? $06() : orElse(value),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$$07() => $07 != null ? $07() : orElse(value),
+      ThreeDSecureDetailsChargeElectronicCommerceIndicator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreeDSecureDetailsChargeElectronicCommerceIndicator($value)';
 
  }

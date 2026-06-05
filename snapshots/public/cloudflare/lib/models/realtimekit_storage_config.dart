@@ -27,6 +27,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitStorageConfigAuthMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() key, required W Function() password, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitStorageConfigAuthMethod$key() => key(),
+      RealtimekitStorageConfigAuthMethod$password() => password(),
+      RealtimekitStorageConfigAuthMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? key, W Function()? password, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitStorageConfigAuthMethod$key() => key != null ? key() : orElse(value),
+      RealtimekitStorageConfigAuthMethod$password() => password != null ? password() : orElse(value),
+      RealtimekitStorageConfigAuthMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitStorageConfigAuthMethod($value)';
 
  }
@@ -95,6 +107,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitStorageConfigType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aws, required W Function() azure, required W Function() digitalocean, required W Function() gcs, required W Function() sftp, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitStorageConfigType$aws() => aws(),
+      RealtimekitStorageConfigType$azure() => azure(),
+      RealtimekitStorageConfigType$digitalocean() => digitalocean(),
+      RealtimekitStorageConfigType$gcs() => gcs(),
+      RealtimekitStorageConfigType$sftp() => sftp(),
+      RealtimekitStorageConfigType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aws, W Function()? azure, W Function()? digitalocean, W Function()? gcs, W Function()? sftp, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitStorageConfigType$aws() => aws != null ? aws() : orElse(value),
+      RealtimekitStorageConfigType$azure() => azure != null ? azure() : orElse(value),
+      RealtimekitStorageConfigType$digitalocean() => digitalocean != null ? digitalocean() : orElse(value),
+      RealtimekitStorageConfigType$gcs() => gcs != null ? gcs() : orElse(value),
+      RealtimekitStorageConfigType$sftp() => sftp != null ? sftp() : orElse(value),
+      RealtimekitStorageConfigType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitStorageConfigType($value)';
 
  }

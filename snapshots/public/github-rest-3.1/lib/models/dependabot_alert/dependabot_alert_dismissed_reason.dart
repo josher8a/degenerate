@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotAlertDismissedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fixStarted, required W Function() inaccurate, required W Function() noBandwidth, required W Function() notUsed, required W Function() tolerableRisk, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotAlertDismissedReason$fixStarted() => fixStarted(),
+      DependabotAlertDismissedReason$inaccurate() => inaccurate(),
+      DependabotAlertDismissedReason$noBandwidth() => noBandwidth(),
+      DependabotAlertDismissedReason$notUsed() => notUsed(),
+      DependabotAlertDismissedReason$tolerableRisk() => tolerableRisk(),
+      DependabotAlertDismissedReason$$null() => $null(),
+      DependabotAlertDismissedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixStarted, W Function()? inaccurate, W Function()? noBandwidth, W Function()? notUsed, W Function()? tolerableRisk, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotAlertDismissedReason$fixStarted() => fixStarted != null ? fixStarted() : orElse(value),
+      DependabotAlertDismissedReason$inaccurate() => inaccurate != null ? inaccurate() : orElse(value),
+      DependabotAlertDismissedReason$noBandwidth() => noBandwidth != null ? noBandwidth() : orElse(value),
+      DependabotAlertDismissedReason$notUsed() => notUsed != null ? notUsed() : orElse(value),
+      DependabotAlertDismissedReason$tolerableRisk() => tolerableRisk != null ? tolerableRisk() : orElse(value),
+      DependabotAlertDismissedReason$$null() => $null != null ? $null() : orElse(value),
+      DependabotAlertDismissedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotAlertDismissedReason($value)';
 
  }

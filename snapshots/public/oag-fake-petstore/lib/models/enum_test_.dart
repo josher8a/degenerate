@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OuterEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() placed, required W Function() approved, required W Function() delivered, required W Function(String value) $unknown, }) { return switch (this) {
+      OuterEnum$placed() => placed(),
+      OuterEnum$approved() => approved(),
+      OuterEnum$delivered() => delivered(),
+      OuterEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? placed, W Function()? approved, W Function()? delivered, W Function(String value)? $unknown, }) { return switch (this) {
+      OuterEnum$placed() => placed != null ? placed() : orElse(value),
+      OuterEnum$approved() => approved != null ? approved() : orElse(value),
+      OuterEnum$delivered() => delivered != null ? delivered() : orElse(value),
+      OuterEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OuterEnum($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OuterEnumDefaultValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() placed, required W Function() approved, required W Function() delivered, required W Function(String value) $unknown, }) { return switch (this) {
+      OuterEnumDefaultValue$placed() => placed(),
+      OuterEnumDefaultValue$approved() => approved(),
+      OuterEnumDefaultValue$delivered() => delivered(),
+      OuterEnumDefaultValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? placed, W Function()? approved, W Function()? delivered, W Function(String value)? $unknown, }) { return switch (this) {
+      OuterEnumDefaultValue$placed() => placed != null ? placed() : orElse(value),
+      OuterEnumDefaultValue$approved() => approved != null ? approved() : orElse(value),
+      OuterEnumDefaultValue$delivered() => delivered != null ? delivered() : orElse(value),
+      OuterEnumDefaultValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OuterEnumDefaultValue($value)';
 
  }
@@ -165,6 +193,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OuterEnumIntegerDefaultValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $0, required W Function() $1, required W Function() $2, required W Function(int value) $unknown, }) { return switch (this) {
+      OuterEnumIntegerDefaultValue$$0() => $0(),
+      OuterEnumIntegerDefaultValue$$1() => $1(),
+      OuterEnumIntegerDefaultValue$$2() => $2(),
+      OuterEnumIntegerDefaultValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Function()? $1, W Function()? $2, W Function(int value)? $unknown, }) { return switch (this) {
+      OuterEnumIntegerDefaultValue$$0() => $0 != null ? $0() : orElse(value),
+      OuterEnumIntegerDefaultValue$$1() => $1 != null ? $1() : orElse(value),
+      OuterEnumIntegerDefaultValue$$2() => $2 != null ? $2() : orElse(value),
+      OuterEnumIntegerDefaultValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OuterEnumIntegerDefaultValue($value)';
 
  }
@@ -233,6 +275,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumString$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() upper, required W Function() lower, required W Function() $empty, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumString$upper() => upper(),
+      EnumString$lower() => lower(),
+      EnumString$$empty() => $empty(),
+      EnumString$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? upper, W Function()? lower, W Function()? $empty, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumString$upper() => upper != null ? upper() : orElse(value),
+      EnumString$lower() => lower != null ? lower() : orElse(value),
+      EnumString$$empty() => $empty != null ? $empty() : orElse(value),
+      EnumString$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumString($value)';
 
  }
@@ -301,6 +357,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumStringRequired$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() upper, required W Function() lower, required W Function() $empty, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumStringRequired$upper() => upper(),
+      EnumStringRequired$lower() => lower(),
+      EnumStringRequired$$empty() => $empty(),
+      EnumStringRequired$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? upper, W Function()? lower, W Function()? $empty, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumStringRequired$upper() => upper != null ? upper() : orElse(value),
+      EnumStringRequired$lower() => lower != null ? lower() : orElse(value),
+      EnumStringRequired$$empty() => $empty != null ? $empty() : orElse(value),
+      EnumStringRequired$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumStringRequired($value)';
 
  }
@@ -365,6 +435,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumInteger$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function() minus1, required W Function(int value) $unknown, }) { return switch (this) {
+      EnumInteger$$1() => $1(),
+      EnumInteger$minus1() => minus1(),
+      EnumInteger$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? minus1, W Function(int value)? $unknown, }) { return switch (this) {
+      EnumInteger$$1() => $1 != null ? $1() : orElse(value),
+      EnumInteger$minus1() => minus1 != null ? minus1() : orElse(value),
+      EnumInteger$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumInteger($value)';
 
  }
@@ -420,6 +502,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumNumber$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $11, required W Function() minus12, required W Function(double value) $unknown, }) { return switch (this) {
+      EnumNumber$$11() => $11(),
+      EnumNumber$minus12() => minus12(),
+      EnumNumber$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $11, W Function()? minus12, W Function(double value)? $unknown, }) { return switch (this) {
+      EnumNumber$$11() => $11 != null ? $11() : orElse(value),
+      EnumNumber$minus12() => minus12 != null ? minus12() : orElse(value),
+      EnumNumber$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumNumber($value)';
 
  }

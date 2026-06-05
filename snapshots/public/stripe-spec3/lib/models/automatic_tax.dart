@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AutomaticTaxDisabledReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() finalizationRequiresLocationInputs, required W Function() finalizationSystemError, required W Function(String value) $unknown, }) { return switch (this) {
+      AutomaticTaxDisabledReason$finalizationRequiresLocationInputs() => finalizationRequiresLocationInputs(),
+      AutomaticTaxDisabledReason$finalizationSystemError() => finalizationSystemError(),
+      AutomaticTaxDisabledReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? finalizationRequiresLocationInputs, W Function()? finalizationSystemError, W Function(String value)? $unknown, }) { return switch (this) {
+      AutomaticTaxDisabledReason$finalizationRequiresLocationInputs() => finalizationRequiresLocationInputs != null ? finalizationRequiresLocationInputs() : orElse(value),
+      AutomaticTaxDisabledReason$finalizationSystemError() => finalizationSystemError != null ? finalizationSystemError() : orElse(value),
+      AutomaticTaxDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AutomaticTaxDisabledReason($value)';
 
  }

@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesIntuneInputRequestComplianceStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() compliant, required W Function() noncompliant, required W Function() unknown, required W Function() notapplicable, required W Function() ingraceperiod, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesIntuneInputRequestComplianceStatus$compliant() => compliant(),
+      TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant() => noncompliant(),
+      TeamsDevicesIntuneInputRequestComplianceStatus$unknown() => unknown(),
+      TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable() => notapplicable(),
+      TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod() => ingraceperiod(),
+      TeamsDevicesIntuneInputRequestComplianceStatus$error() => error(),
+      TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? compliant, W Function()? noncompliant, W Function()? unknown, W Function()? notapplicable, W Function()? ingraceperiod, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesIntuneInputRequestComplianceStatus$compliant() => compliant != null ? compliant() : orElse(value),
+      TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant() => noncompliant != null ? noncompliant() : orElse(value),
+      TeamsDevicesIntuneInputRequestComplianceStatus$unknown() => unknown != null ? unknown() : orElse(value),
+      TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable() => notapplicable != null ? notapplicable() : orElse(value),
+      TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod() => ingraceperiod != null ? ingraceperiod() : orElse(value),
+      TeamsDevicesIntuneInputRequestComplianceStatus$error() => error != null ? error() : orElse(value),
+      TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesIntuneInputRequestComplianceStatus($value)';
 
  }

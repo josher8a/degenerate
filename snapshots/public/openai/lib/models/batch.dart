@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BatchObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() batch, required W Function(String value) $unknown, }) { return switch (this) {
+      BatchObject$batch() => batch(),
+      BatchObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? batch, W Function(String value)? $unknown, }) { return switch (this) {
+      BatchObject$batch() => batch != null ? batch() : orElse(value),
+      BatchObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BatchObject($value)';
 
  }
@@ -93,6 +103,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BatchStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() validating, required W Function() failed, required W Function() inProgress, required W Function() finalizing, required W Function() completed, required W Function() expired, required W Function() cancelling, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      BatchStatus$validating() => validating(),
+      BatchStatus$failed() => failed(),
+      BatchStatus$inProgress() => inProgress(),
+      BatchStatus$finalizing() => finalizing(),
+      BatchStatus$completed() => completed(),
+      BatchStatus$expired() => expired(),
+      BatchStatus$cancelling() => cancelling(),
+      BatchStatus$cancelled() => cancelled(),
+      BatchStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? validating, W Function()? failed, W Function()? inProgress, W Function()? finalizing, W Function()? completed, W Function()? expired, W Function()? cancelling, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      BatchStatus$validating() => validating != null ? validating() : orElse(value),
+      BatchStatus$failed() => failed != null ? failed() : orElse(value),
+      BatchStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      BatchStatus$finalizing() => finalizing != null ? finalizing() : orElse(value),
+      BatchStatus$completed() => completed != null ? completed() : orElse(value),
+      BatchStatus$expired() => expired != null ? expired() : orElse(value),
+      BatchStatus$cancelling() => cancelling != null ? cancelling() : orElse(value),
+      BatchStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      BatchStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BatchStatus($value)';
 
  }

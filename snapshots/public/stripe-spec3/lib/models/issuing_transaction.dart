@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingTransactionObject$issuingTransaction() => issuingTransaction(),
+      IssuingTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingTransactionObject$issuingTransaction() => issuingTransaction != null ? issuingTransaction() : orElse(value),
+      IssuingTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingTransactionObject($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() capture, required W Function() refund, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingTransactionType$capture() => capture(),
+      IssuingTransactionType$refund() => refund(),
+      IssuingTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? capture, W Function()? refund, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingTransactionType$capture() => capture != null ? capture() : orElse(value),
+      IssuingTransactionType$refund() => refund != null ? refund() : orElse(value),
+      IssuingTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingTransactionType($value)';
 
  }
@@ -129,6 +151,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingTransactionWallet$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingTransactionWallet$applePay() => applePay(),
+      IssuingTransactionWallet$googlePay() => googlePay(),
+      IssuingTransactionWallet$samsungPay() => samsungPay(),
+      IssuingTransactionWallet$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingTransactionWallet$applePay() => applePay != null ? applePay() : orElse(value),
+      IssuingTransactionWallet$googlePay() => googlePay != null ? googlePay() : orElse(value),
+      IssuingTransactionWallet$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
+      IssuingTransactionWallet$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingTransactionWallet($value)';
 
  }

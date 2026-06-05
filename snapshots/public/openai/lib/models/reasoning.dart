@@ -35,6 +35,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Summary$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() concise, required W Function() detailed, required W Function(String value) $unknown, }) { return switch (this) {
+      Summary$auto() => auto(),
+      Summary$concise() => concise(),
+      Summary$detailed() => detailed(),
+      Summary$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? concise, W Function()? detailed, W Function(String value)? $unknown, }) { return switch (this) {
+      Summary$auto() => auto != null ? auto() : orElse(value),
+      Summary$concise() => concise != null ? concise() : orElse(value),
+      Summary$detailed() => detailed != null ? detailed() : orElse(value),
+      Summary$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Summary($value)';
 
  }
@@ -109,6 +123,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GenerateSummary$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() concise, required W Function() detailed, required W Function(String value) $unknown, }) { return switch (this) {
+      GenerateSummary$auto() => auto(),
+      GenerateSummary$concise() => concise(),
+      GenerateSummary$detailed() => detailed(),
+      GenerateSummary$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? concise, W Function()? detailed, W Function(String value)? $unknown, }) { return switch (this) {
+      GenerateSummary$auto() => auto != null ? auto() : orElse(value),
+      GenerateSummary$concise() => concise != null ? concise() : orElse(value),
+      GenerateSummary$detailed() => detailed != null ? detailed() : orElse(value),
+      GenerateSummary$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GenerateSummary($value)';
 
  }

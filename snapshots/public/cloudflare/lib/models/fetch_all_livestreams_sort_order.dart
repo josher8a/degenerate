@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FetchAllLivestreamsSortOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() asc, required W Function() dsc, required W Function(String value) $unknown, }) { return switch (this) {
+      FetchAllLivestreamsSortOrder$asc() => asc(),
+      FetchAllLivestreamsSortOrder$dsc() => dsc(),
+      FetchAllLivestreamsSortOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? dsc, W Function(String value)? $unknown, }) { return switch (this) {
+      FetchAllLivestreamsSortOrder$asc() => asc != null ? asc() : orElse(value),
+      FetchAllLivestreamsSortOrder$dsc() => dsc != null ? dsc() : orElse(value),
+      FetchAllLivestreamsSortOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FetchAllLivestreamsSortOrder($value)';
 
  }

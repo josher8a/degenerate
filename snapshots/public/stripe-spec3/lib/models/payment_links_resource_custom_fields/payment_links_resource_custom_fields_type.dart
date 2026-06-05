@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinksResourceCustomFieldsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dropdown, required W Function() numeric, required W Function() text, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinksResourceCustomFieldsType$dropdown() => dropdown(),
+      PaymentLinksResourceCustomFieldsType$numeric() => numeric(),
+      PaymentLinksResourceCustomFieldsType$text() => text(),
+      PaymentLinksResourceCustomFieldsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dropdown, W Function()? numeric, W Function()? text, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinksResourceCustomFieldsType$dropdown() => dropdown != null ? dropdown() : orElse(value),
+      PaymentLinksResourceCustomFieldsType$numeric() => numeric != null ? numeric() : orElse(value),
+      PaymentLinksResourceCustomFieldsType$text() => text != null ? text() : orElse(value),
+      PaymentLinksResourceCustomFieldsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinksResourceCustomFieldsType($value)';
 
  }

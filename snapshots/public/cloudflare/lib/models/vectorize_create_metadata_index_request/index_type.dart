@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IndexType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() string, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) { return switch (this) {
+      IndexType$string() => string(),
+      IndexType$number() => number(),
+      IndexType$boolean() => boolean(),
+      IndexType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? string, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) { return switch (this) {
+      IndexType$string() => string != null ? string() : orElse(value),
+      IndexType$number() => number != null ? number() : orElse(value),
+      IndexType$boolean() => boolean != null ? boolean() : orElse(value),
+      IndexType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IndexType($value)';
 
  }

@@ -73,6 +73,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailEmailSettingStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ready, required W Function() unconfigured, required W Function() misconfigured, required W Function() misconfiguredLocked, required W Function() unlocked, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailEmailSettingStatus$ready() => ready(),
+      EmailEmailSettingStatus$unconfigured() => unconfigured(),
+      EmailEmailSettingStatus$misconfigured() => misconfigured(),
+      EmailEmailSettingStatus$misconfiguredLocked() => misconfiguredLocked(),
+      EmailEmailSettingStatus$unlocked() => unlocked(),
+      EmailEmailSettingStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W Function()? unconfigured, W Function()? misconfigured, W Function()? misconfiguredLocked, W Function()? unlocked, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailEmailSettingStatus$ready() => ready != null ? ready() : orElse(value),
+      EmailEmailSettingStatus$unconfigured() => unconfigured != null ? unconfigured() : orElse(value),
+      EmailEmailSettingStatus$misconfigured() => misconfigured != null ? misconfigured() : orElse(value),
+      EmailEmailSettingStatus$misconfiguredLocked() => misconfiguredLocked != null ? misconfiguredLocked() : orElse(value),
+      EmailEmailSettingStatus$unlocked() => unlocked != null ? unlocked() : orElse(value),
+      EmailEmailSettingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailEmailSettingStatus($value)';
 
  }

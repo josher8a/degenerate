@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oneTime, required W Function() scheduled, required W Function() variable, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateInterval$oneTime() => oneTime(),
+      MandateInterval$scheduled() => scheduled(),
+      MandateInterval$variable() => variable(),
+      MandateInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? scheduled, W Function()? variable, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateInterval$oneTime() => oneTime != null ? oneTime() : orElse(value),
+      MandateInterval$scheduled() => scheduled != null ? scheduled() : orElse(value),
+      MandateInterval$variable() => variable != null ? variable() : orElse(value),
+      MandateInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateInterval($value)';
 
  }
@@ -105,6 +119,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NotificationMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deprecatedNone, required W Function() email, required W Function() manual, required W Function() none, required W Function() stripeEmail, required W Function(String value) $unknown, }) { return switch (this) {
+      NotificationMethod$deprecatedNone() => deprecatedNone(),
+      NotificationMethod$email() => email(),
+      NotificationMethod$manual() => manual(),
+      NotificationMethod$none() => none(),
+      NotificationMethod$stripeEmail() => stripeEmail(),
+      NotificationMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deprecatedNone, W Function()? email, W Function()? manual, W Function()? none, W Function()? stripeEmail, W Function(String value)? $unknown, }) { return switch (this) {
+      NotificationMethod$deprecatedNone() => deprecatedNone != null ? deprecatedNone() : orElse(value),
+      NotificationMethod$email() => email != null ? email() : orElse(value),
+      NotificationMethod$manual() => manual != null ? manual() : orElse(value),
+      NotificationMethod$none() => none != null ? none() : orElse(value),
+      NotificationMethod$stripeEmail() => stripeEmail != null ? stripeEmail() : orElse(value),
+      NotificationMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NotificationMethod($value)';
 
  }

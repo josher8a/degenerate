@@ -33,6 +33,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Verbosity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      Verbosity$low() => low(),
+      Verbosity$medium() => medium(),
+      Verbosity$high() => high(),
+      Verbosity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      Verbosity$low() => low != null ? low() : orElse(value),
+      Verbosity$medium() => medium != null ? medium() : orElse(value),
+      Verbosity$high() => high != null ? high() : orElse(value),
+      Verbosity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Verbosity($value)';
 
  }

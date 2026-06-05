@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Carrier$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dhl, required W Function() fedex, required W Function() royalMail, required W Function() usps, required W Function(String value) $unknown, }) { return switch (this) {
+      Carrier$dhl() => dhl(),
+      Carrier$fedex() => fedex(),
+      Carrier$royalMail() => royalMail(),
+      Carrier$usps() => usps(),
+      Carrier$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dhl, W Function()? fedex, W Function()? royalMail, W Function()? usps, W Function(String value)? $unknown, }) { return switch (this) {
+      Carrier$dhl() => dhl != null ? dhl() : orElse(value),
+      Carrier$fedex() => fedex != null ? fedex() : orElse(value),
+      Carrier$royalMail() => royalMail != null ? royalMail() : orElse(value),
+      Carrier$usps() => usps != null ? usps() : orElse(value),
+      Carrier$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Carrier($value)';
 
  }
@@ -128,6 +144,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardShippingStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() delivered, required W Function() failure, required W Function() pending, required W Function() returned, required W Function() shipped, required W Function() submitted, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardShippingStatus$canceled() => canceled(),
+      IssuingCardShippingStatus$delivered() => delivered(),
+      IssuingCardShippingStatus$failure() => failure(),
+      IssuingCardShippingStatus$pending() => pending(),
+      IssuingCardShippingStatus$returned() => returned(),
+      IssuingCardShippingStatus$shipped() => shipped(),
+      IssuingCardShippingStatus$submitted() => submitted(),
+      IssuingCardShippingStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? delivered, W Function()? failure, W Function()? pending, W Function()? returned, W Function()? shipped, W Function()? submitted, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardShippingStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      IssuingCardShippingStatus$delivered() => delivered != null ? delivered() : orElse(value),
+      IssuingCardShippingStatus$failure() => failure != null ? failure() : orElse(value),
+      IssuingCardShippingStatus$pending() => pending != null ? pending() : orElse(value),
+      IssuingCardShippingStatus$returned() => returned != null ? returned() : orElse(value),
+      IssuingCardShippingStatus$shipped() => shipped != null ? shipped() : orElse(value),
+      IssuingCardShippingStatus$submitted() => submitted != null ? submitted() : orElse(value),
+      IssuingCardShippingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardShippingStatus($value)';
 
  }

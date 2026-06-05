@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7TopAttacksNormalization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() percentage, required W Function() minMax, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TopAttacksNormalization$percentage() => percentage(),
+      RadarGetAttacksLayer7TopAttacksNormalization$minMax() => minMax(),
+      RadarGetAttacksLayer7TopAttacksNormalization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentage, W Function()? minMax, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TopAttacksNormalization$percentage() => percentage != null ? percentage() : orElse(value),
+      RadarGetAttacksLayer7TopAttacksNormalization$minMax() => minMax != null ? minMax() : orElse(value),
+      RadarGetAttacksLayer7TopAttacksNormalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7TopAttacksNormalization($value)';
 
  }

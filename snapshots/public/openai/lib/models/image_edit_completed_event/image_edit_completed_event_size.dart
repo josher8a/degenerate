@@ -35,6 +35,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageEditCompletedEventSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1024x1024, required W Function() $1024x1536, required W Function() $1536x1024, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageEditCompletedEventSize$$1024x1024() => $1024x1024(),
+      ImageEditCompletedEventSize$$1024x1536() => $1024x1536(),
+      ImageEditCompletedEventSize$$1536x1024() => $1536x1024(),
+      ImageEditCompletedEventSize$auto() => auto(),
+      ImageEditCompletedEventSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1024x1024, W Function()? $1024x1536, W Function()? $1536x1024, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageEditCompletedEventSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
+      ImageEditCompletedEventSize$$1024x1536() => $1024x1536 != null ? $1024x1536() : orElse(value),
+      ImageEditCompletedEventSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
+      ImageEditCompletedEventSize$auto() => auto != null ? auto() : orElse(value),
+      ImageEditCompletedEventSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageEditCompletedEventSize($value)';
 
  }

@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeBetaServerEventMcpListToolsCompletedType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mcpListToolsCompleted, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeBetaServerEventMcpListToolsCompletedType$mcpListToolsCompleted() => mcpListToolsCompleted(),
+      RealtimeBetaServerEventMcpListToolsCompletedType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mcpListToolsCompleted, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeBetaServerEventMcpListToolsCompletedType$mcpListToolsCompleted() => mcpListToolsCompleted != null ? mcpListToolsCompleted() : orElse(value),
+      RealtimeBetaServerEventMcpListToolsCompletedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeBetaServerEventMcpListToolsCompletedType($value)';
 
  }

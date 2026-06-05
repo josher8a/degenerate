@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() termination, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminationType$termination() => termination(),
+      TerminationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? termination, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminationType$termination() => termination != null ? termination() : orElse(value),
+      TerminationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminationType($value)';
 
  }

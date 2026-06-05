@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingCreditBalanceTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() billingCreditBalanceTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingCreditBalanceTransactionObject$billingCreditBalanceTransaction() => billingCreditBalanceTransaction(),
+      BillingCreditBalanceTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingCreditBalanceTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingCreditBalanceTransactionObject$billingCreditBalanceTransaction() => billingCreditBalanceTransaction != null ? billingCreditBalanceTransaction() : orElse(value),
+      BillingCreditBalanceTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingCreditBalanceTransactionObject($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingCreditBalanceTransactionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() credit, required W Function() debit, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingCreditBalanceTransactionType$credit() => credit(),
+      BillingCreditBalanceTransactionType$debit() => debit(),
+      BillingCreditBalanceTransactionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? credit, W Function()? debit, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingCreditBalanceTransactionType$credit() => credit != null ? credit() : orElse(value),
+      BillingCreditBalanceTransactionType$debit() => debit != null ? debit() : orElse(value),
+      BillingCreditBalanceTransactionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingCreditBalanceTransactionType($value)';
 
  }

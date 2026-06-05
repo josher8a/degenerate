@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AbuseReportsReportType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() phish, required W Function() gen, required W Function() threat, required W Function() dmca, required W Function() emer, required W Function() tm, required W Function() regWho, required W Function() ncsei, required W Function() network, required W Function(String value) $unknown, }) { return switch (this) {
+      AbuseReportsReportType$phish() => phish(),
+      AbuseReportsReportType$gen() => gen(),
+      AbuseReportsReportType$threat() => threat(),
+      AbuseReportsReportType$dmca() => dmca(),
+      AbuseReportsReportType$emer() => emer(),
+      AbuseReportsReportType$tm() => tm(),
+      AbuseReportsReportType$regWho() => regWho(),
+      AbuseReportsReportType$ncsei() => ncsei(),
+      AbuseReportsReportType$network() => network(),
+      AbuseReportsReportType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? phish, W Function()? gen, W Function()? threat, W Function()? dmca, W Function()? emer, W Function()? tm, W Function()? regWho, W Function()? ncsei, W Function()? network, W Function(String value)? $unknown, }) { return switch (this) {
+      AbuseReportsReportType$phish() => phish != null ? phish() : orElse(value),
+      AbuseReportsReportType$gen() => gen != null ? gen() : orElse(value),
+      AbuseReportsReportType$threat() => threat != null ? threat() : orElse(value),
+      AbuseReportsReportType$dmca() => dmca != null ? dmca() : orElse(value),
+      AbuseReportsReportType$emer() => emer != null ? emer() : orElse(value),
+      AbuseReportsReportType$tm() => tm != null ? tm() : orElse(value),
+      AbuseReportsReportType$regWho() => regWho != null ? regWho() : orElse(value),
+      AbuseReportsReportType$ncsei() => ncsei != null ? ncsei() : orElse(value),
+      AbuseReportsReportType$network() => network != null ? network() : orElse(value),
+      AbuseReportsReportType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AbuseReportsReportType($value)';
 
  }

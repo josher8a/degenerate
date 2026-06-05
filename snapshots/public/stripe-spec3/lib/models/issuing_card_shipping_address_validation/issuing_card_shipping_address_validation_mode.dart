@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardShippingAddressValidationMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disabled, required W Function() normalizationOnly, required W Function() validationAndNormalization, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardShippingAddressValidationMode$disabled() => disabled(),
+      IssuingCardShippingAddressValidationMode$normalizationOnly() => normalizationOnly(),
+      IssuingCardShippingAddressValidationMode$validationAndNormalization() => validationAndNormalization(),
+      IssuingCardShippingAddressValidationMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? normalizationOnly, W Function()? validationAndNormalization, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardShippingAddressValidationMode$disabled() => disabled != null ? disabled() : orElse(value),
+      IssuingCardShippingAddressValidationMode$normalizationOnly() => normalizationOnly != null ? normalizationOnly() : orElse(value),
+      IssuingCardShippingAddressValidationMode$validationAndNormalization() => validationAndNormalization != null ? validationAndNormalization() : orElse(value),
+      IssuingCardShippingAddressValidationMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardShippingAddressValidationMode($value)';
 
  }

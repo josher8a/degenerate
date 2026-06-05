@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dsa, required W Function() ecdsa, required W Function() rsa, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesPublicKeyAlgorithm$dsa() => dsa(),
+      RadarGetCtTimeseriesPublicKeyAlgorithm$ecdsa() => ecdsa(),
+      RadarGetCtTimeseriesPublicKeyAlgorithm$rsa() => rsa(),
+      RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dsa, W Function()? ecdsa, W Function()? rsa, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesPublicKeyAlgorithm$dsa() => dsa != null ? dsa() : orElse(value),
+      RadarGetCtTimeseriesPublicKeyAlgorithm$ecdsa() => ecdsa != null ? ecdsa() : orElse(value),
+      RadarGetCtTimeseriesPublicKeyAlgorithm$rsa() => rsa != null ? rsa() : orElse(value),
+      RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtTimeseriesPublicKeyAlgorithm($value)';
 
  }

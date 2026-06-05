@@ -74,6 +74,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() selfHosted, required W Function() saas, required W Function() ssh, required W Function() vnc, required W Function() appLauncher, required W Function() warp, required W Function() biso, required W Function() bookmark, required W Function() dashSso, required W Function() infrastructure, required W Function() rdp, required W Function() mcp, required W Function() mcpPortal, required W Function() proxyEndpoint, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessType$selfHosted() => selfHosted(),
+      AccessType$saas() => saas(),
+      AccessType$ssh() => ssh(),
+      AccessType$vnc() => vnc(),
+      AccessType$appLauncher() => appLauncher(),
+      AccessType$warp() => warp(),
+      AccessType$biso() => biso(),
+      AccessType$bookmark() => bookmark(),
+      AccessType$dashSso() => dashSso(),
+      AccessType$infrastructure() => infrastructure(),
+      AccessType$rdp() => rdp(),
+      AccessType$mcp() => mcp(),
+      AccessType$mcpPortal() => mcpPortal(),
+      AccessType$proxyEndpoint() => proxyEndpoint(),
+      AccessType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHosted, W Function()? saas, W Function()? ssh, W Function()? vnc, W Function()? appLauncher, W Function()? warp, W Function()? biso, W Function()? bookmark, W Function()? dashSso, W Function()? infrastructure, W Function()? rdp, W Function()? mcp, W Function()? mcpPortal, W Function()? proxyEndpoint, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessType$selfHosted() => selfHosted != null ? selfHosted() : orElse(value),
+      AccessType$saas() => saas != null ? saas() : orElse(value),
+      AccessType$ssh() => ssh != null ? ssh() : orElse(value),
+      AccessType$vnc() => vnc != null ? vnc() : orElse(value),
+      AccessType$appLauncher() => appLauncher != null ? appLauncher() : orElse(value),
+      AccessType$warp() => warp != null ? warp() : orElse(value),
+      AccessType$biso() => biso != null ? biso() : orElse(value),
+      AccessType$bookmark() => bookmark != null ? bookmark() : orElse(value),
+      AccessType$dashSso() => dashSso != null ? dashSso() : orElse(value),
+      AccessType$infrastructure() => infrastructure != null ? infrastructure() : orElse(value),
+      AccessType$rdp() => rdp != null ? rdp() : orElse(value),
+      AccessType$mcp() => mcp != null ? mcp() : orElse(value),
+      AccessType$mcpPortal() => mcpPortal != null ? mcpPortal() : orElse(value),
+      AccessType$proxyEndpoint() => proxyEndpoint != null ? proxyEndpoint() : orElse(value),
+      AccessType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessType($value)';
 
  }

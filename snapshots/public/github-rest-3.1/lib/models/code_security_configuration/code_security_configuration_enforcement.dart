@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeSecurityConfigurationEnforcement$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enforced, required W Function() unenforced, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationEnforcement$enforced() => enforced(),
+      CodeSecurityConfigurationEnforcement$unenforced() => unenforced(),
+      CodeSecurityConfigurationEnforcement$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enforced, W Function()? unenforced, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationEnforcement$enforced() => enforced != null ? enforced() : orElse(value),
+      CodeSecurityConfigurationEnforcement$unenforced() => unenforced != null ? unenforced() : orElse(value),
+      CodeSecurityConfigurationEnforcement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeSecurityConfigurationEnforcement($value)';
 
  }

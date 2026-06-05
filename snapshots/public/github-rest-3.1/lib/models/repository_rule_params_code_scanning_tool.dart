@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AlertsThreshold$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() errors, required W Function() errorsAndWarnings, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      AlertsThreshold$none() => none(),
+      AlertsThreshold$errors() => errors(),
+      AlertsThreshold$errorsAndWarnings() => errorsAndWarnings(),
+      AlertsThreshold$all() => all(),
+      AlertsThreshold$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? errors, W Function()? errorsAndWarnings, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      AlertsThreshold$none() => none != null ? none() : orElse(value),
+      AlertsThreshold$errors() => errors != null ? errors() : orElse(value),
+      AlertsThreshold$errorsAndWarnings() => errorsAndWarnings != null ? errorsAndWarnings() : orElse(value),
+      AlertsThreshold$all() => all != null ? all() : orElse(value),
+      AlertsThreshold$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AlertsThreshold($value)';
 
  }
@@ -120,6 +136,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityAlertsThreshold$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() critical, required W Function() highOrHigher, required W Function() mediumOrHigher, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityAlertsThreshold$none() => none(),
+      SecurityAlertsThreshold$critical() => critical(),
+      SecurityAlertsThreshold$highOrHigher() => highOrHigher(),
+      SecurityAlertsThreshold$mediumOrHigher() => mediumOrHigher(),
+      SecurityAlertsThreshold$all() => all(),
+      SecurityAlertsThreshold$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? critical, W Function()? highOrHigher, W Function()? mediumOrHigher, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityAlertsThreshold$none() => none != null ? none() : orElse(value),
+      SecurityAlertsThreshold$critical() => critical != null ? critical() : orElse(value),
+      SecurityAlertsThreshold$highOrHigher() => highOrHigher != null ? highOrHigher() : orElse(value),
+      SecurityAlertsThreshold$mediumOrHigher() => mediumOrHigher != null ? mediumOrHigher() : orElse(value),
+      SecurityAlertsThreshold$all() => all != null ? all() : orElse(value),
+      SecurityAlertsThreshold$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityAlertsThreshold($value)';
 
  }

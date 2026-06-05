@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserRiskScoreUserRiskScore$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() unscored, required W Function(String value) $unknown, }) { return switch (this) {
+      UserRiskScoreUserRiskScore$low() => low(),
+      UserRiskScoreUserRiskScore$medium() => medium(),
+      UserRiskScoreUserRiskScore$high() => high(),
+      UserRiskScoreUserRiskScore$unscored() => unscored(),
+      UserRiskScoreUserRiskScore$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? unscored, W Function(String value)? $unknown, }) { return switch (this) {
+      UserRiskScoreUserRiskScore$low() => low != null ? low() : orElse(value),
+      UserRiskScoreUserRiskScore$medium() => medium != null ? medium() : orElse(value),
+      UserRiskScoreUserRiskScore$high() => high != null ? high() : orElse(value),
+      UserRiskScoreUserRiskScore$unscored() => unscored != null ? unscored() : orElse(value),
+      UserRiskScoreUserRiskScore$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UserRiskScoreUserRiskScore($value)';
 
  }

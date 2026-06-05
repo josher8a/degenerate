@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PlatformRestrictionsInboundFlows$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() restricted, required W Function() unrestricted, required W Function(String value) $unknown, }) { return switch (this) {
+      PlatformRestrictionsInboundFlows$restricted() => restricted(),
+      PlatformRestrictionsInboundFlows$unrestricted() => unrestricted(),
+      PlatformRestrictionsInboundFlows$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? restricted, W Function()? unrestricted, W Function(String value)? $unknown, }) { return switch (this) {
+      PlatformRestrictionsInboundFlows$restricted() => restricted != null ? restricted() : orElse(value),
+      PlatformRestrictionsInboundFlows$unrestricted() => unrestricted != null ? unrestricted() : orElse(value),
+      PlatformRestrictionsInboundFlows$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PlatformRestrictionsInboundFlows($value)';
 
  }
@@ -80,6 +92,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PlatformRestrictionsOutboundFlows$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() restricted, required W Function() unrestricted, required W Function(String value) $unknown, }) { return switch (this) {
+      PlatformRestrictionsOutboundFlows$restricted() => restricted(),
+      PlatformRestrictionsOutboundFlows$unrestricted() => unrestricted(),
+      PlatformRestrictionsOutboundFlows$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? restricted, W Function()? unrestricted, W Function(String value)? $unknown, }) { return switch (this) {
+      PlatformRestrictionsOutboundFlows$restricted() => restricted != null ? restricted() : orElse(value),
+      PlatformRestrictionsOutboundFlows$unrestricted() => unrestricted != null ? unrestricted() : orElse(value),
+      PlatformRestrictionsOutboundFlows$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PlatformRestrictionsOutboundFlows($value)';
 
  }

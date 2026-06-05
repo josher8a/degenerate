@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionBillingAddressCollection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionBillingAddressCollection$auto() => auto(),
+      CheckoutSessionBillingAddressCollection$$required() => $required(),
+      CheckoutSessionBillingAddressCollection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionBillingAddressCollection$auto() => auto != null ? auto() : orElse(value),
+      CheckoutSessionBillingAddressCollection$$required() => $required != null ? $required() : orElse(value),
+      CheckoutSessionBillingAddressCollection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionBillingAddressCollection($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionCustomerCreation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionCustomerCreation$always() => always(),
+      CheckoutSessionCustomerCreation$ifRequired() => ifRequired(),
+      CheckoutSessionCustomerCreation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionCustomerCreation$always() => always != null ? always() : orElse(value),
+      CheckoutSessionCustomerCreation$ifRequired() => ifRequired != null ? ifRequired() : orElse(value),
+      CheckoutSessionCustomerCreation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionCustomerCreation($value)';
 
  }
@@ -294,6 +318,96 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionLocale$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enGb, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionLocale$auto() => auto(),
+      CheckoutSessionLocale$bg() => bg(),
+      CheckoutSessionLocale$cs() => cs(),
+      CheckoutSessionLocale$da() => da(),
+      CheckoutSessionLocale$de() => de(),
+      CheckoutSessionLocale$el() => el(),
+      CheckoutSessionLocale$en() => en(),
+      CheckoutSessionLocale$enGb() => enGb(),
+      CheckoutSessionLocale$es() => es(),
+      CheckoutSessionLocale$es419() => es419(),
+      CheckoutSessionLocale$et() => et(),
+      CheckoutSessionLocale$fi() => fi(),
+      CheckoutSessionLocale$fil() => fil(),
+      CheckoutSessionLocale$fr() => fr(),
+      CheckoutSessionLocale$frCa() => frCa(),
+      CheckoutSessionLocale$hr() => hr(),
+      CheckoutSessionLocale$hu() => hu(),
+      CheckoutSessionLocale$id() => id(),
+      CheckoutSessionLocale$it() => it(),
+      CheckoutSessionLocale$ja() => ja(),
+      CheckoutSessionLocale$ko() => ko(),
+      CheckoutSessionLocale$lt() => lt(),
+      CheckoutSessionLocale$lv() => lv(),
+      CheckoutSessionLocale$ms() => ms(),
+      CheckoutSessionLocale$mt() => mt(),
+      CheckoutSessionLocale$nb() => nb(),
+      CheckoutSessionLocale$nl() => nl(),
+      CheckoutSessionLocale$pl() => pl(),
+      CheckoutSessionLocale$pt() => pt(),
+      CheckoutSessionLocale$ptBr() => ptBr(),
+      CheckoutSessionLocale$ro() => ro(),
+      CheckoutSessionLocale$ru() => ru(),
+      CheckoutSessionLocale$sk() => sk(),
+      CheckoutSessionLocale$sl() => sl(),
+      CheckoutSessionLocale$sv() => sv(),
+      CheckoutSessionLocale$th() => th(),
+      CheckoutSessionLocale$tr() => tr(),
+      CheckoutSessionLocale$vi() => vi(),
+      CheckoutSessionLocale$zh() => zh(),
+      CheckoutSessionLocale$zhHk() => zhHk(),
+      CheckoutSessionLocale$zhTw() => zhTw(),
+      CheckoutSessionLocale$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enGb, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionLocale$auto() => auto != null ? auto() : orElse(value),
+      CheckoutSessionLocale$bg() => bg != null ? bg() : orElse(value),
+      CheckoutSessionLocale$cs() => cs != null ? cs() : orElse(value),
+      CheckoutSessionLocale$da() => da != null ? da() : orElse(value),
+      CheckoutSessionLocale$de() => de != null ? de() : orElse(value),
+      CheckoutSessionLocale$el() => el != null ? el() : orElse(value),
+      CheckoutSessionLocale$en() => en != null ? en() : orElse(value),
+      CheckoutSessionLocale$enGb() => enGb != null ? enGb() : orElse(value),
+      CheckoutSessionLocale$es() => es != null ? es() : orElse(value),
+      CheckoutSessionLocale$es419() => es419 != null ? es419() : orElse(value),
+      CheckoutSessionLocale$et() => et != null ? et() : orElse(value),
+      CheckoutSessionLocale$fi() => fi != null ? fi() : orElse(value),
+      CheckoutSessionLocale$fil() => fil != null ? fil() : orElse(value),
+      CheckoutSessionLocale$fr() => fr != null ? fr() : orElse(value),
+      CheckoutSessionLocale$frCa() => frCa != null ? frCa() : orElse(value),
+      CheckoutSessionLocale$hr() => hr != null ? hr() : orElse(value),
+      CheckoutSessionLocale$hu() => hu != null ? hu() : orElse(value),
+      CheckoutSessionLocale$id() => id != null ? id() : orElse(value),
+      CheckoutSessionLocale$it() => it != null ? it() : orElse(value),
+      CheckoutSessionLocale$ja() => ja != null ? ja() : orElse(value),
+      CheckoutSessionLocale$ko() => ko != null ? ko() : orElse(value),
+      CheckoutSessionLocale$lt() => lt != null ? lt() : orElse(value),
+      CheckoutSessionLocale$lv() => lv != null ? lv() : orElse(value),
+      CheckoutSessionLocale$ms() => ms != null ? ms() : orElse(value),
+      CheckoutSessionLocale$mt() => mt != null ? mt() : orElse(value),
+      CheckoutSessionLocale$nb() => nb != null ? nb() : orElse(value),
+      CheckoutSessionLocale$nl() => nl != null ? nl() : orElse(value),
+      CheckoutSessionLocale$pl() => pl != null ? pl() : orElse(value),
+      CheckoutSessionLocale$pt() => pt != null ? pt() : orElse(value),
+      CheckoutSessionLocale$ptBr() => ptBr != null ? ptBr() : orElse(value),
+      CheckoutSessionLocale$ro() => ro != null ? ro() : orElse(value),
+      CheckoutSessionLocale$ru() => ru != null ? ru() : orElse(value),
+      CheckoutSessionLocale$sk() => sk != null ? sk() : orElse(value),
+      CheckoutSessionLocale$sl() => sl != null ? sl() : orElse(value),
+      CheckoutSessionLocale$sv() => sv != null ? sv() : orElse(value),
+      CheckoutSessionLocale$th() => th != null ? th() : orElse(value),
+      CheckoutSessionLocale$tr() => tr != null ? tr() : orElse(value),
+      CheckoutSessionLocale$vi() => vi != null ? vi() : orElse(value),
+      CheckoutSessionLocale$zh() => zh != null ? zh() : orElse(value),
+      CheckoutSessionLocale$zhHk() => zhHk != null ? zhHk() : orElse(value),
+      CheckoutSessionLocale$zhTw() => zhTw != null ? zhTw() : orElse(value),
+      CheckoutSessionLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionLocale($value)';
 
  }
@@ -697,6 +811,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() checkoutSession, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionObject$checkoutSession() => checkoutSession(),
+      CheckoutSessionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checkoutSession, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionObject$checkoutSession() => checkoutSession != null ? checkoutSession() : orElse(value),
+      CheckoutSessionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionObject($value)';
 
  }
@@ -744,6 +868,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionOriginContext$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mobileApp, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionOriginContext$mobileApp() => mobileApp(),
+      CheckoutSessionOriginContext$web() => web(),
+      CheckoutSessionOriginContext$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileApp, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionOriginContext$mobileApp() => mobileApp != null ? mobileApp() : orElse(value),
+      CheckoutSessionOriginContext$web() => web != null ? web() : orElse(value),
+      CheckoutSessionOriginContext$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionOriginContext($value)';
 
  }
@@ -800,6 +936,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionPaymentMethodCollection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() ifRequired, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionPaymentMethodCollection$always() => always(),
+      CheckoutSessionPaymentMethodCollection$ifRequired() => ifRequired(),
+      CheckoutSessionPaymentMethodCollection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? ifRequired, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionPaymentMethodCollection$always() => always != null ? always() : orElse(value),
+      CheckoutSessionPaymentMethodCollection$ifRequired() => ifRequired != null ? ifRequired() : orElse(value),
+      CheckoutSessionPaymentMethodCollection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionPaymentMethodCollection($value)';
 
  }
@@ -861,6 +1009,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noPaymentRequired, required W Function() paid, required W Function() unpaid, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentStatus$noPaymentRequired() => noPaymentRequired(),
+      PaymentStatus$paid() => paid(),
+      PaymentStatus$unpaid() => unpaid(),
+      PaymentStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPaymentRequired, W Function()? paid, W Function()? unpaid, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentStatus$noPaymentRequired() => noPaymentRequired != null ? noPaymentRequired() : orElse(value),
+      PaymentStatus$paid() => paid != null ? paid() : orElse(value),
+      PaymentStatus$unpaid() => unpaid != null ? unpaid() : orElse(value),
+      PaymentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentStatus($value)';
 
  }
@@ -930,6 +1092,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() complete, required W Function() expired, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionStatus$complete() => complete(),
+      CheckoutSessionStatus$expired() => expired(),
+      CheckoutSessionStatus$open() => open(),
+      CheckoutSessionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? expired, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionStatus$complete() => complete != null ? complete() : orElse(value),
+      CheckoutSessionStatus$expired() => expired != null ? expired() : orElse(value),
+      CheckoutSessionStatus$open() => open != null ? open() : orElse(value),
+      CheckoutSessionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionStatus($value)';
 
  }
@@ -1009,6 +1185,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionSubmitType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() book, required W Function() donate, required W Function() pay, required W Function() subscribe, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionSubmitType$auto() => auto(),
+      CheckoutSessionSubmitType$book() => book(),
+      CheckoutSessionSubmitType$donate() => donate(),
+      CheckoutSessionSubmitType$pay() => pay(),
+      CheckoutSessionSubmitType$subscribe() => subscribe(),
+      CheckoutSessionSubmitType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? book, W Function()? donate, W Function()? pay, W Function()? subscribe, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionSubmitType$auto() => auto != null ? auto() : orElse(value),
+      CheckoutSessionSubmitType$book() => book != null ? book() : orElse(value),
+      CheckoutSessionSubmitType$donate() => donate != null ? donate() : orElse(value),
+      CheckoutSessionSubmitType$pay() => pay != null ? pay() : orElse(value),
+      CheckoutSessionSubmitType$subscribe() => subscribe != null ? subscribe() : orElse(value),
+      CheckoutSessionSubmitType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionSubmitType($value)';
 
  }
@@ -1096,6 +1290,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckoutSessionUiMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() embedded, required W Function() hosted, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckoutSessionUiMode$custom() => custom(),
+      CheckoutSessionUiMode$embedded() => embedded(),
+      CheckoutSessionUiMode$hosted() => hosted(),
+      CheckoutSessionUiMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? embedded, W Function()? hosted, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckoutSessionUiMode$custom() => custom != null ? custom() : orElse(value),
+      CheckoutSessionUiMode$embedded() => embedded != null ? embedded() : orElse(value),
+      CheckoutSessionUiMode$hosted() => hosted != null ? hosted() : orElse(value),
+      CheckoutSessionUiMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckoutSessionUiMode($value)';
 
  }

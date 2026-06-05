@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RetrievalType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() vector, required W Function() keyword, required W Function() hybrid, required W Function(String value) $unknown, }) { return switch (this) {
+      RetrievalType$vector() => vector(),
+      RetrievalType$keyword() => keyword(),
+      RetrievalType$hybrid() => hybrid(),
+      RetrievalType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vector, W Function()? keyword, W Function()? hybrid, W Function(String value)? $unknown, }) { return switch (this) {
+      RetrievalType$vector() => vector != null ? vector() : orElse(value),
+      RetrievalType$keyword() => keyword != null ? keyword() : orElse(value),
+      RetrievalType$hybrid() => hybrid != null ? hybrid() : orElse(value),
+      RetrievalType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RetrievalType($value)';
 
  }

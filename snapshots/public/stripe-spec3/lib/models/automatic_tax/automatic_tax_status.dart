@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AutomaticTaxStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() complete, required W Function() failed, required W Function() requiresLocationInputs, required W Function(String value) $unknown, }) { return switch (this) {
+      AutomaticTaxStatus$complete() => complete(),
+      AutomaticTaxStatus$failed() => failed(),
+      AutomaticTaxStatus$requiresLocationInputs() => requiresLocationInputs(),
+      AutomaticTaxStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? failed, W Function()? requiresLocationInputs, W Function(String value)? $unknown, }) { return switch (this) {
+      AutomaticTaxStatus$complete() => complete != null ? complete() : orElse(value),
+      AutomaticTaxStatus$failed() => failed != null ? failed() : orElse(value),
+      AutomaticTaxStatus$requiresLocationInputs() => requiresLocationInputs != null ? requiresLocationInputs() : orElse(value),
+      AutomaticTaxStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AutomaticTaxStatus($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetAccountAuditLogsActorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() account, required W Function() cloudflareAdmin, required W Function() system, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActorType$account() => account(),
+      GetAccountAuditLogsActorType$cloudflareAdmin() => cloudflareAdmin(),
+      GetAccountAuditLogsActorType$system() => system(),
+      GetAccountAuditLogsActorType$user() => user(),
+      GetAccountAuditLogsActorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? cloudflareAdmin, W Function()? system, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      GetAccountAuditLogsActorType$account() => account != null ? account() : orElse(value),
+      GetAccountAuditLogsActorType$cloudflareAdmin() => cloudflareAdmin != null ? cloudflareAdmin() : orElse(value),
+      GetAccountAuditLogsActorType$system() => system != null ? system() : orElse(value),
+      GetAccountAuditLogsActorType$user() => user != null ? user() : orElse(value),
+      GetAccountAuditLogsActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetAccountAuditLogsActorType($value)';
 
  }

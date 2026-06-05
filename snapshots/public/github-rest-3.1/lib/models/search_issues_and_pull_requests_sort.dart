@@ -61,6 +61,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SearchIssuesAndPullRequestsSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() comments, required W Function() reactions, required W Function() reactions1, required W Function() reactions12, required W Function() reactionsSmile, required W Function() reactionsThinkingFace, required W Function() reactionsHeart, required W Function() reactionsTada, required W Function() interactions, required W Function() created, required W Function() updated, required W Function(String value) $unknown, }) { return switch (this) {
+      SearchIssuesAndPullRequestsSort$comments() => comments(),
+      SearchIssuesAndPullRequestsSort$reactions() => reactions(),
+      SearchIssuesAndPullRequestsSort$reactions1() => reactions1(),
+      SearchIssuesAndPullRequestsSort$reactions12() => reactions12(),
+      SearchIssuesAndPullRequestsSort$reactionsSmile() => reactionsSmile(),
+      SearchIssuesAndPullRequestsSort$reactionsThinkingFace() => reactionsThinkingFace(),
+      SearchIssuesAndPullRequestsSort$reactionsHeart() => reactionsHeart(),
+      SearchIssuesAndPullRequestsSort$reactionsTada() => reactionsTada(),
+      SearchIssuesAndPullRequestsSort$interactions() => interactions(),
+      SearchIssuesAndPullRequestsSort$created() => created(),
+      SearchIssuesAndPullRequestsSort$updated() => updated(),
+      SearchIssuesAndPullRequestsSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? comments, W Function()? reactions, W Function()? reactions1, W Function()? reactions12, W Function()? reactionsSmile, W Function()? reactionsThinkingFace, W Function()? reactionsHeart, W Function()? reactionsTada, W Function()? interactions, W Function()? created, W Function()? updated, W Function(String value)? $unknown, }) { return switch (this) {
+      SearchIssuesAndPullRequestsSort$comments() => comments != null ? comments() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactions() => reactions != null ? reactions() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactions1() => reactions1 != null ? reactions1() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactions12() => reactions12 != null ? reactions12() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactionsSmile() => reactionsSmile != null ? reactionsSmile() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactionsThinkingFace() => reactionsThinkingFace != null ? reactionsThinkingFace() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactionsHeart() => reactionsHeart != null ? reactionsHeart() : orElse(value),
+      SearchIssuesAndPullRequestsSort$reactionsTada() => reactionsTada != null ? reactionsTada() : orElse(value),
+      SearchIssuesAndPullRequestsSort$interactions() => interactions != null ? interactions() : orElse(value),
+      SearchIssuesAndPullRequestsSort$created() => created != null ? created() : orElse(value),
+      SearchIssuesAndPullRequestsSort$updated() => updated != null ? updated() : orElse(value),
+      SearchIssuesAndPullRequestsSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SearchIssuesAndPullRequestsSort($value)';
 
  }

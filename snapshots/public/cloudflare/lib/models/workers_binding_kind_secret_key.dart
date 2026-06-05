@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersBindingKindSecretKeyFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() raw, required W Function() pkcs8, required W Function() spki, required W Function() jwk, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersBindingKindSecretKeyFormat$raw() => raw(),
+      WorkersBindingKindSecretKeyFormat$pkcs8() => pkcs8(),
+      WorkersBindingKindSecretKeyFormat$spki() => spki(),
+      WorkersBindingKindSecretKeyFormat$jwk() => jwk(),
+      WorkersBindingKindSecretKeyFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? raw, W Function()? pkcs8, W Function()? spki, W Function()? jwk, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersBindingKindSecretKeyFormat$raw() => raw != null ? raw() : orElse(value),
+      WorkersBindingKindSecretKeyFormat$pkcs8() => pkcs8 != null ? pkcs8() : orElse(value),
+      WorkersBindingKindSecretKeyFormat$spki() => spki != null ? spki() : orElse(value),
+      WorkersBindingKindSecretKeyFormat$jwk() => jwk != null ? jwk() : orElse(value),
+      WorkersBindingKindSecretKeyFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersBindingKindSecretKeyFormat($value)';
 
  }
@@ -131,6 +147,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Usages$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() encrypt, required W Function() decrypt, required W Function() sign, required W Function() verify, required W Function() deriveKey, required W Function() deriveBits, required W Function() wrapKey, required W Function() unwrapKey, required W Function(String value) $unknown, }) { return switch (this) {
+      Usages$encrypt() => encrypt(),
+      Usages$decrypt() => decrypt(),
+      Usages$sign() => sign(),
+      Usages$verify() => verify(),
+      Usages$deriveKey() => deriveKey(),
+      Usages$deriveBits() => deriveBits(),
+      Usages$wrapKey() => wrapKey(),
+      Usages$unwrapKey() => unwrapKey(),
+      Usages$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypt, W Function()? decrypt, W Function()? sign, W Function()? verify, W Function()? deriveKey, W Function()? deriveBits, W Function()? wrapKey, W Function()? unwrapKey, W Function(String value)? $unknown, }) { return switch (this) {
+      Usages$encrypt() => encrypt != null ? encrypt() : orElse(value),
+      Usages$decrypt() => decrypt != null ? decrypt() : orElse(value),
+      Usages$sign() => sign != null ? sign() : orElse(value),
+      Usages$verify() => verify != null ? verify() : orElse(value),
+      Usages$deriveKey() => deriveKey != null ? deriveKey() : orElse(value),
+      Usages$deriveBits() => deriveBits != null ? deriveBits() : orElse(value),
+      Usages$wrapKey() => wrapKey != null ? wrapKey() : orElse(value),
+      Usages$unwrapKey() => unwrapKey != null ? unwrapKey() : orElse(value),
+      Usages$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Usages($value)';
 
  }

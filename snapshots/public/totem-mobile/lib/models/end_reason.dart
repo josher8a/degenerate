@@ -43,6 +43,40 @@ sealed class EndReason {
     return this is EndReason$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() keeperEnded,
+    required W Function() keeperAbsent,
+    required W Function() roomEmpty,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      EndReason$keeperEnded() => keeperEnded(),
+      EndReason$keeperAbsent() => keeperAbsent(),
+      EndReason$roomEmpty() => roomEmpty(),
+      EndReason$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? keeperEnded,
+    W Function()? keeperAbsent,
+    W Function()? roomEmpty,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      EndReason$keeperEnded() =>
+        keeperEnded != null ? keeperEnded() : orElse(value),
+      EndReason$keeperAbsent() =>
+        keeperAbsent != null ? keeperAbsent() : orElse(value),
+      EndReason$roomEmpty() => roomEmpty != null ? roomEmpty() : orElse(value),
+      EndReason$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'EndReason($value)';
 }

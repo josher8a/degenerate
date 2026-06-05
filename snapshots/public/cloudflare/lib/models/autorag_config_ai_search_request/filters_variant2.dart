@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FiltersVariant2Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() and, required W Function() or, required W Function(String value) $unknown, }) { return switch (this) {
+      FiltersVariant2Type$and() => and(),
+      FiltersVariant2Type$or() => or(),
+      FiltersVariant2Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W Function()? or, W Function(String value)? $unknown, }) { return switch (this) {
+      FiltersVariant2Type$and() => and != null ? and() : orElse(value),
+      FiltersVariant2Type$or() => or != null ? or() : orElse(value),
+      FiltersVariant2Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FiltersVariant2Type($value)';
 
  }

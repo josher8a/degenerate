@@ -102,6 +102,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ObservatoryRegion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() asiaEast1, required W Function() asiaNortheast1, required W Function() asiaNortheast2, required W Function() asiaSouth1, required W Function() asiaSoutheast1, required W Function() australiaSoutheast1, required W Function() europeNorth1, required W Function() europeSouthwest1, required W Function() europeWest1, required W Function() europeWest2, required W Function() europeWest3, required W Function() europeWest4, required W Function() europeWest8, required W Function() europeWest9, required W Function() meWest1, required W Function() southamericaEast1, required W Function() usCentral1, required W Function() usEast1, required W Function() usEast4, required W Function() usSouth1, required W Function() usWest1, required W Function(String value) $unknown, }) { return switch (this) {
+      ObservatoryRegion$asiaEast1() => asiaEast1(),
+      ObservatoryRegion$asiaNortheast1() => asiaNortheast1(),
+      ObservatoryRegion$asiaNortheast2() => asiaNortheast2(),
+      ObservatoryRegion$asiaSouth1() => asiaSouth1(),
+      ObservatoryRegion$asiaSoutheast1() => asiaSoutheast1(),
+      ObservatoryRegion$australiaSoutheast1() => australiaSoutheast1(),
+      ObservatoryRegion$europeNorth1() => europeNorth1(),
+      ObservatoryRegion$europeSouthwest1() => europeSouthwest1(),
+      ObservatoryRegion$europeWest1() => europeWest1(),
+      ObservatoryRegion$europeWest2() => europeWest2(),
+      ObservatoryRegion$europeWest3() => europeWest3(),
+      ObservatoryRegion$europeWest4() => europeWest4(),
+      ObservatoryRegion$europeWest8() => europeWest8(),
+      ObservatoryRegion$europeWest9() => europeWest9(),
+      ObservatoryRegion$meWest1() => meWest1(),
+      ObservatoryRegion$southamericaEast1() => southamericaEast1(),
+      ObservatoryRegion$usCentral1() => usCentral1(),
+      ObservatoryRegion$usEast1() => usEast1(),
+      ObservatoryRegion$usEast4() => usEast4(),
+      ObservatoryRegion$usSouth1() => usSouth1(),
+      ObservatoryRegion$usWest1() => usWest1(),
+      ObservatoryRegion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asiaEast1, W Function()? asiaNortheast1, W Function()? asiaNortheast2, W Function()? asiaSouth1, W Function()? asiaSoutheast1, W Function()? australiaSoutheast1, W Function()? europeNorth1, W Function()? europeSouthwest1, W Function()? europeWest1, W Function()? europeWest2, W Function()? europeWest3, W Function()? europeWest4, W Function()? europeWest8, W Function()? europeWest9, W Function()? meWest1, W Function()? southamericaEast1, W Function()? usCentral1, W Function()? usEast1, W Function()? usEast4, W Function()? usSouth1, W Function()? usWest1, W Function(String value)? $unknown, }) { return switch (this) {
+      ObservatoryRegion$asiaEast1() => asiaEast1 != null ? asiaEast1() : orElse(value),
+      ObservatoryRegion$asiaNortheast1() => asiaNortheast1 != null ? asiaNortheast1() : orElse(value),
+      ObservatoryRegion$asiaNortheast2() => asiaNortheast2 != null ? asiaNortheast2() : orElse(value),
+      ObservatoryRegion$asiaSouth1() => asiaSouth1 != null ? asiaSouth1() : orElse(value),
+      ObservatoryRegion$asiaSoutheast1() => asiaSoutheast1 != null ? asiaSoutheast1() : orElse(value),
+      ObservatoryRegion$australiaSoutheast1() => australiaSoutheast1 != null ? australiaSoutheast1() : orElse(value),
+      ObservatoryRegion$europeNorth1() => europeNorth1 != null ? europeNorth1() : orElse(value),
+      ObservatoryRegion$europeSouthwest1() => europeSouthwest1 != null ? europeSouthwest1() : orElse(value),
+      ObservatoryRegion$europeWest1() => europeWest1 != null ? europeWest1() : orElse(value),
+      ObservatoryRegion$europeWest2() => europeWest2 != null ? europeWest2() : orElse(value),
+      ObservatoryRegion$europeWest3() => europeWest3 != null ? europeWest3() : orElse(value),
+      ObservatoryRegion$europeWest4() => europeWest4 != null ? europeWest4() : orElse(value),
+      ObservatoryRegion$europeWest8() => europeWest8 != null ? europeWest8() : orElse(value),
+      ObservatoryRegion$europeWest9() => europeWest9 != null ? europeWest9() : orElse(value),
+      ObservatoryRegion$meWest1() => meWest1 != null ? meWest1() : orElse(value),
+      ObservatoryRegion$southamericaEast1() => southamericaEast1 != null ? southamericaEast1() : orElse(value),
+      ObservatoryRegion$usCentral1() => usCentral1 != null ? usCentral1() : orElse(value),
+      ObservatoryRegion$usEast1() => usEast1 != null ? usEast1() : orElse(value),
+      ObservatoryRegion$usEast4() => usEast4 != null ? usEast4() : orElse(value),
+      ObservatoryRegion$usSouth1() => usSouth1 != null ? usSouth1() : orElse(value),
+      ObservatoryRegion$usWest1() => usWest1 != null ? usWest1() : orElse(value),
+      ObservatoryRegion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ObservatoryRegion($value)';
 
  }

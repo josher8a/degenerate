@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetBillingAlertsAlertType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() usageThreshold, required W Function(String value) $unknown, }) { return switch (this) {
+      GetBillingAlertsAlertType$usageThreshold() => usageThreshold(),
+      GetBillingAlertsAlertType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? usageThreshold, W Function(String value)? $unknown, }) { return switch (this) {
+      GetBillingAlertsAlertType$usageThreshold() => usageThreshold != null ? usageThreshold() : orElse(value),
+      GetBillingAlertsAlertType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetBillingAlertsAlertType($value)';
 
  }

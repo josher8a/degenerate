@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsListOutsideCollaboratorsFilter$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $2faDisabled, required W Function() $2faInsecure, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsListOutsideCollaboratorsFilter$$2faDisabled() => $2faDisabled(),
+      OrgsListOutsideCollaboratorsFilter$$2faInsecure() => $2faInsecure(),
+      OrgsListOutsideCollaboratorsFilter$all() => all(),
+      OrgsListOutsideCollaboratorsFilter$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $2faDisabled, W Function()? $2faInsecure, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsListOutsideCollaboratorsFilter$$2faDisabled() => $2faDisabled != null ? $2faDisabled() : orElse(value),
+      OrgsListOutsideCollaboratorsFilter$$2faInsecure() => $2faInsecure != null ? $2faInsecure() : orElse(value),
+      OrgsListOutsideCollaboratorsFilter$all() => all != null ? all() : orElse(value),
+      OrgsListOutsideCollaboratorsFilter$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsListOutsideCollaboratorsFilter($value)';
 
  }

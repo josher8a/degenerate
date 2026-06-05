@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TunnelTunnelType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cfdTunnel, required W Function() warpConnector, required W Function() warp, required W Function() magic, required W Function() ipSec, required W Function() gre, required W Function() cni, required W Function(String value) $unknown, }) { return switch (this) {
+      TunnelTunnelType$cfdTunnel() => cfdTunnel(),
+      TunnelTunnelType$warpConnector() => warpConnector(),
+      TunnelTunnelType$warp() => warp(),
+      TunnelTunnelType$magic() => magic(),
+      TunnelTunnelType$ipSec() => ipSec(),
+      TunnelTunnelType$gre() => gre(),
+      TunnelTunnelType$cni() => cni(),
+      TunnelTunnelType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cfdTunnel, W Function()? warpConnector, W Function()? warp, W Function()? magic, W Function()? ipSec, W Function()? gre, W Function()? cni, W Function(String value)? $unknown, }) { return switch (this) {
+      TunnelTunnelType$cfdTunnel() => cfdTunnel != null ? cfdTunnel() : orElse(value),
+      TunnelTunnelType$warpConnector() => warpConnector != null ? warpConnector() : orElse(value),
+      TunnelTunnelType$warp() => warp != null ? warp() : orElse(value),
+      TunnelTunnelType$magic() => magic != null ? magic() : orElse(value),
+      TunnelTunnelType$ipSec() => ipSec != null ? ipSec() : orElse(value),
+      TunnelTunnelType$gre() => gre != null ? gre() : orElse(value),
+      TunnelTunnelType$cni() => cni != null ? cni() : orElse(value),
+      TunnelTunnelType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TunnelTunnelType($value)';
 
  }

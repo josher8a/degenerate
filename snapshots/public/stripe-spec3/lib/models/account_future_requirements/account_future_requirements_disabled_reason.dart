@@ -78,6 +78,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountFutureRequirementsDisabledReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() actionRequiredRequestedCapabilities, required W Function() listed, required W Function() $other, required W Function() platformPaused, required W Function() rejectedFraud, required W Function() rejectedIncompleteVerification, required W Function() rejectedListed, required W Function() rejectedOther, required W Function() rejectedPlatformFraud, required W Function() rejectedPlatformOther, required W Function() rejectedPlatformTermsOfService, required W Function() rejectedTermsOfService, required W Function() requirementsPastDue, required W Function() requirementsPendingVerification, required W Function() underReview, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities() => actionRequiredRequestedCapabilities(),
+      AccountFutureRequirementsDisabledReason$listed() => listed(),
+      AccountFutureRequirementsDisabledReason$$other() => $other(),
+      AccountFutureRequirementsDisabledReason$platformPaused() => platformPaused(),
+      AccountFutureRequirementsDisabledReason$rejectedFraud() => rejectedFraud(),
+      AccountFutureRequirementsDisabledReason$rejectedIncompleteVerification() => rejectedIncompleteVerification(),
+      AccountFutureRequirementsDisabledReason$rejectedListed() => rejectedListed(),
+      AccountFutureRequirementsDisabledReason$rejectedOther() => rejectedOther(),
+      AccountFutureRequirementsDisabledReason$rejectedPlatformFraud() => rejectedPlatformFraud(),
+      AccountFutureRequirementsDisabledReason$rejectedPlatformOther() => rejectedPlatformOther(),
+      AccountFutureRequirementsDisabledReason$rejectedPlatformTermsOfService() => rejectedPlatformTermsOfService(),
+      AccountFutureRequirementsDisabledReason$rejectedTermsOfService() => rejectedTermsOfService(),
+      AccountFutureRequirementsDisabledReason$requirementsPastDue() => requirementsPastDue(),
+      AccountFutureRequirementsDisabledReason$requirementsPendingVerification() => requirementsPendingVerification(),
+      AccountFutureRequirementsDisabledReason$underReview() => underReview(),
+      AccountFutureRequirementsDisabledReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actionRequiredRequestedCapabilities, W Function()? listed, W Function()? $other, W Function()? platformPaused, W Function()? rejectedFraud, W Function()? rejectedIncompleteVerification, W Function()? rejectedListed, W Function()? rejectedOther, W Function()? rejectedPlatformFraud, W Function()? rejectedPlatformOther, W Function()? rejectedPlatformTermsOfService, W Function()? rejectedTermsOfService, W Function()? requirementsPastDue, W Function()? requirementsPendingVerification, W Function()? underReview, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountFutureRequirementsDisabledReason$actionRequiredRequestedCapabilities() => actionRequiredRequestedCapabilities != null ? actionRequiredRequestedCapabilities() : orElse(value),
+      AccountFutureRequirementsDisabledReason$listed() => listed != null ? listed() : orElse(value),
+      AccountFutureRequirementsDisabledReason$$other() => $other != null ? $other() : orElse(value),
+      AccountFutureRequirementsDisabledReason$platformPaused() => platformPaused != null ? platformPaused() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedFraud() => rejectedFraud != null ? rejectedFraud() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedIncompleteVerification() => rejectedIncompleteVerification != null ? rejectedIncompleteVerification() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedListed() => rejectedListed != null ? rejectedListed() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedOther() => rejectedOther != null ? rejectedOther() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedPlatformFraud() => rejectedPlatformFraud != null ? rejectedPlatformFraud() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedPlatformOther() => rejectedPlatformOther != null ? rejectedPlatformOther() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedPlatformTermsOfService() => rejectedPlatformTermsOfService != null ? rejectedPlatformTermsOfService() : orElse(value),
+      AccountFutureRequirementsDisabledReason$rejectedTermsOfService() => rejectedTermsOfService != null ? rejectedTermsOfService() : orElse(value),
+      AccountFutureRequirementsDisabledReason$requirementsPastDue() => requirementsPastDue != null ? requirementsPastDue() : orElse(value),
+      AccountFutureRequirementsDisabledReason$requirementsPendingVerification() => requirementsPendingVerification != null ? requirementsPendingVerification() : orElse(value),
+      AccountFutureRequirementsDisabledReason$underReview() => underReview != null ? underReview() : orElse(value),
+      AccountFutureRequirementsDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountFutureRequirementsDisabledReason($value)';
 
  }

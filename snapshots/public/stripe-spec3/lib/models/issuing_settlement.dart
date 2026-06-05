@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingSettlementObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingSettlement, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingSettlementObject$issuingSettlement() => issuingSettlement(),
+      IssuingSettlementObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingSettlement, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingSettlementObject$issuingSettlement() => issuingSettlement != null ? issuingSettlement() : orElse(value),
+      IssuingSettlementObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingSettlementObject($value)';
 
  }

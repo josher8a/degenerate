@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Priority$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      Priority$low() => low(),
+      Priority$medium() => medium(),
+      Priority$high() => high(),
+      Priority$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      Priority$low() => low != null ? low() : orElse(value),
+      Priority$medium() => medium != null ? medium() : orElse(value),
+      Priority$high() => high != null ? high() : orElse(value),
+      Priority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Priority($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SameSite$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() strict, required W Function() lax, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      SameSite$strict() => strict(),
+      SameSite$lax() => lax(),
+      SameSite$none() => none(),
+      SameSite$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, W Function()? lax, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      SameSite$strict() => strict != null ? strict() : orElse(value),
+      SameSite$lax() => lax != null ? lax() : orElse(value),
+      SameSite$none() => none != null ? none() : orElse(value),
+      SameSite$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SameSite($value)';
 
  }
@@ -165,6 +193,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SourceScheme$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unset, required W Function() nonSecure, required W Function() secure, required W Function(String value) $unknown, }) { return switch (this) {
+      SourceScheme$unset() => unset(),
+      SourceScheme$nonSecure() => nonSecure(),
+      SourceScheme$secure() => secure(),
+      SourceScheme$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unset, W Function()? nonSecure, W Function()? secure, W Function(String value)? $unknown, }) { return switch (this) {
+      SourceScheme$unset() => unset != null ? unset() : orElse(value),
+      SourceScheme$nonSecure() => nonSecure != null ? nonSecure() : orElse(value),
+      SourceScheme$secure() => secure != null ? secure() : orElse(value),
+      SourceScheme$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SourceScheme($value)';
 
  }

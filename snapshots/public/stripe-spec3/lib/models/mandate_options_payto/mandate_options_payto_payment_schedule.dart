@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MandateOptionsPaytoPaymentSchedule$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adhoc, required W Function() annual, required W Function() daily, required W Function() fortnightly, required W Function() monthly, required W Function() quarterly, required W Function() semiAnnual, required W Function() weekly, required W Function(String value) $unknown, }) { return switch (this) {
+      MandateOptionsPaytoPaymentSchedule$adhoc() => adhoc(),
+      MandateOptionsPaytoPaymentSchedule$annual() => annual(),
+      MandateOptionsPaytoPaymentSchedule$daily() => daily(),
+      MandateOptionsPaytoPaymentSchedule$fortnightly() => fortnightly(),
+      MandateOptionsPaytoPaymentSchedule$monthly() => monthly(),
+      MandateOptionsPaytoPaymentSchedule$quarterly() => quarterly(),
+      MandateOptionsPaytoPaymentSchedule$semiAnnual() => semiAnnual(),
+      MandateOptionsPaytoPaymentSchedule$weekly() => weekly(),
+      MandateOptionsPaytoPaymentSchedule$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adhoc, W Function()? annual, W Function()? daily, W Function()? fortnightly, W Function()? monthly, W Function()? quarterly, W Function()? semiAnnual, W Function()? weekly, W Function(String value)? $unknown, }) { return switch (this) {
+      MandateOptionsPaytoPaymentSchedule$adhoc() => adhoc != null ? adhoc() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$annual() => annual != null ? annual() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$daily() => daily != null ? daily() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$fortnightly() => fortnightly != null ? fortnightly() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$monthly() => monthly != null ? monthly() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$quarterly() => quarterly != null ? quarterly() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$semiAnnual() => semiAnnual != null ? semiAnnual() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$weekly() => weekly != null ? weekly() : orElse(value),
+      MandateOptionsPaytoPaymentSchedule$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MandateOptionsPaytoPaymentSchedule($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Web3Status$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() pending, required W Function() deleting, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      Web3Status$active() => active(),
+      Web3Status$pending() => pending(),
+      Web3Status$deleting() => deleting(),
+      Web3Status$error() => error(),
+      Web3Status$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function()? deleting, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      Web3Status$active() => active != null ? active() : orElse(value),
+      Web3Status$pending() => pending != null ? pending() : orElse(value),
+      Web3Status$deleting() => deleting != null ? deleting() : orElse(value),
+      Web3Status$error() => error != null ? error() : orElse(value),
+      Web3Status$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Web3Status($value)';
 
  }

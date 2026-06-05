@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TestHelpersTestClockStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() advancing, required W Function() internalFailure, required W Function() ready, required W Function(String value) $unknown, }) { return switch (this) {
+      TestHelpersTestClockStatus$advancing() => advancing(),
+      TestHelpersTestClockStatus$internalFailure() => internalFailure(),
+      TestHelpersTestClockStatus$ready() => ready(),
+      TestHelpersTestClockStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? advancing, W Function()? internalFailure, W Function()? ready, W Function(String value)? $unknown, }) { return switch (this) {
+      TestHelpersTestClockStatus$advancing() => advancing != null ? advancing() : orElse(value),
+      TestHelpersTestClockStatus$internalFailure() => internalFailure != null ? internalFailure() : orElse(value),
+      TestHelpersTestClockStatus$ready() => ready != null ? ready() : orElse(value),
+      TestHelpersTestClockStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TestHelpersTestClockStatus($value)';
 
  }

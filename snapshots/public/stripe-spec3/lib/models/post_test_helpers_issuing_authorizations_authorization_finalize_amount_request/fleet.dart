@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FleetPurchaseType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fuelAndNonFuelPurchase, required W Function() fuelPurchase, required W Function() nonFuelPurchase, required W Function(String value) $unknown, }) { return switch (this) {
+      FleetPurchaseType$fuelAndNonFuelPurchase() => fuelAndNonFuelPurchase(),
+      FleetPurchaseType$fuelPurchase() => fuelPurchase(),
+      FleetPurchaseType$nonFuelPurchase() => nonFuelPurchase(),
+      FleetPurchaseType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fuelAndNonFuelPurchase, W Function()? fuelPurchase, W Function()? nonFuelPurchase, W Function(String value)? $unknown, }) { return switch (this) {
+      FleetPurchaseType$fuelAndNonFuelPurchase() => fuelAndNonFuelPurchase != null ? fuelAndNonFuelPurchase() : orElse(value),
+      FleetPurchaseType$fuelPurchase() => fuelPurchase != null ? fuelPurchase() : orElse(value),
+      FleetPurchaseType$nonFuelPurchase() => nonFuelPurchase != null ? nonFuelPurchase() : orElse(value),
+      FleetPurchaseType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FleetPurchaseType($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FleetServiceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fullService, required W Function() nonFuelTransaction, required W Function() selfService, required W Function(String value) $unknown, }) { return switch (this) {
+      FleetServiceType$fullService() => fullService(),
+      FleetServiceType$nonFuelTransaction() => nonFuelTransaction(),
+      FleetServiceType$selfService() => selfService(),
+      FleetServiceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fullService, W Function()? nonFuelTransaction, W Function()? selfService, W Function(String value)? $unknown, }) { return switch (this) {
+      FleetServiceType$fullService() => fullService != null ? fullService() : orElse(value),
+      FleetServiceType$nonFuelTransaction() => nonFuelTransaction != null ? nonFuelTransaction() : orElse(value),
+      FleetServiceType$selfService() => selfService != null ? selfService() : orElse(value),
+      FleetServiceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FleetServiceType($value)';
 
  }

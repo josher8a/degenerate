@@ -53,6 +53,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$$empty() => $empty(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$customerService() => customerService(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$lowQuality() => lowQuality(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$missingFeatures() => missingFeatures(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$$other() => $other(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$switchedService() => switchedService(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$tooComplex() => tooComplex(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$tooExpensive() => tooExpensive(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$unused() => unused(),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$$empty() => $empty != null ? $empty() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$customerService() => customerService != null ? customerService() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$$other() => $other != null ? $other() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$switchedService() => switchedService != null ? switchedService() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$tooComplex() => tooComplex != null ? tooComplex() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$unused() => unused != null ? unused() : orElse(value),
+      DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)';
 
  }

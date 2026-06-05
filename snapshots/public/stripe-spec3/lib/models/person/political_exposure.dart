@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PoliticalExposure$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() existing, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      PoliticalExposure$existing() => existing(),
+      PoliticalExposure$none() => none(),
+      PoliticalExposure$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? existing, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      PoliticalExposure$existing() => existing != null ? existing() : orElse(value),
+      PoliticalExposure$none() => none != null ? none() : orElse(value),
+      PoliticalExposure$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PoliticalExposure($value)';
 
  }

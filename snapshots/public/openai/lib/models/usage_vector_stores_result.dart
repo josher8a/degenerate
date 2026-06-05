@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageVectorStoresResultObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organizationUsageVectorStoresResult, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageVectorStoresResultObject$organizationUsageVectorStoresResult() => organizationUsageVectorStoresResult(),
+      UsageVectorStoresResultObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organizationUsageVectorStoresResult, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageVectorStoresResultObject$organizationUsageVectorStoresResult() => organizationUsageVectorStoresResult != null ? organizationUsageVectorStoresResult() : orElse(value),
+      UsageVectorStoresResultObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageVectorStoresResultObject($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingNetworkTokenDeviceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $other, required W Function() phone, required W Function() watch, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingNetworkTokenDeviceType$$other() => $other(),
+      IssuingNetworkTokenDeviceType$phone() => phone(),
+      IssuingNetworkTokenDeviceType$watch() => watch(),
+      IssuingNetworkTokenDeviceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $other, W Function()? phone, W Function()? watch, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingNetworkTokenDeviceType$$other() => $other != null ? $other() : orElse(value),
+      IssuingNetworkTokenDeviceType$phone() => phone != null ? phone() : orElse(value),
+      IssuingNetworkTokenDeviceType$watch() => watch != null ? watch() : orElse(value),
+      IssuingNetworkTokenDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingNetworkTokenDeviceType($value)';
 
  }

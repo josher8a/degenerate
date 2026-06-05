@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DexEndpointsListColosSortBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fleetStatusUsage, required W Function() applicationTestsUsage, required W Function(String value) $unknown, }) { return switch (this) {
+      DexEndpointsListColosSortBy$fleetStatusUsage() => fleetStatusUsage(),
+      DexEndpointsListColosSortBy$applicationTestsUsage() => applicationTestsUsage(),
+      DexEndpointsListColosSortBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fleetStatusUsage, W Function()? applicationTestsUsage, W Function(String value)? $unknown, }) { return switch (this) {
+      DexEndpointsListColosSortBy$fleetStatusUsage() => fleetStatusUsage != null ? fleetStatusUsage() : orElse(value),
+      DexEndpointsListColosSortBy$applicationTestsUsage() => applicationTestsUsage != null ? applicationTestsUsage() : orElse(value),
+      DexEndpointsListColosSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DexEndpointsListColosSortBy($value)';
 
  }

@@ -74,6 +74,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductResourceTaxRateDetailsTaxType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amusementTax, required W Function() communicationsTax, required W Function() gst, required W Function() hst, required W Function() igst, required W Function() jct, required W Function() leaseTax, required W Function() pst, required W Function() qst, required W Function() retailDeliveryFee, required W Function() rst, required W Function() salesTax, required W Function() serviceTax, required W Function() vat, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductResourceTaxRateDetailsTaxType$amusementTax() => amusementTax(),
+      TaxProductResourceTaxRateDetailsTaxType$communicationsTax() => communicationsTax(),
+      TaxProductResourceTaxRateDetailsTaxType$gst() => gst(),
+      TaxProductResourceTaxRateDetailsTaxType$hst() => hst(),
+      TaxProductResourceTaxRateDetailsTaxType$igst() => igst(),
+      TaxProductResourceTaxRateDetailsTaxType$jct() => jct(),
+      TaxProductResourceTaxRateDetailsTaxType$leaseTax() => leaseTax(),
+      TaxProductResourceTaxRateDetailsTaxType$pst() => pst(),
+      TaxProductResourceTaxRateDetailsTaxType$qst() => qst(),
+      TaxProductResourceTaxRateDetailsTaxType$retailDeliveryFee() => retailDeliveryFee(),
+      TaxProductResourceTaxRateDetailsTaxType$rst() => rst(),
+      TaxProductResourceTaxRateDetailsTaxType$salesTax() => salesTax(),
+      TaxProductResourceTaxRateDetailsTaxType$serviceTax() => serviceTax(),
+      TaxProductResourceTaxRateDetailsTaxType$vat() => vat(),
+      TaxProductResourceTaxRateDetailsTaxType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amusementTax, W Function()? communicationsTax, W Function()? gst, W Function()? hst, W Function()? igst, W Function()? jct, W Function()? leaseTax, W Function()? pst, W Function()? qst, W Function()? retailDeliveryFee, W Function()? rst, W Function()? salesTax, W Function()? serviceTax, W Function()? vat, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductResourceTaxRateDetailsTaxType$amusementTax() => amusementTax != null ? amusementTax() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$communicationsTax() => communicationsTax != null ? communicationsTax() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$gst() => gst != null ? gst() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$hst() => hst != null ? hst() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$igst() => igst != null ? igst() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$jct() => jct != null ? jct() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$leaseTax() => leaseTax != null ? leaseTax() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$pst() => pst != null ? pst() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$qst() => qst != null ? qst() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$retailDeliveryFee() => retailDeliveryFee != null ? retailDeliveryFee() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$rst() => rst != null ? rst() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$salesTax() => salesTax != null ? salesTax() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$serviceTax() => serviceTax != null ? serviceTax() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$vat() => vat != null ? vat() : orElse(value),
+      TaxProductResourceTaxRateDetailsTaxType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductResourceTaxRateDetailsTaxType($value)';
 
  }

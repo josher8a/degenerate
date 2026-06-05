@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileDetailEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() high, required W Function() low, required W Function(String value) $unknown, }) { return switch (this) {
+      FileDetailEnum$high() => high(),
+      FileDetailEnum$low() => low(),
+      FileDetailEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? high, W Function()? low, W Function(String value)? $unknown, }) { return switch (this) {
+      FileDetailEnum$high() => high != null ? high() : orElse(value),
+      FileDetailEnum$low() => low != null ? low() : orElse(value),
+      FileDetailEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileDetailEnum($value)';
 
  }
@@ -77,6 +89,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InputFileContentParamType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inputFile, required W Function(String value) $unknown, }) { return switch (this) {
+      InputFileContentParamType$inputFile() => inputFile(),
+      InputFileContentParamType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputFile, W Function(String value)? $unknown, }) { return switch (this) {
+      InputFileContentParamType$inputFile() => inputFile != null ? inputFile() : orElse(value),
+      InputFileContentParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InputFileContentParamType($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() failed, required W Function() guaranteed, required W Function(String value) $unknown, }) { return switch (this) {
+      PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$failed() => failed(),
+      PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$guaranteed() => guaranteed(),
+      PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? guaranteed, W Function(String value)? $unknown, }) { return switch (this) {
+      PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$failed() => failed != null ? failed() : orElse(value),
+      PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$guaranteed() => guaranteed != null ? guaranteed() : orElse(value),
+      PostPaymentRecordsIdReportPaymentAttemptRequestOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptRequestOutcome($value)';
 
  }

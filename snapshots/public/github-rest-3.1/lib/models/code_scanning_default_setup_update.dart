@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningDefaultSetupUpdateRunnerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() labeled, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupUpdateRunnerType$standard() => standard(),
+      CodeScanningDefaultSetupUpdateRunnerType$labeled() => labeled(),
+      CodeScanningDefaultSetupUpdateRunnerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? labeled, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupUpdateRunnerType$standard() => standard != null ? standard() : orElse(value),
+      CodeScanningDefaultSetupUpdateRunnerType$labeled() => labeled != null ? labeled() : orElse(value),
+      CodeScanningDefaultSetupUpdateRunnerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningDefaultSetupUpdateRunnerType($value)';
 
  }
@@ -109,6 +121,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningDefaultSetupUpdateLanguages$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() actions, required W Function() cCpp, required W Function() csharp, required W Function() go, required W Function() javaKotlin, required W Function() javascriptTypescript, required W Function() python, required W Function() ruby, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupUpdateLanguages$actions() => actions(),
+      CodeScanningDefaultSetupUpdateLanguages$cCpp() => cCpp(),
+      CodeScanningDefaultSetupUpdateLanguages$csharp() => csharp(),
+      CodeScanningDefaultSetupUpdateLanguages$go() => go(),
+      CodeScanningDefaultSetupUpdateLanguages$javaKotlin() => javaKotlin(),
+      CodeScanningDefaultSetupUpdateLanguages$javascriptTypescript() => javascriptTypescript(),
+      CodeScanningDefaultSetupUpdateLanguages$python() => python(),
+      CodeScanningDefaultSetupUpdateLanguages$ruby() => ruby(),
+      CodeScanningDefaultSetupUpdateLanguages$swift() => swift(),
+      CodeScanningDefaultSetupUpdateLanguages$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cCpp, W Function()? csharp, W Function()? go, W Function()? javaKotlin, W Function()? javascriptTypescript, W Function()? python, W Function()? ruby, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupUpdateLanguages$actions() => actions != null ? actions() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$cCpp() => cCpp != null ? cCpp() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$csharp() => csharp != null ? csharp() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$go() => go != null ? go() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$javaKotlin() => javaKotlin != null ? javaKotlin() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$javascriptTypescript() => javascriptTypescript != null ? javascriptTypescript() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$python() => python != null ? python() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$ruby() => ruby != null ? ruby() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$swift() => swift != null ? swift() : orElse(value),
+      CodeScanningDefaultSetupUpdateLanguages$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningDefaultSetupUpdateLanguages($value)';
 
  }

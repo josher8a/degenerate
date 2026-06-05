@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageTriggerEnumRecurring$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() daily, required W Function() monthly, required W Function() yearly, required W Function() alltime, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageTriggerEnumRecurring$daily() => daily(),
+      UsageTriggerEnumRecurring$monthly() => monthly(),
+      UsageTriggerEnumRecurring$yearly() => yearly(),
+      UsageTriggerEnumRecurring$alltime() => alltime(),
+      UsageTriggerEnumRecurring$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? daily, W Function()? monthly, W Function()? yearly, W Function()? alltime, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageTriggerEnumRecurring$daily() => daily != null ? daily() : orElse(value),
+      UsageTriggerEnumRecurring$monthly() => monthly != null ? monthly() : orElse(value),
+      UsageTriggerEnumRecurring$yearly() => yearly != null ? yearly() : orElse(value),
+      UsageTriggerEnumRecurring$alltime() => alltime != null ? alltime() : orElse(value),
+      UsageTriggerEnumRecurring$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageTriggerEnumRecurring($value)';
 
  }

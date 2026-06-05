@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Sex$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() redacted, required W Function() female, required W Function() male, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      Sex$redacted() => redacted(),
+      Sex$female() => female(),
+      Sex$male() => male(),
+      Sex$unknown() => unknown(),
+      Sex$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? redacted, W Function()? female, W Function()? male, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      Sex$redacted() => redacted != null ? redacted() : orElse(value),
+      Sex$female() => female != null ? female() : orElse(value),
+      Sex$male() => male != null ? male() : orElse(value),
+      Sex$unknown() => unknown != null ? unknown() : orElse(value),
+      Sex$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Sex($value)';
 
  }

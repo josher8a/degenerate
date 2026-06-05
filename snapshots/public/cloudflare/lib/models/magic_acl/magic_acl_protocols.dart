@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicAclProtocols$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tcp, required W Function() udp, required W Function() icmp, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicAclProtocols$tcp() => tcp(),
+      MagicAclProtocols$udp() => udp(),
+      MagicAclProtocols$icmp() => icmp(),
+      MagicAclProtocols$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tcp, W Function()? udp, W Function()? icmp, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicAclProtocols$tcp() => tcp != null ? tcp() : orElse(value),
+      MagicAclProtocols$udp() => udp != null ? udp() : orElse(value),
+      MagicAclProtocols$icmp() => icmp != null ? icmp() : orElse(value),
+      MagicAclProtocols$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicAclProtocols($value)';
 
  }

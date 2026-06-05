@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPhysicalBundleObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingPhysicalBundle, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleObject$issuingPhysicalBundle() => issuingPhysicalBundle(),
+      IssuingPhysicalBundleObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingPhysicalBundle, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleObject$issuingPhysicalBundle() => issuingPhysicalBundle != null ? issuingPhysicalBundle() : orElse(value),
+      IssuingPhysicalBundleObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPhysicalBundleObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPhysicalBundleStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() inactive, required W Function() review, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleStatus$active() => active(),
+      IssuingPhysicalBundleStatus$inactive() => inactive(),
+      IssuingPhysicalBundleStatus$review() => review(),
+      IssuingPhysicalBundleStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? review, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleStatus$active() => active != null ? active() : orElse(value),
+      IssuingPhysicalBundleStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      IssuingPhysicalBundleStatus$review() => review != null ? review() : orElse(value),
+      IssuingPhysicalBundleStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPhysicalBundleStatus($value)';
 
  }
@@ -138,6 +162,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingPhysicalBundleType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleType$custom() => custom(),
+      IssuingPhysicalBundleType$standard() => standard(),
+      IssuingPhysicalBundleType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingPhysicalBundleType$custom() => custom != null ? custom() : orElse(value),
+      IssuingPhysicalBundleType$standard() => standard != null ? standard() : orElse(value),
+      IssuingPhysicalBundleType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingPhysicalBundleType($value)';
 
  }

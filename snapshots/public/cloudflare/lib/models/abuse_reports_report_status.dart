@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AbuseReportsReportStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() inReview, required W Function(String value) $unknown, }) { return switch (this) {
+      AbuseReportsReportStatus$accepted() => accepted(),
+      AbuseReportsReportStatus$inReview() => inReview(),
+      AbuseReportsReportStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? inReview, W Function(String value)? $unknown, }) { return switch (this) {
+      AbuseReportsReportStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      AbuseReportsReportStatus$inReview() => inReview != null ? inReview() : orElse(value),
+      AbuseReportsReportStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AbuseReportsReportStatus($value)';
 
  }

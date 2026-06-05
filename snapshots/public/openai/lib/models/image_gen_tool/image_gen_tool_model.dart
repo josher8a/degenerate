@@ -31,6 +31,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageGenToolModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() gptImage1, required W Function() gptImage1Mini, required W Function() gptImage15, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolModelVariant2$gptImage1() => gptImage1(),
+      ImageGenToolModelVariant2$gptImage1Mini() => gptImage1Mini(),
+      ImageGenToolModelVariant2$gptImage15() => gptImage15(),
+      ImageGenToolModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage1, W Function()? gptImage1Mini, W Function()? gptImage15, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolModelVariant2$gptImage1() => gptImage1 != null ? gptImage1() : orElse(value),
+      ImageGenToolModelVariant2$gptImage1Mini() => gptImage1Mini != null ? gptImage1Mini() : orElse(value),
+      ImageGenToolModelVariant2$gptImage15() => gptImage15 != null ? gptImage15() : orElse(value),
+      ImageGenToolModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageGenToolModelVariant2($value)';
 
  }

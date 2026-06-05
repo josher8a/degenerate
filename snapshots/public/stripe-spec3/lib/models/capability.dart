@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CapabilityObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() capability, required W Function(String value) $unknown, }) { return switch (this) {
+      CapabilityObject$capability() => capability(),
+      CapabilityObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? capability, W Function(String value)? $unknown, }) { return switch (this) {
+      CapabilityObject$capability() => capability != null ? capability() : orElse(value),
+      CapabilityObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CapabilityObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CapabilityStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() inactive, required W Function() pending, required W Function() unrequested, required W Function(String value) $unknown, }) { return switch (this) {
+      CapabilityStatus$active() => active(),
+      CapabilityStatus$inactive() => inactive(),
+      CapabilityStatus$pending() => pending(),
+      CapabilityStatus$unrequested() => unrequested(),
+      CapabilityStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function()? pending, W Function()? unrequested, W Function(String value)? $unknown, }) { return switch (this) {
+      CapabilityStatus$active() => active != null ? active() : orElse(value),
+      CapabilityStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      CapabilityStatus$pending() => pending != null ? pending() : orElse(value),
+      CapabilityStatus$unrequested() => unrequested != null ? unrequested() : orElse(value),
+      CapabilityStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CapabilityStatus($value)';
 
  }

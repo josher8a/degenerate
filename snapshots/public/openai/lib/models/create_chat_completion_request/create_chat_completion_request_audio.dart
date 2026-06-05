@@ -44,6 +44,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AudioFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() wav, required W Function() aac, required W Function() mp3, required W Function() flac, required W Function() opus, required W Function() pcm16, required W Function(String value) $unknown, }) { return switch (this) {
+      AudioFormat$wav() => wav(),
+      AudioFormat$aac() => aac(),
+      AudioFormat$mp3() => mp3(),
+      AudioFormat$flac() => flac(),
+      AudioFormat$opus() => opus(),
+      AudioFormat$pcm16() => pcm16(),
+      AudioFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? wav, W Function()? aac, W Function()? mp3, W Function()? flac, W Function()? opus, W Function()? pcm16, W Function(String value)? $unknown, }) { return switch (this) {
+      AudioFormat$wav() => wav != null ? wav() : orElse(value),
+      AudioFormat$aac() => aac != null ? aac() : orElse(value),
+      AudioFormat$mp3() => mp3 != null ? mp3() : orElse(value),
+      AudioFormat$flac() => flac != null ? flac() : orElse(value),
+      AudioFormat$opus() => opus != null ? opus() : orElse(value),
+      AudioFormat$pcm16() => pcm16 != null ? pcm16() : orElse(value),
+      AudioFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AudioFormat($value)';
 
  }

@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TranscriptTextUsageTokensType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tokens, required W Function(String value) $unknown, }) { return switch (this) {
+      TranscriptTextUsageTokensType$tokens() => tokens(),
+      TranscriptTextUsageTokensType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tokens, W Function(String value)? $unknown, }) { return switch (this) {
+      TranscriptTextUsageTokensType$tokens() => tokens != null ? tokens() : orElse(value),
+      TranscriptTextUsageTokensType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TranscriptTextUsageTokensType($value)';
 
  }

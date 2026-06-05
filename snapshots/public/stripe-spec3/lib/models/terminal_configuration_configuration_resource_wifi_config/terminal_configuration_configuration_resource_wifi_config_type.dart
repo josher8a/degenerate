@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalConfigurationConfigurationResourceWifiConfigType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enterpriseEapPeap, required W Function() enterpriseEapTls, required W Function() personalPsk, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalConfigurationConfigurationResourceWifiConfigType$enterpriseEapPeap() => enterpriseEapPeap(),
+      TerminalConfigurationConfigurationResourceWifiConfigType$enterpriseEapTls() => enterpriseEapTls(),
+      TerminalConfigurationConfigurationResourceWifiConfigType$personalPsk() => personalPsk(),
+      TerminalConfigurationConfigurationResourceWifiConfigType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enterpriseEapPeap, W Function()? enterpriseEapTls, W Function()? personalPsk, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalConfigurationConfigurationResourceWifiConfigType$enterpriseEapPeap() => enterpriseEapPeap != null ? enterpriseEapPeap() : orElse(value),
+      TerminalConfigurationConfigurationResourceWifiConfigType$enterpriseEapTls() => enterpriseEapTls != null ? enterpriseEapTls() : orElse(value),
+      TerminalConfigurationConfigurationResourceWifiConfigType$personalPsk() => personalPsk != null ? personalPsk() : orElse(value),
+      TerminalConfigurationConfigurationResourceWifiConfigType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalConfigurationConfigurationResourceWifiConfigType($value)';
 
  }

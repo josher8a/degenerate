@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserContentVariant2Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() imageUrl, required W Function() inputAudio, required W Function() file, required W Function(String value) $unknown, }) { return switch (this) {
+      UserContentVariant2Type$text() => text(),
+      UserContentVariant2Type$imageUrl() => imageUrl(),
+      UserContentVariant2Type$inputAudio() => inputAudio(),
+      UserContentVariant2Type$file() => file(),
+      UserContentVariant2Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? imageUrl, W Function()? inputAudio, W Function()? file, W Function(String value)? $unknown, }) { return switch (this) {
+      UserContentVariant2Type$text() => text != null ? text() : orElse(value),
+      UserContentVariant2Type$imageUrl() => imageUrl != null ? imageUrl() : orElse(value),
+      UserContentVariant2Type$inputAudio() => inputAudio != null ? inputAudio() : orElse(value),
+      UserContentVariant2Type$file() => file != null ? file() : orElse(value),
+      UserContentVariant2Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UserContentVariant2Type($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetIssuingCardsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() canceled, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+      GetIssuingCardsStatus$active() => active(),
+      GetIssuingCardsStatus$canceled() => canceled(),
+      GetIssuingCardsStatus$inactive() => inactive(),
+      GetIssuingCardsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+      GetIssuingCardsStatus$active() => active != null ? active() : orElse(value),
+      GetIssuingCardsStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      GetIssuingCardsStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      GetIssuingCardsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetIssuingCardsStatus($value)';
 
  }

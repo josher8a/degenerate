@@ -79,6 +79,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnOnrampLifecycleState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() onrampNeedsApply, required W Function() onrampPendingPlan, required W Function() onrampPlanning, required W Function() onrampPlanFailed, required W Function() onrampPendingApproval, required W Function() onrampPendingApply, required W Function() onrampApplying, required W Function() onrampApplyFailed, required W Function() onrampActive, required W Function() onrampPendingDestroy, required W Function() onrampDestroying, required W Function() onrampDestroyFailed, required W Function(String value) $unknown, }) { return switch (this) {
+      McnOnrampLifecycleState$onrampNeedsApply() => onrampNeedsApply(),
+      McnOnrampLifecycleState$onrampPendingPlan() => onrampPendingPlan(),
+      McnOnrampLifecycleState$onrampPlanning() => onrampPlanning(),
+      McnOnrampLifecycleState$onrampPlanFailed() => onrampPlanFailed(),
+      McnOnrampLifecycleState$onrampPendingApproval() => onrampPendingApproval(),
+      McnOnrampLifecycleState$onrampPendingApply() => onrampPendingApply(),
+      McnOnrampLifecycleState$onrampApplying() => onrampApplying(),
+      McnOnrampLifecycleState$onrampApplyFailed() => onrampApplyFailed(),
+      McnOnrampLifecycleState$onrampActive() => onrampActive(),
+      McnOnrampLifecycleState$onrampPendingDestroy() => onrampPendingDestroy(),
+      McnOnrampLifecycleState$onrampDestroying() => onrampDestroying(),
+      McnOnrampLifecycleState$onrampDestroyFailed() => onrampDestroyFailed(),
+      McnOnrampLifecycleState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampNeedsApply, W Function()? onrampPendingPlan, W Function()? onrampPlanning, W Function()? onrampPlanFailed, W Function()? onrampPendingApproval, W Function()? onrampPendingApply, W Function()? onrampApplying, W Function()? onrampApplyFailed, W Function()? onrampActive, W Function()? onrampPendingDestroy, W Function()? onrampDestroying, W Function()? onrampDestroyFailed, W Function(String value)? $unknown, }) { return switch (this) {
+      McnOnrampLifecycleState$onrampNeedsApply() => onrampNeedsApply != null ? onrampNeedsApply() : orElse(value),
+      McnOnrampLifecycleState$onrampPendingPlan() => onrampPendingPlan != null ? onrampPendingPlan() : orElse(value),
+      McnOnrampLifecycleState$onrampPlanning() => onrampPlanning != null ? onrampPlanning() : orElse(value),
+      McnOnrampLifecycleState$onrampPlanFailed() => onrampPlanFailed != null ? onrampPlanFailed() : orElse(value),
+      McnOnrampLifecycleState$onrampPendingApproval() => onrampPendingApproval != null ? onrampPendingApproval() : orElse(value),
+      McnOnrampLifecycleState$onrampPendingApply() => onrampPendingApply != null ? onrampPendingApply() : orElse(value),
+      McnOnrampLifecycleState$onrampApplying() => onrampApplying != null ? onrampApplying() : orElse(value),
+      McnOnrampLifecycleState$onrampApplyFailed() => onrampApplyFailed != null ? onrampApplyFailed() : orElse(value),
+      McnOnrampLifecycleState$onrampActive() => onrampActive != null ? onrampActive() : orElse(value),
+      McnOnrampLifecycleState$onrampPendingDestroy() => onrampPendingDestroy != null ? onrampPendingDestroy() : orElse(value),
+      McnOnrampLifecycleState$onrampDestroying() => onrampDestroying != null ? onrampDestroying() : orElse(value),
+      McnOnrampLifecycleState$onrampDestroyFailed() => onrampDestroyFailed != null ? onrampDestroyFailed() : orElse(value),
+      McnOnrampLifecycleState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnOnrampLifecycleState($value)';
 
  }

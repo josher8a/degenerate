@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2GetEventNotificationConfigCfR2Jurisdiction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $default, required W Function() eu, required W Function() fedramp, required W Function(String value) $unknown, }) { return switch (this) {
+      R2GetEventNotificationConfigCfR2Jurisdiction$$default() => $default(),
+      R2GetEventNotificationConfigCfR2Jurisdiction$eu() => eu(),
+      R2GetEventNotificationConfigCfR2Jurisdiction$fedramp() => fedramp(),
+      R2GetEventNotificationConfigCfR2Jurisdiction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $default, W Function()? eu, W Function()? fedramp, W Function(String value)? $unknown, }) { return switch (this) {
+      R2GetEventNotificationConfigCfR2Jurisdiction$$default() => $default != null ? $default() : orElse(value),
+      R2GetEventNotificationConfigCfR2Jurisdiction$eu() => eu != null ? eu() : orElse(value),
+      R2GetEventNotificationConfigCfR2Jurisdiction$fedramp() => fedramp != null ? fedramp() : orElse(value),
+      R2GetEventNotificationConfigCfR2Jurisdiction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2GetEventNotificationConfigCfR2Jurisdiction($value)';
 
  }

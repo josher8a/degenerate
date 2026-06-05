@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCrawlersTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clientType, required W Function() userAgent, required W Function() referer, required W Function() crawlReferRatio, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCrawlersTimeseriesGroupDimension$clientType() => clientType(),
+      RadarGetCrawlersTimeseriesGroupDimension$userAgent() => userAgent(),
+      RadarGetCrawlersTimeseriesGroupDimension$referer() => referer(),
+      RadarGetCrawlersTimeseriesGroupDimension$crawlReferRatio() => crawlReferRatio(),
+      RadarGetCrawlersTimeseriesGroupDimension$vertical() => vertical(),
+      RadarGetCrawlersTimeseriesGroupDimension$industry() => industry(),
+      RadarGetCrawlersTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientType, W Function()? userAgent, W Function()? referer, W Function()? crawlReferRatio, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCrawlersTimeseriesGroupDimension$clientType() => clientType != null ? clientType() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupDimension$userAgent() => userAgent != null ? userAgent() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupDimension$referer() => referer != null ? referer() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupDimension$crawlReferRatio() => crawlReferRatio != null ? crawlReferRatio() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetCrawlersTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCrawlersTimeseriesGroupDimension($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PlanTiersMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() graduated, required W Function() volume, required W Function(String value) $unknown, }) { return switch (this) {
+      PlanTiersMode$graduated() => graduated(),
+      PlanTiersMode$volume() => volume(),
+      PlanTiersMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduated, W Function()? volume, W Function(String value)? $unknown, }) { return switch (this) {
+      PlanTiersMode$graduated() => graduated != null ? graduated() : orElse(value),
+      PlanTiersMode$volume() => volume != null ? volume() : orElse(value),
+      PlanTiersMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PlanTiersMode($value)';
 
  }

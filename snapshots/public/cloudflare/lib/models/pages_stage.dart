@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesStageName$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() initialize, required W Function() cloneRepo, required W Function() build, required W Function() deploy, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesStageName$queued() => queued(),
+      PagesStageName$initialize() => initialize(),
+      PagesStageName$cloneRepo() => cloneRepo(),
+      PagesStageName$build() => build(),
+      PagesStageName$deploy() => deploy(),
+      PagesStageName$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? initialize, W Function()? cloneRepo, W Function()? build, W Function()? deploy, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesStageName$queued() => queued != null ? queued() : orElse(value),
+      PagesStageName$initialize() => initialize != null ? initialize() : orElse(value),
+      PagesStageName$cloneRepo() => cloneRepo != null ? cloneRepo() : orElse(value),
+      PagesStageName$build() => build != null ? build() : orElse(value),
+      PagesStageName$deploy() => deploy != null ? deploy() : orElse(value),
+      PagesStageName$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesStageName($value)';
 
  }
@@ -133,6 +151,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesStageStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() idle, required W Function() active, required W Function() failure, required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesStageStatus$success() => success(),
+      PagesStageStatus$idle() => idle(),
+      PagesStageStatus$active() => active(),
+      PagesStageStatus$failure() => failure(),
+      PagesStageStatus$canceled() => canceled(),
+      PagesStageStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? idle, W Function()? active, W Function()? failure, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesStageStatus$success() => success != null ? success() : orElse(value),
+      PagesStageStatus$idle() => idle != null ? idle() : orElse(value),
+      PagesStageStatus$active() => active != null ? active() : orElse(value),
+      PagesStageStatus$failure() => failure != null ? failure() : orElse(value),
+      PagesStageStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      PagesStageStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesStageStatus($value)';
 
  }

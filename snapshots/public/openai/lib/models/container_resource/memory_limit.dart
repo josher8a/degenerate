@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MemoryLimit$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1g, required W Function() $4g, required W Function() $16g, required W Function() $64g, required W Function(String value) $unknown, }) { return switch (this) {
+      MemoryLimit$$1g() => $1g(),
+      MemoryLimit$$4g() => $4g(),
+      MemoryLimit$$16g() => $16g(),
+      MemoryLimit$$64g() => $64g(),
+      MemoryLimit$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1g, W Function()? $4g, W Function()? $16g, W Function()? $64g, W Function(String value)? $unknown, }) { return switch (this) {
+      MemoryLimit$$1g() => $1g != null ? $1g() : orElse(value),
+      MemoryLimit$$4g() => $4g != null ? $4g() : orElse(value),
+      MemoryLimit$$16g() => $16g != null ? $16g() : orElse(value),
+      MemoryLimit$$64g() => $64g != null ? $64g() : orElse(value),
+      MemoryLimit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MemoryLimit($value)';
 
  }

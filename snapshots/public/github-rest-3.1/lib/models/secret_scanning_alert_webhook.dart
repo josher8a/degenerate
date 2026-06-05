@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretScanningAlertResolutionWebhook$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() revoked, required W Function() usedInTests, required W Function() patternDeleted, required W Function() patternEdited, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretScanningAlertResolutionWebhook$falsePositive() => falsePositive(),
+      SecretScanningAlertResolutionWebhook$wontFix() => wontFix(),
+      SecretScanningAlertResolutionWebhook$revoked() => revoked(),
+      SecretScanningAlertResolutionWebhook$usedInTests() => usedInTests(),
+      SecretScanningAlertResolutionWebhook$patternDeleted() => patternDeleted(),
+      SecretScanningAlertResolutionWebhook$patternEdited() => patternEdited(),
+      SecretScanningAlertResolutionWebhook$$null() => $null(),
+      SecretScanningAlertResolutionWebhook$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? revoked, W Function()? usedInTests, W Function()? patternDeleted, W Function()? patternEdited, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretScanningAlertResolutionWebhook$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
+      SecretScanningAlertResolutionWebhook$wontFix() => wontFix != null ? wontFix() : orElse(value),
+      SecretScanningAlertResolutionWebhook$revoked() => revoked != null ? revoked() : orElse(value),
+      SecretScanningAlertResolutionWebhook$usedInTests() => usedInTests != null ? usedInTests() : orElse(value),
+      SecretScanningAlertResolutionWebhook$patternDeleted() => patternDeleted != null ? patternDeleted() : orElse(value),
+      SecretScanningAlertResolutionWebhook$patternEdited() => patternEdited != null ? patternEdited() : orElse(value),
+      SecretScanningAlertResolutionWebhook$$null() => $null != null ? $null() : orElse(value),
+      SecretScanningAlertResolutionWebhook$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretScanningAlertResolutionWebhook($value)';
 
  }

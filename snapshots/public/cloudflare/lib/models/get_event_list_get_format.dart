@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetEventListGetFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() stix2, required W Function(String value) $unknown, }) { return switch (this) {
+      GetEventListGetFormat$$json() => $json(),
+      GetEventListGetFormat$stix2() => stix2(),
+      GetEventListGetFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? stix2, W Function(String value)? $unknown, }) { return switch (this) {
+      GetEventListGetFormat$$json() => $json != null ? $json() : orElse(value),
+      GetEventListGetFormat$stix2() => stix2 != null ? stix2() : orElse(value),
+      GetEventListGetFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetEventListGetFormat($value)';
 
  }

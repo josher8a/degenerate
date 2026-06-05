@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecuritySubmissionsCustomerStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() escalated, required W Function() reviewed, required W Function() unreviewed, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecuritySubmissionsCustomerStatus$escalated() => escalated(),
+      EmailSecuritySubmissionsCustomerStatus$reviewed() => reviewed(),
+      EmailSecuritySubmissionsCustomerStatus$unreviewed() => unreviewed(),
+      EmailSecuritySubmissionsCustomerStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? escalated, W Function()? reviewed, W Function()? unreviewed, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecuritySubmissionsCustomerStatus$escalated() => escalated != null ? escalated() : orElse(value),
+      EmailSecuritySubmissionsCustomerStatus$reviewed() => reviewed != null ? reviewed() : orElse(value),
+      EmailSecuritySubmissionsCustomerStatus$unreviewed() => unreviewed != null ? unreviewed() : orElse(value),
+      EmailSecuritySubmissionsCustomerStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecuritySubmissionsCustomerStatus($value)';
 
  }

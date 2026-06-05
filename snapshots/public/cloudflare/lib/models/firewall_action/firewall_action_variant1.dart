@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() simulate, required W Function() ban, required W Function() challenge, required W Function() jsChallenge, required W Function() managedChallenge, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallMode$simulate() => simulate(),
+      FirewallMode$ban() => ban(),
+      FirewallMode$challenge() => challenge(),
+      FirewallMode$jsChallenge() => jsChallenge(),
+      FirewallMode$managedChallenge() => managedChallenge(),
+      FirewallMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? simulate, W Function()? ban, W Function()? challenge, W Function()? jsChallenge, W Function()? managedChallenge, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallMode$simulate() => simulate != null ? simulate() : orElse(value),
+      FirewallMode$ban() => ban != null ? ban() : orElse(value),
+      FirewallMode$challenge() => challenge != null ? challenge() : orElse(value),
+      FirewallMode$jsChallenge() => jsChallenge != null ? jsChallenge() : orElse(value),
+      FirewallMode$managedChallenge() => managedChallenge != null ? managedChallenge() : orElse(value),
+      FirewallMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallMode($value)';
 
  }

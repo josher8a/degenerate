@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicTransitError$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() couldNotGatherTracerouteDataCode1, required W Function() couldNotGatherTracerouteDataCode2, required W Function() couldNotGatherTracerouteDataCode3, required W Function() couldNotGatherTracerouteDataCode4, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicTransitError$$empty() => $empty(),
+      MagicTransitError$couldNotGatherTracerouteDataCode1() => couldNotGatherTracerouteDataCode1(),
+      MagicTransitError$couldNotGatherTracerouteDataCode2() => couldNotGatherTracerouteDataCode2(),
+      MagicTransitError$couldNotGatherTracerouteDataCode3() => couldNotGatherTracerouteDataCode3(),
+      MagicTransitError$couldNotGatherTracerouteDataCode4() => couldNotGatherTracerouteDataCode4(),
+      MagicTransitError$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? couldNotGatherTracerouteDataCode1, W Function()? couldNotGatherTracerouteDataCode2, W Function()? couldNotGatherTracerouteDataCode3, W Function()? couldNotGatherTracerouteDataCode4, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicTransitError$$empty() => $empty != null ? $empty() : orElse(value),
+      MagicTransitError$couldNotGatherTracerouteDataCode1() => couldNotGatherTracerouteDataCode1 != null ? couldNotGatherTracerouteDataCode1() : orElse(value),
+      MagicTransitError$couldNotGatherTracerouteDataCode2() => couldNotGatherTracerouteDataCode2 != null ? couldNotGatherTracerouteDataCode2() : orElse(value),
+      MagicTransitError$couldNotGatherTracerouteDataCode3() => couldNotGatherTracerouteDataCode3 != null ? couldNotGatherTracerouteDataCode3() : orElse(value),
+      MagicTransitError$couldNotGatherTracerouteDataCode4() => couldNotGatherTracerouteDataCode4 != null ? couldNotGatherTracerouteDataCode4() : orElse(value),
+      MagicTransitError$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicTransitError($value)';
 
  }

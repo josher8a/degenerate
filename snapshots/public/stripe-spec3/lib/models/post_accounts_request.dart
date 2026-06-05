@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostAccountsRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() express, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      PostAccountsRequestType$custom() => custom(),
+      PostAccountsRequestType$express() => express(),
+      PostAccountsRequestType$standard() => standard(),
+      PostAccountsRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? express, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      PostAccountsRequestType$custom() => custom != null ? custom() : orElse(value),
+      PostAccountsRequestType$express() => express != null ? express() : orElse(value),
+      PostAccountsRequestType$standard() => standard != null ? standard() : orElse(value),
+      PostAccountsRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostAccountsRequestType($value)';
 
  }

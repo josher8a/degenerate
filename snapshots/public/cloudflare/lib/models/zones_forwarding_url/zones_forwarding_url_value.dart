@@ -28,6 +28,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ValueStatusCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $301, required W Function() $302, required W Function(int value) $unknown, }) { return switch (this) {
+      ValueStatusCode$$301() => $301(),
+      ValueStatusCode$$302() => $302(),
+      ValueStatusCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $301, W Function()? $302, W Function(int value)? $unknown, }) { return switch (this) {
+      ValueStatusCode$$301() => $301 != null ? $301() : orElse(value),
+      ValueStatusCode$$302() => $302 != null ? $302() : orElse(value),
+      ValueStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ValueStatusCode($value)';
 
  }

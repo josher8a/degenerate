@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Int32EnumVal$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $55, required W Function() $69, required W Function() $181, required W Function(int value) $unknown, }) { return switch (this) {
+      Int32EnumVal$$55() => $55(),
+      Int32EnumVal$$69() => $69(),
+      Int32EnumVal$$181() => $181(),
+      Int32EnumVal$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $55, W Function()? $69, W Function()? $181, W Function(int value)? $unknown, }) { return switch (this) {
+      Int32EnumVal$$55() => $55 != null ? $55() : orElse(value),
+      Int32EnumVal$$69() => $69 != null ? $69() : orElse(value),
+      Int32EnumVal$$181() => $181 != null ? $181() : orElse(value),
+      Int32EnumVal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Int32EnumVal($value)';
 
  }

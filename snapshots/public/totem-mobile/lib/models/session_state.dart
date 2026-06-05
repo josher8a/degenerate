@@ -43,6 +43,38 @@ sealed class SessionStatus {
     return this is SessionStatus$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() waiting,
+    required W Function() started,
+    required W Function() ended,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      SessionStatus$waiting() => waiting(),
+      SessionStatus$started() => started(),
+      SessionStatus$ended() => ended(),
+      SessionStatus$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? waiting,
+    W Function()? started,
+    W Function()? ended,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      SessionStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      SessionStatus$started() => started != null ? started() : orElse(value),
+      SessionStatus$ended() => ended != null ? ended() : orElse(value),
+      SessionStatus$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'SessionStatus($value)';
 }
@@ -146,6 +178,38 @@ sealed class TotemStatus {
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return this is TotemStatus$Unknown;
+  }
+
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() none,
+    required W Function() accepted,
+    required W Function() passing,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      TotemStatus$none() => none(),
+      TotemStatus$accepted() => accepted(),
+      TotemStatus$passing() => passing(),
+      TotemStatus$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? none,
+    W Function()? accepted,
+    W Function()? passing,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      TotemStatus$none() => none != null ? none() : orElse(value),
+      TotemStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      TotemStatus$passing() => passing != null ? passing() : orElse(value),
+      TotemStatus$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
   }
 
   @override

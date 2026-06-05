@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() spam, required W Function() malicious, required W Function() spoof, required W Function() threatCategory, required W Function() arc, required W Function() dkim, required W Function() dmarc, required W Function() spf, required W Function() tlsVersion, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailSecurityTimeseriesGroupDimension$spam() => spam(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$malicious() => malicious(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$spoof() => spoof(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$threatCategory() => threatCategory(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$arc() => arc(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$dkim() => dkim(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$dmarc() => dmarc(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$spf() => spf(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$tlsVersion() => tlsVersion(),
+      RadarGetEmailSecurityTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? spam, W Function()? malicious, W Function()? spoof, W Function()? threatCategory, W Function()? arc, W Function()? dkim, W Function()? dmarc, W Function()? spf, W Function()? tlsVersion, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailSecurityTimeseriesGroupDimension$spam() => spam != null ? spam() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$malicious() => malicious != null ? malicious() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$spoof() => spoof != null ? spoof() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$threatCategory() => threatCategory != null ? threatCategory() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$arc() => arc != null ? arc() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$dkim() => dkim != null ? dkim() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$dmarc() => dmarc != null ? dmarc() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$spf() => spf != null ? spf() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$tlsVersion() => tlsVersion != null ? tlsVersion() : orElse(value),
+      RadarGetEmailSecurityTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailSecurityTimeseriesGroupDimension($value)';
 
  }

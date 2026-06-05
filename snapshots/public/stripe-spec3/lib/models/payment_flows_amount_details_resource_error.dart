@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentFlowsAmountDetailsResourceErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amountDetailsAmountMismatch, required W Function() amountDetailsTaxShippingDiscountGreaterThanAmount, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsAmountMismatch() => amountDetailsAmountMismatch(),
+      PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsTaxShippingDiscountGreaterThanAmount() => amountDetailsTaxShippingDiscountGreaterThanAmount(),
+      PaymentFlowsAmountDetailsResourceErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amountDetailsAmountMismatch, W Function()? amountDetailsTaxShippingDiscountGreaterThanAmount, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsAmountMismatch() => amountDetailsAmountMismatch != null ? amountDetailsAmountMismatch() : orElse(value),
+      PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsTaxShippingDiscountGreaterThanAmount() => amountDetailsTaxShippingDiscountGreaterThanAmount != null ? amountDetailsTaxShippingDiscountGreaterThanAmount() : orElse(value),
+      PaymentFlowsAmountDetailsResourceErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentFlowsAmountDetailsResourceErrorCode($value)';
 
  }

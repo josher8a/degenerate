@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnOnrampType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() onrampTypeSingle, required W Function() onrampTypeHub, required W Function(String value) $unknown, }) { return switch (this) {
+      McnOnrampType$onrampTypeSingle() => onrampTypeSingle(),
+      McnOnrampType$onrampTypeHub() => onrampTypeHub(),
+      McnOnrampType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? onrampTypeSingle, W Function()? onrampTypeHub, W Function(String value)? $unknown, }) { return switch (this) {
+      McnOnrampType$onrampTypeSingle() => onrampTypeSingle != null ? onrampTypeSingle() : orElse(value),
+      McnOnrampType$onrampTypeHub() => onrampTypeHub != null ? onrampTypeHub() : orElse(value),
+      McnOnrampType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnOnrampType($value)';
 
  }

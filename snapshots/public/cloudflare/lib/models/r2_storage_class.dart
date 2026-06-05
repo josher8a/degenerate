@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2StorageClass$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() infrequentAccess, required W Function(String value) $unknown, }) { return switch (this) {
+      R2StorageClass$standard() => standard(),
+      R2StorageClass$infrequentAccess() => infrequentAccess(),
+      R2StorageClass$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? infrequentAccess, W Function(String value)? $unknown, }) { return switch (this) {
+      R2StorageClass$standard() => standard != null ? standard() : orElse(value),
+      R2StorageClass$infrequentAccess() => infrequentAccess != null ? infrequentAccess() : orElse(value),
+      R2StorageClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2StorageClass($value)';
 
  }

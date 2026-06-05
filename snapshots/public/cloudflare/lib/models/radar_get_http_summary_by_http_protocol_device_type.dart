@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpSummaryByHttpProtocolDeviceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryByHttpProtocolDeviceType$desktop() => desktop(),
+      RadarGetHttpSummaryByHttpProtocolDeviceType$mobile() => mobile(),
+      RadarGetHttpSummaryByHttpProtocolDeviceType$$other() => $other(),
+      RadarGetHttpSummaryByHttpProtocolDeviceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryByHttpProtocolDeviceType$desktop() => desktop != null ? desktop() : orElse(value),
+      RadarGetHttpSummaryByHttpProtocolDeviceType$mobile() => mobile != null ? mobile() : orElse(value),
+      RadarGetHttpSummaryByHttpProtocolDeviceType$$other() => $other != null ? $other() : orElse(value),
+      RadarGetHttpSummaryByHttpProtocolDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpSummaryByHttpProtocolDeviceType($value)';
 
  }

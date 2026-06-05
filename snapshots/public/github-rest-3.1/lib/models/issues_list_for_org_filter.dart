@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuesListForOrgFilter$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() assigned, required W Function() created, required W Function() mentioned, required W Function() subscribed, required W Function() repos, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuesListForOrgFilter$assigned() => assigned(),
+      IssuesListForOrgFilter$created() => created(),
+      IssuesListForOrgFilter$mentioned() => mentioned(),
+      IssuesListForOrgFilter$subscribed() => subscribed(),
+      IssuesListForOrgFilter$repos() => repos(),
+      IssuesListForOrgFilter$all() => all(),
+      IssuesListForOrgFilter$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assigned, W Function()? created, W Function()? mentioned, W Function()? subscribed, W Function()? repos, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuesListForOrgFilter$assigned() => assigned != null ? assigned() : orElse(value),
+      IssuesListForOrgFilter$created() => created != null ? created() : orElse(value),
+      IssuesListForOrgFilter$mentioned() => mentioned != null ? mentioned() : orElse(value),
+      IssuesListForOrgFilter$subscribed() => subscribed != null ? subscribed() : orElse(value),
+      IssuesListForOrgFilter$repos() => repos != null ? repos() : orElse(value),
+      IssuesListForOrgFilter$all() => all != null ? all() : orElse(value),
+      IssuesListForOrgFilter$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuesListForOrgFilter($value)';
 
  }

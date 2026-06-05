@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkflowJobConclusion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function() skipped, required W Function() cancelled, required W Function() actionRequired, required W Function() neutral, required W Function() timedOut, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkflowJobConclusion$success() => success(),
+      WorkflowJobConclusion$failure() => failure(),
+      WorkflowJobConclusion$skipped() => skipped(),
+      WorkflowJobConclusion$cancelled() => cancelled(),
+      WorkflowJobConclusion$actionRequired() => actionRequired(),
+      WorkflowJobConclusion$neutral() => neutral(),
+      WorkflowJobConclusion$timedOut() => timedOut(),
+      WorkflowJobConclusion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? skipped, W Function()? cancelled, W Function()? actionRequired, W Function()? neutral, W Function()? timedOut, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkflowJobConclusion$success() => success != null ? success() : orElse(value),
+      WorkflowJobConclusion$failure() => failure != null ? failure() : orElse(value),
+      WorkflowJobConclusion$skipped() => skipped != null ? skipped() : orElse(value),
+      WorkflowJobConclusion$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      WorkflowJobConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
+      WorkflowJobConclusion$neutral() => neutral != null ? neutral() : orElse(value),
+      WorkflowJobConclusion$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      WorkflowJobConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkflowJobConclusion($value)';
 
  }

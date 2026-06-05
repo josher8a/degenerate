@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReturnMetadata$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() indexed, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      ReturnMetadata$none() => none(),
+      ReturnMetadata$indexed() => indexed(),
+      ReturnMetadata$all() => all(),
+      ReturnMetadata$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? indexed, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      ReturnMetadata$none() => none != null ? none() : orElse(value),
+      ReturnMetadata$indexed() => indexed != null ? indexed() : orElse(value),
+      ReturnMetadata$all() => all != null ? all() : orElse(value),
+      ReturnMetadata$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReturnMetadata($value)';
 
  }

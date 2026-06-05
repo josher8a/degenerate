@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DeploymentReviewerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function() team, required W Function(String value) $unknown, }) { return switch (this) {
+      DeploymentReviewerType$user() => user(),
+      DeploymentReviewerType$team() => team(),
+      DeploymentReviewerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? team, W Function(String value)? $unknown, }) { return switch (this) {
+      DeploymentReviewerType$user() => user != null ? user() : orElse(value),
+      DeploymentReviewerType$team() => team != null ? team() : orElse(value),
+      DeploymentReviewerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DeploymentReviewerType($value)';
 
  }

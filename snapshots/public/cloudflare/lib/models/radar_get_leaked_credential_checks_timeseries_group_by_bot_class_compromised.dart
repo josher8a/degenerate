@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clean, required W Function() compromised, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$clean() => clean(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$compromised() => compromised(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clean, W Function()? compromised, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$clean() => clean != null ? clean() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$compromised() => compromised != null ? compromised() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised($value)';
 
  }

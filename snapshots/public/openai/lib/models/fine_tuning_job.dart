@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FineTuningJobObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fineTuningJob, required W Function(String value) $unknown, }) { return switch (this) {
+      FineTuningJobObject$fineTuningJob() => fineTuningJob(),
+      FineTuningJobObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fineTuningJob, W Function(String value)? $unknown, }) { return switch (this) {
+      FineTuningJobObject$fineTuningJob() => fineTuningJob != null ? fineTuningJob() : orElse(value),
+      FineTuningJobObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FineTuningJobObject($value)';
 
  }
@@ -85,6 +95,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FineTuningJobStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() validatingFiles, required W Function() queued, required W Function() running, required W Function() succeeded, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      FineTuningJobStatus$validatingFiles() => validatingFiles(),
+      FineTuningJobStatus$queued() => queued(),
+      FineTuningJobStatus$running() => running(),
+      FineTuningJobStatus$succeeded() => succeeded(),
+      FineTuningJobStatus$failed() => failed(),
+      FineTuningJobStatus$cancelled() => cancelled(),
+      FineTuningJobStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? validatingFiles, W Function()? queued, W Function()? running, W Function()? succeeded, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      FineTuningJobStatus$validatingFiles() => validatingFiles != null ? validatingFiles() : orElse(value),
+      FineTuningJobStatus$queued() => queued != null ? queued() : orElse(value),
+      FineTuningJobStatus$running() => running != null ? running() : orElse(value),
+      FineTuningJobStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      FineTuningJobStatus$failed() => failed != null ? failed() : orElse(value),
+      FineTuningJobStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      FineTuningJobStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FineTuningJobStatus($value)';
 
  }

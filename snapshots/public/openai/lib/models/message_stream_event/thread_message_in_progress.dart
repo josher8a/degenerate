@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreadMessageInProgressEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() threadMessageInProgress, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreadMessageInProgressEvent$threadMessageInProgress() => threadMessageInProgress(),
+      ThreadMessageInProgressEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadMessageInProgress, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreadMessageInProgressEvent$threadMessageInProgress() => threadMessageInProgress != null ? threadMessageInProgress() : orElse(value),
+      ThreadMessageInProgressEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreadMessageInProgressEvent($value)';
 
  }

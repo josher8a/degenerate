@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunStepDeltaStepDetailsToolCallsObjectType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() toolCalls, required W Function(String value) $unknown, }) { return switch (this) {
+      RunStepDeltaStepDetailsToolCallsObjectType$toolCalls() => toolCalls(),
+      RunStepDeltaStepDetailsToolCallsObjectType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? toolCalls, W Function(String value)? $unknown, }) { return switch (this) {
+      RunStepDeltaStepDetailsToolCallsObjectType$toolCalls() => toolCalls != null ? toolCalls() : orElse(value),
+      RunStepDeltaStepDetailsToolCallsObjectType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunStepDeltaStepDetailsToolCallsObjectType($value)';
 
  }

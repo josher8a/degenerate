@@ -77,6 +77,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VerificationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() expiredKey, required W Function() notSigningKey, required W Function() gpgverifyError, required W Function() gpgverifyUnavailable, required W Function() unsigned, required W Function() unknownSignatureType, required W Function() noUser, required W Function() unverifiedEmail, required W Function() badEmail, required W Function() unknownKey, required W Function() malformedSignature, required W Function() invalid, required W Function() valid, required W Function() badCert, required W Function() ocspPending, required W Function(String value) $unknown, }) { return switch (this) {
+      VerificationReason$expiredKey() => expiredKey(),
+      VerificationReason$notSigningKey() => notSigningKey(),
+      VerificationReason$gpgverifyError() => gpgverifyError(),
+      VerificationReason$gpgverifyUnavailable() => gpgverifyUnavailable(),
+      VerificationReason$unsigned() => unsigned(),
+      VerificationReason$unknownSignatureType() => unknownSignatureType(),
+      VerificationReason$noUser() => noUser(),
+      VerificationReason$unverifiedEmail() => unverifiedEmail(),
+      VerificationReason$badEmail() => badEmail(),
+      VerificationReason$unknownKey() => unknownKey(),
+      VerificationReason$malformedSignature() => malformedSignature(),
+      VerificationReason$invalid() => invalid(),
+      VerificationReason$valid() => valid(),
+      VerificationReason$badCert() => badCert(),
+      VerificationReason$ocspPending() => ocspPending(),
+      VerificationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expiredKey, W Function()? notSigningKey, W Function()? gpgverifyError, W Function()? gpgverifyUnavailable, W Function()? unsigned, W Function()? unknownSignatureType, W Function()? noUser, W Function()? unverifiedEmail, W Function()? badEmail, W Function()? unknownKey, W Function()? malformedSignature, W Function()? invalid, W Function()? valid, W Function()? badCert, W Function()? ocspPending, W Function(String value)? $unknown, }) { return switch (this) {
+      VerificationReason$expiredKey() => expiredKey != null ? expiredKey() : orElse(value),
+      VerificationReason$notSigningKey() => notSigningKey != null ? notSigningKey() : orElse(value),
+      VerificationReason$gpgverifyError() => gpgverifyError != null ? gpgverifyError() : orElse(value),
+      VerificationReason$gpgverifyUnavailable() => gpgverifyUnavailable != null ? gpgverifyUnavailable() : orElse(value),
+      VerificationReason$unsigned() => unsigned != null ? unsigned() : orElse(value),
+      VerificationReason$unknownSignatureType() => unknownSignatureType != null ? unknownSignatureType() : orElse(value),
+      VerificationReason$noUser() => noUser != null ? noUser() : orElse(value),
+      VerificationReason$unverifiedEmail() => unverifiedEmail != null ? unverifiedEmail() : orElse(value),
+      VerificationReason$badEmail() => badEmail != null ? badEmail() : orElse(value),
+      VerificationReason$unknownKey() => unknownKey != null ? unknownKey() : orElse(value),
+      VerificationReason$malformedSignature() => malformedSignature != null ? malformedSignature() : orElse(value),
+      VerificationReason$invalid() => invalid != null ? invalid() : orElse(value),
+      VerificationReason$valid() => valid != null ? valid() : orElse(value),
+      VerificationReason$badCert() => badCert != null ? badCert() : orElse(value),
+      VerificationReason$ocspPending() => ocspPending != null ? ocspPending() : orElse(value),
+      VerificationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VerificationReason($value)';
 
  }

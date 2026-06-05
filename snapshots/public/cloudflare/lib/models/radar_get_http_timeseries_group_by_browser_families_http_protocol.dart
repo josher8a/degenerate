@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() https, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$http() => http(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$https() => https(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$http() => http != null ? http() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$https() => https != null ? https() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByBrowserFamiliesHttpProtocol($value)';
 
  }

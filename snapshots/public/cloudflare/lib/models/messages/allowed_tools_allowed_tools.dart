@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowedToolsMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowedToolsMode$auto() => auto(),
+      AllowedToolsMode$$required() => $required(),
+      AllowedToolsMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowedToolsMode$auto() => auto != null ? auto() : orElse(value),
+      AllowedToolsMode$$required() => $required != null ? $required() : orElse(value),
+      AllowedToolsMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowedToolsMode($value)';
 
  }

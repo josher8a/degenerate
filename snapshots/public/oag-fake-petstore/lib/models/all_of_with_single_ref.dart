@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SingleRefType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() admin, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      SingleRefType$admin() => admin(),
+      SingleRefType$user() => user(),
+      SingleRefType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      SingleRefType$admin() => admin != null ? admin() : orElse(value),
+      SingleRefType$user() => user != null ? user() : orElse(value),
+      SingleRefType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SingleRefType($value)';
 
  }

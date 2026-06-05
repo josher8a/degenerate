@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityAdvisoriesListGlobalAdvisoriesSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() updated, required W Function() published, required W Function() epssPercentage, required W Function() epssPercentile, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityAdvisoriesListGlobalAdvisoriesSort$updated() => updated(),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$published() => published(),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$epssPercentage() => epssPercentage(),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$epssPercentile() => epssPercentile(),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? updated, W Function()? published, W Function()? epssPercentage, W Function()? epssPercentile, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityAdvisoriesListGlobalAdvisoriesSort$updated() => updated != null ? updated() : orElse(value),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$published() => published != null ? published() : orElse(value),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$epssPercentage() => epssPercentage != null ? epssPercentage() : orElse(value),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$epssPercentile() => epssPercentile != null ? epssPercentile() : orElse(value),
+      SecurityAdvisoriesListGlobalAdvisoriesSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityAdvisoriesListGlobalAdvisoriesSort($value)';
 
  }

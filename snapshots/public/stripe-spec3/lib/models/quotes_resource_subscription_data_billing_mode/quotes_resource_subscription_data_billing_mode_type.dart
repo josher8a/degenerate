@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is QuotesResourceSubscriptionDataBillingModeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() classic, required W Function() flexible, required W Function(String value) $unknown, }) { return switch (this) {
+      QuotesResourceSubscriptionDataBillingModeType$classic() => classic(),
+      QuotesResourceSubscriptionDataBillingModeType$flexible() => flexible(),
+      QuotesResourceSubscriptionDataBillingModeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? classic, W Function()? flexible, W Function(String value)? $unknown, }) { return switch (this) {
+      QuotesResourceSubscriptionDataBillingModeType$classic() => classic != null ? classic() : orElse(value),
+      QuotesResourceSubscriptionDataBillingModeType$flexible() => flexible != null ? flexible() : orElse(value),
+      QuotesResourceSubscriptionDataBillingModeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'QuotesResourceSubscriptionDataBillingModeType($value)';
 
  }

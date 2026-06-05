@@ -27,6 +27,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AddressingProvisioningState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() provisioning, required W Function() active, required W Function(String value) $unknown, }) { return switch (this) {
+      AddressingProvisioningState$provisioning() => provisioning(),
+      AddressingProvisioningState$active() => active(),
+      AddressingProvisioningState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? provisioning, W Function()? active, W Function(String value)? $unknown, }) { return switch (this) {
+      AddressingProvisioningState$provisioning() => provisioning != null ? provisioning() : orElse(value),
+      AddressingProvisioningState$active() => active != null ? active() : orElse(value),
+      AddressingProvisioningState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AddressingProvisioningState($value)';
 
  }

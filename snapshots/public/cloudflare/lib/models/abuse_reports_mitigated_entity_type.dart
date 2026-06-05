@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AbuseReportsMitigatedEntityType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() urlPattern, required W Function() account, required W Function() zone, required W Function(String value) $unknown, }) { return switch (this) {
+      AbuseReportsMitigatedEntityType$urlPattern() => urlPattern(),
+      AbuseReportsMitigatedEntityType$account() => account(),
+      AbuseReportsMitigatedEntityType$zone() => zone(),
+      AbuseReportsMitigatedEntityType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? urlPattern, W Function()? account, W Function()? zone, W Function(String value)? $unknown, }) { return switch (this) {
+      AbuseReportsMitigatedEntityType$urlPattern() => urlPattern != null ? urlPattern() : orElse(value),
+      AbuseReportsMitigatedEntityType$account() => account != null ? account() : orElse(value),
+      AbuseReportsMitigatedEntityType$zone() => zone != null ? zone() : orElse(value),
+      AbuseReportsMitigatedEntityType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AbuseReportsMitigatedEntityType($value)';
 
  }

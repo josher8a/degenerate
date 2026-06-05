@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2BucketLocation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() apac, required W Function() eeur, required W Function() enam, required W Function() weur, required W Function() wnam, required W Function() oc, required W Function(String value) $unknown, }) { return switch (this) {
+      R2BucketLocation$apac() => apac(),
+      R2BucketLocation$eeur() => eeur(),
+      R2BucketLocation$enam() => enam(),
+      R2BucketLocation$weur() => weur(),
+      R2BucketLocation$wnam() => wnam(),
+      R2BucketLocation$oc() => oc(),
+      R2BucketLocation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apac, W Function()? eeur, W Function()? enam, W Function()? weur, W Function()? wnam, W Function()? oc, W Function(String value)? $unknown, }) { return switch (this) {
+      R2BucketLocation$apac() => apac != null ? apac() : orElse(value),
+      R2BucketLocation$eeur() => eeur != null ? eeur() : orElse(value),
+      R2BucketLocation$enam() => enam != null ? enam() : orElse(value),
+      R2BucketLocation$weur() => weur != null ? weur() : orElse(value),
+      R2BucketLocation$wnam() => wnam != null ? wnam() : orElse(value),
+      R2BucketLocation$oc() => oc != null ? oc() : orElse(value),
+      R2BucketLocation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2BucketLocation($value)';
 
  }

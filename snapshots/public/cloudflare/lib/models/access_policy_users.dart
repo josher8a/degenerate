@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessUserResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() approved, required W Function() blocked, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessUserResult$approved() => approved(),
+      AccessUserResult$blocked() => blocked(),
+      AccessUserResult$error() => error(),
+      AccessUserResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approved, W Function()? blocked, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessUserResult$approved() => approved != null ? approved() : orElse(value),
+      AccessUserResult$blocked() => blocked != null ? blocked() : orElse(value),
+      AccessUserResult$error() => error != null ? error() : orElse(value),
+      AccessUserResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessUserResult($value)';
 
  }

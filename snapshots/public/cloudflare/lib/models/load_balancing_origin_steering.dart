@@ -38,6 +38,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Policy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() random, required W Function() hash, required W Function() leastOutstandingRequests, required W Function() leastConnections, required W Function(String value) $unknown, }) { return switch (this) {
+      Policy$random() => random(),
+      Policy$hash() => hash(),
+      Policy$leastOutstandingRequests() => leastOutstandingRequests(),
+      Policy$leastConnections() => leastConnections(),
+      Policy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? random, W Function()? hash, W Function()? leastOutstandingRequests, W Function()? leastConnections, W Function(String value)? $unknown, }) { return switch (this) {
+      Policy$random() => random != null ? random() : orElse(value),
+      Policy$hash() => hash != null ? hash() : orElse(value),
+      Policy$leastOutstandingRequests() => leastOutstandingRequests != null ? leastOutstandingRequests() : orElse(value),
+      Policy$leastConnections() => leastConnections != null ? leastConnections() : orElse(value),
+      Policy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Policy($value)';
 
  }

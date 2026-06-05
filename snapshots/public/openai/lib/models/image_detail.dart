@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageDetail$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() high, required W Function() auto, required W Function() original, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageDetail$low() => low(),
+      ImageDetail$high() => high(),
+      ImageDetail$auto() => auto(),
+      ImageDetail$original() => original(),
+      ImageDetail$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? high, W Function()? auto, W Function()? original, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageDetail$low() => low != null ? low() : orElse(value),
+      ImageDetail$high() => high != null ? high() : orElse(value),
+      ImageDetail$auto() => auto != null ? auto() : orElse(value),
+      ImageDetail$original() => original != null ? original() : orElse(value),
+      ImageDetail$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageDetail($value)';
 
  }

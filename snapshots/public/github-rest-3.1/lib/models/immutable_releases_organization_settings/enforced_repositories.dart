@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnforcedRepositories$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() none, required W Function() selected, required W Function(String value) $unknown, }) { return switch (this) {
+      EnforcedRepositories$all() => all(),
+      EnforcedRepositories$none() => none(),
+      EnforcedRepositories$selected() => selected(),
+      EnforcedRepositories$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? none, W Function()? selected, W Function(String value)? $unknown, }) { return switch (this) {
+      EnforcedRepositories$all() => all != null ? all() : orElse(value),
+      EnforcedRepositories$none() => none != null ? none() : orElse(value),
+      EnforcedRepositories$selected() => selected != null ? selected() : orElse(value),
+      EnforcedRepositories$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnforcedRepositories($value)';
 
  }

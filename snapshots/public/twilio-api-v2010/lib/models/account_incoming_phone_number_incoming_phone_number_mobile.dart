@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IncomingPhoneNumberMobileEnumAddressRequirement$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() any, required W Function() local, required W Function() foreign, required W Function(String value) $unknown, }) { return switch (this) {
+      IncomingPhoneNumberMobileEnumAddressRequirement$none() => none(),
+      IncomingPhoneNumberMobileEnumAddressRequirement$any() => any(),
+      IncomingPhoneNumberMobileEnumAddressRequirement$local() => local(),
+      IncomingPhoneNumberMobileEnumAddressRequirement$foreign() => foreign(),
+      IncomingPhoneNumberMobileEnumAddressRequirement$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? any, W Function()? local, W Function()? foreign, W Function(String value)? $unknown, }) { return switch (this) {
+      IncomingPhoneNumberMobileEnumAddressRequirement$none() => none != null ? none() : orElse(value),
+      IncomingPhoneNumberMobileEnumAddressRequirement$any() => any != null ? any() : orElse(value),
+      IncomingPhoneNumberMobileEnumAddressRequirement$local() => local != null ? local() : orElse(value),
+      IncomingPhoneNumberMobileEnumAddressRequirement$foreign() => foreign != null ? foreign() : orElse(value),
+      IncomingPhoneNumberMobileEnumAddressRequirement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IncomingPhoneNumberMobileEnumAddressRequirement($value)';
 
  }
@@ -124,6 +140,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() registered, required W Function() unregistered, required W Function() pendingRegistration, required W Function() registrationFailure, required W Function() pendingUnregistration, required W Function() unregistrationFailure, required W Function(String value) $unknown, }) { return switch (this) {
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registered() => registered(),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistered() => unregistered(),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingRegistration() => pendingRegistration(),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registrationFailure() => registrationFailure(),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingUnregistration() => pendingUnregistration(),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistrationFailure() => unregistrationFailure(),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? registered, W Function()? unregistered, W Function()? pendingRegistration, W Function()? registrationFailure, W Function()? pendingUnregistration, W Function()? unregistrationFailure, W Function(String value)? $unknown, }) { return switch (this) {
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registered() => registered != null ? registered() : orElse(value),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistered() => unregistered != null ? unregistered() : orElse(value),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingRegistration() => pendingRegistration != null ? pendingRegistration() : orElse(value),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registrationFailure() => registrationFailure != null ? registrationFailure() : orElse(value),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingUnregistration() => pendingUnregistration != null ? pendingUnregistration() : orElse(value),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistrationFailure() => unregistrationFailure != null ? unregistrationFailure() : orElse(value),
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IncomingPhoneNumberMobileEnumEmergencyAddressStatus($value)';
 
  }

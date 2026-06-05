@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListMitigationsSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() typeasc, required W Function() typedesc, required W Function() effectiveDateasc, required W Function() effectiveDatedesc, required W Function() statusasc, required W Function() statusdesc, required W Function() entityTypeasc, required W Function() entityTypedesc, required W Function(String value) $unknown, }) { return switch (this) {
+      ListMitigationsSort$typeasc() => typeasc(),
+      ListMitigationsSort$typedesc() => typedesc(),
+      ListMitigationsSort$effectiveDateasc() => effectiveDateasc(),
+      ListMitigationsSort$effectiveDatedesc() => effectiveDatedesc(),
+      ListMitigationsSort$statusasc() => statusasc(),
+      ListMitigationsSort$statusdesc() => statusdesc(),
+      ListMitigationsSort$entityTypeasc() => entityTypeasc(),
+      ListMitigationsSort$entityTypedesc() => entityTypedesc(),
+      ListMitigationsSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? typeasc, W Function()? typedesc, W Function()? effectiveDateasc, W Function()? effectiveDatedesc, W Function()? statusasc, W Function()? statusdesc, W Function()? entityTypeasc, W Function()? entityTypedesc, W Function(String value)? $unknown, }) { return switch (this) {
+      ListMitigationsSort$typeasc() => typeasc != null ? typeasc() : orElse(value),
+      ListMitigationsSort$typedesc() => typedesc != null ? typedesc() : orElse(value),
+      ListMitigationsSort$effectiveDateasc() => effectiveDateasc != null ? effectiveDateasc() : orElse(value),
+      ListMitigationsSort$effectiveDatedesc() => effectiveDatedesc != null ? effectiveDatedesc() : orElse(value),
+      ListMitigationsSort$statusasc() => statusasc != null ? statusasc() : orElse(value),
+      ListMitigationsSort$statusdesc() => statusdesc != null ? statusdesc() : orElse(value),
+      ListMitigationsSort$entityTypeasc() => entityTypeasc != null ? entityTypeasc() : orElse(value),
+      ListMitigationsSort$entityTypedesc() => entityTypedesc != null ? entityTypedesc() : orElse(value),
+      ListMitigationsSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListMitigationsSort($value)';
 
  }

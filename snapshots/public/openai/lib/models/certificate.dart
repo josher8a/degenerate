@@ -35,6 +35,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CertificateObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() certificate, required W Function() organizationCertificate, required W Function() organizationProjectCertificate, required W Function(String value) $unknown, }) { return switch (this) {
+      CertificateObject$certificate() => certificate(),
+      CertificateObject$organizationCertificate() => organizationCertificate(),
+      CertificateObject$organizationProjectCertificate() => organizationProjectCertificate(),
+      CertificateObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? certificate, W Function()? organizationCertificate, W Function()? organizationProjectCertificate, W Function(String value)? $unknown, }) { return switch (this) {
+      CertificateObject$certificate() => certificate != null ? certificate() : orElse(value),
+      CertificateObject$organizationCertificate() => organizationCertificate != null ? organizationCertificate() : orElse(value),
+      CertificateObject$organizationProjectCertificate() => organizationProjectCertificate != null ? organizationProjectCertificate() : orElse(value),
+      CertificateObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CertificateObject($value)';
 
  }

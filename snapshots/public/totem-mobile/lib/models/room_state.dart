@@ -44,6 +44,39 @@ sealed class RoomStatus {
     return this is RoomStatus$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() waitingRoom,
+    required W Function() active,
+    required W Function() ended,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      RoomStatus$waitingRoom() => waitingRoom(),
+      RoomStatus$active() => active(),
+      RoomStatus$ended() => ended(),
+      RoomStatus$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? waitingRoom,
+    W Function()? active,
+    W Function()? ended,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      RoomStatus$waitingRoom() =>
+        waitingRoom != null ? waitingRoom() : orElse(value),
+      RoomStatus$active() => active != null ? active() : orElse(value),
+      RoomStatus$ended() => ended != null ? ended() : orElse(value),
+      RoomStatus$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'RoomStatus($value)';
 }
@@ -147,6 +180,38 @@ sealed class TurnState {
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
     return this is TurnState$Unknown;
+  }
+
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() idle,
+    required W Function() speaking,
+    required W Function() passing,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      TurnState$idle() => idle(),
+      TurnState$speaking() => speaking(),
+      TurnState$passing() => passing(),
+      TurnState$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? idle,
+    W Function()? speaking,
+    W Function()? passing,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      TurnState$idle() => idle != null ? idle() : orElse(value),
+      TurnState$speaking() => speaking != null ? speaking() : orElse(value),
+      TurnState$passing() => passing != null ? passing() : orElse(value),
+      TurnState$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
   }
 
   @override

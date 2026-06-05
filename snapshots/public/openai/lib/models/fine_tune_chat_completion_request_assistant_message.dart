@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Weight$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $0, required W Function() $1, required W Function(int value) $unknown, }) { return switch (this) {
+      Weight$$0() => $0(),
+      Weight$$1() => $1(),
+      Weight$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $0, W Function()? $1, W Function(int value)? $unknown, }) { return switch (this) {
+      Weight$$0() => $0 != null ? $0() : orElse(value),
+      Weight$$1() => $1 != null ? $1() : orElse(value),
+      Weight$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Weight($value)';
 
  }

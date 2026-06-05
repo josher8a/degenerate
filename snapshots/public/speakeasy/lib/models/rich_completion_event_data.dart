@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StopReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() stopSequence, required W Function() maxTokens, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      StopReason$stopSequence() => stopSequence(),
+      StopReason$maxTokens() => maxTokens(),
+      StopReason$$null() => $null(),
+      StopReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stopSequence, W Function()? maxTokens, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      StopReason$stopSequence() => stopSequence != null ? stopSequence() : orElse(value),
+      StopReason$maxTokens() => maxTokens != null ? maxTokens() : orElse(value),
+      StopReason$$null() => $null != null ? $null() : orElse(value),
+      StopReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StopReason($value)';
 
  }

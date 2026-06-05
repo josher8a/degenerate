@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingRoomType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() skip, required W Function() onPrivilegedUserEntry, required W Function() skipOnAccept, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingRoomType$skip() => skip(),
+      WaitingRoomType$onPrivilegedUserEntry() => onPrivilegedUserEntry(),
+      WaitingRoomType$skipOnAccept() => skipOnAccept(),
+      WaitingRoomType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? skip, W Function()? onPrivilegedUserEntry, W Function()? skipOnAccept, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingRoomType$skip() => skip != null ? skip() : orElse(value),
+      WaitingRoomType$onPrivilegedUserEntry() => onPrivilegedUserEntry != null ? onPrivilegedUserEntry() : orElse(value),
+      WaitingRoomType$skipOnAccept() => skipOnAccept != null ? skipOnAccept() : orElse(value),
+      WaitingRoomType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingRoomType($value)';
 
  }

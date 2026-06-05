@@ -78,6 +78,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductResourceLineItemTaxBreakdownTaxabilityReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerExempt, required W Function() notCollecting, required W Function() notSubjectToTax, required W Function() notSupported, required W Function() portionProductExempt, required W Function() portionReducedRated, required W Function() portionStandardRated, required W Function() productExempt, required W Function() productExemptHoliday, required W Function() proportionallyRated, required W Function() reducedRated, required W Function() reverseCharge, required W Function() standardRated, required W Function() taxableBasisReduced, required W Function() zeroRated, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$customerExempt() => customerExempt(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$notCollecting() => notCollecting(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$notSubjectToTax() => notSubjectToTax(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$notSupported() => notSupported(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$portionProductExempt() => portionProductExempt(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$portionReducedRated() => portionReducedRated(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$portionStandardRated() => portionStandardRated(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$productExempt() => productExempt(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$productExemptHoliday() => productExemptHoliday(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$proportionallyRated() => proportionallyRated(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$reducedRated() => reducedRated(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$reverseCharge() => reverseCharge(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$standardRated() => standardRated(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$taxableBasisReduced() => taxableBasisReduced(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$zeroRated() => zeroRated(),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerExempt, W Function()? notCollecting, W Function()? notSubjectToTax, W Function()? notSupported, W Function()? portionProductExempt, W Function()? portionReducedRated, W Function()? portionStandardRated, W Function()? productExempt, W Function()? productExemptHoliday, W Function()? proportionallyRated, W Function()? reducedRated, W Function()? reverseCharge, W Function()? standardRated, W Function()? taxableBasisReduced, W Function()? zeroRated, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$customerExempt() => customerExempt != null ? customerExempt() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$notCollecting() => notCollecting != null ? notCollecting() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$notSubjectToTax() => notSubjectToTax != null ? notSubjectToTax() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$notSupported() => notSupported != null ? notSupported() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$portionProductExempt() => portionProductExempt != null ? portionProductExempt() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$portionReducedRated() => portionReducedRated != null ? portionReducedRated() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$portionStandardRated() => portionStandardRated != null ? portionStandardRated() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$productExempt() => productExempt != null ? productExempt() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$productExemptHoliday() => productExemptHoliday != null ? productExemptHoliday() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$proportionallyRated() => proportionallyRated != null ? proportionallyRated() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$reducedRated() => reducedRated != null ? reducedRated() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$reverseCharge() => reverseCharge != null ? reverseCharge() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$standardRated() => standardRated != null ? standardRated() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$taxableBasisReduced() => taxableBasisReduced != null ? taxableBasisReduced() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$zeroRated() => zeroRated != null ? zeroRated() : orElse(value),
+      TaxProductResourceLineItemTaxBreakdownTaxabilityReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductResourceLineItemTaxBreakdownTaxabilityReason($value)';
 
  }

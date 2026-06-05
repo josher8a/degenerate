@@ -217,6 +217,114 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostCheckoutSessionsRequestPaymentMethodTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() acssDebit, required W Function() affirm, required W Function() afterpayClearpay, required W Function() alipay, required W Function() alma, required W Function() amazonPay, required W Function() auBecsDebit, required W Function() bacsDebit, required W Function() bancontact, required W Function() billie, required W Function() blik, required W Function() boleto, required W Function() card, required W Function() cashapp, required W Function() crypto, required W Function() customerBalance, required W Function() eps, required W Function() fpx, required W Function() giropay, required W Function() grabpay, required W Function() ideal, required W Function() kakaoPay, required W Function() klarna, required W Function() konbini, required W Function() krCard, required W Function() link, required W Function() mbWay, required W Function() mobilepay, required W Function() multibanco, required W Function() naverPay, required W Function() nzBankAccount, required W Function() oxxo, required W Function() p24, required W Function() payByBank, required W Function() payco, required W Function() paynow, required W Function() paypal, required W Function() payto, required W Function() pix, required W Function() promptpay, required W Function() revolutPay, required W Function() samsungPay, required W Function() satispay, required W Function() sepaDebit, required W Function() sofort, required W Function() swish, required W Function() twint, required W Function() usBankAccount, required W Function() wechatPay, required W Function() zip, required W Function(String value) $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit() => acssDebit(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$affirm() => affirm(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay() => afterpayClearpay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$alipay() => alipay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$alma() => alma(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay() => amazonPay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit() => auBecsDebit(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit() => bacsDebit(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$bancontact() => bancontact(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$billie() => billie(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$blik() => blik(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$boleto() => boleto(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$card() => card(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$cashapp() => cashapp(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$crypto() => crypto(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance() => customerBalance(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$eps() => eps(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$fpx() => fpx(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$giropay() => giropay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$grabpay() => grabpay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$ideal() => ideal(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay() => kakaoPay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$klarna() => klarna(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$konbini() => konbini(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$krCard() => krCard(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$link() => link(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$mbWay() => mbWay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay() => mobilepay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$multibanco() => multibanco(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$naverPay() => naverPay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount() => nzBankAccount(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$oxxo() => oxxo(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$p24() => p24(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$payByBank() => payByBank(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$payco() => payco(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$paynow() => paynow(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$paypal() => paypal(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$payto() => payto(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$pix() => pix(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$promptpay() => promptpay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay() => revolutPay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay() => samsungPay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$satispay() => satispay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit() => sepaDebit(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$sofort() => sofort(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$swish() => swish(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$twint() => twint(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount() => usBankAccount(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay() => wechatPay(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$zip() => zip(),
+      PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? acssDebit, W Function()? affirm, W Function()? afterpayClearpay, W Function()? alipay, W Function()? alma, W Function()? amazonPay, W Function()? auBecsDebit, W Function()? bacsDebit, W Function()? bancontact, W Function()? billie, W Function()? blik, W Function()? boleto, W Function()? card, W Function()? cashapp, W Function()? crypto, W Function()? customerBalance, W Function()? eps, W Function()? fpx, W Function()? giropay, W Function()? grabpay, W Function()? ideal, W Function()? kakaoPay, W Function()? klarna, W Function()? konbini, W Function()? krCard, W Function()? link, W Function()? mbWay, W Function()? mobilepay, W Function()? multibanco, W Function()? naverPay, W Function()? nzBankAccount, W Function()? oxxo, W Function()? p24, W Function()? payByBank, W Function()? payco, W Function()? paynow, W Function()? paypal, W Function()? payto, W Function()? pix, W Function()? promptpay, W Function()? revolutPay, W Function()? samsungPay, W Function()? satispay, W Function()? sepaDebit, W Function()? sofort, W Function()? swish, W Function()? twint, W Function()? usBankAccount, W Function()? wechatPay, W Function()? zip, W Function(String value)? $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit() => acssDebit != null ? acssDebit() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$affirm() => affirm != null ? affirm() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay() => afterpayClearpay != null ? afterpayClearpay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$alipay() => alipay != null ? alipay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$alma() => alma != null ? alma() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay() => amazonPay != null ? amazonPay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit() => auBecsDebit != null ? auBecsDebit() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit() => bacsDebit != null ? bacsDebit() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$bancontact() => bancontact != null ? bancontact() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$billie() => billie != null ? billie() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$blik() => blik != null ? blik() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$boleto() => boleto != null ? boleto() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$card() => card != null ? card() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$cashapp() => cashapp != null ? cashapp() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$crypto() => crypto != null ? crypto() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance() => customerBalance != null ? customerBalance() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$eps() => eps != null ? eps() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$fpx() => fpx != null ? fpx() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$giropay() => giropay != null ? giropay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$grabpay() => grabpay != null ? grabpay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$ideal() => ideal != null ? ideal() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay() => kakaoPay != null ? kakaoPay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$klarna() => klarna != null ? klarna() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$konbini() => konbini != null ? konbini() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$krCard() => krCard != null ? krCard() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$link() => link != null ? link() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$mbWay() => mbWay != null ? mbWay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay() => mobilepay != null ? mobilepay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$multibanco() => multibanco != null ? multibanco() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$naverPay() => naverPay != null ? naverPay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount() => nzBankAccount != null ? nzBankAccount() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$oxxo() => oxxo != null ? oxxo() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$p24() => p24 != null ? p24() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$payByBank() => payByBank != null ? payByBank() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$payco() => payco != null ? payco() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$paynow() => paynow != null ? paynow() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$paypal() => paypal != null ? paypal() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$payto() => payto != null ? payto() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$pix() => pix != null ? pix() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$promptpay() => promptpay != null ? promptpay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay() => revolutPay != null ? revolutPay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$satispay() => satispay != null ? satispay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit() => sepaDebit != null ? sepaDebit() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$sofort() => sofort != null ? sofort() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$swish() => swish != null ? swish() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$twint() => twint != null ? twint() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount() => usBankAccount != null ? usBankAccount() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay() => wechatPay != null ? wechatPay() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$zip() => zip != null ? zip() : orElse(value),
+      PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostCheckoutSessionsRequestPaymentMethodTypes($value)';
 
  }
@@ -861,6 +969,96 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostCheckoutSessionsRequestLocale$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() bg, required W Function() cs, required W Function() da, required W Function() de, required W Function() el, required W Function() en, required W Function() enGb, required W Function() es, required W Function() es419, required W Function() et, required W Function() fi, required W Function() fil, required W Function() fr, required W Function() frCa, required W Function() hr, required W Function() hu, required W Function() id, required W Function() it, required W Function() ja, required W Function() ko, required W Function() lt, required W Function() lv, required W Function() ms, required W Function() mt, required W Function() nb, required W Function() nl, required W Function() pl, required W Function() pt, required W Function() ptBr, required W Function() ro, required W Function() ru, required W Function() sk, required W Function() sl, required W Function() sv, required W Function() th, required W Function() tr, required W Function() vi, required W Function() zh, required W Function() zhHk, required W Function() zhTw, required W Function(String value) $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestLocale$auto() => auto(),
+      PostCheckoutSessionsRequestLocale$bg() => bg(),
+      PostCheckoutSessionsRequestLocale$cs() => cs(),
+      PostCheckoutSessionsRequestLocale$da() => da(),
+      PostCheckoutSessionsRequestLocale$de() => de(),
+      PostCheckoutSessionsRequestLocale$el() => el(),
+      PostCheckoutSessionsRequestLocale$en() => en(),
+      PostCheckoutSessionsRequestLocale$enGb() => enGb(),
+      PostCheckoutSessionsRequestLocale$es() => es(),
+      PostCheckoutSessionsRequestLocale$es419() => es419(),
+      PostCheckoutSessionsRequestLocale$et() => et(),
+      PostCheckoutSessionsRequestLocale$fi() => fi(),
+      PostCheckoutSessionsRequestLocale$fil() => fil(),
+      PostCheckoutSessionsRequestLocale$fr() => fr(),
+      PostCheckoutSessionsRequestLocale$frCa() => frCa(),
+      PostCheckoutSessionsRequestLocale$hr() => hr(),
+      PostCheckoutSessionsRequestLocale$hu() => hu(),
+      PostCheckoutSessionsRequestLocale$id() => id(),
+      PostCheckoutSessionsRequestLocale$it() => it(),
+      PostCheckoutSessionsRequestLocale$ja() => ja(),
+      PostCheckoutSessionsRequestLocale$ko() => ko(),
+      PostCheckoutSessionsRequestLocale$lt() => lt(),
+      PostCheckoutSessionsRequestLocale$lv() => lv(),
+      PostCheckoutSessionsRequestLocale$ms() => ms(),
+      PostCheckoutSessionsRequestLocale$mt() => mt(),
+      PostCheckoutSessionsRequestLocale$nb() => nb(),
+      PostCheckoutSessionsRequestLocale$nl() => nl(),
+      PostCheckoutSessionsRequestLocale$pl() => pl(),
+      PostCheckoutSessionsRequestLocale$pt() => pt(),
+      PostCheckoutSessionsRequestLocale$ptBr() => ptBr(),
+      PostCheckoutSessionsRequestLocale$ro() => ro(),
+      PostCheckoutSessionsRequestLocale$ru() => ru(),
+      PostCheckoutSessionsRequestLocale$sk() => sk(),
+      PostCheckoutSessionsRequestLocale$sl() => sl(),
+      PostCheckoutSessionsRequestLocale$sv() => sv(),
+      PostCheckoutSessionsRequestLocale$th() => th(),
+      PostCheckoutSessionsRequestLocale$tr() => tr(),
+      PostCheckoutSessionsRequestLocale$vi() => vi(),
+      PostCheckoutSessionsRequestLocale$zh() => zh(),
+      PostCheckoutSessionsRequestLocale$zhHk() => zhHk(),
+      PostCheckoutSessionsRequestLocale$zhTw() => zhTw(),
+      PostCheckoutSessionsRequestLocale$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? bg, W Function()? cs, W Function()? da, W Function()? de, W Function()? el, W Function()? en, W Function()? enGb, W Function()? es, W Function()? es419, W Function()? et, W Function()? fi, W Function()? fil, W Function()? fr, W Function()? frCa, W Function()? hr, W Function()? hu, W Function()? id, W Function()? it, W Function()? ja, W Function()? ko, W Function()? lt, W Function()? lv, W Function()? ms, W Function()? mt, W Function()? nb, W Function()? nl, W Function()? pl, W Function()? pt, W Function()? ptBr, W Function()? ro, W Function()? ru, W Function()? sk, W Function()? sl, W Function()? sv, W Function()? th, W Function()? tr, W Function()? vi, W Function()? zh, W Function()? zhHk, W Function()? zhTw, W Function(String value)? $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestLocale$auto() => auto != null ? auto() : orElse(value),
+      PostCheckoutSessionsRequestLocale$bg() => bg != null ? bg() : orElse(value),
+      PostCheckoutSessionsRequestLocale$cs() => cs != null ? cs() : orElse(value),
+      PostCheckoutSessionsRequestLocale$da() => da != null ? da() : orElse(value),
+      PostCheckoutSessionsRequestLocale$de() => de != null ? de() : orElse(value),
+      PostCheckoutSessionsRequestLocale$el() => el != null ? el() : orElse(value),
+      PostCheckoutSessionsRequestLocale$en() => en != null ? en() : orElse(value),
+      PostCheckoutSessionsRequestLocale$enGb() => enGb != null ? enGb() : orElse(value),
+      PostCheckoutSessionsRequestLocale$es() => es != null ? es() : orElse(value),
+      PostCheckoutSessionsRequestLocale$es419() => es419 != null ? es419() : orElse(value),
+      PostCheckoutSessionsRequestLocale$et() => et != null ? et() : orElse(value),
+      PostCheckoutSessionsRequestLocale$fi() => fi != null ? fi() : orElse(value),
+      PostCheckoutSessionsRequestLocale$fil() => fil != null ? fil() : orElse(value),
+      PostCheckoutSessionsRequestLocale$fr() => fr != null ? fr() : orElse(value),
+      PostCheckoutSessionsRequestLocale$frCa() => frCa != null ? frCa() : orElse(value),
+      PostCheckoutSessionsRequestLocale$hr() => hr != null ? hr() : orElse(value),
+      PostCheckoutSessionsRequestLocale$hu() => hu != null ? hu() : orElse(value),
+      PostCheckoutSessionsRequestLocale$id() => id != null ? id() : orElse(value),
+      PostCheckoutSessionsRequestLocale$it() => it != null ? it() : orElse(value),
+      PostCheckoutSessionsRequestLocale$ja() => ja != null ? ja() : orElse(value),
+      PostCheckoutSessionsRequestLocale$ko() => ko != null ? ko() : orElse(value),
+      PostCheckoutSessionsRequestLocale$lt() => lt != null ? lt() : orElse(value),
+      PostCheckoutSessionsRequestLocale$lv() => lv != null ? lv() : orElse(value),
+      PostCheckoutSessionsRequestLocale$ms() => ms != null ? ms() : orElse(value),
+      PostCheckoutSessionsRequestLocale$mt() => mt != null ? mt() : orElse(value),
+      PostCheckoutSessionsRequestLocale$nb() => nb != null ? nb() : orElse(value),
+      PostCheckoutSessionsRequestLocale$nl() => nl != null ? nl() : orElse(value),
+      PostCheckoutSessionsRequestLocale$pl() => pl != null ? pl() : orElse(value),
+      PostCheckoutSessionsRequestLocale$pt() => pt != null ? pt() : orElse(value),
+      PostCheckoutSessionsRequestLocale$ptBr() => ptBr != null ? ptBr() : orElse(value),
+      PostCheckoutSessionsRequestLocale$ro() => ro != null ? ro() : orElse(value),
+      PostCheckoutSessionsRequestLocale$ru() => ru != null ? ru() : orElse(value),
+      PostCheckoutSessionsRequestLocale$sk() => sk != null ? sk() : orElse(value),
+      PostCheckoutSessionsRequestLocale$sl() => sl != null ? sl() : orElse(value),
+      PostCheckoutSessionsRequestLocale$sv() => sv != null ? sv() : orElse(value),
+      PostCheckoutSessionsRequestLocale$th() => th != null ? th() : orElse(value),
+      PostCheckoutSessionsRequestLocale$tr() => tr != null ? tr() : orElse(value),
+      PostCheckoutSessionsRequestLocale$vi() => vi != null ? vi() : orElse(value),
+      PostCheckoutSessionsRequestLocale$zh() => zh != null ? zh() : orElse(value),
+      PostCheckoutSessionsRequestLocale$zhHk() => zhHk != null ? zhHk() : orElse(value),
+      PostCheckoutSessionsRequestLocale$zhTw() => zhTw != null ? zhTw() : orElse(value),
+      PostCheckoutSessionsRequestLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostCheckoutSessionsRequestLocale($value)';
 
  }
@@ -1268,6 +1466,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostCheckoutSessionsRequestOriginContext$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mobileApp, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestOriginContext$mobileApp() => mobileApp(),
+      PostCheckoutSessionsRequestOriginContext$web() => web(),
+      PostCheckoutSessionsRequestOriginContext$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mobileApp, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestOriginContext$mobileApp() => mobileApp != null ? mobileApp() : orElse(value),
+      PostCheckoutSessionsRequestOriginContext$web() => web != null ? web() : orElse(value),
+      PostCheckoutSessionsRequestOriginContext$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostCheckoutSessionsRequestOriginContext($value)';
 
  }
@@ -1328,6 +1538,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostCheckoutSessionsRequestUiMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() embedded, required W Function() hosted, required W Function(String value) $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestUiMode$custom() => custom(),
+      PostCheckoutSessionsRequestUiMode$embedded() => embedded(),
+      PostCheckoutSessionsRequestUiMode$hosted() => hosted(),
+      PostCheckoutSessionsRequestUiMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? embedded, W Function()? hosted, W Function(String value)? $unknown, }) { return switch (this) {
+      PostCheckoutSessionsRequestUiMode$custom() => custom != null ? custom() : orElse(value),
+      PostCheckoutSessionsRequestUiMode$embedded() => embedded != null ? embedded() : orElse(value),
+      PostCheckoutSessionsRequestUiMode$hosted() => hosted != null ? hosted() : orElse(value),
+      PostCheckoutSessionsRequestUiMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostCheckoutSessionsRequestUiMode($value)';
 
  }

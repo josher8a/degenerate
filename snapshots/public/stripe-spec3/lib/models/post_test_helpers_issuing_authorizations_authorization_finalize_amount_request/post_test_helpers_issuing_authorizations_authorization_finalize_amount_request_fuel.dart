@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FuelType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() diesel, required W Function() $other, required W Function() unleadedPlus, required W Function() unleadedRegular, required W Function() unleadedSuper, required W Function(String value) $unknown, }) { return switch (this) {
+      FuelType$diesel() => diesel(),
+      FuelType$$other() => $other(),
+      FuelType$unleadedPlus() => unleadedPlus(),
+      FuelType$unleadedRegular() => unleadedRegular(),
+      FuelType$unleadedSuper() => unleadedSuper(),
+      FuelType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? diesel, W Function()? $other, W Function()? unleadedPlus, W Function()? unleadedRegular, W Function()? unleadedSuper, W Function(String value)? $unknown, }) { return switch (this) {
+      FuelType$diesel() => diesel != null ? diesel() : orElse(value),
+      FuelType$$other() => $other != null ? $other() : orElse(value),
+      FuelType$unleadedPlus() => unleadedPlus != null ? unleadedPlus() : orElse(value),
+      FuelType$unleadedRegular() => unleadedRegular != null ? unleadedRegular() : orElse(value),
+      FuelType$unleadedSuper() => unleadedSuper != null ? unleadedSuper() : orElse(value),
+      FuelType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FuelType($value)';
 
  }
@@ -143,6 +161,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FuelUnit$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chargingMinute, required W Function() imperialGallon, required W Function() kilogram, required W Function() kilowattHour, required W Function() liter, required W Function() $other, required W Function() pound, required W Function() usGallon, required W Function(String value) $unknown, }) { return switch (this) {
+      FuelUnit$chargingMinute() => chargingMinute(),
+      FuelUnit$imperialGallon() => imperialGallon(),
+      FuelUnit$kilogram() => kilogram(),
+      FuelUnit$kilowattHour() => kilowattHour(),
+      FuelUnit$liter() => liter(),
+      FuelUnit$$other() => $other(),
+      FuelUnit$pound() => pound(),
+      FuelUnit$usGallon() => usGallon(),
+      FuelUnit$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargingMinute, W Function()? imperialGallon, W Function()? kilogram, W Function()? kilowattHour, W Function()? liter, W Function()? $other, W Function()? pound, W Function()? usGallon, W Function(String value)? $unknown, }) { return switch (this) {
+      FuelUnit$chargingMinute() => chargingMinute != null ? chargingMinute() : orElse(value),
+      FuelUnit$imperialGallon() => imperialGallon != null ? imperialGallon() : orElse(value),
+      FuelUnit$kilogram() => kilogram != null ? kilogram() : orElse(value),
+      FuelUnit$kilowattHour() => kilowattHour != null ? kilowattHour() : orElse(value),
+      FuelUnit$liter() => liter != null ? liter() : orElse(value),
+      FuelUnit$$other() => $other != null ? $other() : orElse(value),
+      FuelUnit$pound() => pound != null ? pound() : orElse(value),
+      FuelUnit$usGallon() => usGallon != null ? usGallon() : orElse(value),
+      FuelUnit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FuelUnit($value)';
 
  }

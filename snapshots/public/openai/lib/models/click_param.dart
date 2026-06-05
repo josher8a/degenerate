@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClickButtonType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() left, required W Function() right, required W Function() wheel, required W Function() back, required W Function() forward, required W Function(String value) $unknown, }) { return switch (this) {
+      ClickButtonType$left() => left(),
+      ClickButtonType$right() => right(),
+      ClickButtonType$wheel() => wheel(),
+      ClickButtonType$back() => back(),
+      ClickButtonType$forward() => forward(),
+      ClickButtonType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? left, W Function()? right, W Function()? wheel, W Function()? back, W Function()? forward, W Function(String value)? $unknown, }) { return switch (this) {
+      ClickButtonType$left() => left != null ? left() : orElse(value),
+      ClickButtonType$right() => right != null ? right() : orElse(value),
+      ClickButtonType$wheel() => wheel != null ? wheel() : orElse(value),
+      ClickButtonType$back() => back != null ? back() : orElse(value),
+      ClickButtonType$forward() => forward != null ? forward() : orElse(value),
+      ClickButtonType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClickButtonType($value)';
 
  }

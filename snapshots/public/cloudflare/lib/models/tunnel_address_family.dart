@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TunnelAddressFamily$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() v4, required W Function() v6, required W Function(String value) $unknown, }) { return switch (this) {
+      TunnelAddressFamily$v4() => v4(),
+      TunnelAddressFamily$v6() => v6(),
+      TunnelAddressFamily$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? v4, W Function()? v6, W Function(String value)? $unknown, }) { return switch (this) {
+      TunnelAddressFamily$v4() => v4 != null ? v4() : orElse(value),
+      TunnelAddressFamily$v6() => v6 != null ? v6() : orElse(value),
+      TunnelAddressFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TunnelAddressFamily($value)';
 
  }

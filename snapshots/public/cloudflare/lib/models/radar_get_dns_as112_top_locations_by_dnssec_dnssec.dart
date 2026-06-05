@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsAs112TopLocationsByDnssecDnssec$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() supported, required W Function() notSupported, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TopLocationsByDnssecDnssec$supported() => supported(),
+      RadarGetDnsAs112TopLocationsByDnssecDnssec$notSupported() => notSupported(),
+      RadarGetDnsAs112TopLocationsByDnssecDnssec$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? supported, W Function()? notSupported, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TopLocationsByDnssecDnssec$supported() => supported != null ? supported() : orElse(value),
+      RadarGetDnsAs112TopLocationsByDnssecDnssec$notSupported() => notSupported != null ? notSupported() : orElse(value),
+      RadarGetDnsAs112TopLocationsByDnssecDnssec$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsAs112TopLocationsByDnssecDnssec($value)';
 
  }

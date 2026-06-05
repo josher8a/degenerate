@@ -51,6 +51,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AaaMechanismType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() email, required W Function() pagerduty, required W Function() webhook, required W Function(String value) $unknown, }) { return switch (this) {
+      AaaMechanismType$email() => email(),
+      AaaMechanismType$pagerduty() => pagerduty(),
+      AaaMechanismType$webhook() => webhook(),
+      AaaMechanismType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? email, W Function()? pagerduty, W Function()? webhook, W Function(String value)? $unknown, }) { return switch (this) {
+      AaaMechanismType$email() => email != null ? email() : orElse(value),
+      AaaMechanismType$pagerduty() => pagerduty != null ? pagerduty() : orElse(value),
+      AaaMechanismType$webhook() => webhook != null ? webhook() : orElse(value),
+      AaaMechanismType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AaaMechanismType($value)';
 
  }

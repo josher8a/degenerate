@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesSchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() workspaceOne, required W Function() crowdstrikeS2s, required W Function() uptycs, required W Function() intune, required W Function() kolide, required W Function() taniumS2s, required W Function() sentineloneS2s, required W Function() customS2s, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesSchemasType$workspaceOne() => workspaceOne(),
+      TeamsDevicesSchemasType$crowdstrikeS2s() => crowdstrikeS2s(),
+      TeamsDevicesSchemasType$uptycs() => uptycs(),
+      TeamsDevicesSchemasType$intune() => intune(),
+      TeamsDevicesSchemasType$kolide() => kolide(),
+      TeamsDevicesSchemasType$taniumS2s() => taniumS2s(),
+      TeamsDevicesSchemasType$sentineloneS2s() => sentineloneS2s(),
+      TeamsDevicesSchemasType$customS2s() => customS2s(),
+      TeamsDevicesSchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? workspaceOne, W Function()? crowdstrikeS2s, W Function()? uptycs, W Function()? intune, W Function()? kolide, W Function()? taniumS2s, W Function()? sentineloneS2s, W Function()? customS2s, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesSchemasType$workspaceOne() => workspaceOne != null ? workspaceOne() : orElse(value),
+      TeamsDevicesSchemasType$crowdstrikeS2s() => crowdstrikeS2s != null ? crowdstrikeS2s() : orElse(value),
+      TeamsDevicesSchemasType$uptycs() => uptycs != null ? uptycs() : orElse(value),
+      TeamsDevicesSchemasType$intune() => intune != null ? intune() : orElse(value),
+      TeamsDevicesSchemasType$kolide() => kolide != null ? kolide() : orElse(value),
+      TeamsDevicesSchemasType$taniumS2s() => taniumS2s != null ? taniumS2s() : orElse(value),
+      TeamsDevicesSchemasType$sentineloneS2s() => sentineloneS2s != null ? sentineloneS2s() : orElse(value),
+      TeamsDevicesSchemasType$customS2s() => customS2s != null ? customS2s() : orElse(value),
+      TeamsDevicesSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesSchemasType($value)';
 
  }

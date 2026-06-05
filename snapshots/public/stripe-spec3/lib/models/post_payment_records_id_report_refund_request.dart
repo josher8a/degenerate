@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostPaymentRecordsIdReportRefundRequestOutcome$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() refunded, required W Function(String value) $unknown, }) { return switch (this) {
+      PostPaymentRecordsIdReportRefundRequestOutcome$refunded() => refunded(),
+      PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? refunded, W Function(String value)? $unknown, }) { return switch (this) {
+      PostPaymentRecordsIdReportRefundRequestOutcome$refunded() => refunded != null ? refunded() : orElse(value),
+      PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostPaymentRecordsIdReportRefundRequestOutcome($value)';
 
  }

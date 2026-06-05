@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LocalShellCallOutputStatusEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      LocalShellCallOutputStatusEnum$inProgress() => inProgress(),
+      LocalShellCallOutputStatusEnum$completed() => completed(),
+      LocalShellCallOutputStatusEnum$incomplete() => incomplete(),
+      LocalShellCallOutputStatusEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      LocalShellCallOutputStatusEnum$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      LocalShellCallOutputStatusEnum$completed() => completed != null ? completed() : orElse(value),
+      LocalShellCallOutputStatusEnum$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      LocalShellCallOutputStatusEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LocalShellCallOutputStatusEnum($value)';
 
  }

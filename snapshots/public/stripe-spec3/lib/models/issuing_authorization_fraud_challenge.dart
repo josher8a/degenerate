@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Channel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sms, required W Function(String value) $unknown, }) { return switch (this) {
+      Channel$sms() => sms(),
+      Channel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sms, W Function(String value)? $unknown, }) { return switch (this) {
+      Channel$sms() => sms != null ? sms() : orElse(value),
+      Channel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Channel($value)';
 
  }
@@ -81,6 +91,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationFraudChallengeStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() expired, required W Function() pending, required W Function() rejected, required W Function() undeliverable, required W Function() verified, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationFraudChallengeStatus$expired() => expired(),
+      IssuingAuthorizationFraudChallengeStatus$pending() => pending(),
+      IssuingAuthorizationFraudChallengeStatus$rejected() => rejected(),
+      IssuingAuthorizationFraudChallengeStatus$undeliverable() => undeliverable(),
+      IssuingAuthorizationFraudChallengeStatus$verified() => verified(),
+      IssuingAuthorizationFraudChallengeStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? pending, W Function()? rejected, W Function()? undeliverable, W Function()? verified, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationFraudChallengeStatus$expired() => expired != null ? expired() : orElse(value),
+      IssuingAuthorizationFraudChallengeStatus$pending() => pending != null ? pending() : orElse(value),
+      IssuingAuthorizationFraudChallengeStatus$rejected() => rejected != null ? rejected() : orElse(value),
+      IssuingAuthorizationFraudChallengeStatus$undeliverable() => undeliverable != null ? undeliverable() : orElse(value),
+      IssuingAuthorizationFraudChallengeStatus$verified() => verified != null ? verified() : orElse(value),
+      IssuingAuthorizationFraudChallengeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationFraudChallengeStatus($value)';
 
  }
@@ -164,6 +192,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UndeliverableReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noPhoneNumber, required W Function() unsupportedPhoneNumber, required W Function(String value) $unknown, }) { return switch (this) {
+      UndeliverableReason$noPhoneNumber() => noPhoneNumber(),
+      UndeliverableReason$unsupportedPhoneNumber() => unsupportedPhoneNumber(),
+      UndeliverableReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noPhoneNumber, W Function()? unsupportedPhoneNumber, W Function(String value)? $unknown, }) { return switch (this) {
+      UndeliverableReason$noPhoneNumber() => noPhoneNumber != null ? noPhoneNumber() : orElse(value),
+      UndeliverableReason$unsupportedPhoneNumber() => unsupportedPhoneNumber != null ? unsupportedPhoneNumber() : orElse(value),
+      UndeliverableReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UndeliverableReason($value)';
 
  }

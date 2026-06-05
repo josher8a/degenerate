@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseFormatType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() jsonObject, required W Function() jsonSchema, required W Function(String value) $unknown, }) { return switch (this) {
+      ResponseFormatType$jsonObject() => jsonObject(),
+      ResponseFormatType$jsonSchema() => jsonSchema(),
+      ResponseFormatType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? jsonObject, W Function()? jsonSchema, W Function(String value)? $unknown, }) { return switch (this) {
+      ResponseFormatType$jsonObject() => jsonObject != null ? jsonObject() : orElse(value),
+      ResponseFormatType$jsonSchema() => jsonSchema != null ? jsonSchema() : orElse(value),
+      ResponseFormatType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResponseFormatType($value)';
 
  }

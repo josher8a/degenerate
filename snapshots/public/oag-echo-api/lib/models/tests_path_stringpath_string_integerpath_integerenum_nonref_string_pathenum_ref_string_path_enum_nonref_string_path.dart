@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function() unclassified, required W Function(String value) $unknown, }) { return switch (this) {
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$success() => success(),
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$failure() => failure(),
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$unclassified() => unclassified(),
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? unclassified, W Function(String value)? $unknown, }) { return switch (this) {
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$success() => success != null ? success() : orElse(value),
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$failure() => failure != null ? failure() : orElse(value),
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$unclassified() => unclassified != null ? unclassified() : orElse(value),
+      TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TestsPathStringpathStringIntegerpathIntegerenumNonrefStringPathenumRefStringPathEnumNonrefStringPath($value)';
 
  }

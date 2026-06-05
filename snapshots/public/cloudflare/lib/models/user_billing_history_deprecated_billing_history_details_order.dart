@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() type, required W Function() occurredAt, required W Function() action, required W Function(String value) $unknown, }) { return switch (this) {
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$type() => type(),
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$occurredAt() => occurredAt(),
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$action() => action(),
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? type, W Function()? occurredAt, W Function()? action, W Function(String value)? $unknown, }) { return switch (this) {
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$type() => type != null ? type() : orElse(value),
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$occurredAt() => occurredAt != null ? occurredAt() : orElse(value),
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$action() => action != null ? action() : orElse(value),
+      UserBillingHistoryDeprecatedBillingHistoryDetailsOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UserBillingHistoryDeprecatedBillingHistoryDetailsOrder($value)';
 
  }

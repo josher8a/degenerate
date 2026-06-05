@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsListTeamType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() enterprise, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsListTeamType$all() => all(),
+      TeamsListTeamType$enterprise() => enterprise(),
+      TeamsListTeamType$organization() => organization(),
+      TeamsListTeamType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? enterprise, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsListTeamType$all() => all != null ? all() : orElse(value),
+      TeamsListTeamType$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      TeamsListTeamType$organization() => organization != null ? organization() : orElse(value),
+      TeamsListTeamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsListTeamType($value)';
 
  }

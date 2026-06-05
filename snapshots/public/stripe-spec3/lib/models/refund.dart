@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RefundObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() refund, required W Function(String value) $unknown, }) { return switch (this) {
+      RefundObject$refund() => refund(),
+      RefundObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? refund, W Function(String value)? $unknown, }) { return switch (this) {
+      RefundObject$refund() => refund != null ? refund() : orElse(value),
+      RefundObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RefundObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PendingReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chargePending, required W Function() insufficientFunds, required W Function() processing, required W Function(String value) $unknown, }) { return switch (this) {
+      PendingReason$chargePending() => chargePending(),
+      PendingReason$insufficientFunds() => insufficientFunds(),
+      PendingReason$processing() => processing(),
+      PendingReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargePending, W Function()? insufficientFunds, W Function()? processing, W Function(String value)? $unknown, }) { return switch (this) {
+      PendingReason$chargePending() => chargePending != null ? chargePending() : orElse(value),
+      PendingReason$insufficientFunds() => insufficientFunds != null ? insufficientFunds() : orElse(value),
+      PendingReason$processing() => processing != null ? processing() : orElse(value),
+      PendingReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PendingReason($value)';
 
  }
@@ -146,6 +170,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RefundReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() duplicate, required W Function() expiredUncapturedCharge, required W Function() fraudulent, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+      RefundReason$duplicate() => duplicate(),
+      RefundReason$expiredUncapturedCharge() => expiredUncapturedCharge(),
+      RefundReason$fraudulent() => fraudulent(),
+      RefundReason$requestedByCustomer() => requestedByCustomer(),
+      RefundReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? expiredUncapturedCharge, W Function()? fraudulent, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+      RefundReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      RefundReason$expiredUncapturedCharge() => expiredUncapturedCharge != null ? expiredUncapturedCharge() : orElse(value),
+      RefundReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      RefundReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
+      RefundReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RefundReason($value)';
 
  }

@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackageType$npm() => npm(),
+      PackageType$maven() => maven(),
+      PackageType$rubygems() => rubygems(),
+      PackageType$docker() => docker(),
+      PackageType$nuget() => nuget(),
+      PackageType$container() => container(),
+      PackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackageType$npm() => npm != null ? npm() : orElse(value),
+      PackageType$maven() => maven != null ? maven() : orElse(value),
+      PackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackageType$docker() => docker != null ? docker() : orElse(value),
+      PackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackageType$container() => container != null ? container() : orElse(value),
+      PackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackageType($value)';
 
  }

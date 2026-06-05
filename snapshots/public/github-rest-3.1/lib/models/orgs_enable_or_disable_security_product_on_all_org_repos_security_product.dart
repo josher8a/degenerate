@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dependencyGraph, required W Function() dependabotAlerts, required W Function() dependabotSecurityUpdates, required W Function() advancedSecurity, required W Function() codeScanningDefaultSetup, required W Function() secretScanning, required W Function() secretScanningPushProtection, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph() => dependencyGraph(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotAlerts() => dependabotAlerts(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotSecurityUpdates() => dependabotSecurityUpdates(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$advancedSecurity() => advancedSecurity(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$codeScanningDefaultSetup() => codeScanningDefaultSetup(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanning() => secretScanning(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanningPushProtection() => secretScanningPushProtection(),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependencyGraph, W Function()? dependabotAlerts, W Function()? dependabotSecurityUpdates, W Function()? advancedSecurity, W Function()? codeScanningDefaultSetup, W Function()? secretScanning, W Function()? secretScanningPushProtection, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependencyGraph() => dependencyGraph != null ? dependencyGraph() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotAlerts() => dependabotAlerts != null ? dependabotAlerts() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$dependabotSecurityUpdates() => dependabotSecurityUpdates != null ? dependabotSecurityUpdates() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$advancedSecurity() => advancedSecurity != null ? advancedSecurity() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$codeScanningDefaultSetup() => codeScanningDefaultSetup != null ? codeScanningDefaultSetup() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanning() => secretScanning != null ? secretScanning() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$secretScanningPushProtection() => secretScanningPushProtection != null ? secretScanningPushProtection() : orElse(value),
+      OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsEnableOrDisableSecurityProductOnAllOrgReposSecurityProduct($value)';
 
  }

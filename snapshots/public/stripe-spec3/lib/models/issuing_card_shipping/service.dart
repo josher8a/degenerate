@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Service$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() express, required W Function() priority, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      Service$express() => express(),
+      Service$priority() => priority(),
+      Service$standard() => standard(),
+      Service$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? express, W Function()? priority, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      Service$express() => express != null ? express() : orElse(value),
+      Service$priority() => priority != null ? priority() : orElse(value),
+      Service$standard() => standard != null ? standard() : orElse(value),
+      Service$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Service($value)';
 
  }

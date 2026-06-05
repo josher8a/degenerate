@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() originRsa, required W Function() originEcc, required W Function() keylessCertificate, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesRequestType$originRsa() => originRsa(),
+      TlsCertificatesAndHostnamesRequestType$originEcc() => originEcc(),
+      TlsCertificatesAndHostnamesRequestType$keylessCertificate() => keylessCertificate(),
+      TlsCertificatesAndHostnamesRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? originRsa, W Function()? originEcc, W Function()? keylessCertificate, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesRequestType$originRsa() => originRsa != null ? originRsa() : orElse(value),
+      TlsCertificatesAndHostnamesRequestType$originEcc() => originEcc != null ? originEcc() : orElse(value),
+      TlsCertificatesAndHostnamesRequestType$keylessCertificate() => keylessCertificate != null ? keylessCertificate() : orElse(value),
+      TlsCertificatesAndHostnamesRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesRequestType($value)';
 
  }

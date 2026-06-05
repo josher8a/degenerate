@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomPagesErrorPageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1000Errors, required W Function() $500Errors, required W Function() basicChallenge, required W Function() countryChallenge, required W Function() ipBlock, required W Function() managedChallenge, required W Function() ratelimitBlock, required W Function() underAttack, required W Function() wafBlock, required W Function() wafChallenge, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomPagesErrorPageType$$1000Errors() => $1000Errors(),
+      CustomPagesErrorPageType$$500Errors() => $500Errors(),
+      CustomPagesErrorPageType$basicChallenge() => basicChallenge(),
+      CustomPagesErrorPageType$countryChallenge() => countryChallenge(),
+      CustomPagesErrorPageType$ipBlock() => ipBlock(),
+      CustomPagesErrorPageType$managedChallenge() => managedChallenge(),
+      CustomPagesErrorPageType$ratelimitBlock() => ratelimitBlock(),
+      CustomPagesErrorPageType$underAttack() => underAttack(),
+      CustomPagesErrorPageType$wafBlock() => wafBlock(),
+      CustomPagesErrorPageType$wafChallenge() => wafChallenge(),
+      CustomPagesErrorPageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1000Errors, W Function()? $500Errors, W Function()? basicChallenge, W Function()? countryChallenge, W Function()? ipBlock, W Function()? managedChallenge, W Function()? ratelimitBlock, W Function()? underAttack, W Function()? wafBlock, W Function()? wafChallenge, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomPagesErrorPageType$$1000Errors() => $1000Errors != null ? $1000Errors() : orElse(value),
+      CustomPagesErrorPageType$$500Errors() => $500Errors != null ? $500Errors() : orElse(value),
+      CustomPagesErrorPageType$basicChallenge() => basicChallenge != null ? basicChallenge() : orElse(value),
+      CustomPagesErrorPageType$countryChallenge() => countryChallenge != null ? countryChallenge() : orElse(value),
+      CustomPagesErrorPageType$ipBlock() => ipBlock != null ? ipBlock() : orElse(value),
+      CustomPagesErrorPageType$managedChallenge() => managedChallenge != null ? managedChallenge() : orElse(value),
+      CustomPagesErrorPageType$ratelimitBlock() => ratelimitBlock != null ? ratelimitBlock() : orElse(value),
+      CustomPagesErrorPageType$underAttack() => underAttack != null ? underAttack() : orElse(value),
+      CustomPagesErrorPageType$wafBlock() => wafBlock != null ? wafBlock() : orElse(value),
+      CustomPagesErrorPageType$wafChallenge() => wafChallenge != null ? wafChallenge() : orElse(value),
+      CustomPagesErrorPageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomPagesErrorPageType($value)';
 
  }

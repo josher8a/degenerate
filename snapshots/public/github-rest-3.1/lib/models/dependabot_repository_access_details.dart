@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotRepositoryAccessDetailsDefaultLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() public, required W Function() internal, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotRepositoryAccessDetailsDefaultLevel$public() => public(),
+      DependabotRepositoryAccessDetailsDefaultLevel$internal() => internal(),
+      DependabotRepositoryAccessDetailsDefaultLevel$$null() => $null(),
+      DependabotRepositoryAccessDetailsDefaultLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, W Function()? internal, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotRepositoryAccessDetailsDefaultLevel$public() => public != null ? public() : orElse(value),
+      DependabotRepositoryAccessDetailsDefaultLevel$internal() => internal != null ? internal() : orElse(value),
+      DependabotRepositoryAccessDetailsDefaultLevel$$null() => $null != null ? $null() : orElse(value),
+      DependabotRepositoryAccessDetailsDefaultLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotRepositoryAccessDetailsDefaultLevel($value)';
 
  }

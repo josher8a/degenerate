@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultForNewRepos$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() none, required W Function() privateAndInternal, required W Function() public, required W Function(String value) $unknown, }) { return switch (this) {
+      DefaultForNewRepos$all() => all(),
+      DefaultForNewRepos$none() => none(),
+      DefaultForNewRepos$privateAndInternal() => privateAndInternal(),
+      DefaultForNewRepos$public() => public(),
+      DefaultForNewRepos$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? none, W Function()? privateAndInternal, W Function()? public, W Function(String value)? $unknown, }) { return switch (this) {
+      DefaultForNewRepos$all() => all != null ? all() : orElse(value),
+      DefaultForNewRepos$none() => none != null ? none() : orElse(value),
+      DefaultForNewRepos$privateAndInternal() => privateAndInternal != null ? privateAndInternal() : orElse(value),
+      DefaultForNewRepos$public() => public != null ? public() : orElse(value),
+      DefaultForNewRepos$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultForNewRepos($value)';
 
  }

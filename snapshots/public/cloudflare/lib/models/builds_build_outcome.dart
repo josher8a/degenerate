@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BuildsBuildOutcome$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() fail, required W Function() skipped, required W Function() cancelled, required W Function() terminated, required W Function(String value) $unknown, }) { return switch (this) {
+      BuildsBuildOutcome$success() => success(),
+      BuildsBuildOutcome$fail() => fail(),
+      BuildsBuildOutcome$skipped() => skipped(),
+      BuildsBuildOutcome$cancelled() => cancelled(),
+      BuildsBuildOutcome$terminated() => terminated(),
+      BuildsBuildOutcome$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? fail, W Function()? skipped, W Function()? cancelled, W Function()? terminated, W Function(String value)? $unknown, }) { return switch (this) {
+      BuildsBuildOutcome$success() => success != null ? success() : orElse(value),
+      BuildsBuildOutcome$fail() => fail != null ? fail() : orElse(value),
+      BuildsBuildOutcome$skipped() => skipped != null ? skipped() : orElse(value),
+      BuildsBuildOutcome$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      BuildsBuildOutcome$terminated() => terminated != null ? terminated() : orElse(value),
+      BuildsBuildOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BuildsBuildOutcome($value)';
 
  }

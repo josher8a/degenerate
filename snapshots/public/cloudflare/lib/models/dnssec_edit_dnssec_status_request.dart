@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnssecEditDnssecStatusRequestStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      DnssecEditDnssecStatusRequestStatus$active() => active(),
+      DnssecEditDnssecStatusRequestStatus$disabled() => disabled(),
+      DnssecEditDnssecStatusRequestStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      DnssecEditDnssecStatusRequestStatus$active() => active != null ? active() : orElse(value),
+      DnssecEditDnssecStatusRequestStatus$disabled() => disabled != null ? disabled() : orElse(value),
+      DnssecEditDnssecStatusRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnssecEditDnssecStatusRequestStatus($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() percentage, required W Function() min0Max, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$percentage() => percentage(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$min0Max() => min0Max(),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentage, W Function()? min0Max, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$percentage() => percentage != null ? percentage() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$min0Max() => min0Max != null ? min0Max() : orElse(value),
+      RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodNormalization($value)';
 
  }

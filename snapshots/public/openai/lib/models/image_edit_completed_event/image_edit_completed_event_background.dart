@@ -31,6 +31,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageEditCompletedEventBackground$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transparent, required W Function() opaque, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageEditCompletedEventBackground$transparent() => transparent(),
+      ImageEditCompletedEventBackground$opaque() => opaque(),
+      ImageEditCompletedEventBackground$auto() => auto(),
+      ImageEditCompletedEventBackground$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transparent, W Function()? opaque, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageEditCompletedEventBackground$transparent() => transparent != null ? transparent() : orElse(value),
+      ImageEditCompletedEventBackground$opaque() => opaque != null ? opaque() : orElse(value),
+      ImageEditCompletedEventBackground$auto() => auto != null ? auto() : orElse(value),
+      ImageEditCompletedEventBackground$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageEditCompletedEventBackground($value)';
 
  }

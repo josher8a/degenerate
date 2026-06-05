@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is D1Jurisdiction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eu, required W Function() fedramp, required W Function(String value) $unknown, }) { return switch (this) {
+      D1Jurisdiction$eu() => eu(),
+      D1Jurisdiction$fedramp() => fedramp(),
+      D1Jurisdiction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eu, W Function()? fedramp, W Function(String value)? $unknown, }) { return switch (this) {
+      D1Jurisdiction$eu() => eu != null ? eu() : orElse(value),
+      D1Jurisdiction$fedramp() => fedramp != null ? fedramp() : orElse(value),
+      D1Jurisdiction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'D1Jurisdiction($value)';
 
  }
@@ -98,6 +110,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is D1PrimaryLocationHint$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() wnam, required W Function() enam, required W Function() weur, required W Function() eeur, required W Function() apac, required W Function() oc, required W Function(String value) $unknown, }) { return switch (this) {
+      D1PrimaryLocationHint$wnam() => wnam(),
+      D1PrimaryLocationHint$enam() => enam(),
+      D1PrimaryLocationHint$weur() => weur(),
+      D1PrimaryLocationHint$eeur() => eeur(),
+      D1PrimaryLocationHint$apac() => apac(),
+      D1PrimaryLocationHint$oc() => oc(),
+      D1PrimaryLocationHint$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? wnam, W Function()? enam, W Function()? weur, W Function()? eeur, W Function()? apac, W Function()? oc, W Function(String value)? $unknown, }) { return switch (this) {
+      D1PrimaryLocationHint$wnam() => wnam != null ? wnam() : orElse(value),
+      D1PrimaryLocationHint$enam() => enam != null ? enam() : orElse(value),
+      D1PrimaryLocationHint$weur() => weur != null ? weur() : orElse(value),
+      D1PrimaryLocationHint$eeur() => eeur != null ? eeur() : orElse(value),
+      D1PrimaryLocationHint$apac() => apac != null ? apac() : orElse(value),
+      D1PrimaryLocationHint$oc() => oc != null ? oc() : orElse(value),
+      D1PrimaryLocationHint$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'D1PrimaryLocationHint($value)';
 
  }

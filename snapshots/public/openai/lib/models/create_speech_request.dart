@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateSpeechRequestResponseFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mp3, required W Function() opus, required W Function() aac, required W Function() flac, required W Function() wav, required W Function() pcm, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateSpeechRequestResponseFormat$mp3() => mp3(),
+      CreateSpeechRequestResponseFormat$opus() => opus(),
+      CreateSpeechRequestResponseFormat$aac() => aac(),
+      CreateSpeechRequestResponseFormat$flac() => flac(),
+      CreateSpeechRequestResponseFormat$wav() => wav(),
+      CreateSpeechRequestResponseFormat$pcm() => pcm(),
+      CreateSpeechRequestResponseFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mp3, W Function()? opus, W Function()? aac, W Function()? flac, W Function()? wav, W Function()? pcm, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateSpeechRequestResponseFormat$mp3() => mp3 != null ? mp3() : orElse(value),
+      CreateSpeechRequestResponseFormat$opus() => opus != null ? opus() : orElse(value),
+      CreateSpeechRequestResponseFormat$aac() => aac != null ? aac() : orElse(value),
+      CreateSpeechRequestResponseFormat$flac() => flac != null ? flac() : orElse(value),
+      CreateSpeechRequestResponseFormat$wav() => wav != null ? wav() : orElse(value),
+      CreateSpeechRequestResponseFormat$pcm() => pcm != null ? pcm() : orElse(value),
+      CreateSpeechRequestResponseFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateSpeechRequestResponseFormat($value)';
 
  }
@@ -134,6 +154,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamFormat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sse, required W Function() audio, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamFormat$sse() => sse(),
+      StreamFormat$audio() => audio(),
+      StreamFormat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sse, W Function()? audio, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamFormat$sse() => sse != null ? sse() : orElse(value),
+      StreamFormat$audio() => audio != null ? audio() : orElse(value),
+      StreamFormat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamFormat($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingSettlementNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() maestro, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingSettlementNetwork$maestro() => maestro(),
+      IssuingSettlementNetwork$visa() => visa(),
+      IssuingSettlementNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? maestro, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingSettlementNetwork$maestro() => maestro != null ? maestro() : orElse(value),
+      IssuingSettlementNetwork$visa() => visa != null ? visa() : orElse(value),
+      IssuingSettlementNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingSettlementNetwork($value)';
 
  }

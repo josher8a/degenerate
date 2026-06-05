@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetAccountAuditLogsResourceScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accounts, required W Function() user, required W Function() zones, required W Function() memberships, required W Function(String value) $unknown, }) { return switch (this) {
+      GetAccountAuditLogsResourceScope$accounts() => accounts(),
+      GetAccountAuditLogsResourceScope$user() => user(),
+      GetAccountAuditLogsResourceScope$zones() => zones(),
+      GetAccountAuditLogsResourceScope$memberships() => memberships(),
+      GetAccountAuditLogsResourceScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accounts, W Function()? user, W Function()? zones, W Function()? memberships, W Function(String value)? $unknown, }) { return switch (this) {
+      GetAccountAuditLogsResourceScope$accounts() => accounts != null ? accounts() : orElse(value),
+      GetAccountAuditLogsResourceScope$user() => user != null ? user() : orElse(value),
+      GetAccountAuditLogsResourceScope$zones() => zones != null ? zones() : orElse(value),
+      GetAccountAuditLogsResourceScope$memberships() => memberships != null ? memberships() : orElse(value),
+      GetAccountAuditLogsResourceScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetAccountAuditLogsResourceScope($value)';
 
  }

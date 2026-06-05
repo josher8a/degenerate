@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesRestorePackageForOrgPackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesRestorePackageForOrgPackageType$npm() => npm(),
+      PackagesRestorePackageForOrgPackageType$maven() => maven(),
+      PackagesRestorePackageForOrgPackageType$rubygems() => rubygems(),
+      PackagesRestorePackageForOrgPackageType$docker() => docker(),
+      PackagesRestorePackageForOrgPackageType$nuget() => nuget(),
+      PackagesRestorePackageForOrgPackageType$container() => container(),
+      PackagesRestorePackageForOrgPackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesRestorePackageForOrgPackageType$npm() => npm != null ? npm() : orElse(value),
+      PackagesRestorePackageForOrgPackageType$maven() => maven != null ? maven() : orElse(value),
+      PackagesRestorePackageForOrgPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackagesRestorePackageForOrgPackageType$docker() => docker != null ? docker() : orElse(value),
+      PackagesRestorePackageForOrgPackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackagesRestorePackageForOrgPackageType$container() => container != null ? container() : orElse(value),
+      PackagesRestorePackageForOrgPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesRestorePackageForOrgPackageType($value)';
 
  }

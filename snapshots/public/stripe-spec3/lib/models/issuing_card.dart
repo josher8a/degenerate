@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardCancellationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() designRejected, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardCancellationReason$designRejected() => designRejected(),
+      IssuingCardCancellationReason$lost() => lost(),
+      IssuingCardCancellationReason$stolen() => stolen(),
+      IssuingCardCancellationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? designRejected, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardCancellationReason$designRejected() => designRejected != null ? designRejected() : orElse(value),
+      IssuingCardCancellationReason$lost() => lost != null ? lost() : orElse(value),
+      IssuingCardCancellationReason$stolen() => stolen != null ? stolen() : orElse(value),
+      IssuingCardCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardCancellationReason($value)';
 
  }
@@ -91,6 +105,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingCard, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardObject$issuingCard() => issuingCard(),
+      IssuingCardObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingCard, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardObject$issuingCard() => issuingCard != null ? issuingCard() : orElse(value),
+      IssuingCardObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardObject($value)';
 
  }
@@ -146,6 +170,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardReplacementReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() damaged, required W Function() expired, required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardReplacementReason$damaged() => damaged(),
+      IssuingCardReplacementReason$expired() => expired(),
+      IssuingCardReplacementReason$lost() => lost(),
+      IssuingCardReplacementReason$stolen() => stolen(),
+      IssuingCardReplacementReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? damaged, W Function()? expired, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardReplacementReason$damaged() => damaged != null ? damaged() : orElse(value),
+      IssuingCardReplacementReason$expired() => expired != null ? expired() : orElse(value),
+      IssuingCardReplacementReason$lost() => lost != null ? lost() : orElse(value),
+      IssuingCardReplacementReason$stolen() => stolen != null ? stolen() : orElse(value),
+      IssuingCardReplacementReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardReplacementReason($value)';
 
  }

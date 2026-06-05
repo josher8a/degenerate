@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsGetRouteStatsByActorSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lastRateLimitedTimestamp, required W Function() lastRequestTimestamp, required W Function() rateLimitedRequestCount, required W Function() httpMethod, required W Function() apiRoute, required W Function() totalRequestCount, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsGetRouteStatsByActorSort$lastRateLimitedTimestamp() => lastRateLimitedTimestamp(),
+      InsightsGetRouteStatsByActorSort$lastRequestTimestamp() => lastRequestTimestamp(),
+      InsightsGetRouteStatsByActorSort$rateLimitedRequestCount() => rateLimitedRequestCount(),
+      InsightsGetRouteStatsByActorSort$httpMethod() => httpMethod(),
+      InsightsGetRouteStatsByActorSort$apiRoute() => apiRoute(),
+      InsightsGetRouteStatsByActorSort$totalRequestCount() => totalRequestCount(),
+      InsightsGetRouteStatsByActorSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastRateLimitedTimestamp, W Function()? lastRequestTimestamp, W Function()? rateLimitedRequestCount, W Function()? httpMethod, W Function()? apiRoute, W Function()? totalRequestCount, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsGetRouteStatsByActorSort$lastRateLimitedTimestamp() => lastRateLimitedTimestamp != null ? lastRateLimitedTimestamp() : orElse(value),
+      InsightsGetRouteStatsByActorSort$lastRequestTimestamp() => lastRequestTimestamp != null ? lastRequestTimestamp() : orElse(value),
+      InsightsGetRouteStatsByActorSort$rateLimitedRequestCount() => rateLimitedRequestCount != null ? rateLimitedRequestCount() : orElse(value),
+      InsightsGetRouteStatsByActorSort$httpMethod() => httpMethod != null ? httpMethod() : orElse(value),
+      InsightsGetRouteStatsByActorSort$apiRoute() => apiRoute != null ? apiRoute() : orElse(value),
+      InsightsGetRouteStatsByActorSort$totalRequestCount() => totalRequestCount != null ? totalRequestCount() : orElse(value),
+      InsightsGetRouteStatsByActorSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsGetRouteStatsByActorSort($value)';
 
  }

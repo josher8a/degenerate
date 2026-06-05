@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryCreditReversalNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ach, required W Function() stripe, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryCreditReversalNetwork$ach() => ach(),
+      TreasuryCreditReversalNetwork$stripe() => stripe(),
+      TreasuryCreditReversalNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function()? stripe, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryCreditReversalNetwork$ach() => ach != null ? ach() : orElse(value),
+      TreasuryCreditReversalNetwork$stripe() => stripe != null ? stripe() : orElse(value),
+      TreasuryCreditReversalNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryCreditReversalNetwork($value)';
 
  }
@@ -78,6 +90,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryCreditReversalObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() treasuryCreditReversal, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryCreditReversalObject$treasuryCreditReversal() => treasuryCreditReversal(),
+      TreasuryCreditReversalObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryCreditReversal, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryCreditReversalObject$treasuryCreditReversal() => treasuryCreditReversal != null ? treasuryCreditReversal() : orElse(value),
+      TreasuryCreditReversalObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryCreditReversalObject($value)';
 
  }
@@ -129,6 +151,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryCreditReversalStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() posted, required W Function() processing, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryCreditReversalStatus$canceled() => canceled(),
+      TreasuryCreditReversalStatus$posted() => posted(),
+      TreasuryCreditReversalStatus$processing() => processing(),
+      TreasuryCreditReversalStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? posted, W Function()? processing, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryCreditReversalStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      TreasuryCreditReversalStatus$posted() => posted != null ? posted() : orElse(value),
+      TreasuryCreditReversalStatus$processing() => processing != null ? processing() : orElse(value),
+      TreasuryCreditReversalStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryCreditReversalStatus($value)';
 
  }

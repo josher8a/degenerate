@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InlineSkillSourceParamType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() base64, required W Function(String value) $unknown, }) { return switch (this) {
+      InlineSkillSourceParamType$base64() => base64(),
+      InlineSkillSourceParamType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? base64, W Function(String value)? $unknown, }) { return switch (this) {
+      InlineSkillSourceParamType$base64() => base64 != null ? base64() : orElse(value),
+      InlineSkillSourceParamType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InlineSkillSourceParamType($value)';
 
  }
@@ -65,6 +75,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MediaType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applicationZip, required W Function(String value) $unknown, }) { return switch (this) {
+      MediaType$applicationZip() => applicationZip(),
+      MediaType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicationZip, W Function(String value)? $unknown, }) { return switch (this) {
+      MediaType$applicationZip() => applicationZip != null ? applicationZip() : orElse(value),
+      MediaType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MediaType($value)';
 
  }

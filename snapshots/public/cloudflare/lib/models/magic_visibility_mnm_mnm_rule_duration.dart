@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityMnmMnmRuleDuration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1m, required W Function() $5m, required W Function() $10m, required W Function() $15m, required W Function() $20m, required W Function() $30m, required W Function() $45m, required W Function() $60m, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleDuration$$1m() => $1m(),
+      MagicVisibilityMnmMnmRuleDuration$$5m() => $5m(),
+      MagicVisibilityMnmMnmRuleDuration$$10m() => $10m(),
+      MagicVisibilityMnmMnmRuleDuration$$15m() => $15m(),
+      MagicVisibilityMnmMnmRuleDuration$$20m() => $20m(),
+      MagicVisibilityMnmMnmRuleDuration$$30m() => $30m(),
+      MagicVisibilityMnmMnmRuleDuration$$45m() => $45m(),
+      MagicVisibilityMnmMnmRuleDuration$$60m() => $60m(),
+      MagicVisibilityMnmMnmRuleDuration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W Function()? $5m, W Function()? $10m, W Function()? $15m, W Function()? $20m, W Function()? $30m, W Function()? $45m, W Function()? $60m, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityMnmMnmRuleDuration$$1m() => $1m != null ? $1m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$5m() => $5m != null ? $5m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$10m() => $10m != null ? $10m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$15m() => $15m != null ? $15m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$20m() => $20m != null ? $20m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$30m() => $30m != null ? $30m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$45m() => $45m != null ? $45m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$$60m() => $60m != null ? $60m() : orElse(value),
+      MagicVisibilityMnmMnmRuleDuration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityMnmMnmRuleDuration($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountLoadBalancerSearchSearchResourcesReferences$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() referral, required W Function() referrer, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountLoadBalancerSearchSearchResourcesReferences$$empty() => $empty(),
+      AccountLoadBalancerSearchSearchResourcesReferences$$empty2() => $empty2(),
+      AccountLoadBalancerSearchSearchResourcesReferences$referral() => referral(),
+      AccountLoadBalancerSearchSearchResourcesReferences$referrer() => referrer(),
+      AccountLoadBalancerSearchSearchResourcesReferences$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? referral, W Function()? referrer, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountLoadBalancerSearchSearchResourcesReferences$$empty() => $empty != null ? $empty() : orElse(value),
+      AccountLoadBalancerSearchSearchResourcesReferences$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      AccountLoadBalancerSearchSearchResourcesReferences$referral() => referral != null ? referral() : orElse(value),
+      AccountLoadBalancerSearchSearchResourcesReferences$referrer() => referrer != null ? referrer() : orElse(value),
+      AccountLoadBalancerSearchSearchResourcesReferences$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountLoadBalancerSearchSearchResourcesReferences($value)';
 
  }

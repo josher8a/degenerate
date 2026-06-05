@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ClimateSupplierObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() climateSupplier, required W Function(String value) $unknown, }) { return switch (this) {
+      ClimateSupplierObject$climateSupplier() => climateSupplier(),
+      ClimateSupplierObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? climateSupplier, W Function(String value)? $unknown, }) { return switch (this) {
+      ClimateSupplierObject$climateSupplier() => climateSupplier != null ? climateSupplier() : orElse(value),
+      ClimateSupplierObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ClimateSupplierObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RemovalPathway$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() biomassCarbonRemovalAndStorage, required W Function() directAirCapture, required W Function() enhancedWeathering, required W Function(String value) $unknown, }) { return switch (this) {
+      RemovalPathway$biomassCarbonRemovalAndStorage() => biomassCarbonRemovalAndStorage(),
+      RemovalPathway$directAirCapture() => directAirCapture(),
+      RemovalPathway$enhancedWeathering() => enhancedWeathering(),
+      RemovalPathway$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? biomassCarbonRemovalAndStorage, W Function()? directAirCapture, W Function()? enhancedWeathering, W Function(String value)? $unknown, }) { return switch (this) {
+      RemovalPathway$biomassCarbonRemovalAndStorage() => biomassCarbonRemovalAndStorage != null ? biomassCarbonRemovalAndStorage() : orElse(value),
+      RemovalPathway$directAirCapture() => directAirCapture != null ? directAirCapture() : orElse(value),
+      RemovalPathway$enhancedWeathering() => enhancedWeathering != null ? enhancedWeathering() : orElse(value),
+      RemovalPathway$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RemovalPathway($value)';
 
  }

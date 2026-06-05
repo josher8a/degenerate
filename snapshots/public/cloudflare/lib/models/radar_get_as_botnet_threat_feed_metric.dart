@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAsBotnetThreatFeedMetric$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() offenseCount, required W Function() numberOfOffendingIps, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAsBotnetThreatFeedMetric$offenseCount() => offenseCount(),
+      RadarGetAsBotnetThreatFeedMetric$numberOfOffendingIps() => numberOfOffendingIps(),
+      RadarGetAsBotnetThreatFeedMetric$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offenseCount, W Function()? numberOfOffendingIps, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAsBotnetThreatFeedMetric$offenseCount() => offenseCount != null ? offenseCount() : orElse(value),
+      RadarGetAsBotnetThreatFeedMetric$numberOfOffendingIps() => numberOfOffendingIps != null ? numberOfOffendingIps() : orElse(value),
+      RadarGetAsBotnetThreatFeedMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAsBotnetThreatFeedMetric($value)';
 
  }

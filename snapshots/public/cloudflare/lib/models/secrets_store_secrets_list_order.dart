@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretsStoreSecretsListOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $name, required W Function() comment, required W Function() created, required W Function() modified, required W Function() status, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretsStoreSecretsListOrder$$name() => $name(),
+      SecretsStoreSecretsListOrder$comment() => comment(),
+      SecretsStoreSecretsListOrder$created() => created(),
+      SecretsStoreSecretsListOrder$modified() => modified(),
+      SecretsStoreSecretsListOrder$status() => status(),
+      SecretsStoreSecretsListOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $name, W Function()? comment, W Function()? created, W Function()? modified, W Function()? status, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretsStoreSecretsListOrder$$name() => $name != null ? $name() : orElse(value),
+      SecretsStoreSecretsListOrder$comment() => comment != null ? comment() : orElse(value),
+      SecretsStoreSecretsListOrder$created() => created != null ? created() : orElse(value),
+      SecretsStoreSecretsListOrder$modified() => modified != null ? modified() : orElse(value),
+      SecretsStoreSecretsListOrder$status() => status != null ? status() : orElse(value),
+      SecretsStoreSecretsListOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretsStoreSecretsListOrder($value)';
 
  }

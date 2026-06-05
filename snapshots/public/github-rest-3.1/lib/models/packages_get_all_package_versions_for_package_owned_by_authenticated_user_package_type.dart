@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$npm() => npm(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$maven() => maven(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$rubygems() => rubygems(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$docker() => docker(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$nuget() => nuget(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$container() => container(),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$npm() => npm != null ? npm() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$maven() => maven != null ? maven() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$docker() => docker != null ? docker() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$container() => container != null ? container() : orElse(value),
+      PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType($value)';
 
  }

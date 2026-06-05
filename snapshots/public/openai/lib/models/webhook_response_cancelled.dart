@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookResponseCancelledType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() responseCancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookResponseCancelledType$responseCancelled() => responseCancelled(),
+      WebhookResponseCancelledType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? responseCancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookResponseCancelledType$responseCancelled() => responseCancelled != null ? responseCancelled() : orElse(value),
+      WebhookResponseCancelledType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookResponseCancelledType($value)';
 
  }

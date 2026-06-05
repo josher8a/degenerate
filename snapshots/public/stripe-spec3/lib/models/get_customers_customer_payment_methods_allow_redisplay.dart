@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() limited, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$always() => always(),
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$limited() => limited(),
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$unspecified() => unspecified(),
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? limited, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$always() => always != null ? always() : orElse(value),
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$limited() => limited != null ? limited() : orElse(value),
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetCustomersCustomerPaymentMethodsAllowRedisplay($value)';
 
  }

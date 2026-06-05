@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$windows() => windows(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$macosx() => macosx(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$ios() => ios(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$android() => android(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$chromeos() => chromeos(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$linux() => linux(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$smartTv() => smartTv(),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$windows() => windows != null ? windows() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$macosx() => macosx != null ? macosx() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$ios() => ios != null ? ios() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$android() => android != null ? android() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$linux() => linux != null ? linux() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBrowserFamiliesOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByBrowserFamiliesOs($value)';
 
  }

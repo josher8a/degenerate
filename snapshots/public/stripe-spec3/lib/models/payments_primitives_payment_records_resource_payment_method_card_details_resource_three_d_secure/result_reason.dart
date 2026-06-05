@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResultReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abandoned, required W Function() bypassed, required W Function() canceled, required W Function() cardNotEnrolled, required W Function() networkNotSupported, required W Function() protocolError, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+      ResultReason$abandoned() => abandoned(),
+      ResultReason$bypassed() => bypassed(),
+      ResultReason$canceled() => canceled(),
+      ResultReason$cardNotEnrolled() => cardNotEnrolled(),
+      ResultReason$networkNotSupported() => networkNotSupported(),
+      ResultReason$protocolError() => protocolError(),
+      ResultReason$rejected() => rejected(),
+      ResultReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? bypassed, W Function()? canceled, W Function()? cardNotEnrolled, W Function()? networkNotSupported, W Function()? protocolError, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+      ResultReason$abandoned() => abandoned != null ? abandoned() : orElse(value),
+      ResultReason$bypassed() => bypassed != null ? bypassed() : orElse(value),
+      ResultReason$canceled() => canceled != null ? canceled() : orElse(value),
+      ResultReason$cardNotEnrolled() => cardNotEnrolled != null ? cardNotEnrolled() : orElse(value),
+      ResultReason$networkNotSupported() => networkNotSupported != null ? networkNotSupported() : orElse(value),
+      ResultReason$protocolError() => protocolError != null ? protocolError() : orElse(value),
+      ResultReason$rejected() => rejected != null ? rejected() : orElse(value),
+      ResultReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResultReason($value)';
 
  }

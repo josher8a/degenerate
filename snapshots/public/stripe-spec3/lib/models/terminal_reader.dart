@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalReaderStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() offline, required W Function() online, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalReaderStatus$offline() => offline(),
+      TerminalReaderStatus$online() => online(),
+      TerminalReaderStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? offline, W Function()? online, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalReaderStatus$offline() => offline != null ? offline() : orElse(value),
+      TerminalReaderStatus$online() => online != null ? online() : orElse(value),
+      TerminalReaderStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalReaderStatus($value)';
 
  }

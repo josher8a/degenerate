@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConferenceEnumReasonConferenceEnded$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() conferenceEndedViaApi, required W Function() participantWithEndConferenceOnExitLeft, required W Function() participantWithEndConferenceOnExitKicked, required W Function() lastParticipantKicked, required W Function() lastParticipantLeft, required W Function(String value) $unknown, }) { return switch (this) {
+      ConferenceEnumReasonConferenceEnded$conferenceEndedViaApi() => conferenceEndedViaApi(),
+      ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitLeft() => participantWithEndConferenceOnExitLeft(),
+      ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitKicked() => participantWithEndConferenceOnExitKicked(),
+      ConferenceEnumReasonConferenceEnded$lastParticipantKicked() => lastParticipantKicked(),
+      ConferenceEnumReasonConferenceEnded$lastParticipantLeft() => lastParticipantLeft(),
+      ConferenceEnumReasonConferenceEnded$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? conferenceEndedViaApi, W Function()? participantWithEndConferenceOnExitLeft, W Function()? participantWithEndConferenceOnExitKicked, W Function()? lastParticipantKicked, W Function()? lastParticipantLeft, W Function(String value)? $unknown, }) { return switch (this) {
+      ConferenceEnumReasonConferenceEnded$conferenceEndedViaApi() => conferenceEndedViaApi != null ? conferenceEndedViaApi() : orElse(value),
+      ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitLeft() => participantWithEndConferenceOnExitLeft != null ? participantWithEndConferenceOnExitLeft() : orElse(value),
+      ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitKicked() => participantWithEndConferenceOnExitKicked != null ? participantWithEndConferenceOnExitKicked() : orElse(value),
+      ConferenceEnumReasonConferenceEnded$lastParticipantKicked() => lastParticipantKicked != null ? lastParticipantKicked() : orElse(value),
+      ConferenceEnumReasonConferenceEnded$lastParticipantLeft() => lastParticipantLeft != null ? lastParticipantLeft() : orElse(value),
+      ConferenceEnumReasonConferenceEnded$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConferenceEnumReasonConferenceEnded($value)';
 
  }

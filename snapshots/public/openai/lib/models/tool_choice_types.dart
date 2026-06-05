@@ -61,6 +61,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ToolChoiceTypesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fileSearch, required W Function() webSearchPreview, required W Function() computer, required W Function() computerUsePreview, required W Function() computerUse, required W Function() webSearchPreview20250311, required W Function() imageGeneration, required W Function() codeInterpreter, required W Function(String value) $unknown, }) { return switch (this) {
+      ToolChoiceTypesType$fileSearch() => fileSearch(),
+      ToolChoiceTypesType$webSearchPreview() => webSearchPreview(),
+      ToolChoiceTypesType$computer() => computer(),
+      ToolChoiceTypesType$computerUsePreview() => computerUsePreview(),
+      ToolChoiceTypesType$computerUse() => computerUse(),
+      ToolChoiceTypesType$webSearchPreview20250311() => webSearchPreview20250311(),
+      ToolChoiceTypesType$imageGeneration() => imageGeneration(),
+      ToolChoiceTypesType$codeInterpreter() => codeInterpreter(),
+      ToolChoiceTypesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSearch, W Function()? webSearchPreview, W Function()? computer, W Function()? computerUsePreview, W Function()? computerUse, W Function()? webSearchPreview20250311, W Function()? imageGeneration, W Function()? codeInterpreter, W Function(String value)? $unknown, }) { return switch (this) {
+      ToolChoiceTypesType$fileSearch() => fileSearch != null ? fileSearch() : orElse(value),
+      ToolChoiceTypesType$webSearchPreview() => webSearchPreview != null ? webSearchPreview() : orElse(value),
+      ToolChoiceTypesType$computer() => computer != null ? computer() : orElse(value),
+      ToolChoiceTypesType$computerUsePreview() => computerUsePreview != null ? computerUsePreview() : orElse(value),
+      ToolChoiceTypesType$computerUse() => computerUse != null ? computerUse() : orElse(value),
+      ToolChoiceTypesType$webSearchPreview20250311() => webSearchPreview20250311 != null ? webSearchPreview20250311() : orElse(value),
+      ToolChoiceTypesType$imageGeneration() => imageGeneration != null ? imageGeneration() : orElse(value),
+      ToolChoiceTypesType$codeInterpreter() => codeInterpreter != null ? codeInterpreter() : orElse(value),
+      ToolChoiceTypesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ToolChoiceTypesType($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinancialConnectionsAccountCategory$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cash, required W Function() credit, required W Function() investment, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountCategory$cash() => cash(),
+      FinancialConnectionsAccountCategory$credit() => credit(),
+      FinancialConnectionsAccountCategory$investment() => investment(),
+      FinancialConnectionsAccountCategory$$other() => $other(),
+      FinancialConnectionsAccountCategory$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cash, W Function()? credit, W Function()? investment, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountCategory$cash() => cash != null ? cash() : orElse(value),
+      FinancialConnectionsAccountCategory$credit() => credit != null ? credit() : orElse(value),
+      FinancialConnectionsAccountCategory$investment() => investment != null ? investment() : orElse(value),
+      FinancialConnectionsAccountCategory$$other() => $other != null ? $other() : orElse(value),
+      FinancialConnectionsAccountCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinancialConnectionsAccountCategory($value)';
 
  }
@@ -104,6 +120,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinancialConnectionsAccountObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() financialConnectionsAccount, required W Function(String value) $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountObject$financialConnectionsAccount() => financialConnectionsAccount(),
+      FinancialConnectionsAccountObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? financialConnectionsAccount, W Function(String value)? $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountObject$financialConnectionsAccount() => financialConnectionsAccount != null ? financialConnectionsAccount() : orElse(value),
+      FinancialConnectionsAccountObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinancialConnectionsAccountObject($value)';
 
  }
@@ -155,6 +181,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinancialConnectionsAccountStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() disconnected, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountStatus$active() => active(),
+      FinancialConnectionsAccountStatus$disconnected() => disconnected(),
+      FinancialConnectionsAccountStatus$inactive() => inactive(),
+      FinancialConnectionsAccountStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? disconnected, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountStatus$active() => active != null ? active() : orElse(value),
+      FinancialConnectionsAccountStatus$disconnected() => disconnected != null ? disconnected() : orElse(value),
+      FinancialConnectionsAccountStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      FinancialConnectionsAccountStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinancialConnectionsAccountStatus($value)';
 
  }
@@ -249,6 +289,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Subcategory$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() checking, required W Function() creditCard, required W Function() lineOfCredit, required W Function() mortgage, required W Function() $other, required W Function() savings, required W Function(String value) $unknown, }) { return switch (this) {
+      Subcategory$checking() => checking(),
+      Subcategory$creditCard() => creditCard(),
+      Subcategory$lineOfCredit() => lineOfCredit(),
+      Subcategory$mortgage() => mortgage(),
+      Subcategory$$other() => $other(),
+      Subcategory$savings() => savings(),
+      Subcategory$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? checking, W Function()? creditCard, W Function()? lineOfCredit, W Function()? mortgage, W Function()? $other, W Function()? savings, W Function(String value)? $unknown, }) { return switch (this) {
+      Subcategory$checking() => checking != null ? checking() : orElse(value),
+      Subcategory$creditCard() => creditCard != null ? creditCard() : orElse(value),
+      Subcategory$lineOfCredit() => lineOfCredit != null ? lineOfCredit() : orElse(value),
+      Subcategory$mortgage() => mortgage != null ? mortgage() : orElse(value),
+      Subcategory$$other() => $other != null ? $other() : orElse(value),
+      Subcategory$savings() => savings != null ? savings() : orElse(value),
+      Subcategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Subcategory($value)';
 
  }
@@ -336,6 +396,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FinancialConnectionsAccountSubscriptions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transactions, required W Function(String value) $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountSubscriptions$transactions() => transactions(),
+      FinancialConnectionsAccountSubscriptions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transactions, W Function(String value)? $unknown, }) { return switch (this) {
+      FinancialConnectionsAccountSubscriptions$transactions() => transactions != null ? transactions() : orElse(value),
+      FinancialConnectionsAccountSubscriptions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FinancialConnectionsAccountSubscriptions($value)';
 
  }
@@ -382,6 +452,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SupportedPaymentMethodTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() link, required W Function() usBankAccount, required W Function(String value) $unknown, }) { return switch (this) {
+      SupportedPaymentMethodTypes$link() => link(),
+      SupportedPaymentMethodTypes$usBankAccount() => usBankAccount(),
+      SupportedPaymentMethodTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? link, W Function()? usBankAccount, W Function(String value)? $unknown, }) { return switch (this) {
+      SupportedPaymentMethodTypes$link() => link != null ? link() : orElse(value),
+      SupportedPaymentMethodTypes$usBankAccount() => usBankAccount != null ? usBankAccount() : orElse(value),
+      SupportedPaymentMethodTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SupportedPaymentMethodTypes($value)';
 
  }

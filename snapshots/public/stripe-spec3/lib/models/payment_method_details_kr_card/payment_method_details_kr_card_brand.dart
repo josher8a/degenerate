@@ -106,6 +106,58 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsKrCardBrand$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bc, required W Function() citi, required W Function() hana, required W Function() hyundai, required W Function() jeju, required W Function() jeonbuk, required W Function() kakaobank, required W Function() kbank, required W Function() kdbbank, required W Function() kookmin, required W Function() kwangju, required W Function() lotte, required W Function() mg, required W Function() nh, required W Function() post, required W Function() samsung, required W Function() savingsbank, required W Function() shinhan, required W Function() shinhyup, required W Function() suhyup, required W Function() tossbank, required W Function() woori, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsKrCardBrand$bc() => bc(),
+      PaymentMethodDetailsKrCardBrand$citi() => citi(),
+      PaymentMethodDetailsKrCardBrand$hana() => hana(),
+      PaymentMethodDetailsKrCardBrand$hyundai() => hyundai(),
+      PaymentMethodDetailsKrCardBrand$jeju() => jeju(),
+      PaymentMethodDetailsKrCardBrand$jeonbuk() => jeonbuk(),
+      PaymentMethodDetailsKrCardBrand$kakaobank() => kakaobank(),
+      PaymentMethodDetailsKrCardBrand$kbank() => kbank(),
+      PaymentMethodDetailsKrCardBrand$kdbbank() => kdbbank(),
+      PaymentMethodDetailsKrCardBrand$kookmin() => kookmin(),
+      PaymentMethodDetailsKrCardBrand$kwangju() => kwangju(),
+      PaymentMethodDetailsKrCardBrand$lotte() => lotte(),
+      PaymentMethodDetailsKrCardBrand$mg() => mg(),
+      PaymentMethodDetailsKrCardBrand$nh() => nh(),
+      PaymentMethodDetailsKrCardBrand$post() => post(),
+      PaymentMethodDetailsKrCardBrand$samsung() => samsung(),
+      PaymentMethodDetailsKrCardBrand$savingsbank() => savingsbank(),
+      PaymentMethodDetailsKrCardBrand$shinhan() => shinhan(),
+      PaymentMethodDetailsKrCardBrand$shinhyup() => shinhyup(),
+      PaymentMethodDetailsKrCardBrand$suhyup() => suhyup(),
+      PaymentMethodDetailsKrCardBrand$tossbank() => tossbank(),
+      PaymentMethodDetailsKrCardBrand$woori() => woori(),
+      PaymentMethodDetailsKrCardBrand$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bc, W Function()? citi, W Function()? hana, W Function()? hyundai, W Function()? jeju, W Function()? jeonbuk, W Function()? kakaobank, W Function()? kbank, W Function()? kdbbank, W Function()? kookmin, W Function()? kwangju, W Function()? lotte, W Function()? mg, W Function()? nh, W Function()? post, W Function()? samsung, W Function()? savingsbank, W Function()? shinhan, W Function()? shinhyup, W Function()? suhyup, W Function()? tossbank, W Function()? woori, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsKrCardBrand$bc() => bc != null ? bc() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$citi() => citi != null ? citi() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$hana() => hana != null ? hana() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$hyundai() => hyundai != null ? hyundai() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$jeju() => jeju != null ? jeju() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$jeonbuk() => jeonbuk != null ? jeonbuk() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$kakaobank() => kakaobank != null ? kakaobank() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$kbank() => kbank != null ? kbank() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$kdbbank() => kdbbank != null ? kdbbank() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$kookmin() => kookmin != null ? kookmin() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$kwangju() => kwangju != null ? kwangju() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$lotte() => lotte != null ? lotte() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$mg() => mg != null ? mg() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$nh() => nh != null ? nh() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$post() => post != null ? post() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$samsung() => samsung != null ? samsung() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$savingsbank() => savingsbank != null ? savingsbank() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$shinhan() => shinhan != null ? shinhan() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$shinhyup() => shinhyup != null ? shinhyup() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$suhyup() => suhyup != null ? suhyup() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$tossbank() => tossbank != null ? tossbank() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$woori() => woori != null ? woori() : orElse(value),
+      PaymentMethodDetailsKrCardBrand$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsKrCardBrand($value)';
 
  }

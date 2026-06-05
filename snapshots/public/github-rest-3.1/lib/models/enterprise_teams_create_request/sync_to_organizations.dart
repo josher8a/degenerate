@@ -29,6 +29,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SyncToOrganizations$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      SyncToOrganizations$all() => all(),
+      SyncToOrganizations$disabled() => disabled(),
+      SyncToOrganizations$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      SyncToOrganizations$all() => all != null ? all() : orElse(value),
+      SyncToOrganizations$disabled() => disabled != null ? disabled() : orElse(value),
+      SyncToOrganizations$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SyncToOrganizations($value)';
 
  }

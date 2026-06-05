@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnCatalogSyncUpdateMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() manual, required W Function(String value) $unknown, }) { return switch (this) {
+      McnCatalogSyncUpdateMode$auto() => auto(),
+      McnCatalogSyncUpdateMode$manual() => manual(),
+      McnCatalogSyncUpdateMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? manual, W Function(String value)? $unknown, }) { return switch (this) {
+      McnCatalogSyncUpdateMode$auto() => auto != null ? auto() : orElse(value),
+      McnCatalogSyncUpdateMode$manual() => manual != null ? manual() : orElse(value),
+      McnCatalogSyncUpdateMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnCatalogSyncUpdateMode($value)';
 
  }

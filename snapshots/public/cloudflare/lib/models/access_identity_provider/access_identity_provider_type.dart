@@ -74,6 +74,42 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessIdentityProviderType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() onetimepin, required W Function() azureAd, required W Function() saml, required W Function() centrify, required W Function() facebook, required W Function() github, required W Function() googleApps, required W Function() google, required W Function() linkedin, required W Function() oidc, required W Function() okta, required W Function() onelogin, required W Function() pingone, required W Function() yandex, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessIdentityProviderType$onetimepin() => onetimepin(),
+      AccessIdentityProviderType$azureAd() => azureAd(),
+      AccessIdentityProviderType$saml() => saml(),
+      AccessIdentityProviderType$centrify() => centrify(),
+      AccessIdentityProviderType$facebook() => facebook(),
+      AccessIdentityProviderType$github() => github(),
+      AccessIdentityProviderType$googleApps() => googleApps(),
+      AccessIdentityProviderType$google() => google(),
+      AccessIdentityProviderType$linkedin() => linkedin(),
+      AccessIdentityProviderType$oidc() => oidc(),
+      AccessIdentityProviderType$okta() => okta(),
+      AccessIdentityProviderType$onelogin() => onelogin(),
+      AccessIdentityProviderType$pingone() => pingone(),
+      AccessIdentityProviderType$yandex() => yandex(),
+      AccessIdentityProviderType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? onetimepin, W Function()? azureAd, W Function()? saml, W Function()? centrify, W Function()? facebook, W Function()? github, W Function()? googleApps, W Function()? google, W Function()? linkedin, W Function()? oidc, W Function()? okta, W Function()? onelogin, W Function()? pingone, W Function()? yandex, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessIdentityProviderType$onetimepin() => onetimepin != null ? onetimepin() : orElse(value),
+      AccessIdentityProviderType$azureAd() => azureAd != null ? azureAd() : orElse(value),
+      AccessIdentityProviderType$saml() => saml != null ? saml() : orElse(value),
+      AccessIdentityProviderType$centrify() => centrify != null ? centrify() : orElse(value),
+      AccessIdentityProviderType$facebook() => facebook != null ? facebook() : orElse(value),
+      AccessIdentityProviderType$github() => github != null ? github() : orElse(value),
+      AccessIdentityProviderType$googleApps() => googleApps != null ? googleApps() : orElse(value),
+      AccessIdentityProviderType$google() => google != null ? google() : orElse(value),
+      AccessIdentityProviderType$linkedin() => linkedin != null ? linkedin() : orElse(value),
+      AccessIdentityProviderType$oidc() => oidc != null ? oidc() : orElse(value),
+      AccessIdentityProviderType$okta() => okta != null ? okta() : orElse(value),
+      AccessIdentityProviderType$onelogin() => onelogin != null ? onelogin() : orElse(value),
+      AccessIdentityProviderType$pingone() => pingone != null ? pingone() : orElse(value),
+      AccessIdentityProviderType$yandex() => yandex != null ? yandex() : orElse(value),
+      AccessIdentityProviderType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessIdentityProviderType($value)';
 
  }

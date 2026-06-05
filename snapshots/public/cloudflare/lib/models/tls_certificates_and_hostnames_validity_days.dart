@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesValidityDays$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $14, required W Function() $30, required W Function() $90, required W Function() $365, required W Function(int value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValidityDays$$14() => $14(),
+      TlsCertificatesAndHostnamesValidityDays$$30() => $30(),
+      TlsCertificatesAndHostnamesValidityDays$$90() => $90(),
+      TlsCertificatesAndHostnamesValidityDays$$365() => $365(),
+      TlsCertificatesAndHostnamesValidityDays$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $14, W Function()? $30, W Function()? $90, W Function()? $365, W Function(int value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValidityDays$$14() => $14 != null ? $14() : orElse(value),
+      TlsCertificatesAndHostnamesValidityDays$$30() => $30 != null ? $30() : orElse(value),
+      TlsCertificatesAndHostnamesValidityDays$$90() => $90 != null ? $90() : orElse(value),
+      TlsCertificatesAndHostnamesValidityDays$$365() => $365 != null ? $365() : orElse(value),
+      TlsCertificatesAndHostnamesValidityDays$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesValidityDays($value)';
 
  }

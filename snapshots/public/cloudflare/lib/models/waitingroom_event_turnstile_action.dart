@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomEventTurnstileAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() log, required W Function() infiniteQueue, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomEventTurnstileAction$log() => log(),
+      WaitingroomEventTurnstileAction$infiniteQueue() => infiniteQueue(),
+      WaitingroomEventTurnstileAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? log, W Function()? infiniteQueue, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomEventTurnstileAction$log() => log != null ? log() : orElse(value),
+      WaitingroomEventTurnstileAction$infiniteQueue() => infiniteQueue != null ? infiniteQueue() : orElse(value),
+      WaitingroomEventTurnstileAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomEventTurnstileAction($value)';
 
  }

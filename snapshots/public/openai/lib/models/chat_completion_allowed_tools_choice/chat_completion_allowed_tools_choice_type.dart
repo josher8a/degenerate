@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatCompletionAllowedToolsChoiceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allowedTools, required W Function(String value) $unknown, }) { return switch (this) {
+      ChatCompletionAllowedToolsChoiceType$allowedTools() => allowedTools(),
+      ChatCompletionAllowedToolsChoiceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowedTools, W Function(String value)? $unknown, }) { return switch (this) {
+      ChatCompletionAllowedToolsChoiceType$allowedTools() => allowedTools != null ? allowedTools() : orElse(value),
+      ChatCompletionAllowedToolsChoiceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChatCompletionAllowedToolsChoiceType($value)';
 
  }

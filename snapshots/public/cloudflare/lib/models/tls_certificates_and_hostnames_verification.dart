@@ -53,6 +53,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesCertificateStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() authorizing, required W Function() active, required W Function() expired, required W Function() issuing, required W Function() timingOut, required W Function() pendingDeployment, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesCertificateStatus$initializing() => initializing(),
+      TlsCertificatesAndHostnamesCertificateStatus$authorizing() => authorizing(),
+      TlsCertificatesAndHostnamesCertificateStatus$active() => active(),
+      TlsCertificatesAndHostnamesCertificateStatus$expired() => expired(),
+      TlsCertificatesAndHostnamesCertificateStatus$issuing() => issuing(),
+      TlsCertificatesAndHostnamesCertificateStatus$timingOut() => timingOut(),
+      TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment() => pendingDeployment(),
+      TlsCertificatesAndHostnamesCertificateStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? authorizing, W Function()? active, W Function()? expired, W Function()? issuing, W Function()? timingOut, W Function()? pendingDeployment, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesCertificateStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$authorizing() => authorizing != null ? authorizing() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$active() => active != null ? active() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$expired() => expired != null ? expired() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$issuing() => issuing != null ? issuing() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$timingOut() => timingOut != null ? timingOut() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
+      TlsCertificatesAndHostnamesCertificateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificateStatus($value)';
 
  }
@@ -158,6 +180,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasSignature$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ecdsaWithSha256, required W Function() sha1WithRsa, required W Function() sha256WithRsa, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256() => ecdsaWithSha256(),
+      TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa() => sha1WithRsa(),
+      TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa() => sha256WithRsa(),
+      TlsCertificatesAndHostnamesSchemasSignature$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ecdsaWithSha256, W Function()? sha1WithRsa, W Function()? sha256WithRsa, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256() => ecdsaWithSha256 != null ? ecdsaWithSha256() : orElse(value),
+      TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa() => sha1WithRsa != null ? sha1WithRsa() : orElse(value),
+      TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa() => sha256WithRsa != null ? sha256WithRsa() : orElse(value),
+      TlsCertificatesAndHostnamesSchemasSignature$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasSignature($value)';
 
  }
@@ -227,6 +263,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() cname, required W Function() txt, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesSchemasValidationMethod$http() => http(),
+      TlsCertificatesAndHostnamesSchemasValidationMethod$cname() => cname(),
+      TlsCertificatesAndHostnamesSchemasValidationMethod$txt() => txt(),
+      TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? cname, W Function()? txt, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesSchemasValidationMethod$http() => http != null ? http() : orElse(value),
+      TlsCertificatesAndHostnamesSchemasValidationMethod$cname() => cname != null ? cname() : orElse(value),
+      TlsCertificatesAndHostnamesSchemasValidationMethod$txt() => txt != null ? txt() : orElse(value),
+      TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasValidationMethod($value)';
 
  }
@@ -299,6 +349,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesVerificationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cname, required W Function() metaTag, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesVerificationType$cname() => cname(),
+      TlsCertificatesAndHostnamesVerificationType$metaTag() => metaTag(),
+      TlsCertificatesAndHostnamesVerificationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cname, W Function()? metaTag, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesVerificationType$cname() => cname != null ? cname() : orElse(value),
+      TlsCertificatesAndHostnamesVerificationType$metaTag() => metaTag != null ? metaTag() : orElse(value),
+      TlsCertificatesAndHostnamesVerificationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesVerificationType($value)';
 
  }

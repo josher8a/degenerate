@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty() => $empty(),
+      PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none() => none(),
+      PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty() => $empty != null ? $empty() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none() => none != null ? none() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage($value)';
 
  }

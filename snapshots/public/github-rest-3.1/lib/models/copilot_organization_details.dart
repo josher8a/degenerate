@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PublicCodeSuggestions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allow, required W Function() block, required W Function() unconfigured, required W Function(String value) $unknown, }) { return switch (this) {
+      PublicCodeSuggestions$allow() => allow(),
+      PublicCodeSuggestions$block() => block(),
+      PublicCodeSuggestions$unconfigured() => unconfigured(),
+      PublicCodeSuggestions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? block, W Function()? unconfigured, W Function(String value)? $unknown, }) { return switch (this) {
+      PublicCodeSuggestions$allow() => allow != null ? allow() : orElse(value),
+      PublicCodeSuggestions$block() => block != null ? block() : orElse(value),
+      PublicCodeSuggestions$unconfigured() => unconfigured != null ? unconfigured() : orElse(value),
+      PublicCodeSuggestions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PublicCodeSuggestions($value)';
 
  }
@@ -99,6 +113,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdeChat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() unconfigured, required W Function(String value) $unknown, }) { return switch (this) {
+      IdeChat$enabled() => enabled(),
+      IdeChat$disabled() => disabled(),
+      IdeChat$unconfigured() => unconfigured(),
+      IdeChat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? unconfigured, W Function(String value)? $unknown, }) { return switch (this) {
+      IdeChat$enabled() => enabled != null ? enabled() : orElse(value),
+      IdeChat$disabled() => disabled != null ? disabled() : orElse(value),
+      IdeChat$unconfigured() => unconfigured != null ? unconfigured() : orElse(value),
+      IdeChat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdeChat($value)';
 
  }
@@ -168,6 +196,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PlatformChat$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() unconfigured, required W Function(String value) $unknown, }) { return switch (this) {
+      PlatformChat$enabled() => enabled(),
+      PlatformChat$disabled() => disabled(),
+      PlatformChat$unconfigured() => unconfigured(),
+      PlatformChat$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? unconfigured, W Function(String value)? $unknown, }) { return switch (this) {
+      PlatformChat$enabled() => enabled != null ? enabled() : orElse(value),
+      PlatformChat$disabled() => disabled != null ? disabled() : orElse(value),
+      PlatformChat$unconfigured() => unconfigured != null ? unconfigured() : orElse(value),
+      PlatformChat$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PlatformChat($value)';
 
  }
@@ -237,6 +279,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Cli$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() unconfigured, required W Function(String value) $unknown, }) { return switch (this) {
+      Cli$enabled() => enabled(),
+      Cli$disabled() => disabled(),
+      Cli$unconfigured() => unconfigured(),
+      Cli$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? unconfigured, W Function(String value)? $unknown, }) { return switch (this) {
+      Cli$enabled() => enabled != null ? enabled() : orElse(value),
+      Cli$disabled() => disabled != null ? disabled() : orElse(value),
+      Cli$unconfigured() => unconfigured != null ? unconfigured() : orElse(value),
+      Cli$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Cli($value)';
 
  }
@@ -310,6 +366,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SeatManagementSetting$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() assignAll, required W Function() assignSelected, required W Function() disabled, required W Function() unconfigured, required W Function(String value) $unknown, }) { return switch (this) {
+      SeatManagementSetting$assignAll() => assignAll(),
+      SeatManagementSetting$assignSelected() => assignSelected(),
+      SeatManagementSetting$disabled() => disabled(),
+      SeatManagementSetting$unconfigured() => unconfigured(),
+      SeatManagementSetting$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assignAll, W Function()? assignSelected, W Function()? disabled, W Function()? unconfigured, W Function(String value)? $unknown, }) { return switch (this) {
+      SeatManagementSetting$assignAll() => assignAll != null ? assignAll() : orElse(value),
+      SeatManagementSetting$assignSelected() => assignSelected != null ? assignSelected() : orElse(value),
+      SeatManagementSetting$disabled() => disabled != null ? disabled() : orElse(value),
+      SeatManagementSetting$unconfigured() => unconfigured != null ? unconfigured() : orElse(value),
+      SeatManagementSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SeatManagementSetting($value)';
 
  }
@@ -384,6 +456,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CopilotOrganizationDetailsPlanType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() business, required W Function() enterprise, required W Function(String value) $unknown, }) { return switch (this) {
+      CopilotOrganizationDetailsPlanType$business() => business(),
+      CopilotOrganizationDetailsPlanType$enterprise() => enterprise(),
+      CopilotOrganizationDetailsPlanType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? business, W Function()? enterprise, W Function(String value)? $unknown, }) { return switch (this) {
+      CopilotOrganizationDetailsPlanType$business() => business != null ? business() : orElse(value),
+      CopilotOrganizationDetailsPlanType$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      CopilotOrganizationDetailsPlanType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CopilotOrganizationDetailsPlanType($value)';
 
  }

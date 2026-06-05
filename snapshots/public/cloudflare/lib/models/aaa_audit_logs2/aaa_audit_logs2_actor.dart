@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActorContext$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() apiKey, required W Function() apiToken, required W Function() dash, required W Function() oauth, required W Function() originCaKey, required W Function(String value) $unknown, }) { return switch (this) {
+      ActorContext$apiKey() => apiKey(),
+      ActorContext$apiToken() => apiToken(),
+      ActorContext$dash() => dash(),
+      ActorContext$oauth() => oauth(),
+      ActorContext$originCaKey() => originCaKey(),
+      ActorContext$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiKey, W Function()? apiToken, W Function()? dash, W Function()? oauth, W Function()? originCaKey, W Function(String value)? $unknown, }) { return switch (this) {
+      ActorContext$apiKey() => apiKey != null ? apiKey() : orElse(value),
+      ActorContext$apiToken() => apiToken != null ? apiToken() : orElse(value),
+      ActorContext$dash() => dash != null ? dash() : orElse(value),
+      ActorContext$oauth() => oauth != null ? oauth() : orElse(value),
+      ActorContext$originCaKey() => originCaKey != null ? originCaKey() : orElse(value),
+      ActorContext$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActorContext($value)';
 
  }
@@ -128,6 +146,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AaaAuditLogs2ActorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() account, required W Function() cloudflareAdmin, required W Function() system, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      AaaAuditLogs2ActorType$account() => account(),
+      AaaAuditLogs2ActorType$cloudflareAdmin() => cloudflareAdmin(),
+      AaaAuditLogs2ActorType$system() => system(),
+      AaaAuditLogs2ActorType$user() => user(),
+      AaaAuditLogs2ActorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? cloudflareAdmin, W Function()? system, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      AaaAuditLogs2ActorType$account() => account != null ? account() : orElse(value),
+      AaaAuditLogs2ActorType$cloudflareAdmin() => cloudflareAdmin != null ? cloudflareAdmin() : orElse(value),
+      AaaAuditLogs2ActorType$system() => system != null ? system() : orElse(value),
+      AaaAuditLogs2ActorType$user() => user != null ? user() : orElse(value),
+      AaaAuditLogs2ActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AaaAuditLogs2ActorType($value)';
 
  }

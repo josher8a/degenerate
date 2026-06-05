@@ -33,6 +33,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() user, required W Function() organization, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessLevel$none() => none(),
+      AccessLevel$user() => user(),
+      AccessLevel$organization() => organization(),
+      AccessLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? user, W Function()? organization, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessLevel$none() => none != null ? none() : orElse(value),
+      AccessLevel$user() => user != null ? user() : orElse(value),
+      AccessLevel$organization() => organization != null ? organization() : orElse(value),
+      AccessLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessLevel($value)';
 
  }

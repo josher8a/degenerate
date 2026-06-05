@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MinTls$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $10, required W Function() $11, required W Function() $12, required W Function() $13, required W Function(String value) $unknown, }) { return switch (this) {
+      MinTls$$10() => $10(),
+      MinTls$$11() => $11(),
+      MinTls$$12() => $12(),
+      MinTls$$13() => $13(),
+      MinTls$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W Function()? $11, W Function()? $12, W Function()? $13, W Function(String value)? $unknown, }) { return switch (this) {
+      MinTls$$10() => $10 != null ? $10() : orElse(value),
+      MinTls$$11() => $11 != null ? $11() : orElse(value),
+      MinTls$$12() => $12 != null ? $12() : orElse(value),
+      MinTls$$13() => $13 != null ? $13() : orElse(value),
+      MinTls$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MinTls($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetTreasuryTransactionEntriesOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() created, required W Function() effectiveAt, required W Function(String value) $unknown, }) { return switch (this) {
+      GetTreasuryTransactionEntriesOrderBy$created() => created(),
+      GetTreasuryTransactionEntriesOrderBy$effectiveAt() => effectiveAt(),
+      GetTreasuryTransactionEntriesOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? effectiveAt, W Function(String value)? $unknown, }) { return switch (this) {
+      GetTreasuryTransactionEntriesOrderBy$created() => created != null ? created() : orElse(value),
+      GetTreasuryTransactionEntriesOrderBy$effectiveAt() => effectiveAt != null ? effectiveAt() : orElse(value),
+      GetTreasuryTransactionEntriesOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetTreasuryTransactionEntriesOrderBy($value)';
 
  }

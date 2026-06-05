@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationThreeDSecureResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() attemptAcknowledged, required W Function() authenticated, required W Function() failed, required W Function() $required, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationThreeDSecureResult$attemptAcknowledged() => attemptAcknowledged(),
+      IssuingAuthorizationThreeDSecureResult$authenticated() => authenticated(),
+      IssuingAuthorizationThreeDSecureResult$failed() => failed(),
+      IssuingAuthorizationThreeDSecureResult$$required() => $required(),
+      IssuingAuthorizationThreeDSecureResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? attemptAcknowledged, W Function()? authenticated, W Function()? failed, W Function()? $required, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationThreeDSecureResult$attemptAcknowledged() => attemptAcknowledged != null ? attemptAcknowledged() : orElse(value),
+      IssuingAuthorizationThreeDSecureResult$authenticated() => authenticated != null ? authenticated() : orElse(value),
+      IssuingAuthorizationThreeDSecureResult$failed() => failed != null ? failed() : orElse(value),
+      IssuingAuthorizationThreeDSecureResult$$required() => $required != null ? $required() : orElse(value),
+      IssuingAuthorizationThreeDSecureResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationThreeDSecureResult($value)';
 
  }

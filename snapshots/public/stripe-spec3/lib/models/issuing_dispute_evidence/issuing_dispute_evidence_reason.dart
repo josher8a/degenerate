@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingDisputeEvidenceReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() duplicate, required W Function() fraudulent, required W Function() merchandiseNotAsDescribed, required W Function() noValidAuthorization, required W Function() notReceived, required W Function() $other, required W Function() serviceNotAsDescribed, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingDisputeEvidenceReason$canceled() => canceled(),
+      IssuingDisputeEvidenceReason$duplicate() => duplicate(),
+      IssuingDisputeEvidenceReason$fraudulent() => fraudulent(),
+      IssuingDisputeEvidenceReason$merchandiseNotAsDescribed() => merchandiseNotAsDescribed(),
+      IssuingDisputeEvidenceReason$noValidAuthorization() => noValidAuthorization(),
+      IssuingDisputeEvidenceReason$notReceived() => notReceived(),
+      IssuingDisputeEvidenceReason$$other() => $other(),
+      IssuingDisputeEvidenceReason$serviceNotAsDescribed() => serviceNotAsDescribed(),
+      IssuingDisputeEvidenceReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? duplicate, W Function()? fraudulent, W Function()? merchandiseNotAsDescribed, W Function()? noValidAuthorization, W Function()? notReceived, W Function()? $other, W Function()? serviceNotAsDescribed, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingDisputeEvidenceReason$canceled() => canceled != null ? canceled() : orElse(value),
+      IssuingDisputeEvidenceReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      IssuingDisputeEvidenceReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      IssuingDisputeEvidenceReason$merchandiseNotAsDescribed() => merchandiseNotAsDescribed != null ? merchandiseNotAsDescribed() : orElse(value),
+      IssuingDisputeEvidenceReason$noValidAuthorization() => noValidAuthorization != null ? noValidAuthorization() : orElse(value),
+      IssuingDisputeEvidenceReason$notReceived() => notReceived != null ? notReceived() : orElse(value),
+      IssuingDisputeEvidenceReason$$other() => $other != null ? $other() : orElse(value),
+      IssuingDisputeEvidenceReason$serviceNotAsDescribed() => serviceNotAsDescribed != null ? serviceNotAsDescribed() : orElse(value),
+      IssuingDisputeEvidenceReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingDisputeEvidenceReason($value)';
 
  }

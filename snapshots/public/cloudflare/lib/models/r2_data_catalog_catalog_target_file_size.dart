@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R2DataCatalogCatalogTargetFileSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $64, required W Function() $128, required W Function() $256, required W Function() $512, required W Function(String value) $unknown, }) { return switch (this) {
+      R2DataCatalogCatalogTargetFileSize$$64() => $64(),
+      R2DataCatalogCatalogTargetFileSize$$128() => $128(),
+      R2DataCatalogCatalogTargetFileSize$$256() => $256(),
+      R2DataCatalogCatalogTargetFileSize$$512() => $512(),
+      R2DataCatalogCatalogTargetFileSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $64, W Function()? $128, W Function()? $256, W Function()? $512, W Function(String value)? $unknown, }) { return switch (this) {
+      R2DataCatalogCatalogTargetFileSize$$64() => $64 != null ? $64() : orElse(value),
+      R2DataCatalogCatalogTargetFileSize$$128() => $128 != null ? $128() : orElse(value),
+      R2DataCatalogCatalogTargetFileSize$$256() => $256 != null ? $256() : orElse(value),
+      R2DataCatalogCatalogTargetFileSize$$512() => $512 != null ? $512() : orElse(value),
+      R2DataCatalogCatalogTargetFileSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R2DataCatalogCatalogTargetFileSize($value)';
 
  }

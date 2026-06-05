@@ -69,6 +69,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentParamNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() girocard, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentParamNetwork$amex() => amex(),
+      PaymentIntentParamNetwork$cartesBancaires() => cartesBancaires(),
+      PaymentIntentParamNetwork$diners() => diners(),
+      PaymentIntentParamNetwork$discover() => discover(),
+      PaymentIntentParamNetwork$eftposAu() => eftposAu(),
+      PaymentIntentParamNetwork$girocard() => girocard(),
+      PaymentIntentParamNetwork$interac() => interac(),
+      PaymentIntentParamNetwork$jcb() => jcb(),
+      PaymentIntentParamNetwork$link() => link(),
+      PaymentIntentParamNetwork$mastercard() => mastercard(),
+      PaymentIntentParamNetwork$unionpay() => unionpay(),
+      PaymentIntentParamNetwork$unknown() => unknown(),
+      PaymentIntentParamNetwork$visa() => visa(),
+      PaymentIntentParamNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? girocard, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentParamNetwork$amex() => amex != null ? amex() : orElse(value),
+      PaymentIntentParamNetwork$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
+      PaymentIntentParamNetwork$diners() => diners != null ? diners() : orElse(value),
+      PaymentIntentParamNetwork$discover() => discover != null ? discover() : orElse(value),
+      PaymentIntentParamNetwork$eftposAu() => eftposAu != null ? eftposAu() : orElse(value),
+      PaymentIntentParamNetwork$girocard() => girocard != null ? girocard() : orElse(value),
+      PaymentIntentParamNetwork$interac() => interac != null ? interac() : orElse(value),
+      PaymentIntentParamNetwork$jcb() => jcb != null ? jcb() : orElse(value),
+      PaymentIntentParamNetwork$link() => link != null ? link() : orElse(value),
+      PaymentIntentParamNetwork$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      PaymentIntentParamNetwork$unionpay() => unionpay != null ? unionpay() : orElse(value),
+      PaymentIntentParamNetwork$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentIntentParamNetwork$visa() => visa != null ? visa() : orElse(value),
+      PaymentIntentParamNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentParamNetwork($value)';
 
  }

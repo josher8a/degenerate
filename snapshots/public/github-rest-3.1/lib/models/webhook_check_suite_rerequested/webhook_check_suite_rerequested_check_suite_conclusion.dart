@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookCheckSuiteRerequestedCheckSuiteConclusion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() timedOut, required W Function() actionRequired, required W Function() stale, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$success() => success(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$failure() => failure(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$neutral() => neutral(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$cancelled() => cancelled(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$timedOut() => timedOut(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$actionRequired() => actionRequired(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$stale() => stale(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$$null() => $null(),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? timedOut, W Function()? actionRequired, W Function()? stale, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$success() => success != null ? success() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$failure() => failure != null ? failure() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$neutral() => neutral != null ? neutral() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$stale() => stale != null ? stale() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$$null() => $null != null ? $null() : orElse(value),
+      WebhookCheckSuiteRerequestedCheckSuiteConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookCheckSuiteRerequestedCheckSuiteConclusion($value)';
 
  }

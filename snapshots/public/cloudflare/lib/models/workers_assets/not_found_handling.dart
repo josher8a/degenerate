@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NotFoundHandling$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() $404Page, required W Function() singlePageApplication, required W Function(String value) $unknown, }) { return switch (this) {
+      NotFoundHandling$none() => none(),
+      NotFoundHandling$$404Page() => $404Page(),
+      NotFoundHandling$singlePageApplication() => singlePageApplication(),
+      NotFoundHandling$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? $404Page, W Function()? singlePageApplication, W Function(String value)? $unknown, }) { return switch (this) {
+      NotFoundHandling$none() => none != null ? none() : orElse(value),
+      NotFoundHandling$$404Page() => $404Page != null ? $404Page() : orElse(value),
+      NotFoundHandling$singlePageApplication() => singlePageApplication != null ? singlePageApplication() : orElse(value),
+      NotFoundHandling$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NotFoundHandling($value)';
 
  }

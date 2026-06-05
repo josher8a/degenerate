@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsTimeseriesGroupResponseTtl$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lte1M, required W Function() gt1MLte5M, required W Function() gt5MLte15M, required W Function() gt15MLte1H, required W Function() gt1HLte1D, required W Function() gt1DLte1W, required W Function() gt1W, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesGroupResponseTtl$lte1M() => lte1M(),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1MLte5M() => gt1MLte5M(),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt5MLte15M() => gt5MLte15M(),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt15MLte1H() => gt15MLte1H(),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1HLte1D() => gt1HLte1D(),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1DLte1W() => gt1DLte1W(),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1W() => gt1W(),
+      RadarGetDnsTimeseriesGroupResponseTtl$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte1M, W Function()? gt1MLte5M, W Function()? gt5MLte15M, W Function()? gt15MLte1H, W Function()? gt1HLte1D, W Function()? gt1DLte1W, W Function()? gt1W, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesGroupResponseTtl$lte1M() => lte1M != null ? lte1M() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1MLte5M() => gt1MLte5M != null ? gt1MLte5M() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt5MLte15M() => gt5MLte15M != null ? gt5MLte15M() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt15MLte1H() => gt15MLte1H != null ? gt15MLte1H() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1HLte1D() => gt1HLte1D != null ? gt1HLte1D() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1DLte1W() => gt1DLte1W != null ? gt1DLte1W() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$gt1W() => gt1W != null ? gt1W() : orElse(value),
+      RadarGetDnsTimeseriesGroupResponseTtl$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsTimeseriesGroupResponseTtl($value)';
 
  }

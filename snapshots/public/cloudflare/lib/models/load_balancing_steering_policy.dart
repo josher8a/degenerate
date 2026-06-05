@@ -58,6 +58,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingSteeringPolicy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() geo, required W Function() random, required W Function() dynamicLatency, required W Function() proximity, required W Function() leastOutstandingRequests, required W Function() leastConnections, required W Function() $empty, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingSteeringPolicy$off() => off(),
+      LoadBalancingSteeringPolicy$geo() => geo(),
+      LoadBalancingSteeringPolicy$random() => random(),
+      LoadBalancingSteeringPolicy$dynamicLatency() => dynamicLatency(),
+      LoadBalancingSteeringPolicy$proximity() => proximity(),
+      LoadBalancingSteeringPolicy$leastOutstandingRequests() => leastOutstandingRequests(),
+      LoadBalancingSteeringPolicy$leastConnections() => leastConnections(),
+      LoadBalancingSteeringPolicy$$empty() => $empty(),
+      LoadBalancingSteeringPolicy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? geo, W Function()? random, W Function()? dynamicLatency, W Function()? proximity, W Function()? leastOutstandingRequests, W Function()? leastConnections, W Function()? $empty, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingSteeringPolicy$off() => off != null ? off() : orElse(value),
+      LoadBalancingSteeringPolicy$geo() => geo != null ? geo() : orElse(value),
+      LoadBalancingSteeringPolicy$random() => random != null ? random() : orElse(value),
+      LoadBalancingSteeringPolicy$dynamicLatency() => dynamicLatency != null ? dynamicLatency() : orElse(value),
+      LoadBalancingSteeringPolicy$proximity() => proximity != null ? proximity() : orElse(value),
+      LoadBalancingSteeringPolicy$leastOutstandingRequests() => leastOutstandingRequests != null ? leastOutstandingRequests() : orElse(value),
+      LoadBalancingSteeringPolicy$leastConnections() => leastConnections != null ? leastConnections() : orElse(value),
+      LoadBalancingSteeringPolicy$$empty() => $empty != null ? $empty() : orElse(value),
+      LoadBalancingSteeringPolicy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingSteeringPolicy($value)';
 
  }

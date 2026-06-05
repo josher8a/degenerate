@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Layout$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() table, required W Function() board, required W Function() roadmap, required W Function(String value) $unknown, }) { return switch (this) {
+      Layout$table() => table(),
+      Layout$board() => board(),
+      Layout$roadmap() => roadmap(),
+      Layout$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? table, W Function()? board, W Function()? roadmap, W Function(String value)? $unknown, }) { return switch (this) {
+      Layout$table() => table != null ? table() : orElse(value),
+      Layout$board() => board != null ? board() : orElse(value),
+      Layout$roadmap() => roadmap != null ? roadmap() : orElse(value),
+      Layout$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Layout($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Fields$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() currentlyDue, required W Function() eventuallyDue, required W Function(String value) $unknown, }) { return switch (this) {
+      Fields$currentlyDue() => currentlyDue(),
+      Fields$eventuallyDue() => eventuallyDue(),
+      Fields$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? currentlyDue, W Function()? eventuallyDue, W Function(String value)? $unknown, }) { return switch (this) {
+      Fields$currentlyDue() => currentlyDue != null ? currentlyDue() : orElse(value),
+      Fields$eventuallyDue() => eventuallyDue != null ? eventuallyDue() : orElse(value),
+      Fields$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Fields($value)';
 
  }
@@ -80,6 +92,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FutureRequirements$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() include, required W Function() omit, required W Function(String value) $unknown, }) { return switch (this) {
+      FutureRequirements$include() => include(),
+      FutureRequirements$omit() => omit(),
+      FutureRequirements$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? include, W Function()? omit, W Function(String value)? $unknown, }) { return switch (this) {
+      FutureRequirements$include() => include != null ? include() : orElse(value),
+      FutureRequirements$omit() => omit != null ? omit() : orElse(value),
+      FutureRequirements$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FutureRequirements($value)';
 
  }

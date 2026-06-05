@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesExtendedKeyUsageEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clientAuth, required W Function() emailProtection, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesExtendedKeyUsageEnum$clientAuth() => clientAuth(),
+      TeamsDevicesExtendedKeyUsageEnum$emailProtection() => emailProtection(),
+      TeamsDevicesExtendedKeyUsageEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientAuth, W Function()? emailProtection, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesExtendedKeyUsageEnum$clientAuth() => clientAuth != null ? clientAuth() : orElse(value),
+      TeamsDevicesExtendedKeyUsageEnum$emailProtection() => emailProtection != null ? emailProtection() : orElse(value),
+      TeamsDevicesExtendedKeyUsageEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesExtendedKeyUsageEnum($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VideoContentVariant$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() video, required W Function() thumbnail, required W Function() spritesheet, required W Function(String value) $unknown, }) { return switch (this) {
+      VideoContentVariant$video() => video(),
+      VideoContentVariant$thumbnail() => thumbnail(),
+      VideoContentVariant$spritesheet() => spritesheet(),
+      VideoContentVariant$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? video, W Function()? thumbnail, W Function()? spritesheet, W Function(String value)? $unknown, }) { return switch (this) {
+      VideoContentVariant$video() => video != null ? video() : orElse(value),
+      VideoContentVariant$thumbnail() => thumbnail != null ? thumbnail() : orElse(value),
+      VideoContentVariant$spritesheet() => spritesheet != null ? spritesheet() : orElse(value),
+      VideoContentVariant$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VideoContentVariant($value)';
 
  }

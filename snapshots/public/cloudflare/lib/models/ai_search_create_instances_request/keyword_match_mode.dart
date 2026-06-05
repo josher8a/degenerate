@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is KeywordMatchMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exactMatch, required W Function() fuzzyMatch, required W Function(String value) $unknown, }) { return switch (this) {
+      KeywordMatchMode$exactMatch() => exactMatch(),
+      KeywordMatchMode$fuzzyMatch() => fuzzyMatch(),
+      KeywordMatchMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exactMatch, W Function()? fuzzyMatch, W Function(String value)? $unknown, }) { return switch (this) {
+      KeywordMatchMode$exactMatch() => exactMatch != null ? exactMatch() : orElse(value),
+      KeywordMatchMode$fuzzyMatch() => fuzzyMatch != null ? fuzzyMatch() : orElse(value),
+      KeywordMatchMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'KeywordMatchMode($value)';
 
  }

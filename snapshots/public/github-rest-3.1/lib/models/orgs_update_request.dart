@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultRepositoryPermission$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() write, required W Function() admin, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      DefaultRepositoryPermission$read() => read(),
+      DefaultRepositoryPermission$write() => write(),
+      DefaultRepositoryPermission$admin() => admin(),
+      DefaultRepositoryPermission$none() => none(),
+      DefaultRepositoryPermission$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? write, W Function()? admin, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      DefaultRepositoryPermission$read() => read != null ? read() : orElse(value),
+      DefaultRepositoryPermission$write() => write != null ? write() : orElse(value),
+      DefaultRepositoryPermission$admin() => admin != null ? admin() : orElse(value),
+      DefaultRepositoryPermission$none() => none != null ? none() : orElse(value),
+      DefaultRepositoryPermission$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultRepositoryPermission($value)';
 
  }
@@ -113,6 +129,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MembersAllowedRepositoryCreationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() private, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      MembersAllowedRepositoryCreationType$all() => all(),
+      MembersAllowedRepositoryCreationType$private() => private(),
+      MembersAllowedRepositoryCreationType$none() => none(),
+      MembersAllowedRepositoryCreationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? private, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      MembersAllowedRepositoryCreationType$all() => all != null ? all() : orElse(value),
+      MembersAllowedRepositoryCreationType$private() => private != null ? private() : orElse(value),
+      MembersAllowedRepositoryCreationType$none() => none != null ? none() : orElse(value),
+      MembersAllowedRepositoryCreationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MembersAllowedRepositoryCreationType($value)';
 
  }

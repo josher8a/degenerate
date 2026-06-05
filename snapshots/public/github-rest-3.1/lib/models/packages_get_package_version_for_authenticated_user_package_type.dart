@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$npm() => npm(),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$maven() => maven(),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems() => rubygems(),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$docker() => docker(),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget() => nuget(),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$container() => container(),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$npm() => npm != null ? npm() : orElse(value),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$maven() => maven != null ? maven() : orElse(value),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$docker() => docker != null ? docker() : orElse(value),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$container() => container != null ? container() : orElse(value),
+      PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesGetPackageVersionForAuthenticatedUserPackageType($value)';
 
  }

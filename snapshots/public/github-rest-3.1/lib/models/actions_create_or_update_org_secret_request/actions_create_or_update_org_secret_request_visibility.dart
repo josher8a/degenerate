@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActionsCreateOrUpdateOrgSecretRequestVisibility$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() private, required W Function() selected, required W Function(String value) $unknown, }) { return switch (this) {
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$all() => all(),
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$private() => private(),
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$selected() => selected(),
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? private, W Function()? selected, W Function(String value)? $unknown, }) { return switch (this) {
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$all() => all != null ? all() : orElse(value),
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$private() => private != null ? private() : orElse(value),
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$selected() => selected != null ? selected() : orElse(value),
+      ActionsCreateOrUpdateOrgSecretRequestVisibility$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActionsCreateOrUpdateOrgSecretRequestVisibility($value)';
 
  }

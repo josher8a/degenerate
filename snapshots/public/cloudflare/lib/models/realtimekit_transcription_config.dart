@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Language$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enUs, required W Function() enIn, required W Function() de, required W Function() hi, required W Function() sv, required W Function() ru, required W Function() pl, required W Function() el, required W Function() fr, required W Function() nl, required W Function(String value) $unknown, }) { return switch (this) {
+      Language$enUs() => enUs(),
+      Language$enIn() => enIn(),
+      Language$de() => de(),
+      Language$hi() => hi(),
+      Language$sv() => sv(),
+      Language$ru() => ru(),
+      Language$pl() => pl(),
+      Language$el() => el(),
+      Language$fr() => fr(),
+      Language$nl() => nl(),
+      Language$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enUs, W Function()? enIn, W Function()? de, W Function()? hi, W Function()? sv, W Function()? ru, W Function()? pl, W Function()? el, W Function()? fr, W Function()? nl, W Function(String value)? $unknown, }) { return switch (this) {
+      Language$enUs() => enUs != null ? enUs() : orElse(value),
+      Language$enIn() => enIn != null ? enIn() : orElse(value),
+      Language$de() => de != null ? de() : orElse(value),
+      Language$hi() => hi != null ? hi() : orElse(value),
+      Language$sv() => sv != null ? sv() : orElse(value),
+      Language$ru() => ru != null ? ru() : orElse(value),
+      Language$pl() => pl != null ? pl() : orElse(value),
+      Language$el() => el != null ? el() : orElse(value),
+      Language$fr() => fr != null ? fr() : orElse(value),
+      Language$nl() => nl != null ? nl() : orElse(value),
+      Language$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Language($value)';
 
  }

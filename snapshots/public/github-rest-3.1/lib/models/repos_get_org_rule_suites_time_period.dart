@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposGetOrgRuleSuitesTimePeriod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() hour, required W Function() day, required W Function() week, required W Function() month, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposGetOrgRuleSuitesTimePeriod$hour() => hour(),
+      ReposGetOrgRuleSuitesTimePeriod$day() => day(),
+      ReposGetOrgRuleSuitesTimePeriod$week() => week(),
+      ReposGetOrgRuleSuitesTimePeriod$month() => month(),
+      ReposGetOrgRuleSuitesTimePeriod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? hour, W Function()? day, W Function()? week, W Function()? month, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposGetOrgRuleSuitesTimePeriod$hour() => hour != null ? hour() : orElse(value),
+      ReposGetOrgRuleSuitesTimePeriod$day() => day != null ? day() : orElse(value),
+      ReposGetOrgRuleSuitesTimePeriod$week() => week != null ? week() : orElse(value),
+      ReposGetOrgRuleSuitesTimePeriod$month() => month != null ? month() : orElse(value),
+      ReposGetOrgRuleSuitesTimePeriod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposGetOrgRuleSuitesTimePeriod($value)';
 
  }

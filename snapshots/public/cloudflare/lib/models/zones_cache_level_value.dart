@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesCacheLevelValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aggressive, required W Function() basic, required W Function() simplified, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesCacheLevelValue$aggressive() => aggressive(),
+      ZonesCacheLevelValue$basic() => basic(),
+      ZonesCacheLevelValue$simplified() => simplified(),
+      ZonesCacheLevelValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aggressive, W Function()? basic, W Function()? simplified, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesCacheLevelValue$aggressive() => aggressive != null ? aggressive() : orElse(value),
+      ZonesCacheLevelValue$basic() => basic != null ? basic() : orElse(value),
+      ZonesCacheLevelValue$simplified() => simplified != null ? simplified() : orElse(value),
+      ZonesCacheLevelValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesCacheLevelValue($value)';
 
  }

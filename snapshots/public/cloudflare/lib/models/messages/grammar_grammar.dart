@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Syntax$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lark, required W Function() regex, required W Function(String value) $unknown, }) { return switch (this) {
+      Syntax$lark() => lark(),
+      Syntax$regex() => regex(),
+      Syntax$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lark, W Function()? regex, W Function(String value)? $unknown, }) { return switch (this) {
+      Syntax$lark() => lark != null ? lark() : orElse(value),
+      Syntax$regex() => regex != null ? regex() : orElse(value),
+      Syntax$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Syntax($value)';
 
  }

@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MetadataSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() api, required W Function() wrangler, required W Function() terraform, required W Function() dash, required W Function() dashTemplate, required W Function() integration, required W Function() quickEditor, required W Function() playground, required W Function() workersci, required W Function(String value) $unknown, }) { return switch (this) {
+      MetadataSource$unknown() => unknown(),
+      MetadataSource$api() => api(),
+      MetadataSource$wrangler() => wrangler(),
+      MetadataSource$terraform() => terraform(),
+      MetadataSource$dash() => dash(),
+      MetadataSource$dashTemplate() => dashTemplate(),
+      MetadataSource$integration() => integration(),
+      MetadataSource$quickEditor() => quickEditor(),
+      MetadataSource$playground() => playground(),
+      MetadataSource$workersci() => workersci(),
+      MetadataSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? api, W Function()? wrangler, W Function()? terraform, W Function()? dash, W Function()? dashTemplate, W Function()? integration, W Function()? quickEditor, W Function()? playground, W Function()? workersci, W Function(String value)? $unknown, }) { return switch (this) {
+      MetadataSource$unknown() => unknown != null ? unknown() : orElse(value),
+      MetadataSource$api() => api != null ? api() : orElse(value),
+      MetadataSource$wrangler() => wrangler != null ? wrangler() : orElse(value),
+      MetadataSource$terraform() => terraform != null ? terraform() : orElse(value),
+      MetadataSource$dash() => dash != null ? dash() : orElse(value),
+      MetadataSource$dashTemplate() => dashTemplate != null ? dashTemplate() : orElse(value),
+      MetadataSource$integration() => integration != null ? integration() : orElse(value),
+      MetadataSource$quickEditor() => quickEditor != null ? quickEditor() : orElse(value),
+      MetadataSource$playground() => playground != null ? playground() : orElse(value),
+      MetadataSource$workersci() => workersci != null ? workersci() : orElse(value),
+      MetadataSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MetadataSource($value)';
 
  }

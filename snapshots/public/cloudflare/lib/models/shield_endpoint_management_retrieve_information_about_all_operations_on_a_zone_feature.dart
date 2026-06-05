@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() thresholds, required W Function() parameterSchemas, required W Function() schemaInfo, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$thresholds() => thresholds(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$parameterSchemas() => parameterSchemas(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$schemaInfo() => schemaInfo(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? thresholds, W Function()? parameterSchemas, W Function()? schemaInfo, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$thresholds() => thresholds != null ? thresholds() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$parameterSchemas() => parameterSchemas != null ? parameterSchemas() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$schemaInfo() => schemaInfo != null ? schemaInfo() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature($value)';
 
  }

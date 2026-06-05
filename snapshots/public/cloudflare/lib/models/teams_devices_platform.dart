@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesPlatform$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() mac, required W Function() linux, required W Function() android, required W Function() ios, required W Function() chromeos, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesPlatform$windows() => windows(),
+      TeamsDevicesPlatform$mac() => mac(),
+      TeamsDevicesPlatform$linux() => linux(),
+      TeamsDevicesPlatform$android() => android(),
+      TeamsDevicesPlatform$ios() => ios(),
+      TeamsDevicesPlatform$chromeos() => chromeos(),
+      TeamsDevicesPlatform$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? mac, W Function()? linux, W Function()? android, W Function()? ios, W Function()? chromeos, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesPlatform$windows() => windows != null ? windows() : orElse(value),
+      TeamsDevicesPlatform$mac() => mac != null ? mac() : orElse(value),
+      TeamsDevicesPlatform$linux() => linux != null ? linux() : orElse(value),
+      TeamsDevicesPlatform$android() => android != null ? android() : orElse(value),
+      TeamsDevicesPlatform$ios() => ios != null ? ios() : orElse(value),
+      TeamsDevicesPlatform$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      TeamsDevicesPlatform$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesPlatform($value)';
 
  }

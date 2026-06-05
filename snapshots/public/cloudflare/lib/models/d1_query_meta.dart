@@ -49,6 +49,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is D1ServedByRegion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() wnam, required W Function() enam, required W Function() weur, required W Function() eeur, required W Function() apac, required W Function() oc, required W Function(String value) $unknown, }) { return switch (this) {
+      D1ServedByRegion$wnam() => wnam(),
+      D1ServedByRegion$enam() => enam(),
+      D1ServedByRegion$weur() => weur(),
+      D1ServedByRegion$eeur() => eeur(),
+      D1ServedByRegion$apac() => apac(),
+      D1ServedByRegion$oc() => oc(),
+      D1ServedByRegion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? wnam, W Function()? enam, W Function()? weur, W Function()? eeur, W Function()? apac, W Function()? oc, W Function(String value)? $unknown, }) { return switch (this) {
+      D1ServedByRegion$wnam() => wnam != null ? wnam() : orElse(value),
+      D1ServedByRegion$enam() => enam != null ? enam() : orElse(value),
+      D1ServedByRegion$weur() => weur != null ? weur() : orElse(value),
+      D1ServedByRegion$eeur() => eeur != null ? eeur() : orElse(value),
+      D1ServedByRegion$apac() => apac != null ? apac() : orElse(value),
+      D1ServedByRegion$oc() => oc != null ? oc() : orElse(value),
+      D1ServedByRegion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'D1ServedByRegion($value)';
 
  }

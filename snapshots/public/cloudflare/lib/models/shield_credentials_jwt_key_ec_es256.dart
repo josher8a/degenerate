@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldCredentialsJwtKeyEcEs256Alg$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() es256, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyEcEs256Alg$es256() => es256(),
+      ShieldCredentialsJwtKeyEcEs256Alg$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? es256, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyEcEs256Alg$es256() => es256 != null ? es256() : orElse(value),
+      ShieldCredentialsJwtKeyEcEs256Alg$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldCredentialsJwtKeyEcEs256Alg($value)';
 
  }
@@ -65,6 +75,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldCredentialsJwtKeyEcEs256Crv$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() p256, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyEcEs256Crv$p256() => p256(),
+      ShieldCredentialsJwtKeyEcEs256Crv$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? p256, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyEcEs256Crv$p256() => p256 != null ? p256() : orElse(value),
+      ShieldCredentialsJwtKeyEcEs256Crv$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldCredentialsJwtKeyEcEs256Crv($value)';
 
  }

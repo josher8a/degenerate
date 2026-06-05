@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BrandingSettingsBorderStyle$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() pill, required W Function() rectangular, required W Function() rounded, required W Function(String value) $unknown, }) { return switch (this) {
+      BrandingSettingsBorderStyle$$empty() => $empty(),
+      BrandingSettingsBorderStyle$pill() => pill(),
+      BrandingSettingsBorderStyle$rectangular() => rectangular(),
+      BrandingSettingsBorderStyle$rounded() => rounded(),
+      BrandingSettingsBorderStyle$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? pill, W Function()? rectangular, W Function()? rounded, W Function(String value)? $unknown, }) { return switch (this) {
+      BrandingSettingsBorderStyle$$empty() => $empty != null ? $empty() : orElse(value),
+      BrandingSettingsBorderStyle$pill() => pill != null ? pill() : orElse(value),
+      BrandingSettingsBorderStyle$rectangular() => rectangular != null ? rectangular() : orElse(value),
+      BrandingSettingsBorderStyle$rounded() => rounded != null ? rounded() : orElse(value),
+      BrandingSettingsBorderStyle$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BrandingSettingsBorderStyle($value)';
 
  }
@@ -206,6 +222,68 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FontFamily$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() beVietnamPro, required W Function() bitter, required W Function() chakraPetch, required W Function() $default, required W Function() hahmlet, required W Function() inconsolata, required W Function() inter, required W Function() lato, required W Function() lora, required W Function() mPlus1Code, required W Function() montserrat, required W Function() notoSans, required W Function() notoSansJp, required W Function() notoSerif, required W Function() nunito, required W Function() openSans, required W Function() pridi, required W Function() ptSans, required W Function() ptSerif, required W Function() raleway, required W Function() roboto, required W Function() robotoSlab, required W Function() sourceSansPro, required W Function() titilliumWeb, required W Function() ubuntuMono, required W Function() zenMaruGothic, required W Function(String value) $unknown, }) { return switch (this) {
+      FontFamily$$empty() => $empty(),
+      FontFamily$beVietnamPro() => beVietnamPro(),
+      FontFamily$bitter() => bitter(),
+      FontFamily$chakraPetch() => chakraPetch(),
+      FontFamily$$default() => $default(),
+      FontFamily$hahmlet() => hahmlet(),
+      FontFamily$inconsolata() => inconsolata(),
+      FontFamily$inter() => inter(),
+      FontFamily$lato() => lato(),
+      FontFamily$lora() => lora(),
+      FontFamily$mPlus1Code() => mPlus1Code(),
+      FontFamily$montserrat() => montserrat(),
+      FontFamily$notoSans() => notoSans(),
+      FontFamily$notoSansJp() => notoSansJp(),
+      FontFamily$notoSerif() => notoSerif(),
+      FontFamily$nunito() => nunito(),
+      FontFamily$openSans() => openSans(),
+      FontFamily$pridi() => pridi(),
+      FontFamily$ptSans() => ptSans(),
+      FontFamily$ptSerif() => ptSerif(),
+      FontFamily$raleway() => raleway(),
+      FontFamily$roboto() => roboto(),
+      FontFamily$robotoSlab() => robotoSlab(),
+      FontFamily$sourceSansPro() => sourceSansPro(),
+      FontFamily$titilliumWeb() => titilliumWeb(),
+      FontFamily$ubuntuMono() => ubuntuMono(),
+      FontFamily$zenMaruGothic() => zenMaruGothic(),
+      FontFamily$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? beVietnamPro, W Function()? bitter, W Function()? chakraPetch, W Function()? $default, W Function()? hahmlet, W Function()? inconsolata, W Function()? inter, W Function()? lato, W Function()? lora, W Function()? mPlus1Code, W Function()? montserrat, W Function()? notoSans, W Function()? notoSansJp, W Function()? notoSerif, W Function()? nunito, W Function()? openSans, W Function()? pridi, W Function()? ptSans, W Function()? ptSerif, W Function()? raleway, W Function()? roboto, W Function()? robotoSlab, W Function()? sourceSansPro, W Function()? titilliumWeb, W Function()? ubuntuMono, W Function()? zenMaruGothic, W Function(String value)? $unknown, }) { return switch (this) {
+      FontFamily$$empty() => $empty != null ? $empty() : orElse(value),
+      FontFamily$beVietnamPro() => beVietnamPro != null ? beVietnamPro() : orElse(value),
+      FontFamily$bitter() => bitter != null ? bitter() : orElse(value),
+      FontFamily$chakraPetch() => chakraPetch != null ? chakraPetch() : orElse(value),
+      FontFamily$$default() => $default != null ? $default() : orElse(value),
+      FontFamily$hahmlet() => hahmlet != null ? hahmlet() : orElse(value),
+      FontFamily$inconsolata() => inconsolata != null ? inconsolata() : orElse(value),
+      FontFamily$inter() => inter != null ? inter() : orElse(value),
+      FontFamily$lato() => lato != null ? lato() : orElse(value),
+      FontFamily$lora() => lora != null ? lora() : orElse(value),
+      FontFamily$mPlus1Code() => mPlus1Code != null ? mPlus1Code() : orElse(value),
+      FontFamily$montserrat() => montserrat != null ? montserrat() : orElse(value),
+      FontFamily$notoSans() => notoSans != null ? notoSans() : orElse(value),
+      FontFamily$notoSansJp() => notoSansJp != null ? notoSansJp() : orElse(value),
+      FontFamily$notoSerif() => notoSerif != null ? notoSerif() : orElse(value),
+      FontFamily$nunito() => nunito != null ? nunito() : orElse(value),
+      FontFamily$openSans() => openSans != null ? openSans() : orElse(value),
+      FontFamily$pridi() => pridi != null ? pridi() : orElse(value),
+      FontFamily$ptSans() => ptSans != null ? ptSans() : orElse(value),
+      FontFamily$ptSerif() => ptSerif != null ? ptSerif() : orElse(value),
+      FontFamily$raleway() => raleway != null ? raleway() : orElse(value),
+      FontFamily$roboto() => roboto != null ? roboto() : orElse(value),
+      FontFamily$robotoSlab() => robotoSlab != null ? robotoSlab() : orElse(value),
+      FontFamily$sourceSansPro() => sourceSansPro != null ? sourceSansPro() : orElse(value),
+      FontFamily$titilliumWeb() => titilliumWeb != null ? titilliumWeb() : orElse(value),
+      FontFamily$ubuntuMono() => ubuntuMono != null ? ubuntuMono() : orElse(value),
+      FontFamily$zenMaruGothic() => zenMaruGothic != null ? zenMaruGothic() : orElse(value),
+      FontFamily$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FontFamily($value)';
 
  }

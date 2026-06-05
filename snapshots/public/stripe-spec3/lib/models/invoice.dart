@@ -62,6 +62,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() automaticPendingInvoiceItemInvoice, required W Function() manual, required W Function() quoteAccept, required W Function() subscription, required W Function() subscriptionCreate, required W Function() subscriptionCycle, required W Function() subscriptionThreshold, required W Function() subscriptionUpdate, required W Function() upcoming, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingReason$automaticPendingInvoiceItemInvoice() => automaticPendingInvoiceItemInvoice(),
+      BillingReason$manual() => manual(),
+      BillingReason$quoteAccept() => quoteAccept(),
+      BillingReason$subscription() => subscription(),
+      BillingReason$subscriptionCreate() => subscriptionCreate(),
+      BillingReason$subscriptionCycle() => subscriptionCycle(),
+      BillingReason$subscriptionThreshold() => subscriptionThreshold(),
+      BillingReason$subscriptionUpdate() => subscriptionUpdate(),
+      BillingReason$upcoming() => upcoming(),
+      BillingReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automaticPendingInvoiceItemInvoice, W Function()? manual, W Function()? quoteAccept, W Function()? subscription, W Function()? subscriptionCreate, W Function()? subscriptionCycle, W Function()? subscriptionThreshold, W Function()? subscriptionUpdate, W Function()? upcoming, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingReason$automaticPendingInvoiceItemInvoice() => automaticPendingInvoiceItemInvoice != null ? automaticPendingInvoiceItemInvoice() : orElse(value),
+      BillingReason$manual() => manual != null ? manual() : orElse(value),
+      BillingReason$quoteAccept() => quoteAccept != null ? quoteAccept() : orElse(value),
+      BillingReason$subscription() => subscription != null ? subscription() : orElse(value),
+      BillingReason$subscriptionCreate() => subscriptionCreate != null ? subscriptionCreate() : orElse(value),
+      BillingReason$subscriptionCycle() => subscriptionCycle != null ? subscriptionCycle() : orElse(value),
+      BillingReason$subscriptionThreshold() => subscriptionThreshold != null ? subscriptionThreshold() : orElse(value),
+      BillingReason$subscriptionUpdate() => subscriptionUpdate != null ? subscriptionUpdate() : orElse(value),
+      BillingReason$upcoming() => upcoming != null ? upcoming() : orElse(value),
+      BillingReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingReason($value)';
 
  }
@@ -185,6 +211,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceCustomerTaxExempt$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exempt, required W Function() none, required W Function() reverse, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceCustomerTaxExempt$exempt() => exempt(),
+      InvoiceCustomerTaxExempt$none() => none(),
+      InvoiceCustomerTaxExempt$reverse() => reverse(),
+      InvoiceCustomerTaxExempt$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exempt, W Function()? none, W Function()? reverse, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceCustomerTaxExempt$exempt() => exempt != null ? exempt() : orElse(value),
+      InvoiceCustomerTaxExempt$none() => none != null ? none() : orElse(value),
+      InvoiceCustomerTaxExempt$reverse() => reverse != null ? reverse() : orElse(value),
+      InvoiceCustomerTaxExempt$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceCustomerTaxExempt($value)';
 
  }
@@ -262,6 +302,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() draft, required W Function() open, required W Function() paid, required W Function() uncollectible, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceStatus$draft() => draft(),
+      InvoiceStatus$open() => open(),
+      InvoiceStatus$paid() => paid(),
+      InvoiceStatus$uncollectible() => uncollectible(),
+      InvoiceStatus$$void() => $void(),
+      InvoiceStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? draft, W Function()? open, W Function()? paid, W Function()? uncollectible, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceStatus$draft() => draft != null ? draft() : orElse(value),
+      InvoiceStatus$open() => open != null ? open() : orElse(value),
+      InvoiceStatus$paid() => paid != null ? paid() : orElse(value),
+      InvoiceStatus$uncollectible() => uncollectible != null ? uncollectible() : orElse(value),
+      InvoiceStatus$$void() => $void != null ? $void() : orElse(value),
+      InvoiceStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceStatus($value)';
 
  }

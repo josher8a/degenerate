@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersPlacementStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() unsupportedApplication, required W Function() insufficientInvocations, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersPlacementStatus$success() => success(),
+      WorkersPlacementStatus$unsupportedApplication() => unsupportedApplication(),
+      WorkersPlacementStatus$insufficientInvocations() => insufficientInvocations(),
+      WorkersPlacementStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? unsupportedApplication, W Function()? insufficientInvocations, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersPlacementStatus$success() => success != null ? success() : orElse(value),
+      WorkersPlacementStatus$unsupportedApplication() => unsupportedApplication != null ? unsupportedApplication() : orElse(value),
+      WorkersPlacementStatus$insufficientInvocations() => insufficientInvocations != null ? insufficientInvocations() : orElse(value),
+      WorkersPlacementStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersPlacementStatus($value)';
 
  }

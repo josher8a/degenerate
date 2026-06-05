@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageEmbeddingsGroupBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() projectId, required W Function() userId, required W Function() apiKeyId, required W Function() model, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageEmbeddingsGroupBy$projectId() => projectId(),
+      UsageEmbeddingsGroupBy$userId() => userId(),
+      UsageEmbeddingsGroupBy$apiKeyId() => apiKeyId(),
+      UsageEmbeddingsGroupBy$model() => model(),
+      UsageEmbeddingsGroupBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectId, W Function()? userId, W Function()? apiKeyId, W Function()? model, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageEmbeddingsGroupBy$projectId() => projectId != null ? projectId() : orElse(value),
+      UsageEmbeddingsGroupBy$userId() => userId != null ? userId() : orElse(value),
+      UsageEmbeddingsGroupBy$apiKeyId() => apiKeyId != null ? apiKeyId() : orElse(value),
+      UsageEmbeddingsGroupBy$model() => model != null ? model() : orElse(value),
+      UsageEmbeddingsGroupBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageEmbeddingsGroupBy($value)';
 
  }

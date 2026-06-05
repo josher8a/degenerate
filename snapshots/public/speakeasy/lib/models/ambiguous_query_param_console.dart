@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AmbiguousQueryParamConsole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function() $2, required W Function() $3, required W Function(int value) $unknown, }) { return switch (this) {
+      AmbiguousQueryParamConsole$$1() => $1(),
+      AmbiguousQueryParamConsole$$2() => $2(),
+      AmbiguousQueryParamConsole$$3() => $3(),
+      AmbiguousQueryParamConsole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? $2, W Function()? $3, W Function(int value)? $unknown, }) { return switch (this) {
+      AmbiguousQueryParamConsole$$1() => $1 != null ? $1() : orElse(value),
+      AmbiguousQueryParamConsole$$2() => $2 != null ? $2() : orElse(value),
+      AmbiguousQueryParamConsole$$3() => $3 != null ? $3() : orElse(value),
+      AmbiguousQueryParamConsole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AmbiguousQueryParamConsole($value)';
 
  }

@@ -35,6 +35,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsBancontactPreferredLanguage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() de, required W Function() en, required W Function() fr, required W Function() nl, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsBancontactPreferredLanguage$de() => de(),
+      PaymentMethodDetailsBancontactPreferredLanguage$en() => en(),
+      PaymentMethodDetailsBancontactPreferredLanguage$fr() => fr(),
+      PaymentMethodDetailsBancontactPreferredLanguage$nl() => nl(),
+      PaymentMethodDetailsBancontactPreferredLanguage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? de, W Function()? en, W Function()? fr, W Function()? nl, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsBancontactPreferredLanguage$de() => de != null ? de() : orElse(value),
+      PaymentMethodDetailsBancontactPreferredLanguage$en() => en != null ? en() : orElse(value),
+      PaymentMethodDetailsBancontactPreferredLanguage$fr() => fr != null ? fr() : orElse(value),
+      PaymentMethodDetailsBancontactPreferredLanguage$nl() => nl != null ? nl() : orElse(value),
+      PaymentMethodDetailsBancontactPreferredLanguage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsBancontactPreferredLanguage($value)';
 
  }

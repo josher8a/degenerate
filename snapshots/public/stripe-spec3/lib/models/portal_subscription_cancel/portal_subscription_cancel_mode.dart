@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalSubscriptionCancelMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() atPeriodEnd, required W Function() immediately, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalSubscriptionCancelMode$atPeriodEnd() => atPeriodEnd(),
+      PortalSubscriptionCancelMode$immediately() => immediately(),
+      PortalSubscriptionCancelMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? atPeriodEnd, W Function()? immediately, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalSubscriptionCancelMode$atPeriodEnd() => atPeriodEnd != null ? atPeriodEnd() : orElse(value),
+      PortalSubscriptionCancelMode$immediately() => immediately != null ? immediately() : orElse(value),
+      PortalSubscriptionCancelMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalSubscriptionCancelMode($value)';
 
  }

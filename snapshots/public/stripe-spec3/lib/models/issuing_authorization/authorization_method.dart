@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AuthorizationMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chip, required W Function() contactless, required W Function() keyedIn, required W Function() online, required W Function() swipe, required W Function(String value) $unknown, }) { return switch (this) {
+      AuthorizationMethod$chip() => chip(),
+      AuthorizationMethod$contactless() => contactless(),
+      AuthorizationMethod$keyedIn() => keyedIn(),
+      AuthorizationMethod$online() => online(),
+      AuthorizationMethod$swipe() => swipe(),
+      AuthorizationMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chip, W Function()? contactless, W Function()? keyedIn, W Function()? online, W Function()? swipe, W Function(String value)? $unknown, }) { return switch (this) {
+      AuthorizationMethod$chip() => chip != null ? chip() : orElse(value),
+      AuthorizationMethod$contactless() => contactless != null ? contactless() : orElse(value),
+      AuthorizationMethod$keyedIn() => keyedIn != null ? keyedIn() : orElse(value),
+      AuthorizationMethod$online() => online != null ? online() : orElse(value),
+      AuthorizationMethod$swipe() => swipe != null ? swipe() : orElse(value),
+      AuthorizationMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AuthorizationMethod($value)';
 
  }

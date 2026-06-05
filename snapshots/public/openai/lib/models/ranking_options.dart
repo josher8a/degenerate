@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RankerVersionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() default20241115, required W Function(String value) $unknown, }) { return switch (this) {
+      RankerVersionType$auto() => auto(),
+      RankerVersionType$default20241115() => default20241115(),
+      RankerVersionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? default20241115, W Function(String value)? $unknown, }) { return switch (this) {
+      RankerVersionType$auto() => auto != null ? auto() : orElse(value),
+      RankerVersionType$default20241115() => default20241115 != null ? default20241115() : orElse(value),
+      RankerVersionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RankerVersionType($value)';
 
  }

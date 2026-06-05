@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() day, required W Function() hour, required W Function(String value) $unknown, }) { return switch (this) {
+      GetBillingMetersIdEventSummariesValueGroupingWindow$day() => day(),
+      GetBillingMetersIdEventSummariesValueGroupingWindow$hour() => hour(),
+      GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? hour, W Function(String value)? $unknown, }) { return switch (this) {
+      GetBillingMetersIdEventSummariesValueGroupingWindow$day() => day != null ? day() : orElse(value),
+      GetBillingMetersIdEventSummariesValueGroupingWindow$hour() => hour != null ? hour() : orElse(value),
+      GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetBillingMetersIdEventSummariesValueGroupingWindow($value)';
 
  }

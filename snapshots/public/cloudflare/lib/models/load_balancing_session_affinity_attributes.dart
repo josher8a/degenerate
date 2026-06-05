@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingSessionAffinityAttributesSamesite$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() lax, required W Function() none, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingSessionAffinityAttributesSamesite$auto() => auto(),
+      LoadBalancingSessionAffinityAttributesSamesite$lax() => lax(),
+      LoadBalancingSessionAffinityAttributesSamesite$none() => none(),
+      LoadBalancingSessionAffinityAttributesSamesite$strict() => strict(),
+      LoadBalancingSessionAffinityAttributesSamesite$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? lax, W Function()? none, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingSessionAffinityAttributesSamesite$auto() => auto != null ? auto() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSamesite$lax() => lax != null ? lax() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSamesite$none() => none != null ? none() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSamesite$strict() => strict != null ? strict() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSamesite$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingSessionAffinityAttributesSamesite($value)';
 
  }
@@ -112,6 +128,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingSessionAffinityAttributesSecure$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() always, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingSessionAffinityAttributesSecure$auto() => auto(),
+      LoadBalancingSessionAffinityAttributesSecure$always() => always(),
+      LoadBalancingSessionAffinityAttributesSecure$never() => never(),
+      LoadBalancingSessionAffinityAttributesSecure$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingSessionAffinityAttributesSecure$auto() => auto != null ? auto() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSecure$always() => always != null ? always() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSecure$never() => never != null ? never() : orElse(value),
+      LoadBalancingSessionAffinityAttributesSecure$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingSessionAffinityAttributesSecure($value)';
 
  }
@@ -181,6 +211,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroDowntimeFailover$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() temporary, required W Function() sticky, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroDowntimeFailover$none() => none(),
+      ZeroDowntimeFailover$temporary() => temporary(),
+      ZeroDowntimeFailover$sticky() => sticky(),
+      ZeroDowntimeFailover$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? temporary, W Function()? sticky, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroDowntimeFailover$none() => none != null ? none() : orElse(value),
+      ZeroDowntimeFailover$temporary() => temporary != null ? temporary() : orElse(value),
+      ZeroDowntimeFailover$sticky() => sticky != null ? sticky() : orElse(value),
+      ZeroDowntimeFailover$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroDowntimeFailover($value)';
 
  }

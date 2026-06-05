@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AaaAuditLogsActorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function() admin, required W Function() cloudflare, required W Function(String value) $unknown, }) { return switch (this) {
+      AaaAuditLogsActorType$user() => user(),
+      AaaAuditLogsActorType$admin() => admin(),
+      AaaAuditLogsActorType$cloudflare() => cloudflare(),
+      AaaAuditLogsActorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? admin, W Function()? cloudflare, W Function(String value)? $unknown, }) { return switch (this) {
+      AaaAuditLogsActorType$user() => user != null ? user() : orElse(value),
+      AaaAuditLogsActorType$admin() => admin != null ? admin() : orElse(value),
+      AaaAuditLogsActorType$cloudflare() => cloudflare != null ? cloudflare() : orElse(value),
+      AaaAuditLogsActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AaaAuditLogsActorType($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NullableRequiredEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() first, required W Function() second, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      NullableRequiredEnum$first() => first(),
+      NullableRequiredEnum$second() => second(),
+      NullableRequiredEnum$$null() => $null(),
+      NullableRequiredEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? first, W Function()? second, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      NullableRequiredEnum$first() => first != null ? first() : orElse(value),
+      NullableRequiredEnum$second() => second != null ? second() : orElse(value),
+      NullableRequiredEnum$$null() => $null != null ? $null() : orElse(value),
+      NullableRequiredEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NullableRequiredEnum($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CardNumberSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() app, required W Function() manual, required W Function() onFile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      CardNumberSource$app() => app(),
+      CardNumberSource$manual() => manual(),
+      CardNumberSource$onFile() => onFile(),
+      CardNumberSource$$other() => $other(),
+      CardNumberSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? app, W Function()? manual, W Function()? onFile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      CardNumberSource$app() => app != null ? app() : orElse(value),
+      CardNumberSource$manual() => manual != null ? manual() : orElse(value),
+      CardNumberSource$onFile() => onFile != null ? onFile() : orElse(value),
+      CardNumberSource$$other() => $other != null ? $other() : orElse(value),
+      CardNumberSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CardNumberSource($value)';
 
  }
@@ -211,6 +227,70 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReasonCodes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountCardTooNew, required W Function() accountRecentlyChanged, required W Function() accountTooNew, required W Function() accountTooNewSinceLaunch, required W Function() additionalDevice, required W Function() dataExpired, required W Function() deferIdVDecision, required W Function() deviceRecentlyLost, required W Function() goodActivityHistory, required W Function() hasSuspendedTokens, required W Function() highRisk, required W Function() inactiveAccount, required W Function() longAccountTenure, required W Function() lowAccountScore, required W Function() lowDeviceScore, required W Function() lowPhoneNumberScore, required W Function() networkServiceError, required W Function() outsideHomeTerritory, required W Function() provisioningCardholderMismatch, required W Function() provisioningDeviceAndCardholderMismatch, required W Function() provisioningDeviceMismatch, required W Function() sameDeviceNoPriorAuthentication, required W Function() sameDeviceSuccessfulPriorAuthentication, required W Function() softwareUpdate, required W Function() suspiciousActivity, required W Function() tooManyDifferentCardholders, required W Function() tooManyRecentAttempts, required W Function() tooManyRecentTokens, required W Function(String value) $unknown, }) { return switch (this) {
+      ReasonCodes$accountCardTooNew() => accountCardTooNew(),
+      ReasonCodes$accountRecentlyChanged() => accountRecentlyChanged(),
+      ReasonCodes$accountTooNew() => accountTooNew(),
+      ReasonCodes$accountTooNewSinceLaunch() => accountTooNewSinceLaunch(),
+      ReasonCodes$additionalDevice() => additionalDevice(),
+      ReasonCodes$dataExpired() => dataExpired(),
+      ReasonCodes$deferIdVDecision() => deferIdVDecision(),
+      ReasonCodes$deviceRecentlyLost() => deviceRecentlyLost(),
+      ReasonCodes$goodActivityHistory() => goodActivityHistory(),
+      ReasonCodes$hasSuspendedTokens() => hasSuspendedTokens(),
+      ReasonCodes$highRisk() => highRisk(),
+      ReasonCodes$inactiveAccount() => inactiveAccount(),
+      ReasonCodes$longAccountTenure() => longAccountTenure(),
+      ReasonCodes$lowAccountScore() => lowAccountScore(),
+      ReasonCodes$lowDeviceScore() => lowDeviceScore(),
+      ReasonCodes$lowPhoneNumberScore() => lowPhoneNumberScore(),
+      ReasonCodes$networkServiceError() => networkServiceError(),
+      ReasonCodes$outsideHomeTerritory() => outsideHomeTerritory(),
+      ReasonCodes$provisioningCardholderMismatch() => provisioningCardholderMismatch(),
+      ReasonCodes$provisioningDeviceAndCardholderMismatch() => provisioningDeviceAndCardholderMismatch(),
+      ReasonCodes$provisioningDeviceMismatch() => provisioningDeviceMismatch(),
+      ReasonCodes$sameDeviceNoPriorAuthentication() => sameDeviceNoPriorAuthentication(),
+      ReasonCodes$sameDeviceSuccessfulPriorAuthentication() => sameDeviceSuccessfulPriorAuthentication(),
+      ReasonCodes$softwareUpdate() => softwareUpdate(),
+      ReasonCodes$suspiciousActivity() => suspiciousActivity(),
+      ReasonCodes$tooManyDifferentCardholders() => tooManyDifferentCardholders(),
+      ReasonCodes$tooManyRecentAttempts() => tooManyRecentAttempts(),
+      ReasonCodes$tooManyRecentTokens() => tooManyRecentTokens(),
+      ReasonCodes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountCardTooNew, W Function()? accountRecentlyChanged, W Function()? accountTooNew, W Function()? accountTooNewSinceLaunch, W Function()? additionalDevice, W Function()? dataExpired, W Function()? deferIdVDecision, W Function()? deviceRecentlyLost, W Function()? goodActivityHistory, W Function()? hasSuspendedTokens, W Function()? highRisk, W Function()? inactiveAccount, W Function()? longAccountTenure, W Function()? lowAccountScore, W Function()? lowDeviceScore, W Function()? lowPhoneNumberScore, W Function()? networkServiceError, W Function()? outsideHomeTerritory, W Function()? provisioningCardholderMismatch, W Function()? provisioningDeviceAndCardholderMismatch, W Function()? provisioningDeviceMismatch, W Function()? sameDeviceNoPriorAuthentication, W Function()? sameDeviceSuccessfulPriorAuthentication, W Function()? softwareUpdate, W Function()? suspiciousActivity, W Function()? tooManyDifferentCardholders, W Function()? tooManyRecentAttempts, W Function()? tooManyRecentTokens, W Function(String value)? $unknown, }) { return switch (this) {
+      ReasonCodes$accountCardTooNew() => accountCardTooNew != null ? accountCardTooNew() : orElse(value),
+      ReasonCodes$accountRecentlyChanged() => accountRecentlyChanged != null ? accountRecentlyChanged() : orElse(value),
+      ReasonCodes$accountTooNew() => accountTooNew != null ? accountTooNew() : orElse(value),
+      ReasonCodes$accountTooNewSinceLaunch() => accountTooNewSinceLaunch != null ? accountTooNewSinceLaunch() : orElse(value),
+      ReasonCodes$additionalDevice() => additionalDevice != null ? additionalDevice() : orElse(value),
+      ReasonCodes$dataExpired() => dataExpired != null ? dataExpired() : orElse(value),
+      ReasonCodes$deferIdVDecision() => deferIdVDecision != null ? deferIdVDecision() : orElse(value),
+      ReasonCodes$deviceRecentlyLost() => deviceRecentlyLost != null ? deviceRecentlyLost() : orElse(value),
+      ReasonCodes$goodActivityHistory() => goodActivityHistory != null ? goodActivityHistory() : orElse(value),
+      ReasonCodes$hasSuspendedTokens() => hasSuspendedTokens != null ? hasSuspendedTokens() : orElse(value),
+      ReasonCodes$highRisk() => highRisk != null ? highRisk() : orElse(value),
+      ReasonCodes$inactiveAccount() => inactiveAccount != null ? inactiveAccount() : orElse(value),
+      ReasonCodes$longAccountTenure() => longAccountTenure != null ? longAccountTenure() : orElse(value),
+      ReasonCodes$lowAccountScore() => lowAccountScore != null ? lowAccountScore() : orElse(value),
+      ReasonCodes$lowDeviceScore() => lowDeviceScore != null ? lowDeviceScore() : orElse(value),
+      ReasonCodes$lowPhoneNumberScore() => lowPhoneNumberScore != null ? lowPhoneNumberScore() : orElse(value),
+      ReasonCodes$networkServiceError() => networkServiceError != null ? networkServiceError() : orElse(value),
+      ReasonCodes$outsideHomeTerritory() => outsideHomeTerritory != null ? outsideHomeTerritory() : orElse(value),
+      ReasonCodes$provisioningCardholderMismatch() => provisioningCardholderMismatch != null ? provisioningCardholderMismatch() : orElse(value),
+      ReasonCodes$provisioningDeviceAndCardholderMismatch() => provisioningDeviceAndCardholderMismatch != null ? provisioningDeviceAndCardholderMismatch() : orElse(value),
+      ReasonCodes$provisioningDeviceMismatch() => provisioningDeviceMismatch != null ? provisioningDeviceMismatch() : orElse(value),
+      ReasonCodes$sameDeviceNoPriorAuthentication() => sameDeviceNoPriorAuthentication != null ? sameDeviceNoPriorAuthentication() : orElse(value),
+      ReasonCodes$sameDeviceSuccessfulPriorAuthentication() => sameDeviceSuccessfulPriorAuthentication != null ? sameDeviceSuccessfulPriorAuthentication() : orElse(value),
+      ReasonCodes$softwareUpdate() => softwareUpdate != null ? softwareUpdate() : orElse(value),
+      ReasonCodes$suspiciousActivity() => suspiciousActivity != null ? suspiciousActivity() : orElse(value),
+      ReasonCodes$tooManyDifferentCardholders() => tooManyDifferentCardholders != null ? tooManyDifferentCardholders() : orElse(value),
+      ReasonCodes$tooManyRecentAttempts() => tooManyRecentAttempts != null ? tooManyRecentAttempts() : orElse(value),
+      ReasonCodes$tooManyRecentTokens() => tooManyRecentTokens != null ? tooManyRecentTokens() : orElse(value),
+      ReasonCodes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReasonCodes($value)';
 
  }
@@ -505,6 +585,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SuggestedDecision$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() approve, required W Function() decline, required W Function() requireAuth, required W Function(String value) $unknown, }) { return switch (this) {
+      SuggestedDecision$approve() => approve(),
+      SuggestedDecision$decline() => decline(),
+      SuggestedDecision$requireAuth() => requireAuth(),
+      SuggestedDecision$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve, W Function()? decline, W Function()? requireAuth, W Function(String value)? $unknown, }) { return switch (this) {
+      SuggestedDecision$approve() => approve != null ? approve() : orElse(value),
+      SuggestedDecision$decline() => decline != null ? decline() : orElse(value),
+      SuggestedDecision$requireAuth() => requireAuth != null ? requireAuth() : orElse(value),
+      SuggestedDecision$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SuggestedDecision($value)';
 
  }

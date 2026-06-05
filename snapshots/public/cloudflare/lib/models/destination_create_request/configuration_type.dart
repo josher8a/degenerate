@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConfigurationType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() logpush, required W Function(String value) $unknown, }) { return switch (this) {
+      ConfigurationType$logpush() => logpush(),
+      ConfigurationType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? logpush, W Function(String value)? $unknown, }) { return switch (this) {
+      ConfigurationType$logpush() => logpush != null ? logpush() : orElse(value),
+      ConfigurationType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConfigurationType($value)';
 
  }

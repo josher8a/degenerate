@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsServeErrorContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applicationJson, required W Function() textHtml, required W Function() textPlain, required W Function() textXml, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsServeErrorContentType$applicationJson() => applicationJson(),
+      RulesetsServeErrorContentType$textHtml() => textHtml(),
+      RulesetsServeErrorContentType$textPlain() => textPlain(),
+      RulesetsServeErrorContentType$textXml() => textXml(),
+      RulesetsServeErrorContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applicationJson, W Function()? textHtml, W Function()? textPlain, W Function()? textXml, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsServeErrorContentType$applicationJson() => applicationJson != null ? applicationJson() : orElse(value),
+      RulesetsServeErrorContentType$textHtml() => textHtml != null ? textHtml() : orElse(value),
+      RulesetsServeErrorContentType$textPlain() => textPlain != null ? textPlain() : orElse(value),
+      RulesetsServeErrorContentType$textXml() => textXml != null ? textXml() : orElse(value),
+      RulesetsServeErrorContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsServeErrorContentType($value)';
 
  }

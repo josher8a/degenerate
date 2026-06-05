@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReactionsListForCommitCommentContent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() plus1, required W Function() minus1, required W Function() laugh, required W Function() confused, required W Function() heart, required W Function() hooray, required W Function() rocket, required W Function() eyes, required W Function(String value) $unknown, }) { return switch (this) {
+      ReactionsListForCommitCommentContent$plus1() => plus1(),
+      ReactionsListForCommitCommentContent$minus1() => minus1(),
+      ReactionsListForCommitCommentContent$laugh() => laugh(),
+      ReactionsListForCommitCommentContent$confused() => confused(),
+      ReactionsListForCommitCommentContent$heart() => heart(),
+      ReactionsListForCommitCommentContent$hooray() => hooray(),
+      ReactionsListForCommitCommentContent$rocket() => rocket(),
+      ReactionsListForCommitCommentContent$eyes() => eyes(),
+      ReactionsListForCommitCommentContent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? plus1, W Function()? minus1, W Function()? laugh, W Function()? confused, W Function()? heart, W Function()? hooray, W Function()? rocket, W Function()? eyes, W Function(String value)? $unknown, }) { return switch (this) {
+      ReactionsListForCommitCommentContent$plus1() => plus1 != null ? plus1() : orElse(value),
+      ReactionsListForCommitCommentContent$minus1() => minus1 != null ? minus1() : orElse(value),
+      ReactionsListForCommitCommentContent$laugh() => laugh != null ? laugh() : orElse(value),
+      ReactionsListForCommitCommentContent$confused() => confused != null ? confused() : orElse(value),
+      ReactionsListForCommitCommentContent$heart() => heart != null ? heart() : orElse(value),
+      ReactionsListForCommitCommentContent$hooray() => hooray != null ? hooray() : orElse(value),
+      ReactionsListForCommitCommentContent$rocket() => rocket != null ? rocket() : orElse(value),
+      ReactionsListForCommitCommentContent$eyes() => eyes != null ? eyes() : orElse(value),
+      ReactionsListForCommitCommentContent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReactionsListForCommitCommentContent($value)';
 
  }

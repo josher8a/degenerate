@@ -43,6 +43,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldOldValidationDefaultMitigationActionPatch$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() log, required W Function() block, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldOldValidationDefaultMitigationActionPatch$none() => none(),
+      ShieldOldValidationDefaultMitigationActionPatch$log() => log(),
+      ShieldOldValidationDefaultMitigationActionPatch$block() => block(),
+      ShieldOldValidationDefaultMitigationActionPatch$$null() => $null(),
+      ShieldOldValidationDefaultMitigationActionPatch$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? log, W Function()? block, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldOldValidationDefaultMitigationActionPatch$none() => none != null ? none() : orElse(value),
+      ShieldOldValidationDefaultMitigationActionPatch$log() => log != null ? log() : orElse(value),
+      ShieldOldValidationDefaultMitigationActionPatch$block() => block != null ? block() : orElse(value),
+      ShieldOldValidationDefaultMitigationActionPatch$$null() => $null != null ? $null() : orElse(value),
+      ShieldOldValidationDefaultMitigationActionPatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldOldValidationDefaultMitigationActionPatch($value)';
 
  }
@@ -128,6 +144,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldOldValidationOverrideMitigationActionPatch$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() disableOverride, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldOldValidationOverrideMitigationActionPatch$none() => none(),
+      ShieldOldValidationOverrideMitigationActionPatch$disableOverride() => disableOverride(),
+      ShieldOldValidationOverrideMitigationActionPatch$$null() => $null(),
+      ShieldOldValidationOverrideMitigationActionPatch$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? disableOverride, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldOldValidationOverrideMitigationActionPatch$none() => none != null ? none() : orElse(value),
+      ShieldOldValidationOverrideMitigationActionPatch$disableOverride() => disableOverride != null ? disableOverride() : orElse(value),
+      ShieldOldValidationOverrideMitigationActionPatch$$null() => $null != null ? $null() : orElse(value),
+      ShieldOldValidationOverrideMitigationActionPatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldOldValidationOverrideMitigationActionPatch($value)';
 
  }

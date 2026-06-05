@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThemeColor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() red, required W Function() green, required W Function() blue, required W Function() $return, required W Function() $class, required W Function() $int, required W Function(String value) $unknown, }) { return switch (this) {
+      ThemeColor$red() => red(),
+      ThemeColor$green() => green(),
+      ThemeColor$blue() => blue(),
+      ThemeColor$$return() => $return(),
+      ThemeColor$$class() => $class(),
+      ThemeColor$$int() => $int(),
+      ThemeColor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? red, W Function()? green, W Function()? blue, W Function()? $return, W Function()? $class, W Function()? $int, W Function(String value)? $unknown, }) { return switch (this) {
+      ThemeColor$red() => red != null ? red() : orElse(value),
+      ThemeColor$green() => green != null ? green() : orElse(value),
+      ThemeColor$blue() => blue != null ? blue() : orElse(value),
+      ThemeColor$$return() => $return != null ? $return() : orElse(value),
+      ThemeColor$$class() => $class != null ? $class() : orElse(value),
+      ThemeColor$$int() => $int != null ? $int() : orElse(value),
+      ThemeColor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThemeColor($value)';
 
  }
@@ -136,6 +156,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThemeIcon$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tick, required W Function() thumbsUp, required W Function() fire, required W Function(String value) $unknown, }) { return switch (this) {
+      ThemeIcon$tick() => tick(),
+      ThemeIcon$thumbsUp() => thumbsUp(),
+      ThemeIcon$fire() => fire(),
+      ThemeIcon$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tick, W Function()? thumbsUp, W Function()? fire, W Function(String value)? $unknown, }) { return switch (this) {
+      ThemeIcon$tick() => tick != null ? tick() : orElse(value),
+      ThemeIcon$thumbsUp() => thumbsUp != null ? thumbsUp() : orElse(value),
+      ThemeIcon$fire() => fire != null ? fire() : orElse(value),
+      ThemeIcon$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThemeIcon($value)';
 
  }
@@ -204,6 +238,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HeroWidth$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $480, required W Function() $720, required W Function() $1080, required W Function(int value) $unknown, }) { return switch (this) {
+      HeroWidth$$480() => $480(),
+      HeroWidth$$720() => $720(),
+      HeroWidth$$1080() => $1080(),
+      HeroWidth$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $480, W Function()? $720, W Function()? $1080, W Function(int value)? $unknown, }) { return switch (this) {
+      HeroWidth$$480() => $480 != null ? $480() : orElse(value),
+      HeroWidth$$720() => $720 != null ? $720() : orElse(value),
+      HeroWidth$$1080() => $1080 != null ? $1080() : orElse(value),
+      HeroWidth$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HeroWidth($value)';
 
  }

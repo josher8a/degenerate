@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProjectRateLimitObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() projectRateLimit, required W Function(String value) $unknown, }) { return switch (this) {
+      ProjectRateLimitObject$projectRateLimit() => projectRateLimit(),
+      ProjectRateLimitObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectRateLimit, W Function(String value)? $unknown, }) { return switch (this) {
+      ProjectRateLimitObject$projectRateLimit() => projectRateLimit != null ? projectRateLimit() : orElse(value),
+      ProjectRateLimitObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProjectRateLimitObject($value)';
 
  }

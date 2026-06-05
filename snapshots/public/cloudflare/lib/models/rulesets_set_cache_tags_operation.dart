@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsSetCacheTagsOperation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() add, required W Function() remove, required W Function() $set, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsSetCacheTagsOperation$add() => add(),
+      RulesetsSetCacheTagsOperation$remove() => remove(),
+      RulesetsSetCacheTagsOperation$$set() => $set(),
+      RulesetsSetCacheTagsOperation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? add, W Function()? remove, W Function()? $set, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsSetCacheTagsOperation$add() => add != null ? add() : orElse(value),
+      RulesetsSetCacheTagsOperation$remove() => remove != null ? remove() : orElse(value),
+      RulesetsSetCacheTagsOperation$$set() => $set != null ? $set() : orElse(value),
+      RulesetsSetCacheTagsOperation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsSetCacheTagsOperation($value)';
 
  }

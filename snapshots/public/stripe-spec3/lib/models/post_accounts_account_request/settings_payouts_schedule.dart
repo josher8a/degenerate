@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WeeklyAnchor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() friday, required W Function() monday, required W Function() saturday, required W Function() sunday, required W Function() thursday, required W Function() tuesday, required W Function() wednesday, required W Function(String value) $unknown, }) { return switch (this) {
+      WeeklyAnchor$friday() => friday(),
+      WeeklyAnchor$monday() => monday(),
+      WeeklyAnchor$saturday() => saturday(),
+      WeeklyAnchor$sunday() => sunday(),
+      WeeklyAnchor$thursday() => thursday(),
+      WeeklyAnchor$tuesday() => tuesday(),
+      WeeklyAnchor$wednesday() => wednesday(),
+      WeeklyAnchor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? friday, W Function()? monday, W Function()? saturday, W Function()? sunday, W Function()? thursday, W Function()? tuesday, W Function()? wednesday, W Function(String value)? $unknown, }) { return switch (this) {
+      WeeklyAnchor$friday() => friday != null ? friday() : orElse(value),
+      WeeklyAnchor$monday() => monday != null ? monday() : orElse(value),
+      WeeklyAnchor$saturday() => saturday != null ? saturday() : orElse(value),
+      WeeklyAnchor$sunday() => sunday != null ? sunday() : orElse(value),
+      WeeklyAnchor$thursday() => thursday != null ? thursday() : orElse(value),
+      WeeklyAnchor$tuesday() => tuesday != null ? tuesday() : orElse(value),
+      WeeklyAnchor$wednesday() => wednesday != null ? wednesday() : orElse(value),
+      WeeklyAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WeeklyAnchor($value)';
 
  }

@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeSecurityConfigurationForRepositoryStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() attached, required W Function() attaching, required W Function() detached, required W Function() removed, required W Function() enforced, required W Function() failed, required W Function() updating, required W Function() removedByEnterprise, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationForRepositoryStatus$attached() => attached(),
+      CodeSecurityConfigurationForRepositoryStatus$attaching() => attaching(),
+      CodeSecurityConfigurationForRepositoryStatus$detached() => detached(),
+      CodeSecurityConfigurationForRepositoryStatus$removed() => removed(),
+      CodeSecurityConfigurationForRepositoryStatus$enforced() => enforced(),
+      CodeSecurityConfigurationForRepositoryStatus$failed() => failed(),
+      CodeSecurityConfigurationForRepositoryStatus$updating() => updating(),
+      CodeSecurityConfigurationForRepositoryStatus$removedByEnterprise() => removedByEnterprise(),
+      CodeSecurityConfigurationForRepositoryStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? attached, W Function()? attaching, W Function()? detached, W Function()? removed, W Function()? enforced, W Function()? failed, W Function()? updating, W Function()? removedByEnterprise, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationForRepositoryStatus$attached() => attached != null ? attached() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$attaching() => attaching != null ? attaching() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$detached() => detached != null ? detached() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$removed() => removed != null ? removed() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$enforced() => enforced != null ? enforced() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$failed() => failed != null ? failed() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$updating() => updating != null ? updating() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$removedByEnterprise() => removedByEnterprise != null ? removedByEnterprise() : orElse(value),
+      CodeSecurityConfigurationForRepositoryStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeSecurityConfigurationForRepositoryStatus($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() method, required W Function() host, required W Function() endpoint, required W Function() thresholdsKey, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$method() => method(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$host() => host(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$endpoint() => endpoint(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$thresholdsKey() => thresholdsKey(),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? method, W Function()? host, W Function()? endpoint, W Function()? thresholdsKey, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$method() => method != null ? method() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$host() => host != null ? host() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$endpoint() => endpoint != null ? endpoint() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$thresholdsKey() => thresholdsKey != null ? thresholdsKey() : orElse(value),
+      ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder($value)';
 
  }

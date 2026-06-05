@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityValidationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() neutral, required W Function() fail, required W Function() error, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityValidationStatus$pass() => pass(),
+      EmailSecurityValidationStatus$neutral() => neutral(),
+      EmailSecurityValidationStatus$fail() => fail(),
+      EmailSecurityValidationStatus$error() => error(),
+      EmailSecurityValidationStatus$none() => none(),
+      EmailSecurityValidationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? neutral, W Function()? fail, W Function()? error, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityValidationStatus$pass() => pass != null ? pass() : orElse(value),
+      EmailSecurityValidationStatus$neutral() => neutral != null ? neutral() : orElse(value),
+      EmailSecurityValidationStatus$fail() => fail != null ? fail() : orElse(value),
+      EmailSecurityValidationStatus$error() => error != null ? error() : orElse(value),
+      EmailSecurityValidationStatus$none() => none != null ? none() : orElse(value),
+      EmailSecurityValidationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityValidationStatus($value)';
 
  }

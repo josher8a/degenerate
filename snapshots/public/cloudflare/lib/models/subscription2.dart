@@ -48,6 +48,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Frequency$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() weekly, required W Function() monthly, required W Function() quarterly, required W Function() yearly, required W Function(String value) $unknown, }) { return switch (this) {
+      Frequency$weekly() => weekly(),
+      Frequency$monthly() => monthly(),
+      Frequency$quarterly() => quarterly(),
+      Frequency$yearly() => yearly(),
+      Frequency$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? weekly, W Function()? monthly, W Function()? quarterly, W Function()? yearly, W Function(String value)? $unknown, }) { return switch (this) {
+      Frequency$weekly() => weekly != null ? weekly() : orElse(value),
+      Frequency$monthly() => monthly != null ? monthly() : orElse(value),
+      Frequency$quarterly() => quarterly != null ? quarterly() : orElse(value),
+      Frequency$yearly() => yearly != null ? yearly() : orElse(value),
+      Frequency$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Frequency($value)';
 
  }
@@ -149,6 +165,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is State$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() trial, required W Function() provisioned, required W Function() paid, required W Function() awaitingPayment, required W Function() cancelled, required W Function() failed, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+      State$trial() => trial(),
+      State$provisioned() => provisioned(),
+      State$paid() => paid(),
+      State$awaitingPayment() => awaitingPayment(),
+      State$cancelled() => cancelled(),
+      State$failed() => failed(),
+      State$expired() => expired(),
+      State$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? trial, W Function()? provisioned, W Function()? paid, W Function()? awaitingPayment, W Function()? cancelled, W Function()? failed, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+      State$trial() => trial != null ? trial() : orElse(value),
+      State$provisioned() => provisioned != null ? provisioned() : orElse(value),
+      State$paid() => paid != null ? paid() : orElse(value),
+      State$awaitingPayment() => awaitingPayment != null ? awaitingPayment() : orElse(value),
+      State$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      State$failed() => failed != null ? failed() : orElse(value),
+      State$expired() => expired != null ? expired() : orElse(value),
+      State$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'State($value)';
 
  }

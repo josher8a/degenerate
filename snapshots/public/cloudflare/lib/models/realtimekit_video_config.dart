@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitVideoConfigCodec$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() h264, required W Function() vp8, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitVideoConfigCodec$h264() => h264(),
+      RealtimekitVideoConfigCodec$vp8() => vp8(),
+      RealtimekitVideoConfigCodec$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? h264, W Function()? vp8, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitVideoConfigCodec$h264() => h264 != null ? h264() : orElse(value),
+      RealtimekitVideoConfigCodec$vp8() => vp8 != null ? vp8() : orElse(value),
+      RealtimekitVideoConfigCodec$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitVideoConfigCodec($value)';
 
  }

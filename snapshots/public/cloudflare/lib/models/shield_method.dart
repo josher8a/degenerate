@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function() head, required W Function() options, required W Function() put, required W Function() delete, required W Function() connect, required W Function() patch, required W Function() trace, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldMethod$$get() => $get(),
+      ShieldMethod$post() => post(),
+      ShieldMethod$head() => head(),
+      ShieldMethod$options() => options(),
+      ShieldMethod$put() => put(),
+      ShieldMethod$delete() => delete(),
+      ShieldMethod$connect() => connect(),
+      ShieldMethod$patch() => patch(),
+      ShieldMethod$trace() => trace(),
+      ShieldMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? head, W Function()? options, W Function()? put, W Function()? delete, W Function()? connect, W Function()? patch, W Function()? trace, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldMethod$$get() => $get != null ? $get() : orElse(value),
+      ShieldMethod$post() => post != null ? post() : orElse(value),
+      ShieldMethod$head() => head != null ? head() : orElse(value),
+      ShieldMethod$options() => options != null ? options() : orElse(value),
+      ShieldMethod$put() => put != null ? put() : orElse(value),
+      ShieldMethod$delete() => delete != null ? delete() : orElse(value),
+      ShieldMethod$connect() => connect != null ? connect() : orElse(value),
+      ShieldMethod$patch() => patch != null ? patch() : orElse(value),
+      ShieldMethod$trace() => trace != null ? trace() : orElse(value),
+      ShieldMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldMethod($value)';
 
  }

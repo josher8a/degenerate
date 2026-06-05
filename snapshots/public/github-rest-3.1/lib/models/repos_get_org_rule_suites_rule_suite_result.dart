@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposGetOrgRuleSuitesRuleSuiteResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() fail, required W Function() bypass, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposGetOrgRuleSuitesRuleSuiteResult$pass() => pass(),
+      ReposGetOrgRuleSuitesRuleSuiteResult$fail() => fail(),
+      ReposGetOrgRuleSuitesRuleSuiteResult$bypass() => bypass(),
+      ReposGetOrgRuleSuitesRuleSuiteResult$all() => all(),
+      ReposGetOrgRuleSuitesRuleSuiteResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? fail, W Function()? bypass, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposGetOrgRuleSuitesRuleSuiteResult$pass() => pass != null ? pass() : orElse(value),
+      ReposGetOrgRuleSuitesRuleSuiteResult$fail() => fail != null ? fail() : orElse(value),
+      ReposGetOrgRuleSuitesRuleSuiteResult$bypass() => bypass != null ? bypass() : orElse(value),
+      ReposGetOrgRuleSuitesRuleSuiteResult$all() => all != null ? all() : orElse(value),
+      ReposGetOrgRuleSuitesRuleSuiteResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposGetOrgRuleSuitesRuleSuiteResult($value)';
 
  }

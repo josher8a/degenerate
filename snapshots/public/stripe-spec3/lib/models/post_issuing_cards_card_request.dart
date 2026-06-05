@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostIssuingCardsCardRequestCancellationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lost, required W Function() stolen, required W Function(String value) $unknown, }) { return switch (this) {
+      PostIssuingCardsCardRequestCancellationReason$lost() => lost(),
+      PostIssuingCardsCardRequestCancellationReason$stolen() => stolen(),
+      PostIssuingCardsCardRequestCancellationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W Function()? stolen, W Function(String value)? $unknown, }) { return switch (this) {
+      PostIssuingCardsCardRequestCancellationReason$lost() => lost != null ? lost() : orElse(value),
+      PostIssuingCardsCardRequestCancellationReason$stolen() => stolen != null ? stolen() : orElse(value),
+      PostIssuingCardsCardRequestCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostIssuingCardsCardRequestCancellationReason($value)';
 
  }

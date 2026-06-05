@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowedMergeMethods$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() merge, required W Function() squash, required W Function() rebase, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowedMergeMethods$merge() => merge(),
+      AllowedMergeMethods$squash() => squash(),
+      AllowedMergeMethods$rebase() => rebase(),
+      AllowedMergeMethods$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W Function()? squash, W Function()? rebase, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowedMergeMethods$merge() => merge != null ? merge() : orElse(value),
+      AllowedMergeMethods$squash() => squash != null ? squash() : orElse(value),
+      AllowedMergeMethods$rebase() => rebase != null ? rebase() : orElse(value),
+      AllowedMergeMethods$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowedMergeMethods($value)';
 
  }

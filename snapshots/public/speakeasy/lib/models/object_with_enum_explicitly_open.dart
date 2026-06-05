@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumUsedInRequestExplicitlyOpen$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() alpha, required W Function() beta, required W Function() gamma, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumUsedInRequestExplicitlyOpen$alpha() => alpha(),
+      EnumUsedInRequestExplicitlyOpen$beta() => beta(),
+      EnumUsedInRequestExplicitlyOpen$gamma() => gamma(),
+      EnumUsedInRequestExplicitlyOpen$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? alpha, W Function()? beta, W Function()? gamma, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumUsedInRequestExplicitlyOpen$alpha() => alpha != null ? alpha() : orElse(value),
+      EnumUsedInRequestExplicitlyOpen$beta() => beta != null ? beta() : orElse(value),
+      EnumUsedInRequestExplicitlyOpen$gamma() => gamma != null ? gamma() : orElse(value),
+      EnumUsedInRequestExplicitlyOpen$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumUsedInRequestExplicitlyOpen($value)';
 
  }

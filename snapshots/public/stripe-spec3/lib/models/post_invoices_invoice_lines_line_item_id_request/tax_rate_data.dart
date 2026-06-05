@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxRateDataJurisdictionLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() city, required W Function() country, required W Function() county, required W Function() district, required W Function() multiple, required W Function() state, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxRateDataJurisdictionLevel$city() => city(),
+      TaxRateDataJurisdictionLevel$country() => country(),
+      TaxRateDataJurisdictionLevel$county() => county(),
+      TaxRateDataJurisdictionLevel$district() => district(),
+      TaxRateDataJurisdictionLevel$multiple() => multiple(),
+      TaxRateDataJurisdictionLevel$state() => state(),
+      TaxRateDataJurisdictionLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? city, W Function()? country, W Function()? county, W Function()? district, W Function()? multiple, W Function()? state, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxRateDataJurisdictionLevel$city() => city != null ? city() : orElse(value),
+      TaxRateDataJurisdictionLevel$country() => country != null ? country() : orElse(value),
+      TaxRateDataJurisdictionLevel$county() => county != null ? county() : orElse(value),
+      TaxRateDataJurisdictionLevel$district() => district != null ? district() : orElse(value),
+      TaxRateDataJurisdictionLevel$multiple() => multiple != null ? multiple() : orElse(value),
+      TaxRateDataJurisdictionLevel$state() => state != null ? state() : orElse(value),
+      TaxRateDataJurisdictionLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxRateDataJurisdictionLevel($value)';
 
  }

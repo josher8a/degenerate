@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesValidityPeriod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $90, required W Function(int value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValidityPeriod$$90() => $90(),
+      TlsCertificatesAndHostnamesValidityPeriod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $90, W Function(int value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesValidityPeriod$$90() => $90 != null ? $90() : orElse(value),
+      TlsCertificatesAndHostnamesValidityPeriod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesValidityPeriod($value)';
 
  }

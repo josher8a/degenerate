@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LogManagementStrategy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() stopInserting, required W Function() deleteOldest, required W Function(String value) $unknown, }) { return switch (this) {
+      LogManagementStrategy$stopInserting() => stopInserting(),
+      LogManagementStrategy$deleteOldest() => deleteOldest(),
+      LogManagementStrategy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stopInserting, W Function()? deleteOldest, W Function(String value)? $unknown, }) { return switch (this) {
+      LogManagementStrategy$stopInserting() => stopInserting != null ? stopInserting() : orElse(value),
+      LogManagementStrategy$deleteOldest() => deleteOldest != null ? deleteOldest() : orElse(value),
+      LogManagementStrategy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LogManagementStrategy($value)';
 
  }

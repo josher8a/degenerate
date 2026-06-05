@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GroupingStrategy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allgreen, required W Function() headgreen, required W Function(String value) $unknown, }) { return switch (this) {
+      GroupingStrategy$allgreen() => allgreen(),
+      GroupingStrategy$headgreen() => headgreen(),
+      GroupingStrategy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allgreen, W Function()? headgreen, W Function(String value)? $unknown, }) { return switch (this) {
+      GroupingStrategy$allgreen() => allgreen != null ? allgreen() : orElse(value),
+      GroupingStrategy$headgreen() => headgreen != null ? headgreen() : orElse(value),
+      GroupingStrategy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GroupingStrategy($value)';
 
  }
@@ -86,6 +98,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ParametersMergeMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() merge, required W Function() squash, required W Function() rebase, required W Function(String value) $unknown, }) { return switch (this) {
+      ParametersMergeMethod$merge() => merge(),
+      ParametersMergeMethod$squash() => squash(),
+      ParametersMergeMethod$rebase() => rebase(),
+      ParametersMergeMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W Function()? squash, W Function()? rebase, W Function(String value)? $unknown, }) { return switch (this) {
+      ParametersMergeMethod$merge() => merge != null ? merge() : orElse(value),
+      ParametersMergeMethod$squash() => squash != null ? squash() : orElse(value),
+      ParametersMergeMethod$rebase() => rebase != null ? rebase() : orElse(value),
+      ParametersMergeMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ParametersMergeMethod($value)';
 
  }

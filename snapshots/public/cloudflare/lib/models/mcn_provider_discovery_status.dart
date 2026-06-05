@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnProviderDiscoveryStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unspecified, required W Function() pending, required W Function() discovering, required W Function() failed, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      McnProviderDiscoveryStatus$unspecified() => unspecified(),
+      McnProviderDiscoveryStatus$pending() => pending(),
+      McnProviderDiscoveryStatus$discovering() => discovering(),
+      McnProviderDiscoveryStatus$failed() => failed(),
+      McnProviderDiscoveryStatus$succeeded() => succeeded(),
+      McnProviderDiscoveryStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unspecified, W Function()? pending, W Function()? discovering, W Function()? failed, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      McnProviderDiscoveryStatus$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      McnProviderDiscoveryStatus$pending() => pending != null ? pending() : orElse(value),
+      McnProviderDiscoveryStatus$discovering() => discovering != null ? discovering() : orElse(value),
+      McnProviderDiscoveryStatus$failed() => failed != null ? failed() : orElse(value),
+      McnProviderDiscoveryStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      McnProviderDiscoveryStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnProviderDiscoveryStatus($value)';
 
  }

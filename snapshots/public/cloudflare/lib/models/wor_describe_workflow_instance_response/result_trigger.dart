@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TriggerSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() api, required W Function() binding, required W Function() event, required W Function() cron, required W Function(String value) $unknown, }) { return switch (this) {
+      TriggerSource$unknown() => unknown(),
+      TriggerSource$api() => api(),
+      TriggerSource$binding() => binding(),
+      TriggerSource$event() => event(),
+      TriggerSource$cron() => cron(),
+      TriggerSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? api, W Function()? binding, W Function()? event, W Function()? cron, W Function(String value)? $unknown, }) { return switch (this) {
+      TriggerSource$unknown() => unknown != null ? unknown() : orElse(value),
+      TriggerSource$api() => api != null ? api() : orElse(value),
+      TriggerSource$binding() => binding != null ? binding() : orElse(value),
+      TriggerSource$event() => event != null ? event() : orElse(value),
+      TriggerSource$cron() => cron != null ? cron() : orElse(value),
+      TriggerSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TriggerSource($value)';
 
  }

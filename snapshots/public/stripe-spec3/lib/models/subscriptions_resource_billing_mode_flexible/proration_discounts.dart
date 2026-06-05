@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProrationDiscounts$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() included, required W Function() itemized, required W Function(String value) $unknown, }) { return switch (this) {
+      ProrationDiscounts$included() => included(),
+      ProrationDiscounts$itemized() => itemized(),
+      ProrationDiscounts$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? itemized, W Function(String value)? $unknown, }) { return switch (this) {
+      ProrationDiscounts$included() => included != null ? included() : orElse(value),
+      ProrationDiscounts$itemized() => itemized != null ? itemized() : orElse(value),
+      ProrationDiscounts$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProrationDiscounts($value)';
 
  }

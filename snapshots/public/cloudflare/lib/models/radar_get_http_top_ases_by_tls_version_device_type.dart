@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopAsesByTlsVersionDeviceType$desktop() => desktop(),
+      RadarGetHttpTopAsesByTlsVersionDeviceType$mobile() => mobile(),
+      RadarGetHttpTopAsesByTlsVersionDeviceType$$other() => $other(),
+      RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopAsesByTlsVersionDeviceType$desktop() => desktop != null ? desktop() : orElse(value),
+      RadarGetHttpTopAsesByTlsVersionDeviceType$mobile() => mobile != null ? mobile() : orElse(value),
+      RadarGetHttpTopAsesByTlsVersionDeviceType$$other() => $other != null ? $other() : orElse(value),
+      RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopAsesByTlsVersionDeviceType($value)';
 
  }

@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorStoreExpirationAfterAnchor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lastActiveAt, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorStoreExpirationAfterAnchor$lastActiveAt() => lastActiveAt(),
+      VectorStoreExpirationAfterAnchor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lastActiveAt, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorStoreExpirationAfterAnchor$lastActiveAt() => lastActiveAt != null ? lastActiveAt() : orElse(value),
+      VectorStoreExpirationAfterAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorStoreExpirationAfterAnchor($value)';
 
  }

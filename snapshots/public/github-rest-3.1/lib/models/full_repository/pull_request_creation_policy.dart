@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PullRequestCreationPolicy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() collaboratorsOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      PullRequestCreationPolicy$all() => all(),
+      PullRequestCreationPolicy$collaboratorsOnly() => collaboratorsOnly(),
+      PullRequestCreationPolicy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? collaboratorsOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      PullRequestCreationPolicy$all() => all != null ? all() : orElse(value),
+      PullRequestCreationPolicy$collaboratorsOnly() => collaboratorsOnly != null ? collaboratorsOnly() : orElse(value),
+      PullRequestCreationPolicy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PullRequestCreationPolicy($value)';
 
  }

@@ -28,6 +28,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IamMemberInvitationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      IamMemberInvitationStatus$accepted() => accepted(),
+      IamMemberInvitationStatus$pending() => pending(),
+      IamMemberInvitationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      IamMemberInvitationStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      IamMemberInvitationStatus$pending() => pending != null ? pending() : orElse(value),
+      IamMemberInvitationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IamMemberInvitationStatus($value)';
 
  }

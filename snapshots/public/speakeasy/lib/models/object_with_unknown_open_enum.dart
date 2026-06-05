@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ObjectWithUnknownOpenEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() processing, required W Function(String value) $unknown, }) { return switch (this) {
+      ObjectWithUnknownOpenEnumStatus$pending() => pending(),
+      ObjectWithUnknownOpenEnumStatus$processing() => processing(),
+      ObjectWithUnknownOpenEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? processing, W Function(String value)? $unknown, }) { return switch (this) {
+      ObjectWithUnknownOpenEnumStatus$pending() => pending != null ? pending() : orElse(value),
+      ObjectWithUnknownOpenEnumStatus$processing() => processing != null ? processing() : orElse(value),
+      ObjectWithUnknownOpenEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ObjectWithUnknownOpenEnumStatus($value)';
 
  }
@@ -80,6 +92,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ObjectWithUnknownOpenEnumPriority$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      ObjectWithUnknownOpenEnumPriority$low() => low(),
+      ObjectWithUnknownOpenEnumPriority$high() => high(),
+      ObjectWithUnknownOpenEnumPriority$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      ObjectWithUnknownOpenEnumPriority$low() => low != null ? low() : orElse(value),
+      ObjectWithUnknownOpenEnumPriority$high() => high != null ? high() : orElse(value),
+      ObjectWithUnknownOpenEnumPriority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ObjectWithUnknownOpenEnumPriority($value)';
 
  }

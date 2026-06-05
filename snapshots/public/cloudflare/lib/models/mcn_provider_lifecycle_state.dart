@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnProviderLifecycleState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() pendingSetup, required W Function() retired, required W Function(String value) $unknown, }) { return switch (this) {
+      McnProviderLifecycleState$active() => active(),
+      McnProviderLifecycleState$pendingSetup() => pendingSetup(),
+      McnProviderLifecycleState$retired() => retired(),
+      McnProviderLifecycleState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pendingSetup, W Function()? retired, W Function(String value)? $unknown, }) { return switch (this) {
+      McnProviderLifecycleState$active() => active != null ? active() : orElse(value),
+      McnProviderLifecycleState$pendingSetup() => pendingSetup != null ? pendingSetup() : orElse(value),
+      McnProviderLifecycleState$retired() => retired != null ? retired() : orElse(value),
+      McnProviderLifecycleState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'McnProviderLifecycleState($value)';
 
  }

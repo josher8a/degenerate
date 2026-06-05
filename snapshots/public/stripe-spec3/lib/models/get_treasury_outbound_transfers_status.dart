@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetTreasuryOutboundTransfersStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() failed, required W Function() posted, required W Function() processing, required W Function() returned, required W Function(String value) $unknown, }) { return switch (this) {
+      GetTreasuryOutboundTransfersStatus$canceled() => canceled(),
+      GetTreasuryOutboundTransfersStatus$failed() => failed(),
+      GetTreasuryOutboundTransfersStatus$posted() => posted(),
+      GetTreasuryOutboundTransfersStatus$processing() => processing(),
+      GetTreasuryOutboundTransfersStatus$returned() => returned(),
+      GetTreasuryOutboundTransfersStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? posted, W Function()? processing, W Function()? returned, W Function(String value)? $unknown, }) { return switch (this) {
+      GetTreasuryOutboundTransfersStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      GetTreasuryOutboundTransfersStatus$failed() => failed != null ? failed() : orElse(value),
+      GetTreasuryOutboundTransfersStatus$posted() => posted != null ? posted() : orElse(value),
+      GetTreasuryOutboundTransfersStatus$processing() => processing != null ? processing() : orElse(value),
+      GetTreasuryOutboundTransfersStatus$returned() => returned != null ? returned() : orElse(value),
+      GetTreasuryOutboundTransfersStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetTreasuryOutboundTransfersStatus($value)';
 
  }

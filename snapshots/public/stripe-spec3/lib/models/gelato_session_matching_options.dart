@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoSessionMatchingOptionsDob$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() similar, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoSessionMatchingOptionsDob$none() => none(),
+      GelatoSessionMatchingOptionsDob$similar() => similar(),
+      GelatoSessionMatchingOptionsDob$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? similar, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoSessionMatchingOptionsDob$none() => none != null ? none() : orElse(value),
+      GelatoSessionMatchingOptionsDob$similar() => similar != null ? similar() : orElse(value),
+      GelatoSessionMatchingOptionsDob$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoSessionMatchingOptionsDob($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoSessionMatchingOptionsName$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() similar, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoSessionMatchingOptionsName$none() => none(),
+      GelatoSessionMatchingOptionsName$similar() => similar(),
+      GelatoSessionMatchingOptionsName$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? similar, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoSessionMatchingOptionsName$none() => none != null ? none() : orElse(value),
+      GelatoSessionMatchingOptionsName$similar() => similar != null ? similar() : orElse(value),
+      GelatoSessionMatchingOptionsName$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoSessionMatchingOptionsName($value)';
 
  }

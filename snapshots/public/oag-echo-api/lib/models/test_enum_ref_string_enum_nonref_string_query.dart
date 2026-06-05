@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TestEnumRefStringEnumNonrefStringQuery$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function() unclassified, required W Function(String value) $unknown, }) { return switch (this) {
+      TestEnumRefStringEnumNonrefStringQuery$success() => success(),
+      TestEnumRefStringEnumNonrefStringQuery$failure() => failure(),
+      TestEnumRefStringEnumNonrefStringQuery$unclassified() => unclassified(),
+      TestEnumRefStringEnumNonrefStringQuery$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? unclassified, W Function(String value)? $unknown, }) { return switch (this) {
+      TestEnumRefStringEnumNonrefStringQuery$success() => success != null ? success() : orElse(value),
+      TestEnumRefStringEnumNonrefStringQuery$failure() => failure != null ? failure() : orElse(value),
+      TestEnumRefStringEnumNonrefStringQuery$unclassified() => unclassified != null ? unclassified() : orElse(value),
+      TestEnumRefStringEnumNonrefStringQuery$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TestEnumRefStringEnumNonrefStringQuery($value)';
 
  }

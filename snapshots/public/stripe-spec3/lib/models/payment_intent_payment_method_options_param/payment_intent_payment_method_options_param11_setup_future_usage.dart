@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() none, required W Function() offSession, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$$empty() => $empty(),
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$none() => none(),
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$offSession() => offSession(),
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? none, W Function()? offSession, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$$empty() => $empty != null ? $empty() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$none() => none != null ? none() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$offSession() => offSession != null ? offSession() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage($value)';
 
  }

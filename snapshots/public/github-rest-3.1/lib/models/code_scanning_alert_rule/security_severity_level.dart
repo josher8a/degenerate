@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecuritySeverityLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() critical, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      SecuritySeverityLevel$low() => low(),
+      SecuritySeverityLevel$medium() => medium(),
+      SecuritySeverityLevel$high() => high(),
+      SecuritySeverityLevel$critical() => critical(),
+      SecuritySeverityLevel$$null() => $null(),
+      SecuritySeverityLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? critical, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      SecuritySeverityLevel$low() => low != null ? low() : orElse(value),
+      SecuritySeverityLevel$medium() => medium != null ? medium() : orElse(value),
+      SecuritySeverityLevel$high() => high != null ? high() : orElse(value),
+      SecuritySeverityLevel$critical() => critical != null ? critical() : orElse(value),
+      SecuritySeverityLevel$$null() => $null != null ? $null() : orElse(value),
+      SecuritySeverityLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecuritySeverityLevel($value)';
 
  }

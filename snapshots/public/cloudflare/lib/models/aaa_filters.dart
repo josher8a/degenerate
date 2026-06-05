@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IncidentImpact$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() incidentImpactNone, required W Function() incidentImpactMinor, required W Function() incidentImpactMajor, required W Function() incidentImpactCritical, required W Function(String value) $unknown, }) { return switch (this) {
+      IncidentImpact$incidentImpactNone() => incidentImpactNone(),
+      IncidentImpact$incidentImpactMinor() => incidentImpactMinor(),
+      IncidentImpact$incidentImpactMajor() => incidentImpactMajor(),
+      IncidentImpact$incidentImpactCritical() => incidentImpactCritical(),
+      IncidentImpact$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? incidentImpactNone, W Function()? incidentImpactMinor, W Function()? incidentImpactMajor, W Function()? incidentImpactCritical, W Function(String value)? $unknown, }) { return switch (this) {
+      IncidentImpact$incidentImpactNone() => incidentImpactNone != null ? incidentImpactNone() : orElse(value),
+      IncidentImpact$incidentImpactMinor() => incidentImpactMinor != null ? incidentImpactMinor() : orElse(value),
+      IncidentImpact$incidentImpactMajor() => incidentImpactMajor != null ? incidentImpactMajor() : orElse(value),
+      IncidentImpact$incidentImpactCritical() => incidentImpactCritical != null ? incidentImpactCritical() : orElse(value),
+      IncidentImpact$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IncidentImpact($value)';
 
  }
@@ -102,6 +118,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TrafficExclusions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() securityEvents, required W Function(String value) $unknown, }) { return switch (this) {
+      TrafficExclusions$securityEvents() => securityEvents(),
+      TrafficExclusions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? securityEvents, W Function(String value)? $unknown, }) { return switch (this) {
+      TrafficExclusions$securityEvents() => securityEvents != null ? securityEvents() : orElse(value),
+      TrafficExclusions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TrafficExclusions($value)';
 
  }

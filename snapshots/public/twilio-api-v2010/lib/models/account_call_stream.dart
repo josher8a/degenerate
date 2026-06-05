@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() stopped, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamEnumStatus$inProgress() => inProgress(),
+      StreamEnumStatus$stopped() => stopped(),
+      StreamEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? stopped, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      StreamEnumStatus$stopped() => stopped != null ? stopped() : orElse(value),
+      StreamEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamEnumStatus($value)';
 
  }

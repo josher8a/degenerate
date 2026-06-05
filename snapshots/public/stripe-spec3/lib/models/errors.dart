@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ErrorsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() apiError, required W Function() cardError, required W Function() idempotencyError, required W Function() invalidRequestError, required W Function(String value) $unknown, }) { return switch (this) {
+      ErrorsType$apiError() => apiError(),
+      ErrorsType$cardError() => cardError(),
+      ErrorsType$idempotencyError() => idempotencyError(),
+      ErrorsType$invalidRequestError() => invalidRequestError(),
+      ErrorsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiError, W Function()? cardError, W Function()? idempotencyError, W Function()? invalidRequestError, W Function(String value)? $unknown, }) { return switch (this) {
+      ErrorsType$apiError() => apiError != null ? apiError() : orElse(value),
+      ErrorsType$cardError() => cardError != null ? cardError() : orElse(value),
+      ErrorsType$idempotencyError() => idempotencyError != null ? idempotencyError() : orElse(value),
+      ErrorsType$invalidRequestError() => invalidRequestError != null ? invalidRequestError() : orElse(value),
+      ErrorsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ErrorsType($value)';
 
  }

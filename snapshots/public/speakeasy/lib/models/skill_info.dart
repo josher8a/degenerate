@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SkillType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() skill, required W Function() capability, required W Function() workflow, required W Function(String value) $unknown, }) { return switch (this) {
+      SkillType$skill() => skill(),
+      SkillType$capability() => capability(),
+      SkillType$workflow() => workflow(),
+      SkillType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? skill, W Function()? capability, W Function()? workflow, W Function(String value)? $unknown, }) { return switch (this) {
+      SkillType$skill() => skill != null ? skill() : orElse(value),
+      SkillType$capability() => capability != null ? capability() : orElse(value),
+      SkillType$workflow() => workflow != null ? workflow() : orElse(value),
+      SkillType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SkillType($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupAggInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $15m, required W Function() $1h, required W Function() $1d, required W Function() $1w, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$15m() => $15m(),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$1h() => $1h(),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$1d() => $1d(),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$1w() => $1w(),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W Function()? $1h, W Function()? $1d, W Function()? $1w, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$15m() => $15m != null ? $15m() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$1h() => $1h != null ? $1h() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$1d() => $1d != null ? $1d() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$$1w() => $1w != null ? $1w() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupAggInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupAggInterval($value)';
 
  }

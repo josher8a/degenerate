@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$requested() => requested(),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress() => inProgress(),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$completed() => completed(),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$queued() => queued(),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting() => waiting(),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$requested() => requested != null ? requested() : orElse(value),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$completed() => completed != null ? completed() : orElse(value),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$queued() => queued != null ? queued() : orElse(value),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting() => waiting != null ? waiting() : orElse(value),
+      WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRunStatus($value)';
 
  }

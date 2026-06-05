@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SmsFeedbackEnumOutcome$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() confirmed, required W Function() unconfirmed, required W Function() received, required W Function() notReceived, required W Function() delayed, required W Function(String value) $unknown, }) { return switch (this) {
+      SmsFeedbackEnumOutcome$confirmed() => confirmed(),
+      SmsFeedbackEnumOutcome$unconfirmed() => unconfirmed(),
+      SmsFeedbackEnumOutcome$received() => received(),
+      SmsFeedbackEnumOutcome$notReceived() => notReceived(),
+      SmsFeedbackEnumOutcome$delayed() => delayed(),
+      SmsFeedbackEnumOutcome$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmed, W Function()? unconfirmed, W Function()? received, W Function()? notReceived, W Function()? delayed, W Function(String value)? $unknown, }) { return switch (this) {
+      SmsFeedbackEnumOutcome$confirmed() => confirmed != null ? confirmed() : orElse(value),
+      SmsFeedbackEnumOutcome$unconfirmed() => unconfirmed != null ? unconfirmed() : orElse(value),
+      SmsFeedbackEnumOutcome$received() => received != null ? received() : orElse(value),
+      SmsFeedbackEnumOutcome$notReceived() => notReceived != null ? notReceived() : orElse(value),
+      SmsFeedbackEnumOutcome$delayed() => delayed != null ? delayed() : orElse(value),
+      SmsFeedbackEnumOutcome$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SmsFeedbackEnumOutcome($value)';
 
  }

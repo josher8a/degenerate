@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FieldSingleSelectOptionColor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() blue, required W Function() gray, required W Function() green, required W Function() orange, required W Function() pink, required W Function() purple, required W Function() red, required W Function() yellow, required W Function(String value) $unknown, }) { return switch (this) {
+      FieldSingleSelectOptionColor$blue() => blue(),
+      FieldSingleSelectOptionColor$gray() => gray(),
+      FieldSingleSelectOptionColor$green() => green(),
+      FieldSingleSelectOptionColor$orange() => orange(),
+      FieldSingleSelectOptionColor$pink() => pink(),
+      FieldSingleSelectOptionColor$purple() => purple(),
+      FieldSingleSelectOptionColor$red() => red(),
+      FieldSingleSelectOptionColor$yellow() => yellow(),
+      FieldSingleSelectOptionColor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? blue, W Function()? gray, W Function()? green, W Function()? orange, W Function()? pink, W Function()? purple, W Function()? red, W Function()? yellow, W Function(String value)? $unknown, }) { return switch (this) {
+      FieldSingleSelectOptionColor$blue() => blue != null ? blue() : orElse(value),
+      FieldSingleSelectOptionColor$gray() => gray != null ? gray() : orElse(value),
+      FieldSingleSelectOptionColor$green() => green != null ? green() : orElse(value),
+      FieldSingleSelectOptionColor$orange() => orange != null ? orange() : orElse(value),
+      FieldSingleSelectOptionColor$pink() => pink != null ? pink() : orElse(value),
+      FieldSingleSelectOptionColor$purple() => purple != null ? purple() : orElse(value),
+      FieldSingleSelectOptionColor$red() => red != null ? red() : orElse(value),
+      FieldSingleSelectOptionColor$yellow() => yellow != null ? yellow() : orElse(value),
+      FieldSingleSelectOptionColor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FieldSingleSelectOptionColor($value)';
 
  }

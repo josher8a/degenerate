@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesIpGeolocationId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ipGeolocation, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesIpGeolocationId$ipGeolocation() => ipGeolocation(),
+      ZonesIpGeolocationId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipGeolocation, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesIpGeolocationId$ipGeolocation() => ipGeolocation != null ? ipGeolocation() : orElse(value),
+      ZonesIpGeolocationId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesIpGeolocationId($value)';
 
  }

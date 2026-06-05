@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Replacements$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cardCvc, required W Function() cardExpiry, required W Function() cardNumber, required W Function() cardholderName, required W Function() requestSignature, required W Function(String value) $unknown, }) { return switch (this) {
+      Replacements$cardCvc() => cardCvc(),
+      Replacements$cardExpiry() => cardExpiry(),
+      Replacements$cardNumber() => cardNumber(),
+      Replacements$cardholderName() => cardholderName(),
+      Replacements$requestSignature() => requestSignature(),
+      Replacements$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardCvc, W Function()? cardExpiry, W Function()? cardNumber, W Function()? cardholderName, W Function()? requestSignature, W Function(String value)? $unknown, }) { return switch (this) {
+      Replacements$cardCvc() => cardCvc != null ? cardCvc() : orElse(value),
+      Replacements$cardExpiry() => cardExpiry != null ? cardExpiry() : orElse(value),
+      Replacements$cardNumber() => cardNumber != null ? cardNumber() : orElse(value),
+      Replacements$cardholderName() => cardholderName != null ? cardholderName() : orElse(value),
+      Replacements$requestSignature() => requestSignature != null ? requestSignature() : orElse(value),
+      Replacements$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Replacements($value)';
 
  }

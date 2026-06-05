@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OtelContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $json, required W Function() protobuf, required W Function(String value) $unknown, }) { return switch (this) {
+      OtelContentType$$json() => $json(),
+      OtelContentType$protobuf() => protobuf(),
+      OtelContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $json, W Function()? protobuf, W Function(String value)? $unknown, }) { return switch (this) {
+      OtelContentType$$json() => $json != null ? $json() : orElse(value),
+      OtelContentType$protobuf() => protobuf != null ? protobuf() : orElse(value),
+      OtelContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OtelContentType($value)';
 
  }

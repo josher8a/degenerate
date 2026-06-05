@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetTreasuryDebitReversalsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() completed, required W Function() processing, required W Function(String value) $unknown, }) { return switch (this) {
+      GetTreasuryDebitReversalsStatus$canceled() => canceled(),
+      GetTreasuryDebitReversalsStatus$completed() => completed(),
+      GetTreasuryDebitReversalsStatus$processing() => processing(),
+      GetTreasuryDebitReversalsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? completed, W Function()? processing, W Function(String value)? $unknown, }) { return switch (this) {
+      GetTreasuryDebitReversalsStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      GetTreasuryDebitReversalsStatus$completed() => completed != null ? completed() : orElse(value),
+      GetTreasuryDebitReversalsStatus$processing() => processing != null ? processing() : orElse(value),
+      GetTreasuryDebitReversalsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetTreasuryDebitReversalsStatus($value)';
 
  }

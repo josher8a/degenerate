@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReportedBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() self, required W Function() stripe, required W Function(String value) $unknown, }) { return switch (this) {
+      ReportedBy$self() => self(),
+      ReportedBy$stripe() => stripe(),
+      ReportedBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? self, W Function()? stripe, W Function(String value)? $unknown, }) { return switch (this) {
+      ReportedBy$self() => self != null ? self() : orElse(value),
+      ReportedBy$stripe() => stripe != null ? stripe() : orElse(value),
+      ReportedBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReportedBy($value)';
 
  }

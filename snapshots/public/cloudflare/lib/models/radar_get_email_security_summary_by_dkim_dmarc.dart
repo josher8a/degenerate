@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailSecuritySummaryByDkimDmarc$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailSecuritySummaryByDkimDmarc$pass() => pass(),
+      RadarGetEmailSecuritySummaryByDkimDmarc$none() => none(),
+      RadarGetEmailSecuritySummaryByDkimDmarc$fail() => fail(),
+      RadarGetEmailSecuritySummaryByDkimDmarc$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailSecuritySummaryByDkimDmarc$pass() => pass != null ? pass() : orElse(value),
+      RadarGetEmailSecuritySummaryByDkimDmarc$none() => none != null ? none() : orElse(value),
+      RadarGetEmailSecuritySummaryByDkimDmarc$fail() => fail != null ? fail() : orElse(value),
+      RadarGetEmailSecuritySummaryByDkimDmarc$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailSecuritySummaryByDkimDmarc($value)';
 
  }

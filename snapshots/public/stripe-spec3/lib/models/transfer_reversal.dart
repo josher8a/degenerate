@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TransferReversalObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transferReversal, required W Function(String value) $unknown, }) { return switch (this) {
+      TransferReversalObject$transferReversal() => transferReversal(),
+      TransferReversalObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transferReversal, W Function(String value)? $unknown, }) { return switch (this) {
+      TransferReversalObject$transferReversal() => transferReversal != null ? transferReversal() : orElse(value),
+      TransferReversalObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TransferReversalObject($value)';
 
  }

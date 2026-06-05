@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingDisputeCanceledEvidenceReturnStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() merchantRejected, required W Function() successful, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingDisputeCanceledEvidenceReturnStatus$merchantRejected() => merchantRejected(),
+      IssuingDisputeCanceledEvidenceReturnStatus$successful() => successful(),
+      IssuingDisputeCanceledEvidenceReturnStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merchantRejected, W Function()? successful, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingDisputeCanceledEvidenceReturnStatus$merchantRejected() => merchantRejected != null ? merchantRejected() : orElse(value),
+      IssuingDisputeCanceledEvidenceReturnStatus$successful() => successful != null ? successful() : orElse(value),
+      IssuingDisputeCanceledEvidenceReturnStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingDisputeCanceledEvidenceReturnStatus($value)';
 
  }

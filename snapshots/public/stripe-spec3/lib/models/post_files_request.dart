@@ -78,6 +78,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostFilesRequestPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountRequirement, required W Function() additionalVerification, required W Function() businessIcon, required W Function() businessLogo, required W Function() customerSignature, required W Function() disputeEvidence, required W Function() identityDocument, required W Function() issuingRegulatoryReporting, required W Function() pciDocument, required W Function() platformTermsOfService, required W Function() taxDocumentUserUpload, required W Function() terminalAndroidApk, required W Function() terminalReaderSplashscreen, required W Function() terminalWifiCertificate, required W Function() terminalWifiPrivateKey, required W Function(String value) $unknown, }) { return switch (this) {
+      PostFilesRequestPurpose$accountRequirement() => accountRequirement(),
+      PostFilesRequestPurpose$additionalVerification() => additionalVerification(),
+      PostFilesRequestPurpose$businessIcon() => businessIcon(),
+      PostFilesRequestPurpose$businessLogo() => businessLogo(),
+      PostFilesRequestPurpose$customerSignature() => customerSignature(),
+      PostFilesRequestPurpose$disputeEvidence() => disputeEvidence(),
+      PostFilesRequestPurpose$identityDocument() => identityDocument(),
+      PostFilesRequestPurpose$issuingRegulatoryReporting() => issuingRegulatoryReporting(),
+      PostFilesRequestPurpose$pciDocument() => pciDocument(),
+      PostFilesRequestPurpose$platformTermsOfService() => platformTermsOfService(),
+      PostFilesRequestPurpose$taxDocumentUserUpload() => taxDocumentUserUpload(),
+      PostFilesRequestPurpose$terminalAndroidApk() => terminalAndroidApk(),
+      PostFilesRequestPurpose$terminalReaderSplashscreen() => terminalReaderSplashscreen(),
+      PostFilesRequestPurpose$terminalWifiCertificate() => terminalWifiCertificate(),
+      PostFilesRequestPurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey(),
+      PostFilesRequestPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountRequirement, W Function()? additionalVerification, W Function()? businessIcon, W Function()? businessLogo, W Function()? customerSignature, W Function()? disputeEvidence, W Function()? identityDocument, W Function()? issuingRegulatoryReporting, W Function()? pciDocument, W Function()? platformTermsOfService, W Function()? taxDocumentUserUpload, W Function()? terminalAndroidApk, W Function()? terminalReaderSplashscreen, W Function()? terminalWifiCertificate, W Function()? terminalWifiPrivateKey, W Function(String value)? $unknown, }) { return switch (this) {
+      PostFilesRequestPurpose$accountRequirement() => accountRequirement != null ? accountRequirement() : orElse(value),
+      PostFilesRequestPurpose$additionalVerification() => additionalVerification != null ? additionalVerification() : orElse(value),
+      PostFilesRequestPurpose$businessIcon() => businessIcon != null ? businessIcon() : orElse(value),
+      PostFilesRequestPurpose$businessLogo() => businessLogo != null ? businessLogo() : orElse(value),
+      PostFilesRequestPurpose$customerSignature() => customerSignature != null ? customerSignature() : orElse(value),
+      PostFilesRequestPurpose$disputeEvidence() => disputeEvidence != null ? disputeEvidence() : orElse(value),
+      PostFilesRequestPurpose$identityDocument() => identityDocument != null ? identityDocument() : orElse(value),
+      PostFilesRequestPurpose$issuingRegulatoryReporting() => issuingRegulatoryReporting != null ? issuingRegulatoryReporting() : orElse(value),
+      PostFilesRequestPurpose$pciDocument() => pciDocument != null ? pciDocument() : orElse(value),
+      PostFilesRequestPurpose$platformTermsOfService() => platformTermsOfService != null ? platformTermsOfService() : orElse(value),
+      PostFilesRequestPurpose$taxDocumentUserUpload() => taxDocumentUserUpload != null ? taxDocumentUserUpload() : orElse(value),
+      PostFilesRequestPurpose$terminalAndroidApk() => terminalAndroidApk != null ? terminalAndroidApk() : orElse(value),
+      PostFilesRequestPurpose$terminalReaderSplashscreen() => terminalReaderSplashscreen != null ? terminalReaderSplashscreen() : orElse(value),
+      PostFilesRequestPurpose$terminalWifiCertificate() => terminalWifiCertificate != null ? terminalWifiCertificate() : orElse(value),
+      PostFilesRequestPurpose$terminalWifiPrivateKey() => terminalWifiPrivateKey != null ? terminalWifiPrivateKey() : orElse(value),
+      PostFilesRequestPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostFilesRequestPurpose($value)';
 
  }

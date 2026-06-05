@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsCardNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() amex, required W Function() cartesBancaires, required W Function() diners, required W Function() discover, required W Function() eftposAu, required W Function() girocard, required W Function() interac, required W Function() jcb, required W Function() link, required W Function() mastercard, required W Function() unionpay, required W Function() unknown, required W Function() visa, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsCardNetwork$amex() => amex(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$cartesBancaires() => cartesBancaires(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$diners() => diners(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$discover() => discover(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$eftposAu() => eftposAu(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$girocard() => girocard(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$interac() => interac(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$jcb() => jcb(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$link() => link(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$mastercard() => mastercard(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$unionpay() => unionpay(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$unknown() => unknown(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$visa() => visa(),
+      PaymentIntentPaymentMethodOptionsCardNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? amex, W Function()? cartesBancaires, W Function()? diners, W Function()? discover, W Function()? eftposAu, W Function()? girocard, W Function()? interac, W Function()? jcb, W Function()? link, W Function()? mastercard, W Function()? unionpay, W Function()? unknown, W Function()? visa, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsCardNetwork$amex() => amex != null ? amex() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$cartesBancaires() => cartesBancaires != null ? cartesBancaires() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$diners() => diners != null ? diners() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$discover() => discover != null ? discover() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$eftposAu() => eftposAu != null ? eftposAu() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$girocard() => girocard != null ? girocard() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$interac() => interac != null ? interac() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$jcb() => jcb != null ? jcb() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$link() => link != null ? link() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$mastercard() => mastercard != null ? mastercard() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$unionpay() => unionpay != null ? unionpay() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$unknown() => unknown != null ? unknown() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$visa() => visa != null ? visa() : orElse(value),
+      PaymentIntentPaymentMethodOptionsCardNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsCardNetwork($value)';
 
  }

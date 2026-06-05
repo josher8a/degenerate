@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StepType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() step, required W Function(String value) $unknown, }) { return switch (this) {
+      StepType$step() => step(),
+      StepType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? step, W Function(String value)? $unknown, }) { return switch (this) {
+      StepType$step() => step != null ? step() : orElse(value),
+      StepType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StepType($value)';
 
  }

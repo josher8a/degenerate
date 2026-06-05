@@ -48,6 +48,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumConfigOriginDnsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() a, required W Function() aaaa, required W Function() srv, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumConfigOriginDnsType$$empty() => $empty(),
+      SpectrumConfigOriginDnsType$a() => a(),
+      SpectrumConfigOriginDnsType$aaaa() => aaaa(),
+      SpectrumConfigOriginDnsType$srv() => srv(),
+      SpectrumConfigOriginDnsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? a, W Function()? aaaa, W Function()? srv, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumConfigOriginDnsType$$empty() => $empty != null ? $empty() : orElse(value),
+      SpectrumConfigOriginDnsType$a() => a != null ? a() : orElse(value),
+      SpectrumConfigOriginDnsType$aaaa() => aaaa != null ? aaaa() : orElse(value),
+      SpectrumConfigOriginDnsType$srv() => srv != null ? srv() : orElse(value),
+      SpectrumConfigOriginDnsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumConfigOriginDnsType($value)';
 
  }

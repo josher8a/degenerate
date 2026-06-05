@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerTaxAutomaticTax$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() failed, required W Function() notCollecting, required W Function() supported, required W Function() unrecognizedLocation, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerTaxAutomaticTax$failed() => failed(),
+      CustomerTaxAutomaticTax$notCollecting() => notCollecting(),
+      CustomerTaxAutomaticTax$supported() => supported(),
+      CustomerTaxAutomaticTax$unrecognizedLocation() => unrecognizedLocation(),
+      CustomerTaxAutomaticTax$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? failed, W Function()? notCollecting, W Function()? supported, W Function()? unrecognizedLocation, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerTaxAutomaticTax$failed() => failed != null ? failed() : orElse(value),
+      CustomerTaxAutomaticTax$notCollecting() => notCollecting != null ? notCollecting() : orElse(value),
+      CustomerTaxAutomaticTax$supported() => supported != null ? supported() : orElse(value),
+      CustomerTaxAutomaticTax$unrecognizedLocation() => unrecognizedLocation != null ? unrecognizedLocation() : orElse(value),
+      CustomerTaxAutomaticTax$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerTaxAutomaticTax($value)';
 
  }

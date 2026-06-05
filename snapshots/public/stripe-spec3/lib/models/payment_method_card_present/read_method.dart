@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReadMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() contactEmv, required W Function() contactlessEmv, required W Function() contactlessMagstripeMode, required W Function() magneticStripeFallback, required W Function() magneticStripeTrack2, required W Function(String value) $unknown, }) { return switch (this) {
+      ReadMethod$contactEmv() => contactEmv(),
+      ReadMethod$contactlessEmv() => contactlessEmv(),
+      ReadMethod$contactlessMagstripeMode() => contactlessMagstripeMode(),
+      ReadMethod$magneticStripeFallback() => magneticStripeFallback(),
+      ReadMethod$magneticStripeTrack2() => magneticStripeTrack2(),
+      ReadMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? contactEmv, W Function()? contactlessEmv, W Function()? contactlessMagstripeMode, W Function()? magneticStripeFallback, W Function()? magneticStripeTrack2, W Function(String value)? $unknown, }) { return switch (this) {
+      ReadMethod$contactEmv() => contactEmv != null ? contactEmv() : orElse(value),
+      ReadMethod$contactlessEmv() => contactlessEmv != null ? contactlessEmv() : orElse(value),
+      ReadMethod$contactlessMagstripeMode() => contactlessMagstripeMode != null ? contactlessMagstripeMode() : orElse(value),
+      ReadMethod$magneticStripeFallback() => magneticStripeFallback != null ? magneticStripeFallback() : orElse(value),
+      ReadMethod$magneticStripeTrack2() => magneticStripeTrack2 != null ? magneticStripeTrack2() : orElse(value),
+      ReadMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReadMethod($value)';
 
  }

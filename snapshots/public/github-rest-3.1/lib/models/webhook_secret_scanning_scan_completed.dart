@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookSecretScanningScanCompletedType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() backfill, required W Function() customPatternBackfill, required W Function() patternVersionBackfill, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookSecretScanningScanCompletedType$backfill() => backfill(),
+      WebhookSecretScanningScanCompletedType$customPatternBackfill() => customPatternBackfill(),
+      WebhookSecretScanningScanCompletedType$patternVersionBackfill() => patternVersionBackfill(),
+      WebhookSecretScanningScanCompletedType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? backfill, W Function()? customPatternBackfill, W Function()? patternVersionBackfill, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookSecretScanningScanCompletedType$backfill() => backfill != null ? backfill() : orElse(value),
+      WebhookSecretScanningScanCompletedType$customPatternBackfill() => customPatternBackfill != null ? customPatternBackfill() : orElse(value),
+      WebhookSecretScanningScanCompletedType$patternVersionBackfill() => patternVersionBackfill != null ? patternVersionBackfill() : orElse(value),
+      WebhookSecretScanningScanCompletedType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookSecretScanningScanCompletedType($value)';
 
  }
@@ -107,6 +121,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookSecretScanningScanCompletedSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() git, required W Function() issues, required W Function() pullRequests, required W Function() discussions, required W Function() wiki, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookSecretScanningScanCompletedSource$git() => git(),
+      WebhookSecretScanningScanCompletedSource$issues() => issues(),
+      WebhookSecretScanningScanCompletedSource$pullRequests() => pullRequests(),
+      WebhookSecretScanningScanCompletedSource$discussions() => discussions(),
+      WebhookSecretScanningScanCompletedSource$wiki() => wiki(),
+      WebhookSecretScanningScanCompletedSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? git, W Function()? issues, W Function()? pullRequests, W Function()? discussions, W Function()? wiki, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookSecretScanningScanCompletedSource$git() => git != null ? git() : orElse(value),
+      WebhookSecretScanningScanCompletedSource$issues() => issues != null ? issues() : orElse(value),
+      WebhookSecretScanningScanCompletedSource$pullRequests() => pullRequests != null ? pullRequests() : orElse(value),
+      WebhookSecretScanningScanCompletedSource$discussions() => discussions != null ? discussions() : orElse(value),
+      WebhookSecretScanningScanCompletedSource$wiki() => wiki != null ? wiki() : orElse(value),
+      WebhookSecretScanningScanCompletedSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookSecretScanningScanCompletedSource($value)';
 
  }
@@ -198,6 +230,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomPatternScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() repository, required W Function() organization, required W Function() enterprise, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomPatternScope$repository() => repository(),
+      CustomPatternScope$organization() => organization(),
+      CustomPatternScope$enterprise() => enterprise(),
+      CustomPatternScope$$null() => $null(),
+      CustomPatternScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? repository, W Function()? organization, W Function()? enterprise, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomPatternScope$repository() => repository != null ? repository() : orElse(value),
+      CustomPatternScope$organization() => organization != null ? organization() : orElse(value),
+      CustomPatternScope$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      CustomPatternScope$$null() => $null != null ? $null() : orElse(value),
+      CustomPatternScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomPatternScope($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() automatic, required W Function() phaseStart, required W Function(String value) $unknown, }) { return switch (this) {
+      SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic() => automatic(),
+      SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart() => phaseStart(),
+      SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automatic, W Function()? phaseStart, W Function(String value)? $unknown, }) { return switch (this) {
+      SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic() => automatic != null ? automatic() : orElse(value),
+      SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart() => phaseStart != null ? phaseStart() : orElse(value),
+      SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)';
 
  }

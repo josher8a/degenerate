@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() host, required W Function() method, required W Function() endpoint, required W Function() trafficStatsRequests, required W Function() trafficStatsLastUpdated, required W Function(String value) $unknown, }) { return switch (this) {
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host() => host(),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$method() => method(),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$endpoint() => endpoint(),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsRequests() => trafficStatsRequests(),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsLastUpdated() => trafficStatsLastUpdated(),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? host, W Function()? method, W Function()? endpoint, W Function()? trafficStatsRequests, W Function()? trafficStatsLastUpdated, W Function(String value)? $unknown, }) { return switch (this) {
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$host() => host != null ? host() : orElse(value),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$method() => method != null ? method() : orElse(value),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$endpoint() => endpoint != null ? endpoint() : orElse(value),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsRequests() => trafficStatsRequests != null ? trafficStatsRequests() : orElse(value),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$trafficStatsLastUpdated() => trafficStatsLastUpdated != null ? trafficStatsLastUpdated() : orElse(value),
+      DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder($value)';
 
  }

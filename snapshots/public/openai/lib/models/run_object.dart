@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunObjectObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() threadRun, required W Function(String value) $unknown, }) { return switch (this) {
+      RunObjectObject$threadRun() => threadRun(),
+      RunObjectObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRun, W Function(String value)? $unknown, }) { return switch (this) {
+      RunObjectObject$threadRun() => threadRun != null ? threadRun() : orElse(value),
+      RunObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunObjectObject($value)';
 
  }
@@ -97,6 +107,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunObjectStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() inProgress, required W Function() requiresAction, required W Function() cancelling, required W Function() cancelled, required W Function() failed, required W Function() completed, required W Function() incomplete, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+      RunObjectStatus$queued() => queued(),
+      RunObjectStatus$inProgress() => inProgress(),
+      RunObjectStatus$requiresAction() => requiresAction(),
+      RunObjectStatus$cancelling() => cancelling(),
+      RunObjectStatus$cancelled() => cancelled(),
+      RunObjectStatus$failed() => failed(),
+      RunObjectStatus$completed() => completed(),
+      RunObjectStatus$incomplete() => incomplete(),
+      RunObjectStatus$expired() => expired(),
+      RunObjectStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? inProgress, W Function()? requiresAction, W Function()? cancelling, W Function()? cancelled, W Function()? failed, W Function()? completed, W Function()? incomplete, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+      RunObjectStatus$queued() => queued != null ? queued() : orElse(value),
+      RunObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      RunObjectStatus$requiresAction() => requiresAction != null ? requiresAction() : orElse(value),
+      RunObjectStatus$cancelling() => cancelling != null ? cancelling() : orElse(value),
+      RunObjectStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      RunObjectStatus$failed() => failed != null ? failed() : orElse(value),
+      RunObjectStatus$completed() => completed != null ? completed() : orElse(value),
+      RunObjectStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      RunObjectStatus$expired() => expired != null ? expired() : orElse(value),
+      RunObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunObjectStatus($value)';
 
  }

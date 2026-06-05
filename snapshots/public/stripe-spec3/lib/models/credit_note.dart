@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreditNoteObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditNote, required W Function(String value) $unknown, }) { return switch (this) {
+      CreditNoteObject$creditNote() => creditNote(),
+      CreditNoteObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditNote, W Function(String value)? $unknown, }) { return switch (this) {
+      CreditNoteObject$creditNote() => creditNote != null ? creditNote() : orElse(value),
+      CreditNoteObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreditNoteObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreditNoteReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() orderChange, required W Function() productUnsatisfactory, required W Function(String value) $unknown, }) { return switch (this) {
+      CreditNoteReason$duplicate() => duplicate(),
+      CreditNoteReason$fraudulent() => fraudulent(),
+      CreditNoteReason$orderChange() => orderChange(),
+      CreditNoteReason$productUnsatisfactory() => productUnsatisfactory(),
+      CreditNoteReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? orderChange, W Function()? productUnsatisfactory, W Function(String value)? $unknown, }) { return switch (this) {
+      CreditNoteReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      CreditNoteReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      CreditNoteReason$orderChange() => orderChange != null ? orderChange() : orElse(value),
+      CreditNoteReason$productUnsatisfactory() => productUnsatisfactory != null ? productUnsatisfactory() : orElse(value),
+      CreditNoteReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreditNoteReason($value)';
 
  }
@@ -151,6 +177,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreditNoteStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issued, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+      CreditNoteStatus$issued() => issued(),
+      CreditNoteStatus$$void() => $void(),
+      CreditNoteStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issued, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+      CreditNoteStatus$issued() => issued != null ? issued() : orElse(value),
+      CreditNoteStatus$$void() => $void != null ? $void() : orElse(value),
+      CreditNoteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreditNoteStatus($value)';
 
  }
@@ -211,6 +249,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreditNoteType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mixed, required W Function() postPayment, required W Function() prePayment, required W Function(String value) $unknown, }) { return switch (this) {
+      CreditNoteType$mixed() => mixed(),
+      CreditNoteType$postPayment() => postPayment(),
+      CreditNoteType$prePayment() => prePayment(),
+      CreditNoteType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mixed, W Function()? postPayment, W Function()? prePayment, W Function(String value)? $unknown, }) { return switch (this) {
+      CreditNoteType$mixed() => mixed != null ? mixed() : orElse(value),
+      CreditNoteType$postPayment() => postPayment != null ? postPayment() : orElse(value),
+      CreditNoteType$prePayment() => prePayment != null ? prePayment() : orElse(value),
+      CreditNoteType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreditNoteType($value)';
 
  }

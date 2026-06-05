@@ -65,6 +65,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CheckRunWithSimpleCheckSuiteConclusion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() waiting, required W Function() pending, required W Function() startupFailure, required W Function() stale, required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() skipped, required W Function() timedOut, required W Function() actionRequired, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CheckRunWithSimpleCheckSuiteConclusion$waiting() => waiting(),
+      CheckRunWithSimpleCheckSuiteConclusion$pending() => pending(),
+      CheckRunWithSimpleCheckSuiteConclusion$startupFailure() => startupFailure(),
+      CheckRunWithSimpleCheckSuiteConclusion$stale() => stale(),
+      CheckRunWithSimpleCheckSuiteConclusion$success() => success(),
+      CheckRunWithSimpleCheckSuiteConclusion$failure() => failure(),
+      CheckRunWithSimpleCheckSuiteConclusion$neutral() => neutral(),
+      CheckRunWithSimpleCheckSuiteConclusion$cancelled() => cancelled(),
+      CheckRunWithSimpleCheckSuiteConclusion$skipped() => skipped(),
+      CheckRunWithSimpleCheckSuiteConclusion$timedOut() => timedOut(),
+      CheckRunWithSimpleCheckSuiteConclusion$actionRequired() => actionRequired(),
+      CheckRunWithSimpleCheckSuiteConclusion$$null() => $null(),
+      CheckRunWithSimpleCheckSuiteConclusion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting, W Function()? pending, W Function()? startupFailure, W Function()? stale, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? skipped, W Function()? timedOut, W Function()? actionRequired, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CheckRunWithSimpleCheckSuiteConclusion$waiting() => waiting != null ? waiting() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$pending() => pending != null ? pending() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$startupFailure() => startupFailure != null ? startupFailure() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$stale() => stale != null ? stale() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$success() => success != null ? success() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$failure() => failure != null ? failure() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$neutral() => neutral != null ? neutral() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$skipped() => skipped != null ? skipped() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$$null() => $null != null ? $null() : orElse(value),
+      CheckRunWithSimpleCheckSuiteConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CheckRunWithSimpleCheckSuiteConclusion($value)';
 
  }

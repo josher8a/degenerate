@@ -77,6 +77,44 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LogType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() migrationStart, required W Function() migrationComplete, required W Function() migrationAbort, required W Function() migrationError, required W Function() migrationPause, required W Function() migrationResume, required W Function() migrationErrorFailedContinuation, required W Function() importErrorRetryExhaustion, required W Function() importSkippedStorageClass, required W Function() importSkippedOversized, required W Function() importSkippedEmptyObject, required W Function() importSkippedUnsupportedContentType, required W Function() importSkippedExcludedContentType, required W Function() importSkippedInvalidMedia, required W Function() importSkippedRequiresRetrieval, required W Function(String value) $unknown, }) { return switch (this) {
+      LogType$migrationStart() => migrationStart(),
+      LogType$migrationComplete() => migrationComplete(),
+      LogType$migrationAbort() => migrationAbort(),
+      LogType$migrationError() => migrationError(),
+      LogType$migrationPause() => migrationPause(),
+      LogType$migrationResume() => migrationResume(),
+      LogType$migrationErrorFailedContinuation() => migrationErrorFailedContinuation(),
+      LogType$importErrorRetryExhaustion() => importErrorRetryExhaustion(),
+      LogType$importSkippedStorageClass() => importSkippedStorageClass(),
+      LogType$importSkippedOversized() => importSkippedOversized(),
+      LogType$importSkippedEmptyObject() => importSkippedEmptyObject(),
+      LogType$importSkippedUnsupportedContentType() => importSkippedUnsupportedContentType(),
+      LogType$importSkippedExcludedContentType() => importSkippedExcludedContentType(),
+      LogType$importSkippedInvalidMedia() => importSkippedInvalidMedia(),
+      LogType$importSkippedRequiresRetrieval() => importSkippedRequiresRetrieval(),
+      LogType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? migrationStart, W Function()? migrationComplete, W Function()? migrationAbort, W Function()? migrationError, W Function()? migrationPause, W Function()? migrationResume, W Function()? migrationErrorFailedContinuation, W Function()? importErrorRetryExhaustion, W Function()? importSkippedStorageClass, W Function()? importSkippedOversized, W Function()? importSkippedEmptyObject, W Function()? importSkippedUnsupportedContentType, W Function()? importSkippedExcludedContentType, W Function()? importSkippedInvalidMedia, W Function()? importSkippedRequiresRetrieval, W Function(String value)? $unknown, }) { return switch (this) {
+      LogType$migrationStart() => migrationStart != null ? migrationStart() : orElse(value),
+      LogType$migrationComplete() => migrationComplete != null ? migrationComplete() : orElse(value),
+      LogType$migrationAbort() => migrationAbort != null ? migrationAbort() : orElse(value),
+      LogType$migrationError() => migrationError != null ? migrationError() : orElse(value),
+      LogType$migrationPause() => migrationPause != null ? migrationPause() : orElse(value),
+      LogType$migrationResume() => migrationResume != null ? migrationResume() : orElse(value),
+      LogType$migrationErrorFailedContinuation() => migrationErrorFailedContinuation != null ? migrationErrorFailedContinuation() : orElse(value),
+      LogType$importErrorRetryExhaustion() => importErrorRetryExhaustion != null ? importErrorRetryExhaustion() : orElse(value),
+      LogType$importSkippedStorageClass() => importSkippedStorageClass != null ? importSkippedStorageClass() : orElse(value),
+      LogType$importSkippedOversized() => importSkippedOversized != null ? importSkippedOversized() : orElse(value),
+      LogType$importSkippedEmptyObject() => importSkippedEmptyObject != null ? importSkippedEmptyObject() : orElse(value),
+      LogType$importSkippedUnsupportedContentType() => importSkippedUnsupportedContentType != null ? importSkippedUnsupportedContentType() : orElse(value),
+      LogType$importSkippedExcludedContentType() => importSkippedExcludedContentType != null ? importSkippedExcludedContentType() : orElse(value),
+      LogType$importSkippedInvalidMedia() => importSkippedInvalidMedia != null ? importSkippedInvalidMedia() : orElse(value),
+      LogType$importSkippedRequiresRetrieval() => importSkippedRequiresRetrieval != null ? importSkippedRequiresRetrieval() : orElse(value),
+      LogType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LogType($value)';
 
  }

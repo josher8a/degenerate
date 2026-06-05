@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotAlertDependencyScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() development, required W Function() runtime, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotAlertDependencyScope$development() => development(),
+      DependabotAlertDependencyScope$runtime() => runtime(),
+      DependabotAlertDependencyScope$$null() => $null(),
+      DependabotAlertDependencyScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? development, W Function()? runtime, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotAlertDependencyScope$development() => development != null ? development() : orElse(value),
+      DependabotAlertDependencyScope$runtime() => runtime != null ? runtime() : orElse(value),
+      DependabotAlertDependencyScope$$null() => $null != null ? $null() : orElse(value),
+      DependabotAlertDependencyScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotAlertDependencyScope($value)';
 
  }
@@ -107,6 +121,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotAlertDependencyRelationship$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() direct, required W Function() transitive, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotAlertDependencyRelationship$unknown() => unknown(),
+      DependabotAlertDependencyRelationship$direct() => direct(),
+      DependabotAlertDependencyRelationship$transitive() => transitive(),
+      DependabotAlertDependencyRelationship$$null() => $null(),
+      DependabotAlertDependencyRelationship$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? direct, W Function()? transitive, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotAlertDependencyRelationship$unknown() => unknown != null ? unknown() : orElse(value),
+      DependabotAlertDependencyRelationship$direct() => direct != null ? direct() : orElse(value),
+      DependabotAlertDependencyRelationship$transitive() => transitive != null ? transitive() : orElse(value),
+      DependabotAlertDependencyRelationship$$null() => $null != null ? $null() : orElse(value),
+      DependabotAlertDependencyRelationship$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotAlertDependencyRelationship($value)';
 
  }

@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NoAuthType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noAuth, required W Function(String value) $unknown, }) { return switch (this) {
+      NoAuthType$noAuth() => noAuth(),
+      NoAuthType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noAuth, W Function(String value)? $unknown, }) { return switch (this) {
+      NoAuthType$noAuth() => noAuth != null ? noAuth() : orElse(value),
+      NoAuthType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NoAuthType($value)';
 
  }

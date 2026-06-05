@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityDomainRegions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() global, required W Function() au, required W Function() de, required W Function() $in, required W Function() us, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityDomainRegions$global() => global(),
+      EmailSecurityDomainRegions$au() => au(),
+      EmailSecurityDomainRegions$de() => de(),
+      EmailSecurityDomainRegions$$in() => $in(),
+      EmailSecurityDomainRegions$us() => us(),
+      EmailSecurityDomainRegions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? global, W Function()? au, W Function()? de, W Function()? $in, W Function()? us, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityDomainRegions$global() => global != null ? global() : orElse(value),
+      EmailSecurityDomainRegions$au() => au != null ? au() : orElse(value),
+      EmailSecurityDomainRegions$de() => de != null ? de() : orElse(value),
+      EmailSecurityDomainRegions$$in() => $in != null ? $in() : orElse(value),
+      EmailSecurityDomainRegions$us() => us != null ? us() : orElse(value),
+      EmailSecurityDomainRegions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityDomainRegions($value)';
 
  }

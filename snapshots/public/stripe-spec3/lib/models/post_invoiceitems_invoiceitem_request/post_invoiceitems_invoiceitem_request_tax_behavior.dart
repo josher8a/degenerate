@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive() => exclusive(),
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$inclusive() => inclusive(),
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$unspecified() => unspecified(),
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$exclusive() => exclusive != null ? exclusive() : orElse(value),
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$inclusive() => inclusive != null ? inclusive() : orElse(value),
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      PostInvoiceitemsInvoiceitemRequestTaxBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostInvoiceitemsInvoiceitemRequestTaxBehavior($value)';
 
  }

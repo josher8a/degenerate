@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdentifierType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountNumber, required W Function() tokenizedAccountNumber, required W Function(String value) $unknown, }) { return switch (this) {
+      IdentifierType$accountNumber() => accountNumber(),
+      IdentifierType$tokenizedAccountNumber() => tokenizedAccountNumber(),
+      IdentifierType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountNumber, W Function()? tokenizedAccountNumber, W Function(String value)? $unknown, }) { return switch (this) {
+      IdentifierType$accountNumber() => accountNumber != null ? accountNumber() : orElse(value),
+      IdentifierType$tokenizedAccountNumber() => tokenizedAccountNumber != null ? tokenizedAccountNumber() : orElse(value),
+      IdentifierType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdentifierType($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BankConnectionsResourceAccountNumberDetailsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deactivated, required W Function() transactable, required W Function(String value) $unknown, }) { return switch (this) {
+      BankConnectionsResourceAccountNumberDetailsStatus$deactivated() => deactivated(),
+      BankConnectionsResourceAccountNumberDetailsStatus$transactable() => transactable(),
+      BankConnectionsResourceAccountNumberDetailsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deactivated, W Function()? transactable, W Function(String value)? $unknown, }) { return switch (this) {
+      BankConnectionsResourceAccountNumberDetailsStatus$deactivated() => deactivated != null ? deactivated() : orElse(value),
+      BankConnectionsResourceAccountNumberDetailsStatus$transactable() => transactable != null ? transactable() : orElse(value),
+      BankConnectionsResourceAccountNumberDetailsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BankConnectionsResourceAccountNumberDetailsStatus($value)';
 
  }
@@ -133,6 +157,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ach, required W Function(String value) $unknown, }) { return switch (this) {
+      BankConnectionsResourceAccountNumberDetailsSupportedNetworks$ach() => ach(),
+      BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ach, W Function(String value)? $unknown, }) { return switch (this) {
+      BankConnectionsResourceAccountNumberDetailsSupportedNetworks$ach() => ach != null ? ach() : orElse(value),
+      BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)';
 
  }

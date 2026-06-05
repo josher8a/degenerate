@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ListRegistrationsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() all, required W Function() revoked, required W Function(String value) $unknown, }) { return switch (this) {
+      ListRegistrationsStatus$active() => active(),
+      ListRegistrationsStatus$all() => all(),
+      ListRegistrationsStatus$revoked() => revoked(),
+      ListRegistrationsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? all, W Function()? revoked, W Function(String value)? $unknown, }) { return switch (this) {
+      ListRegistrationsStatus$active() => active != null ? active() : orElse(value),
+      ListRegistrationsStatus$all() => all != null ? all() : orElse(value),
+      ListRegistrationsStatus$revoked() => revoked != null ? revoked() : orElse(value),
+      ListRegistrationsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ListRegistrationsStatus($value)';
 
  }

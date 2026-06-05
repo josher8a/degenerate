@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RegulatedStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() regulated, required W Function() unregulated, required W Function(String value) $unknown, }) { return switch (this) {
+      RegulatedStatus$regulated() => regulated(),
+      RegulatedStatus$unregulated() => unregulated(),
+      RegulatedStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? regulated, W Function()? unregulated, W Function(String value)? $unknown, }) { return switch (this) {
+      RegulatedStatus$regulated() => regulated != null ? regulated() : orElse(value),
+      RegulatedStatus$unregulated() => unregulated != null ? unregulated() : orElse(value),
+      RegulatedStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RegulatedStatus($value)';
 
  }

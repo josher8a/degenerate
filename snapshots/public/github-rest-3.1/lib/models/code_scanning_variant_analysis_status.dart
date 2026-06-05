@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningVariantAnalysisStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() inProgress, required W Function() succeeded, required W Function() failed, required W Function() canceled, required W Function() timedOut, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningVariantAnalysisStatus$pending() => pending(),
+      CodeScanningVariantAnalysisStatus$inProgress() => inProgress(),
+      CodeScanningVariantAnalysisStatus$succeeded() => succeeded(),
+      CodeScanningVariantAnalysisStatus$failed() => failed(),
+      CodeScanningVariantAnalysisStatus$canceled() => canceled(),
+      CodeScanningVariantAnalysisStatus$timedOut() => timedOut(),
+      CodeScanningVariantAnalysisStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? inProgress, W Function()? succeeded, W Function()? failed, W Function()? canceled, W Function()? timedOut, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningVariantAnalysisStatus$pending() => pending != null ? pending() : orElse(value),
+      CodeScanningVariantAnalysisStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      CodeScanningVariantAnalysisStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      CodeScanningVariantAnalysisStatus$failed() => failed != null ? failed() : orElse(value),
+      CodeScanningVariantAnalysisStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      CodeScanningVariantAnalysisStatus$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      CodeScanningVariantAnalysisStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningVariantAnalysisStatus($value)';
 
  }

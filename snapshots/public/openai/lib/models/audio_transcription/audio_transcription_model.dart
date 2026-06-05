@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AudioTranscriptionModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() whisper1, required W Function() gpt4oMiniTranscribe, required W Function() gpt4oMiniTranscribe20251215, required W Function() gpt4oTranscribe, required W Function() gpt4oTranscribeDiarize, required W Function(String value) $unknown, }) { return switch (this) {
+      AudioTranscriptionModelVariant2$whisper1() => whisper1(),
+      AudioTranscriptionModelVariant2$gpt4oMiniTranscribe() => gpt4oMiniTranscribe(),
+      AudioTranscriptionModelVariant2$gpt4oMiniTranscribe20251215() => gpt4oMiniTranscribe20251215(),
+      AudioTranscriptionModelVariant2$gpt4oTranscribe() => gpt4oTranscribe(),
+      AudioTranscriptionModelVariant2$gpt4oTranscribeDiarize() => gpt4oTranscribeDiarize(),
+      AudioTranscriptionModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? whisper1, W Function()? gpt4oMiniTranscribe, W Function()? gpt4oMiniTranscribe20251215, W Function()? gpt4oTranscribe, W Function()? gpt4oTranscribeDiarize, W Function(String value)? $unknown, }) { return switch (this) {
+      AudioTranscriptionModelVariant2$whisper1() => whisper1 != null ? whisper1() : orElse(value),
+      AudioTranscriptionModelVariant2$gpt4oMiniTranscribe() => gpt4oMiniTranscribe != null ? gpt4oMiniTranscribe() : orElse(value),
+      AudioTranscriptionModelVariant2$gpt4oMiniTranscribe20251215() => gpt4oMiniTranscribe20251215 != null ? gpt4oMiniTranscribe20251215() : orElse(value),
+      AudioTranscriptionModelVariant2$gpt4oTranscribe() => gpt4oTranscribe != null ? gpt4oTranscribe() : orElse(value),
+      AudioTranscriptionModelVariant2$gpt4oTranscribeDiarize() => gpt4oTranscribeDiarize != null ? gpt4oTranscribeDiarize() : orElse(value),
+      AudioTranscriptionModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AudioTranscriptionModelVariant2($value)';
 
  }

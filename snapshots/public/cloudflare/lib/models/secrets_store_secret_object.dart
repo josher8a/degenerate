@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretsStoreSecretStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() active, required W Function() deleted, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretsStoreSecretStatus$pending() => pending(),
+      SecretsStoreSecretStatus$active() => active(),
+      SecretsStoreSecretStatus$deleted() => deleted(),
+      SecretsStoreSecretStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? active, W Function()? deleted, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretsStoreSecretStatus$pending() => pending != null ? pending() : orElse(value),
+      SecretsStoreSecretStatus$active() => active != null ? active() : orElse(value),
+      SecretsStoreSecretStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      SecretsStoreSecretStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretsStoreSecretStatus($value)';
 
  }

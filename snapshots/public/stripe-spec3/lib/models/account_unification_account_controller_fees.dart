@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountUnificationAccountControllerFeesPayer$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() account, required W Function() application, required W Function() applicationCustom, required W Function() applicationExpress, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountUnificationAccountControllerFeesPayer$account() => account(),
+      AccountUnificationAccountControllerFeesPayer$application() => application(),
+      AccountUnificationAccountControllerFeesPayer$applicationCustom() => applicationCustom(),
+      AccountUnificationAccountControllerFeesPayer$applicationExpress() => applicationExpress(),
+      AccountUnificationAccountControllerFeesPayer$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? application, W Function()? applicationCustom, W Function()? applicationExpress, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountUnificationAccountControllerFeesPayer$account() => account != null ? account() : orElse(value),
+      AccountUnificationAccountControllerFeesPayer$application() => application != null ? application() : orElse(value),
+      AccountUnificationAccountControllerFeesPayer$applicationCustom() => applicationCustom != null ? applicationCustom() : orElse(value),
+      AccountUnificationAccountControllerFeesPayer$applicationExpress() => applicationExpress != null ? applicationExpress() : orElse(value),
+      AccountUnificationAccountControllerFeesPayer$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountUnificationAccountControllerFeesPayer($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopLocationsByBotClassDeviceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() desktop, required W Function() mobile, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByBotClassDeviceType$desktop() => desktop(),
+      RadarGetHttpTopLocationsByBotClassDeviceType$mobile() => mobile(),
+      RadarGetHttpTopLocationsByBotClassDeviceType$$other() => $other(),
+      RadarGetHttpTopLocationsByBotClassDeviceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desktop, W Function()? mobile, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopLocationsByBotClassDeviceType$desktop() => desktop != null ? desktop() : orElse(value),
+      RadarGetHttpTopLocationsByBotClassDeviceType$mobile() => mobile != null ? mobile() : orElse(value),
+      RadarGetHttpTopLocationsByBotClassDeviceType$$other() => $other != null ? $other() : orElse(value),
+      RadarGetHttpTopLocationsByBotClassDeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopLocationsByBotClassDeviceType($value)';
 
  }

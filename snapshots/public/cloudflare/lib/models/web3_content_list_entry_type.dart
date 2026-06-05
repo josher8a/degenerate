@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Web3ContentListEntryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cid, required W Function() contentPath, required W Function(String value) $unknown, }) { return switch (this) {
+      Web3ContentListEntryType$cid() => cid(),
+      Web3ContentListEntryType$contentPath() => contentPath(),
+      Web3ContentListEntryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cid, W Function()? contentPath, W Function(String value)? $unknown, }) { return switch (this) {
+      Web3ContentListEntryType$cid() => cid != null ? cid() : orElse(value),
+      Web3ContentListEntryType$contentPath() => contentPath != null ? contentPath() : orElse(value),
+      Web3ContentListEntryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Web3ContentListEntryType($value)';
 
  }

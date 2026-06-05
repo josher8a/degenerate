@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConversationVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      ConversationVariant2$auto() => auto(),
+      ConversationVariant2$none() => none(),
+      ConversationVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      ConversationVariant2$auto() => auto != null ? auto() : orElse(value),
+      ConversationVariant2$none() => none != null ? none() : orElse(value),
+      ConversationVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConversationVariant2($value)';
 
  }

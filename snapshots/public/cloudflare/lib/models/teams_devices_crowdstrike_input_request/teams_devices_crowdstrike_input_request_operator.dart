@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesCrowdstrikeInputRequestOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() $empty3, required W Function() $empty4, required W Function() $empty5, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty() => $empty(),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty2() => $empty2(),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty3() => $empty3(),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty4() => $empty4(),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty5() => $empty5(),
+      TeamsDevicesCrowdstrikeInputRequestOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? $empty3, W Function()? $empty4, W Function()? $empty5, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty() => $empty != null ? $empty() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty4() => $empty4 != null ? $empty4() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestOperator$$empty5() => $empty5 != null ? $empty5() : orElse(value),
+      TeamsDevicesCrowdstrikeInputRequestOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesCrowdstrikeInputRequestOperator($value)';
 
  }

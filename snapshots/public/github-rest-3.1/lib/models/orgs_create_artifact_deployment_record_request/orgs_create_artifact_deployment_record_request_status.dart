@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deployed, required W Function() decommissioned, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsCreateArtifactDeploymentRecordRequestStatus$deployed() => deployed(),
+      OrgsCreateArtifactDeploymentRecordRequestStatus$decommissioned() => decommissioned(),
+      OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deployed, W Function()? decommissioned, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsCreateArtifactDeploymentRecordRequestStatus$deployed() => deployed != null ? deployed() : orElse(value),
+      OrgsCreateArtifactDeploymentRecordRequestStatus$decommissioned() => decommissioned != null ? decommissioned() : orElse(value),
+      OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsCreateArtifactDeploymentRecordRequestStatus($value)';
 
  }

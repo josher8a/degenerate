@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ServiceTier$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() $default, required W Function() flex, required W Function() scale, required W Function() priority, required W Function(String value) $unknown, }) { return switch (this) {
+      ServiceTier$auto() => auto(),
+      ServiceTier$$default() => $default(),
+      ServiceTier$flex() => flex(),
+      ServiceTier$scale() => scale(),
+      ServiceTier$priority() => priority(),
+      ServiceTier$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $default, W Function()? flex, W Function()? scale, W Function()? priority, W Function(String value)? $unknown, }) { return switch (this) {
+      ServiceTier$auto() => auto != null ? auto() : orElse(value),
+      ServiceTier$$default() => $default != null ? $default() : orElse(value),
+      ServiceTier$flex() => flex != null ? flex() : orElse(value),
+      ServiceTier$scale() => scale != null ? scale() : orElse(value),
+      ServiceTier$priority() => priority != null ? priority() : orElse(value),
+      ServiceTier$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ServiceTier($value)';
 
  }

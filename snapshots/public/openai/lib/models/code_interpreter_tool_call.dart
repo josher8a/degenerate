@@ -39,6 +39,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeInterpreterToolCallStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function() interpreting, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeInterpreterToolCallStatus$inProgress() => inProgress(),
+      CodeInterpreterToolCallStatus$completed() => completed(),
+      CodeInterpreterToolCallStatus$incomplete() => incomplete(),
+      CodeInterpreterToolCallStatus$interpreting() => interpreting(),
+      CodeInterpreterToolCallStatus$failed() => failed(),
+      CodeInterpreterToolCallStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function()? interpreting, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeInterpreterToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      CodeInterpreterToolCallStatus$completed() => completed != null ? completed() : orElse(value),
+      CodeInterpreterToolCallStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      CodeInterpreterToolCallStatus$interpreting() => interpreting != null ? interpreting() : orElse(value),
+      CodeInterpreterToolCallStatus$failed() => failed != null ? failed() : orElse(value),
+      CodeInterpreterToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeInterpreterToolCallStatus($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailRuleActionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() drop, required W Function() forward, required W Function() worker, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailRuleActionType$drop() => drop(),
+      EmailRuleActionType$forward() => forward(),
+      EmailRuleActionType$worker() => worker(),
+      EmailRuleActionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? drop, W Function()? forward, W Function()? worker, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailRuleActionType$drop() => drop != null ? drop() : orElse(value),
+      EmailRuleActionType$forward() => forward != null ? forward() : orElse(value),
+      EmailRuleActionType$worker() => worker != null ? worker() : orElse(value),
+      EmailRuleActionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailRuleActionType($value)';
 
  }

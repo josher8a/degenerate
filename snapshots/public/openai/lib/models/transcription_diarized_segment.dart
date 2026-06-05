@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TranscriptionDiarizedSegmentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() transcriptTextSegment, required W Function(String value) $unknown, }) { return switch (this) {
+      TranscriptionDiarizedSegmentType$transcriptTextSegment() => transcriptTextSegment(),
+      TranscriptionDiarizedSegmentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? transcriptTextSegment, W Function(String value)? $unknown, }) { return switch (this) {
+      TranscriptionDiarizedSegmentType$transcriptTextSegment() => transcriptTextSegment != null ? transcriptTextSegment() : orElse(value),
+      TranscriptionDiarizedSegmentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TranscriptionDiarizedSegmentType($value)';
 
  }

@@ -98,6 +98,54 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsIdealBank$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abnAmro, required W Function() adyen, required W Function() asnBank, required W Function() bunq, required W Function() buut, required W Function() finom, required W Function() handelsbanken, required W Function() ing, required W Function() knab, required W Function() mollie, required W Function() moneyou, required W Function() n26, required W Function() nn, required W Function() rabobank, required W Function() regiobank, required W Function() revolut, required W Function() snsBank, required W Function() triodosBank, required W Function() vanLanschot, required W Function() yoursafe, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsIdealBank$abnAmro() => abnAmro(),
+      PaymentMethodDetailsIdealBank$adyen() => adyen(),
+      PaymentMethodDetailsIdealBank$asnBank() => asnBank(),
+      PaymentMethodDetailsIdealBank$bunq() => bunq(),
+      PaymentMethodDetailsIdealBank$buut() => buut(),
+      PaymentMethodDetailsIdealBank$finom() => finom(),
+      PaymentMethodDetailsIdealBank$handelsbanken() => handelsbanken(),
+      PaymentMethodDetailsIdealBank$ing() => ing(),
+      PaymentMethodDetailsIdealBank$knab() => knab(),
+      PaymentMethodDetailsIdealBank$mollie() => mollie(),
+      PaymentMethodDetailsIdealBank$moneyou() => moneyou(),
+      PaymentMethodDetailsIdealBank$n26() => n26(),
+      PaymentMethodDetailsIdealBank$nn() => nn(),
+      PaymentMethodDetailsIdealBank$rabobank() => rabobank(),
+      PaymentMethodDetailsIdealBank$regiobank() => regiobank(),
+      PaymentMethodDetailsIdealBank$revolut() => revolut(),
+      PaymentMethodDetailsIdealBank$snsBank() => snsBank(),
+      PaymentMethodDetailsIdealBank$triodosBank() => triodosBank(),
+      PaymentMethodDetailsIdealBank$vanLanschot() => vanLanschot(),
+      PaymentMethodDetailsIdealBank$yoursafe() => yoursafe(),
+      PaymentMethodDetailsIdealBank$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnAmro, W Function()? adyen, W Function()? asnBank, W Function()? bunq, W Function()? buut, W Function()? finom, W Function()? handelsbanken, W Function()? ing, W Function()? knab, W Function()? mollie, W Function()? moneyou, W Function()? n26, W Function()? nn, W Function()? rabobank, W Function()? regiobank, W Function()? revolut, W Function()? snsBank, W Function()? triodosBank, W Function()? vanLanschot, W Function()? yoursafe, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsIdealBank$abnAmro() => abnAmro != null ? abnAmro() : orElse(value),
+      PaymentMethodDetailsIdealBank$adyen() => adyen != null ? adyen() : orElse(value),
+      PaymentMethodDetailsIdealBank$asnBank() => asnBank != null ? asnBank() : orElse(value),
+      PaymentMethodDetailsIdealBank$bunq() => bunq != null ? bunq() : orElse(value),
+      PaymentMethodDetailsIdealBank$buut() => buut != null ? buut() : orElse(value),
+      PaymentMethodDetailsIdealBank$finom() => finom != null ? finom() : orElse(value),
+      PaymentMethodDetailsIdealBank$handelsbanken() => handelsbanken != null ? handelsbanken() : orElse(value),
+      PaymentMethodDetailsIdealBank$ing() => ing != null ? ing() : orElse(value),
+      PaymentMethodDetailsIdealBank$knab() => knab != null ? knab() : orElse(value),
+      PaymentMethodDetailsIdealBank$mollie() => mollie != null ? mollie() : orElse(value),
+      PaymentMethodDetailsIdealBank$moneyou() => moneyou != null ? moneyou() : orElse(value),
+      PaymentMethodDetailsIdealBank$n26() => n26 != null ? n26() : orElse(value),
+      PaymentMethodDetailsIdealBank$nn() => nn != null ? nn() : orElse(value),
+      PaymentMethodDetailsIdealBank$rabobank() => rabobank != null ? rabobank() : orElse(value),
+      PaymentMethodDetailsIdealBank$regiobank() => regiobank != null ? regiobank() : orElse(value),
+      PaymentMethodDetailsIdealBank$revolut() => revolut != null ? revolut() : orElse(value),
+      PaymentMethodDetailsIdealBank$snsBank() => snsBank != null ? snsBank() : orElse(value),
+      PaymentMethodDetailsIdealBank$triodosBank() => triodosBank != null ? triodosBank() : orElse(value),
+      PaymentMethodDetailsIdealBank$vanLanschot() => vanLanschot != null ? vanLanschot() : orElse(value),
+      PaymentMethodDetailsIdealBank$yoursafe() => yoursafe != null ? yoursafe() : orElse(value),
+      PaymentMethodDetailsIdealBank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsIdealBank($value)';
 
  }

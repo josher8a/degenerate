@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sirio, required W Function() nestor, required W Function() carina, required W Function() celeste, required W Function() alvaro, required W Function() diana, required W Function() aquila, required W Function() selena, required W Function() estrella, required W Function() javier, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$sirio() => sirio(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$nestor() => nestor(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$carina() => carina(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$celeste() => celeste(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$alvaro() => alvaro(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$diana() => diana(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$aquila() => aquila(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$selena() => selena(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$estrella() => estrella(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$javier() => javier(),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sirio, W Function()? nestor, W Function()? carina, W Function()? celeste, W Function()? alvaro, W Function()? diana, W Function()? aquila, W Function()? selena, W Function()? estrella, W Function()? javier, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$sirio() => sirio != null ? sirio() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$nestor() => nestor != null ? nestor() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$carina() => carina != null ? carina() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$celeste() => celeste != null ? celeste() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$alvaro() => alvaro != null ? alvaro() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$diana() => diana != null ? diana() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$aquila() => aquila != null ? aquila() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$selena() => selena != null ? selena() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$estrella() => estrella != null ? estrella() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$javier() => javier != null ? javier() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker($value)';
 
  }

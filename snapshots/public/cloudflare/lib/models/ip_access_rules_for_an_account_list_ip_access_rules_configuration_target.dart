@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ip, required W Function() ipRange, required W Function() asn, required W Function() country, required W Function(String value) $unknown, }) { return switch (this) {
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$ip() => ip(),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$ipRange() => ipRange(),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$asn() => asn(),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$country() => country(),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Function()? ipRange, W Function()? asn, W Function()? country, W Function(String value)? $unknown, }) { return switch (this) {
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$ip() => ip != null ? ip() : orElse(value),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$ipRange() => ipRange != null ? ipRange() : orElse(value),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$asn() => asn != null ? asn() : orElse(value),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$country() => country != null ? country() : orElse(value),
+      IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IpAccessRulesForAnAccountListIpAccessRulesConfigurationTarget($value)';
 
  }

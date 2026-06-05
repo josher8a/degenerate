@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChangeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() added, required W Function() removed, required W Function(String value) $unknown, }) { return switch (this) {
+      ChangeType$added() => added(),
+      ChangeType$removed() => removed(),
+      ChangeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? added, W Function()? removed, W Function(String value)? $unknown, }) { return switch (this) {
+      ChangeType$added() => added != null ? added() : orElse(value),
+      ChangeType$removed() => removed != null ? removed() : orElse(value),
+      ChangeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChangeType($value)';
 
  }
@@ -85,6 +97,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependencyGraphDiffScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() runtime, required W Function() development, required W Function(String value) $unknown, }) { return switch (this) {
+      DependencyGraphDiffScope$unknown() => unknown(),
+      DependencyGraphDiffScope$runtime() => runtime(),
+      DependencyGraphDiffScope$development() => development(),
+      DependencyGraphDiffScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? runtime, W Function()? development, W Function(String value)? $unknown, }) { return switch (this) {
+      DependencyGraphDiffScope$unknown() => unknown != null ? unknown() : orElse(value),
+      DependencyGraphDiffScope$runtime() => runtime != null ? runtime() : orElse(value),
+      DependencyGraphDiffScope$development() => development != null ? development() : orElse(value),
+      DependencyGraphDiffScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependencyGraphDiffScope($value)';
 
  }

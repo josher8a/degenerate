@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostPlansRequestTiersMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() graduated, required W Function() volume, required W Function(String value) $unknown, }) { return switch (this) {
+      PostPlansRequestTiersMode$graduated() => graduated(),
+      PostPlansRequestTiersMode$volume() => volume(),
+      PostPlansRequestTiersMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? graduated, W Function()? volume, W Function(String value)? $unknown, }) { return switch (this) {
+      PostPlansRequestTiersMode$graduated() => graduated != null ? graduated() : orElse(value),
+      PostPlansRequestTiersMode$volume() => volume != null ? volume() : orElse(value),
+      PostPlansRequestTiersMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostPlansRequestTiersMode($value)';
 
  }

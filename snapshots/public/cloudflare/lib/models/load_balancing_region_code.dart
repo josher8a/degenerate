@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingRegionCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() wnam, required W Function() enam, required W Function() weu, required W Function() eeu, required W Function() nsam, required W Function() ssam, required W Function() oc, required W Function() me, required W Function() naf, required W Function() saf, required W Function() sas, required W Function() seas, required W Function() neas, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingRegionCode$wnam() => wnam(),
+      LoadBalancingRegionCode$enam() => enam(),
+      LoadBalancingRegionCode$weu() => weu(),
+      LoadBalancingRegionCode$eeu() => eeu(),
+      LoadBalancingRegionCode$nsam() => nsam(),
+      LoadBalancingRegionCode$ssam() => ssam(),
+      LoadBalancingRegionCode$oc() => oc(),
+      LoadBalancingRegionCode$me() => me(),
+      LoadBalancingRegionCode$naf() => naf(),
+      LoadBalancingRegionCode$saf() => saf(),
+      LoadBalancingRegionCode$sas() => sas(),
+      LoadBalancingRegionCode$seas() => seas(),
+      LoadBalancingRegionCode$neas() => neas(),
+      LoadBalancingRegionCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? wnam, W Function()? enam, W Function()? weu, W Function()? eeu, W Function()? nsam, W Function()? ssam, W Function()? oc, W Function()? me, W Function()? naf, W Function()? saf, W Function()? sas, W Function()? seas, W Function()? neas, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingRegionCode$wnam() => wnam != null ? wnam() : orElse(value),
+      LoadBalancingRegionCode$enam() => enam != null ? enam() : orElse(value),
+      LoadBalancingRegionCode$weu() => weu != null ? weu() : orElse(value),
+      LoadBalancingRegionCode$eeu() => eeu != null ? eeu() : orElse(value),
+      LoadBalancingRegionCode$nsam() => nsam != null ? nsam() : orElse(value),
+      LoadBalancingRegionCode$ssam() => ssam != null ? ssam() : orElse(value),
+      LoadBalancingRegionCode$oc() => oc != null ? oc() : orElse(value),
+      LoadBalancingRegionCode$me() => me != null ? me() : orElse(value),
+      LoadBalancingRegionCode$naf() => naf != null ? naf() : orElse(value),
+      LoadBalancingRegionCode$saf() => saf != null ? saf() : orElse(value),
+      LoadBalancingRegionCode$sas() => sas != null ? sas() : orElse(value),
+      LoadBalancingRegionCode$seas() => seas != null ? seas() : orElse(value),
+      LoadBalancingRegionCode$neas() => neas != null ? neas() : orElse(value),
+      LoadBalancingRegionCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingRegionCode($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PullsCreateReviewRequestEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() approve, required W Function() requestChanges, required W Function() comment, required W Function(String value) $unknown, }) { return switch (this) {
+      PullsCreateReviewRequestEvent$approve() => approve(),
+      PullsCreateReviewRequestEvent$requestChanges() => requestChanges(),
+      PullsCreateReviewRequestEvent$comment() => comment(),
+      PullsCreateReviewRequestEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? approve, W Function()? requestChanges, W Function()? comment, W Function(String value)? $unknown, }) { return switch (this) {
+      PullsCreateReviewRequestEvent$approve() => approve != null ? approve() : orElse(value),
+      PullsCreateReviewRequestEvent$requestChanges() => requestChanges != null ? requestChanges() : orElse(value),
+      PullsCreateReviewRequestEvent$comment() => comment != null ? comment() : orElse(value),
+      PullsCreateReviewRequestEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PullsCreateReviewRequestEvent($value)';
 
  }

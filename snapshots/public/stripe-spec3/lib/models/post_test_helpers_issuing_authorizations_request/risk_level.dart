@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RiskLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() elevated, required W Function() highest, required W Function() low, required W Function() normal, required W Function() notAssessed, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      RiskLevel$elevated() => elevated(),
+      RiskLevel$highest() => highest(),
+      RiskLevel$low() => low(),
+      RiskLevel$normal() => normal(),
+      RiskLevel$notAssessed() => notAssessed(),
+      RiskLevel$unknown() => unknown(),
+      RiskLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? elevated, W Function()? highest, W Function()? low, W Function()? normal, W Function()? notAssessed, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      RiskLevel$elevated() => elevated != null ? elevated() : orElse(value),
+      RiskLevel$highest() => highest != null ? highest() : orElse(value),
+      RiskLevel$low() => low != null ? low() : orElse(value),
+      RiskLevel$normal() => normal != null ? normal() : orElse(value),
+      RiskLevel$notAssessed() => notAssessed != null ? notAssessed() : orElse(value),
+      RiskLevel$unknown() => unknown != null ? unknown() : orElse(value),
+      RiskLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RiskLevel($value)';
 
  }

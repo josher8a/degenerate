@@ -93,6 +93,52 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsTopAsesResponseCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noerror, required W Function() formerr, required W Function() servfail, required W Function() nxdomain, required W Function() notimp, required W Function() refused, required W Function() yxdomain, required W Function() yxrrset, required W Function() nxrrset, required W Function() notauth, required W Function() notzone, required W Function() badsig, required W Function() badkey, required W Function() badtime, required W Function() badmode, required W Function() badname, required W Function() badalg, required W Function() badtrunc, required W Function() badcookie, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsTopAsesResponseCode$noerror() => noerror(),
+      RadarGetDnsTopAsesResponseCode$formerr() => formerr(),
+      RadarGetDnsTopAsesResponseCode$servfail() => servfail(),
+      RadarGetDnsTopAsesResponseCode$nxdomain() => nxdomain(),
+      RadarGetDnsTopAsesResponseCode$notimp() => notimp(),
+      RadarGetDnsTopAsesResponseCode$refused() => refused(),
+      RadarGetDnsTopAsesResponseCode$yxdomain() => yxdomain(),
+      RadarGetDnsTopAsesResponseCode$yxrrset() => yxrrset(),
+      RadarGetDnsTopAsesResponseCode$nxrrset() => nxrrset(),
+      RadarGetDnsTopAsesResponseCode$notauth() => notauth(),
+      RadarGetDnsTopAsesResponseCode$notzone() => notzone(),
+      RadarGetDnsTopAsesResponseCode$badsig() => badsig(),
+      RadarGetDnsTopAsesResponseCode$badkey() => badkey(),
+      RadarGetDnsTopAsesResponseCode$badtime() => badtime(),
+      RadarGetDnsTopAsesResponseCode$badmode() => badmode(),
+      RadarGetDnsTopAsesResponseCode$badname() => badname(),
+      RadarGetDnsTopAsesResponseCode$badalg() => badalg(),
+      RadarGetDnsTopAsesResponseCode$badtrunc() => badtrunc(),
+      RadarGetDnsTopAsesResponseCode$badcookie() => badcookie(),
+      RadarGetDnsTopAsesResponseCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror, W Function()? formerr, W Function()? servfail, W Function()? nxdomain, W Function()? notimp, W Function()? refused, W Function()? yxdomain, W Function()? yxrrset, W Function()? nxrrset, W Function()? notauth, W Function()? notzone, W Function()? badsig, W Function()? badkey, W Function()? badtime, W Function()? badmode, W Function()? badname, W Function()? badalg, W Function()? badtrunc, W Function()? badcookie, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsTopAsesResponseCode$noerror() => noerror != null ? noerror() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$formerr() => formerr != null ? formerr() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$servfail() => servfail != null ? servfail() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$nxdomain() => nxdomain != null ? nxdomain() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$notimp() => notimp != null ? notimp() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$refused() => refused != null ? refused() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$yxdomain() => yxdomain != null ? yxdomain() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$yxrrset() => yxrrset != null ? yxrrset() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$nxrrset() => nxrrset != null ? nxrrset() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$notauth() => notauth != null ? notauth() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$notzone() => notzone != null ? notzone() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badsig() => badsig != null ? badsig() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badkey() => badkey != null ? badkey() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badtime() => badtime != null ? badtime() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badmode() => badmode != null ? badmode() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badname() => badname != null ? badname() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badalg() => badalg != null ? badalg() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badtrunc() => badtrunc != null ? badtrunc() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$badcookie() => badcookie != null ? badcookie() : orElse(value),
+      RadarGetDnsTopAsesResponseCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsTopAsesResponseCode($value)';
 
  }

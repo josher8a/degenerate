@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallProducts2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() zoneLockdown, required W Function() uaBlock, required W Function() bic, required W Function() hot, required W Function() securityLevel, required W Function() rateLimit, required W Function() waf, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallProducts2$zoneLockdown() => zoneLockdown(),
+      FirewallProducts2$uaBlock() => uaBlock(),
+      FirewallProducts2$bic() => bic(),
+      FirewallProducts2$hot() => hot(),
+      FirewallProducts2$securityLevel() => securityLevel(),
+      FirewallProducts2$rateLimit() => rateLimit(),
+      FirewallProducts2$waf() => waf(),
+      FirewallProducts2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? zoneLockdown, W Function()? uaBlock, W Function()? bic, W Function()? hot, W Function()? securityLevel, W Function()? rateLimit, W Function()? waf, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallProducts2$zoneLockdown() => zoneLockdown != null ? zoneLockdown() : orElse(value),
+      FirewallProducts2$uaBlock() => uaBlock != null ? uaBlock() : orElse(value),
+      FirewallProducts2$bic() => bic != null ? bic() : orElse(value),
+      FirewallProducts2$hot() => hot != null ? hot() : orElse(value),
+      FirewallProducts2$securityLevel() => securityLevel != null ? securityLevel() : orElse(value),
+      FirewallProducts2$rateLimit() => rateLimit != null ? rateLimit() : orElse(value),
+      FirewallProducts2$waf() => waf != null ? waf() : orElse(value),
+      FirewallProducts2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallProducts2($value)';
 
  }

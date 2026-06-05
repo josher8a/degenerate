@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetTaxIdsOwnerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() account, required W Function() application, required W Function() customer, required W Function() self, required W Function(String value) $unknown, }) { return switch (this) {
+      GetTaxIdsOwnerType$account() => account(),
+      GetTaxIdsOwnerType$application() => application(),
+      GetTaxIdsOwnerType$customer() => customer(),
+      GetTaxIdsOwnerType$self() => self(),
+      GetTaxIdsOwnerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? account, W Function()? application, W Function()? customer, W Function()? self, W Function(String value)? $unknown, }) { return switch (this) {
+      GetTaxIdsOwnerType$account() => account != null ? account() : orElse(value),
+      GetTaxIdsOwnerType$application() => application != null ? application() : orElse(value),
+      GetTaxIdsOwnerType$customer() => customer != null ? customer() : orElse(value),
+      GetTaxIdsOwnerType$self() => self != null ? self() : orElse(value),
+      GetTaxIdsOwnerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetTaxIdsOwnerType($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() $json, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$text() => text(),
+      WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$$json() => $json(),
+      WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? $json, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$text() => text != null ? text() : orElse(value),
+      WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$$json() => $json != null ? $json() : orElse(value),
+      WorkersKvNamespaceGetMultipleKeyValuePairsRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)';
 
  }

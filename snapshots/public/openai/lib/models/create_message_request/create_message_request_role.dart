@@ -29,6 +29,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateMessageRequestRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function() assistant, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateMessageRequestRole$user() => user(),
+      CreateMessageRequestRole$assistant() => assistant(),
+      CreateMessageRequestRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? assistant, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateMessageRequestRole$user() => user != null ? user() : orElse(value),
+      CreateMessageRequestRole$assistant() => assistant != null ? assistant() : orElse(value),
+      CreateMessageRequestRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateMessageRequestRole($value)';
 
  }

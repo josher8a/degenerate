@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Assignment$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() direct, required W Function() indirect, required W Function() mixed, required W Function(String value) $unknown, }) { return switch (this) {
+      Assignment$direct() => direct(),
+      Assignment$indirect() => indirect(),
+      Assignment$mixed() => mixed(),
+      Assignment$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? indirect, W Function()? mixed, W Function(String value)? $unknown, }) { return switch (this) {
+      Assignment$direct() => direct != null ? direct() : orElse(value),
+      Assignment$indirect() => indirect != null ? indirect() : orElse(value),
+      Assignment$mixed() => mixed != null ? mixed() : orElse(value),
+      Assignment$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Assignment($value)';
 
  }

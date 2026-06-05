@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Prefetch$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() balances, required W Function() ownership, required W Function() transactions, required W Function(String value) $unknown, }) { return switch (this) {
+      Prefetch$balances() => balances(),
+      Prefetch$ownership() => ownership(),
+      Prefetch$transactions() => transactions(),
+      Prefetch$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? balances, W Function()? ownership, W Function()? transactions, W Function(String value)? $unknown, }) { return switch (this) {
+      Prefetch$balances() => balances != null ? balances() : orElse(value),
+      Prefetch$ownership() => ownership != null ? ownership() : orElse(value),
+      Prefetch$transactions() => transactions != null ? transactions() : orElse(value),
+      Prefetch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Prefetch($value)';
 
  }

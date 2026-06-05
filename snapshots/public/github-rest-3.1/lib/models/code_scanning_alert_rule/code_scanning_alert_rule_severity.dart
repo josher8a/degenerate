@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningAlertRuleSeverity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() note, required W Function() warning, required W Function() error, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningAlertRuleSeverity$none() => none(),
+      CodeScanningAlertRuleSeverity$note() => note(),
+      CodeScanningAlertRuleSeverity$warning() => warning(),
+      CodeScanningAlertRuleSeverity$error() => error(),
+      CodeScanningAlertRuleSeverity$$null() => $null(),
+      CodeScanningAlertRuleSeverity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? note, W Function()? warning, W Function()? error, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningAlertRuleSeverity$none() => none != null ? none() : orElse(value),
+      CodeScanningAlertRuleSeverity$note() => note != null ? note() : orElse(value),
+      CodeScanningAlertRuleSeverity$warning() => warning != null ? warning() : orElse(value),
+      CodeScanningAlertRuleSeverity$error() => error != null ? error() : orElse(value),
+      CodeScanningAlertRuleSeverity$$null() => $null != null ? $null() : orElse(value),
+      CodeScanningAlertRuleSeverity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningAlertRuleSeverity($value)';
 
  }

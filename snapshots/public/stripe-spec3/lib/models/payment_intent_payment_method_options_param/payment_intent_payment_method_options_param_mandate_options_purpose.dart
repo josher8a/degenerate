@@ -65,6 +65,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() dependantSupport, required W Function() government, required W Function() loan, required W Function() mortgage, required W Function() $other, required W Function() pension, required W Function() personal, required W Function() retail, required W Function() salary, required W Function() tax, required W Function() utility, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$empty() => $empty(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport() => dependantSupport(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$government() => government(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$loan() => loan(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$mortgage() => mortgage(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$other() => $other(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$pension() => pension(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$personal() => personal(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$retail() => retail(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$salary() => salary(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$tax() => tax(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$utility() => utility(),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? dependantSupport, W Function()? government, W Function()? loan, W Function()? mortgage, W Function()? $other, W Function()? pension, W Function()? personal, W Function()? retail, W Function()? salary, W Function()? tax, W Function()? utility, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$empty() => $empty != null ? $empty() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport() => dependantSupport != null ? dependantSupport() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$government() => government != null ? government() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$loan() => loan != null ? loan() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$mortgage() => mortgage != null ? mortgage() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$other() => $other != null ? $other() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$pension() => pension != null ? pension() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$personal() => personal != null ? personal() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$retail() => retail != null ? retail() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$salary() => salary != null ? salary() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$tax() => tax != null ? tax() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$utility() => utility != null ? utility() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose($value)';
 
  }

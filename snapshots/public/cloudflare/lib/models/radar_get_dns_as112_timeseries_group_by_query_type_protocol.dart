@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() udp, required W Function() tcp, required W Function() https, required W Function() tls, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$udp() => udp(),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$tcp() => tcp(),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$https() => https(),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$tls() => tls(),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? https, W Function()? tls, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$udp() => udp != null ? udp() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$tcp() => tcp != null ? tcp() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$https() => https != null ? https() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$tls() => tls != null ? tls() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsAs112TimeseriesGroupByQueryTypeProtocol($value)';
 
  }

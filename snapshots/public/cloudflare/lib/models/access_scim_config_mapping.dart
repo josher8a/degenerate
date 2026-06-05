@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Strictness$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() strict, required W Function() passthrough, required W Function(String value) $unknown, }) { return switch (this) {
+      Strictness$strict() => strict(),
+      Strictness$passthrough() => passthrough(),
+      Strictness$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? strict, W Function()? passthrough, W Function(String value)? $unknown, }) { return switch (this) {
+      Strictness$strict() => strict != null ? strict() : orElse(value),
+      Strictness$passthrough() => passthrough != null ? passthrough() : orElse(value),
+      Strictness$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Strictness($value)';
 
  }

@@ -62,6 +62,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceMandateOptionsPaytoPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dependantSupport, required W Function() government, required W Function() loan, required W Function() mortgage, required W Function() $other, required W Function() pension, required W Function() personal, required W Function() retail, required W Function() salary, required W Function() tax, required W Function() utility, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceMandateOptionsPaytoPurpose$dependantSupport() => dependantSupport(),
+      InvoiceMandateOptionsPaytoPurpose$government() => government(),
+      InvoiceMandateOptionsPaytoPurpose$loan() => loan(),
+      InvoiceMandateOptionsPaytoPurpose$mortgage() => mortgage(),
+      InvoiceMandateOptionsPaytoPurpose$$other() => $other(),
+      InvoiceMandateOptionsPaytoPurpose$pension() => pension(),
+      InvoiceMandateOptionsPaytoPurpose$personal() => personal(),
+      InvoiceMandateOptionsPaytoPurpose$retail() => retail(),
+      InvoiceMandateOptionsPaytoPurpose$salary() => salary(),
+      InvoiceMandateOptionsPaytoPurpose$tax() => tax(),
+      InvoiceMandateOptionsPaytoPurpose$utility() => utility(),
+      InvoiceMandateOptionsPaytoPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dependantSupport, W Function()? government, W Function()? loan, W Function()? mortgage, W Function()? $other, W Function()? pension, W Function()? personal, W Function()? retail, W Function()? salary, W Function()? tax, W Function()? utility, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceMandateOptionsPaytoPurpose$dependantSupport() => dependantSupport != null ? dependantSupport() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$government() => government != null ? government() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$loan() => loan != null ? loan() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$mortgage() => mortgage != null ? mortgage() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$$other() => $other != null ? $other() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$pension() => pension != null ? pension() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$personal() => personal != null ? personal() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$retail() => retail != null ? retail() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$salary() => salary != null ? salary() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$tax() => tax != null ? tax() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$utility() => utility != null ? utility() : orElse(value),
+      InvoiceMandateOptionsPaytoPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceMandateOptionsPaytoPurpose($value)';
 
  }

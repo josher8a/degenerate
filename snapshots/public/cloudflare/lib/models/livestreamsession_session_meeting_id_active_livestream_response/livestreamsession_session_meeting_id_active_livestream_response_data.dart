@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ErrMessage$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() live, required W Function() idle, required W Function() errored, required W Function() invoked, required W Function(String value) $unknown, }) { return switch (this) {
+      ErrMessage$live() => live(),
+      ErrMessage$idle() => idle(),
+      ErrMessage$errored() => errored(),
+      ErrMessage$invoked() => invoked(),
+      ErrMessage$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? live, W Function()? idle, W Function()? errored, W Function()? invoked, W Function(String value)? $unknown, }) { return switch (this) {
+      ErrMessage$live() => live != null ? live() : orElse(value),
+      ErrMessage$idle() => idle != null ? idle() : orElse(value),
+      ErrMessage$errored() => errored != null ? errored() : orElse(value),
+      ErrMessage$invoked() => invoked != null ? invoked() : orElse(value),
+      ErrMessage$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ErrMessage($value)';
 
  }

@@ -82,6 +82,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function() allow, required W Function() block, required W Function() scan, required W Function() noscan, required W Function() safesearch, required W Function() ytrestricted, required W Function() isolate, required W Function() noisolate, required W Function() $override, required W Function() l4Override, required W Function() egress, required W Function() resolve, required W Function() quarantine, required W Function() redirect, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewayAction$$on() => $on(),
+      ZeroTrustGatewayAction$off() => off(),
+      ZeroTrustGatewayAction$allow() => allow(),
+      ZeroTrustGatewayAction$block() => block(),
+      ZeroTrustGatewayAction$scan() => scan(),
+      ZeroTrustGatewayAction$noscan() => noscan(),
+      ZeroTrustGatewayAction$safesearch() => safesearch(),
+      ZeroTrustGatewayAction$ytrestricted() => ytrestricted(),
+      ZeroTrustGatewayAction$isolate() => isolate(),
+      ZeroTrustGatewayAction$noisolate() => noisolate(),
+      ZeroTrustGatewayAction$$override() => $override(),
+      ZeroTrustGatewayAction$l4Override() => l4Override(),
+      ZeroTrustGatewayAction$egress() => egress(),
+      ZeroTrustGatewayAction$resolve() => resolve(),
+      ZeroTrustGatewayAction$quarantine() => quarantine(),
+      ZeroTrustGatewayAction$redirect() => redirect(),
+      ZeroTrustGatewayAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function()? allow, W Function()? block, W Function()? scan, W Function()? noscan, W Function()? safesearch, W Function()? ytrestricted, W Function()? isolate, W Function()? noisolate, W Function()? $override, W Function()? l4Override, W Function()? egress, W Function()? resolve, W Function()? quarantine, W Function()? redirect, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewayAction$$on() => $on != null ? $on() : orElse(value),
+      ZeroTrustGatewayAction$off() => off != null ? off() : orElse(value),
+      ZeroTrustGatewayAction$allow() => allow != null ? allow() : orElse(value),
+      ZeroTrustGatewayAction$block() => block != null ? block() : orElse(value),
+      ZeroTrustGatewayAction$scan() => scan != null ? scan() : orElse(value),
+      ZeroTrustGatewayAction$noscan() => noscan != null ? noscan() : orElse(value),
+      ZeroTrustGatewayAction$safesearch() => safesearch != null ? safesearch() : orElse(value),
+      ZeroTrustGatewayAction$ytrestricted() => ytrestricted != null ? ytrestricted() : orElse(value),
+      ZeroTrustGatewayAction$isolate() => isolate != null ? isolate() : orElse(value),
+      ZeroTrustGatewayAction$noisolate() => noisolate != null ? noisolate() : orElse(value),
+      ZeroTrustGatewayAction$$override() => $override != null ? $override() : orElse(value),
+      ZeroTrustGatewayAction$l4Override() => l4Override != null ? l4Override() : orElse(value),
+      ZeroTrustGatewayAction$egress() => egress != null ? egress() : orElse(value),
+      ZeroTrustGatewayAction$resolve() => resolve != null ? resolve() : orElse(value),
+      ZeroTrustGatewayAction$quarantine() => quarantine != null ? quarantine() : orElse(value),
+      ZeroTrustGatewayAction$redirect() => redirect != null ? redirect() : orElse(value),
+      ZeroTrustGatewayAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewayAction($value)';
 
  }

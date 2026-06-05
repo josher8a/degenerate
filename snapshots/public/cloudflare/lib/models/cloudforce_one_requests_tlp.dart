@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudforceOneRequestsTlp$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clear, required W Function() amber, required W Function() amberStrict, required W Function() green, required W Function() red, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudforceOneRequestsTlp$clear() => clear(),
+      CloudforceOneRequestsTlp$amber() => amber(),
+      CloudforceOneRequestsTlp$amberStrict() => amberStrict(),
+      CloudforceOneRequestsTlp$green() => green(),
+      CloudforceOneRequestsTlp$red() => red(),
+      CloudforceOneRequestsTlp$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clear, W Function()? amber, W Function()? amberStrict, W Function()? green, W Function()? red, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudforceOneRequestsTlp$clear() => clear != null ? clear() : orElse(value),
+      CloudforceOneRequestsTlp$amber() => amber != null ? amber() : orElse(value),
+      CloudforceOneRequestsTlp$amberStrict() => amberStrict != null ? amberStrict() : orElse(value),
+      CloudforceOneRequestsTlp$green() => green != null ? green() : orElse(value),
+      CloudforceOneRequestsTlp$red() => red != null ? red() : orElse(value),
+      CloudforceOneRequestsTlp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudforceOneRequestsTlp($value)';
 
  }

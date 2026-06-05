@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Label$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() us, required W Function() eu, required W Function() highestSecurity, required W Function(String value) $unknown, }) { return switch (this) {
+      Label$us() => us(),
+      Label$eu() => eu(),
+      Label$highestSecurity() => highestSecurity(),
+      Label$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? us, W Function()? eu, W Function()? highestSecurity, W Function(String value)? $unknown, }) { return switch (this) {
+      Label$us() => us != null ? us() : orElse(value),
+      Label$eu() => eu != null ? eu() : orElse(value),
+      Label$highestSecurity() => highestSecurity != null ? highestSecurity() : orElse(value),
+      Label$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Label($value)';
 
  }

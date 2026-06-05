@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeConversationItemMessageUserContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inputText, required W Function() inputAudio, required W Function() inputImage, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeConversationItemMessageUserContentType$inputText() => inputText(),
+      RealtimeConversationItemMessageUserContentType$inputAudio() => inputAudio(),
+      RealtimeConversationItemMessageUserContentType$inputImage() => inputImage(),
+      RealtimeConversationItemMessageUserContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inputText, W Function()? inputAudio, W Function()? inputImage, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeConversationItemMessageUserContentType$inputText() => inputText != null ? inputText() : orElse(value),
+      RealtimeConversationItemMessageUserContentType$inputAudio() => inputAudio != null ? inputAudio() : orElse(value),
+      RealtimeConversationItemMessageUserContentType$inputImage() => inputImage != null ? inputImage() : orElse(value),
+      RealtimeConversationItemMessageUserContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeConversationItemMessageUserContentType($value)';
 
  }

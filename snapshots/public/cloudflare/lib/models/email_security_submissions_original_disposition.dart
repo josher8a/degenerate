@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecuritySubmissionsOriginalDisposition$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() malicious, required W Function() suspicious, required W Function() spoof, required W Function() spam, required W Function() bulk, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecuritySubmissionsOriginalDisposition$malicious() => malicious(),
+      EmailSecuritySubmissionsOriginalDisposition$suspicious() => suspicious(),
+      EmailSecuritySubmissionsOriginalDisposition$spoof() => spoof(),
+      EmailSecuritySubmissionsOriginalDisposition$spam() => spam(),
+      EmailSecuritySubmissionsOriginalDisposition$bulk() => bulk(),
+      EmailSecuritySubmissionsOriginalDisposition$none() => none(),
+      EmailSecuritySubmissionsOriginalDisposition$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? malicious, W Function()? suspicious, W Function()? spoof, W Function()? spam, W Function()? bulk, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecuritySubmissionsOriginalDisposition$malicious() => malicious != null ? malicious() : orElse(value),
+      EmailSecuritySubmissionsOriginalDisposition$suspicious() => suspicious != null ? suspicious() : orElse(value),
+      EmailSecuritySubmissionsOriginalDisposition$spoof() => spoof != null ? spoof() : orElse(value),
+      EmailSecuritySubmissionsOriginalDisposition$spam() => spam != null ? spam() : orElse(value),
+      EmailSecuritySubmissionsOriginalDisposition$bulk() => bulk != null ? bulk() : orElse(value),
+      EmailSecuritySubmissionsOriginalDisposition$none() => none != null ? none() : orElse(value),
+      EmailSecuritySubmissionsOriginalDisposition$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecuritySubmissionsOriginalDisposition($value)';
 
  }

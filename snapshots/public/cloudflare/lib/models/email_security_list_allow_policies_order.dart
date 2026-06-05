@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityListAllowPoliciesOrder$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pattern, required W Function() createdAt, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityListAllowPoliciesOrder$pattern() => pattern(),
+      EmailSecurityListAllowPoliciesOrder$createdAt() => createdAt(),
+      EmailSecurityListAllowPoliciesOrder$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pattern, W Function()? createdAt, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityListAllowPoliciesOrder$pattern() => pattern != null ? pattern() : orElse(value),
+      EmailSecurityListAllowPoliciesOrder$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      EmailSecurityListAllowPoliciesOrder$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityListAllowPoliciesOrder($value)';
 
  }

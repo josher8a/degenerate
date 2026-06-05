@@ -107,6 +107,86 @@ sealed class Phase {
     return this is Phase$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() $new,
+    required W Function() full,
+    required W Function() $empty,
+    required W Function() $empty2,
+    required W Function() yes,
+    required W Function() no,
+    required W Function() $on,
+    required W Function() off,
+    required W Function() $true,
+    required W Function() $false,
+    required W Function() $empty3,
+    required W Function() inf,
+    required W Function() inf2,
+    required W Function() nan,
+    required W Function() $null,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      Phase$$new() => $new(),
+      Phase$full() => full(),
+      Phase$$empty() => $empty(),
+      Phase$$empty2() => $empty2(),
+      Phase$yes() => yes(),
+      Phase$no() => no(),
+      Phase$$on() => $on(),
+      Phase$off() => off(),
+      Phase$$true() => $true(),
+      Phase$$false() => $false(),
+      Phase$$empty3() => $empty3(),
+      Phase$inf() => inf(),
+      Phase$inf2() => inf2(),
+      Phase$nan() => nan(),
+      Phase$$null() => $null(),
+      Phase$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? $new,
+    W Function()? full,
+    W Function()? $empty,
+    W Function()? $empty2,
+    W Function()? yes,
+    W Function()? no,
+    W Function()? $on,
+    W Function()? off,
+    W Function()? $true,
+    W Function()? $false,
+    W Function()? $empty3,
+    W Function()? inf,
+    W Function()? inf2,
+    W Function()? nan,
+    W Function()? $null,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      Phase$$new() => $new != null ? $new() : orElse(value),
+      Phase$full() => full != null ? full() : orElse(value),
+      Phase$$empty() => $empty != null ? $empty() : orElse(value),
+      Phase$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      Phase$yes() => yes != null ? yes() : orElse(value),
+      Phase$no() => no != null ? no() : orElse(value),
+      Phase$$on() => $on != null ? $on() : orElse(value),
+      Phase$off() => off != null ? off() : orElse(value),
+      Phase$$true() => $true != null ? $true() : orElse(value),
+      Phase$$false() => $false != null ? $false() : orElse(value),
+      Phase$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      Phase$inf() => inf != null ? inf() : orElse(value),
+      Phase$inf2() => inf2 != null ? inf2() : orElse(value),
+      Phase$nan() => nan != null ? nan() : orElse(value),
+      Phase$$null() => $null != null ? $null() : orElse(value),
+      Phase$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'Phase($value)';
 }

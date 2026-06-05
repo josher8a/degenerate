@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependencyRelationship$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() direct, required W Function() indirect, required W Function(String value) $unknown, }) { return switch (this) {
+      DependencyRelationship$direct() => direct(),
+      DependencyRelationship$indirect() => indirect(),
+      DependencyRelationship$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? indirect, W Function(String value)? $unknown, }) { return switch (this) {
+      DependencyRelationship$direct() => direct != null ? direct() : orElse(value),
+      DependencyRelationship$indirect() => indirect != null ? indirect() : orElse(value),
+      DependencyRelationship$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependencyRelationship($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependencyScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() runtime, required W Function() development, required W Function(String value) $unknown, }) { return switch (this) {
+      DependencyScope$runtime() => runtime(),
+      DependencyScope$development() => development(),
+      DependencyScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? runtime, W Function()? development, W Function(String value)? $unknown, }) { return switch (this) {
+      DependencyScope$runtime() => runtime != null ? runtime() : orElse(value),
+      DependencyScope$development() => development != null ? development() : orElse(value),
+      DependencyScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependencyScope($value)';
 
  }

@@ -41,6 +41,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() pendingReactivation, required W Function() pendingRevocation, required W Function() revoked, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active() => active(),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation() => pendingReactivation(),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation() => pendingRevocation(),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked() => revoked(),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pendingReactivation, W Function()? pendingRevocation, W Function()? revoked, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active() => active != null ? active() : orElse(value),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation() => pendingReactivation != null ? pendingReactivation() : orElse(value),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation() => pendingRevocation != null ? pendingRevocation() : orElse(value),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked() => revoked != null ? revoked() : orElse(value),
+      TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)';
 
  }

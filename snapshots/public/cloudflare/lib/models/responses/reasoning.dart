@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Effort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      Effort$low() => low(),
+      Effort$medium() => medium(),
+      Effort$high() => high(),
+      Effort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      Effort$low() => low != null ? low() : orElse(value),
+      Effort$medium() => medium != null ? medium() : orElse(value),
+      Effort$high() => high != null ? high() : orElse(value),
+      Effort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Effort($value)';
 
  }
@@ -99,6 +113,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReasoningSummary$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() concise, required W Function() detailed, required W Function(String value) $unknown, }) { return switch (this) {
+      ReasoningSummary$auto() => auto(),
+      ReasoningSummary$concise() => concise(),
+      ReasoningSummary$detailed() => detailed(),
+      ReasoningSummary$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? concise, W Function()? detailed, W Function(String value)? $unknown, }) { return switch (this) {
+      ReasoningSummary$auto() => auto != null ? auto() : orElse(value),
+      ReasoningSummary$concise() => concise != null ? concise() : orElse(value),
+      ReasoningSummary$detailed() => detailed != null ? detailed() : orElse(value),
+      ReasoningSummary$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReasoningSummary($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TestEnumParametersEnumQueryInteger$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1, required W Function() minus2, required W Function(int value) $unknown, }) { return switch (this) {
+      TestEnumParametersEnumQueryInteger$$1() => $1(),
+      TestEnumParametersEnumQueryInteger$minus2() => minus2(),
+      TestEnumParametersEnumQueryInteger$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $1, W Function()? minus2, W Function(int value)? $unknown, }) { return switch (this) {
+      TestEnumParametersEnumQueryInteger$$1() => $1 != null ? $1() : orElse(value),
+      TestEnumParametersEnumQueryInteger$minus2() => minus2 != null ? minus2() : orElse(value),
+      TestEnumParametersEnumQueryInteger$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TestEnumParametersEnumQueryInteger($value)';
 
  }

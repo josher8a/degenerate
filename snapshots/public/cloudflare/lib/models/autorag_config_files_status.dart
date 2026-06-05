@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AutoragConfigFilesStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() queued, required W Function() running, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      AutoragConfigFilesStatus$completed() => completed(),
+      AutoragConfigFilesStatus$queued() => queued(),
+      AutoragConfigFilesStatus$running() => running(),
+      AutoragConfigFilesStatus$error() => error(),
+      AutoragConfigFilesStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? queued, W Function()? running, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      AutoragConfigFilesStatus$completed() => completed != null ? completed() : orElse(value),
+      AutoragConfigFilesStatus$queued() => queued != null ? queued() : orElse(value),
+      AutoragConfigFilesStatus$running() => running != null ? running() : orElse(value),
+      AutoragConfigFilesStatus$error() => error != null ? error() : orElse(value),
+      AutoragConfigFilesStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AutoragConfigFilesStatus($value)';
 
  }

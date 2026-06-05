@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodOptionsWechatPayClient$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() android, required W Function() ios, required W Function() web, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodOptionsWechatPayClient$android() => android(),
+      PaymentMethodOptionsWechatPayClient$ios() => ios(),
+      PaymentMethodOptionsWechatPayClient$web() => web(),
+      PaymentMethodOptionsWechatPayClient$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? android, W Function()? ios, W Function()? web, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodOptionsWechatPayClient$android() => android != null ? android() : orElse(value),
+      PaymentMethodOptionsWechatPayClient$ios() => ios != null ? ios() : orElse(value),
+      PaymentMethodOptionsWechatPayClient$web() => web != null ? web() : orElse(value),
+      PaymentMethodOptionsWechatPayClient$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodOptionsWechatPayClient($value)';
 
  }

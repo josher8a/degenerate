@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() euBankTransfer, required W Function() gbBankTransfer, required W Function() jpBankTransfer, required W Function() mxBankTransfer, required W Function() usBankTransfer, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$euBankTransfer() => euBankTransfer(),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$gbBankTransfer() => gbBankTransfer(),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$jpBankTransfer() => jpBankTransfer(),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$mxBankTransfer() => mxBankTransfer(),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$usBankTransfer() => usBankTransfer(),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? euBankTransfer, W Function()? gbBankTransfer, W Function()? jpBankTransfer, W Function()? mxBankTransfer, W Function()? usBankTransfer, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$euBankTransfer() => euBankTransfer != null ? euBankTransfer() : orElse(value),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$gbBankTransfer() => gbBankTransfer != null ? gbBankTransfer() : orElse(value),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$jpBankTransfer() => jpBankTransfer != null ? jpBankTransfer() : orElse(value),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$mxBankTransfer() => mxBankTransfer != null ? mxBankTransfer() : orElse(value),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$usBankTransfer() => usBankTransfer != null ? usBankTransfer() : orElse(value),
+      CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType($value)';
 
  }

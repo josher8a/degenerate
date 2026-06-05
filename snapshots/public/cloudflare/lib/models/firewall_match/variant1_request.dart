@@ -53,6 +53,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallMethods2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function() put, required W Function() delete, required W Function() patch, required W Function() head, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallMethods2$$get() => $get(),
+      FirewallMethods2$post() => post(),
+      FirewallMethods2$put() => put(),
+      FirewallMethods2$delete() => delete(),
+      FirewallMethods2$patch() => patch(),
+      FirewallMethods2$head() => head(),
+      FirewallMethods2$all() => all(),
+      FirewallMethods2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function()? put, W Function()? delete, W Function()? patch, W Function()? head, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallMethods2$$get() => $get != null ? $get() : orElse(value),
+      FirewallMethods2$post() => post != null ? post() : orElse(value),
+      FirewallMethods2$put() => put != null ? put() : orElse(value),
+      FirewallMethods2$delete() => delete != null ? delete() : orElse(value),
+      FirewallMethods2$patch() => patch != null ? patch() : orElse(value),
+      FirewallMethods2$head() => head != null ? head() : orElse(value),
+      FirewallMethods2$all() => all != null ? all() : orElse(value),
+      FirewallMethods2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallMethods2($value)';
 
  }

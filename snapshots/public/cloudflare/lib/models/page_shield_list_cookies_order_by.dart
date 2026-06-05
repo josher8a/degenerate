@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PageShieldListCookiesOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() firstSeenAt, required W Function() lastSeenAt, required W Function(String value) $unknown, }) { return switch (this) {
+      PageShieldListCookiesOrderBy$firstSeenAt() => firstSeenAt(),
+      PageShieldListCookiesOrderBy$lastSeenAt() => lastSeenAt(),
+      PageShieldListCookiesOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? firstSeenAt, W Function()? lastSeenAt, W Function(String value)? $unknown, }) { return switch (this) {
+      PageShieldListCookiesOrderBy$firstSeenAt() => firstSeenAt != null ? firstSeenAt() : orElse(value),
+      PageShieldListCookiesOrderBy$lastSeenAt() => lastSeenAt != null ? lastSeenAt() : orElse(value),
+      PageShieldListCookiesOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PageShieldListCookiesOrderBy($value)';
 
  }

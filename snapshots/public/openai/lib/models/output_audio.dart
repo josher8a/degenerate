@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutputAudioType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() outputAudio, required W Function(String value) $unknown, }) { return switch (this) {
+      OutputAudioType$outputAudio() => outputAudio(),
+      OutputAudioType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? outputAudio, W Function(String value)? $unknown, }) { return switch (this) {
+      OutputAudioType$outputAudio() => outputAudio != null ? outputAudio() : orElse(value),
+      OutputAudioType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OutputAudioType($value)';
 
  }

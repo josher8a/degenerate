@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityListDisplayNamesProvenance$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() a1SInternal, required W Function() snoopyCasbOffice365, required W Function() snoopyOffice365, required W Function() snoopyGoogleDirectory, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityListDisplayNamesProvenance$a1SInternal() => a1SInternal(),
+      EmailSecurityListDisplayNamesProvenance$snoopyCasbOffice365() => snoopyCasbOffice365(),
+      EmailSecurityListDisplayNamesProvenance$snoopyOffice365() => snoopyOffice365(),
+      EmailSecurityListDisplayNamesProvenance$snoopyGoogleDirectory() => snoopyGoogleDirectory(),
+      EmailSecurityListDisplayNamesProvenance$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a1SInternal, W Function()? snoopyCasbOffice365, W Function()? snoopyOffice365, W Function()? snoopyGoogleDirectory, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityListDisplayNamesProvenance$a1SInternal() => a1SInternal != null ? a1SInternal() : orElse(value),
+      EmailSecurityListDisplayNamesProvenance$snoopyCasbOffice365() => snoopyCasbOffice365 != null ? snoopyCasbOffice365() : orElse(value),
+      EmailSecurityListDisplayNamesProvenance$snoopyOffice365() => snoopyOffice365 != null ? snoopyOffice365() : orElse(value),
+      EmailSecurityListDisplayNamesProvenance$snoopyGoogleDirectory() => snoopyGoogleDirectory != null ? snoopyGoogleDirectory() : orElse(value),
+      EmailSecurityListDisplayNamesProvenance$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityListDisplayNamesProvenance($value)';
 
  }

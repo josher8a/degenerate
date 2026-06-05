@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayFilters2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() dns, required W Function() l4, required W Function() egress, required W Function() dnsResolver, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewayFilters2$http() => http(),
+      ZeroTrustGatewayFilters2$dns() => dns(),
+      ZeroTrustGatewayFilters2$l4() => l4(),
+      ZeroTrustGatewayFilters2$egress() => egress(),
+      ZeroTrustGatewayFilters2$dnsResolver() => dnsResolver(),
+      ZeroTrustGatewayFilters2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? dns, W Function()? l4, W Function()? egress, W Function()? dnsResolver, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewayFilters2$http() => http != null ? http() : orElse(value),
+      ZeroTrustGatewayFilters2$dns() => dns != null ? dns() : orElse(value),
+      ZeroTrustGatewayFilters2$l4() => l4 != null ? l4() : orElse(value),
+      ZeroTrustGatewayFilters2$egress() => egress != null ? egress() : orElse(value),
+      ZeroTrustGatewayFilters2$dnsResolver() => dnsResolver != null ? dnsResolver() : orElse(value),
+      ZeroTrustGatewayFilters2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewayFilters2($value)';
 
  }

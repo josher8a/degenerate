@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultFor$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() invoice, required W Function() subscription, required W Function(String value) $unknown, }) { return switch (this) {
+      DefaultFor$invoice() => invoice(),
+      DefaultFor$subscription() => subscription(),
+      DefaultFor$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? invoice, W Function()? subscription, W Function(String value)? $unknown, }) { return switch (this) {
+      DefaultFor$invoice() => invoice != null ? invoice() : orElse(value),
+      DefaultFor$subscription() => subscription != null ? subscription() : orElse(value),
+      DefaultFor$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultFor($value)';
 
  }

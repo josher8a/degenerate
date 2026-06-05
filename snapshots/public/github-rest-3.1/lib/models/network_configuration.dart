@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NetworkConfigurationComputeService$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() actions, required W Function() codespaces, required W Function(String value) $unknown, }) { return switch (this) {
+      NetworkConfigurationComputeService$none() => none(),
+      NetworkConfigurationComputeService$actions() => actions(),
+      NetworkConfigurationComputeService$codespaces() => codespaces(),
+      NetworkConfigurationComputeService$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? actions, W Function()? codespaces, W Function(String value)? $unknown, }) { return switch (this) {
+      NetworkConfigurationComputeService$none() => none != null ? none() : orElse(value),
+      NetworkConfigurationComputeService$actions() => actions != null ? actions() : orElse(value),
+      NetworkConfigurationComputeService$codespaces() => codespaces != null ? codespaces() : orElse(value),
+      NetworkConfigurationComputeService$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NetworkConfigurationComputeService($value)';
 
  }

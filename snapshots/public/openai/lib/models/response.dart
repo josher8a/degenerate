@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() response, required W Function(String value) $unknown, }) { return switch (this) {
+      ResponseObject$response() => response(),
+      ResponseObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? response, W Function(String value)? $unknown, }) { return switch (this) {
+      ResponseObject$response() => response != null ? response() : orElse(value),
+      ResponseObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResponseObject($value)';
 
  }
@@ -88,6 +98,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() failed, required W Function() inProgress, required W Function() cancelled, required W Function() queued, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      ResponseStatus$completed() => completed(),
+      ResponseStatus$failed() => failed(),
+      ResponseStatus$inProgress() => inProgress(),
+      ResponseStatus$cancelled() => cancelled(),
+      ResponseStatus$queued() => queued(),
+      ResponseStatus$incomplete() => incomplete(),
+      ResponseStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? failed, W Function()? inProgress, W Function()? cancelled, W Function()? queued, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      ResponseStatus$completed() => completed != null ? completed() : orElse(value),
+      ResponseStatus$failed() => failed != null ? failed() : orElse(value),
+      ResponseStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ResponseStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      ResponseStatus$queued() => queued != null ? queued() : orElse(value),
+      ResponseStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      ResponseStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResponseStatus($value)';
 
  }

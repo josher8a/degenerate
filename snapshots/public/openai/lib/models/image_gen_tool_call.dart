@@ -35,6 +35,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImageGenToolCallStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() generating, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      ImageGenToolCallStatus$inProgress() => inProgress(),
+      ImageGenToolCallStatus$completed() => completed(),
+      ImageGenToolCallStatus$generating() => generating(),
+      ImageGenToolCallStatus$failed() => failed(),
+      ImageGenToolCallStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? generating, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      ImageGenToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ImageGenToolCallStatus$completed() => completed != null ? completed() : orElse(value),
+      ImageGenToolCallStatus$generating() => generating != null ? generating() : orElse(value),
+      ImageGenToolCallStatus$failed() => failed != null ? failed() : orElse(value),
+      ImageGenToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImageGenToolCallStatus($value)';
 
  }

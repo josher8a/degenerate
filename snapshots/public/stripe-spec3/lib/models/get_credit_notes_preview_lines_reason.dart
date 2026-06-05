@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetCreditNotesPreviewLinesReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() duplicate, required W Function() fraudulent, required W Function() orderChange, required W Function() productUnsatisfactory, required W Function(String value) $unknown, }) { return switch (this) {
+      GetCreditNotesPreviewLinesReason$duplicate() => duplicate(),
+      GetCreditNotesPreviewLinesReason$fraudulent() => fraudulent(),
+      GetCreditNotesPreviewLinesReason$orderChange() => orderChange(),
+      GetCreditNotesPreviewLinesReason$productUnsatisfactory() => productUnsatisfactory(),
+      GetCreditNotesPreviewLinesReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? duplicate, W Function()? fraudulent, W Function()? orderChange, W Function()? productUnsatisfactory, W Function(String value)? $unknown, }) { return switch (this) {
+      GetCreditNotesPreviewLinesReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      GetCreditNotesPreviewLinesReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      GetCreditNotesPreviewLinesReason$orderChange() => orderChange != null ? orderChange() : orElse(value),
+      GetCreditNotesPreviewLinesReason$productUnsatisfactory() => productUnsatisfactory != null ? productUnsatisfactory() : orElse(value),
+      GetCreditNotesPreviewLinesReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetCreditNotesPreviewLinesReason($value)';
 
  }

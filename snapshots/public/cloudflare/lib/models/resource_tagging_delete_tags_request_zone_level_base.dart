@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingZoneResourceTypeBaseEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() apiGatewayOperation, required W Function() customCertificate, required W Function() customHostname, required W Function() dnsRecord, required W Function() managedClientCertificate, required W Function() zone, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceTaggingZoneResourceTypeBaseEnum$apiGatewayOperation() => apiGatewayOperation(),
+      ResourceTaggingZoneResourceTypeBaseEnum$customCertificate() => customCertificate(),
+      ResourceTaggingZoneResourceTypeBaseEnum$customHostname() => customHostname(),
+      ResourceTaggingZoneResourceTypeBaseEnum$dnsRecord() => dnsRecord(),
+      ResourceTaggingZoneResourceTypeBaseEnum$managedClientCertificate() => managedClientCertificate(),
+      ResourceTaggingZoneResourceTypeBaseEnum$zone() => zone(),
+      ResourceTaggingZoneResourceTypeBaseEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiGatewayOperation, W Function()? customCertificate, W Function()? customHostname, W Function()? dnsRecord, W Function()? managedClientCertificate, W Function()? zone, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceTaggingZoneResourceTypeBaseEnum$apiGatewayOperation() => apiGatewayOperation != null ? apiGatewayOperation() : orElse(value),
+      ResourceTaggingZoneResourceTypeBaseEnum$customCertificate() => customCertificate != null ? customCertificate() : orElse(value),
+      ResourceTaggingZoneResourceTypeBaseEnum$customHostname() => customHostname != null ? customHostname() : orElse(value),
+      ResourceTaggingZoneResourceTypeBaseEnum$dnsRecord() => dnsRecord != null ? dnsRecord() : orElse(value),
+      ResourceTaggingZoneResourceTypeBaseEnum$managedClientCertificate() => managedClientCertificate != null ? managedClientCertificate() : orElse(value),
+      ResourceTaggingZoneResourceTypeBaseEnum$zone() => zone != null ? zone() : orElse(value),
+      ResourceTaggingZoneResourceTypeBaseEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceTaggingZoneResourceTypeBaseEnum($value)';
 
  }

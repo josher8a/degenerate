@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesResolveOverrideId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() resolveOverride, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesResolveOverrideId$resolveOverride() => resolveOverride(),
+      ZonesResolveOverrideId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? resolveOverride, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesResolveOverrideId$resolveOverride() => resolveOverride != null ? resolveOverride() : orElse(value),
+      ZonesResolveOverrideId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesResolveOverrideId($value)';
 
  }

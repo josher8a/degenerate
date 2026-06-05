@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageCodeInterpreterSessionsBucketWidth$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $1m, required W Function() $1h, required W Function() $1d, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageCodeInterpreterSessionsBucketWidth$$1m() => $1m(),
+      UsageCodeInterpreterSessionsBucketWidth$$1h() => $1h(),
+      UsageCodeInterpreterSessionsBucketWidth$$1d() => $1d(),
+      UsageCodeInterpreterSessionsBucketWidth$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $1m, W Function()? $1h, W Function()? $1d, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageCodeInterpreterSessionsBucketWidth$$1m() => $1m != null ? $1m() : orElse(value),
+      UsageCodeInterpreterSessionsBucketWidth$$1h() => $1h != null ? $1h() : orElse(value),
+      UsageCodeInterpreterSessionsBucketWidth$$1d() => $1d != null ? $1d() : orElse(value),
+      UsageCodeInterpreterSessionsBucketWidth$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageCodeInterpreterSessionsBucketWidth($value)';
 
  }

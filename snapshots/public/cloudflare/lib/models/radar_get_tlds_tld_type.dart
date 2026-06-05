@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetTldsTldType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() generic, required W Function() countryCode, required W Function() genericRestricted, required W Function() infrastructure, required W Function() sponsored, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetTldsTldType$generic() => generic(),
+      RadarGetTldsTldType$countryCode() => countryCode(),
+      RadarGetTldsTldType$genericRestricted() => genericRestricted(),
+      RadarGetTldsTldType$infrastructure() => infrastructure(),
+      RadarGetTldsTldType$sponsored() => sponsored(),
+      RadarGetTldsTldType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? generic, W Function()? countryCode, W Function()? genericRestricted, W Function()? infrastructure, W Function()? sponsored, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetTldsTldType$generic() => generic != null ? generic() : orElse(value),
+      RadarGetTldsTldType$countryCode() => countryCode != null ? countryCode() : orElse(value),
+      RadarGetTldsTldType$genericRestricted() => genericRestricted != null ? genericRestricted() : orElse(value),
+      RadarGetTldsTldType$infrastructure() => infrastructure != null ? infrastructure() : orElse(value),
+      RadarGetTldsTldType$sponsored() => sponsored != null ? sponsored() : orElse(value),
+      RadarGetTldsTldType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetTldsTldType($value)';
 
  }

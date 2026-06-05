@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceCollectionMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() chargeAutomatically, required W Function() sendInvoice, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceCollectionMethod$chargeAutomatically() => chargeAutomatically(),
+      InvoiceCollectionMethod$sendInvoice() => sendInvoice(),
+      InvoiceCollectionMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? chargeAutomatically, W Function()? sendInvoice, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceCollectionMethod$chargeAutomatically() => chargeAutomatically != null ? chargeAutomatically() : orElse(value),
+      InvoiceCollectionMethod$sendInvoice() => sendInvoice != null ? sendInvoice() : orElse(value),
+      InvoiceCollectionMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceCollectionMethod($value)';
 
  }

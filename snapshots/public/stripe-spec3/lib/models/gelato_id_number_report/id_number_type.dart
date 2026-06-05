@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdNumberType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() brCpf, required W Function() sgNric, required W Function() usSsn, required W Function(String value) $unknown, }) { return switch (this) {
+      IdNumberType$brCpf() => brCpf(),
+      IdNumberType$sgNric() => sgNric(),
+      IdNumberType$usSsn() => usSsn(),
+      IdNumberType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? brCpf, W Function()? sgNric, W Function()? usSsn, W Function(String value)? $unknown, }) { return switch (this) {
+      IdNumberType$brCpf() => brCpf != null ? brCpf() : orElse(value),
+      IdNumberType$sgNric() => sgNric != null ? sgNric() : orElse(value),
+      IdNumberType$usSsn() => usSsn != null ? usSsn() : orElse(value),
+      IdNumberType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdNumberType($value)';
 
  }

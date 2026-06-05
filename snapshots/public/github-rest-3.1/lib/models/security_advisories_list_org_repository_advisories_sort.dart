@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() created, required W Function() updated, required W Function() published, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$created() => created(),
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$updated() => updated(),
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$published() => published(),
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? published, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$created() => created != null ? created() : orElse(value),
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$updated() => updated != null ? updated() : orElse(value),
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$published() => published != null ? published() : orElse(value),
+      SecurityAdvisoriesListOrgRepositoryAdvisoriesSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityAdvisoriesListOrgRepositoryAdvisoriesSort($value)';
 
  }

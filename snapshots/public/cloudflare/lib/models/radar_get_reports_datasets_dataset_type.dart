@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetReportsDatasetsDatasetType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rankingBucket, required W Function() report, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetReportsDatasetsDatasetType$rankingBucket() => rankingBucket(),
+      RadarGetReportsDatasetsDatasetType$report() => report(),
+      RadarGetReportsDatasetsDatasetType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rankingBucket, W Function()? report, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetReportsDatasetsDatasetType$rankingBucket() => rankingBucket != null ? rankingBucket() : orElse(value),
+      RadarGetReportsDatasetsDatasetType$report() => report != null ? report() : orElse(value),
+      RadarGetReportsDatasetsDatasetType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetReportsDatasetsDatasetType($value)';
 
  }

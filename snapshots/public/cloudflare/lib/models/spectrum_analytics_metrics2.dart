@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumAnalyticsMetrics2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() count, required W Function() bytesIngress, required W Function() bytesEgress, required W Function() durationAvg, required W Function() durationMedian, required W Function() duration90th, required W Function() duration99th, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumAnalyticsMetrics2$count() => count(),
+      SpectrumAnalyticsMetrics2$bytesIngress() => bytesIngress(),
+      SpectrumAnalyticsMetrics2$bytesEgress() => bytesEgress(),
+      SpectrumAnalyticsMetrics2$durationAvg() => durationAvg(),
+      SpectrumAnalyticsMetrics2$durationMedian() => durationMedian(),
+      SpectrumAnalyticsMetrics2$duration90th() => duration90th(),
+      SpectrumAnalyticsMetrics2$duration99th() => duration99th(),
+      SpectrumAnalyticsMetrics2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? count, W Function()? bytesIngress, W Function()? bytesEgress, W Function()? durationAvg, W Function()? durationMedian, W Function()? duration90th, W Function()? duration99th, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumAnalyticsMetrics2$count() => count != null ? count() : orElse(value),
+      SpectrumAnalyticsMetrics2$bytesIngress() => bytesIngress != null ? bytesIngress() : orElse(value),
+      SpectrumAnalyticsMetrics2$bytesEgress() => bytesEgress != null ? bytesEgress() : orElse(value),
+      SpectrumAnalyticsMetrics2$durationAvg() => durationAvg != null ? durationAvg() : orElse(value),
+      SpectrumAnalyticsMetrics2$durationMedian() => durationMedian != null ? durationMedian() : orElse(value),
+      SpectrumAnalyticsMetrics2$duration90th() => duration90th != null ? duration90th() : orElse(value),
+      SpectrumAnalyticsMetrics2$duration99th() => duration99th != null ? duration99th() : orElse(value),
+      SpectrumAnalyticsMetrics2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumAnalyticsMetrics2($value)';
 
  }

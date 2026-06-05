@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodespaceLocation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eastUs, required W Function() southEastAsia, required W Function() westEurope, required W Function() westUs2, required W Function(String value) $unknown, }) { return switch (this) {
+      CodespaceLocation$eastUs() => eastUs(),
+      CodespaceLocation$southEastAsia() => southEastAsia(),
+      CodespaceLocation$westEurope() => westEurope(),
+      CodespaceLocation$westUs2() => westUs2(),
+      CodespaceLocation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eastUs, W Function()? southEastAsia, W Function()? westEurope, W Function()? westUs2, W Function(String value)? $unknown, }) { return switch (this) {
+      CodespaceLocation$eastUs() => eastUs != null ? eastUs() : orElse(value),
+      CodespaceLocation$southEastAsia() => southEastAsia != null ? southEastAsia() : orElse(value),
+      CodespaceLocation$westEurope() => westEurope != null ? westEurope() : orElse(value),
+      CodespaceLocation$westUs2() => westUs2 != null ? westUs2() : orElse(value),
+      CodespaceLocation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodespaceLocation($value)';
 
  }

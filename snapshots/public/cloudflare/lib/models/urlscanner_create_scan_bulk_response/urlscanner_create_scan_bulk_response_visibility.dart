@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UrlscannerCreateScanBulkResponseVisibility$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() public, required W Function() unlisted, required W Function(String value) $unknown, }) { return switch (this) {
+      UrlscannerCreateScanBulkResponseVisibility$public() => public(),
+      UrlscannerCreateScanBulkResponseVisibility$unlisted() => unlisted(),
+      UrlscannerCreateScanBulkResponseVisibility$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? public, W Function()? unlisted, W Function(String value)? $unknown, }) { return switch (this) {
+      UrlscannerCreateScanBulkResponseVisibility$public() => public != null ? public() : orElse(value),
+      UrlscannerCreateScanBulkResponseVisibility$unlisted() => unlisted != null ? unlisted() : orElse(value),
+      UrlscannerCreateScanBulkResponseVisibility$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UrlscannerCreateScanBulkResponseVisibility($value)';
 
  }

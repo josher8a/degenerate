@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() localAmusementTax, required W Function() localLeaseTax, required W Function() stateCommunicationsTax, required W Function() stateRetailDeliveryFee, required W Function() stateSalesTax, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$localAmusementTax() => localAmusementTax(),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$localLeaseTax() => localLeaseTax(),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$stateCommunicationsTax() => stateCommunicationsTax(),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$stateRetailDeliveryFee() => stateRetailDeliveryFee(),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$stateSalesTax() => stateSalesTax(),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? localAmusementTax, W Function()? localLeaseTax, W Function()? stateCommunicationsTax, W Function()? stateRetailDeliveryFee, W Function()? stateSalesTax, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$localAmusementTax() => localAmusementTax != null ? localAmusementTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$localLeaseTax() => localLeaseTax != null ? localLeaseTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$stateCommunicationsTax() => stateCommunicationsTax != null ? stateCommunicationsTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$stateRetailDeliveryFee() => stateRetailDeliveryFee != null ? stateRetailDeliveryFee() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$stateSalesTax() => stateSalesTax != null ? stateSalesTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUnitedStatesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUnitedStatesType($value)';
 
  }

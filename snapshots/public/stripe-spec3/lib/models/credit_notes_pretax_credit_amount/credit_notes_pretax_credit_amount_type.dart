@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreditNotesPretaxCreditAmountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditBalanceTransaction, required W Function() discount, required W Function(String value) $unknown, }) { return switch (this) {
+      CreditNotesPretaxCreditAmountType$creditBalanceTransaction() => creditBalanceTransaction(),
+      CreditNotesPretaxCreditAmountType$discount() => discount(),
+      CreditNotesPretaxCreditAmountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditBalanceTransaction, W Function()? discount, W Function(String value)? $unknown, }) { return switch (this) {
+      CreditNotesPretaxCreditAmountType$creditBalanceTransaction() => creditBalanceTransaction != null ? creditBalanceTransaction() : orElse(value),
+      CreditNotesPretaxCreditAmountType$discount() => discount != null ? discount() : orElse(value),
+      CreditNotesPretaxCreditAmountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreditNotesPretaxCreditAmountType($value)';
 
  }

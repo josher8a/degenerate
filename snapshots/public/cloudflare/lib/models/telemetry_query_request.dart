@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PatternType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() message, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      PatternType$message() => message(),
+      PatternType$error() => error(),
+      PatternType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      PatternType$message() => message != null ? message() : orElse(value),
+      PatternType$error() => error != null ? error() : orElse(value),
+      PatternType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PatternType($value)';
 
  }
@@ -98,6 +110,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is View$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() traces, required W Function() events, required W Function() calculations, required W Function() invocations, required W Function() requests, required W Function() patterns, required W Function(String value) $unknown, }) { return switch (this) {
+      View$traces() => traces(),
+      View$events() => events(),
+      View$calculations() => calculations(),
+      View$invocations() => invocations(),
+      View$requests() => requests(),
+      View$patterns() => patterns(),
+      View$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? traces, W Function()? events, W Function()? calculations, W Function()? invocations, W Function()? requests, W Function()? patterns, W Function(String value)? $unknown, }) { return switch (this) {
+      View$traces() => traces != null ? traces() : orElse(value),
+      View$events() => events != null ? events() : orElse(value),
+      View$calculations() => calculations != null ? calculations() : orElse(value),
+      View$invocations() => invocations != null ? invocations() : orElse(value),
+      View$requests() => requests != null ? requests() : orElse(value),
+      View$patterns() => patterns != null ? patterns() : orElse(value),
+      View$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'View($value)';
 
  }

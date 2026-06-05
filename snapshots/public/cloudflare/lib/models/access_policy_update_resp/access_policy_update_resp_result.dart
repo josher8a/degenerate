@@ -69,6 +69,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessUpdateStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() blocked, required W Function() processing, required W Function() exceededTime, required W Function() complete, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessUpdateStatus$blocked() => blocked(),
+      AccessUpdateStatus$processing() => processing(),
+      AccessUpdateStatus$exceededTime() => exceededTime(),
+      AccessUpdateStatus$complete() => complete(),
+      AccessUpdateStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? blocked, W Function()? processing, W Function()? exceededTime, W Function()? complete, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessUpdateStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      AccessUpdateStatus$processing() => processing != null ? processing() : orElse(value),
+      AccessUpdateStatus$exceededTime() => exceededTime != null ? exceededTime() : orElse(value),
+      AccessUpdateStatus$complete() => complete != null ? complete() : orElse(value),
+      AccessUpdateStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessUpdateStatus($value)';
 
  }

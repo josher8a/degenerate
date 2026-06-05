@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListForOrgType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() public, required W Function() private, required W Function() forks, required W Function() sources, required W Function() member, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListForOrgType$all() => all(),
+      ReposListForOrgType$public() => public(),
+      ReposListForOrgType$private() => private(),
+      ReposListForOrgType$forks() => forks(),
+      ReposListForOrgType$sources() => sources(),
+      ReposListForOrgType$member() => member(),
+      ReposListForOrgType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? public, W Function()? private, W Function()? forks, W Function()? sources, W Function()? member, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListForOrgType$all() => all != null ? all() : orElse(value),
+      ReposListForOrgType$public() => public != null ? public() : orElse(value),
+      ReposListForOrgType$private() => private != null ? private() : orElse(value),
+      ReposListForOrgType$forks() => forks != null ? forks() : orElse(value),
+      ReposListForOrgType$sources() => sources != null ? sources() : orElse(value),
+      ReposListForOrgType$member() => member != null ? member() : orElse(value),
+      ReposListForOrgType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListForOrgType($value)';
 
  }

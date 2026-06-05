@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsListMembersLegacyRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() member, required W Function() maintainer, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsListMembersLegacyRole$member() => member(),
+      TeamsListMembersLegacyRole$maintainer() => maintainer(),
+      TeamsListMembersLegacyRole$all() => all(),
+      TeamsListMembersLegacyRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? member, W Function()? maintainer, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsListMembersLegacyRole$member() => member != null ? member() : orElse(value),
+      TeamsListMembersLegacyRole$maintainer() => maintainer != null ? maintainer() : orElse(value),
+      TeamsListMembersLegacyRole$all() => all != null ? all() : orElse(value),
+      TeamsListMembersLegacyRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsListMembersLegacyRole($value)';
 
  }

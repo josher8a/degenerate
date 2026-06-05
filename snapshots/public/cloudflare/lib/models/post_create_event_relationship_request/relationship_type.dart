@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RelationshipType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() relatedTo, required W Function() causedBy, required W Function() attributedTo, required W Function(String value) $unknown, }) { return switch (this) {
+      RelationshipType$relatedTo() => relatedTo(),
+      RelationshipType$causedBy() => causedBy(),
+      RelationshipType$attributedTo() => attributedTo(),
+      RelationshipType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? relatedTo, W Function()? causedBy, W Function()? attributedTo, W Function(String value)? $unknown, }) { return switch (this) {
+      RelationshipType$relatedTo() => relatedTo != null ? relatedTo() : orElse(value),
+      RelationshipType$causedBy() => causedBy != null ? causedBy() : orElse(value),
+      RelationshipType$attributedTo() => attributedTo != null ? attributedTo() : orElse(value),
+      RelationshipType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RelationshipType($value)';
 
  }

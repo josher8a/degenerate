@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingMeterEventTimeWindow$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() day, required W Function() hour, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingMeterEventTimeWindow$day() => day(),
+      BillingMeterEventTimeWindow$hour() => hour(),
+      BillingMeterEventTimeWindow$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? hour, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingMeterEventTimeWindow$day() => day != null ? day() : orElse(value),
+      BillingMeterEventTimeWindow$hour() => hour != null ? hour() : orElse(value),
+      BillingMeterEventTimeWindow$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingMeterEventTimeWindow($value)';
 
  }
@@ -78,6 +90,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingMeterObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() billingMeter, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingMeterObject$billingMeter() => billingMeter(),
+      BillingMeterObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? billingMeter, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingMeterObject$billingMeter() => billingMeter != null ? billingMeter() : orElse(value),
+      BillingMeterObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingMeterObject($value)';
 
  }

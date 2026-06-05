@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SetupIntentCancellationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abandoned, required W Function() duplicate, required W Function() requestedByCustomer, required W Function(String value) $unknown, }) { return switch (this) {
+      SetupIntentCancellationReason$abandoned() => abandoned(),
+      SetupIntentCancellationReason$duplicate() => duplicate(),
+      SetupIntentCancellationReason$requestedByCustomer() => requestedByCustomer(),
+      SetupIntentCancellationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? duplicate, W Function()? requestedByCustomer, W Function(String value)? $unknown, }) { return switch (this) {
+      SetupIntentCancellationReason$abandoned() => abandoned != null ? abandoned() : orElse(value),
+      SetupIntentCancellationReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      SetupIntentCancellationReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
+      SetupIntentCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SetupIntentCancellationReason($value)';
 
  }
@@ -91,6 +105,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SetupIntentObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() setupIntent, required W Function(String value) $unknown, }) { return switch (this) {
+      SetupIntentObject$setupIntent() => setupIntent(),
+      SetupIntentObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? setupIntent, W Function(String value)? $unknown, }) { return switch (this) {
+      SetupIntentObject$setupIntent() => setupIntent != null ? setupIntent() : orElse(value),
+      SetupIntentObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SetupIntentObject($value)';
 
  }
@@ -154,6 +178,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SetupIntentStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresAction, required W Function() requiresConfirmation, required W Function() requiresPaymentMethod, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      SetupIntentStatus$canceled() => canceled(),
+      SetupIntentStatus$processing() => processing(),
+      SetupIntentStatus$requiresAction() => requiresAction(),
+      SetupIntentStatus$requiresConfirmation() => requiresConfirmation(),
+      SetupIntentStatus$requiresPaymentMethod() => requiresPaymentMethod(),
+      SetupIntentStatus$succeeded() => succeeded(),
+      SetupIntentStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresAction, W Function()? requiresConfirmation, W Function()? requiresPaymentMethod, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      SetupIntentStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      SetupIntentStatus$processing() => processing != null ? processing() : orElse(value),
+      SetupIntentStatus$requiresAction() => requiresAction != null ? requiresAction() : orElse(value),
+      SetupIntentStatus$requiresConfirmation() => requiresConfirmation != null ? requiresConfirmation() : orElse(value),
+      SetupIntentStatus$requiresPaymentMethod() => requiresPaymentMethod != null ? requiresPaymentMethod() : orElse(value),
+      SetupIntentStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      SetupIntentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SetupIntentStatus($value)';
 
  }

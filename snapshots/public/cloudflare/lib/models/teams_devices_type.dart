@@ -110,6 +110,60 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() file, required W Function() application, required W Function() tanium, required W Function() gateway, required W Function() warp, required W Function() diskEncryption, required W Function() serialNumber, required W Function() sentinelone, required W Function() carbonblack, required W Function() firewall, required W Function() osVersion, required W Function() domainJoined, required W Function() clientCertificate, required W Function() clientCertificateV2, required W Function() antivirus, required W Function() uniqueClientId, required W Function() kolide, required W Function() taniumS2s, required W Function() crowdstrikeS2s, required W Function() intune, required W Function() workspaceOne, required W Function() sentineloneS2s, required W Function() customS2s, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesType$file() => file(),
+      TeamsDevicesType$application() => application(),
+      TeamsDevicesType$tanium() => tanium(),
+      TeamsDevicesType$gateway() => gateway(),
+      TeamsDevicesType$warp() => warp(),
+      TeamsDevicesType$diskEncryption() => diskEncryption(),
+      TeamsDevicesType$serialNumber() => serialNumber(),
+      TeamsDevicesType$sentinelone() => sentinelone(),
+      TeamsDevicesType$carbonblack() => carbonblack(),
+      TeamsDevicesType$firewall() => firewall(),
+      TeamsDevicesType$osVersion() => osVersion(),
+      TeamsDevicesType$domainJoined() => domainJoined(),
+      TeamsDevicesType$clientCertificate() => clientCertificate(),
+      TeamsDevicesType$clientCertificateV2() => clientCertificateV2(),
+      TeamsDevicesType$antivirus() => antivirus(),
+      TeamsDevicesType$uniqueClientId() => uniqueClientId(),
+      TeamsDevicesType$kolide() => kolide(),
+      TeamsDevicesType$taniumS2s() => taniumS2s(),
+      TeamsDevicesType$crowdstrikeS2s() => crowdstrikeS2s(),
+      TeamsDevicesType$intune() => intune(),
+      TeamsDevicesType$workspaceOne() => workspaceOne(),
+      TeamsDevicesType$sentineloneS2s() => sentineloneS2s(),
+      TeamsDevicesType$customS2s() => customS2s(),
+      TeamsDevicesType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? file, W Function()? application, W Function()? tanium, W Function()? gateway, W Function()? warp, W Function()? diskEncryption, W Function()? serialNumber, W Function()? sentinelone, W Function()? carbonblack, W Function()? firewall, W Function()? osVersion, W Function()? domainJoined, W Function()? clientCertificate, W Function()? clientCertificateV2, W Function()? antivirus, W Function()? uniqueClientId, W Function()? kolide, W Function()? taniumS2s, W Function()? crowdstrikeS2s, W Function()? intune, W Function()? workspaceOne, W Function()? sentineloneS2s, W Function()? customS2s, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesType$file() => file != null ? file() : orElse(value),
+      TeamsDevicesType$application() => application != null ? application() : orElse(value),
+      TeamsDevicesType$tanium() => tanium != null ? tanium() : orElse(value),
+      TeamsDevicesType$gateway() => gateway != null ? gateway() : orElse(value),
+      TeamsDevicesType$warp() => warp != null ? warp() : orElse(value),
+      TeamsDevicesType$diskEncryption() => diskEncryption != null ? diskEncryption() : orElse(value),
+      TeamsDevicesType$serialNumber() => serialNumber != null ? serialNumber() : orElse(value),
+      TeamsDevicesType$sentinelone() => sentinelone != null ? sentinelone() : orElse(value),
+      TeamsDevicesType$carbonblack() => carbonblack != null ? carbonblack() : orElse(value),
+      TeamsDevicesType$firewall() => firewall != null ? firewall() : orElse(value),
+      TeamsDevicesType$osVersion() => osVersion != null ? osVersion() : orElse(value),
+      TeamsDevicesType$domainJoined() => domainJoined != null ? domainJoined() : orElse(value),
+      TeamsDevicesType$clientCertificate() => clientCertificate != null ? clientCertificate() : orElse(value),
+      TeamsDevicesType$clientCertificateV2() => clientCertificateV2 != null ? clientCertificateV2() : orElse(value),
+      TeamsDevicesType$antivirus() => antivirus != null ? antivirus() : orElse(value),
+      TeamsDevicesType$uniqueClientId() => uniqueClientId != null ? uniqueClientId() : orElse(value),
+      TeamsDevicesType$kolide() => kolide != null ? kolide() : orElse(value),
+      TeamsDevicesType$taniumS2s() => taniumS2s != null ? taniumS2s() : orElse(value),
+      TeamsDevicesType$crowdstrikeS2s() => crowdstrikeS2s != null ? crowdstrikeS2s() : orElse(value),
+      TeamsDevicesType$intune() => intune != null ? intune() : orElse(value),
+      TeamsDevicesType$workspaceOne() => workspaceOne != null ? workspaceOne() : orElse(value),
+      TeamsDevicesType$sentineloneS2s() => sentineloneS2s != null ? sentineloneS2s() : orElse(value),
+      TeamsDevicesType$customS2s() => customS2s != null ? customS2s() : orElse(value),
+      TeamsDevicesType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesType($value)';
 
  }

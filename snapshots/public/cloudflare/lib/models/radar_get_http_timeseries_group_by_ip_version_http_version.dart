@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() httPv1, required W Function() httPv2, required W Function() httPv3, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$httPv1() => httPv1(),
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$httPv2() => httPv2(),
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$httPv3() => httPv3(),
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, W Function()? httPv2, W Function()? httPv3, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$httPv1() => httPv1 != null ? httPv1() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$httPv2() => httPv2 != null ? httPv2() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$httPv3() => httPv3 != null ? httPv3() : orElse(value),
+      RadarGetHttpTimeseriesGroupByIpVersionHttpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByIpVersionHttpVersion($value)';
 
  }

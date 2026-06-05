@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UntrustedCertAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() passThrough, required W Function() block, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      UntrustedCertAction$passThrough() => passThrough(),
+      UntrustedCertAction$block() => block(),
+      UntrustedCertAction$error() => error(),
+      UntrustedCertAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? passThrough, W Function()? block, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      UntrustedCertAction$passThrough() => passThrough != null ? passThrough() : orElse(value),
+      UntrustedCertAction$block() => block != null ? block() : orElse(value),
+      UntrustedCertAction$error() => error != null ? error() : orElse(value),
+      UntrustedCertAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UntrustedCertAction($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer3TopTargetLocationsProtocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() udp, required W Function() tcp, required W Function() icmp, required W Function() gre, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$udp() => udp(),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$tcp() => tcp(),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$icmp() => icmp(),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$gre() => gre(),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? udp, W Function()? tcp, W Function()? icmp, W Function()? gre, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$udp() => udp != null ? udp() : orElse(value),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$tcp() => tcp != null ? tcp() : orElse(value),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$icmp() => icmp != null ? icmp() : orElse(value),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$gre() => gre != null ? gre() : orElse(value),
+      RadarGetAttacksLayer3TopTargetLocationsProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer3TopTargetLocationsProtocol($value)';
 
  }

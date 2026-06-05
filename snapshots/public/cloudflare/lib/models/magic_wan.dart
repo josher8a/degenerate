@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HealthCheckRate$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() mid, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      HealthCheckRate$low() => low(),
+      HealthCheckRate$mid() => mid(),
+      HealthCheckRate$high() => high(),
+      HealthCheckRate$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? mid, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      HealthCheckRate$low() => low != null ? low() : orElse(value),
+      HealthCheckRate$mid() => mid != null ? mid() : orElse(value),
+      HealthCheckRate$high() => high != null ? high() : orElse(value),
+      HealthCheckRate$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HealthCheckRate($value)';
 
  }

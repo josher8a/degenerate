@@ -122,6 +122,66 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsP24Bank$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aliorBank, required W Function() bankMillennium, required W Function() bankNowyBfgSa, required W Function() bankPekaoSa, required W Function() bankiSpbdzielcze, required W Function() blik, required W Function() bnpParibas, required W Function() boz, required W Function() citiHandlowy, required W Function() creditAgricole, required W Function() envelobank, required W Function() etransferPocztowy24, required W Function() getinBank, required W Function() ideabank, required W Function() ing, required W Function() inteligo, required W Function() mbankMtransfer, required W Function() nestPrzelew, required W Function() noblePay, required W Function() pbacZIpko, required W Function() plusBank, required W Function() santanderPrzelew24, required W Function() tmobileUsbugiBankowe, required W Function() toyotaBank, required W Function() velobank, required W Function() volkswagenBank, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsP24Bank$aliorBank() => aliorBank(),
+      PaymentMethodDetailsP24Bank$bankMillennium() => bankMillennium(),
+      PaymentMethodDetailsP24Bank$bankNowyBfgSa() => bankNowyBfgSa(),
+      PaymentMethodDetailsP24Bank$bankPekaoSa() => bankPekaoSa(),
+      PaymentMethodDetailsP24Bank$bankiSpbdzielcze() => bankiSpbdzielcze(),
+      PaymentMethodDetailsP24Bank$blik() => blik(),
+      PaymentMethodDetailsP24Bank$bnpParibas() => bnpParibas(),
+      PaymentMethodDetailsP24Bank$boz() => boz(),
+      PaymentMethodDetailsP24Bank$citiHandlowy() => citiHandlowy(),
+      PaymentMethodDetailsP24Bank$creditAgricole() => creditAgricole(),
+      PaymentMethodDetailsP24Bank$envelobank() => envelobank(),
+      PaymentMethodDetailsP24Bank$etransferPocztowy24() => etransferPocztowy24(),
+      PaymentMethodDetailsP24Bank$getinBank() => getinBank(),
+      PaymentMethodDetailsP24Bank$ideabank() => ideabank(),
+      PaymentMethodDetailsP24Bank$ing() => ing(),
+      PaymentMethodDetailsP24Bank$inteligo() => inteligo(),
+      PaymentMethodDetailsP24Bank$mbankMtransfer() => mbankMtransfer(),
+      PaymentMethodDetailsP24Bank$nestPrzelew() => nestPrzelew(),
+      PaymentMethodDetailsP24Bank$noblePay() => noblePay(),
+      PaymentMethodDetailsP24Bank$pbacZIpko() => pbacZIpko(),
+      PaymentMethodDetailsP24Bank$plusBank() => plusBank(),
+      PaymentMethodDetailsP24Bank$santanderPrzelew24() => santanderPrzelew24(),
+      PaymentMethodDetailsP24Bank$tmobileUsbugiBankowe() => tmobileUsbugiBankowe(),
+      PaymentMethodDetailsP24Bank$toyotaBank() => toyotaBank(),
+      PaymentMethodDetailsP24Bank$velobank() => velobank(),
+      PaymentMethodDetailsP24Bank$volkswagenBank() => volkswagenBank(),
+      PaymentMethodDetailsP24Bank$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aliorBank, W Function()? bankMillennium, W Function()? bankNowyBfgSa, W Function()? bankPekaoSa, W Function()? bankiSpbdzielcze, W Function()? blik, W Function()? bnpParibas, W Function()? boz, W Function()? citiHandlowy, W Function()? creditAgricole, W Function()? envelobank, W Function()? etransferPocztowy24, W Function()? getinBank, W Function()? ideabank, W Function()? ing, W Function()? inteligo, W Function()? mbankMtransfer, W Function()? nestPrzelew, W Function()? noblePay, W Function()? pbacZIpko, W Function()? plusBank, W Function()? santanderPrzelew24, W Function()? tmobileUsbugiBankowe, W Function()? toyotaBank, W Function()? velobank, W Function()? volkswagenBank, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsP24Bank$aliorBank() => aliorBank != null ? aliorBank() : orElse(value),
+      PaymentMethodDetailsP24Bank$bankMillennium() => bankMillennium != null ? bankMillennium() : orElse(value),
+      PaymentMethodDetailsP24Bank$bankNowyBfgSa() => bankNowyBfgSa != null ? bankNowyBfgSa() : orElse(value),
+      PaymentMethodDetailsP24Bank$bankPekaoSa() => bankPekaoSa != null ? bankPekaoSa() : orElse(value),
+      PaymentMethodDetailsP24Bank$bankiSpbdzielcze() => bankiSpbdzielcze != null ? bankiSpbdzielcze() : orElse(value),
+      PaymentMethodDetailsP24Bank$blik() => blik != null ? blik() : orElse(value),
+      PaymentMethodDetailsP24Bank$bnpParibas() => bnpParibas != null ? bnpParibas() : orElse(value),
+      PaymentMethodDetailsP24Bank$boz() => boz != null ? boz() : orElse(value),
+      PaymentMethodDetailsP24Bank$citiHandlowy() => citiHandlowy != null ? citiHandlowy() : orElse(value),
+      PaymentMethodDetailsP24Bank$creditAgricole() => creditAgricole != null ? creditAgricole() : orElse(value),
+      PaymentMethodDetailsP24Bank$envelobank() => envelobank != null ? envelobank() : orElse(value),
+      PaymentMethodDetailsP24Bank$etransferPocztowy24() => etransferPocztowy24 != null ? etransferPocztowy24() : orElse(value),
+      PaymentMethodDetailsP24Bank$getinBank() => getinBank != null ? getinBank() : orElse(value),
+      PaymentMethodDetailsP24Bank$ideabank() => ideabank != null ? ideabank() : orElse(value),
+      PaymentMethodDetailsP24Bank$ing() => ing != null ? ing() : orElse(value),
+      PaymentMethodDetailsP24Bank$inteligo() => inteligo != null ? inteligo() : orElse(value),
+      PaymentMethodDetailsP24Bank$mbankMtransfer() => mbankMtransfer != null ? mbankMtransfer() : orElse(value),
+      PaymentMethodDetailsP24Bank$nestPrzelew() => nestPrzelew != null ? nestPrzelew() : orElse(value),
+      PaymentMethodDetailsP24Bank$noblePay() => noblePay != null ? noblePay() : orElse(value),
+      PaymentMethodDetailsP24Bank$pbacZIpko() => pbacZIpko != null ? pbacZIpko() : orElse(value),
+      PaymentMethodDetailsP24Bank$plusBank() => plusBank != null ? plusBank() : orElse(value),
+      PaymentMethodDetailsP24Bank$santanderPrzelew24() => santanderPrzelew24 != null ? santanderPrzelew24() : orElse(value),
+      PaymentMethodDetailsP24Bank$tmobileUsbugiBankowe() => tmobileUsbugiBankowe != null ? tmobileUsbugiBankowe() : orElse(value),
+      PaymentMethodDetailsP24Bank$toyotaBank() => toyotaBank != null ? toyotaBank() : orElse(value),
+      PaymentMethodDetailsP24Bank$velobank() => velobank != null ? velobank() : orElse(value),
+      PaymentMethodDetailsP24Bank$volkswagenBank() => volkswagenBank != null ? volkswagenBank() : orElse(value),
+      PaymentMethodDetailsP24Bank$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsP24Bank($value)';
 
  }

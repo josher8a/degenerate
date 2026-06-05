@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConferenceRecordingEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() paused, required W Function() stopped, required W Function() processing, required W Function() completed, required W Function() absent, required W Function(String value) $unknown, }) { return switch (this) {
+      ConferenceRecordingEnumStatus$inProgress() => inProgress(),
+      ConferenceRecordingEnumStatus$paused() => paused(),
+      ConferenceRecordingEnumStatus$stopped() => stopped(),
+      ConferenceRecordingEnumStatus$processing() => processing(),
+      ConferenceRecordingEnumStatus$completed() => completed(),
+      ConferenceRecordingEnumStatus$absent() => absent(),
+      ConferenceRecordingEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? paused, W Function()? stopped, W Function()? processing, W Function()? completed, W Function()? absent, W Function(String value)? $unknown, }) { return switch (this) {
+      ConferenceRecordingEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ConferenceRecordingEnumStatus$paused() => paused != null ? paused() : orElse(value),
+      ConferenceRecordingEnumStatus$stopped() => stopped != null ? stopped() : orElse(value),
+      ConferenceRecordingEnumStatus$processing() => processing != null ? processing() : orElse(value),
+      ConferenceRecordingEnumStatus$completed() => completed != null ? completed() : orElse(value),
+      ConferenceRecordingEnumStatus$absent() => absent != null ? absent() : orElse(value),
+      ConferenceRecordingEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConferenceRecordingEnumStatus($value)';
 
  }

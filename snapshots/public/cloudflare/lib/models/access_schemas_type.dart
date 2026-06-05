@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessSchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() identityDenied, required W Function() forbidden, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessSchemasType$identityDenied() => identityDenied(),
+      AccessSchemasType$forbidden() => forbidden(),
+      AccessSchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? identityDenied, W Function()? forbidden, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessSchemasType$identityDenied() => identityDenied != null ? identityDenied() : orElse(value),
+      AccessSchemasType$forbidden() => forbidden != null ? forbidden() : orElse(value),
+      AccessSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessSchemasType($value)';
 
  }

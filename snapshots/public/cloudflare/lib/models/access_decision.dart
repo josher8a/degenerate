@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessDecision$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allow, required W Function() deny, required W Function() nonIdentity, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessDecision$allow() => allow(),
+      AccessDecision$deny() => deny(),
+      AccessDecision$nonIdentity() => nonIdentity(),
+      AccessDecision$bypass() => bypass(),
+      AccessDecision$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? deny, W Function()? nonIdentity, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessDecision$allow() => allow != null ? allow() : orElse(value),
+      AccessDecision$deny() => deny != null ? deny() : orElse(value),
+      AccessDecision$nonIdentity() => nonIdentity != null ? nonIdentity() : orElse(value),
+      AccessDecision$bypass() => bypass != null ? bypass() : orElse(value),
+      AccessDecision$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessDecision($value)';
 
  }

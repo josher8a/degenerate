@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalReaderReaderResourceToggleDefaultValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceToggleDefaultValue$disabled() => disabled(),
+      TerminalReaderReaderResourceToggleDefaultValue$enabled() => enabled(),
+      TerminalReaderReaderResourceToggleDefaultValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceToggleDefaultValue$disabled() => disabled != null ? disabled() : orElse(value),
+      TerminalReaderReaderResourceToggleDefaultValue$enabled() => enabled != null ? enabled() : orElse(value),
+      TerminalReaderReaderResourceToggleDefaultValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalReaderReaderResourceToggleDefaultValue($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TerminalReaderReaderResourceToggleValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() disabled, required W Function() enabled, required W Function(String value) $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceToggleValue$disabled() => disabled(),
+      TerminalReaderReaderResourceToggleValue$enabled() => enabled(),
+      TerminalReaderReaderResourceToggleValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? disabled, W Function()? enabled, W Function(String value)? $unknown, }) { return switch (this) {
+      TerminalReaderReaderResourceToggleValue$disabled() => disabled != null ? disabled() : orElse(value),
+      TerminalReaderReaderResourceToggleValue$enabled() => enabled != null ? enabled() : orElse(value),
+      TerminalReaderReaderResourceToggleValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TerminalReaderReaderResourceToggleValue($value)';
 
  }

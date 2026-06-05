@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorizeUpsertVectorUnparsableBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() error, required W Function() discard, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorizeUpsertVectorUnparsableBehavior$error() => error(),
+      VectorizeUpsertVectorUnparsableBehavior$discard() => discard(),
+      VectorizeUpsertVectorUnparsableBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? error, W Function()? discard, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorizeUpsertVectorUnparsableBehavior$error() => error != null ? error() : orElse(value),
+      VectorizeUpsertVectorUnparsableBehavior$discard() => discard != null ? discard() : orElse(value),
+      VectorizeUpsertVectorUnparsableBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorizeUpsertVectorUnparsableBehavior($value)';
 
  }

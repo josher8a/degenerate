@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SpectrumAnalyticsDimensions2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() event, required W Function() appId, required W Function() coloName, required W Function() ipVersion, required W Function(String value) $unknown, }) { return switch (this) {
+      SpectrumAnalyticsDimensions2$event() => event(),
+      SpectrumAnalyticsDimensions2$appId() => appId(),
+      SpectrumAnalyticsDimensions2$coloName() => coloName(),
+      SpectrumAnalyticsDimensions2$ipVersion() => ipVersion(),
+      SpectrumAnalyticsDimensions2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? appId, W Function()? coloName, W Function()? ipVersion, W Function(String value)? $unknown, }) { return switch (this) {
+      SpectrumAnalyticsDimensions2$event() => event != null ? event() : orElse(value),
+      SpectrumAnalyticsDimensions2$appId() => appId != null ? appId() : orElse(value),
+      SpectrumAnalyticsDimensions2$coloName() => coloName != null ? coloName() : orElse(value),
+      SpectrumAnalyticsDimensions2$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      SpectrumAnalyticsDimensions2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SpectrumAnalyticsDimensions2($value)';
 
  }

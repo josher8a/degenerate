@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PageShieldPolicyAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allow, required W Function() log, required W Function() addReportingDirectives, required W Function(String value) $unknown, }) { return switch (this) {
+      PageShieldPolicyAction$allow() => allow(),
+      PageShieldPolicyAction$log() => log(),
+      PageShieldPolicyAction$addReportingDirectives() => addReportingDirectives(),
+      PageShieldPolicyAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allow, W Function()? log, W Function()? addReportingDirectives, W Function(String value)? $unknown, }) { return switch (this) {
+      PageShieldPolicyAction$allow() => allow != null ? allow() : orElse(value),
+      PageShieldPolicyAction$log() => log != null ? log() : orElse(value),
+      PageShieldPolicyAction$addReportingDirectives() => addReportingDirectives != null ? addReportingDirectives() : orElse(value),
+      PageShieldPolicyAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PageShieldPolicyAction($value)';
 
  }

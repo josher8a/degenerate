@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorStoreObjectObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() vectorStore, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorStoreObjectObject$vectorStore() => vectorStore(),
+      VectorStoreObjectObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? vectorStore, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorStoreObjectObject$vectorStore() => vectorStore != null ? vectorStore() : orElse(value),
+      VectorStoreObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorStoreObjectObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is VectorStoreObjectStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() expired, required W Function() inProgress, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+      VectorStoreObjectStatus$expired() => expired(),
+      VectorStoreObjectStatus$inProgress() => inProgress(),
+      VectorStoreObjectStatus$completed() => completed(),
+      VectorStoreObjectStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? inProgress, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+      VectorStoreObjectStatus$expired() => expired != null ? expired() : orElse(value),
+      VectorStoreObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      VectorStoreObjectStatus$completed() => completed != null ? completed() : orElse(value),
+      VectorStoreObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'VectorStoreObjectStatus($value)';
 
  }

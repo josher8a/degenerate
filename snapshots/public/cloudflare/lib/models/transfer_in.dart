@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AcceptFoa$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() needed, required W Function() ok, required W Function(String value) $unknown, }) { return switch (this) {
+      AcceptFoa$needed() => needed(),
+      AcceptFoa$ok() => ok(),
+      AcceptFoa$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function(String value)? $unknown, }) { return switch (this) {
+      AcceptFoa$needed() => needed != null ? needed() : orElse(value),
+      AcceptFoa$ok() => ok != null ? ok() : orElse(value),
+      AcceptFoa$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AcceptFoa($value)';
 
  }
@@ -98,6 +110,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ApproveTransfer$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() rejected, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      ApproveTransfer$needed() => needed(),
+      ApproveTransfer$ok() => ok(),
+      ApproveTransfer$pending() => pending(),
+      ApproveTransfer$trying() => trying(),
+      ApproveTransfer$rejected() => rejected(),
+      ApproveTransfer$unknown() => unknown(),
+      ApproveTransfer$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? rejected, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      ApproveTransfer$needed() => needed != null ? needed() : orElse(value),
+      ApproveTransfer$ok() => ok != null ? ok() : orElse(value),
+      ApproveTransfer$pending() => pending != null ? pending() : orElse(value),
+      ApproveTransfer$trying() => trying != null ? trying() : orElse(value),
+      ApproveTransfer$rejected() => rejected != null ? rejected() : orElse(value),
+      ApproveTransfer$unknown() => unknown != null ? unknown() : orElse(value),
+      ApproveTransfer$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ApproveTransfer($value)';
 
  }
@@ -194,6 +226,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisablePrivacy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() needed, required W Function() ok, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      DisablePrivacy$needed() => needed(),
+      DisablePrivacy$ok() => ok(),
+      DisablePrivacy$unknown() => unknown(),
+      DisablePrivacy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      DisablePrivacy$needed() => needed != null ? needed() : orElse(value),
+      DisablePrivacy$ok() => ok != null ? ok() : orElse(value),
+      DisablePrivacy$unknown() => unknown != null ? unknown() : orElse(value),
+      DisablePrivacy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisablePrivacy($value)';
 
  }
@@ -271,6 +317,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnterAuthCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+      EnterAuthCode$needed() => needed(),
+      EnterAuthCode$ok() => ok(),
+      EnterAuthCode$pending() => pending(),
+      EnterAuthCode$trying() => trying(),
+      EnterAuthCode$rejected() => rejected(),
+      EnterAuthCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+      EnterAuthCode$needed() => needed != null ? needed() : orElse(value),
+      EnterAuthCode$ok() => ok != null ? ok() : orElse(value),
+      EnterAuthCode$pending() => pending != null ? pending() : orElse(value),
+      EnterAuthCode$trying() => trying != null ? trying() : orElse(value),
+      EnterAuthCode$rejected() => rejected != null ? rejected() : orElse(value),
+      EnterAuthCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnterAuthCode($value)';
 
  }
@@ -366,6 +430,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UnlockDomain$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() needed, required W Function() ok, required W Function() pending, required W Function() trying, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      UnlockDomain$needed() => needed(),
+      UnlockDomain$ok() => ok(),
+      UnlockDomain$pending() => pending(),
+      UnlockDomain$trying() => trying(),
+      UnlockDomain$unknown() => unknown(),
+      UnlockDomain$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? needed, W Function()? ok, W Function()? pending, W Function()? trying, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      UnlockDomain$needed() => needed != null ? needed() : orElse(value),
+      UnlockDomain$ok() => ok != null ? ok() : orElse(value),
+      UnlockDomain$pending() => pending != null ? pending() : orElse(value),
+      UnlockDomain$trying() => trying != null ? trying() : orElse(value),
+      UnlockDomain$unknown() => unknown != null ? unknown() : orElse(value),
+      UnlockDomain$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UnlockDomain($value)';
 
  }

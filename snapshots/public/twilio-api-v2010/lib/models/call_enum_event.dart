@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CallEnumEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initiated, required W Function() ringing, required W Function() answered, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+      CallEnumEvent$initiated() => initiated(),
+      CallEnumEvent$ringing() => ringing(),
+      CallEnumEvent$answered() => answered(),
+      CallEnumEvent$completed() => completed(),
+      CallEnumEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initiated, W Function()? ringing, W Function()? answered, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+      CallEnumEvent$initiated() => initiated != null ? initiated() : orElse(value),
+      CallEnumEvent$ringing() => ringing != null ? ringing() : orElse(value),
+      CallEnumEvent$answered() => answered != null ? answered() : orElse(value),
+      CallEnumEvent$completed() => completed != null ? completed() : orElse(value),
+      CallEnumEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CallEnumEvent($value)';
 
  }

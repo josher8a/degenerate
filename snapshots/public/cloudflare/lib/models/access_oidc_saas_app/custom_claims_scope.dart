@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomClaimsScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() groups, required W Function() profile, required W Function() email, required W Function() openid, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomClaimsScope$groups() => groups(),
+      CustomClaimsScope$profile() => profile(),
+      CustomClaimsScope$email() => email(),
+      CustomClaimsScope$openid() => openid(),
+      CustomClaimsScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? groups, W Function()? profile, W Function()? email, W Function()? openid, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomClaimsScope$groups() => groups != null ? groups() : orElse(value),
+      CustomClaimsScope$profile() => profile != null ? profile() : orElse(value),
+      CustomClaimsScope$email() => email != null ? email() : orElse(value),
+      CustomClaimsScope$openid() => openid != null ? openid() : orElse(value),
+      CustomClaimsScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomClaimsScope($value)';
 
  }

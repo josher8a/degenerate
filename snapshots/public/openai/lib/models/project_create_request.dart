@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Geography$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() us, required W Function() eu, required W Function() jp, required W Function() $in, required W Function() kr, required W Function() ca, required W Function() au, required W Function() sg, required W Function(String value) $unknown, }) { return switch (this) {
+      Geography$us() => us(),
+      Geography$eu() => eu(),
+      Geography$jp() => jp(),
+      Geography$$in() => $in(),
+      Geography$kr() => kr(),
+      Geography$ca() => ca(),
+      Geography$au() => au(),
+      Geography$sg() => sg(),
+      Geography$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? us, W Function()? eu, W Function()? jp, W Function()? $in, W Function()? kr, W Function()? ca, W Function()? au, W Function()? sg, W Function(String value)? $unknown, }) { return switch (this) {
+      Geography$us() => us != null ? us() : orElse(value),
+      Geography$eu() => eu != null ? eu() : orElse(value),
+      Geography$jp() => jp != null ? jp() : orElse(value),
+      Geography$$in() => $in != null ? $in() : orElse(value),
+      Geography$kr() => kr != null ? kr() : orElse(value),
+      Geography$ca() => ca != null ? ca() : orElse(value),
+      Geography$au() => au != null ? au() : orElse(value),
+      Geography$sg() => sg != null ? sg() : orElse(value),
+      Geography$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Geography($value)';
 
  }

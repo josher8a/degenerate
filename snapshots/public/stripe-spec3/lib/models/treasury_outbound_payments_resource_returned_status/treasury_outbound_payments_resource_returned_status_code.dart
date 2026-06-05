@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountClosed, required W Function() accountFrozen, required W Function() bankAccountRestricted, required W Function() bankOwnershipChanged, required W Function() declined, required W Function() incorrectAccountHolderName, required W Function() invalidAccountNumber, required W Function() invalidCurrency, required W Function() noAccount, required W Function() $other, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed() => accountClosed(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$accountFrozen() => accountFrozen(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$bankAccountRestricted() => bankAccountRestricted(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$bankOwnershipChanged() => bankOwnershipChanged(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$declined() => declined(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$incorrectAccountHolderName() => incorrectAccountHolderName(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidAccountNumber() => invalidAccountNumber(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidCurrency() => invalidCurrency(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$noAccount() => noAccount(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$$other() => $other(),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountClosed, W Function()? accountFrozen, W Function()? bankAccountRestricted, W Function()? bankOwnershipChanged, W Function()? declined, W Function()? incorrectAccountHolderName, W Function()? invalidAccountNumber, W Function()? invalidCurrency, W Function()? noAccount, W Function()? $other, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$accountClosed() => accountClosed != null ? accountClosed() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$accountFrozen() => accountFrozen != null ? accountFrozen() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$bankAccountRestricted() => bankAccountRestricted != null ? bankAccountRestricted() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$bankOwnershipChanged() => bankOwnershipChanged != null ? bankOwnershipChanged() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$declined() => declined != null ? declined() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$incorrectAccountHolderName() => incorrectAccountHolderName != null ? incorrectAccountHolderName() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidAccountNumber() => invalidAccountNumber != null ? invalidAccountNumber() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$invalidCurrency() => invalidCurrency != null ? invalidCurrency() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$noAccount() => noAccount != null ? noAccount() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$$other() => $other != null ? $other() : orElse(value),
+      TreasuryOutboundPaymentsResourceReturnedStatusCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryOutboundPaymentsResourceReturnedStatusCode($value)';
 
  }

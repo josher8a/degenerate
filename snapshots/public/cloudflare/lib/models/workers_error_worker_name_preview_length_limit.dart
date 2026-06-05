@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $100315, required W Function(int value) $unknown, }) { return switch (this) {
+      WorkersErrorWorkerNamePreviewLengthLimitCode$$100315() => $100315(),
+      WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(int value) orElse, W Function()? $100315, W Function(int value)? $unknown, }) { return switch (this) {
+      WorkersErrorWorkerNamePreviewLengthLimitCode$$100315() => $100315 != null ? $100315() : orElse(value),
+      WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersErrorWorkerNamePreviewLengthLimitCode($value)';
 
  }

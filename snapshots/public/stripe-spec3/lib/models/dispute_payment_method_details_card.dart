@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CaseType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() block, required W Function() chargeback, required W Function() compliance, required W Function() inquiry, required W Function() resolution, required W Function(String value) $unknown, }) { return switch (this) {
+      CaseType$block() => block(),
+      CaseType$chargeback() => chargeback(),
+      CaseType$compliance() => compliance(),
+      CaseType$inquiry() => inquiry(),
+      CaseType$resolution() => resolution(),
+      CaseType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? block, W Function()? chargeback, W Function()? compliance, W Function()? inquiry, W Function()? resolution, W Function(String value)? $unknown, }) { return switch (this) {
+      CaseType$block() => block != null ? block() : orElse(value),
+      CaseType$chargeback() => chargeback != null ? chargeback() : orElse(value),
+      CaseType$compliance() => compliance != null ? compliance() : orElse(value),
+      CaseType$inquiry() => inquiry != null ? inquiry() : orElse(value),
+      CaseType$resolution() => resolution != null ? resolution() : orElse(value),
+      CaseType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CaseType($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AuditLogsGetUserAuditLogsDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() desc, required W Function() asc, required W Function(String value) $unknown, }) { return switch (this) {
+      AuditLogsGetUserAuditLogsDirection$desc() => desc(),
+      AuditLogsGetUserAuditLogsDirection$asc() => asc(),
+      AuditLogsGetUserAuditLogsDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? desc, W Function()? asc, W Function(String value)? $unknown, }) { return switch (this) {
+      AuditLogsGetUserAuditLogsDirection$desc() => desc != null ? desc() : orElse(value),
+      AuditLogsGetUserAuditLogsDirection$asc() => asc != null ? asc() : orElse(value),
+      AuditLogsGetUserAuditLogsDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AuditLogsGetUserAuditLogsDirection($value)';
 
  }

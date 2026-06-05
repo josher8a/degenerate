@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IdentityUpdateBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() automatic, required W Function() reauth, required W Function() noAction, required W Function(String value) $unknown, }) { return switch (this) {
+      IdentityUpdateBehavior$automatic() => automatic(),
+      IdentityUpdateBehavior$reauth() => reauth(),
+      IdentityUpdateBehavior$noAction() => noAction(),
+      IdentityUpdateBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automatic, W Function()? reauth, W Function()? noAction, W Function(String value)? $unknown, }) { return switch (this) {
+      IdentityUpdateBehavior$automatic() => automatic != null ? automatic() : orElse(value),
+      IdentityUpdateBehavior$reauth() => reauth != null ? reauth() : orElse(value),
+      IdentityUpdateBehavior$noAction() => noAction != null ? noAction() : orElse(value),
+      IdentityUpdateBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IdentityUpdateBehavior($value)';
 
  }

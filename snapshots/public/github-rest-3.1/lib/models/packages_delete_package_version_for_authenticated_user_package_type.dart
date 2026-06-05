@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() npm, required W Function() maven, required W Function() rubygems, required W Function() docker, required W Function() nuget, required W Function() container, required W Function(String value) $unknown, }) { return switch (this) {
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$npm() => npm(),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$maven() => maven(),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$rubygems() => rubygems(),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$docker() => docker(),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$nuget() => nuget(),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$container() => container(),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? npm, W Function()? maven, W Function()? rubygems, W Function()? docker, W Function()? nuget, W Function()? container, W Function(String value)? $unknown, }) { return switch (this) {
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$npm() => npm != null ? npm() : orElse(value),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$maven() => maven != null ? maven() : orElse(value),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$rubygems() => rubygems != null ? rubygems() : orElse(value),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$docker() => docker != null ? docker() : orElse(value),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$nuget() => nuget != null ? nuget() : orElse(value),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$container() => container != null ? container() : orElse(value),
+      PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PackagesDeletePackageVersionForAuthenticatedUserPackageType($value)';
 
  }

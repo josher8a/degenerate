@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisputeCategories$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fraudulent, required W Function() productNotReceived, required W Function(String value) $unknown, }) { return switch (this) {
+      DisputeCategories$fraudulent() => fraudulent(),
+      DisputeCategories$productNotReceived() => productNotReceived(),
+      DisputeCategories$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fraudulent, W Function()? productNotReceived, W Function(String value)? $unknown, }) { return switch (this) {
+      DisputeCategories$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      DisputeCategories$productNotReceived() => productNotReceived != null ? productNotReceived() : orElse(value),
+      DisputeCategories$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisputeCategories($value)';
 
  }
@@ -85,6 +97,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaypalSellerProtectionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eligible, required W Function() notEligible, required W Function() partiallyEligible, required W Function(String value) $unknown, }) { return switch (this) {
+      PaypalSellerProtectionStatus$eligible() => eligible(),
+      PaypalSellerProtectionStatus$notEligible() => notEligible(),
+      PaypalSellerProtectionStatus$partiallyEligible() => partiallyEligible(),
+      PaypalSellerProtectionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eligible, W Function()? notEligible, W Function()? partiallyEligible, W Function(String value)? $unknown, }) { return switch (this) {
+      PaypalSellerProtectionStatus$eligible() => eligible != null ? eligible() : orElse(value),
+      PaypalSellerProtectionStatus$notEligible() => notEligible != null ? notEligible() : orElse(value),
+      PaypalSellerProtectionStatus$partiallyEligible() => partiallyEligible != null ? partiallyEligible() : orElse(value),
+      PaypalSellerProtectionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaypalSellerProtectionStatus($value)';
 
  }

@@ -39,6 +39,34 @@ sealed class SessionFeedbackOptions {
     return this is SessionFeedbackOptions$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() up,
+    required W Function() down,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      SessionFeedbackOptions$up() => up(),
+      SessionFeedbackOptions$down() => down(),
+      SessionFeedbackOptions$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? up,
+    W Function()? down,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      SessionFeedbackOptions$up() => up != null ? up() : orElse(value),
+      SessionFeedbackOptions$down() => down != null ? down() : orElse(value),
+      SessionFeedbackOptions$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'SessionFeedbackOptions($value)';
 }

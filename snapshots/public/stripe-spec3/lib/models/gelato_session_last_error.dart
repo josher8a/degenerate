@@ -94,6 +94,52 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GelatoSessionLastErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abandoned, required W Function() consentDeclined, required W Function() countryNotSupported, required W Function() deviceNotSupported, required W Function() documentExpired, required W Function() documentTypeNotSupported, required W Function() documentUnverifiedOther, required W Function() emailUnverifiedOther, required W Function() emailVerificationDeclined, required W Function() idNumberInsufficientDocumentData, required W Function() idNumberMismatch, required W Function() idNumberUnverifiedOther, required W Function() phoneUnverifiedOther, required W Function() phoneVerificationDeclined, required W Function() selfieDocumentMissingPhoto, required W Function() selfieFaceMismatch, required W Function() selfieManipulated, required W Function() selfieUnverifiedOther, required W Function() underSupportedAge, required W Function(String value) $unknown, }) { return switch (this) {
+      GelatoSessionLastErrorCode$abandoned() => abandoned(),
+      GelatoSessionLastErrorCode$consentDeclined() => consentDeclined(),
+      GelatoSessionLastErrorCode$countryNotSupported() => countryNotSupported(),
+      GelatoSessionLastErrorCode$deviceNotSupported() => deviceNotSupported(),
+      GelatoSessionLastErrorCode$documentExpired() => documentExpired(),
+      GelatoSessionLastErrorCode$documentTypeNotSupported() => documentTypeNotSupported(),
+      GelatoSessionLastErrorCode$documentUnverifiedOther() => documentUnverifiedOther(),
+      GelatoSessionLastErrorCode$emailUnverifiedOther() => emailUnverifiedOther(),
+      GelatoSessionLastErrorCode$emailVerificationDeclined() => emailVerificationDeclined(),
+      GelatoSessionLastErrorCode$idNumberInsufficientDocumentData() => idNumberInsufficientDocumentData(),
+      GelatoSessionLastErrorCode$idNumberMismatch() => idNumberMismatch(),
+      GelatoSessionLastErrorCode$idNumberUnverifiedOther() => idNumberUnverifiedOther(),
+      GelatoSessionLastErrorCode$phoneUnverifiedOther() => phoneUnverifiedOther(),
+      GelatoSessionLastErrorCode$phoneVerificationDeclined() => phoneVerificationDeclined(),
+      GelatoSessionLastErrorCode$selfieDocumentMissingPhoto() => selfieDocumentMissingPhoto(),
+      GelatoSessionLastErrorCode$selfieFaceMismatch() => selfieFaceMismatch(),
+      GelatoSessionLastErrorCode$selfieManipulated() => selfieManipulated(),
+      GelatoSessionLastErrorCode$selfieUnverifiedOther() => selfieUnverifiedOther(),
+      GelatoSessionLastErrorCode$underSupportedAge() => underSupportedAge(),
+      GelatoSessionLastErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? consentDeclined, W Function()? countryNotSupported, W Function()? deviceNotSupported, W Function()? documentExpired, W Function()? documentTypeNotSupported, W Function()? documentUnverifiedOther, W Function()? emailUnverifiedOther, W Function()? emailVerificationDeclined, W Function()? idNumberInsufficientDocumentData, W Function()? idNumberMismatch, W Function()? idNumberUnverifiedOther, W Function()? phoneUnverifiedOther, W Function()? phoneVerificationDeclined, W Function()? selfieDocumentMissingPhoto, W Function()? selfieFaceMismatch, W Function()? selfieManipulated, W Function()? selfieUnverifiedOther, W Function()? underSupportedAge, W Function(String value)? $unknown, }) { return switch (this) {
+      GelatoSessionLastErrorCode$abandoned() => abandoned != null ? abandoned() : orElse(value),
+      GelatoSessionLastErrorCode$consentDeclined() => consentDeclined != null ? consentDeclined() : orElse(value),
+      GelatoSessionLastErrorCode$countryNotSupported() => countryNotSupported != null ? countryNotSupported() : orElse(value),
+      GelatoSessionLastErrorCode$deviceNotSupported() => deviceNotSupported != null ? deviceNotSupported() : orElse(value),
+      GelatoSessionLastErrorCode$documentExpired() => documentExpired != null ? documentExpired() : orElse(value),
+      GelatoSessionLastErrorCode$documentTypeNotSupported() => documentTypeNotSupported != null ? documentTypeNotSupported() : orElse(value),
+      GelatoSessionLastErrorCode$documentUnverifiedOther() => documentUnverifiedOther != null ? documentUnverifiedOther() : orElse(value),
+      GelatoSessionLastErrorCode$emailUnverifiedOther() => emailUnverifiedOther != null ? emailUnverifiedOther() : orElse(value),
+      GelatoSessionLastErrorCode$emailVerificationDeclined() => emailVerificationDeclined != null ? emailVerificationDeclined() : orElse(value),
+      GelatoSessionLastErrorCode$idNumberInsufficientDocumentData() => idNumberInsufficientDocumentData != null ? idNumberInsufficientDocumentData() : orElse(value),
+      GelatoSessionLastErrorCode$idNumberMismatch() => idNumberMismatch != null ? idNumberMismatch() : orElse(value),
+      GelatoSessionLastErrorCode$idNumberUnverifiedOther() => idNumberUnverifiedOther != null ? idNumberUnverifiedOther() : orElse(value),
+      GelatoSessionLastErrorCode$phoneUnverifiedOther() => phoneUnverifiedOther != null ? phoneUnverifiedOther() : orElse(value),
+      GelatoSessionLastErrorCode$phoneVerificationDeclined() => phoneVerificationDeclined != null ? phoneVerificationDeclined() : orElse(value),
+      GelatoSessionLastErrorCode$selfieDocumentMissingPhoto() => selfieDocumentMissingPhoto != null ? selfieDocumentMissingPhoto() : orElse(value),
+      GelatoSessionLastErrorCode$selfieFaceMismatch() => selfieFaceMismatch != null ? selfieFaceMismatch() : orElse(value),
+      GelatoSessionLastErrorCode$selfieManipulated() => selfieManipulated != null ? selfieManipulated() : orElse(value),
+      GelatoSessionLastErrorCode$selfieUnverifiedOther() => selfieUnverifiedOther != null ? selfieUnverifiedOther() : orElse(value),
+      GelatoSessionLastErrorCode$underSupportedAge() => underSupportedAge != null ? underSupportedAge() : orElse(value),
+      GelatoSessionLastErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GelatoSessionLastErrorCode($value)';
 
  }

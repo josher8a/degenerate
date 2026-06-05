@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DynamicConnectivity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() ipv4, required W Function() ipv6, required W Function(String value) $unknown, }) { return switch (this) {
+      DynamicConnectivity$all() => all(),
+      DynamicConnectivity$ipv4() => ipv4(),
+      DynamicConnectivity$ipv6() => ipv6(),
+      DynamicConnectivity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? ipv4, W Function()? ipv6, W Function(String value)? $unknown, }) { return switch (this) {
+      DynamicConnectivity$all() => all != null ? all() : orElse(value),
+      DynamicConnectivity$ipv4() => ipv4 != null ? ipv4() : orElse(value),
+      DynamicConnectivity$ipv6() => ipv6 != null ? ipv6() : orElse(value),
+      DynamicConnectivity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DynamicConnectivity($value)';
 
  }
@@ -91,6 +105,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DynamicType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $dynamic, required W Function(String value) $unknown, }) { return switch (this) {
+      DynamicType$$dynamic() => $dynamic(),
+      DynamicType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $dynamic, W Function(String value)? $unknown, }) { return switch (this) {
+      DynamicType$$dynamic() => $dynamic != null ? $dynamic() : orElse(value),
+      DynamicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DynamicType($value)';
 
  }

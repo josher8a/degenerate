@@ -44,6 +44,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() allowIncomplete, required W Function() defaultIncomplete, required W Function() errorIfIncomplete, required W Function() pendingIfIncomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentBehavior$allowIncomplete() => allowIncomplete(),
+      PaymentBehavior$defaultIncomplete() => defaultIncomplete(),
+      PaymentBehavior$errorIfIncomplete() => errorIfIncomplete(),
+      PaymentBehavior$pendingIfIncomplete() => pendingIfIncomplete(),
+      PaymentBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? allowIncomplete, W Function()? defaultIncomplete, W Function()? errorIfIncomplete, W Function()? pendingIfIncomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentBehavior$allowIncomplete() => allowIncomplete != null ? allowIncomplete() : orElse(value),
+      PaymentBehavior$defaultIncomplete() => defaultIncomplete != null ? defaultIncomplete() : orElse(value),
+      PaymentBehavior$errorIfIncomplete() => errorIfIncomplete != null ? errorIfIncomplete() : orElse(value),
+      PaymentBehavior$pendingIfIncomplete() => pendingIfIncomplete != null ? pendingIfIncomplete() : orElse(value),
+      PaymentBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentBehavior($value)';
 
  }

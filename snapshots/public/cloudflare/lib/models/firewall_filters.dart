@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConfigurationTarget$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ip, required W Function() ipRange, required W Function() asn, required W Function() country, required W Function(String value) $unknown, }) { return switch (this) {
+      ConfigurationTarget$ip() => ip(),
+      ConfigurationTarget$ipRange() => ipRange(),
+      ConfigurationTarget$asn() => asn(),
+      ConfigurationTarget$country() => country(),
+      ConfigurationTarget$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ip, W Function()? ipRange, W Function()? asn, W Function()? country, W Function(String value)? $unknown, }) { return switch (this) {
+      ConfigurationTarget$ip() => ip != null ? ip() : orElse(value),
+      ConfigurationTarget$ipRange() => ipRange != null ? ipRange() : orElse(value),
+      ConfigurationTarget$asn() => asn != null ? asn() : orElse(value),
+      ConfigurationTarget$country() => country != null ? country() : orElse(value),
+      ConfigurationTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ConfigurationTarget($value)';
 
  }
@@ -108,6 +124,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FirewallFiltersMatch$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() any, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      FirewallFiltersMatch$any() => any(),
+      FirewallFiltersMatch$all() => all(),
+      FirewallFiltersMatch$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      FirewallFiltersMatch$any() => any != null ? any() : orElse(value),
+      FirewallFiltersMatch$all() => all != null ? all() : orElse(value),
+      FirewallFiltersMatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FirewallFiltersMatch($value)';
 
  }

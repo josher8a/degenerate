@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecuritySubmissionsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() team, required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecuritySubmissionsType$team() => team(),
+      EmailSecuritySubmissionsType$user() => user(),
+      EmailSecuritySubmissionsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? team, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecuritySubmissionsType$team() => team != null ? team() : orElse(value),
+      EmailSecuritySubmissionsType$user() => user != null ? user() : orElse(value),
+      EmailSecuritySubmissionsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecuritySubmissionsType($value)';
 
  }

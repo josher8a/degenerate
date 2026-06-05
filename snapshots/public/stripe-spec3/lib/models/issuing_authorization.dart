@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingAuthorization, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationObject$issuingAuthorization() => issuingAuthorization(),
+      IssuingAuthorizationObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingAuthorization, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationObject$issuingAuthorization() => issuingAuthorization != null ? issuingAuthorization() : orElse(value),
+      IssuingAuthorizationObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() closed, required W Function() expired, required W Function() pending, required W Function() reversed, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationStatus$closed() => closed(),
+      IssuingAuthorizationStatus$expired() => expired(),
+      IssuingAuthorizationStatus$pending() => pending(),
+      IssuingAuthorizationStatus$reversed() => reversed(),
+      IssuingAuthorizationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? closed, W Function()? expired, W Function()? pending, W Function()? reversed, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationStatus$closed() => closed != null ? closed() : orElse(value),
+      IssuingAuthorizationStatus$expired() => expired != null ? expired() : orElse(value),
+      IssuingAuthorizationStatus$pending() => pending != null ? pending() : orElse(value),
+      IssuingAuthorizationStatus$reversed() => reversed != null ? reversed() : orElse(value),
+      IssuingAuthorizationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationStatus($value)';
 
  }

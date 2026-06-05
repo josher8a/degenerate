@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RevocationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() notRevoked, required W Function() revoked, required W Function() parentCertRevoked, required W Function(String value) $unknown, }) { return switch (this) {
+      RevocationStatus$notRevoked() => notRevoked(),
+      RevocationStatus$revoked() => revoked(),
+      RevocationStatus$parentCertRevoked() => parentCertRevoked(),
+      RevocationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notRevoked, W Function()? revoked, W Function()? parentCertRevoked, W Function(String value)? $unknown, }) { return switch (this) {
+      RevocationStatus$notRevoked() => notRevoked != null ? notRevoked() : orElse(value),
+      RevocationStatus$revoked() => revoked != null ? revoked() : orElse(value),
+      RevocationStatus$parentCertRevoked() => parentCertRevoked != null ? parentCertRevoked() : orElse(value),
+      RevocationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RevocationStatus($value)';
 
  }

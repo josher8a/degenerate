@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ItemContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issue, required W Function() pullRequest, required W Function() draftIssue, required W Function(String value) $unknown, }) { return switch (this) {
+      ItemContentType$issue() => issue(),
+      ItemContentType$pullRequest() => pullRequest(),
+      ItemContentType$draftIssue() => draftIssue(),
+      ItemContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issue, W Function()? pullRequest, W Function()? draftIssue, W Function(String value)? $unknown, }) { return switch (this) {
+      ItemContentType$issue() => issue != null ? issue() : orElse(value),
+      ItemContentType$pullRequest() => pullRequest != null ? pullRequest() : orElse(value),
+      ItemContentType$draftIssue() => draftIssue != null ? draftIssue() : orElse(value),
+      ItemContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ItemContentType($value)';
 
  }

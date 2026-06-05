@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsExecuteSensitivityLevel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $default, required W Function() medium, required W Function() low, required W Function() eoff, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsExecuteSensitivityLevel$$default() => $default(),
+      RulesetsExecuteSensitivityLevel$medium() => medium(),
+      RulesetsExecuteSensitivityLevel$low() => low(),
+      RulesetsExecuteSensitivityLevel$eoff() => eoff(),
+      RulesetsExecuteSensitivityLevel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $default, W Function()? medium, W Function()? low, W Function()? eoff, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsExecuteSensitivityLevel$$default() => $default != null ? $default() : orElse(value),
+      RulesetsExecuteSensitivityLevel$medium() => medium != null ? medium() : orElse(value),
+      RulesetsExecuteSensitivityLevel$low() => low != null ? low() : orElse(value),
+      RulesetsExecuteSensitivityLevel$eoff() => eoff != null ? eoff() : orElse(value),
+      RulesetsExecuteSensitivityLevel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsExecuteSensitivityLevel($value)';
 
  }

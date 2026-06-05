@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhooksReviewersType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhooksReviewersType$user() => user(),
+      WebhooksReviewersType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhooksReviewersType$user() => user != null ? user() : orElse(value),
+      WebhooksReviewersType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhooksReviewersType($value)';
 
  }

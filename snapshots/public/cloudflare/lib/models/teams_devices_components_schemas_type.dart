@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TeamsDevicesComponentsSchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tls, required W Function(String value) $unknown, }) { return switch (this) {
+      TeamsDevicesComponentsSchemasType$tls() => tls(),
+      TeamsDevicesComponentsSchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tls, W Function(String value)? $unknown, }) { return switch (this) {
+      TeamsDevicesComponentsSchemasType$tls() => tls != null ? tls() : orElse(value),
+      TeamsDevicesComponentsSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TeamsDevicesComponentsSchemasType($value)';
 
  }

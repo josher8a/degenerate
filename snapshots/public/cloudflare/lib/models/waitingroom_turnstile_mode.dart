@@ -39,6 +39,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomTurnstileMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() invisible, required W Function() visibleNonInteractive, required W Function() visibleManaged, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomTurnstileMode$off() => off(),
+      WaitingroomTurnstileMode$invisible() => invisible(),
+      WaitingroomTurnstileMode$visibleNonInteractive() => visibleNonInteractive(),
+      WaitingroomTurnstileMode$visibleManaged() => visibleManaged(),
+      WaitingroomTurnstileMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? invisible, W Function()? visibleNonInteractive, W Function()? visibleManaged, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomTurnstileMode$off() => off != null ? off() : orElse(value),
+      WaitingroomTurnstileMode$invisible() => invisible != null ? invisible() : orElse(value),
+      WaitingroomTurnstileMode$visibleNonInteractive() => visibleNonInteractive != null ? visibleNonInteractive() : orElse(value),
+      WaitingroomTurnstileMode$visibleManaged() => visibleManaged != null ? visibleManaged() : orElse(value),
+      WaitingroomTurnstileMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomTurnstileMode($value)';
 
  }

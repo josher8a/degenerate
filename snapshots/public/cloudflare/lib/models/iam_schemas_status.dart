@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IamSchemasStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() pending, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+      IamSchemasStatus$accepted() => accepted(),
+      IamSchemasStatus$pending() => pending(),
+      IamSchemasStatus$rejected() => rejected(),
+      IamSchemasStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? pending, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+      IamSchemasStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      IamSchemasStatus$pending() => pending != null ? pending() : orElse(value),
+      IamSchemasStatus$rejected() => rejected != null ? rejected() : orElse(value),
+      IamSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IamSchemasStatus($value)';
 
  }

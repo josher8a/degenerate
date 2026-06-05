@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MergeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() merge, required W Function() fastForward, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      MergeType$merge() => merge(),
+      MergeType$fastForward() => fastForward(),
+      MergeType$none() => none(),
+      MergeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? merge, W Function()? fastForward, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      MergeType$merge() => merge != null ? merge() : orElse(value),
+      MergeType$fastForward() => fastForward != null ? fastForward() : orElse(value),
+      MergeType$none() => none != null ? none() : orElse(value),
+      MergeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MergeType($value)';
 
  }

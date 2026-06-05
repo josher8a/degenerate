@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CallEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() ringing, required W Function() inProgress, required W Function() completed, required W Function() busy, required W Function() failed, required W Function() noAnswer, required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+      CallEnumStatus$queued() => queued(),
+      CallEnumStatus$ringing() => ringing(),
+      CallEnumStatus$inProgress() => inProgress(),
+      CallEnumStatus$completed() => completed(),
+      CallEnumStatus$busy() => busy(),
+      CallEnumStatus$failed() => failed(),
+      CallEnumStatus$noAnswer() => noAnswer(),
+      CallEnumStatus$canceled() => canceled(),
+      CallEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? ringing, W Function()? inProgress, W Function()? completed, W Function()? busy, W Function()? failed, W Function()? noAnswer, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+      CallEnumStatus$queued() => queued != null ? queued() : orElse(value),
+      CallEnumStatus$ringing() => ringing != null ? ringing() : orElse(value),
+      CallEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      CallEnumStatus$completed() => completed != null ? completed() : orElse(value),
+      CallEnumStatus$busy() => busy != null ? busy() : orElse(value),
+      CallEnumStatus$failed() => failed != null ? failed() : orElse(value),
+      CallEnumStatus$noAnswer() => noAnswer != null ? noAnswer() : orElse(value),
+      CallEnumStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      CallEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CallEnumStatus($value)';
 
  }

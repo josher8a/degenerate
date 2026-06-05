@@ -28,6 +28,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Position$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() hidden, required W Function(String value) $unknown, }) { return switch (this) {
+      Position$auto() => auto(),
+      Position$hidden() => hidden(),
+      Position$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? hidden, W Function(String value)? $unknown, }) { return switch (this) {
+      Position$auto() => auto != null ? auto() : orElse(value),
+      Position$hidden() => hidden != null ? hidden() : orElse(value),
+      Position$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Position($value)';
 
  }

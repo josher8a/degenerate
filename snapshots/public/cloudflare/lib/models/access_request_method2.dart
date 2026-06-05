@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessRequestMethod2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() delete, required W Function() patch, required W Function() post, required W Function() put, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessRequestMethod2$delete() => delete(),
+      AccessRequestMethod2$patch() => patch(),
+      AccessRequestMethod2$post() => post(),
+      AccessRequestMethod2$put() => put(),
+      AccessRequestMethod2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? delete, W Function()? patch, W Function()? post, W Function()? put, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessRequestMethod2$delete() => delete != null ? delete() : orElse(value),
+      AccessRequestMethod2$patch() => patch != null ? patch() : orElse(value),
+      AccessRequestMethod2$post() => post != null ? post() : orElse(value),
+      AccessRequestMethod2$put() => put != null ? put() : orElse(value),
+      AccessRequestMethod2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessRequestMethod2($value)';
 
  }

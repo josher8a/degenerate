@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimekitStopReasonReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() apiCall, required W Function() internalError, required W Function() allPeersLeft, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimekitStopReasonReason$apiCall() => apiCall(),
+      RealtimekitStopReasonReason$internalError() => internalError(),
+      RealtimekitStopReasonReason$allPeersLeft() => allPeersLeft(),
+      RealtimekitStopReasonReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? apiCall, W Function()? internalError, W Function()? allPeersLeft, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimekitStopReasonReason$apiCall() => apiCall != null ? apiCall() : orElse(value),
+      RealtimekitStopReasonReason$internalError() => internalError != null ? internalError() : orElse(value),
+      RealtimekitStopReasonReason$allPeersLeft() => allPeersLeft != null ? allPeersLeft() : orElse(value),
+      RealtimekitStopReasonReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimekitStopReasonReason($value)';
 
  }

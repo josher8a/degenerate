@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ErrorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() notFound, required W Function() invalid, required W Function() internal, required W Function(String value) $unknown, }) { return switch (this) {
+      ErrorType$notFound() => notFound(),
+      ErrorType$invalid() => invalid(),
+      ErrorType$internal() => internal(),
+      ErrorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notFound, W Function()? invalid, W Function()? internal, W Function(String value)? $unknown, }) { return switch (this) {
+      ErrorType$notFound() => notFound != null ? notFound() : orElse(value),
+      ErrorType$invalid() => invalid != null ? invalid() : orElse(value),
+      ErrorType$internal() => internal != null ? internal() : orElse(value),
+      ErrorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ErrorType($value)';
 
  }

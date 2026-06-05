@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageEditRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() gptImage15, required W Function() dallE2, required W Function() gptImage1, required W Function() gptImage1Mini, required W Function() chatgptImageLatest, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageEditRequestModelVariant2$gptImage15() => gptImage15(),
+      CreateImageEditRequestModelVariant2$dallE2() => dallE2(),
+      CreateImageEditRequestModelVariant2$gptImage1() => gptImage1(),
+      CreateImageEditRequestModelVariant2$gptImage1Mini() => gptImage1Mini(),
+      CreateImageEditRequestModelVariant2$chatgptImageLatest() => chatgptImageLatest(),
+      CreateImageEditRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage15, W Function()? dallE2, W Function()? gptImage1, W Function()? gptImage1Mini, W Function()? chatgptImageLatest, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageEditRequestModelVariant2$gptImage15() => gptImage15 != null ? gptImage15() : orElse(value),
+      CreateImageEditRequestModelVariant2$dallE2() => dallE2 != null ? dallE2() : orElse(value),
+      CreateImageEditRequestModelVariant2$gptImage1() => gptImage1 != null ? gptImage1() : orElse(value),
+      CreateImageEditRequestModelVariant2$gptImage1Mini() => gptImage1Mini != null ? gptImage1Mini() : orElse(value),
+      CreateImageEditRequestModelVariant2$chatgptImageLatest() => chatgptImageLatest != null ? chatgptImageLatest() : orElse(value),
+      CreateImageEditRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageEditRequestModelVariant2($value)';
 
  }

@@ -66,6 +66,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NetworkCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() r02, required W Function() r03, required W Function() r04, required W Function() r05, required W Function() r07, required W Function() r08, required W Function() r10, required W Function() r11, required W Function() r16, required W Function() r20, required W Function() r29, required W Function() r31, required W Function(String value) $unknown, }) { return switch (this) {
+      NetworkCode$r02() => r02(),
+      NetworkCode$r03() => r03(),
+      NetworkCode$r04() => r04(),
+      NetworkCode$r05() => r05(),
+      NetworkCode$r07() => r07(),
+      NetworkCode$r08() => r08(),
+      NetworkCode$r10() => r10(),
+      NetworkCode$r11() => r11(),
+      NetworkCode$r16() => r16(),
+      NetworkCode$r20() => r20(),
+      NetworkCode$r29() => r29(),
+      NetworkCode$r31() => r31(),
+      NetworkCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? r02, W Function()? r03, W Function()? r04, W Function()? r05, W Function()? r07, W Function()? r08, W Function()? r10, W Function()? r11, W Function()? r16, W Function()? r20, W Function()? r29, W Function()? r31, W Function(String value)? $unknown, }) { return switch (this) {
+      NetworkCode$r02() => r02 != null ? r02() : orElse(value),
+      NetworkCode$r03() => r03 != null ? r03() : orElse(value),
+      NetworkCode$r04() => r04 != null ? r04() : orElse(value),
+      NetworkCode$r05() => r05 != null ? r05() : orElse(value),
+      NetworkCode$r07() => r07 != null ? r07() : orElse(value),
+      NetworkCode$r08() => r08 != null ? r08() : orElse(value),
+      NetworkCode$r10() => r10 != null ? r10() : orElse(value),
+      NetworkCode$r11() => r11 != null ? r11() : orElse(value),
+      NetworkCode$r16() => r16 != null ? r16() : orElse(value),
+      NetworkCode$r20() => r20 != null ? r20() : orElse(value),
+      NetworkCode$r29() => r29 != null ? r29() : orElse(value),
+      NetworkCode$r31() => r31 != null ? r31() : orElse(value),
+      NetworkCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NetworkCode($value)';
 
  }
@@ -232,6 +264,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodUsBankAccountBlockedReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bankAccountClosed, required W Function() bankAccountFrozen, required W Function() bankAccountInvalidDetails, required W Function() bankAccountRestricted, required W Function() bankAccountUnusable, required W Function() debitNotAuthorized, required W Function() tokenizedAccountNumberDeactivated, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodUsBankAccountBlockedReason$bankAccountClosed() => bankAccountClosed(),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountFrozen() => bankAccountFrozen(),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountInvalidDetails() => bankAccountInvalidDetails(),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountRestricted() => bankAccountRestricted(),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountUnusable() => bankAccountUnusable(),
+      PaymentMethodUsBankAccountBlockedReason$debitNotAuthorized() => debitNotAuthorized(),
+      PaymentMethodUsBankAccountBlockedReason$tokenizedAccountNumberDeactivated() => tokenizedAccountNumberDeactivated(),
+      PaymentMethodUsBankAccountBlockedReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccountClosed, W Function()? bankAccountFrozen, W Function()? bankAccountInvalidDetails, W Function()? bankAccountRestricted, W Function()? bankAccountUnusable, W Function()? debitNotAuthorized, W Function()? tokenizedAccountNumberDeactivated, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodUsBankAccountBlockedReason$bankAccountClosed() => bankAccountClosed != null ? bankAccountClosed() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountFrozen() => bankAccountFrozen != null ? bankAccountFrozen() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountInvalidDetails() => bankAccountInvalidDetails != null ? bankAccountInvalidDetails() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountRestricted() => bankAccountRestricted != null ? bankAccountRestricted() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$bankAccountUnusable() => bankAccountUnusable != null ? bankAccountUnusable() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$debitNotAuthorized() => debitNotAuthorized != null ? debitNotAuthorized() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$tokenizedAccountNumberDeactivated() => tokenizedAccountNumberDeactivated != null ? tokenizedAccountNumberDeactivated() : orElse(value),
+      PaymentMethodUsBankAccountBlockedReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodUsBankAccountBlockedReason($value)';
 
  }

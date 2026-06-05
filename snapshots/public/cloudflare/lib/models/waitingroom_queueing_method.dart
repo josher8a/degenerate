@@ -38,6 +38,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomQueueingMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fifo, required W Function() random, required W Function() passthrough, required W Function() reject, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomQueueingMethod$fifo() => fifo(),
+      WaitingroomQueueingMethod$random() => random(),
+      WaitingroomQueueingMethod$passthrough() => passthrough(),
+      WaitingroomQueueingMethod$reject() => reject(),
+      WaitingroomQueueingMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fifo, W Function()? random, W Function()? passthrough, W Function()? reject, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomQueueingMethod$fifo() => fifo != null ? fifo() : orElse(value),
+      WaitingroomQueueingMethod$random() => random != null ? random() : orElse(value),
+      WaitingroomQueueingMethod$passthrough() => passthrough != null ? passthrough() : orElse(value),
+      WaitingroomQueueingMethod$reject() => reject != null ? reject() : orElse(value),
+      WaitingroomQueueingMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomQueueingMethod($value)';
 
  }

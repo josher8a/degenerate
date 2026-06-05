@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Mile$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clientToApp, required W Function() clientToCfEgress, required W Function() clientToCfIngress, required W Function() clientToIsp, required W Function(String value) $unknown, }) { return switch (this) {
+      Mile$clientToApp() => clientToApp(),
+      Mile$clientToCfEgress() => clientToCfEgress(),
+      Mile$clientToCfIngress() => clientToCfIngress(),
+      Mile$clientToIsp() => clientToIsp(),
+      Mile$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientToApp, W Function()? clientToCfEgress, W Function()? clientToCfIngress, W Function()? clientToIsp, W Function(String value)? $unknown, }) { return switch (this) {
+      Mile$clientToApp() => clientToApp != null ? clientToApp() : orElse(value),
+      Mile$clientToCfEgress() => clientToCfEgress != null ? clientToCfEgress() : orElse(value),
+      Mile$clientToCfIngress() => clientToCfIngress != null ? clientToCfIngress() : orElse(value),
+      Mile$clientToIsp() => clientToIsp != null ? clientToIsp() : orElse(value),
+      Mile$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Mile($value)';
 
  }

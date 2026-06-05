@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UploadPartObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() uploadPart, required W Function(String value) $unknown, }) { return switch (this) {
+      UploadPartObject$uploadPart() => uploadPart(),
+      UploadPartObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploadPart, W Function(String value)? $unknown, }) { return switch (this) {
+      UploadPartObject$uploadPart() => uploadPart != null ? uploadPart() : orElse(value),
+      UploadPartObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UploadPartObject($value)';
 
  }

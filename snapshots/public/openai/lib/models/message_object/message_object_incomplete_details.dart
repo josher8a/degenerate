@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageObjectIncompleteDetailsReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() contentFilter, required W Function() maxTokens, required W Function() runCancelled, required W Function() runExpired, required W Function() runFailed, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageObjectIncompleteDetailsReason$contentFilter() => contentFilter(),
+      MessageObjectIncompleteDetailsReason$maxTokens() => maxTokens(),
+      MessageObjectIncompleteDetailsReason$runCancelled() => runCancelled(),
+      MessageObjectIncompleteDetailsReason$runExpired() => runExpired(),
+      MessageObjectIncompleteDetailsReason$runFailed() => runFailed(),
+      MessageObjectIncompleteDetailsReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? contentFilter, W Function()? maxTokens, W Function()? runCancelled, W Function()? runExpired, W Function()? runFailed, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageObjectIncompleteDetailsReason$contentFilter() => contentFilter != null ? contentFilter() : orElse(value),
+      MessageObjectIncompleteDetailsReason$maxTokens() => maxTokens != null ? maxTokens() : orElse(value),
+      MessageObjectIncompleteDetailsReason$runCancelled() => runCancelled != null ? runCancelled() : orElse(value),
+      MessageObjectIncompleteDetailsReason$runExpired() => runExpired != null ? runExpired() : orElse(value),
+      MessageObjectIncompleteDetailsReason$runFailed() => runFailed != null ? runFailed() : orElse(value),
+      MessageObjectIncompleteDetailsReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageObjectIncompleteDetailsReason($value)';
 
  }

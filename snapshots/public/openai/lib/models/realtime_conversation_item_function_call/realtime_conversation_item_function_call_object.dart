@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeConversationItemFunctionCallObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() realtimeItem, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeConversationItemFunctionCallObject$realtimeItem() => realtimeItem(),
+      RealtimeConversationItemFunctionCallObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtimeItem, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeConversationItemFunctionCallObject$realtimeItem() => realtimeItem != null ? realtimeItem() : orElse(value),
+      RealtimeConversationItemFunctionCallObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeConversationItemFunctionCallObject($value)';
 
  }

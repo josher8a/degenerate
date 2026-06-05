@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SubscriptionScheduleObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() subscriptionSchedule, required W Function(String value) $unknown, }) { return switch (this) {
+      SubscriptionScheduleObject$subscriptionSchedule() => subscriptionSchedule(),
+      SubscriptionScheduleObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? subscriptionSchedule, W Function(String value)? $unknown, }) { return switch (this) {
+      SubscriptionScheduleObject$subscriptionSchedule() => subscriptionSchedule != null ? subscriptionSchedule() : orElse(value),
+      SubscriptionScheduleObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SubscriptionScheduleObject($value)';
 
  }
@@ -81,6 +91,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SubscriptionScheduleStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() canceled, required W Function() completed, required W Function() notStarted, required W Function() released, required W Function(String value) $unknown, }) { return switch (this) {
+      SubscriptionScheduleStatus$active() => active(),
+      SubscriptionScheduleStatus$canceled() => canceled(),
+      SubscriptionScheduleStatus$completed() => completed(),
+      SubscriptionScheduleStatus$notStarted() => notStarted(),
+      SubscriptionScheduleStatus$released() => released(),
+      SubscriptionScheduleStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? canceled, W Function()? completed, W Function()? notStarted, W Function()? released, W Function(String value)? $unknown, }) { return switch (this) {
+      SubscriptionScheduleStatus$active() => active != null ? active() : orElse(value),
+      SubscriptionScheduleStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      SubscriptionScheduleStatus$completed() => completed != null ? completed() : orElse(value),
+      SubscriptionScheduleStatus$notStarted() => notStarted != null ? notStarted() : orElse(value),
+      SubscriptionScheduleStatus$released() => released != null ? released() : orElse(value),
+      SubscriptionScheduleStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SubscriptionScheduleStatus($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AdvancedSecurityStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      AdvancedSecurityStatus$enabled() => enabled(),
+      AdvancedSecurityStatus$disabled() => disabled(),
+      AdvancedSecurityStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      AdvancedSecurityStatus$enabled() => enabled != null ? enabled() : orElse(value),
+      AdvancedSecurityStatus$disabled() => disabled != null ? disabled() : orElse(value),
+      AdvancedSecurityStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AdvancedSecurityStatus($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBgpHijacksEventsSortBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() id, required W Function() time, required W Function() confidence, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBgpHijacksEventsSortBy$id() => id(),
+      RadarGetBgpHijacksEventsSortBy$time() => time(),
+      RadarGetBgpHijacksEventsSortBy$confidence() => confidence(),
+      RadarGetBgpHijacksEventsSortBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? time, W Function()? confidence, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBgpHijacksEventsSortBy$id() => id != null ? id() : orElse(value),
+      RadarGetBgpHijacksEventsSortBy$time() => time != null ? time() : orElse(value),
+      RadarGetBgpHijacksEventsSortBy$confidence() => confidence != null ? confidence() : orElse(value),
+      RadarGetBgpHijacksEventsSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBgpHijacksEventsSortBy($value)';
 
  }

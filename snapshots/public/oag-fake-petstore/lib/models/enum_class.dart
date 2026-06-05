@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumClass$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abc, required W Function() efg, required W Function() xyz, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumClass$abc() => abc(),
+      EnumClass$efg() => efg(),
+      EnumClass$xyz() => xyz(),
+      EnumClass$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W Function()? efg, W Function()? xyz, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumClass$abc() => abc != null ? abc() : orElse(value),
+      EnumClass$efg() => efg != null ? efg() : orElse(value),
+      EnumClass$xyz() => xyz != null ? xyz() : orElse(value),
+      EnumClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumClass($value)';
 
  }

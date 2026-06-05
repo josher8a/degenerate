@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnsRecordsNaptrRecordType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() naptr, required W Function(String value) $unknown, }) { return switch (this) {
+      DnsRecordsNaptrRecordType$naptr() => naptr(),
+      DnsRecordsNaptrRecordType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? naptr, W Function(String value)? $unknown, }) { return switch (this) {
+      DnsRecordsNaptrRecordType$naptr() => naptr != null ? naptr() : orElse(value),
+      DnsRecordsNaptrRecordType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnsRecordsNaptrRecordType($value)';
 
  }

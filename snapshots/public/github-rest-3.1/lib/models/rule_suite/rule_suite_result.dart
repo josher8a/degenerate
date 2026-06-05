@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RuleSuiteResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() fail, required W Function() bypass, required W Function(String value) $unknown, }) { return switch (this) {
+      RuleSuiteResult$pass() => pass(),
+      RuleSuiteResult$fail() => fail(),
+      RuleSuiteResult$bypass() => bypass(),
+      RuleSuiteResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? fail, W Function()? bypass, W Function(String value)? $unknown, }) { return switch (this) {
+      RuleSuiteResult$pass() => pass != null ? pass() : orElse(value),
+      RuleSuiteResult$fail() => fail != null ? fail() : orElse(value),
+      RuleSuiteResult$bypass() => bypass != null ? bypass() : orElse(value),
+      RuleSuiteResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RuleSuiteResult($value)';
 
  }

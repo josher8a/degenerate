@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GrantTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() authorizationCode, required W Function() authorizationCodeWithPkce, required W Function() refreshTokens, required W Function() hybrid, required W Function() implicit, required W Function(String value) $unknown, }) { return switch (this) {
+      GrantTypes$authorizationCode() => authorizationCode(),
+      GrantTypes$authorizationCodeWithPkce() => authorizationCodeWithPkce(),
+      GrantTypes$refreshTokens() => refreshTokens(),
+      GrantTypes$hybrid() => hybrid(),
+      GrantTypes$implicit() => implicit(),
+      GrantTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? authorizationCode, W Function()? authorizationCodeWithPkce, W Function()? refreshTokens, W Function()? hybrid, W Function()? implicit, W Function(String value)? $unknown, }) { return switch (this) {
+      GrantTypes$authorizationCode() => authorizationCode != null ? authorizationCode() : orElse(value),
+      GrantTypes$authorizationCodeWithPkce() => authorizationCodeWithPkce != null ? authorizationCodeWithPkce() : orElse(value),
+      GrantTypes$refreshTokens() => refreshTokens != null ? refreshTokens() : orElse(value),
+      GrantTypes$hybrid() => hybrid != null ? hybrid() : orElse(value),
+      GrantTypes$implicit() => implicit != null ? implicit() : orElse(value),
+      GrantTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GrantTypes($value)';
 
  }

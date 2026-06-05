@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() https, required W Function() tcp, required W Function() udpIcmp, required W Function() icmpPing, required W Function() smtp, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingType$http() => http(),
+      LoadBalancingType$https() => https(),
+      LoadBalancingType$tcp() => tcp(),
+      LoadBalancingType$udpIcmp() => udpIcmp(),
+      LoadBalancingType$icmpPing() => icmpPing(),
+      LoadBalancingType$smtp() => smtp(),
+      LoadBalancingType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function()? tcp, W Function()? udpIcmp, W Function()? icmpPing, W Function()? smtp, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingType$http() => http != null ? http() : orElse(value),
+      LoadBalancingType$https() => https != null ? https() : orElse(value),
+      LoadBalancingType$tcp() => tcp != null ? tcp() : orElse(value),
+      LoadBalancingType$udpIcmp() => udpIcmp != null ? udpIcmp() : orElse(value),
+      LoadBalancingType$icmpPing() => icmpPing != null ? icmpPing() : orElse(value),
+      LoadBalancingType$smtp() => smtp != null ? smtp() : orElse(value),
+      LoadBalancingType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingType($value)';
 
  }

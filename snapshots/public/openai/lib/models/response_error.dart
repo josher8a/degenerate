@@ -91,6 +91,50 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseErrorCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() serverError, required W Function() rateLimitExceeded, required W Function() invalidPrompt, required W Function() vectorStoreTimeout, required W Function() invalidImage, required W Function() invalidImageFormat, required W Function() invalidBase64Image, required W Function() invalidImageUrl, required W Function() imageTooLarge, required W Function() imageTooSmall, required W Function() imageParseError, required W Function() imageContentPolicyViolation, required W Function() invalidImageMode, required W Function() imageFileTooLarge, required W Function() unsupportedImageMediaType, required W Function() emptyImageFile, required W Function() failedToDownloadImage, required W Function() imageFileNotFound, required W Function(String value) $unknown, }) { return switch (this) {
+      ResponseErrorCode$serverError() => serverError(),
+      ResponseErrorCode$rateLimitExceeded() => rateLimitExceeded(),
+      ResponseErrorCode$invalidPrompt() => invalidPrompt(),
+      ResponseErrorCode$vectorStoreTimeout() => vectorStoreTimeout(),
+      ResponseErrorCode$invalidImage() => invalidImage(),
+      ResponseErrorCode$invalidImageFormat() => invalidImageFormat(),
+      ResponseErrorCode$invalidBase64Image() => invalidBase64Image(),
+      ResponseErrorCode$invalidImageUrl() => invalidImageUrl(),
+      ResponseErrorCode$imageTooLarge() => imageTooLarge(),
+      ResponseErrorCode$imageTooSmall() => imageTooSmall(),
+      ResponseErrorCode$imageParseError() => imageParseError(),
+      ResponseErrorCode$imageContentPolicyViolation() => imageContentPolicyViolation(),
+      ResponseErrorCode$invalidImageMode() => invalidImageMode(),
+      ResponseErrorCode$imageFileTooLarge() => imageFileTooLarge(),
+      ResponseErrorCode$unsupportedImageMediaType() => unsupportedImageMediaType(),
+      ResponseErrorCode$emptyImageFile() => emptyImageFile(),
+      ResponseErrorCode$failedToDownloadImage() => failedToDownloadImage(),
+      ResponseErrorCode$imageFileNotFound() => imageFileNotFound(),
+      ResponseErrorCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serverError, W Function()? rateLimitExceeded, W Function()? invalidPrompt, W Function()? vectorStoreTimeout, W Function()? invalidImage, W Function()? invalidImageFormat, W Function()? invalidBase64Image, W Function()? invalidImageUrl, W Function()? imageTooLarge, W Function()? imageTooSmall, W Function()? imageParseError, W Function()? imageContentPolicyViolation, W Function()? invalidImageMode, W Function()? imageFileTooLarge, W Function()? unsupportedImageMediaType, W Function()? emptyImageFile, W Function()? failedToDownloadImage, W Function()? imageFileNotFound, W Function(String value)? $unknown, }) { return switch (this) {
+      ResponseErrorCode$serverError() => serverError != null ? serverError() : orElse(value),
+      ResponseErrorCode$rateLimitExceeded() => rateLimitExceeded != null ? rateLimitExceeded() : orElse(value),
+      ResponseErrorCode$invalidPrompt() => invalidPrompt != null ? invalidPrompt() : orElse(value),
+      ResponseErrorCode$vectorStoreTimeout() => vectorStoreTimeout != null ? vectorStoreTimeout() : orElse(value),
+      ResponseErrorCode$invalidImage() => invalidImage != null ? invalidImage() : orElse(value),
+      ResponseErrorCode$invalidImageFormat() => invalidImageFormat != null ? invalidImageFormat() : orElse(value),
+      ResponseErrorCode$invalidBase64Image() => invalidBase64Image != null ? invalidBase64Image() : orElse(value),
+      ResponseErrorCode$invalidImageUrl() => invalidImageUrl != null ? invalidImageUrl() : orElse(value),
+      ResponseErrorCode$imageTooLarge() => imageTooLarge != null ? imageTooLarge() : orElse(value),
+      ResponseErrorCode$imageTooSmall() => imageTooSmall != null ? imageTooSmall() : orElse(value),
+      ResponseErrorCode$imageParseError() => imageParseError != null ? imageParseError() : orElse(value),
+      ResponseErrorCode$imageContentPolicyViolation() => imageContentPolicyViolation != null ? imageContentPolicyViolation() : orElse(value),
+      ResponseErrorCode$invalidImageMode() => invalidImageMode != null ? invalidImageMode() : orElse(value),
+      ResponseErrorCode$imageFileTooLarge() => imageFileTooLarge != null ? imageFileTooLarge() : orElse(value),
+      ResponseErrorCode$unsupportedImageMediaType() => unsupportedImageMediaType != null ? unsupportedImageMediaType() : orElse(value),
+      ResponseErrorCode$emptyImageFile() => emptyImageFile != null ? emptyImageFile() : orElse(value),
+      ResponseErrorCode$failedToDownloadImage() => failedToDownloadImage != null ? failedToDownloadImage() : orElse(value),
+      ResponseErrorCode$imageFileNotFound() => imageFileNotFound != null ? imageFileNotFound() : orElse(value),
+      ResponseErrorCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResponseErrorCode($value)';
 
  }

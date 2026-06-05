@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopBrowsersBotClass$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() likelyAutomated, required W Function() likelyHuman, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopBrowsersBotClass$likelyAutomated() => likelyAutomated(),
+      RadarGetHttpTopBrowsersBotClass$likelyHuman() => likelyHuman(),
+      RadarGetHttpTopBrowsersBotClass$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? likelyAutomated, W Function()? likelyHuman, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopBrowsersBotClass$likelyAutomated() => likelyAutomated != null ? likelyAutomated() : orElse(value),
+      RadarGetHttpTopBrowsersBotClass$likelyHuman() => likelyHuman != null ? likelyHuman() : orElse(value),
+      RadarGetHttpTopBrowsersBotClass$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopBrowsersBotClass($value)';
 
  }

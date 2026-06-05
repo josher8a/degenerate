@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FileSearchRanker$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() default20240821, required W Function(String value) $unknown, }) { return switch (this) {
+      FileSearchRanker$auto() => auto(),
+      FileSearchRanker$default20240821() => default20240821(),
+      FileSearchRanker$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? default20240821, W Function(String value)? $unknown, }) { return switch (this) {
+      FileSearchRanker$auto() => auto != null ? auto() : orElse(value),
+      FileSearchRanker$default20240821() => default20240821 != null ? default20240821() : orElse(value),
+      FileSearchRanker$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FileSearchRanker($value)';
 
  }

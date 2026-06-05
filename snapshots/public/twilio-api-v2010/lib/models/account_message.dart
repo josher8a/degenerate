@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() sending, required W Function() sent, required W Function() failed, required W Function() delivered, required W Function() undelivered, required W Function() receiving, required W Function() received, required W Function() accepted, required W Function() scheduled, required W Function() read, required W Function() partiallyDelivered, required W Function() canceled, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumStatus$queued() => queued(),
+      MessageEnumStatus$sending() => sending(),
+      MessageEnumStatus$sent() => sent(),
+      MessageEnumStatus$failed() => failed(),
+      MessageEnumStatus$delivered() => delivered(),
+      MessageEnumStatus$undelivered() => undelivered(),
+      MessageEnumStatus$receiving() => receiving(),
+      MessageEnumStatus$received() => received(),
+      MessageEnumStatus$accepted() => accepted(),
+      MessageEnumStatus$scheduled() => scheduled(),
+      MessageEnumStatus$read() => read(),
+      MessageEnumStatus$partiallyDelivered() => partiallyDelivered(),
+      MessageEnumStatus$canceled() => canceled(),
+      MessageEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? sending, W Function()? sent, W Function()? failed, W Function()? delivered, W Function()? undelivered, W Function()? receiving, W Function()? received, W Function()? accepted, W Function()? scheduled, W Function()? read, W Function()? partiallyDelivered, W Function()? canceled, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumStatus$queued() => queued != null ? queued() : orElse(value),
+      MessageEnumStatus$sending() => sending != null ? sending() : orElse(value),
+      MessageEnumStatus$sent() => sent != null ? sent() : orElse(value),
+      MessageEnumStatus$failed() => failed != null ? failed() : orElse(value),
+      MessageEnumStatus$delivered() => delivered != null ? delivered() : orElse(value),
+      MessageEnumStatus$undelivered() => undelivered != null ? undelivered() : orElse(value),
+      MessageEnumStatus$receiving() => receiving != null ? receiving() : orElse(value),
+      MessageEnumStatus$received() => received != null ? received() : orElse(value),
+      MessageEnumStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      MessageEnumStatus$scheduled() => scheduled != null ? scheduled() : orElse(value),
+      MessageEnumStatus$read() => read != null ? read() : orElse(value),
+      MessageEnumStatus$partiallyDelivered() => partiallyDelivered != null ? partiallyDelivered() : orElse(value),
+      MessageEnumStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      MessageEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumStatus($value)';
 
  }
@@ -233,6 +267,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inbound, required W Function() outboundApi, required W Function() outboundCall, required W Function() outboundReply, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumDirection$inbound() => inbound(),
+      MessageEnumDirection$outboundApi() => outboundApi(),
+      MessageEnumDirection$outboundCall() => outboundCall(),
+      MessageEnumDirection$outboundReply() => outboundReply(),
+      MessageEnumDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inbound, W Function()? outboundApi, W Function()? outboundCall, W Function()? outboundReply, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumDirection$inbound() => inbound != null ? inbound() : orElse(value),
+      MessageEnumDirection$outboundApi() => outboundApi != null ? outboundApi() : orElse(value),
+      MessageEnumDirection$outboundCall() => outboundCall != null ? outboundCall() : orElse(value),
+      MessageEnumDirection$outboundReply() => outboundReply != null ? outboundReply() : orElse(value),
+      MessageEnumDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumDirection($value)';
 
  }

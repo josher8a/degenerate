@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetCommandsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pendingExec, required W Function() pendingUpload, required W Function() success, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      GetCommandsStatus$pendingExec() => pendingExec(),
+      GetCommandsStatus$pendingUpload() => pendingUpload(),
+      GetCommandsStatus$success() => success(),
+      GetCommandsStatus$failed() => failed(),
+      GetCommandsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingExec, W Function()? pendingUpload, W Function()? success, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      GetCommandsStatus$pendingExec() => pendingExec != null ? pendingExec() : orElse(value),
+      GetCommandsStatus$pendingUpload() => pendingUpload != null ? pendingUpload() : orElse(value),
+      GetCommandsStatus$success() => success != null ? success() : orElse(value),
+      GetCommandsStatus$failed() => failed != null ? failed() : orElse(value),
+      GetCommandsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetCommandsStatus($value)';
 
  }

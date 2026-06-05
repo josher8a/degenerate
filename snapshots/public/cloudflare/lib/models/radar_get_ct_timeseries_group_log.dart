@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtTimeseriesGroupLog$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rfc6962, required W Function() $static, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesGroupLog$rfc6962() => rfc6962(),
+      RadarGetCtTimeseriesGroupLog$$static() => $static(),
+      RadarGetCtTimeseriesGroupLog$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rfc6962, W Function()? $static, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtTimeseriesGroupLog$rfc6962() => rfc6962 != null ? rfc6962() : orElse(value),
+      RadarGetCtTimeseriesGroupLog$$static() => $static != null ? $static() : orElse(value),
+      RadarGetCtTimeseriesGroupLog$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtTimeseriesGroupLog($value)';
 
  }

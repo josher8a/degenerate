@@ -53,6 +53,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkflowRunConclusion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() success, required W Function() failure, required W Function() neutral, required W Function() cancelled, required W Function() timedOut, required W Function() actionRequired, required W Function() stale, required W Function() $null, required W Function() startupFailure, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkflowRunConclusion$success() => success(),
+      WorkflowRunConclusion$failure() => failure(),
+      WorkflowRunConclusion$neutral() => neutral(),
+      WorkflowRunConclusion$cancelled() => cancelled(),
+      WorkflowRunConclusion$timedOut() => timedOut(),
+      WorkflowRunConclusion$actionRequired() => actionRequired(),
+      WorkflowRunConclusion$stale() => stale(),
+      WorkflowRunConclusion$$null() => $null(),
+      WorkflowRunConclusion$startupFailure() => startupFailure(),
+      WorkflowRunConclusion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? success, W Function()? failure, W Function()? neutral, W Function()? cancelled, W Function()? timedOut, W Function()? actionRequired, W Function()? stale, W Function()? $null, W Function()? startupFailure, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkflowRunConclusion$success() => success != null ? success() : orElse(value),
+      WorkflowRunConclusion$failure() => failure != null ? failure() : orElse(value),
+      WorkflowRunConclusion$neutral() => neutral != null ? neutral() : orElse(value),
+      WorkflowRunConclusion$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      WorkflowRunConclusion$timedOut() => timedOut != null ? timedOut() : orElse(value),
+      WorkflowRunConclusion$actionRequired() => actionRequired != null ? actionRequired() : orElse(value),
+      WorkflowRunConclusion$stale() => stale != null ? stale() : orElse(value),
+      WorkflowRunConclusion$$null() => $null != null ? $null() : orElse(value),
+      WorkflowRunConclusion$startupFailure() => startupFailure != null ? startupFailure() : orElse(value),
+      WorkflowRunConclusion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkflowRunConclusion($value)';
 
  }

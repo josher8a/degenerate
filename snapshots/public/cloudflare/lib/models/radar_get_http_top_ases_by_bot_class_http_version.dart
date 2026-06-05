@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTopAsesByBotClassHttpVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() httPv1, required W Function() httPv2, required W Function() httPv3, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTopAsesByBotClassHttpVersion$httPv1() => httPv1(),
+      RadarGetHttpTopAsesByBotClassHttpVersion$httPv2() => httPv2(),
+      RadarGetHttpTopAsesByBotClassHttpVersion$httPv3() => httPv3(),
+      RadarGetHttpTopAsesByBotClassHttpVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? httPv1, W Function()? httPv2, W Function()? httPv3, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTopAsesByBotClassHttpVersion$httPv1() => httPv1 != null ? httPv1() : orElse(value),
+      RadarGetHttpTopAsesByBotClassHttpVersion$httPv2() => httPv2 != null ? httPv2() : orElse(value),
+      RadarGetHttpTopAsesByBotClassHttpVersion$httPv3() => httPv3 != null ? httPv3() : orElse(value),
+      RadarGetHttpTopAsesByBotClassHttpVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTopAsesByBotClassHttpVersion($value)';
 
  }

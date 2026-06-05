@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCrawlersSummaryDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clientType, required W Function() userAgent, required W Function() referer, required W Function() crawlReferRatio, required W Function() vertical, required W Function() industry, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCrawlersSummaryDimension$clientType() => clientType(),
+      RadarGetCrawlersSummaryDimension$userAgent() => userAgent(),
+      RadarGetCrawlersSummaryDimension$referer() => referer(),
+      RadarGetCrawlersSummaryDimension$crawlReferRatio() => crawlReferRatio(),
+      RadarGetCrawlersSummaryDimension$vertical() => vertical(),
+      RadarGetCrawlersSummaryDimension$industry() => industry(),
+      RadarGetCrawlersSummaryDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clientType, W Function()? userAgent, W Function()? referer, W Function()? crawlReferRatio, W Function()? vertical, W Function()? industry, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCrawlersSummaryDimension$clientType() => clientType != null ? clientType() : orElse(value),
+      RadarGetCrawlersSummaryDimension$userAgent() => userAgent != null ? userAgent() : orElse(value),
+      RadarGetCrawlersSummaryDimension$referer() => referer != null ? referer() : orElse(value),
+      RadarGetCrawlersSummaryDimension$crawlReferRatio() => crawlReferRatio != null ? crawlReferRatio() : orElse(value),
+      RadarGetCrawlersSummaryDimension$vertical() => vertical != null ? vertical() : orElse(value),
+      RadarGetCrawlersSummaryDimension$industry() => industry != null ? industry() : orElse(value),
+      RadarGetCrawlersSummaryDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCrawlersSummaryDimension($value)';
 
  }

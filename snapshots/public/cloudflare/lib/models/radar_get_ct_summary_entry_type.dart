@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtSummaryEntryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() precertificate, required W Function() certificate, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtSummaryEntryType$precertificate() => precertificate(),
+      RadarGetCtSummaryEntryType$certificate() => certificate(),
+      RadarGetCtSummaryEntryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? precertificate, W Function()? certificate, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtSummaryEntryType$precertificate() => precertificate != null ? precertificate() : orElse(value),
+      RadarGetCtSummaryEntryType$certificate() => certificate != null ? certificate() : orElse(value),
+      RadarGetCtSummaryEntryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtSummaryEntryType($value)';
 
  }

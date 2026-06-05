@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SearchContextSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function(String value) $unknown, }) { return switch (this) {
+      SearchContextSize$low() => low(),
+      SearchContextSize$medium() => medium(),
+      SearchContextSize$high() => high(),
+      SearchContextSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function(String value)? $unknown, }) { return switch (this) {
+      SearchContextSize$low() => low != null ? low() : orElse(value),
+      SearchContextSize$medium() => medium != null ? medium() : orElse(value),
+      SearchContextSize$high() => high != null ? high() : orElse(value),
+      SearchContextSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SearchContextSize($value)';
 
  }
@@ -93,6 +107,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SearchContentType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() image, required W Function(String value) $unknown, }) { return switch (this) {
+      SearchContentType$text() => text(),
+      SearchContentType$image() => image(),
+      SearchContentType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? image, W Function(String value)? $unknown, }) { return switch (this) {
+      SearchContentType$text() => text != null ? text() : orElse(value),
+      SearchContentType$image() => image != null ? image() : orElse(value),
+      SearchContentType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SearchContentType($value)';
 
  }

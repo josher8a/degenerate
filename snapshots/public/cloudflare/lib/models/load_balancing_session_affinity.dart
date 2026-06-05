@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LoadBalancingSessionAffinity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() cookie, required W Function() ipCookie, required W Function() header, required W Function(String value) $unknown, }) { return switch (this) {
+      LoadBalancingSessionAffinity$none() => none(),
+      LoadBalancingSessionAffinity$cookie() => cookie(),
+      LoadBalancingSessionAffinity$ipCookie() => ipCookie(),
+      LoadBalancingSessionAffinity$header() => header(),
+      LoadBalancingSessionAffinity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? cookie, W Function()? ipCookie, W Function()? header, W Function(String value)? $unknown, }) { return switch (this) {
+      LoadBalancingSessionAffinity$none() => none != null ? none() : orElse(value),
+      LoadBalancingSessionAffinity$cookie() => cookie != null ? cookie() : orElse(value),
+      LoadBalancingSessionAffinity$ipCookie() => ipCookie != null ? ipCookie() : orElse(value),
+      LoadBalancingSessionAffinity$header() => header != null ? header() : orElse(value),
+      LoadBalancingSessionAffinity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LoadBalancingSessionAffinity($value)';
 
  }

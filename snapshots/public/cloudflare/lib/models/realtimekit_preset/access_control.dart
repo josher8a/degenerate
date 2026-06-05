@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessControl$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fullAccess, required W Function() viewOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessControl$fullAccess() => fullAccess(),
+      AccessControl$viewOnly() => viewOnly(),
+      AccessControl$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fullAccess, W Function()? viewOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessControl$fullAccess() => fullAccess != null ? fullAccess() : orElse(value),
+      AccessControl$viewOnly() => viewOnly != null ? viewOnly() : orElse(value),
+      AccessControl$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessControl($value)';
 
  }

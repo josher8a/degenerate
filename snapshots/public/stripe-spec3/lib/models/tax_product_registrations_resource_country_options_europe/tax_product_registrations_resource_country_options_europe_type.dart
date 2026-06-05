@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductRegistrationsResourceCountryOptionsEuropeType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ioss, required W Function() ossNonUnion, required W Function() ossUnion, required W Function() standard, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$ioss() => ioss(),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$ossNonUnion() => ossNonUnion(),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$ossUnion() => ossUnion(),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$standard() => standard(),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ioss, W Function()? ossNonUnion, W Function()? ossUnion, W Function()? standard, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$ioss() => ioss != null ? ioss() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$ossNonUnion() => ossNonUnion != null ? ossNonUnion() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$ossUnion() => ossUnion != null ? ossUnion() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$standard() => standard != null ? standard() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsEuropeType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductRegistrationsResourceCountryOptionsEuropeType($value)';
 
  }

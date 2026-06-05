@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RoutingRequestedPriority$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() domestic, required W Function() international, required W Function(String value) $unknown, }) { return switch (this) {
+      RoutingRequestedPriority$domestic() => domestic(),
+      RoutingRequestedPriority$international() => international(),
+      RoutingRequestedPriority$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domestic, W Function()? international, W Function(String value)? $unknown, }) { return switch (this) {
+      RoutingRequestedPriority$domestic() => domestic != null ? domestic() : orElse(value),
+      RoutingRequestedPriority$international() => international != null ? international() : orElse(value),
+      RoutingRequestedPriority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RoutingRequestedPriority($value)';
 
  }

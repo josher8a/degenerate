@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImagesImageVariantFit$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() scaleDown, required W Function() contain, required W Function() cover, required W Function() crop, required W Function() pad, required W Function(String value) $unknown, }) { return switch (this) {
+      ImagesImageVariantFit$scaleDown() => scaleDown(),
+      ImagesImageVariantFit$contain() => contain(),
+      ImagesImageVariantFit$cover() => cover(),
+      ImagesImageVariantFit$crop() => crop(),
+      ImagesImageVariantFit$pad() => pad(),
+      ImagesImageVariantFit$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? scaleDown, W Function()? contain, W Function()? cover, W Function()? crop, W Function()? pad, W Function(String value)? $unknown, }) { return switch (this) {
+      ImagesImageVariantFit$scaleDown() => scaleDown != null ? scaleDown() : orElse(value),
+      ImagesImageVariantFit$contain() => contain != null ? contain() : orElse(value),
+      ImagesImageVariantFit$cover() => cover != null ? cover() : orElse(value),
+      ImagesImageVariantFit$crop() => crop != null ? crop() : orElse(value),
+      ImagesImageVariantFit$pad() => pad != null ? pad() : orElse(value),
+      ImagesImageVariantFit$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImagesImageVariantFit($value)';
 
  }
@@ -132,6 +150,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ImagesImageVariantSchemasMetadata$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() keep, required W Function() copyright, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      ImagesImageVariantSchemasMetadata$keep() => keep(),
+      ImagesImageVariantSchemasMetadata$copyright() => copyright(),
+      ImagesImageVariantSchemasMetadata$none() => none(),
+      ImagesImageVariantSchemasMetadata$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? keep, W Function()? copyright, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      ImagesImageVariantSchemasMetadata$keep() => keep != null ? keep() : orElse(value),
+      ImagesImageVariantSchemasMetadata$copyright() => copyright != null ? copyright() : orElse(value),
+      ImagesImageVariantSchemasMetadata$none() => none != null ? none() : orElse(value),
+      ImagesImageVariantSchemasMetadata$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ImagesImageVariantSchemasMetadata($value)';
 
  }

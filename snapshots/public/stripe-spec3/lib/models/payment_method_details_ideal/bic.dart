@@ -102,6 +102,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Bic$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abnanl2A, required W Function() adybnl2A, required W Function() asnbnl21, required W Function() bitsnl2A, required W Function() bunqnl2A, required W Function() buutnl2A, required W Function() fnomnl22, required W Function() fvlbnl22, required W Function() handnl2A, required W Function() ingbnl2A, required W Function() knabnl2H, required W Function() mllenl2A, required W Function() moyonl21, required W Function() nnbanl2G, required W Function() ntsbdeb1, required W Function() rabonl2U, required W Function() rbrbnl21, required W Function() revoie23, required W Function() revolt21, required W Function() snsbnl2A, required W Function() trionl2U, required W Function(String value) $unknown, }) { return switch (this) {
+      Bic$abnanl2A() => abnanl2A(),
+      Bic$adybnl2A() => adybnl2A(),
+      Bic$asnbnl21() => asnbnl21(),
+      Bic$bitsnl2A() => bitsnl2A(),
+      Bic$bunqnl2A() => bunqnl2A(),
+      Bic$buutnl2A() => buutnl2A(),
+      Bic$fnomnl22() => fnomnl22(),
+      Bic$fvlbnl22() => fvlbnl22(),
+      Bic$handnl2A() => handnl2A(),
+      Bic$ingbnl2A() => ingbnl2A(),
+      Bic$knabnl2H() => knabnl2H(),
+      Bic$mllenl2A() => mllenl2A(),
+      Bic$moyonl21() => moyonl21(),
+      Bic$nnbanl2G() => nnbanl2G(),
+      Bic$ntsbdeb1() => ntsbdeb1(),
+      Bic$rabonl2U() => rabonl2U(),
+      Bic$rbrbnl21() => rbrbnl21(),
+      Bic$revoie23() => revoie23(),
+      Bic$revolt21() => revolt21(),
+      Bic$snsbnl2A() => snsbnl2A(),
+      Bic$trionl2U() => trionl2U(),
+      Bic$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abnanl2A, W Function()? adybnl2A, W Function()? asnbnl21, W Function()? bitsnl2A, W Function()? bunqnl2A, W Function()? buutnl2A, W Function()? fnomnl22, W Function()? fvlbnl22, W Function()? handnl2A, W Function()? ingbnl2A, W Function()? knabnl2H, W Function()? mllenl2A, W Function()? moyonl21, W Function()? nnbanl2G, W Function()? ntsbdeb1, W Function()? rabonl2U, W Function()? rbrbnl21, W Function()? revoie23, W Function()? revolt21, W Function()? snsbnl2A, W Function()? trionl2U, W Function(String value)? $unknown, }) { return switch (this) {
+      Bic$abnanl2A() => abnanl2A != null ? abnanl2A() : orElse(value),
+      Bic$adybnl2A() => adybnl2A != null ? adybnl2A() : orElse(value),
+      Bic$asnbnl21() => asnbnl21 != null ? asnbnl21() : orElse(value),
+      Bic$bitsnl2A() => bitsnl2A != null ? bitsnl2A() : orElse(value),
+      Bic$bunqnl2A() => bunqnl2A != null ? bunqnl2A() : orElse(value),
+      Bic$buutnl2A() => buutnl2A != null ? buutnl2A() : orElse(value),
+      Bic$fnomnl22() => fnomnl22 != null ? fnomnl22() : orElse(value),
+      Bic$fvlbnl22() => fvlbnl22 != null ? fvlbnl22() : orElse(value),
+      Bic$handnl2A() => handnl2A != null ? handnl2A() : orElse(value),
+      Bic$ingbnl2A() => ingbnl2A != null ? ingbnl2A() : orElse(value),
+      Bic$knabnl2H() => knabnl2H != null ? knabnl2H() : orElse(value),
+      Bic$mllenl2A() => mllenl2A != null ? mllenl2A() : orElse(value),
+      Bic$moyonl21() => moyonl21 != null ? moyonl21() : orElse(value),
+      Bic$nnbanl2G() => nnbanl2G != null ? nnbanl2G() : orElse(value),
+      Bic$ntsbdeb1() => ntsbdeb1 != null ? ntsbdeb1() : orElse(value),
+      Bic$rabonl2U() => rabonl2U != null ? rabonl2U() : orElse(value),
+      Bic$rbrbnl21() => rbrbnl21 != null ? rbrbnl21() : orElse(value),
+      Bic$revoie23() => revoie23 != null ? revoie23() : orElse(value),
+      Bic$revolt21() => revolt21 != null ? revolt21() : orElse(value),
+      Bic$snsbnl2A() => snsbnl2A != null ? snsbnl2A() : orElse(value),
+      Bic$trionl2U() => trionl2U != null ? trionl2U() : orElse(value),
+      Bic$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Bic($value)';
 
  }

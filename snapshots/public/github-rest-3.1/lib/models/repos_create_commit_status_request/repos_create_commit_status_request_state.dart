@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposCreateCommitStatusRequestState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() success, required W Function() failure, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposCreateCommitStatusRequestState$pending() => pending(),
+      ReposCreateCommitStatusRequestState$success() => success(),
+      ReposCreateCommitStatusRequestState$failure() => failure(),
+      ReposCreateCommitStatusRequestState$error() => error(),
+      ReposCreateCommitStatusRequestState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? success, W Function()? failure, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposCreateCommitStatusRequestState$pending() => pending != null ? pending() : orElse(value),
+      ReposCreateCommitStatusRequestState$success() => success != null ? success() : orElse(value),
+      ReposCreateCommitStatusRequestState$failure() => failure != null ? failure() : orElse(value),
+      ReposCreateCommitStatusRequestState$error() => error != null ? error() : orElse(value),
+      ReposCreateCommitStatusRequestState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposCreateCommitStatusRequestState($value)';
 
  }

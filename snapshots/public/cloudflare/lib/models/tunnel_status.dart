@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TunnelStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inactive, required W Function() degraded, required W Function() healthy, required W Function() down, required W Function(String value) $unknown, }) { return switch (this) {
+      TunnelStatus$inactive() => inactive(),
+      TunnelStatus$degraded() => degraded(),
+      TunnelStatus$healthy() => healthy(),
+      TunnelStatus$down() => down(),
+      TunnelStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inactive, W Function()? degraded, W Function()? healthy, W Function()? down, W Function(String value)? $unknown, }) { return switch (this) {
+      TunnelStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      TunnelStatus$degraded() => degraded != null ? degraded() : orElse(value),
+      TunnelStatus$healthy() => healthy != null ? healthy() : orElse(value),
+      TunnelStatus$down() => down != null ? down() : orElse(value),
+      TunnelStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TunnelStatus($value)';
 
  }

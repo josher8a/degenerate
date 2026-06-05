@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetPricesRecurringInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() day, required W Function() month, required W Function() week, required W Function() year, required W Function(String value) $unknown, }) { return switch (this) {
+      GetPricesRecurringInterval$day() => day(),
+      GetPricesRecurringInterval$month() => month(),
+      GetPricesRecurringInterval$week() => week(),
+      GetPricesRecurringInterval$year() => year(),
+      GetPricesRecurringInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? month, W Function()? week, W Function()? year, W Function(String value)? $unknown, }) { return switch (this) {
+      GetPricesRecurringInterval$day() => day != null ? day() : orElse(value),
+      GetPricesRecurringInterval$month() => month != null ? month() : orElse(value),
+      GetPricesRecurringInterval$week() => week != null ? week() : orElse(value),
+      GetPricesRecurringInterval$year() => year != null ? year() : orElse(value),
+      GetPricesRecurringInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetPricesRecurringInterval($value)';
 
  }

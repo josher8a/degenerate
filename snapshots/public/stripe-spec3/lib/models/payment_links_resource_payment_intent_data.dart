@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() automatic, required W Function() automaticAsync, required W Function() manual, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$automatic() => automatic(),
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$automaticAsync() => automaticAsync(),
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$manual() => manual(),
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? automatic, W Function()? automaticAsync, W Function()? manual, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$automatic() => automatic != null ? automatic() : orElse(value),
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$automaticAsync() => automaticAsync != null ? automaticAsync() : orElse(value),
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$manual() => manual != null ? manual() : orElse(value),
+      PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)';
 
  }

@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AppleStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+      AppleStatus$included() => included(),
+      AppleStatus$notYetIncluded() => notYetIncluded(),
+      AppleStatus$notIncluded() => notIncluded(),
+      AppleStatus$notBefore() => notBefore(),
+      AppleStatus$removed() => removed(),
+      AppleStatus$disabled() => disabled(),
+      AppleStatus$blocked() => blocked(),
+      AppleStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+      AppleStatus$included() => included != null ? included() : orElse(value),
+      AppleStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
+      AppleStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
+      AppleStatus$notBefore() => notBefore != null ? notBefore() : orElse(value),
+      AppleStatus$removed() => removed != null ? removed() : orElse(value),
+      AppleStatus$disabled() => disabled != null ? disabled() : orElse(value),
+      AppleStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      AppleStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AppleStatus($value)';
 
  }
@@ -167,6 +189,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChromeStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+      ChromeStatus$included() => included(),
+      ChromeStatus$notYetIncluded() => notYetIncluded(),
+      ChromeStatus$notIncluded() => notIncluded(),
+      ChromeStatus$notBefore() => notBefore(),
+      ChromeStatus$removed() => removed(),
+      ChromeStatus$disabled() => disabled(),
+      ChromeStatus$blocked() => blocked(),
+      ChromeStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+      ChromeStatus$included() => included != null ? included() : orElse(value),
+      ChromeStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
+      ChromeStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
+      ChromeStatus$notBefore() => notBefore != null ? notBefore() : orElse(value),
+      ChromeStatus$removed() => removed != null ? removed() : orElse(value),
+      ChromeStatus$disabled() => disabled != null ? disabled() : orElse(value),
+      ChromeStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      ChromeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ChromeStatus($value)';
 
  }
@@ -288,6 +332,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MicrosoftStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+      MicrosoftStatus$included() => included(),
+      MicrosoftStatus$notYetIncluded() => notYetIncluded(),
+      MicrosoftStatus$notIncluded() => notIncluded(),
+      MicrosoftStatus$notBefore() => notBefore(),
+      MicrosoftStatus$removed() => removed(),
+      MicrosoftStatus$disabled() => disabled(),
+      MicrosoftStatus$blocked() => blocked(),
+      MicrosoftStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+      MicrosoftStatus$included() => included != null ? included() : orElse(value),
+      MicrosoftStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
+      MicrosoftStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
+      MicrosoftStatus$notBefore() => notBefore != null ? notBefore() : orElse(value),
+      MicrosoftStatus$removed() => removed != null ? removed() : orElse(value),
+      MicrosoftStatus$disabled() => disabled != null ? disabled() : orElse(value),
+      MicrosoftStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      MicrosoftStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MicrosoftStatus($value)';
 
  }
@@ -409,6 +475,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MozillaStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() included, required W Function() notYetIncluded, required W Function() notIncluded, required W Function() notBefore, required W Function() removed, required W Function() disabled, required W Function() blocked, required W Function(String value) $unknown, }) { return switch (this) {
+      MozillaStatus$included() => included(),
+      MozillaStatus$notYetIncluded() => notYetIncluded(),
+      MozillaStatus$notIncluded() => notIncluded(),
+      MozillaStatus$notBefore() => notBefore(),
+      MozillaStatus$removed() => removed(),
+      MozillaStatus$disabled() => disabled(),
+      MozillaStatus$blocked() => blocked(),
+      MozillaStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? included, W Function()? notYetIncluded, W Function()? notIncluded, W Function()? notBefore, W Function()? removed, W Function()? disabled, W Function()? blocked, W Function(String value)? $unknown, }) { return switch (this) {
+      MozillaStatus$included() => included != null ? included() : orElse(value),
+      MozillaStatus$notYetIncluded() => notYetIncluded != null ? notYetIncluded() : orElse(value),
+      MozillaStatus$notIncluded() => notIncluded != null ? notIncluded() : orElse(value),
+      MozillaStatus$notBefore() => notBefore != null ? notBefore() : orElse(value),
+      MozillaStatus$removed() => removed != null ? removed() : orElse(value),
+      MozillaStatus$disabled() => disabled != null ? disabled() : orElse(value),
+      MozillaStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      MozillaStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MozillaStatus($value)';
 
  }

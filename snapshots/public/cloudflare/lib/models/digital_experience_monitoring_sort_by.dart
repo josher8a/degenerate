@@ -46,6 +46,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DigitalExperienceMonitoringSortBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() colo, required W Function() deviceId, required W Function() mode, required W Function() platform, required W Function() status, required W Function() timestamp, required W Function() version, required W Function(String value) $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringSortBy$colo() => colo(),
+      DigitalExperienceMonitoringSortBy$deviceId() => deviceId(),
+      DigitalExperienceMonitoringSortBy$mode() => mode(),
+      DigitalExperienceMonitoringSortBy$platform() => platform(),
+      DigitalExperienceMonitoringSortBy$status() => status(),
+      DigitalExperienceMonitoringSortBy$timestamp() => timestamp(),
+      DigitalExperienceMonitoringSortBy$version() => version(),
+      DigitalExperienceMonitoringSortBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? colo, W Function()? deviceId, W Function()? mode, W Function()? platform, W Function()? status, W Function()? timestamp, W Function()? version, W Function(String value)? $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringSortBy$colo() => colo != null ? colo() : orElse(value),
+      DigitalExperienceMonitoringSortBy$deviceId() => deviceId != null ? deviceId() : orElse(value),
+      DigitalExperienceMonitoringSortBy$mode() => mode != null ? mode() : orElse(value),
+      DigitalExperienceMonitoringSortBy$platform() => platform != null ? platform() : orElse(value),
+      DigitalExperienceMonitoringSortBy$status() => status != null ? status() : orElse(value),
+      DigitalExperienceMonitoringSortBy$timestamp() => timestamp != null ? timestamp() : orElse(value),
+      DigitalExperienceMonitoringSortBy$version() => version != null ? version() : orElse(value),
+      DigitalExperienceMonitoringSortBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DigitalExperienceMonitoringSortBy($value)';
 
  }

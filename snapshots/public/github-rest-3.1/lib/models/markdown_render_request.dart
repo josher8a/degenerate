@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MarkdownRenderRequestMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() markdown, required W Function() gfm, required W Function(String value) $unknown, }) { return switch (this) {
+      MarkdownRenderRequestMode$markdown() => markdown(),
+      MarkdownRenderRequestMode$gfm() => gfm(),
+      MarkdownRenderRequestMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? markdown, W Function()? gfm, W Function(String value)? $unknown, }) { return switch (this) {
+      MarkdownRenderRequestMode$markdown() => markdown != null ? markdown() : orElse(value),
+      MarkdownRenderRequestMode$gfm() => gfm != null ? gfm() : orElse(value),
+      MarkdownRenderRequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MarkdownRenderRequestMode($value)';
 
  }

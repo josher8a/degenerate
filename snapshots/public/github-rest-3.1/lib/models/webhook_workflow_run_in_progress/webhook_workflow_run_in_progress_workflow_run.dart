@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() requested, required W Function() inProgress, required W Function() completed, required W Function() queued, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookWorkflowRunInProgressWorkflowRunStatus$requested() => requested(),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$inProgress() => inProgress(),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$completed() => completed(),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$queued() => queued(),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$pending() => pending(),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? requested, W Function()? inProgress, W Function()? completed, W Function()? queued, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookWorkflowRunInProgressWorkflowRunStatus$requested() => requested != null ? requested() : orElse(value),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$completed() => completed != null ? completed() : orElse(value),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$queued() => queued != null ? queued() : orElse(value),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$pending() => pending != null ? pending() : orElse(value),
+      WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookWorkflowRunInProgressWorkflowRunStatus($value)';
 
  }

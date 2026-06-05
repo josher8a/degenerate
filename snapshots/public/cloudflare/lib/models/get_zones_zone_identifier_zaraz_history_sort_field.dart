@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetZonesZoneIdentifierZarazHistorySortField$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() id, required W Function() userId, required W Function() description, required W Function() createdAt, required W Function() updatedAt, required W Function(String value) $unknown, }) { return switch (this) {
+      GetZonesZoneIdentifierZarazHistorySortField$id() => id(),
+      GetZonesZoneIdentifierZarazHistorySortField$userId() => userId(),
+      GetZonesZoneIdentifierZarazHistorySortField$description() => description(),
+      GetZonesZoneIdentifierZarazHistorySortField$createdAt() => createdAt(),
+      GetZonesZoneIdentifierZarazHistorySortField$updatedAt() => updatedAt(),
+      GetZonesZoneIdentifierZarazHistorySortField$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? userId, W Function()? description, W Function()? createdAt, W Function()? updatedAt, W Function(String value)? $unknown, }) { return switch (this) {
+      GetZonesZoneIdentifierZarazHistorySortField$id() => id != null ? id() : orElse(value),
+      GetZonesZoneIdentifierZarazHistorySortField$userId() => userId != null ? userId() : orElse(value),
+      GetZonesZoneIdentifierZarazHistorySortField$description() => description != null ? description() : orElse(value),
+      GetZonesZoneIdentifierZarazHistorySortField$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      GetZonesZoneIdentifierZarazHistorySortField$updatedAt() => updatedAt != null ? updatedAt() : orElse(value),
+      GetZonesZoneIdentifierZarazHistorySortField$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetZonesZoneIdentifierZarazHistorySortField($value)';
 
  }

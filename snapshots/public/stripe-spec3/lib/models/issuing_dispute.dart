@@ -98,6 +98,54 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LossReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cardholderAuthenticationIssuerLiability, required W Function() eci5TokenTransactionWithTavv, required W Function() excessDisputesInTimeframe, required W Function() hasNotMetTheMinimumDisputeAmountRequirements, required W Function() invalidDuplicateDispute, required W Function() invalidIncorrectAmountDispute, required W Function() invalidNoAuthorization, required W Function() invalidUseOfDisputes, required W Function() merchandiseDeliveredOrShipped, required W Function() merchandiseOrServiceAsDescribed, required W Function() notCancelled, required W Function() $other, required W Function() refundIssued, required W Function() submittedBeyondAllowableTimeLimit, required W Function() transaction3dsRequired, required W Function() transactionApprovedAfterPriorFraudDispute, required W Function() transactionAuthorized, required W Function() transactionElectronicallyRead, required W Function() transactionQualifiesForVisaEasyPaymentService, required W Function() transactionUnattended, required W Function(String value) $unknown, }) { return switch (this) {
+      LossReason$cardholderAuthenticationIssuerLiability() => cardholderAuthenticationIssuerLiability(),
+      LossReason$eci5TokenTransactionWithTavv() => eci5TokenTransactionWithTavv(),
+      LossReason$excessDisputesInTimeframe() => excessDisputesInTimeframe(),
+      LossReason$hasNotMetTheMinimumDisputeAmountRequirements() => hasNotMetTheMinimumDisputeAmountRequirements(),
+      LossReason$invalidDuplicateDispute() => invalidDuplicateDispute(),
+      LossReason$invalidIncorrectAmountDispute() => invalidIncorrectAmountDispute(),
+      LossReason$invalidNoAuthorization() => invalidNoAuthorization(),
+      LossReason$invalidUseOfDisputes() => invalidUseOfDisputes(),
+      LossReason$merchandiseDeliveredOrShipped() => merchandiseDeliveredOrShipped(),
+      LossReason$merchandiseOrServiceAsDescribed() => merchandiseOrServiceAsDescribed(),
+      LossReason$notCancelled() => notCancelled(),
+      LossReason$$other() => $other(),
+      LossReason$refundIssued() => refundIssued(),
+      LossReason$submittedBeyondAllowableTimeLimit() => submittedBeyondAllowableTimeLimit(),
+      LossReason$transaction3dsRequired() => transaction3dsRequired(),
+      LossReason$transactionApprovedAfterPriorFraudDispute() => transactionApprovedAfterPriorFraudDispute(),
+      LossReason$transactionAuthorized() => transactionAuthorized(),
+      LossReason$transactionElectronicallyRead() => transactionElectronicallyRead(),
+      LossReason$transactionQualifiesForVisaEasyPaymentService() => transactionQualifiesForVisaEasyPaymentService(),
+      LossReason$transactionUnattended() => transactionUnattended(),
+      LossReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardholderAuthenticationIssuerLiability, W Function()? eci5TokenTransactionWithTavv, W Function()? excessDisputesInTimeframe, W Function()? hasNotMetTheMinimumDisputeAmountRequirements, W Function()? invalidDuplicateDispute, W Function()? invalidIncorrectAmountDispute, W Function()? invalidNoAuthorization, W Function()? invalidUseOfDisputes, W Function()? merchandiseDeliveredOrShipped, W Function()? merchandiseOrServiceAsDescribed, W Function()? notCancelled, W Function()? $other, W Function()? refundIssued, W Function()? submittedBeyondAllowableTimeLimit, W Function()? transaction3dsRequired, W Function()? transactionApprovedAfterPriorFraudDispute, W Function()? transactionAuthorized, W Function()? transactionElectronicallyRead, W Function()? transactionQualifiesForVisaEasyPaymentService, W Function()? transactionUnattended, W Function(String value)? $unknown, }) { return switch (this) {
+      LossReason$cardholderAuthenticationIssuerLiability() => cardholderAuthenticationIssuerLiability != null ? cardholderAuthenticationIssuerLiability() : orElse(value),
+      LossReason$eci5TokenTransactionWithTavv() => eci5TokenTransactionWithTavv != null ? eci5TokenTransactionWithTavv() : orElse(value),
+      LossReason$excessDisputesInTimeframe() => excessDisputesInTimeframe != null ? excessDisputesInTimeframe() : orElse(value),
+      LossReason$hasNotMetTheMinimumDisputeAmountRequirements() => hasNotMetTheMinimumDisputeAmountRequirements != null ? hasNotMetTheMinimumDisputeAmountRequirements() : orElse(value),
+      LossReason$invalidDuplicateDispute() => invalidDuplicateDispute != null ? invalidDuplicateDispute() : orElse(value),
+      LossReason$invalidIncorrectAmountDispute() => invalidIncorrectAmountDispute != null ? invalidIncorrectAmountDispute() : orElse(value),
+      LossReason$invalidNoAuthorization() => invalidNoAuthorization != null ? invalidNoAuthorization() : orElse(value),
+      LossReason$invalidUseOfDisputes() => invalidUseOfDisputes != null ? invalidUseOfDisputes() : orElse(value),
+      LossReason$merchandiseDeliveredOrShipped() => merchandiseDeliveredOrShipped != null ? merchandiseDeliveredOrShipped() : orElse(value),
+      LossReason$merchandiseOrServiceAsDescribed() => merchandiseOrServiceAsDescribed != null ? merchandiseOrServiceAsDescribed() : orElse(value),
+      LossReason$notCancelled() => notCancelled != null ? notCancelled() : orElse(value),
+      LossReason$$other() => $other != null ? $other() : orElse(value),
+      LossReason$refundIssued() => refundIssued != null ? refundIssued() : orElse(value),
+      LossReason$submittedBeyondAllowableTimeLimit() => submittedBeyondAllowableTimeLimit != null ? submittedBeyondAllowableTimeLimit() : orElse(value),
+      LossReason$transaction3dsRequired() => transaction3dsRequired != null ? transaction3dsRequired() : orElse(value),
+      LossReason$transactionApprovedAfterPriorFraudDispute() => transactionApprovedAfterPriorFraudDispute != null ? transactionApprovedAfterPriorFraudDispute() : orElse(value),
+      LossReason$transactionAuthorized() => transactionAuthorized != null ? transactionAuthorized() : orElse(value),
+      LossReason$transactionElectronicallyRead() => transactionElectronicallyRead != null ? transactionElectronicallyRead() : orElse(value),
+      LossReason$transactionQualifiesForVisaEasyPaymentService() => transactionQualifiesForVisaEasyPaymentService != null ? transactionQualifiesForVisaEasyPaymentService() : orElse(value),
+      LossReason$transactionUnattended() => transactionUnattended != null ? transactionUnattended() : orElse(value),
+      LossReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LossReason($value)';
 
  }
@@ -312,6 +360,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingDisputeObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() issuingDispute, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingDisputeObject$issuingDispute() => issuingDispute(),
+      IssuingDisputeObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? issuingDispute, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingDisputeObject$issuingDispute() => issuingDispute != null ? issuingDispute() : orElse(value),
+      IssuingDisputeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingDisputeObject($value)';
 
  }
@@ -371,6 +429,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingDisputeStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() expired, required W Function() lost, required W Function() submitted, required W Function() unsubmitted, required W Function() won, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingDisputeStatus$expired() => expired(),
+      IssuingDisputeStatus$lost() => lost(),
+      IssuingDisputeStatus$submitted() => submitted(),
+      IssuingDisputeStatus$unsubmitted() => unsubmitted(),
+      IssuingDisputeStatus$won() => won(),
+      IssuingDisputeStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? lost, W Function()? submitted, W Function()? unsubmitted, W Function()? won, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingDisputeStatus$expired() => expired != null ? expired() : orElse(value),
+      IssuingDisputeStatus$lost() => lost != null ? lost() : orElse(value),
+      IssuingDisputeStatus$submitted() => submitted != null ? submitted() : orElse(value),
+      IssuingDisputeStatus$unsubmitted() => unsubmitted != null ? unsubmitted() : orElse(value),
+      IssuingDisputeStatus$won() => won != null ? won() : orElse(value),
+      IssuingDisputeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingDisputeStatus($value)';
 
  }

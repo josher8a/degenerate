@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MixedDataEventEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completion, required W Function() text, required W Function() loading, required W Function(String value) $unknown, }) { return switch (this) {
+      MixedDataEventEvent$completion() => completion(),
+      MixedDataEventEvent$text() => text(),
+      MixedDataEventEvent$loading() => loading(),
+      MixedDataEventEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completion, W Function()? text, W Function()? loading, W Function(String value)? $unknown, }) { return switch (this) {
+      MixedDataEventEvent$completion() => completion != null ? completion() : orElse(value),
+      MixedDataEventEvent$text() => text != null ? text() : orElse(value),
+      MixedDataEventEvent$loading() => loading != null ? loading() : orElse(value),
+      MixedDataEventEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MixedDataEventEvent($value)';
 
  }

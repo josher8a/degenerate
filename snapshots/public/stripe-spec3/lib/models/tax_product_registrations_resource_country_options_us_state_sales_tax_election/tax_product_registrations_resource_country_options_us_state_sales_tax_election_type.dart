@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() localUseTax, required W Function() simplifiedSellersUseTax, required W Function() singleLocalUseTax, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$localUseTax() => localUseTax(),
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$simplifiedSellersUseTax() => simplifiedSellersUseTax(),
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$singleLocalUseTax() => singleLocalUseTax(),
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? localUseTax, W Function()? simplifiedSellersUseTax, W Function()? singleLocalUseTax, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$localUseTax() => localUseTax != null ? localUseTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$simplifiedSellersUseTax() => simplifiedSellersUseTax != null ? simplifiedSellersUseTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$singleLocalUseTax() => singleLocalUseTax != null ? singleLocalUseTax() : orElse(value),
+      TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType($value)';
 
  }

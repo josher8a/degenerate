@@ -62,6 +62,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DeviceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bbposChipper2x, required W Function() bbposWisepad3, required W Function() bbposWiseposE, required W Function() mobilePhoneReader, required W Function() simulatedStripeS700, required W Function() simulatedStripeS710, required W Function() simulatedWiseposE, required W Function() stripeM2, required W Function() stripeS700, required W Function() stripeS710, required W Function() verifoneP400, required W Function(String value) $unknown, }) { return switch (this) {
+      DeviceType$bbposChipper2x() => bbposChipper2x(),
+      DeviceType$bbposWisepad3() => bbposWisepad3(),
+      DeviceType$bbposWiseposE() => bbposWiseposE(),
+      DeviceType$mobilePhoneReader() => mobilePhoneReader(),
+      DeviceType$simulatedStripeS700() => simulatedStripeS700(),
+      DeviceType$simulatedStripeS710() => simulatedStripeS710(),
+      DeviceType$simulatedWiseposE() => simulatedWiseposE(),
+      DeviceType$stripeM2() => stripeM2(),
+      DeviceType$stripeS700() => stripeS700(),
+      DeviceType$stripeS710() => stripeS710(),
+      DeviceType$verifoneP400() => verifoneP400(),
+      DeviceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bbposChipper2x, W Function()? bbposWisepad3, W Function()? bbposWiseposE, W Function()? mobilePhoneReader, W Function()? simulatedStripeS700, W Function()? simulatedStripeS710, W Function()? simulatedWiseposE, W Function()? stripeM2, W Function()? stripeS700, W Function()? stripeS710, W Function()? verifoneP400, W Function(String value)? $unknown, }) { return switch (this) {
+      DeviceType$bbposChipper2x() => bbposChipper2x != null ? bbposChipper2x() : orElse(value),
+      DeviceType$bbposWisepad3() => bbposWisepad3 != null ? bbposWisepad3() : orElse(value),
+      DeviceType$bbposWiseposE() => bbposWiseposE != null ? bbposWiseposE() : orElse(value),
+      DeviceType$mobilePhoneReader() => mobilePhoneReader != null ? mobilePhoneReader() : orElse(value),
+      DeviceType$simulatedStripeS700() => simulatedStripeS700 != null ? simulatedStripeS700() : orElse(value),
+      DeviceType$simulatedStripeS710() => simulatedStripeS710 != null ? simulatedStripeS710() : orElse(value),
+      DeviceType$simulatedWiseposE() => simulatedWiseposE != null ? simulatedWiseposE() : orElse(value),
+      DeviceType$stripeM2() => stripeM2 != null ? stripeM2() : orElse(value),
+      DeviceType$stripeS700() => stripeS700 != null ? stripeS700() : orElse(value),
+      DeviceType$stripeS710() => stripeS710 != null ? stripeS710() : orElse(value),
+      DeviceType$verifoneP400() => verifoneP400 != null ? verifoneP400() : orElse(value),
+      DeviceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DeviceType($value)';
 
  }

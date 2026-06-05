@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BaseRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() read, required W Function() triage, required W Function() write, required W Function() maintain, required W Function() admin, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      BaseRole$read() => read(),
+      BaseRole$triage() => triage(),
+      BaseRole$write() => write(),
+      BaseRole$maintain() => maintain(),
+      BaseRole$admin() => admin(),
+      BaseRole$$null() => $null(),
+      BaseRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? read, W Function()? triage, W Function()? write, W Function()? maintain, W Function()? admin, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      BaseRole$read() => read != null ? read() : orElse(value),
+      BaseRole$triage() => triage != null ? triage() : orElse(value),
+      BaseRole$write() => write != null ? write() : orElse(value),
+      BaseRole$maintain() => maintain != null ? maintain() : orElse(value),
+      BaseRole$admin() => admin != null ? admin() : orElse(value),
+      BaseRole$$null() => $null != null ? $null() : orElse(value),
+      BaseRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BaseRole($value)';
 
  }
@@ -142,6 +162,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationRoleSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() organization, required W Function() enterprise, required W Function() predefined, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationRoleSource$organization() => organization(),
+      OrganizationRoleSource$enterprise() => enterprise(),
+      OrganizationRoleSource$predefined() => predefined(),
+      OrganizationRoleSource$$null() => $null(),
+      OrganizationRoleSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? organization, W Function()? enterprise, W Function()? predefined, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationRoleSource$organization() => organization != null ? organization() : orElse(value),
+      OrganizationRoleSource$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      OrganizationRoleSource$predefined() => predefined != null ? predefined() : orElse(value),
+      OrganizationRoleSource$$null() => $null != null ? $null() : orElse(value),
+      OrganizationRoleSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationRoleSource($value)';
 
  }

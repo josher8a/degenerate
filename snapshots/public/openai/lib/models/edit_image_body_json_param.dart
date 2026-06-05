@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EditImageBodyJsonParamQuality$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() auto, required W Function(String value) $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamQuality$low() => low(),
+      EditImageBodyJsonParamQuality$medium() => medium(),
+      EditImageBodyJsonParamQuality$high() => high(),
+      EditImageBodyJsonParamQuality$auto() => auto(),
+      EditImageBodyJsonParamQuality$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? auto, W Function(String value)? $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamQuality$low() => low != null ? low() : orElse(value),
+      EditImageBodyJsonParamQuality$medium() => medium != null ? medium() : orElse(value),
+      EditImageBodyJsonParamQuality$high() => high != null ? high() : orElse(value),
+      EditImageBodyJsonParamQuality$auto() => auto != null ? auto() : orElse(value),
+      EditImageBodyJsonParamQuality$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EditImageBodyJsonParamQuality($value)';
 
  }
@@ -106,6 +122,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EditImageBodyJsonParamInputFidelity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() high, required W Function() low, required W Function(String value) $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamInputFidelity$high() => high(),
+      EditImageBodyJsonParamInputFidelity$low() => low(),
+      EditImageBodyJsonParamInputFidelity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? high, W Function()? low, W Function(String value)? $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamInputFidelity$high() => high != null ? high() : orElse(value),
+      EditImageBodyJsonParamInputFidelity$low() => low != null ? low() : orElse(value),
+      EditImageBodyJsonParamInputFidelity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EditImageBodyJsonParamInputFidelity($value)';
 
  }
@@ -169,6 +197,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EditImageBodyJsonParamSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() $1024x1024, required W Function() $1536x1024, required W Function() $1024x1536, required W Function(String value) $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamSize$auto() => auto(),
+      EditImageBodyJsonParamSize$$1024x1024() => $1024x1024(),
+      EditImageBodyJsonParamSize$$1536x1024() => $1536x1024(),
+      EditImageBodyJsonParamSize$$1024x1536() => $1024x1536(),
+      EditImageBodyJsonParamSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? $1024x1024, W Function()? $1536x1024, W Function()? $1024x1536, W Function(String value)? $unknown, }) { return switch (this) {
+      EditImageBodyJsonParamSize$auto() => auto != null ? auto() : orElse(value),
+      EditImageBodyJsonParamSize$$1024x1024() => $1024x1024 != null ? $1024x1024() : orElse(value),
+      EditImageBodyJsonParamSize$$1536x1024() => $1536x1024 != null ? $1536x1024() : orElse(value),
+      EditImageBodyJsonParamSize$$1024x1536() => $1024x1536 != null ? $1024x1536() : orElse(value),
+      EditImageBodyJsonParamSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EditImageBodyJsonParamSize($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerUpdateAddress$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerUpdateAddress$auto() => auto(),
+      CustomerUpdateAddress$never() => never(),
+      CustomerUpdateAddress$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerUpdateAddress$auto() => auto != null ? auto() : orElse(value),
+      CustomerUpdateAddress$never() => never != null ? never() : orElse(value),
+      CustomerUpdateAddress$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerUpdateAddress($value)';
 
  }
@@ -80,6 +92,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerUpdateName$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerUpdateName$auto() => auto(),
+      CustomerUpdateName$never() => never(),
+      CustomerUpdateName$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerUpdateName$auto() => auto != null ? auto() : orElse(value),
+      CustomerUpdateName$never() => never != null ? never() : orElse(value),
+      CustomerUpdateName$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerUpdateName($value)';
 
  }
@@ -135,6 +159,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomerUpdateShipping$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomerUpdateShipping$auto() => auto(),
+      CustomerUpdateShipping$never() => never(),
+      CustomerUpdateShipping$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomerUpdateShipping$auto() => auto != null ? auto() : orElse(value),
+      CustomerUpdateShipping$never() => never != null ? never() : orElse(value),
+      CustomerUpdateShipping$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomerUpdateShipping($value)';
 
  }

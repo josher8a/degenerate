@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CompanyOwnershipExemptionReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() qualifiedEntityExceedsOwnershipThreshold, required W Function() qualifiesAsFinancialInstitution, required W Function(String value) $unknown, }) { return switch (this) {
+      CompanyOwnershipExemptionReason$$empty() => $empty(),
+      CompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold(),
+      CompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution(),
+      CompanyOwnershipExemptionReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? qualifiedEntityExceedsOwnershipThreshold, W Function()? qualifiesAsFinancialInstitution, W Function(String value)? $unknown, }) { return switch (this) {
+      CompanyOwnershipExemptionReason$$empty() => $empty != null ? $empty() : orElse(value),
+      CompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold != null ? qualifiedEntityExceedsOwnershipThreshold() : orElse(value),
+      CompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution != null ? qualifiesAsFinancialInstitution() : orElse(value),
+      CompanyOwnershipExemptionReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CompanyOwnershipExemptionReason($value)';
 
  }

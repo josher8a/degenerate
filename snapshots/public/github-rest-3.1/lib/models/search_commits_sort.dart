@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SearchCommitsSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() authorDate, required W Function() committerDate, required W Function(String value) $unknown, }) { return switch (this) {
+      SearchCommitsSort$authorDate() => authorDate(),
+      SearchCommitsSort$committerDate() => committerDate(),
+      SearchCommitsSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? authorDate, W Function()? committerDate, W Function(String value)? $unknown, }) { return switch (this) {
+      SearchCommitsSort$authorDate() => authorDate != null ? authorDate() : orElse(value),
+      SearchCommitsSort$committerDate() => committerDate != null ? committerDate() : orElse(value),
+      SearchCommitsSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SearchCommitsSort($value)';
 
  }

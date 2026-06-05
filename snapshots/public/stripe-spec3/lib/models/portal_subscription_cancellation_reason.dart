@@ -49,6 +49,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalSubscriptionCancellationReasonOptions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customerService, required W Function() lowQuality, required W Function() missingFeatures, required W Function() $other, required W Function() switchedService, required W Function() tooComplex, required W Function() tooExpensive, required W Function() unused, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalSubscriptionCancellationReasonOptions$customerService() => customerService(),
+      PortalSubscriptionCancellationReasonOptions$lowQuality() => lowQuality(),
+      PortalSubscriptionCancellationReasonOptions$missingFeatures() => missingFeatures(),
+      PortalSubscriptionCancellationReasonOptions$$other() => $other(),
+      PortalSubscriptionCancellationReasonOptions$switchedService() => switchedService(),
+      PortalSubscriptionCancellationReasonOptions$tooComplex() => tooComplex(),
+      PortalSubscriptionCancellationReasonOptions$tooExpensive() => tooExpensive(),
+      PortalSubscriptionCancellationReasonOptions$unused() => unused(),
+      PortalSubscriptionCancellationReasonOptions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customerService, W Function()? lowQuality, W Function()? missingFeatures, W Function()? $other, W Function()? switchedService, W Function()? tooComplex, W Function()? tooExpensive, W Function()? unused, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalSubscriptionCancellationReasonOptions$customerService() => customerService != null ? customerService() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$lowQuality() => lowQuality != null ? lowQuality() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$missingFeatures() => missingFeatures != null ? missingFeatures() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$$other() => $other != null ? $other() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$switchedService() => switchedService != null ? switchedService() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$tooComplex() => tooComplex != null ? tooComplex() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$tooExpensive() => tooExpensive != null ? tooExpensive() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$unused() => unused != null ? unused() : orElse(value),
+      PortalSubscriptionCancellationReasonOptions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalSubscriptionCancellationReasonOptions($value)';
 
  }

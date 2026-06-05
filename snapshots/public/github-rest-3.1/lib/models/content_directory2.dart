@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ContentDirectoryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dir, required W Function() file, required W Function() submodule, required W Function() symlink, required W Function(String value) $unknown, }) { return switch (this) {
+      ContentDirectoryType$dir() => dir(),
+      ContentDirectoryType$file() => file(),
+      ContentDirectoryType$submodule() => submodule(),
+      ContentDirectoryType$symlink() => symlink(),
+      ContentDirectoryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dir, W Function()? file, W Function()? submodule, W Function()? symlink, W Function(String value)? $unknown, }) { return switch (this) {
+      ContentDirectoryType$dir() => dir != null ? dir() : orElse(value),
+      ContentDirectoryType$file() => file != null ? file() : orElse(value),
+      ContentDirectoryType$submodule() => submodule != null ? submodule() : orElse(value),
+      ContentDirectoryType$symlink() => symlink != null ? symlink() : orElse(value),
+      ContentDirectoryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ContentDirectoryType($value)';
 
  }

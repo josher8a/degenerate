@@ -101,6 +101,56 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodOptionsParam102PreferredLocale$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() csCz, required W Function() daDk, required W Function() deAt, required W Function() deDe, required W Function() deLu, required W Function() elGr, required W Function() enGb, required W Function() enUs, required W Function() esEs, required W Function() fiFi, required W Function() frBe, required W Function() frFr, required W Function() frLu, required W Function() huHu, required W Function() itIt, required W Function() nlBe, required W Function() nlNl, required W Function() plPl, required W Function() ptPt, required W Function() skSk, required W Function() svSe, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodOptionsParam102PreferredLocale$csCz() => csCz(),
+      PaymentMethodOptionsParam102PreferredLocale$daDk() => daDk(),
+      PaymentMethodOptionsParam102PreferredLocale$deAt() => deAt(),
+      PaymentMethodOptionsParam102PreferredLocale$deDe() => deDe(),
+      PaymentMethodOptionsParam102PreferredLocale$deLu() => deLu(),
+      PaymentMethodOptionsParam102PreferredLocale$elGr() => elGr(),
+      PaymentMethodOptionsParam102PreferredLocale$enGb() => enGb(),
+      PaymentMethodOptionsParam102PreferredLocale$enUs() => enUs(),
+      PaymentMethodOptionsParam102PreferredLocale$esEs() => esEs(),
+      PaymentMethodOptionsParam102PreferredLocale$fiFi() => fiFi(),
+      PaymentMethodOptionsParam102PreferredLocale$frBe() => frBe(),
+      PaymentMethodOptionsParam102PreferredLocale$frFr() => frFr(),
+      PaymentMethodOptionsParam102PreferredLocale$frLu() => frLu(),
+      PaymentMethodOptionsParam102PreferredLocale$huHu() => huHu(),
+      PaymentMethodOptionsParam102PreferredLocale$itIt() => itIt(),
+      PaymentMethodOptionsParam102PreferredLocale$nlBe() => nlBe(),
+      PaymentMethodOptionsParam102PreferredLocale$nlNl() => nlNl(),
+      PaymentMethodOptionsParam102PreferredLocale$plPl() => plPl(),
+      PaymentMethodOptionsParam102PreferredLocale$ptPt() => ptPt(),
+      PaymentMethodOptionsParam102PreferredLocale$skSk() => skSk(),
+      PaymentMethodOptionsParam102PreferredLocale$svSe() => svSe(),
+      PaymentMethodOptionsParam102PreferredLocale$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? csCz, W Function()? daDk, W Function()? deAt, W Function()? deDe, W Function()? deLu, W Function()? elGr, W Function()? enGb, W Function()? enUs, W Function()? esEs, W Function()? fiFi, W Function()? frBe, W Function()? frFr, W Function()? frLu, W Function()? huHu, W Function()? itIt, W Function()? nlBe, W Function()? nlNl, W Function()? plPl, W Function()? ptPt, W Function()? skSk, W Function()? svSe, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodOptionsParam102PreferredLocale$csCz() => csCz != null ? csCz() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$daDk() => daDk != null ? daDk() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$deAt() => deAt != null ? deAt() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$deDe() => deDe != null ? deDe() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$deLu() => deLu != null ? deLu() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$elGr() => elGr != null ? elGr() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$enGb() => enGb != null ? enGb() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$enUs() => enUs != null ? enUs() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$esEs() => esEs != null ? esEs() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$fiFi() => fiFi != null ? fiFi() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$frBe() => frBe != null ? frBe() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$frFr() => frFr != null ? frFr() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$frLu() => frLu != null ? frLu() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$huHu() => huHu != null ? huHu() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$itIt() => itIt != null ? itIt() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$nlBe() => nlBe != null ? nlBe() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$nlNl() => nlNl != null ? nlNl() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$plPl() => plPl != null ? plPl() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$ptPt() => ptPt != null ? ptPt() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$skSk() => skSk != null ? skSk() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$svSe() => svSe != null ? svSe() : orElse(value),
+      PaymentMethodOptionsParam102PreferredLocale$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodOptionsParam102PreferredLocale($value)';
 
  }

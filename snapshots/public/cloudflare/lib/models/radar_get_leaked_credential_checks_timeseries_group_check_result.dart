@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() clean, required W Function() usernameLeaked, required W Function() usernamePasswordSimilar, required W Function() usernameAndPasswordLeaked, required W Function() passwordLeaked, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$clean() => clean(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameLeaked() => usernameLeaked(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernamePasswordSimilar() => usernamePasswordSimilar(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameAndPasswordLeaked() => usernameAndPasswordLeaked(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$passwordLeaked() => passwordLeaked(),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? clean, W Function()? usernameLeaked, W Function()? usernamePasswordSimilar, W Function()? usernameAndPasswordLeaked, W Function()? passwordLeaked, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$clean() => clean != null ? clean() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameLeaked() => usernameLeaked != null ? usernameLeaked() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernamePasswordSimilar() => usernamePasswordSimilar != null ? usernamePasswordSimilar() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameAndPasswordLeaked() => usernameAndPasswordLeaked != null ? usernameAndPasswordLeaked() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$passwordLeaked() => passwordLeaked != null ? passwordLeaked() : orElse(value),
+      RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult($value)';
 
  }

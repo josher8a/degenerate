@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is L$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() invisible, required W Function() visible, required W Function(String value) $unknown, }) { return switch (this) {
+      L$unknown() => unknown(),
+      L$invisible() => invisible(),
+      L$visible() => visible(),
+      L$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? invisible, W Function()? visible, W Function(String value)? $unknown, }) { return switch (this) {
+      L$unknown() => unknown != null ? unknown() : orElse(value),
+      L$invisible() => invisible != null ? invisible() : orElse(value),
+      L$visible() => visible != null ? visible() : orElse(value),
+      L$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'L($value)';
 
  }
@@ -97,6 +111,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is T$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() invisible, required W Function() visible, required W Function(String value) $unknown, }) { return switch (this) {
+      T$unknown() => unknown(),
+      T$invisible() => invisible(),
+      T$visible() => visible(),
+      T$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? invisible, W Function()? visible, W Function(String value)? $unknown, }) { return switch (this) {
+      T$unknown() => unknown != null ? unknown() : orElse(value),
+      T$invisible() => invisible != null ? invisible() : orElse(value),
+      T$visible() => visible != null ? visible() : orElse(value),
+      T$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'T($value)';
 
  }
@@ -165,6 +193,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is R$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() invisible, required W Function() visible, required W Function(String value) $unknown, }) { return switch (this) {
+      R$unknown() => unknown(),
+      R$invisible() => invisible(),
+      R$visible() => visible(),
+      R$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? invisible, W Function()? visible, W Function(String value)? $unknown, }) { return switch (this) {
+      R$unknown() => unknown != null ? unknown() : orElse(value),
+      R$invisible() => invisible != null ? invisible() : orElse(value),
+      R$visible() => visible != null ? visible() : orElse(value),
+      R$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'R($value)';
 
  }
@@ -233,6 +275,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is B$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() unknown, required W Function() invisible, required W Function() visible, required W Function(String value) $unknown, }) { return switch (this) {
+      B$unknown() => unknown(),
+      B$invisible() => invisible(),
+      B$visible() => visible(),
+      B$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? unknown, W Function()? invisible, W Function()? visible, W Function(String value)? $unknown, }) { return switch (this) {
+      B$unknown() => unknown != null ? unknown() : orElse(value),
+      B$invisible() => invisible != null ? invisible() : orElse(value),
+      B$visible() => visible != null ? visible() : orElse(value),
+      B$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'B($value)';
 
  }

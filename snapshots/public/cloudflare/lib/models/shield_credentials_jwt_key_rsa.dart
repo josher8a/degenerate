@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldCredentialsJwtKeyRsaAlg$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rs256, required W Function() rs384, required W Function() rs512, required W Function() ps256, required W Function() ps384, required W Function() ps512, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyRsaAlg$rs256() => rs256(),
+      ShieldCredentialsJwtKeyRsaAlg$rs384() => rs384(),
+      ShieldCredentialsJwtKeyRsaAlg$rs512() => rs512(),
+      ShieldCredentialsJwtKeyRsaAlg$ps256() => ps256(),
+      ShieldCredentialsJwtKeyRsaAlg$ps384() => ps384(),
+      ShieldCredentialsJwtKeyRsaAlg$ps512() => ps512(),
+      ShieldCredentialsJwtKeyRsaAlg$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rs256, W Function()? rs384, W Function()? rs512, W Function()? ps256, W Function()? ps384, W Function()? ps512, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyRsaAlg$rs256() => rs256 != null ? rs256() : orElse(value),
+      ShieldCredentialsJwtKeyRsaAlg$rs384() => rs384 != null ? rs384() : orElse(value),
+      ShieldCredentialsJwtKeyRsaAlg$rs512() => rs512 != null ? rs512() : orElse(value),
+      ShieldCredentialsJwtKeyRsaAlg$ps256() => ps256 != null ? ps256() : orElse(value),
+      ShieldCredentialsJwtKeyRsaAlg$ps384() => ps384 != null ? ps384() : orElse(value),
+      ShieldCredentialsJwtKeyRsaAlg$ps512() => ps512 != null ? ps512() : orElse(value),
+      ShieldCredentialsJwtKeyRsaAlg$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldCredentialsJwtKeyRsaAlg($value)';
 
  }
@@ -130,6 +150,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldCredentialsJwtKeyRsaKty$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rsa, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyRsaKty$rsa() => rsa(),
+      ShieldCredentialsJwtKeyRsaKty$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rsa, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldCredentialsJwtKeyRsaKty$rsa() => rsa != null ? rsa() : orElse(value),
+      ShieldCredentialsJwtKeyRsaKty$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldCredentialsJwtKeyRsaKty($value)';
 
  }

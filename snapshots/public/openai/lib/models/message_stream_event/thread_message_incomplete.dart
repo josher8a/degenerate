@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreadMessageIncompleteEvent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() threadMessageIncomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      ThreadMessageIncompleteEvent$threadMessageIncomplete() => threadMessageIncomplete(),
+      ThreadMessageIncompleteEvent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadMessageIncomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      ThreadMessageIncompleteEvent$threadMessageIncomplete() => threadMessageIncomplete != null ? threadMessageIncomplete() : orElse(value),
+      ThreadMessageIncompleteEvent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ThreadMessageIncompleteEvent($value)';
 
  }

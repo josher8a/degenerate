@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceSharingResourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() customRuleset, required W Function() widget, required W Function() gatewayPolicy, required W Function() gatewayDestinationIp, required W Function() gatewayBlockPageSettings, required W Function() gatewayExtendedEmailMatching, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceSharingResourceType$customRuleset() => customRuleset(),
+      ResourceSharingResourceType$widget() => widget(),
+      ResourceSharingResourceType$gatewayPolicy() => gatewayPolicy(),
+      ResourceSharingResourceType$gatewayDestinationIp() => gatewayDestinationIp(),
+      ResourceSharingResourceType$gatewayBlockPageSettings() => gatewayBlockPageSettings(),
+      ResourceSharingResourceType$gatewayExtendedEmailMatching() => gatewayExtendedEmailMatching(),
+      ResourceSharingResourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? customRuleset, W Function()? widget, W Function()? gatewayPolicy, W Function()? gatewayDestinationIp, W Function()? gatewayBlockPageSettings, W Function()? gatewayExtendedEmailMatching, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceSharingResourceType$customRuleset() => customRuleset != null ? customRuleset() : orElse(value),
+      ResourceSharingResourceType$widget() => widget != null ? widget() : orElse(value),
+      ResourceSharingResourceType$gatewayPolicy() => gatewayPolicy != null ? gatewayPolicy() : orElse(value),
+      ResourceSharingResourceType$gatewayDestinationIp() => gatewayDestinationIp != null ? gatewayDestinationIp() : orElse(value),
+      ResourceSharingResourceType$gatewayBlockPageSettings() => gatewayBlockPageSettings != null ? gatewayBlockPageSettings() : orElse(value),
+      ResourceSharingResourceType$gatewayExtendedEmailMatching() => gatewayExtendedEmailMatching != null ? gatewayExtendedEmailMatching() : orElse(value),
+      ResourceSharingResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceSharingResourceType($value)';
 
  }

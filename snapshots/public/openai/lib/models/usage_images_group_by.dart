@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageImagesGroupBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() projectId, required W Function() userId, required W Function() apiKeyId, required W Function() model, required W Function() size, required W Function() source, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageImagesGroupBy$projectId() => projectId(),
+      UsageImagesGroupBy$userId() => userId(),
+      UsageImagesGroupBy$apiKeyId() => apiKeyId(),
+      UsageImagesGroupBy$model() => model(),
+      UsageImagesGroupBy$size() => size(),
+      UsageImagesGroupBy$source() => source(),
+      UsageImagesGroupBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? projectId, W Function()? userId, W Function()? apiKeyId, W Function()? model, W Function()? size, W Function()? source, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageImagesGroupBy$projectId() => projectId != null ? projectId() : orElse(value),
+      UsageImagesGroupBy$userId() => userId != null ? userId() : orElse(value),
+      UsageImagesGroupBy$apiKeyId() => apiKeyId != null ? apiKeyId() : orElse(value),
+      UsageImagesGroupBy$model() => model != null ? model() : orElse(value),
+      UsageImagesGroupBy$size() => size != null ? size() : orElse(value),
+      UsageImagesGroupBy$source() => source != null ? source() : orElse(value),
+      UsageImagesGroupBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageImagesGroupBy($value)';
 
  }

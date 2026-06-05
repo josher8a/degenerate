@@ -38,6 +38,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Zones0PatchRequestType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() full, required W Function() partial, required W Function() secondary, required W Function() internal, required W Function(String value) $unknown, }) { return switch (this) {
+      Zones0PatchRequestType$full() => full(),
+      Zones0PatchRequestType$partial() => partial(),
+      Zones0PatchRequestType$secondary() => secondary(),
+      Zones0PatchRequestType$internal() => internal(),
+      Zones0PatchRequestType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? full, W Function()? partial, W Function()? secondary, W Function()? internal, W Function(String value)? $unknown, }) { return switch (this) {
+      Zones0PatchRequestType$full() => full != null ? full() : orElse(value),
+      Zones0PatchRequestType$partial() => partial != null ? partial() : orElse(value),
+      Zones0PatchRequestType$secondary() => secondary != null ? secondary() : orElse(value),
+      Zones0PatchRequestType$internal() => internal != null ? internal() : orElse(value),
+      Zones0PatchRequestType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Zones0PatchRequestType($value)';
 
  }

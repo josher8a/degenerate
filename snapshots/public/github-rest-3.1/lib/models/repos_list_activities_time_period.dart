@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposListActivitiesTimePeriod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() day, required W Function() week, required W Function() month, required W Function() quarter, required W Function() year, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposListActivitiesTimePeriod$day() => day(),
+      ReposListActivitiesTimePeriod$week() => week(),
+      ReposListActivitiesTimePeriod$month() => month(),
+      ReposListActivitiesTimePeriod$quarter() => quarter(),
+      ReposListActivitiesTimePeriod$year() => year(),
+      ReposListActivitiesTimePeriod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? day, W Function()? week, W Function()? month, W Function()? quarter, W Function()? year, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposListActivitiesTimePeriod$day() => day != null ? day() : orElse(value),
+      ReposListActivitiesTimePeriod$week() => week != null ? week() : orElse(value),
+      ReposListActivitiesTimePeriod$month() => month != null ? month() : orElse(value),
+      ReposListActivitiesTimePeriod$quarter() => quarter != null ? quarter() : orElse(value),
+      ReposListActivitiesTimePeriod$year() => year != null ? year() : orElse(value),
+      ReposListActivitiesTimePeriod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposListActivitiesTimePeriod($value)';
 
  }

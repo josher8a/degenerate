@@ -56,6 +56,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LatestUploadStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() mirroring, required W Function() unifying, required W Function() loading, required W Function() provisioning, required W Function() complete, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      LatestUploadStatus$mirroring() => mirroring(),
+      LatestUploadStatus$unifying() => unifying(),
+      LatestUploadStatus$loading() => loading(),
+      LatestUploadStatus$provisioning() => provisioning(),
+      LatestUploadStatus$complete() => complete(),
+      LatestUploadStatus$error() => error(),
+      LatestUploadStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirroring, W Function()? unifying, W Function()? loading, W Function()? provisioning, W Function()? complete, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      LatestUploadStatus$mirroring() => mirroring != null ? mirroring() : orElse(value),
+      LatestUploadStatus$unifying() => unifying != null ? unifying() : orElse(value),
+      LatestUploadStatus$loading() => loading != null ? loading() : orElse(value),
+      LatestUploadStatus$provisioning() => provisioning != null ? provisioning() : orElse(value),
+      LatestUploadStatus$complete() => complete != null ? complete() : orElse(value),
+      LatestUploadStatus$error() => error != null ? error() : orElse(value),
+      LatestUploadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LatestUploadStatus($value)';
 
  }

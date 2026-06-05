@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentCancellationReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abandoned, required W Function() automatic, required W Function() duplicate, required W Function() expired, required W Function() failedInvoice, required W Function() fraudulent, required W Function() requestedByCustomer, required W Function() voidInvoice, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentCancellationReason$abandoned() => abandoned(),
+      PaymentIntentCancellationReason$automatic() => automatic(),
+      PaymentIntentCancellationReason$duplicate() => duplicate(),
+      PaymentIntentCancellationReason$expired() => expired(),
+      PaymentIntentCancellationReason$failedInvoice() => failedInvoice(),
+      PaymentIntentCancellationReason$fraudulent() => fraudulent(),
+      PaymentIntentCancellationReason$requestedByCustomer() => requestedByCustomer(),
+      PaymentIntentCancellationReason$voidInvoice() => voidInvoice(),
+      PaymentIntentCancellationReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abandoned, W Function()? automatic, W Function()? duplicate, W Function()? expired, W Function()? failedInvoice, W Function()? fraudulent, W Function()? requestedByCustomer, W Function()? voidInvoice, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentCancellationReason$abandoned() => abandoned != null ? abandoned() : orElse(value),
+      PaymentIntentCancellationReason$automatic() => automatic != null ? automatic() : orElse(value),
+      PaymentIntentCancellationReason$duplicate() => duplicate != null ? duplicate() : orElse(value),
+      PaymentIntentCancellationReason$expired() => expired != null ? expired() : orElse(value),
+      PaymentIntentCancellationReason$failedInvoice() => failedInvoice != null ? failedInvoice() : orElse(value),
+      PaymentIntentCancellationReason$fraudulent() => fraudulent != null ? fraudulent() : orElse(value),
+      PaymentIntentCancellationReason$requestedByCustomer() => requestedByCustomer != null ? requestedByCustomer() : orElse(value),
+      PaymentIntentCancellationReason$voidInvoice() => voidInvoice != null ? voidInvoice() : orElse(value),
+      PaymentIntentCancellationReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentCancellationReason($value)';
 
  }
@@ -156,6 +180,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() paymentIntent, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentObject$paymentIntent() => paymentIntent(),
+      PaymentIntentObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentIntent, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentObject$paymentIntent() => paymentIntent != null ? paymentIntent() : orElse(value),
+      PaymentIntentObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentObject($value)';
 
  }
@@ -223,6 +257,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() processing, required W Function() requiresAction, required W Function() requiresCapture, required W Function() requiresConfirmation, required W Function() requiresPaymentMethod, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentStatus$canceled() => canceled(),
+      PaymentIntentStatus$processing() => processing(),
+      PaymentIntentStatus$requiresAction() => requiresAction(),
+      PaymentIntentStatus$requiresCapture() => requiresCapture(),
+      PaymentIntentStatus$requiresConfirmation() => requiresConfirmation(),
+      PaymentIntentStatus$requiresPaymentMethod() => requiresPaymentMethod(),
+      PaymentIntentStatus$succeeded() => succeeded(),
+      PaymentIntentStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? processing, W Function()? requiresAction, W Function()? requiresCapture, W Function()? requiresConfirmation, W Function()? requiresPaymentMethod, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      PaymentIntentStatus$processing() => processing != null ? processing() : orElse(value),
+      PaymentIntentStatus$requiresAction() => requiresAction != null ? requiresAction() : orElse(value),
+      PaymentIntentStatus$requiresCapture() => requiresCapture != null ? requiresCapture() : orElse(value),
+      PaymentIntentStatus$requiresConfirmation() => requiresConfirmation != null ? requiresConfirmation() : orElse(value),
+      PaymentIntentStatus$requiresPaymentMethod() => requiresPaymentMethod != null ? requiresPaymentMethod() : orElse(value),
+      PaymentIntentStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      PaymentIntentStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentStatus($value)';
 
  }

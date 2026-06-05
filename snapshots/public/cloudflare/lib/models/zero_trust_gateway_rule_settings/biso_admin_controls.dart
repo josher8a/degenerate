@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Copy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      Copy$enabled() => enabled(),
+      Copy$disabled() => disabled(),
+      Copy$remoteOnly() => remoteOnly(),
+      Copy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      Copy$enabled() => enabled != null ? enabled() : orElse(value),
+      Copy$disabled() => disabled != null ? disabled() : orElse(value),
+      Copy$remoteOnly() => remoteOnly != null ? remoteOnly() : orElse(value),
+      Copy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Copy($value)';
 
  }
@@ -99,6 +113,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Download$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      Download$enabled() => enabled(),
+      Download$disabled() => disabled(),
+      Download$remoteOnly() => remoteOnly(),
+      Download$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      Download$enabled() => enabled != null ? enabled() : orElse(value),
+      Download$disabled() => disabled != null ? disabled() : orElse(value),
+      Download$remoteOnly() => remoteOnly != null ? remoteOnly() : orElse(value),
+      Download$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Download($value)';
 
  }
@@ -164,6 +192,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Keyboard$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      Keyboard$enabled() => enabled(),
+      Keyboard$disabled() => disabled(),
+      Keyboard$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      Keyboard$enabled() => enabled != null ? enabled() : orElse(value),
+      Keyboard$disabled() => disabled != null ? disabled() : orElse(value),
+      Keyboard$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Keyboard($value)';
 
  }
@@ -224,6 +264,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Paste$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() remoteOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      Paste$enabled() => enabled(),
+      Paste$disabled() => disabled(),
+      Paste$remoteOnly() => remoteOnly(),
+      Paste$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? remoteOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      Paste$enabled() => enabled != null ? enabled() : orElse(value),
+      Paste$disabled() => disabled != null ? disabled() : orElse(value),
+      Paste$remoteOnly() => remoteOnly != null ? remoteOnly() : orElse(value),
+      Paste$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Paste($value)';
 
  }
@@ -289,6 +343,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Printing$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      Printing$enabled() => enabled(),
+      Printing$disabled() => disabled(),
+      Printing$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      Printing$enabled() => enabled != null ? enabled() : orElse(value),
+      Printing$disabled() => disabled != null ? disabled() : orElse(value),
+      Printing$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Printing($value)';
 
  }
@@ -345,6 +411,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Upload$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function(String value) $unknown, }) { return switch (this) {
+      Upload$enabled() => enabled(),
+      Upload$disabled() => disabled(),
+      Upload$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function(String value)? $unknown, }) { return switch (this) {
+      Upload$enabled() => enabled != null ? enabled() : orElse(value),
+      Upload$disabled() => disabled != null ? disabled() : orElse(value),
+      Upload$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Upload($value)';
 
  }
@@ -401,6 +479,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BisoAdminControlsVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() v1, required W Function() v2, required W Function(String value) $unknown, }) { return switch (this) {
+      BisoAdminControlsVersion$v1() => v1(),
+      BisoAdminControlsVersion$v2() => v2(),
+      BisoAdminControlsVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? v1, W Function()? v2, W Function(String value)? $unknown, }) { return switch (this) {
+      BisoAdminControlsVersion$v1() => v1 != null ? v1() : orElse(value),
+      BisoAdminControlsVersion$v2() => v2 != null ? v2() : orElse(value),
+      BisoAdminControlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BisoAdminControlsVersion($value)';
 
  }

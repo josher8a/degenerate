@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FraudDisputabilityLikelihood$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() neutral, required W Function() unknown, required W Function() veryLikely, required W Function() veryUnlikely, required W Function(String value) $unknown, }) { return switch (this) {
+      FraudDisputabilityLikelihood$neutral() => neutral(),
+      FraudDisputabilityLikelihood$unknown() => unknown(),
+      FraudDisputabilityLikelihood$veryLikely() => veryLikely(),
+      FraudDisputabilityLikelihood$veryUnlikely() => veryUnlikely(),
+      FraudDisputabilityLikelihood$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? neutral, W Function()? unknown, W Function()? veryLikely, W Function()? veryUnlikely, W Function(String value)? $unknown, }) { return switch (this) {
+      FraudDisputabilityLikelihood$neutral() => neutral != null ? neutral() : orElse(value),
+      FraudDisputabilityLikelihood$unknown() => unknown != null ? unknown() : orElse(value),
+      FraudDisputabilityLikelihood$veryLikely() => veryLikely != null ? veryLikely() : orElse(value),
+      FraudDisputabilityLikelihood$veryUnlikely() => veryUnlikely != null ? veryUnlikely() : orElse(value),
+      FraudDisputabilityLikelihood$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FraudDisputabilityLikelihood($value)';
 
  }
@@ -112,6 +128,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() applePay, required W Function() googlePay, required W Function() samsungPay, required W Function(String value) $unknown, }) { return switch (this) {
+      PostTestHelpersIssuingAuthorizationsRequestWallet$applePay() => applePay(),
+      PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay() => googlePay(),
+      PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay() => samsungPay(),
+      PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? applePay, W Function()? googlePay, W Function()? samsungPay, W Function(String value)? $unknown, }) { return switch (this) {
+      PostTestHelpersIssuingAuthorizationsRequestWallet$applePay() => applePay != null ? applePay() : orElse(value),
+      PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay() => googlePay != null ? googlePay() : orElse(value),
+      PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay() => samsungPay != null ? samsungPay() : orElse(value),
+      PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentMethodDetailsCryptoNetwork$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() base, required W Function() ethereum, required W Function() polygon, required W Function() solana, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentMethodDetailsCryptoNetwork$base() => base(),
+      PaymentMethodDetailsCryptoNetwork$ethereum() => ethereum(),
+      PaymentMethodDetailsCryptoNetwork$polygon() => polygon(),
+      PaymentMethodDetailsCryptoNetwork$solana() => solana(),
+      PaymentMethodDetailsCryptoNetwork$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? base, W Function()? ethereum, W Function()? polygon, W Function()? solana, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentMethodDetailsCryptoNetwork$base() => base != null ? base() : orElse(value),
+      PaymentMethodDetailsCryptoNetwork$ethereum() => ethereum != null ? ethereum() : orElse(value),
+      PaymentMethodDetailsCryptoNetwork$polygon() => polygon != null ? polygon() : orElse(value),
+      PaymentMethodDetailsCryptoNetwork$solana() => solana != null ? solana() : orElse(value),
+      PaymentMethodDetailsCryptoNetwork$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentMethodDetailsCryptoNetwork($value)';
 
  }
@@ -112,6 +128,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TokenCurrency$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() usdc, required W Function() usdg, required W Function() usdp, required W Function(String value) $unknown, }) { return switch (this) {
+      TokenCurrency$usdc() => usdc(),
+      TokenCurrency$usdg() => usdg(),
+      TokenCurrency$usdp() => usdp(),
+      TokenCurrency$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? usdc, W Function()? usdg, W Function()? usdp, W Function(String value)? $unknown, }) { return switch (this) {
+      TokenCurrency$usdc() => usdc != null ? usdc() : orElse(value),
+      TokenCurrency$usdg() => usdg != null ? usdg() : orElse(value),
+      TokenCurrency$usdp() => usdp != null ? usdp() : orElse(value),
+      TokenCurrency$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TokenCurrency($value)';
 
  }

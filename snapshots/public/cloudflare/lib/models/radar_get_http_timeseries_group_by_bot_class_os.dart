@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBotClassOs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBotClassOs$windows() => windows(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$macosx() => macosx(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$ios() => ios(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$android() => android(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$chromeos() => chromeos(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$linux() => linux(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$smartTv() => smartTv(),
+      RadarGetHttpTimeseriesGroupByBotClassOs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupByBotClassOs$windows() => windows != null ? windows() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$macosx() => macosx != null ? macosx() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$ios() => ios != null ? ios() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$android() => android != null ? android() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$linux() => linux != null ? linux() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
+      RadarGetHttpTimeseriesGroupByBotClassOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupByBotClassOs($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RuleEvaluationsEnforcement$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() evaluate, required W Function() deletedRuleset, required W Function(String value) $unknown, }) { return switch (this) {
+      RuleEvaluationsEnforcement$active() => active(),
+      RuleEvaluationsEnforcement$evaluate() => evaluate(),
+      RuleEvaluationsEnforcement$deletedRuleset() => deletedRuleset(),
+      RuleEvaluationsEnforcement$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? evaluate, W Function()? deletedRuleset, W Function(String value)? $unknown, }) { return switch (this) {
+      RuleEvaluationsEnforcement$active() => active != null ? active() : orElse(value),
+      RuleEvaluationsEnforcement$evaluate() => evaluate != null ? evaluate() : orElse(value),
+      RuleEvaluationsEnforcement$deletedRuleset() => deletedRuleset != null ? deletedRuleset() : orElse(value),
+      RuleEvaluationsEnforcement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RuleEvaluationsEnforcement($value)';
 
  }
@@ -95,6 +109,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RuleEvaluationsResult$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+      RuleEvaluationsResult$pass() => pass(),
+      RuleEvaluationsResult$fail() => fail(),
+      RuleEvaluationsResult$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+      RuleEvaluationsResult$pass() => pass != null ? pass() : orElse(value),
+      RuleEvaluationsResult$fail() => fail != null ? fail() : orElse(value),
+      RuleEvaluationsResult$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RuleEvaluationsResult($value)';
 
  }

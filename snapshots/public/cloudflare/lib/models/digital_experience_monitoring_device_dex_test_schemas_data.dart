@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function(String value) $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get() => $get(),
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function(String value)? $unknown, }) { return switch (this) {
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get() => $get != null ? $get() : orElse(value),
+      DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod($value)';
 
  }

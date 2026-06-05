@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FindPetsByStatusStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() available, required W Function() pending, required W Function() sold, required W Function(String value) $unknown, }) { return switch (this) {
+      FindPetsByStatusStatus$available() => available(),
+      FindPetsByStatusStatus$pending() => pending(),
+      FindPetsByStatusStatus$sold() => sold(),
+      FindPetsByStatusStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? available, W Function()? pending, W Function()? sold, W Function(String value)? $unknown, }) { return switch (this) {
+      FindPetsByStatusStatus$available() => available != null ? available() : orElse(value),
+      FindPetsByStatusStatus$pending() => pending != null ? pending() : orElse(value),
+      FindPetsByStatusStatus$sold() => sold != null ? sold() : orElse(value),
+      FindPetsByStatusStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FindPetsByStatusStatus($value)';
 
  }

@@ -61,6 +61,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AigConfigDeleteGatewayLogsOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() createdAt, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() success, required W Function() cached, required W Function() cost, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function(String value) $unknown, }) { return switch (this) {
+      AigConfigDeleteGatewayLogsOrderBy$createdAt() => createdAt(),
+      AigConfigDeleteGatewayLogsOrderBy$provider() => provider(),
+      AigConfigDeleteGatewayLogsOrderBy$model() => model(),
+      AigConfigDeleteGatewayLogsOrderBy$modelType() => modelType(),
+      AigConfigDeleteGatewayLogsOrderBy$success() => success(),
+      AigConfigDeleteGatewayLogsOrderBy$cached() => cached(),
+      AigConfigDeleteGatewayLogsOrderBy$cost() => cost(),
+      AigConfigDeleteGatewayLogsOrderBy$tokensIn() => tokensIn(),
+      AigConfigDeleteGatewayLogsOrderBy$tokensOut() => tokensOut(),
+      AigConfigDeleteGatewayLogsOrderBy$duration() => duration(),
+      AigConfigDeleteGatewayLogsOrderBy$feedback() => feedback(),
+      AigConfigDeleteGatewayLogsOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? createdAt, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? success, W Function()? cached, W Function()? cost, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function(String value)? $unknown, }) { return switch (this) {
+      AigConfigDeleteGatewayLogsOrderBy$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$provider() => provider != null ? provider() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$model() => model != null ? model() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$modelType() => modelType != null ? modelType() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$success() => success != null ? success() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$cached() => cached != null ? cached() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$cost() => cost != null ? cost() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$tokensIn() => tokensIn != null ? tokensIn() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$tokensOut() => tokensOut != null ? tokensOut() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$duration() => duration != null ? duration() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$feedback() => feedback != null ? feedback() : orElse(value),
+      AigConfigDeleteGatewayLogsOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AigConfigDeleteGatewayLogsOrderBy($value)';
 
  }

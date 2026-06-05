@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryInboundTransferObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() treasuryInboundTransfer, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryInboundTransferObject$treasuryInboundTransfer() => treasuryInboundTransfer(),
+      TreasuryInboundTransferObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryInboundTransfer, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryInboundTransferObject$treasuryInboundTransfer() => treasuryInboundTransfer != null ? treasuryInboundTransfer() : orElse(value),
+      TreasuryInboundTransferObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryInboundTransferObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryInboundTransferStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() failed, required W Function() processing, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryInboundTransferStatus$canceled() => canceled(),
+      TreasuryInboundTransferStatus$failed() => failed(),
+      TreasuryInboundTransferStatus$processing() => processing(),
+      TreasuryInboundTransferStatus$succeeded() => succeeded(),
+      TreasuryInboundTransferStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? processing, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryInboundTransferStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      TreasuryInboundTransferStatus$failed() => failed != null ? failed() : orElse(value),
+      TreasuryInboundTransferStatus$processing() => processing != null ? processing() : orElse(value),
+      TreasuryInboundTransferStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      TreasuryInboundTransferStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryInboundTransferStatus($value)';
 
  }

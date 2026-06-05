@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpSummaryByOperatingSystemTlsVersion$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() tlSv10, required W Function() tlSv11, required W Function() tlSv12, required W Function() tlSv13, required W Function() tlSvQuic, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv10() => tlSv10(),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv11() => tlSv11(),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv12() => tlSv12(),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv13() => tlSv13(),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSvQuic() => tlSvQuic(),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? tlSv10, W Function()? tlSv11, W Function()? tlSv12, W Function()? tlSv13, W Function()? tlSvQuic, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv10() => tlSv10 != null ? tlSv10() : orElse(value),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv11() => tlSv11 != null ? tlSv11() : orElse(value),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv12() => tlSv12 != null ? tlSv12() : orElse(value),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSv13() => tlSv13 != null ? tlSv13() : orElse(value),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$tlSvQuic() => tlSvQuic != null ? tlSvQuic() : orElse(value),
+      RadarGetHttpSummaryByOperatingSystemTlsVersion$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpSummaryByOperatingSystemTlsVersion($value)';
 
  }

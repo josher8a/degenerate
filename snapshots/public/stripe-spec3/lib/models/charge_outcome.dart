@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AdviceCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() confirmCardData, required W Function() doNotTryAgain, required W Function() tryAgainLater, required W Function(String value) $unknown, }) { return switch (this) {
+      AdviceCode$confirmCardData() => confirmCardData(),
+      AdviceCode$doNotTryAgain() => doNotTryAgain(),
+      AdviceCode$tryAgainLater() => tryAgainLater(),
+      AdviceCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? confirmCardData, W Function()? doNotTryAgain, W Function()? tryAgainLater, W Function(String value)? $unknown, }) { return switch (this) {
+      AdviceCode$confirmCardData() => confirmCardData != null ? confirmCardData() : orElse(value),
+      AdviceCode$doNotTryAgain() => doNotTryAgain != null ? doNotTryAgain() : orElse(value),
+      AdviceCode$tryAgainLater() => tryAgainLater != null ? tryAgainLater() : orElse(value),
+      AdviceCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AdviceCode($value)';
 
  }

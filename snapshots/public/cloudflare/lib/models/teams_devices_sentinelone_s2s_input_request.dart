@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NetworkStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() connected, required W Function() disconnected, required W Function() disconnecting, required W Function() connecting, required W Function(String value) $unknown, }) { return switch (this) {
+      NetworkStatus$connected() => connected(),
+      NetworkStatus$disconnected() => disconnected(),
+      NetworkStatus$disconnecting() => disconnecting(),
+      NetworkStatus$connecting() => connecting(),
+      NetworkStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? connected, W Function()? disconnected, W Function()? disconnecting, W Function()? connecting, W Function(String value)? $unknown, }) { return switch (this) {
+      NetworkStatus$connected() => connected != null ? connected() : orElse(value),
+      NetworkStatus$disconnected() => disconnected != null ? disconnected() : orElse(value),
+      NetworkStatus$disconnecting() => disconnecting != null ? disconnecting() : orElse(value),
+      NetworkStatus$connecting() => connecting != null ? connecting() : orElse(value),
+      NetworkStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NetworkStatus($value)';
 
  }
@@ -128,6 +144,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OperationalState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() na, required W Function() partiallyDisabled, required W Function() autoFullyDisabled, required W Function() fullyDisabled, required W Function() autoPartiallyDisabled, required W Function() disabledError, required W Function() dbCorruption, required W Function(String value) $unknown, }) { return switch (this) {
+      OperationalState$na() => na(),
+      OperationalState$partiallyDisabled() => partiallyDisabled(),
+      OperationalState$autoFullyDisabled() => autoFullyDisabled(),
+      OperationalState$fullyDisabled() => fullyDisabled(),
+      OperationalState$autoPartiallyDisabled() => autoPartiallyDisabled(),
+      OperationalState$disabledError() => disabledError(),
+      OperationalState$dbCorruption() => dbCorruption(),
+      OperationalState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? na, W Function()? partiallyDisabled, W Function()? autoFullyDisabled, W Function()? fullyDisabled, W Function()? autoPartiallyDisabled, W Function()? disabledError, W Function()? dbCorruption, W Function(String value)? $unknown, }) { return switch (this) {
+      OperationalState$na() => na != null ? na() : orElse(value),
+      OperationalState$partiallyDisabled() => partiallyDisabled != null ? partiallyDisabled() : orElse(value),
+      OperationalState$autoFullyDisabled() => autoFullyDisabled != null ? autoFullyDisabled() : orElse(value),
+      OperationalState$fullyDisabled() => fullyDisabled != null ? fullyDisabled() : orElse(value),
+      OperationalState$autoPartiallyDisabled() => autoPartiallyDisabled != null ? autoPartiallyDisabled() : orElse(value),
+      OperationalState$disabledError() => disabledError != null ? disabledError() : orElse(value),
+      OperationalState$dbCorruption() => dbCorruption != null ? dbCorruption() : orElse(value),
+      OperationalState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OperationalState($value)';
 
  }

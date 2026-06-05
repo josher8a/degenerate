@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetNetflowsTimeseriesNormalization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() percentageChange, required W Function() min0Max, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetNetflowsTimeseriesNormalization$percentageChange() => percentageChange(),
+      RadarGetNetflowsTimeseriesNormalization$min0Max() => min0Max(),
+      RadarGetNetflowsTimeseriesNormalization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentageChange, W Function()? min0Max, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetNetflowsTimeseriesNormalization$percentageChange() => percentageChange != null ? percentageChange() : orElse(value),
+      RadarGetNetflowsTimeseriesNormalization$min0Max() => min0Max != null ? min0Max() : orElse(value),
+      RadarGetNetflowsTimeseriesNormalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetNetflowsTimeseriesNormalization($value)';
 
  }

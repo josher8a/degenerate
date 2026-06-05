@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OpenAiFilePurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() assistants, required W Function() assistantsOutput, required W Function() batch, required W Function() batchOutput, required W Function() fineTune, required W Function() fineTuneResults, required W Function() vision, required W Function() userData, required W Function(String value) $unknown, }) { return switch (this) {
+      OpenAiFilePurpose$assistants() => assistants(),
+      OpenAiFilePurpose$assistantsOutput() => assistantsOutput(),
+      OpenAiFilePurpose$batch() => batch(),
+      OpenAiFilePurpose$batchOutput() => batchOutput(),
+      OpenAiFilePurpose$fineTune() => fineTune(),
+      OpenAiFilePurpose$fineTuneResults() => fineTuneResults(),
+      OpenAiFilePurpose$vision() => vision(),
+      OpenAiFilePurpose$userData() => userData(),
+      OpenAiFilePurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistants, W Function()? assistantsOutput, W Function()? batch, W Function()? batchOutput, W Function()? fineTune, W Function()? fineTuneResults, W Function()? vision, W Function()? userData, W Function(String value)? $unknown, }) { return switch (this) {
+      OpenAiFilePurpose$assistants() => assistants != null ? assistants() : orElse(value),
+      OpenAiFilePurpose$assistantsOutput() => assistantsOutput != null ? assistantsOutput() : orElse(value),
+      OpenAiFilePurpose$batch() => batch != null ? batch() : orElse(value),
+      OpenAiFilePurpose$batchOutput() => batchOutput != null ? batchOutput() : orElse(value),
+      OpenAiFilePurpose$fineTune() => fineTune != null ? fineTune() : orElse(value),
+      OpenAiFilePurpose$fineTuneResults() => fineTuneResults != null ? fineTuneResults() : orElse(value),
+      OpenAiFilePurpose$vision() => vision != null ? vision() : orElse(value),
+      OpenAiFilePurpose$userData() => userData != null ? userData() : orElse(value),
+      OpenAiFilePurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OpenAiFilePurpose($value)';
 
  }
@@ -164,6 +188,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OpenAiFileStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() uploaded, required W Function() processed, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      OpenAiFileStatus$uploaded() => uploaded(),
+      OpenAiFileStatus$processed() => processed(),
+      OpenAiFileStatus$error() => error(),
+      OpenAiFileStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uploaded, W Function()? processed, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      OpenAiFileStatus$uploaded() => uploaded != null ? uploaded() : orElse(value),
+      OpenAiFileStatus$processed() => processed != null ? processed() : orElse(value),
+      OpenAiFileStatus$error() => error != null ? error() : orElse(value),
+      OpenAiFileStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OpenAiFileStatus($value)';
 
  }

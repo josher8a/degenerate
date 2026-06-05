@@ -57,6 +57,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Variant1EventType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fetch, required W Function() scheduled, required W Function() alarm, required W Function() cron, required W Function() queue, required W Function() email, required W Function() tail, required W Function() rpc, required W Function() websocket, required W Function() unknown, required W Function(String value) $unknown, }) { return switch (this) {
+      Variant1EventType$fetch() => fetch(),
+      Variant1EventType$scheduled() => scheduled(),
+      Variant1EventType$alarm() => alarm(),
+      Variant1EventType$cron() => cron(),
+      Variant1EventType$queue() => queue(),
+      Variant1EventType$email() => email(),
+      Variant1EventType$tail() => tail(),
+      Variant1EventType$rpc() => rpc(),
+      Variant1EventType$websocket() => websocket(),
+      Variant1EventType$unknown() => unknown(),
+      Variant1EventType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fetch, W Function()? scheduled, W Function()? alarm, W Function()? cron, W Function()? queue, W Function()? email, W Function()? tail, W Function()? rpc, W Function()? websocket, W Function()? unknown, W Function(String value)? $unknown, }) { return switch (this) {
+      Variant1EventType$fetch() => fetch != null ? fetch() : orElse(value),
+      Variant1EventType$scheduled() => scheduled != null ? scheduled() : orElse(value),
+      Variant1EventType$alarm() => alarm != null ? alarm() : orElse(value),
+      Variant1EventType$cron() => cron != null ? cron() : orElse(value),
+      Variant1EventType$queue() => queue != null ? queue() : orElse(value),
+      Variant1EventType$email() => email != null ? email() : orElse(value),
+      Variant1EventType$tail() => tail != null ? tail() : orElse(value),
+      Variant1EventType$rpc() => rpc != null ? rpc() : orElse(value),
+      Variant1EventType$websocket() => websocket != null ? websocket() : orElse(value),
+      Variant1EventType$unknown() => unknown != null ? unknown() : orElse(value),
+      Variant1EventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Variant1EventType($value)';
 
  }

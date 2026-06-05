@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateImageRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() gptImage15, required W Function() dallE2, required W Function() dallE3, required W Function() gptImage1, required W Function() gptImage1Mini, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateImageRequestModelVariant2$gptImage15() => gptImage15(),
+      CreateImageRequestModelVariant2$dallE2() => dallE2(),
+      CreateImageRequestModelVariant2$dallE3() => dallE3(),
+      CreateImageRequestModelVariant2$gptImage1() => gptImage1(),
+      CreateImageRequestModelVariant2$gptImage1Mini() => gptImage1Mini(),
+      CreateImageRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? gptImage15, W Function()? dallE2, W Function()? dallE3, W Function()? gptImage1, W Function()? gptImage1Mini, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateImageRequestModelVariant2$gptImage15() => gptImage15 != null ? gptImage15() : orElse(value),
+      CreateImageRequestModelVariant2$dallE2() => dallE2 != null ? dallE2() : orElse(value),
+      CreateImageRequestModelVariant2$dallE3() => dallE3 != null ? dallE3() : orElse(value),
+      CreateImageRequestModelVariant2$gptImage1() => gptImage1 != null ? gptImage1() : orElse(value),
+      CreateImageRequestModelVariant2$gptImage1Mini() => gptImage1Mini != null ? gptImage1Mini() : orElse(value),
+      CreateImageRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateImageRequestModelVariant2($value)';
 
  }

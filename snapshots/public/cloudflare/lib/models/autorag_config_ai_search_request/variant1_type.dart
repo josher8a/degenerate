@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Variant1Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() ne, required W Function() gt, required W Function() gte, required W Function() lt, required W Function() lte, required W Function(String value) $unknown, }) { return switch (this) {
+      Variant1Type$eq() => eq(),
+      Variant1Type$ne() => ne(),
+      Variant1Type$gt() => gt(),
+      Variant1Type$gte() => gte(),
+      Variant1Type$lt() => lt(),
+      Variant1Type$lte() => lte(),
+      Variant1Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? gt, W Function()? gte, W Function()? lt, W Function()? lte, W Function(String value)? $unknown, }) { return switch (this) {
+      Variant1Type$eq() => eq != null ? eq() : orElse(value),
+      Variant1Type$ne() => ne != null ? ne() : orElse(value),
+      Variant1Type$gt() => gt != null ? gt() : orElse(value),
+      Variant1Type$gte() => gte != null ? gte() : orElse(value),
+      Variant1Type$lt() => lt != null ? lt() : orElse(value),
+      Variant1Type$lte() => lte != null ? lte() : orElse(value),
+      Variant1Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Variant1Type($value)';
 
  }

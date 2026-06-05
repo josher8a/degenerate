@@ -35,6 +35,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebSearchToolCallStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() searching, required W Function() completed, required W Function() failed, required W Function(String value) $unknown, }) { return switch (this) {
+      WebSearchToolCallStatus$inProgress() => inProgress(),
+      WebSearchToolCallStatus$searching() => searching(),
+      WebSearchToolCallStatus$completed() => completed(),
+      WebSearchToolCallStatus$failed() => failed(),
+      WebSearchToolCallStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? searching, W Function()? completed, W Function()? failed, W Function(String value)? $unknown, }) { return switch (this) {
+      WebSearchToolCallStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      WebSearchToolCallStatus$searching() => searching != null ? searching() : orElse(value),
+      WebSearchToolCallStatus$completed() => completed != null ? completed() : orElse(value),
+      WebSearchToolCallStatus$failed() => failed != null ? failed() : orElse(value),
+      WebSearchToolCallStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebSearchToolCallStatus($value)';
 
  }

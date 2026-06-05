@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetParticipantDataFromPeerIdFilters$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deviceInfo, required W Function() ipInformation, required W Function() precallNetworkInformation, required W Function() events, required W Function() qualityStats, required W Function(String value) $unknown, }) { return switch (this) {
+      GetParticipantDataFromPeerIdFilters$deviceInfo() => deviceInfo(),
+      GetParticipantDataFromPeerIdFilters$ipInformation() => ipInformation(),
+      GetParticipantDataFromPeerIdFilters$precallNetworkInformation() => precallNetworkInformation(),
+      GetParticipantDataFromPeerIdFilters$events() => events(),
+      GetParticipantDataFromPeerIdFilters$qualityStats() => qualityStats(),
+      GetParticipantDataFromPeerIdFilters$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deviceInfo, W Function()? ipInformation, W Function()? precallNetworkInformation, W Function()? events, W Function()? qualityStats, W Function(String value)? $unknown, }) { return switch (this) {
+      GetParticipantDataFromPeerIdFilters$deviceInfo() => deviceInfo != null ? deviceInfo() : orElse(value),
+      GetParticipantDataFromPeerIdFilters$ipInformation() => ipInformation != null ? ipInformation() : orElse(value),
+      GetParticipantDataFromPeerIdFilters$precallNetworkInformation() => precallNetworkInformation != null ? precallNetworkInformation() : orElse(value),
+      GetParticipantDataFromPeerIdFilters$events() => events != null ? events() : orElse(value),
+      GetParticipantDataFromPeerIdFilters$qualityStats() => qualityStats != null ? qualityStats() : orElse(value),
+      GetParticipantDataFromPeerIdFilters$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetParticipantDataFromPeerIdFilters($value)';
 
  }

@@ -118,6 +118,64 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DataSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() aiBots, required W Function() aiGateway, required W Function() bgp, required W Function() bots, required W Function() connectionAnomaly, required W Function() ct, required W Function() dns, required W Function() dnsMagnitude, required W Function() dnsAs112, required W Function() dos, required W Function() emailRouting, required W Function() emailSecurity, required W Function() fw, required W Function() fwPg, required W Function() http, required W Function() httpControl, required W Function() httpCrawlerReferer, required W Function() httpOrigins, required W Function() iqi, required W Function() leakedCredentials, required W Function() net, required W Function() robotsTxt, required W Function() speed, required W Function() workersAi, required W Function(String value) $unknown, }) { return switch (this) {
+      DataSource$all() => all(),
+      DataSource$aiBots() => aiBots(),
+      DataSource$aiGateway() => aiGateway(),
+      DataSource$bgp() => bgp(),
+      DataSource$bots() => bots(),
+      DataSource$connectionAnomaly() => connectionAnomaly(),
+      DataSource$ct() => ct(),
+      DataSource$dns() => dns(),
+      DataSource$dnsMagnitude() => dnsMagnitude(),
+      DataSource$dnsAs112() => dnsAs112(),
+      DataSource$dos() => dos(),
+      DataSource$emailRouting() => emailRouting(),
+      DataSource$emailSecurity() => emailSecurity(),
+      DataSource$fw() => fw(),
+      DataSource$fwPg() => fwPg(),
+      DataSource$http() => http(),
+      DataSource$httpControl() => httpControl(),
+      DataSource$httpCrawlerReferer() => httpCrawlerReferer(),
+      DataSource$httpOrigins() => httpOrigins(),
+      DataSource$iqi() => iqi(),
+      DataSource$leakedCredentials() => leakedCredentials(),
+      DataSource$net() => net(),
+      DataSource$robotsTxt() => robotsTxt(),
+      DataSource$speed() => speed(),
+      DataSource$workersAi() => workersAi(),
+      DataSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? aiBots, W Function()? aiGateway, W Function()? bgp, W Function()? bots, W Function()? connectionAnomaly, W Function()? ct, W Function()? dns, W Function()? dnsMagnitude, W Function()? dnsAs112, W Function()? dos, W Function()? emailRouting, W Function()? emailSecurity, W Function()? fw, W Function()? fwPg, W Function()? http, W Function()? httpControl, W Function()? httpCrawlerReferer, W Function()? httpOrigins, W Function()? iqi, W Function()? leakedCredentials, W Function()? net, W Function()? robotsTxt, W Function()? speed, W Function()? workersAi, W Function(String value)? $unknown, }) { return switch (this) {
+      DataSource$all() => all != null ? all() : orElse(value),
+      DataSource$aiBots() => aiBots != null ? aiBots() : orElse(value),
+      DataSource$aiGateway() => aiGateway != null ? aiGateway() : orElse(value),
+      DataSource$bgp() => bgp != null ? bgp() : orElse(value),
+      DataSource$bots() => bots != null ? bots() : orElse(value),
+      DataSource$connectionAnomaly() => connectionAnomaly != null ? connectionAnomaly() : orElse(value),
+      DataSource$ct() => ct != null ? ct() : orElse(value),
+      DataSource$dns() => dns != null ? dns() : orElse(value),
+      DataSource$dnsMagnitude() => dnsMagnitude != null ? dnsMagnitude() : orElse(value),
+      DataSource$dnsAs112() => dnsAs112 != null ? dnsAs112() : orElse(value),
+      DataSource$dos() => dos != null ? dos() : orElse(value),
+      DataSource$emailRouting() => emailRouting != null ? emailRouting() : orElse(value),
+      DataSource$emailSecurity() => emailSecurity != null ? emailSecurity() : orElse(value),
+      DataSource$fw() => fw != null ? fw() : orElse(value),
+      DataSource$fwPg() => fwPg != null ? fwPg() : orElse(value),
+      DataSource$http() => http != null ? http() : orElse(value),
+      DataSource$httpControl() => httpControl != null ? httpControl() : orElse(value),
+      DataSource$httpCrawlerReferer() => httpCrawlerReferer != null ? httpCrawlerReferer() : orElse(value),
+      DataSource$httpOrigins() => httpOrigins != null ? httpOrigins() : orElse(value),
+      DataSource$iqi() => iqi != null ? iqi() : orElse(value),
+      DataSource$leakedCredentials() => leakedCredentials != null ? leakedCredentials() : orElse(value),
+      DataSource$net() => net != null ? net() : orElse(value),
+      DataSource$robotsTxt() => robotsTxt != null ? robotsTxt() : orElse(value),
+      DataSource$speed() => speed != null ? speed() : orElse(value),
+      DataSource$workersAi() => workersAi != null ? workersAi() : orElse(value),
+      DataSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DataSource($value)';
 
  }
@@ -397,6 +455,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AnnotationsEventType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() event, required W Function() general, required W Function() outage, required W Function() partialProjection, required W Function() pipeline, required W Function() trafficAnomaly, required W Function(String value) $unknown, }) { return switch (this) {
+      AnnotationsEventType$event() => event(),
+      AnnotationsEventType$general() => general(),
+      AnnotationsEventType$outage() => outage(),
+      AnnotationsEventType$partialProjection() => partialProjection(),
+      AnnotationsEventType$pipeline() => pipeline(),
+      AnnotationsEventType$trafficAnomaly() => trafficAnomaly(),
+      AnnotationsEventType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? event, W Function()? general, W Function()? outage, W Function()? partialProjection, W Function()? pipeline, W Function()? trafficAnomaly, W Function(String value)? $unknown, }) { return switch (this) {
+      AnnotationsEventType$event() => event != null ? event() : orElse(value),
+      AnnotationsEventType$general() => general != null ? general() : orElse(value),
+      AnnotationsEventType$outage() => outage != null ? outage() : orElse(value),
+      AnnotationsEventType$partialProjection() => partialProjection != null ? partialProjection() : orElse(value),
+      AnnotationsEventType$pipeline() => pipeline != null ? pipeline() : orElse(value),
+      AnnotationsEventType$trafficAnomaly() => trafficAnomaly != null ? trafficAnomaly() : orElse(value),
+      AnnotationsEventType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AnnotationsEventType($value)';
 
  }

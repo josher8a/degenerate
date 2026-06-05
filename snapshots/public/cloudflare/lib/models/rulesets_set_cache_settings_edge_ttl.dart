@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsSetCacheSettingsEdgeTtlMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() respectOrigin, required W Function() bypassByDefault, required W Function() overrideOrigin, required W Function(String value) $unknown, }) { return switch (this) {
+      RulesetsSetCacheSettingsEdgeTtlMode$respectOrigin() => respectOrigin(),
+      RulesetsSetCacheSettingsEdgeTtlMode$bypassByDefault() => bypassByDefault(),
+      RulesetsSetCacheSettingsEdgeTtlMode$overrideOrigin() => overrideOrigin(),
+      RulesetsSetCacheSettingsEdgeTtlMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? respectOrigin, W Function()? bypassByDefault, W Function()? overrideOrigin, W Function(String value)? $unknown, }) { return switch (this) {
+      RulesetsSetCacheSettingsEdgeTtlMode$respectOrigin() => respectOrigin != null ? respectOrigin() : orElse(value),
+      RulesetsSetCacheSettingsEdgeTtlMode$bypassByDefault() => bypassByDefault != null ? bypassByDefault() : orElse(value),
+      RulesetsSetCacheSettingsEdgeTtlMode$overrideOrigin() => overrideOrigin != null ? overrideOrigin() : orElse(value),
+      RulesetsSetCacheSettingsEdgeTtlMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RulesetsSetCacheSettingsEdgeTtlMode($value)';
 
  }

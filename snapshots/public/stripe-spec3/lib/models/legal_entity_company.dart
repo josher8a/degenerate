@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LegalEntityCompanyOwnershipExemptionReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() qualifiedEntityExceedsOwnershipThreshold, required W Function() qualifiesAsFinancialInstitution, required W Function(String value) $unknown, }) { return switch (this) {
+      LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold(),
+      LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution(),
+      LegalEntityCompanyOwnershipExemptionReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? qualifiedEntityExceedsOwnershipThreshold, W Function()? qualifiesAsFinancialInstitution, W Function(String value)? $unknown, }) { return switch (this) {
+      LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold() => qualifiedEntityExceedsOwnershipThreshold != null ? qualifiedEntityExceedsOwnershipThreshold() : orElse(value),
+      LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution() => qualifiesAsFinancialInstitution != null ? qualifiesAsFinancialInstitution() : orElse(value),
+      LegalEntityCompanyOwnershipExemptionReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LegalEntityCompanyOwnershipExemptionReason($value)';
 
  }
@@ -166,6 +178,60 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is LegalEntityCompanyStructure$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() freeZoneEstablishment, required W Function() freeZoneLlc, required W Function() governmentInstrumentality, required W Function() governmentalUnit, required W Function() incorporatedNonProfit, required W Function() incorporatedPartnership, required W Function() limitedLiabilityPartnership, required W Function() llc, required W Function() multiMemberLlc, required W Function() privateCompany, required W Function() privateCorporation, required W Function() privatePartnership, required W Function() publicCompany, required W Function() publicCorporation, required W Function() publicPartnership, required W Function() registeredCharity, required W Function() singleMemberLlc, required W Function() soleEstablishment, required W Function() soleProprietorship, required W Function() taxExemptGovernmentInstrumentality, required W Function() unincorporatedAssociation, required W Function() unincorporatedNonProfit, required W Function() unincorporatedPartnership, required W Function(String value) $unknown, }) { return switch (this) {
+      LegalEntityCompanyStructure$freeZoneEstablishment() => freeZoneEstablishment(),
+      LegalEntityCompanyStructure$freeZoneLlc() => freeZoneLlc(),
+      LegalEntityCompanyStructure$governmentInstrumentality() => governmentInstrumentality(),
+      LegalEntityCompanyStructure$governmentalUnit() => governmentalUnit(),
+      LegalEntityCompanyStructure$incorporatedNonProfit() => incorporatedNonProfit(),
+      LegalEntityCompanyStructure$incorporatedPartnership() => incorporatedPartnership(),
+      LegalEntityCompanyStructure$limitedLiabilityPartnership() => limitedLiabilityPartnership(),
+      LegalEntityCompanyStructure$llc() => llc(),
+      LegalEntityCompanyStructure$multiMemberLlc() => multiMemberLlc(),
+      LegalEntityCompanyStructure$privateCompany() => privateCompany(),
+      LegalEntityCompanyStructure$privateCorporation() => privateCorporation(),
+      LegalEntityCompanyStructure$privatePartnership() => privatePartnership(),
+      LegalEntityCompanyStructure$publicCompany() => publicCompany(),
+      LegalEntityCompanyStructure$publicCorporation() => publicCorporation(),
+      LegalEntityCompanyStructure$publicPartnership() => publicPartnership(),
+      LegalEntityCompanyStructure$registeredCharity() => registeredCharity(),
+      LegalEntityCompanyStructure$singleMemberLlc() => singleMemberLlc(),
+      LegalEntityCompanyStructure$soleEstablishment() => soleEstablishment(),
+      LegalEntityCompanyStructure$soleProprietorship() => soleProprietorship(),
+      LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality() => taxExemptGovernmentInstrumentality(),
+      LegalEntityCompanyStructure$unincorporatedAssociation() => unincorporatedAssociation(),
+      LegalEntityCompanyStructure$unincorporatedNonProfit() => unincorporatedNonProfit(),
+      LegalEntityCompanyStructure$unincorporatedPartnership() => unincorporatedPartnership(),
+      LegalEntityCompanyStructure$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? freeZoneEstablishment, W Function()? freeZoneLlc, W Function()? governmentInstrumentality, W Function()? governmentalUnit, W Function()? incorporatedNonProfit, W Function()? incorporatedPartnership, W Function()? limitedLiabilityPartnership, W Function()? llc, W Function()? multiMemberLlc, W Function()? privateCompany, W Function()? privateCorporation, W Function()? privatePartnership, W Function()? publicCompany, W Function()? publicCorporation, W Function()? publicPartnership, W Function()? registeredCharity, W Function()? singleMemberLlc, W Function()? soleEstablishment, W Function()? soleProprietorship, W Function()? taxExemptGovernmentInstrumentality, W Function()? unincorporatedAssociation, W Function()? unincorporatedNonProfit, W Function()? unincorporatedPartnership, W Function(String value)? $unknown, }) { return switch (this) {
+      LegalEntityCompanyStructure$freeZoneEstablishment() => freeZoneEstablishment != null ? freeZoneEstablishment() : orElse(value),
+      LegalEntityCompanyStructure$freeZoneLlc() => freeZoneLlc != null ? freeZoneLlc() : orElse(value),
+      LegalEntityCompanyStructure$governmentInstrumentality() => governmentInstrumentality != null ? governmentInstrumentality() : orElse(value),
+      LegalEntityCompanyStructure$governmentalUnit() => governmentalUnit != null ? governmentalUnit() : orElse(value),
+      LegalEntityCompanyStructure$incorporatedNonProfit() => incorporatedNonProfit != null ? incorporatedNonProfit() : orElse(value),
+      LegalEntityCompanyStructure$incorporatedPartnership() => incorporatedPartnership != null ? incorporatedPartnership() : orElse(value),
+      LegalEntityCompanyStructure$limitedLiabilityPartnership() => limitedLiabilityPartnership != null ? limitedLiabilityPartnership() : orElse(value),
+      LegalEntityCompanyStructure$llc() => llc != null ? llc() : orElse(value),
+      LegalEntityCompanyStructure$multiMemberLlc() => multiMemberLlc != null ? multiMemberLlc() : orElse(value),
+      LegalEntityCompanyStructure$privateCompany() => privateCompany != null ? privateCompany() : orElse(value),
+      LegalEntityCompanyStructure$privateCorporation() => privateCorporation != null ? privateCorporation() : orElse(value),
+      LegalEntityCompanyStructure$privatePartnership() => privatePartnership != null ? privatePartnership() : orElse(value),
+      LegalEntityCompanyStructure$publicCompany() => publicCompany != null ? publicCompany() : orElse(value),
+      LegalEntityCompanyStructure$publicCorporation() => publicCorporation != null ? publicCorporation() : orElse(value),
+      LegalEntityCompanyStructure$publicPartnership() => publicPartnership != null ? publicPartnership() : orElse(value),
+      LegalEntityCompanyStructure$registeredCharity() => registeredCharity != null ? registeredCharity() : orElse(value),
+      LegalEntityCompanyStructure$singleMemberLlc() => singleMemberLlc != null ? singleMemberLlc() : orElse(value),
+      LegalEntityCompanyStructure$soleEstablishment() => soleEstablishment != null ? soleEstablishment() : orElse(value),
+      LegalEntityCompanyStructure$soleProprietorship() => soleProprietorship != null ? soleProprietorship() : orElse(value),
+      LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality() => taxExemptGovernmentInstrumentality != null ? taxExemptGovernmentInstrumentality() : orElse(value),
+      LegalEntityCompanyStructure$unincorporatedAssociation() => unincorporatedAssociation != null ? unincorporatedAssociation() : orElse(value),
+      LegalEntityCompanyStructure$unincorporatedNonProfit() => unincorporatedNonProfit != null ? unincorporatedNonProfit() : orElse(value),
+      LegalEntityCompanyStructure$unincorporatedPartnership() => unincorporatedPartnership != null ? unincorporatedPartnership() : orElse(value),
+      LegalEntityCompanyStructure$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'LegalEntityCompanyStructure($value)';
 
  }

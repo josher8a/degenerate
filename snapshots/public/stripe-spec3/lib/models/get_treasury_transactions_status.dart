@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetTreasuryTransactionsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() posted, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+      GetTreasuryTransactionsStatus$open() => open(),
+      GetTreasuryTransactionsStatus$posted() => posted(),
+      GetTreasuryTransactionsStatus$$void() => $void(),
+      GetTreasuryTransactionsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? posted, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+      GetTreasuryTransactionsStatus$open() => open != null ? open() : orElse(value),
+      GetTreasuryTransactionsStatus$posted() => posted != null ? posted() : orElse(value),
+      GetTreasuryTransactionsStatus$$void() => $void != null ? $void() : orElse(value),
+      GetTreasuryTransactionsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetTreasuryTransactionsStatus($value)';
 
  }

@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InviteRequestRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() owner, required W Function() reader, required W Function(String value) $unknown, }) { return switch (this) {
+      InviteRequestRole$owner() => owner(),
+      InviteRequestRole$reader() => reader(),
+      InviteRequestRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? owner, W Function()? reader, W Function(String value)? $unknown, }) { return switch (this) {
+      InviteRequestRole$owner() => owner != null ? owner() : orElse(value),
+      InviteRequestRole$reader() => reader != null ? reader() : orElse(value),
+      InviteRequestRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InviteRequestRole($value)';
 
  }

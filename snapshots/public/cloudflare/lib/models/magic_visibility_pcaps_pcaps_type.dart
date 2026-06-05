@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicVisibilityPcapsPcapsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() simple, required W Function() full, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicVisibilityPcapsPcapsType$simple() => simple(),
+      MagicVisibilityPcapsPcapsType$full() => full(),
+      MagicVisibilityPcapsPcapsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? simple, W Function()? full, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicVisibilityPcapsPcapsType$simple() => simple != null ? simple() : orElse(value),
+      MagicVisibilityPcapsPcapsType$full() => full != null ? full() : orElse(value),
+      MagicVisibilityPcapsPcapsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicVisibilityPcapsPcapsType($value)';
 
  }

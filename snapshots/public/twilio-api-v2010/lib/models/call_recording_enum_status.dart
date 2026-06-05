@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CallRecordingEnumStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() paused, required W Function() stopped, required W Function() processing, required W Function() completed, required W Function() absent, required W Function(String value) $unknown, }) { return switch (this) {
+      CallRecordingEnumStatus$inProgress() => inProgress(),
+      CallRecordingEnumStatus$paused() => paused(),
+      CallRecordingEnumStatus$stopped() => stopped(),
+      CallRecordingEnumStatus$processing() => processing(),
+      CallRecordingEnumStatus$completed() => completed(),
+      CallRecordingEnumStatus$absent() => absent(),
+      CallRecordingEnumStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? paused, W Function()? stopped, W Function()? processing, W Function()? completed, W Function()? absent, W Function(String value)? $unknown, }) { return switch (this) {
+      CallRecordingEnumStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      CallRecordingEnumStatus$paused() => paused != null ? paused() : orElse(value),
+      CallRecordingEnumStatus$stopped() => stopped != null ? stopped() : orElse(value),
+      CallRecordingEnumStatus$processing() => processing != null ? processing() : orElse(value),
+      CallRecordingEnumStatus$completed() => completed != null ? completed() : orElse(value),
+      CallRecordingEnumStatus$absent() => absent != null ? absent() : orElse(value),
+      CallRecordingEnumStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CallRecordingEnumStatus($value)';
 
  }

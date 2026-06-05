@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumContentRetention$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() retain, required W Function() discard, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumContentRetention$retain() => retain(),
+      MessageEnumContentRetention$discard() => discard(),
+      MessageEnumContentRetention$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, W Function()? discard, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumContentRetention$retain() => retain != null ? retain() : orElse(value),
+      MessageEnumContentRetention$discard() => discard != null ? discard() : orElse(value),
+      MessageEnumContentRetention$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumContentRetention($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumAddressRetention$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() retain, required W Function() obfuscate, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumAddressRetention$retain() => retain(),
+      MessageEnumAddressRetention$obfuscate() => obfuscate(),
+      MessageEnumAddressRetention$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? retain, W Function()? obfuscate, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumAddressRetention$retain() => retain != null ? retain() : orElse(value),
+      MessageEnumAddressRetention$obfuscate() => obfuscate != null ? obfuscate() : orElse(value),
+      MessageEnumAddressRetention$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumAddressRetention($value)';
 
  }
@@ -133,6 +157,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumTrafficType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() free, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumTrafficType$free() => free(),
+      MessageEnumTrafficType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? free, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumTrafficType$free() => free != null ? free() : orElse(value),
+      MessageEnumTrafficType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumTrafficType($value)';
 
  }
@@ -176,6 +210,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumScheduleType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fixed, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumScheduleType$fixed() => fixed(),
+      MessageEnumScheduleType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fixed, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumScheduleType$fixed() => fixed != null ? fixed() : orElse(value),
+      MessageEnumScheduleType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumScheduleType($value)';
 
  }
@@ -223,6 +267,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageEnumRiskCheck$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enable, required W Function() disable, required W Function(String value) $unknown, }) { return switch (this) {
+      MessageEnumRiskCheck$enable() => enable(),
+      MessageEnumRiskCheck$disable() => disable(),
+      MessageEnumRiskCheck$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enable, W Function()? disable, W Function(String value)? $unknown, }) { return switch (this) {
+      MessageEnumRiskCheck$enable() => enable != null ? enable() : orElse(value),
+      MessageEnumRiskCheck$disable() => disable != null ? disable() : orElse(value),
+      MessageEnumRiskCheck$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MessageEnumRiskCheck($value)';
 
  }

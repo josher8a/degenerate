@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsageExamplePostEnumParameter$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() value1, required W Function() value2, required W Function() value3, required W Function(String value) $unknown, }) { return switch (this) {
+      UsageExamplePostEnumParameter$value1() => value1(),
+      UsageExamplePostEnumParameter$value2() => value2(),
+      UsageExamplePostEnumParameter$value3() => value3(),
+      UsageExamplePostEnumParameter$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? value1, W Function()? value2, W Function()? value3, W Function(String value)? $unknown, }) { return switch (this) {
+      UsageExamplePostEnumParameter$value1() => value1 != null ? value1() : orElse(value),
+      UsageExamplePostEnumParameter$value2() => value2 != null ? value2() : orElse(value),
+      UsageExamplePostEnumParameter$value3() => value3 != null ? value3() : orElse(value),
+      UsageExamplePostEnumParameter$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UsageExamplePostEnumParameter($value)';
 
  }

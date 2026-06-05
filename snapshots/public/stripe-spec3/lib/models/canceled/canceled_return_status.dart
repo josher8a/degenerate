@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CanceledReturnStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() merchantRejected, required W Function() successful, required W Function(String value) $unknown, }) { return switch (this) {
+      CanceledReturnStatus$$empty() => $empty(),
+      CanceledReturnStatus$merchantRejected() => merchantRejected(),
+      CanceledReturnStatus$successful() => successful(),
+      CanceledReturnStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? merchantRejected, W Function()? successful, W Function(String value)? $unknown, }) { return switch (this) {
+      CanceledReturnStatus$$empty() => $empty != null ? $empty() : orElse(value),
+      CanceledReturnStatus$merchantRejected() => merchantRejected != null ? merchantRejected() : orElse(value),
+      CanceledReturnStatus$successful() => successful != null ? successful() : orElse(value),
+      CanceledReturnStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CanceledReturnStatus($value)';
 
  }

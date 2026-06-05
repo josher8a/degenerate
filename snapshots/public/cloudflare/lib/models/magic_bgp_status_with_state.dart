@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MagicBgpStatusWithStateState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bgpDown, required W Function() bgpUp, required W Function() bgpEstablishing, required W Function(String value) $unknown, }) { return switch (this) {
+      MagicBgpStatusWithStateState$bgpDown() => bgpDown(),
+      MagicBgpStatusWithStateState$bgpUp() => bgpUp(),
+      MagicBgpStatusWithStateState$bgpEstablishing() => bgpEstablishing(),
+      MagicBgpStatusWithStateState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bgpDown, W Function()? bgpUp, W Function()? bgpEstablishing, W Function(String value)? $unknown, }) { return switch (this) {
+      MagicBgpStatusWithStateState$bgpDown() => bgpDown != null ? bgpDown() : orElse(value),
+      MagicBgpStatusWithStateState$bgpUp() => bgpUp != null ? bgpUp() : orElse(value),
+      MagicBgpStatusWithStateState$bgpEstablishing() => bgpEstablishing != null ? bgpEstablishing() : orElse(value),
+      MagicBgpStatusWithStateState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'MagicBgpStatusWithStateState($value)';
 
  }

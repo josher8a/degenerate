@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() origin, required W Function() target, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$origin() => origin(),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$target() => target(),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? origin, W Function()? target, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$origin() => origin != null ? origin() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$target() => target != null ? target() : orElse(value),
+      RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByBitrateDirection($value)';
 
  }

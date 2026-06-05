@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayBindingStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pendingDeployment, required W Function() available, required W Function() pendingDeletion, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewayBindingStatus$pendingDeployment() => pendingDeployment(),
+      ZeroTrustGatewayBindingStatus$available() => available(),
+      ZeroTrustGatewayBindingStatus$pendingDeletion() => pendingDeletion(),
+      ZeroTrustGatewayBindingStatus$inactive() => inactive(),
+      ZeroTrustGatewayBindingStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pendingDeployment, W Function()? available, W Function()? pendingDeletion, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewayBindingStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
+      ZeroTrustGatewayBindingStatus$available() => available != null ? available() : orElse(value),
+      ZeroTrustGatewayBindingStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
+      ZeroTrustGatewayBindingStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      ZeroTrustGatewayBindingStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewayBindingStatus($value)';
 
  }
@@ -108,6 +124,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() custom, required W Function() gatewayManaged, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewayType$custom() => custom(),
+      ZeroTrustGatewayType$gatewayManaged() => gatewayManaged(),
+      ZeroTrustGatewayType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? custom, W Function()? gatewayManaged, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewayType$custom() => custom != null ? custom() : orElse(value),
+      ZeroTrustGatewayType$gatewayManaged() => gatewayManaged != null ? gatewayManaged() : orElse(value),
+      ZeroTrustGatewayType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewayType($value)';
 
  }

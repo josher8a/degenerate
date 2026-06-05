@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AllowedAuthenticators$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() totp, required W Function() biometrics, required W Function() securityKey, required W Function(String value) $unknown, }) { return switch (this) {
+      AllowedAuthenticators$totp() => totp(),
+      AllowedAuthenticators$biometrics() => biometrics(),
+      AllowedAuthenticators$securityKey() => securityKey(),
+      AllowedAuthenticators$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? totp, W Function()? biometrics, W Function()? securityKey, W Function(String value)? $unknown, }) { return switch (this) {
+      AllowedAuthenticators$totp() => totp != null ? totp() : orElse(value),
+      AllowedAuthenticators$biometrics() => biometrics != null ? biometrics() : orElse(value),
+      AllowedAuthenticators$securityKey() => securityKey != null ? securityKey() : orElse(value),
+      AllowedAuthenticators$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AllowedAuthenticators($value)';
 
  }

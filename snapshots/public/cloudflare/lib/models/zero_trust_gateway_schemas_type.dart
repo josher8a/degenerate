@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewaySchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() serial, required W Function() url, required W Function() domain, required W Function() email, required W Function() ip, required W Function() category, required W Function() location, required W Function() device, required W Function(String value) $unknown, }) { return switch (this) {
+      ZeroTrustGatewaySchemasType$serial() => serial(),
+      ZeroTrustGatewaySchemasType$url() => url(),
+      ZeroTrustGatewaySchemasType$domain() => domain(),
+      ZeroTrustGatewaySchemasType$email() => email(),
+      ZeroTrustGatewaySchemasType$ip() => ip(),
+      ZeroTrustGatewaySchemasType$category() => category(),
+      ZeroTrustGatewaySchemasType$location() => location(),
+      ZeroTrustGatewaySchemasType$device() => device(),
+      ZeroTrustGatewaySchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? serial, W Function()? url, W Function()? domain, W Function()? email, W Function()? ip, W Function()? category, W Function()? location, W Function()? device, W Function(String value)? $unknown, }) { return switch (this) {
+      ZeroTrustGatewaySchemasType$serial() => serial != null ? serial() : orElse(value),
+      ZeroTrustGatewaySchemasType$url() => url != null ? url() : orElse(value),
+      ZeroTrustGatewaySchemasType$domain() => domain != null ? domain() : orElse(value),
+      ZeroTrustGatewaySchemasType$email() => email != null ? email() : orElse(value),
+      ZeroTrustGatewaySchemasType$ip() => ip != null ? ip() : orElse(value),
+      ZeroTrustGatewaySchemasType$category() => category != null ? category() : orElse(value),
+      ZeroTrustGatewaySchemasType$location() => location != null ? location() : orElse(value),
+      ZeroTrustGatewaySchemasType$device() => device != null ? device() : orElse(value),
+      ZeroTrustGatewaySchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZeroTrustGatewaySchemasType($value)';
 
  }

@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HavingsOperation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() neq, required W Function() gt, required W Function() gte, required W Function() lt, required W Function() lte, required W Function(String value) $unknown, }) { return switch (this) {
+      HavingsOperation$eq() => eq(),
+      HavingsOperation$neq() => neq(),
+      HavingsOperation$gt() => gt(),
+      HavingsOperation$gte() => gte(),
+      HavingsOperation$lt() => lt(),
+      HavingsOperation$lte() => lte(),
+      HavingsOperation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? neq, W Function()? gt, W Function()? gte, W Function()? lt, W Function()? lte, W Function(String value)? $unknown, }) { return switch (this) {
+      HavingsOperation$eq() => eq != null ? eq() : orElse(value),
+      HavingsOperation$neq() => neq != null ? neq() : orElse(value),
+      HavingsOperation$gt() => gt != null ? gt() : orElse(value),
+      HavingsOperation$gte() => gte != null ? gte() : orElse(value),
+      HavingsOperation$lt() => lt != null ? lt() : orElse(value),
+      HavingsOperation$lte() => lte != null ? lte() : orElse(value),
+      HavingsOperation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'HavingsOperation($value)';
 
  }

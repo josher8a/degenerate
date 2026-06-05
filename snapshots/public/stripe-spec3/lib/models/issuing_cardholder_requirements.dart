@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingCardholderRequirementsDisabledReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() listed, required W Function() rejectedListed, required W Function() requirementsPastDue, required W Function() underReview, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingCardholderRequirementsDisabledReason$listed() => listed(),
+      IssuingCardholderRequirementsDisabledReason$rejectedListed() => rejectedListed(),
+      IssuingCardholderRequirementsDisabledReason$requirementsPastDue() => requirementsPastDue(),
+      IssuingCardholderRequirementsDisabledReason$underReview() => underReview(),
+      IssuingCardholderRequirementsDisabledReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? listed, W Function()? rejectedListed, W Function()? requirementsPastDue, W Function()? underReview, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingCardholderRequirementsDisabledReason$listed() => listed != null ? listed() : orElse(value),
+      IssuingCardholderRequirementsDisabledReason$rejectedListed() => rejectedListed != null ? rejectedListed() : orElse(value),
+      IssuingCardholderRequirementsDisabledReason$requirementsPastDue() => requirementsPastDue != null ? requirementsPastDue() : orElse(value),
+      IssuingCardholderRequirementsDisabledReason$underReview() => underReview != null ? underReview() : orElse(value),
+      IssuingCardholderRequirementsDisabledReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingCardholderRequirementsDisabledReason($value)';
 
  }
@@ -135,6 +151,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PastDue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() companyTaxId, required W Function() individualCardIssuingUserTermsAcceptanceDate, required W Function() individualCardIssuingUserTermsAcceptanceIp, required W Function() individualDobDay, required W Function() individualDobMonth, required W Function() individualDobYear, required W Function() individualFirstName, required W Function() individualLastName, required W Function() individualVerificationDocument, required W Function(String value) $unknown, }) { return switch (this) {
+      PastDue$companyTaxId() => companyTaxId(),
+      PastDue$individualCardIssuingUserTermsAcceptanceDate() => individualCardIssuingUserTermsAcceptanceDate(),
+      PastDue$individualCardIssuingUserTermsAcceptanceIp() => individualCardIssuingUserTermsAcceptanceIp(),
+      PastDue$individualDobDay() => individualDobDay(),
+      PastDue$individualDobMonth() => individualDobMonth(),
+      PastDue$individualDobYear() => individualDobYear(),
+      PastDue$individualFirstName() => individualFirstName(),
+      PastDue$individualLastName() => individualLastName(),
+      PastDue$individualVerificationDocument() => individualVerificationDocument(),
+      PastDue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? companyTaxId, W Function()? individualCardIssuingUserTermsAcceptanceDate, W Function()? individualCardIssuingUserTermsAcceptanceIp, W Function()? individualDobDay, W Function()? individualDobMonth, W Function()? individualDobYear, W Function()? individualFirstName, W Function()? individualLastName, W Function()? individualVerificationDocument, W Function(String value)? $unknown, }) { return switch (this) {
+      PastDue$companyTaxId() => companyTaxId != null ? companyTaxId() : orElse(value),
+      PastDue$individualCardIssuingUserTermsAcceptanceDate() => individualCardIssuingUserTermsAcceptanceDate != null ? individualCardIssuingUserTermsAcceptanceDate() : orElse(value),
+      PastDue$individualCardIssuingUserTermsAcceptanceIp() => individualCardIssuingUserTermsAcceptanceIp != null ? individualCardIssuingUserTermsAcceptanceIp() : orElse(value),
+      PastDue$individualDobDay() => individualDobDay != null ? individualDobDay() : orElse(value),
+      PastDue$individualDobMonth() => individualDobMonth != null ? individualDobMonth() : orElse(value),
+      PastDue$individualDobYear() => individualDobYear != null ? individualDobYear() : orElse(value),
+      PastDue$individualFirstName() => individualFirstName != null ? individualFirstName() : orElse(value),
+      PastDue$individualLastName() => individualLastName != null ? individualLastName() : orElse(value),
+      PastDue$individualVerificationDocument() => individualVerificationDocument != null ? individualVerificationDocument() : orElse(value),
+      PastDue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PastDue($value)';
 
  }

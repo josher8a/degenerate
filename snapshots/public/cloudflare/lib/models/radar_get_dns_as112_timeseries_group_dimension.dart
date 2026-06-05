@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsAs112TimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dnssec, required W Function() edns, required W Function() ipVersion, required W Function() protocol, required W Function() queryType, required W Function() responseCode, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TimeseriesGroupDimension$dnssec() => dnssec(),
+      RadarGetDnsAs112TimeseriesGroupDimension$edns() => edns(),
+      RadarGetDnsAs112TimeseriesGroupDimension$ipVersion() => ipVersion(),
+      RadarGetDnsAs112TimeseriesGroupDimension$protocol() => protocol(),
+      RadarGetDnsAs112TimeseriesGroupDimension$queryType() => queryType(),
+      RadarGetDnsAs112TimeseriesGroupDimension$responseCode() => responseCode(),
+      RadarGetDnsAs112TimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dnssec, W Function()? edns, W Function()? ipVersion, W Function()? protocol, W Function()? queryType, W Function()? responseCode, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsAs112TimeseriesGroupDimension$dnssec() => dnssec != null ? dnssec() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupDimension$edns() => edns != null ? edns() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupDimension$protocol() => protocol != null ? protocol() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupDimension$queryType() => queryType != null ? queryType() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupDimension$responseCode() => responseCode != null ? responseCode() : orElse(value),
+      RadarGetDnsAs112TimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsAs112TimeseriesGroupDimension($value)';
 
  }

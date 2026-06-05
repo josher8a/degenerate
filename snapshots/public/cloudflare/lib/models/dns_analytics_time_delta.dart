@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DnsAnalyticsTimeDelta$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() auto, required W Function() year, required W Function() quarter, required W Function() month, required W Function() week, required W Function() day, required W Function() hour, required W Function() dekaminute, required W Function() minute, required W Function(String value) $unknown, }) { return switch (this) {
+      DnsAnalyticsTimeDelta$all() => all(),
+      DnsAnalyticsTimeDelta$auto() => auto(),
+      DnsAnalyticsTimeDelta$year() => year(),
+      DnsAnalyticsTimeDelta$quarter() => quarter(),
+      DnsAnalyticsTimeDelta$month() => month(),
+      DnsAnalyticsTimeDelta$week() => week(),
+      DnsAnalyticsTimeDelta$day() => day(),
+      DnsAnalyticsTimeDelta$hour() => hour(),
+      DnsAnalyticsTimeDelta$dekaminute() => dekaminute(),
+      DnsAnalyticsTimeDelta$minute() => minute(),
+      DnsAnalyticsTimeDelta$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? auto, W Function()? year, W Function()? quarter, W Function()? month, W Function()? week, W Function()? day, W Function()? hour, W Function()? dekaminute, W Function()? minute, W Function(String value)? $unknown, }) { return switch (this) {
+      DnsAnalyticsTimeDelta$all() => all != null ? all() : orElse(value),
+      DnsAnalyticsTimeDelta$auto() => auto != null ? auto() : orElse(value),
+      DnsAnalyticsTimeDelta$year() => year != null ? year() : orElse(value),
+      DnsAnalyticsTimeDelta$quarter() => quarter != null ? quarter() : orElse(value),
+      DnsAnalyticsTimeDelta$month() => month != null ? month() : orElse(value),
+      DnsAnalyticsTimeDelta$week() => week != null ? week() : orElse(value),
+      DnsAnalyticsTimeDelta$day() => day != null ? day() : orElse(value),
+      DnsAnalyticsTimeDelta$hour() => hour != null ? hour() : orElse(value),
+      DnsAnalyticsTimeDelta$dekaminute() => dekaminute != null ? dekaminute() : orElse(value),
+      DnsAnalyticsTimeDelta$minute() => minute != null ? minute() : orElse(value),
+      DnsAnalyticsTimeDelta$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DnsAnalyticsTimeDelta($value)';
 
  }

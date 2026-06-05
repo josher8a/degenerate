@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PreviewDeploymentSetting$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() none, required W Function() custom, required W Function(String value) $unknown, }) { return switch (this) {
+      PreviewDeploymentSetting$all() => all(),
+      PreviewDeploymentSetting$none() => none(),
+      PreviewDeploymentSetting$custom() => custom(),
+      PreviewDeploymentSetting$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? none, W Function()? custom, W Function(String value)? $unknown, }) { return switch (this) {
+      PreviewDeploymentSetting$all() => all != null ? all() : orElse(value),
+      PreviewDeploymentSetting$none() => none != null ? none() : orElse(value),
+      PreviewDeploymentSetting$custom() => custom != null ? custom() : orElse(value),
+      PreviewDeploymentSetting$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PreviewDeploymentSetting($value)';
 
  }

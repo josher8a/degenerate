@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtSummaryNormalization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() rawValues, required W Function() percentage, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtSummaryNormalization$rawValues() => rawValues(),
+      RadarGetCtSummaryNormalization$percentage() => percentage(),
+      RadarGetCtSummaryNormalization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? rawValues, W Function()? percentage, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtSummaryNormalization$rawValues() => rawValues != null ? rawValues() : orElse(value),
+      RadarGetCtSummaryNormalization$percentage() => percentage != null ? percentage() : orElse(value),
+      RadarGetCtSummaryNormalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtSummaryNormalization($value)';
 
  }

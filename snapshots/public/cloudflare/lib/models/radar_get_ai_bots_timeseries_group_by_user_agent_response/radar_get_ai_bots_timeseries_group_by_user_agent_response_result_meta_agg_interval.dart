@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fifteenMinutes, required W Function() oneHour, required W Function() oneDay, required W Function() oneWeek, required W Function() oneMonth, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$fifteenMinutes() => fifteenMinutes(),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneHour() => oneHour(),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneDay() => oneDay(),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneWeek() => oneWeek(),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneMonth() => oneMonth(),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fifteenMinutes, W Function()? oneHour, W Function()? oneDay, W Function()? oneWeek, W Function()? oneMonth, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$fifteenMinutes() => fifteenMinutes != null ? fifteenMinutes() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneHour() => oneHour != null ? oneHour() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneDay() => oneDay != null ? oneDay() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneWeek() => oneWeek != null ? oneWeek() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$oneMonth() => oneMonth != null ? oneMonth() : orElse(value),
+      RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval($value)';
 
  }

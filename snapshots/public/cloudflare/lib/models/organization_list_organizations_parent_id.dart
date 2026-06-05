@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrganizationListOrganizationsParentIdVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      OrganizationListOrganizationsParentIdVariant2$$null() => $null(),
+      OrganizationListOrganizationsParentIdVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      OrganizationListOrganizationsParentIdVariant2$$null() => $null != null ? $null() : orElse(value),
+      OrganizationListOrganizationsParentIdVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrganizationListOrganizationsParentIdVariant2($value)';
 
  }

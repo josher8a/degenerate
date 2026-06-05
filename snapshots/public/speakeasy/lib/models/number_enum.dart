@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NumberEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $15, required W Function() $25, required W Function(double value) $unknown, }) { return switch (this) {
+      NumberEnum$$15() => $15(),
+      NumberEnum$$25() => $25(),
+      NumberEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(double value) orElse, W Function()? $15, W Function()? $25, W Function(double value)? $unknown, }) { return switch (this) {
+      NumberEnum$$15() => $15 != null ? $15() : orElse(value),
+      NumberEnum$$25() => $25 != null ? $25() : orElse(value),
+      NumberEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'NumberEnum($value)';
 
  }

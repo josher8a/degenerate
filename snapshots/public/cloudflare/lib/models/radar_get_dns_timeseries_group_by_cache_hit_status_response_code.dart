@@ -93,6 +93,52 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() noerror, required W Function() formerr, required W Function() servfail, required W Function() nxdomain, required W Function() notimp, required W Function() refused, required W Function() yxdomain, required W Function() yxrrset, required W Function() nxrrset, required W Function() notauth, required W Function() notzone, required W Function() badsig, required W Function() badkey, required W Function() badtime, required W Function() badmode, required W Function() badname, required W Function() badalg, required W Function() badtrunc, required W Function() badcookie, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$noerror() => noerror(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$formerr() => formerr(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$servfail() => servfail(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$nxdomain() => nxdomain(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$notimp() => notimp(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$refused() => refused(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$yxdomain() => yxdomain(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$yxrrset() => yxrrset(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$nxrrset() => nxrrset(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$notauth() => notauth(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$notzone() => notzone(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badsig() => badsig(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badkey() => badkey(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badtime() => badtime(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badmode() => badmode(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badname() => badname(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badalg() => badalg(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badtrunc() => badtrunc(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badcookie() => badcookie(),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? noerror, W Function()? formerr, W Function()? servfail, W Function()? nxdomain, W Function()? notimp, W Function()? refused, W Function()? yxdomain, W Function()? yxrrset, W Function()? nxrrset, W Function()? notauth, W Function()? notzone, W Function()? badsig, W Function()? badkey, W Function()? badtime, W Function()? badmode, W Function()? badname, W Function()? badalg, W Function()? badtrunc, W Function()? badcookie, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$noerror() => noerror != null ? noerror() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$formerr() => formerr != null ? formerr() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$servfail() => servfail != null ? servfail() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$nxdomain() => nxdomain != null ? nxdomain() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$notimp() => notimp != null ? notimp() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$refused() => refused != null ? refused() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$yxdomain() => yxdomain != null ? yxdomain() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$yxrrset() => yxrrset != null ? yxrrset() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$nxrrset() => nxrrset != null ? nxrrset() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$notauth() => notauth != null ? notauth() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$notzone() => notzone != null ? notzone() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badsig() => badsig != null ? badsig() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badkey() => badkey != null ? badkey() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badtime() => badtime != null ? badtime() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badmode() => badmode != null ? badmode() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badname() => badname != null ? badname() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badalg() => badalg != null ? badalg() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badtrunc() => badtrunc != null ? badtrunc() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$badcookie() => badcookie != null ? badcookie() : orElse(value),
+      RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetDnsTimeseriesGroupByCacheHitStatusResponseCode($value)';
 
  }

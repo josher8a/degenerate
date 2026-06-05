@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DataType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() number, required W Function() boolean, required W Function(String value) $unknown, }) { return switch (this) {
+      DataType$text() => text(),
+      DataType$number() => number(),
+      DataType$boolean() => boolean(),
+      DataType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? number, W Function()? boolean, W Function(String value)? $unknown, }) { return switch (this) {
+      DataType$text() => text != null ? text() : orElse(value),
+      DataType$number() => number != null ? number() : orElse(value),
+      DataType$boolean() => boolean != null ? boolean() : orElse(value),
+      DataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DataType($value)';
 
  }

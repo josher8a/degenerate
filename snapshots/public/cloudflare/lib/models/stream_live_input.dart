@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamLiveInputStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $null, required W Function() connected, required W Function() reconnected, required W Function() reconnecting, required W Function() clientDisconnect, required W Function() ttlExceeded, required W Function() failedToConnect, required W Function() failedToReconnect, required W Function() newConfigurationAccepted, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamLiveInputStatus$$null() => $null(),
+      StreamLiveInputStatus$connected() => connected(),
+      StreamLiveInputStatus$reconnected() => reconnected(),
+      StreamLiveInputStatus$reconnecting() => reconnecting(),
+      StreamLiveInputStatus$clientDisconnect() => clientDisconnect(),
+      StreamLiveInputStatus$ttlExceeded() => ttlExceeded(),
+      StreamLiveInputStatus$failedToConnect() => failedToConnect(),
+      StreamLiveInputStatus$failedToReconnect() => failedToReconnect(),
+      StreamLiveInputStatus$newConfigurationAccepted() => newConfigurationAccepted(),
+      StreamLiveInputStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $null, W Function()? connected, W Function()? reconnected, W Function()? reconnecting, W Function()? clientDisconnect, W Function()? ttlExceeded, W Function()? failedToConnect, W Function()? failedToReconnect, W Function()? newConfigurationAccepted, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamLiveInputStatus$$null() => $null != null ? $null() : orElse(value),
+      StreamLiveInputStatus$connected() => connected != null ? connected() : orElse(value),
+      StreamLiveInputStatus$reconnected() => reconnected != null ? reconnected() : orElse(value),
+      StreamLiveInputStatus$reconnecting() => reconnecting != null ? reconnecting() : orElse(value),
+      StreamLiveInputStatus$clientDisconnect() => clientDisconnect != null ? clientDisconnect() : orElse(value),
+      StreamLiveInputStatus$ttlExceeded() => ttlExceeded != null ? ttlExceeded() : orElse(value),
+      StreamLiveInputStatus$failedToConnect() => failedToConnect != null ? failedToConnect() : orElse(value),
+      StreamLiveInputStatus$failedToReconnect() => failedToReconnect != null ? failedToReconnect() : orElse(value),
+      StreamLiveInputStatus$newConfigurationAccepted() => newConfigurationAccepted != null ? newConfigurationAccepted() : orElse(value),
+      StreamLiveInputStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamLiveInputStatus($value)';
 
  }

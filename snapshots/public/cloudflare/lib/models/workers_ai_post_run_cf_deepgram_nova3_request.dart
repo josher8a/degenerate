@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomIntentMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() extended, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomIntentMode$extended() => extended(),
+      CustomIntentMode$strict() => strict(),
+      CustomIntentMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomIntentMode$extended() => extended != null ? extended() : orElse(value),
+      CustomIntentMode$strict() => strict != null ? strict() : orElse(value),
+      CustomIntentMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomIntentMode($value)';
 
  }
@@ -82,6 +94,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomTopicMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() extended, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      CustomTopicMode$extended() => extended(),
+      CustomTopicMode$strict() => strict(),
+      CustomTopicMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? extended, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      CustomTopicMode$extended() => extended != null ? extended() : orElse(value),
+      CustomTopicMode$strict() => strict != null ? strict() : orElse(value),
+      CustomTopicMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CustomTopicMode($value)';
 
  }
@@ -162,6 +186,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() linear16, required W Function() flac, required W Function() mulaw, required W Function() amrNb, required W Function() amrWb, required W Function() opus, required W Function() speex, required W Function() g729, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16() => linear16(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac() => flac(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw() => mulaw(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb() => amrNb(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb() => amrWb(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus() => opus(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex() => speex(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729() => g729(),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? linear16, W Function()? flac, W Function()? mulaw, W Function()? amrNb, W Function()? amrWb, W Function()? opus, W Function()? speex, W Function()? g729, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16() => linear16 != null ? linear16() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac() => flac != null ? flac() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw() => mulaw != null ? mulaw() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb() => amrNb != null ? amrNb() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb() => amrWb != null ? amrWb() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus() => opus != null ? opus() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex() => speex != null ? speex() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729() => g729 != null ? g729() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestEncoding($value)';
 
  }
@@ -276,6 +324,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() general, required W Function() medical, required W Function() finance, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramNova3RequestMode$general() => general(),
+      WorkersAiPostRunCfDeepgramNova3RequestMode$medical() => medical(),
+      WorkersAiPostRunCfDeepgramNova3RequestMode$finance() => finance(),
+      WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? general, W Function()? medical, W Function()? finance, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramNova3RequestMode$general() => general != null ? general() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestMode$medical() => medical != null ? medical() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestMode$finance() => finance != null ? finance() : orElse(value),
+      WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestMode($value)';
 
  }

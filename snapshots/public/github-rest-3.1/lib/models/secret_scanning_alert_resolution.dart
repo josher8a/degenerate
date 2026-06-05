@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecretScanningAlertResolution$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() falsePositive, required W Function() wontFix, required W Function() revoked, required W Function() usedInTests, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      SecretScanningAlertResolution$falsePositive() => falsePositive(),
+      SecretScanningAlertResolution$wontFix() => wontFix(),
+      SecretScanningAlertResolution$revoked() => revoked(),
+      SecretScanningAlertResolution$usedInTests() => usedInTests(),
+      SecretScanningAlertResolution$$null() => $null(),
+      SecretScanningAlertResolution$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? falsePositive, W Function()? wontFix, W Function()? revoked, W Function()? usedInTests, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      SecretScanningAlertResolution$falsePositive() => falsePositive != null ? falsePositive() : orElse(value),
+      SecretScanningAlertResolution$wontFix() => wontFix != null ? wontFix() : orElse(value),
+      SecretScanningAlertResolution$revoked() => revoked != null ? revoked() : orElse(value),
+      SecretScanningAlertResolution$usedInTests() => usedInTests != null ? usedInTests() : orElse(value),
+      SecretScanningAlertResolution$$null() => $null != null ? $null() : orElse(value),
+      SecretScanningAlertResolution$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecretScanningAlertResolution($value)';
 
  }

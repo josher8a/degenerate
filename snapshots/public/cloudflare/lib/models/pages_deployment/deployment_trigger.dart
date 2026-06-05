@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DeploymentTriggerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() githubpush, required W Function() adHoc, required W Function() deployHook, required W Function(String value) $unknown, }) { return switch (this) {
+      DeploymentTriggerType$githubpush() => githubpush(),
+      DeploymentTriggerType$adHoc() => adHoc(),
+      DeploymentTriggerType$deployHook() => deployHook(),
+      DeploymentTriggerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? githubpush, W Function()? adHoc, W Function()? deployHook, W Function(String value)? $unknown, }) { return switch (this) {
+      DeploymentTriggerType$githubpush() => githubpush != null ? githubpush() : orElse(value),
+      DeploymentTriggerType$adHoc() => adHoc != null ? adHoc() : orElse(value),
+      DeploymentTriggerType$deployHook() => deployHook != null ? deployHook() : orElse(value),
+      DeploymentTriggerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DeploymentTriggerType($value)';
 
  }

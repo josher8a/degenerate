@@ -62,6 +62,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesDeploymentStatusStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() deploymentInProgress, required W Function() syncingFiles, required W Function() finishedFileSync, required W Function() updatingPages, required W Function() purgingCdn, required W Function() deploymentCancelled, required W Function() deploymentFailed, required W Function() deploymentContentFailed, required W Function() deploymentAttemptError, required W Function() deploymentLost, required W Function() succeed, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesDeploymentStatusStatus$deploymentInProgress() => deploymentInProgress(),
+      PagesDeploymentStatusStatus$syncingFiles() => syncingFiles(),
+      PagesDeploymentStatusStatus$finishedFileSync() => finishedFileSync(),
+      PagesDeploymentStatusStatus$updatingPages() => updatingPages(),
+      PagesDeploymentStatusStatus$purgingCdn() => purgingCdn(),
+      PagesDeploymentStatusStatus$deploymentCancelled() => deploymentCancelled(),
+      PagesDeploymentStatusStatus$deploymentFailed() => deploymentFailed(),
+      PagesDeploymentStatusStatus$deploymentContentFailed() => deploymentContentFailed(),
+      PagesDeploymentStatusStatus$deploymentAttemptError() => deploymentAttemptError(),
+      PagesDeploymentStatusStatus$deploymentLost() => deploymentLost(),
+      PagesDeploymentStatusStatus$succeed() => succeed(),
+      PagesDeploymentStatusStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? deploymentInProgress, W Function()? syncingFiles, W Function()? finishedFileSync, W Function()? updatingPages, W Function()? purgingCdn, W Function()? deploymentCancelled, W Function()? deploymentFailed, W Function()? deploymentContentFailed, W Function()? deploymentAttemptError, W Function()? deploymentLost, W Function()? succeed, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesDeploymentStatusStatus$deploymentInProgress() => deploymentInProgress != null ? deploymentInProgress() : orElse(value),
+      PagesDeploymentStatusStatus$syncingFiles() => syncingFiles != null ? syncingFiles() : orElse(value),
+      PagesDeploymentStatusStatus$finishedFileSync() => finishedFileSync != null ? finishedFileSync() : orElse(value),
+      PagesDeploymentStatusStatus$updatingPages() => updatingPages != null ? updatingPages() : orElse(value),
+      PagesDeploymentStatusStatus$purgingCdn() => purgingCdn != null ? purgingCdn() : orElse(value),
+      PagesDeploymentStatusStatus$deploymentCancelled() => deploymentCancelled != null ? deploymentCancelled() : orElse(value),
+      PagesDeploymentStatusStatus$deploymentFailed() => deploymentFailed != null ? deploymentFailed() : orElse(value),
+      PagesDeploymentStatusStatus$deploymentContentFailed() => deploymentContentFailed != null ? deploymentContentFailed() : orElse(value),
+      PagesDeploymentStatusStatus$deploymentAttemptError() => deploymentAttemptError != null ? deploymentAttemptError() : orElse(value),
+      PagesDeploymentStatusStatus$deploymentLost() => deploymentLost != null ? deploymentLost() : orElse(value),
+      PagesDeploymentStatusStatus$succeed() => succeed != null ? succeed() : orElse(value),
+      PagesDeploymentStatusStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesDeploymentStatusStatus($value)';
 
  }

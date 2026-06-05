@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Geo$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() europeWest, required W Function() southeastAsia, required W Function() usEast, required W Function() usWest, required W Function(String value) $unknown, }) { return switch (this) {
+      Geo$europeWest() => europeWest(),
+      Geo$southeastAsia() => southeastAsia(),
+      Geo$usEast() => usEast(),
+      Geo$usWest() => usWest(),
+      Geo$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? europeWest, W Function()? southeastAsia, W Function()? usEast, W Function()? usWest, W Function(String value)? $unknown, }) { return switch (this) {
+      Geo$europeWest() => europeWest != null ? europeWest() : orElse(value),
+      Geo$southeastAsia() => southeastAsia != null ? southeastAsia() : orElse(value),
+      Geo$usEast() => usEast != null ? usEast() : orElse(value),
+      Geo$usWest() => usWest != null ? usWest() : orElse(value),
+      Geo$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Geo($value)';
 
  }

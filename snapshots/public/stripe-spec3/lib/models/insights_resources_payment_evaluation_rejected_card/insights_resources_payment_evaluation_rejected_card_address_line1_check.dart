@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fail, required W Function() pass, required W Function() unavailable, required W Function() unchecked, required W Function(String value) $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$fail() => fail(),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$pass() => pass(),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$unavailable() => unavailable(),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$unchecked() => unchecked(),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fail, W Function()? pass, W Function()? unavailable, W Function()? unchecked, W Function(String value)? $unknown, }) { return switch (this) {
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$fail() => fail != null ? fail() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$pass() => pass != null ? pass() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$unavailable() => unavailable != null ? unavailable() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$unchecked() => unchecked != null ? unchecked() : orElse(value),
+      InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCardAddressLine1Check($value)';
 
  }

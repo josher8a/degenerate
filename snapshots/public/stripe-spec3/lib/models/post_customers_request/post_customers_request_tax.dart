@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostCustomersRequestTaxValidateLocation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $deferred, required W Function() immediately, required W Function(String value) $unknown, }) { return switch (this) {
+      PostCustomersRequestTaxValidateLocation$$deferred() => $deferred(),
+      PostCustomersRequestTaxValidateLocation$immediately() => immediately(),
+      PostCustomersRequestTaxValidateLocation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $deferred, W Function()? immediately, W Function(String value)? $unknown, }) { return switch (this) {
+      PostCustomersRequestTaxValidateLocation$$deferred() => $deferred != null ? $deferred() : orElse(value),
+      PostCustomersRequestTaxValidateLocation$immediately() => immediately != null ? immediately() : orElse(value),
+      PostCustomersRequestTaxValidateLocation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostCustomersRequestTaxValidateLocation($value)';
 
  }

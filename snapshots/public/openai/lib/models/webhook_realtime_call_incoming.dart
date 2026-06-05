@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookRealtimeCallIncomingType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() realtimeCallIncoming, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookRealtimeCallIncomingType$realtimeCallIncoming() => realtimeCallIncoming(),
+      WebhookRealtimeCallIncomingType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? realtimeCallIncoming, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookRealtimeCallIncomingType$realtimeCallIncoming() => realtimeCallIncoming != null ? realtimeCallIncoming() : orElse(value),
+      WebhookRealtimeCallIncomingType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookRealtimeCallIncomingType($value)';
 
  }

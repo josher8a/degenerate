@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ActorType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() integration, required W Function() organizationAdmin, required W Function() repositoryRole, required W Function() team, required W Function() deployKey, required W Function(String value) $unknown, }) { return switch (this) {
+      ActorType$integration() => integration(),
+      ActorType$organizationAdmin() => organizationAdmin(),
+      ActorType$repositoryRole() => repositoryRole(),
+      ActorType$team() => team(),
+      ActorType$deployKey() => deployKey(),
+      ActorType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? integration, W Function()? organizationAdmin, W Function()? repositoryRole, W Function()? team, W Function()? deployKey, W Function(String value)? $unknown, }) { return switch (this) {
+      ActorType$integration() => integration != null ? integration() : orElse(value),
+      ActorType$organizationAdmin() => organizationAdmin != null ? organizationAdmin() : orElse(value),
+      ActorType$repositoryRole() => repositoryRole != null ? repositoryRole() : orElse(value),
+      ActorType$team() => team != null ? team() : orElse(value),
+      ActorType$deployKey() => deployKey != null ? deployKey() : orElse(value),
+      ActorType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ActorType($value)';
 
  }
@@ -125,6 +143,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BypassMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() pullRequest, required W Function() exempt, required W Function(String value) $unknown, }) { return switch (this) {
+      BypassMode$always() => always(),
+      BypassMode$pullRequest() => pullRequest(),
+      BypassMode$exempt() => exempt(),
+      BypassMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? pullRequest, W Function()? exempt, W Function(String value)? $unknown, }) { return switch (this) {
+      BypassMode$always() => always != null ? always() : orElse(value),
+      BypassMode$pullRequest() => pullRequest != null ? pullRequest() : orElse(value),
+      BypassMode$exempt() => exempt != null ? exempt() : orElse(value),
+      BypassMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BypassMode($value)';
 
  }

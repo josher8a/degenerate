@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ProjectServiceAccountRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() member, required W Function() owner, required W Function(String value) $unknown, }) { return switch (this) {
+      ProjectServiceAccountRole$member() => member(),
+      ProjectServiceAccountRole$owner() => owner(),
+      ProjectServiceAccountRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? member, W Function()? owner, W Function(String value)? $unknown, }) { return switch (this) {
+      ProjectServiceAccountRole$member() => member != null ? member() : orElse(value),
+      ProjectServiceAccountRole$owner() => owner != null ? owner() : orElse(value),
+      ProjectServiceAccountRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ProjectServiceAccountRole($value)';
 
  }

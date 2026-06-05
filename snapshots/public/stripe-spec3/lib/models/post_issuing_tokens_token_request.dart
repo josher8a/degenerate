@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PostIssuingTokensTokenRequestStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() deleted, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+      PostIssuingTokensTokenRequestStatus$active() => active(),
+      PostIssuingTokensTokenRequestStatus$deleted() => deleted(),
+      PostIssuingTokensTokenRequestStatus$suspended() => suspended(),
+      PostIssuingTokensTokenRequestStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? deleted, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+      PostIssuingTokensTokenRequestStatus$active() => active != null ? active() : orElse(value),
+      PostIssuingTokensTokenRequestStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      PostIssuingTokensTokenRequestStatus$suspended() => suspended != null ? suspended() : orElse(value),
+      PostIssuingTokensTokenRequestStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PostIssuingTokensTokenRequestStatus($value)';
 
  }

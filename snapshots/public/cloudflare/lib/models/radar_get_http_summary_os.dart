@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpSummaryOs$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() windows, required W Function() macosx, required W Function() ios, required W Function() android, required W Function() chromeos, required W Function() linux, required W Function() smartTv, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryOs$windows() => windows(),
+      RadarGetHttpSummaryOs$macosx() => macosx(),
+      RadarGetHttpSummaryOs$ios() => ios(),
+      RadarGetHttpSummaryOs$android() => android(),
+      RadarGetHttpSummaryOs$chromeos() => chromeos(),
+      RadarGetHttpSummaryOs$linux() => linux(),
+      RadarGetHttpSummaryOs$smartTv() => smartTv(),
+      RadarGetHttpSummaryOs$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? windows, W Function()? macosx, W Function()? ios, W Function()? android, W Function()? chromeos, W Function()? linux, W Function()? smartTv, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryOs$windows() => windows != null ? windows() : orElse(value),
+      RadarGetHttpSummaryOs$macosx() => macosx != null ? macosx() : orElse(value),
+      RadarGetHttpSummaryOs$ios() => ios != null ? ios() : orElse(value),
+      RadarGetHttpSummaryOs$android() => android != null ? android() : orElse(value),
+      RadarGetHttpSummaryOs$chromeos() => chromeos != null ? chromeos() : orElse(value),
+      RadarGetHttpSummaryOs$linux() => linux != null ? linux() : orElse(value),
+      RadarGetHttpSummaryOs$smartTv() => smartTv != null ? smartTv() : orElse(value),
+      RadarGetHttpSummaryOs$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpSummaryOs($value)';
 
  }

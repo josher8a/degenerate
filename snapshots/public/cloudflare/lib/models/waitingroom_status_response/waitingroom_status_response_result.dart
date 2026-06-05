@@ -51,6 +51,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eventPrequeueing, required W Function() notQueueing, required W Function() queueing, required W Function() suspended, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomStatus$eventPrequeueing() => eventPrequeueing(),
+      WaitingroomStatus$notQueueing() => notQueueing(),
+      WaitingroomStatus$queueing() => queueing(),
+      WaitingroomStatus$suspended() => suspended(),
+      WaitingroomStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eventPrequeueing, W Function()? notQueueing, W Function()? queueing, W Function()? suspended, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomStatus$eventPrequeueing() => eventPrequeueing != null ? eventPrequeueing() : orElse(value),
+      WaitingroomStatus$notQueueing() => notQueueing != null ? notQueueing() : orElse(value),
+      WaitingroomStatus$queueing() => queueing != null ? queueing() : orElse(value),
+      WaitingroomStatus$suspended() => suspended != null ? suspended() : orElse(value),
+      WaitingroomStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomStatus($value)';
 
  }

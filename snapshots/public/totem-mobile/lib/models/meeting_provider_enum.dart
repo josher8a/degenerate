@@ -40,6 +40,36 @@ sealed class MeetingProviderEnum {
     return this is MeetingProviderEnum$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() googleMeet,
+    required W Function() livekit,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      MeetingProviderEnum$googleMeet() => googleMeet(),
+      MeetingProviderEnum$livekit() => livekit(),
+      MeetingProviderEnum$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? googleMeet,
+    W Function()? livekit,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      MeetingProviderEnum$googleMeet() =>
+        googleMeet != null ? googleMeet() : orElse(value),
+      MeetingProviderEnum$livekit() =>
+        livekit != null ? livekit() : orElse(value),
+      MeetingProviderEnum$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'MeetingProviderEnum($value)';
 }

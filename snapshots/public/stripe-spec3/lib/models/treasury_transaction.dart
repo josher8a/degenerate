@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryTransactionObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() treasuryTransaction, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryTransactionObject$treasuryTransaction() => treasuryTransaction(),
+      TreasuryTransactionObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryTransaction, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryTransactionObject$treasuryTransaction() => treasuryTransaction != null ? treasuryTransaction() : orElse(value),
+      TreasuryTransactionObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryTransactionObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryTransactionStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() posted, required W Function() $void, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryTransactionStatus$open() => open(),
+      TreasuryTransactionStatus$posted() => posted(),
+      TreasuryTransactionStatus$$void() => $void(),
+      TreasuryTransactionStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? posted, W Function()? $void, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryTransactionStatus$open() => open != null ? open() : orElse(value),
+      TreasuryTransactionStatus$posted() => posted != null ? posted() : orElse(value),
+      TreasuryTransactionStatus$$void() => $void != null ? $void() : orElse(value),
+      TreasuryTransactionStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryTransactionStatus($value)';
 
  }

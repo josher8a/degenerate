@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RequiredActions$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() missingCustomerIdentifiers, required W Function() missingDisputedTransactionDescription, required W Function() missingMerchandiseOrServices, required W Function() missingPriorUndisputedTransactionDescription, required W Function() missingPriorUndisputedTransactions, required W Function(String value) $unknown, }) { return switch (this) {
+      RequiredActions$missingCustomerIdentifiers() => missingCustomerIdentifiers(),
+      RequiredActions$missingDisputedTransactionDescription() => missingDisputedTransactionDescription(),
+      RequiredActions$missingMerchandiseOrServices() => missingMerchandiseOrServices(),
+      RequiredActions$missingPriorUndisputedTransactionDescription() => missingPriorUndisputedTransactionDescription(),
+      RequiredActions$missingPriorUndisputedTransactions() => missingPriorUndisputedTransactions(),
+      RequiredActions$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? missingCustomerIdentifiers, W Function()? missingDisputedTransactionDescription, W Function()? missingMerchandiseOrServices, W Function()? missingPriorUndisputedTransactionDescription, W Function()? missingPriorUndisputedTransactions, W Function(String value)? $unknown, }) { return switch (this) {
+      RequiredActions$missingCustomerIdentifiers() => missingCustomerIdentifiers != null ? missingCustomerIdentifiers() : orElse(value),
+      RequiredActions$missingDisputedTransactionDescription() => missingDisputedTransactionDescription != null ? missingDisputedTransactionDescription() : orElse(value),
+      RequiredActions$missingMerchandiseOrServices() => missingMerchandiseOrServices != null ? missingMerchandiseOrServices() : orElse(value),
+      RequiredActions$missingPriorUndisputedTransactionDescription() => missingPriorUndisputedTransactionDescription != null ? missingPriorUndisputedTransactionDescription() : orElse(value),
+      RequiredActions$missingPriorUndisputedTransactions() => missingPriorUndisputedTransactions != null ? missingPriorUndisputedTransactions() : orElse(value),
+      RequiredActions$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RequiredActions($value)';
 
  }
@@ -124,6 +142,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() notQualified, required W Function() qualified, required W Function() requiresAction, required W Function(String value) $unknown, }) { return switch (this) {
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$notQualified() => notQualified(),
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$qualified() => qualified(),
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$requiresAction() => requiresAction(),
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? notQualified, W Function()? qualified, W Function()? requiresAction, W Function(String value)? $unknown, }) { return switch (this) {
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$notQualified() => notQualified != null ? notQualified() : orElse(value),
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$qualified() => qualified != null ? qualified() : orElse(value),
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$requiresAction() => requiresAction != null ? requiresAction() : orElse(value),
+      DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisputeEnhancedEligibilityVisaCompellingEvidence3Status($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountInvoicesSettingsHostedPaymentMethodSave$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() always, required W Function() never, required W Function() offer, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountInvoicesSettingsHostedPaymentMethodSave$always() => always(),
+      AccountInvoicesSettingsHostedPaymentMethodSave$never() => never(),
+      AccountInvoicesSettingsHostedPaymentMethodSave$offer() => offer(),
+      AccountInvoicesSettingsHostedPaymentMethodSave$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? always, W Function()? never, W Function()? offer, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountInvoicesSettingsHostedPaymentMethodSave$always() => always != null ? always() : orElse(value),
+      AccountInvoicesSettingsHostedPaymentMethodSave$never() => never != null ? never() : orElse(value),
+      AccountInvoicesSettingsHostedPaymentMethodSave$offer() => offer != null ? offer() : orElse(value),
+      AccountInvoicesSettingsHostedPaymentMethodSave$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountInvoicesSettingsHostedPaymentMethodSave($value)';
 
  }

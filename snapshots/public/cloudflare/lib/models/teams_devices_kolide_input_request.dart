@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CountOperator$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function() $empty3, required W Function() $empty4, required W Function() $empty5, required W Function(String value) $unknown, }) { return switch (this) {
+      CountOperator$$empty() => $empty(),
+      CountOperator$$empty2() => $empty2(),
+      CountOperator$$empty3() => $empty3(),
+      CountOperator$$empty4() => $empty4(),
+      CountOperator$$empty5() => $empty5(),
+      CountOperator$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function()? $empty3, W Function()? $empty4, W Function()? $empty5, W Function(String value)? $unknown, }) { return switch (this) {
+      CountOperator$$empty() => $empty != null ? $empty() : orElse(value),
+      CountOperator$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      CountOperator$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      CountOperator$$empty4() => $empty4 != null ? $empty4() : orElse(value),
+      CountOperator$$empty5() => $empty5 != null ? $empty5() : orElse(value),
+      CountOperator$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CountOperator($value)';
 
  }

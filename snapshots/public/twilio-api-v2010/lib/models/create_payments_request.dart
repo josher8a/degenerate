@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsEnumPaymentMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditCard, required W Function() achDebit, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsEnumPaymentMethod$creditCard() => creditCard(),
+      PaymentsEnumPaymentMethod$achDebit() => achDebit(),
+      PaymentsEnumPaymentMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditCard, W Function()? achDebit, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsEnumPaymentMethod$creditCard() => creditCard != null ? creditCard() : orElse(value),
+      PaymentsEnumPaymentMethod$achDebit() => achDebit != null ? achDebit() : orElse(value),
+      PaymentsEnumPaymentMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsEnumPaymentMethod($value)';
 
  }
@@ -86,6 +98,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsEnumBankAccountType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() consumerChecking, required W Function() consumerSavings, required W Function() commercialChecking, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsEnumBankAccountType$consumerChecking() => consumerChecking(),
+      PaymentsEnumBankAccountType$consumerSavings() => consumerSavings(),
+      PaymentsEnumBankAccountType$commercialChecking() => commercialChecking(),
+      PaymentsEnumBankAccountType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? consumerChecking, W Function()? consumerSavings, W Function()? commercialChecking, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsEnumBankAccountType$consumerChecking() => consumerChecking != null ? consumerChecking() : orElse(value),
+      PaymentsEnumBankAccountType$consumerSavings() => consumerSavings != null ? consumerSavings() : orElse(value),
+      PaymentsEnumBankAccountType$commercialChecking() => commercialChecking != null ? commercialChecking() : orElse(value),
+      PaymentsEnumBankAccountType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsEnumBankAccountType($value)';
 
  }
@@ -155,6 +181,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentsEnumTokenType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oneTime, required W Function() reusable, required W Function() paymentMethod, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentsEnumTokenType$oneTime() => oneTime(),
+      PaymentsEnumTokenType$reusable() => reusable(),
+      PaymentsEnumTokenType$paymentMethod() => paymentMethod(),
+      PaymentsEnumTokenType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oneTime, W Function()? reusable, W Function()? paymentMethod, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentsEnumTokenType$oneTime() => oneTime != null ? oneTime() : orElse(value),
+      PaymentsEnumTokenType$reusable() => reusable != null ? reusable() : orElse(value),
+      PaymentsEnumTokenType$paymentMethod() => paymentMethod != null ? paymentMethod() : orElse(value),
+      PaymentsEnumTokenType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentsEnumTokenType($value)';
 
  }

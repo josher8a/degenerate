@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() goods, required W Function() $other, required W Function() services, required W Function() unspecified, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$empty() => $empty(),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$goods() => goods(),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$other() => $other(),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$services() => services(),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$unspecified() => unspecified(),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? goods, W Function()? $other, W Function()? services, W Function()? unspecified, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$empty() => $empty != null ? $empty() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$goods() => goods != null ? goods() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$other() => $other != null ? $other() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$services() => services != null ? services() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$unspecified() => unspecified != null ? unspecified() : orElse(value),
+      PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentIntentPaymentMethodOptionsParamTransactionPurpose($value)';
 
  }

@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResultScopes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() comCloudflareApiAccount, required W Function() comCloudflareApiAccountZone, required W Function() comCloudflareApiUser, required W Function() comCloudflareEdgeR2Bucket, required W Function(String value) $unknown, }) { return switch (this) {
+      ResultScopes$comCloudflareApiAccount() => comCloudflareApiAccount(),
+      ResultScopes$comCloudflareApiAccountZone() => comCloudflareApiAccountZone(),
+      ResultScopes$comCloudflareApiUser() => comCloudflareApiUser(),
+      ResultScopes$comCloudflareEdgeR2Bucket() => comCloudflareEdgeR2Bucket(),
+      ResultScopes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? comCloudflareApiAccount, W Function()? comCloudflareApiAccountZone, W Function()? comCloudflareApiUser, W Function()? comCloudflareEdgeR2Bucket, W Function(String value)? $unknown, }) { return switch (this) {
+      ResultScopes$comCloudflareApiAccount() => comCloudflareApiAccount != null ? comCloudflareApiAccount() : orElse(value),
+      ResultScopes$comCloudflareApiAccountZone() => comCloudflareApiAccountZone != null ? comCloudflareApiAccountZone() : orElse(value),
+      ResultScopes$comCloudflareApiUser() => comCloudflareApiUser != null ? comCloudflareApiUser() : orElse(value),
+      ResultScopes$comCloudflareEdgeR2Bucket() => comCloudflareEdgeR2Bucket != null ? comCloudflareEdgeR2Bucket() : orElse(value),
+      ResultScopes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResultScopes($value)';
 
  }

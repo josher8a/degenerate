@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateServersRequestAuthType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() oauth, required W Function() bearer, required W Function() unauthenticated, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateServersRequestAuthType$oauth() => oauth(),
+      CreateServersRequestAuthType$bearer() => bearer(),
+      CreateServersRequestAuthType$unauthenticated() => unauthenticated(),
+      CreateServersRequestAuthType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? oauth, W Function()? bearer, W Function()? unauthenticated, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateServersRequestAuthType$oauth() => oauth != null ? oauth() : orElse(value),
+      CreateServersRequestAuthType$bearer() => bearer != null ? bearer() : orElse(value),
+      CreateServersRequestAuthType$unauthenticated() => unauthenticated != null ? unauthenticated() : orElse(value),
+      CreateServersRequestAuthType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateServersRequestAuthType($value)';
 
  }

@@ -37,6 +37,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamDownloadStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() ready, required W Function() inprogress, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamDownloadStatus$ready() => ready(),
+      StreamDownloadStatus$inprogress() => inprogress(),
+      StreamDownloadStatus$error() => error(),
+      StreamDownloadStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? ready, W Function()? inprogress, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamDownloadStatus$ready() => ready != null ? ready() : orElse(value),
+      StreamDownloadStatus$inprogress() => inprogress != null ? inprogress() : orElse(value),
+      StreamDownloadStatus$error() => error != null ? error() : orElse(value),
+      StreamDownloadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamDownloadStatus($value)';
 
  }

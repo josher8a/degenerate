@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ViewType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() groupCall, required W Function() webinar, required W Function() audioRoom, required W Function(String value) $unknown, }) { return switch (this) {
+      ViewType$groupCall() => groupCall(),
+      ViewType$webinar() => webinar(),
+      ViewType$audioRoom() => audioRoom(),
+      ViewType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? groupCall, W Function()? webinar, W Function()? audioRoom, W Function(String value)? $unknown, }) { return switch (this) {
+      ViewType$groupCall() => groupCall != null ? groupCall() : orElse(value),
+      ViewType$webinar() => webinar != null ? webinar() : orElse(value),
+      ViewType$audioRoom() => audioRoom != null ? audioRoom() : orElse(value),
+      ViewType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ViewType($value)';
 
  }

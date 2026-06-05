@@ -38,6 +38,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsCreateInvitationRequestRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() admin, required W Function() directMember, required W Function() billingManager, required W Function() reinstate, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsCreateInvitationRequestRole$admin() => admin(),
+      OrgsCreateInvitationRequestRole$directMember() => directMember(),
+      OrgsCreateInvitationRequestRole$billingManager() => billingManager(),
+      OrgsCreateInvitationRequestRole$reinstate() => reinstate(),
+      OrgsCreateInvitationRequestRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W Function()? directMember, W Function()? billingManager, W Function()? reinstate, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsCreateInvitationRequestRole$admin() => admin != null ? admin() : orElse(value),
+      OrgsCreateInvitationRequestRole$directMember() => directMember != null ? directMember() : orElse(value),
+      OrgsCreateInvitationRequestRole$billingManager() => billingManager != null ? billingManager() : orElse(value),
+      OrgsCreateInvitationRequestRole$reinstate() => reinstate != null ? reinstate() : orElse(value),
+      OrgsCreateInvitationRequestRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsCreateInvitationRequestRole($value)';
 
  }

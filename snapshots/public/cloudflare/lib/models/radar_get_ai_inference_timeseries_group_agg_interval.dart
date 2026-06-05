@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetAiInferenceTimeseriesGroupAggInterval$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $15m, required W Function() $1h, required W Function() $1d, required W Function() $1w, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$15m() => $15m(),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$1h() => $1h(),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$1d() => $1d(),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$1w() => $1w(),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $15m, W Function()? $1h, W Function()? $1d, W Function()? $1w, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$15m() => $15m != null ? $15m() : orElse(value),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$1h() => $1h != null ? $1h() : orElse(value),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$1d() => $1d != null ? $1d() : orElse(value),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$$1w() => $1w != null ? $1w() : orElse(value),
+      RadarGetAiInferenceTimeseriesGroupAggInterval$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetAiInferenceTimeseriesGroupAggInterval($value)';
 
  }

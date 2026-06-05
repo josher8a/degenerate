@@ -82,6 +82,46 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetBotsSummaryBotCategory$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() searchEngineCrawler, required W Function() searchEngineOptimization, required W Function() monitoringAndAnalytics, required W Function() advertisingAndMarketing, required W Function() socialMediaMarketing, required W Function() pagePreview, required W Function() academicResearch, required W Function() security, required W Function() accessibility, required W Function() webhooks, required W Function() feedFetcher, required W Function() aiCrawler, required W Function() aggregator, required W Function() aiAssistant, required W Function() aiSearch, required W Function() archiver, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetBotsSummaryBotCategory$searchEngineCrawler() => searchEngineCrawler(),
+      RadarGetBotsSummaryBotCategory$searchEngineOptimization() => searchEngineOptimization(),
+      RadarGetBotsSummaryBotCategory$monitoringAndAnalytics() => monitoringAndAnalytics(),
+      RadarGetBotsSummaryBotCategory$advertisingAndMarketing() => advertisingAndMarketing(),
+      RadarGetBotsSummaryBotCategory$socialMediaMarketing() => socialMediaMarketing(),
+      RadarGetBotsSummaryBotCategory$pagePreview() => pagePreview(),
+      RadarGetBotsSummaryBotCategory$academicResearch() => academicResearch(),
+      RadarGetBotsSummaryBotCategory$security() => security(),
+      RadarGetBotsSummaryBotCategory$accessibility() => accessibility(),
+      RadarGetBotsSummaryBotCategory$webhooks() => webhooks(),
+      RadarGetBotsSummaryBotCategory$feedFetcher() => feedFetcher(),
+      RadarGetBotsSummaryBotCategory$aiCrawler() => aiCrawler(),
+      RadarGetBotsSummaryBotCategory$aggregator() => aggregator(),
+      RadarGetBotsSummaryBotCategory$aiAssistant() => aiAssistant(),
+      RadarGetBotsSummaryBotCategory$aiSearch() => aiSearch(),
+      RadarGetBotsSummaryBotCategory$archiver() => archiver(),
+      RadarGetBotsSummaryBotCategory$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? searchEngineCrawler, W Function()? searchEngineOptimization, W Function()? monitoringAndAnalytics, W Function()? advertisingAndMarketing, W Function()? socialMediaMarketing, W Function()? pagePreview, W Function()? academicResearch, W Function()? security, W Function()? accessibility, W Function()? webhooks, W Function()? feedFetcher, W Function()? aiCrawler, W Function()? aggregator, W Function()? aiAssistant, W Function()? aiSearch, W Function()? archiver, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetBotsSummaryBotCategory$searchEngineCrawler() => searchEngineCrawler != null ? searchEngineCrawler() : orElse(value),
+      RadarGetBotsSummaryBotCategory$searchEngineOptimization() => searchEngineOptimization != null ? searchEngineOptimization() : orElse(value),
+      RadarGetBotsSummaryBotCategory$monitoringAndAnalytics() => monitoringAndAnalytics != null ? monitoringAndAnalytics() : orElse(value),
+      RadarGetBotsSummaryBotCategory$advertisingAndMarketing() => advertisingAndMarketing != null ? advertisingAndMarketing() : orElse(value),
+      RadarGetBotsSummaryBotCategory$socialMediaMarketing() => socialMediaMarketing != null ? socialMediaMarketing() : orElse(value),
+      RadarGetBotsSummaryBotCategory$pagePreview() => pagePreview != null ? pagePreview() : orElse(value),
+      RadarGetBotsSummaryBotCategory$academicResearch() => academicResearch != null ? academicResearch() : orElse(value),
+      RadarGetBotsSummaryBotCategory$security() => security != null ? security() : orElse(value),
+      RadarGetBotsSummaryBotCategory$accessibility() => accessibility != null ? accessibility() : orElse(value),
+      RadarGetBotsSummaryBotCategory$webhooks() => webhooks != null ? webhooks() : orElse(value),
+      RadarGetBotsSummaryBotCategory$feedFetcher() => feedFetcher != null ? feedFetcher() : orElse(value),
+      RadarGetBotsSummaryBotCategory$aiCrawler() => aiCrawler != null ? aiCrawler() : orElse(value),
+      RadarGetBotsSummaryBotCategory$aggregator() => aggregator != null ? aggregator() : orElse(value),
+      RadarGetBotsSummaryBotCategory$aiAssistant() => aiAssistant != null ? aiAssistant() : orElse(value),
+      RadarGetBotsSummaryBotCategory$aiSearch() => aiSearch != null ? aiSearch() : orElse(value),
+      RadarGetBotsSummaryBotCategory$archiver() => archiver != null ? archiver() : orElse(value),
+      RadarGetBotsSummaryBotCategory$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetBotsSummaryBotCategory($value)';
 
  }

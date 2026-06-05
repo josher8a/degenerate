@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityCenterIssueType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() complianceViolation, required W Function() emailSecurity, required W Function() exposedInfrastructure, required W Function() insecureConfiguration, required W Function() weakAuthentication, required W Function() configurationSuggestion, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityCenterIssueType$complianceViolation() => complianceViolation(),
+      SecurityCenterIssueType$emailSecurity() => emailSecurity(),
+      SecurityCenterIssueType$exposedInfrastructure() => exposedInfrastructure(),
+      SecurityCenterIssueType$insecureConfiguration() => insecureConfiguration(),
+      SecurityCenterIssueType$weakAuthentication() => weakAuthentication(),
+      SecurityCenterIssueType$configurationSuggestion() => configurationSuggestion(),
+      SecurityCenterIssueType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complianceViolation, W Function()? emailSecurity, W Function()? exposedInfrastructure, W Function()? insecureConfiguration, W Function()? weakAuthentication, W Function()? configurationSuggestion, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityCenterIssueType$complianceViolation() => complianceViolation != null ? complianceViolation() : orElse(value),
+      SecurityCenterIssueType$emailSecurity() => emailSecurity != null ? emailSecurity() : orElse(value),
+      SecurityCenterIssueType$exposedInfrastructure() => exposedInfrastructure != null ? exposedInfrastructure() : orElse(value),
+      SecurityCenterIssueType$insecureConfiguration() => insecureConfiguration != null ? insecureConfiguration() : orElse(value),
+      SecurityCenterIssueType$weakAuthentication() => weakAuthentication != null ? weakAuthentication() : orElse(value),
+      SecurityCenterIssueType$configurationSuggestion() => configurationSuggestion != null ? configurationSuggestion() : orElse(value),
+      SecurityCenterIssueType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityCenterIssueType($value)';
 
  }

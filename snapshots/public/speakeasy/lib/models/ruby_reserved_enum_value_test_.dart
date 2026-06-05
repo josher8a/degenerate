@@ -41,6 +41,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RubyReservedEnumValueTest$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enb, required W Function() enc, required W Function() end, required W Function() ene, required W Function() begin, required W Function() eof, required W Function(String value) $unknown, }) { return switch (this) {
+      RubyReservedEnumValueTest$enb() => enb(),
+      RubyReservedEnumValueTest$enc() => enc(),
+      RubyReservedEnumValueTest$end() => end(),
+      RubyReservedEnumValueTest$ene() => ene(),
+      RubyReservedEnumValueTest$begin() => begin(),
+      RubyReservedEnumValueTest$eof() => eof(),
+      RubyReservedEnumValueTest$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enb, W Function()? enc, W Function()? end, W Function()? ene, W Function()? begin, W Function()? eof, W Function(String value)? $unknown, }) { return switch (this) {
+      RubyReservedEnumValueTest$enb() => enb != null ? enb() : orElse(value),
+      RubyReservedEnumValueTest$enc() => enc != null ? enc() : orElse(value),
+      RubyReservedEnumValueTest$end() => end != null ? end() : orElse(value),
+      RubyReservedEnumValueTest$ene() => ene != null ? ene() : orElse(value),
+      RubyReservedEnumValueTest$begin() => begin != null ? begin() : orElse(value),
+      RubyReservedEnumValueTest$eof() => eof != null ? eof() : orElse(value),
+      RubyReservedEnumValueTest$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RubyReservedEnumValueTest($value)';
 
  }

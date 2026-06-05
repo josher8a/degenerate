@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateEmbeddingRequestModelVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() textEmbeddingAda002, required W Function() textEmbedding3Small, required W Function() textEmbedding3Large, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateEmbeddingRequestModelVariant2$textEmbeddingAda002() => textEmbeddingAda002(),
+      CreateEmbeddingRequestModelVariant2$textEmbedding3Small() => textEmbedding3Small(),
+      CreateEmbeddingRequestModelVariant2$textEmbedding3Large() => textEmbedding3Large(),
+      CreateEmbeddingRequestModelVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? textEmbeddingAda002, W Function()? textEmbedding3Small, W Function()? textEmbedding3Large, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateEmbeddingRequestModelVariant2$textEmbeddingAda002() => textEmbeddingAda002 != null ? textEmbeddingAda002() : orElse(value),
+      CreateEmbeddingRequestModelVariant2$textEmbedding3Small() => textEmbedding3Small != null ? textEmbedding3Small() : orElse(value),
+      CreateEmbeddingRequestModelVariant2$textEmbedding3Large() => textEmbedding3Large != null ? textEmbedding3Large() : orElse(value),
+      CreateEmbeddingRequestModelVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateEmbeddingRequestModelVariant2($value)';
 
  }

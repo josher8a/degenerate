@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura1RequestContainer$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() wav, required W Function() ogg, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$none() => none(),
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$wav() => wav(),
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$ogg() => ogg(),
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? wav, W Function()? ogg, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$none() => none != null ? none() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$wav() => wav != null ? wav() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$ogg() => ogg != null ? ogg() : orElse(value),
+      WorkersAiPostRunCfDeepgramAura1RequestContainer$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestContainer($value)';
 
  }

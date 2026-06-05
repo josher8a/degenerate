@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetCheckoutSessionsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() complete, required W Function() expired, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      GetCheckoutSessionsStatus$complete() => complete(),
+      GetCheckoutSessionsStatus$expired() => expired(),
+      GetCheckoutSessionsStatus$open() => open(),
+      GetCheckoutSessionsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? complete, W Function()? expired, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      GetCheckoutSessionsStatus$complete() => complete != null ? complete() : orElse(value),
+      GetCheckoutSessionsStatus$expired() => expired != null ? expired() : orElse(value),
+      GetCheckoutSessionsStatus$open() => open != null ? open() : orElse(value),
+      GetCheckoutSessionsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetCheckoutSessionsStatus($value)';
 
  }

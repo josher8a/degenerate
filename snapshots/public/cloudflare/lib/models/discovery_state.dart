@@ -34,6 +34,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DiscoveryState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() review, required W Function() saved, required W Function() ignored, required W Function(String value) $unknown, }) { return switch (this) {
+      DiscoveryState$review() => review(),
+      DiscoveryState$saved() => saved(),
+      DiscoveryState$ignored() => ignored(),
+      DiscoveryState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? review, W Function()? saved, W Function()? ignored, W Function(String value)? $unknown, }) { return switch (this) {
+      DiscoveryState$review() => review != null ? review() : orElse(value),
+      DiscoveryState$saved() => saved != null ? saved() : orElse(value),
+      DiscoveryState$ignored() => ignored != null ? ignored() : orElse(value),
+      DiscoveryState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DiscoveryState($value)';
 
  }

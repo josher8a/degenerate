@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetQualityIndexTimeseriesGroupMetric$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bandwidth, required W Function() dns, required W Function() latency, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetQualityIndexTimeseriesGroupMetric$bandwidth() => bandwidth(),
+      RadarGetQualityIndexTimeseriesGroupMetric$dns() => dns(),
+      RadarGetQualityIndexTimeseriesGroupMetric$latency() => latency(),
+      RadarGetQualityIndexTimeseriesGroupMetric$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidth, W Function()? dns, W Function()? latency, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetQualityIndexTimeseriesGroupMetric$bandwidth() => bandwidth != null ? bandwidth() : orElse(value),
+      RadarGetQualityIndexTimeseriesGroupMetric$dns() => dns != null ? dns() : orElse(value),
+      RadarGetQualityIndexTimeseriesGroupMetric$latency() => latency != null ? latency() : orElse(value),
+      RadarGetQualityIndexTimeseriesGroupMetric$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetQualityIndexTimeseriesGroupMetric($value)';
 
  }

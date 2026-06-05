@@ -49,6 +49,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateFileRequestPurpose$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() assistants, required W Function() batch, required W Function() fineTune, required W Function() vision, required W Function() userData, required W Function() evals, required W Function(String value) $unknown, }) { return switch (this) {
+      CreateFileRequestPurpose$assistants() => assistants(),
+      CreateFileRequestPurpose$batch() => batch(),
+      CreateFileRequestPurpose$fineTune() => fineTune(),
+      CreateFileRequestPurpose$vision() => vision(),
+      CreateFileRequestPurpose$userData() => userData(),
+      CreateFileRequestPurpose$evals() => evals(),
+      CreateFileRequestPurpose$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? assistants, W Function()? batch, W Function()? fineTune, W Function()? vision, W Function()? userData, W Function()? evals, W Function(String value)? $unknown, }) { return switch (this) {
+      CreateFileRequestPurpose$assistants() => assistants != null ? assistants() : orElse(value),
+      CreateFileRequestPurpose$batch() => batch != null ? batch() : orElse(value),
+      CreateFileRequestPurpose$fineTune() => fineTune != null ? fineTune() : orElse(value),
+      CreateFileRequestPurpose$vision() => vision != null ? vision() : orElse(value),
+      CreateFileRequestPurpose$userData() => userData != null ? userData() : orElse(value),
+      CreateFileRequestPurpose$evals() => evals != null ? evals() : orElse(value),
+      CreateFileRequestPurpose$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CreateFileRequestPurpose($value)';
 
  }

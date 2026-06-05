@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesDomainCertificateAuthority$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() google, required W Function() letsEncrypt, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesDomainCertificateAuthority$google() => google(),
+      PagesDomainCertificateAuthority$letsEncrypt() => letsEncrypt(),
+      PagesDomainCertificateAuthority$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? google, W Function()? letsEncrypt, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesDomainCertificateAuthority$google() => google != null ? google() : orElse(value),
+      PagesDomainCertificateAuthority$letsEncrypt() => letsEncrypt != null ? letsEncrypt() : orElse(value),
+      PagesDomainCertificateAuthority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesDomainCertificateAuthority($value)';
 
  }
@@ -96,6 +108,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesDomainStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() pending, required W Function() active, required W Function() deactivated, required W Function() blocked, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      PagesDomainStatus$initializing() => initializing(),
+      PagesDomainStatus$pending() => pending(),
+      PagesDomainStatus$active() => active(),
+      PagesDomainStatus$deactivated() => deactivated(),
+      PagesDomainStatus$blocked() => blocked(),
+      PagesDomainStatus$error() => error(),
+      PagesDomainStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pending, W Function()? active, W Function()? deactivated, W Function()? blocked, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      PagesDomainStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      PagesDomainStatus$pending() => pending != null ? pending() : orElse(value),
+      PagesDomainStatus$active() => active != null ? active() : orElse(value),
+      PagesDomainStatus$deactivated() => deactivated != null ? deactivated() : orElse(value),
+      PagesDomainStatus$blocked() => blocked != null ? blocked() : orElse(value),
+      PagesDomainStatus$error() => error != null ? error() : orElse(value),
+      PagesDomainStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PagesDomainStatus($value)';
 
  }

@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UploadStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() completed, required W Function() cancelled, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+      UploadStatus$pending() => pending(),
+      UploadStatus$completed() => completed(),
+      UploadStatus$cancelled() => cancelled(),
+      UploadStatus$expired() => expired(),
+      UploadStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? completed, W Function()? cancelled, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+      UploadStatus$pending() => pending != null ? pending() : orElse(value),
+      UploadStatus$completed() => completed != null ? completed() : orElse(value),
+      UploadStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      UploadStatus$expired() => expired != null ? expired() : orElse(value),
+      UploadStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UploadStatus($value)';
 
  }
@@ -104,6 +120,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UploadObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() upload, required W Function(String value) $unknown, }) { return switch (this) {
+      UploadObject$upload() => upload(),
+      UploadObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? upload, W Function(String value)? $unknown, }) { return switch (this) {
+      UploadObject$upload() => upload != null ? upload() : orElse(value),
+      UploadObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'UploadObject($value)';
 
  }

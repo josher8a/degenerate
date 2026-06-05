@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is SecurityAdvisoriesListRepositoryAdvisoriesState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() triage, required W Function() draft, required W Function() published, required W Function() closed, required W Function(String value) $unknown, }) { return switch (this) {
+      SecurityAdvisoriesListRepositoryAdvisoriesState$triage() => triage(),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$draft() => draft(),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$published() => published(),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$closed() => closed(),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? triage, W Function()? draft, W Function()? published, W Function()? closed, W Function(String value)? $unknown, }) { return switch (this) {
+      SecurityAdvisoriesListRepositoryAdvisoriesState$triage() => triage != null ? triage() : orElse(value),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$draft() => draft != null ? draft() : orElse(value),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$published() => published != null ? published() : orElse(value),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$closed() => closed != null ? closed() : orElse(value),
+      SecurityAdvisoriesListRepositoryAdvisoriesState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'SecurityAdvisoriesListRepositoryAdvisoriesState($value)';
 
  }

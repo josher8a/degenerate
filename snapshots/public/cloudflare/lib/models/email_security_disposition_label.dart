@@ -57,6 +57,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityDispositionLabel$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() malicious, required W Function() maliciousBec, required W Function() suspicious, required W Function() spoof, required W Function() spam, required W Function() bulk, required W Function() encrypted, required W Function() $external, required W Function() unknown, required W Function() none, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityDispositionLabel$malicious() => malicious(),
+      EmailSecurityDispositionLabel$maliciousBec() => maliciousBec(),
+      EmailSecurityDispositionLabel$suspicious() => suspicious(),
+      EmailSecurityDispositionLabel$spoof() => spoof(),
+      EmailSecurityDispositionLabel$spam() => spam(),
+      EmailSecurityDispositionLabel$bulk() => bulk(),
+      EmailSecurityDispositionLabel$encrypted() => encrypted(),
+      EmailSecurityDispositionLabel$$external() => $external(),
+      EmailSecurityDispositionLabel$unknown() => unknown(),
+      EmailSecurityDispositionLabel$none() => none(),
+      EmailSecurityDispositionLabel$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? malicious, W Function()? maliciousBec, W Function()? suspicious, W Function()? spoof, W Function()? spam, W Function()? bulk, W Function()? encrypted, W Function()? $external, W Function()? unknown, W Function()? none, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityDispositionLabel$malicious() => malicious != null ? malicious() : orElse(value),
+      EmailSecurityDispositionLabel$maliciousBec() => maliciousBec != null ? maliciousBec() : orElse(value),
+      EmailSecurityDispositionLabel$suspicious() => suspicious != null ? suspicious() : orElse(value),
+      EmailSecurityDispositionLabel$spoof() => spoof != null ? spoof() : orElse(value),
+      EmailSecurityDispositionLabel$spam() => spam != null ? spam() : orElse(value),
+      EmailSecurityDispositionLabel$bulk() => bulk != null ? bulk() : orElse(value),
+      EmailSecurityDispositionLabel$encrypted() => encrypted != null ? encrypted() : orElse(value),
+      EmailSecurityDispositionLabel$$external() => $external != null ? $external() : orElse(value),
+      EmailSecurityDispositionLabel$unknown() => unknown != null ? unknown() : orElse(value),
+      EmailSecurityDispositionLabel$none() => none != null ? none() : orElse(value),
+      EmailSecurityDispositionLabel$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityDispositionLabel($value)';
 
  }

@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgsListPendingInvitationsInvitationSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() member, required W Function() scim, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgsListPendingInvitationsInvitationSource$all() => all(),
+      OrgsListPendingInvitationsInvitationSource$member() => member(),
+      OrgsListPendingInvitationsInvitationSource$scim() => scim(),
+      OrgsListPendingInvitationsInvitationSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? member, W Function()? scim, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgsListPendingInvitationsInvitationSource$all() => all != null ? all() : orElse(value),
+      OrgsListPendingInvitationsInvitationSource$member() => member != null ? member() : orElse(value),
+      OrgsListPendingInvitationsInvitationSource$scim() => scim != null ? scim() : orElse(value),
+      OrgsListPendingInvitationsInvitationSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgsListPendingInvitationsInvitationSource($value)';
 
  }

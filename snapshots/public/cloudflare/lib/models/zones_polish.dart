@@ -23,6 +23,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZonesPolishId$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() polish, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesPolishId$polish() => polish(),
+      ZonesPolishId$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? polish, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesPolishId$polish() => polish != null ? polish() : orElse(value),
+      ZonesPolishId$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ZonesPolishId($value)';
 
  }

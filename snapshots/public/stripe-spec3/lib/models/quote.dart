@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is QuoteObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() quote, required W Function(String value) $unknown, }) { return switch (this) {
+      QuoteObject$quote() => quote(),
+      QuoteObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? quote, W Function(String value)? $unknown, }) { return switch (this) {
+      QuoteObject$quote() => quote != null ? quote() : orElse(value),
+      QuoteObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'QuoteObject($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is QuoteStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accepted, required W Function() canceled, required W Function() draft, required W Function() open, required W Function(String value) $unknown, }) { return switch (this) {
+      QuoteStatus$accepted() => accepted(),
+      QuoteStatus$canceled() => canceled(),
+      QuoteStatus$draft() => draft(),
+      QuoteStatus$open() => open(),
+      QuoteStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accepted, W Function()? canceled, W Function()? draft, W Function()? open, W Function(String value)? $unknown, }) { return switch (this) {
+      QuoteStatus$accepted() => accepted != null ? accepted() : orElse(value),
+      QuoteStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      QuoteStatus$draft() => draft != null ? draft() : orElse(value),
+      QuoteStatus$open() => open != null ? open() : orElse(value),
+      QuoteStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'QuoteStatus($value)';
 
  }

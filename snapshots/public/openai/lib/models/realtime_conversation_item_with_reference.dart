@@ -31,6 +31,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeConversationItemWithReferenceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() message, required W Function() functionCall, required W Function() functionCallOutput, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeConversationItemWithReferenceType$message() => message(),
+      RealtimeConversationItemWithReferenceType$functionCall() => functionCall(),
+      RealtimeConversationItemWithReferenceType$functionCallOutput() => functionCallOutput(),
+      RealtimeConversationItemWithReferenceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? message, W Function()? functionCall, W Function()? functionCallOutput, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeConversationItemWithReferenceType$message() => message != null ? message() : orElse(value),
+      RealtimeConversationItemWithReferenceType$functionCall() => functionCall != null ? functionCall() : orElse(value),
+      RealtimeConversationItemWithReferenceType$functionCallOutput() => functionCallOutput != null ? functionCallOutput() : orElse(value),
+      RealtimeConversationItemWithReferenceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeConversationItemWithReferenceType($value)';
 
  }
@@ -102,6 +116,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeConversationItemWithReferenceRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() user, required W Function() assistant, required W Function() system, required W Function(String value) $unknown, }) { return switch (this) {
+      RealtimeConversationItemWithReferenceRole$user() => user(),
+      RealtimeConversationItemWithReferenceRole$assistant() => assistant(),
+      RealtimeConversationItemWithReferenceRole$system() => system(),
+      RealtimeConversationItemWithReferenceRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? user, W Function()? assistant, W Function()? system, W Function(String value)? $unknown, }) { return switch (this) {
+      RealtimeConversationItemWithReferenceRole$user() => user != null ? user() : orElse(value),
+      RealtimeConversationItemWithReferenceRole$assistant() => assistant != null ? assistant() : orElse(value),
+      RealtimeConversationItemWithReferenceRole$system() => system != null ? system() : orElse(value),
+      RealtimeConversationItemWithReferenceRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RealtimeConversationItemWithReferenceRole($value)';
 
  }

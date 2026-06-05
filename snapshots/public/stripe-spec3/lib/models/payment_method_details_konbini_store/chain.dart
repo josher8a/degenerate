@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Chain$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() familymart, required W Function() lawson, required W Function() ministop, required W Function() seicomart, required W Function(String value) $unknown, }) { return switch (this) {
+      Chain$familymart() => familymart(),
+      Chain$lawson() => lawson(),
+      Chain$ministop() => ministop(),
+      Chain$seicomart() => seicomart(),
+      Chain$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? familymart, W Function()? lawson, W Function()? ministop, W Function()? seicomart, W Function(String value)? $unknown, }) { return switch (this) {
+      Chain$familymart() => familymart != null ? familymart() : orElse(value),
+      Chain$lawson() => lawson != null ? lawson() : orElse(value),
+      Chain$ministop() => ministop != null ? ministop() : orElse(value),
+      Chain$seicomart() => seicomart != null ? seicomart() : orElse(value),
+      Chain$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Chain($value)';
 
  }

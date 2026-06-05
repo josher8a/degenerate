@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TargetType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() global, required W Function() organization, required W Function() enterprise, required W Function(String value) $unknown, }) { return switch (this) {
+      TargetType$global() => global(),
+      TargetType$organization() => organization(),
+      TargetType$enterprise() => enterprise(),
+      TargetType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? global, W Function()? organization, W Function()? enterprise, W Function(String value)? $unknown, }) { return switch (this) {
+      TargetType$global() => global != null ? global() : orElse(value),
+      TargetType$organization() => organization != null ? organization() : orElse(value),
+      TargetType$enterprise() => enterprise != null ? enterprise() : orElse(value),
+      TargetType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TargetType($value)';
 
  }
@@ -103,6 +117,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() enabled, required W Function() disabled, required W Function() notSet, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$enabled() => enabled(),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$disabled() => disabled(),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$notSet() => notSet(),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$$null() => $null(),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? enabled, W Function()? disabled, W Function()? notSet, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$enabled() => enabled != null ? enabled() : orElse(value),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$disabled() => disabled != null ? disabled() : orElse(value),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$notSet() => notSet != null ? notSet() : orElse(value),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$$null() => $null != null ? $null() : orElse(value),
+      CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeSecurityConfigurationDependabotDelegatedAlertDismissal($value)';
 
  }

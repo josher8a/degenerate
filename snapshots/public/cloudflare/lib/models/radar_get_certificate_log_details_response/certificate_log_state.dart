@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CertificateLogState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() usable, required W Function() pending, required W Function() qualified, required W Function() readOnly, required W Function() retired, required W Function() rejected, required W Function(String value) $unknown, }) { return switch (this) {
+      CertificateLogState$usable() => usable(),
+      CertificateLogState$pending() => pending(),
+      CertificateLogState$qualified() => qualified(),
+      CertificateLogState$readOnly() => readOnly(),
+      CertificateLogState$retired() => retired(),
+      CertificateLogState$rejected() => rejected(),
+      CertificateLogState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? usable, W Function()? pending, W Function()? qualified, W Function()? readOnly, W Function()? retired, W Function()? rejected, W Function(String value)? $unknown, }) { return switch (this) {
+      CertificateLogState$usable() => usable != null ? usable() : orElse(value),
+      CertificateLogState$pending() => pending != null ? pending() : orElse(value),
+      CertificateLogState$qualified() => qualified != null ? qualified() : orElse(value),
+      CertificateLogState$readOnly() => readOnly != null ? readOnly() : orElse(value),
+      CertificateLogState$retired() => retired != null ? retired() : orElse(value),
+      CertificateLogState$rejected() => rejected != null ? rejected() : orElse(value),
+      CertificateLogState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CertificateLogState($value)';
 
  }

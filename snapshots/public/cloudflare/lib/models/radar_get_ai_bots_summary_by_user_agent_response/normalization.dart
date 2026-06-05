@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Normalization$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() percentage, required W Function() min0Max, required W Function() minMax, required W Function() rawValues, required W Function() percentageChange, required W Function() rollingAverage, required W Function() overlappedPercentage, required W Function() ratio, required W Function(String value) $unknown, }) { return switch (this) {
+      Normalization$percentage() => percentage(),
+      Normalization$min0Max() => min0Max(),
+      Normalization$minMax() => minMax(),
+      Normalization$rawValues() => rawValues(),
+      Normalization$percentageChange() => percentageChange(),
+      Normalization$rollingAverage() => rollingAverage(),
+      Normalization$overlappedPercentage() => overlappedPercentage(),
+      Normalization$ratio() => ratio(),
+      Normalization$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? percentage, W Function()? min0Max, W Function()? minMax, W Function()? rawValues, W Function()? percentageChange, W Function()? rollingAverage, W Function()? overlappedPercentage, W Function()? ratio, W Function(String value)? $unknown, }) { return switch (this) {
+      Normalization$percentage() => percentage != null ? percentage() : orElse(value),
+      Normalization$min0Max() => min0Max != null ? min0Max() : orElse(value),
+      Normalization$minMax() => minMax != null ? minMax() : orElse(value),
+      Normalization$rawValues() => rawValues != null ? rawValues() : orElse(value),
+      Normalization$percentageChange() => percentageChange != null ? percentageChange() : orElse(value),
+      Normalization$rollingAverage() => rollingAverage != null ? rollingAverage() : orElse(value),
+      Normalization$overlappedPercentage() => overlappedPercentage != null ? overlappedPercentage() : orElse(value),
+      Normalization$ratio() => ratio != null ? ratio() : orElse(value),
+      Normalization$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Normalization($value)';
 
  }

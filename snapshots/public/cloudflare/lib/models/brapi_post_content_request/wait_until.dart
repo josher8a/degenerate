@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitUntilVariant1$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() load, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitUntilVariant1$load() => load(),
+      WaitUntilVariant1$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? load, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitUntilVariant1$load() => load != null ? load() : orElse(value),
+      WaitUntilVariant1$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitUntilVariant1($value)';
 
  }
@@ -63,6 +73,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitUntilVariant2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() domcontentloaded, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitUntilVariant2$domcontentloaded() => domcontentloaded(),
+      WaitUntilVariant2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? domcontentloaded, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitUntilVariant2$domcontentloaded() => domcontentloaded != null ? domcontentloaded() : orElse(value),
+      WaitUntilVariant2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitUntilVariant2($value)';
 
  }
@@ -105,6 +125,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitUntilVariant3$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() networkidle0, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitUntilVariant3$networkidle0() => networkidle0(),
+      WaitUntilVariant3$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? networkidle0, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitUntilVariant3$networkidle0() => networkidle0 != null ? networkidle0() : orElse(value),
+      WaitUntilVariant3$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitUntilVariant3($value)';
 
  }
@@ -147,6 +177,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitUntilVariant4$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() networkidle2, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitUntilVariant4$networkidle2() => networkidle2(),
+      WaitUntilVariant4$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? networkidle2, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitUntilVariant4$networkidle2() => networkidle2 != null ? networkidle2() : orElse(value),
+      WaitUntilVariant4$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitUntilVariant4($value)';
 
  }
@@ -201,6 +241,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitUntilVariant5$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() load, required W Function() domcontentloaded, required W Function() networkidle0, required W Function() networkidle2, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitUntilVariant5$load() => load(),
+      WaitUntilVariant5$domcontentloaded() => domcontentloaded(),
+      WaitUntilVariant5$networkidle0() => networkidle0(),
+      WaitUntilVariant5$networkidle2() => networkidle2(),
+      WaitUntilVariant5$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? load, W Function()? domcontentloaded, W Function()? networkidle0, W Function()? networkidle2, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitUntilVariant5$load() => load != null ? load() : orElse(value),
+      WaitUntilVariant5$domcontentloaded() => domcontentloaded != null ? domcontentloaded() : orElse(value),
+      WaitUntilVariant5$networkidle0() => networkidle0 != null ? networkidle0() : orElse(value),
+      WaitUntilVariant5$networkidle2() => networkidle2 != null ? networkidle2() : orElse(value),
+      WaitUntilVariant5$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitUntilVariant5($value)';
 
  }

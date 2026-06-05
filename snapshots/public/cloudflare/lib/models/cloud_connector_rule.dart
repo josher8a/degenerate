@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudConnectorProvider$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() awsS3, required W Function() cloudflareR2, required W Function() gcpStorage, required W Function() azureStorage, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudConnectorProvider$awsS3() => awsS3(),
+      CloudConnectorProvider$cloudflareR2() => cloudflareR2(),
+      CloudConnectorProvider$gcpStorage() => gcpStorage(),
+      CloudConnectorProvider$azureStorage() => azureStorage(),
+      CloudConnectorProvider$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? awsS3, W Function()? cloudflareR2, W Function()? gcpStorage, W Function()? azureStorage, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudConnectorProvider$awsS3() => awsS3 != null ? awsS3() : orElse(value),
+      CloudConnectorProvider$cloudflareR2() => cloudflareR2 != null ? cloudflareR2() : orElse(value),
+      CloudConnectorProvider$gcpStorage() => gcpStorage != null ? gcpStorage() : orElse(value),
+      CloudConnectorProvider$azureStorage() => azureStorage != null ? azureStorage() : orElse(value),
+      CloudConnectorProvider$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudConnectorProvider($value)';
 
  }

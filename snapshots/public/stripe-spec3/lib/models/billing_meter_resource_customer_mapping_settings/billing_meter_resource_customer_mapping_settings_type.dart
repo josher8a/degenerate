@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingMeterResourceCustomerMappingSettingsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() byId, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingMeterResourceCustomerMappingSettingsType$byId() => byId(),
+      BillingMeterResourceCustomerMappingSettingsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? byId, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingMeterResourceCustomerMappingSettingsType$byId() => byId != null ? byId() : orElse(value),
+      BillingMeterResourceCustomerMappingSettingsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingMeterResourceCustomerMappingSettingsType($value)';
 
  }

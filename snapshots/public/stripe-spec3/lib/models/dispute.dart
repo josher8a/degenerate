@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnhancedEligibilityTypes$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() visaCompellingEvidence3, required W Function() visaCompliance, required W Function(String value) $unknown, }) { return switch (this) {
+      EnhancedEligibilityTypes$visaCompellingEvidence3() => visaCompellingEvidence3(),
+      EnhancedEligibilityTypes$visaCompliance() => visaCompliance(),
+      EnhancedEligibilityTypes$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? visaCompellingEvidence3, W Function()? visaCompliance, W Function(String value)? $unknown, }) { return switch (this) {
+      EnhancedEligibilityTypes$visaCompellingEvidence3() => visaCompellingEvidence3 != null ? visaCompellingEvidence3() : orElse(value),
+      EnhancedEligibilityTypes$visaCompliance() => visaCompliance != null ? visaCompliance() : orElse(value),
+      EnhancedEligibilityTypes$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnhancedEligibilityTypes($value)';
 
  }
@@ -77,6 +89,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisputeObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dispute, required W Function(String value) $unknown, }) { return switch (this) {
+      DisputeObject$dispute() => dispute(),
+      DisputeObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dispute, W Function(String value)? $unknown, }) { return switch (this) {
+      DisputeObject$dispute() => dispute != null ? dispute() : orElse(value),
+      DisputeObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisputeObject($value)';
 
  }
@@ -148,6 +170,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DisputeStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lost, required W Function() needsResponse, required W Function() prevented, required W Function() underReview, required W Function() warningClosed, required W Function() warningNeedsResponse, required W Function() warningUnderReview, required W Function() won, required W Function(String value) $unknown, }) { return switch (this) {
+      DisputeStatus$lost() => lost(),
+      DisputeStatus$needsResponse() => needsResponse(),
+      DisputeStatus$prevented() => prevented(),
+      DisputeStatus$underReview() => underReview(),
+      DisputeStatus$warningClosed() => warningClosed(),
+      DisputeStatus$warningNeedsResponse() => warningNeedsResponse(),
+      DisputeStatus$warningUnderReview() => warningUnderReview(),
+      DisputeStatus$won() => won(),
+      DisputeStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lost, W Function()? needsResponse, W Function()? prevented, W Function()? underReview, W Function()? warningClosed, W Function()? warningNeedsResponse, W Function()? warningUnderReview, W Function()? won, W Function(String value)? $unknown, }) { return switch (this) {
+      DisputeStatus$lost() => lost != null ? lost() : orElse(value),
+      DisputeStatus$needsResponse() => needsResponse != null ? needsResponse() : orElse(value),
+      DisputeStatus$prevented() => prevented != null ? prevented() : orElse(value),
+      DisputeStatus$underReview() => underReview != null ? underReview() : orElse(value),
+      DisputeStatus$warningClosed() => warningClosed != null ? warningClosed() : orElse(value),
+      DisputeStatus$warningNeedsResponse() => warningNeedsResponse != null ? warningNeedsResponse() : orElse(value),
+      DisputeStatus$warningUnderReview() => warningUnderReview != null ? warningUnderReview() : orElse(value),
+      DisputeStatus$won() => won != null ? won() : orElse(value),
+      DisputeStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DisputeStatus($value)';
 
  }

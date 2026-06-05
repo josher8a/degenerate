@@ -57,6 +57,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetSubscriptionsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() all, required W Function() canceled, required W Function() ended, required W Function() incomplete, required W Function() incompleteExpired, required W Function() pastDue, required W Function() paused, required W Function() trialing, required W Function() unpaid, required W Function(String value) $unknown, }) { return switch (this) {
+      GetSubscriptionsStatus$active() => active(),
+      GetSubscriptionsStatus$all() => all(),
+      GetSubscriptionsStatus$canceled() => canceled(),
+      GetSubscriptionsStatus$ended() => ended(),
+      GetSubscriptionsStatus$incomplete() => incomplete(),
+      GetSubscriptionsStatus$incompleteExpired() => incompleteExpired(),
+      GetSubscriptionsStatus$pastDue() => pastDue(),
+      GetSubscriptionsStatus$paused() => paused(),
+      GetSubscriptionsStatus$trialing() => trialing(),
+      GetSubscriptionsStatus$unpaid() => unpaid(),
+      GetSubscriptionsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? all, W Function()? canceled, W Function()? ended, W Function()? incomplete, W Function()? incompleteExpired, W Function()? pastDue, W Function()? paused, W Function()? trialing, W Function()? unpaid, W Function(String value)? $unknown, }) { return switch (this) {
+      GetSubscriptionsStatus$active() => active != null ? active() : orElse(value),
+      GetSubscriptionsStatus$all() => all != null ? all() : orElse(value),
+      GetSubscriptionsStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      GetSubscriptionsStatus$ended() => ended != null ? ended() : orElse(value),
+      GetSubscriptionsStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      GetSubscriptionsStatus$incompleteExpired() => incompleteExpired != null ? incompleteExpired() : orElse(value),
+      GetSubscriptionsStatus$pastDue() => pastDue != null ? pastDue() : orElse(value),
+      GetSubscriptionsStatus$paused() => paused != null ? paused() : orElse(value),
+      GetSubscriptionsStatus$trialing() => trialing != null ? trialing() : orElse(value),
+      GetSubscriptionsStatus$unpaid() => unpaid != null ? unpaid() : orElse(value),
+      GetSubscriptionsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetSubscriptionsStatus($value)';
 
  }

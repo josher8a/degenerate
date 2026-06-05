@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FilterCombination$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() and, required W Function() or, required W Function() and2, required W Function() or2, required W Function(String value) $unknown, }) { return switch (this) {
+      FilterCombination$and() => and(),
+      FilterCombination$or() => or(),
+      FilterCombination$and2() => and2(),
+      FilterCombination$or2() => or2(),
+      FilterCombination$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? and, W Function()? or, W Function()? and2, W Function()? or2, W Function(String value)? $unknown, }) { return switch (this) {
+      FilterCombination$and() => and != null ? and() : orElse(value),
+      FilterCombination$or() => or != null ? or() : orElse(value),
+      FilterCombination$and2() => and2 != null ? and2() : orElse(value),
+      FilterCombination$or2() => or2 != null ? or2() : orElse(value),
+      FilterCombination$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FilterCombination($value)';
 
  }

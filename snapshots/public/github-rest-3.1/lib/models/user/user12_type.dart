@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is User12Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bot, required W Function() user, required W Function() organization, required W Function() mannequin, required W Function(String value) $unknown, }) { return switch (this) {
+      User12Type$bot() => bot(),
+      User12Type$user() => user(),
+      User12Type$organization() => organization(),
+      User12Type$mannequin() => mannequin(),
+      User12Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bot, W Function()? user, W Function()? organization, W Function()? mannequin, W Function(String value)? $unknown, }) { return switch (this) {
+      User12Type$bot() => bot != null ? bot() : orElse(value),
+      User12Type$user() => user != null ? user() : orElse(value),
+      User12Type$organization() => organization != null ? organization() : orElse(value),
+      User12Type$mannequin() => mannequin != null ? mannequin() : orElse(value),
+      User12Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'User12Type($value)';
 
  }

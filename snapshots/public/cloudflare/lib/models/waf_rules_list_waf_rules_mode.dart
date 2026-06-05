@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WafRulesListWafRulesMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() dis, required W Function() chl, required W Function() blk, required W Function() sim, required W Function(String value) $unknown, }) { return switch (this) {
+      WafRulesListWafRulesMode$dis() => dis(),
+      WafRulesListWafRulesMode$chl() => chl(),
+      WafRulesListWafRulesMode$blk() => blk(),
+      WafRulesListWafRulesMode$sim() => sim(),
+      WafRulesListWafRulesMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? dis, W Function()? chl, W Function()? blk, W Function()? sim, W Function(String value)? $unknown, }) { return switch (this) {
+      WafRulesListWafRulesMode$dis() => dis != null ? dis() : orElse(value),
+      WafRulesListWafRulesMode$chl() => chl != null ? chl() : orElse(value),
+      WafRulesListWafRulesMode$blk() => blk != null ? blk() : orElse(value),
+      WafRulesListWafRulesMode$sim() => sim != null ? sim() : orElse(value),
+      WafRulesListWafRulesMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WafRulesListWafRulesMode($value)';
 
  }

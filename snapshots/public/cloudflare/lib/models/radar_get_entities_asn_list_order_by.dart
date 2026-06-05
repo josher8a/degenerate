@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEntitiesAsnListOrderBy$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() asn, required W Function() population, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEntitiesAsnListOrderBy$asn() => asn(),
+      RadarGetEntitiesAsnListOrderBy$population() => population(),
+      RadarGetEntitiesAsnListOrderBy$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asn, W Function()? population, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEntitiesAsnListOrderBy$asn() => asn != null ? asn() : orElse(value),
+      RadarGetEntitiesAsnListOrderBy$population() => population != null ? population() : orElse(value),
+      RadarGetEntitiesAsnListOrderBy$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEntitiesAsnListOrderBy($value)';
 
  }

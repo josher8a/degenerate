@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TopupObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() topup, required W Function(String value) $unknown, }) { return switch (this) {
+      TopupObject$topup() => topup(),
+      TopupObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? topup, W Function(String value)? $unknown, }) { return switch (this) {
+      TopupObject$topup() => topup != null ? topup() : orElse(value),
+      TopupObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TopupObject($value)';
 
  }
@@ -81,6 +91,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TopupStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() canceled, required W Function() failed, required W Function() pending, required W Function() reversed, required W Function() succeeded, required W Function(String value) $unknown, }) { return switch (this) {
+      TopupStatus$canceled() => canceled(),
+      TopupStatus$failed() => failed(),
+      TopupStatus$pending() => pending(),
+      TopupStatus$reversed() => reversed(),
+      TopupStatus$succeeded() => succeeded(),
+      TopupStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? canceled, W Function()? failed, W Function()? pending, W Function()? reversed, W Function()? succeeded, W Function(String value)? $unknown, }) { return switch (this) {
+      TopupStatus$canceled() => canceled != null ? canceled() : orElse(value),
+      TopupStatus$failed() => failed != null ? failed() : orElse(value),
+      TopupStatus$pending() => pending != null ? pending() : orElse(value),
+      TopupStatus$reversed() => reversed != null ? reversed() : orElse(value),
+      TopupStatus$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      TopupStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TopupStatus($value)';
 
  }

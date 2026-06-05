@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DefaultsTaxBehavior$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() exclusive, required W Function() inclusive, required W Function() inferredByCurrency, required W Function(String value) $unknown, }) { return switch (this) {
+      DefaultsTaxBehavior$exclusive() => exclusive(),
+      DefaultsTaxBehavior$inclusive() => inclusive(),
+      DefaultsTaxBehavior$inferredByCurrency() => inferredByCurrency(),
+      DefaultsTaxBehavior$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? exclusive, W Function()? inclusive, W Function()? inferredByCurrency, W Function(String value)? $unknown, }) { return switch (this) {
+      DefaultsTaxBehavior$exclusive() => exclusive != null ? exclusive() : orElse(value),
+      DefaultsTaxBehavior$inclusive() => inclusive != null ? inclusive() : orElse(value),
+      DefaultsTaxBehavior$inferredByCurrency() => inferredByCurrency != null ? inferredByCurrency() : orElse(value),
+      DefaultsTaxBehavior$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DefaultsTaxBehavior($value)';
 
  }

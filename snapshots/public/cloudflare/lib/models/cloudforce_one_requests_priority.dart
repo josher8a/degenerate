@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudforceOneRequestsPriority$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() routine, required W Function() high, required W Function() urgent, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudforceOneRequestsPriority$routine() => routine(),
+      CloudforceOneRequestsPriority$high() => high(),
+      CloudforceOneRequestsPriority$urgent() => urgent(),
+      CloudforceOneRequestsPriority$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? routine, W Function()? high, W Function()? urgent, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudforceOneRequestsPriority$routine() => routine != null ? routine() : orElse(value),
+      CloudforceOneRequestsPriority$high() => high != null ? high() : orElse(value),
+      CloudforceOneRequestsPriority$urgent() => urgent != null ? urgent() : orElse(value),
+      CloudforceOneRequestsPriority$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudforceOneRequestsPriority($value)';
 
  }

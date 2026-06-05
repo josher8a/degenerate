@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposCreateOrgRulesetRequestTarget$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() branch, required W Function() tag, required W Function() push, required W Function() repository, required W Function(String value) $unknown, }) { return switch (this) {
+      ReposCreateOrgRulesetRequestTarget$branch() => branch(),
+      ReposCreateOrgRulesetRequestTarget$tag() => tag(),
+      ReposCreateOrgRulesetRequestTarget$push() => push(),
+      ReposCreateOrgRulesetRequestTarget$repository() => repository(),
+      ReposCreateOrgRulesetRequestTarget$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? branch, W Function()? tag, W Function()? push, W Function()? repository, W Function(String value)? $unknown, }) { return switch (this) {
+      ReposCreateOrgRulesetRequestTarget$branch() => branch != null ? branch() : orElse(value),
+      ReposCreateOrgRulesetRequestTarget$tag() => tag != null ? tag() : orElse(value),
+      ReposCreateOrgRulesetRequestTarget$push() => push != null ? push() : orElse(value),
+      ReposCreateOrgRulesetRequestTarget$repository() => repository != null ? repository() : orElse(value),
+      ReposCreateOrgRulesetRequestTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReposCreateOrgRulesetRequestTarget($value)';
 
  }

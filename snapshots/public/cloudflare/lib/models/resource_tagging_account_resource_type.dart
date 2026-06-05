@@ -98,6 +98,54 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingAccountResourceType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accessApplication, required W Function() accessGroup, required W Function() account, required W Function() aiGateway, required W Function() alertingPolicy, required W Function() alertingWebhook, required W Function() cloudflaredTunnel, required W Function() d1Database, required W Function() durableObjectNamespace, required W Function() gatewayList, required W Function() gatewayRule, required W Function() image, required W Function() kvNamespace, required W Function() queue, required W Function() r2Bucket, required W Function() resourceShare, required W Function() streamLiveInput, required W Function() streamVideo, required W Function() worker, required W Function() workerVersion, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceTaggingAccountResourceType$accessApplication() => accessApplication(),
+      ResourceTaggingAccountResourceType$accessGroup() => accessGroup(),
+      ResourceTaggingAccountResourceType$account() => account(),
+      ResourceTaggingAccountResourceType$aiGateway() => aiGateway(),
+      ResourceTaggingAccountResourceType$alertingPolicy() => alertingPolicy(),
+      ResourceTaggingAccountResourceType$alertingWebhook() => alertingWebhook(),
+      ResourceTaggingAccountResourceType$cloudflaredTunnel() => cloudflaredTunnel(),
+      ResourceTaggingAccountResourceType$d1Database() => d1Database(),
+      ResourceTaggingAccountResourceType$durableObjectNamespace() => durableObjectNamespace(),
+      ResourceTaggingAccountResourceType$gatewayList() => gatewayList(),
+      ResourceTaggingAccountResourceType$gatewayRule() => gatewayRule(),
+      ResourceTaggingAccountResourceType$image() => image(),
+      ResourceTaggingAccountResourceType$kvNamespace() => kvNamespace(),
+      ResourceTaggingAccountResourceType$queue() => queue(),
+      ResourceTaggingAccountResourceType$r2Bucket() => r2Bucket(),
+      ResourceTaggingAccountResourceType$resourceShare() => resourceShare(),
+      ResourceTaggingAccountResourceType$streamLiveInput() => streamLiveInput(),
+      ResourceTaggingAccountResourceType$streamVideo() => streamVideo(),
+      ResourceTaggingAccountResourceType$worker() => worker(),
+      ResourceTaggingAccountResourceType$workerVersion() => workerVersion(),
+      ResourceTaggingAccountResourceType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accessApplication, W Function()? accessGroup, W Function()? account, W Function()? aiGateway, W Function()? alertingPolicy, W Function()? alertingWebhook, W Function()? cloudflaredTunnel, W Function()? d1Database, W Function()? durableObjectNamespace, W Function()? gatewayList, W Function()? gatewayRule, W Function()? image, W Function()? kvNamespace, W Function()? queue, W Function()? r2Bucket, W Function()? resourceShare, W Function()? streamLiveInput, W Function()? streamVideo, W Function()? worker, W Function()? workerVersion, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceTaggingAccountResourceType$accessApplication() => accessApplication != null ? accessApplication() : orElse(value),
+      ResourceTaggingAccountResourceType$accessGroup() => accessGroup != null ? accessGroup() : orElse(value),
+      ResourceTaggingAccountResourceType$account() => account != null ? account() : orElse(value),
+      ResourceTaggingAccountResourceType$aiGateway() => aiGateway != null ? aiGateway() : orElse(value),
+      ResourceTaggingAccountResourceType$alertingPolicy() => alertingPolicy != null ? alertingPolicy() : orElse(value),
+      ResourceTaggingAccountResourceType$alertingWebhook() => alertingWebhook != null ? alertingWebhook() : orElse(value),
+      ResourceTaggingAccountResourceType$cloudflaredTunnel() => cloudflaredTunnel != null ? cloudflaredTunnel() : orElse(value),
+      ResourceTaggingAccountResourceType$d1Database() => d1Database != null ? d1Database() : orElse(value),
+      ResourceTaggingAccountResourceType$durableObjectNamespace() => durableObjectNamespace != null ? durableObjectNamespace() : orElse(value),
+      ResourceTaggingAccountResourceType$gatewayList() => gatewayList != null ? gatewayList() : orElse(value),
+      ResourceTaggingAccountResourceType$gatewayRule() => gatewayRule != null ? gatewayRule() : orElse(value),
+      ResourceTaggingAccountResourceType$image() => image != null ? image() : orElse(value),
+      ResourceTaggingAccountResourceType$kvNamespace() => kvNamespace != null ? kvNamespace() : orElse(value),
+      ResourceTaggingAccountResourceType$queue() => queue != null ? queue() : orElse(value),
+      ResourceTaggingAccountResourceType$r2Bucket() => r2Bucket != null ? r2Bucket() : orElse(value),
+      ResourceTaggingAccountResourceType$resourceShare() => resourceShare != null ? resourceShare() : orElse(value),
+      ResourceTaggingAccountResourceType$streamLiveInput() => streamLiveInput != null ? streamLiveInput() : orElse(value),
+      ResourceTaggingAccountResourceType$streamVideo() => streamVideo != null ? streamVideo() : orElse(value),
+      ResourceTaggingAccountResourceType$worker() => worker != null ? worker() : orElse(value),
+      ResourceTaggingAccountResourceType$workerVersion() => workerVersion != null ? workerVersion() : orElse(value),
+      ResourceTaggingAccountResourceType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceTaggingAccountResourceType($value)';
 
  }

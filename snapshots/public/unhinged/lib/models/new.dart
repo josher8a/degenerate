@@ -67,6 +67,50 @@ sealed class NewType {
     return this is NewType$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() type,
+    required W Function() object,
+    required W Function() array,
+    required W Function() string,
+    required W Function() integer,
+    required W Function() $null,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      NewType$type() => type(),
+      NewType$object() => object(),
+      NewType$array() => array(),
+      NewType$string() => string(),
+      NewType$integer() => integer(),
+      NewType$$null() => $null(),
+      NewType$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? type,
+    W Function()? object,
+    W Function()? array,
+    W Function()? string,
+    W Function()? integer,
+    W Function()? $null,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      NewType$type() => type != null ? type() : orElse(value),
+      NewType$object() => object != null ? object() : orElse(value),
+      NewType$array() => array != null ? array() : orElse(value),
+      NewType$string() => string != null ? string() : orElse(value),
+      NewType$integer() => integer != null ? integer() : orElse(value),
+      NewType$$null() => $null != null ? $null() : orElse(value),
+      NewType$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'NewType($value)';
 }

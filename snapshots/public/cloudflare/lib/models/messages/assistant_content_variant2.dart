@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AssistantContentVariant2Type$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() refusal, required W Function(String value) $unknown, }) { return switch (this) {
+      AssistantContentVariant2Type$text() => text(),
+      AssistantContentVariant2Type$refusal() => refusal(),
+      AssistantContentVariant2Type$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? refusal, W Function(String value)? $unknown, }) { return switch (this) {
+      AssistantContentVariant2Type$text() => text != null ? text() : orElse(value),
+      AssistantContentVariant2Type$refusal() => refusal != null ? refusal() : orElse(value),
+      AssistantContentVariant2Type$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AssistantContentVariant2Type($value)';
 
  }

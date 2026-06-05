@@ -27,6 +27,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PromptCacheRetention$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inMemory, required W Function() $24h, required W Function(String value) $unknown, }) { return switch (this) {
+      PromptCacheRetention$inMemory() => inMemory(),
+      PromptCacheRetention$$24h() => $24h(),
+      PromptCacheRetention$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inMemory, W Function()? $24h, W Function(String value)? $unknown, }) { return switch (this) {
+      PromptCacheRetention$inMemory() => inMemory != null ? inMemory() : orElse(value),
+      PromptCacheRetention$$24h() => $24h != null ? $24h() : orElse(value),
+      PromptCacheRetention$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PromptCacheRetention($value)';
 
  }

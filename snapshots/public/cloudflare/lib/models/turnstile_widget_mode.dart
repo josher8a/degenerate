@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TurnstileWidgetMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() nonInteractive, required W Function() invisible, required W Function() managed, required W Function(String value) $unknown, }) { return switch (this) {
+      TurnstileWidgetMode$nonInteractive() => nonInteractive(),
+      TurnstileWidgetMode$invisible() => invisible(),
+      TurnstileWidgetMode$managed() => managed(),
+      TurnstileWidgetMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? nonInteractive, W Function()? invisible, W Function()? managed, W Function(String value)? $unknown, }) { return switch (this) {
+      TurnstileWidgetMode$nonInteractive() => nonInteractive != null ? nonInteractive() : orElse(value),
+      TurnstileWidgetMode$invisible() => invisible != null ? invisible() : orElse(value),
+      TurnstileWidgetMode$managed() => managed != null ? managed() : orElse(value),
+      TurnstileWidgetMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TurnstileWidgetMode($value)';
 
  }

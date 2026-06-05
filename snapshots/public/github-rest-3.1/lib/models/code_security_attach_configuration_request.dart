@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeSecurityAttachConfigurationRequestScope$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() all, required W Function() allWithoutConfigurations, required W Function() public, required W Function() privateOrInternal, required W Function() selected, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeSecurityAttachConfigurationRequestScope$all() => all(),
+      CodeSecurityAttachConfigurationRequestScope$allWithoutConfigurations() => allWithoutConfigurations(),
+      CodeSecurityAttachConfigurationRequestScope$public() => public(),
+      CodeSecurityAttachConfigurationRequestScope$privateOrInternal() => privateOrInternal(),
+      CodeSecurityAttachConfigurationRequestScope$selected() => selected(),
+      CodeSecurityAttachConfigurationRequestScope$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? all, W Function()? allWithoutConfigurations, W Function()? public, W Function()? privateOrInternal, W Function()? selected, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeSecurityAttachConfigurationRequestScope$all() => all != null ? all() : orElse(value),
+      CodeSecurityAttachConfigurationRequestScope$allWithoutConfigurations() => allWithoutConfigurations != null ? allWithoutConfigurations() : orElse(value),
+      CodeSecurityAttachConfigurationRequestScope$public() => public != null ? public() : orElse(value),
+      CodeSecurityAttachConfigurationRequestScope$privateOrInternal() => privateOrInternal != null ? privateOrInternal() : orElse(value),
+      CodeSecurityAttachConfigurationRequestScope$selected() => selected != null ? selected() : orElse(value),
+      CodeSecurityAttachConfigurationRequestScope$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeSecurityAttachConfigurationRequestScope($value)';
 
  }

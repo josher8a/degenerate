@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Methods$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() put, required W Function() post, required W Function() delete, required W Function() head, required W Function(String value) $unknown, }) { return switch (this) {
+      Methods$$get() => $get(),
+      Methods$put() => put(),
+      Methods$post() => post(),
+      Methods$delete() => delete(),
+      Methods$head() => head(),
+      Methods$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? put, W Function()? post, W Function()? delete, W Function()? head, W Function(String value)? $unknown, }) { return switch (this) {
+      Methods$$get() => $get != null ? $get() : orElse(value),
+      Methods$put() => put != null ? put() : orElse(value),
+      Methods$post() => post != null ? post() : orElse(value),
+      Methods$delete() => delete != null ? delete() : orElse(value),
+      Methods$head() => head != null ? head() : orElse(value),
+      Methods$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Methods($value)';
 
  }

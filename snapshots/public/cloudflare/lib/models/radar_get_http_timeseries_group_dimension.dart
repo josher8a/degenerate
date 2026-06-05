@@ -70,6 +70,40 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpTimeseriesGroupDimension$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() adm1, required W Function() $as, required W Function() botClass, required W Function() browser, required W Function() browserFamily, required W Function() deviceType, required W Function() httpProtocol, required W Function() httpVersion, required W Function() ipVersion, required W Function() location, required W Function() os, required W Function() postQuantum, required W Function() tlsVersion, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupDimension$adm1() => adm1(),
+      RadarGetHttpTimeseriesGroupDimension$$as() => $as(),
+      RadarGetHttpTimeseriesGroupDimension$botClass() => botClass(),
+      RadarGetHttpTimeseriesGroupDimension$browser() => browser(),
+      RadarGetHttpTimeseriesGroupDimension$browserFamily() => browserFamily(),
+      RadarGetHttpTimeseriesGroupDimension$deviceType() => deviceType(),
+      RadarGetHttpTimeseriesGroupDimension$httpProtocol() => httpProtocol(),
+      RadarGetHttpTimeseriesGroupDimension$httpVersion() => httpVersion(),
+      RadarGetHttpTimeseriesGroupDimension$ipVersion() => ipVersion(),
+      RadarGetHttpTimeseriesGroupDimension$location() => location(),
+      RadarGetHttpTimeseriesGroupDimension$os() => os(),
+      RadarGetHttpTimeseriesGroupDimension$postQuantum() => postQuantum(),
+      RadarGetHttpTimeseriesGroupDimension$tlsVersion() => tlsVersion(),
+      RadarGetHttpTimeseriesGroupDimension$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? adm1, W Function()? $as, W Function()? botClass, W Function()? browser, W Function()? browserFamily, W Function()? deviceType, W Function()? httpProtocol, W Function()? httpVersion, W Function()? ipVersion, W Function()? location, W Function()? os, W Function()? postQuantum, W Function()? tlsVersion, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpTimeseriesGroupDimension$adm1() => adm1 != null ? adm1() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$$as() => $as != null ? $as() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$botClass() => botClass != null ? botClass() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$browser() => browser != null ? browser() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$browserFamily() => browserFamily != null ? browserFamily() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$deviceType() => deviceType != null ? deviceType() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$httpProtocol() => httpProtocol != null ? httpProtocol() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$httpVersion() => httpVersion != null ? httpVersion() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$ipVersion() => ipVersion != null ? ipVersion() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$location() => location != null ? location() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$os() => os != null ? os() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$postQuantum() => postQuantum != null ? postQuantum() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$tlsVersion() => tlsVersion != null ? tlsVersion() : orElse(value),
+      RadarGetHttpTimeseriesGroupDimension$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpTimeseriesGroupDimension($value)';
 
  }

@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InvoiceRenderingPdfPageSize$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() a4, required W Function() auto, required W Function() letter, required W Function(String value) $unknown, }) { return switch (this) {
+      InvoiceRenderingPdfPageSize$a4() => a4(),
+      InvoiceRenderingPdfPageSize$auto() => auto(),
+      InvoiceRenderingPdfPageSize$letter() => letter(),
+      InvoiceRenderingPdfPageSize$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? a4, W Function()? auto, W Function()? letter, W Function(String value)? $unknown, }) { return switch (this) {
+      InvoiceRenderingPdfPageSize$a4() => a4 != null ? a4() : orElse(value),
+      InvoiceRenderingPdfPageSize$auto() => auto != null ? auto() : orElse(value),
+      InvoiceRenderingPdfPageSize$letter() => letter != null ? letter() : orElse(value),
+      InvoiceRenderingPdfPageSize$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InvoiceRenderingPdfPageSize($value)';
 
  }

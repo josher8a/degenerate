@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreeMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $100644, required W Function() $100755, required W Function() $040000, required W Function() $160000, required W Function() $120000, required W Function(String value) $unknown, }) { return switch (this) {
+      TreeMode$$100644() => $100644(),
+      TreeMode$$100755() => $100755(),
+      TreeMode$$040000() => $040000(),
+      TreeMode$$160000() => $160000(),
+      TreeMode$$120000() => $120000(),
+      TreeMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $100644, W Function()? $100755, W Function()? $040000, W Function()? $160000, W Function()? $120000, W Function(String value)? $unknown, }) { return switch (this) {
+      TreeMode$$100644() => $100644 != null ? $100644() : orElse(value),
+      TreeMode$$100755() => $100755 != null ? $100755() : orElse(value),
+      TreeMode$$040000() => $040000 != null ? $040000() : orElse(value),
+      TreeMode$$160000() => $160000 != null ? $160000() : orElse(value),
+      TreeMode$$120000() => $120000 != null ? $120000() : orElse(value),
+      TreeMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreeMode($value)';
 
  }

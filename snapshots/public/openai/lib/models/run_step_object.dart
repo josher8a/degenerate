@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunStepObjectObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() threadRunStep, required W Function(String value) $unknown, }) { return switch (this) {
+      RunStepObjectObject$threadRunStep() => threadRunStep(),
+      RunStepObjectObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? threadRunStep, W Function(String value)? $unknown, }) { return switch (this) {
+      RunStepObjectObject$threadRunStep() => threadRunStep != null ? threadRunStep() : orElse(value),
+      RunStepObjectObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunStepObjectObject($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunStepObjectType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() messageCreation, required W Function() toolCalls, required W Function(String value) $unknown, }) { return switch (this) {
+      RunStepObjectType$messageCreation() => messageCreation(),
+      RunStepObjectType$toolCalls() => toolCalls(),
+      RunStepObjectType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? messageCreation, W Function()? toolCalls, W Function(String value)? $unknown, }) { return switch (this) {
+      RunStepObjectType$messageCreation() => messageCreation != null ? messageCreation() : orElse(value),
+      RunStepObjectType$toolCalls() => toolCalls != null ? toolCalls() : orElse(value),
+      RunStepObjectType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunStepObjectType($value)';
 
  }
@@ -137,6 +159,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RunStepObjectStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() cancelled, required W Function() failed, required W Function() completed, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+      RunStepObjectStatus$inProgress() => inProgress(),
+      RunStepObjectStatus$cancelled() => cancelled(),
+      RunStepObjectStatus$failed() => failed(),
+      RunStepObjectStatus$completed() => completed(),
+      RunStepObjectStatus$expired() => expired(),
+      RunStepObjectStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? cancelled, W Function()? failed, W Function()? completed, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+      RunStepObjectStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      RunStepObjectStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      RunStepObjectStatus$failed() => failed != null ? failed() : orElse(value),
+      RunStepObjectStatus$completed() => completed != null ? completed() : orElse(value),
+      RunStepObjectStatus$expired() => expired != null ? expired() : orElse(value),
+      RunStepObjectStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RunStepObjectStatus($value)';
 
  }

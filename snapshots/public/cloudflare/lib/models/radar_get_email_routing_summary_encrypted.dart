@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingSummaryEncrypted$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() encrypted, required W Function() notEncrypted, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingSummaryEncrypted$encrypted() => encrypted(),
+      RadarGetEmailRoutingSummaryEncrypted$notEncrypted() => notEncrypted(),
+      RadarGetEmailRoutingSummaryEncrypted$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? encrypted, W Function()? notEncrypted, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingSummaryEncrypted$encrypted() => encrypted != null ? encrypted() : orElse(value),
+      RadarGetEmailRoutingSummaryEncrypted$notEncrypted() => notEncrypted != null ? notEncrypted() : orElse(value),
+      RadarGetEmailRoutingSummaryEncrypted$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingSummaryEncrypted($value)';
 
  }

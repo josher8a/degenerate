@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GraderStringCheckType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() stringCheck, required W Function(String value) $unknown, }) { return switch (this) {
+      GraderStringCheckType$stringCheck() => stringCheck(),
+      GraderStringCheckType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? stringCheck, W Function(String value)? $unknown, }) { return switch (this) {
+      GraderStringCheckType$stringCheck() => stringCheck != null ? stringCheck() : orElse(value),
+      GraderStringCheckType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GraderStringCheckType($value)';
 
  }
@@ -77,6 +87,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GraderStringCheckOperation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() eq, required W Function() ne, required W Function() like, required W Function() ilike, required W Function(String value) $unknown, }) { return switch (this) {
+      GraderStringCheckOperation$eq() => eq(),
+      GraderStringCheckOperation$ne() => ne(),
+      GraderStringCheckOperation$like() => like(),
+      GraderStringCheckOperation$ilike() => ilike(),
+      GraderStringCheckOperation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? eq, W Function()? ne, W Function()? like, W Function()? ilike, W Function(String value)? $unknown, }) { return switch (this) {
+      GraderStringCheckOperation$eq() => eq != null ? eq() : orElse(value),
+      GraderStringCheckOperation$ne() => ne != null ? ne() : orElse(value),
+      GraderStringCheckOperation$like() => like != null ? like() : orElse(value),
+      GraderStringCheckOperation$ilike() => ilike != null ? ilike() : orElse(value),
+      GraderStringCheckOperation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GraderStringCheckOperation($value)';
 
  }

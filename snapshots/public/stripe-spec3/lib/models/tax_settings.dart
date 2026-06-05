@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxSettingsObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() taxSettings, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxSettingsObject$taxSettings() => taxSettings(),
+      TaxSettingsObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? taxSettings, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxSettingsObject$taxSettings() => taxSettings != null ? taxSettings() : orElse(value),
+      TaxSettingsObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxSettingsObject($value)';
 
  }
@@ -69,6 +79,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TaxSettingsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() pending, required W Function(String value) $unknown, }) { return switch (this) {
+      TaxSettingsStatus$active() => active(),
+      TaxSettingsStatus$pending() => pending(),
+      TaxSettingsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function(String value)? $unknown, }) { return switch (this) {
+      TaxSettingsStatus$active() => active != null ? active() : orElse(value),
+      TaxSettingsStatus$pending() => pending != null ? pending() : orElse(value),
+      TaxSettingsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TaxSettingsStatus($value)';
 
  }

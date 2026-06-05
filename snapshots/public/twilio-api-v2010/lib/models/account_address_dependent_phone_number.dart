@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependentPhoneNumberEnumAddressRequirement$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() none, required W Function() any, required W Function() local, required W Function() foreign, required W Function(String value) $unknown, }) { return switch (this) {
+      DependentPhoneNumberEnumAddressRequirement$none() => none(),
+      DependentPhoneNumberEnumAddressRequirement$any() => any(),
+      DependentPhoneNumberEnumAddressRequirement$local() => local(),
+      DependentPhoneNumberEnumAddressRequirement$foreign() => foreign(),
+      DependentPhoneNumberEnumAddressRequirement$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? none, W Function()? any, W Function()? local, W Function()? foreign, W Function(String value)? $unknown, }) { return switch (this) {
+      DependentPhoneNumberEnumAddressRequirement$none() => none != null ? none() : orElse(value),
+      DependentPhoneNumberEnumAddressRequirement$any() => any != null ? any() : orElse(value),
+      DependentPhoneNumberEnumAddressRequirement$local() => local != null ? local() : orElse(value),
+      DependentPhoneNumberEnumAddressRequirement$foreign() => foreign != null ? foreign() : orElse(value),
+      DependentPhoneNumberEnumAddressRequirement$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependentPhoneNumberEnumAddressRequirement($value)';
 
  }
@@ -108,6 +124,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependentPhoneNumberEnumEmergencyStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() inactive, required W Function(String value) $unknown, }) { return switch (this) {
+      DependentPhoneNumberEnumEmergencyStatus$active() => active(),
+      DependentPhoneNumberEnumEmergencyStatus$inactive() => inactive(),
+      DependentPhoneNumberEnumEmergencyStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? inactive, W Function(String value)? $unknown, }) { return switch (this) {
+      DependentPhoneNumberEnumEmergencyStatus$active() => active != null ? active() : orElse(value),
+      DependentPhoneNumberEnumEmergencyStatus$inactive() => inactive != null ? inactive() : orElse(value),
+      DependentPhoneNumberEnumEmergencyStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependentPhoneNumberEnumEmergencyStatus($value)';
 
  }

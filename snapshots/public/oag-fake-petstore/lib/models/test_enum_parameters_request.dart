@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumFormStringArray$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $empty, required W Function() $empty2, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumFormStringArray$$empty() => $empty(),
+      EnumFormStringArray$$empty2() => $empty2(),
+      EnumFormStringArray$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $empty, W Function()? $empty2, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumFormStringArray$$empty() => $empty != null ? $empty() : orElse(value),
+      EnumFormStringArray$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      EnumFormStringArray$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumFormStringArray($value)';
 
  }
@@ -85,6 +97,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EnumFormString$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() abc, required W Function() efg, required W Function() xyz, required W Function(String value) $unknown, }) { return switch (this) {
+      EnumFormString$abc() => abc(),
+      EnumFormString$efg() => efg(),
+      EnumFormString$xyz() => xyz(),
+      EnumFormString$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W Function()? efg, W Function()? xyz, W Function(String value)? $unknown, }) { return switch (this) {
+      EnumFormString$abc() => abc != null ? abc() : orElse(value),
+      EnumFormString$efg() => efg != null ? efg() : orElse(value),
+      EnumFormString$xyz() => xyz != null ? xyz() : orElse(value),
+      EnumFormString$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EnumFormString($value)';
 
  }

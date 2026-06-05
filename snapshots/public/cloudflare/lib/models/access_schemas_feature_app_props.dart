@@ -54,6 +54,32 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccessComponentsSchemasType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() selfHosted, required W Function() saas, required W Function() ssh, required W Function() vnc, required W Function() appLauncher, required W Function() warp, required W Function() biso, required W Function() bookmark, required W Function() dashSso, required W Function(String value) $unknown, }) { return switch (this) {
+      AccessComponentsSchemasType$selfHosted() => selfHosted(),
+      AccessComponentsSchemasType$saas() => saas(),
+      AccessComponentsSchemasType$ssh() => ssh(),
+      AccessComponentsSchemasType$vnc() => vnc(),
+      AccessComponentsSchemasType$appLauncher() => appLauncher(),
+      AccessComponentsSchemasType$warp() => warp(),
+      AccessComponentsSchemasType$biso() => biso(),
+      AccessComponentsSchemasType$bookmark() => bookmark(),
+      AccessComponentsSchemasType$dashSso() => dashSso(),
+      AccessComponentsSchemasType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? selfHosted, W Function()? saas, W Function()? ssh, W Function()? vnc, W Function()? appLauncher, W Function()? warp, W Function()? biso, W Function()? bookmark, W Function()? dashSso, W Function(String value)? $unknown, }) { return switch (this) {
+      AccessComponentsSchemasType$selfHosted() => selfHosted != null ? selfHosted() : orElse(value),
+      AccessComponentsSchemasType$saas() => saas != null ? saas() : orElse(value),
+      AccessComponentsSchemasType$ssh() => ssh != null ? ssh() : orElse(value),
+      AccessComponentsSchemasType$vnc() => vnc != null ? vnc() : orElse(value),
+      AccessComponentsSchemasType$appLauncher() => appLauncher != null ? appLauncher() : orElse(value),
+      AccessComponentsSchemasType$warp() => warp != null ? warp() : orElse(value),
+      AccessComponentsSchemasType$biso() => biso != null ? biso() : orElse(value),
+      AccessComponentsSchemasType$bookmark() => bookmark != null ? bookmark() : orElse(value),
+      AccessComponentsSchemasType$dashSso() => dashSso != null ? dashSso() : orElse(value),
+      AccessComponentsSchemasType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccessComponentsSchemasType($value)';
 
  }

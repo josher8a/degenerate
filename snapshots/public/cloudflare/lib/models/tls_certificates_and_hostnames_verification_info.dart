@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RecordName$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() recordName, required W Function() httpUrl, required W Function() cname, required W Function() txtName, required W Function(String value) $unknown, }) { return switch (this) {
+      RecordName$recordName() => recordName(),
+      RecordName$httpUrl() => httpUrl(),
+      RecordName$cname() => cname(),
+      RecordName$txtName() => txtName(),
+      RecordName$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recordName, W Function()? httpUrl, W Function()? cname, W Function()? txtName, W Function(String value)? $unknown, }) { return switch (this) {
+      RecordName$recordName() => recordName != null ? recordName() : orElse(value),
+      RecordName$httpUrl() => httpUrl != null ? httpUrl() : orElse(value),
+      RecordName$cname() => cname != null ? cname() : orElse(value),
+      RecordName$txtName() => txtName != null ? txtName() : orElse(value),
+      RecordName$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RecordName($value)';
 
  }
@@ -116,6 +132,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RecordTarget$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() recordValue, required W Function() httpBody, required W Function() cnameTarget, required W Function() txtValue, required W Function(String value) $unknown, }) { return switch (this) {
+      RecordTarget$recordValue() => recordValue(),
+      RecordTarget$httpBody() => httpBody(),
+      RecordTarget$cnameTarget() => cnameTarget(),
+      RecordTarget$txtValue() => txtValue(),
+      RecordTarget$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? recordValue, W Function()? httpBody, W Function()? cnameTarget, W Function()? txtValue, W Function(String value)? $unknown, }) { return switch (this) {
+      RecordTarget$recordValue() => recordValue != null ? recordValue() : orElse(value),
+      RecordTarget$httpBody() => httpBody != null ? httpBody() : orElse(value),
+      RecordTarget$cnameTarget() => cnameTarget != null ? cnameTarget() : orElse(value),
+      RecordTarget$txtValue() => txtValue != null ? txtValue() : orElse(value),
+      RecordTarget$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RecordTarget($value)';
 
  }

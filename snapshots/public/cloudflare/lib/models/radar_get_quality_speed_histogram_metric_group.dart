@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetQualitySpeedHistogramMetricGroup$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bandwidth, required W Function() latency, required W Function() jitter, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetQualitySpeedHistogramMetricGroup$bandwidth() => bandwidth(),
+      RadarGetQualitySpeedHistogramMetricGroup$latency() => latency(),
+      RadarGetQualitySpeedHistogramMetricGroup$jitter() => jitter(),
+      RadarGetQualitySpeedHistogramMetricGroup$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bandwidth, W Function()? latency, W Function()? jitter, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetQualitySpeedHistogramMetricGroup$bandwidth() => bandwidth != null ? bandwidth() : orElse(value),
+      RadarGetQualitySpeedHistogramMetricGroup$latency() => latency != null ? latency() : orElse(value),
+      RadarGetQualitySpeedHistogramMetricGroup$jitter() => jitter != null ? jitter() : orElse(value),
+      RadarGetQualitySpeedHistogramMetricGroup$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetQualitySpeedHistogramMetricGroup($value)';
 
  }

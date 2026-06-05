@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellCallItemStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() completed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      FunctionShellCallItemStatus$inProgress() => inProgress(),
+      FunctionShellCallItemStatus$completed() => completed(),
+      FunctionShellCallItemStatus$incomplete() => incomplete(),
+      FunctionShellCallItemStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? completed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      FunctionShellCallItemStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      FunctionShellCallItemStatus$completed() => completed != null ? completed() : orElse(value),
+      FunctionShellCallItemStatus$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      FunctionShellCallItemStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'FunctionShellCallItemStatus($value)';
 
  }

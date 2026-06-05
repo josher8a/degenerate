@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() initializing, required W Function() pendingDeployment, required W Function() active, required W Function() pendingDeletion, required W Function() deleted, required W Function() expired, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$initializing() => initializing(),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeployment() => pendingDeployment(),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$active() => active(),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeletion() => pendingDeletion(),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$deleted() => deleted(),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$expired() => expired(),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? initializing, W Function()? pendingDeployment, W Function()? active, W Function()? pendingDeletion, W Function()? deleted, W Function()? expired, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeployment() => pendingDeployment != null ? pendingDeployment() : orElse(value),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$active() => active != null ? active() : orElse(value),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeletion() => pendingDeletion != null ? pendingDeletion() : orElse(value),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$expired() => expired != null ? expired() : orElse(value),
+      TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus($value)';
 
  }

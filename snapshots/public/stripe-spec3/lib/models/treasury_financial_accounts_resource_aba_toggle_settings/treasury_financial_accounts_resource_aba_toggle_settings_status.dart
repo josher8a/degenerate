@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() pending, required W Function() restricted, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$active() => active(),
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$pending() => pending(),
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$restricted() => restricted(),
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? pending, W Function()? restricted, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$active() => active != null ? active() : orElse(value),
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$pending() => pending != null ? pending() : orElse(value),
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$restricted() => restricted != null ? restricted() : orElse(value),
+      TreasuryFinancialAccountsResourceAbaToggleSettingsStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryFinancialAccountsResourceAbaToggleSettingsStatus($value)';
 
  }

@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtSummaryExpirationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() expired, required W Function() valid, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtSummaryExpirationStatus$expired() => expired(),
+      RadarGetCtSummaryExpirationStatus$valid() => valid(),
+      RadarGetCtSummaryExpirationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? expired, W Function()? valid, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtSummaryExpirationStatus$expired() => expired != null ? expired() : orElse(value),
+      RadarGetCtSummaryExpirationStatus$valid() => valid != null ? valid() : orElse(value),
+      RadarGetCtSummaryExpirationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtSummaryExpirationStatus($value)';
 
  }

@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesParquetCompression$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() uncompressed, required W Function() snappy, required W Function() gzip, required W Function() zstd, required W Function() lz4, required W Function(String value) $unknown, }) { return switch (this) {
+      CloudflarePipelinesParquetCompression$uncompressed() => uncompressed(),
+      CloudflarePipelinesParquetCompression$snappy() => snappy(),
+      CloudflarePipelinesParquetCompression$gzip() => gzip(),
+      CloudflarePipelinesParquetCompression$zstd() => zstd(),
+      CloudflarePipelinesParquetCompression$lz4() => lz4(),
+      CloudflarePipelinesParquetCompression$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? uncompressed, W Function()? snappy, W Function()? gzip, W Function()? zstd, W Function()? lz4, W Function(String value)? $unknown, }) { return switch (this) {
+      CloudflarePipelinesParquetCompression$uncompressed() => uncompressed != null ? uncompressed() : orElse(value),
+      CloudflarePipelinesParquetCompression$snappy() => snappy != null ? snappy() : orElse(value),
+      CloudflarePipelinesParquetCompression$gzip() => gzip != null ? gzip() : orElse(value),
+      CloudflarePipelinesParquetCompression$zstd() => zstd != null ? zstd() : orElse(value),
+      CloudflarePipelinesParquetCompression$lz4() => lz4 != null ? lz4() : orElse(value),
+      CloudflarePipelinesParquetCompression$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CloudflarePipelinesParquetCompression($value)';
 
  }

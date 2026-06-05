@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupArc$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pass, required W Function() none, required W Function() fail, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupArc$pass() => pass(),
+      RadarGetEmailRoutingTimeseriesGroupArc$none() => none(),
+      RadarGetEmailRoutingTimeseriesGroupArc$fail() => fail(),
+      RadarGetEmailRoutingTimeseriesGroupArc$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pass, W Function()? none, W Function()? fail, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEmailRoutingTimeseriesGroupArc$pass() => pass != null ? pass() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupArc$none() => none != null ? none() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupArc$fail() => fail != null ? fail() : orElse(value),
+      RadarGetEmailRoutingTimeseriesGroupArc$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEmailRoutingTimeseriesGroupArc($value)';
 
  }

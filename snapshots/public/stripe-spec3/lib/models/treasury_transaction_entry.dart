@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryTransactionEntryObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() treasuryTransactionEntry, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryTransactionEntryObject$treasuryTransactionEntry() => treasuryTransactionEntry(),
+      TreasuryTransactionEntryObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? treasuryTransactionEntry, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryTransactionEntryObject$treasuryTransactionEntry() => treasuryTransactionEntry != null ? treasuryTransactionEntry() : orElse(value),
+      TreasuryTransactionEntryObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryTransactionEntryObject($value)';
 
  }
@@ -141,6 +151,54 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TreasuryTransactionEntryType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditReversal, required W Function() creditReversalPosting, required W Function() debitReversal, required W Function() inboundTransfer, required W Function() inboundTransferReturn, required W Function() issuingAuthorizationHold, required W Function() issuingAuthorizationRelease, required W Function() $other, required W Function() outboundPayment, required W Function() outboundPaymentCancellation, required W Function() outboundPaymentFailure, required W Function() outboundPaymentPosting, required W Function() outboundPaymentReturn, required W Function() outboundTransfer, required W Function() outboundTransferCancellation, required W Function() outboundTransferFailure, required W Function() outboundTransferPosting, required W Function() outboundTransferReturn, required W Function() receivedCredit, required W Function() receivedDebit, required W Function(String value) $unknown, }) { return switch (this) {
+      TreasuryTransactionEntryType$creditReversal() => creditReversal(),
+      TreasuryTransactionEntryType$creditReversalPosting() => creditReversalPosting(),
+      TreasuryTransactionEntryType$debitReversal() => debitReversal(),
+      TreasuryTransactionEntryType$inboundTransfer() => inboundTransfer(),
+      TreasuryTransactionEntryType$inboundTransferReturn() => inboundTransferReturn(),
+      TreasuryTransactionEntryType$issuingAuthorizationHold() => issuingAuthorizationHold(),
+      TreasuryTransactionEntryType$issuingAuthorizationRelease() => issuingAuthorizationRelease(),
+      TreasuryTransactionEntryType$$other() => $other(),
+      TreasuryTransactionEntryType$outboundPayment() => outboundPayment(),
+      TreasuryTransactionEntryType$outboundPaymentCancellation() => outboundPaymentCancellation(),
+      TreasuryTransactionEntryType$outboundPaymentFailure() => outboundPaymentFailure(),
+      TreasuryTransactionEntryType$outboundPaymentPosting() => outboundPaymentPosting(),
+      TreasuryTransactionEntryType$outboundPaymentReturn() => outboundPaymentReturn(),
+      TreasuryTransactionEntryType$outboundTransfer() => outboundTransfer(),
+      TreasuryTransactionEntryType$outboundTransferCancellation() => outboundTransferCancellation(),
+      TreasuryTransactionEntryType$outboundTransferFailure() => outboundTransferFailure(),
+      TreasuryTransactionEntryType$outboundTransferPosting() => outboundTransferPosting(),
+      TreasuryTransactionEntryType$outboundTransferReturn() => outboundTransferReturn(),
+      TreasuryTransactionEntryType$receivedCredit() => receivedCredit(),
+      TreasuryTransactionEntryType$receivedDebit() => receivedDebit(),
+      TreasuryTransactionEntryType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditReversal, W Function()? creditReversalPosting, W Function()? debitReversal, W Function()? inboundTransfer, W Function()? inboundTransferReturn, W Function()? issuingAuthorizationHold, W Function()? issuingAuthorizationRelease, W Function()? $other, W Function()? outboundPayment, W Function()? outboundPaymentCancellation, W Function()? outboundPaymentFailure, W Function()? outboundPaymentPosting, W Function()? outboundPaymentReturn, W Function()? outboundTransfer, W Function()? outboundTransferCancellation, W Function()? outboundTransferFailure, W Function()? outboundTransferPosting, W Function()? outboundTransferReturn, W Function()? receivedCredit, W Function()? receivedDebit, W Function(String value)? $unknown, }) { return switch (this) {
+      TreasuryTransactionEntryType$creditReversal() => creditReversal != null ? creditReversal() : orElse(value),
+      TreasuryTransactionEntryType$creditReversalPosting() => creditReversalPosting != null ? creditReversalPosting() : orElse(value),
+      TreasuryTransactionEntryType$debitReversal() => debitReversal != null ? debitReversal() : orElse(value),
+      TreasuryTransactionEntryType$inboundTransfer() => inboundTransfer != null ? inboundTransfer() : orElse(value),
+      TreasuryTransactionEntryType$inboundTransferReturn() => inboundTransferReturn != null ? inboundTransferReturn() : orElse(value),
+      TreasuryTransactionEntryType$issuingAuthorizationHold() => issuingAuthorizationHold != null ? issuingAuthorizationHold() : orElse(value),
+      TreasuryTransactionEntryType$issuingAuthorizationRelease() => issuingAuthorizationRelease != null ? issuingAuthorizationRelease() : orElse(value),
+      TreasuryTransactionEntryType$$other() => $other != null ? $other() : orElse(value),
+      TreasuryTransactionEntryType$outboundPayment() => outboundPayment != null ? outboundPayment() : orElse(value),
+      TreasuryTransactionEntryType$outboundPaymentCancellation() => outboundPaymentCancellation != null ? outboundPaymentCancellation() : orElse(value),
+      TreasuryTransactionEntryType$outboundPaymentFailure() => outboundPaymentFailure != null ? outboundPaymentFailure() : orElse(value),
+      TreasuryTransactionEntryType$outboundPaymentPosting() => outboundPaymentPosting != null ? outboundPaymentPosting() : orElse(value),
+      TreasuryTransactionEntryType$outboundPaymentReturn() => outboundPaymentReturn != null ? outboundPaymentReturn() : orElse(value),
+      TreasuryTransactionEntryType$outboundTransfer() => outboundTransfer != null ? outboundTransfer() : orElse(value),
+      TreasuryTransactionEntryType$outboundTransferCancellation() => outboundTransferCancellation != null ? outboundTransferCancellation() : orElse(value),
+      TreasuryTransactionEntryType$outboundTransferFailure() => outboundTransferFailure != null ? outboundTransferFailure() : orElse(value),
+      TreasuryTransactionEntryType$outboundTransferPosting() => outboundTransferPosting != null ? outboundTransferPosting() : orElse(value),
+      TreasuryTransactionEntryType$outboundTransferReturn() => outboundTransferReturn != null ? outboundTransferReturn() : orElse(value),
+      TreasuryTransactionEntryType$receivedCredit() => receivedCredit != null ? receivedCredit() : orElse(value),
+      TreasuryTransactionEntryType$receivedDebit() => receivedDebit != null ? receivedDebit() : orElse(value),
+      TreasuryTransactionEntryType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TreasuryTransactionEntryType($value)';
 
  }

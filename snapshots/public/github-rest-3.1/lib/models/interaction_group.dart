@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InteractionGroup$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() existingUsers, required W Function() contributorsOnly, required W Function() collaboratorsOnly, required W Function(String value) $unknown, }) { return switch (this) {
+      InteractionGroup$existingUsers() => existingUsers(),
+      InteractionGroup$contributorsOnly() => contributorsOnly(),
+      InteractionGroup$collaboratorsOnly() => collaboratorsOnly(),
+      InteractionGroup$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? existingUsers, W Function()? contributorsOnly, W Function()? collaboratorsOnly, W Function(String value)? $unknown, }) { return switch (this) {
+      InteractionGroup$existingUsers() => existingUsers != null ? existingUsers() : orElse(value),
+      InteractionGroup$contributorsOnly() => contributorsOnly != null ? contributorsOnly() : orElse(value),
+      InteractionGroup$collaboratorsOnly() => collaboratorsOnly != null ? collaboratorsOnly() : orElse(value),
+      InteractionGroup$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'InteractionGroup($value)';
 
  }

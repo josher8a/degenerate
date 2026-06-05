@@ -45,6 +45,28 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetCtSummaryDuration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() lte3D, required W Function() gt3DLte7D, required W Function() gt7DLte10D, required W Function() gt10DLte47D, required W Function() gt47DLte100D, required W Function() gt100DLte200D, required W Function() gt200D, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetCtSummaryDuration$lte3D() => lte3D(),
+      RadarGetCtSummaryDuration$gt3DLte7D() => gt3DLte7D(),
+      RadarGetCtSummaryDuration$gt7DLte10D() => gt7DLte10D(),
+      RadarGetCtSummaryDuration$gt10DLte47D() => gt10DLte47D(),
+      RadarGetCtSummaryDuration$gt47DLte100D() => gt47DLte100D(),
+      RadarGetCtSummaryDuration$gt100DLte200D() => gt100DLte200D(),
+      RadarGetCtSummaryDuration$gt200D() => gt200D(),
+      RadarGetCtSummaryDuration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? lte3D, W Function()? gt3DLte7D, W Function()? gt7DLte10D, W Function()? gt10DLte47D, W Function()? gt47DLte100D, W Function()? gt100DLte200D, W Function()? gt200D, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetCtSummaryDuration$lte3D() => lte3D != null ? lte3D() : orElse(value),
+      RadarGetCtSummaryDuration$gt3DLte7D() => gt3DLte7D != null ? gt3DLte7D() : orElse(value),
+      RadarGetCtSummaryDuration$gt7DLte10D() => gt7DLte10D != null ? gt7DLte10D() : orElse(value),
+      RadarGetCtSummaryDuration$gt10DLte47D() => gt10DLte47D != null ? gt10DLte47D() : orElse(value),
+      RadarGetCtSummaryDuration$gt47DLte100D() => gt47DLte100D != null ? gt47DLte100D() : orElse(value),
+      RadarGetCtSummaryDuration$gt100DLte200D() => gt100DLte200D != null ? gt100DLte200D() : orElse(value),
+      RadarGetCtSummaryDuration$gt200D() => gt200D != null ? gt200D() : orElse(value),
+      RadarGetCtSummaryDuration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetCtSummaryDuration($value)';
 
  }

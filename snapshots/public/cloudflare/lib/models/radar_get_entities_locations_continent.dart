@@ -42,6 +42,26 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetEntitiesLocationsContinent$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() af, required W Function() $as, required W Function() eu, required W Function() na, required W Function() oc, required W Function() sa, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetEntitiesLocationsContinent$af() => af(),
+      RadarGetEntitiesLocationsContinent$$as() => $as(),
+      RadarGetEntitiesLocationsContinent$eu() => eu(),
+      RadarGetEntitiesLocationsContinent$na() => na(),
+      RadarGetEntitiesLocationsContinent$oc() => oc(),
+      RadarGetEntitiesLocationsContinent$sa() => sa(),
+      RadarGetEntitiesLocationsContinent$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? af, W Function()? $as, W Function()? eu, W Function()? na, W Function()? oc, W Function()? sa, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetEntitiesLocationsContinent$af() => af != null ? af() : orElse(value),
+      RadarGetEntitiesLocationsContinent$$as() => $as != null ? $as() : orElse(value),
+      RadarGetEntitiesLocationsContinent$eu() => eu != null ? eu() : orElse(value),
+      RadarGetEntitiesLocationsContinent$na() => na != null ? na() : orElse(value),
+      RadarGetEntitiesLocationsContinent$oc() => oc != null ? oc() : orElse(value),
+      RadarGetEntitiesLocationsContinent$sa() => sa != null ? sa() : orElse(value),
+      RadarGetEntitiesLocationsContinent$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetEntitiesLocationsContinent($value)';
 
  }

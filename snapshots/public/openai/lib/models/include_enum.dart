@@ -57,6 +57,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IncludeEnum$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() fileSearchCallResults, required W Function() webSearchCallResults, required W Function() webSearchCallActionSources, required W Function() messageInputImageImageUrl, required W Function() computerCallOutputOutputImageUrl, required W Function() codeInterpreterCallOutputs, required W Function() reasoningEncryptedContent, required W Function() messageOutputTextLogprobs, required W Function(String value) $unknown, }) { return switch (this) {
+      IncludeEnum$fileSearchCallResults() => fileSearchCallResults(),
+      IncludeEnum$webSearchCallResults() => webSearchCallResults(),
+      IncludeEnum$webSearchCallActionSources() => webSearchCallActionSources(),
+      IncludeEnum$messageInputImageImageUrl() => messageInputImageImageUrl(),
+      IncludeEnum$computerCallOutputOutputImageUrl() => computerCallOutputOutputImageUrl(),
+      IncludeEnum$codeInterpreterCallOutputs() => codeInterpreterCallOutputs(),
+      IncludeEnum$reasoningEncryptedContent() => reasoningEncryptedContent(),
+      IncludeEnum$messageOutputTextLogprobs() => messageOutputTextLogprobs(),
+      IncludeEnum$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? fileSearchCallResults, W Function()? webSearchCallResults, W Function()? webSearchCallActionSources, W Function()? messageInputImageImageUrl, W Function()? computerCallOutputOutputImageUrl, W Function()? codeInterpreterCallOutputs, W Function()? reasoningEncryptedContent, W Function()? messageOutputTextLogprobs, W Function(String value)? $unknown, }) { return switch (this) {
+      IncludeEnum$fileSearchCallResults() => fileSearchCallResults != null ? fileSearchCallResults() : orElse(value),
+      IncludeEnum$webSearchCallResults() => webSearchCallResults != null ? webSearchCallResults() : orElse(value),
+      IncludeEnum$webSearchCallActionSources() => webSearchCallActionSources != null ? webSearchCallActionSources() : orElse(value),
+      IncludeEnum$messageInputImageImageUrl() => messageInputImageImageUrl != null ? messageInputImageImageUrl() : orElse(value),
+      IncludeEnum$computerCallOutputOutputImageUrl() => computerCallOutputOutputImageUrl != null ? computerCallOutputOutputImageUrl() : orElse(value),
+      IncludeEnum$codeInterpreterCallOutputs() => codeInterpreterCallOutputs != null ? codeInterpreterCallOutputs() : orElse(value),
+      IncludeEnum$reasoningEncryptedContent() => reasoningEncryptedContent != null ? reasoningEncryptedContent() : orElse(value),
+      IncludeEnum$messageOutputTextLogprobs() => messageOutputTextLogprobs != null ? messageOutputTextLogprobs() : orElse(value),
+      IncludeEnum$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IncludeEnum($value)';
 
  }

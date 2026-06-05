@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StreamAudioState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() queued, required W Function() ready, required W Function() error, required W Function(String value) $unknown, }) { return switch (this) {
+      StreamAudioState$queued() => queued(),
+      StreamAudioState$ready() => ready(),
+      StreamAudioState$error() => error(),
+      StreamAudioState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? queued, W Function()? ready, W Function()? error, W Function(String value)? $unknown, }) { return switch (this) {
+      StreamAudioState$queued() => queued != null ? queued() : orElse(value),
+      StreamAudioState$ready() => ready != null ? ready() : orElse(value),
+      StreamAudioState$error() => error != null ? error() : orElse(value),
+      StreamAudioState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StreamAudioState($value)';
 
  }

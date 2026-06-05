@@ -122,6 +122,103 @@ sealed class EventType {
     return this is EventType$Unknown;
   }
 
+  /// Exhaustive match on the enum value.
+  W when<W>({
+    required W Function() ectoplasmSpike,
+    required W Function() $null,
+    required W Function() $true,
+    required W Function() $false,
+    required W Function() $0,
+    required W Function() naN,
+    required W Function() $empty,
+    required W Function() $empty2,
+    required W Function() $empty3,
+    required W Function() ectoplasmSpike2,
+    required W Function() ectoplasmSpike3,
+    required W Function() $empty4,
+    required W Function() $empty5,
+    required W Function() $empty6,
+    required W Function() $toString,
+    required W Function() hasOwnProperty,
+    required W Function() proto,
+    required W Function() constructor,
+    required W Function(String value) $unknown,
+  }) {
+    return switch (this) {
+      EventType$ectoplasmSpike() => ectoplasmSpike(),
+      EventType$$null() => $null(),
+      EventType$$true() => $true(),
+      EventType$$false() => $false(),
+      EventType$$0() => $0(),
+      EventType$naN() => naN(),
+      EventType$$empty() => $empty(),
+      EventType$$empty2() => $empty2(),
+      EventType$$empty3() => $empty3(),
+      EventType$ectoplasmSpike2() => ectoplasmSpike2(),
+      EventType$ectoplasmSpike3() => ectoplasmSpike3(),
+      EventType$$empty4() => $empty4(),
+      EventType$$empty5() => $empty5(),
+      EventType$$empty6() => $empty6(),
+      EventType$$toString() => $toString(),
+      EventType$hasOwnProperty() => hasOwnProperty(),
+      EventType$proto() => proto(),
+      EventType$constructor() => constructor(),
+      EventType$Unknown(:final value) => $unknown(value),
+    };
+  }
+
+  /// Partial match with a required fallback for unhandled variants.
+  W maybeWhen<W>({
+    required W Function(String value) orElse,
+    W Function()? ectoplasmSpike,
+    W Function()? $null,
+    W Function()? $true,
+    W Function()? $false,
+    W Function()? $0,
+    W Function()? naN,
+    W Function()? $empty,
+    W Function()? $empty2,
+    W Function()? $empty3,
+    W Function()? ectoplasmSpike2,
+    W Function()? ectoplasmSpike3,
+    W Function()? $empty4,
+    W Function()? $empty5,
+    W Function()? $empty6,
+    W Function()? $toString,
+    W Function()? hasOwnProperty,
+    W Function()? proto,
+    W Function()? constructor,
+    W Function(String value)? $unknown,
+  }) {
+    return switch (this) {
+      EventType$ectoplasmSpike() =>
+        ectoplasmSpike != null ? ectoplasmSpike() : orElse(value),
+      EventType$$null() => $null != null ? $null() : orElse(value),
+      EventType$$true() => $true != null ? $true() : orElse(value),
+      EventType$$false() => $false != null ? $false() : orElse(value),
+      EventType$$0() => $0 != null ? $0() : orElse(value),
+      EventType$naN() => naN != null ? naN() : orElse(value),
+      EventType$$empty() => $empty != null ? $empty() : orElse(value),
+      EventType$$empty2() => $empty2 != null ? $empty2() : orElse(value),
+      EventType$$empty3() => $empty3 != null ? $empty3() : orElse(value),
+      EventType$ectoplasmSpike2() =>
+        ectoplasmSpike2 != null ? ectoplasmSpike2() : orElse(value),
+      EventType$ectoplasmSpike3() =>
+        ectoplasmSpike3 != null ? ectoplasmSpike3() : orElse(value),
+      EventType$$empty4() => $empty4 != null ? $empty4() : orElse(value),
+      EventType$$empty5() => $empty5 != null ? $empty5() : orElse(value),
+      EventType$$empty6() => $empty6 != null ? $empty6() : orElse(value),
+      EventType$$toString() => $toString != null ? $toString() : orElse(value),
+      EventType$hasOwnProperty() =>
+        hasOwnProperty != null ? hasOwnProperty() : orElse(value),
+      EventType$proto() => proto != null ? proto() : orElse(value),
+      EventType$constructor() =>
+        constructor != null ? constructor() : orElse(value),
+      EventType$Unknown(:final value) =>
+        $unknown != null ? $unknown(value) : orElse(value),
+    };
+  }
+
   @override
   String toString() => 'EventType($value)';
 }

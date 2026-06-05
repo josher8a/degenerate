@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WafPackagesListWafPackagesMatch$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() any, required W Function() all, required W Function(String value) $unknown, }) { return switch (this) {
+      WafPackagesListWafPackagesMatch$any() => any(),
+      WafPackagesListWafPackagesMatch$all() => all(),
+      WafPackagesListWafPackagesMatch$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? any, W Function()? all, W Function(String value)? $unknown, }) { return switch (this) {
+      WafPackagesListWafPackagesMatch$any() => any != null ? any() : orElse(value),
+      WafPackagesListWafPackagesMatch$all() => all != null ? all() : orElse(value),
+      WafPackagesListWafPackagesMatch$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WafPackagesListWafPackagesMatch($value)';
 
  }

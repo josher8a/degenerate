@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotAlertSecurityAdvisorySeverity$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() low, required W Function() medium, required W Function() high, required W Function() critical, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotAlertSecurityAdvisorySeverity$low() => low(),
+      DependabotAlertSecurityAdvisorySeverity$medium() => medium(),
+      DependabotAlertSecurityAdvisorySeverity$high() => high(),
+      DependabotAlertSecurityAdvisorySeverity$critical() => critical(),
+      DependabotAlertSecurityAdvisorySeverity$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? low, W Function()? medium, W Function()? high, W Function()? critical, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotAlertSecurityAdvisorySeverity$low() => low != null ? low() : orElse(value),
+      DependabotAlertSecurityAdvisorySeverity$medium() => medium != null ? medium() : orElse(value),
+      DependabotAlertSecurityAdvisorySeverity$high() => high != null ? high() : orElse(value),
+      DependabotAlertSecurityAdvisorySeverity$critical() => critical != null ? critical() : orElse(value),
+      DependabotAlertSecurityAdvisorySeverity$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotAlertSecurityAdvisorySeverity($value)';
 
  }

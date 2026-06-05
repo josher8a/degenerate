@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BillingCreditGrantsResourceBalanceDebitType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() creditsApplied, required W Function() creditsExpired, required W Function() creditsVoided, required W Function(String value) $unknown, }) { return switch (this) {
+      BillingCreditGrantsResourceBalanceDebitType$creditsApplied() => creditsApplied(),
+      BillingCreditGrantsResourceBalanceDebitType$creditsExpired() => creditsExpired(),
+      BillingCreditGrantsResourceBalanceDebitType$creditsVoided() => creditsVoided(),
+      BillingCreditGrantsResourceBalanceDebitType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? creditsApplied, W Function()? creditsExpired, W Function()? creditsVoided, W Function(String value)? $unknown, }) { return switch (this) {
+      BillingCreditGrantsResourceBalanceDebitType$creditsApplied() => creditsApplied != null ? creditsApplied() : orElse(value),
+      BillingCreditGrantsResourceBalanceDebitType$creditsExpired() => creditsExpired != null ? creditsExpired() : orElse(value),
+      BillingCreditGrantsResourceBalanceDebitType$creditsVoided() => creditsVoided != null ? creditsVoided() : orElse(value),
+      BillingCreditGrantsResourceBalanceDebitType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BillingCreditGrantsResourceBalanceDebitType($value)';
 
  }

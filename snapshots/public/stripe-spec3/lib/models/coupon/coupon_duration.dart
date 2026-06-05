@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CouponDuration$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() forever, required W Function() once, required W Function() repeating, required W Function(String value) $unknown, }) { return switch (this) {
+      CouponDuration$forever() => forever(),
+      CouponDuration$once() => once(),
+      CouponDuration$repeating() => repeating(),
+      CouponDuration$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? forever, W Function()? once, W Function()? repeating, W Function(String value)? $unknown, }) { return switch (this) {
+      CouponDuration$forever() => forever != null ? forever() : orElse(value),
+      CouponDuration$once() => once != null ? once() : orElse(value),
+      CouponDuration$repeating() => repeating != null ? repeating() : orElse(value),
+      CouponDuration$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CouponDuration($value)';
 
  }

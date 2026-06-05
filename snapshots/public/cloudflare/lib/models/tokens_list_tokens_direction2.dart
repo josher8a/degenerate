@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TokensListTokensDirection2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() asc, required W Function() desc, required W Function(String value) $unknown, }) { return switch (this) {
+      TokensListTokensDirection2$asc() => asc(),
+      TokensListTokensDirection2$desc() => desc(),
+      TokensListTokensDirection2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? asc, W Function()? desc, W Function(String value)? $unknown, }) { return switch (this) {
+      TokensListTokensDirection2$asc() => asc != null ? asc() : orElse(value),
+      TokensListTokensDirection2$desc() => desc != null ? desc() : orElse(value),
+      TokensListTokensDirection2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TokensListTokensDirection2($value)';
 
  }

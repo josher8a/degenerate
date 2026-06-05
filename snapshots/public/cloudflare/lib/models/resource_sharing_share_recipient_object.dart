@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceSharingRecipientAssociationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() associating, required W Function() associated, required W Function() disassociating, required W Function() disassociated, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceSharingRecipientAssociationStatus$associating() => associating(),
+      ResourceSharingRecipientAssociationStatus$associated() => associated(),
+      ResourceSharingRecipientAssociationStatus$disassociating() => disassociating(),
+      ResourceSharingRecipientAssociationStatus$disassociated() => disassociated(),
+      ResourceSharingRecipientAssociationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? associating, W Function()? associated, W Function()? disassociating, W Function()? disassociated, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceSharingRecipientAssociationStatus$associating() => associating != null ? associating() : orElse(value),
+      ResourceSharingRecipientAssociationStatus$associated() => associated != null ? associated() : orElse(value),
+      ResourceSharingRecipientAssociationStatus$disassociating() => disassociating != null ? disassociating() : orElse(value),
+      ResourceSharingRecipientAssociationStatus$disassociated() => disassociated != null ? disassociated() : orElse(value),
+      ResourceSharingRecipientAssociationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceSharingRecipientAssociationStatus($value)';
 
  }

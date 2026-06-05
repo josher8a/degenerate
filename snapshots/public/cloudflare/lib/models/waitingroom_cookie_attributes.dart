@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomCookieAttributesSamesite$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() lax, required W Function() none, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomCookieAttributesSamesite$auto() => auto(),
+      WaitingroomCookieAttributesSamesite$lax() => lax(),
+      WaitingroomCookieAttributesSamesite$none() => none(),
+      WaitingroomCookieAttributesSamesite$strict() => strict(),
+      WaitingroomCookieAttributesSamesite$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? lax, W Function()? none, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomCookieAttributesSamesite$auto() => auto != null ? auto() : orElse(value),
+      WaitingroomCookieAttributesSamesite$lax() => lax != null ? lax() : orElse(value),
+      WaitingroomCookieAttributesSamesite$none() => none != null ? none() : orElse(value),
+      WaitingroomCookieAttributesSamesite$strict() => strict != null ? strict() : orElse(value),
+      WaitingroomCookieAttributesSamesite$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomCookieAttributesSamesite($value)';
 
  }
@@ -112,6 +128,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WaitingroomCookieAttributesSecure$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() always, required W Function() never, required W Function(String value) $unknown, }) { return switch (this) {
+      WaitingroomCookieAttributesSecure$auto() => auto(),
+      WaitingroomCookieAttributesSecure$always() => always(),
+      WaitingroomCookieAttributesSecure$never() => never(),
+      WaitingroomCookieAttributesSecure$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? always, W Function()? never, W Function(String value)? $unknown, }) { return switch (this) {
+      WaitingroomCookieAttributesSecure$auto() => auto != null ? auto() : orElse(value),
+      WaitingroomCookieAttributesSecure$always() => always != null ? always() : orElse(value),
+      WaitingroomCookieAttributesSecure$never() => never != null ? never() : orElse(value),
+      WaitingroomCookieAttributesSecure$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WaitingroomCookieAttributesSecure($value)';
 
  }

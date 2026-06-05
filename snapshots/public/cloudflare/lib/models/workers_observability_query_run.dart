@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersObservabilityQueryRunStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() started, required W Function() completed, required W Function(String value) $unknown, }) { return switch (this) {
+      WorkersObservabilityQueryRunStatus$started() => started(),
+      WorkersObservabilityQueryRunStatus$completed() => completed(),
+      WorkersObservabilityQueryRunStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? started, W Function()? completed, W Function(String value)? $unknown, }) { return switch (this) {
+      WorkersObservabilityQueryRunStatus$started() => started != null ? started() : orElse(value),
+      WorkersObservabilityQueryRunStatus$completed() => completed != null ? completed() : orElse(value),
+      WorkersObservabilityQueryRunStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WorkersObservabilityQueryRunStatus($value)';
 
  }

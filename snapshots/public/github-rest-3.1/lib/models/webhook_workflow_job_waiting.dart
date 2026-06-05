@@ -21,6 +21,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebhookWorkflowJobWaitingAction$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() waiting, required W Function(String value) $unknown, }) { return switch (this) {
+      WebhookWorkflowJobWaitingAction$waiting() => waiting(),
+      WebhookWorkflowJobWaitingAction$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? waiting, W Function(String value)? $unknown, }) { return switch (this) {
+      WebhookWorkflowJobWaitingAction$waiting() => waiting != null ? waiting() : orElse(value),
+      WebhookWorkflowJobWaitingAction$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'WebhookWorkflowJobWaitingAction($value)';
 
  }

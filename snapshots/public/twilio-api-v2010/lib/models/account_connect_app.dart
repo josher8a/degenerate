@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountConnectAppDeauthorizeCallbackMethod$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $get, required W Function() post, required W Function(String value) $unknown, }) { return switch (this) {
+      AccountConnectAppDeauthorizeCallbackMethod$$get() => $get(),
+      AccountConnectAppDeauthorizeCallbackMethod$post() => post(),
+      AccountConnectAppDeauthorizeCallbackMethod$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $get, W Function()? post, W Function(String value)? $unknown, }) { return switch (this) {
+      AccountConnectAppDeauthorizeCallbackMethod$$get() => $get != null ? $get() : orElse(value),
+      AccountConnectAppDeauthorizeCallbackMethod$post() => post != null ? post() : orElse(value),
+      AccountConnectAppDeauthorizeCallbackMethod$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AccountConnectAppDeauthorizeCallbackMethod($value)';
 
  }

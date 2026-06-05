@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OrgMembershipRole$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() admin, required W Function() member, required W Function() billingManager, required W Function(String value) $unknown, }) { return switch (this) {
+      OrgMembershipRole$admin() => admin(),
+      OrgMembershipRole$member() => member(),
+      OrgMembershipRole$billingManager() => billingManager(),
+      OrgMembershipRole$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? admin, W Function()? member, W Function()? billingManager, W Function(String value)? $unknown, }) { return switch (this) {
+      OrgMembershipRole$admin() => admin != null ? admin() : orElse(value),
+      OrgMembershipRole$member() => member != null ? member() : orElse(value),
+      OrgMembershipRole$billingManager() => billingManager != null ? billingManager() : orElse(value),
+      OrgMembershipRole$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'OrgMembershipRole($value)';
 
  }

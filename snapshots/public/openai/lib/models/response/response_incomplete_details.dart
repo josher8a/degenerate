@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResponseIncompleteDetailsReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() maxOutputTokens, required W Function() contentFilter, required W Function(String value) $unknown, }) { return switch (this) {
+      ResponseIncompleteDetailsReason$maxOutputTokens() => maxOutputTokens(),
+      ResponseIncompleteDetailsReason$contentFilter() => contentFilter(),
+      ResponseIncompleteDetailsReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? maxOutputTokens, W Function()? contentFilter, W Function(String value)? $unknown, }) { return switch (this) {
+      ResponseIncompleteDetailsReason$maxOutputTokens() => maxOutputTokens != null ? maxOutputTokens() : orElse(value),
+      ResponseIncompleteDetailsReason$contentFilter() => contentFilter != null ? contentFilter() : orElse(value),
+      ResponseIncompleteDetailsReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResponseIncompleteDetailsReason($value)';
 
  }

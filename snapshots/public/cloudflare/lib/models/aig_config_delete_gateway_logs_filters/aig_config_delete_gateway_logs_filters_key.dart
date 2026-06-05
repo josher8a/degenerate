@@ -117,6 +117,64 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AigConfigDeleteGatewayLogsFiltersKey$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() id, required W Function() createdAt, required W Function() requestContentType, required W Function() responseContentType, required W Function() requestType, required W Function() success, required W Function() cached, required W Function() provider, required W Function() model, required W Function() modelType, required W Function() cost, required W Function() tokens, required W Function() tokensIn, required W Function() tokensOut, required W Function() duration, required W Function() feedback, required W Function() eventId, required W Function() metadataKey, required W Function() metadataValue, required W Function() promptsPromptId, required W Function() promptsVersionId, required W Function() authentication, required W Function() wholesale, required W Function() compatibilityMode, required W Function() dlpAction, required W Function(String value) $unknown, }) { return switch (this) {
+      AigConfigDeleteGatewayLogsFiltersKey$id() => id(),
+      AigConfigDeleteGatewayLogsFiltersKey$createdAt() => createdAt(),
+      AigConfigDeleteGatewayLogsFiltersKey$requestContentType() => requestContentType(),
+      AigConfigDeleteGatewayLogsFiltersKey$responseContentType() => responseContentType(),
+      AigConfigDeleteGatewayLogsFiltersKey$requestType() => requestType(),
+      AigConfigDeleteGatewayLogsFiltersKey$success() => success(),
+      AigConfigDeleteGatewayLogsFiltersKey$cached() => cached(),
+      AigConfigDeleteGatewayLogsFiltersKey$provider() => provider(),
+      AigConfigDeleteGatewayLogsFiltersKey$model() => model(),
+      AigConfigDeleteGatewayLogsFiltersKey$modelType() => modelType(),
+      AigConfigDeleteGatewayLogsFiltersKey$cost() => cost(),
+      AigConfigDeleteGatewayLogsFiltersKey$tokens() => tokens(),
+      AigConfigDeleteGatewayLogsFiltersKey$tokensIn() => tokensIn(),
+      AigConfigDeleteGatewayLogsFiltersKey$tokensOut() => tokensOut(),
+      AigConfigDeleteGatewayLogsFiltersKey$duration() => duration(),
+      AigConfigDeleteGatewayLogsFiltersKey$feedback() => feedback(),
+      AigConfigDeleteGatewayLogsFiltersKey$eventId() => eventId(),
+      AigConfigDeleteGatewayLogsFiltersKey$metadataKey() => metadataKey(),
+      AigConfigDeleteGatewayLogsFiltersKey$metadataValue() => metadataValue(),
+      AigConfigDeleteGatewayLogsFiltersKey$promptsPromptId() => promptsPromptId(),
+      AigConfigDeleteGatewayLogsFiltersKey$promptsVersionId() => promptsVersionId(),
+      AigConfigDeleteGatewayLogsFiltersKey$authentication() => authentication(),
+      AigConfigDeleteGatewayLogsFiltersKey$wholesale() => wholesale(),
+      AigConfigDeleteGatewayLogsFiltersKey$compatibilityMode() => compatibilityMode(),
+      AigConfigDeleteGatewayLogsFiltersKey$dlpAction() => dlpAction(),
+      AigConfigDeleteGatewayLogsFiltersKey$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? id, W Function()? createdAt, W Function()? requestContentType, W Function()? responseContentType, W Function()? requestType, W Function()? success, W Function()? cached, W Function()? provider, W Function()? model, W Function()? modelType, W Function()? cost, W Function()? tokens, W Function()? tokensIn, W Function()? tokensOut, W Function()? duration, W Function()? feedback, W Function()? eventId, W Function()? metadataKey, W Function()? metadataValue, W Function()? promptsPromptId, W Function()? promptsVersionId, W Function()? authentication, W Function()? wholesale, W Function()? compatibilityMode, W Function()? dlpAction, W Function(String value)? $unknown, }) { return switch (this) {
+      AigConfigDeleteGatewayLogsFiltersKey$id() => id != null ? id() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$createdAt() => createdAt != null ? createdAt() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$requestContentType() => requestContentType != null ? requestContentType() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$responseContentType() => responseContentType != null ? responseContentType() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$requestType() => requestType != null ? requestType() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$success() => success != null ? success() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$cached() => cached != null ? cached() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$provider() => provider != null ? provider() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$model() => model != null ? model() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$modelType() => modelType != null ? modelType() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$cost() => cost != null ? cost() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$tokens() => tokens != null ? tokens() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$tokensIn() => tokensIn != null ? tokensIn() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$tokensOut() => tokensOut != null ? tokensOut() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$duration() => duration != null ? duration() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$feedback() => feedback != null ? feedback() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$eventId() => eventId != null ? eventId() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$metadataKey() => metadataKey != null ? metadataKey() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$metadataValue() => metadataValue != null ? metadataValue() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$promptsPromptId() => promptsPromptId != null ? promptsPromptId() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$promptsVersionId() => promptsVersionId != null ? promptsVersionId() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$authentication() => authentication != null ? authentication() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$wholesale() => wholesale != null ? wholesale() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$compatibilityMode() => compatibilityMode != null ? compatibilityMode() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$dlpAction() => dlpAction != null ? dlpAction() : orElse(value),
+      AigConfigDeleteGatewayLogsFiltersKey$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AigConfigDeleteGatewayLogsFiltersKey($value)';
 
  }

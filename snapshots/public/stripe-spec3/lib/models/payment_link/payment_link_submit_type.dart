@@ -38,6 +38,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PaymentLinkSubmitType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() auto, required W Function() book, required W Function() donate, required W Function() pay, required W Function() subscribe, required W Function(String value) $unknown, }) { return switch (this) {
+      PaymentLinkSubmitType$auto() => auto(),
+      PaymentLinkSubmitType$book() => book(),
+      PaymentLinkSubmitType$donate() => donate(),
+      PaymentLinkSubmitType$pay() => pay(),
+      PaymentLinkSubmitType$subscribe() => subscribe(),
+      PaymentLinkSubmitType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? auto, W Function()? book, W Function()? donate, W Function()? pay, W Function()? subscribe, W Function(String value)? $unknown, }) { return switch (this) {
+      PaymentLinkSubmitType$auto() => auto != null ? auto() : orElse(value),
+      PaymentLinkSubmitType$book() => book != null ? book() : orElse(value),
+      PaymentLinkSubmitType$donate() => donate != null ? donate() : orElse(value),
+      PaymentLinkSubmitType$pay() => pay != null ? pay() : orElse(value),
+      PaymentLinkSubmitType$subscribe() => subscribe != null ? subscribe() : orElse(value),
+      PaymentLinkSubmitType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PaymentLinkSubmitType($value)';
 
  }

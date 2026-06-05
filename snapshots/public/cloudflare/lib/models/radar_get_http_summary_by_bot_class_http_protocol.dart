@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RadarGetHttpSummaryByBotClassHttpProtocol$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() http, required W Function() https, required W Function(String value) $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryByBotClassHttpProtocol$http() => http(),
+      RadarGetHttpSummaryByBotClassHttpProtocol$https() => https(),
+      RadarGetHttpSummaryByBotClassHttpProtocol$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? http, W Function()? https, W Function(String value)? $unknown, }) { return switch (this) {
+      RadarGetHttpSummaryByBotClassHttpProtocol$http() => http != null ? http() : orElse(value),
+      RadarGetHttpSummaryByBotClassHttpProtocol$https() => https != null ? https() : orElse(value),
+      RadarGetHttpSummaryByBotClassHttpProtocol$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'RadarGetHttpSummaryByBotClassHttpProtocol($value)';
 
  }

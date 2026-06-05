@@ -25,6 +25,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceSharingShareKind$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() sent, required W Function() received, required W Function(String value) $unknown, }) { return switch (this) {
+      ResourceSharingShareKind$sent() => sent(),
+      ResourceSharingShareKind$received() => received(),
+      ResourceSharingShareKind$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? sent, W Function()? received, W Function(String value)? $unknown, }) { return switch (this) {
+      ResourceSharingShareKind$sent() => sent != null ? sent() : orElse(value),
+      ResourceSharingShareKind$received() => received != null ? received() : orElse(value),
+      ResourceSharingShareKind$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ResourceSharingShareKind($value)';
 
  }

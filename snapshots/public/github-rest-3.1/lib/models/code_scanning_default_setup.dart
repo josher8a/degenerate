@@ -61,6 +61,36 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningDefaultSetupLanguages$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() actions, required W Function() cCpp, required W Function() csharp, required W Function() go, required W Function() javaKotlin, required W Function() javascriptTypescript, required W Function() javascript, required W Function() python, required W Function() ruby, required W Function() typescript, required W Function() swift, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupLanguages$actions() => actions(),
+      CodeScanningDefaultSetupLanguages$cCpp() => cCpp(),
+      CodeScanningDefaultSetupLanguages$csharp() => csharp(),
+      CodeScanningDefaultSetupLanguages$go() => go(),
+      CodeScanningDefaultSetupLanguages$javaKotlin() => javaKotlin(),
+      CodeScanningDefaultSetupLanguages$javascriptTypescript() => javascriptTypescript(),
+      CodeScanningDefaultSetupLanguages$javascript() => javascript(),
+      CodeScanningDefaultSetupLanguages$python() => python(),
+      CodeScanningDefaultSetupLanguages$ruby() => ruby(),
+      CodeScanningDefaultSetupLanguages$typescript() => typescript(),
+      CodeScanningDefaultSetupLanguages$swift() => swift(),
+      CodeScanningDefaultSetupLanguages$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions, W Function()? cCpp, W Function()? csharp, W Function()? go, W Function()? javaKotlin, W Function()? javascriptTypescript, W Function()? javascript, W Function()? python, W Function()? ruby, W Function()? typescript, W Function()? swift, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupLanguages$actions() => actions != null ? actions() : orElse(value),
+      CodeScanningDefaultSetupLanguages$cCpp() => cCpp != null ? cCpp() : orElse(value),
+      CodeScanningDefaultSetupLanguages$csharp() => csharp != null ? csharp() : orElse(value),
+      CodeScanningDefaultSetupLanguages$go() => go != null ? go() : orElse(value),
+      CodeScanningDefaultSetupLanguages$javaKotlin() => javaKotlin != null ? javaKotlin() : orElse(value),
+      CodeScanningDefaultSetupLanguages$javascriptTypescript() => javascriptTypescript != null ? javascriptTypescript() : orElse(value),
+      CodeScanningDefaultSetupLanguages$javascript() => javascript != null ? javascript() : orElse(value),
+      CodeScanningDefaultSetupLanguages$python() => python != null ? python() : orElse(value),
+      CodeScanningDefaultSetupLanguages$ruby() => ruby != null ? ruby() : orElse(value),
+      CodeScanningDefaultSetupLanguages$typescript() => typescript != null ? typescript() : orElse(value),
+      CodeScanningDefaultSetupLanguages$swift() => swift != null ? swift() : orElse(value),
+      CodeScanningDefaultSetupLanguages$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningDefaultSetupLanguages($value)';
 
  }
@@ -202,6 +232,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningDefaultSetupRunnerType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() standard, required W Function() labeled, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupRunnerType$standard() => standard(),
+      CodeScanningDefaultSetupRunnerType$labeled() => labeled(),
+      CodeScanningDefaultSetupRunnerType$$null() => $null(),
+      CodeScanningDefaultSetupRunnerType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? standard, W Function()? labeled, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningDefaultSetupRunnerType$standard() => standard != null ? standard() : orElse(value),
+      CodeScanningDefaultSetupRunnerType$labeled() => labeled != null ? labeled() : orElse(value),
+      CodeScanningDefaultSetupRunnerType$$null() => $null != null ? $null() : orElse(value),
+      CodeScanningDefaultSetupRunnerType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningDefaultSetupRunnerType($value)';
 
  }
@@ -267,6 +311,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Schedule$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() weekly, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      Schedule$weekly() => weekly(),
+      Schedule$$null() => $null(),
+      Schedule$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? weekly, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      Schedule$weekly() => weekly != null ? weekly() : orElse(value),
+      Schedule$$null() => $null != null ? $null() : orElse(value),
+      Schedule$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Schedule($value)';
 
  }

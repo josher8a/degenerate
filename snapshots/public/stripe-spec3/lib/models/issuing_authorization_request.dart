@@ -98,6 +98,54 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is IssuingAuthorizationRequestReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() accountDisabled, required W Function() cardActive, required W Function() cardCanceled, required W Function() cardExpired, required W Function() cardInactive, required W Function() cardholderBlocked, required W Function() cardholderInactive, required W Function() cardholderVerificationRequired, required W Function() insecureAuthorizationMethod, required W Function() insufficientFunds, required W Function() networkFallback, required W Function() notAllowed, required W Function() pinBlocked, required W Function() spendingControls, required W Function() suspectedFraud, required W Function() verificationFailed, required W Function() webhookApproved, required W Function() webhookDeclined, required W Function() webhookError, required W Function() webhookTimeout, required W Function(String value) $unknown, }) { return switch (this) {
+      IssuingAuthorizationRequestReason$accountDisabled() => accountDisabled(),
+      IssuingAuthorizationRequestReason$cardActive() => cardActive(),
+      IssuingAuthorizationRequestReason$cardCanceled() => cardCanceled(),
+      IssuingAuthorizationRequestReason$cardExpired() => cardExpired(),
+      IssuingAuthorizationRequestReason$cardInactive() => cardInactive(),
+      IssuingAuthorizationRequestReason$cardholderBlocked() => cardholderBlocked(),
+      IssuingAuthorizationRequestReason$cardholderInactive() => cardholderInactive(),
+      IssuingAuthorizationRequestReason$cardholderVerificationRequired() => cardholderVerificationRequired(),
+      IssuingAuthorizationRequestReason$insecureAuthorizationMethod() => insecureAuthorizationMethod(),
+      IssuingAuthorizationRequestReason$insufficientFunds() => insufficientFunds(),
+      IssuingAuthorizationRequestReason$networkFallback() => networkFallback(),
+      IssuingAuthorizationRequestReason$notAllowed() => notAllowed(),
+      IssuingAuthorizationRequestReason$pinBlocked() => pinBlocked(),
+      IssuingAuthorizationRequestReason$spendingControls() => spendingControls(),
+      IssuingAuthorizationRequestReason$suspectedFraud() => suspectedFraud(),
+      IssuingAuthorizationRequestReason$verificationFailed() => verificationFailed(),
+      IssuingAuthorizationRequestReason$webhookApproved() => webhookApproved(),
+      IssuingAuthorizationRequestReason$webhookDeclined() => webhookDeclined(),
+      IssuingAuthorizationRequestReason$webhookError() => webhookError(),
+      IssuingAuthorizationRequestReason$webhookTimeout() => webhookTimeout(),
+      IssuingAuthorizationRequestReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? accountDisabled, W Function()? cardActive, W Function()? cardCanceled, W Function()? cardExpired, W Function()? cardInactive, W Function()? cardholderBlocked, W Function()? cardholderInactive, W Function()? cardholderVerificationRequired, W Function()? insecureAuthorizationMethod, W Function()? insufficientFunds, W Function()? networkFallback, W Function()? notAllowed, W Function()? pinBlocked, W Function()? spendingControls, W Function()? suspectedFraud, W Function()? verificationFailed, W Function()? webhookApproved, W Function()? webhookDeclined, W Function()? webhookError, W Function()? webhookTimeout, W Function(String value)? $unknown, }) { return switch (this) {
+      IssuingAuthorizationRequestReason$accountDisabled() => accountDisabled != null ? accountDisabled() : orElse(value),
+      IssuingAuthorizationRequestReason$cardActive() => cardActive != null ? cardActive() : orElse(value),
+      IssuingAuthorizationRequestReason$cardCanceled() => cardCanceled != null ? cardCanceled() : orElse(value),
+      IssuingAuthorizationRequestReason$cardExpired() => cardExpired != null ? cardExpired() : orElse(value),
+      IssuingAuthorizationRequestReason$cardInactive() => cardInactive != null ? cardInactive() : orElse(value),
+      IssuingAuthorizationRequestReason$cardholderBlocked() => cardholderBlocked != null ? cardholderBlocked() : orElse(value),
+      IssuingAuthorizationRequestReason$cardholderInactive() => cardholderInactive != null ? cardholderInactive() : orElse(value),
+      IssuingAuthorizationRequestReason$cardholderVerificationRequired() => cardholderVerificationRequired != null ? cardholderVerificationRequired() : orElse(value),
+      IssuingAuthorizationRequestReason$insecureAuthorizationMethod() => insecureAuthorizationMethod != null ? insecureAuthorizationMethod() : orElse(value),
+      IssuingAuthorizationRequestReason$insufficientFunds() => insufficientFunds != null ? insufficientFunds() : orElse(value),
+      IssuingAuthorizationRequestReason$networkFallback() => networkFallback != null ? networkFallback() : orElse(value),
+      IssuingAuthorizationRequestReason$notAllowed() => notAllowed != null ? notAllowed() : orElse(value),
+      IssuingAuthorizationRequestReason$pinBlocked() => pinBlocked != null ? pinBlocked() : orElse(value),
+      IssuingAuthorizationRequestReason$spendingControls() => spendingControls != null ? spendingControls() : orElse(value),
+      IssuingAuthorizationRequestReason$suspectedFraud() => suspectedFraud != null ? suspectedFraud() : orElse(value),
+      IssuingAuthorizationRequestReason$verificationFailed() => verificationFailed != null ? verificationFailed() : orElse(value),
+      IssuingAuthorizationRequestReason$webhookApproved() => webhookApproved != null ? webhookApproved() : orElse(value),
+      IssuingAuthorizationRequestReason$webhookDeclined() => webhookDeclined != null ? webhookDeclined() : orElse(value),
+      IssuingAuthorizationRequestReason$webhookError() => webhookError != null ? webhookError() : orElse(value),
+      IssuingAuthorizationRequestReason$webhookTimeout() => webhookTimeout != null ? webhookTimeout() : orElse(value),
+      IssuingAuthorizationRequestReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'IssuingAuthorizationRequestReason($value)';
 
  }

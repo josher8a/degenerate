@@ -58,6 +58,34 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ItemType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() cardBin, required W Function() cardFingerprint, required W Function() caseSensitiveString, required W Function() country, required W Function() customerId, required W Function() email, required W Function() ipAddress, required W Function() sepaDebitFingerprint, required W Function() string, required W Function() usBankAccountFingerprint, required W Function(String value) $unknown, }) { return switch (this) {
+      ItemType$cardBin() => cardBin(),
+      ItemType$cardFingerprint() => cardFingerprint(),
+      ItemType$caseSensitiveString() => caseSensitiveString(),
+      ItemType$country() => country(),
+      ItemType$customerId() => customerId(),
+      ItemType$email() => email(),
+      ItemType$ipAddress() => ipAddress(),
+      ItemType$sepaDebitFingerprint() => sepaDebitFingerprint(),
+      ItemType$string() => string(),
+      ItemType$usBankAccountFingerprint() => usBankAccountFingerprint(),
+      ItemType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? cardBin, W Function()? cardFingerprint, W Function()? caseSensitiveString, W Function()? country, W Function()? customerId, W Function()? email, W Function()? ipAddress, W Function()? sepaDebitFingerprint, W Function()? string, W Function()? usBankAccountFingerprint, W Function(String value)? $unknown, }) { return switch (this) {
+      ItemType$cardBin() => cardBin != null ? cardBin() : orElse(value),
+      ItemType$cardFingerprint() => cardFingerprint != null ? cardFingerprint() : orElse(value),
+      ItemType$caseSensitiveString() => caseSensitiveString != null ? caseSensitiveString() : orElse(value),
+      ItemType$country() => country != null ? country() : orElse(value),
+      ItemType$customerId() => customerId != null ? customerId() : orElse(value),
+      ItemType$email() => email != null ? email() : orElse(value),
+      ItemType$ipAddress() => ipAddress != null ? ipAddress() : orElse(value),
+      ItemType$sepaDebitFingerprint() => sepaDebitFingerprint != null ? sepaDebitFingerprint() : orElse(value),
+      ItemType$string() => string != null ? string() : orElse(value),
+      ItemType$usBankAccountFingerprint() => usBankAccountFingerprint != null ? usBankAccountFingerprint() : orElse(value),
+      ItemType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ItemType($value)';
 
  }

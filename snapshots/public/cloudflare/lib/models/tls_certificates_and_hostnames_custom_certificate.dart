@@ -66,6 +66,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TlsCertificatesAndHostnamesStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() active, required W Function() expired, required W Function() deleted, required W Function() pending, required W Function() initializing, required W Function(String value) $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesStatus$active() => active(),
+      TlsCertificatesAndHostnamesStatus$expired() => expired(),
+      TlsCertificatesAndHostnamesStatus$deleted() => deleted(),
+      TlsCertificatesAndHostnamesStatus$pending() => pending(),
+      TlsCertificatesAndHostnamesStatus$initializing() => initializing(),
+      TlsCertificatesAndHostnamesStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? active, W Function()? expired, W Function()? deleted, W Function()? pending, W Function()? initializing, W Function(String value)? $unknown, }) { return switch (this) {
+      TlsCertificatesAndHostnamesStatus$active() => active != null ? active() : orElse(value),
+      TlsCertificatesAndHostnamesStatus$expired() => expired != null ? expired() : orElse(value),
+      TlsCertificatesAndHostnamesStatus$deleted() => deleted != null ? deleted() : orElse(value),
+      TlsCertificatesAndHostnamesStatus$pending() => pending != null ? pending() : orElse(value),
+      TlsCertificatesAndHostnamesStatus$initializing() => initializing != null ? initializing() : orElse(value),
+      TlsCertificatesAndHostnamesStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TlsCertificatesAndHostnamesStatus($value)';
 
  }

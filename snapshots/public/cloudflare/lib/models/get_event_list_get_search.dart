@@ -65,6 +65,38 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetEventListGetSearchOp$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() equals, required W Function() not, required W Function() gt, required W Function() gte, required W Function() lt, required W Function() lte, required W Function() like, required W Function() contains, required W Function() startsWith, required W Function() endsWith, required W Function() $in, required W Function() find, required W Function(String value) $unknown, }) { return switch (this) {
+      GetEventListGetSearchOp$equals() => equals(),
+      GetEventListGetSearchOp$not() => not(),
+      GetEventListGetSearchOp$gt() => gt(),
+      GetEventListGetSearchOp$gte() => gte(),
+      GetEventListGetSearchOp$lt() => lt(),
+      GetEventListGetSearchOp$lte() => lte(),
+      GetEventListGetSearchOp$like() => like(),
+      GetEventListGetSearchOp$contains() => contains(),
+      GetEventListGetSearchOp$startsWith() => startsWith(),
+      GetEventListGetSearchOp$endsWith() => endsWith(),
+      GetEventListGetSearchOp$$in() => $in(),
+      GetEventListGetSearchOp$find() => find(),
+      GetEventListGetSearchOp$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? equals, W Function()? not, W Function()? gt, W Function()? gte, W Function()? lt, W Function()? lte, W Function()? like, W Function()? contains, W Function()? startsWith, W Function()? endsWith, W Function()? $in, W Function()? find, W Function(String value)? $unknown, }) { return switch (this) {
+      GetEventListGetSearchOp$equals() => equals != null ? equals() : orElse(value),
+      GetEventListGetSearchOp$not() => not != null ? not() : orElse(value),
+      GetEventListGetSearchOp$gt() => gt != null ? gt() : orElse(value),
+      GetEventListGetSearchOp$gte() => gte != null ? gte() : orElse(value),
+      GetEventListGetSearchOp$lt() => lt != null ? lt() : orElse(value),
+      GetEventListGetSearchOp$lte() => lte != null ? lte() : orElse(value),
+      GetEventListGetSearchOp$like() => like != null ? like() : orElse(value),
+      GetEventListGetSearchOp$contains() => contains != null ? contains() : orElse(value),
+      GetEventListGetSearchOp$startsWith() => startsWith != null ? startsWith() : orElse(value),
+      GetEventListGetSearchOp$endsWith() => endsWith != null ? endsWith() : orElse(value),
+      GetEventListGetSearchOp$$in() => $in != null ? $in() : orElse(value),
+      GetEventListGetSearchOp$find() => find != null ? find() : orElse(value),
+      GetEventListGetSearchOp$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'GetEventListGetSearchOp($value)';
 
  }

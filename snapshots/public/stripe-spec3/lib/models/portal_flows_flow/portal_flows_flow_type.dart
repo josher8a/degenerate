@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PortalFlowsFlowType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() paymentMethodUpdate, required W Function() subscriptionCancel, required W Function() subscriptionUpdate, required W Function() subscriptionUpdateConfirm, required W Function(String value) $unknown, }) { return switch (this) {
+      PortalFlowsFlowType$paymentMethodUpdate() => paymentMethodUpdate(),
+      PortalFlowsFlowType$subscriptionCancel() => subscriptionCancel(),
+      PortalFlowsFlowType$subscriptionUpdate() => subscriptionUpdate(),
+      PortalFlowsFlowType$subscriptionUpdateConfirm() => subscriptionUpdateConfirm(),
+      PortalFlowsFlowType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? paymentMethodUpdate, W Function()? subscriptionCancel, W Function()? subscriptionUpdate, W Function()? subscriptionUpdateConfirm, W Function(String value)? $unknown, }) { return switch (this) {
+      PortalFlowsFlowType$paymentMethodUpdate() => paymentMethodUpdate != null ? paymentMethodUpdate() : orElse(value),
+      PortalFlowsFlowType$subscriptionCancel() => subscriptionCancel != null ? subscriptionCancel() : orElse(value),
+      PortalFlowsFlowType$subscriptionUpdate() => subscriptionUpdate != null ? subscriptionUpdate() : orElse(value),
+      PortalFlowsFlowType$subscriptionUpdateConfirm() => subscriptionUpdateConfirm != null ? subscriptionUpdateConfirm() : orElse(value),
+      PortalFlowsFlowType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PortalFlowsFlowType($value)';
 
  }

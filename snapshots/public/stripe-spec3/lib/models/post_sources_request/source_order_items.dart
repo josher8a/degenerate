@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ItemsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() discount, required W Function() shipping, required W Function() sku, required W Function() tax, required W Function(String value) $unknown, }) { return switch (this) {
+      ItemsType$discount() => discount(),
+      ItemsType$shipping() => shipping(),
+      ItemsType$sku() => sku(),
+      ItemsType$tax() => tax(),
+      ItemsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? discount, W Function()? shipping, W Function()? sku, W Function()? tax, W Function(String value)? $unknown, }) { return switch (this) {
+      ItemsType$discount() => discount != null ? discount() : orElse(value),
+      ItemsType$shipping() => shipping != null ? shipping() : orElse(value),
+      ItemsType$sku() => sku != null ? sku() : orElse(value),
+      ItemsType$tax() => tax != null ? tax() : orElse(value),
+      ItemsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ItemsType($value)';
 
  }

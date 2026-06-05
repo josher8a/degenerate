@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CodeScanningAlertInstanceState$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() open, required W Function() fixed, required W Function() $null, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningAlertInstanceState$open() => open(),
+      CodeScanningAlertInstanceState$fixed() => fixed(),
+      CodeScanningAlertInstanceState$$null() => $null(),
+      CodeScanningAlertInstanceState$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? open, W Function()? fixed, W Function()? $null, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningAlertInstanceState$open() => open != null ? open() : orElse(value),
+      CodeScanningAlertInstanceState$fixed() => fixed != null ? fixed() : orElse(value),
+      CodeScanningAlertInstanceState$$null() => $null != null ? $null() : orElse(value),
+      CodeScanningAlertInstanceState$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'CodeScanningAlertInstanceState($value)';
 
  }

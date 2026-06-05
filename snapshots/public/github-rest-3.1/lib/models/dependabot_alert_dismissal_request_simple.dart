@@ -34,6 +34,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotAlertDismissalRequestSimpleStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() pending, required W Function() approved, required W Function() rejected, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotAlertDismissalRequestSimpleStatus$pending() => pending(),
+      DependabotAlertDismissalRequestSimpleStatus$approved() => approved(),
+      DependabotAlertDismissalRequestSimpleStatus$rejected() => rejected(),
+      DependabotAlertDismissalRequestSimpleStatus$cancelled() => cancelled(),
+      DependabotAlertDismissalRequestSimpleStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? pending, W Function()? approved, W Function()? rejected, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotAlertDismissalRequestSimpleStatus$pending() => pending != null ? pending() : orElse(value),
+      DependabotAlertDismissalRequestSimpleStatus$approved() => approved != null ? approved() : orElse(value),
+      DependabotAlertDismissalRequestSimpleStatus$rejected() => rejected != null ? rejected() : orElse(value),
+      DependabotAlertDismissalRequestSimpleStatus$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      DependabotAlertDismissalRequestSimpleStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotAlertDismissalRequestSimpleStatus($value)';
 
  }

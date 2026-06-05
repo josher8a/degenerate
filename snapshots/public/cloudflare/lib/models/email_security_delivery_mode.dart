@@ -37,6 +37,24 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EmailSecurityDeliveryMode$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() direct, required W Function() bcc, required W Function() journal, required W Function() api, required W Function() retroScan, required W Function(String value) $unknown, }) { return switch (this) {
+      EmailSecurityDeliveryMode$direct() => direct(),
+      EmailSecurityDeliveryMode$bcc() => bcc(),
+      EmailSecurityDeliveryMode$journal() => journal(),
+      EmailSecurityDeliveryMode$api() => api(),
+      EmailSecurityDeliveryMode$retroScan() => retroScan(),
+      EmailSecurityDeliveryMode$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? direct, W Function()? bcc, W Function()? journal, W Function()? api, W Function()? retroScan, W Function(String value)? $unknown, }) { return switch (this) {
+      EmailSecurityDeliveryMode$direct() => direct != null ? direct() : orElse(value),
+      EmailSecurityDeliveryMode$bcc() => bcc != null ? bcc() : orElse(value),
+      EmailSecurityDeliveryMode$journal() => journal != null ? journal() : orElse(value),
+      EmailSecurityDeliveryMode$api() => api != null ? api() : orElse(value),
+      EmailSecurityDeliveryMode$retroScan() => retroScan != null ? retroScan() : orElse(value),
+      EmailSecurityDeliveryMode$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'EmailSecurityDeliveryMode($value)';
 
  }

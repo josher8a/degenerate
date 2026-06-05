@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is TasksClientType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() site, required W Function() automatic, required W Function() api, required W Function(String value) $unknown, }) { return switch (this) {
+      TasksClientType$site() => site(),
+      TasksClientType$automatic() => automatic(),
+      TasksClientType$api() => api(),
+      TasksClientType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? site, W Function()? automatic, W Function()? api, W Function(String value)? $unknown, }) { return switch (this) {
+      TasksClientType$site() => site != null ? site() : orElse(value),
+      TasksClientType$automatic() => automatic != null ? automatic() : orElse(value),
+      TasksClientType$api() => api != null ? api() : orElse(value),
+      TasksClientType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'TasksClientType($value)';
 
  }

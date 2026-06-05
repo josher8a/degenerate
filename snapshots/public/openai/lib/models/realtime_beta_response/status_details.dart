@@ -37,6 +37,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StatusDetailsType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() cancelled, required W Function() failed, required W Function() incomplete, required W Function(String value) $unknown, }) { return switch (this) {
+      StatusDetailsType$completed() => completed(),
+      StatusDetailsType$cancelled() => cancelled(),
+      StatusDetailsType$failed() => failed(),
+      StatusDetailsType$incomplete() => incomplete(),
+      StatusDetailsType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? cancelled, W Function()? failed, W Function()? incomplete, W Function(String value)? $unknown, }) { return switch (this) {
+      StatusDetailsType$completed() => completed != null ? completed() : orElse(value),
+      StatusDetailsType$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      StatusDetailsType$failed() => failed != null ? failed() : orElse(value),
+      StatusDetailsType$incomplete() => incomplete != null ? incomplete() : orElse(value),
+      StatusDetailsType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StatusDetailsType($value)';
 
  }
@@ -124,6 +140,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is StatusDetailsReason$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() turnDetected, required W Function() clientCancelled, required W Function() maxOutputTokens, required W Function() contentFilter, required W Function(String value) $unknown, }) { return switch (this) {
+      StatusDetailsReason$turnDetected() => turnDetected(),
+      StatusDetailsReason$clientCancelled() => clientCancelled(),
+      StatusDetailsReason$maxOutputTokens() => maxOutputTokens(),
+      StatusDetailsReason$contentFilter() => contentFilter(),
+      StatusDetailsReason$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? turnDetected, W Function()? clientCancelled, W Function()? maxOutputTokens, W Function()? contentFilter, W Function(String value)? $unknown, }) { return switch (this) {
+      StatusDetailsReason$turnDetected() => turnDetected != null ? turnDetected() : orElse(value),
+      StatusDetailsReason$clientCancelled() => clientCancelled != null ? clientCancelled() : orElse(value),
+      StatusDetailsReason$maxOutputTokens() => maxOutputTokens != null ? maxOutputTokens() : orElse(value),
+      StatusDetailsReason$contentFilter() => contentFilter != null ? contentFilter() : orElse(value),
+      StatusDetailsReason$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'StatusDetailsReason($value)';
 
  }

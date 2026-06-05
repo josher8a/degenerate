@@ -50,6 +50,30 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AuthorAssociation$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() collaborator, required W Function() contributor, required W Function() firstTimer, required W Function() firstTimeContributor, required W Function() mannequin, required W Function() member, required W Function() none, required W Function() owner, required W Function(String value) $unknown, }) { return switch (this) {
+      AuthorAssociation$collaborator() => collaborator(),
+      AuthorAssociation$contributor() => contributor(),
+      AuthorAssociation$firstTimer() => firstTimer(),
+      AuthorAssociation$firstTimeContributor() => firstTimeContributor(),
+      AuthorAssociation$mannequin() => mannequin(),
+      AuthorAssociation$member() => member(),
+      AuthorAssociation$none() => none(),
+      AuthorAssociation$owner() => owner(),
+      AuthorAssociation$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? collaborator, W Function()? contributor, W Function()? firstTimer, W Function()? firstTimeContributor, W Function()? mannequin, W Function()? member, W Function()? none, W Function()? owner, W Function(String value)? $unknown, }) { return switch (this) {
+      AuthorAssociation$collaborator() => collaborator != null ? collaborator() : orElse(value),
+      AuthorAssociation$contributor() => contributor != null ? contributor() : orElse(value),
+      AuthorAssociation$firstTimer() => firstTimer != null ? firstTimer() : orElse(value),
+      AuthorAssociation$firstTimeContributor() => firstTimeContributor != null ? firstTimeContributor() : orElse(value),
+      AuthorAssociation$mannequin() => mannequin != null ? mannequin() : orElse(value),
+      AuthorAssociation$member() => member != null ? member() : orElse(value),
+      AuthorAssociation$none() => none != null ? none() : orElse(value),
+      AuthorAssociation$owner() => owner != null ? owner() : orElse(value),
+      AuthorAssociation$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'AuthorAssociation($value)';
 
  }

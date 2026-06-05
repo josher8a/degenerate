@@ -22,6 +22,16 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PayoutObject$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() payout, required W Function(String value) $unknown, }) { return switch (this) {
+      PayoutObject$payout() => payout(),
+      PayoutObject$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? payout, W Function(String value)? $unknown, }) { return switch (this) {
+      PayoutObject$payout() => payout != null ? payout() : orElse(value),
+      PayoutObject$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PayoutObject($value)';
 
  }
@@ -73,6 +83,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReconciliationStatus$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() completed, required W Function() inProgress, required W Function() notApplicable, required W Function(String value) $unknown, }) { return switch (this) {
+      ReconciliationStatus$completed() => completed(),
+      ReconciliationStatus$inProgress() => inProgress(),
+      ReconciliationStatus$notApplicable() => notApplicable(),
+      ReconciliationStatus$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? completed, W Function()? inProgress, W Function()? notApplicable, W Function(String value)? $unknown, }) { return switch (this) {
+      ReconciliationStatus$completed() => completed != null ? completed() : orElse(value),
+      ReconciliationStatus$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      ReconciliationStatus$notApplicable() => notApplicable != null ? notApplicable() : orElse(value),
+      ReconciliationStatus$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ReconciliationStatus($value)';
 
  }
@@ -138,6 +162,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PayoutType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() bankAccount, required W Function() card, required W Function(String value) $unknown, }) { return switch (this) {
+      PayoutType$bankAccount() => bankAccount(),
+      PayoutType$card() => card(),
+      PayoutType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? bankAccount, W Function()? card, W Function(String value)? $unknown, }) { return switch (this) {
+      PayoutType$bankAccount() => bankAccount != null ? bankAccount() : orElse(value),
+      PayoutType$card() => card != null ? card() : orElse(value),
+      PayoutType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'PayoutType($value)';
 
  }

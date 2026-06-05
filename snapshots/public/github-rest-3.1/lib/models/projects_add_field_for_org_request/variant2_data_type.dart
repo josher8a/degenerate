@@ -30,6 +30,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Variant2DataType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() text, required W Function() number, required W Function() date, required W Function(String value) $unknown, }) { return switch (this) {
+      Variant2DataType$text() => text(),
+      Variant2DataType$number() => number(),
+      Variant2DataType$date() => date(),
+      Variant2DataType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? text, W Function()? number, W Function()? date, W Function(String value)? $unknown, }) { return switch (this) {
+      Variant2DataType$text() => text != null ? text() : orElse(value),
+      Variant2DataType$number() => number != null ? number() : orElse(value),
+      Variant2DataType$date() => date != null ? date() : orElse(value),
+      Variant2DataType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'Variant2DataType($value)';
 
  }

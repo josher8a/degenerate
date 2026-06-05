@@ -26,6 +26,18 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ShieldAuthIdCharacteristicType$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() header, required W Function() cookie, required W Function(String value) $unknown, }) { return switch (this) {
+      ShieldAuthIdCharacteristicType$header() => header(),
+      ShieldAuthIdCharacteristicType$cookie() => cookie(),
+      ShieldAuthIdCharacteristicType$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? header, W Function()? cookie, W Function(String value)? $unknown, }) { return switch (this) {
+      ShieldAuthIdCharacteristicType$header() => header != null ? header() : orElse(value),
+      ShieldAuthIdCharacteristicType$cookie() => cookie != null ? cookie() : orElse(value),
+      ShieldAuthIdCharacteristicType$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'ShieldAuthIdCharacteristicType($value)';
 
  }

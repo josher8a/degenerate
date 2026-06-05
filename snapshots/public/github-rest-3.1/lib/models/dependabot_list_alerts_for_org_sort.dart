@@ -29,6 +29,20 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is DependabotListAlertsForOrgSort$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() created, required W Function() updated, required W Function() epssPercentage, required W Function(String value) $unknown, }) { return switch (this) {
+      DependabotListAlertsForOrgSort$created() => created(),
+      DependabotListAlertsForOrgSort$updated() => updated(),
+      DependabotListAlertsForOrgSort$epssPercentage() => epssPercentage(),
+      DependabotListAlertsForOrgSort$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? created, W Function()? updated, W Function()? epssPercentage, W Function(String value)? $unknown, }) { return switch (this) {
+      DependabotListAlertsForOrgSort$created() => created != null ? created() : orElse(value),
+      DependabotListAlertsForOrgSort$updated() => updated != null ? updated() : orElse(value),
+      DependabotListAlertsForOrgSort$epssPercentage() => epssPercentage != null ? epssPercentage() : orElse(value),
+      DependabotListAlertsForOrgSort$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'DependabotListAlertsForOrgSort($value)';
 
  }

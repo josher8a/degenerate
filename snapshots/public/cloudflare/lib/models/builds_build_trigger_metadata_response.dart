@@ -33,6 +33,22 @@ String get name { return switch (value) {
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is BuildsBuildTriggerSource$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() push, required W Function() pullRequest, required W Function() manual, required W Function() api, required W Function(String value) $unknown, }) { return switch (this) {
+      BuildsBuildTriggerSource$push() => push(),
+      BuildsBuildTriggerSource$pullRequest() => pullRequest(),
+      BuildsBuildTriggerSource$manual() => manual(),
+      BuildsBuildTriggerSource$api() => api(),
+      BuildsBuildTriggerSource$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? push, W Function()? pullRequest, W Function()? manual, W Function()? api, W Function(String value)? $unknown, }) { return switch (this) {
+      BuildsBuildTriggerSource$push() => push != null ? push() : orElse(value),
+      BuildsBuildTriggerSource$pullRequest() => pullRequest != null ? pullRequest() : orElse(value),
+      BuildsBuildTriggerSource$manual() => manual != null ? manual() : orElse(value),
+      BuildsBuildTriggerSource$api() => api != null ? api() : orElse(value),
+      BuildsBuildTriggerSource$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
 @override String toString() => 'BuildsBuildTriggerSource($value)';
 
  }
